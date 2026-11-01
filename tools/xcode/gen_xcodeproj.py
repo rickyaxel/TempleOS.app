@@ -6,17 +6,35 @@ reviewable: one iOS app target (TempleOSMobile) depending on the local Swift
 package ../TempleCore, the shared content from ../../shared as folder
 references, and one UI test target (TempleOSMobileUITests).
 
-Usage: gen_xcodeproj.py   (run from anywhere; paths are resolved from this file)
+Usage: gen_xcodeproj.py           write the project (run from anywhere; paths are resolved from this file)
+       gen_xcodeproj.py --check   exit 1 if the committed project differs from what this script writes
 
-Device validation builds (docs/native-validation) install beside the normal app by overriding
-TOS_BUNDLE_ID (app and UI test runner follow it) and enable the headless benchmark mode:
-  xcodebuild ... TOS_BUNDLE_ID=io.github.templeosmobile.bench TOS_GIT_REV=$(git rev-parse --short HEAD) \
+The app target carries the App Store identity (STORE_* below): the team and bundle identifier of
+the published app. Changing them breaks updates for existing users (AGENTS.md). Version numbers
+are bumped in Xcode; the generator keeps the ones it finds in the existing project file.
+
+Device validation builds (docs/native-validation) enable the headless benchmark mode:
+  xcodebuild ... TOS_GIT_REV=$(git rev-parse --short HEAD) \
       SWIFT_ACTIVE_COMPILATION_CONDITIONS='$(inherited) TEMPLEOS_BENCH'
+TOS_BUNDLE_ID names the UI test runner; the app target uses the store bundle identifier.
 """
+import json
 import os
+import re
+import subprocess
+import sys
+import tempfile
+import xml.etree.ElementTree as ET
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 APP_DIR = os.path.join(ROOT, 'temple_os_swift', 'App')
+PROJ = os.path.join(APP_DIR, 'TempleOSMobile.xcodeproj')
+
+# App Store identity of the published app (public values, not secrets; never change them)
+STORE_TEAM = 'LOCAL_SIGNING_TEAM'
+STORE_BUNDLE_ID = 'com.digitalcircuitstudios.templeosapp'
+STORE_DISPLAY_NAME = 'TempleOS.app'
+STORE_CATEGORY = 'public.app-category.education'
 
 ids = {}
 
@@ -41,7 +59,24 @@ def lst(keys, suffix=''):
     return '\n'.join(f'\t\t\t\t{i(k)} /* {k.split(".", 1)[1]}{suffix} */,' for k in keys)
 
 
-def main():
+def app_versions(path):
+    """{configuration: (MARKETING_VERSION, CURRENT_PROJECT_VERSION)} of the app target in an existing
+    project file, so version bumps made in Xcode survive regeneration."""
+    found = {}
+    if os.path.exists(path):
+        text = open(path).read()
+        for settings, name in re.findall(r'buildSettings = \{(.*?)\n\t\t\t\};\n\t\t\tname = (\w+);', text, re.S):
+            if 'INFOPLIST_FILE = TempleOSMobile/Info.plist;' in settings:
+                mv = re.search(r'MARKETING_VERSION = ([^;]+);', settings)
+                cv = re.search(r'CURRENT_PROJECT_VERSION = ([^;]+);', settings)
+                if mv and cv:
+                    found[name] = (mv.group(1), cv.group(1))
+    return found
+
+
+def build():
+    """The project file and the shared scheme, as text."""
+    versions = app_versions(os.path.join(PROJ, 'project.pbxproj'))
     P = i('project'); MG = i('maingroup'); PG = i('products'); AG = i('appgroup'); RG = i('resgroup')
     APP = i('app.product'); T = i('target')
     pkg = i('pkgref'); dep = i('pkgdep'); depbf = i('pkgdep.bf')
@@ -85,18 +120,23 @@ def main():
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;'''
-    common_targ = '''				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+    def common_targ(config):
+        marketing, build_number = versions.get(config, ('1.0.0', '1'))
+        return f'''				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = {build_number};
+				DEVELOPMENT_TEAM = {STORE_TEAM};
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = TempleOSMobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = {STORE_DISPLAY_NAME};
+				INFOPLIST_KEY_LSApplicationCategoryType = "{STORE_CATEGORY}";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "$(TOS_BUNDLE_ID)";
+				MARKETING_VERSION = {marketing};
+				PRODUCT_BUNDLE_IDENTIFIER = {STORE_BUNDLE_ID};
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TOS_BUNDLE_ID = io.github.templeosmobile;
 				TOS_GIT_REV = unknown;
@@ -363,14 +403,14 @@ def main():
 		{TD} /* Debug */ = {{
 			isa = XCBuildConfiguration;
 			buildSettings = {{
-{common_targ}
+{common_targ("Debug")}
 			}};
 			name = Debug;
 		}};
 		{TR} /* Release */ = {{
 			isa = XCBuildConfiguration;
 			buildSettings = {{
-{common_targ}
+{common_targ("Release")}
 			}};
 			name = Release;
 		}};
@@ -441,9 +481,6 @@ def main():
 	rootObject = {P} /* Project object */;
 }}
 '''
-    proj = os.path.join(APP_DIR, 'TempleOSMobile.xcodeproj')
-    os.makedirs(os.path.join(proj, 'xcshareddata', 'xcschemes'), exist_ok=True)
-    open(os.path.join(proj, 'project.pbxproj'), 'w').write(txt)
     ref = lambda tid, prod, name: (f'<BuildableReference BuildableIdentifier = "primary" BlueprintIdentifier = "{tid}" '
                                    f'BuildableName = "{prod}" BlueprintName = "{name}" ReferencedContainer = "container:TempleOSMobile.xcodeproj">'
                                    '</BuildableReference>')
@@ -481,8 +518,54 @@ def main():
    </ArchiveAction>
 </Scheme>
 '''
-    open(os.path.join(proj, 'xcshareddata', 'xcschemes', 'TempleOSMobile.xcscheme'), 'w').write(scheme)
-    print('wrote', proj)
+    return txt, scheme
+
+
+def pbxproj_objects(text):
+    """The project file parsed by plutil, so formatting and comments don't count as differences."""
+    with tempfile.NamedTemporaryFile('w', suffix='.pbxproj', delete=False) as f:
+        f.write(text)
+    try:
+        out = subprocess.run(['plutil', '-convert', 'json', '-o', '-', f.name], capture_output=True, text=True, check=True).stdout
+    finally:
+        os.unlink(f.name)
+    return json.loads(out)['objects']
+
+
+def check(txt, scheme):
+    committed = open(os.path.join(PROJ, 'project.pbxproj')).read()
+    want, have = pbxproj_objects(txt), pbxproj_objects(committed)
+    diffs = []
+    for oid in sorted(set(want) | set(have)):
+        a, b = want.get(oid, {}), have.get(oid, {})
+        if a != b:
+            keys = sorted(k for k in set(a) | set(b) if a.get(k) != b.get(k))
+            diffs.append(f'  {oid} ({a.get("isa") or b.get("isa")}): {", ".join(keys)}')
+            for k in keys:
+                if k == 'buildSettings':
+                    sa, sb = a.get(k, {}), b.get(k, {})
+                    for s in sorted(s for s in set(sa) | set(sb) if sa.get(s) != sb.get(s)):
+                        diffs.append(f'      {s}: generator {sa.get(s)!r}, committed {sb.get(s)!r}')
+    scheme_path = os.path.join(PROJ, 'xcshareddata', 'xcschemes', 'TempleOSMobile.xcscheme')
+    canon = lambda s: ET.canonicalize(s, strip_text=True)
+    if canon(scheme) != canon(open(scheme_path).read()):
+        diffs.append('  TempleOSMobile.xcscheme differs')
+    if diffs:
+        print('The committed Xcode project differs from tools/xcode/gen_xcodeproj.py:\n' + '\n'.join(diffs)
+              + '\nUpdate the generator to match the intended project (never by dropping the store identity).')
+        return 1
+    print('Xcode project matches tools/xcode/gen_xcodeproj.py')
+    return 0
+
+
+def main():
+    txt, scheme = build()
+    if sys.argv[1:] == ['--check']:
+        sys.exit(check(txt, scheme))
+    os.makedirs(os.path.join(PROJ, 'xcshareddata', 'xcschemes'), exist_ok=True)
+    open(os.path.join(PROJ, 'project.pbxproj'), 'w').write(txt)
+    open(os.path.join(PROJ, 'xcshareddata', 'xcschemes', 'TempleOSMobile.xcscheme'), 'w').write(scheme)
+    print('wrote', PROJ)
 
 
 if __name__ == '__main__':

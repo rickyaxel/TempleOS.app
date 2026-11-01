@@ -31,6 +31,9 @@ cd temple_os_kotlin
 ./gradlew :app:assembleRelease  # minified; signed with the debug key unless you configure signing
 ```
 
+Signed store bundles need the owner's upload key, which never enters the repository:
+[`docs/releasing.md`](../docs/releasing.md).
+
 Optional, informational test runs (need the extracted ISO in `../reference/templeos-iso`):
 
 ```sh

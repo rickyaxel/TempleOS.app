@@ -34,11 +34,14 @@ xcodebuild -project TempleOSMobile.xcodeproj -scheme TempleOSMobile \
 ```
 
 For a physical device, open `App/TempleOSMobile.xcodeproj` in Xcode and choose
-your signing team (the project uses automatic signing and contains no team id).
+your own signing team and bundle id (the project uses automatic signing with the
+store team and bundle id, which only the owner can sign; don't commit that change).
+Store releases: [`docs/releasing.md`](../docs/releasing.md).
 
 ## App facts
 
-- Bundle id `io.github.templeosmobile`, iOS 16.0+.
+- Bundle id `com.digitalcircuitstudios.templeosapp` (the App Store identity; UI tests use
+  `io.github.templeosmobile.uitests`), iOS 16.0+.
 - No entitlements, no capabilities, no URL schemes, no document types,
   no file sharing, no network usage keys; privacy manifest declares no
   tracking and no collected data.

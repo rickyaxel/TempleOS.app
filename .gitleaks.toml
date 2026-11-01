@@ -1,0 +1,10 @@
+# gitleaks settings for this repository (tools/git-hooks/pre-commit runs gitleaks when installed).
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Generated manifests: their 64-hex values are SHA-256 content hashes, not secrets"
+paths = [
+  '''^shared/native-translation/manifest\.json$''',
+  '''^temple_os_swift/TempleCore/Sources/PureSwift/Generated/NativeCatalog\.swift$''',
+]

@@ -4,6 +4,9 @@ Assessment as of 2026-10-16. Severity: **P0** blocks any release, **P1** must
 be resolved before a store submission, **P2** should be resolved, **P3** nice
 to have.
 
+> Historical assessment. How store releases are made now: [releasing.md](releasing.md).
+> The verification-pass report cited below was not published with this repository.
+
 ## 1. Summary
 
 > **Superseded by the independent verification pass of 2026-10-16:**

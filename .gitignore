@@ -25,10 +25,32 @@ signing.properties
 *.aab
 *.apk
 *.apks
+# Android Studio "Generate Signed Bundle/APK" output folders (bundle plus metadata and baseline profiles)
+/temple_os_kotlin/app/release/
+/temple_os_kotlin/app/bench/
 
-# Keep local Xcode audit bundles without adding their large binary diagnostics.
-/docs/distribution-audit/evidence/**/*.xcresult/
+# Apple signing and App Store Connect credentials (never commit)
+*.p8
+*.pem
+*.cer
+*.certSigningRequest
+*.mobileprovision
+*.provisionprofile
+# Archives and exports (built locally, uploaded to App Store Connect, never committed)
+*.xcarchive/
+*.ipa
+*.dSYM/
+*.dSYM.zip
 
-# Full localization campaigns stay available locally; reports retain selected screenshots.
-/docs/localization-validation/evidence/*.xcresult/
-/docs/localization-validation/evidence/screenshots/
+# Local secrets and overrides
+.env
+.env.*
+*.local.xcconfig
+*service-account*.json
+
+# Device and validation evidence (test results, screenshots, crash reports, device logs) stays on
+# the machine that produced it: it carries device identifiers and local paths. See AGENTS.md.
+*.xcresult/
+*.ips
+/docs/**/evidence/
+/docs/localization-evidence/

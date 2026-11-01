@@ -92,6 +92,9 @@ cd ../App && xcodebuild -project TempleOSMobile.xcodeproj -scheme TempleOSMobile
   -destination 'generic/platform=iOS Simulator' build
 ```
 
+Store releases are built from this repository with the owner's signing keys, which never enter
+it: [`docs/releasing.md`](docs/releasing.md). Contributors and coding agents: [`AGENTS.md`](AGENTS.md).
+
 ## Status
 
 Both apps build and pass their tests. An independent verification pass
@@ -121,6 +124,7 @@ The documents below are the detailed engineering references and dated reports it
 | [performance](docs/performance.md) | measured numbers and conditions |
 | [testing](docs/testing.md) | test suites, results, gaps |
 | [release-readiness](docs/release-readiness.md) | open items before release |
+| [releasing](docs/releasing.md) | store releases: version numbers, signing, upload, backups, recovery |
 | [future-developer-mode](docs/future-developer-mode.md) | design notes only (not implemented) |
 | [future-online-mode](docs/future-online-mode.md) | design notes only (not implemented) |
 | [HolyC runtime specification](shared/specifications/holyc-runtime-spec.md) | the authoritative cross-platform spec |

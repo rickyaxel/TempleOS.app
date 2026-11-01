@@ -1,0 +1,11 @@
+#!/bin/sh
+# Keeps private material out of this public repository (AGENTS.md). Enable once per clone:
+#   git config core.hooksPath tools/git-hooks
+set -e
+root=$(git rev-parse --show-toplevel)
+python3 "$root/tools/public-safety/check_public_tree.py" --staged
+if command -v gitleaks >/dev/null 2>&1; then
+  gitleaks git --pre-commit --staged --redact --no-banner --log-level warn --config "$root/.gitleaks.toml" "$root"
+else
+  echo "pre-commit: gitleaks not installed, skipped its secret scan (brew install gitleaks)" >&2
+fi
