@@ -12,6 +12,13 @@ compiler, HolyC language, graphics, games and documentation and placed them in
 the public domain. This project is not affiliated with him or his estate and
 is not an official TempleOS release.
 
+## Wiki
+
+New here? The [TempleOS.app Wiki](https://github.com/rickyaxel/TempleOS.app/wiki) is a guided
+introduction: what the apps are and are not, how the HolyC compiler, bytecode interpreter and
+per-program kernel work on Android and iOS, how to build and test both apps, compatibility
+and known limitations, and how to contribute.
+
 ## Names
 
 | Where | Name |
@@ -91,6 +98,9 @@ testing, signing, license, branding and content decisions. See
 [`docs/release-readiness.md`](docs/release-readiness.md).
 
 ## Documentation
+
+For a guided introduction, start with the [Wiki](https://github.com/rickyaxel/TempleOS.app/wiki).
+The documents below are the detailed engineering references and dated reports it links to.
 
 | Document | Topic |
 |---|---|
