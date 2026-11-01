@@ -1,0 +1,8 @@
+TOSIMG 1
+unit C:/Demo/Graphics/MouseDemo.HC#0
+s 17fd38 5072657373206c656674206d6f757365206274746e20746f20657869742e0a
+fn 703 Mouse (U0;;-)
+fn 704 $init:C:/Demo/Graphics/MouseDemo.HC#0 (I64;;-)
+sym f Mouse 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/MouseDemo.HC#1

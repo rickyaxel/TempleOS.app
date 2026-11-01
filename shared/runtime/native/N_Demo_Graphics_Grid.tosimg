@@ -1,0 +1,10 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Grid.HC#0
+value GRID 5
+fn 703 DrawMyMs (U0;*$CDC,I64,I64;-)
+fn 704 GridDemo (U0;;-)
+fn 705 $init:C:/Demo/Graphics/Grid.HC#0 (I64;;-)
+sym f DrawMyMs 703 (U0;*$CDC,I64,I64;-)
+sym f GridDemo 704 (U0;;-)
+init 705
+unit C:/Demo/Graphics/Grid.HC#1

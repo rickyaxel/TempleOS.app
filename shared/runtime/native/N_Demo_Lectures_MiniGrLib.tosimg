@@ -1,0 +1,23 @@
+TOSIMG 1
+unit C:/Demo/Lectures/MiniGrLib.HC#0
+g 17fd38 256
+g 17fe48 38400
+fn 703 MGInit (U0;;-)
+fn 704 MGUpdate (U0;;-)
+fn 705 MGPlot (U0;I64,I64;-)
+fn 706 MGHLine (U0;I64,I64,I64;-)
+fn 707 MGLine (U0;I64,I64,I64,I64;-)
+fn 708 MGCircle (U0;I64,I64,F64;-)
+fn 709 MiniGrLibDemo (U0;;-)
+fn 710 $init:C:/Demo/Lectures/MiniGrLib.HC#0 (I64;;-)
+sym f MGCircle 708 (U0;I64,I64,F64;-)
+sym f MGHLine 706 (U0;I64,I64,I64;-)
+sym f MGInit 703 (U0;;-)
+sym f MGLine 707 (U0;I64,I64,I64,I64;-)
+sym f MGPlot 705 (U0;I64,I64;-)
+sym f MGUpdate 704 (U0;;-)
+sym f MiniGrLibDemo 709 (U0;;-)
+sym g image 17fe48 [38400]U8
+sym g rev 17fd38 [256]U8
+init 710
+unit C:/Demo/Lectures/MiniGrLib.HC#1

@@ -1,0 +1,46 @@
+TOSIMG 1
+unit C:/Demo/SortFileDemo/F64FileSort.HC#0
+s 17fd38 433a2f44656d6f2f536f727446696c6544656d6f
+fn 703 $init:C:/Demo/SortFileDemo/F64FileSort.HC#0 (I64;;-)
+init 703
+unit C:/Demo/SortFileDemo/F64FileSort.HC#1
+s 13708 23696e636c7564652022257322
+s 13708 23696e636c7564652022257322
+s 17fd60 2f2f5468697320697320736f727465642e0a
+s 17fd88 2531322e36660a
+s 17fda0 7e2f44656d6f536f727465644636342e44442e5a
+s 17fdc8 7e2f44656d6f556e736f727465644636342e44442e5a
+fn 704 Compare (I64;F64,F64;-)
+fn 705 F64FileSortTXT (U0;*U8,*U8;-)
+fn 706 $init:C:/Demo/SortFileDemo/F64FileSort.HC#1 (I64;;-)
+sym f Compare 704 (I64;F64,F64;-)
+sym f F64FileSortTXT 705 (U0;*U8,*U8;-)
+init 706
+unit C:/Demo/SortFileDemo/F64FileSort.HC#2
+s 17fdc8 7e2f44656d6f556e736f727465644636342e44442e5a
+fn 707 $init:C:/Demo/SortFileDemo/F64FileSort.HC#2 (I64;;-)
+init 707
+unit C:/Demo/SortFileDemo/F64FileSort.HC#3
+s 17fda0 7e2f44656d6f536f727465644636342e44442e5a
+fn 708 $init:C:/Demo/SortFileDemo/F64FileSort.HC#3 (I64;;-)
+init 708
+unit C:/Demo/SortFileDemo/F64FileSort.HC#4
+s 17fdf0 7e2f44656d6f536f727465644636342e444154412e5a
+s 17fe18 7e2f44656d6f556e736f727465644636342e444154412e5a
+fn 709 F64FileSortDAT (U0;*U8,*U8;-)
+fn 710 $init:C:/Demo/SortFileDemo/F64FileSort.HC#4 (I64;;-)
+sym f F64FileSortDAT 709 (U0;*U8,*U8;-)
+init 710
+unit C:/Demo/SortFileDemo/F64FileSort.HC#5
+s 13ec8 25730a
+s 17fd88 2531322e36660a
+s 17fe18 7e2f44656d6f556e736f727465644636342e444154412e5a
+fn 711 F64FileDumpDAT (U0;*U8;-)
+fn 712 $init:C:/Demo/SortFileDemo/F64FileSort.HC#5 (I64;;-)
+sym f F64FileDumpDAT 711 (U0;*U8;-)
+init 712
+unit C:/Demo/SortFileDemo/F64FileSort.HC#6
+s 17fdf0 7e2f44656d6f536f727465644636342e444154412e5a
+fn 713 $init:C:/Demo/SortFileDemo/F64FileSort.HC#6 (I64;;-)
+init 713
+unit C:/Demo/SortFileDemo/F64FileSort.HC#7

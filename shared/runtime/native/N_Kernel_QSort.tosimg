@@ -1,0 +1,13 @@
+TOSIMG 1
+unit C:/Kernel/QSort.HC#0
+fn 703 QSortI64 (U0;*I64,I64,*(I64;I64,I64;-);-)
+fn 704 QSort2a (U0;**U8,I64,*(I64;**U8,**U8;-);-)
+fn 705 QSort2b (U0;*U8,I64,I64,*(I64;*U8,*U8;-),*U8;-)
+fn 706 QSort (U0;*U8,I64,I64,*(I64;*U8,*U8;-);-)
+fn 707 $init:C:/Kernel/QSort.HC#0 (I64;;-)
+sym f QSort 706 (U0;*U8,I64,I64,*(I64;*U8,*U8;-);-)
+sym f QSort2a 704 (U0;**U8,I64,*(I64;**U8,**U8;-);-)
+sym f QSort2b 705 (U0;*U8,I64,I64,*(I64;*U8,*U8;-),*U8;-)
+sym f QSortI64 703 (U0;*I64,I64,*(I64;I64,I64;-);-)
+init 707
+unit C:/Kernel/QSort.HC#1

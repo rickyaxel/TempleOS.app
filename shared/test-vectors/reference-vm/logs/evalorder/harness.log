@@ -1,0 +1,17 @@
+R
+BOOT-OK mp_cnt=2 sys_code_bp.alloced=1068326912
+LOADER begin opt/templeos/h0 size=1472 fnv=96012FC52F2C1C58
+EO args2 order=21 result=12
+EO args3 order=321 result=123
+EO args_postinc result=10 c=2
+EO add order=12 result=3
+EO sub_mul order=123 result=-5
+EO fdiv order=12
+EO cmp order=12 result=1
+EO andand order=12 result=1
+EO vararg_values 1 2
+EO vararg order=21
+EO statements order=12
+EO-END
+LOADER end opt/templeos/h0 res=00000000000000A0
+HARNESS-DONE

@@ -1,0 +1,11 @@
+runtime: kotlin
+target: vm
+seed: 2117809908241460
+signature: step:VmFault@?
+minimized input (150 bytes): U8 *b0=MAlloc(6),*b1=MAlloc(6),*s0="",; I64 d;
+try{Free(s0);}catch{Fs->catch_except=TRUE;}
+try{MemSet(s0,0x7,0x1);}catch{Fs->catch_except=TRUE;}
+"F";
+
+
+io.github.templeosmobile.core.holyc.VmFault: heap corruption detected in MAlloc (block 0x24da80)

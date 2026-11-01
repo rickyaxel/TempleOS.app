@@ -1,0 +1,1056 @@
+{
+ "version": 1,
+ "about": "Cartesian (Demo/Graphics/Cartesian.HC) evaluates ExePrint(\"ToF64(%s);\",st) for every x; this corpus is evaluated by the original TempleOS V5.03 (tools/reference-vm), Pure Terry (both platforms) and the native dynamic expression engines. Each formula is evaluated at each sample with the globals x=sample, y=0, y_last=0 set beforehand (x, y, y_last are Cartesian's F64 globals). Results are recorded as the raw F64 bits returned by ExePrint plus the values of x, y, y_last afterwards and whether a compile error or exception occurred. Expected values come only from the reference environments, never from the engine under test.",
+ "template": "ToF64(%s);",
+ "globals": {
+  "x": "F64",
+  "y": "F64",
+  "y_last": "F64"
+ },
+ "samples": [
+  -320.0,
+  -100.0,
+  -45.0,
+  -10.0,
+  -7.0,
+  -1.0,
+  -0.5,
+  0.0,
+  0.5,
+  1.0,
+  2.0,
+  7.0,
+  10.0,
+  45.0,
+  100.0,
+  319.0,
+  320.0
+ ],
+ "formulas": [
+  {
+   "id": "linear-01",
+   "cat": "linear",
+   "text": "2*x"
+  },
+  {
+   "id": "linear-02",
+   "cat": "linear",
+   "text": "x"
+  },
+  {
+   "id": "linear-03",
+   "cat": "linear",
+   "text": "-x"
+  },
+  {
+   "id": "linear-04",
+   "cat": "linear",
+   "text": "x+1"
+  },
+  {
+   "id": "linear-05",
+   "cat": "linear",
+   "text": "3*x-7"
+  },
+  {
+   "id": "linear-06",
+   "cat": "linear",
+   "text": "x/2"
+  },
+  {
+   "id": "linear-07",
+   "cat": "linear",
+   "text": "x/2.0"
+  },
+  {
+   "id": "linear-08",
+   "cat": "linear",
+   "text": "0.5*x+10"
+  },
+  {
+   "id": "linear-09",
+   "cat": "linear",
+   "text": "-2*x+3"
+  },
+  {
+   "id": "linear-10",
+   "cat": "linear",
+   "text": "x-x"
+  },
+  {
+   "id": "poly-01",
+   "cat": "poly",
+   "text": "x*x/100"
+  },
+  {
+   "id": "poly-02",
+   "cat": "poly",
+   "text": "x*x*x/10000"
+  },
+  {
+   "id": "poly-03",
+   "cat": "poly",
+   "text": "x`2/100"
+  },
+  {
+   "id": "poly-04",
+   "cat": "poly",
+   "text": "(x-10)*(x+10)/50"
+  },
+  {
+   "id": "poly-05",
+   "cat": "poly",
+   "text": "x`3/1000-x"
+  },
+  {
+   "id": "poly-06",
+   "cat": "poly",
+   "text": "x*x*x*x/1000000-x*x/100"
+  },
+  {
+   "id": "intsem-01",
+   "cat": "intsem",
+   "text": "7/2"
+  },
+  {
+   "id": "intsem-02",
+   "cat": "intsem",
+   "text": "-7/2"
+  },
+  {
+   "id": "intsem-03",
+   "cat": "intsem",
+   "text": "7%3"
+  },
+  {
+   "id": "intsem-04",
+   "cat": "intsem",
+   "text": "-7%3"
+  },
+  {
+   "id": "intsem-05",
+   "cat": "intsem",
+   "text": "7/2.0"
+  },
+  {
+   "id": "intsem-06",
+   "cat": "intsem",
+   "text": "7.0/2"
+  },
+  {
+   "id": "intsem-07",
+   "cat": "intsem",
+   "text": "x/3"
+  },
+  {
+   "id": "intsem-08",
+   "cat": "intsem",
+   "text": "1/2*x"
+  },
+  {
+   "id": "intsem-09",
+   "cat": "intsem",
+   "text": "x*1/2"
+  },
+  {
+   "id": "intsem-10",
+   "cat": "intsem",
+   "text": "100/7*x"
+  },
+  {
+   "id": "intsem-11",
+   "cat": "intsem",
+   "text": "x%7"
+  },
+  {
+   "id": "intsem-12",
+   "cat": "intsem",
+   "text": "-x%7"
+  },
+  {
+   "id": "bitops-01",
+   "cat": "bitops",
+   "text": "5&3"
+  },
+  {
+   "id": "bitops-02",
+   "cat": "bitops",
+   "text": "5|2"
+  },
+  {
+   "id": "bitops-03",
+   "cat": "bitops",
+   "text": "5^1"
+  },
+  {
+   "id": "bitops-04",
+   "cat": "bitops",
+   "text": "~5"
+  },
+  {
+   "id": "bitops-05",
+   "cat": "bitops",
+   "text": "1<<4"
+  },
+  {
+   "id": "bitops-06",
+   "cat": "bitops",
+   "text": "256>>3"
+  },
+  {
+   "id": "bitops-07",
+   "cat": "bitops",
+   "text": "-256>>3"
+  },
+  {
+   "id": "bitops-08",
+   "cat": "bitops",
+   "text": "1<<2+1"
+  },
+  {
+   "id": "bitops-09",
+   "cat": "bitops",
+   "text": "6&3+1"
+  },
+  {
+   "id": "bitops-10",
+   "cat": "bitops",
+   "text": "1+6&3"
+  },
+  {
+   "id": "bitops-11",
+   "cat": "bitops",
+   "text": "5&3|8"
+  },
+  {
+   "id": "bitops-12",
+   "cat": "bitops",
+   "text": "x(I64)&15"
+  },
+  {
+   "id": "bitops-13",
+   "cat": "bitops",
+   "text": "x(I64)<<1"
+  },
+  {
+   "id": "power-01",
+   "cat": "power",
+   "text": "2`10"
+  },
+  {
+   "id": "power-02",
+   "cat": "power",
+   "text": "x`0.5"
+  },
+  {
+   "id": "power-03",
+   "cat": "power",
+   "text": "2`3`2"
+  },
+  {
+   "id": "power-04",
+   "cat": "power",
+   "text": "-x`2"
+  },
+  {
+   "id": "power-05",
+   "cat": "power",
+   "text": "-2`2"
+  },
+  {
+   "id": "power-06",
+   "cat": "power",
+   "text": "2*3`2"
+  },
+  {
+   "id": "power-07",
+   "cat": "power",
+   "text": "x`-1*1000"
+  },
+  {
+   "id": "power-08",
+   "cat": "power",
+   "text": "(-8)`(1/3.0)"
+  },
+  {
+   "id": "power-09",
+   "cat": "power",
+   "text": "0`0"
+  },
+  {
+   "id": "power-10",
+   "cat": "power",
+   "text": "2`0.5"
+  },
+  {
+   "id": "prec-01",
+   "cat": "prec",
+   "text": "1+2*3"
+  },
+  {
+   "id": "prec-02",
+   "cat": "prec",
+   "text": "2*3+1"
+  },
+  {
+   "id": "prec-03",
+   "cat": "prec",
+   "text": "10-4-3"
+  },
+  {
+   "id": "prec-04",
+   "cat": "prec",
+   "text": "100/10/2"
+  },
+  {
+   "id": "prec-05",
+   "cat": "prec",
+   "text": "2*-3"
+  },
+  {
+   "id": "prec-06",
+   "cat": "prec",
+   "text": "--x"
+  },
+  {
+   "id": "prec-07",
+   "cat": "prec",
+   "text": "-(-x)"
+  },
+  {
+   "id": "prec-08",
+   "cat": "prec",
+   "text": "!x"
+  },
+  {
+   "id": "prec-09",
+   "cat": "prec",
+   "text": "!0"
+  },
+  {
+   "id": "prec-10",
+   "cat": "prec",
+   "text": "!!x"
+  },
+  {
+   "id": "prec-11",
+   "cat": "prec",
+   "text": "1-~1"
+  },
+  {
+   "id": "compare-01",
+   "cat": "compare",
+   "text": "x>0"
+  },
+  {
+   "id": "compare-02",
+   "cat": "compare",
+   "text": "x<0"
+  },
+  {
+   "id": "compare-03",
+   "cat": "compare",
+   "text": "x==0"
+  },
+  {
+   "id": "compare-04",
+   "cat": "compare",
+   "text": "x!=0"
+  },
+  {
+   "id": "compare-05",
+   "cat": "compare",
+   "text": "x>=10"
+  },
+  {
+   "id": "compare-06",
+   "cat": "compare",
+   "text": "x<=-10"
+  },
+  {
+   "id": "compare-07",
+   "cat": "compare",
+   "text": "0<x<10"
+  },
+  {
+   "id": "compare-08",
+   "cat": "compare",
+   "text": "-5<=x<=5"
+  },
+  {
+   "id": "compare-09",
+   "cat": "compare",
+   "text": "x>0 && x<50"
+  },
+  {
+   "id": "compare-10",
+   "cat": "compare",
+   "text": "x<-50 || x>50"
+  },
+  {
+   "id": "compare-11",
+   "cat": "compare",
+   "text": "x>0 ^^ x>25"
+  },
+  {
+   "id": "compare-12",
+   "cat": "compare",
+   "text": "(x>0)*x"
+  },
+  {
+   "id": "compare-13",
+   "cat": "compare",
+   "text": "1<2<3"
+  },
+  {
+   "id": "compare-14",
+   "cat": "compare",
+   "text": "3>2>1"
+  },
+  {
+   "id": "func-01",
+   "cat": "func",
+   "text": "Sin(x/20)*100"
+  },
+  {
+   "id": "func-02",
+   "cat": "func",
+   "text": "Cos(x/30)*50"
+  },
+  {
+   "id": "func-03",
+   "cat": "func",
+   "text": "Tan(x/100)*20"
+  },
+  {
+   "id": "func-04",
+   "cat": "func",
+   "text": "Sqrt(x)*10"
+  },
+  {
+   "id": "func-05",
+   "cat": "func",
+   "text": "Abs(x)"
+  },
+  {
+   "id": "func-06",
+   "cat": "func",
+   "text": "Exp(x/100)"
+  },
+  {
+   "id": "func-07",
+   "cat": "func",
+   "text": "Ln(x)"
+  },
+  {
+   "id": "func-08",
+   "cat": "func",
+   "text": "Log10(x)*50"
+  },
+  {
+   "id": "func-09",
+   "cat": "func",
+   "text": "Log2(x)*20"
+  },
+  {
+   "id": "func-10",
+   "cat": "func",
+   "text": "ATan(x/10)*50"
+  },
+  {
+   "id": "func-11",
+   "cat": "func",
+   "text": "Arg(x,10)*50"
+  },
+  {
+   "id": "func-12",
+   "cat": "func",
+   "text": "Pow(x,2)/100"
+  },
+  {
+   "id": "func-13",
+   "cat": "func",
+   "text": "Sqr(x)/100"
+  },
+  {
+   "id": "func-14",
+   "cat": "func",
+   "text": "Floor(x/10)*10"
+  },
+  {
+   "id": "func-15",
+   "cat": "func",
+   "text": "Ceil(x/10)*10"
+  },
+  {
+   "id": "func-16",
+   "cat": "func",
+   "text": "Round(x/7)*7"
+  },
+  {
+   "id": "func-17",
+   "cat": "func",
+   "text": "Trunc(x/7)*7"
+  },
+  {
+   "id": "func-18",
+   "cat": "func",
+   "text": "Sign(x)*50"
+  },
+  {
+   "id": "func-19",
+   "cat": "func",
+   "text": "Min(x,10)"
+  },
+  {
+   "id": "func-20",
+   "cat": "func",
+   "text": "Max(x,-10)"
+  },
+  {
+   "id": "func-21",
+   "cat": "func",
+   "text": "Clamp(x,-50,50)"
+  },
+  {
+   "id": "func-22",
+   "cat": "func",
+   "text": "ToI64(x/3)"
+  },
+  {
+   "id": "func-23",
+   "cat": "func",
+   "text": "ToF64(7)/2"
+  },
+  {
+   "id": "func-24",
+   "cat": "func",
+   "text": "AbsI64(-5)"
+  },
+  {
+   "id": "func-25",
+   "cat": "func",
+   "text": "SqrI64(3)"
+  },
+  {
+   "id": "func-26",
+   "cat": "func",
+   "text": "MinI64(3,4)"
+  },
+  {
+   "id": "func-27",
+   "cat": "func",
+   "text": "MaxI64(3,4)"
+  },
+  {
+   "id": "func-28",
+   "cat": "func",
+   "text": "ClampI64(x,-5,5)"
+  },
+  {
+   "id": "func-29",
+   "cat": "func",
+   "text": "SignI64(-9)"
+  },
+  {
+   "id": "func-30",
+   "cat": "func",
+   "text": "FloorI64(17,5)"
+  },
+  {
+   "id": "func-31",
+   "cat": "func",
+   "text": "CeilI64(17,5)"
+  },
+  {
+   "id": "nested-01",
+   "cat": "nested",
+   "text": "Sin(Cos(x/40)*3)*80"
+  },
+  {
+   "id": "nested-02",
+   "cat": "nested",
+   "text": "Sqrt(Abs(x))*Sign(x)*10"
+  },
+  {
+   "id": "nested-03",
+   "cat": "nested",
+   "text": "Abs(Sin(x/30))*Exp(-Abs(x)/200)*150"
+  },
+  {
+   "id": "nested-04",
+   "cat": "nested",
+   "text": "Max(Min(x,30),-30)"
+  },
+  {
+   "id": "nested-05",
+   "cat": "nested",
+   "text": "Sin(x/20)+Sin(x/10)*Cos(x/5)"
+  },
+  {
+   "id": "const-01",
+   "cat": "const",
+   "text": "pi*x/10"
+  },
+  {
+   "id": "const-02",
+   "cat": "const",
+   "text": "exp_1*10"
+  },
+  {
+   "id": "const-03",
+   "cat": "const",
+   "text": "x*pi/180*100"
+  },
+  {
+   "id": "const-04",
+   "cat": "const",
+   "text": "Sin(x*pi/180)*100"
+  },
+  {
+   "id": "const-05",
+   "cat": "const",
+   "text": "log2_10"
+  },
+  {
+   "id": "const-06",
+   "cat": "const",
+   "text": "eps*1e16"
+  },
+  {
+   "id": "const-07",
+   "cat": "const",
+   "text": "I64_MAX"
+  },
+  {
+   "id": "const-08",
+   "cat": "const",
+   "text": "I64_MIN"
+  },
+  {
+   "id": "const-09",
+   "cat": "const",
+   "text": "U8_MAX"
+  },
+  {
+   "id": "const-10",
+   "cat": "const",
+   "text": "TRUE+x"
+  },
+  {
+   "id": "const-11",
+   "cat": "const",
+   "text": "FALSE"
+  },
+  {
+   "id": "cast-01",
+   "cat": "cast",
+   "text": "x(I64)/2"
+  },
+  {
+   "id": "cast-02",
+   "cat": "cast",
+   "text": "(x/3)(I64)"
+  },
+  {
+   "id": "cast-03",
+   "cat": "cast",
+   "text": "x(U8)"
+  },
+  {
+   "id": "cast-04",
+   "cat": "cast",
+   "text": "(-1)(U8)"
+  },
+  {
+   "id": "cast-05",
+   "cat": "cast",
+   "text": "x(F64)"
+  },
+  {
+   "id": "cast-06",
+   "cat": "cast",
+   "text": "x(I32)"
+  },
+  {
+   "id": "cast-07",
+   "cat": "cast",
+   "text": "(x*1000000000)(I32)"
+  },
+  {
+   "id": "cast-08",
+   "cat": "cast",
+   "text": "(x/2)(I64)(F64)"
+  },
+  {
+   "id": "cast-09",
+   "cat": "cast",
+   "text": "300(U8)"
+  },
+  {
+   "id": "literal-01",
+   "cat": "literal",
+   "text": "0x10"
+  },
+  {
+   "id": "literal-02",
+   "cat": "literal",
+   "text": "1e2"
+  },
+  {
+   "id": "literal-03",
+   "cat": "literal",
+   "text": "1.5e-1"
+  },
+  {
+   "id": "literal-04",
+   "cat": "literal",
+   "text": "'A'"
+  },
+  {
+   "id": "literal-05",
+   "cat": "literal",
+   "text": "'AB'"
+  },
+  {
+   "id": "literal-06",
+   "cat": "literal",
+   "text": "1."
+  },
+  {
+   "id": "literal-07",
+   "cat": "literal",
+   "text": "0b101"
+  },
+  {
+   "id": "literal-08",
+   "cat": "literal",
+   "text": "0x7FFFFFFFFFFFFFFF"
+  },
+  {
+   "id": "literal-09",
+   "cat": "literal",
+   "text": "12345678901234567890"
+  },
+  {
+   "id": "literal-10",
+   "cat": "literal",
+   "text": "1e400"
+  },
+  {
+   "id": "literal-11",
+   "cat": "literal",
+   "text": "0.0000001"
+  },
+  {
+   "id": "assign-01",
+   "cat": "assign",
+   "text": "y=2*x"
+  },
+  {
+   "id": "assign-02",
+   "cat": "assign",
+   "text": "y_last=3"
+  },
+  {
+   "id": "assign-03",
+   "cat": "assign",
+   "text": "y=x+1"
+  },
+  {
+   "id": "assign-04",
+   "cat": "assign",
+   "text": "x+0*(y=5)"
+  },
+  {
+   "id": "assign-05",
+   "cat": "assign",
+   "text": "x++"
+  },
+  {
+   "id": "assign-06",
+   "cat": "assign",
+   "text": "x--"
+  },
+  {
+   "id": "assign-07",
+   "cat": "assign",
+   "text": "++x"
+  },
+  {
+   "id": "assign-08",
+   "cat": "assign",
+   "text": "x+=1"
+  },
+  {
+   "id": "assign-09",
+   "cat": "assign",
+   "text": "x*=2"
+  },
+  {
+   "id": "divzero-01",
+   "cat": "divzero",
+   "text": "1/0"
+  },
+  {
+   "id": "divzero-02",
+   "cat": "divzero",
+   "text": "1%0"
+  },
+  {
+   "id": "divzero-03",
+   "cat": "divzero",
+   "text": "x/0"
+  },
+  {
+   "id": "divzero-04",
+   "cat": "divzero",
+   "text": "1.0/0"
+  },
+  {
+   "id": "divzero-05",
+   "cat": "divzero",
+   "text": "0.0/0"
+  },
+  {
+   "id": "divzero-06",
+   "cat": "divzero",
+   "text": "-1.0/0"
+  },
+  {
+   "id": "divzero-07",
+   "cat": "divzero",
+   "text": "x%0"
+  },
+  {
+   "id": "divzero-08",
+   "cat": "divzero",
+   "text": "x(I64)/0"
+  },
+  {
+   "id": "overflow-01",
+   "cat": "overflow",
+   "text": "I64_MAX+1"
+  },
+  {
+   "id": "overflow-02",
+   "cat": "overflow",
+   "text": "I64_MIN-1"
+  },
+  {
+   "id": "overflow-03",
+   "cat": "overflow",
+   "text": "0x7FFFFFFFFFFFFFFF*2"
+  },
+  {
+   "id": "overflow-04",
+   "cat": "overflow",
+   "text": "-I64_MIN"
+  },
+  {
+   "id": "overflow-05",
+   "cat": "overflow",
+   "text": "I64_MIN/-1"
+  },
+  {
+   "id": "overflow-06",
+   "cat": "overflow",
+   "text": "1e308*10"
+  },
+  {
+   "id": "overflow-07",
+   "cat": "overflow",
+   "text": "-1e308*10"
+  },
+  {
+   "id": "domain-01",
+   "cat": "domain",
+   "text": "Sqrt(-x)"
+  },
+  {
+   "id": "domain-02",
+   "cat": "domain",
+   "text": "Ln(-1)"
+  },
+  {
+   "id": "domain-03",
+   "cat": "domain",
+   "text": "Ln(0)"
+  },
+  {
+   "id": "domain-04",
+   "cat": "domain",
+   "text": "Log10(0)"
+  },
+  {
+   "id": "domain-05",
+   "cat": "domain",
+   "text": "ASin(2)"
+  },
+  {
+   "id": "domain-06",
+   "cat": "domain",
+   "text": "ACos(-2)"
+  },
+  {
+   "id": "domain-07",
+   "cat": "domain",
+   "text": "Tan(pi/2)"
+  },
+  {
+   "id": "invalid-01",
+   "cat": "invalid",
+   "text": ""
+  },
+  {
+   "id": "invalid-02",
+   "cat": "invalid",
+   "text": "2*"
+  },
+  {
+   "id": "invalid-03",
+   "cat": "invalid",
+   "text": "(x"
+  },
+  {
+   "id": "invalid-04",
+   "cat": "invalid",
+   "text": "x)"
+  },
+  {
+   "id": "invalid-05",
+   "cat": "invalid",
+   "text": "x y"
+  },
+  {
+   "id": "invalid-06",
+   "cat": "invalid",
+   "text": "foo(x)"
+  },
+  {
+   "id": "invalid-07",
+   "cat": "invalid",
+   "text": "Sin("
+  },
+  {
+   "id": "invalid-08",
+   "cat": "invalid",
+   "text": "Sin x"
+  },
+  {
+   "id": "invalid-09",
+   "cat": "invalid",
+   "text": "1++"
+  },
+  {
+   "id": "invalid-10",
+   "cat": "invalid",
+   "text": "$"
+  },
+  {
+   "id": "invalid-11",
+   "cat": "invalid",
+   "text": "\"str\""
+  },
+  {
+   "id": "invalid-12",
+   "cat": "invalid",
+   "text": "x="
+  },
+  {
+   "id": "invalid-13",
+   "cat": "invalid",
+   "text": "*"
+  },
+  {
+   "id": "invalid-14",
+   "cat": "invalid",
+   "text": "()"
+  },
+  {
+   "id": "invalid-15",
+   "cat": "invalid",
+   "text": "Sin(x,1,2,3)"
+  },
+  {
+   "id": "invalid-16",
+   "cat": "invalid",
+   "text": "Sin()"
+  },
+  {
+   "id": "invalid-17",
+   "cat": "invalid",
+   "text": "1..2"
+  },
+  {
+   "id": "invalid-18",
+   "cat": "invalid",
+   "text": "x>>"
+  },
+  {
+   "id": "invalid-19",
+   "cat": "invalid",
+   "text": "#x"
+  },
+  {
+   "id": "unsupported-01",
+   "cat": "unsupported",
+   "text": "Beep"
+  },
+  {
+   "id": "unsupported-02",
+   "cat": "unsupported",
+   "text": "Print(\"hi\")"
+  },
+  {
+   "id": "unsupported-03",
+   "cat": "unsupported",
+   "text": "Sleep(1)"
+  },
+  {
+   "id": "unsupported-04",
+   "cat": "unsupported",
+   "text": "MAlloc(10)"
+  },
+  {
+   "id": "unsupported-05",
+   "cat": "unsupported",
+   "text": "Fs"
+  },
+  {
+   "id": "unsupported-06",
+   "cat": "unsupported",
+   "text": "1);y=3;ToF64(y"
+  },
+  {
+   "id": "unsupported-07",
+   "cat": "unsupported",
+   "text": "StrLen(\"abc\")"
+  },
+  {
+   "id": "stress-01",
+   "cat": "stress",
+   "text": "x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x"
+  },
+  {
+   "id": "stress-02",
+   "cat": "stress",
+   "text": "((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((x))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))"
+  },
+  {
+   "id": "stress-03",
+   "cat": "stress",
+   "text": "----------------------------------------------------------------------------------------------------x"
+  },
+  {
+   "id": "stress-04",
+   "cat": "stress",
+   "text": "Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(x))))))))))))))))))))))))))))))))))))))))"
+  },
+  {
+   "id": "stress-05",
+   "cat": "stress",
+   "text": "1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1"
+  }
+ ]
+}

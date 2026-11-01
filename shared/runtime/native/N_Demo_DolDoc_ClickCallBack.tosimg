@@ -1,0 +1,26 @@
+TOSIMG 1
+unit C:/Demo/DolDoc/ClickCallBack.HC#0
+s 17fd38 0a244d412b4c432c22436c69636b204d65222420
+s 17fd60 284e6f742070726573657276656420696620796f75207072657373203c4354524c2d743e2e290a0a
+fn 703 MyLeftCB1 (I64;*$CDoc,*$CDocEntry;-)
+fn 704 ClickCallBack (U0;;-)
+fn 705 $init:C:/Demo/DolDoc/ClickCallBack.HC#0 (I64;;-)
+sym f ClickCallBack 704 (U0;;-)
+sym f MyLeftCB1 703 (I64;*$CDoc,*$CDocEntry;-)
+init 705
+unit C:/Demo/DolDoc/ClickCallBack.HC#1
+s 17fda0 436c69636b202564206d6f72652074696d65730a0a0a2442542b4c432c224a69666669657322240a0a0a
+s 17fde0 43757272656e74204a6966666965733a25640a
+fn 706 MyLeftCB2 (I64;*$CDoc,*$CDocEntry;-)
+fn 707 PopUpJiffiesCallBack (U0;I64;-)
+fn 708 $init:C:/Demo/DolDoc/ClickCallBack.HC#1 (I64;;-)
+sym f MyLeftCB2 706 (I64;*$CDoc,*$CDocEntry;-)
+sym f PopUpJiffiesCallBack 707 (U0;I64;-)
+init 708
+unit C:/Demo/DolDoc/ClickCallBack.HC#2
+fn 709 $init:C:/Demo/DolDoc/ClickCallBack.HC#2 (I64;;-)
+init 709
+unit C:/Demo/DolDoc/ClickCallBack.HC#3
+fn 710 $init:C:/Demo/DolDoc/ClickCallBack.HC#3 (I64;;-)
+init 710
+unit C:/Demo/DolDoc/ClickCallBack.HC#4

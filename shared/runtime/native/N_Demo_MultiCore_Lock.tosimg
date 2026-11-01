@@ -1,0 +1,21 @@
+TOSIMG 1
+unit C:/Demo/MultiCore/Lock.HC#0
+value CNT 16777216
+g 17fd38 8
+s 17fd50 436f727265637420436e743a25582041637475616c20436e743a25580a
+s 17fd50 436f727265637420436e743a25582041637475616c20436e743a25580a
+fn 703 MPUnlockedInc (U0;I64;-)
+fn 704 UnlockedInc (U0;;-)
+fn 705 MPLockedInc (U0;I64;-)
+fn 706 LockedInc (U0;;-)
+fn 707 $init:C:/Demo/MultiCore/Lock.HC#0 (I64;;-)
+sym f LockedInc 706 (U0;;-)
+sym f MPLockedInc 705 (U0;I64;-)
+sym f MPUnlockedInc 703 (U0;I64;-)
+sym f UnlockedInc 704 (U0;;-)
+sym g glbl 17fd38 I64
+init 707
+unit C:/Demo/MultiCore/Lock.HC#1
+fn 708 $init:C:/Demo/MultiCore/Lock.HC#1 (I64;;-)
+init 708
+unit C:/Demo/MultiCore/Lock.HC#2

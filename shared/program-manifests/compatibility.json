@@ -1,0 +1,106 @@
+{
+ "_comment": "Curated compatibility of catalog programs. Default (absent): status 'runs' = starts and runs without errors in the automated sweeps on both runtimes (tools: SweepTest/SweepTests, -Dtempleos.sweep=Catalog). 'unsupported' programs are excluded from executable lists; the historical Games page shows them as source-only entries. Evidence: docs/game-compatibility.md and docs/graphics-compatibility.md.",
+ "app.budget": {
+  "status": "runs",
+  "note": ""
+ },
+ "app.psalmody": {
+  "status": "runs",
+  "note": ""
+ },
+ "app.tothefront": {
+  "status": "runs",
+  "note": ""
+ },
+ "demo.fonted": {
+  "status": "runs",
+  "note": ""
+ },
+ "app.grmodels": {
+  "status": "runs",
+  "note": ""
+ },
+ "app.vocabulary": {
+  "status": "runs",
+  "note": ""
+ },
+ "demo.balloon": {
+  "status": "runs",
+  "note": ""
+ },
+ "demo.spritetext": {
+  "status": "runs",
+  "note": ""
+ },
+ "demo.grid": {
+  "status": "runs",
+  "note": ""
+ },
+ "demo.polezeros": {
+  "status": "partial",
+  "note": "original drag and phase behavior runs in both engines; full-screen recalculation is slow in HolyC mode (see simulator/host evidence)"
+ },
+ "app.titanium": {
+  "status": "partial",
+  "note": "starts and plays briefly, then stops with a memory fault while drawing"
+ },
+ "game.talons": {
+  "status": "partial",
+  "note": "needs 72 MiB of program memory (devices with more RAM); generates terrain for a minute or more before play"
+ },
+ "demo.predatorprey": {
+  "status": "partial",
+  "note": "very slow on the interpreter (about one frame per second)"
+ },
+ "sound.morsecode": {
+  "status": "runs",
+  "note": ""
+ },
+ "sound.asciiorgan": {
+  "status": "runs",
+  "note": ""
+ },
+ "demo.scrncapture": {
+  "status": "runs",
+  "note": ""
+ },
+ "demo.wallpaperctrl": {
+  "status": "runs",
+  "note": ""
+ },
+ "source.demo.datetime": {
+  "status": "runs",
+  "note": "Original source and genuine native execution verified in Swift and Kotlin; bounded output/input/menu/audio/exit tests, not full-system compatibility.",
+  "verification": "DiscoveredMenuProgramTests (Swift) and DiscoveredMenuProgramTest (Kotlin); docs/distribution-audit/MENU_VERIFICATION_REPORT.md"
+ },
+ "source.demo.radixsort": {
+  "status": "runs",
+  "note": "Original source and genuine native execution verified in Swift and Kotlin; bounded output/input/menu/audio/exit tests, not full-system compatibility.",
+  "verification": "DiscoveredMenuProgramTests (Swift) and DiscoveredMenuProgramTest (Kotlin); docs/distribution-audit/MENU_VERIFICATION_REPORT.md"
+ },
+ "source.demo.msgloop": {
+  "status": "runs",
+  "note": "Original source and genuine native execution verified in Swift and Kotlin; bounded output/input/menu/audio/exit tests, not full-system compatibility.",
+  "verification": "DiscoveredMenuProgramTests (Swift) and DiscoveredMenuProgramTest (Kotlin); docs/distribution-audit/MENU_VERIFICATION_REPORT.md"
+ },
+ "source.demo.keybitmap": {
+  "status": "runs",
+  "note": "Original source and genuine native execution verified in Swift and Kotlin; bounded output/input/menu/audio/exit tests, not full-system compatibility.",
+  "verification": "DiscoveredMenuProgramTests (Swift) and DiscoveredMenuProgramTest (Kotlin); docs/distribution-audit/MENU_VERIFICATION_REPORT.md"
+ },
+ "source.demo.pulldownmenu": {
+  "status": "runs",
+  "note": "Original source and genuine native execution verified in Swift and Kotlin; bounded output/input/menu/audio/exit tests, not full-system compatibility.",
+  "verification": "DiscoveredMenuProgramTests (Swift) and DiscoveredMenuProgramTest (Kotlin); docs/distribution-audit/MENU_VERIFICATION_REPORT.md"
+ },
+ "source.demo.doldoc.menubttn": {
+  "status": "runs",
+  "note": "Original source and genuine native execution verified in Swift and Kotlin; bounded output/input/menu/audio/exit tests, not full-system compatibility.",
+  "verification": "DiscoveredMenuProgramTests (Swift) and DiscoveredMenuProgramTest (Kotlin); docs/distribution-audit/MENU_VERIFICATION_REPORT.md"
+ },
+ "source.demo.doldoc.menusprite": {
+  "status": "runs",
+  "note": "Original source and genuine native execution verified in Swift and Kotlin; bounded output/input/menu/audio/exit tests, not full-system compatibility.",
+  "verification": "DiscoveredMenuProgramTests (Swift) and DiscoveredMenuProgramTest (Kotlin); docs/distribution-audit/MENU_VERIFICATION_REPORT.md"
+ }
+}

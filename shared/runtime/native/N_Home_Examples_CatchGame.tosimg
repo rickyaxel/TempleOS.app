@@ -1,0 +1,22 @@
+TOSIMG 1
+unit C:/Home/Examples/CatchGame.HC#0
+value PADDLE_W 80
+g 17fd38 8
+g 17fd50 8
+g 17fd68 8
+g 17fd80 8
+g 17fd98 8
+s 17fdb0 53636f72653a2564204d69737365643a256420202845534320746f206578697429
+s 17fde8 46696e616c2073636f72653a2025640a
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 CatchGame (U0;;-)
+fn 705 $init:C:/Home/Examples/CatchGame.HC#0 (I64;;-)
+sym f CatchGame 704 (U0;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym g missed 17fd98 I64
+sym g paddle_x 17fd38 I64
+sym g score 17fd80 I64
+sym g star_x 17fd50 I64
+sym g star_y 17fd68 I64
+init 705
+unit C:/Home/Examples/CatchGame.HC#1

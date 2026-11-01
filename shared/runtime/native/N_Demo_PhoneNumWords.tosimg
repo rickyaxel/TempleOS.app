@@ -1,0 +1,16 @@
+TOSIMG 1
+unit C:/Demo/PhoneNumWords.HC#0
+service dictionary
+g 17fd38 26
+s 132c0 2573
+s 2b2178 24475245454e24257324464724
+s 13ec8 25730a
+s 2b2198 50686f6e65204e756d3a
+fn 703 PhoneNumWords (U0;*U8;-)
+fn 704 PNWDemo (U0;;-)
+fn 705 $init:C:/Demo/PhoneNumWords.HC#0 (I64;;-)
+sym f PNWDemo 704 (U0;;-)
+sym f PhoneNumWords 703 (U0;*U8;-)
+sym g char_map 17fd38 [26]U8
+init 705
+unit C:/Demo/PhoneNumWords.HC#1

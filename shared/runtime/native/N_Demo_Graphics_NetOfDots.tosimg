@@ -1,0 +1,7 @@
+TOSIMG 1
+unit C:/Demo/Graphics/NetOfDots.HC#0
+fn 703 NetOfDots (U0;;-)
+fn 704 $init:C:/Demo/Graphics/NetOfDots.HC#0 (I64;;-)
+sym f NetOfDots 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/NetOfDots.HC#1

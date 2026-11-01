@@ -1,0 +1,11 @@
+TOSIMG 1
+unit C:/Demo/MultiCore/MPPrint.HC#0
+s 17fd38 2446472c25642443505525641f
+s 17fd58 244647240a
+fn 703 Job (U0;*$CDoc;-)
+fn 704 MPPrintDemo (U0;;-)
+fn 705 $init:C:/Demo/MultiCore/MPPrint.HC#0 (I64;;-)
+sym f Job 703 (U0;*$CDoc;-)
+sym f MPPrintDemo 704 (U0;;-)
+init 705
+unit C:/Demo/MultiCore/MPPrint.HC#1

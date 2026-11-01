@@ -1,0 +1,9 @@
+{
+  "source": "C:/Demo/Games/Stadium/StadiumBG.GR",
+  "source_sha256": "18bd27ad4817b661e0e05064fca0fcb455bccaeedd770fcc8871d799a6081130",
+  "width": 641,
+  "height": 473,
+  "stride": 648,
+  "body_sha256": "ecb35852e4048f4018c8aa70d10f93c6416f51a7f4e511de56d306cce9477224",
+  "oracle": "tools/asset-extraction/extract_templeos_iso.py, independent Python port of original Kernel/Compress.HC"
+}

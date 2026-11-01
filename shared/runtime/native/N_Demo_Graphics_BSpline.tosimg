@@ -1,0 +1,9 @@
+TOSIMG 1
+unit C:/Demo/Graphics/BSpline.HC#0
+value PTS_NUM 16
+s 17fd38 53656c206374726c20706f696e74732077697468206c656674206d6f7573652e1f1f5269676874207768656e2066696e69736865642e0a
+fn 703 BSplineDemo (U0;;-)
+fn 704 $init:C:/Demo/Graphics/BSpline.HC#0 (I64;;-)
+sym f BSplineDemo 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/BSpline.HC#1

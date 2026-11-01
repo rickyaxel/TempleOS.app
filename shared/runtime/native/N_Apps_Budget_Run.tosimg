@@ -1,0 +1,173 @@
+TOSIMG 1
+unit C:/Apps/Budget/Run.HC#0
+s 17fd38 433a2f417070732f427564676574
+fn 703 $init:C:/Apps/Budget/Run.HC#0 (I64;;-)
+init 703
+unit C:/Apps/Budget/Run.HC#1
+s 17fd38 433a2f417070732f427564676574
+fn 704 $init:C:/Apps/Budget/Run.HC#1 (I64;;-)
+init 704
+unit C:/Apps/Budget/Run.HC#2
+value BE_ANNIVERSARY 2
+value BE_GAS 1
+value BE_NORMAL 0
+value BE_PRICE 3
+value BE_TEMPLATE_COPY 4
+value BT_ANNUAL 5
+value BT_BIMONTHLY 3
+value BT_INTERVAL 1
+value BT_MONTHLY 2
+value BT_NULL 0
+value BT_SEMIANNUAL 4
+value SFT_GENERIC 1
+class CBgtEntry 88 0 - -
+m next 0 *$CBgtEntry
+m last 8 *$CBgtEntry
+m start 16 U0
+m date 16 $CDate
+m type 24 U16
+m flags 26 U16
+m credit_idx 28 U32
+m debit_idx 32 U32
+m desc_idx 36 U32
+m amount 40 F64
+m end 48 U0
+m credit 48 *U8
+m debit 56 *U8
+m desc 64 *U8
+m template 72 *$CBgtTemplate
+m doc_e 80 *$CDocEntry
+class CBgtTemplate 148 0 - -
+m next 0 *$CBgtTemplate
+m last 8 *$CBgtTemplate
+m start 16 U0
+m type 16 U16 244c532c443d2253545f4247545f54454d504c4154455f545950455322240a
+m flags 18 U16
+m start_date 20 [16]U8 2444412d502c413d2253746172741f446174653a257322240a
+m end_date 36 [16]U8 2444412d502c413d22456e641f446174651f1f3a257322240a
+m period 52 F64 2444412c413d22506572696f641f1f1f1f3a25382e326622240a
+m end 60 U0
+m b 60 $CBgtEntry
+s 13eb0 2446472c256424
+s 13ec8 25730a
+s 17fd58 25642c25730a
+g 17fd70 8
+g 17fd88 8
+g 17fda0 8
+g 17fdb8 88
+s 17fe20 4e756c6c00496e74657276616c004d6f6e74686c790042696d6f6e74686c790053656d69616e6e75616c00416e6e75616c00
+s 17fe68 53545f4247545f54454d504c4154455f5459504553
+fn 705 StrFileRead (**U8;*U8,*I64,**U8,Bool;-)
+fn 706 StrFileArrDel (U0;**U8,I64;-)
+fn 707 StrFileAdd (I64;*U8,*I64,*$CHashTable,I64;-)
+fn 708 StrEntriesCompare (I64;*$CHashGeneric,*$CHashGeneric;-)
+fn 709 StrFileWrite (U0;*U8,*$CHashTable,Bool;-)
+fn 710 StrFileDel (U0;*$CHashTable;-)
+fn 711 $init:C:/Apps/Budget/Run.HC#2 (I64;;-)
+sym f StrEntriesCompare 708 (I64;*$CHashGeneric,*$CHashGeneric;-)
+sym f StrFileAdd 707 (I64;*U8,*I64,*$CHashTable,I64;-)
+sym f StrFileArrDel 706 (U0;**U8,I64;-)
+sym f StrFileDel 710 (U0;*$CHashTable;-)
+sym f StrFileRead 705 (**U8;*U8,*I64,**U8,Bool;-)
+sym f StrFileWrite 709 (U0;*U8,*$CHashTable,Bool;-)
+sym g b_head 17fdb8 $CBgtEntry
+sym g bgt_accts_file 17fd88 *U8
+sym g bgt_data_file 17fda0 *U8
+sym g bgt_string_file 17fd70 *U8
+init 711
+unit C:/Apps/Budget/Run.HC#3
+class CBgtEntryForm 2056 0 - -
+m date 0 [512]U8 2444412d502c413d22446174651f1f1f1f1f1f1f1f1f1f1f1f1f1f3a257322240a
+m amount 512 F64 416d6f756e741f1f1f1f1f1f1f1f1f1f1f1f24242444412c413d222531302e326622240a
+m credit 520 [512]U8 2444412d502c413d224372656469741f2866726f6d291f416363743a257322240a
+m debit 1032 [512]U8 2444412d502c413d2244656269741f1f28746f291f1f1f416363743a257322240a
+m desc 1544 [512]U8 2444412d502c413d22446573631f1f1f1f1f1f1f1f1f1f1f1f1f1f3a257322240a
+g 17fe90 148
+g 17ff38 512
+g 180148 8
+g 180160 8
+s 132c0 2573
+s 180178 2446472c256424244d552d554c2c222573222c4c453d30782558240a
+s 1801a8 2a
+s 1801c0 2544
+s 1801d8 43426774456e747279466f726d
+s 1801f8 43726564697420416363740a0a
+s 180218 446562697420416363740a0a
+s 1801c0 2544
+s 180238 5b
+s 180250 5d
+s 180268 4342677454656d706c617465
+s 180288 53657420746865206e616d6520616e6420636f6c6f72206f6620796f7572206163636f756e74732e0a546f2064656c657465206163636f756e74732c206d616e75616c6c7920656469740a24475245454e247e2f4275646765742f41636374732e44442e5a244647242e
+s 180308 5669657720416363740a0a
+s 13eb0 2446472c256424
+s 180328 244d552d554c2c222544202538747320253874733a25382e32662025382e32663a252451222c553d30782558240a
+s 180368 537472732e44442e5a
+s 180388 41636374732e44442e5a
+s 1803a8 4267742e444154412e5a
+s 1803c8 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d45646974207b20204e6577456e747279282c276e27293b2020436f7079456e747279282c276327293b2020506572696f646963456e747279282c277027293b202045646974456e747279282c270a27293b202044656c657465456e747279282c43485f4354524c59293b20204e657754656d706c617465282c277427293b2020416363747346696c65282c276127293b7d56696577207b20205669657741636374282c277627293b7d
+s 1804b0 42414e4b
+c 180148 8 0
+c 180160 8 0
+s 17fd38 433a2f417070732f427564676574
+fn 712 MyStr2Date ($CDate;*U8;-)
+fn 713 BgtAcctsUpdate (U0;;-)
+fn 714 BgtAcctsWrite (U0;;-)
+fn 715 BgtAcctsRead (U0;;-)
+fn 716 BgtAcctColor (I64;*U8;-)
+fn 717 BgtPopUpAcct (*U8;*U8,*U8;-)
+fn 718 BgtEntryDel2 (U0;*$CBgtEntry;-)
+fn 719 BgtEntryCopy (*$CBgtEntry;*$CBgtEntry,Bool;-)
+fn 720 BgtEntryDel (U0;*$CBgtEntry;-)
+fn 721 BgtIns (U0;*$CBgtEntry;-)
+fn 722 BgtEntryPmt (*$CBgtEntry;*$CBgtEntry;-)
+fn 723 BgtTemplatePurge (U0;*$CBgtTemplate;-)
+fn 724 BgtTemplateDel (U0;*$CBgtTemplate;-)
+fn 725 BgtTemplateExpand (U0;*$CBgtTemplate,Bool;-)
+fn 726 CBgtTemplatesExpand (U0;;-)
+fn 727 BgtTemplatePmt (*$CBgtTemplate;*$CBgtTemplate,*$CBgtEntry;-)
+fn 728 BgtDataRead (U0;;-)
+fn 729 BgtDataWrite (U0;;-)
+fn 730 BgtDel (U0;;-)
+fn 732 BgtPutKey (Bool;*$CDoc,*U8,I64,I64;-)
+fn 731 BgtRegen (U0;;-)
+fn 733 Budget (U0;*U8;-)
+fn 734 $init:C:/Apps/Budget/Run.HC#3 (I64;;-)
+sym f BgtAcctColor 716 (I64;*U8;-)
+sym f BgtAcctsRead 715 (U0;;-)
+sym f BgtAcctsUpdate 713 (U0;;-)
+sym f BgtAcctsWrite 714 (U0;;-)
+sym f BgtDataRead 728 (U0;;-)
+sym f BgtDataWrite 729 (U0;;-)
+sym f BgtDel 730 (U0;;-)
+sym f BgtEntryCopy 719 (*$CBgtEntry;*$CBgtEntry,Bool;-)
+sym f BgtEntryDel 720 (U0;*$CBgtEntry;-)
+sym f BgtEntryDel2 718 (U0;*$CBgtEntry;-)
+sym f BgtEntryPmt 722 (*$CBgtEntry;*$CBgtEntry;-)
+sym f BgtIns 721 (U0;*$CBgtEntry;-)
+sym f BgtPopUpAcct 717 (*U8;*U8,*U8;-)
+sym f BgtPutKey 732 (Bool;*$CDoc,*U8,I64,I64;-)
+sym f BgtRegen 731 (U0;;-)
+sym f BgtTemplateDel 724 (U0;*$CBgtTemplate;-)
+sym f BgtTemplateExpand 725 (U0;*$CBgtTemplate,Bool;-)
+sym f BgtTemplatePmt 727 (*$CBgtTemplate;*$CBgtTemplate,*$CBgtEntry;-)
+sym f BgtTemplatePurge 723 (U0;*$CBgtTemplate;-)
+sym f Budget 733 (U0;*U8;-)
+sym f CBgtTemplatesExpand 726 (U0;;-)
+sym f MyStr2Date 712 ($CDate;*U8;-)
+sym g accts_table 180148 *$CHashTable
+sym g accts_table_strs 180160 I64
+sym g t_head 17fe90 $CBgtTemplate
+sym g view_acct 17ff38 [512]U8
+init 734
+unit C:/Apps/Budget/Run.HC#4
+s 1804c8 7e2f427564676574
+s 1804c8 7e2f427564676574
+s 1804c8 7e2f427564676574
+s 180388 41636374732e44442e5a
+fn 735 $init:C:/Apps/Budget/Run.HC#4 (I64;;-)
+init 735
+unit C:/Apps/Budget/Run.HC#5
+s 1804c8 7e2f427564676574
+fn 736 $init:C:/Apps/Budget/Run.HC#5 (I64;;-)
+init 736
+unit C:/Apps/Budget/Run.HC#6

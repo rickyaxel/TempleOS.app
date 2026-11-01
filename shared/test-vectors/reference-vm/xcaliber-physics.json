@@ -1,0 +1,2986 @@
+{
+ "about": "X-Caliber (::/Apps/X-Caliber) replayed deterministically in the original TempleOS V5.03 (reference VM). INSTRUMENTED DRIVER tools/reference-vm/harness/XCaliberPhysics.HC (its header lists every difference from the real game: harness clock for tS, fixed window size, no real-time timeout, fixed ODE tolerance 1e-6, scripted input: thrust frames 10-40, fire frame 30, left missile frame 60). The CD's X-Caliber files are included unmodified. States at frames 0, 30, 60, 90, 120 (30 Hz): every mass's x, y, DxDt, DyDt (raw F64 bits) in the ODE's mass order, ships, missiles; mass_hash = FNV-1a 64 over x,y,DxDt,DyDt bytes of all masses in order; state_hash adds score and ship count. Mode templeos_rand uses TempleOS's RandU16/Rand after Seed(12345); mode harness_lcg replaces them in the game's code by the driver's own copy of the same LCG (so engines with a different Rand can be compared).",
+ "harness_lcg_equals_templeos_rand": true,
+ "floating_point_note": "TempleOS's compiler evaluates F64 expressions on the x87 FPU (80-bit registers, precision control left at the FNINIT default: 64-bit mantissa); values are rounded to IEEE double only when stored. QEMU TCG emulates the x87 in software (floatx80).",
+ "modes": {
+  "templeos_rand": {
+   "files": [
+    "tools/reference-vm/harness/XCaliberPhysics.HC"
+   ],
+   "info": {
+    "PIX": [
+     "PIX real pix_width=640 pix_height=472"
+    ],
+    "XC-START": [
+     "XC-START seed=12345 tol=3EB0C6F7A0B5ED8D frames=120 harness_rng=0"
+    ],
+    "XC-END": [
+     "XC-END steps=1730"
+    ]
+   },
+   "frames": {
+    "0": {
+     "state": {
+      "t": "408F400000000000",
+      "ode_t": "0000000000000000",
+      "ode_h": "3EB0C6F7A0B5ED8D",
+      "n_internal": 0,
+      "steps": 0,
+      "score": 0,
+      "level": 1,
+      "remaining": 4,
+      "game_over": 0,
+      "human": 1
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 0,
+       "x": "4074000000000000",
+       "y": "406D800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "320.0",
+       "y_f64": "236.0"
+      },
+      {
+       "i": 1,
+       "type": 0,
+       "x": "4074300000000000",
+       "y": "406EC00000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "323.0",
+       "y_f64": "246.0"
+      },
+      {
+       "i": 2,
+       "type": 0,
+       "x": "4073D00000000000",
+       "y": "406EC00000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "317.0",
+       "y_f64": "246.0"
+      },
+      {
+       "i": 3,
+       "type": 0,
+       "x": "4075400000000000",
+       "y": "4070000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "340.0",
+       "y_f64": "256.0"
+      },
+      {
+       "i": 4,
+       "type": 0,
+       "x": "4072C00000000000",
+       "y": "4070000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "300.0",
+       "y_f64": "256.0"
+      },
+      {
+       "i": 5,
+       "type": 6,
+       "x": "4074B80000000000",
+       "y": "406F000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "331.5",
+       "y_f64": "248.0"
+      },
+      {
+       "i": 6,
+       "type": 6,
+       "x": "4074B80000000000",
+       "y": "406F800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "331.5",
+       "y_f64": "252.0"
+      },
+      {
+       "i": 7,
+       "type": 6,
+       "x": "4073480000000000",
+       "y": "406F000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "308.5",
+       "y_f64": "248.0"
+      },
+      {
+       "i": 8,
+       "type": 6,
+       "x": "4073480000000000",
+       "y": "406F800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "308.5",
+       "y_f64": "252.0"
+      },
+      {
+       "i": 9,
+       "type": 1,
+       "x": "4076600000000000",
+       "y": "407C500000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "358.0",
+       "y_f64": "453.0"
+      },
+      {
+       "i": 10,
+       "type": 1,
+       "x": "4077500000000000",
+       "y": "407C500000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "373.0",
+       "y_f64": "453.0"
+      },
+      {
+       "i": 11,
+       "type": 1,
+       "x": "4076600000000000",
+       "y": "407D400000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "358.0",
+       "y_f64": "468.0"
+      },
+      {
+       "i": 12,
+       "type": 1,
+       "x": "407B700000000000",
+       "y": "403E000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "439.0",
+       "y_f64": "30.0"
+      },
+      {
+       "i": 13,
+       "type": 1,
+       "x": "407C600000000000",
+       "y": "403E000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "454.0",
+       "y_f64": "30.0"
+      },
+      {
+       "i": 14,
+       "type": 1,
+       "x": "407B700000000000",
+       "y": "4046800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "439.0",
+       "y_f64": "45.0"
+      },
+      {
+       "i": 15,
+       "type": 1,
+       "x": "405BC00000000000",
+       "y": "406F200000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "111.0",
+       "y_f64": "249.0"
+      },
+      {
+       "i": 16,
+       "type": 1,
+       "x": "405F800000000000",
+       "y": "406F200000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "126.0",
+       "y_f64": "249.0"
+      },
+      {
+       "i": 17,
+       "type": 1,
+       "x": "405BC00000000000",
+       "y": "4070800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "111.0",
+       "y_f64": "264.0"
+      },
+      {
+       "i": 18,
+       "type": 1,
+       "x": "4063000000000000",
+       "y": "4050000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "152.0",
+       "y_f64": "64.0"
+      },
+      {
+       "i": 19,
+       "type": 1,
+       "x": "4062200000000000",
+       "y": "4052800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "145.0",
+       "y_f64": "74.0"
+      },
+      {
+       "i": 20,
+       "type": 1,
+       "x": "4063E00000000000",
+       "y": "4052800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "159.0",
+       "y_f64": "74.0"
+      },
+      {
+       "i": 21,
+       "type": 1,
+       "x": "4061400000000000",
+       "y": "4055000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "138.0",
+       "y_f64": "84.0"
+      },
+      {
+       "i": 22,
+       "type": 1,
+       "x": "4064C00000000000",
+       "y": "4055000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "166.0",
+       "y_f64": "84.0"
+      }
+     ],
+     "ships": [
+      {
+       "i": 0,
+       "type": 0,
+       "masses": 5,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 1,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 2,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 3,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 4,
+       "type": 2,
+       "masses": 5,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      }
+     ],
+     "missiles": [
+      {
+       "i": 0,
+       "label": "R",
+       "active": 1,
+       "launched": 0,
+       "exploding": 0,
+       "target": 0
+      },
+      {
+       "i": 1,
+       "label": "L",
+       "active": 1,
+       "launched": 0,
+       "exploding": 0,
+       "target": 0
+      }
+     ],
+     "hash": {
+      "masses": 23,
+      "ships": 5,
+      "shots": 0,
+      "mass_hash": "6031638FDB852AEC",
+      "state_hash": "73BE377C21642789"
+     }
+    },
+    "30": {
+     "state": {
+      "t": "408F480000000000",
+      "ode_t": "3FF0000000000000",
+      "ode_h": "3EE6991AC7100000",
+      "n_internal": 378,
+      "steps": 1397,
+      "score": 0,
+      "level": 1,
+      "remaining": 4,
+      "game_over": 0,
+      "human": 1
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 0,
+       "x": "4074000000000000",
+       "y": "406A764AE8572FE8",
+       "DxDt": "0000000000000000",
+       "DyDt": "C051B0BD3FC73BBE",
+       "temperature": "3FEBFE5C91D14E3E",
+       "x_f64": "320.0",
+       "y_f64": "211.6966439917444"
+      },
+      {
+       "i": 1,
+       "type": 0,
+       "x": "40742FFDB335CDB8",
+       "y": "406BB6A5853C1971",
+       "DxDt": "3FE7052DDEF40104",
+       "DyDt": "C051BC0A7240030D",
+       "temperature": "0000000000000000",
+       "x_f64": "322.9994384862616",
+       "y_f64": "221.70770513284836"
+      },
+      {
+       "i": 2,
+       "type": 0,
+       "x": "4073D0024CCA3248",
+       "y": "406BB6A5853C1971",
+       "DxDt": "BFE7052DDEF40104",
+       "DyDt": "C051BC0A7240030D",
+       "temperature": "3FE2A9930BE0DED4",
+       "x_f64": "317.0005615137384",
+       "y_f64": "221.70770513284836"
+      },
+      {
+       "i": 3,
+       "type": 0,
+       "x": "4075417CA6F0128E",
+       "y": "406CF2508BB43B8A",
+       "DxDt": "BFDF6A48269777FD",
+       "DyDt": "C052094AA972061A",
+       "temperature": "0000000000000000",
+       "x_f64": "340.0929326417762",
+       "y_f64": "231.57233224107432"
+      },
+      {
+       "i": 4,
+       "type": 0,
+       "x": "4072BE83590FED72",
+       "y": "406CF2508BB43B8A",
+       "DxDt": "3FDF6A48269777FD",
+       "DyDt": "C052094AA972061A",
+       "temperature": "0000000000000000",
+       "x_f64": "299.9070673582238",
+       "y_f64": "231.57233224107432"
+      },
+      {
+       "i": 5,
+       "type": 6,
+       "x": "4074B768874B6A05",
+       "y": "406BF815EA695548",
+       "DxDt": "4003CA6FC4C2FA70",
+       "DyDt": "C052AC8CE2CEE217",
+       "temperature": "0000000000000000",
+       "x_f64": "331.4630196519723",
+       "y_f64": "223.75267525265576"
+      },
+      {
+       "i": 6,
+       "type": 6,
+       "x": "4074B7C38D878B5B",
+       "y": "406C78419B7854C4",
+       "DxDt": "3FFF83B0A36A47EC",
+       "DyDt": "C052821D5A018EBE",
+       "temperature": "0000000000000000",
+       "x_f64": "331.4852423948957",
+       "y_f64": "227.7580087042062"
+      },
+      {
+       "i": 7,
+       "type": 6,
+       "x": "4073489778B495FB",
+       "y": "406BF815EA695548",
+       "DxDt": "C003CA6FC4C2FA70",
+       "DyDt": "C052AC8CE2CEE217",
+       "temperature": "3FD2A9930BE0DED4",
+       "x_f64": "308.5369803480277",
+       "y_f64": "223.75267525265576"
+      },
+      {
+       "i": 8,
+       "type": 6,
+       "x": "4073483C727874A5",
+       "y": "406C78419B7854C4",
+       "DxDt": "BFFF83B0A36A47EC",
+       "DyDt": "C052821D5A018EBE",
+       "temperature": "0000000000000000",
+       "x_f64": "308.5147576051043",
+       "y_f64": "227.7580087042062"
+      },
+      {
+       "i": 9,
+       "type": 1,
+       "x": "4076F40092F9299E",
+       "y": "407A73D357CA186F",
+       "DxDt": "40333BEA92D46816",
+       "DyDt": "C0369CF84003A588",
+       "temperature": "0000000000000000",
+       "x_f64": "367.2501401646531",
+       "y_f64": "423.2390973944047"
+      },
+      {
+       "i": 10,
+       "type": 1,
+       "x": "4077112B2646E044",
+       "y": "407B62EC2C6C5D19",
+       "DxDt": "C01DEA4DF501D95B",
+       "DyDt": "C030D13E32D99983",
+       "temperature": "0000000000000000",
+       "x_f64": "369.07303455053284",
+       "y_f64": "438.182659552856"
+      },
+      {
+       "i": 11,
+       "type": 1,
+       "x": "4076088A4D3F1FAB",
+       "y": "407A906FACDA95EF",
+       "DxDt": "C02806C5FCF3175C",
+       "DyDt": "C047AC5CBB231CD6",
+       "temperature": "0000000000000000",
+       "x_f64": "352.5337650743265",
+       "y_f64": "425.0272644556525"
+      },
+      {
+       "i": 12,
+       "type": 1,
+       "x": "407B700000000000",
+       "y": "403E000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "439.0",
+       "y_f64": "30.0"
+      },
+      {
+       "i": 13,
+       "type": 1,
+       "x": "407C600000000000",
+       "y": "403E000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "454.0",
+       "y_f64": "30.0"
+      },
+      {
+       "i": 14,
+       "type": 1,
+       "x": "407B700000000000",
+       "y": "4046800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "439.0",
+       "y_f64": "45.0"
+      },
+      {
+       "i": 15,
+       "type": 1,
+       "x": "405BC00000000000",
+       "y": "406F200000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "111.0",
+       "y_f64": "249.0"
+      },
+      {
+       "i": 16,
+       "type": 1,
+       "x": "405F800000000000",
+       "y": "406F200000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "126.0",
+       "y_f64": "249.0"
+      },
+      {
+       "i": 17,
+       "type": 1,
+       "x": "405BC00000000000",
+       "y": "4070800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "111.0",
+       "y_f64": "264.0"
+      },
+      {
+       "i": 18,
+       "type": 1,
+       "x": "4063000000000000",
+       "y": "4050000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "152.0",
+       "y_f64": "64.0"
+      },
+      {
+       "i": 19,
+       "type": 1,
+       "x": "4062200000000000",
+       "y": "4052800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "145.0",
+       "y_f64": "74.0"
+      },
+      {
+       "i": 20,
+       "type": 1,
+       "x": "4063E00000000000",
+       "y": "4052800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "159.0",
+       "y_f64": "74.0"
+      },
+      {
+       "i": 21,
+       "type": 1,
+       "x": "4061400000000000",
+       "y": "4055000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "138.0",
+       "y_f64": "84.0"
+      },
+      {
+       "i": 22,
+       "type": 1,
+       "x": "4064C00000000000",
+       "y": "4055000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "166.0",
+       "y_f64": "84.0"
+      },
+      {
+       "i": 23,
+       "type": 5,
+       "x": "407497BEB2C397E9",
+       "y": "406572AC642ABBBA",
+       "DxDt": "C04F32ECA1179152",
+       "DyDt": "4068163E97A57D00",
+       "temperature": "0000000000000000",
+       "x_f64": "329.4840572014205",
+       "y_f64": "171.5835438570628"
+      },
+      {
+       "i": 24,
+       "type": 5,
+       "x": "40744FE159CAE86D",
+       "y": "40650EB78582FDF4",
+       "DxDt": "402E0F9642AF0532",
+       "DyDt": "40617D67C7BFB5BC",
+       "temperature": "0000000000000000",
+       "x_f64": "324.99251727353004",
+       "y_f64": "168.45990253052116"
+      },
+      {
+       "i": 25,
+       "type": 5,
+       "x": "40745684293DEB84",
+       "y": "40652505E306E92B",
+       "DxDt": "402A94F07812300F",
+       "DyDt": "40625F35CBA7B99E",
+       "temperature": "0000000000000000",
+       "x_f64": "325.4072658938169",
+       "y_f64": "169.1569686064698"
+      },
+      {
+       "i": 26,
+       "type": 5,
+       "x": "4074906E9FE94B44",
+       "y": "4065AC3A4FACD4CC",
+       "DxDt": "C04110C70E108115",
+       "DyDt": "406909906DC456EB",
+       "temperature": "0000000000000000",
+       "x_f64": "329.0270079720542",
+       "y_f64": "173.38211807018376"
+      },
+      {
+       "i": 27,
+       "type": 5,
+       "x": "40748C8E34C03F61",
+       "y": "4065CB304A742374",
+       "DxDt": "C02F3CC3E1859FEE",
+       "DyDt": "40691DA9410D9000",
+       "temperature": "0000000000000000",
+       "x_f64": "328.7847182759925",
+       "y_f64": "174.3496448772745"
+      },
+      {
+       "i": 28,
+       "type": 5,
+       "x": "407454CFC3CBECE1",
+       "y": "40657B057AEB0015",
+       "DxDt": "4045794C0D122D91",
+       "DyDt": "40633C057E98CC25",
+       "temperature": "0000000000000000",
+       "x_f64": "325.30072383554767",
+       "y_f64": "171.844418963418"
+      },
+      {
+       "i": 29,
+       "type": 5,
+       "x": "40745F8F3D8C9E1B",
+       "y": "406559F7C50B0DA0",
+       "DxDt": "403122C446B58C8E",
+       "DyDt": "4063F098DE5204F1",
+       "temperature": "0000000000000000",
+       "x_f64": "325.9724708073497",
+       "y_f64": "170.8114953246959"
+      },
+      {
+       "i": 30,
+       "type": 5,
+       "x": "407458C7262D7013",
+       "y": "40659E9C09E7915A",
+       "DxDt": "404B0DB78E427ECC",
+       "DyDt": "40633FB94751BA58",
+       "temperature": "0000000000000000",
+       "x_f64": "325.548620393268",
+       "y_f64": "172.95654769161303"
+      },
+      {
+       "i": 31,
+       "type": 5,
+       "x": "40749FCBF68E094D",
+       "y": "4065ECB5A8DC7C90",
+       "DxDt": "C046A949C03F6322",
+       "DyDt": "406B5FC76C16A6CA",
+       "temperature": "0000000000000000",
+       "x_f64": "329.9872956798834",
+       "y_f64": "175.39717524589332"
+      },
+      {
+       "i": 32,
+       "type": 5,
+       "x": "4074C0B5ECFA9D18",
+       "y": "4066771CC899FD57",
+       "DxDt": "C054091A6F2B89FC",
+       "DyDt": "406FC12E33F4E3A9",
+       "temperature": "0000000000000000",
+       "x_f64": "332.04441545387226",
+       "y_f64": "179.72226362300964"
+      },
+      {
+       "i": 33,
+       "type": 5,
+       "x": "4074BCC875124F60",
+       "y": "40665B300C76DC4D",
+       "DxDt": "C05673D5086C5804",
+       "DyDt": "406FC4D64C8FFB30",
+       "temperature": "0000000000000000",
+       "x_f64": "331.7989397731053",
+       "y_f64": "178.84961531844093"
+      },
+      {
+       "i": 34,
+       "type": 5,
+       "x": "4074C7A94FF006FA",
+       "y": "4066943C9BE3A77D",
+       "DxDt": "C0564675C04355A8",
+       "DyDt": "4070313BA48DCC0F",
+       "temperature": "0000000000000000",
+       "x_f64": "332.4788360000672",
+       "y_f64": "180.6323985525486"
+      },
+      {
+       "i": 35,
+       "type": 5,
+       "x": "4074BF2F346D6ADA",
+       "y": "40667089478A53BF",
+       "DxDt": "C06491BD1BEE7655",
+       "DyDt": "4071280480A4FECA",
+       "temperature": "0000000000000000",
+       "x_f64": "331.949024608051",
+       "y_f64": "179.5167577459051"
+      },
+      {
+       "i": 36,
+       "type": 5,
+       "x": "4074C4F193FF9D9C",
+       "y": "40668A3E9B6A1A0C",
+       "DxDt": "C061F37725A1E08D",
+       "DyDt": "40713E241F91DBE2",
+       "temperature": "0000000000000000",
+       "x_f64": "332.30897903299206",
+       "y_f64": "180.32014246676442"
+      },
+      {
+       "i": 37,
+       "type": 5,
+       "x": "4074D2C1AE53040F",
+       "y": "4066BC90532380E0",
+       "DxDt": "C059006F455CF894",
+       "DyDt": "40703E72810B75F5",
+       "temperature": "0000000000000000",
+       "x_f64": "333.1722853892142",
+       "y_f64": "181.8926177686144"
+      },
+      {
+       "i": 38,
+       "type": 5,
+       "x": "4074908F1A293D51",
+       "y": "4066ABEA3D7CC11B",
+       "DxDt": "C066A3F70D6A821F",
+       "DyDt": "40712E775A1A959B",
+       "temperature": "0000000000000000",
+       "x_f64": "329.0349370585364",
+       "y_f64": "181.37234377256468"
+      },
+      {
+       "i": 39,
+       "type": 5,
+       "x": "4074C11844C19AC4",
+       "y": "4066C1415160A7C3",
+       "DxDt": "C06638DBFD2E92C2",
+       "DyDt": "407230C119C8B93B",
+       "temperature": "0000000000000000",
+       "x_f64": "332.0684249460867",
+       "y_f64": "182.03922337415688"
+      },
+      {
+       "i": 40,
+       "type": 5,
+       "x": "40738B3E86909EDF",
+       "y": "406586A2C47F4356",
+       "DxDt": "C06351D4E91B787D",
+       "DyDt": "40685568589C20A0",
+       "temperature": "0000000000000000",
+       "x_f64": "312.7027650498621",
+       "y_f64": "172.20736908775388"
+      },
+      {
+       "i": 41,
+       "type": 5,
+       "x": "4074A94C0C22CE3F",
+       "y": "4066AF70BAFD4D70",
+       "DxDt": "C06840C2B9468AE2",
+       "DyDt": "40722E58CB626EF4",
+       "temperature": "0000000000000000",
+       "x_f64": "330.58106626125294",
+       "y_f64": "181.48251103852408"
+      },
+      {
+       "i": 42,
+       "type": 5,
+       "x": "4074A9C90C68C2BD",
+       "y": "4066AB5F89B543C5",
+       "DxDt": "C068432D30111F78",
+       "DyDt": "4072289696D8C569",
+       "temperature": "0000000000000000",
+       "x_f64": "330.6115840999808",
+       "y_f64": "181.35541234401003"
+      },
+      {
+       "i": 43,
+       "type": 5,
+       "x": "4073985BF79B48BD",
+       "y": "4065853B6A1C94E0",
+       "DxDt": "C062B32823A1664A",
+       "DyDt": "40687DDACBE77394",
+       "temperature": "0000000000000000",
+       "x_f64": "313.52245293290963",
+       "y_f64": "172.16350274641354"
+      },
+      {
+       "i": 44,
+       "type": 5,
+       "x": "4071B79AA5C50B0A",
+       "y": "40657BDB7F6E5D41",
+       "DxDt": "C06AA7B8277A20A4",
+       "DyDt": "40594BE7098D4AD0",
+       "temperature": "0000000000000000",
+       "x_f64": "283.47525574655504",
+       "y_f64": "171.87054416232607"
+      },
+      {
+       "i": 45,
+       "type": 5,
+       "x": "4071D0F74CE542BE",
+       "y": "40656188B042CAE1",
+       "DxDt": "C06AABBB36ADCC17",
+       "DyDt": "405A2C378CFD8D50",
+       "temperature": "0000000000000000",
+       "x_f64": "285.06037606768575",
+       "y_f64": "171.04793561025056"
+      },
+      {
+       "i": 46,
+       "type": 5,
+       "x": "4071DAB94AEAC1E1",
+       "y": "40653444A5374E42",
+       "DxDt": "C06B27C1E902EFD3",
+       "DyDt": "405933391E117CC2",
+       "temperature": "0000000000000000",
+       "x_f64": "285.67023746206365",
+       "y_f64": "169.633379562396"
+      },
+      {
+       "i": 47,
+       "type": 5,
+       "x": "4074AEF86148874A",
+       "y": "4065FDED9636F44A",
+       "DxDt": "C0669A69BA82FE00",
+       "DyDt": "406EEC61EFF890F6",
+       "temperature": "0000000000000000",
+       "x_f64": "330.9356396515983",
+       "y_f64": "175.9352522919965"
+      },
+      {
+       "i": 48,
+       "type": 5,
+       "x": "40732EE06A740EFA",
+       "y": "4064D42C2514A6FB",
+       "DxDt": "C066B939AAA35036",
+       "DyDt": "40627FB9BAF6F254",
+       "temperature": "0000000000000000",
+       "x_f64": "306.92978902182915",
+       "y_f64": "166.6303887751927"
+      },
+      {
+       "i": 49,
+       "type": 5,
+       "x": "40737A9EC7BBE753",
+       "y": "4064F9713B841160",
+       "DxDt": "C064CBDE17B5E07B",
+       "DyDt": "4064B2DE4F48AE57",
+       "temperature": "0000000000000000",
+       "x_f64": "311.66376469993446",
+       "y_f64": "167.7950723247004"
+      },
+      {
+       "i": 50,
+       "type": 5,
+       "x": "4074ABB6C9D8A502",
+       "y": "4065DBADF9F50E45",
+       "DxDt": "C066A2B9DBEA0B20",
+       "DyDt": "406DBCAA48585F36",
+       "temperature": "0000000000000000",
+       "x_f64": "330.7321260893515",
+       "y_f64": "174.86498735296678"
+      },
+      {
+       "i": 51,
+       "type": 5,
+       "x": "4073F5BF220BA4BE",
+       "y": "406576985F570DB0",
+       "DxDt": "C0633D08C3E97FC5",
+       "DyDt": "406A2A2374C4AEA6",
+       "temperature": "0000000000000000",
+       "x_f64": "319.35916332767727",
+       "y_f64": "171.70610014917975"
+      },
+      {
+       "i": 52,
+       "type": 5,
+       "x": "4074AF7E5A1EBE5E",
+       "y": "406563857F3E5F68",
+       "DxDt": "C0649F9A900AA147",
+       "DyDt": "4069241AD0FCDA19",
+       "temperature": "0000000000000000",
+       "x_f64": "330.9683476639674",
+       "y_f64": "171.11004602605976"
+      },
+      {
+       "i": 53,
+       "type": 5,
+       "x": "4074ADB912536BFF",
+       "y": "40664907F61C227B",
+       "DxDt": "C06781C384554C2A",
+       "DyDt": "4070CB36B9EFACBC",
+       "temperature": "0000000000000000",
+       "x_f64": "330.85768349253334",
+       "y_f64": "178.28222184653336"
+      },
+      {
+       "i": 54,
+       "type": 5,
+       "x": "4074B98156A62FF5",
+       "y": "40660B822D0B2FE1",
+       "DxDt": "C064064C074C2FE9",
+       "DyDt": "406F0F71CC493A14",
+       "temperature": "0000000000000000",
+       "x_f64": "331.59407677571227",
+       "y_f64": "176.35964061913458"
+      },
+      {
+       "i": 55,
+       "type": 5,
+       "x": "4074BE631FB61A59",
+       "y": "40664010380160EF",
+       "DxDt": "C0620DEBB4F6F5CB",
+       "DyDt": "407041C59934C4AD",
+       "temperature": "0000000000000000",
+       "x_f64": "331.89920016416505",
+       "y_f64": "178.0019798304488"
+      },
+      {
+       "i": 56,
+       "type": 5,
+       "x": "4074AA4714421750",
+       "y": "4064D1733B86BD9C",
+       "DxDt": "C05F6FDE41813C22",
+       "DyDt": "40636B0892FBB158",
+       "temperature": "0000000000000000",
+       "x_f64": "330.64235330406973",
+       "y_f64": "166.54531647030387"
+      },
+      {
+       "i": 57,
+       "type": 5,
+       "x": "4074B1C85E60ACCC",
+       "y": "4065850865CE5A83",
+       "DxDt": "C05F5B14AFB4B733",
+       "DyDt": "4069EB9AD4F70588",
+       "temperature": "0000000000000000",
+       "x_f64": "331.11141813052814",
+       "y_f64": "172.15727510741644"
+      },
+      {
+       "i": 58,
+       "type": 5,
+       "x": "40747F924A497A64",
+       "y": "406561F76FAA3EEF",
+       "DxDt": "C03969F45312E5C5",
+       "DyDt": "40664ABFCEE5BAA2",
+       "temperature": "0000000000000000",
+       "x_f64": "327.9732153768766",
+       "y_f64": "171.06145461321964"
+      },
+      {
+       "i": 59,
+       "type": 5,
+       "x": "4074B3BCE290AE7C",
+       "y": "4065CC2C6C008245",
+       "DxDt": "C05CFB0AF910DCF9",
+       "DyDt": "406C43F6FB624F51",
+       "temperature": "0000000000000000",
+       "x_f64": "331.2336145068764",
+       "y_f64": "174.38042259311092"
+      },
+      {
+       "i": 60,
+       "type": 5,
+       "x": "4074A34ADF5FDAD6",
+       "y": "40654CBBCE0ECD33",
+       "DxDt": "C05721AA42A674CC",
+       "DyDt": "40676F68AE187BB5",
+       "temperature": "0000000000000000",
+       "x_f64": "330.2057794327096",
+       "y_f64": "170.39792540446214"
+      },
+      {
+       "i": 61,
+       "type": 5,
+       "x": "407484DA8123914F",
+       "y": "40650EEADE0B3099",
+       "DxDt": "C048F361FCFC0BC5",
+       "DyDt": "4064429338ED9553",
+       "temperature": "0000000000000000",
+       "x_f64": "328.3033458127365",
+       "y_f64": "168.4661703318168"
+      },
+      {
+       "i": 62,
+       "type": 5,
+       "x": "4074229CDF9D3C0D",
+       "y": "4064621982D1315B",
+       "DxDt": "4031F77A28384779",
+       "DyDt": "4055C4FF261C4F8C",
+       "temperature": "0000000000000000",
+       "x_f64": "322.163299192617",
+       "y_f64": "163.065614136295"
+      }
+     ],
+     "ships": [
+      {
+       "i": 0,
+       "type": 0,
+       "masses": 5,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 1,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "408F495555555555"
+      },
+      {
+       "i": 2,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 3,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 4,
+       "type": 2,
+       "masses": 5,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      }
+     ],
+     "missiles": [
+      {
+       "i": 0,
+       "label": "R",
+       "active": 1,
+       "launched": 0,
+       "exploding": 0,
+       "target": 0
+      },
+      {
+       "i": 1,
+       "label": "L",
+       "active": 1,
+       "launched": 0,
+       "exploding": 0,
+       "target": 0
+      }
+     ],
+     "hash": {
+      "masses": 63,
+      "ships": 5,
+      "shots": 0,
+      "mass_hash": "0804C72693ED5C97",
+      "state_hash": "FDFBC4CC66A937B2"
+     }
+    },
+    "60": {
+     "state": {
+      "t": "408F500000000000",
+      "ode_t": "4000000000000000",
+      "ode_h": "3F95EE54E5DF1F80",
+      "n_internal": 72,
+      "steps": 1610,
+      "score": 1,
+      "level": 1,
+      "remaining": 2,
+      "game_over": 1,
+      "human": 0
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 1,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 2,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 3,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 4,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 5,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 6,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 7,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 8,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 9,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 10,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 11,
+       "type": 4,
+       "x": "4074000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "FFF0000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "320.0",
+       "y_f64": "nan"
+      }
+     ],
+     "ships": [
+      {
+       "i": 0,
+       "type": 1,
+       "masses": 3,
+       "exploding": 1,
+       "inactive_springs": 7,
+       "reload": "408F4EEEEEEEEEEF"
+      },
+      {
+       "i": 1,
+       "type": 1,
+       "masses": 3,
+       "exploding": 1,
+       "inactive_springs": 7,
+       "reload": "408F4EEEEEEEEEEF"
+      },
+      {
+       "i": 2,
+       "type": 2,
+       "masses": 5,
+       "exploding": 1,
+       "inactive_springs": "7F",
+       "reload": "408F4BBBBBBBBBBC"
+      }
+     ],
+     "hash": {
+      "masses": 12,
+      "ships": 3,
+      "shots": 1,
+      "mass_hash": "B25C988066DD5649",
+      "state_hash": "6F5945296AFF86AB"
+     }
+    },
+    "90": {
+     "state": {
+      "t": "408F580000000000",
+      "ode_t": "4008000000000000",
+      "ode_h": "3F95EE54E5DF1F80",
+      "n_internal": 6,
+      "steps": 1670,
+      "score": 4,
+      "level": 1,
+      "remaining": -1,
+      "game_over": 1,
+      "human": 0
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 4,
+       "x": "4074000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "FFF0000000000000",
+       "temperature": "4012474A4376CBD4",
+       "x_f64": "320.0",
+       "y_f64": "nan"
+      }
+     ],
+     "hash": {
+      "masses": 1,
+      "ships": 0,
+      "shots": 1,
+      "mass_hash": "4277308E6F659A69",
+      "state_hash": "65F5F28F91376DAD"
+     }
+    },
+    "120": {
+     "state": {
+      "t": "408F600000000000",
+      "ode_t": "4010000000000000",
+      "ode_h": "3F95EE54E5DF1F80",
+      "n_internal": 6,
+      "steps": 1730,
+      "score": 4,
+      "level": 1,
+      "remaining": -1,
+      "game_over": 1,
+      "human": 0
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 4,
+       "x": "4074000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "FFF0000000000000",
+       "temperature": "3FC8CB896FB6CB5B",
+       "x_f64": "320.0",
+       "y_f64": "nan"
+      }
+     ],
+     "hash": {
+      "masses": 1,
+      "ships": 0,
+      "shots": 1,
+      "mass_hash": "4277308E6F659A69",
+      "state_hash": "65F5F28F91376DAD"
+     }
+    }
+   },
+   "vm_run": {
+    "date_utc": "2026-10-20T12:22:49+00:00",
+    "iso": {
+     "path": "reference/iso/TempleOS.ISO",
+     "sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26",
+     "expected_sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26"
+    },
+    "qemu_version": "QEMU emulator version 11.1.2\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+    "qemu_args": [
+     "qemu-system-x86_64",
+     "-m",
+     "1024",
+     "-smp",
+     "2",
+     "-cdrom",
+     "reference/iso/TempleOS.ISO",
+     "-boot",
+     "d",
+     "-nic",
+     "none",
+     "-display",
+     "none",
+     "-vga",
+     "std",
+     "-audiodev",
+     "none,id=snd0",
+     "-machine",
+     "pc,pcspk-audiodev=snd0",
+     "-qmp",
+     "tcp:127.0.0.1:57813,server,nowait",
+     "-rtc",
+     "base=localtime,clock=vm",
+     "-accel",
+     "tcg",
+     "-cpu",
+     "qemu64",
+     "-chardev",
+     "file,id=dbg0,path=build/reference-vm/xcaliber/templeos_rand/harness.log",
+     "-device",
+     "isa-debugcon,iobase=0xe9,chardev=dbg0",
+     "-chardev",
+     "file,id=dbg1,path=build/reference-vm/xcaliber/templeos_rand/console.log",
+     "-device",
+     "isa-debugcon,iobase=0xea,chardev=dbg1",
+     "-fw_cfg",
+     "name=opt/templeos/boot,file=tools/reference-vm/harness/VmIO.HC",
+     "-fw_cfg",
+     "name=opt/templeos/h0,file=tools/reference-vm/harness/XCaliberPhysics.HC",
+     "-icount",
+     "shift=auto"
+    ],
+    "guest": {
+     "machine": "pc",
+     "cpu": "qemu64",
+     "smp": 2,
+     "mem_mib": 1024,
+     "accelerator": "tcg (software emulation of x86-64; no hardware virtualization on this host)",
+     "icount": "shift=auto",
+     "rtc": "base=localtime,clock=vm",
+     "network": "none",
+     "disk": "none (live CD only)"
+    },
+    "host": {
+     "os": "macOS-27.0.1-arm64-arm-64bit",
+     "machine": "arm64",
+     "uname": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030 arm64",
+     "python": "3.10.6"
+    },
+    "files": {
+     "boot (VmIO.HC)": {
+      "path": "tools/reference-vm/harness/VmIO.HC",
+      "sha256": "3d837449e6a4c976f609086f887b7485c11237dceb9f9f615700ac666765259f"
+     },
+     "h0": {
+      "path": "tools/reference-vm/harness/XCaliberPhysics.HC",
+      "sha256": "f35d8a3412f4562217c6517b8036fcc6a6bf83a3b920b176a9f9ceada54db4f7",
+      "fnv1a64": "DA153C6E5308578C"
+     }
+    },
+    "result": {
+     "status": "done",
+     "seconds_after_boot": 10.6,
+     "seconds_total": 96.4,
+     "events": [
+      {
+       "t": 52.2,
+       "event": "shell ready (probe 3)"
+      },
+      {
+       "t": 85.7,
+       "event": "boot-ok (typing attempt 1, hold 25 ms)"
+      }
+     ],
+     "loader": [
+      "BOOT-OK mp_cnt=2 sys_code_bp.alloced=1068326912",
+      "LOADER begin opt/templeos/h0 size=7749 fnv=DA153C6E5308578C",
+      "LOADER end opt/templeos/h0 res=00000000000000A0",
+      "HARNESS-DONE"
+     ],
+     "harness_bytes_exact": {
+      "h0": true
+     }
+    }
+   },
+   "raw_logs": "shared/test-vectors/reference-vm/logs/xcaliber-templeos_rand"
+  },
+  "harness_lcg": {
+   "files": [
+    "tools/reference-vm/harness/XCaliberLcg.HC",
+    "tools/reference-vm/harness/XCaliberPhysics.HC"
+   ],
+   "info": {
+    "PIX": [
+     "PIX real pix_width=640 pix_height=472"
+    ],
+    "XC-START": [
+     "XC-START seed=12345 tol=3EB0C6F7A0B5ED8D frames=120 harness_rng=1"
+    ],
+    "XC-END": [
+     "XC-END steps=1730"
+    ]
+   },
+   "frames": {
+    "0": {
+     "state": {
+      "t": "408F400000000000",
+      "ode_t": "0000000000000000",
+      "ode_h": "3EB0C6F7A0B5ED8D",
+      "n_internal": 0,
+      "steps": 0,
+      "score": 0,
+      "level": 1,
+      "remaining": 4,
+      "game_over": 0,
+      "human": 1
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 0,
+       "x": "4074000000000000",
+       "y": "406D800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "320.0",
+       "y_f64": "236.0"
+      },
+      {
+       "i": 1,
+       "type": 0,
+       "x": "4074300000000000",
+       "y": "406EC00000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "323.0",
+       "y_f64": "246.0"
+      },
+      {
+       "i": 2,
+       "type": 0,
+       "x": "4073D00000000000",
+       "y": "406EC00000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "317.0",
+       "y_f64": "246.0"
+      },
+      {
+       "i": 3,
+       "type": 0,
+       "x": "4075400000000000",
+       "y": "4070000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "340.0",
+       "y_f64": "256.0"
+      },
+      {
+       "i": 4,
+       "type": 0,
+       "x": "4072C00000000000",
+       "y": "4070000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "300.0",
+       "y_f64": "256.0"
+      },
+      {
+       "i": 5,
+       "type": 6,
+       "x": "4074B80000000000",
+       "y": "406F000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "331.5",
+       "y_f64": "248.0"
+      },
+      {
+       "i": 6,
+       "type": 6,
+       "x": "4074B80000000000",
+       "y": "406F800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "331.5",
+       "y_f64": "252.0"
+      },
+      {
+       "i": 7,
+       "type": 6,
+       "x": "4073480000000000",
+       "y": "406F000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "308.5",
+       "y_f64": "248.0"
+      },
+      {
+       "i": 8,
+       "type": 6,
+       "x": "4073480000000000",
+       "y": "406F800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "308.5",
+       "y_f64": "252.0"
+      },
+      {
+       "i": 9,
+       "type": 1,
+       "x": "4076600000000000",
+       "y": "407C500000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "358.0",
+       "y_f64": "453.0"
+      },
+      {
+       "i": 10,
+       "type": 1,
+       "x": "4077500000000000",
+       "y": "407C500000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "373.0",
+       "y_f64": "453.0"
+      },
+      {
+       "i": 11,
+       "type": 1,
+       "x": "4076600000000000",
+       "y": "407D400000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "358.0",
+       "y_f64": "468.0"
+      },
+      {
+       "i": 12,
+       "type": 1,
+       "x": "407B700000000000",
+       "y": "403E000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "439.0",
+       "y_f64": "30.0"
+      },
+      {
+       "i": 13,
+       "type": 1,
+       "x": "407C600000000000",
+       "y": "403E000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "454.0",
+       "y_f64": "30.0"
+      },
+      {
+       "i": 14,
+       "type": 1,
+       "x": "407B700000000000",
+       "y": "4046800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "439.0",
+       "y_f64": "45.0"
+      },
+      {
+       "i": 15,
+       "type": 1,
+       "x": "405BC00000000000",
+       "y": "406F200000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "111.0",
+       "y_f64": "249.0"
+      },
+      {
+       "i": 16,
+       "type": 1,
+       "x": "405F800000000000",
+       "y": "406F200000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "126.0",
+       "y_f64": "249.0"
+      },
+      {
+       "i": 17,
+       "type": 1,
+       "x": "405BC00000000000",
+       "y": "4070800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "111.0",
+       "y_f64": "264.0"
+      },
+      {
+       "i": 18,
+       "type": 1,
+       "x": "4063000000000000",
+       "y": "4050000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "152.0",
+       "y_f64": "64.0"
+      },
+      {
+       "i": 19,
+       "type": 1,
+       "x": "4062200000000000",
+       "y": "4052800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "145.0",
+       "y_f64": "74.0"
+      },
+      {
+       "i": 20,
+       "type": 1,
+       "x": "4063E00000000000",
+       "y": "4052800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "159.0",
+       "y_f64": "74.0"
+      },
+      {
+       "i": 21,
+       "type": 1,
+       "x": "4061400000000000",
+       "y": "4055000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "138.0",
+       "y_f64": "84.0"
+      },
+      {
+       "i": 22,
+       "type": 1,
+       "x": "4064C00000000000",
+       "y": "4055000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "166.0",
+       "y_f64": "84.0"
+      }
+     ],
+     "ships": [
+      {
+       "i": 0,
+       "type": 0,
+       "masses": 5,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 1,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 2,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 3,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 4,
+       "type": 2,
+       "masses": 5,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      }
+     ],
+     "missiles": [
+      {
+       "i": 0,
+       "label": "R",
+       "active": 1,
+       "launched": 0,
+       "exploding": 0,
+       "target": 0
+      },
+      {
+       "i": 1,
+       "label": "L",
+       "active": 1,
+       "launched": 0,
+       "exploding": 0,
+       "target": 0
+      }
+     ],
+     "hash": {
+      "masses": 23,
+      "ships": 5,
+      "shots": 0,
+      "mass_hash": "6031638FDB852AEC",
+      "state_hash": "73BE377C21642789"
+     }
+    },
+    "30": {
+     "state": {
+      "t": "408F480000000000",
+      "ode_t": "3FF0000000000000",
+      "ode_h": "3EE6991AC7100000",
+      "n_internal": 378,
+      "steps": 1397,
+      "score": 0,
+      "level": 1,
+      "remaining": 4,
+      "game_over": 0,
+      "human": 1
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 0,
+       "x": "4074000000000000",
+       "y": "406A764AE8572FE8",
+       "DxDt": "0000000000000000",
+       "DyDt": "C051B0BD3FC73BBE",
+       "temperature": "3FEBFE5C91D14E3E",
+       "x_f64": "320.0",
+       "y_f64": "211.6966439917444"
+      },
+      {
+       "i": 1,
+       "type": 0,
+       "x": "40742FFDB335CDB8",
+       "y": "406BB6A5853C1971",
+       "DxDt": "3FE7052DDEF40104",
+       "DyDt": "C051BC0A7240030D",
+       "temperature": "0000000000000000",
+       "x_f64": "322.9994384862616",
+       "y_f64": "221.70770513284836"
+      },
+      {
+       "i": 2,
+       "type": 0,
+       "x": "4073D0024CCA3248",
+       "y": "406BB6A5853C1971",
+       "DxDt": "BFE7052DDEF40104",
+       "DyDt": "C051BC0A7240030D",
+       "temperature": "3FE2A9930BE0DED4",
+       "x_f64": "317.0005615137384",
+       "y_f64": "221.70770513284836"
+      },
+      {
+       "i": 3,
+       "type": 0,
+       "x": "4075417CA6F0128E",
+       "y": "406CF2508BB43B8A",
+       "DxDt": "BFDF6A48269777FD",
+       "DyDt": "C052094AA972061A",
+       "temperature": "0000000000000000",
+       "x_f64": "340.0929326417762",
+       "y_f64": "231.57233224107432"
+      },
+      {
+       "i": 4,
+       "type": 0,
+       "x": "4072BE83590FED72",
+       "y": "406CF2508BB43B8A",
+       "DxDt": "3FDF6A48269777FD",
+       "DyDt": "C052094AA972061A",
+       "temperature": "0000000000000000",
+       "x_f64": "299.9070673582238",
+       "y_f64": "231.57233224107432"
+      },
+      {
+       "i": 5,
+       "type": 6,
+       "x": "4074B768874B6A05",
+       "y": "406BF815EA695548",
+       "DxDt": "4003CA6FC4C2FA70",
+       "DyDt": "C052AC8CE2CEE217",
+       "temperature": "0000000000000000",
+       "x_f64": "331.4630196519723",
+       "y_f64": "223.75267525265576"
+      },
+      {
+       "i": 6,
+       "type": 6,
+       "x": "4074B7C38D878B5B",
+       "y": "406C78419B7854C4",
+       "DxDt": "3FFF83B0A36A47EC",
+       "DyDt": "C052821D5A018EBE",
+       "temperature": "0000000000000000",
+       "x_f64": "331.4852423948957",
+       "y_f64": "227.7580087042062"
+      },
+      {
+       "i": 7,
+       "type": 6,
+       "x": "4073489778B495FB",
+       "y": "406BF815EA695548",
+       "DxDt": "C003CA6FC4C2FA70",
+       "DyDt": "C052AC8CE2CEE217",
+       "temperature": "3FD2A9930BE0DED4",
+       "x_f64": "308.5369803480277",
+       "y_f64": "223.75267525265576"
+      },
+      {
+       "i": 8,
+       "type": 6,
+       "x": "4073483C727874A5",
+       "y": "406C78419B7854C4",
+       "DxDt": "BFFF83B0A36A47EC",
+       "DyDt": "C052821D5A018EBE",
+       "temperature": "0000000000000000",
+       "x_f64": "308.5147576051043",
+       "y_f64": "227.7580087042062"
+      },
+      {
+       "i": 9,
+       "type": 1,
+       "x": "4076F40092F9299E",
+       "y": "407A73D357CA186F",
+       "DxDt": "40333BEA92D46816",
+       "DyDt": "C0369CF84003A588",
+       "temperature": "0000000000000000",
+       "x_f64": "367.2501401646531",
+       "y_f64": "423.2390973944047"
+      },
+      {
+       "i": 10,
+       "type": 1,
+       "x": "4077112B2646E044",
+       "y": "407B62EC2C6C5D19",
+       "DxDt": "C01DEA4DF501D95B",
+       "DyDt": "C030D13E32D99983",
+       "temperature": "0000000000000000",
+       "x_f64": "369.07303455053284",
+       "y_f64": "438.182659552856"
+      },
+      {
+       "i": 11,
+       "type": 1,
+       "x": "4076088A4D3F1FAB",
+       "y": "407A906FACDA95EF",
+       "DxDt": "C02806C5FCF3175C",
+       "DyDt": "C047AC5CBB231CD6",
+       "temperature": "0000000000000000",
+       "x_f64": "352.5337650743265",
+       "y_f64": "425.0272644556525"
+      },
+      {
+       "i": 12,
+       "type": 1,
+       "x": "407B700000000000",
+       "y": "403E000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "439.0",
+       "y_f64": "30.0"
+      },
+      {
+       "i": 13,
+       "type": 1,
+       "x": "407C600000000000",
+       "y": "403E000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "454.0",
+       "y_f64": "30.0"
+      },
+      {
+       "i": 14,
+       "type": 1,
+       "x": "407B700000000000",
+       "y": "4046800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "439.0",
+       "y_f64": "45.0"
+      },
+      {
+       "i": 15,
+       "type": 1,
+       "x": "405BC00000000000",
+       "y": "406F200000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "111.0",
+       "y_f64": "249.0"
+      },
+      {
+       "i": 16,
+       "type": 1,
+       "x": "405F800000000000",
+       "y": "406F200000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "126.0",
+       "y_f64": "249.0"
+      },
+      {
+       "i": 17,
+       "type": 1,
+       "x": "405BC00000000000",
+       "y": "4070800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "111.0",
+       "y_f64": "264.0"
+      },
+      {
+       "i": 18,
+       "type": 1,
+       "x": "4063000000000000",
+       "y": "4050000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "152.0",
+       "y_f64": "64.0"
+      },
+      {
+       "i": 19,
+       "type": 1,
+       "x": "4062200000000000",
+       "y": "4052800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "145.0",
+       "y_f64": "74.0"
+      },
+      {
+       "i": 20,
+       "type": 1,
+       "x": "4063E00000000000",
+       "y": "4052800000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "159.0",
+       "y_f64": "74.0"
+      },
+      {
+       "i": 21,
+       "type": 1,
+       "x": "4061400000000000",
+       "y": "4055000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "138.0",
+       "y_f64": "84.0"
+      },
+      {
+       "i": 22,
+       "type": 1,
+       "x": "4064C00000000000",
+       "y": "4055000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "0000000000000000",
+       "temperature": "0000000000000000",
+       "x_f64": "166.0",
+       "y_f64": "84.0"
+      },
+      {
+       "i": 23,
+       "type": 5,
+       "x": "407497BEB2C397E9",
+       "y": "406572AC642ABBBA",
+       "DxDt": "C04F32ECA1179152",
+       "DyDt": "4068163E97A57D00",
+       "temperature": "0000000000000000",
+       "x_f64": "329.4840572014205",
+       "y_f64": "171.5835438570628"
+      },
+      {
+       "i": 24,
+       "type": 5,
+       "x": "40744FE159CAE86D",
+       "y": "40650EB78582FDF4",
+       "DxDt": "402E0F9642AF0532",
+       "DyDt": "40617D67C7BFB5BC",
+       "temperature": "0000000000000000",
+       "x_f64": "324.99251727353004",
+       "y_f64": "168.45990253052116"
+      },
+      {
+       "i": 25,
+       "type": 5,
+       "x": "40745684293DEB84",
+       "y": "40652505E306E92B",
+       "DxDt": "402A94F07812300F",
+       "DyDt": "40625F35CBA7B99E",
+       "temperature": "0000000000000000",
+       "x_f64": "325.4072658938169",
+       "y_f64": "169.1569686064698"
+      },
+      {
+       "i": 26,
+       "type": 5,
+       "x": "4074906E9FE94B44",
+       "y": "4065AC3A4FACD4CC",
+       "DxDt": "C04110C70E108115",
+       "DyDt": "406909906DC456EB",
+       "temperature": "0000000000000000",
+       "x_f64": "329.0270079720542",
+       "y_f64": "173.38211807018376"
+      },
+      {
+       "i": 27,
+       "type": 5,
+       "x": "40748C8E34C03F61",
+       "y": "4065CB304A742374",
+       "DxDt": "C02F3CC3E1859FEE",
+       "DyDt": "40691DA9410D9000",
+       "temperature": "0000000000000000",
+       "x_f64": "328.7847182759925",
+       "y_f64": "174.3496448772745"
+      },
+      {
+       "i": 28,
+       "type": 5,
+       "x": "407454CFC3CBECE1",
+       "y": "40657B057AEB0015",
+       "DxDt": "4045794C0D122D91",
+       "DyDt": "40633C057E98CC25",
+       "temperature": "0000000000000000",
+       "x_f64": "325.30072383554767",
+       "y_f64": "171.844418963418"
+      },
+      {
+       "i": 29,
+       "type": 5,
+       "x": "40745F8F3D8C9E1B",
+       "y": "406559F7C50B0DA0",
+       "DxDt": "403122C446B58C8E",
+       "DyDt": "4063F098DE5204F1",
+       "temperature": "0000000000000000",
+       "x_f64": "325.9724708073497",
+       "y_f64": "170.8114953246959"
+      },
+      {
+       "i": 30,
+       "type": 5,
+       "x": "407458C7262D7013",
+       "y": "40659E9C09E7915A",
+       "DxDt": "404B0DB78E427ECC",
+       "DyDt": "40633FB94751BA58",
+       "temperature": "0000000000000000",
+       "x_f64": "325.548620393268",
+       "y_f64": "172.95654769161303"
+      },
+      {
+       "i": 31,
+       "type": 5,
+       "x": "40749FCBF68E094D",
+       "y": "4065ECB5A8DC7C90",
+       "DxDt": "C046A949C03F6322",
+       "DyDt": "406B5FC76C16A6CA",
+       "temperature": "0000000000000000",
+       "x_f64": "329.9872956798834",
+       "y_f64": "175.39717524589332"
+      },
+      {
+       "i": 32,
+       "type": 5,
+       "x": "4074C0B5ECFA9D18",
+       "y": "4066771CC899FD57",
+       "DxDt": "C054091A6F2B89FC",
+       "DyDt": "406FC12E33F4E3A9",
+       "temperature": "0000000000000000",
+       "x_f64": "332.04441545387226",
+       "y_f64": "179.72226362300964"
+      },
+      {
+       "i": 33,
+       "type": 5,
+       "x": "4074BCC875124F60",
+       "y": "40665B300C76DC4D",
+       "DxDt": "C05673D5086C5804",
+       "DyDt": "406FC4D64C8FFB30",
+       "temperature": "0000000000000000",
+       "x_f64": "331.7989397731053",
+       "y_f64": "178.84961531844093"
+      },
+      {
+       "i": 34,
+       "type": 5,
+       "x": "4074C7A94FF006FA",
+       "y": "4066943C9BE3A77D",
+       "DxDt": "C0564675C04355A8",
+       "DyDt": "4070313BA48DCC0F",
+       "temperature": "0000000000000000",
+       "x_f64": "332.4788360000672",
+       "y_f64": "180.6323985525486"
+      },
+      {
+       "i": 35,
+       "type": 5,
+       "x": "4074BF2F346D6ADA",
+       "y": "40667089478A53BF",
+       "DxDt": "C06491BD1BEE7655",
+       "DyDt": "4071280480A4FECA",
+       "temperature": "0000000000000000",
+       "x_f64": "331.949024608051",
+       "y_f64": "179.5167577459051"
+      },
+      {
+       "i": 36,
+       "type": 5,
+       "x": "4074C4F193FF9D9C",
+       "y": "40668A3E9B6A1A0C",
+       "DxDt": "C061F37725A1E08D",
+       "DyDt": "40713E241F91DBE2",
+       "temperature": "0000000000000000",
+       "x_f64": "332.30897903299206",
+       "y_f64": "180.32014246676442"
+      },
+      {
+       "i": 37,
+       "type": 5,
+       "x": "4074D2C1AE53040F",
+       "y": "4066BC90532380E0",
+       "DxDt": "C059006F455CF894",
+       "DyDt": "40703E72810B75F5",
+       "temperature": "0000000000000000",
+       "x_f64": "333.1722853892142",
+       "y_f64": "181.8926177686144"
+      },
+      {
+       "i": 38,
+       "type": 5,
+       "x": "4074908F1A293D51",
+       "y": "4066ABEA3D7CC11B",
+       "DxDt": "C066A3F70D6A821F",
+       "DyDt": "40712E775A1A959B",
+       "temperature": "0000000000000000",
+       "x_f64": "329.0349370585364",
+       "y_f64": "181.37234377256468"
+      },
+      {
+       "i": 39,
+       "type": 5,
+       "x": "4074C11844C19AC4",
+       "y": "4066C1415160A7C3",
+       "DxDt": "C06638DBFD2E92C2",
+       "DyDt": "407230C119C8B93B",
+       "temperature": "0000000000000000",
+       "x_f64": "332.0684249460867",
+       "y_f64": "182.03922337415688"
+      },
+      {
+       "i": 40,
+       "type": 5,
+       "x": "40738B3E86909EDF",
+       "y": "406586A2C47F4356",
+       "DxDt": "C06351D4E91B787D",
+       "DyDt": "40685568589C20A0",
+       "temperature": "0000000000000000",
+       "x_f64": "312.7027650498621",
+       "y_f64": "172.20736908775388"
+      },
+      {
+       "i": 41,
+       "type": 5,
+       "x": "4074A94C0C22CE3F",
+       "y": "4066AF70BAFD4D70",
+       "DxDt": "C06840C2B9468AE2",
+       "DyDt": "40722E58CB626EF4",
+       "temperature": "0000000000000000",
+       "x_f64": "330.58106626125294",
+       "y_f64": "181.48251103852408"
+      },
+      {
+       "i": 42,
+       "type": 5,
+       "x": "4074A9C90C68C2BD",
+       "y": "4066AB5F89B543C5",
+       "DxDt": "C068432D30111F78",
+       "DyDt": "4072289696D8C569",
+       "temperature": "0000000000000000",
+       "x_f64": "330.6115840999808",
+       "y_f64": "181.35541234401003"
+      },
+      {
+       "i": 43,
+       "type": 5,
+       "x": "4073985BF79B48BD",
+       "y": "4065853B6A1C94E0",
+       "DxDt": "C062B32823A1664A",
+       "DyDt": "40687DDACBE77394",
+       "temperature": "0000000000000000",
+       "x_f64": "313.52245293290963",
+       "y_f64": "172.16350274641354"
+      },
+      {
+       "i": 44,
+       "type": 5,
+       "x": "4071B79AA5C50B0A",
+       "y": "40657BDB7F6E5D41",
+       "DxDt": "C06AA7B8277A20A4",
+       "DyDt": "40594BE7098D4AD0",
+       "temperature": "0000000000000000",
+       "x_f64": "283.47525574655504",
+       "y_f64": "171.87054416232607"
+      },
+      {
+       "i": 45,
+       "type": 5,
+       "x": "4071D0F74CE542BE",
+       "y": "40656188B042CAE1",
+       "DxDt": "C06AABBB36ADCC17",
+       "DyDt": "405A2C378CFD8D50",
+       "temperature": "0000000000000000",
+       "x_f64": "285.06037606768575",
+       "y_f64": "171.04793561025056"
+      },
+      {
+       "i": 46,
+       "type": 5,
+       "x": "4071DAB94AEAC1E1",
+       "y": "40653444A5374E42",
+       "DxDt": "C06B27C1E902EFD3",
+       "DyDt": "405933391E117CC2",
+       "temperature": "0000000000000000",
+       "x_f64": "285.67023746206365",
+       "y_f64": "169.633379562396"
+      },
+      {
+       "i": 47,
+       "type": 5,
+       "x": "4074AEF86148874A",
+       "y": "4065FDED9636F44A",
+       "DxDt": "C0669A69BA82FE00",
+       "DyDt": "406EEC61EFF890F6",
+       "temperature": "0000000000000000",
+       "x_f64": "330.9356396515983",
+       "y_f64": "175.9352522919965"
+      },
+      {
+       "i": 48,
+       "type": 5,
+       "x": "40732EE06A740EFA",
+       "y": "4064D42C2514A6FB",
+       "DxDt": "C066B939AAA35036",
+       "DyDt": "40627FB9BAF6F254",
+       "temperature": "0000000000000000",
+       "x_f64": "306.92978902182915",
+       "y_f64": "166.6303887751927"
+      },
+      {
+       "i": 49,
+       "type": 5,
+       "x": "40737A9EC7BBE753",
+       "y": "4064F9713B841160",
+       "DxDt": "C064CBDE17B5E07B",
+       "DyDt": "4064B2DE4F48AE57",
+       "temperature": "0000000000000000",
+       "x_f64": "311.66376469993446",
+       "y_f64": "167.7950723247004"
+      },
+      {
+       "i": 50,
+       "type": 5,
+       "x": "4074ABB6C9D8A502",
+       "y": "4065DBADF9F50E45",
+       "DxDt": "C066A2B9DBEA0B20",
+       "DyDt": "406DBCAA48585F36",
+       "temperature": "0000000000000000",
+       "x_f64": "330.7321260893515",
+       "y_f64": "174.86498735296678"
+      },
+      {
+       "i": 51,
+       "type": 5,
+       "x": "4073F5BF220BA4BE",
+       "y": "406576985F570DB0",
+       "DxDt": "C0633D08C3E97FC5",
+       "DyDt": "406A2A2374C4AEA6",
+       "temperature": "0000000000000000",
+       "x_f64": "319.35916332767727",
+       "y_f64": "171.70610014917975"
+      },
+      {
+       "i": 52,
+       "type": 5,
+       "x": "4074AF7E5A1EBE5E",
+       "y": "406563857F3E5F68",
+       "DxDt": "C0649F9A900AA147",
+       "DyDt": "4069241AD0FCDA19",
+       "temperature": "0000000000000000",
+       "x_f64": "330.9683476639674",
+       "y_f64": "171.11004602605976"
+      },
+      {
+       "i": 53,
+       "type": 5,
+       "x": "4074ADB912536BFF",
+       "y": "40664907F61C227B",
+       "DxDt": "C06781C384554C2A",
+       "DyDt": "4070CB36B9EFACBC",
+       "temperature": "0000000000000000",
+       "x_f64": "330.85768349253334",
+       "y_f64": "178.28222184653336"
+      },
+      {
+       "i": 54,
+       "type": 5,
+       "x": "4074B98156A62FF5",
+       "y": "40660B822D0B2FE1",
+       "DxDt": "C064064C074C2FE9",
+       "DyDt": "406F0F71CC493A14",
+       "temperature": "0000000000000000",
+       "x_f64": "331.59407677571227",
+       "y_f64": "176.35964061913458"
+      },
+      {
+       "i": 55,
+       "type": 5,
+       "x": "4074BE631FB61A59",
+       "y": "40664010380160EF",
+       "DxDt": "C0620DEBB4F6F5CB",
+       "DyDt": "407041C59934C4AD",
+       "temperature": "0000000000000000",
+       "x_f64": "331.89920016416505",
+       "y_f64": "178.0019798304488"
+      },
+      {
+       "i": 56,
+       "type": 5,
+       "x": "4074AA4714421750",
+       "y": "4064D1733B86BD9C",
+       "DxDt": "C05F6FDE41813C22",
+       "DyDt": "40636B0892FBB158",
+       "temperature": "0000000000000000",
+       "x_f64": "330.64235330406973",
+       "y_f64": "166.54531647030387"
+      },
+      {
+       "i": 57,
+       "type": 5,
+       "x": "4074B1C85E60ACCC",
+       "y": "4065850865CE5A83",
+       "DxDt": "C05F5B14AFB4B733",
+       "DyDt": "4069EB9AD4F70588",
+       "temperature": "0000000000000000",
+       "x_f64": "331.11141813052814",
+       "y_f64": "172.15727510741644"
+      },
+      {
+       "i": 58,
+       "type": 5,
+       "x": "40747F924A497A64",
+       "y": "406561F76FAA3EEF",
+       "DxDt": "C03969F45312E5C5",
+       "DyDt": "40664ABFCEE5BAA2",
+       "temperature": "0000000000000000",
+       "x_f64": "327.9732153768766",
+       "y_f64": "171.06145461321964"
+      },
+      {
+       "i": 59,
+       "type": 5,
+       "x": "4074B3BCE290AE7C",
+       "y": "4065CC2C6C008245",
+       "DxDt": "C05CFB0AF910DCF9",
+       "DyDt": "406C43F6FB624F51",
+       "temperature": "0000000000000000",
+       "x_f64": "331.2336145068764",
+       "y_f64": "174.38042259311092"
+      },
+      {
+       "i": 60,
+       "type": 5,
+       "x": "4074A34ADF5FDAD6",
+       "y": "40654CBBCE0ECD33",
+       "DxDt": "C05721AA42A674CC",
+       "DyDt": "40676F68AE187BB5",
+       "temperature": "0000000000000000",
+       "x_f64": "330.2057794327096",
+       "y_f64": "170.39792540446214"
+      },
+      {
+       "i": 61,
+       "type": 5,
+       "x": "407484DA8123914F",
+       "y": "40650EEADE0B3099",
+       "DxDt": "C048F361FCFC0BC5",
+       "DyDt": "4064429338ED9553",
+       "temperature": "0000000000000000",
+       "x_f64": "328.3033458127365",
+       "y_f64": "168.4661703318168"
+      },
+      {
+       "i": 62,
+       "type": 5,
+       "x": "4074229CDF9D3C0D",
+       "y": "4064621982D1315B",
+       "DxDt": "4031F77A28384779",
+       "DyDt": "4055C4FF261C4F8C",
+       "temperature": "0000000000000000",
+       "x_f64": "322.163299192617",
+       "y_f64": "163.065614136295"
+      }
+     ],
+     "ships": [
+      {
+       "i": 0,
+       "type": 0,
+       "masses": 5,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 1,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "408F495555555555"
+      },
+      {
+       "i": 2,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 3,
+       "type": 1,
+       "masses": 3,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      },
+      {
+       "i": 4,
+       "type": 2,
+       "masses": 5,
+       "exploding": 0,
+       "inactive_springs": 0,
+       "reload": "0000000000000000"
+      }
+     ],
+     "missiles": [
+      {
+       "i": 0,
+       "label": "R",
+       "active": 1,
+       "launched": 0,
+       "exploding": 0,
+       "target": 0
+      },
+      {
+       "i": 1,
+       "label": "L",
+       "active": 1,
+       "launched": 0,
+       "exploding": 0,
+       "target": 0
+      }
+     ],
+     "hash": {
+      "masses": 63,
+      "ships": 5,
+      "shots": 0,
+      "mass_hash": "0804C72693ED5C97",
+      "state_hash": "FDFBC4CC66A937B2"
+     }
+    },
+    "60": {
+     "state": {
+      "t": "408F500000000000",
+      "ode_t": "4000000000000000",
+      "ode_h": "3F95EE54E5DF1F80",
+      "n_internal": 72,
+      "steps": 1610,
+      "score": 1,
+      "level": 1,
+      "remaining": 2,
+      "game_over": 1,
+      "human": 0
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 1,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 2,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 3,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 4,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 5,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 6,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 7,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 8,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 9,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 10,
+       "type": 1,
+       "x": "FFF8000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "FFF8000000000000",
+       "DyDt": "FFF8000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "nan",
+       "y_f64": "nan"
+      },
+      {
+       "i": 11,
+       "type": 4,
+       "x": "4074000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "FFF0000000000000",
+       "temperature": "405AF2FA241817D3",
+       "x_f64": "320.0",
+       "y_f64": "nan"
+      }
+     ],
+     "ships": [
+      {
+       "i": 0,
+       "type": 1,
+       "masses": 3,
+       "exploding": 1,
+       "inactive_springs": 7,
+       "reload": "408F4EEEEEEEEEEF"
+      },
+      {
+       "i": 1,
+       "type": 1,
+       "masses": 3,
+       "exploding": 1,
+       "inactive_springs": 7,
+       "reload": "408F4EEEEEEEEEEF"
+      },
+      {
+       "i": 2,
+       "type": 2,
+       "masses": 5,
+       "exploding": 1,
+       "inactive_springs": "7F",
+       "reload": "408F4BBBBBBBBBBC"
+      }
+     ],
+     "hash": {
+      "masses": 12,
+      "ships": 3,
+      "shots": 1,
+      "mass_hash": "B25C988066DD5649",
+      "state_hash": "6F5945296AFF86AB"
+     }
+    },
+    "90": {
+     "state": {
+      "t": "408F580000000000",
+      "ode_t": "4008000000000000",
+      "ode_h": "3F95EE54E5DF1F80",
+      "n_internal": 6,
+      "steps": 1670,
+      "score": 4,
+      "level": 1,
+      "remaining": -1,
+      "game_over": 1,
+      "human": 0
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 4,
+       "x": "4074000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "FFF0000000000000",
+       "temperature": "4012474A4376CBD4",
+       "x_f64": "320.0",
+       "y_f64": "nan"
+      }
+     ],
+     "hash": {
+      "masses": 1,
+      "ships": 0,
+      "shots": 1,
+      "mass_hash": "4277308E6F659A69",
+      "state_hash": "65F5F28F91376DAD"
+     }
+    },
+    "120": {
+     "state": {
+      "t": "408F600000000000",
+      "ode_t": "4010000000000000",
+      "ode_h": "3F95EE54E5DF1F80",
+      "n_internal": 6,
+      "steps": 1730,
+      "score": 4,
+      "level": 1,
+      "remaining": -1,
+      "game_over": 1,
+      "human": 0
+     },
+     "masses": [
+      {
+       "i": 0,
+       "type": 4,
+       "x": "4074000000000000",
+       "y": "FFF8000000000000",
+       "DxDt": "0000000000000000",
+       "DyDt": "FFF0000000000000",
+       "temperature": "3FC8CB896FB6CB5B",
+       "x_f64": "320.0",
+       "y_f64": "nan"
+      }
+     ],
+     "hash": {
+      "masses": 1,
+      "ships": 0,
+      "shots": 1,
+      "mass_hash": "4277308E6F659A69",
+      "state_hash": "65F5F28F91376DAD"
+     }
+    }
+   },
+   "vm_run": {
+    "date_utc": "2026-10-20T12:24:11+00:00",
+    "iso": {
+     "path": "reference/iso/TempleOS.ISO",
+     "sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26",
+     "expected_sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26"
+    },
+    "qemu_version": "QEMU emulator version 11.1.2\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+    "qemu_args": [
+     "qemu-system-x86_64",
+     "-m",
+     "1024",
+     "-smp",
+     "2",
+     "-cdrom",
+     "reference/iso/TempleOS.ISO",
+     "-boot",
+     "d",
+     "-nic",
+     "none",
+     "-display",
+     "none",
+     "-vga",
+     "std",
+     "-audiodev",
+     "none,id=snd0",
+     "-machine",
+     "pc,pcspk-audiodev=snd0",
+     "-qmp",
+     "tcp:127.0.0.1:57932,server,nowait",
+     "-rtc",
+     "base=localtime,clock=vm",
+     "-accel",
+     "tcg",
+     "-cpu",
+     "qemu64",
+     "-chardev",
+     "file,id=dbg0,path=build/reference-vm/xcaliber/harness_lcg/harness.log",
+     "-device",
+     "isa-debugcon,iobase=0xe9,chardev=dbg0",
+     "-chardev",
+     "file,id=dbg1,path=build/reference-vm/xcaliber/harness_lcg/console.log",
+     "-device",
+     "isa-debugcon,iobase=0xea,chardev=dbg1",
+     "-fw_cfg",
+     "name=opt/templeos/boot,file=tools/reference-vm/harness/VmIO.HC",
+     "-fw_cfg",
+     "name=opt/templeos/h0,file=tools/reference-vm/harness/XCaliberLcg.HC",
+     "-fw_cfg",
+     "name=opt/templeos/h1,file=tools/reference-vm/harness/XCaliberPhysics.HC",
+     "-icount",
+     "shift=auto"
+    ],
+    "guest": {
+     "machine": "pc",
+     "cpu": "qemu64",
+     "smp": 2,
+     "mem_mib": 1024,
+     "accelerator": "tcg (software emulation of x86-64; no hardware virtualization on this host)",
+     "icount": "shift=auto",
+     "rtc": "base=localtime,clock=vm",
+     "network": "none",
+     "disk": "none (live CD only)"
+    },
+    "host": {
+     "os": "macOS-27.0.1-arm64-arm-64bit",
+     "machine": "arm64",
+     "uname": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030 arm64",
+     "python": "3.10.6"
+    },
+    "files": {
+     "boot (VmIO.HC)": {
+      "path": "tools/reference-vm/harness/VmIO.HC",
+      "sha256": "3d837449e6a4c976f609086f887b7485c11237dceb9f9f615700ac666765259f"
+     },
+     "h0": {
+      "path": "tools/reference-vm/harness/XCaliberLcg.HC",
+      "sha256": "bcaa8e76d1649c0f592d3871dfca9596130bc896da5f65bd0a17f49e678dcda6",
+      "fnv1a64": "56448CC81B5B790D"
+     },
+     "h1": {
+      "path": "tools/reference-vm/harness/XCaliberPhysics.HC",
+      "sha256": "f35d8a3412f4562217c6517b8036fcc6a6bf83a3b920b176a9f9ceada54db4f7",
+      "fnv1a64": "DA153C6E5308578C"
+     }
+    },
+    "result": {
+     "status": "done",
+     "seconds_after_boot": 10.1,
+     "seconds_total": 81.6,
+     "events": [
+      {
+       "t": 37.5,
+       "event": "shell ready (probe 1)"
+      },
+      {
+       "t": 71.5,
+       "event": "boot-ok (typing attempt 1, hold 25 ms)"
+      }
+     ],
+     "loader": [
+      "BOOT-OK mp_cnt=2 sys_code_bp.alloced=1068326912",
+      "LOADER begin opt/templeos/h0 size=209 fnv=56448CC81B5B790D",
+      "LOADER end opt/templeos/h0 res=0000000000000000",
+      "LOADER begin opt/templeos/h1 size=7749 fnv=DA153C6E5308578C",
+      "LOADER end opt/templeos/h1 res=00000000000000A0",
+      "HARNESS-DONE"
+     ],
+     "harness_bytes_exact": {
+      "h0": true,
+      "h1": true
+     }
+    }
+   },
+   "raw_logs": "shared/test-vectors/reference-vm/logs/xcaliber-harness_lcg"
+  }
+ }
+}

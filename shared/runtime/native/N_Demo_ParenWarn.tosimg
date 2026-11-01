@@ -1,0 +1,34 @@
+TOSIMG 1
+unit C:/Demo/ParenWarn.HC#0
+fn 703 $init:C:/Demo/ParenWarn.HC#0 (I64;;-)
+init 703
+unit C:/Demo/ParenWarn.HC#1
+g 17fd38 8
+g 17fd50 8
+g 17fd68 8
+c 17fd50 8 3ff0000000000000
+c 17fd68 8 3ff0000000000000
+fn 704 $init:C:/Demo/ParenWarn.HC#1 (I64;;-)
+sym g d 17fd38 F64
+sym g d1 17fd50 F64
+sym g d2 17fd68 F64
+init 704
+unit C:/Demo/ParenWarn.HC#2
+fn 705 $init:C:/Demo/ParenWarn.HC#2 (I64;;-)
+init 705
+unit C:/Demo/ParenWarn.HC#3
+fn 706 $init:C:/Demo/ParenWarn.HC#3 (I64;;-)
+init 706
+unit C:/Demo/ParenWarn.HC#4
+fn 707 $init:C:/Demo/ParenWarn.HC#4 (I64;;-)
+init 707
+unit C:/Demo/ParenWarn.HC#5
+fn 708 $init:C:/Demo/ParenWarn.HC#5 (I64;;-)
+init 708
+unit C:/Demo/ParenWarn.HC#6
+fn 709 $init:C:/Demo/ParenWarn.HC#6 (I64;;-)
+init 709
+unit C:/Demo/ParenWarn.HC#7
+fn 710 $init:C:/Demo/ParenWarn.HC#7 (I64;;-)
+init 710
+unit C:/Demo/ParenWarn.HC#8

@@ -1,0 +1,17 @@
+TOSIMG 1
+unit C:/Home/Examples/Hello.HC#0
+s 17fd38 48656c6c6f20576f726c64210a
+fn 703 $init:C:/Home/Examples/Hello.HC#0 (I64;;-)
+init 703
+unit C:/Home/Examples/Hello.HC#1
+s 17fd58 496e20486f6c79432c2024475245454e24737472696e6773244647242063616e2075736520446f6c446f6320636f6c6f72732e0a
+fn 704 $init:C:/Home/Examples/Hello.HC#1 (I64;;-)
+init 704
+unit C:/Home/Examples/Hello.HC#2
+fn 705 $init:C:/Home/Examples/Hello.HC#2 (I64;;-)
+init 705
+unit C:/Home/Examples/Hello.HC#3
+s 13060 0a
+fn 706 $init:C:/Home/Examples/Hello.HC#3 (I64;;-)
+init 706
+unit C:/Home/Examples/Hello.HC#4

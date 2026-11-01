@@ -1,0 +1,8 @@
+runtime: kotlin
+target: fs
+seed: 2117809904361271
+signature: IOException@LayeredFs.kt:69
+minimized input (197 bytes): op=6 p1=~/Games/\ud800/\u007f\///Doc/\u2e24\u196b\u2d12\u20bd\u1d0b/ p2=~/\u1542\u0240\u07d3\u0987/\u2a55\u1f9d\\u1a52\u20a2\u0a7a\u16da\u1a3b/Demo/\ud83d\ude00//data/data/io.github.templeosmobile\
+
+op=6 p1=~/Games/\ud800/\u007f\///Doc/\u2e24\u196b\u2d12\u20bd\u1d0b/ p2=~/\u1542\u0240\u07d3\u0987/\u2a55\u1f9d\\u1a52\u20a2\u0a7a\u16da\u1a3b/Demo/\ud83d\ude00//data/data/io.github.templeosmobile\
+IOException@LayeredFs.kt:69:java.io.IOException: Invalid file path

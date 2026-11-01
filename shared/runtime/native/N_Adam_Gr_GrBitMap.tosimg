@@ -1,0 +1,45 @@
+TOSIMG 1
+unit C:/Adam/Gr/GrBitMap.HC#0
+fn 703 $init:C:/Adam/Gr/GrBitMap.HC#0 (I64;;-)
+init 703
+unit C:/Adam/Gr/GrBitMap.HC#1
+fn 704 GrPlot0 (Bool;*$CDC,I64,I64;-)
+fn 705 $init:C:/Adam/Gr/GrBitMap.HC#1 (I64;;-)
+sym f GrPlot0 704 (Bool;*$CDC,I64,I64;-)
+init 705
+unit C:/Adam/Gr/GrBitMap.HC#2
+fn 706 GrPeek0 (I64;*$CDC,I64,I64;-)
+fn 707 GrBlot (I64;*$CDC,I64,I64,*$CDC;-)
+fn 708 GrBitMap4ToBitMap8 (*U8;*U8,*U8,I64,I64;-)
+fn 709 GrBitMap1ToBitMap8 (*U8;*U8,*U8,I64,I64;-)
+fn 710 DCExt (*$CDC;*$CDC,I64,I64,I64,I64,*$CTask;-)
+fn 711 DCDiff (*$CDC;*$CDC,*$CDC;-)
+fn 712 GrPutChar (I64;*$CDC,I64,I64,U8;-)
+fn 713 GrPutS (I64;*$CDC,I64,I64,*U8;-)
+fn 714 GrVPutS (I64;*$CDC,I64,I64,*U8;-)
+fn 715 GrPrint (I64;*$CDC,I64,I64,*U8;v)
+fn 716 GrVPrint (I64;*$CDC,I64,I64,*U8;v)
+fn 717 GrRect (I64;*$CDC,I64,I64,I64,I64;-)
+fn 718 GrRayLenMinus (I64;*$CDC,I64,I64;-)
+fn 719 GrRayLen (I64;*$CDC,*I64,I64,I64,*I32;-)
+fn 720 GrHLine (I64;*$CDC,I64,I64,I64,I64,I64;-)
+fn 721 GrVLine (I64;*$CDC,I64,I64,I64,I64,I64;-)
+fn 722 $init:C:/Adam/Gr/GrBitMap.HC#2 (I64;;-)
+sym f DCDiff 711 (*$CDC;*$CDC,*$CDC;-)
+sym f DCExt 710 (*$CDC;*$CDC,I64,I64,I64,I64,*$CTask;-)
+sym f GrBitMap1ToBitMap8 709 (*U8;*U8,*U8,I64,I64;-)
+sym f GrBitMap4ToBitMap8 708 (*U8;*U8,*U8,I64,I64;-)
+sym f GrBlot 707 (I64;*$CDC,I64,I64,*$CDC;-)
+sym f GrHLine 720 (I64;*$CDC,I64,I64,I64,I64,I64;-)
+sym f GrPeek0 706 (I64;*$CDC,I64,I64;-)
+sym f GrPrint 715 (I64;*$CDC,I64,I64,*U8;v)
+sym f GrPutChar 712 (I64;*$CDC,I64,I64,U8;-)
+sym f GrPutS 713 (I64;*$CDC,I64,I64,*U8;-)
+sym f GrRayLen 719 (I64;*$CDC,*I64,I64,I64,*I32;-)
+sym f GrRayLenMinus 718 (I64;*$CDC,I64,I64;-)
+sym f GrRect 717 (I64;*$CDC,I64,I64,I64,I64;-)
+sym f GrVLine 721 (I64;*$CDC,I64,I64,I64,I64,I64;-)
+sym f GrVPrint 716 (I64;*$CDC,I64,I64,*U8;v)
+sym f GrVPutS 714 (I64;*$CDC,I64,I64,*U8;-)
+init 722
+unit C:/Adam/Gr/GrBitMap.HC#3

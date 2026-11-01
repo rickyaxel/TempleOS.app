@@ -1,0 +1,40 @@
+TOSIMG 1
+unit C:/Demo/Graphics/PoleZeros.HC#0
+value ZEROS_NUM 2
+g 17fd38 32
+c 17fd38 8 4024000000000000
+c 17fd40 8 0
+c 17fd48 8 c03e000000000000
+c 17fd50 8 0
+fn 703 $init:C:/Demo/Graphics/PoleZeros.HC#0 (I64;;-)
+sym g zeros 17fd38 [2]$Complex
+init 703
+unit C:/Demo/Graphics/PoleZeros.HC#1
+value POLES_NUM 2
+g 17fd68 32
+c 17fd68 8 c034000000000000
+c 17fd70 8 c02e000000000000
+c 17fd78 8 c034000000000000
+c 17fd80 8 402e000000000000
+fn 704 $init:C:/Demo/Graphics/PoleZeros.HC#1 (I64;;-)
+sym g poles 17fd68 [2]$Complex
+init 704
+unit C:/Demo/Graphics/PoleZeros.HC#2
+g 17fd98 8
+s 17fdb0 6f
+s 17fdc8 78
+s 17fde0 447261672074686520706f6c657320616e64207a65726f732077697468206c656674206d6f7573652e0a486f6c64207269676874206d6f75736520666f7220706861736520706c6f742e0a
+fn 705 PoleZeroFind (*$Complex;I64,I64;-)
+fn 706 F (F64;*$Complex;-)
+fn 707 MPDraw (F64;*$CTask;-)
+fn 708 Draw (U0;;-)
+fn 709 PoleZeros (U0;;-)
+fn 710 $init:C:/Demo/Graphics/PoleZeros.HC#2 (I64;;-)
+sym f Draw 708 (U0;;-)
+sym f F 706 (F64;*$Complex;-)
+sym f MPDraw 707 (F64;*$CTask;-)
+sym f PoleZeroFind 705 (*$Complex;I64,I64;-)
+sym f PoleZeros 709 (U0;;-)
+sym g scale 17fd98 F64
+init 710
+unit C:/Demo/Graphics/PoleZeros.HC#3

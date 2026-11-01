@@ -1,0 +1,16 @@
+runtime: kotlin
+target: sprite
+seed: 2110716990050681
+signature: sprite3:HANG(unresponsive)@Vm.kt:exec
+minimized input (35 bytes): 
+\xfe\xff\xff\xff\xf6\xff\xff\xff\x00\x00\x00\x00\xf6\xff\xff\xff
+\x00\x00\x00\x00\xf4\xffp\xff\xff\xff\xff\xff\xf4\xff\xff\xff\x00
+
+template:
+U8 *p=BLOB,*q; I64 x0,x1,y0,y1; CDC *dc=DCAlias;
+try{SpriteExtents(p,&x0,&x1,&y0,&y1);}catch{Fs->catch_except=TRUE;}
+try{q=DC2Sprite(dc);}catch{Fs->catch_except=TRUE;}
+try{q=SpriteInterpolate(0.5,p,p);}catch{Fs->catch_except=TRUE;}
+try{Sprite3ZB(dc,31,415,0,p,0.5);}catch{Fs->catch_except=TRUE;}
+DCDel(dc);"FUZZDONE\n";
+

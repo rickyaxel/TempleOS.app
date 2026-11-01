@@ -1,0 +1,71 @@
+TOSIMG 1
+unit C:/Apps/Psalmody/Psalmody.HC#0
+value PSMF_SEL 1
+value PSMTT_BOX_TOOL 1
+value PSMTT_PTR_TOOL 0
+value PSMT_HEAD 0
+value PSMT_METER 2
+value PSMT_NOTE 1
+value PSMf_FLAT 2
+value PSMf_SEL 0
+value PSMf_SHARP 1
+value PSMf_TIE 3
+class PsmCtrl 305 0 - -
+m head 0 $PsmNote
+m clip 128 $PsmNote
+m incomplete_entry 256 *$CMenuEntry
+m record_entry 264 *$CMenuEntry
+m scrn_x 272 I64
+m tool 280 I64
+m cur_note 288 *$PsmNote
+m dc2 296 *$CDC
+m playing 304 Bool
+class PsmNote 128 0 - -
+m next 0 *$PsmNote
+m last 8 *$PsmNote
+m x 16 I64
+m y 24 I64
+m word 32 *U8
+m type 40 I64
+m flags 48 I64
+m ona 56 I64
+m meter_top 64 I64
+m meter_bottom 72 I64
+m duration 80 I64
+m width 88 I64
+m ascii 96 [32]U8
+g 17fd38 305
+g 17fe80 8
+g 17fe98 12
+s 17feb8 4100412300420043004323004400442300450046004623004700472300
+c 17fe80 8 17feb8 s
+c 17fe98 1 6
+c 17fe99 1 6
+c 17fe9a 1 5
+c 17fe9b 1 4
+c 17fe9c 1 4
+c 17fe9d 1 3
+c 17fe9e 1 3
+c 17fe9f 1 2
+c 17fea0 1 1
+c 17fea1 1 1
+c 17fea2 1 0
+c 17fea3 1 0
+fn 703 $init:C:/Apps/Psalmody/Psalmody.HC#0 (I64;;-)
+sym g psm 17fd38 $PsmCtrl
+sym g psm_note_lst 17fe80 *U8
+sym g psm_note_map 17fe98 [12]U8
+init 703
+unit C:/Apps/Psalmody/Psalmody.HC#1
+g 17fee8 8
+c 17fee8 1 a
+c 17fee9 1 8
+c 17feea 1 7
+c 17feeb 1 5
+c 17feec 1 3
+c 17feed 1 2
+c 17feee 1 0
+fn 704 $init:C:/Apps/Psalmody/Psalmody.HC#1 (I64;;-)
+sym g psm_note_inverse_map 17fee8 [7]U8
+init 704
+unit C:/Apps/Psalmody/Psalmody.HC#2

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--
+      Edge to edge from the first frame: the status bar sits over the black TempleOS top bar, and the
+      navigation bar is transparent without the contrast scrim, so the region under it shows what the
+      shell paints there (the surface that owns the bottom edge, SystemBarsAdapter / SystemChrome).
+      Before the first frame (system splash, window creation) the whole window is the black
+      windowBackground, the same black as the top bar.
+    -->
+    <style name="Theme.TempleOS" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+        <item name="android:navigationBarDividerColor" tools:targetApi="28">@android:color/transparent</item>
+        <item name="android:enforceNavigationBarContrast" tools:targetApi="29">false</item>
+    </style>
+</resources>

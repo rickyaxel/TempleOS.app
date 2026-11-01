@@ -1,0 +1,22 @@
+TOSIMG 1
+unit C:/Demo/WebLogDemo/WebLogScramble.HC#0
+g 17fd38 1024
+s 180148 536372616d626c696e673a1f25730a
+s 180168 20
+s 132f0 2e
+s 180180 25642e25642e25642e2564202573
+s 1801a0 433a2f44656d6f2f5765624c6f6744656d6f
+s 1801c8 24242420546869732077696c6c20736372616d626c6520616c6c202e6c6f672066696c657320696e20272573272e0a0a
+s 180210 2a2e6c6f672a
+fn 703 InitKey (U0;;-)
+fn 704 LogScrambleFile (U0;*U8;-)
+fn 705 WebLogScramble (U0;*U8;-)
+fn 706 LogScrambleDemo (U0;;-)
+fn 707 $init:C:/Demo/WebLogDemo/WebLogScramble.HC#0 (I64;;-)
+sym f InitKey 703 (U0;;-)
+sym f LogScrambleDemo 706 (U0;;-)
+sym f LogScrambleFile 704 (U0;*U8;-)
+sym f WebLogScramble 705 (U0;*U8;-)
+sym g key 17fd38 [4][256]U8
+init 707
+unit C:/Demo/WebLogDemo/WebLogScramble.HC#1

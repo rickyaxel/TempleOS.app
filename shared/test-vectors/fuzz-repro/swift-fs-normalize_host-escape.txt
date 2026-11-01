@@ -1,0 +1,7 @@
+runtime: swift
+target: fs
+seed: 13834620569894049732
+signature: normalize:host-escape
+op=12 p1= //\u0301..\ p2=|\\u0301/~\*/\u1a24\u05d4\u06cc\u2c7a\u1a52/
+minimized input (91 bytes): op=12 p1= //\u0301..\ p2=|\\u0301/~\*/\u1a24\u05d4\u06cc\u2c7a\u1a52/
+normalize:host-escape

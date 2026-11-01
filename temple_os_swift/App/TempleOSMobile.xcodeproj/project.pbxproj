@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B2C3D4000000000000000A /* TempleCore in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D40000000000000009 /* TempleCore */; };
+		A1B2C3D4000000000000000C /* PureSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4000000000000000B /* PureSwift */; };
+		A1B2C3D40000000000000031 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000020 /* AppDelegate.swift */; };
+		A1B2C3D40000000000000032 /* TempleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000021 /* TempleView.swift */; };
+		A1B2C3D40000000000000033 /* IOSShellEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000022 /* IOSShellEnv.swift */; };
+		A1B2C3D40000000000000034 /* BenchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000023 /* BenchMode.swift */; };
+		A1B2C3D40000000000000035 /* NativeKeyboardDiagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000024 /* NativeKeyboardDiagnostics.swift */; };
+		A1B2C3D40000000000000036 /* HardwareKeyAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000025 /* HardwareKeyAdapter.swift */; };
+		A1B2C3D40000000000000037 /* AccessibilityAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000026 /* AccessibilityAdapter.swift */; };
+		A1B2C3D40000000000000038 /* DisplayContextAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000027 /* DisplayContextAdapter.swift */; };
+		A1B2C3D40000000000000039 /* TempleOSMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000028 /* TempleOSMobileUITests.swift */; };
+		A1B2C3D4000000000000003A /* DuoPostureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000029 /* DuoPostureUITests.swift */; };
+		A1B2C3D4000000000000003B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000000000000002B /* Assets.xcassets */; };
+		A1B2C3D4000000000000003C /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000000000000002C /* PrivacyInfo.xcprivacy */; };
+		A1B2C3D4000000000000003D /* runtime in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000000000000002D /* runtime */; };
+		A1B2C3D4000000000000003E /* bundled-fs in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000000000000002E /* bundled-fs */; };
+		A1B2C3D4000000000000003F /* bundled-fs.index in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4000000000000002F /* bundled-fs.index */; };
+		A1B2C3D40000000000000040 /* catalog.json in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D40000000000000030 /* catalog.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1B2C3D4000000000000001E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B2C3D40000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B2C3D40000000000000007;
+			remoteInfo = TempleOSMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D40000000000000006 /* TempleOSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TempleOSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D40000000000000017 /* TempleOSMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempleOSMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D40000000000000020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000021 /* TempleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleView.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000022 /* IOSShellEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSShellEnv.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000023 /* BenchMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchMode.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000024 /* NativeKeyboardDiagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeKeyboardDiagnostics.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000025 /* HardwareKeyAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareKeyAdapter.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000026 /* AccessibilityAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityAdapter.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000027 /* DisplayContextAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayContextAdapter.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000028 /* TempleOSMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempleOSMobileUITests.swift; sourceTree = "<group>"; };
+		A1B2C3D40000000000000029 /* DuoPostureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuoPostureUITests.swift; sourceTree = "<group>"; };
+		A1B2C3D4000000000000002A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B2C3D4000000000000002B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D4000000000000002C /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		A1B2C3D4000000000000002D /* runtime */ = {isa = PBXFileReference; lastKnownFileType = folder; name = runtime; path = ../../shared/runtime; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4000000000000002E /* bundled-fs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "bundled-fs"; path = "../../shared/bundled-fs"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D4000000000000002F /* bundled-fs.index */ = {isa = PBXFileReference; lastKnownFileType = text; name = "bundled-fs.index"; path = "../../shared/bundled-fs.index"; sourceTree = SOURCE_ROOT; };
+		A1B2C3D40000000000000030 /* catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = catalog.json; path = "../../shared/program-manifests/catalog.json"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3D4000000000000000F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4000000000000000A /* TempleCore in Frameworks */,
+				A1B2C3D4000000000000000C /* PureSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B2C3D4000000000000001A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3D40000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D40000000000000004 /* TempleOSMobile */,
+				A1B2C3D40000000000000016 /* TempleOSMobileUITests */,
+				A1B2C3D40000000000000005 /* Shared */,
+				A1B2C3D40000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3D40000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D40000000000000006 /* TempleOSMobile.app */,
+				A1B2C3D40000000000000017 /* TempleOSMobileUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B2C3D40000000000000004 /* TempleOSMobile */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D40000000000000020 /* AppDelegate.swift */,
+				A1B2C3D40000000000000021 /* TempleView.swift */,
+				A1B2C3D40000000000000022 /* IOSShellEnv.swift */,
+				A1B2C3D40000000000000023 /* BenchMode.swift */,
+				A1B2C3D40000000000000024 /* NativeKeyboardDiagnostics.swift */,
+				A1B2C3D40000000000000025 /* HardwareKeyAdapter.swift */,
+				A1B2C3D40000000000000026 /* AccessibilityAdapter.swift */,
+				A1B2C3D40000000000000027 /* DisplayContextAdapter.swift */,
+				A1B2C3D4000000000000002A /* Info.plist */,
+				A1B2C3D4000000000000002B /* Assets.xcassets */,
+				A1B2C3D4000000000000002C /* PrivacyInfo.xcprivacy */,
+			);
+			path = TempleOSMobile;
+			sourceTree = "<group>";
+		};
+		A1B2C3D40000000000000005 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4000000000000002D /* runtime */,
+				A1B2C3D4000000000000002E /* bundled-fs */,
+				A1B2C3D4000000000000002F /* bundled-fs.index */,
+				A1B2C3D40000000000000030 /* catalog.json */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		A1B2C3D40000000000000016 /* TempleOSMobileUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D40000000000000028 /* TempleOSMobileUITests.swift */,
+				A1B2C3D40000000000000029 /* DuoPostureUITests.swift */,
+			);
+			path = TempleOSMobileUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D40000000000000007 /* TempleOSMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D40000000000000011 /* Build configuration list for PBXNativeTarget "TempleOSMobile" */;
+			buildPhases = (
+				AA0000000000000000000001 /* ShellScript */,
+				A1B2C3D4000000000000000D /* Sources */,
+				A1B2C3D4000000000000000F /* Frameworks */,
+				A1B2C3D4000000000000000E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TempleOSMobile;
+			packageProductDependencies = (
+				A1B2C3D40000000000000009 /* TempleCore */,
+				A1B2C3D4000000000000000B /* PureSwift */,
+			);
+			productName = TempleOSMobile;
+			productReference = A1B2C3D40000000000000006 /* TempleOSMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1B2C3D40000000000000018 /* TempleOSMobileUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D4000000000000001B /* Build configuration list for PBXNativeTarget "TempleOSMobileUITests" */;
+			buildPhases = (
+				A1B2C3D40000000000000019 /* Sources */,
+				A1B2C3D4000000000000001A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1B2C3D4000000000000001F /* PBXTargetDependency */,
+			);
+			name = TempleOSMobileUITests;
+			productName = TempleOSMobileUITests;
+			productReference = A1B2C3D40000000000000017 /* TempleOSMobileUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3D40000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A1B2C3D40000000000000018 = {
+						TestTargetID = A1B2C3D40000000000000007;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3D40000000000000010 /* Build configuration list for PBXProject "TempleOSMobile" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B2C3D40000000000000002;
+			packageReferences = (
+				A1B2C3D40000000000000008 /* XCLocalSwiftPackageReference "../TempleCore" */,
+			);
+			productRefGroup = A1B2C3D40000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D40000000000000007 /* TempleOSMobile */,
+				A1B2C3D40000000000000018 /* TempleOSMobileUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3D4000000000000000E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4000000000000003B /* Assets.xcassets in Resources */,
+				A1B2C3D4000000000000003C /* PrivacyInfo.xcprivacy in Resources */,
+				A1B2C3D4000000000000003D /* runtime in Resources */,
+				A1B2C3D4000000000000003E /* bundled-fs in Resources */,
+				A1B2C3D4000000000000003F /* bundled-fs.index in Resources */,
+				A1B2C3D40000000000000040 /* catalog.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA0000000000000000000001 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python3 \"$SRCROOT/../../tools/input-audit/check_input_architecture.py\" --platform ios\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3D4000000000000000D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D40000000000000031 /* AppDelegate.swift in Sources */,
+				A1B2C3D40000000000000032 /* TempleView.swift in Sources */,
+				A1B2C3D40000000000000033 /* IOSShellEnv.swift in Sources */,
+				A1B2C3D40000000000000034 /* BenchMode.swift in Sources */,
+				A1B2C3D40000000000000035 /* NativeKeyboardDiagnostics.swift in Sources */,
+				A1B2C3D40000000000000036 /* HardwareKeyAdapter.swift in Sources */,
+				A1B2C3D40000000000000037 /* AccessibilityAdapter.swift in Sources */,
+				A1B2C3D40000000000000038 /* DisplayContextAdapter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1B2C3D40000000000000019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D40000000000000039 /* TempleOSMobileUITests.swift in Sources */,
+				A1B2C3D4000000000000003A /* DuoPostureUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1B2C3D4000000000000001F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B2C3D40000000000000007 /* TempleOSMobile */;
+			targetProxy = A1B2C3D4000000000000001E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3D40000000000000012 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1B2C3D40000000000000013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1B2C3D40000000000000014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LOCAL_SIGNING_TEAM;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TempleOSMobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TempleOS.app;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.digitalcircuitstudios.templeosapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TOS_BUNDLE_ID = io.github.templeosmobile;
+				TOS_GIT_REV = unknown;
+			};
+			name = Debug;
+		};
+		A1B2C3D40000000000000015 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LOCAL_SIGNING_TEAM;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TempleOSMobile/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TempleOS.app;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.digitalcircuitstudios.templeosapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TOS_BUNDLE_ID = io.github.templeosmobile;
+				TOS_GIT_REV = unknown;
+			};
+			name = Release;
+		};
+		A1B2C3D4000000000000001C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(TOS_BUNDLE_ID).uitests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TempleOSMobile;
+				TOS_BUNDLE_ID = io.github.templeosmobile;
+			};
+			name = Debug;
+		};
+		A1B2C3D4000000000000001D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(TOS_BUNDLE_ID).uitests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TempleOSMobile;
+				TOS_BUNDLE_ID = io.github.templeosmobile;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3D40000000000000010 /* Build configuration list for PBXProject "TempleOSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D40000000000000012 /* Debug */,
+				A1B2C3D40000000000000013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D40000000000000011 /* Build configuration list for PBXNativeTarget "TempleOSMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D40000000000000014 /* Debug */,
+				A1B2C3D40000000000000015 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D4000000000000001B /* Build configuration list for PBXNativeTarget "TempleOSMobileUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4000000000000001C /* Debug */,
+				A1B2C3D4000000000000001D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A1B2C3D40000000000000008 /* XCLocalSwiftPackageReference "../TempleCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../TempleCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A1B2C3D40000000000000009 /* TempleCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TempleCore;
+		};
+		A1B2C3D4000000000000000B /* PureSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PureSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A1B2C3D40000000000000001 /* Project object */;
+}

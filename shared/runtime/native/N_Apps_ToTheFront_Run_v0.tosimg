@@ -1,0 +1,473 @@
+TOSIMG 1
+unit C:/Apps/ToTheFront/Run.HC#0
+s 1c04b8 433a2f417070732f546f54686546726f6e74
+fn 703 $init:C:/Apps/ToTheFront/Run.HC#0 (I64;;-)
+init 703
+unit C:/Apps/ToTheFront/Run.HC#1
+s 1c04b8 433a2f417070732f546f54686546726f6e74
+fn 704 $init:C:/Apps/ToTheFront/Run.HC#1 (I64;;-)
+init 704
+unit C:/Apps/ToTheFront/Run.HC#2
+value HEX_SIDE 11
+value MAP_WIDTH 640
+value UNITS_NUM 32
+s 131e0 2564
+s 1c04e0 4d41505f484549474854
+s 1c0500 2531322e3966
+s 1c0518 44434f53
+s 1c0500 2531322e3966
+s 1c0530 4453494e
+s 1c0500 2531322e3966
+s 1c0548 4845585f524144495553
+fn 705 InitDefines (U0;;-)
+fn 706 $init:C:/Apps/ToTheFront/Run.HC#2 (I64;;-)
+sym f InitDefines 705 (U0;;-)
+init 706
+unit C:/Apps/ToTheFront/Run.HC#3
+value MAP_HEIGHT 464
+g 1c05e0 8
+g 1c05f8 8
+g 1c0610 8
+g 1c0628 8
+g 1c0640 8
+g 1c0658 8
+fn 707 $init:C:/Apps/ToTheFront/Run.HC#3 (I64;;-)
+sym g map_cols 1c05e0 I64
+sym g map_height 1c0628 I64
+sym g map_rows 1c05f8 I64
+sym g map_width 1c0610 I64
+sym g x0 1c0640 I64
+sym g y0 1c0658 I64
+init 707
+unit C:/Apps/ToTheFront/Run.HC#4
+value PHASE_DIRECT 4
+value PHASE_DIRECT0 4
+value PHASE_DIRECT1 5
+value PHASE_END 6
+value PHASE_INDIRECT 0
+value PHASE_INDIRECT0 0
+value PHASE_INDIRECT1 1
+value PHASE_MOVE 2
+value PHASE_MOVE0 2
+value PHASE_MOVE1 3
+value PHASE_START 0
+value UT_ARTILLERY 1
+value UT_INFANTRY 0
+value UT_LT_TANK 2
+value UT_MD_TANK 3
+class IndirectOrders 40 0 - -
+m next 0 *$IndirectOrders
+m last 8 *$IndirectOrders
+m attacker 16 *$Unit
+m row 24 I64
+m col 32 I64
+class Pt 16 0 - -
+m x 0 F64
+m y 8 F64
+class Unit 72 0 - -
+m img 0 *U8
+m num 8 I64
+m row 16 I64
+m col 24 I64
+m armored_attack 32 I64
+m unarmored_attack 40 I64
+m armor 48 I64
+m type 56 I8
+m player 57 I8
+m facing 58 I8
+m movement 59 I8
+m life 60 I8
+m range 61 I8
+m remaining_movement 62 I8
+m accuracy 63 I8
+m vis 64 [2]Bool
+m fired 66 Bool
+m infantry 67 Bool
+m indirect_fire 68 Bool
+m pad 69 [3]Bool
+g 1c0670 8
+g 1c0688 874
+g 1c0a08 13984
+g 1c4218 8
+g 1c4230 8
+g 1c4248 874
+g 1c45c8 874
+g 1c4948 874
+g 1c4cc8 8
+g 1c4ce0 8
+g 1c4cf8 8
+g 1c4d10 144
+g 1c4db0 8
+g 1c4dc8 4608
+g 1c5fd8 256
+g 1c60e8 8
+g 1c6100 8
+g 1c6118 8
+g 1c6130 8
+g 1c6148 8
+g 1c6160 8
+g 1c6178 8
+g 1c6190 16
+g 1c61b0 16
+g 1c61d0 16
+g 1c61f0 16
+g 1c6210 8
+g 1c6228 8
+g 1c6240 8
+g 1c6258 8
+g 1c6270 8
+g 1c6288 8
+g 1c62a0 40
+g 1c62d8 8
+g 1c62f0 8
+g 1c6308 8
+g 1c6320 8
+g 1c6338 8
+g 1c6350 8
+g 1c6368 8
+g 1c6380 8
+g 1c6398 56
+c 1c6210 8 3fe0000000000000
+c 1c6228 1 0
+c 1c62d8 1 0
+c 1c6350 1 0
+c 1c6398 8 ffffffffffffffff
+c 1c63a0 8 fffffffffffffffe
+c 1c63a8 8 ffffffffffffffff
+c 1c63b0 8 1
+c 1c63b8 8 2
+c 1c63c0 8 1
+c 1c63c8 8 0
+fn 708 $eval0 (I64;;-)
+fn 709 $eval1 (I64;;-)
+fn 710 $eval2 (I64;;-)
+fn 711 $eval3 (I64;;-)
+fn 712 $eval4 (I64;;-)
+fn 713 $eval5 (I64;;-)
+fn 714 $eval6 (I64;;-)
+fn 715 $eval7 (I64;;-)
+fn 716 $eval8 (I64;;-)
+fn 717 $eval9 (I64;;-)
+fn 719 $init:C:/Apps/ToTheFront/Run.HC#4 (I64;;-)
+sym f HexMoveOne 718 (I64;*I64,*I64,F64,F64;-)
+sym g alive_cnt 1c6190 [2]I64
+sym g animation_delay 1c6210 F64
+sym g cur_player 1c6100 I64
+sym g cursor_col 1c6178 I64
+sym g cursor_row 1c6160 I64
+sym g enemy_player 1c6118 I64
+sym g fire_radius 1c4cc8 F64
+sym g fire_radius_x 1c4ce0 F64
+sym g fire_radius_y 1c4cf8 F64
+sym g fire_x 1c62f0 I64
+sym g fire_y 1c6308 I64
+sym g firing 1c62d8 Bool
+sym g hex_centers 1c0a08 [46][19]$Pt
+sym g indirect_col 1c6380 I64
+sym g indirect_explosion 1c6350 Bool
+sym g indirect_head 1c62a0 $IndirectOrders
+sym g indirect_row 1c6368 I64
+sym g map_dc 1c0670 *$CDC
+sym g move_facing 1c6270 F64
+sym g move_x 1c6240 I64
+sym g move_y 1c6258 I64
+sym g moving 1c6228 Bool
+sym g moving_unit 1c6288 *$Unit
+sym g msg_buf 1c4d10 [144]U8
+sym g msg_off_timeout 1c4db0 I64
+sym g phase 1c60e8 I64
+sym g player_direct 1c61f0 [2]I64
+sym g player_indirect 1c61b0 [2]I64
+sym g player_move 1c61d0 [2]I64
+sym g rivers 1c45c8 [46][19]Bool
+sym g roads 1c4248 [46][19]Bool
+sym g row_offsets 1c6398 [7]I64
+sym g show_vis_col 1c4230 I64
+sym g show_vis_row 1c4218 I64
+sym g target_hit 1c6338 Bool
+sym g target_unit 1c6320 *$Unit
+sym g terrain 1c0688 [46][19]U8
+sym g turn 1c6148 I64
+sym g units 1c4dc8 [2][32]$Unit
+sym g view_player 1c6130 I64
+sym g vis_map 1c4948 [46][19]Bool
+sym g vis_unit_bitmap 1c5fd8 [2][128]U8
+init 719
+unit C:/Apps/ToTheFront/Run.HC#5
+g 1c63e0 56
+c 1c63e0 8 ffffffffffffffff
+c 1c63e8 8 0
+c 1c63f0 8 0
+c 1c63f8 8 0
+c 1c6400 8 0
+c 1c6408 8 ffffffffffffffff
+c 1c6410 8 0
+fn 720 $init:C:/Apps/ToTheFront/Run.HC#5 (I64;;-)
+sym g col_offsets_even 1c63e0 [7]I64
+init 720
+unit C:/Apps/ToTheFront/Run.HC#6
+g 1c6428 56
+c 1c6428 8 0
+c 1c6430 8 0
+c 1c6438 8 1
+c 1c6440 8 1
+c 1c6448 8 0
+c 1c6450 8 0
+c 1c6458 8 0
+fn 721 $init:C:/Apps/ToTheFront/Run.HC#6 (I64;;-)
+sym g col_offsets_odd 1c6428 [7]I64
+init 721
+unit C:/Apps/ToTheFront/Run.HC#7
+value VR_ALL_UNITS 5
+value VR_FRIENDLY_UNIT_DIED 3
+value VR_ONE_ENEMY_UNIT 4
+value VR_ONE_FRIENDLY_UNIT 0
+value VR_UPDATE_FRIENDLY_UNIT 1
+class LOSCtrl 40 0 - -
+m r1 0 I64
+m c1 8 I64
+m r2 16 I64
+m c2 24 I64
+m distance 32 I64
+class MPCtrl1 32 0 - -
+m mode 0 I64
+m lo 8 I64
+m hi 16 I64
+m tmpu 24 *$Unit
+class MPCtrl2 32 0 - -
+m lo 0 I64
+m hi 8 I64
+m row 16 I64
+m col 24 I64
+b 1c6470 0cfcfffffffcffffff0500000005000000030100000001000afbfffffffbffffff05000000fbffffff0a05000000fbffffff05000000050000000a0500000005000000fbffffff050000000afbffffff05000000fbfffffffbffffff0afcfffffffcffffff05000000050000000a04000000fcfffffffcffffff0400000000
+b 1c6500 0cfefffffffeffffff03000000040000000afffffffffdffffff01000000fdffffff0afffffffffcffffff01000000fcffffff01000a00000000fcffffff00000000030000000afdffffff0400000003000000040000000afefffffffbffffff02000000fbffffff0a02000000fdffffff02000000fcffffff0afefffffffdfffffffefffffffcffffff0afdfffffffdfffffffdffffff030000000a03000000fdffffff03000000030000000a010000000300000001000000010000000affffffff03000000ffffffff0100000000
+b 1c65e0 0cfffffffffdffffff020000000300000001000a02000000fcffffff02000000040000000afefffffffcfffffffeffffff040000000a000000000100000000000000faffffff00
+b 1c6638 03010000000cfffffffffcffffff020000000400000001000c02000000faffffff04000000060000000cfcfffffffafffffffeffffff060000000a000000000100000000000000f8ffffff00
+s 1c6698 566965772f506c6179657231
+s 1c66b8 566965772f506c6179657232
+s 1c66d8 47616d65536565642830782558293a
+s 1c66f8 47616d65536565642830782558290a
+s 1c6718 25732f2a2e48432a
+s 1c6738 7e2f546f54686546726f6e742f2a2e48432a
+s 1c6760 506c6179657220256420547970650a0a244c54424c554524
+s 13060 0a
+s 1c6790 244d552d554c2c22252d31307473222c4c453d25642420
+s 13060 0a
+s 1c6790 244d552d554c2c22252d31307473222c4c453d25642420
+s 1c67b8 0a0a0a2446472443726561746520796f7572206f776e20414920696e207e2f546f54686546726f6e742e
+s 1c67f8 706c617965725f696e6469726563745b25645d3d26506c61796572496e6469726563743b706c617965725f6d6f76655b25645d3d26506c617965724d6f76653b706c617965725f6469726563745b25645d3d26506c617965724469726563743b
+s 1c6870 24424c41434b2425682a63244647240a
+s 1c6898 24505552504c4524506c6179657220322446472420
+s 1c68c0 244359414e24506c6179657220312446472420
+s 132c0 2573
+s 1c68e8 2024505552504c4524506c617965722032
+s 1c6910 20244359414e24506c617965722031
+s 1c6930 2041726d6f726564
+s 1c6950 20556e61726d6f726564
+s 1c6870 24424c41434b2425682a63244647240a
+s 1c6970 0a526f6c6c204f7574206f662032303009093a25362e32662044616d6167650a
+s 1c69a8 41726d6f721f41747461636b09093a25362e32660a
+s 1c69d0 46726f6e740046726f6e7453696465005265617253696465005265617200
+s 1c6a00 41726d6f7228257a291f446566656e7365093a25362e32660a
+s 1c6a30 556e61726d6f7265642041747461636b093a25362e32660a
+s 1c6a60 52616e67652041646a75737409093a25362e326625250a
+s 1c6a88 41747461636b2f446566656e73652041646a7573746564093a25362e32662044616d6167650a
+s 1c6ac0 41726d6f72204869742053636f72652025362e3266093a
+s 1c6ae8 253364204c696665202d202533662044616d616765093d
+s 1c6b10 24524544244b696c6c6564244647240a
+s 1c6b38 2452454424496d6d6f62696c697a6564244647240a
+s 1c6b60 24475245454e244e6f2050656e6574726174696f6e244647240a
+s 1c6b90 245245442425362e3266204c696665244647240a
+s 1c6bb8 44697265637446697265
+s 1c6bd8 2b25352e32661f1f526f6c6c0a
+s 1c6bf8 2b2532642e30301f1f41636375726163790a
+s 1c6c20 2d25352e32662525206f662052616e67650a
+s 1c6c48 2d33302e30301f1f54617267657420696e2054726565732050656e616c74790a
+s 1c6c80 2b33302e30301f1f486967682047726f756e6420426f6e75730a
+s 1c6cb0 5f5f5f5f5f5f5f0a
+s 1c6cd0 2b25352e32661f1f4869740a
+s 1c6cf0 2d25352e32661f1f4d6973730a
+s 1c6d10 4f76657252756e
+s 1c6d28 436c6f736541737361756c74
+s 1c6d48 7832204f76657252756e20426f6e7573093d25362e32662044616d6167650a
+s 1c6d78 2f32205465727261696e2050656e616c7479093d25362e32662044616d6167650a
+s 1c6db0 783320436c6f736541737361756c7420426f6e7573093d25362e32662044616d6167650a
+s 1c6de8 245245442453756363657373244647240a
+s 1c6e10 24524544244661696c757265244647240a
+s 1c6e38 496e64697265637446697265
+s 1c6bd8 2b25352e32661f1f526f6c6c0a
+s 1c6bf8 2b2532642e30301f1f41636375726163790a
+s 1c6c20 2d25352e32662525206f662052616e67650a
+s 1c6cd0 2b25352e32661f1f4869740a
+s 1c6cf0 2d25352e32661f1f4d6973730a
+s 1c6e38 496e64697265637446697265
+g 1c6e58 16
+fn 722 Toward (U0;*I64,*I64,I64;-)
+fn 723 FacingChg (I64;I64,I64;-)
+fn 724 RowCol2XY (U0;*F64,*F64,I64,I64;-)
+fn 725 XY2RowCol (U0;*I64,*I64,F64,F64;-)
+fn 726 UnitFind (*$Unit;I64,I64;-)
+fn 727 CursorInWin (Bool;*$CTask,I64,I64;-)
+fn 728 CursorUpdate (U0;*$CTask,I64,I64;-)
+fn 729 LOSPlot (Bool;*$LOSCtrl,I64,I64,I64;-)
+fn 730 LOS (Bool;I64,I64,I64,I64;-)
+fn 731 DrawHexes (U0;;-)
+fn 732 MakeTerrain (U0;U8,I64,I64,I64;-)
+fn 733 MakeRivers (U0;;-)
+fn 734 MakeRoads (U0;;-)
+fn 735 DrawTerrain (U0;;-)
+fn 736 DrawRivers (U0;;-)
+fn 737 DrawRoads (U0;;-)
+fn 738 DrawDots (U0;;-)
+fn 739 HexCentersCalc (U0;;-)
+fn 740 InitMap (U0;;-)
+fn 741 InitUnits (U0;;-)
+fn 742 ViewPlayerSet (U0;I8;-)
+fn 743 Init (U0;;-)
+fn 744 CleanUp (U0;;-)
+fn 745 PlayerPick (U0;*U8,I64;-)
+fn 746 VRSetUp (U0;I64;-)
+fn 747 VRMerge (U0;I64;-)
+fn 748 MPVisRecalc (Bool;*$MPCtrl1;-)
+fn 750 $eval10 (I64;;-)
+fn 751 $eval11 (I64;;-)
+fn 749 VisRecalc (Bool;I64,*$Unit;-)
+fn 752 MPVisRecalcMap (U0;*$MPCtrl2;-)
+fn 754 $eval12 (I64;;-)
+fn 755 $eval13 (I64;;-)
+fn 753 VisRecalcMap (U0;I64,I64;-)
+fn 756 AttackHeader (U0;*$Unit,*U8,*$Unit;-)
+fn 757 HitDamage (F64;*$Unit,*$Unit,I64,F64;-)
+fn 758 DamageDo (Bool;*$Unit,F64;-)
+fn 759 IndirectAdd (U0;*$Unit,I64,I64;-)
+fn 760 BulletPlot (Bool;U0,I64,I64,I64;-)
+fn 761 UnitDirectFire (U0;*$Unit,*$Unit;-)
+fn 762 HexOccupy (Bool;Bool,*$Unit,*$Unit;-)
+fn 763 IndirectResolveAll (U0;;-)
+fn 764 $init:C:/Apps/ToTheFront/Run.HC#7 (I64;;-)
+sym f AttackHeader 756 (U0;*$Unit,*U8,*$Unit;-)
+sym f BulletPlot 760 (Bool;U0,I64,I64,I64;-)
+sym f CleanUp 744 (U0;;-)
+sym f CursorInWin 727 (Bool;*$CTask,I64,I64;-)
+sym f CursorUpdate 728 (U0;*$CTask,I64,I64;-)
+sym f DamageDo 758 (Bool;*$Unit,F64;-)
+sym f DrawDots 738 (U0;;-)
+sym f DrawHexes 731 (U0;;-)
+sym f DrawRivers 736 (U0;;-)
+sym f DrawRoads 737 (U0;;-)
+sym f DrawTerrain 735 (U0;;-)
+sym f FacingChg 723 (I64;I64,I64;-)
+sym f HexCentersCalc 739 (U0;;-)
+sym f HexOccupy 762 (Bool;Bool,*$Unit,*$Unit;-)
+sym f HitDamage 757 (F64;*$Unit,*$Unit,I64,F64;-)
+sym f IndirectAdd 759 (U0;*$Unit,I64,I64;-)
+sym f IndirectResolveAll 763 (U0;;-)
+sym f Init 743 (U0;;-)
+sym f InitMap 740 (U0;;-)
+sym f InitUnits 741 (U0;;-)
+sym f LOS 730 (Bool;I64,I64,I64,I64;-)
+sym f LOSPlot 729 (Bool;*$LOSCtrl,I64,I64,I64;-)
+sym f MPVisRecalc 748 (Bool;*$MPCtrl1;-)
+sym f MPVisRecalcMap 752 (U0;*$MPCtrl2;-)
+sym f MakeRivers 733 (U0;;-)
+sym f MakeRoads 734 (U0;;-)
+sym f MakeTerrain 732 (U0;U8,I64,I64,I64;-)
+sym f PlayerPick 745 (U0;*U8,I64;-)
+sym f RowCol2XY 724 (U0;*F64,*F64,I64,I64;-)
+sym f Toward 722 (U0;*I64,*I64,I64;-)
+sym f UnitDirectFire 761 (U0;*$Unit,*$Unit;-)
+sym f UnitFind 726 (*$Unit;I64,I64;-)
+sym f VRMerge 747 (U0;I64;-)
+sym f VRSetUp 746 (U0;I64;-)
+sym f ViewPlayerSet 742 (U0;I8;-)
+sym f VisRecalc 749 (Bool;I64,*$Unit;-)
+sym f VisRecalcMap 753 (U0;I64,I64;-)
+sym f XY2RowCol 725 (U0;*I64,*I64,F64,F64;-)
+sym g movement_costs 1c6e58 [16]U8
+init 764
+unit C:/Apps/ToTheFront/Run.HC#8
+fn 765 $init:C:/Apps/ToTheFront/Run.HC#8 (I64;;-)
+init 765
+unit C:/Apps/ToTheFront/Run.HC#9
+fn 766 $init:C:/Apps/ToTheFront/Run.HC#9 (I64;;-)
+init 766
+unit C:/Apps/ToTheFront/Run.HC#10
+b 1c6e78 010403020000000e01000000010000000600000003010000000a00000000feffffff00000000020000000afeffffff00000000020000000000000000
+s 1c6ec8 5475726e3a25326420417274696c6c657279
+s 1c6ef0 5475726e3a253264204d6f7665
+s 1c6f10 5475726e3a2532642046697265
+s 1c6f30 25336420556e697473
+s 1c6f30 25336420556e697473
+s 1c6f50 416e696d6174696f6e2044656c61790a
+s 1c6f78 25336625202525
+s 1c6f90 5475726e202564
+s 1c6fa8 506c6179657220256420417274696c6c65727920506c6f74
+s 1c6fd8 506c61796572202564204d6f7665
+s 1c6ff8 506c617965722025642046697265
+s 1c7018 0a24475245454e243c53484946542d4553433e2446472420746f2072657475726e20746f2067616d652e0a
+s 1c04b8 433a2f417070732f546f54686546726f6e74
+s 1c7058 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b2020456e645068617365282c43485f5350414345293b202052657374617274282c270a27293b7d56696577207b2020506c6179657231282c273127293b2020506c6179657232282c273227293b20204f64647343616c63756c6174696f6e73282c276327293b20204c4f53282c302c5343465f5348494654293b7d53657474696e6773207b2020416e696d6174696f6e44656c6179282c276427293b7d
+s 1c7140 414973
+s 1c7140 414973
+s 1c7158 24505552504c45242454582b43582c22546f54686546726f6e742224244647240a0a24475245454e247b4c6566742d636c69636b7d2446472420746f206d6f7665206f72206669726520756e6974732e0a24475245454e243c53504143453e24464724096f722024475245454e247b52696768742d636c69636b7d2446472420746f20656e642070686173652e0a24475245454e243c53484946543e2446472409746f2073686f77206c696e652d6f662d73696768742e0a24475245454e243c454e5445523e2446472409746f207374617274206e65772067616d652e0a24475245454e241f1f312446472409506c61796572203120766965772e0a24475245454e241f1f322446472409506c61796572203220766965772e0a24475245454e241f1f63244647240956696577206f6464732063616c63756c6174696f6e732e0a24475245454e241f1f64244647240953657420616e696d6174696f6e2064656c61792e
+s 1c72d0 47616d65204f766572
+fn 767 HexMoveOneCost (I64;*$Unit,I64,I64,I64;-)
+fn 718 HexMoveOne (I64;*I64,*I64,F64,F64;-)
+fn 768 UnitMovePlot (Bool;U0,I64,I64,I64;-)
+fn 769 UnitMoveAnimation (U0;*$Unit,I64,I64,I64;-)
+fn 770 UnitMove (Bool;*$Unit,I64,I64;-)
+fn 771 UnitDraw (U0;*$CDC,*$Unit,I64,I64,F64;-)
+fn 772 UnitsDraw (U0;*$CDC;-)
+fn 773 DrawIt (U0;*$CTask,*$CDC;-)
+fn 774 AnimationDelaySet (U0;;-)
+fn 775 TurnNew (U0;;-)
+fn 776 PhaseNew (U0;;-)
+fn 777 CharDo (U0;U8;-)
+fn 778 UserChk (U0;;-)
+fn 779 TaskEndCB (U0;;-)
+fn 780 PhaseDo (I64;;-)
+fn 781 ToTheFront (U0;;-)
+fn 782 $init:C:/Apps/ToTheFront/Run.HC#10 (I64;;-)
+sym f AnimationDelaySet 774 (U0;;-)
+sym f CharDo 777 (U0;U8;-)
+sym f DrawIt 773 (U0;*$CTask,*$CDC;-)
+sym f HexMoveOneCost 767 (I64;*$Unit,I64,I64,I64;-)
+sym f PhaseDo 780 (I64;;-)
+sym f PhaseNew 776 (U0;;-)
+sym f TaskEndCB 779 (U0;;-)
+sym f ToTheFront 781 (U0;;-)
+sym f TurnNew 775 (U0;;-)
+sym f UnitDraw 771 (U0;*$CDC,*$Unit,I64,I64,F64;-)
+sym f UnitMove 770 (Bool;*$Unit,I64,I64;-)
+sym f UnitMoveAnimation 769 (U0;*$Unit,I64,I64,I64;-)
+sym f UnitMovePlot 768 (Bool;U0,I64,I64,I64;-)
+sym f UnitsDraw 772 (U0;*$CDC;-)
+sym f UserChk 778 (U0;;-)
+init 782
+unit C:/Apps/ToTheFront/Run.HC#11
+unit C:/Apps/ToTheFront/AIs/Human.HC#0
+registry file:C:/Apps/ToTheFront/AIs/Human.HC
+fn 783 PlayerIndirect (U0;;-)
+fn 784 PlayerMove (U0;;-)
+fn 785 PlayerDirect (U0;;-)
+fn 786 $init:C:/Apps/ToTheFront/AIs/Human.HC#0 (I64;;-)
+sym f PlayerDirect 785 (U0;;-)
+sym f PlayerIndirect 783 (U0;;-)
+sym f PlayerMove 784 (U0;;-)
+init 786
+unit C:/Apps/ToTheFront/AIs/Human.HC#1
+registry file:C:/Apps/ToTheFront/AIs/Human.HC
+unit C:/Apps/ToTheFront/AIs/SimpleAI.HC#0
+registry file:C:/Apps/ToTheFront/AIs/SimpleAI.HC
+fn 787 UnitNearestFind (*$Unit;I64,I64,I64,Bool,F64;-)
+fn 788 PlayerIndirect (U0;;-)
+fn 789 PlayerMove (U0;;-)
+fn 790 PlayerDirect (U0;;-)
+fn 791 $init:C:/Apps/ToTheFront/AIs/SimpleAI.HC#0 (I64;;-)
+sym f PlayerDirect 790 (U0;;-)
+sym f PlayerIndirect 788 (U0;;-)
+sym f PlayerMove 789 (U0;;-)
+sym f UnitNearestFind 787 (*$Unit;I64,I64,I64,Bool,F64;-)
+init 791
+unit C:/Apps/ToTheFront/AIs/SimpleAI.HC#1
+registry file:C:/Apps/ToTheFront/AIs/SimpleAI.HC

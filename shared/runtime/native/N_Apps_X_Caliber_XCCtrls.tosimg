@@ -1,0 +1,31 @@
+TOSIMG 1
+unit C:/Apps/X-Caliber/XCCtrls.HC#0
+value CTRL_PANEL_BORDER 2
+value CTRL_PANEL_BTTN_SIZE 12
+value CTRL_PANEL_RANGE 30
+value CTRL_PANEL_SPACING 33
+class CtrlPanelState 25 0 - -
+m shot_radius 0 I64
+m fuse_time 8 I64
+m laser_temperature 16 F64
+m spacewalk 24 Bool
+g 17fd38 25
+s 17fd68 537061636557616c6b
+s 17fd88 53697a65
+s 17fda0 46757365
+s 131e0 2564
+s 131e0 2564
+fn 703 DrawCtrlPanelCtrl (U0;*$CDC,*$CCtrl;-)
+fn 704 UpdateDerivedCtrlPanelCtrl (U0;*$CCtrl;-)
+fn 705 LeftClickCtrlPanel (U0;*$CCtrl,I64,I64,Bool;-)
+fn 706 CtrlPanelNew (*$CCtrl;;-)
+fn 707 CtrlPanelDel (U0;*$CCtrl;-)
+fn 708 $init:C:/Apps/X-Caliber/XCCtrls.HC#0 (I64;;-)
+sym f CtrlPanelDel 707 (U0;*$CCtrl;-)
+sym f CtrlPanelNew 706 (*$CCtrl;;-)
+sym f DrawCtrlPanelCtrl 703 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickCtrlPanel 705 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f UpdateDerivedCtrlPanelCtrl 704 (U0;*$CCtrl;-)
+sym g ctrl_panel 17fd38 $CtrlPanelState
+init 708
+unit C:/Apps/X-Caliber/XCCtrls.HC#1

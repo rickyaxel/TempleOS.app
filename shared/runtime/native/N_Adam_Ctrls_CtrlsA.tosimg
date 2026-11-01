@@ -1,0 +1,46 @@
+TOSIMG 1
+unit C:/Adam/Ctrls/CtrlsA.HC#0
+fn 703 CtrlFindUnique (*$CCtrl;*$CTask,I64;-)
+fn 704 CtrlsUpdate (U0;*$CTask;-)
+fn 705 $init:C:/Adam/Ctrls/CtrlsA.HC#0 (I64;;-)
+sym f CtrlFindUnique 703 (*$CCtrl;*$CTask,I64;-)
+sym f CtrlsUpdate 704 (U0;*$CTask;-)
+init 705
+unit C:/Adam/Ctrls/CtrlsA.HC#1
+s 13728 58
+s 13740 253364
+s 13758 59
+s 13740 253364
+s 13770 5a
+s 13740 253364
+fn 706 CtrlInsideRect (Bool;*$CCtrl,I64,I64;-)
+fn 707 CtrlInside (Bool;*$CCtrl,I64,I64;-)
+fn 708 DrawCtrls (U0;*$CTask;-)
+fn 709 DrawWinScroll (U0;*$CDC,*$CCtrl;-)
+fn 710 WinDerivedScrollValsUpdate (U0;*$CCtrl;-)
+fn 711 LeftClickHWinScroll (U0;*$CCtrl,I64,I64,Bool;-)
+fn 712 LeftClickVWinScroll (U0;*$CCtrl,I64,I64,Bool;-)
+fn 713 WheelChangeWinScroll (U0;*$CCtrl,I64;-)
+fn 714 WinScrollsInit (U0;*$CTask;-)
+fn 715 DrawViewAnglesCtrl (U0;*$CDC,*$CCtrl;-)
+fn 716 UpdateDerivedViewAnglesCtrl (U0;*$CCtrl;-)
+fn 717 LeftClickViewAngles (U0;*$CCtrl,I64,I64,Bool;-)
+fn 718 ViewAnglesNew (*$CCtrl;*$CTask;-)
+fn 719 ViewAnglesDel (U0;*$CTask;-)
+fn 720 $init:C:/Adam/Ctrls/CtrlsA.HC#1 (I64;;-)
+sym f CtrlInside 707 (Bool;*$CCtrl,I64,I64;-)
+sym f CtrlInsideRect 706 (Bool;*$CCtrl,I64,I64;-)
+sym f DrawCtrls 708 (U0;*$CTask;-)
+sym f DrawViewAnglesCtrl 715 (U0;*$CDC,*$CCtrl;-)
+sym f DrawWinScroll 709 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickHWinScroll 711 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f LeftClickVWinScroll 712 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f LeftClickViewAngles 717 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f UpdateDerivedViewAnglesCtrl 716 (U0;*$CCtrl;-)
+sym f ViewAnglesDel 719 (U0;*$CTask;-)
+sym f ViewAnglesNew 718 (*$CCtrl;*$CTask;-)
+sym f WheelChangeWinScroll 713 (U0;*$CCtrl,I64;-)
+sym f WinDerivedScrollValsUpdate 710 (U0;*$CCtrl;-)
+sym f WinScrollsInit 714 (U0;*$CTask;-)
+init 720
+unit C:/Adam/Ctrls/CtrlsA.HC#2

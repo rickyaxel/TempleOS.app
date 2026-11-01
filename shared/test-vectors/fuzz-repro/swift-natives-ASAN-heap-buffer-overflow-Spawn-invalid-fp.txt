@@ -1,0 +1,8 @@
+runtime: swift (memory-safety, P0); kotlin: same logic, surfaces as AIOOBE masked into HolyC "operand stack overflow"
+target: natives
+seed: 9992573390625381997 (natives fuzzer, ASan run); minimized by hand
+signature: AddressSanitizer heap-buffer-overflow READ of size 8, Vm.swift:651 in Vm.exec (RET: t.fRet[dd] with dd = -1),
+           region = HTask frame arrays allocated in HTask.init (HTask.swift:31) via Kernel.newTask from Natives.swift Spawn
+root cause: Spawn creates and registers the task (newTask) before vm.pushCall validates the function pointer;
+           pushCall throws VmFault, the task stays READY with depth 0, the scheduler runs it and RET reads fRet[-1].
+replay: TEMPLEOS_FUZZ_REPLAY=<this .HC> swift test --sanitize=address --filter FuzzTests/testReplay

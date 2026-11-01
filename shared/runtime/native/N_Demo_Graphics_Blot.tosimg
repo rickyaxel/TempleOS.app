@@ -1,0 +1,100 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Blot.HC#0
+g 17fd38 8
+fn 703 $init:C:/Demo/Graphics/Blot.HC#0 (I64;;-)
+sym g dc 17fd38 *$CDC
+init 703
+unit C:/Demo/Graphics/Blot.HC#1
+g 17fd50 8
+fn 704 $init:C:/Demo/Graphics/Blot.HC#1 (I64;;-)
+sym g img1 17fd50 *$CDC
+init 704
+unit C:/Demo/Graphics/Blot.HC#2
+g 17fd68 8
+fn 705 $init:C:/Demo/Graphics/Blot.HC#2 (I64;;-)
+sym g img2 17fd68 *$CDC
+init 705
+unit C:/Demo/Graphics/Blot.HC#3
+fn 706 $init:C:/Demo/Graphics/Blot.HC#3 (I64;;-)
+init 706
+unit C:/Demo/Graphics/Blot.HC#4
+fn 707 $init:C:/Demo/Graphics/Blot.HC#4 (I64;;-)
+init 707
+unit C:/Demo/Graphics/Blot.HC#5
+fn 708 $init:C:/Demo/Graphics/Blot.HC#5 (I64;;-)
+init 708
+unit C:/Demo/Graphics/Blot.HC#6
+fn 709 $init:C:/Demo/Graphics/Blot.HC#6 (I64;;-)
+init 709
+unit C:/Demo/Graphics/Blot.HC#7
+fn 710 $init:C:/Demo/Graphics/Blot.HC#7 (I64;;-)
+init 710
+unit C:/Demo/Graphics/Blot.HC#8
+fn 711 $init:C:/Demo/Graphics/Blot.HC#8 (I64;;-)
+init 711
+unit C:/Demo/Graphics/Blot.HC#9
+fn 712 $init:C:/Demo/Graphics/Blot.HC#9 (I64;;-)
+init 712
+unit C:/Demo/Graphics/Blot.HC#10
+fn 713 $init:C:/Demo/Graphics/Blot.HC#10 (I64;;-)
+init 713
+unit C:/Demo/Graphics/Blot.HC#11
+fn 714 $init:C:/Demo/Graphics/Blot.HC#11 (I64;;-)
+init 714
+unit C:/Demo/Graphics/Blot.HC#12
+fn 715 $init:C:/Demo/Graphics/Blot.HC#12 (I64;;-)
+init 715
+unit C:/Demo/Graphics/Blot.HC#13
+fn 716 $init:C:/Demo/Graphics/Blot.HC#13 (I64;;-)
+init 716
+unit C:/Demo/Graphics/Blot.HC#14
+fn 717 $init:C:/Demo/Graphics/Blot.HC#14 (I64;;-)
+init 717
+unit C:/Demo/Graphics/Blot.HC#15
+fn 718 $init:C:/Demo/Graphics/Blot.HC#15 (I64;;-)
+init 718
+unit C:/Demo/Graphics/Blot.HC#16
+fn 719 $init:C:/Demo/Graphics/Blot.HC#16 (I64;;-)
+init 719
+unit C:/Demo/Graphics/Blot.HC#17
+fn 720 $init:C:/Demo/Graphics/Blot.HC#17 (I64;;-)
+init 720
+unit C:/Demo/Graphics/Blot.HC#18
+fn 721 $init:C:/Demo/Graphics/Blot.HC#18 (I64;;-)
+init 721
+unit C:/Demo/Graphics/Blot.HC#19
+g 17fd80 8
+fn 722 $init:C:/Demo/Graphics/Blot.HC#19 (I64;;-)
+sym g i 17fd80 I64
+init 722
+unit C:/Demo/Graphics/Blot.HC#20
+g 17fd98 8
+fn 723 $init:C:/Demo/Graphics/Blot.HC#20 (I64;;-)
+sym g tmpg 17fd98 *U8
+init 723
+unit C:/Demo/Graphics/Blot.HC#21
+fn 724 $init:C:/Demo/Graphics/Blot.HC#21 (I64;;-)
+init 724
+unit C:/Demo/Graphics/Blot.HC#22
+fn 725 $init:C:/Demo/Graphics/Blot.HC#22 (I64;;-)
+init 725
+unit C:/Demo/Graphics/Blot.HC#23
+s 17fdb0 25683963
+fn 726 $init:C:/Demo/Graphics/Blot.HC#23 (I64;;-)
+init 726
+unit C:/Demo/Graphics/Blot.HC#24
+fn 727 $init:C:/Demo/Graphics/Blot.HC#24 (I64;;-)
+init 727
+unit C:/Demo/Graphics/Blot.HC#25
+fn 728 $init:C:/Demo/Graphics/Blot.HC#25 (I64;;-)
+init 728
+unit C:/Demo/Graphics/Blot.HC#26
+fn 729 $init:C:/Demo/Graphics/Blot.HC#26 (I64;;-)
+init 729
+unit C:/Demo/Graphics/Blot.HC#27
+fn 730 $init:C:/Demo/Graphics/Blot.HC#27 (I64;;-)
+init 730
+unit C:/Demo/Graphics/Blot.HC#28
+fn 731 $init:C:/Demo/Graphics/Blot.HC#28 (I64;;-)
+init 731
+unit C:/Demo/Graphics/Blot.HC#29

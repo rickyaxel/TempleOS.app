@@ -1,0 +1,700 @@
+D	Adam	0	-	-	1513118208863
+D	Adam/ABlkDev	0	-	-	1513118208863
+D	Adam/Ctrls	0	-	-	1513118208863
+D	Adam/DolDoc	0	-	-	1513118208863
+D	Adam/God	0	-	-	1513118208863
+D	Adam/Gr	0	-	-	1513118208863
+D	Adam/Opt	0	-	-	1513118208863
+D	Adam/Opt/Boot	0	-	-	1513118208863
+D	Adam/Opt/Utils	0	-	-	1513118208863
+D	Apps	0	-	-	1513118208863
+D	Apps/Budget	0	-	-	1513118208863
+D	Apps/GrModels	0	-	-	1513118208863
+D	Apps/KeepAway	0	-	-	1513118208863
+D	Apps/Logic	0	-	-	1513118208863
+D	Apps/Psalmody	0	-	-	1513118208863
+D	Apps/Psalmody/Examples	0	-	-	1513118208863
+D	Apps/Span	0	-	-	1513118208863
+D	Apps/Strut	0	-	-	1513118208863
+D	Apps/TimeClock	0	-	-	1513118208863
+D	Apps/Titanium	0	-	-	1513118208863
+D	Apps/ToTheFront	0	-	-	1513118208863
+D	Apps/ToTheFront/AIs	0	-	-	1513118208863
+D	Apps/Vocabulary	0	-	-	1513118208863
+D	Apps/X-Caliber	0	-	-	1513118208863
+D	Compiler	0	-	-	1513118208863
+D	Demo	0	-	-	1513118208863
+D	Demo/AcctExample	0	-	-	1513118208863
+D	Demo/AcctExample/TOS	0	-	-	1513118208863
+D	Demo/Asm	0	-	-	1513118208863
+D	Demo/DolDoc	0	-	-	1513118208863
+D	Demo/Dsk	0	-	-	1513118208863
+D	Demo/Games	0	-	-	1513118208863
+D	Demo/Games/Stadium	0	-	-	1513118208863
+D	Demo/Graphics	0	-	-	1513118208863
+D	Demo/InFile	0	-	-	1513118208863
+D	Demo/Lectures	0	-	-	1513118208863
+D	Demo/MultiCore	0	-	-	1513118208863
+D	Demo/RevFileDemo	0	-	-	1513118208863
+D	Demo/Snd	0	-	-	1513118208863
+D	Demo/SortFileDemo	0	-	-	1513118208863
+D	Demo/Templates	0	-	-	1513118208863
+D	Demo/ToHtmlToTXTDemo	0	-	-	1513118208863
+D	Demo/WebLogDemo	0	-	-	1513118208863
+D	Doc	0	-	-	1513118208863
+D	Downloads	0	-	-	1513118208863
+D	Downloads/TemplarLetters	0	-	-	1513118208863
+D	Downloads/TemplarLetters/TSheikhs	0	-	-	1513118208863
+D	Home	0	-	-	1513118208863
+D	Home/Examples	0	-	-	0
+D	Kernel	0	-	-	1513118208863
+D	Kernel/BlkDev	0	-	-	1513118208863
+D	Kernel/Mem	0	-	-	1513118208863
+D	Kernel/SerialDev	0	-	-	1513118208863
+D	Misc	0	-	-	1513118208863
+D	Misc/Tour	0	-	-	1513118208863
+F	Adam/ABlkDev/ADskA.HC	6514	0966a8ed3301eb61c0b767dcbc0295e7fc2b9016cbb08773856adb59a61e1413	TempleOS V5.03 (public domain, Terry A. Davis)	1493612129999
+F	Adam/ABlkDev/ADskB.HC	5093	d78cf30e58aabc4638532f6504e0eeb9879deafe4a6d9e00ea3ffc7836ded98d	TempleOS V5.03 (public domain, Terry A. Davis)	1485400625999
+F	Adam/ABlkDev/DskChk.HC	10411	fb6e4bf644f485df454f255e1d35ba2b6757557f323cf7d0e79a818e19677d33	TempleOS V5.03 (public domain, Terry A. Davis)	1485405599999
+F	Adam/ABlkDev/DskPrt.HC	4323	f12069426cc069302aed4285ebccf84ed5b63ba97c95f43239bf9ac9ec66501b	TempleOS V5.03 (public domain, Terry A. Davis)	1485401261999
+F	Adam/ABlkDev/FileMgr.HC	19295	af71eb6dc799903db2387d9608e85e1bd4ff8939bee26cf5115a63d805fafbcd	TempleOS V5.03 (public domain, Terry A. Davis)	1496643455999
+F	Adam/ABlkDev/MakeABlkDev.HC	131	03651e2c62712d77d1146985f14eda511f7e2b654f664edff2f1bbce71a5fd14	TempleOS V5.03 (public domain, Terry A. Davis)	1485401261999
+F	Adam/ABlkDev/Mount.HC	5188	43dfccd66a66946ab250f9aab4644977e084a07ee8dd4bf3d27abea6cc47ac7e	TempleOS V5.03 (public domain, Terry A. Davis)	1485402599999
+F	Adam/ADbg.HC	7110	8352777a4e4c378fc3d419638b3f2a538ff3c720c89433059fb0ab8cefcc3a56	TempleOS V5.03 (public domain, Terry A. Davis)	1484648659999
+F	Adam/ADefine.HC	1281	30bed21fff4a6302c876576568c13ff12e030d8a849bdeca7424a480b14e48f3	TempleOS V5.03 (public domain, Terry A. Davis)	1513118193999
+F	Adam/AExts.HC	4478	5dc17012fe30bb44a7a5f176461b024a96442f4b8676c6d4337bda7af96d65e7	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	Adam/AHash.HC	9691	77822e83662d54381db0706577ab084c3719d2642b5d868add471ab2e8eca13c	TempleOS V5.03 (public domain, Terry A. Davis)	1508385999999
+F	Adam/AMath.HC	2458	3023888ca30f37c76548ffb67593a5a3d3ccbcb272205b9029081aa75adb88d9	TempleOS V5.03 (public domain, Terry A. Davis)	1484022457999
+F	Adam/AMathODE.HC	17606	e63f272dd7f9d5718ad78ab816efca7c7f540a4029476d0dcdf3631dd8b10ee8	TempleOS V5.03 (public domain, Terry A. Davis)	1487395309999
+F	Adam/AMem.HC	4037	b1f64f5775feab9138eba3cafaa5bb959dd4f40497e50357d7cd04be3614e0e8	TempleOS V5.03 (public domain, Terry A. Davis)	1483095023999
+F	Adam/AMouse.HC	948	2fd65fee7a23ba1c74bb8f2b7a275e4a51ee32af960616b2dd4b72dcc22fb02b	TempleOS V5.03 (public domain, Terry A. Davis)	1483563043999
+F	Adam/ARegistry.HC	5114	fa55d37ecc4bf3ebf540d2cc7854562924c974dd291f3318334c4057656fd2be	TempleOS V5.03 (public domain, Terry A. Davis)	1485304221999
+F	Adam/ASnd.HC	8095	3c3f37c4698c2d17ee6573f88f591aa8dc5a93876361562c5f8b87d6040ecea2	TempleOS V5.03 (public domain, Terry A. Davis)	1509590645999
+F	Adam/CPURep.HC	1822	8182f3008eea310ac5bd9de3a9bdb68cf33dc4f6e97edb38ad301365f34433bc	TempleOS V5.03 (public domain, Terry A. Davis)	1483548457999
+F	Adam/Ctrls/CtrlsA.HC	11095	dc56e5d3e41fb8489fd2a2081abbca998a9d2aba8e3c0b439f4db2b008503afc	TempleOS V5.03 (public domain, Terry A. Davis)	1483558261999
+F	Adam/Ctrls/CtrlsBttn.HC	2071	be24034b653ef4341e9d07f1df0fa547b4990f0ae6ea9b1054b9c3892eca74ac	TempleOS V5.03 (public domain, Terry A. Davis)	1483565029999
+F	Adam/Ctrls/CtrlsSlider.HC	5105	9a80ae954c0695ce5cddd3dd0f12531772c46cc8265f9480b8f07ba7327dc6b3	TempleOS V5.03 (public domain, Terry A. Davis)	1483558261999
+F	Adam/Ctrls/MakeCtrls.HC	134	5e38edfd514597402c16d16dd1ebd0d49d314c6cd18d8853edc2b51d8eaa6735	TempleOS V5.03 (public domain, Terry A. Davis)	1483565001999
+F	Adam/DevInfo.HC	5457	43b86b50dfadf70165bda05dd1f128074dc3e429ec1f045a379b9f0968dcc2d3	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Adam/DolDoc/DocBin.HC	3088	a135e6aa549c452d66f3c3a9c772d393312a58f9b3c31922f97c5f1595dc7639	TempleOS V5.03 (public domain, Terry A. Davis)	1484657049999
+F	Adam/DolDoc/DocChar.HC	18775	5d72c1c0414514015cb565d4992481ab47c4ef8064176ee8f08246fe96098cb6	TempleOS V5.03 (public domain, Terry A. Davis)	1484657067999
+F	Adam/DolDoc/DocClipBoard.HC	3079	713efea1fa827b2b0bdcd022ddd8276f007c9f1f87aacb12b2a99278577e38a7	TempleOS V5.03 (public domain, Terry A. Davis)	1485405651999
+F	Adam/DolDoc/DocCodeTools.HC	15599	daeac2ca6f0f2794a5b30fdcc508185fe4bc6c11ca987ff102a4e7f73e268e5c	TempleOS V5.03 (public domain, Terry A. Davis)	1485405761999
+F	Adam/DolDoc/DocDblBuf.HC	3340	ee9d9527aa646f0f8a619cc18b95215c77e4cde8eb8ea7562d4d4f6cf10da348	TempleOS V5.03 (public domain, Terry A. Davis)	1484080807999
+F	Adam/DolDoc/DocEd.HC	6565	5777991402a0563997271622206ba41ca9d2b85acd6ae4d6ac197c9e757aeb2d	TempleOS V5.03 (public domain, Terry A. Davis)	1489735943999
+F	Adam/DolDoc/DocExt.HC	653	f492ca1a9a3fd4b319685784d9df7c34cc65a5c2d830ca7426ffcceaffeda2ae	TempleOS V5.03 (public domain, Terry A. Davis)	1485877597999
+F	Adam/DolDoc/DocFile.HC	9639	2a002427c34d07b09077dc82a811029473e9c6ab8114a2e87793d7fbc6c92580	TempleOS V5.03 (public domain, Terry A. Davis)	1497715257999
+F	Adam/DolDoc/DocFind.HC	14219	157922eb3bc8cd67ce5d10dc96ff6a3d1668bf91612ae24cdd6a0b4613ecabcc	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Adam/DolDoc/DocForm.HC	9308	051ad72fd292886b56a15a5ee067e6ee6e50e4b92d44290764f55ffd92ee5c43	TempleOS V5.03 (public domain, Terry A. Davis)	1492833249999
+F	Adam/DolDoc/DocGet.HC	5723	c79833e28649227c24111abafef88d0bcd7f5e083d1236056ad510455d9a24a0	TempleOS V5.03 (public domain, Terry A. Davis)	1485999087999
+F	Adam/DolDoc/DocGr.HC	4794	2aa1087a11052665072e519af304d3d09413c8dccf19087d602f8ad1a17a34b7	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Adam/DolDoc/DocHighlight.HC	4239	8f087d674a7d0b452b280947906bb62dc2f115fd2d60591ee57cf6caa684ea13	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Adam/DolDoc/DocInit.HC	3479	632323687ace48932393ed987431a780bf0e901f192968be9113e6e82942a4aa	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Adam/DolDoc/DocLink.HC	8571	6b3fa97ab46facf4543f5abfa5375215f46bc576a3ac2d2d6df12d1ab5f1ee1c	TempleOS V5.03 (public domain, Terry A. Davis)	1485405761999
+F	Adam/DolDoc/DocMacro.HC	4585	4f77cd40ed193dd35d4e88ef650e32902dd73f451abb245b68f1b65e8110be37	TempleOS V5.03 (public domain, Terry A. Davis)	1484657371999
+F	Adam/DolDoc/DocNew.HC	10277	c98920a4cb23a0dbbbdbc45367d5c65aa6963a886b03869d5940c3ee13bc6f6f	TempleOS V5.03 (public domain, Terry A. Davis)	1484657051999
+F	Adam/DolDoc/DocPlain.HC	15940	f78b3778ebab4c87afa7811bf58ee7f53caab05e26f3abcf91292241656f6953	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Adam/DolDoc/DocPopUp.HC	8370	9dab62345b49eb96ad07bbd7997ffa6695092aee8946984530b348aa48d2c52b	TempleOS V5.03 (public domain, Terry A. Davis)	1485876291999
+F	Adam/DolDoc/DocPutKey.HC	16617	b6e6c7c0a72bbf4d0211beb37ed5002e91f30cb2899795c956bdbad71cb07cd7	TempleOS V5.03 (public domain, Terry A. Davis)	1489736037999
+F	Adam/DolDoc/DocPutS.HC	7828	85821d097646e5ceb386705948c927abfb597380800ea07a5a850900a8bd10e8	TempleOS V5.03 (public domain, Terry A. Davis)	1483611613999
+F	Adam/DolDoc/DocRecalc.HC	36007	d247772529187719b9ae4eb85f139a9b8a182169ec57379387aa6c1d68f53760	TempleOS V5.03 (public domain, Terry A. Davis)	1484657373999
+F	Adam/DolDoc/DocRecalcLib.HC	5485	b92cbb8493106d19e0175d67b6ad03e7dd9440d0e649b2c3585ad0a0bbd2ffbb	TempleOS V5.03 (public domain, Terry A. Davis)	1484657051999
+F	Adam/DolDoc/DocRun.HC	2811	9087614ac621a09f0bf3c73ad3f8f1aefa2760a50a9e4d9facacc88b22740c2d	TempleOS V5.03 (public domain, Terry A. Davis)	1482292795999
+F	Adam/DolDoc/DocTerm.HC	5697	1db5ca3bab9b6aaf3a0ae4a630e975b2362e2762df7a532c86f17b270e810532	TempleOS V5.03 (public domain, Terry A. Davis)	1492524857999
+F	Adam/DolDoc/DocTree.HC	6018	29eaae2282b5375d7c2ebb741a318f5c8c6427701fe06c8dfb1470e8f37840db	TempleOS V5.03 (public domain, Terry A. Davis)	1485309589999
+F	Adam/DolDoc/DocWidgetWiz.HC	29857	8429854ab61af86638840c3e275fb8f6be931869922870547dfb74b3557a941e	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Adam/DolDoc/MakeDoc.HC	1666	45e8f0a2ea09f695f67c8f944bc25a7bc40a33af2bdc62f69bc179abdb591f4e	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Adam/God/GodBible.HC	7045	73e09fa555e824673f1b6c9d2195018f143a8857c0478d33339f7ab6c2a2a346	TempleOS V5.03 (public domain, Terry A. Davis)	1485405761999
+F	Adam/God/GodDoodle.HC	4896	def083c49e47854a6890dcaff7180fa054158647ddde1493bfe57b38a52db2f4	TempleOS V5.03 (public domain, Terry A. Davis)	1483571141999
+F	Adam/God/GodExt.HC	537	ca8097fb3c01961a53f265049fadb24cbd7d6937e6212f58e12b4227776a630b	TempleOS V5.03 (public domain, Terry A. Davis)	1485528153999
+F	Adam/God/GodSong.HC	3974	fa01c8e50fb616ed0557a4183becf6dbfb79840ee293158a0be33fe3da1b245d	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Adam/God/HSNotes.DD	25619	1c6274c55dcb042063ebae5c0112a49e77a96d7892677b6b5ecd79120ac3914a	TempleOS V5.03 (public domain, Terry A. Davis); modified: offensive content censored or redacted by TempleOS.app	1496457065999
+F	Adam/God/HolySpirit.HC	3790	73e500410bd79db6cacfeb3daeff2f44c346a58045de4c2b7b0fd38e5462f68f	TempleOS V5.03 (public domain, Terry A. Davis)	1485528563999
+F	Adam/God/MakeGod.HC	150	e3e5a2edcc38bd0d86102d699b19ea68df90d0503fdfb40fdfed9a2c51d53424	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Adam/God/Vocab.DD	63177	3714c846cc2280ccd599275f3097c6a392a249f786abc3b34cc6d7f47881d9d4	TempleOS V5.03 (public domain, Terry A. Davis); modified: offensive content censored or redacted by TempleOS.app	1474975495999
+F	Adam/Gr/Gr.HH	4382	061bd85ddb417a77b432dc8908b75d29461ed972d0b6199bbb487a85119c7823	TempleOS V5.03 (public domain, Terry A. Davis)	1489463065999
+F	Adam/Gr/GrAsm.HC	6234	c119c37df84f74822c3aa4767c30096ebdf53f547104f929e2241125c13f8dd6	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Adam/Gr/GrBitMap.HC	51887	c34892e2b69e96b8b3d8728c8433a4f324b60e592a403c8db097709c129b2974	TempleOS V5.03 (public domain, Terry A. Davis)	1497660351999
+F	Adam/Gr/GrComposites.HC	9256	da3cad9c8d667827b45e57db055e87e659477069cb7e7919a352aed0060ea0b5	TempleOS V5.03 (public domain, Terry A. Davis)	1489462557999
+F	Adam/Gr/GrDC.HC	11727	3f1302af35b0566d85c48a22184585877fca63b6c7eea9c62575c50a58a115ed	TempleOS V5.03 (public domain, Terry A. Davis)	1497696365999
+F	Adam/Gr/GrEnd.HC	517	290a14f1f0675191ac46e227a8f9bcc567a4e108f108a18144fb26c3f0539a98	TempleOS V5.03 (public domain, Terry A. Davis)	1485405651999
+F	Adam/Gr/GrExt.HC	436	bb4d290d341f1b2db1ff5702e867fd4906f6c798796abe4306ac790ffb58ce8f	TempleOS V5.03 (public domain, Terry A. Davis)	1497647461999
+F	Adam/Gr/GrGlbls.HC	1727	8f952ca14766ec24e7c2dae5629ca31a2873e9d557a0e842d1c852a497b44baa	TempleOS V5.03 (public domain, Terry A. Davis)	1484654509999
+F	Adam/Gr/GrInitA.HC	761	4fc17e27ed12a4f0327502e233b88a43450e8e15df6b98af9a4ad279fe605aae	TempleOS V5.03 (public domain, Terry A. Davis)	1489463003999
+F	Adam/Gr/GrInitB.HC	5077	4dacfec348e2fa9c16616c34a4cbbf6b97bf5fd2d9058e0aa7875589a658435a	TempleOS V5.03 (public domain, Terry A. Davis)	1484654509999
+F	Adam/Gr/GrMath.HC	19186	18d7cf03ede3159ef2f452a73951db5441400bec2e36903606860871205d97eb	TempleOS V5.03 (public domain, Terry A. Davis)	1489462557999
+F	Adam/Gr/GrPalette.HC	2737	c966e949aeb6cbf45aab2410c6ae0f921feab860dc103f52224eaa585bf3e2b5	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Adam/Gr/GrPrimatives.HC	42679	53a03adae44cb88d1d621a0b3713e6637ba45e5194b878e63bc5ac732954c978	TempleOS V5.03 (public domain, Terry A. Davis)	1498933699999
+F	Adam/Gr/GrScrn.HC	10415	73b3433fb41660658bf1ecf92de4f9d9a7b7406c293cd92046e3db70ecb59f8a	TempleOS V5.03 (public domain, Terry A. Davis)	1484654509999
+F	Adam/Gr/GrSpritePlot.HC	13546	3270287fdc936feb3b440c891fac4ec0768d745545ca3c129620c082c0c761f9	TempleOS V5.03 (public domain, Terry A. Davis)	1489462783999
+F	Adam/Gr/GrTextBase.HC	7230	bad03dbb5a9ebaa25e5e62d1c2aac0d9975ebaa1d02aeb0b0d1cff61bb77682d	TempleOS V5.03 (public domain, Terry A. Davis)	1483564973999
+F	Adam/Gr/MakeGr.HC	578	aa8b027fafb21572ccca7c99d612bbec8867425317b7ddb37fea5fe1082fc35f	TempleOS V5.03 (public domain, Terry A. Davis)	1497997467999
+F	Adam/Gr/ScrnCast.HC	2300	1611b3d30323a66ef0f3821389901facdacaf978c0a35e8e39b9104adcd6bf83	TempleOS V5.03 (public domain, Terry A. Davis)	1498026765999
+F	Adam/Gr/SpriteBitMap.HC	16654	3fb489e8b869811d56f0a3f91034d30a09384c21efa7b906befa6b8e3e45532c	TempleOS V5.03 (public domain, Terry A. Davis)	1497715279999
+F	Adam/Gr/SpriteCode.HC	15436	f1fd842deeca32e79a36c4a03cfcdebb8a5c1ae9408f75cb396d51993952b53d	TempleOS V5.03 (public domain, Terry A. Davis)	1489462783999
+F	Adam/Gr/SpriteEd.HC	27702	244865cef58aa09994f2bad021c466880275b450c423b8da5b5f934d2b27c019	TempleOS V5.03 (public domain, Terry A. Davis)	1498330697999
+F	Adam/Gr/SpriteMain.HC	35286	3343bbb03f371321b7b4e66235717fb3a689bf383a633519dbf38db095871644	TempleOS V5.03 (public domain, Terry A. Davis)	1489462857999
+F	Adam/Gr/SpriteMesh.HC	35894	56be009cc3b1d4af7a08ccacbba841f9ff3cfec2b96a8fb224c2fde7223b3428	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Adam/Gr/SpriteNew.HC	5618	832ee14216402d49db29c62670428817b9a0f916cbdc39e754c87960d957c536	TempleOS V5.03 (public domain, Terry A. Davis)	1489463023999
+F	Adam/Gr/SpriteSideBar.HC	2661	01afde7ee15cc7d1c13b9f4d58df22aeb12793c0ad08fd3053a15408b8a50f08	TempleOS V5.03 (public domain, Terry A. Davis)	1486008489999
+F	Adam/Host.HC	1299	151118a5ed6b132bbf11ec0885422fc406e5a2b76d3e632bf240e03964e6a6d0	TempleOS V5.03 (public domain, Terry A. Davis)	1485401229999
+F	Adam/InFile.HC	3079	5852a81f65fef41282c0762d60fb59b65da011d12cb647b171e02587599a1070	TempleOS V5.03 (public domain, Terry A. Davis)	1484657051999
+F	Adam/InsReg.HC	1962	513666d2ba0df2a5f89ae8b55e40d8e611d0a9bd94f8b9a8ff74e4134a52e684	TempleOS V5.03 (public domain, Terry A. Davis)	1484097101999
+F	Adam/MakeAdam.HC	643	f5d33050d7a79306db68a04a0d39e765e3c550422925d940c80276621b773f78	TempleOS V5.03 (public domain, Terry A. Davis)	1497722513999
+F	Adam/Menu.HC	5753	ca3a8f150f5d52cc9ac11caa94dc27d1f3905db52890e7e42c3b25af2ce210ef	TempleOS V5.03 (public domain, Terry A. Davis)	1484022457999
+F	Adam/Opt/Boot/BootDVD.HC	3766	f529a4b4e904e06007076d55c8685754e5466c3343eef6c917f335039d1b6522	TempleOS V5.03 (public domain, Terry A. Davis)	1483558331999
+F	Adam/Opt/Boot/BootDVDIns.HC	767	0e2c4b2895bf6c07a5827fd046708aff6c5e10d39fd24d8a995fb86bec79ba47	TempleOS V5.03 (public domain, Terry A. Davis)	1496642079999
+F	Adam/Opt/Boot/BootHD.HC	1962	b7616832b04bb2aa310d0581e3f21d3e2bc7f5a108c05bed409eb2b77d58faa1	TempleOS V5.03 (public domain, Terry A. Davis)	1483558331999
+F	Adam/Opt/Boot/BootHDIns.HC	1548	d09d99354d967b0353d19b6dd1ac483bccc488278ea056fcefc2ed74092a84d7	TempleOS V5.03 (public domain, Terry A. Davis)	1496455829999
+F	Adam/Opt/Boot/BootMHD.HC	2148	807ee4c772985963a89af78d311a752405b3943ee69e8d21754a30eaae763137	TempleOS V5.03 (public domain, Terry A. Davis)	1483558423999
+F	Adam/Opt/Boot/BootMHD2.HC	2398	5296d7d1578ad3c056e94596a85af494c9d6cfb7f57dd160143071e9c817e54a	TempleOS V5.03 (public domain, Terry A. Davis)	1483558423999
+F	Adam/Opt/Boot/BootMHDIns.HC	4083	1a674b5218b88d35241606ba7ffb2eee4c72ef57d1cd62827a99f40488da0556	TempleOS V5.03 (public domain, Terry A. Davis)	1496455825999
+F	Adam/Opt/Boot/BootRAM.HC	1452	d8d7d2ceb9361e3c2528ebbbe0e5cd618b41e596fe07ba9c57bdac9aa939e601	TempleOS V5.03 (public domain, Terry A. Davis)	1484109959999
+F	Adam/Opt/Boot/DskISORedSea.HC	5501	4b0e25b6b319a0342c5674c23926dbc46ea8931c55c3585b2dd3ba7291f6d13a	TempleOS V5.03 (public domain, Terry A. Davis)	1507064617999
+F	Adam/Opt/Boot/MakeBoot.HC	109	7ad680cc0025090d1948b2d4ce1ea773b4db53f5526b4f2a2f1e50a224657de8	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Adam/Opt/Utils/Diff.HC	9368	979fc7b38294ce431e15bdfc7781bcf1cc73f0b0e4292418d0cdc8966a780ae9	TempleOS V5.03 (public domain, Terry A. Davis)	1483612411999
+F	Adam/Opt/Utils/DocUtils.HC	4303	ccd1893d7a87006f94c69a5a1c78e1f62d99e1591ff72e68ec3901f6c5bcf2d6	TempleOS V5.03 (public domain, Terry A. Davis)	1483200165999
+F	Adam/Opt/Utils/Find.HC	7403	c3578bd88e512d42a4e3e02a451de5eddc52cb1f0e0b461d3bceabbab1812ca2	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Adam/Opt/Utils/HeapLog.HC	5345	196bd3ddaab94da888cf8aa870da3ba09ba0898894b4d66cacdd7dba8089654c	TempleOS V5.03 (public domain, Terry A. Davis)	1483193465999
+F	Adam/Opt/Utils/LineRep.HC	2987	f266007eaa1bca755731262c91d1671281dd693b099a531636addd8cf9abb2f7	TempleOS V5.03 (public domain, Terry A. Davis)	1485400625999
+F	Adam/Opt/Utils/LinkChk.HC	1952	a3f2c4eb2cada44265e5a58a8e18c07b99a7cc77d69ae060e562d70ebf459229	TempleOS V5.03 (public domain, Terry A. Davis)	1484134015999
+F	Adam/Opt/Utils/MakeUtils.HC	261	bb7ae64d5eac1c98dfc37631dcca2af1357a7637185a8fbe089f341029f69636	TempleOS V5.03 (public domain, Terry A. Davis)	1497714609999
+F	Adam/Opt/Utils/MemRep.HC	6016	7cb2c68de679a8a47ed0eb33ec74ce03cf21cd2f5a5ba0da4db3810aa6162969	TempleOS V5.03 (public domain, Terry A. Davis)	1497996861999
+F	Adam/Opt/Utils/Merge.HC	2374	4f82279f4ebddb31882e7297b7d2d3adebc68e3b925e67be36ac0dac8daf5e74	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Adam/Opt/Utils/Profiler.HC	2801	bbc76ea75c8fa30664581b9c5c2fe10ad82328f2347aeb2ac267cbce53bc1e32	TempleOS V5.03 (public domain, Terry A. Davis)	1483556563999
+F	Adam/Opt/Utils/StrUtils.HC	5112	d3bebee3611021e7e5cce1cd5682eee8ac5f4331ff521db00263f3f4addd6154	TempleOS V5.03 (public domain, Terry A. Davis)	1508385999999
+F	Adam/Opt/Utils/TOS.HC	2354	fb35e7765343be917b6f8770fcd2dd8c1b4c43b0a3ec3c500bf717e048183e6d	TempleOS V5.03 (public domain, Terry A. Davis)	1498388149999
+F	Adam/Opt/Utils/ToDolDoc.HC	674	d2c95734f6462ecddaf8d6416373ccdcccad5af097520be87a68619c443fc730	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Adam/Opt/Utils/ToTXT.HC	2854	43fab349c743738233b86ff4be3f173a801ff878646e16577cc13e1fae1b396f	TempleOS V5.03 (public domain, Terry A. Davis)	1485402599999
+F	Adam/TaskRep.HC	784	4176d7dff7cf631be54365b5a30cbd57b826e84b39ca0e0b0121020bd3ce9631	TempleOS V5.03 (public domain, Terry A. Davis)	1483548107999
+F	Adam/TaskSettings.HC	3447	e4631c822b231b14514bcfeca14725bda092d47dcb7084683640e10f3b3984c8	TempleOS V5.03 (public domain, Terry A. Davis)	1485402619999
+F	Adam/Training.HC	4568	1e86c36aa108606f8960d073e66a72be43932faf115dd57bc83458a1f1826dc3	TempleOS V5.03 (public domain, Terry A. Davis)	1484022457999
+F	Adam/WallPaper.HC	4847	890a3ecc658db22f21d9669f706f24b039b0b28cf5743d2efcd535d1fffffeea	TempleOS V5.03 (public domain, Terry A. Davis)	1497995807999
+F	Adam/Win.HC	12763	eac46e7c5017ab460db1f6b1c82c04d90892e83e0cd899472604c93de2d8c5f2	TempleOS V5.03 (public domain, Terry A. Davis)	1497997299999
+F	Adam/WinMgr.HC	22815	3da952356039fea0d83d33af7897e26c1b6112d89eb8ece6bd18b64bc49c4ce4	TempleOS V5.03 (public domain, Terry A. Davis)	1498026773999
+F	Apps/Budget/Accts.DD	97	326a9a7bbe6eacda718c2a97303d0ae72dec52fcd30f68486de59bb358fcf0b4	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Budget/BgtAccts.HC	1793	2d8f69be87ac37707f633354c6021e221c66733eacd4a7df0fdf057522a2b82e	TempleOS V5.03 (public domain, Terry A. Davis)	1485862117999
+F	Apps/Budget/BgtEntry.HC	2024	bce1808a520555488f5011d7fb2f901d0191562c623c1f0f722db03fb1595087	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Apps/Budget/BgtFile.HC	3200	aeea3ba5d696b5665b062c4fcbca8bcf0576284abfce0835e3232f557d1321f6	TempleOS V5.03 (public domain, Terry A. Davis)	1485862089999
+F	Apps/Budget/BgtMain.HC	5096	ba2c006053ef87a13dd86dc51cb218d5134e51a6120bb7278fb1f0605d3076d4	TempleOS V5.03 (public domain, Terry A. Davis)	1485862045999
+F	Apps/Budget/BgtStrs.HC	2856	aaf4e0ff16fe6f7ea30a88848270870b5595a98d6c8ddabd0ddaca6dbd22bfbd	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Budget/BgtTemplate.HC	3602	81c2af6ca4e1f489c969770272efa1531b22b333d05cc72fdd1f316f5fda8733	TempleOS V5.03 (public domain, Terry A. Davis)	1479521241999
+F	Apps/Budget/Budget.HC	1557	e1285a6834be0da87cb0024efc8b45c02011514523da9c9bd621b8332af057e5	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Apps/Budget/Install.HC	114	98dc6400349ba84b84f827f2b6a5f9d35ed9fc089dbca5a8596084b7ad8f69c9	TempleOS V5.03 (public domain, Terry A. Davis)	1485401655999
+F	Apps/Budget/Load.HC	191	f19a3e3887317f77ec841385d147bd7fd28c59b0be84b808da7f31152a5f0911	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Budget/Run.HC	88	60bd9e5b69525ef0e94c197a86725760a261865ef7c2bdf3e401f9b101de2a1b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/GrModels/BallGen.HC	2872	e229b800a3e905fef5cebd2dcffa30b8838ab4bf85e921179e6ab8ca818c6703	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Apps/GrModels/Load.HC	105	e15cd852d271739996239eae0d7260142d62cc1ebfa404a7371daca0c89590e4	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/GrModels/ManGen.HC	8961	55cd058eb258305c93eeb46bdfb4ecd1095c83a2ab4046a927cb1776fc264ad7	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Apps/GrModels/Models.HC	468	aa4d7a630742a38afa9ce25d4ca783e242004a2fe3e0c812b8b5add9b5c28d84	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/GrModels/Run.HC	37	91ef5355257508c01a78f6bd030c06be138c2a1cb28eb202def2005e600bc70b	TempleOS V5.03 (public domain, Terry A. Davis)	1511233521999
+F	Apps/KeepAway/KeepAway.HC	107079	94eeb6d87f66cafb29fa32627df6e8f9fbed62f77ae6dcd55006d820ace4e025	TempleOS V5.03 (public domain, Terry A. Davis)	1498047061999
+F	Apps/KeepAway/Load.HC	71	d481032d5f5543dccbb9ecedd9810c4d9ad4b068867035203e2dfe1ce306daf3	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/KeepAway/Run.HC	39	476c37fbd37b8bd6bc47709bb6a4b2025bbad243b1e7b754ac7e72b031505e65	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Logic/Load.HC	67	a5e00f6ad4ad8a01df979287a1c39a85b03a12dfd504e241f32ab56740da4ade	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Logic/Logic.HC	22696	57006674862cef221ea00c72fdcb7e32d0d57584974132466cd27f1dc98a507a	TempleOS V5.03 (public domain, Terry A. Davis)	1484655049999
+F	Apps/Logic/Run.HC	43	16ca744d0e5f5f777ab9e8b29c2c297f3e5be649af7c9cdb8eeb1fa56d11da5e	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Psalmody/Examples/childish.HC	603	a9a9ec918af8d7fc92d8bb88aa9e7effcaa8b3abfd61d8a86c7c3a0956c98b8c	TempleOS V5.03 (public domain, Terry A. Davis)	1483015435999
+F	Apps/Psalmody/Examples/night.HC	3403	e4a121bdad8baa56ef9187d9a89dee3220061f0306cabeb8f988d221391bedec	TempleOS V5.03 (public domain, Terry A. Davis)	1483014473999
+F	Apps/Psalmody/Examples/prosper.HC	5632	fe0f3d57b9ba32320c817e9cd2c1dd28993a183730e9c584e5a306052655a1b1	TempleOS V5.03 (public domain, Terry A. Davis)	1483014473999
+F	Apps/Psalmody/Help.DD	1870	a53fa9822de8fb684263b0482ceb692fa7a65fdcaa27854ecc33df72e254115b	TempleOS V5.03 (public domain, Terry A. Davis)	1497720141999
+F	Apps/Psalmody/Install.HC	67	3d55f92a6b0cd1c28fe9ecec3d28b844accee83d85b82e1fec09bcfaaebb769c	TempleOS V5.03 (public domain, Terry A. Davis)	1485401655999
+F	Apps/Psalmody/JukeBox.HC	5564	bd8b650b427f826f611e09b6ea94968bdbd3a2550ff72a9826ac12f452b8060c	TempleOS V5.03 (public domain, Terry A. Davis)	1489451899999
+F	Apps/Psalmody/JukePuppet.HC	2479	3768dd9bd5a267dc0453d4292543eddaeae0fc5197794a1efd723c4910e45837	TempleOS V5.03 (public domain, Terry A. Davis)	1498380195999
+F	Apps/Psalmody/Load.HC	218	cb274743297487a0471421af11a0f5db3151d801cfd1d9f9fbfd6ab1708b3431	TempleOS V5.03 (public domain, Terry A. Davis)	1498030699999
+F	Apps/Psalmody/Psalmody.HC	1507	da092b60d175c6ee1661d70cac691ed0b32a9a1394a508306c78b1a2ccaa51cf	TempleOS V5.03 (public domain, Terry A. Davis)	1485404047999
+F	Apps/Psalmody/PsalmodyCtrls.HC	2514	9e20581b0b9cdc9cf07a9cce83e54c12c91f65a4108634d3cf99f66888475552	TempleOS V5.03 (public domain, Terry A. Davis)	1483558261999
+F	Apps/Psalmody/PsalmodyDraw.HC	11932	b3e5f86a61bd2c523eaa4e813145442b10019ebfbc2fd1dc02fa5a87e33bbf7a	TempleOS V5.03 (public domain, Terry A. Davis)	1509590495999
+F	Apps/Psalmody/PsalmodyFile.HC	9243	4e9edb983bfe60b91efed9f75eb911b4aee14cb6d11a233506f5f6e4640dce8a	TempleOS V5.03 (public domain, Terry A. Davis)	1509590479999
+F	Apps/Psalmody/PsalmodyMain.HC	18462	8084473f68c1bd09501d113bf86b44269344d523f932be380928f5711467c162	TempleOS V5.03 (public domain, Terry A. Davis)	1509590681999
+F	Apps/Psalmody/Run.HC	40	4e0fc73f3980d9c23222d18423637cf902cc681a01d8796c41fa5fa0438aa588	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Span/Install.HC	17	ecc2ea096e3115b6768fd9109369822f23c554393b74445c91b8781205deb2d6	TempleOS V5.03 (public domain, Terry A. Davis)	1485401655999
+F	Apps/Span/Load.HC	153	ee13f28dca7f1cf53ff38532f35ce54c2b9aff3de444b850d0bd9e167b8f521a	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Span/Run.HC	36	33b7f152ca1843d4e242d4746b7efcd7758c94d5978926c1d40872c05ab40fd6	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Span/Span.HH	903	4f22e1241dee1f9fef98c691f1d39c374484847d3c23b583cd9d17d57d8f7f4a	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Apps/Span/SpanBridge.HC	2133	e6e2022dc09863cb52af069162a9708bb0fe758063a6e448898214cee46fcf7b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Span/SpanDerive.HC	1208	25fb88f4967702c79b64f52e6047725d8a96c138da3ce27f12de4ccbfc9ba045	TempleOS V5.03 (public domain, Terry A. Davis)	1483555409999
+F	Apps/Span/SpanMain.HC	10325	d4c8dc9a9bf496eadacaadbd39cfaed4a4eaf72ff1f8eb3d06814a69b1b29435	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Apps/Span/SpanNew.HC	2498	66b4de3d984045673907e0cb5876af81a51c7c8293022c38078c639081ed8ba7	TempleOS V5.03 (public domain, Terry A. Davis)	1486055329999
+F	Apps/Strut/Load.HC	68	a549f65b246d1b506d257dcfd27a17d2faacce3d915b02b3356b2160d2fd4772	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Strut/Run.HC	37	c6d7643ad2827c09ee79298f3041d666a4b4799bcaa6673ba1500f99da604525	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Strut/Strut.HC	14530	497232d6e9059dc72f11b987953ea8f9a0f5efac7ffbf847a768748f2e2af0dc	TempleOS V5.03 (public domain, Terry A. Davis)	1486055329999
+F	Apps/TimeClock/Install.HC	250	93a6eaa93c12c52ce8bb378725092355c36c77770029acedfb6f1d05570ea5ec	TempleOS V5.03 (public domain, Terry A. Davis)	1485401655999
+F	Apps/TimeClock/Load.HC	119	c075ba921d2fa92f2ebfe4171362d32e3629d73480140af5236d00b020510606	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/TimeClock/TimeClk.HC	3191	ea0574db2d51cc57b3b5197cb0d3fdf3c4179a65bd142838b2381c5e6764e599	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Titanium/Load.HC	71	edc60f864c9c1eb77cd46b3dac5830a5d82f8412ab70f178cd06a102f72d7fa4	TempleOS V5.03 (public domain, Terry A. Davis)	1480213033999
+F	Apps/Titanium/Run.HC	39	cf0f24a8ad110a81a48ff34a148146fd5557f27a18595673d103e5a982f4c91b	TempleOS V5.03 (public domain, Terry A. Davis)	1480213033999
+F	Apps/Titanium/Titanium.HC	106687	488082e6a7e3188bbda9246f6780aea89e77f696c9eec0027ec3b7e9c3329602	TempleOS V5.03 (public domain, Terry A. Davis); modified: offensive content censored or redacted by TempleOS.app	1508005071999
+F	Apps/ToTheFront/AIs/Human.HC	3801	594fd30fbb47a923ce5b695c5c8846c1821c73dcd04aa2964e0846e6cfdf3fe2	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Apps/ToTheFront/AIs/SimpleAI.HC	1856	77706b69d78f32f1480ea32bc60528285b981b9f1880cf19cd0cbb01051e1377	TempleOS V5.03 (public domain, Terry A. Davis)	1484657117999
+F	Apps/ToTheFront/Install.HC	24	d2fcbd18e5c9b8df95c639096d192e70f2e03ba1d325b66309ff5196d2e2f3a2	TempleOS V5.03 (public domain, Terry A. Davis)	1485401655999
+F	Apps/ToTheFront/Load.HC	205	9929d772f13ebbce1e8a0a0ffd551ec00c23d6395131f187966d911c51212b0d	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/ToTheFront/Run.HC	41	e4d1492f241effc0dd7d2e15b57bf9196df78a422e4183c07f9aba03483850ae	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/ToTheFront/TTFDraw.HC	5543	55ba6665984c8f9faf0371588c812bdb1dc3602ac3d875593fc146831e576447	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Apps/ToTheFront/TTFFire.HC	6876	50edacd4744fd0e13f6e791c6e3cea22fc204e1349ab9fcb6fed3e6b848f3f86	TempleOS V5.03 (public domain, Terry A. Davis)	1509590335999
+F	Apps/ToTheFront/TTFGlbls.HC	2619	bed701eb97876a38bbee468d341e733eb4fcc109f43a70ddbedca82739da027c	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Apps/ToTheFront/TTFInit.HC	9208	0a789e5e10c3afc8b778be855cd804615e896be42eb41fbeb4a77cc79f098959	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Apps/ToTheFront/TTFLib.HC	2416	2b11da999d127996e190f7a52763e21507b91a22366194d6ee032565f11c4363	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Apps/ToTheFront/TTFMove.HC	2925	ca18f9ef02787ca8cc3c1758b4a8936c3fadcb59ea6944e1e8fc566a7eb22094	TempleOS V5.03 (public domain, Terry A. Davis)	1483017013999
+F	Apps/ToTheFront/TTFVis.HC	5261	680184bc5edc3646e78f847a9d82943aefc3bdd4f63632a152608eb23e034eb7	TempleOS V5.03 (public domain, Terry A. Davis)	1484657117999
+F	Apps/ToTheFront/ToTheFront.HC	4366	9c387f949c01fa5728ca6732ba30b4f6483b2165fbe5ec466a3d8467a781523a	TempleOS V5.03 (public domain, Terry A. Davis)	1485799309999
+F	Apps/Vocabulary/Load.HC	72	cf5e6d2096d37fc7f6dfdbcdeb4e6dd9fce81876d1ca1bbc2651fde36ea142fd	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Vocabulary/Run.HC	40	36c578510595691f35bf2ba7b341a228d7d74c53103e91ebb1188ac52a9f6bed	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/Vocabulary/VocabQuiz.HC	1181	7ce89ddfe50d7a3305648d146c4d4733b7a44ae047a17c5a36ed3a3e235792f0	TempleOS V5.03 (public domain, Terry A. Davis)	1483017013999
+F	Apps/X-Caliber/Load.HC	91	1d0bc9e4cc18b58cb1f7880bdc59eadcb01c02dbdbdf3b9de6977529795fdbf2	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/X-Caliber/Run.HC	39	0996519a5a452d443ae64ab1d3dcdea36e7d02aeca5adac6c577534a1fac5d0f	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Apps/X-Caliber/X-Caliber.HC	37983	fd7c92aa35481075188a24c9222420739adf491fcfb54823eabfbe4e3410bd32	TempleOS V5.03 (public domain, Terry A. Davis)	1507441001999
+F	Apps/X-Caliber/XCCtrls.HC	4871	9248a6ac5f505c5d049f0e93a5e609266218a05b8163be9f71a92cd75f297a13	TempleOS V5.03 (public domain, Terry A. Davis)	1484654987999
+F	Compiler/Asm.HC	30668	00f2b2fa8b32eff2ceb3c338b796b1608e2b71b3134f3782cb61b0d460fbfec0	TempleOS V5.03 (public domain, Terry A. Davis)	1491161789999
+F	Compiler/AsmInit.HC	5777	f2e6a8ed27b879031b1574b8e2df01e253b71ca012f86429e7c5f47ed0a61acc	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Compiler/AsmLib.HC	3987	623d84d625a7a2f2f1c7c391b7878c2ee7f1bf0c5486b85fca8f71d8212d39ad	TempleOS V5.03 (public domain, Terry A. Davis)	1483957875999
+F	Compiler/AsmResolve.HC	6228	0bd47938221100b8d4786979f84735f4fdd5aff8406cab75db77a05ee3226df9	TempleOS V5.03 (public domain, Terry A. Davis)	1484657063999
+F	Compiler/BackA.HC	18492	482b2ea015cc771e0e221ab176334623d77b06c241986d3803326914e69def76	TempleOS V5.03 (public domain, Terry A. Davis)	1484657065999
+F	Compiler/BackB.HC	20053	1f7bedaca6845779bfe07142fc6a3c632e7e762a2a7fdb2c9172a981e45aef69	TempleOS V5.03 (public domain, Terry A. Davis)	1484657065999
+F	Compiler/BackC.HC	21570	207ca307204ffa8a29870dae38f9663bd3b2021d78caf35ece0f68380feb6139	TempleOS V5.03 (public domain, Terry A. Davis)	1484657073999
+F	Compiler/BackFA.HC	17654	600aff7a73711571ac764f02bbbd6d8cb41e5651867e59dd496182866d93e924	TempleOS V5.03 (public domain, Terry A. Davis)	1484657065999
+F	Compiler/BackFB.HC	19797	f2b21dcf2e34965ab1488e13190df7ca742464c89466f9e5f8c84eb18ac96a8d	TempleOS V5.03 (public domain, Terry A. Davis)	1484657061999
+F	Compiler/BackLib.HC	17008	df6ee2b2a141b5beb2b9de4394b4386c7ecf11bb429b86458b0681b3463cfe7e	TempleOS V5.03 (public domain, Terry A. Davis)	1484657065999
+F	Compiler/CExcept.HC	6109	4af48a26a34a79094cbdd211b5f586eae81e24d49e08cc74d5fdd0c935a49936	TempleOS V5.03 (public domain, Terry A. Davis)	1484024827999
+F	Compiler/CExts.HC	2294	7f91af973aeb3f2ddd519aa0591b4e4a7caaa8c6ebe00db7b823ade0c36c0c73	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	Compiler/CHash.HC	3961	56d44aa0e437d69740a1eb401726833895762be973cf370ca9b399284344c9a1	TempleOS V5.03 (public domain, Terry A. Davis)	1483089023999
+F	Compiler/CInit.HC	14811	4a74fb31c3f32d336dd79ce21249dfaa6ef9e64112f0319595619407d523e5ee	TempleOS V5.03 (public domain, Terry A. Davis)	1484657077999
+F	Compiler/CMain.HC	17161	318717f411327cdb5b4b4f2d4836e0e9ec69995f80403f0eb2b6d527b2a43647	TempleOS V5.03 (public domain, Terry A. Davis)	1491161789999
+F	Compiler/CMisc.HC	3579	78ebbe40817339bb61e79d2d9b5dbefab402d11397b3a7ad440219f70b1024ef	TempleOS V5.03 (public domain, Terry A. Davis)	1493619045999
+F	Compiler/Compiler.PRJ	975	bbf936462dbe22b5ef4dc8bd0e33269d56c26d246ba7cff48c26c4e4be5477bd	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Compiler/CompilerA.HH	8880	9eca54eff7d1c0803172e45e5483a57262e24f7b759a6a727c29beaf660967b2	TempleOS V5.03 (public domain, Terry A. Davis)	1491161823999
+F	Compiler/CompilerB.HH	3554	829136ab966141dbdb6539bf1a8fb6c6291cce55605acf287fe6de904fc76b48	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	Compiler/Lex.HC	26595	d35432fb7862588ae463524e3896d7de2f2e1db2ccb5f2ce6e11e18db27da864	TempleOS V5.03 (public domain, Terry A. Davis)	1495138115999
+F	Compiler/LexLib.HC	7217	e3618d409597d8fffd9089bfd6c9fd31463a69c9b62ac6089a347b2e3b54e8b2	TempleOS V5.03 (public domain, Terry A. Davis)	1484657051999
+F	Compiler/OpCodes.DD	26808	b814c439af73b080e7584dd32734241724d95f072b6ca7c805759fbd870f635d	TempleOS V5.03 (public domain, Terry A. Davis)	1491161815999
+F	Compiler/OptLib.HC	15369	dba8601706e5a9bbdb3e57a7eaaf0f6328b66d27656141217ddd1119473a81ce	TempleOS V5.03 (public domain, Terry A. Davis)	1484648659999
+F	Compiler/OptPass012.HC	36330	afe81317536c8639c8b755eaba80cf87f6175edd79760c45f7382ee350d15630	TempleOS V5.03 (public domain, Terry A. Davis)	1484396807999
+F	Compiler/OptPass3.HC	16908	a3a455f4d3087e049367c93783edf6bd8716853fca75d0937c4b267e5b4988a1	TempleOS V5.03 (public domain, Terry A. Davis)	1508385999999
+F	Compiler/OptPass4.HC	18544	46035fa73c1856397a2d2490b35b8a8224ea3abb979e874c83389a6a29814475	TempleOS V5.03 (public domain, Terry A. Davis)	1484657065999
+F	Compiler/OptPass5.HC	2612	ecffcfb5d633a129845c34ab8abd73da897299fac0dccb70a2dec33fdbcc06c9	TempleOS V5.03 (public domain, Terry A. Davis)	1484648659999
+F	Compiler/OptPass6.HC	5815	767725bda74cc633893d4c2385c5444bf896a2de00045d04bb12856348aaf852	TempleOS V5.03 (public domain, Terry A. Davis)	1484657065999
+F	Compiler/OptPass789A.HC	32430	7cae9bc11a863d2066df27894449dbb28afb0d550b6b3fae1eeb6bb1362addcc	TempleOS V5.03 (public domain, Terry A. Davis)	1484657065999
+F	Compiler/PrsExp.HC	32484	e1746e64e943f26d6d96179379ec8684f24ae908614b965ea4e01f2d5398dd73	TempleOS V5.03 (public domain, Terry A. Davis)	1484397353999
+F	Compiler/PrsLib.HC	7558	4c29376dea256cc6ca6cc5e2cb042816fb5ef6dc2aafe54f303143a013a555e1	TempleOS V5.03 (public domain, Terry A. Davis)	1484654637999
+F	Compiler/PrsStmt.HC	33792	f9921e2b4fbf39bcb29e92ee128ac8ec7f1607903a508b564fe1cf91f7ed8673	TempleOS V5.03 (public domain, Terry A. Davis)	1493586527999
+F	Compiler/PrsVar.HC	17935	a4d090d96e13f2358aa9914699aefd58f6b785ba5e444d6e9e59ffafcc28bae8	TempleOS V5.03 (public domain, Terry A. Davis)	1496768855999
+F	Compiler/Templates.HC	5697	94653f9095b9521b3d88cf3f47b354734a120d7dad363dec8e8290212c730adf	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Compiler/UAsm.HC	16920	86eeab96951a2c3e6962dc519e35dc153b63db4d802ae6fa7efa2999a537be3d	TempleOS V5.03 (public domain, Terry A. Davis)	1484024921999
+F	Demo/AcctExample/HomeKeyPlugIns.HC	5890	2857e926d7db5456a93b123bbc106f70cce9ce5f42ce80b4e4cb31eecf157254	TempleOS V5.03 (public domain, Terry A. Davis)	1501374273999
+F	Demo/AcctExample/HomeLocalize.HC	596	777543b093322ea36e93e992c42b0188782528ab5df08d653097229254d67888	TempleOS V5.03 (public domain, Terry A. Davis)	1489316941999
+F	Demo/AcctExample/HomeSys.HC	924	a4295ebe1970f6baf2271c20e0fbe4453d6ad04fbd14a35e8bc5b2057bf6a450	TempleOS V5.03 (public domain, Terry A. Davis)	1496478353999
+F	Demo/AcctExample/HomeWrappers.HC	1131	bc7fbd1fb76f6d8e78c03a9cf990f032bd80983365c496a3a9b6799172aff57a	TempleOS V5.03 (public domain, Terry A. Davis)	1496458779999
+F	Demo/AcctExample/MakeHome.HC	486	0cf3221cdb958e306a0297bc2835e691a398b411b8e8e3abe20bc1344ef4aee4	TempleOS V5.03 (public domain, Terry A. Davis)	1505320217999
+F	Demo/AcctExample/Once.HC	1051	247e955644fe9699e8cd0204f926a514252cd4de03237cbcd60d277a0cb4bc29	TempleOS V5.03 (public domain, Terry A. Davis)	1484235953999
+F	Demo/AcctExample/PersonalMenu.DD	66437	d28860ffa2470a273479872c9fb0e743fd545aa7721c661abfc535bb000c859f	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	Demo/AcctExample/PersonalNotes.DD	20528	155f950dad96f54e8c7b8019c240c8856a3b587c7b10a5a38ecdb480bef42fe7	TempleOS V5.03 (public domain, Terry A. Davis); modified: offensive content censored or redacted by TempleOS.app	1511845983999
+F	Demo/AcctExample/Registry.HC	2172	1b67c0b896a26c3aa3559266c38a1cff83b29c90b934ef45c530b661ec356222	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	Demo/AcctExample/TOS/MakeTOS.HC	103	0c2963a4ec59fd785e45c551b95064f1f78bcc96d35a8f0634fd9422b2aa898e	TempleOS V5.03 (public domain, Terry A. Davis)	1496454647999
+F	Demo/AcctExample/TOS/TOSCfg.HC	2218	fa3da0e237aaea90e2d8af95720881f676e7a3771f81233e1c3187a6418156b7	TempleOS V5.03 (public domain, Terry A. Davis)	1498045607999
+F	Demo/AcctExample/TOS/TOSDistro.HC	9676	cd346d1dd21063d732eac6a664136b8d7f293cba0b3fe7a6321b58b25b743059	TempleOS V5.03 (public domain, Terry A. Davis)	1511193683999
+F	Demo/AcctExample/TOS/TOSExt.HC	7582	fd7248c080e0a58e2eb3c0b3b3e55a1b0924c721e18497602a814cf142068252	TempleOS V5.03 (public domain, Terry A. Davis)	1495240427999
+F	Demo/AcctExample/TOS/TOSMisc.HC	3901	52cae8530891453d1b60b120d7c5bd2d98ec0a8b1d3c930124a62cb69c29d6d8	TempleOS V5.03 (public domain, Terry A. Davis)	1509623487999
+F	Demo/AcctExample/TOS/TOSTheme.HC	30687	b6c331a9b67f643db0e0d3ed6f23691286e80ef60a2b6534f582498f5ff9dd44	TempleOS V5.03 (public domain, Terry A. Davis)	1497325985999
+F	Demo/Asm/AsmAndC1.HC	1893	669907c2b3cdb07f4c7670cc5a900aee3ffb86eb1164449e0e5ad573a5958ae2	TempleOS V5.03 (public domain, Terry A. Davis)	1483024185999
+F	Demo/Asm/AsmAndC2.HC	2182	28935da386e060a2eea9c55867f3a4a431947d0bbe4cb65c5e6ab20aceb13bc7	TempleOS V5.03 (public domain, Terry A. Davis)	1483028867999
+F	Demo/Asm/AsmAndC3.HC	475	9d2fc3d08a88f9e25ee45de64e6d438869e91bbcd7b912f4cc222c380659f1a7	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Asm/AsmHelloWorld.HC	1243	4ce74c6c59b9413dfac9b3125f77fa5a1f1c0b88c9cbfb416fd97fdeacbf1370	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Asm/BuzzFizz.HC	4497	41ec42ff7d81396b7cc54578135bfa30d1d73e30ec4627905b409e4a61683932	TempleOS V5.03 (public domain, Terry A. Davis)	1490901577999
+F	Demo/Asm/DivByHand.HC	326	c1b4c83ac2b33887e8d3c606b480ec237f719f4b25047597fe52fcda22cc9744	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Asm/MulByHand.HC	1457	ae062d3b3b9665787a4614d39e0a6196ed9168fced46c9b532d8124ed08de3a9	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Asm/PutDec.HC	1083	8002730a5834122472ee090a95e4b0d1dbfb4030bda1ace3a24bbd646ca120cd	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Carry.HC	582	2db340cf85174349c1c8d7637d69aead8c24b03bbb407008ce2441258624190f	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/ClassMeta.HC	2089	1b337772f9b48f90bf0e939a3320c57752ff656ded486856d59907e0397e618c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/CompileDemo.HC	730	ac530c10a7654de97d530410dcf8d6a41aa55eb42cf36cad4a36c328da478715	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/DateTime.HC	257	ad5b53e8807c7f2eba1acda72872f339b8c315b296c5f590bb2a46c6c79e82e7	TempleOS V5.03 (public domain, Terry A. Davis)	1474980125999
+F	Demo/DbgDemo.HC	381	a90e0f92e7e8524919991534db57a131ffa325651fef14d97cc1bcb6db71d3f1	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Define.HC	647	dd0b25a98b2bbc64175c4275d314bb887bbd1cdd61f681a239aab61a1bf9718f	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Directives.HC	252	a38fd433cdf8cee2563db660ffddcde70653d5f9d83b95aff0603d17cb3822b9	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/DolDoc/CallBack.HC	1664	bc7300d028663e7b7ab9918844ae570dd7cf052fb434af3b0b56bcd705196ce7	TempleOS V5.03 (public domain, Terry A. Davis)	1485404047999
+F	Demo/DolDoc/ClickCallBack.HC	1060	f3968589ba33efaba8faac37bece522453853045d895031a276188a186750f44	TempleOS V5.03 (public domain, Terry A. Davis)	1483016691999
+F	Demo/DolDoc/CursorMove.HC	894	e4089bd01964cff6ed107163fe90bca86ec1d4793539e50ef4fe8d789520e4fa	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/DolDoc/Data.HC	1352	360c3ae662e76def9727e697afc27e301f832924a5dd90f09960c134103e3e14	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/DolDoc/DefineStr.HC	489	ef22df19fea2dd73214c5ed5ddc9b06d0512186c0bc7d772322cb0621a22ede0	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/DolDoc/DemoDoc.DD	4848	dd0d98d4cb4c5709a5682b31f8175155e8b0ce02bc23680fe139bde44bb924d6	TempleOS V5.03 (public domain, Terry A. Davis)	1483612661999
+F	Demo/DolDoc/FileRead.HC	2557	926936ac4ca72a6a67ffe3e295e1314adba65b1868e5d3bc6ca3ddffdab8d5fc	TempleOS V5.03 (public domain, Terry A. Davis)	1496455679999
+F	Demo/DolDoc/Form.HC	1550	192ac3b442e058c4854adcc494736548ca9f642408597adffb25210d9c54b0a0	TempleOS V5.03 (public domain, Terry A. Davis)	1492833337999
+F	Demo/DolDoc/MenuBttn.HC	1750	f5a5322f5273c4796782304c2edd1792cb8956f846266ad22ae5d11ad2a48a2a	TempleOS V5.03 (public domain, Terry A. Davis)	1491579885999
+F	Demo/DolDoc/MenuSprite.HC	1165	d3630372963b8c1eec35ef80391579848625573a2f731da1774fd5782453665e	TempleOS V5.03 (public domain, Terry A. Davis)	1491579865999
+F	Demo/DolDoc/NumBible.HC	720	e867f45d478d2fda01068d6e23812b7329ae29aad5305e8da1baace304fc54d7	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/DolDoc/TextDemo.HC	821	866995abac8a007ade15fa7fce32050e5f781cb488231eaeea2d24dfb516a59f	TempleOS V5.03 (public domain, Terry A. Davis)	1483565001999
+F	Demo/DolDoc/TreeDemo.HC	970	4c8ef820f83a54912830cf93a22b49d178fed84f5e688bbea9263f3a2f16efb2	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/DolDoc/UnusedDefine.HC	1727	94590cba95734560cbdb1adc7569ebb188f0f42cb327ce19d4928a6eabc2eefb	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Dsk/BlkDevRep.HC	440	2172d8e3fa42c8e12cc12ef83f8fc7bed4eb3face35653062a2a361c704bfc04	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/Dsk/DataBase.HC	1276	1376f33b605dc2933eae1c75bfe5a358cc8048c50116a19677b4d5149203d2fa	TempleOS V5.03 (public domain, Terry A. Davis)	1492833345999
+F	Demo/Dsk/DskRaw.HC	998	b41863beceb974f8e777a0c6bcd4a56cd221fa724373715fbb8cc00fe28f2c4e	TempleOS V5.03 (public domain, Terry A. Davis)	1485400555999
+F	Demo/Dsk/FPrintF.HC	1273	8a965780e47855c7d4e112b888ff1f76dd422c92922c3b179fe50dfff8b55230	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Dsk/SerializeTree.HC	960	844d2c942df22e8a54fe98f30444b553126c7dbbe3937e7290acf1c5362f2392	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Dsk/UnusedSpaceRep.HC	271	82cad3fa5dc51111649193ca2690d0d43e8b4abdc3ca4cb497f0ab65a7c837cf	TempleOS V5.03 (public domain, Terry A. Davis)	1485405599999
+F	Demo/Exceptions.HC	757	78f20fa699880338500f28dd6d4fe6f25f531a8454efaeed43cb4da15be19b19	TempleOS V5.03 (public domain, Terry A. Davis)	1483563907999
+F	Demo/ExtChars.HC	666	25d8a0b382277e73814ed28845631b78b28dc6cdc036e7f5d07d47438b364012	TempleOS V5.03 (public domain, Terry A. Davis)	1483441469999
+F	Demo/Games/BattleLines.HC	8292	52ccea640edf696a1b648e60adfb686268036faeb5c0622667eb64b25d247ec0	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Demo/Games/BigGuns.HC	6276	d03a46547f643b5b0b02de2172932a7f3a93f6951fe9125e3a92342185c7c1b4	TempleOS V5.03 (public domain, Terry A. Davis)	1486055329999
+F	Demo/Games/BlackDiamond.HC	62047	78534f1bf2d7e174986405db301c74b11c44c54b15d0bf0299d9631e7127e37e	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Games/BomberGolf.HC	18917	9a4712a266cd19798a32dbc8406a1b2bb9524d1117abd7b546fffda5fd55023c	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Games/CastleFrankenstein.HC	21125	2eb19bbf98230d18dfafd109e96c350be602a909de25df05ef50d4a5b22d8dc2	TempleOS V5.03 (public domain, Terry A. Davis)	1492704781999
+F	Demo/Games/CharDemo.HC	4104	dc3a215308c8f20680529a946503369139383274d94891e7cbe23dcd681e6c84	TempleOS V5.03 (public domain, Terry A. Davis)	1474980005999
+F	Demo/Games/CircleTrace.HC	3017	7db74ca636fd3076f706f986b89e6e280d398d468da9cf6b9450b6fd690b0efe	TempleOS V5.03 (public domain, Terry A. Davis)	1484082373999
+F	Demo/Games/Collision.HC	3997	6e6c2f6150aa6d2564be8df283767da9ce6b3bbfa874efe51878f7dda959dbe0	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/Games/Digits.HC	1853	a2566a4e90716530c52307fa6405cd995f55f85efb14c2be5b4d1c038f2d55b8	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Games/DunGen.HC	16785	eca0cf31068a93d0570683ac16673f7f0d6bb6c8a97b18070d4f706948bd7e28	TempleOS V5.03 (public domain, Terry A. Davis)	1485799231999
+F	Demo/Games/ElephantWalk.HC	53842	e68378015b665e9cea44e30feacd10bc5f353ee97bef943d94d772dee64f008d	TempleOS V5.03 (public domain, Terry A. Davis)	1480799661999
+F	Demo/Games/FlapBat.HC	7660	b0000d22e8870f7be275f60e9ce98de724582aad3cc0ab5b9dba786ea84e8ad4	TempleOS V5.03 (public domain, Terry A. Davis)	1497876207999
+F	Demo/Games/FlatTops.HC	25688	6c1ff880e80131ad7f8d7b4b1ff00815b6032de15b784460158b33634dc7825c	TempleOS V5.03 (public domain, Terry A. Davis)	1485799200000
+F	Demo/Games/Halogen.HC	3007	33474f3b6f933f430dca7d67439e9b467547bba665a5d8f9dd59c3235d5d90b5	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/Games/MassSpring.HC	3205	6420f57253c07121587b500b3ea103a3647b5e6460995185e4b31f7edc528db0	TempleOS V5.03 (public domain, Terry A. Davis)	1486055329999
+F	Demo/Games/Maze.HC	2605	7e8905d5cd507f906fbfb9a78d2dc238243810d5621de4636e03028fec7b0194	TempleOS V5.03 (public domain, Terry A. Davis)	1483564973999
+F	Demo/Games/RainDrops.HC	3520	b7d780d87f243af549ffdd942b8a137fc90a793cfbcd401101eb2c73afedf6f8	TempleOS V5.03 (public domain, Terry A. Davis)	1484657049999
+F	Demo/Games/RawHide.HC	26775	1e13b7a4e75d990bdd96ef2c31e2b507c9caa9107b87f1c7bfbb63902fa8551d	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Games/Rocket.HC	80158	5097308abd1748b1f797e3d19f4b1579a6858c4ee9087957139591eeed195e4a	TempleOS V5.03 (public domain, Terry A. Davis)	1486055329999
+F	Demo/Games/RocketScience.HC	87822	277d8c826ba7acfe577db89b9cb3bbd811f641e416aa9e9d738da9059ef00ace	TempleOS V5.03 (public domain, Terry A. Davis)	1510543117999
+F	Demo/Games/Squirt.HC	84514	67f0406f9dc3198e2640afe086ff00647f425e08207013ed0c6814a474c15a39	TempleOS V5.03 (public domain, Terry A. Davis)	1498342383999
+F	Demo/Games/Stadium/Stadium.HC	3801	3cea1de07fe3596e600267abac74416713e6b1378e1295c249767ee48c4ec1f2	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/Games/Stadium/StadiumBG.DD	302127	b0476fc33f54928982e25a0b62e8bcd46016bec6156ba6a62f9247aa20b7c6d6	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Games/Stadium/StadiumBG.GR	4706	18bd27ad4817b661e0e05064fca0fcb455bccaeedd770fcc8871d799a6081130	TempleOS V5.03 (public domain, Terry A. Davis)	1497661741999
+F	Demo/Games/Stadium/StadiumGen.HC	614	b09a62297160727c2909ce205bebbea3606264f8322998bfeb74fe134c2d78b6	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Games/Talons.HC	138205	af31e209e1b13b4363c81b2a244b2876fe2592ac56b1b67c3074b6396a5c66b6	TempleOS V5.03 (public domain, Terry A. Davis)	1512250125999
+F	Demo/Games/TheDead.HC	7060	b5b99d2d1509d0d4519a25dd13cf82cf528b88c8315f9b2c293c49c403efeadb	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/Games/TicTacToe.HC	2305	b2a63ed99cc4a2dfb886a014f66baf55e4420bb334cadc85de2221679342df2d	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Games/TreeCheckers.HC	7464	4dd9e4f5f4426b6b45d8c9ce51f18ecc9aef33969860d4cf8f1f3941af72c439	TempleOS V5.03 (public domain, Terry A. Davis)	1492667273999
+F	Demo/Games/Varoom.HC	22316	e8671b31da6e3ba249780aa277487611296917231ba4b4efb7111549bab4b089	TempleOS V5.03 (public domain, Terry A. Davis)	1506795539999
+F	Demo/Games/Wenceslas.HC	64508	019abfdfd387d88b74ee144f8d5be85bfbbcafc30934df3393e5431ad0a6fb25	TempleOS V5.03 (public domain, Terry A. Davis)	1501367957999
+F	Demo/Games/Whap.HC	4498	14cdc7b3c178738e4500aec131c44c6235d49791b1b67db3eff7869868c95b70	TempleOS V5.03 (public domain, Terry A. Davis)	1486055329999
+F	Demo/Games/Zing.HC	4676	1557a3c48635a2dfd746708af35a045a7406949ade38902be8f05ffa777469fe	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Games/ZoneOut.HC	111730	fe2a85167b903c845f0ac563a3683ece63b93e6c76a460f93fb98c326149b07f	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/GlblVars.HC	1424	cd4a874556f35a014357e670e43293ea9401db49e4cb797c22d3eaa2757b444d	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/3DPoly.HC	2407	7cf5c8a305beaa7603535c259618d44ab9c6b67b8659a4093870b22b7b26197d	TempleOS V5.03 (public domain, Terry A. Davis)	1483555409999
+F	Demo/Graphics/BSpline.HC	698	478f0a1e2857299e21e2f4cff4323ecac86bb9211208478442e0008c6a0c3d02	TempleOS V5.03 (public domain, Terry A. Davis)	1485650543999
+F	Demo/Graphics/Balloon.HC	732	6b8b89ddc23f12785b5c8d7d96ca9d1aa7f08249e28e52a83c2e3e8b87bec3ab	TempleOS V5.03 (public domain, Terry A. Davis)	1483043877999
+F	Demo/Graphics/Blot.HC	694	c168f733da82b1f8f0aee9c83237a56acf4e1a2771f1e20c47321bb300c424a7	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/Bounce.HC	782	dbf44756c00812f78e2eaf8e2520c4596e444cfe2367dce9ddbda93a786e3035	TempleOS V5.03 (public domain, Terry A. Davis)	1484657049999
+F	Demo/Graphics/Box.HC	1223	43ea2bad24e51886412f762999f4e70bc606d7f1877ef945eb11443c1e027e0a	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/Cartesian.HC	951	1e595e9fa0eb85b0f065d5d57c99f270257b4c66bd9a936d06d892d0b319d7b2	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/CharAnimation.HC	573	d3f424620aea71c16c3d06fce315a197c514d58005793da90fb6164b0a9210e7	TempleOS V5.03 (public domain, Terry A. Davis)	1474981707999
+F	Demo/Graphics/Collision.HC	2532	83bcac7fb5c0031b909b8e3d618e309021a8772162b83fd9b5ed00e298bd97c6	TempleOS V5.03 (public domain, Terry A. Davis)	1483555409999
+F	Demo/Graphics/CommonAncestor.HC	2341	128901a2e3e1ec2b1ef9d578037c204b504a1fcdf8ea720b9cc98445a943da8c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/Doodle.HC	1014	5ea16eb7fcd9119182a0d57d852bbeea5161e86a0c9d44b48460babebdd7b19d	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/EdSprite.HC	6630	493c50b17bcb0009b5ffbaf75e35ffd0c01bc499fec246bf35009359870b1efa	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/Elephant.HC	5141	adc85a7f295c3eec42a9b158daaaa41d836acebdc1fe032ccad1d130c657e39f	TempleOS V5.03 (public domain, Terry A. Davis)	1491453355999
+F	Demo/Graphics/Extents.HC	1132	1e97f94d1b1cc30781d66aa863f4d38b20a81a2abd51d1f3e1e9706a7e761a52	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/FontEd.HC	3351	5d9affd4b2ac888ec6054047eee464f77577d42ffd2baa4f384d5859c10620e7	TempleOS V5.03 (public domain, Terry A. Davis)	1490563063999
+F	Demo/Graphics/Grid.HC	672	658b19432e51da6140814d16647da7b66ac08a64786385932f546f466b299f27	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/Hanoi.HC	3201	bc0aeb446d39472024bb47a446a56d13d86a35682c76bc10c0fe9986b37b2283	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/Graphics/Lattice.HC	5559	a0cd6f5cc3a5896cb13bee5b35dc57618c9469784b6721b1a7fd78a537a9906d	TempleOS V5.03 (public domain, Terry A. Davis)	1492192783999
+F	Demo/Graphics/Life.HC	2019	fa0596cb34e4180316820091c5c629b65c7fcd750f0e085674132d9da44745c4	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/LightTable.HC	15261	e82ba41eb060be9d9cd34e29833f5af4bad97f6299c212d408b7956fa0ea00ce	TempleOS V5.03 (public domain, Terry A. Davis)	1511247107999
+F	Demo/Graphics/Lines.HC	678	470b1db7207bcbe011b513a93144e36a6b755f8c8dfd44ee4ccd28c731b67d68	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/LowPassFilter.HC	1313	73607d12dc38957f8396f3d77eab576d26502670c75d1f6506ef0505857b7422	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/MathAudioDemo.HC	2081	79bdd090a71d886b6e005fff5fca5f0dc39951d7ce33ef853e8069511f6de4c8	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/MouseDemo.HC	160	dd68a7bbda570f4f67af14c7ce6654d29dcf35fe2c313ea8eaaa64feb0645d82	TempleOS V5.03 (public domain, Terry A. Davis)	1483564973999
+F	Demo/Graphics/NetOfDots.HC	234	55491ce92906b47571c8778243ec8cd812f47fa9fbef547d5410f36d78dfe9b1	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/Palette.HC	619	847c62aea0f44beda741f9d2072a320b41f67755aa287112deaa0a41d687add0	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/Graphics/PanText.HC	433	eb3cbe335556515aa0a066f85ac3295624b63d2c574bf290abe0a24870922202	TempleOS V5.03 (public domain, Terry A. Davis)	1491759965999
+F	Demo/Graphics/Pick.HC	2383	57bce47958de2bdd84f1b3bb2f335696263cf654d97ee518e816da307cc7c0bb	TempleOS V5.03 (public domain, Terry A. Davis)	1484657051999
+F	Demo/Graphics/Pick3D.HC	6564	6249e93d5683c5593e1e2584c038c165266d3a422e5fb84d31ffc90d4bf755ff	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/PoleZeros.HC	3560	2529ca99bc92614903cf7ea83d1bcc98aa6eb8c204e26229d91df062fa6ace64	TempleOS V5.03 (public domain, Terry A. Davis)	1486968553999
+F	Demo/Graphics/PredatorPrey.HC	1616	58ae5f16785fd5c8405bae7b65947cd338d825d6346644a1aac8066cdd79dfe2	TempleOS V5.03 (public domain, Terry A. Davis)	1508644981999
+F	Demo/Graphics/RotateTank.HC	2871	1584c91ae756f1759d58ec7765f51791480eb747cd1d7ae22ecfc40c6c53d6a6	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/ScrnCapture.HC	252	3c2ecf75bdbbbaa151f6928814ba0e30bfa502e37903d3ae2a8a5f31a0350eab	TempleOS V5.03 (public domain, Terry A. Davis)	1483587253999
+F	Demo/Graphics/ScrollBars.HC	4500	c9ffa36ef9bd5f518f1ecddda197369e710ccd060b747a33e462d8edc463ecad	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/Shading.HC	4672	05d34a6bece11afd5f51d20035377ae77bf6b3df02c1c35bccb6f5393b2809a8	TempleOS V5.03 (public domain, Terry A. Davis)	1491758703999
+F	Demo/Graphics/Shadow.HC	2301	5d3b66fdae46d88f368f202c380e77e610a6fb8f1c4cce2f3f27affe1dd9b82c	TempleOS V5.03 (public domain, Terry A. Davis)	1483350979999
+F	Demo/Graphics/Slider.HC	3026	e32268fc757836a39b86c94926bd87c013415ef7322654711c8d2e8e4d0dd469	TempleOS V5.03 (public domain, Terry A. Davis)	1483558261999
+F	Demo/Graphics/Speedline.HC	1042	1f9e8ab80f9a6b81ef04866f76e0f684b557327791320b38a37163ffb1e89f51	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/SpritePlot.HC	1465	5447b2123d9f87ec6301a2a06c339a8778eca9fb6e4a70a3b6396336511b4bf0	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/SpritePlot3D.HC	884	927a010f7777a539bf952940bdd93b22ca85a9585155aa849af2368290f55dfe	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/SpritePut.HC	24901	27461cb5e9706cecf2e156afae7b598912b6bd8d658b45ec4fc528da56ea8dbe	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/SpritePutExt.HC	754	04d2f5c3f4b7fc5b4e327a01e7493357174e10ce6d1accfde6bf6bc05aeda386	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/SpriteRaw.HC	808	a7a665e7bfc12a45b2bf9795f342ae26c7ca60d92e9430ff0f3a04414bcbc26c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/SpriteText.HC	961	471b3559bcb82175f6479cf31731ac93e863f2486717c3626ac81e899635a6a7	TempleOS V5.03 (public domain, Terry A. Davis)	1477453611999
+F	Demo/Graphics/SunMoon.HC	1252	e7fe198ea581d148cf57c9e21347b79e8aa9b0bce3b25cad0a5c2007a67b3ad0	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Graphics/Symmetry.HC	1530	4eba37e6e8840e3c9d43dc73fe5bcd07d7ffa619724c9f7361a7db0409b56696	TempleOS V5.03 (public domain, Terry A. Davis)	1484022457999
+F	Demo/Graphics/Transform.HC	8924	553f213ef6919d0701efc475fed15ae8ef03aae61ca6dca155dceacdfd5f4131	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/Graphics/WallPaperCtrl.HC	3072	9617e9643beeced03fc9038f92588f1c43770caf49ec3c406a0ae072e523dfb3	TempleOS V5.03 (public domain, Terry A. Davis)	1483558261999
+F	Demo/Graphics/WallPaperFish.HC	6512	cb42f126458a8b7effab60848fbe94a1dcb7c380a612f3c80994a4940397ec3c	TempleOS V5.03 (public domain, Terry A. Davis)	1484644157999
+F	Demo/Graphics/WinZBuf.HC	434	6fa76b8b5b493a8a8806f4664573f8665477ff709aa114f492ca652a2f975f1b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/InFile/InDir.IN	394	e982c6a5fe60c29123271bdb79130a84bf46157827ef3cab0cd296b41fd65fe2	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/InFile/InEd.DD	4987	b29dc028bd6cec20b24213f262a624df4a9d3700c4360c5ac1ca7ca162d33321	TempleOS V5.03 (public domain, Terry A. Davis)	1484653877999
+F	Demo/InFile/InEd.IN	730	f39855dded42c88b05a448c3ff8d7dcf71ac5d88ac94ccea93a8b6593e933616	TempleOS V5.03 (public domain, Terry A. Davis)	1483562407999
+F	Demo/InFile/InPopUp.HC	282	b0e436969b71b96280c29c7e2466c16fb10badd560613de53b6cd74c186846a0	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/InFile/InPopUpWait.IN	374	3f8a545f6745d5dfea5c9ce080e2a59a28c7236b00d03699942fd246ccc792d5	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/InFile/InProfile.IN	361	070096c42560cbf015c0497a8fb8627618552fa411838073cf259eac97260446	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/InFile/InSetIP.HC	244	d39bd3fd43a39e328fa628d44ac7ddc3b5230dd9cc22460a9b818fc9d2ee3316	TempleOS V5.03 (public domain, Terry A. Davis)	1483562403999
+F	Demo/KeyBitMap.HC	853	152a4fb933e9fc264cd163e7fae537d69c567e5a6e594477cd0a24782fd01136	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/LastClass.HC	594	d951d46ff7e302f8d31aaae20ad6ead4f7fdacd5bee2171de2700e1b6ec38b1c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/64BitAsmQuiz.DD	2952	3011e44038115591acc1f43e1fcbdca92fd15457c97dc3d3c3c4c790d68e52ce	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/AndNotMod.HC	911	2682b50e551a2fdad18688e9594557210899ff245c1a31f18270b64cc71f74d7	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/FixedPoint.HC	2062	3fd70abfbed52fa39cb0fa23ff23b279394c29251a699994201954dab9185742	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/FixedPointAdvanced.HC	3717	b86c86cb673be9fbec4fb2e1c61a2e4939328dd34137a4de3aeb2760d63fe218	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/GraphicsCPULoad.HC	819	cfa92de527500e84d817e7eb8ef313c7537efe6679a2e47ab22da88804ec0d12	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/InterruptDemo.HC	1573	bd215139b38e05f9904042842d469686b97c63f5e464ecc79d17647c527d5988	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/MiniCompiler.HC	5699	24028a8cba43ceba27fa1493def4f120eba02ad9cdd3faee7c09eb214aef0ae9	TempleOS V5.03 (public domain, Terry A. Davis)	1498981393999
+F	Demo/Lectures/MiniGrLib.HC	2913	3b10638182ed20415b9bc737ff8417830889ef143850e7bb74c3171975533c27	TempleOS V5.03 (public domain, Terry A. Davis)	1484022457999
+F	Demo/Lectures/NegDisp.HC	1004	2b052f277c8ace880eb69eb791ff1dd67d85a74002c8297c90cf5b1255637eb3	TempleOS V5.03 (public domain, Terry A. Davis)	1484867337999
+F	Demo/Lectures/Optimization.HC	1812	eb5ab761e57e46406a680faa7ef9f45e5f98e20a8e0af2cf67aa2153552ec566	TempleOS V5.03 (public domain, Terry A. Davis)	1483350817999
+F	Demo/Lectures/PCIInterrupts.HC	1373	8cac3da0ce54f4de280f742094ebe10d929585d7d266cc00523d8b4310dfd673	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/Ring3.HC	1457	a88bf5152d3023e9a40fb78dc033f2999a257fd725f374d7d699f95e2ff35fe5	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Lectures/ScrnMemory.HC	1193	da3a11ff3f6731da0a4040ff7f999f2c53661d852b0b8e942aed0a5db847837a	TempleOS V5.03 (public domain, Terry A. Davis)	1483043877999
+F	Demo/MagicPairs.HC	6930	dfea168865ace5c2246effd8fa56e6af3bdabb6ac7c504a20aeacad470511903	TempleOS V5.03 (public domain, Terry A. Davis)	1485091077999
+F	Demo/MemDemo.HC	1594	8e48abe4a185942ceed282f726b26492b358e9bdc8ffcb61b9120498b944cd5e	TempleOS V5.03 (public domain, Terry A. Davis)	1483094901999
+F	Demo/MsgLoop.HC	698	2016b3f9be84b2ae280c4a41b0b6d86e6d0c42aaa69dba9e4cd6abff0eb6f3bd	TempleOS V5.03 (public domain, Terry A. Davis)	1510529689999
+F	Demo/MultiCore/Interrupts.HC	447	f35436e0a7463e243c94cb115bda8a71fbe7a7985916d3b323f0bea47acbfd02	TempleOS V5.03 (public domain, Terry A. Davis)	1483016177999
+F	Demo/MultiCore/LoadTest.HC	743	09f23ac0a4cd204e95127274fb6902223ec96bef1dc951de440b661a92f01ca5	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/MultiCore/Lock.HC	907	43aaaaa414d586ad5312d8e74caf3c4e1f869efaa997e9e5f8b468d873937013	TempleOS V5.03 (public domain, Terry A. Davis)	1491583903999
+F	Demo/MultiCore/MPAdd.HC	1748	80050544a6ff4ea56bb7f21c82a58695bf3e04c83ffcdef3227f3fad0b94cee3	TempleOS V5.03 (public domain, Terry A. Davis)	1489462419999
+F	Demo/MultiCore/MPPrint.HC	236	5ddd71782311c7351598621634c7369503c2d851abd996db7064e7d5b007407c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/MultiCore/MPRadix.HC	2776	dd5e343ae7526321fe116f29a7812f3a448770c2a9696d9d69cf17e0f50b8ee8	TempleOS V5.03 (public domain, Terry A. Davis)	1508385999999
+F	Demo/MultiCore/Palindrome.HC	1544	44b56d5067b4990c31b42b97092fbc5ee835564a926a3be9be4a7cc6e157b2e2	TempleOS V5.03 (public domain, Terry A. Davis)	1483548077999
+F	Demo/MultiCore/Primes.HC	1401	948136b2ce5b638f2d920603ed7800253ca103d0e6019df14d888d8f6252239e	TempleOS V5.03 (public domain, Terry A. Davis)	1484664939999
+F	Demo/NullCase.HC	436	ddd8cc82cf34020e33c9a387b43cf806b125f3341591f7b684d47998c6a43383	TempleOS V5.03 (public domain, Terry A. Davis)	1484125999999
+F	Demo/OnceDemo.HC	240	c4d5051131162a2662a9f51dfc0eca328807e68d332f0000c87457067d046207	TempleOS V5.03 (public domain, Terry A. Davis)	1484125969999
+F	Demo/ParenWarn.HC	163	8d82094c3f7cdaecfb1ca56855780c115fad9533429bd308536da8a53a03ba7a	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/PhoneNumWords.HC	1000	8714bd1a15e81b43f765182a76b64d8db3e985269796d398a20c00be2c743a1b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Print.HC	642	da2e2d0e51a18f7827a9899c24b5fa5ff5635a209507f23b63c0376cb736c02b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Progress.HC	1834	416986ef1bb29e81b5da753ab5fc27b42f01404c10d7eb092fdef02dd93e142e	TempleOS V5.03 (public domain, Terry A. Davis)	1484082323999
+F	Demo/Prompt.HC	424	c1fcc2c1e4c534cb8a6469fdd0ce32d91da0a1876f3c51d4237f7a9b815c4f10	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/PullDownMenu.HC	1722	2d1cd9f8bd851ea0114f6208451bbda0f842625e48f57a3fe831743ae560a86f	TempleOS V5.03 (public domain, Terry A. Davis)	1484024803999
+F	Demo/RadixSort.HC	692	4c7ef320bd929e1b2e889cbf844cbeb9f9a822eee8542705e3b6d413187abc34	TempleOS V5.03 (public domain, Terry A. Davis)	1477658471999
+F	Demo/RandDemo.HC	1217	f13f2f1320984b676825976a6789d58dc66d5386e81cedbdccc2898f3acfa841	TempleOS V5.03 (public domain, Terry A. Davis)	1484418719999
+F	Demo/RegistryDemo.HC	814	291fca65f13790148f1ebd6c03f1931278f195346fd432fe0f6e04e29fd97b86	TempleOS V5.03 (public domain, Terry A. Davis)	1484082373999
+F	Demo/RevFileDemo/DemoPoemBwd.DD	1209	61aa09316778ade5634e7077db4841b107b0492322551868f911585923c67665	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/RevFileDemo/Rev.HC	478	743ea4af40b0ebf4051be7ae2618cde85b7a2d8826c8919aa11fce06ab4d86d8	TempleOS V5.03 (public domain, Terry A. Davis)	1485405651999
+F	Demo/ScrnCodes.HC	592	c8783a2fc304aeeea9c08e609f9c1c5c9b6f46f4455f38dcbb9d2c4353f95aea	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Snd/ASCIIOrgan.HC	4109	36f36c17d758c23580826b3c91a3a9389bbc0b6be58f3abf4e338d0e81543554	TempleOS V5.03 (public domain, Terry A. Davis)	1483016443999
+F	Demo/Snd/MorseCode.HC	2585	801b69825c54b3f2a95f895707f6934e57e27c7492452c2c7490a8ca9897e5de	TempleOS V5.03 (public domain, Terry A. Davis)	1483190943999
+F	Demo/Snd/OhGreat.HC	1086	b73ecbac7b7d25588ddb7cda10816b58da029cd73abc9e1a9d198471aa19bd77	TempleOS V5.03 (public domain, Terry A. Davis)	1483015435999
+F	Demo/Snd/WaterFowl.HC	308908	36c8706b77f0835c861ffa5c7544edf997debff994500ac97cb0971974145d51	TempleOS V5.03 (public domain, Terry A. Davis)	1509591351999
+F	Demo/SortFileDemo/F64FileGen.HC	598	38676a7693d5b5a46e7d0964b3e529cf0b2d90ab564f30baac44853980cd64ca	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/SortFileDemo/F64FileSort.HC	1642	0ac8bd7d92368f3a3438e71b3a6337b69ad7548672e1a3163934fe892f97fc93	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Spy.HC	1135	f14a78ced9d3e67b42a0bf577750aad6b4a47e81d9f2da5c044e76097d9ebc85	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/StkGrow.HC	987	69134031cad774b4a56da47b6a6fbe32ac75746f0a82fe1db8a1a2dff0997d2b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/SubIntAccess.HC	626	c7b46ddb14ad6e14f1a5e61a75be4b133679f0568f1cf4e8e98781ba8287564d	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/SubSwitch.HC	297	8500ac305868454e90bef308031c42c1950ffcc70850d251925be1fc1c1cc1a9	TempleOS V5.03 (public domain, Terry A. Davis)	1474980135999
+F	Demo/SuggestSpelling.HC	1723	7e8c6c3cc06239b00fbcb3d021afceb8ff85fad2ce59f9046d51a32eebc1ff67	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Templates/Game1.HC	1266	dbdfb3a5c0a7a5e44ab4090771b94f65d091821dfa1b59c59cec36fdae3ec7ba	TempleOS V5.03 (public domain, Terry A. Davis)	1483014473999
+F	Demo/Templates/InEdUtil.IN	529	259d0d92417e38602f2136753d736e21a5d73495bd2d3b5d72ccda7358dde58e	TempleOS V5.03 (public domain, Terry A. Davis)	1485654411999
+F	Demo/Templates/Lex1.HC	431	618501c9f2e847858cd3826526a33f34256794cc62f6c02e56e51c0c9a0993f6	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Templates/MultiCore1.HC	550	eba70e4de9bff0b3a7393e7fb6b98f30a3569807b8e76ad9b47776595e06ce52	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Templates/ODE1.HC	656	9b3b061cdeb1aedec7f13c23a5f307a79bb4aa48f1edb112e0f89502392fad9c	TempleOS V5.03 (public domain, Terry A. Davis)	1486055329999
+F	Demo/Templates/Registry1.HC	180	f884924915187d201a193e07f5884d8a3789063f4a20ea1543abff2833a0acf2	TempleOS V5.03 (public domain, Terry A. Davis)	1484082373999
+F	Demo/Templates/Util1.HC	391	7d72cd256782b011e08c234a66a7443ea5217c374fe73453ee27700387d13cc5	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/Templates/Util2.HC	1199	a677a1f82d63c6ea7790093e2c3fb6c092c502bf8e5ca4c4faf661929a964f27	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/TimeIns.HC	677	d2cf28d43cd5aba223a31fe3936136803236af333ac477182656848eb260396a	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/ToHtmlToTXTDemo/DemoInPage.DD	1124	24e3b0dae5ee8dc0bd833af486b564615983dd1d5eefead5a8c28c1f9ca8cd21	TempleOS V5.03 (public domain, Terry A. Davis)	1498047009999
+F	Demo/ToHtmlToTXTDemo/HtmlGen.HC	790	382b45d753d9acd33affabb2bb34d630082081b0403ef236b9aa991cfabd9263	TempleOS V5.03 (public domain, Terry A. Davis)	1496455321999
+F	Demo/ToHtmlToTXTDemo/TXTGen.HC	177	aa2e1f691ffc2e763d2e036447f1ddcd85ba6fd9a3fb6bf0b1619c59af32e9a9	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Demo/ToHtmlToTXTDemo/ToHtml.HC	10759	0a374371246b7e619651a6cd277e6c2acdfecfcb5e5e336f59a57a7a2797b89b	TempleOS V5.03 (public domain, Terry A. Davis)	1498406953999
+F	Demo/WebLogDemo/WebLogRep.HC	12346	6bcf09ddfead121620a4ced9643ec4d84602aaabcc9ada53814b16de7a0f57e4	TempleOS V5.03 (public domain, Terry A. Davis)	1498791681999
+F	Demo/WebLogDemo/WebLogScramble.HC	1374	7434091f090fd52db7c99e8cfab6a2bfd641b5d5604567d83507198f25292185	TempleOS V5.03 (public domain, Terry A. Davis)	1496685751999
+F	Demo/WordSearch.HC	2628	d0ae8e768eb2d6438105a02cfe603ec7793211dff89c12df32fc6859fc8dc8cc	TempleOS V5.03 (public domain, Terry A. Davis)	1484654855999
+F	Doc/AboutTempleOS.DD	1464	b4191746c062387c9687712cfe6b97822a48888a049d857e9d0037d12076e552	TempleOS V5.03 (public domain, Terry A. Davis)	1498046991999
+F	Doc/Asm.DD	1705	c88d7db31ecce5b19b8e35890609b471a133f3e3ea3ffefb1197ee932f6f8dec	TempleOS V5.03 (public domain, Terry A. Davis)	1491161773999
+F	Doc/AutoComplete.DD	1584	0f414e3bbe70322f7bc62f8e94c22b391445458a7958befa5f0ebe9f65ffa08c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Bit.DD	620	6575829c9b8ed44c6808f692a528d2a89a48ffd62066b2b8e0bd9e7767e60f5b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/BlkChain.DD	2638	ab0637edf1d0cdac7b4beb77c9aeb8ba4892b172278fe9f4c7f5bfca9aa6ccbe	TempleOS V5.03 (public domain, Terry A. Davis)	1486307839999
+F	Doc/Boot.DD	5433	07701b0e8addbb7fa73af47b0b35915bded39697459233056c573f5b183796c2	TempleOS V5.03 (public domain, Terry A. Davis)	1496643259999
+F	Doc/CharOverview.DD	1659	580d24a9d11280d1c49ed07691bdf379562098b08e30245dfdc0dddc8cf59252	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Charter.DD	6726	45a7e6a3e50cac7574f4008d1a9c7f17304e82708ac60f53559a365c13224b2a	TempleOS V5.03 (public domain, Terry A. Davis); modified: offensive content censored or redacted by TempleOS.app	1497715065999
+F	Doc/CmdLineOverview.DD	2065	baf5739e6538a94f05b850855bc57f3c191a242ce0cd27edd07087f20bac67eb	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Comm.HC	2671	cd325db4b3a4c893716e60187c5b60de94211a88b535d8096131f56cf952fab7	TempleOS V5.03 (public domain, Terry A. Davis)	1485133723999
+F	Doc/CompilerOverview.DD	235	59a58631e1f6a9642483d9bbac1d2b2c29c1f3ff0bb856f0f7c4369199fd5c3c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Credits.DD	4585	58ddc8edf81ce48ef961945e52fa85f6dcac7804bfa71790e6287ed41557e9c7	TempleOS V5.03 (public domain, Terry A. Davis)	1498047945999
+F	Doc/Ctrls.DD	383	5bdcad5de963234ede47b22a9cf901f2a6d03c7b6f0a928fb72b8b73bd1d24d1	TempleOS V5.03 (public domain, Terry A. Davis)	1483565001999
+F	Doc/Customize.DD	447	d6604cd29b6ac8698066b12d0d0ddee14dd31ee6e60b48c70f3dc6b507b1dcc3	TempleOS V5.03 (public domain, Terry A. Davis)	1484083487999
+F	Doc/CutCorners.DD	2208	9291e80a12acb2c50383275553776e7263ae0c5f652a4fcf1aee395eb4b9bfd4	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/D3.DD	482	3fb5b8a1217f25fd77bd19c5dd978a6a99f1363f4d7f065a5463be24fd1ac503	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Date.DD	135	ae5f5fc9dfa61cc1f46a0b40f00c3b1cefe6ee9a5dc3535db1e975c1f7766042	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/DbgFunSeg.DD	118	917a01e8af0ecc29a1abf55eb7da871a96a2723c658043dd2d955c67c70be62a	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/DbgOverview.DD	4553	1534e7b1d51a6e17e52ecc32287db552e25de2e338bfaa7729e0f2aeb28d75b8	TempleOS V5.03 (public domain, Terry A. Davis)	1483605651999
+F	Doc/Define.DD	1072	a9bdbe4a2c1db2bb9cf5abf6265b285a25187dd1bbf59a7014331a3e04e636ec	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Demands.DD	7464	cc93a132b768fb5e969160113af9717bd18f7f6438d3e4143f0f3dd6d167f49b	TempleOS V5.03 (public domain, Terry A. Davis)	1509945355999
+F	Doc/DemoIndex.DD	7194	162efac726b8d23802ae36c93f3b643ce6dff813d693b9da20a94693b922fded	TempleOS V5.03 (public domain, Terry A. Davis)	1485819235999
+F	Doc/Directives.DD	479	80fdc3c4303c6f4ff547add32494932db96c1fb6c5207edba192fc97c1dcdbeb	TempleOS V5.03 (public domain, Terry A. Davis)	1480788085999
+F	Doc/DolDoc.DD	374	a578929772cf0fdff50fc776755701870fca2d5a920d0caf93258d222ecf2454	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/DolDocOverview.DD	21199	2a6f6d99d87a464072af5c9b563a9747ad0076dd1e6bee0c5f4cc48121090c43	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Doc/EdPullDown.DD	1782	e1555873298d749e90e8342bb9f4d0141c75d106b8bdc8d9f9953ac0d7fca94f	TempleOS V5.03 (public domain, Terry A. Davis)	1489736269999
+F	Doc/FAQ.DD	14203	7cd0d46fe8b3eead7f10486041e6fbe7041d148da6622df2ef8449bfff0061ab	TempleOS V5.03 (public domain, Terry A. Davis)	1497632163999
+F	Doc/Features.DD	2805	c772759f9d2d8eb5cb52f0a521b8ce14f25d02e9e1c909d0e7442c611ae0db36	TempleOS V5.03 (public domain, Terry A. Davis)	1496643099999
+F	Doc/FileLowLevel.DD	554	7f5f8db46f9fc865384ea61ea2bbec1cf9ef7280a8a91c16f06cab17cd75ff57	TempleOS V5.03 (public domain, Terry A. Davis)	1485400343999
+F	Doc/FileMgr.DD	2576	e873654392594e9d4c860b82474e8f51084bbe0c828afee6cfdcae86129b367d	TempleOS V5.03 (public domain, Terry A. Davis)	1496643071999
+F	Doc/FileMgrPullDown.DD	399	4da6dc97165c36b0cbda95e6564233461638ee765bf81d1ff837e93d740fc4e5	TempleOS V5.03 (public domain, Terry A. Davis)	1496641755999
+F	Doc/FileUtils.DD	2067	5ceee88e05abb3c2f75184c0e4ae8496a5f3f9ed5aed478e7fc4e7971294a0b0	TempleOS V5.03 (public domain, Terry A. Davis)	1497715041999
+F	Doc/Frame.DD	223	6d0d0551567c336870d0d02b97eb42cca9a76d17c616c690a1a9f6baf41066cb	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/GRFiles.DD	1261	0627293ab683eb7986868279631143cb52caa7f9fa57066655fb0b2b75c63d7b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Glossary.DD	14934	90a1eb170e71e71915d4333816caa03b1468442db9a811f162b746b57f716026	TempleOS V5.03 (public domain, Terry A. Davis)	1496643051999
+F	Doc/God.DD	73	63f76ba7b0bc16f2dce9313f41404323a846bc6bfe55da17ba8f7a5686caafac	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/GraphicsOverview.DD	6777	e22cf9f6f29cbcb7fbe5413c8d80b9fed3872a73b0351bf28a5dae8f208f465d	TempleOS V5.03 (public domain, Terry A. Davis)	1489462557999
+F	Doc/GuideLines.DD	8881	5e565b7ab16562dec5e38f67401b1587949e3c91a192f4f6d4d32d7af6a0ade1	TempleOS V5.03 (public domain, Terry A. Davis)	1484083487999
+F	Doc/Hash.DD	2091	2a8579e6c43d5399d41369c143bfbd53bb0e1b91ce2a4d8bddf4d824695c1d15	TempleOS V5.03 (public domain, Terry A. Davis)	1483195857999
+F	Doc/HeapDbg.DD	134	d6e93ec36a4cc041c8a275db7e1d8e8b34bf27eb848e97b4ed72063eae2b2161	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/HelloWorld.DD	1614	82888063d799180af2001f9c81044c431a864eefcc021b2f5083ccdbed9a5c03	TempleOS V5.03 (public domain, Terry A. Davis)	1478209237999
+F	Doc/HelpIndex.DD	7038	d7f62a7fcaba525fd7ca845f4e812ef4e489bde50d1881e8f7826ed04e0bcdf7	TempleOS V5.03 (public domain, Terry A. Davis)	1497995463999
+F	Doc/HelpSystem.DD	569	afad591d11f5b94eeb792b7f8aef481ab6584d2dca67c915537e6ec711942643	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/HolyC.DD	11719	bacd70e46107b03949a3ded7459e1acb771ffbb1864e2b5ef9166d8a81bf10d6	TempleOS V5.03 (public domain, Terry A. Davis)	1492833249999
+F	Doc/InFile.DD	1320	ea8fd5493958cf41297cc204e45e9620959de90d11f1e110c39df844f638a257	TempleOS V5.03 (public domain, Terry A. Davis)	1483562539999
+F	Doc/Install.DD	4012	7326be57bdb948cfc55196d7f007a5b2b942d4e1a27f34caf1a9c975cf810c71	TempleOS V5.03 (public domain, Terry A. Davis)	1496455817999
+F	Doc/Job.DD	2194	743b83cd031910c5902074dba154f9b7bc1d3f62cb2374a9f0b73de35dda6d71	TempleOS V5.03 (public domain, Terry A. Davis)	1484113011999
+F	Doc/KeyAlloc.DD	1926	41da08c1ca2599cb5032bfc5155e60ad63fa4c117d864021e1e4d44e95f1afe9	TempleOS V5.03 (public domain, Terry A. Davis)	1483563907999
+F	Doc/KeyDev.DD	1403	4c639cbee012938e52e730550cad6a239e4a1d07bce8d29fb8426b86cb0751c7	TempleOS V5.03 (public domain, Terry A. Davis)	1483563925999
+F	Doc/Lex.DD	263	71217337d73a3a5e64b3ed7d59426bcd7866f731544e362be54fd29f03a6092d	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/MemOverview.DD	6989	ba0993f529aa375916d421d1c925f74d6fb7d3cf9c7c1a9c3dfd26ecd123803e	TempleOS V5.03 (public domain, Terry A. Davis)	1492200109999
+F	Doc/Menus.DD	1097	fe417f18213d6210c008a850bdb98f016401e400196cdd784ab29bb2cc793d95	TempleOS V5.03 (public domain, Terry A. Davis)	1484022459999
+F	Doc/Mouse.DD	925	c8d506e5e845c6ce2df6bc68eb23ab813da053cfe7fbef7eba54c12496cb1685	TempleOS V5.03 (public domain, Terry A. Davis)	1483571285999
+F	Doc/Msgs.DD	143	e9256aedddd86c8839a635ddd89029f0d5258bc68046b15c766f73e25f9a0edf	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/MultiCore.DD	1404	34bcbbcbf5675d6f0e3816060a4941ceef52fc82fcb4f15fb9aa4be01ec67662	TempleOS V5.03 (public domain, Terry A. Davis)	1482736917999
+F	Doc/NewASCII.DD	463	ec602746c24f0fe8f6055f6275cbbaac82dec454e99c09d81ccda5d8ed4146d7	TempleOS V5.03 (public domain, Terry A. Davis)	1507219795999
+F	Doc/ODE.DD	608	ba447bbc9218a5fdf9bcd385b551908a769ad0df468cdfcca5e5e6cbf213c3b1	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Once.DD	771	b81853ce2d5b991461b9a35045eb91197555a627c83adc746a35b37ca58039ba	TempleOS V5.03 (public domain, Terry A. Davis)	1484113011999
+F	Doc/Options.DD	1550	d49d46b4863a5b136965763b62aa73f70b839830c960b963099afe6ac618505b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Pags.DD	312	3ca802cc11ce8c0d893e243efd708c05efcf5bcd98aa4cac7d12a83942c9c694	TempleOS V5.03 (public domain, Terry A. Davis)	1483095637999
+F	Doc/PreProcessor.DD	1196	36e52625d9cde57a9873bada9c39a6e6ccec65d9603a01a7bda48aa93dd50d54	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Print.DD	4952	06a6fc7f7f5b6ab885392e11f0e758122cbb40ca54a9f5127719f50576b1692a	TempleOS V5.03 (public domain, Terry A. Davis)	1493616877999
+F	Doc/Profiler.DD	596	964a613ab6e2b416216ea619b0d6d271b065e7bd1154222ca4a4568ce4f8c3d5	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Que.DD	266	c4d2c7b9a1bb6de375885654bc29f4e26d7e23813fa0d81dba7e7e6fffa03a7c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Quirks.DD	3610	e4207203f56470ecb0adb138d08677c3803411d6a55a529ac9197b1a67cbfa3d	TempleOS V5.03 (public domain, Terry A. Davis)	1485401229999
+F	Doc/RedSea.DD	2130	c0fa8041fbdcef979002aaa67cecec39d4a1ac8273c0e23e10814d8b3db2664b	TempleOS V5.03 (public domain, Terry A. Davis)	1496643037999
+F	Doc/Reliability.DD	1776	14cd11a6c7d76f051b5dc1abc487e4ddfeacc400ce153967432d157efd837494	TempleOS V5.03 (public domain, Terry A. Davis)	1496169495999
+F	Doc/Requirements.DD	782	51e52b488487183c883aadebe585d25e62dbd241aba377b7e7393a3b5bb1100d	TempleOS V5.03 (public domain, Terry A. Davis)	1496643025999
+F	Doc/Resource.DD	753	097ce93ad71112f1bc421c035252fa674cab8c8e2dd85ae370647a7a82b994f8	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/ScopingLinkage.DD	7843	abe01d285ce3a2d02a36c0009b75145802816db0fe8503f579efc18d4d1f5635	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Snd.DD	450	ed68812d68a09391883f1c755b00d5ecc86c37961b2c72c48538077d50f9bbd7	TempleOS V5.03 (public domain, Terry A. Davis)	1509590247999
+F	Doc/Sprite.DD	780	96608b91b4fecf1b389148db9c42e99b7c53a542c7522852bce62cb58559a8e8	TempleOS V5.03 (public domain, Terry A. Davis)	1485404047999
+F	Doc/SpriteBitMap.DD	284	8826c32fc28dbc76daefd5fe4699e1009dd55a96d923d791899fb50cb1cb5680	TempleOS V5.03 (public domain, Terry A. Davis)	1485404047999
+F	Doc/SpriteEd.DD	639	254d52985d3de4040289444a388e6909432ca300822dbe0971204e2ba4f8e2bd	TempleOS V5.03 (public domain, Terry A. Davis)	1485404047999
+F	Doc/SpriteEdText.DD	103	e676be665cf85522b8fef6173836f26ebc16bbf3ef1d41438ef898a3ba2269aa	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/SpriteMain.DD	1173	02de3824ea8fba10725f058698d3f22c7795c287b69331035d22c9c232024838	TempleOS V5.03 (public domain, Terry A. Davis)	1483564205999
+F	Doc/SpriteSideBar.DD	366	f996a10ea1c21c397ae874604d9cdf2d527b65b686019f7c19491e543d6d2328	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/StandBy.DD	635	1decf1332c8b594339089ad4e28eebf78bf3e45f8a26fe4ab5f37da00774c96a	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Start.DD	219	0f5f7dc1ebd091d2acee39b81b4211a8ffcd0febc423e6b8d5075e9854017530	TempleOS V5.03 (public domain, Terry A. Davis)	1489463747999
+F	Doc/StdOutTask.DD	335	bda55a99365bb05b9a4e5270764aea9596a2951958cb56e9b639d07c760b6ce5	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/StdTempleOSPC.DD	11604	29d5b615a0119dc219d89dc888e69284eff0f49ea2e4fab627b204396153b381	TempleOS V5.03 (public domain, Terry A. Davis)	1498047709999
+F	Doc/Strategy.DD	5200	4cd2fd5043e779f1b1c1b3da0fe8becd325daa46ec97a648d4091317cb18d424	TempleOS V5.03 (public domain, Terry A. Davis); modified: offensive content censored or redacted by TempleOS.app	1483565001999
+F	Doc/Streams.DD	1177	86df6cc6cfc416f562ace427af6a714bb94c685e47ac9e8948e6dbcbbd4c6ef4	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/TOSZ.DD	439	a521b95037b993d5b7bbe00116e33f840f45c3b581c0e5573d59f988e72335b3	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/TextBase.DD	1204	ad8134cb0b657d7eb0644b8e6314ba752bee3090682401f86f1c4c7f7436a188	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/TimeCycles.DD	269	c91256f62ec0d5d55a67264dc106a92bf319caba2c56b9f3af141185139eaecf	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/TimeDate.DD	346	5a44799f0a3d4c72a407c2de851aa159769f76fe9f86ff617f839b915951dde4	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/TimeHPET.DD	224	c1177d608bc3fdd142b16606739e1ae2af200f09bed2408c96c75ba286756e45	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/TimeJiffy.DD	423	0b21931edb140f3a9060f251b39c9005ca1c5b2cd08ce9ebcd8c76f9aca56a02	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Doc/Tips.DD	13985	e74a1264bd4fa502478dd40b83007852169103f285848de5094fcf6902e799f2	TempleOS V5.03 (public domain, Terry A. Davis)	1497715021999
+F	Doc/Transform.DD	1997	35a05e0770ec354f1e156e0746c5d5d0894b37c09dbd56f412980f07135e9f20	TempleOS V5.03 (public domain, Terry A. Davis)	1479436711999
+F	Doc/Welcome.DD	15558	dd278da47d8e50eb5dc491f1a4e5dd87b088088976b64710b31f87e842acfcce	TempleOS V5.03 (public domain, Terry A. Davis)	1508385999999
+F	Doc/WhyNotMore.DD	5615	718e2fe1f64126b4ed8989edb3702923d6d59748d6e056573c6dceefbb5154a5	TempleOS V5.03 (public domain, Terry A. Davis)	1496478381999
+F	Doc/Widget.DD	2559	459fa5fa2349cf238573ccbae5cb0cc72eebeeedba292d6b6a03c64d0de8d69f	TempleOS V5.03 (public domain, Terry A. Davis)	1492833231999
+F	Doc/Windows.DD	269	86ba79f5b0e21677a29903375d75ae73eea5eb0082ba73ad5ff40bd1ac1a858a	TempleOS V5.03 (public domain, Terry A. Davis)	1474975495999
+F	Downloads/ReadMe.TXT	1101	5c29f1b09715273c9c301ae5a67c030a9c30410d3e1348ab7c2bf044647480b0	TempleOS V5.03 (public domain, Terry A. Davis)	1498043373999
+F	Downloads/TemplarLetters/TSheikhs/171207SerialPort.DD	855	7666594a40cf107c95012300a5a1ed73c7ce78f03255ad652b887c90b4892ffa	TempleOS V5.03 (public domain, Terry A. Davis)	1512646757999
+F	Home/Examples/Animation.HC	566	78c42729e2d748edfed4d9b7c65f2f0d771708c3fcfdcc88ed7c171cdccd42a4	TempleOS Mobile	0
+F	Home/Examples/Arithmetic.HC	419	cfba18faee74a13ac10758d2096ec4a31c51eaa1a40b95f08811926bf2060219	TempleOS Mobile	0
+F	Home/Examples/CatchGame.HC	1300	0ac18b98087fa37d6db549d1ae3f5a2c347c149918186248507f12cd36ec8d2e	TempleOS Mobile	0
+F	Home/Examples/Functions.HC	401	25b9139c8eac60ec1aa8ee9bbb850ccddcd4371fcf95d223ce3f3ba6be003a5c	TempleOS Mobile	0
+F	Home/Examples/Graphics.HC	520	619e146a947c362182027c7bf8331b600eb9d43950b2f51b493dc4b4796a926d	TempleOS Mobile	0
+F	Home/Examples/Hello.HC	176	b1538ae4132224293984452c60c0e6efd1faabee3e27b4a409af557fa964b2ed	TempleOS Mobile	0
+F	Home/Examples/Loops.HC	375	cae425e8628baa8d98f5a6f7917ac49b67dd066a83257ae22e982c67e705f130	TempleOS Mobile	0
+F	Home/Examples/Palette.HC	510	ed513e4f04dbf8114f2bbfd8bcfbf96a677ac6ec4a4a773636b3bd6b386a4cdf	TempleOS Mobile	0
+F	Home/Examples/Sound.HC	283	58d76378d92c83eaac499392d8235e04e03e598b2075c5592010a447351b784b	TempleOS Mobile	0
+F	Home/Welcome.DD	824	8d7fd5c62bebce65148c4dd149fdd2dc59742cdb769152f9a005e7f5647b8361	TempleOS Mobile	0
+F	HomeKeyPlugIns.HC	3914	0dfa2a9249210707178aea01e9b484e18b76dde064213731ae0d0d7d375f70ac	TempleOS V5.03 (public domain, Terry A. Davis)	1485405653999
+F	HomeLocalize.HC	506	42ca49026171cf30ed5a9d810fb0bee92a83b0b36a436a2afd92f2707b5cd172	TempleOS V5.03 (public domain, Terry A. Davis)	1483570879999
+F	HomeSys.HC	745	0ceb6445e7425f3f9e5d6e8214cd4b4e5ef1c6c412c4ec82d98f12a5b3cfd5e7	TempleOS V5.03 (public domain, Terry A. Davis)	1484083487999
+F	HomeWrappers.HC	767	bcad343c2beab605bb3003a1a685dcc85d58b34f9a6f0d7b9ea4109749019612	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Kernel/BlkDev/DskATA.HC	15295	40e69d9d58b61495ee00c2044c1ec82236cf6830924688a85536c4e6f6e49498	TempleOS V5.03 (public domain, Terry A. Davis)	1486822103999
+F	Kernel/BlkDev/DskATAId.HC	7823	e53dc03382063cedc82c3ee1a91a757cd1b4df8db2872b3b22939e29cb420d56	TempleOS V5.03 (public domain, Terry A. Davis)	1485402795999
+F	Kernel/BlkDev/DskAddDev.HC	5831	cb2bbd0a3218aa797050019be17b576cd3b42881c6712fb26ddac8a6237f8c50	TempleOS V5.03 (public domain, Terry A. Davis)	1496642977999
+F	Kernel/BlkDev/DskBlk.HC	2514	3d6bae5b82b5fd8a7cda611aaa8fe024182e5bc1e924d0a6d8630c612108b87a	TempleOS V5.03 (public domain, Terry A. Davis)	1485402457999
+F	Kernel/BlkDev/DskBlkDev.HC	4833	f03da2571a039d96a88a116dd9104680167e93b68aac435614acf141e760a0ba	TempleOS V5.03 (public domain, Terry A. Davis)	1511202179999
+F	Kernel/BlkDev/DskCDDVD.HC	5540	e1c7b52a20922d2d0345ab2a524398ea92753b00ac381573b03f2f47c86b940f	TempleOS V5.03 (public domain, Terry A. Davis)	1496643383999
+F	Kernel/BlkDev/DskCFile.HC	6076	cbaa77cd57fde09bbd90c2f9fcc7720b5a9c837e79ca208661ecd4b0aa03b959	TempleOS V5.03 (public domain, Terry A. Davis)	1505322101999
+F	Kernel/BlkDev/DskCache.HC	3437	1e5e9eeb60d9b8cc6459d4a48604f60b95a4e7b0dfabc873c79c00c0a13caf31	TempleOS V5.03 (public domain, Terry A. Davis)	1483193465999
+F	Kernel/BlkDev/DskClus.HC	2834	e7b85f4486d35dcc5e628f1ea26bc6d1b53c4e5b25482aaa4f2ef92e5e5b4c73	TempleOS V5.03 (public domain, Terry A. Davis)	1496642869999
+F	Kernel/BlkDev/DskCopy.HC	2576	afd4feab90a180647726d820d780f755f0a8292897a140bc5fb3e9e5aacd3849	TempleOS V5.03 (public domain, Terry A. Davis)	1496642855999
+F	Kernel/BlkDev/DskDirA.HC	5065	ddda4a49ba119ea95e032c17c0ffd4935767d63f771e4b291cd4ac8da4f9deb9	TempleOS V5.03 (public domain, Terry A. Davis)	1496642851999
+F	Kernel/BlkDev/DskDirB.HC	4819	8bd4af49b0a52ed5e068a33bddaa07a13d5750c9481337db979b9b7eb284b38a	TempleOS V5.03 (public domain, Terry A. Davis)	1508204291999
+F	Kernel/BlkDev/DskDirContext.HC	2195	6dd59c53a80f0ef65800f02f4c20b60d3f3d7b2787bd7b016451913d0b1ee596	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Kernel/BlkDev/DskDrv.HC	8820	fc8abf32b871cc0272eff577168c81ddbe6fab6359a6de309d24d212c7d6dc36	TempleOS V5.03 (public domain, Terry A. Davis)	1496642821999
+F	Kernel/BlkDev/DskFile.HC	3288	907f314c5d7a534ec36986e1c860c64402dcb22be93fcb43d85770c9d6c08f26	TempleOS V5.03 (public domain, Terry A. Davis)	1496642839999
+F	Kernel/BlkDev/DskFind.HC	4035	ca932ae96aa52cfbc0b3647845c87f50dfd5553c233bdfbf10688d9e7d2ebec7	TempleOS V5.03 (public domain, Terry A. Davis)	1496642633999
+F	Kernel/BlkDev/DskFmt.HC	2052	4fe147eb0a981ad0b5b3a372daca028b5206713a9f5c43703d8651111a3cffbe	TempleOS V5.03 (public domain, Terry A. Davis)	1496642835999
+F	Kernel/BlkDev/DskStrA.HC	8305	169357c8460fb5cbd0c1dca0476cefbb7a26c7368ff2d249423c0eb0c287cdff	TempleOS V5.03 (public domain, Terry A. Davis)	1485402619999
+F	Kernel/BlkDev/DskStrB.HC	1884	3a33993791c25969ff6b7350030ae8fc48269cb49eacb106bd4059d22f8bab7b	TempleOS V5.03 (public domain, Terry A. Davis)	1496642609999
+F	Kernel/BlkDev/FileSysFAT.HC	25579	329715f6cae62b23af266d4e03675291abcd8353b9b0583135bc2da3dbf59289	TempleOS V5.03 (public domain, Terry A. Davis)	1493616319999
+F	Kernel/BlkDev/FileSysRedSea.HC	15382	898c31c8c05911c46aefc66ce711fcf6abf18c83a12553c2423371a79564082a	TempleOS V5.03 (public domain, Terry A. Davis)	1511201491999
+F	Kernel/BlkDev/MakeBlkDev.HC	457	c76a92ad0dcab6cd469eebc1e2dc6b48e883dd69bf2a9578d620658583cbb54c	TempleOS V5.03 (public domain, Terry A. Davis)	1496642241999
+F	Kernel/Compress.HC	7600	8e49bae4e7ea8d948a39af8bd95034242c64c4fe4db752d2bdad88dbd0465eee	TempleOS V5.03 (public domain, Terry A. Davis)	1484657057999
+F	Kernel/Display.HC	3586	ef33efb45e5f0b8ee3a1dc9c08db3db7450087c817e09c20ec51818f43349c66	TempleOS V5.03 (public domain, Terry A. Davis)	1483441469999
+F	Kernel/EdLite.HC	7729	188f3022361165325fbe5ab3af02069573a166e431668011b5d14b600a6d6bae	TempleOS V5.03 (public domain, Terry A. Davis)	1483611823999
+F	Kernel/FontStd.HC	5527	dece99330479ea6283de2bf2bad9d756ab1b1a0a6ab2a2da25e4198e3d388729	TempleOS V5.03; font data from FreeDOS (public domain per Doc/Credits.DD)	1474975497999
+F	Kernel/FunSeg.HC	8341	e499763482dd544696cd9a1318cf366da50f9072440cdd8d4d926f4443819486	TempleOS V5.03 (public domain, Terry A. Davis)	1493616319999
+F	Kernel/Job.HC	12714	2d9f8bb8e8689a5974af71d4865941c2c1fd678f9acf79cfdaff0eadbab59a8f	TempleOS V5.03 (public domain, Terry A. Davis)	1485402599999
+F	Kernel/KCfg.HC	4717	c58828c5eb49a17ff615d2bd5e5eee5b55548769d4cd7fcd361f3a0496c14c97	TempleOS V5.03 (public domain, Terry A. Davis)	1485402853999
+F	Kernel/KDataTypes.HC	5693	a88b8218e220a3f2c19cab276a75d22db209c861a51c3645c6ef5359ffe27c80	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Kernel/KDate.HC	3943	6271be9167b30d2fc96ed011ed20c2bb16a3c2918c0a27ac4035d9b9ac0edbf8	TempleOS V5.03 (public domain, Terry A. Davis)	1483193465999
+F	Kernel/KDbg.HC	14463	0e9b3d0ba041ce0566a1965d41a5a39ba05b56967c9d67ce31262e5181288131	TempleOS V5.03 (public domain, Terry A. Davis)	1483915541999
+F	Kernel/KDefine.HC	6331	b975aab20bf3c693fe10c5109e923b67be83e1963e44e1e983636a1cc75bc485	TempleOS V5.03 (public domain, Terry A. Davis)	1496643333999
+F	Kernel/KExcept.HC	3576	4dbd451002990b2d310e2a19fae380f2fe6a9942578c456e44f214a6485099ad	TempleOS V5.03 (public domain, Terry A. Davis)	1483915081999
+F	Kernel/KExts.HC	4874	0b4c9b3087ffdc91ad6587be03abcd33cf1715721fbca20b0f4e69597edb5df5	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	Kernel/KGlbls.HC	991	5081b18f8228afb228ea3cbe702541ad9767c81256f3db95806e6bdb7fdde253	TempleOS V5.03 (public domain, Terry A. Davis)	1497994963999
+F	Kernel/KHashA.HC	4507	76780258c5faf76775a57488c0a9747bb90c5c5c7b1f3e7eceb09804598d0da3	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Kernel/KHashB.HC	6758	260e17f94bfddf8c5d3d5f95dbffd3b8e34bcfd0581167275ed4cf736bfab03d	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Kernel/KInts.HC	4846	c4beca8b62664e0f653ef56c34250d1c951165199c802dee40cc4c7598d3a672	TempleOS V5.03 (public domain, Terry A. Davis)	1483563943999
+F	Kernel/KLoad.HC	6147	da0c11feab995197faf94593bf5eaebb7f110ce2aaefa1ef2583b10002c6f88b	TempleOS V5.03 (public domain, Terry A. Davis)	1491161791999
+F	Kernel/KMain.HC	6011	46457f114885042a042f60a4a7f4d768df4b76c75faa639dc6a0d1204703ae11	TempleOS V5.03 (public domain, Terry A. Davis)	1509590187999
+F	Kernel/KMathA.HC	10729	0d123c8ab3ad60be4d6c8b7a56a14ee7bd86f9f449c42dde01710f145d0560ab	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Kernel/KMathB.HC	3078	c7614bd3b5d0d479f38de1ef2a7bef9551c8e716a3fa58b6e8a94b86633da094	TempleOS V5.03 (public domain, Terry A. Davis)	1475285347999
+F	Kernel/KMisc.HC	6873	eb55e3c256bc5dd4f7e9b9318142a687002e95e63d74b8e4fbea24bd23173117	TempleOS V5.03 (public domain, Terry A. Davis)	1509590173999
+F	Kernel/KStart16.HC	5583	686946db64529d89c16e5723490c3b4b4ab110b1362c3fcfeb3a1b374f2c9883	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Kernel/KStart32.HC	2996	8b913008c3f10876353889562da44c26fadcb3b5e6618f48d2ee56da39b8adc2	TempleOS V5.03 (public domain, Terry A. Davis)	1484646945999
+F	Kernel/KStart64.HC	1993	1facbfe74103db0abc4771233bffd823ab6881f3a80d39c9e3eacca354bce3f6	TempleOS V5.03 (public domain, Terry A. Davis)	1484113011999
+F	Kernel/KTask.HC	13685	4ea967e45c3b82a81925a4aebd11e9daa8e6d1f4c5708ddee6124f3e502d4188	TempleOS V5.03 (public domain, Terry A. Davis)	1492200109999
+F	Kernel/KUtils.HC	6678	0372304b077110f40b13883af21aa5365b57ddfcb8572e0f75cb40af5a65131a	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Kernel/Kernel.PRJ	1391	72ad432e1984734e64992467c7bc4add114a11e14f5e9cb780cb23524c14bed1	TempleOS V5.03 (public domain, Terry A. Davis)	1508385645999
+F	Kernel/KernelA.HH	92628	c26b79f6552bb4f869376a38e1a9ce42acf99166f28294c38e29dbae03bb29ac	TempleOS V5.03 (public domain, Terry A. Davis)	1509590515999
+F	Kernel/KernelB.HH	14390	c267a59bc3418a86d59a72eaf7ed22bebb278c9b714352572ed67457daf6a1b0	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	Kernel/KernelC.HH	30664	d96d3a3364e81724e0b43cc37a0733d85654779b231e145cc5eb889aa4ac2fca	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	Kernel/KeyDev.HC	5079	bafd8fd1f74b49a07d0b5532ed7c12afeea23fcdf794175747101e718cc5e8fb	TempleOS V5.03 (public domain, Terry A. Davis)	1483563907999
+F	Kernel/Mem/BlkPool.HC	1844	06492c1aa8bda7217eb8421733aed8a45f3e51e3d1a8b493d90a192374b6ede3	TempleOS V5.03 (public domain, Terry A. Davis)	1483600431999
+F	Kernel/Mem/HeapCtrl.HC	845	a143545e508df3e6206cf887b4194252bebff2e94447d10857807b3b07894a27	TempleOS V5.03 (public domain, Terry A. Davis)	1483095731999
+F	Kernel/Mem/MAllocFree.HC	10519	1b7042c81516988d64810fbf5994194c21f1cf4955c8c29a4ec78895f12d5528	TempleOS V5.03 (public domain, Terry A. Davis)	1483193737999
+F	Kernel/Mem/MakeMem.HC	163	07262d5591bd5ad4feb7a4d11cfc0df7b678cbb532f9400b761c38bf65455020	TempleOS V5.03 (public domain, Terry A. Davis)	1483095731999
+F	Kernel/Mem/MemPag.HC	4060	3cb8f2a3ae5dfe0275d55f6dbcb4111f9fb6a0889f45568300f25600336d75c4	TempleOS V5.03 (public domain, Terry A. Davis)	1483915099999
+F	Kernel/Mem/MemPhysical.HC	4231	2b991ba36e067e6646b6a4f16822e461588228d39c3a47a1f5551d495765627a	TempleOS V5.03 (public domain, Terry A. Davis)	1483625877999
+F	Kernel/Mem/PageTables.HC	3908	584c2c970d853bf60d8728076ff0deffa29b4a221a308fef02c3d5cb7a6d08f5	TempleOS V5.03 (public domain, Terry A. Davis)	1510593917999
+F	Kernel/MultiProc.HC	9956	3b444d06013ced4f24511837aa47a57741799872ea1afb10bb9c9d00f24cd4c7	TempleOS V5.03 (public domain, Terry A. Davis)	1492200109999
+F	Kernel/PCIBIOS.HC	5430	5de3bf71156770f599c09407d7bb865a3f0d22070ca484dce414f758372d18c5	TempleOS V5.03 (public domain, Terry A. Davis)	1483193465999
+F	Kernel/QSort.HC	2586	ec75d5d7760d968646c6ea9d12f3233a13f5ca567ef2b160dd14b93df302c3b4	TempleOS V5.03 (public domain, Terry A. Davis)	1508385999999
+F	Kernel/Sched.HC	7121	72768ae8960d449484bc8eb176395aaef05f56094ba6d04ce0d5ccc797b0324b	TempleOS V5.03 (public domain, Terry A. Davis)	1501367827999
+F	Kernel/SerialDev/Keyboard.HC	12402	1c9755aca9da9dbd637939eab60382b65185e88b226abe50b56bebd1e47dc931	TempleOS V5.03 (public domain, Terry A. Davis)	1484022459999
+F	Kernel/SerialDev/MakeSerialDev.HC	95	e311af3bb7a76a65e75a94061d9db831494f5486fc43ec8d43f3190ec66163bd	TempleOS V5.03 (public domain, Terry A. Davis)	1483560067999
+F	Kernel/SerialDev/Message.HC	6526	0bf20efa8e47c986b80568626743ce141054974cd34da9a40fe27d6eee566925	TempleOS V5.03 (public domain, Terry A. Davis)	1484024483999
+F	Kernel/SerialDev/Mouse.HC	8429	f20414566a4981630549a416b6c7555df2b44b9e0feec7be0766789673c18ead	TempleOS V5.03 (public domain, Terry A. Davis)	1485030299999
+F	Kernel/StrA.HC	12898	70429121dbb802e46bc1097e6cc5a7d4c338d1523e73080e42cacdd91a2bf9ca	TempleOS V5.03 (public domain, Terry A. Davis)	1483611883999
+F	Kernel/StrB.HC	3662	2d4303b613ce8d9ae7f9061c4505b913dd35d73bb6c7e5ba8c92f13171863c4b	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Kernel/StrPrint.HC	18251	d27abc879b5b5ce22f2a60fd546311fddeda982415c98ee77126e0cc040b709f	TempleOS V5.03 (public domain, Terry A. Davis)	1493614085999
+F	Kernel/StrScan.HC	6778	2f304cd3af891787ef3f9c53b3da74a52d04fda8f25dea1ee202af10c2da9565	TempleOS V5.03 (public domain, Terry A. Davis)	1483441469999
+F	MakeHome.HC	427	43264ae37cea1c00d5720fb935925111c465a4505fd5a82c8458edd3e348bc6d	TempleOS V5.03 (public domain, Terry A. Davis)	1484092655999
+F	Misc/Bible.TXT	4345143	1e26eba1eb07409b64f460406f380de91b94d92cece17e1598312a131c13fedd	Project Gutenberg Etext #10, King James Bible (public-domain text; Gutenberg header retained), as distributed with TempleOS V5.03	1474218855999
+F	Misc/DoDistro.HC	1639	31519f00dbe0fc601f8d4a92131b9c77c305c2e15dc57ded16702b39e26933b9	TempleOS V5.03 (public domain, Terry A. Davis)	1498044319999
+F	Misc/OSInstall.HC	5286	ecd7b181062751fc742a9188e99c8b1001d952fe8b122b4201c12ddb8bd93648	TempleOS V5.03 (public domain, Terry A. Davis)	1485401655999
+F	Misc/OSTestSuite.HC	48570	7c781dd70b859572deb09764735dd4bf8a2acc5f95eb685e75cc16f61f6bf7e4	TempleOS V5.03 (public domain, Terry A. Davis)	1486011553999
+F	Misc/PCIDevices.DD	356581	abd5f65f668d17efc3dacc2f361e1eebb4fcf0bd9e62d92bd233c1b33fa48428	PCI vendor and device list from pcidatabase.com (Doc/Credits.DD), as distributed with TempleOS V5.03	1483313257999
+F	Misc/Tour/Tour.IN	3195	bdf84db8ef4a33cc523847b44cc1a0b518f01f29fe0422cd029702fbaea6d6ee	TempleOS V5.03 (public domain, Terry A. Davis)	1485314637999
+F	Misc/Tour/Tour1.IN	1631	6aced134fa02b9aae57ecf01243a4c49fa4acf057e548b65ac3f4d0c14e4cab1	TempleOS V5.03 (public domain, Terry A. Davis)	1483016177999
+F	Misc/Tour/Tour2.IN	2063	a770be79105994e4ce69d0ed3bd473841adae2c69062a1cca06d061d15a5a46a	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/Tour3.IN	3173	c90be3860763dbf16b6942ea13a66e6c4aaca2063a94d6d0cd6e42262baafb6c	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/Tour4.IN	2955	a4d19b9c899649f3ee4ec25ffc7cc796c9e8356199eaba489db5efef861b7a63	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/Tour5.IN	862	b10d15451f80e1c6ccbd9e448df68138d0a12d080a51d85cfc6156ef2245c918	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/Tour6.IN	1507	f26405a09897f6efb1530ed3ee71262ab691312ecd96e172713362d3d0cc95ed	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/Tour7.IN	1748	d9057a56e6e4683f5694689ee5539064611886c81469f0ddd94aba709c392141	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/Tour8.IN	781	8b3c2fd48e293da5c9fbdbf796d319a0b31aac969e8a2feac1997b9ad059f7dc	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/Tour9.IN	603	ea84fbe342869d6ee5c061e4c4e3cdae45044e47bf99cc70155e4faac2349dad	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/TourA.IN	1219	089a76e42602ca813d132415396443c5d62ed6f1456bdc60d56672cc2053c6f9	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Misc/Tour/TourB.IN	608	02fc9e7ac9c76ea3c54eed367ca298355ecb65e12b8d200c20e27b6b5edd31b5	TempleOS V5.03 (public domain, Terry A. Davis)	1497714717999
+F	Misc/Tour/TourC.IN	293	6b7d2c5b4813f9fdd53030aeb3f3e6304cede4d1d4565a357ea9eb3f1cb87080	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	Once.HC	1151	7e49ca2817c8b712fedc9739d13e7c94a6091d431f796805f4ea2095f40ce161	TempleOS V5.03 (public domain, Terry A. Davis)	1484093051999
+F	PersonalMenu.DD	63471	85d1c327563090d16bbe4858ce177ac32261f1d127c68cb076a212e1d4eb5725	TempleOS V5.03 (public domain, Terry A. Davis)	1513118197999
+F	PersonalNotes.DD	58	0eb873f0c8ed95c2d04371e2ff437a61576c064ce5ab08482971a58b294406be	TempleOS V5.03 (public domain, Terry A. Davis)	1474975497999
+F	StartOS.HC	1158	501a463128ce77b66668a9ed8adbcfdc7da71db2bbf3d857534378da71990346	TempleOS V5.03 (public domain, Terry A. Davis)	1497647443999

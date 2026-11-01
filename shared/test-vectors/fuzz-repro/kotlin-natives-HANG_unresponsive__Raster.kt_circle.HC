@@ -1,0 +1,31 @@
+I64 Cmp(I64 a,I64 b){return a-b;}
+U8 *b0=MAlloc(256),*b1=MAlloc(4096),*s0="hello world",*p; I64 *q,x,i; F64 d;
+for(i=0;i<256;i++) b0[i]=(i*16+238)&255;
+for(i=0;i<4096;i++) b1[i]=(i*255)&127;
+b0[197]=0; b1[1132]=0;
+try{p=StrPrint(b0+77,"%d%fababab",0x40000005,(-1));}catch{Fs->catch_except=TRUE;}
+try{x=MSize(b0);}catch{Fs->catch_except=TRUE;}
+try{x=TextLenStr(b1+1575,(-133),0x3ec,0x1e3,0x1c1,s0);}catch{Fs->catch_except=TRUE;}
+try{x=Bt((b1+4096-2),0x40000000); Bts(NULL,(-12));}catch{Fs->catch_except=TRUE;}
+try{x=IsMute();}catch{Fs->catch_except=TRUE;}
+try{x=DirCur((-8),(b1+4096-8));}catch{Fs->catch_except=TRUE;}
+try{p=StrPrint(s0,"%p",0xf,Fs);}catch{Fs->catch_except=TRUE;}
+try{MemSetU32(b0,0xfff,0x21b);}catch{Fs->catch_except=TRUE;}
+try{x=IsMute();}catch{Fs->catch_except=TRUE;}
+try{q=b1(I64*); q[(-4096)]=0x58;}catch{Fs->catch_except=TRUE;}
+try{x=Circle(b1,0x100,(1<<63),0x40000001,0xffffffff,(-886804451006852229),0x100000010,1.5,b0+0x20000004);}catch{Fs->catch_except=TRUE;}
+try{x=PutChars(0x3fffffff);}catch{Fs->catch_except=TRUE;}
+try{x=mp_cnt();}catch{Fs->catch_except=TRUE;}
+try{Print("ab",0x40000001,(b1+4096-14),0x40000000);}catch{Fs->catch_except=TRUE;}
+try{x=Move(b1+2511,b1);}catch{Fs->catch_except=TRUE;}
+try{x=mp_cnt();}catch{Fs->catch_except=TRUE;}
+try{x=Circle(b1+2989,0x1c2,0x10c,0x3f,0x6,&Cmp,(-4192293462213772915),1e-320,0x15);}catch{Fs->catch_except=TRUE;}
+try{p=StrPrint(b0,"ab",0x100000011,Fs);}catch{Fs->catch_except=TRUE;}
+try{x=QSort(s0,0x9,0x20000000,&Cmp);}catch{Fs->catch_except=TRUE;}
+try{x=GrFillTri0(s0,b1,b0,b1+2848);}catch{Fs->catch_except=TRUE;}
+try{x=TextChar((b1+4096-3),0x460,0x70,(-36),0x77);}catch{Fs->catch_except=TRUE;}
+try{x=PopUpChoose(b1+4174,0xffffffff,b1+4041,(b1+4096-14),(b1+4096-11),0x6);}catch{Fs->catch_except=TRUE;}
+try{x=Pow(1e-320,0.0);}catch{Fs->catch_except=TRUE;}
+try{x=DCTransform(gr.dc,b1,b0,b0+37);}catch{Fs->catch_except=TRUE;}
+try{x=RandU32();}catch{Fs->catch_except=TRUE;}
+"FUZZDONE\n";

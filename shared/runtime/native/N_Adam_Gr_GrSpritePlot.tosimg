@@ -1,0 +1,30 @@
+TOSIMG 1
+unit C:/Adam/Gr/GrSpritePlot.HC#0
+s 132c0 2573
+s 13e70 2453502c22222c42493d256424
+s 132c0 2573
+fn 703 Sprite3 (U0;*$CDC,I64,I64,I64,*U8,Bool;-)
+fn 704 Sprite3B (U0;*$CDC,I64,I64,I64,*U8;-)
+fn 705 Sprite3Mat4x4B (U0;*$CDC,I64,I64,I64,*U8,*I64;-)
+fn 706 Sprite3XB (U0;*$CDC,I64,I64,I64,*U8,F64;-)
+fn 707 Sprite3YB (U0;*$CDC,I64,I64,I64,*U8,F64;-)
+fn 708 Sprite3ZB (U0;*$CDC,I64,I64,I64,*U8,F64;-)
+fn 709 SpriteExtents (U0;*U8,*I64,*I64,*I64,*I64;-)
+fn 710 Sprite2DC (*$CDC;*U8;-)
+fn 711 SpriteInterpolate (*U8;F64,*U8,*U8;-)
+fn 712 DocSprite (*$CDocEntry;*$CDoc,*U8,*U8;-)
+fn 713 Sprite (*$CDocEntry;*U8,*U8;-)
+fn 714 $init:C:/Adam/Gr/GrSpritePlot.HC#0 (I64;;-)
+sym f DocSprite 712 (*$CDocEntry;*$CDoc,*U8,*U8;-)
+sym f Sprite 713 (*$CDocEntry;*U8,*U8;-)
+sym f Sprite2DC 710 (*$CDC;*U8;-)
+sym f Sprite3 703 (U0;*$CDC,I64,I64,I64,*U8,Bool;-)
+sym f Sprite3B 704 (U0;*$CDC,I64,I64,I64,*U8;-)
+sym f Sprite3Mat4x4B 705 (U0;*$CDC,I64,I64,I64,*U8,*I64;-)
+sym f Sprite3XB 706 (U0;*$CDC,I64,I64,I64,*U8,F64;-)
+sym f Sprite3YB 707 (U0;*$CDC,I64,I64,I64,*U8,F64;-)
+sym f Sprite3ZB 708 (U0;*$CDC,I64,I64,I64,*U8,F64;-)
+sym f SpriteExtents 709 (U0;*U8,*I64,*I64,*I64,*I64;-)
+sym f SpriteInterpolate 711 (*U8;F64,*U8,*U8;-)
+init 714
+unit C:/Adam/Gr/GrSpritePlot.HC#1

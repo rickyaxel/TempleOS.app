@@ -1,0 +1,48 @@
+TOSIMG 1
+unit C:/Demo/MagicPairs.HC#0
+value CORE_SUB_RANGE 4096
+class PowPrime 16 0 - -
+m n 0 I64
+m sumfact 8 I64
+class Prime 16 0 - -
+m prime 0 U32
+m pow_cnt 4 U32
+m pp 8 *$PowPrime
+class RangeJob 72 0 - -
+m doc 0 *$CDoc
+m num 8 I64
+m lo 16 I64
+m hi 24 I64
+m N 32 I64
+m sqrt_primes 40 I64
+m cbrt_primes 48 I64
+m primes 56 *$Prime
+m cmd 64 *$CJob
+s 131e0 2564
+s 17fd38 5e2564
+s 17fd50 256420
+g 17fd68 72
+s 17fdc0 25753a25750a
+s 17fdd8 4e3a257520537172745072696d65733a257520436272745072696d65733a257520506f776572734f665072696d65733a25750a
+s 17fe20 466f756e643a25752054696d653a25392e34660a
+fn 703 PrimesNew (*I64;I64,*I64,*I64;-)
+fn 704 PowPrimesNew (*$PowPrime;I64,I64,*$Prime,*I64;-)
+fn 705 SumFact (I64;I64,I64,*$Prime;-)
+fn 706 TestSumFact (Bool;I64,I64,I64,I64,*$Prime;-)
+fn 707 PutFactors (U0;I64;-)
+fn 708 $eval0 (I64;;-)
+fn 709 TestCoreSubRange (I64;*$RangeJob;-)
+fn 710 TestCoreRange (I64;*$RangeJob;-)
+fn 711 MagicPairs (I64;I64;-)
+fn 712 $init:C:/Demo/MagicPairs.HC#0 (I64;;-)
+sym f MagicPairs 711 (I64;I64;-)
+sym f PowPrimesNew 704 (*$PowPrime;I64,I64,*$Prime,*I64;-)
+sym f PrimesNew 703 (*I64;I64,*I64,*I64;-)
+sym f PutFactors 707 (U0;I64;-)
+sym f SumFact 705 (I64;I64,I64,*$Prime;-)
+sym f TestCoreRange 710 (I64;*$RangeJob;-)
+sym f TestCoreSubRange 709 (I64;*$RangeJob;-)
+sym f TestSumFact 706 (Bool;I64,I64,I64,I64,*$Prime;-)
+sym g rj 17fd68 [1]$RangeJob
+init 712
+unit C:/Demo/MagicPairs.HC#1

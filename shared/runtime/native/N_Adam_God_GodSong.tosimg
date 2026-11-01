@@ -1,0 +1,52 @@
+TOSIMG 1
+unit C:/Adam/God/GodSong.HC#0
+s 15320 53696d706c65004e6f726d616c00436f6d706c657800
+s 15348 53545f52485954484d5f434f4d504c4558495459
+fn 703 $init:C:/Adam/God/GodSong.HC#0 (I64;;-)
+init 703
+unit C:/Adam/God/GodSong.HC#1
+class CMakeSongSettings 26 0 - -
+m complexity 0 I64 244c532c443d2253545f52485954484d5f434f4d504c455849545922240a
+m rests 8 Bool 2443422c22526573747322240a
+m six_eight 9 Bool 2443422c2253697820456967687422240a
+m octave 10 I64 2444412d54524d2c413d224f63746176653a256422240a
+m octave_state 18 I64
+c 14608 1 0
+c 14609 1 0
+c 1460a 1 0
+c 1460b 1 0
+c 1460c 1 1
+fn 704 InsNote (U0;*$CMakeSongSettings,*U8,I64,*I64;-)
+fn 705 $init:C:/Adam/God/GodSong.HC#1 (I64;;-)
+sym f InsNote 704 (U0;*$CMakeSongSettings,*U8,I64,*I64;-)
+init 705
+unit C:/Adam/God/GodSong.HC#2
+c 14620 1 0
+c 14621 1 0
+c 14622 1 1
+c 14623 1 2
+c 14624 1 3
+fn 706 $init:C:/Adam/God/GodSong.HC#2 (I64;;-)
+init 706
+unit C:/Adam/God/GodSong.HC#3
+c 14638 1 0
+c 14639 1 0
+c 1463a 1 1
+c 1463b 1 1
+c 1463c 1 4
+c 1463d 1 2
+c 1463e 1 5
+c 1463f 1 6
+c 14640 1 3
+fn 707 $init:C:/Adam/God/GodSong.HC#3 (I64;;-)
+init 707
+unit C:/Adam/God/GodSong.HC#4
+s 14658 434d616b65536f6e6753657474696e6773
+s 14680 24534f2c223c536f6e673e222c413d2225732573257325732224
+fn 708 GodSongStr (*U8;;-)
+fn 709 GodSong (U0;;-)
+fn 710 $init:C:/Adam/God/GodSong.HC#4 (I64;;-)
+sym f GodSong 709 (U0;;-)
+sym f GodSongStr 708 (*U8;;-)
+init 710
+unit C:/Adam/God/GodSong.HC#5

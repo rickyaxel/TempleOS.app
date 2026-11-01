@@ -1,0 +1,9 @@
+TOSIMG 1
+unit C:/Home/Examples/Graphics.HC#0
+s 17fd38 50726573732061206b657920746f20657869742e0a
+s 17fd60 486f6c794321
+fn 703 GraphicsDemo (U0;;-)
+fn 704 $init:C:/Home/Examples/Graphics.HC#0 (I64;;-)
+sym f GraphicsDemo 703 (U0;;-)
+init 704
+unit C:/Home/Examples/Graphics.HC#1

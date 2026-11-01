@@ -1,0 +1,12 @@
+$WW,1$$FG,5$$TX+CX,"Welcome to TempleOS.app"$$FG$
+
+TempleOS was created by $FG,4$Terry A. Davis$FG$ (1969-2018). This app is an independent, native mobile recreation of its user environment. It is not an official TempleOS release and does not emulate a PC: HolyC programs run on a sandboxed HolyC interpreter written for this app, using the original TempleOS graphics and sound libraries.
+
+$FG,2$Things to try$FG$
+  * Open the $FG,4$Terminal$FG$ and type $FG,9$Dir;$FG$ or $FG,9$Cd("::/Demo/Games");Dir;$FG$
+  * Run a program: $FG,9$#include "::/Home/Examples/Hello.HC"$FG$
+  * Edit and run HolyC in the $FG,4$Editor$FG$ (files are saved under C:/Home).
+  * Play Terry's games from the $FG,4$Games$FG$ menu.
+  * Read the original documentation in $FG,4$C:/Doc$FG$.
+
+Everything works offline. Your files stay on this device.

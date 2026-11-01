@@ -1,0 +1,9 @@
+TOSIMG 1
+unit C:/Demo/ScrnCodes.HC#0
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 ScrnCodes (U0;;-)
+fn 705 $init:C:/Demo/ScrnCodes.HC#0 (I64;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym f ScrnCodes 704 (U0;;-)
+init 705
+unit C:/Demo/ScrnCodes.HC#1

@@ -1,0 +1,222 @@
+S C074000000000000
+S C059000000000000
+S C046800000000000
+S C024000000000000
+S C01C000000000000
+S BFF0000000000000
+S BFE0000000000000
+S 0000000000000000
+S 3FE0000000000000
+S 3FF0000000000000
+S 4000000000000000
+S 401C000000000000
+S 4024000000000000
+S 4046800000000000
+S 4059000000000000
+S 4073F00000000000
+S 4074000000000000
+F linear-01	2*x
+F linear-02	x
+F linear-03	-x
+F linear-04	x+1
+F linear-05	3*x-7
+F linear-06	x/2
+F linear-07	x/2.0
+F linear-08	0.5*x+10
+F linear-09	-2*x+3
+F linear-10	x-x
+F poly-01	x*x/100
+F poly-02	x*x*x/10000
+F poly-03	x`2/100
+F poly-04	(x-10)*(x+10)/50
+F poly-05	x`3/1000-x
+F poly-06	x*x*x*x/1000000-x*x/100
+F intsem-01	7/2
+F intsem-02	-7/2
+F intsem-03	7%3
+F intsem-04	-7%3
+F intsem-05	7/2.0
+F intsem-06	7.0/2
+F intsem-07	x/3
+F intsem-08	1/2*x
+F intsem-09	x*1/2
+F intsem-10	100/7*x
+F intsem-11	x%7
+F intsem-12	-x%7
+F bitops-01	5&3
+F bitops-02	5|2
+F bitops-03	5^1
+F bitops-04	~5
+F bitops-05	1<<4
+F bitops-06	256>>3
+F bitops-07	-256>>3
+F bitops-08	1<<2+1
+F bitops-09	6&3+1
+F bitops-10	1+6&3
+F bitops-11	5&3|8
+F bitops-12	x(I64)&15
+F bitops-13	x(I64)<<1
+F power-01	2`10
+F power-02	x`0.5
+F power-03	2`3`2
+F power-04	-x`2
+F power-05	-2`2
+F power-06	2*3`2
+F power-07	x`-1*1000
+F power-08	(-8)`(1/3.0)
+F power-09	0`0
+F power-10	2`0.5
+F prec-01	1+2*3
+F prec-02	2*3+1
+F prec-03	10-4-3
+F prec-04	100/10/2
+F prec-05	2*-3
+F prec-06	--x
+F prec-07	-(-x)
+F prec-08	!x
+F prec-09	!0
+F prec-10	!!x
+F prec-11	1-~1
+F compare-01	x>0
+F compare-02	x<0
+F compare-03	x==0
+F compare-04	x!=0
+F compare-05	x>=10
+F compare-06	x<=-10
+F compare-07	0<x<10
+F compare-08	-5<=x<=5
+F compare-09	x>0 && x<50
+F compare-10	x<-50 || x>50
+F compare-11	x>0 ^^ x>25
+F compare-12	(x>0)*x
+F compare-13	1<2<3
+F compare-14	3>2>1
+F func-01	Sin(x/20)*100
+F func-02	Cos(x/30)*50
+F func-03	Tan(x/100)*20
+F func-04	Sqrt(x)*10
+F func-05	Abs(x)
+F func-06	Exp(x/100)
+F func-07	Ln(x)
+F func-08	Log10(x)*50
+F func-09	Log2(x)*20
+F func-10	ATan(x/10)*50
+F func-11	Arg(x,10)*50
+F func-12	Pow(x,2)/100
+F func-13	Sqr(x)/100
+F func-14	Floor(x/10)*10
+F func-15	Ceil(x/10)*10
+F func-16	Round(x/7)*7
+F func-17	Trunc(x/7)*7
+F func-18	Sign(x)*50
+F func-19	Min(x,10)
+F func-20	Max(x,-10)
+F func-21	Clamp(x,-50,50)
+F func-22	ToI64(x/3)
+F func-23	ToF64(7)/2
+F func-24	AbsI64(-5)
+F func-25	SqrI64(3)
+F func-26	MinI64(3,4)
+F func-27	MaxI64(3,4)
+F func-28	ClampI64(x,-5,5)
+F func-29	SignI64(-9)
+F func-30	FloorI64(17,5)
+F func-31	CeilI64(17,5)
+F nested-01	Sin(Cos(x/40)*3)*80
+F nested-02	Sqrt(Abs(x))*Sign(x)*10
+F nested-03	Abs(Sin(x/30))*Exp(-Abs(x)/200)*150
+F nested-04	Max(Min(x,30),-30)
+F nested-05	Sin(x/20)+Sin(x/10)*Cos(x/5)
+F const-01	pi*x/10
+F const-02	exp_1*10
+F const-03	x*pi/180*100
+F const-04	Sin(x*pi/180)*100
+F const-05	log2_10
+F const-06	eps*1e16
+F const-07	I64_MAX
+F const-08	I64_MIN
+F const-09	U8_MAX
+F const-10	TRUE+x
+F const-11	FALSE
+F cast-01	x(I64)/2
+F cast-02	(x/3)(I64)
+F cast-03	x(U8)
+F cast-04	(-1)(U8)
+F cast-05	x(F64)
+F cast-06	x(I32)
+F cast-07	(x*1000000000)(I32)
+F cast-08	(x/2)(I64)(F64)
+F cast-09	300(U8)
+F literal-01	0x10
+F literal-02	1e2
+F literal-03	1.5e-1
+F literal-04	'A'
+F literal-05	'AB'
+F literal-06	1.
+F literal-07	0b101
+F literal-08	0x7FFFFFFFFFFFFFFF
+F literal-09	12345678901234567890
+F literal-10	1e400
+F literal-11	0.0000001
+F assign-01	y=2*x
+F assign-02	y_last=3
+F assign-03	y=x+1
+F assign-04	x+0*(y=5)
+F assign-05	x++
+F assign-06	x--
+F assign-07	++x
+F assign-08	x+=1
+F assign-09	x*=2
+F divzero-01	1/0
+F divzero-02	1%0
+F divzero-03	x/0
+F divzero-04	1.0/0
+F divzero-05	0.0/0
+F divzero-06	-1.0/0
+F divzero-07	x%0
+F divzero-08	x(I64)/0
+F overflow-01	I64_MAX+1
+F overflow-02	I64_MIN-1
+F overflow-03	0x7FFFFFFFFFFFFFFF*2
+F overflow-04	-I64_MIN
+F overflow-05	I64_MIN/-1
+F overflow-06	1e308*10
+F overflow-07	-1e308*10
+F domain-01	Sqrt(-x)
+F domain-02	Ln(-1)
+F domain-03	Ln(0)
+F domain-04	Log10(0)
+F domain-05	ASin(2)
+F domain-06	ACos(-2)
+F domain-07	Tan(pi/2)
+F invalid-01	
+F invalid-02	2*
+F invalid-03	(x
+F invalid-04	x)
+F invalid-05	x y
+F invalid-06	foo(x)
+F invalid-07	Sin(
+F invalid-08	Sin x
+F invalid-09	1++
+F invalid-10	$
+F invalid-11	"str"
+F invalid-12	x=
+F invalid-13	*
+F invalid-14	()
+F invalid-15	Sin(x,1,2,3)
+F invalid-16	Sin()
+F invalid-17	1..2
+F invalid-18	x>>
+F invalid-19	#x
+F unsupported-01	Beep
+F unsupported-02	Print("hi")
+F unsupported-03	Sleep(1)
+F unsupported-04	MAlloc(10)
+F unsupported-05	Fs
+F unsupported-06	1);y=3;ToF64(y
+F unsupported-07	StrLen("abc")
+F stress-01	x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x+x
+F stress-02	((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((x))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+F stress-03	----------------------------------------------------------------------------------------------------x
+F stress-04	Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(Sin(x))))))))))))))))))))))))))))))))))))))))
+F stress-05	1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1

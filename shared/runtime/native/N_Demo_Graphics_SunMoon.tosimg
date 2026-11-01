@@ -1,0 +1,7 @@
+TOSIMG 1
+unit C:/Demo/Graphics/SunMoon.HC#0
+fn 703 SunMoon (U0;;-)
+fn 704 $init:C:/Demo/Graphics/SunMoon.HC#0 (I64;;-)
+sym f SunMoon 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/SunMoon.HC#1

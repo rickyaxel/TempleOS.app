@@ -1,0 +1,13 @@
+EO args2 order=21 result=12
+EO args3 order=321 result=123
+EO args_postinc result=10 c=2
+EO add order=12 result=3
+EO sub_mul order=123 result=-5
+EO fdiv order=12
+EO cmp order=12 result=1
+EO andand order=12 result=1
+EO vararg_values 1 2
+EO vararg order=21
+EO statements order=12
+EO-END
+HARNESS-DONE

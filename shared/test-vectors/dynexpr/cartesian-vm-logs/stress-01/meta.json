@@ -1,0 +1,112 @@
+{
+ "tool": "tools/reference-vm/templeos_harness.py",
+ "date_utc": "2026-10-20T12:13:55+00:00",
+ "iso": {
+  "path": "reference/iso/TempleOS.ISO",
+  "sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26",
+  "expected_sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26"
+ },
+ "qemu_version": "QEMU emulator version 11.1.2\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+ "qemu_args": [
+  "qemu-system-x86_64",
+  "-m",
+  "1024",
+  "-smp",
+  "2",
+  "-cdrom",
+  "reference/iso/TempleOS.ISO",
+  "-boot",
+  "d",
+  "-nic",
+  "none",
+  "-display",
+  "none",
+  "-vga",
+  "std",
+  "-audiodev",
+  "none,id=snd0",
+  "-machine",
+  "pc,pcspk-audiodev=snd0",
+  "-qmp",
+  "tcp:127.0.0.1:57210,server,nowait",
+  "-rtc",
+  "base=localtime,clock=vm",
+  "-accel",
+  "tcg",
+  "-cpu",
+  "qemu64",
+  "-chardev",
+  "file,id=dbg0,path=build/reference-vm/cartesian/stress-01/harness.log",
+  "-device",
+  "isa-debugcon,iobase=0xe9,chardev=dbg0",
+  "-chardev",
+  "file,id=dbg1,path=build/reference-vm/cartesian/stress-01/console.log",
+  "-device",
+  "isa-debugcon,iobase=0xea,chardev=dbg1",
+  "-fw_cfg",
+  "name=opt/templeos/boot,file=tools/reference-vm/harness/VmIO.HC",
+  "-fw_cfg",
+  "name=opt/templeos/h0,file=tools/reference-vm/harness/Cartesian.HC",
+  "-fw_cfg",
+  "name=opt/templeos/d/cartesian.txt,file=build/reference-vm/cartesian/stress-01/cartesian.txt",
+  "-icount",
+  "shift=auto"
+ ],
+ "guest": {
+  "machine": "pc",
+  "cpu": "qemu64",
+  "smp": 2,
+  "mem_mib": 1024,
+  "accelerator": "tcg (software emulation of x86-64; no hardware virtualization on this host)",
+  "icount": "shift=auto",
+  "rtc": "base=localtime,clock=vm",
+  "network": "none",
+  "disk": "none (live CD only)"
+ },
+ "host": {
+  "os": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "uname": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030 arm64",
+  "python": "3.10.6"
+ },
+ "stage0_typed": "AutoComplete;\\nI64 Fb(I64 k){I64 r=0;while(k--)r=r<<8|InU8(0x511);return r;}U8 *FwLd(U8 *nm){I64 n,s,k;U8 e[56],*b;OutU16(0x510,0x19);n=Fb(4);while(n--){s=Fb(4);k=Fb(2);Fb(2);RepInU8(e,56,0x511);if(!StrCmp(e,nm)){b=CAlloc(s+1);OutU16(0x510,k);RepInU8(b,s,0x511);return b;}}return NULL;}ExePutS(FwLd(\"opt/templeos/boot\"),\"VmIO.HC\");\\n",
+ "files": {
+  "boot (VmIO.HC)": {
+   "path": "tools/reference-vm/harness/VmIO.HC",
+   "sha256": "3d837449e6a4c976f609086f887b7485c11237dceb9f9f615700ac666765259f"
+  },
+  "h0": {
+   "path": "tools/reference-vm/harness/Cartesian.HC",
+   "sha256": "5e6a1c60697018b37946145e0a4989fb2b879ffebbb4fc0acc987c1ea2dd6777",
+   "fnv1a64": "A9BB85B63D1B00EA"
+  },
+  "d/cartesian.txt": {
+   "path": "build/reference-vm/cartesian/stress-01/cartesian.txt",
+   "sha256": "c12cac6c7981183691478474132703e0951664f025c26432a7bd505c272f3826"
+  }
+ },
+ "result": {
+  "status": "done",
+  "seconds_after_boot": 1.0,
+  "seconds_total": 72.8,
+  "events": [
+   {
+    "t": 37.5,
+    "event": "shell ready (probe 1)"
+   },
+   {
+    "t": 71.7,
+    "event": "boot-ok (typing attempt 1, hold 25 ms)"
+   }
+  ],
+  "loader": [
+   "BOOT-OK mp_cnt=2 sys_code_bp.alloced=1068326912",
+   "LOADER begin opt/templeos/h0 size=4135 fnv=A9BB85B63D1B00EA",
+   "LOADER end opt/templeos/h0 res=00000000001007A8",
+   "HARNESS-DONE"
+  ],
+  "harness_bytes_exact": {
+   "h0": true
+  }
+ }
+}

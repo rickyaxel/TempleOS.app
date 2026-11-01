@@ -1,0 +1,219 @@
+{
+ "about": "TempleOS D3Unit on the cells of Talons' synthetic terrain where the VM and the app differed. INSTRUMENTED PROBE tools/reference-vm/harness/X87Probe.HC. Models (fixtures.py d3unit_models, exact rational arithmetic): model_x87_64bit = FSQRT and FDIVR with a 64-bit significand (x87 precision control at its FNINIT default) and one rounding to double on store; model_ieee_double = sqrt rounded to double, then the division rounded to double (what a double-only engine computes).",
+ "basic": "Sqrt(2)=3FF6A09E667F3BCD 1/3=3FD5555555555555 Sqrt(3)=3FFBB67AE8584CAA",
+ "cells": [
+  {
+   "x": -10873,
+   "y": -1636,
+   "z": -1,
+   "vm_D3Unit": [
+    "BFEFA4D05436DABE",
+    "BFC30B89BECC7750",
+    "BF17D75CF15A16ED"
+   ],
+   "model_x87_64bit": [
+    "BFEFA4D05436DABE",
+    "BFC30B89BECC7750",
+    "BF17D75CF15A16ED"
+   ],
+   "model_ieee_double": [
+    "BFEFA4D05436DABD",
+    "BFC30B89BECC7750",
+    "BF17D75CF15A16EC"
+   ],
+   "vm_matches_x87_model": true,
+   "vm_step_by_step_double": [
+    "BFEFA4D05436DABD",
+    "BFC30B89BECC7750",
+    "BF17D75CF15A16EC"
+   ],
+   "vm_step_by_step_matches_double_model": true
+  },
+  {
+   "x": 4632,
+   "y": 71,
+   "z": -1,
+   "vm_D3Unit": [
+    "3FEFFF09A117937C",
+    "3F8F636C0B3D9833",
+    "BF2C4B3284B9531C"
+   ],
+   "model_x87_64bit": [
+    "3FEFFF09A117937C",
+    "3F8F636C0B3D9833",
+    "BF2C4B3284B9531C"
+   ],
+   "model_ieee_double": [
+    "3FEFFF09A117937C",
+    "3F8F636C0B3D9832",
+    "BF2C4B3284B9531B"
+   ],
+   "vm_matches_x87_model": true,
+   "vm_step_by_step_double": [
+    "3FEFFF09A117937C",
+    "3F8F636C0B3D9832",
+    "BF2C4B3284B9531B"
+   ],
+   "vm_step_by_step_matches_double_model": true
+  },
+  {
+   "x": -2311,
+   "y": -2230,
+   "z": -1,
+   "vm_D3Unit": [
+    "BFE70701A628C86F",
+    "BFE638634B5F12B7",
+    "BF346822402B3B35"
+   ],
+   "model_x87_64bit": [
+    "BFE70701A628C86F",
+    "BFE638634B5F12B7",
+    "BF346822402B3B35"
+   ],
+   "model_ieee_double": [
+    "BFE70701A628C86F",
+    "BFE638634B5F12B8",
+    "BF346822402B3B35"
+   ],
+   "vm_matches_x87_model": true,
+   "vm_step_by_step_double": [
+    "BFE70701A628C86F",
+    "BFE638634B5F12B8",
+    "BF346822402B3B35"
+   ],
+   "vm_step_by_step_matches_double_model": true
+  },
+  {
+   "x": -9380,
+   "y": -459,
+   "z": -1,
+   "vm_D3Unit": [
+    "BFEFF635A5233083",
+    "BFA90632F3EB8469",
+    "BF1BE9E9A353ADEA"
+   ],
+   "model_x87_64bit": [
+    "BFEFF635A5233083",
+    "BFA90632F3EB8469",
+    "BF1BE9E9A353ADEA"
+   ],
+   "model_ieee_double": [
+    "BFEFF635A5233083",
+    "BFA90632F3EB8469",
+    "BF1BE9E9A353ADEA"
+   ],
+   "vm_matches_x87_model": true,
+   "vm_step_by_step_double": [
+    "BFEFF635A5233083",
+    "BFA90632F3EB8469",
+    "BF1BE9E9A353ADEA"
+   ],
+   "vm_step_by_step_matches_double_model": true
+  }
+ ],
+ "vm_run": {
+  "date_utc": "2026-10-20T12:22:39+00:00",
+  "iso": {
+   "path": "reference/iso/TempleOS.ISO",
+   "sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26",
+   "expected_sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26"
+  },
+  "qemu_version": "QEMU emulator version 11.1.2\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+  "qemu_args": [
+   "qemu-system-x86_64",
+   "-m",
+   "1024",
+   "-smp",
+   "2",
+   "-cdrom",
+   "reference/iso/TempleOS.ISO",
+   "-boot",
+   "d",
+   "-nic",
+   "none",
+   "-display",
+   "none",
+   "-vga",
+   "std",
+   "-audiodev",
+   "none,id=snd0",
+   "-machine",
+   "pc,pcspk-audiodev=snd0",
+   "-qmp",
+   "tcp:127.0.0.1:57815,server,nowait",
+   "-rtc",
+   "base=localtime,clock=vm",
+   "-accel",
+   "tcg",
+   "-cpu",
+   "qemu64",
+   "-chardev",
+   "file,id=dbg0,path=build/reference-vm/x87probe/harness.log",
+   "-device",
+   "isa-debugcon,iobase=0xe9,chardev=dbg0",
+   "-chardev",
+   "file,id=dbg1,path=build/reference-vm/x87probe/console.log",
+   "-device",
+   "isa-debugcon,iobase=0xea,chardev=dbg1",
+   "-fw_cfg",
+   "name=opt/templeos/boot,file=tools/reference-vm/harness/VmIO.HC",
+   "-fw_cfg",
+   "name=opt/templeos/h0,file=tools/reference-vm/harness/X87Probe.HC",
+   "-icount",
+   "shift=auto"
+  ],
+  "guest": {
+   "machine": "pc",
+   "cpu": "qemu64",
+   "smp": 2,
+   "mem_mib": 1024,
+   "accelerator": "tcg (software emulation of x86-64; no hardware virtualization on this host)",
+   "icount": "shift=auto",
+   "rtc": "base=localtime,clock=vm",
+   "network": "none",
+   "disk": "none (live CD only)"
+  },
+  "host": {
+   "os": "macOS-27.0.1-arm64-arm-64bit",
+   "machine": "arm64",
+   "uname": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030 arm64",
+   "python": "3.10.6"
+  },
+  "files": {
+   "boot (VmIO.HC)": {
+    "path": "tools/reference-vm/harness/VmIO.HC",
+    "sha256": "3d837449e6a4c976f609086f887b7485c11237dceb9f9f615700ac666765259f"
+   },
+   "h0": {
+    "path": "tools/reference-vm/harness/X87Probe.HC",
+    "sha256": "5f6b994ba10c726103506bf3f16b09609f8ee51275949a7358fdbaa4b9d409b6",
+    "fnv1a64": "5882A185CDE81C11"
+   }
+  },
+  "result": {
+   "status": "done",
+   "seconds_after_boot": 0.5,
+   "seconds_total": 86.7,
+   "events": [
+    {
+     "t": 52.2,
+     "event": "shell ready (probe 3)"
+    },
+    {
+     "t": 86.2,
+     "event": "boot-ok (typing attempt 1, hold 25 ms)"
+    }
+   ],
+   "loader": [
+    "BOOT-OK mp_cnt=2 sys_code_bp.alloced=1068326912",
+    "LOADER begin opt/templeos/h0 size=1142 fnv=5882A185CDE81C11",
+    "LOADER end opt/templeos/h0 res=00000000000000A0",
+    "HARNESS-DONE"
+   ],
+   "harness_bytes_exact": {
+    "h0": true
+   }
+  }
+ },
+ "raw_logs": "shared/test-vectors/reference-vm/logs/x87probe"
+}

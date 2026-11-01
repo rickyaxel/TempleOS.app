@@ -1,0 +1,12 @@
+{
+  "description": "Input script of the real-clock program benchmarks (Kotlin PerfTest, Swift PerfTests; docs/performance/TEMPLEOS_PERFORMANCE_BENCHMARKS.md). Times are wall-clock milliseconds since the program started; the first warmupMs are not measured.",
+  "warmupMs": 1000,
+  "stepBudgetMs": 12,
+  "mouse": {"everyStep": true, "x": "170 + (t / 10) % 300", "y": "120 + (t / 7) % 240", "leftButton": "(t / 500) % 4 == 1"},
+  "keys": {
+    "periodMs": 700,
+    "cycle": ["tap SPACE", "press LEFT (held: typematic 250 ms delay, then every 33 ms)", "tap SPACE", "release LEFT"]
+  },
+  "fallback": "a program that ends under this script is measured again with the mouse only (input = mouse)",
+  "metrics": ["fps", "composeMeanMs", "composeP50Ms", "composeP95Ms", "composeMaxMs", "cpuPct (kernel thread CPU time / wall)", "minstrPerSec", "publishedPerSec", "tonesPerSec (speaker changes passed to the platform)"]
+}

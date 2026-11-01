@@ -1,0 +1,69 @@
+TOSIMG 1
+unit C:/Apps/Budget/Budget.HC#0
+value BE_ANNIVERSARY 2
+value BE_GAS 1
+value BE_NORMAL 0
+value BE_PRICE 3
+value BE_TEMPLATE_COPY 4
+value BT_ANNUAL 5
+value BT_BIMONTHLY 3
+value BT_INTERVAL 1
+value BT_MONTHLY 2
+value BT_NULL 0
+value BT_SEMIANNUAL 4
+class CBgtEntry 88 0 - -
+m next 0 *$CBgtEntry
+m last 8 *$CBgtEntry
+m start 16 U0
+m date 16 $CDate
+m type 24 U16
+m flags 26 U16
+m credit_idx 28 U32
+m debit_idx 32 U32
+m desc_idx 36 U32
+m amount 40 F64
+m end 48 U0
+m credit 48 *U8
+m debit 56 *U8
+m desc 64 *U8
+m template 72 *$CBgtTemplate
+m doc_e 80 *$CDocEntry
+class CBgtTemplate 148 0 - -
+m next 0 *$CBgtTemplate
+m last 8 *$CBgtTemplate
+m start 16 U0
+m type 16 U16 244c532c443d2253545f4247545f54454d504c4154455f545950455322240a
+m flags 18 U16
+m start_date 20 [16]U8 2444412d502c413d2253746172741f446174653a257322240a
+m end_date 36 [16]U8 2444412d502c413d22456e641f446174651f1f3a257322240a
+m period 52 F64 2444412c413d22506572696f641f1f1f1f3a25382e326622240a
+m end 60 U0
+m b 60 $CBgtEntry
+g 17fd38 8
+g 17fd50 8
+g 17fd68 8
+g 17fd80 88
+s 17fde8 4e756c6c00496e74657276616c004d6f6e74686c790042696d6f6e74686c790053656d69616e6e75616c00416e6e75616c00
+s 17fe30 53545f4247545f54454d504c4154455f5459504553
+fn 703 $init:C:/Apps/Budget/Budget.HC#0 (I64;;-)
+sym g b_head 17fd80 $CBgtEntry
+sym g bgt_accts_file 17fd50 *U8
+sym g bgt_data_file 17fd68 *U8
+sym g bgt_string_file 17fd38 *U8
+init 703
+unit C:/Apps/Budget/Budget.HC#1
+g 17fe58 148
+g 17ff00 512
+g 180110 8
+g 180128 8
+c 180110 8 0
+c 180128 8 0
+fn 704 MyStr2Date ($CDate;*U8;-)
+fn 705 $init:C:/Apps/Budget/Budget.HC#1 (I64;;-)
+sym f MyStr2Date 704 ($CDate;*U8;-)
+sym g accts_table 180110 *$CHashTable
+sym g accts_table_strs 180128 I64
+sym g t_head 17fe58 $CBgtTemplate
+sym g view_acct 17ff00 [512]U8
+init 705
+unit C:/Apps/Budget/Budget.HC#2

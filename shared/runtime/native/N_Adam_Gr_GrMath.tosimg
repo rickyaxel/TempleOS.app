@@ -1,0 +1,86 @@
+TOSIMG 1
+unit C:/Adam/Gr/GrMath.HC#0
+c 133b0 8 ffffffffffffffff
+c 133b8 8 0
+c 133c0 8 1
+c 133c8 8 ffffffffffffffff
+c 133d0 8 1
+c 133d8 8 ffffffffffffffff
+c 133e0 8 0
+c 133e8 8 1
+c 13400 8 ffffffffffffffff
+c 13408 8 ffffffffffffffff
+c 13410 8 ffffffffffffffff
+c 13418 8 0
+c 13420 8 0
+c 13428 8 1
+c 13430 8 1
+c 13438 8 1
+c 13450 8 0
+c 13458 8 ffffffffffffffff
+c 13460 8 1
+c 13468 8 0
+c 13480 8 ffffffffffffffff
+c 13488 8 0
+c 13490 8 0
+c 13498 8 1
+fn 703 $init:C:/Adam/Gr/GrMath.HC#0 (I64;;-)
+init 703
+unit C:/Adam/Gr/GrMath.HC#1
+fn 704 Line (Bool;*U8,I64,I64,I64,I64,I64,I64,*(Bool;*U8,I64,I64,I64;-),I64,I64;-)
+fn 705 Mat4x4MulMat4x4Equ (*I64;*I64,*I64,*I64;-)
+fn 706 Mat4x4MulMat4x4New (*I64;*I64,*I64,*$CTask;-)
+fn 707 Mat4x4Equ (*I64;*I64,*I64;-)
+fn 708 Mat4x4New (*I64;*I64,*$CTask;-)
+fn 709 Mat4x4RotX (*I64;*I64,F64;-)
+fn 710 Mat4x4RotY (*I64;*I64,F64;-)
+fn 711 Mat4x4RotZ (*I64;*I64,F64;-)
+fn 712 Mat4x4Scale (*I64;*I64,F64;-)
+fn 713 DCThickScale (U0;*$CDC;-)
+fn 714 Mat4x4TranslationEqu (*I64;*I64,I64,I64,I64;-)
+fn 715 Mat4x4TranslationAdd (*I64;*I64,I64,I64,I64;-)
+fn 716 DCSymmetrySet (Bool;*$CDC,I64,I64,I64,I64;-)
+fn 717 DCSymmetry3Set (Bool;*$CDC,I64,I64,I64,I64,I64,I64,I64,I64,I64;-)
+fn 718 DCReflect (U0;*$CDC,*I64,*I64,*I64;-)
+fn 719 Circle (Bool;*U8,I64,I64,I64,I64,*(Bool;*U8,I64,I64,I64;-),I64,F64,F64;-)
+fn 720 Ellipse (Bool;*U8,I64,I64,I64,I64,I64,*(Bool;*U8,I64,I64,I64;-),F64,I64,F64,F64;-)
+fn 721 RegPoly (Bool;*U8,I64,I64,I64,I64,I64,I64,*(Bool;*U8,I64,I64,I64;-),F64,I64,F64,F64;-)
+fn 722 D3I32Dist (F64;*$CD3I32,*$CD3I32;-)
+fn 723 D3I32DistSqr (I64;*$CD3I32,*$CD3I32;-)
+fn 724 D3I32Norm (F64;*$CD3I32;-)
+fn 725 D3I32NormSqr (I64;*$CD3I32;-)
+fn 726 Bezier2 (Bool;*U8,*$CD3I32,*(Bool;*U8,I64,I64,I64;-),Bool;-)
+fn 727 Bezier3 (Bool;*U8,*$CD3I32,*(Bool;*U8,I64,I64,I64;-),Bool;-)
+fn 728 BSpline2 (Bool;*U8,*$CD3I32,I64,*(Bool;*U8,I64,I64,I64;-),Bool;-)
+fn 729 BSpline3 (Bool;*U8,*$CD3I32,I64,*(Bool;*U8,I64,I64,I64;-),Bool;-)
+fn 730 ClipLine (Bool;*I64,*I64,*I64,*I64,I64,I64,I64,I64;-)
+fn 731 $init:C:/Adam/Gr/GrMath.HC#1 (I64;;-)
+sym f BSpline2 728 (Bool;*U8,*$CD3I32,I64,*(Bool;*U8,I64,I64,I64;-),Bool;-)
+sym f BSpline3 729 (Bool;*U8,*$CD3I32,I64,*(Bool;*U8,I64,I64,I64;-),Bool;-)
+sym f Bezier2 726 (Bool;*U8,*$CD3I32,*(Bool;*U8,I64,I64,I64;-),Bool;-)
+sym f Bezier3 727 (Bool;*U8,*$CD3I32,*(Bool;*U8,I64,I64,I64;-),Bool;-)
+sym f Circle 719 (Bool;*U8,I64,I64,I64,I64,*(Bool;*U8,I64,I64,I64;-),I64,F64,F64;-)
+sym f ClipLine 730 (Bool;*I64,*I64,*I64,*I64,I64,I64,I64,I64;-)
+sym f D3I32Dist 722 (F64;*$CD3I32,*$CD3I32;-)
+sym f D3I32DistSqr 723 (I64;*$CD3I32,*$CD3I32;-)
+sym f D3I32Norm 724 (F64;*$CD3I32;-)
+sym f D3I32NormSqr 725 (I64;*$CD3I32;-)
+sym f DCReflect 718 (U0;*$CDC,*I64,*I64,*I64;-)
+sym f DCSymmetry3Set 717 (Bool;*$CDC,I64,I64,I64,I64,I64,I64,I64,I64,I64;-)
+sym f DCSymmetrySet 716 (Bool;*$CDC,I64,I64,I64,I64;-)
+sym f DCThickScale 713 (U0;*$CDC;-)
+sym f Ellipse 720 (Bool;*U8,I64,I64,I64,I64,I64,*(Bool;*U8,I64,I64,I64;-),F64,I64,F64,F64;-)
+sym f Line 704 (Bool;*U8,I64,I64,I64,I64,I64,I64,*(Bool;*U8,I64,I64,I64;-),I64,I64;-)
+sym f Mat4x4Equ 707 (*I64;*I64,*I64;-)
+sym f Mat4x4MulMat4x4Equ 705 (*I64;*I64,*I64,*I64;-)
+sym f Mat4x4MulMat4x4New 706 (*I64;*I64,*I64,*$CTask;-)
+sym f Mat4x4New 708 (*I64;*I64,*$CTask;-)
+sym f Mat4x4RotX 709 (*I64;*I64,F64;-)
+sym f Mat4x4RotY 710 (*I64;*I64,F64;-)
+sym f Mat4x4RotZ 711 (*I64;*I64,F64;-)
+sym f Mat4x4Scale 712 (*I64;*I64,F64;-)
+sym f Mat4x4TranslationAdd 715 (*I64;*I64,I64,I64,I64;-)
+sym f Mat4x4TranslationEqu 714 (*I64;*I64,I64,I64,I64;-)
+sym f RegPoly 721 (Bool;*U8,I64,I64,I64,I64,I64,I64,*(Bool;*U8,I64,I64,I64;-),F64,I64,F64,F64;-)
+init 731
+unit C:/Adam/Gr/GrMath.HC#2

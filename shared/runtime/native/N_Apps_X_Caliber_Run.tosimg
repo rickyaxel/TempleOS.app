@@ -1,0 +1,281 @@
+TOSIMG 1
+unit C:/Apps/X-Caliber/Run.HC#0
+s 17fd38 433a2f417070732f582d43616c69626572
+fn 703 $init:C:/Apps/X-Caliber/Run.HC#0 (I64;;-)
+init 703
+unit C:/Apps/X-Caliber/Run.HC#1
+s 17fd38 433a2f417070732f582d43616c69626572
+fn 704 $init:C:/Apps/X-Caliber/Run.HC#1 (I64;;-)
+init 704
+unit C:/Apps/X-Caliber/Run.HC#2
+value CTRL_PANEL_BORDER 2
+value CTRL_PANEL_BTTN_SIZE 12
+value CTRL_PANEL_RANGE 30
+value CTRL_PANEL_SPACING 33
+value XMSGF_ANTISPIN 0
+value XMSGF_SOLAR_STORM 1
+class CtrlPanelState 25 0 - -
+m shot_radius 0 I64
+m fuse_time 8 I64
+m laser_temperature 16 F64
+m spacewalk 24 Bool
+g 17fd60 25
+s 17fd90 537061636557616c6b
+s 17fdb0 53697a65
+s 17fdc8 46757365
+s 131e0 2564
+s 131e0 2564
+s 17fde0 49363420626573745f73636f72653d303b0a493634206d73675f666c6167733d303b0a
+s 17fe18 54656d706c654f532f5843616c69626572
+fn 705 DrawCtrlPanelCtrl (U0;*$CDC,*$CCtrl;-)
+fn 706 UpdateDerivedCtrlPanelCtrl (U0;*$CCtrl;-)
+fn 707 LeftClickCtrlPanel (U0;*$CCtrl,I64,I64,Bool;-)
+fn 708 CtrlPanelNew (*$CCtrl;;-)
+fn 709 CtrlPanelDel (U0;*$CCtrl;-)
+fn 710 $init:C:/Apps/X-Caliber/Run.HC#2 (I64;;-)
+sym f CtrlPanelDel 709 (U0;*$CCtrl;-)
+sym f CtrlPanelNew 708 (*$CCtrl;;-)
+sym f DrawCtrlPanelCtrl 705 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickCtrlPanel 707 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f UpdateDerivedCtrlPanelCtrl 706 (U0;*$CCtrl;-)
+sym g ctrl_panel 17fd60 $CtrlPanelState
+init 710
+unit C:/Apps/X-Caliber/Run.HC#3
+s 17fe18 54656d706c654f532f5843616c69626572
+fn 711 $init:C:/Apps/X-Caliber/Run.HC#3 (I64;;-)
+init 711
+unit C:/Home/Registry.HC#0
+registry TempleOS/XCaliber
+g 17fe40 8
+g 17fe58 8
+c 17fe40 8 0
+c 17fe58 8 0
+fn 712 $init:C:/Home/Registry.HC#0 (I64;;-)
+sym g best_score 17fe40 I64
+sym g msg_flags 17fe58 I64
+init 712
+unit C:/Home/Registry.HC#1
+unit C:/Apps/X-Caliber/Run.HC#4
+value CMD_EXIT 5
+value CMD_FIRE 4
+value CMD_NULL 0
+value CMD_SPIN_LEFT 1
+value CMD_SPIN_RIGHT 2
+value CMD_THRUST 3
+value MASSES_NUM 8
+value MISSILES_NUM 2
+value MISSILE_LEN 5
+value MT_ANTIMATTER_BALL 4
+value MT_ANTIMATTER_SPLAT 5
+value MT_ENEMY_SHIP 1
+value MT_HUMAN_SHIP 0
+value MT_ION 3
+value MT_MISSILE 6
+value MT_SOLAR_FLARE 2
+value SPRINGS_NUM 16
+value STARS_NUM 100
+value ST_ENEMY1 1
+value ST_ENEMY2 2
+value ST_HUMAN1 0
+class Missile 826 0 - -
+m next 0 *$Missile
+m last 8 *$Missile
+m tons 16 F64
+m fuse_time 24 F64
+m die_timeout 32 F64
+m p_front 40 $MyMass
+m p_back 177 $MyMass
+m s 314 [5]$MySpring
+m img 794 *U8
+m owner 802 *$Ship
+m target 810 *$Ship
+m active 818 Bool
+m launched 819 Bool
+m exploding 820 Bool
+m label 821 [5]U8
+class MyMass 137 0 - CMass
+m next 0 *$CMass
+m last 8 *$CMass
+m state 16 *$COrder2D3
+m DstateDt 24 *$COrder2D3
+m start 32 U0
+m flags 32 U32
+m num 36 U32
+m mass 40 F64
+m drag_profile_factor 48 F64
+m saved_state 56 U0
+m x 56 F64
+m y 64 F64
+m z 72 F64
+m DxDt 80 F64
+m DyDt 88 F64
+m DzDt 96 F64
+m end 104 U0
+m temperature 104 F64
+m radius 112 F64
+m die_timeout 120 F64
+m type 128 I64
+m no_overlap 136 Bool
+class MySpring 96 0 - CSpring
+m next 0 *$CSpring
+m last 8 *$CSpring
+m end1 16 *$CMass
+m end2 24 *$CMass
+m f 32 F64
+m displacement 40 F64
+m start 48 U0
+m flags 48 U32
+m num 52 U32
+m end1_num 56 U32
+m end2_num 60 U32
+m const 64 F64
+m rest_len 72 F64
+m end 80 U0
+m strength 80 F64
+m color 88 I64
+class Ship 4383 0 - -
+m next 0 *$Ship
+m last 8 *$Ship
+m type 16 I64
+m masses 24 I64
+m springs 32 I64
+m p 40 [8]$MyMass
+m s 1136 [16]$MySpring
+m fire_rate 2672 F64
+m reload_timeout 2680 F64
+m spacewalk_timeout 2688 F64
+m die_time 2696 F64
+m die_timeout 2704 F64
+m spacewalk_side 2712 I64
+m laser_temperature 2720 F64
+m missiles 2728 [2]$Missile
+m lasering 4380 Bool
+m exploding 4381 Bool
+m laser_overheat 4382 Bool
+class Shot 177 0 - -
+m next 0 *$Shot
+m last 8 *$Shot
+m radius 16 F64
+m fuse_time 24 F64
+m splats 32 I64
+m p 40 $MyMass
+g 17fe70 826
+g 1801c0 4383
+g 1813d0 8
+g 1813e8 8
+g 181400 8
+g 181418 8
+g 181430 177
+g 1814f8 8
+g 181510 8
+g 181528 8
+g 181540 8
+g 181558 800
+g 181888 800
+g 181bb8 8
+g 181bd0 8
+g 181be8 8
+g 181c00 8
+s 181c18 4c
+s 181c30 52
+b 181c48 17fcfffffffeffffff0b000000050000000707ffffffffffffffffffffffffffff08070708080808080808ffffffffffff0707070707070707080807ffffffffff08070708080808080808ffffffffffff0707ffffffffffffffffffffffffffff00
+s 181cc0 4c6576656c3a25642053636f72653a256420486967682053636f72653a2564
+s 181cf0 47616d65204f766572
+s 181d10 4c6576656c202564
+b 181d30 01070a00000000ffffffff01000000ffffffff0a000000000100000001000000010000000a020000000100000004000000030000000a02000000ffffffff04000000fdffffff0a04000000ffffffff0400000001000000010b0a000000000000000003000000000000000a03000000ffffffff03000000010000000a04000000feffffff05000000feffffff0a0400000002000000050000000200000000
+b 181de0 01070a00000000ffffffff01000000ffffffff0a000000000100000001000000010000000a020000000100000004000000030000000a02000000ffffffff04000000fdffffff0a04000000ffffffff0400000001000000010b0a000000000000000003000000000000000a03000000ffffffff03000000010000000a04000000feffffff05000000feffffff0a0400000002000000050000000200000000
+b 181e90 17f8fffffffdffffff0900000007000000ffffffffffff090909ffffffffffffffffffff0909090a0e09ffffffffffffffff09090a0a0a0a0e09ffffffffffffff0909090a0a0a0a0e09ffffffffffffffffffff0909090a0e09ffffffffffffffffffffffffff090909ffffffffffffffffffffffffffffff09ffffffffffffff00
+b 181f28 17f8fffffffdffffff0900000007000000ffffffffffff010101ffffffffffffffffffff010101ffff01ffffffffffffffff0101ffffffffff01ffffffffffffff010101ffffffffff01ffffffffffffffffffff010101ffff01ffffffffffffffffffffffffff010101ffffffffffffffffffffffffffffff01ffffffffffffff00
+b 181fc0 01091304000000fafffffffbffffff00000000ffffffffffffffff00000000ffffffff0300000000000000faffffff05000000000000001303000000fafffffffcffffff00000000feffffff0100000000000000faffffff050000000000000001070afdffffff01000000f9ffffff010000000af9ffffff01000000f9ffffffffffffff0af9fffffffffffffffdffffffffffffff00
+b 182068 010f0afdfffffffcfffffffdffffff010000000afeffffff02000000fffffffffcffffff0afeffffff02000000fdffffff010000000afefffffffdffffff00000000ffffffff0a00000000ffffffff02000000fdffffff0a00000000fdffffff00000000030000000a0000000003000000ffffffff030000000affffffff03000000fdffffff070000000a00000000fcffffff00000000fbffffff0a00000000030000000000000008000000010e0afffffffffcffffff00000000faffffff00
+b 182138 17f8fffffffdffffff0900000007000000ffffffffffff090909ffffffffffffffffffff0909090a0e09ffffffffffffffff09090a0a0a0a0e09ffffffffffffff0909090a0a0a0a0e09ffffffffffffffffffff0909090a0e09ffffffffffffffffffffffffff090909ffffffffffffffffffffffffffffff09ffffffffffffff00
+b 1821d0 17f8fffffffdffffff0900000007000000ffffffffffff010101ffffffffffffffffffff010101ffff01ffffffffffffffff0101ffffffffff01ffffffffffffff010101ffffffffff01ffffffffffffffffffff010101ffff01ffffffffffffffffffffffffff010101ffffffffffffffffffffffffffffff01ffffffffffffff00
+b 182268 010803030000000a00000000fdffffff0c000000030000000a0c000000f7ffffff00000000ffffffff0a0a000000f9ffffff0a000000010000000a0a000000fdfffffffeffffffffffffff0afffffffffdffffff0b000000f7ffffff0afffffffffeffffff0b00000002000000010703020000000afaffffffffffffff0d000000050000000a0d000000050000000d000000f5ffffff0a0d000000f5fffffffaffffff00000000010503010000000a02000000feffffff0a000000000000000a0a000000000000000b000000f9ffffff0a0b000000f9ffffff02000000feffffff00
+b 182360 010803030000000a00000000fdffffff0c000000030000000a0c000000f7ffffff00000000ffffffff0a0a000000f9ffffff0a000000010000000a0a000000fdfffffffeffffffffffffff0afffffffffdffffff0b000000f7ffffff0afffffffffeffffff0b00000002000000010703020000000afaffffffffffffff0d000000050000000a0d000000050000000d000000f5ffffff0a0d000000f5fffffffaffffff00000000010503010000000a02000000feffffff0a000000000000000a0a000000000000000b000000f9ffffff0a0b000000f9ffffff02000000feffffff00
+b 182458 17f7fffffffeffffff10000000050000000effffffff0707ffffffffffffffffffff040e0e0e08070708080808080808ffff0e0e0e040707070707070707080807ff0e0e040e08070708080808080808ff04ffffffff0707ffffffffffffffffff00
+s 1824d0 4661636520617761792066726f6d2053756e20696e20736f6c61722073746f726d2e0a
+s 182508 50726573732024475245454e243c435552534f522d444f574e3e2446472420666f7220616e74692d7370696e2073746162696c697a65722e0a
+s 182558 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d47616d65207b202052657374617274282c270a27293b20204c6576656c5570282c272b27293b20204c6576656c446f776e282c272d27293b7d506c6179207b202046697265282c43485f5350414345293b2020546872757374282c2c53435f435552534f525f5550293b202053746f705370696e282c2c53435f435552534f525f444f574e293b20204c656674282c2c53435f435552534f525f4c454654293b20205269676874282c2c53435f435552534f525f5249474854293b20204c6566744d697373696c65282c2c53435f435552534f525f4c4546547c5343465f4354524c293b202052696768744d697373696c65282c2c53435f435552534f525f52494748547c5343465f4354524c293b2020537061636b77616c6b282c277727293b20204c6f6e67657246757365282c2c53435f435552534f525f52494748547c5343465f5348494654293b202053686f7274657246757365282c2c53435f435552534f525f4c4546547c5343465f5348494654293b20204c617267657253686f74282c2c53435f435552534f525f55507c5343465f5348494654293b2020536d616c6c657253686f74282c2c53435f435552534f525f444f574e7c5343465f5348494654293b7d
+s 182760 49363420626573745f73636f72653d25643b0a493634206d73675f666c6167733d25643b0a
+s 17fe18 54656d706c654f532f5843616c69626572
+c 181bb8 8 0
+fn 713 CheckOverlap (Bool;;-)
+fn 714 MissileNew (U0;*$Ship,I64;-)
+fn 715 ShipNew (*$Ship;I64,I64,I64;-)
+fn 716 MissileDel (U0;*$Missile;-)
+fn 717 ShipDel (U0;*$Ship;-)
+fn 718 PlaceShip (U0;I64;-)
+fn 719 Tweaked (I64;;-)
+fn 720 AllDel (U0;*$CMathODE;-)
+fn 721 LaserPlot (Bool;*$CDC,I64,I64,I64;-)
+fn 722 DrawIt (U0;*$CTask,*$CDC;-)
+fn 723 Explosion (U0;*$MyMass,*$MyMass,F64;-)
+fn 724 TargetGet ($Ship;*$Missile;-)
+fn 725 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 726 CheckDamage (U0;;-)
+fn 727 ShotNew (*$Shot;I64,*$CD3,*$CD3,F64,F64,*$CD3;-)
+fn 728 SolarFlares (U0;;-)
+fn 729 FireOneGun (U0;*$Ship,I64,F64,F64;-)
+fn 730 FireOneMissile (U0;*$Ship,I64;-)
+fn 731 HumanFireGunBegin (U0;;-)
+fn 732 HumanFireMissileBegin (U0;I64;-)
+fn 733 HumanFireLaserBegin (U0;;-)
+fn 734 HumanFireLaserEnd (U0;;-)
+fn 735 SplatNew (U0;*$Shot,F64,F64,F64;-)
+fn 736 ExpireShots (U0;;-)
+fn 737 ExpireSplats (U0;;-)
+fn 738 ExpireMissiles (U0;;-)
+fn 739 AI (U0;;-)
+fn 740 InitLevel (U0;;-)
+fn 741 Init (U0;;-)
+fn 742 XCaliber (U0;;-)
+fn 743 $init:C:/Apps/X-Caliber/Run.HC#4 (I64;;-)
+sym f AI 739 (U0;;-)
+sym f AllDel 720 (U0;*$CMathODE;-)
+sym f CheckDamage 726 (U0;;-)
+sym f CheckOverlap 713 (Bool;;-)
+sym f DrawIt 722 (U0;*$CTask,*$CDC;-)
+sym f ExpireMissiles 738 (U0;;-)
+sym f ExpireShots 736 (U0;;-)
+sym f ExpireSplats 737 (U0;;-)
+sym f Explosion 723 (U0;*$MyMass,*$MyMass,F64;-)
+sym f FireOneGun 729 (U0;*$Ship,I64,F64,F64;-)
+sym f FireOneMissile 730 (U0;*$Ship,I64;-)
+sym f HumanFireGunBegin 731 (U0;;-)
+sym f HumanFireLaserBegin 733 (U0;;-)
+sym f HumanFireLaserEnd 734 (U0;;-)
+sym f HumanFireMissileBegin 732 (U0;I64;-)
+sym f Init 741 (U0;;-)
+sym f InitLevel 740 (U0;;-)
+sym f LaserPlot 721 (Bool;*$CDC,I64,I64,I64;-)
+sym f MissileDel 716 (U0;*$Missile;-)
+sym f MissileNew 714 (U0;*$Ship,I64;-)
+sym f MyDerivative 725 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym f PlaceShip 718 (U0;I64;-)
+sym f ShipDel 717 (U0;*$Ship;-)
+sym f ShipNew 715 (*$Ship;I64,I64,I64;-)
+sym f ShotNew 727 (*$Shot;I64,*$CD3,*$CD3,F64,F64,*$CD3;-)
+sym f SolarFlares 728 (U0;;-)
+sym f SplatNew 735 (U0;*$Shot,F64,F64,F64;-)
+sym f TargetGet 724 ($Ship;*$Missile;-)
+sym f Tweaked 719 (I64;;-)
+sym f XCaliber 742 (U0;;-)
+sym g alarm 181510 Bool
+sym g game_over 181528 Bool
+sym g human 1813d0 *$Ship
+sym g human_antispin 181418 F64
+sym g human_t_left 1813e8 F64
+sym g human_t_right 181400 F64
+sym g level 181bd0 I64
+sym g missile_head 17fe70 $Missile
+sym g ode 181bb8 *$CMathODE
+sym g remaining 181c00 I64
+sym g score 181be8 I64
+sym g ship_head 1801c0 $Ship
+sym g shot_head 181430 $Shot
+sym g show_level_msg 181540 Bool
+sym g stars_x 181558 [100]I64
+sym g stars_y 181888 [100]I64
+sym g t_solar_storm 1814f8 F64
+init 743
+unit C:/Apps/X-Caliber/Run.HC#5

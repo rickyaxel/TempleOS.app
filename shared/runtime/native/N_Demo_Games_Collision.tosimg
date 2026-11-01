@@ -1,0 +1,24 @@
+TOSIMG 1
+unit C:/Demo/Games/Collision.HC#0
+value BALLS_NUM 64
+value BALL_RADIUS 5
+g 17fd38 512
+g 17ff48 512
+g 180158 512
+g 180368 512
+s 180578 416e696d617465
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 AnimateTask (U0;I64;-)
+fn 705 Init (U0;;-)
+fn 706 Collision (U0;;-)
+fn 707 $init:C:/Demo/Games/Collision.HC#0 (I64;;-)
+sym f AnimateTask 704 (U0;I64;-)
+sym f Collision 706 (U0;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym f Init 705 (U0;;-)
+sym g ball_velocity_x 180158 [64]I64
+sym g ball_velocity_y 180368 [64]I64
+sym g ball_x 17fd38 [64]I64
+sym g ball_y 17ff48 [64]I64
+init 707
+unit C:/Demo/Games/Collision.HC#1

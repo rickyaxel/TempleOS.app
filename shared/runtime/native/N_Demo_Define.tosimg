@@ -1,0 +1,39 @@
+TOSIMG 1
+unit C:/Demo/Define.HC#0
+s 17fd38 28596573206f72204e6f29
+s 17fd58 53545f5945535f4e4f
+fn 703 $init:C:/Demo/Define.HC#0 (I64;;-)
+init 703
+unit C:/Demo/Define.HC#1
+s 17fd78 45786974
+s 17fd90 53545f45584954
+fn 704 $init:C:/Demo/Define.HC#1 (I64;;-)
+init 704
+unit C:/Demo/Define.HC#2
+s 17fda8 4e6f0059657300
+s 17fdc0 53545f4e4f5f5945535f4c5354
+fn 705 $init:C:/Demo/Define.HC#2 (I64;;-)
+init 705
+unit C:/Demo/Define.HC#3
+s 17fde0 5370616e697368
+fn 706 $init:C:/Demo/Define.HC#3 (I64;;-)
+init 706
+unit C:/Demo/Define.HC#4
+s 17fdf8 285369206f72204e6f29
+s 17fd58 53545f5945535f4e4f
+s 17fe18 53616c696461
+s 17fd90 53545f45584954
+s 17fe30 4e6f00536900
+s 17fdc0 53545f4e4f5f5945535f4c5354
+fn 707 $init:C:/Demo/Define.HC#4 (I64;;-)
+init 707
+unit C:/Demo/Define.HC#5
+s 17fd58 53545f5945535f4e4f
+s 17fd90 53545f45584954
+s 17fe48 25532025533f
+s 17fdc0 53545f4e4f5f5945535f4c5354
+fn 708 Quit (Bool;;-)
+fn 709 $init:C:/Demo/Define.HC#5 (I64;;-)
+sym f Quit 708 (Bool;;-)
+init 709
+unit C:/Demo/Define.HC#6

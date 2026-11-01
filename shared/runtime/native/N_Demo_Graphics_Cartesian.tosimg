@@ -1,0 +1,15 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Cartesian.HC#0
+g 17fd38 8
+g 17fd50 8
+g 17fd68 8
+s 17fd80 456e74657220616c67656272616963206571756174696f6e20746f2067726170682e0a4578616d706c653a20793d322a780a793d
+s 130e0 546f463634282573293b
+fn 703 Cartesian (U0;;-)
+fn 704 $init:C:/Demo/Graphics/Cartesian.HC#0 (I64;;-)
+sym f Cartesian 703 (U0;;-)
+sym g x 17fd38 F64
+sym g y 17fd50 F64
+sym g y_last 17fd68 F64
+init 704
+unit C:/Demo/Graphics/Cartesian.HC#1

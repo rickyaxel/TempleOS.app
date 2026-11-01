@@ -1,0 +1,17 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Bounce.HC#0
+g 17fd38 128
+g 17fdc8 128
+g 17fe58 128
+g 17fee8 128
+fn 703 Init (U0;;-)
+fn 704 Bounce (U0;;-)
+fn 705 $init:C:/Demo/Graphics/Bounce.HC#0 (I64;;-)
+sym f Bounce 704 (U0;;-)
+sym f Init 703 (U0;;-)
+sym g dx 17fe58 [16]I64
+sym g dy 17fee8 [16]I64
+sym g x 17fd38 [16]I64
+sym g y 17fdc8 [16]I64
+init 705
+unit C:/Demo/Graphics/Bounce.HC#1

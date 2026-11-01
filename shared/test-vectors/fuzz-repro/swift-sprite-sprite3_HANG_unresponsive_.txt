@@ -1,0 +1,13 @@
+runtime: swift
+target: sprite
+seed: 17990650167836645506
+signature: sprite3:HANG(unresponsive)
+template:
+U8 *p=BLOB,*q; I64 x0,x1,y0,y1; CDC *dc=DCAlias;
+try{Sprite3(dc,100,347,0,p);}catch{Fs->catch_except=TRUE;}
+try{Sprite3ZB(dc,-69,92,0,p,0.5);}catch{Fs->catch_except=TRUE;}
+try{Sprite3ZB(dc,-62,4,0,p,0.5);}catch{Fs->catch_except=TRUE;}
+try{Sprite3ZB(dc,559,417,0,p,0.5);}catch{Fs->catch_except=TRUE;}
+DCDel(dc);"FUZZDONE\n";
+
+minimized input (29 bytes): \x0dC\x96V\x92\x15&sQ\xae\xce\x0cc\xe8(O\xd1\x90\x84\xd9\xa9;\xe4\xb3\x8b\x1c\x00\xed\x85

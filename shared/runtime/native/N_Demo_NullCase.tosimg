@@ -1,0 +1,13 @@
+TOSIMG 1
+unit C:/Demo/NullCase.HC#0
+s 17fd38 5a65726f0a
+s 17fd50 4f6e650a
+s 17fd68 54776f0a
+s 17fd80 54687265650a
+s 17fd98 54656e0a
+s 17fdb0 456c6576656e0a
+fn 703 NullCase (U0;;-)
+fn 704 $init:C:/Demo/NullCase.HC#0 (I64;;-)
+sym f NullCase 703 (U0;;-)
+init 704
+unit C:/Demo/NullCase.HC#1

@@ -1,0 +1,7 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Doodle.HC#0
+fn 703 Doodle (U0;;-)
+fn 704 $init:C:/Demo/Graphics/Doodle.HC#0 (I64;;-)
+sym f Doodle 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/Doodle.HC#1

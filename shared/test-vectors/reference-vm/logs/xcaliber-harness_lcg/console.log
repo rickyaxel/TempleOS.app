@@ -1,0 +1,8 @@
+&LexWarn PrsFun PrsGlblVarLst PrsStmt $RED$$BK,1$WARNING:$FG$$BK,0$ Function should return val in fun 'ShotNew'.
+$LK,"FL:T:/Apps/X-Caliber/X-Caliber.HC.Z,1070"$
+PrsFun PrsGlblVarLst PrsStmt &LexStmt2Bin $RED$$BK,1$WARNING:$FG$$BK,0$ Unused var
+ $LK,"FL:T:/Apps/X-Caliber/X-Caliber.HC.Z,1109"$ 'p1' in 'SolarFlares'
+PrsFun PrsGlblVarLst PrsStmt &LexStmt2Bin $RED$$BK,1$WARNING:$FG$$BK,0$ Unused var
+ $LK,"FL:T:/Apps/X-Caliber/X-Caliber.HC.Z,1109"$ 'p2' in 'SolarFlares'
+10.463794s ans=0x000000A0=160
+T:/Apps/X-Caliber>$PT$

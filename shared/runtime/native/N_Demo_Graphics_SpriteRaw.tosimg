@@ -1,0 +1,15 @@
+TOSIMG 1
+unit C:/Demo/Graphics/SpriteRaw.HC#0
+class MySprite 63 0 - -
+m color 0 $CSpriteColor
+m line1 2 $CSpritePtPt
+m line2 19 $CSpritePtPt
+m line3 36 $CSpritePtPt
+m fill 53 $CSpritePt
+m end 62 $CSpriteBase
+s 17fd38 2568313363
+fn 703 SpriteRawDemo (U0;;-)
+fn 704 $init:C:/Demo/Graphics/SpriteRaw.HC#0 (I64;;-)
+sym f SpriteRawDemo 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/SpriteRaw.HC#1

@@ -1,0 +1,12 @@
+TOSIMG 1
+unit C:/Home/Examples/Animation.HC#0
+g 17fd38 8
+s 17fd50 743d25352e3266202070726573732061206b657920746f2065786974
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 Animation (U0;;-)
+fn 705 $init:C:/Home/Examples/Animation.HC#0 (I64;;-)
+sym f Animation 704 (U0;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym g t0 17fd38 F64
+init 705
+unit C:/Home/Examples/Animation.HC#1

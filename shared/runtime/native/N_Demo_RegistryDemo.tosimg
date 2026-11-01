@@ -1,0 +1,36 @@
+TOSIMG 1
+unit C:/Demo/RegistryDemo.HC#0
+s 17fd38 46363420626573745f73636f72653d312e32333b0a
+s 17fd60 44656d6f436f6d70616e792f47616d6531
+fn 703 $init:C:/Demo/RegistryDemo.HC#0 (I64;;-)
+init 703
+unit C:/Demo/RegistryDemo.HC#1
+s 17fd88 313233343b0a
+s 17fda0 44656d6f436f6d70616e792f47616d65312f53696d706c6556616c
+fn 704 $init:C:/Demo/RegistryDemo.HC#1 (I64;;-)
+init 704
+unit C:/Demo/RegistryDemo.HC#2
+s 17fd60 44656d6f436f6d70616e792f47616d6531
+fn 705 $init:C:/Demo/RegistryDemo.HC#2 (I64;;-)
+init 705
+unit C:/Home/Registry.HC#0
+registry DemoCompany/Game1
+g 17fdd0 8
+c 17fdd0 8 3ff3ae147ae147ae
+fn 706 $init:C:/Home/Registry.HC#0 (I64;;-)
+sym g best_score 17fdd0 F64
+init 706
+unit C:/Home/Registry.HC#1
+unit C:/Demo/RegistryDemo.HC#3
+s 17fda0 44656d6f436f6d70616e792f47616d65312f53696d706c6556616c
+s 17fde8 486967682053636f72653a25362e35660a
+s 17fe10 56616c3a25640a
+s 17fe28 46363420626573745f73636f72653d25392e35663b0a
+s 17fd60 44656d6f436f6d70616e792f47616d6531
+s 17fe50 25643b0a
+s 17fda0 44656d6f436f6d70616e792f47616d65312f53696d706c6556616c
+fn 707 Game (U0;;-)
+fn 708 $init:C:/Demo/RegistryDemo.HC#3 (I64;;-)
+sym f Game 707 (U0;;-)
+init 708
+unit C:/Demo/RegistryDemo.HC#4

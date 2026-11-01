@@ -1,0 +1,73 @@
+TOSIMG 1
+unit C:/Adam/Gr/GrPalette.HC#0
+c 13b70 1 0
+c 13b71 1 6
+c 13b72 1 4
+c 13b73 1 c
+c 13b74 1 e
+c 13b75 1 2
+c 13b76 1 1
+c 13b77 1 5
+c 13b78 1 7
+c 13b79 1 f
+fn 703 $init:C:/Adam/Gr/GrPalette.HC#0 (I64;;-)
+init 703
+unit C:/Adam/Gr/GrPalette.HC#1
+s 152b0 424c41434b0042524f574e00524544004c545245440059454c4c4f5700475245454e00424c554500505552504c45004c544752415900574849544500
+s 15300 53545f5241494e424f575f3130
+fn 704 $init:C:/Adam/Gr/GrPalette.HC#1 (I64;;-)
+init 704
+unit C:/Adam/Gr/GrPalette.HC#2
+c 13320 8 0
+c 13328 8 aaaa
+c 13330 8 aaaa0000
+c 13338 8 aaaaaaaa
+c 13340 8 aaaa00000000
+c 13348 8 aaaa0000aaaa
+c 13350 8 aaaa55550000
+c 13358 8 aaaaaaaaaaaa
+c 13360 8 555555555555
+c 13368 8 55555555ffff
+c 13370 8 5555ffff5555
+c 13378 8 5555ffffffff
+c 13380 8 ffff55555555
+c 13388 8 ffff5555ffff
+c 13390 8 ffffffff5555
+c 13398 8 ffffffffffff
+fn 705 GrPaletteIndicesSet (U0;;-)
+fn 706 GrPaletteColorSet (U0;I64,$CBGR48;-)
+fn 707 GrPaletteColorGet ($CBGR48;I64;-)
+fn 708 $init:C:/Adam/Gr/GrPalette.HC#2 (I64;;-)
+sym f GrPaletteColorGet 707 ($CBGR48;I64;-)
+sym f GrPaletteColorSet 706 (U0;I64,$CBGR48;-)
+sym f GrPaletteIndicesSet 705 (U0;;-)
+init 708
+unit C:/Adam/Gr/GrPalette.HC#3
+c 14760 8 0
+c 14768 8 111111111111
+c 14770 8 222222222222
+c 14778 8 333333333333
+c 14780 8 444444444444
+c 14788 8 555555555555
+c 14790 8 666666666666
+c 14798 8 777777777777
+c 147a0 8 888888888888
+c 147a8 8 999999999999
+c 147b0 8 aaaaaaaaaaaa
+c 147b8 8 bbbbbbbbbbbb
+c 147c0 8 cccccccccccc
+c 147c8 8 dddddddddddd
+c 147d0 8 eeeeeeeeeeee
+c 147d8 8 ffffffffffff
+fn 709 $init:C:/Adam/Gr/GrPalette.HC#3 (I64;;-)
+init 709
+unit C:/Adam/Gr/GrPalette.HC#4
+fn 710 GrPaletteGet (U0;*$CBGR48;-)
+fn 711 GrPaletteSet (U0;*$CBGR48;-)
+fn 712 PaletteSetStd (U0;;-)
+fn 713 $init:C:/Adam/Gr/GrPalette.HC#4 (I64;;-)
+sym f GrPaletteGet 710 (U0;*$CBGR48;-)
+sym f GrPaletteSet 711 (U0;*$CBGR48;-)
+sym f PaletteSetStd 712 (U0;;-)
+init 713
+unit C:/Adam/Gr/GrPalette.HC#5

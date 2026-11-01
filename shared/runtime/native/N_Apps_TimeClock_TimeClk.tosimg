@@ -1,0 +1,37 @@
+TOSIMG 1
+unit C:/Apps/TimeClock/TimeClk.HC#0
+value TET_EOF 0
+value TET_PUNCH_IN 1
+value TET_PUNCH_OUT 2
+class TimeEntry 33 0 - -
+m next 0 *$TimeEntry
+m last 8 *$TimeEntry
+m type 16 U8
+m datetime 17 $CDate
+m desc 25 *U8
+s 17fd38 7e2f54696d65436c6f636b2f54696d6546696c652e444154412e5a
+s 17fd38 7e2f54696d65436c6f636b2f54696d6546696c652e444154412e5a
+s 17fd68 5765656b20546f74616c3a25540a
+s 17fd88 2452454424494e20
+s 17fda8 24524544244f5554
+s 17fdc8 2025442025543a244647240a25730a
+s 17fde8 24524544245765656b20546f74616c3a2554244647240a
+s 17fe10 24424b2c3124416c72656164792050756e636865642d4f757424424b2c30240a
+s 17fe48 0a456e746572204465736372697074696f6e2e0a5072657373203c4553433e207768656e20646f6e652e0a
+s 17fe88 24424b2c3124416c72656164792050756e636865642d496e24424b2c30240a
+s 17fe48 0a456e746572204465736372697074696f6e2e0a5072657373203c4553433e207768656e20646f6e652e0a
+fn 703 TimeFileRead (U0;*$TimeEntry;-)
+fn 704 TimeFileWrite (U0;*$TimeEntry;-)
+fn 705 TimeEntriesDel (U0;*$TimeEntry;-)
+fn 706 TimeRep (Bool;**$TimeEntry;-)
+fn 707 PunchOut (U0;;-)
+fn 708 PunchIn (U0;;-)
+fn 709 $init:C:/Apps/TimeClock/TimeClk.HC#0 (I64;;-)
+sym f PunchIn 708 (U0;;-)
+sym f PunchOut 707 (U0;;-)
+sym f TimeEntriesDel 705 (U0;*$TimeEntry;-)
+sym f TimeFileRead 703 (U0;*$TimeEntry;-)
+sym f TimeFileWrite 704 (U0;*$TimeEntry;-)
+sym f TimeRep 706 (Bool;**$TimeEntry;-)
+init 709
+unit C:/Apps/TimeClock/TimeClk.HC#1

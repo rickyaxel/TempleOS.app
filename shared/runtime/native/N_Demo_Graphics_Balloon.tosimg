@@ -1,0 +1,72 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Balloon.HC#0
+g 17fd38 60
+c 17fd38 1 0
+c 17fd39 1 7f
+c 17fd3a 1 0
+c 17fd3b 1 1
+c 17fd3c 1 ff
+c 17fd3d 1 c0
+c 17fd3e 1 3
+c 17fd3f 1 ff
+c 17fd40 1 e0
+c 17fd41 1 3
+c 17fd42 1 e7
+c 17fd43 1 e0
+c 17fd44 1 7
+c 17fd45 1 d9
+c 17fd46 1 f0
+c 17fd47 1 7
+c 17fd48 1 df
+c 17fd49 1 f0
+c 17fd4a 1 7
+c 17fd4b 1 d9
+c 17fd4c 1 f0
+c 17fd4d 1 3
+c 17fd4e 1 e7
+c 17fd4f 1 e0
+c 17fd50 1 3
+c 17fd51 1 ff
+c 17fd52 1 e0
+c 17fd53 1 3
+c 17fd54 1 ff
+c 17fd55 1 e0
+c 17fd56 1 2
+c 17fd57 1 ff
+c 17fd58 1 a0
+c 17fd59 1 1
+c 17fd5a 1 7f
+c 17fd5b 1 40
+c 17fd5c 1 1
+c 17fd5d 1 3e
+c 17fd5e 1 40
+c 17fd5f 1 0
+c 17fd60 1 9c
+c 17fd61 1 80
+c 17fd62 1 0
+c 17fd63 1 9c
+c 17fd64 1 80
+c 17fd65 1 0
+c 17fd66 1 49
+c 17fd67 1 0
+c 17fd68 1 0
+c 17fd69 1 49
+c 17fd6a 1 0
+c 17fd6b 1 0
+c 17fd6c 1 3e
+c 17fd6d 1 0
+c 17fd6e 1 0
+c 17fd6f 1 3e
+c 17fd70 1 0
+c 17fd71 1 0
+c 17fd72 1 1c
+c 17fd73 1 0
+fn 703 $init:C:/Demo/Graphics/Balloon.HC#0 (I64;;-)
+sym g a 17fd38 [60]U8
+init 703
+unit C:/Demo/Graphics/Balloon.HC#1
+fn 704 Balloon (U0;;-)
+fn 705 $init:C:/Demo/Graphics/Balloon.HC#1 (I64;;-)
+sym f Balloon 704 (U0;;-)
+init 705
+unit C:/Demo/Graphics/Balloon.HC#2

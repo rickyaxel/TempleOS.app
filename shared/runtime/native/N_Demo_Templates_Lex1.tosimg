@@ -1,0 +1,14 @@
+TOSIMG 1
+unit C:/Demo/Templates/Lex1.HC#0
+s 13708 23696e636c7564652022257322
+s 17fd38 253033643a
+s 17fd50 4944454e543a2573
+s 17fd70 5354523a2573
+s 17fd88 434841523a2564
+s 17fda0 4936343a2564
+s 17fdb8 4636343a2564
+fn 703 MyRead (U0;*U8;-)
+fn 704 $init:C:/Demo/Templates/Lex1.HC#0 (I64;;-)
+sym f MyRead 703 (U0;*U8;-)
+init 704
+unit C:/Demo/Templates/Lex1.HC#1

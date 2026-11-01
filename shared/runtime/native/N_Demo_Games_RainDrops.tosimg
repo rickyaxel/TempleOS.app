@@ -1,0 +1,35 @@
+TOSIMG 1
+unit C:/Demo/Games/RainDrops.HC#0
+value DROPS_NUM 8192
+class Drop 8 0 - -
+m x 0 I32
+m y 4 I32
+g 17fd38 8
+g 17fd50 8
+g 17fd68 65536
+g 18fd78 8
+s 18fd90 507265737320273127
+s 18fdb0 507265737320273227
+s 18fdd0 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b20204f70656e5570706572282c273127293b20204f70656e4c6f776572282c273227293b7d
+s 18fe50 416e696d617465
+fn 703 DrawFrame (U0;*$CTask,*$CDC;-)
+fn 704 DrawDrops (U0;*$CTask,*$CDC;-)
+fn 705 UpdateCurBase (U0;*$CTask,*$CDC;-)
+fn 706 DrawIt (U0;*$CTask,*$CDC;-)
+fn 707 AnimateTask (U0;I64;-)
+fn 708 Init (U0;;-)
+fn 709 RainDrops (U0;;-)
+fn 710 $init:C:/Demo/Games/RainDrops.HC#0 (I64;;-)
+sym f AnimateTask 707 (U0;I64;-)
+sym f DrawDrops 704 (U0;*$CTask,*$CDC;-)
+sym f DrawFrame 703 (U0;*$CTask,*$CDC;-)
+sym f DrawIt 706 (U0;*$CTask,*$CDC;-)
+sym f Init 708 (U0;;-)
+sym f RainDrops 709 (U0;;-)
+sym f UpdateCurBase 705 (U0;*$CTask,*$CDC;-)
+sym g cur_dc 18fd78 *$CDC
+sym g drops 17fd68 [8192]$Drop
+sym g sc_1 17fd38 I64
+sym g sc_2 17fd50 I64
+init 710
+unit C:/Demo/Games/RainDrops.HC#1

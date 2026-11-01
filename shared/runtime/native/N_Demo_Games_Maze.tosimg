@@ -1,0 +1,39 @@
+TOSIMG 1
+unit C:/Demo/Games/Maze.HC#0
+value STK_SIZE 2048
+g 17fd38 19200
+s 184948 447261772061206d617a652077697468206c656674206274746e2e
+s 184978 536f6c7665206d617a65207374617274696e6720617420726967687420636c69636b2e
+g 1849b0 8
+g 1849c8 16384
+g 1889d8 16384
+g 18c9e8 16384
+g 1909f8 32
+g 190a28 32
+c 1909f8 8 0
+c 190a00 8 1
+c 190a08 8 0
+c 190a10 8 ffffffffffffffff
+c 190a28 8 1
+c 190a30 8 0
+c 190a38 8 ffffffffffffffff
+c 190a40 8 0
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 $init:C:/Demo/Games/Maze.HC#0 (I64;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym g dir_x 1909f8 [4]I64
+sym g dir_y 190a28 [4]I64
+sym g stk_dir 18c9e8 [2048]I64
+sym g stk_ptr 1849b0 I64
+sym g stk_x 1849c8 [2048]I64
+sym g stk_y 1889d8 [2048]I64
+sym g text 17fd38 [60][80]U32
+init 704
+unit C:/Demo/Games/Maze.HC#1
+fn 705 SolveMaze (U0;I64,I64;-)
+fn 706 Maze (U0;;-)
+fn 707 $init:C:/Demo/Games/Maze.HC#1 (I64;;-)
+sym f Maze 706 (U0;;-)
+sym f SolveMaze 705 (U0;I64,I64;-)
+init 707
+unit C:/Demo/Games/Maze.HC#2

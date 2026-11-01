@@ -1,0 +1,19 @@
+TOSIMG 1
+unit C:/Demo/Exceptions.HC#0
+s 17fd38 256420
+s 17fd50 44310a
+s 17fd68 44320a
+s 17fd80 443220686e646c720a43683a25633a25500a
+s 17fda8 43617567687420696e2044320a
+s 17fdc8 44656d6f20686e646c720a43683a25633a25500a
+fn 703 Prompt (Bool;I64;-)
+fn 704 D1 (U0;;-)
+fn 705 D2 (U0;;-)
+fn 706 Demo (U0;;-)
+fn 707 $init:C:/Demo/Exceptions.HC#0 (I64;;-)
+sym f D1 704 (U0;;-)
+sym f D2 705 (U0;;-)
+sym f Demo 706 (U0;;-)
+sym f Prompt 703 (Bool;I64;-)
+init 707
+unit C:/Demo/Exceptions.HC#1

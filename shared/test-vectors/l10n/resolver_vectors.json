@@ -1,0 +1,1080 @@
+{
+ "schema": 1,
+ "description": "TempleOS Mobile UI-locale resolution vectors (tools/l10n/resolver.py). Derived from a reference vector set, with geography removed, plus TempleOS cases.",
+ "vectors": [
+  {
+   "name": "Canada French device",
+   "device_region": "CA",
+   "preferred": [
+    "fr-CA",
+    "en-CA",
+    "en-US"
+   ],
+   "manual": null,
+   "expected": "fr-CA",
+   "source": "preferred"
+  },
+  {
+   "name": "Canada English device",
+   "device_region": "CA",
+   "preferred": [
+    "en-CA",
+    "fr-CA"
+   ],
+   "manual": null,
+   "expected": "en-CA",
+   "source": "preferred"
+  },
+  {
+   "name": "Canada generic French device",
+   "device_region": "CA",
+   "preferred": [
+    "fr"
+   ],
+   "manual": null,
+   "expected": "fr-CA",
+   "source": "preferred"
+  },
+  {
+   "name": "Quebec no device match",
+   "device_region": "CA",
+   "preferred": [
+    "cy-GB"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Canada no device match",
+   "device_region": "CA",
+   "preferred": [
+    "cy-GB"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Spain Spanish",
+   "device_region": "ES",
+   "preferred": [
+    "es-ES"
+   ],
+   "manual": null,
+   "expected": "es-ES",
+   "source": "preferred"
+  },
+  {
+   "name": "Spain Catalan",
+   "device_region": "ES",
+   "preferred": [
+    "ca-ES"
+   ],
+   "manual": null,
+   "expected": "ca",
+   "source": "preferred"
+  },
+  {
+   "name": "Spain generic Spanish",
+   "device_region": "ES",
+   "preferred": [
+    "es"
+   ],
+   "manual": null,
+   "expected": "es-ES",
+   "source": "preferred"
+  },
+  {
+   "name": "Spain no useful preference",
+   "device_region": "ES",
+   "preferred": [],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Catalonia no useful preference",
+   "device_region": "ES",
+   "preferred": [],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Mexico",
+   "device_region": "MX",
+   "preferred": [
+    "es-MX"
+   ],
+   "manual": null,
+   "expected": "es-MX",
+   "source": "preferred"
+  },
+  {
+   "name": "Mexico generic Spanish",
+   "device_region": "MX",
+   "preferred": [
+    "es"
+   ],
+   "manual": null,
+   "expected": "es-MX",
+   "source": "preferred"
+  },
+  {
+   "name": "Argentina Spanish",
+   "device_region": "AR",
+   "preferred": [
+    "es-AR"
+   ],
+   "manual": null,
+   "expected": "es-419",
+   "source": "preferred"
+  },
+  {
+   "name": "US Spanish device",
+   "device_region": "US",
+   "preferred": [
+    "es-US"
+   ],
+   "manual": null,
+   "expected": "es-US",
+   "source": "preferred"
+  },
+  {
+   "name": "US generic Spanish",
+   "device_region": "US",
+   "preferred": [
+    "es"
+   ],
+   "manual": null,
+   "expected": "es-US",
+   "source": "preferred"
+  },
+  {
+   "name": "US English",
+   "device_region": "US",
+   "preferred": [
+    "en-US"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "preferred"
+  },
+  {
+   "name": "Brazil",
+   "device_region": "BR",
+   "preferred": [
+    "pt-BR"
+   ],
+   "manual": null,
+   "expected": "pt-BR",
+   "source": "preferred"
+  },
+  {
+   "name": "Portugal",
+   "device_region": "PT",
+   "preferred": [
+    "pt-PT"
+   ],
+   "manual": null,
+   "expected": "pt-PT",
+   "source": "preferred"
+  },
+  {
+   "name": "Portugal generic Portuguese",
+   "device_region": "PT",
+   "preferred": [
+    "pt"
+   ],
+   "manual": null,
+   "expected": "pt-PT",
+   "source": "preferred"
+  },
+  {
+   "name": "Angola Portuguese",
+   "device_region": "AO",
+   "preferred": [
+    "pt-AO"
+   ],
+   "manual": null,
+   "expected": "pt-PT",
+   "source": "preferred"
+  },
+  {
+   "name": "France",
+   "device_region": "FR",
+   "preferred": [
+    "fr-FR"
+   ],
+   "manual": null,
+   "expected": "fr-FR",
+   "source": "preferred"
+  },
+  {
+   "name": "Switzerland French",
+   "device_region": "CH",
+   "preferred": [
+    "fr-CH"
+   ],
+   "manual": null,
+   "expected": "fr-FR",
+   "source": "preferred"
+  },
+  {
+   "name": "UK",
+   "device_region": "GB",
+   "preferred": [
+    "en-GB"
+   ],
+   "manual": null,
+   "expected": "en-GB",
+   "source": "preferred"
+  },
+  {
+   "name": "Australia",
+   "device_region": "AU",
+   "preferred": [
+    "en-AU"
+   ],
+   "manual": null,
+   "expected": "en-AU",
+   "source": "preferred"
+  },
+  {
+   "name": "New Zealand English",
+   "device_region": "NZ",
+   "preferred": [
+    "en-NZ"
+   ],
+   "manual": null,
+   "expected": "en-GB",
+   "source": "preferred"
+  },
+  {
+   "name": "China",
+   "device_region": "CN",
+   "preferred": [
+    "zh-CN"
+   ],
+   "manual": null,
+   "expected": "zh-CN",
+   "source": "preferred"
+  },
+  {
+   "name": "China script tag",
+   "device_region": "CN",
+   "preferred": [
+    "zh-Hans-CN"
+   ],
+   "manual": null,
+   "expected": "zh-CN",
+   "source": "preferred"
+  },
+  {
+   "name": "Taiwan",
+   "device_region": "TW",
+   "preferred": [
+    "zh-TW"
+   ],
+   "manual": null,
+   "expected": "zh-TW",
+   "source": "preferred"
+  },
+  {
+   "name": "Taiwan script tag",
+   "device_region": "TW",
+   "preferred": [
+    "zh-Hant-TW"
+   ],
+   "manual": null,
+   "expected": "zh-TW",
+   "source": "preferred"
+  },
+  {
+   "name": "Hong Kong",
+   "device_region": "HK",
+   "preferred": [
+    "zh-HK"
+   ],
+   "manual": null,
+   "expected": "zh-HK",
+   "source": "preferred"
+  },
+  {
+   "name": "Hong Kong Traditional script only",
+   "device_region": "HK",
+   "preferred": [
+    "zh-Hant"
+   ],
+   "manual": null,
+   "expected": "zh-HK",
+   "source": "preferred"
+  },
+  {
+   "name": "Bare Chinese without country",
+   "device_region": null,
+   "preferred": [
+    "zh",
+    "ja-JP"
+   ],
+   "manual": null,
+   "expected": "ja-JP",
+   "source": "preferred"
+  },
+  {
+   "name": "Bare Chinese in Taiwan",
+   "device_region": "TW",
+   "preferred": [
+    "zh"
+   ],
+   "manual": null,
+   "expected": "zh-TW",
+   "source": "preferred"
+  },
+  {
+   "name": "India English",
+   "device_region": "IN",
+   "preferred": [
+    "en-IN"
+   ],
+   "manual": null,
+   "expected": "en-IN",
+   "source": "preferred"
+  },
+  {
+   "name": "India Hindi",
+   "device_region": "IN",
+   "preferred": [
+    "hi-IN"
+   ],
+   "manual": null,
+   "expected": "hi-IN",
+   "source": "preferred"
+  },
+  {
+   "name": "India generic English",
+   "device_region": "IN",
+   "preferred": [
+    "en"
+   ],
+   "manual": null,
+   "expected": "en-IN",
+   "source": "preferred"
+  },
+  {
+   "name": "India no device match",
+   "device_region": "IN",
+   "preferred": [
+    "cy"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Tamil Nadu no device match",
+   "device_region": "IN",
+   "preferred": [],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Singapore English",
+   "device_region": "SG",
+   "preferred": [
+    "en-SG"
+   ],
+   "manual": null,
+   "expected": "en-SG",
+   "source": "preferred"
+  },
+  {
+   "name": "Singapore Chinese",
+   "device_region": "SG",
+   "preferred": [
+    "zh-SG"
+   ],
+   "manual": null,
+   "expected": "zh-CN",
+   "source": "preferred"
+  },
+  {
+   "name": "Singapore no device match",
+   "device_region": "SG",
+   "preferred": [],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "South Africa English",
+   "device_region": "ZA",
+   "preferred": [
+    "en-ZA"
+   ],
+   "manual": null,
+   "expected": "en-ZA",
+   "source": "preferred"
+  },
+  {
+   "name": "South Africa Afrikaans",
+   "device_region": "ZA",
+   "preferred": [
+    "af-ZA"
+   ],
+   "manual": null,
+   "expected": "af",
+   "source": "preferred"
+  },
+  {
+   "name": "Malaysia Malay",
+   "device_region": "MY",
+   "preferred": [
+    "ms-MY"
+   ],
+   "manual": null,
+   "expected": "ms-MY",
+   "source": "preferred"
+  },
+  {
+   "name": "Malaysia no device match",
+   "device_region": "MY",
+   "preferred": [],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Brunei generic Malay",
+   "device_region": "BN",
+   "preferred": [
+    "ms"
+   ],
+   "manual": null,
+   "expected": "ms",
+   "source": "preferred"
+  },
+  {
+   "name": "Iran Persian",
+   "device_region": "IR",
+   "preferred": [
+    "fa-IR"
+   ],
+   "manual": null,
+   "expected": "fa-IR",
+   "source": "preferred"
+  },
+  {
+   "name": "Afghanistan Dari",
+   "device_region": "AF",
+   "preferred": [
+    "prs-AF"
+   ],
+   "manual": null,
+   "expected": "fa-AF",
+   "source": "preferred"
+  },
+  {
+   "name": "Generic Persian device",
+   "device_region": null,
+   "preferred": [
+    "fa"
+   ],
+   "manual": null,
+   "expected": "fa",
+   "source": "preferred"
+  },
+  {
+   "name": "UAE Persian",
+   "device_region": "AE",
+   "preferred": [
+    "fa-AE"
+   ],
+   "manual": null,
+   "expected": "fa-AE",
+   "source": "preferred"
+  },
+  {
+   "name": "Israel legacy Android Hebrew",
+   "device_region": "IL",
+   "preferred": [
+    "iw-IL"
+   ],
+   "manual": null,
+   "expected": "he-IL",
+   "source": "preferred"
+  },
+  {
+   "name": "Legacy bare iw",
+   "device_region": null,
+   "preferred": [
+    "iw"
+   ],
+   "manual": null,
+   "expected": "he-IL",
+   "source": "preferred"
+  },
+  {
+   "name": "Hebrew",
+   "device_region": null,
+   "preferred": [
+    "he"
+   ],
+   "manual": null,
+   "expected": "he-IL",
+   "source": "preferred"
+  },
+  {
+   "name": "Arabic RTL",
+   "device_region": "EG",
+   "preferred": [
+    "ar-EG"
+   ],
+   "manual": null,
+   "expected": "ar",
+   "source": "preferred"
+  },
+  {
+   "name": "Urdu RTL",
+   "device_region": "PK",
+   "preferred": [
+    "ur-PK"
+   ],
+   "manual": null,
+   "expected": "ur",
+   "source": "preferred"
+  },
+  {
+   "name": "Legacy Indonesian in",
+   "device_region": null,
+   "preferred": [
+    "in-ID"
+   ],
+   "manual": null,
+   "expected": "id",
+   "source": "preferred"
+  },
+  {
+   "name": "Norwegian Bokmal",
+   "device_region": null,
+   "preferred": [
+    "nb-NO"
+   ],
+   "manual": null,
+   "expected": "no-NO",
+   "source": "preferred"
+  },
+  {
+   "name": "Norwegian Nynorsk alias",
+   "device_region": null,
+   "preferred": [
+    "nn"
+   ],
+   "manual": null,
+   "expected": "no-NO",
+   "source": "preferred"
+  },
+  {
+   "name": "Tagalog alias",
+   "device_region": null,
+   "preferred": [
+    "tl"
+   ],
+   "manual": null,
+   "expected": "fil",
+   "source": "preferred"
+  },
+  {
+   "name": "Underscore and case",
+   "device_region": null,
+   "preferred": [
+    "FR_ca"
+   ],
+   "manual": null,
+   "expected": "fr-CA",
+   "source": "preferred"
+  },
+  {
+   "name": "Japanese",
+   "device_region": "JP",
+   "preferred": [
+    "ja-JP"
+   ],
+   "manual": null,
+   "expected": "ja-JP",
+   "source": "preferred"
+  },
+  {
+   "name": "Wrong-script Punjabi skipped",
+   "device_region": "PK",
+   "preferred": [
+    "pa-Arab-PK",
+    "ur"
+   ],
+   "manual": null,
+   "expected": "ur",
+   "source": "preferred"
+  },
+  {
+   "name": "Latin Serbian excluded",
+   "device_region": "RS",
+   "preferred": [
+    "sr-Latn-RS"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Unsupported device locale, mapped country",
+   "device_region": "DE",
+   "preferred": [
+    "cy-GB"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default",
+   "note": "reference used geography; TempleOS never does"
+  },
+  {
+   "name": "Unsupported device locale, unknown country",
+   "device_region": "ZZ",
+   "preferred": [
+    "cy-GB"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default"
+  },
+  {
+   "name": "Missing country header",
+   "device_region": null,
+   "preferred": [
+    "cy-GB"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default"
+  },
+  {
+   "name": "Malformed country header",
+   "device_region": "U$",
+   "preferred": [],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default"
+  },
+  {
+   "name": "Malformed locale",
+   "device_region": null,
+   "preferred": [
+    "!!",
+    "de-DE"
+   ],
+   "manual": null,
+   "expected": "de-DE",
+   "source": "preferred"
+  },
+  {
+   "name": "Empty preferences",
+   "device_region": null,
+   "preferred": [],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default"
+  },
+  {
+   "name": "Manual Japanese in Spain",
+   "device_region": "ES",
+   "preferred": [
+    "es-ES"
+   ],
+   "manual": "ja-JP",
+   "expected": "ja-JP",
+   "source": "manual"
+  },
+  {
+   "name": "Manual French Canada in Canada",
+   "device_region": "CA",
+   "preferred": [
+    "en-CA"
+   ],
+   "manual": "fr-CA",
+   "expected": "fr-CA",
+   "source": "manual"
+  },
+  {
+   "name": "Manual Mexican Spanish in US",
+   "device_region": "US",
+   "preferred": [
+    "en-US"
+   ],
+   "manual": "es-MX",
+   "expected": "es-MX",
+   "source": "manual"
+  },
+  {
+   "name": "Stored canonical generic Malay stays generic",
+   "device_region": "MY",
+   "preferred": [
+    "en-US"
+   ],
+   "manual": "ms",
+   "expected": "ms",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored French migrates",
+   "device_region": null,
+   "preferred": [
+    "en-US"
+   ],
+   "manual": "fr",
+   "expected": "fr-FR",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored French in Canada",
+   "device_region": "CA",
+   "preferred": [
+    "en-CA"
+   ],
+   "manual": "fr",
+   "expected": "fr-CA",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored Spanish without country",
+   "device_region": null,
+   "preferred": [],
+   "manual": "es",
+   "expected": "es-419",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored Simplified Chinese",
+   "device_region": null,
+   "preferred": [],
+   "manual": "zh-Hans",
+   "expected": "zh-CN",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored Traditional Chinese",
+   "device_region": null,
+   "preferred": [],
+   "manual": "zh-Hant",
+   "expected": "zh-TW",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored Hebrew",
+   "device_region": null,
+   "preferred": [],
+   "manual": "he",
+   "expected": "he-IL",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored Bokmal",
+   "device_region": null,
+   "preferred": [],
+   "manual": "nb",
+   "expected": "no-NO",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored English",
+   "device_region": null,
+   "preferred": [
+    "fr-FR"
+   ],
+   "manual": "en",
+   "expected": "en-US",
+   "source": "manual"
+  },
+  {
+   "name": "Legacy stored Japanese",
+   "device_region": null,
+   "preferred": [],
+   "manual": "ja",
+   "expected": "ja-JP",
+   "source": "manual"
+  },
+  {
+   "name": "Invalid stored value falls through",
+   "device_region": null,
+   "preferred": [
+    "it-IT"
+   ],
+   "manual": "xx-YY",
+   "expected": "it-IT",
+   "source": "preferred"
+  },
+  {
+   "name": "Lowercase country",
+   "device_region": "mx",
+   "preferred": [
+    "es"
+   ],
+   "manual": null,
+   "expected": "es-MX",
+   "source": "preferred"
+  },
+  {
+   "name": "New Zealand English device in the US",
+   "device_region": "US",
+   "preferred": [
+    "en-NZ"
+   ],
+   "manual": null,
+   "expected": "en-GB",
+   "source": "preferred"
+  },
+  {
+   "name": "Argentine Spanish device in Spain",
+   "device_region": "ES",
+   "preferred": [
+    "es-AR"
+   ],
+   "manual": null,
+   "expected": "es-419",
+   "source": "preferred"
+  },
+  {
+   "name": "Brazilian generic Portuguese in Portugal",
+   "device_region": "PT",
+   "preferred": [
+    "pt"
+   ],
+   "manual": null,
+   "expected": "pt-PT",
+   "source": "preferred"
+  },
+  {
+   "name": "Quebec French device without geo",
+   "device_region": null,
+   "preferred": [
+    "fr-CA"
+   ],
+   "manual": null,
+   "expected": "fr-CA",
+   "source": "preferred"
+  },
+  {
+   "name": "Belgian French device without geo",
+   "device_region": null,
+   "preferred": [
+    "fr-BE"
+   ],
+   "manual": null,
+   "expected": "fr-FR",
+   "source": "preferred"
+  },
+  {
+   "name": "Spanish Spain device",
+   "device_region": "ES",
+   "preferred": [
+    "es-ES"
+   ],
+   "manual": null,
+   "expected": "es-ES",
+   "source": "preferred"
+  },
+  {
+   "name": "Spanish Mexico device",
+   "device_region": "MX",
+   "preferred": [
+    "es-MX"
+   ],
+   "manual": null,
+   "expected": "es-MX",
+   "source": "preferred"
+  },
+  {
+   "name": "Brazilian Portuguese",
+   "device_region": "BR",
+   "preferred": [
+    "pt-BR"
+   ],
+   "manual": null,
+   "expected": "pt-BR",
+   "source": "preferred"
+  },
+  {
+   "name": "Traditional Chinese script tag",
+   "device_region": null,
+   "preferred": [
+    "zh-Hant"
+   ],
+   "manual": null,
+   "expected": "zh-TW",
+   "source": "preferred"
+  },
+  {
+   "name": "Simplified Chinese script tag",
+   "device_region": null,
+   "preferred": [
+    "zh-Hans"
+   ],
+   "manual": null,
+   "expected": "zh-CN",
+   "source": "preferred"
+  },
+  {
+   "name": "Bare zh without region is not guessed",
+   "device_region": null,
+   "preferred": [
+    "zh",
+    "ja-JP"
+   ],
+   "manual": null,
+   "expected": "ja-JP",
+   "source": "preferred"
+  },
+  {
+   "name": "Serbian Latin is excluded",
+   "device_region": "RS",
+   "preferred": [
+    "sr-Latn-RS",
+    "de-DE"
+   ],
+   "manual": null,
+   "expected": "de-DE",
+   "source": "preferred"
+  },
+  {
+   "name": "Serbian Cyrillic",
+   "device_region": "RS",
+   "preferred": [
+    "sr-Cyrl-RS"
+   ],
+   "manual": null,
+   "expected": "sr",
+   "source": "preferred"
+  },
+  {
+   "name": "iOS calendar extension",
+   "device_region": "JP",
+   "preferred": [
+    "ja-JP-u-ca-japanese"
+   ],
+   "manual": null,
+   "expected": "ja-JP",
+   "source": "preferred"
+  },
+  {
+   "name": "Unsupported then supported",
+   "device_region": "GB",
+   "preferred": [
+    "cy-GB",
+    "ga-IE",
+    "fr-FR"
+   ],
+   "manual": null,
+   "expected": "fr-FR",
+   "source": "preferred"
+  },
+  {
+   "name": "Nothing supported is English",
+   "device_region": "GB",
+   "preferred": [
+    "cy-GB",
+    "gd"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default"
+  },
+  {
+   "name": "Empty list",
+   "device_region": null,
+   "preferred": [],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default"
+  },
+  {
+   "name": "Malformed tags are skipped",
+   "device_region": null,
+   "preferred": [
+    "",
+    "!!",
+    "english",
+    "de_AT"
+   ],
+   "manual": null,
+   "expected": "de-DE",
+   "source": "preferred"
+  },
+  {
+   "name": "Manual beats device",
+   "device_region": "FR",
+   "preferred": [
+    "fr-FR"
+   ],
+   "manual": "ja-JP",
+   "expected": "ja-JP",
+   "source": "manual"
+  },
+  {
+   "name": "Invalid persisted choice falls back to device",
+   "device_region": "FR",
+   "preferred": [
+    "fr-FR"
+   ],
+   "manual": "xx-YY",
+   "expected": "fr-FR",
+   "source": "preferred"
+  },
+  {
+   "name": "Legacy persisted catalog tag",
+   "device_region": null,
+   "preferred": [],
+   "manual": "zh-Hant",
+   "expected": "zh-TW",
+   "source": "manual"
+  },
+  {
+   "name": "Hebrew legacy code",
+   "device_region": null,
+   "preferred": [
+    "iw-IL"
+   ],
+   "manual": null,
+   "expected": "he-IL",
+   "source": "preferred"
+  },
+  {
+   "name": "Arabic",
+   "device_region": "EG",
+   "preferred": [
+    "ar-EG"
+   ],
+   "manual": null,
+   "expected": "ar",
+   "source": "preferred"
+  },
+  {
+   "name": "Two-letter prefix is not a match",
+   "device_region": null,
+   "preferred": [
+    "ms-Arab"
+   ],
+   "manual": null,
+   "expected": "en-US",
+   "source": "default"
+  }
+ ]
+}

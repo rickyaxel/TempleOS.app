@@ -1,0 +1,35 @@
+TOSIMG 1
+unit C:/Home/Examples/Arithmetic.HC#0
+g 17fd38 8
+g 17fd50 8
+g 17fd68 8
+c 17fd38 8 11
+c 17fd50 8 5
+c 17fd68 8 4004000000000000
+s 17fd80 612b623d256420612d623d256420612a623d256420612f623d256420612525623d25640a
+fn 703 $init:C:/Home/Examples/Arithmetic.HC#0 (I64;;-)
+sym g a 17fd38 I64
+sym g b 17fd50 I64
+sym g x 17fd68 F64
+init 703
+unit C:/Home/Examples/Arithmetic.HC#1
+s 17fdb8 326031302028706f776572206f70657261746f7229203d2025640a
+fn 704 $init:C:/Home/Examples/Arithmetic.HC#1 (I64;;-)
+init 704
+unit C:/Home/Examples/Arithmetic.HC#2
+s 17fde8 313c3c342b31203d202564202873686966742062696e64732074696768746572207468616e202b290a
+fn 705 $init:C:/Home/Examples/Arithmetic.HC#2 (I64;;-)
+init 705
+unit C:/Home/Examples/Arithmetic.HC#3
+s 17fe28 782a78203d2025352e32660a
+fn 706 $init:C:/Home/Examples/Arithmetic.HC#3 (I64;;-)
+init 706
+unit C:/Home/Examples/Arithmetic.HC#4
+s 17fe48 53717274283229203d2025392e36660a
+fn 707 $init:C:/Home/Examples/Arithmetic.HC#4 (I64;;-)
+init 707
+unit C:/Home/Examples/Arithmetic.HC#5
+s 17fe70 3078255820696e206865782c20256220696e2062696e6172790a
+fn 708 $init:C:/Home/Examples/Arithmetic.HC#5 (I64;;-)
+init 708
+unit C:/Home/Examples/Arithmetic.HC#6

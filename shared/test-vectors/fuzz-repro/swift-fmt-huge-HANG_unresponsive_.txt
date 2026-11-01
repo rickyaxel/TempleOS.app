@@ -1,0 +1,9 @@
+runtime: swift
+target: fmt-huge
+seed: 0
+signature: HANG(unresponsive)
+StrPrint(b,"%h*c",0x7FFFFFFFFFFF,'x');
+minimized input (97 bytes): U8 b[64];
+try{StrPrint(b,"%h*c",0x7FFFFFFFFFFF,'x');}catch{Fs->catch_except=TRUE;}
+"FUZZDONE\n";
+

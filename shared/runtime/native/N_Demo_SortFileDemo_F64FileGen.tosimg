@@ -1,0 +1,20 @@
+TOSIMG 1
+unit C:/Demo/SortFileDemo/F64FileGen.HC#0
+s 17fd38 433a2f44656d6f2f536f727446696c6544656d6f
+fn 703 $init:C:/Demo/SortFileDemo/F64FileGen.HC#0 (I64;;-)
+init 703
+unit C:/Demo/SortFileDemo/F64FileGen.HC#1
+s 17fd60 2f2f5468697320697320756e736f727465642e0a
+s 17fd88 2531322e36660a
+s 17fda0 7e2f44656d6f556e736f727465644636342e44442e5a
+fn 704 F64FileGenTXT (U0;*U8,I64;-)
+fn 705 $init:C:/Demo/SortFileDemo/F64FileGen.HC#1 (I64;;-)
+sym f F64FileGenTXT 704 (U0;*U8,I64;-)
+init 705
+unit C:/Demo/SortFileDemo/F64FileGen.HC#2
+s 17fdc8 7e2f44656d6f556e736f727465644636342e444154412e5a
+fn 706 F64FileGenDAT (U0;*U8,I64;-)
+fn 707 $init:C:/Demo/SortFileDemo/F64FileGen.HC#2 (I64;;-)
+sym f F64FileGenDAT 706 (U0;*U8,I64;-)
+init 707
+unit C:/Demo/SortFileDemo/F64FileGen.HC#3

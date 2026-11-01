@@ -1,0 +1,26 @@
+TOSIMG 1
+unit C:/Demo/Templates/Registry1.HC#0
+s 17fd38 46363420626573745f73636f72653d393939393b0a
+s 17fd60 4d79436f6d70616e792f4d79417070
+fn 703 $init:C:/Demo/Templates/Registry1.HC#0 (I64;;-)
+init 703
+unit C:/Demo/Templates/Registry1.HC#1
+s 17fd60 4d79436f6d70616e792f4d79417070
+fn 704 $init:C:/Demo/Templates/Registry1.HC#1 (I64;;-)
+init 704
+unit C:/Home/Registry.HC#0
+registry MyCompany/MyApp
+g 17fd80 8
+c 17fd80 8 40c3878000000000
+fn 705 $init:C:/Home/Registry.HC#0 (I64;;-)
+sym g best_score 17fd80 F64
+init 705
+unit C:/Home/Registry.HC#1
+unit C:/Demo/Templates/Registry1.HC#2
+s 17fd98 46363420626573745f73636f72653d25352e34663b0a
+s 17fd60 4d79436f6d70616e792f4d79417070
+fn 706 Main (U0;;-)
+fn 707 $init:C:/Demo/Templates/Registry1.HC#2 (I64;;-)
+sym f Main 706 (U0;;-)
+init 707
+unit C:/Demo/Templates/Registry1.HC#3

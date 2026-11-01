@@ -1,0 +1,29 @@
+TOSIMG 1
+unit C:/Adam/God/GodExt.HC#0
+class CGodGlbls 65 0 - -
+m words 0 **U8
+m word_file_mask 8 *U8
+m word_fuf_flags 16 I64
+m num_words 24 I64
+m fifo 32 *$CFifoU8
+m doodle_dc 40 *$CDC
+m doodle_ch 48 I64
+m doodle_fifo 56 *$CFifoU8
+m doodle_done 64 Bool
+g 17fd38 65
+fn 703 $init:C:/Adam/God/GodExt.HC#0 (I64;;-)
+sym g god 17fd38 $CGodGlbls
+init 703
+unit C:/Adam/God/GodExt.HC#1
+fn 704 $init:C:/Adam/God/GodExt.HC#1 (I64;;-)
+init 704
+unit C:/Adam/God/GodExt.HC#2
+fn 705 $init:C:/Adam/God/GodExt.HC#2 (I64;;-)
+init 705
+unit C:/Adam/God/GodExt.HC#3
+fn 709 $init:C:/Adam/God/GodExt.HC#3 (I64;;-)
+sym f GodBiblePassage 706 (U0;I64;-)
+sym f GodDoodle 707 (U0;*U8;-)
+sym f GodWord 708 (U0;I64;-)
+init 709
+unit C:/Adam/God/GodExt.HC#4

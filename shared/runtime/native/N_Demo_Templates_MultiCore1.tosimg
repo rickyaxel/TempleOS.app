@@ -1,0 +1,16 @@
+TOSIMG 1
+unit C:/Demo/Templates/MultiCore1.HC#0
+value NUM 100
+g 17fd38 8
+g 17fd50 8
+s 17fd68 436f72652325643a25642d25643a25640a
+s 17fd90 4772616e6420746f74616c3a25640a
+fn 703 MPRoutine (U0;*$CDoc;-)
+fn 704 Main (U0;;-)
+fn 705 $init:C:/Demo/Templates/MultiCore1.HC#0 (I64;;-)
+sym f MPRoutine 703 (U0;*$CDoc;-)
+sym f Main 704 (U0;;-)
+sym g grand_total 17fd50 I64
+sym g mp_not_done_flags 17fd38 I64
+init 705
+unit C:/Demo/Templates/MultiCore1.HC#1

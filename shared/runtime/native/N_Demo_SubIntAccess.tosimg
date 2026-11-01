@@ -1,0 +1,39 @@
+TOSIMG 1
+unit C:/Demo/SubIntAccess.HC#0
+g 17fd38 8
+g 17fd50 8
+c 17fd38 8 fedcba9876543210
+s 17fd68 7109093d25303136580a
+fn 703 $init:C:/Demo/SubIntAccess.HC#0 (I64;;-)
+sym g q 17fd38 I64
+sym g q1 17fd50 I64
+init 703
+unit C:/Demo/SubIntAccess.HC#1
+fn 704 $init:C:/Demo/SubIntAccess.HC#1 (I64;;-)
+init 704
+unit C:/Demo/SubIntAccess.HC#2
+s 17fd88 712e6931365b325d093d25303136580a
+fn 705 $init:C:/Demo/SubIntAccess.HC#2 (I64;;-)
+init 705
+unit C:/Demo/SubIntAccess.HC#3
+fn 706 $init:C:/Demo/SubIntAccess.HC#3 (I64;;-)
+init 706
+unit C:/Demo/SubIntAccess.HC#4
+s 17fdb0 712e75385b355d09093d25303136580a
+fn 707 $init:C:/Demo/SubIntAccess.HC#4 (I64;;-)
+init 707
+unit C:/Demo/SubIntAccess.HC#5
+fn 708 $init:C:/Demo/SubIntAccess.HC#5 (I64;;-)
+init 708
+unit C:/Demo/SubIntAccess.HC#6
+s 17fdd8 712e6933325b315d2e75385b325d093d25303136580a
+fn 709 $init:C:/Demo/SubIntAccess.HC#6 (I64;;-)
+init 709
+unit C:/Demo/SubIntAccess.HC#7
+fn 710 $init:C:/Demo/SubIntAccess.HC#7 (I64;;-)
+init 710
+unit C:/Demo/SubIntAccess.HC#8
+s 17fe00 712e6933325b305d2e69385b315d093d25303136580a
+fn 711 $init:C:/Demo/SubIntAccess.HC#8 (I64;;-)
+init 711
+unit C:/Demo/SubIntAccess.HC#9

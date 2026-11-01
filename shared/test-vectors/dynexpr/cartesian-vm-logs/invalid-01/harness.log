@@ -1,0 +1,1069 @@
+R
+BOOT-OK mp_cnt=2 sys_code_bp.alloced=1068326912
+DATA B:/HData/cartesian.txt size=653 fnv=A892794B3D33CF45
+LOADER begin opt/templeos/h0 size=4135 fnv=A9BB85B63D1B00EA
+CART-START size=653 fnv=A892794B3D33CF45
+B invalid-01 C074000000000000
+R invalid-01 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 C059000000000000
+R invalid-01 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 C046800000000000
+HB 69040 3 0
+HB 70040 3 0
+HB 71040 3 0
+R invalid-01 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 C024000000000000
+HB 72040 4 0
+HB 73040 4 0
+R invalid-01 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 C01C000000000000
+HB 74040 5 0
+HB 75040 5 0
+R invalid-01 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 BFF0000000000000
+HB 76040 6 0
+HB 77040 6 0
+R invalid-01 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 BFE0000000000000
+HB 78040 7 0
+HB 79040 7 0
+R invalid-01 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 0000000000000000
+HB 80040 8 0
+R invalid-01 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 3FE0000000000000
+HB 81040 9 0
+HB 82040 9 0
+R invalid-01 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 3FF0000000000000
+HB 83040 10 0
+R invalid-01 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 4000000000000000
+HB 84040 11 0
+HB 85040 11 0
+R invalid-01 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 401C000000000000
+HB 86040 12 0
+HB 87040 12 0
+R invalid-01 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 4024000000000000
+HB 88040 13 0
+R invalid-01 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 4046800000000000
+HB 89040 14 0
+R invalid-01 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 4059000000000000
+HB 90040 15 0
+HB 91040 15 0
+R invalid-01 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 4073F00000000000
+HB 92040 16 0
+HB 93041 16 0
+R invalid-01 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-01 4074000000000000
+HB 94041 17 0
+HB 95042 17 0
+R invalid-01 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64();\n
+B invalid-02 C074000000000000
+HB 96042 18 0
+R invalid-02 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 C059000000000000
+HB 97043 19 0
+HB 98043 19 0
+HB 99043 19 0
+R invalid-02 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 C046800000000000
+HB 100043 20 0
+HB 101043 20 0
+R invalid-02 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 C024000000000000
+HB 102043 21 0
+HB 103043 21 0
+R invalid-02 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 C01C000000000000
+HB 104043 22 0
+HB 105044 22 0
+R invalid-02 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 BFF0000000000000
+HB 106044 23 0
+HB 107045 23 0
+R invalid-02 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 BFE0000000000000
+HB 108045 24 0
+HB 109047 24 0
+R invalid-02 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 0000000000000000
+HB 110047 25 0
+R invalid-02 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 3FE0000000000000
+HB 111048 26 0
+R invalid-02 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 3FF0000000000000
+HB 112048 27 0
+HB 113050 27 0
+R invalid-02 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 4000000000000000
+HB 114050 28 0
+HB 115051 28 0
+R invalid-02 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 401C000000000000
+HB 116051 29 0
+HB 117051 29 0
+R invalid-02 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 4024000000000000
+HB 118051 30 0
+HB 119051 30 0
+R invalid-02 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 4046800000000000
+HB 120051 31 0
+HB 121051 31 0
+HB 122051 31 0
+R invalid-02 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 4059000000000000
+HB 123051 32 0
+R invalid-02 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 4073F00000000000
+HB 124051 33 0
+HB 125051 33 0
+HB 126051 33 0
+R invalid-02 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-02 4074000000000000
+HB 127051 34 0
+R invalid-02 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(2*);\n
+B invalid-03 C074000000000000
+HB 128051 35 0
+HB 129051 35 0
+R invalid-03 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 C059000000000000
+HB 130051 36 0
+HB 131051 36 0
+R invalid-03 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 C046800000000000
+HB 132051 37 0
+HB 133051 37 0
+R invalid-03 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 C024000000000000
+HB 134051 38 0
+HB 135051 38 0
+R invalid-03 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 C01C000000000000
+HB 136051 39 0
+HB 137051 39 0
+HB 138051 39 0
+R invalid-03 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 BFF0000000000000
+HB 139051 40 0
+R invalid-03 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 BFE0000000000000
+HB 140051 41 0
+HB 141051 41 0
+R invalid-03 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 0000000000000000
+HB 142051 42 0
+HB 143051 42 0
+R invalid-03 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 3FE0000000000000
+HB 144051 43 0
+HB 145051 43 0
+R invalid-03 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 3FF0000000000000
+HB 146051 44 0
+HB 147051 44 0
+R invalid-03 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 4000000000000000
+HB 148051 45 0
+HB 149051 45 0
+R invalid-03 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 401C000000000000
+HB 150051 46 0
+HB 151051 46 0
+R invalid-03 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 4024000000000000
+HB 152051 47 0
+HB 153051 47 0
+R invalid-03 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 4046800000000000
+HB 154051 48 0
+HB 155051 48 0
+R invalid-03 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 4059000000000000
+HB 156051 49 0
+HB 157051 49 0
+R invalid-03 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 4073F00000000000
+HB 158051 50 0
+HB 159051 50 0
+R invalid-03 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-03 4074000000000000
+HB 160051 51 0
+HB 161051 51 0
+R invalid-03 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ";" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64((x);\n
+B invalid-04 C074000000000000
+R invalid-04 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 C059000000000000
+HB 162051 53 0
+HB 163051 53 0
+R invalid-04 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 C046800000000000
+R invalid-04 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 C024000000000000
+HB 164051 55 0
+HB 165051 55 0
+R invalid-04 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 C01C000000000000
+R invalid-04 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 BFF0000000000000
+HB 166051 57 0
+HB 167051 57 0
+R invalid-04 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 BFE0000000000000
+HB 168051 58 0
+HB 169051 58 0
+R invalid-04 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 0000000000000000
+HB 170051 59 0
+R invalid-04 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 3FE0000000000000
+HB 171051 60 0
+R invalid-04 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 3FF0000000000000
+HB 172051 61 0
+R invalid-04 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 4000000000000000
+HB 173051 62 0
+R invalid-04 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 401C000000000000
+HB 174051 63 0
+R invalid-04 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 4024000000000000
+HB 175051 64 0
+R invalid-04 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 4046800000000000
+HB 176051 65 0
+R invalid-04 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 4059000000000000
+HB 177051 66 0
+R invalid-04 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 4073F00000000000
+HB 178051 67 0
+R invalid-04 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-04 4074000000000000
+HB 179051 68 0
+R invalid-04 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsStmt &LexStmt2Bin &ExeCmdLine $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ';' at")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x));\n
+B invalid-05 C074000000000000
+HB 180051 69 0
+HB 181051 69 0
+R invalid-05 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 C059000000000000
+HB 182051 70 0
+R invalid-05 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 C046800000000000
+HB 183051 71 0
+HB 184051 71 0
+HB 185051 71 0
+R invalid-05 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 C024000000000000
+HB 186051 72 0
+R invalid-05 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 C01C000000000000
+HB 187051 73 0
+HB 188051 73 0
+R invalid-05 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 BFF0000000000000
+HB 189051 74 0
+R invalid-05 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 BFE0000000000000
+HB 190051 75 0
+HB 191051 75 0
+HB 192051 75 0
+R invalid-05 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 0000000000000000
+HB 193051 76 0
+HB 194051 76 0
+HB 195051 76 0
+R invalid-05 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 3FE0000000000000
+HB 196051 77 0
+R invalid-05 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 3FF0000000000000
+HB 197051 78 0
+HB 198051 78 0
+HB 199051 78 0
+HB 200051 78 0
+R invalid-05 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 4000000000000000
+HB 201051 79 0
+HB 202051 79 0
+HB 203051 79 0
+R invalid-05 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 401C000000000000
+HB 204053 80 0
+HB 205053 80 0
+R invalid-05 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 4024000000000000
+HB 206053 81 0
+HB 207053 81 0
+R invalid-05 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 4046800000000000
+HB 208053 82 0
+HB 209053 82 0
+R invalid-05 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 4059000000000000
+HB 210053 83 0
+HB 211053 83 0
+R invalid-05 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 4073F00000000000
+HB 212053 84 0
+HB 213053 84 0
+R invalid-05 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-05 4074000000000000
+HB 214053 85 0
+HB 215053 85 0
+R invalid-05 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "y" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x y);\n
+B invalid-06 C074000000000000
+HB 216053 86 0
+HB 217053 86 0
+R invalid-06 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 C059000000000000
+HB 218053 87 0
+HB 219053 87 0
+HB 220053 87 0
+R invalid-06 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 C046800000000000
+HB 221053 88 0
+R invalid-06 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 C024000000000000
+R invalid-06 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 C01C000000000000
+HB 222053 90 0
+HB 223053 90 0
+R invalid-06 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 BFF0000000000000
+HB 224053 91 0
+HB 225053 91 0
+R invalid-06 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 BFE0000000000000
+HB 226053 92 0
+HB 227053 92 0
+R invalid-06 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 0000000000000000
+R invalid-06 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 3FE0000000000000
+HB 228054 94 0
+HB 229054 94 0
+R invalid-06 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 3FF0000000000000
+HB 230054 95 0
+HB 231054 95 0
+R invalid-06 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 4000000000000000
+HB 232054 96 0
+HB 233054 96 0
+R invalid-06 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 401C000000000000
+HB 234055 97 0
+HB 235055 97 0
+R invalid-06 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 4024000000000000
+HB 236055 98 0
+R invalid-06 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 4046800000000000
+R invalid-06 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 4059000000000000
+HB 237055 100 0
+R invalid-06 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 4073F00000000000
+R invalid-06 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-06 4074000000000000
+HB 238055 102 0
+R invalid-06 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Invalid lval at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "foo" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(foo(x));\n
+B invalid-07 C074000000000000
+R invalid-07 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 C059000000000000
+HB 239055 104 0
+HB 240055 104 0
+HB 241055 104 0
+R invalid-07 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 C046800000000000
+HB 242055 105 0
+HB 243055 105 0
+HB 244056 105 0
+R invalid-07 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 C024000000000000
+HB 245056 106 0
+HB 246056 106 0
+HB 247056 106 0
+R invalid-07 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 C01C000000000000
+HB 248056 107 0
+HB 249056 107 0
+R invalid-07 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 BFF0000000000000
+HB 250056 108 0
+HB 251056 108 0
+R invalid-07 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 BFE0000000000000
+HB 252057 109 0
+R invalid-07 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 0000000000000000
+HB 253057 110 0
+R invalid-07 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 3FE0000000000000
+HB 254057 111 0
+HB 255057 111 0
+R invalid-07 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 3FF0000000000000
+HB 256057 112 0
+HB 257057 112 0
+HB 258057 112 0
+R invalid-07 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 4000000000000000
+R invalid-07 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 401C000000000000
+HB 259057 114 0
+HB 260057 114 0
+R invalid-07 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 4024000000000000
+HB 261057 115 0
+R invalid-07 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 4046800000000000
+HB 262057 116 0
+HB 263057 116 0
+R invalid-07 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 4059000000000000
+HB 264057 117 0
+HB 265057 117 0
+R invalid-07 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 4073F00000000000
+HB 266057 118 0
+R invalid-07 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-07 4074000000000000
+R invalid-07 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin();\n
+B invalid-08 C074000000000000
+R invalid-08 C074000000000000 3FDB66E6064E90FD C074000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 C059000000000000
+R invalid-08 C059000000000000 3FE03425B78C4DB8 C059000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 C046800000000000
+R invalid-08 C046800000000000 BFEB3A9A073D9B03 C046800000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 C024000000000000
+R invalid-08 C024000000000000 3FE1689EF5F34F52 C024000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 C01C000000000000
+R invalid-08 C01C000000000000 BFE50608C26D0A08 C01C000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 BFF0000000000000
+R invalid-08 BFF0000000000000 BFEAED548F090CEE BFF0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 BFE0000000000000
+R invalid-08 BFE0000000000000 BFDEAEE8744B05F0 BFE0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 0000000000000000
+R invalid-08 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 3FE0000000000000
+R invalid-08 3FE0000000000000 3FDEAEE8744B05F0 3FE0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 3FF0000000000000
+R invalid-08 3FF0000000000000 3FEAED548F090CEE 3FF0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 4000000000000000
+R invalid-08 4000000000000000 3FED18F6EAD1B446 4000000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 401C000000000000
+R invalid-08 401C000000000000 3FE50608C26D0A08 401C000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 4024000000000000
+R invalid-08 4024000000000000 BFE1689EF5F34F52 4024000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 4046800000000000
+R invalid-08 4046800000000000 3FEB3A9A073D9B03 4046800000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 4059000000000000
+R invalid-08 4059000000000000 BFE03425B78C4DB8 4059000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 4073F00000000000
+R invalid-08 4073F00000000000 BFEFBC9EEA645013 4073F00000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-08 4074000000000000
+R invalid-08 4074000000000000 BFDB66E6064E90FD 4074000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-09 C074000000000000
+HB 267057 137 0
+R invalid-09 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 C059000000000000
+HB 268057 138 0
+R invalid-09 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 C046800000000000
+HB 269057 139 0
+HB 270057 139 0
+R invalid-09 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 C024000000000000
+R invalid-09 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 C01C000000000000
+HB 271057 141 0
+HB 272057 141 0
+R invalid-09 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 BFF0000000000000
+R invalid-09 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 BFE0000000000000
+R invalid-09 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 0000000000000000
+HB 273057 144 0
+R invalid-09 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 3FE0000000000000
+HB 274057 145 0
+R invalid-09 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 3FF0000000000000
+HB 275057 146 0
+HB 276057 146 0
+R invalid-09 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 4000000000000000
+R invalid-09 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 401C000000000000
+HB 277057 148 0
+R invalid-09 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 4024000000000000
+HB 278057 149 0
+R invalid-09 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 4046800000000000
+HB 279057 150 0
+HB 280057 150 0
+R invalid-09 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 4059000000000000
+R invalid-09 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 4073F00000000000
+HB 281057 152 0
+HB 282057 152 0
+R invalid-09 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-09 4074000000000000
+R invalid-09 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:105" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1++);\n
+B invalid-10 C074000000000000
+HB 283057 154 0
+R invalid-10 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 C059000000000000
+HB 284057 155 0
+R invalid-10 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 C046800000000000
+HB 285057 156 0
+HB 286057 156 0
+R invalid-10 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 C024000000000000
+R invalid-10 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 C01C000000000000
+HB 287057 158 0
+HB 288057 158 0
+HB 289057 158 0
+R invalid-10 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 BFF0000000000000
+HB 290057 159 0
+R invalid-10 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 BFE0000000000000
+HB 291057 160 0
+HB 292057 160 0
+R invalid-10 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 0000000000000000
+R invalid-10 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 3FE0000000000000
+HB 293057 162 0
+HB 294057 162 0
+R invalid-10 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 3FF0000000000000
+R invalid-10 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 4000000000000000
+HB 295057 164 0
+R invalid-10 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 401C000000000000
+HB 296057 165 0
+R invalid-10 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 4024000000000000
+HB 297057 166 0
+HB 298057 166 0
+R invalid-10 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 4046800000000000
+HB 299057 167 0
+R invalid-10 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 4059000000000000
+HB 300057 168 0
+R invalid-10 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 4073F00000000000
+HB 301057 169 0
+HB 302057 169 0
+R invalid-10 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-10 4074000000000000
+HB 303057 170 0
+HB 304057 170 0
+R invalid-10 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n$&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:0" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64($);\n
+B invalid-11 C074000000000000
+R invalid-11 C074000000000000 41C8517C24000000 C074000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 C059000000000000
+R invalid-11 C059000000000000 41C8517A6C000000 C059000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 C046800000000000
+R invalid-11 C046800000000000 41C8517A58000000 C046800000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 C024000000000000
+R invalid-11 C024000000000000 41C8517A44000000 C024000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 C01C000000000000
+R invalid-11 C01C000000000000 41C8517A30000000 C01C000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 BFF0000000000000
+R invalid-11 BFF0000000000000 41C8517A1C000000 BFF0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 BFE0000000000000
+R invalid-11 BFE0000000000000 41C8517A08000000 BFE0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 0000000000000000
+R invalid-11 0000000000000000 41C85179F4000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 3FE0000000000000
+R invalid-11 3FE0000000000000 41C85179E0000000 3FE0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 3FF0000000000000
+R invalid-11 3FF0000000000000 41C85179CC000000 3FF0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 4000000000000000
+R invalid-11 4000000000000000 41C85179B8000000 4000000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 401C000000000000
+R invalid-11 401C000000000000 41C85179A4000000 401C000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 4024000000000000
+R invalid-11 4024000000000000 41C8517990000000 4024000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 4046800000000000
+R invalid-11 4046800000000000 41C851797C000000 4046800000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 4059000000000000
+R invalid-11 4059000000000000 41C8517968000000 4059000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 4073F00000000000
+R invalid-11 4073F00000000000 41C8517954000000 4073F00000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-11 4074000000000000
+R invalid-11 4074000000000000 41C8517940000000 4074000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-12 C074000000000000
+HB 305057 188 0
+R invalid-12 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 $&LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 C059000000000000
+HB 306057 189 0
+R invalid-12 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 C046800000000000
+R invalid-12 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 C024000000000000
+HB 307057 191 0
+R invalid-12 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 C01C000000000000
+HB 308057 192 0
+R invalid-12 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 BFF0000000000000
+HB 309057 193 0
+HB 310057 193 0
+R invalid-12 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 BFE0000000000000
+HB 311057 194 0
+R invalid-12 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 0000000000000000
+HB 312057 195 0
+R invalid-12 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 3FE0000000000000
+HB 313057 196 0
+R invalid-12 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 3FF0000000000000
+HB 314057 197 0
+R invalid-12 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 4000000000000000
+HB 315057 198 0
+R invalid-12 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 401C000000000000
+R invalid-12 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 4024000000000000
+HB 316057 200 0
+HB 317057 200 0
+R invalid-12 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 4046800000000000
+HB 318057 201 0
+HB 319057 201 0
+R invalid-12 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 4059000000000000
+R invalid-12 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 4073F00000000000
+HB 320057 203 0
+HB 321057 203 0
+R invalid-12 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-12 4074000000000000
+HB 322057 204 0
+R invalid-12 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x=);\n
+B invalid-13 C074000000000000
+R invalid-13 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 C059000000000000
+HB 323057 206 0
+HB 324057 206 0
+HB 325057 206 0
+R invalid-13 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 C046800000000000
+HB 326057 207 0
+HB 327057 207 0
+R invalid-13 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 C024000000000000
+HB 328057 208 0
+R invalid-13 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 C01C000000000000
+R invalid-13 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 BFF0000000000000
+HB 329057 210 0
+HB 330057 210 0
+R invalid-13 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 BFE0000000000000
+HB 331057 211 0
+HB 332057 211 0
+R invalid-13 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 0000000000000000
+R invalid-13 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 3FE0000000000000
+HB 333057 213 0
+R invalid-13 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 3FF0000000000000
+HB 334057 214 0
+HB 335057 214 0
+HB 336057 214 0
+R invalid-13 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 4000000000000000
+HB 337057 215 0
+R invalid-13 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 401C000000000000
+HB 338057 216 0
+HB 339057 216 0
+R invalid-13 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 4024000000000000
+HB 340057 217 0
+HB 341057 217 0
+R invalid-13 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 4046800000000000
+HB 342057 218 0
+HB 343057 218 0
+HB 344057 218 0
+R invalid-13 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 4059000000000000
+HB 345057 219 0
+HB 346057 219 0
+HB 347057 219 0
+R invalid-13 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 4073F00000000000
+HB 348057 220 0
+HB 349057 220 0
+R invalid-13 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-13 4074000000000000
+HB 350057 221 0
+R invalid-13 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(*);\n
+B invalid-14 C074000000000000
+HB 351057 222 0
+HB 352057 222 0
+HB 353057 222 0
+R invalid-14 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 C059000000000000
+HB 354057 223 0
+R invalid-14 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 C046800000000000
+R invalid-14 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 C024000000000000
+R invalid-14 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 C01C000000000000
+R invalid-14 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 BFF0000000000000
+R invalid-14 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 BFE0000000000000
+HB 355057 228 0
+R invalid-14 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 0000000000000000
+R invalid-14 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 3FE0000000000000
+R invalid-14 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 3FF0000000000000
+HB 356057 231 0
+HB 357057 231 0
+HB 358057 231 0
+R invalid-14 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 4000000000000000
+HB 359057 232 0
+R invalid-14 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 401C000000000000
+HB 360057 233 0
+HB 361057 233 0
+HB 362057 233 0
+R invalid-14 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 4024000000000000
+HB 363057 234 0
+HB 364057 234 0
+R invalid-14 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 4046800000000000
+HB 365057 235 0
+HB 366057 235 0
+HB 367057 235 0
+R invalid-14 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 4059000000000000
+R invalid-14 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 4073F00000000000
+HB 368057 237 0
+HB 369057 237 0
+HB 370057 237 0
+R invalid-14 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-14 4074000000000000
+HB 371057 238 0
+HB 372057 238 0
+HB 373057 238 0
+R invalid-14 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(());\n
+B invalid-15 C074000000000000
+HB 374057 239 0
+HB 375057 239 0
+R invalid-15 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 C059000000000000
+HB 376057 240 0
+HB 377057 240 0
+HB 378057 240 0
+R invalid-15 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 C046800000000000
+HB 379057 241 0
+HB 380057 241 0
+HB 381057 241 0
+R invalid-15 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 C024000000000000
+HB 382057 242 0
+HB 383057 242 0
+R invalid-15 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 C01C000000000000
+HB 384057 243 0
+HB 385057 243 0
+R invalid-15 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 BFF0000000000000
+HB 386057 244 0
+HB 387057 244 0
+R invalid-15 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 BFE0000000000000
+HB 388057 245 0
+HB 389057 245 0
+R invalid-15 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 0000000000000000
+HB 390057 246 0
+HB 391057 246 0
+R invalid-15 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 3FE0000000000000
+HB 392057 247 0
+R invalid-15 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 3FF0000000000000
+HB 393057 248 0
+HB 394057 248 0
+R invalid-15 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 4000000000000000
+HB 395057 249 0
+R invalid-15 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 401C000000000000
+HB 396057 250 0
+HB 397057 250 0
+R invalid-15 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 4024000000000000
+HB 398057 251 0
+R invalid-15 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 4046800000000000
+HB 399057 252 0
+HB 400057 252 0
+HB 401057 252 0
+R invalid-15 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 4059000000000000
+HB 402057 253 0
+HB 403057 253 0
+R invalid-15 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 4073F00000000000
+HB 404057 254 0
+HB 405057 254 0
+R invalid-15 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-15 4074000000000000
+HB 406057 255 0
+R invalid-15 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "," $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin(x,1,2,3));\n
+B invalid-16 C074000000000000
+HB 407057 256 0
+R invalid-16 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 C059000000000000
+R invalid-16 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 C046800000000000
+HB 408057 258 0
+HB 409057 258 0
+R invalid-16 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 C024000000000000
+HB 410057 259 0
+HB 411057 259 0
+R invalid-16 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 C01C000000000000
+HB 412057 260 0
+HB 413057 260 0
+R invalid-16 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 BFF0000000000000
+HB 414057 261 0
+HB 415057 261 0
+R invalid-16 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 BFE0000000000000
+HB 416057 262 0
+HB 417057 262 0
+HB 418057 262 0
+R invalid-16 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 0000000000000000
+HB 419057 263 0
+HB 420057 263 0
+HB 421057 263 0
+R invalid-16 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 3FE0000000000000
+HB 422057 264 0
+R invalid-16 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 3FF0000000000000
+R invalid-16 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 4000000000000000
+HB 423057 266 0
+R invalid-16 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 401C000000000000
+HB 424057 267 0
+R invalid-16 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 4024000000000000
+HB 425057 268 0
+HB 426057 268 0
+HB 427057 268 0
+R invalid-16 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 4046800000000000
+HB 428057 269 0
+R invalid-16 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 4059000000000000
+HB 429057 270 0
+HB 430057 270 0
+R invalid-16 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 4073F00000000000
+HB 431057 271 0
+HB 432057 271 0
+R invalid-16 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-16 4074000000000000
+R invalid-16 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(Sin());\n
+B invalid-17 C074000000000000
+HB 433057 273 0
+HB 434057 273 0
+R invalid-17 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 C059000000000000
+R invalid-17 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 C046800000000000
+HB 435057 275 0
+HB 436057 275 0
+R invalid-17 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 C024000000000000
+HB 437057 276 0
+R invalid-17 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 C01C000000000000
+R invalid-17 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 BFF0000000000000
+HB 438057 278 0
+R invalid-17 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 BFE0000000000000
+HB 439057 279 0
+HB 440057 279 0
+R invalid-17 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 0000000000000000
+HB 441057 280 0
+HB 442057 280 0
+HB 443057 280 0
+R invalid-17 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 3FE0000000000000
+HB 444057 281 0
+HB 445057 281 0
+R invalid-17 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 3FF0000000000000
+HB 446057 282 0
+HB 447057 282 0
+R invalid-17 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 4000000000000000
+HB 448057 283 0
+HB 449057 283 0
+R invalid-17 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 401C000000000000
+HB 450057 284 0
+HB 451057 284 0
+R invalid-17 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 4024000000000000
+HB 452057 285 0
+R invalid-17 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 4046800000000000
+HB 453057 286 0
+HB 454057 286 0
+R invalid-17 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 4059000000000000
+HB 455057 287 0
+R invalid-17 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 4073F00000000000
+R invalid-17 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-17 4074000000000000
+R invalid-17 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsFunCall PrsUnaryTerm PrsExpression2 $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing ')' at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at "T:123" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(1..2);\n
+B invalid-18 C074000000000000
+HB 456057 290 0
+HB 457057 290 0
+HB 458057 290 0
+R invalid-18 C074000000000000 0000000000000000 C074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 C059000000000000
+HB 459057 291 0
+R invalid-18 C059000000000000 0000000000000000 C059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 C046800000000000
+HB 460057 292 0
+R invalid-18 C046800000000000 0000000000000000 C046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 C024000000000000
+HB 461057 293 0
+R invalid-18 C024000000000000 0000000000000000 C024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 C01C000000000000
+HB 462057 294 0
+HB 463057 294 0
+R invalid-18 C01C000000000000 0000000000000000 C01C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 BFF0000000000000
+R invalid-18 BFF0000000000000 0000000000000000 BFF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 BFE0000000000000
+HB 464057 296 0
+HB 465057 296 0
+R invalid-18 BFE0000000000000 0000000000000000 BFE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 0000000000000000
+HB 466057 297 0
+R invalid-18 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 3FE0000000000000
+HB 467057 298 0
+HB 468057 298 0
+HB 469057 298 0
+R invalid-18 3FE0000000000000 0000000000000000 3FE0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 3FF0000000000000
+HB 470057 299 0
+R invalid-18 3FF0000000000000 0000000000000000 3FF0000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 4000000000000000
+R invalid-18 4000000000000000 0000000000000000 4000000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 401C000000000000
+HB 471057 301 0
+HB 472057 301 0
+R invalid-18 401C000000000000 0000000000000000 401C000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 4024000000000000
+HB 473057 302 0
+R invalid-18 4024000000000000 0000000000000000 4024000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 4046800000000000
+HB 474057 303 0
+HB 475057 303 0
+R invalid-18 4046800000000000 0000000000000000 4046800000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 4059000000000000
+HB 476057 304 0
+HB 477057 304 0
+R invalid-18 4059000000000000 0000000000000000 4059000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 4073F00000000000
+HB 478057 305 0
+HB 479057 305 0
+HB 480057 305 0
+R invalid-18 4073F00000000000 0000000000000000 4073F00000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-18 4074000000000000
+HB 481057 306 0
+HB 482057 306 0
+HB 483057 306 0
+R invalid-18 4074000000000000 0000000000000000 4074000000000000 0000000000000000 0000000000000000 72656C69706D6F43 0 &LexExcept PrsUnaryTerm PrsExpression2 PrsExpression $LTRED$$BK,1$ERROR:$FG$$BK,0$ Missing expression at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n&LexExcept PrsExpression PrsStmt &LexStmt2Bin $LTRED$$BK,1$ERROR:$FG$$BK,0$ Compiler Parse Error at ")" $LK,"T:/Home/Tmp.DD.Z,0001",A="FL:T:/Home/Tmp.DD.Z,1"$ ToF64(x>>);\n
+B invalid-19 C074000000000000
+R invalid-19 C074000000000000 C074000000000000 C074000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 C059000000000000
+R invalid-19 C059000000000000 C059000000000000 C059000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 C046800000000000
+R invalid-19 C046800000000000 C046800000000000 C046800000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 C024000000000000
+R invalid-19 C024000000000000 C024000000000000 C024000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 C01C000000000000
+R invalid-19 C01C000000000000 C01C000000000000 C01C000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 BFF0000000000000
+R invalid-19 BFF0000000000000 BFF0000000000000 BFF0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 BFE0000000000000
+R invalid-19 BFE0000000000000 BFE0000000000000 BFE0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 0000000000000000
+R invalid-19 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 3FE0000000000000
+R invalid-19 3FE0000000000000 3FE0000000000000 3FE0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 3FF0000000000000
+R invalid-19 3FF0000000000000 3FF0000000000000 3FF0000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 4000000000000000
+R invalid-19 4000000000000000 4000000000000000 4000000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 401C000000000000
+R invalid-19 401C000000000000 401C000000000000 401C000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 4024000000000000
+R invalid-19 4024000000000000 4024000000000000 4024000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 4046800000000000
+R invalid-19 4046800000000000 4046800000000000 4046800000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 4059000000000000
+R invalid-19 4059000000000000 4059000000000000 4059000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 4073F00000000000
+R invalid-19 4073F00000000000 4073F00000000000 4073F00000000000 0000000000000000 0000000000000000 0000000000000000 0 
+B invalid-19 4074000000000000
+R invalid-19 4074000000000000 4074000000000000 4074000000000000 0000000000000000 0000000000000000 0000000000000000 0 
+CART-END n=323
+LOADER end opt/templeos/h0 res=00000000000002A0
+HARNESS-DONE

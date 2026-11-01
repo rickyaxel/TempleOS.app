@@ -1,0 +1,22 @@
+runtime: kotlin
+target: gfx-huge
+seed: 1
+signature: HANG(unresponsive)@Raster.kt:line1d
+minimized input (139 bytes): Bool Plot(U8 *a,I64 x,I64 y,I64 z){return TRUE;}
+try{GrFillCircle(gr.dc,100,100,0,0x7FFFFFFF);}catch{Fs->catch_except=TRUE;}
+"FUZZDONE\n";
+
+
+  at io.github.templeosmobile.core.kernel.Raster.line1d(Raster.kt:192)
+  at io.github.templeosmobile.core.kernel.Raster.hline(Raster.kt:181)
+  at io.github.templeosmobile.core.kernel.Raster.fillCircle(Raster.kt:655)
+  at io.github.templeosmobile.core.kernel.Natives.graphics$lambda$176(Natives.kt:640)
+  at io.github.templeosmobile.core.kernel.Natives$reg$1.call(Natives.kt:25)
+  at io.github.templeosmobile.core.holyc.Vm.exec(Vm.kt:463)
+  at io.github.templeosmobile.core.holyc.Vm.run(Vm.kt:224)
+  at io.github.templeosmobile.core.holyc.Vm.run$default(Vm.kt:221)
+  at io.github.templeosmobile.core.kernel.Kernel.runTask(Kernel.kt:582)
+  at io.github.templeosmobile.core.kernel.Kernel.step(Kernel.kt:531)
+  at io.github.templeosmobile.core.FuzzTest.runProgramCase$lambda$18(FuzzTest.kt:198)
+  at io.github.templeosmobile.core.FuzzTest.isolated$lambda$1(FuzzTest.kt:62)
+  at java.base/java.lang.Thread.run(Thread.java:1583)

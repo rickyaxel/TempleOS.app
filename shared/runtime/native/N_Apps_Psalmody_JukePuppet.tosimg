@@ -1,0 +1,15 @@
+TOSIMG 1
+unit C:/Apps/Psalmody/JukePuppet.HC#0
+s 17fd38 536f6e67
+s 17fd50 4a756b65426f782830782558293b0a
+s 17fd70 2a
+s 17fd88 2531322e3666732025730a
+fn 703 SongPuppet (U0;*$CTask,I64;-)
+fn 704 JukeSongPuppet (U0;*$CTask,I64,I64,*U8;-)
+fn 705 JukeSongsPuppet (U0;*U8,I64,I64,I64;-)
+fn 706 $init:C:/Apps/Psalmody/JukePuppet.HC#0 (I64;;-)
+sym f JukeSongPuppet 704 (U0;*$CTask,I64,I64,*U8;-)
+sym f JukeSongsPuppet 705 (U0;*U8,I64,I64,I64;-)
+sym f SongPuppet 703 (U0;*$CTask,I64;-)
+init 706
+unit C:/Apps/Psalmody/JukePuppet.HC#1

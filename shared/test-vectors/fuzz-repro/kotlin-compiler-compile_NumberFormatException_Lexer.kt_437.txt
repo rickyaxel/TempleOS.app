@@ -1,0 +1,7 @@
+runtime: kotlin
+target: compiler
+seed: 2113062213890514
+signature: compile:NumberFormatException@Lexer.kt:437
+minimized input (20 bytes): 99999999999999999999
+
+

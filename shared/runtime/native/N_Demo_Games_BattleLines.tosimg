@@ -1,0 +1,72 @@
+TOSIMG 1
+unit C:/Demo/Games/BattleLines.HC#0
+value FRAMES 6
+g 17fd38 48
+b 17fd78 0a02000000f1fffffffffffffffcffffff0a01000000f5ffffff03000000faffffff0a03000000faffffff07000000ffffffff0a00000000f4fffffffdfffffff9ffffff0afdfffffff9fffffffbffffffffffffff0afffffffffdffffff03000000040000000a0300000004000000010000000d0000000afffffffffefffffffdffffff050000000afdffffff05000000f9ffffff0d00000000
+b 17fe28 0a02000000f2fffffffffffffffdffffff0a01000000f6ffffff01000000fbffffff0a03000000fbffffff03000000020000000a00000000f5fffffffffffffffcffffff0afffffffffcffffffffffffff010000000afffffffffeffffff03000000050000000a0300000005000000000000000e0000000afffffffffffffffffdffffff060000000afdffffff06000000fcffffff0c00000000
+b 17fed8 0a03000000f0ffffff00000000fbffffff0a01000000f9fffffffdfffffffaffffff0afdfffffffafffffffbffffff000000000a01000000f3ffffff05000000fcffffff0a05000000fcffffff06000000020000000a00000000fcfffffffeffffff080000000afdffffff04000000fbffffff0b0000000a00000000fdffffff02000000060000000a0100000003000000020000000d00000000
+b 17ff88 0a02000000f2fffffffffffffffdffffff0a01000000f6fffffffefffffffbffffff0afefffffffafffffff9ffffff000000000a00000000f5ffffff04000000feffffff0a03000000feffffff06000000030000000afffffffffefffffffaffffff070000000afcffffff06000000f8ffffff0f0000000affffffffffffffff03000000070000000a0200000005000000040000000f00000000
+b 180038 0a03000000f0ffffff00000000fbffffff0a01000000f9fffffffdfffffffaffffff0afdfffffffafffffffbffffff000000000a01000000f3ffffff05000000fcffffff0a05000000fcffffff06000000020000000a00000000fcfffffffeffffff080000000afdffffff04000000fbffffff0b0000000a00000000fdffffff02000000060000000a0100000003000000020000000d00000000
+b 1800e8 0a02000000f2fffffffffffffffdffffff0a01000000f6ffffff01000000fbffffff0a03000000fbffffff03000000020000000a00000000f5fffffffffffffffcffffff0afffffffffcffffffffffffff010000000afffffffffeffffff03000000050000000a0300000005000000000000000e0000000afffffffffffffffffdffffff060000000afdffffff06000000fcffffff0c00000000
+fn 703 $init:C:/Demo/Games/BattleLines.HC#0 (I64;;-)
+sym g imgs 17fd38 [6]*U8
+init 703
+unit C:/Demo/Games/BattleLines.HC#1
+value AI_AI_NUM 3
+value AI_NOTHING 0
+value AI_RANDOM 2
+value AI_TARGET 1
+value TAP_MODE_RADIUS 50
+value TROOPERS_NUM 100
+class Trooper 88 0 - -
+m x 0 I64
+m y 8 I64
+m dx 16 I64
+m dy 24 I64
+m att 32 I64
+m def 40 I64
+m rng 48 I64
+m player 56 I64
+m animate_time_base 64 F64
+m fire_end_time 72 F64
+m target 80 *$Trooper
+g 180198 8
+g 1801b0 17600
+g 1847c0 8
+g 1847d8 8
+g 1847f0 8
+g 184808 80
+b 184868 0a02000000f2fffffffffffffffdffffff0a01000000f6fffffffffffffffbffffff0a05000000f9ffffff0d000000f9ffffff0a00000000f5ffffff04000000feffffff0a05000000feffffff08000000faffffff0afffffffffefffffffdffffff050000000afeffffff05000000fcffffff0f0000000affffffffffffffff01000000070000000a0100000005000000010000000f00000000
+b 184918 0a02000000f2fffffffffffffffdffffff0a01000000f6fffffffffffffffbffffff0a05000000f9ffffff0d000000f9ffffff0a00000000f5ffffff04000000feffffff0a05000000feffffff08000000faffffff0afffffffffefffffffdffffff050000000afeffffff05000000fcffffff0f0000000affffffffffffffff01000000070000000a0100000005000000010000000f00000000
+s 1849c8 25303364
+s 1849c8 25303364
+s 1849e0 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b202054696d654c61707365282c273127293b20205461704d6f6465282c273227293b7d
+s 184a58 546865206d6f75736520776865656c20636f6e74726f6c730a74686520636f6d6d616e6420666f7263652e0a41747472616374206f7220726570656c20776974680a6c656674206f72207269676874206274746e2e0a0a
+s 184ac0 506c61792f54696d654c61707365
+s 184ae0 506c61792f5461704d6f6465
+c 1847c0 1 0
+fn 704 DrawTrooper (U0;*$CTask,*$CDC,*$Trooper;-)
+fn 705 DrawIt (U0;*$CTask,*$CDC;-)
+fn 706 DoAiTarget (U0;;-)
+fn 707 UpdatePos (U0;;-)
+fn 708 ResolveFiring (U0;;-)
+fn 709 UpdateHumanVelocities (U0;;-)
+fn 710 Init (U0;;-)
+fn 711 BattleLines (U0;;-)
+fn 712 $init:C:/Demo/Games/BattleLines.HC#1 (I64;;-)
+sym f BattleLines 711 (U0;;-)
+sym f DoAiTarget 706 (U0;;-)
+sym f DrawIt 705 (U0;*$CTask,*$CDC;-)
+sym f DrawTrooper 704 (U0;*$CTask,*$CDC,*$Trooper;-)
+sym f Init 710 (U0;;-)
+sym f ResolveFiring 708 (U0;;-)
+sym f UpdateHumanVelocities 709 (U0;;-)
+sym f UpdatePos 707 (U0;;-)
+sym g ai_mode 1847f0 I64
+sym g ai_targets 184808 [10]I64
+sym g fire_end_time 180198 F64
+sym g tap_mode 1847d8 Bool
+sym g time_lapse 1847c0 Bool
+sym g tr 1801b0 [2][100]$Trooper
+init 712
+unit C:/Demo/Games/BattleLines.HC#2

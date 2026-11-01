@@ -1,0 +1,49 @@
+TOSIMG 1
+unit C:/Demo/Games/CharDemo.HC#0
+value CH_TREE 42
+value CH_WATER 94
+g 17fd38 38400
+g 189348 8
+g 189360 8
+g 189378 8
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 $init:C:/Demo/Games/CharDemo.HC#0 (I64;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym g map 17fd38 [120][160]U16
+sym g old_font 189378 *U8
+sym g scrn_pix_x 189348 I64
+sym g scrn_pix_y 189360 I64
+init 704
+unit C:/Demo/Games/CharDemo.HC#1
+g 189390 32
+c 189390 8 11aa440011aa44
+c 189398 8 22558800225588
+c 1893a0 8 44aa110044aa11
+c 1893a8 8 88552200885522
+fn 705 $init:C:/Demo/Games/CharDemo.HC#1 (I64;;-)
+sym g waves 189390 [4]U64
+init 705
+unit C:/Demo/Games/CharDemo.HC#2
+s 1893c0 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b20204c656674282c2c53435f435552534f525f4c454654293b20205269676874282c2c53435f435552534f525f5249474854293b20205570282c2c53435f435552534f525f5550293b2020446f776e282c2c53435f435552534f525f444f574e293b7d
+s 189478 416e696d617465
+s 189490 5363726f6c6c
+s 189490 5363726f6c6c
+s 189490 5363726f6c6c
+s 189490 5363726f6c6c
+fn 706 AnimateEndCB (U0;;-)
+fn 707 AnimateTask (U0;I64;-)
+fn 708 ScrollTaskX (U0;I64;-)
+fn 709 ScrollTaskY (U0;I64;-)
+fn 710 Init (U0;;-)
+fn 711 CleanUp (U0;;-)
+fn 712 CharDemo (U0;;-)
+fn 713 $init:C:/Demo/Games/CharDemo.HC#2 (I64;;-)
+sym f AnimateEndCB 706 (U0;;-)
+sym f AnimateTask 707 (U0;I64;-)
+sym f CharDemo 712 (U0;;-)
+sym f CleanUp 711 (U0;;-)
+sym f Init 710 (U0;;-)
+sym f ScrollTaskX 708 (U0;I64;-)
+sym f ScrollTaskY 709 (U0;I64;-)
+init 713
+unit C:/Demo/Games/CharDemo.HC#3

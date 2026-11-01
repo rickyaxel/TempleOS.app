@@ -1,0 +1,83 @@
+TOSIMG 1
+unit C:/Demo/Games/BigGuns.HC#0
+value MAP_WIDTH 2048
+class MyMass 105 0 - CMass
+m next 0 *$CMass
+m last 8 *$CMass
+m state 16 *$COrder2D3
+m DstateDt 24 *$COrder2D3
+m start 32 U0
+m flags 32 U32
+m num 36 U32
+m mass 40 F64
+m drag_profile_factor 48 F64
+m saved_state 56 U0
+m x 56 F64
+m y 64 F64
+m z 72 F64
+m DxDt 80 F64
+m DyDt 88 F64
+m DzDt 96 F64
+m end 104 U0
+m collision 104 Bool
+g 17fd38 8
+g 17fd50 8
+g 17fd68 8
+g 17fd80 8
+g 17fd98 8
+g 17fdb0 16
+c 17fd68 8 0
+c 17fdb0 8 0
+c 17fdb8 8 0
+fn 703 $init:C:/Demo/Games/BigGuns.HC#0 (I64;;-)
+sym g active_map 17fd68 I64
+sym g gun_recoil 17fd80 I64
+sym g gun_x 17fd38 I64
+sym g gun_y 17fd50 I64
+sym g gun_é 17fd98 F64
+sym g map_dcs 17fdb0 [2]*$CDC
+init 703
+unit C:/Demo/Games/BigGuns.HC#1
+value DUST_NUM 512
+g 17fdd0 4096
+g 180de0 8
+g 180df8 4096
+g 181e08 4096
+g 182e18 8
+b 182e30 010003020000000a01000000f1ffffff07000000fdffffff0a07000000fdfffffffafffffffeffffff0afafffffffeffffff01000000f0ffffff0af5ffffffffffffff0c000000ffffffff0a00000000f3ffffff00000000fdffffff0af4ffffff010000000d0000000100000000
+b 182eb0 010003020000000a040000000000000020000000000000000a04000000feffffff0a000000feffffff0a04000000020000000e0000000200000000
+g 182f00 8
+c 182f00 8 0
+s 182f18 492072656675736520746f207269702d6f666620746865206f726967696e616c0a736f207468697320697320696e74656e74696f6e616c6c79206372617070790a616e6420696e636c7564656420666f722064656d6f6e7374726174696f6e0a707572706f7365732e0a0a57726974652067616d65732c20646f6e277420706c6179207468656d2e0a
+s 182fb8 546865206d6170207363726f6c6c732e0a
+s 182fe0 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b202046697265282c43485f5350414345293b20204c656674282c2c53435f435552534f525f4c454654293b20205269676874282c2c53435f435552534f525f5249474854293b7d
+s 183080 4d6f7665
+s 183080 4d6f7665
+s 183098 46697265
+c 182e18 8 0
+fn 704 DrawIt (U0;*$CTask,*$CDC;-)
+fn 705 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 706 DrawMap (U0;;-)
+fn 707 FireTask (U0;I64;-)
+fn 708 ManageShots (U0;;-)
+fn 709 MoveTask (U0;I64;-)
+fn 710 Init (U0;;-)
+fn 711 CleanUp (U0;*$CMathODE;-)
+fn 712 BigGuns (U0;;-)
+fn 713 $init:C:/Demo/Games/BigGuns.HC#1 (I64;;-)
+sym f BigGuns 712 (U0;;-)
+sym f CleanUp 711 (U0;*$CMathODE;-)
+sym f DrawIt 704 (U0;*$CTask,*$CDC;-)
+sym f DrawMap 706 (U0;;-)
+sym f FireTask 707 (U0;I64;-)
+sym f Init 710 (U0;;-)
+sym f ManageShots 708 (U0;;-)
+sym f MoveTask 709 (U0;I64;-)
+sym f MyDerivative 705 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym g dust_x 180df8 [512]I64
+sym g dust_y 181e08 [512]I64
+sym g elevs 17fdd0 [2048]I16
+sym g ode 182e18 *$CMathODE
+sym g wind_x 180de0 F64
+init 713
+unit C:/Demo/Games/BigGuns.HC#2

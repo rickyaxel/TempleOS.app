@@ -1,0 +1,77 @@
+{
+ "about": "UNMODIFIED Talons (#include \"::/Demo/Games/Talons.HC\") in the reference VM at several guest RAM sizes (2 CPUs). Loaded through the harness channel only to copy every task's printed text to console.log (TalonsUnmodified.HC: HMirrorAll + one memory snapshot); vm_status 'timeout' = still running in its game loop or halted when the host stopped it (see debugger_entered: the console copy shows the TempleOS debugger; the CPU-1 heartbeat stops while the debugger holds the machine).",
+ "runs": [
+  {
+   "mem_mib": 128,
+   "vm_status": "timeout",
+   "boot": [
+    "BOOT-OK mp_cnt=2 sys_code_bp.alloced=128802816",
+    "MEM before-Talons sys_code_bp.used=64780800 sys_code_bp.alloced=128802816 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812616 code_heap.alloced=891392 data_heap.used=812616 data_heap.alloced=891392 task_used=812616 task_alloced=891392 mem_heap_limit=134086655"
+   ],
+   "exceptions_printed": [
+    "OutMem"
+   ],
+   "debugger_entered": true,
+   "heartbeat_stopped": false,
+   "initializing_seen": true,
+   "console_tail": "Panic+0x002E  RSP:01328408\n\n!!! Unhandled Exception !!!\n\nCallerRep:\n05421D48:00018961:Fault3+0x0133\n05421D78:00018B1F:Fault2+0x0171\n05421DF0:0000FB2D:INT_FAULT+0x007E\n05421E30:000197EB:&throw+0x0190\n05421E98:0000D728:&MAlloc+0x00ED\n05421ED0:0000D965:&CAlloc+0x001C\n05421F10:04478D5D:&MPDoPanels+0x0135\n05421FF0:0001CE3B:&Exit+0x0000\n           &Panic+0x002E 9D           POPFD\nT:/Home>\u00baRAX:0000000001332028\n\u00baRCX:0000000000000050\n\u00baRDX:0000000001331A28\n\u00baRBX:0000000000000000\n\u00baRSP:0000000005421E08\n\u00baRBP:0000000005421E28\n\u00baRSI:0000000000000001\n\u00baRDI:0000000000000000\n\u00ba R8:00000000013323A0\n\u00ba R9:0000000000000000\n\u00baR10:000000000001981B\n\u00baR11:0000000000000001\n\u00baR12:0000000000000194\n\u00baR13:0000000000000205\n\u00baR14:0000000000000001\n\u00baR15:00000000033C4C08\n\u00baRIP:0000000000018C04\n\u00ba&Panic+0x002E                         \n\u00baPOPFD\n\u00c8\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b",
+   "evidence": "docs/native-validation/vm/talons-mem128-console"
+  },
+  {
+   "mem_mib": 160,
+   "vm_status": "timeout",
+   "boot": [
+    "BOOT-OK mp_cnt=2 sys_code_bp.alloced=162357248",
+    "MEM before-Talons sys_code_bp.used=64780800 sys_code_bp.alloced=162357248 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812616 code_heap.alloced=891392 data_heap.used=812616 data_heap.alloced=891392 task_used=812616 task_alloced=891392 mem_heap_limit=167641087"
+   ],
+   "exceptions_printed": [],
+   "debugger_entered": false,
+   "heartbeat_stopped": false,
+   "initializing_seen": true,
+   "console_tail": "Initializing...\n",
+   "evidence": "docs/native-validation/vm/talons-mem160-console"
+  },
+  {
+   "mem_mib": 192,
+   "vm_status": "timeout",
+   "boot": [
+    "BOOT-OK mp_cnt=2 sys_code_bp.alloced=195911680",
+    "MEM before-Talons sys_code_bp.used=64780800 sys_code_bp.alloced=195911680 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812616 code_heap.alloced=891392 data_heap.used=812616 data_heap.alloced=891392 task_used=812616 task_alloced=891392 mem_heap_limit=201195519"
+   ],
+   "exceptions_printed": [],
+   "debugger_entered": false,
+   "heartbeat_stopped": false,
+   "initializing_seen": true,
+   "console_tail": "Initializing...\n",
+   "evidence": "docs/native-validation/vm/talons-mem192-console"
+  },
+  {
+   "mem_mib": 256,
+   "vm_status": "timeout",
+   "boot": [
+    "BOOT-OK mp_cnt=2 sys_code_bp.alloced=263020544",
+    "MEM before-Talons sys_code_bp.used=98335232 sys_code_bp.alloced=263020544 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812616 code_heap.alloced=891392 data_heap.used=812616 data_heap.alloced=891392 task_used=812616 task_alloced=891392 mem_heap_limit=268304383"
+   ],
+   "exceptions_printed": [],
+   "debugger_entered": false,
+   "heartbeat_stopped": false,
+   "initializing_seen": true,
+   "console_tail": "Initializing...\n",
+   "evidence": "docs/native-validation/vm/talons-mem256-console"
+  },
+  {
+   "mem_mib": 512,
+   "vm_status": "timeout",
+   "boot": [
+    "BOOT-OK mp_cnt=2 sys_code_bp.alloced=531456000",
+    "MEM before-Talons sys_code_bp.used=165442560 sys_code_bp.alloced=531456000 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812624 code_heap.alloced=889856 data_heap.used=812624 data_heap.alloced=889856 task_used=812624 task_alloced=889856 mem_heap_limit=536739839"
+   ],
+   "exceptions_printed": [],
+   "debugger_entered": false,
+   "heartbeat_stopped": false,
+   "initializing_seen": true,
+   "console_tail": "Initializing...\n",
+   "evidence": "docs/native-validation/vm/talons-mem512-console"
+  }
+ ]
+}

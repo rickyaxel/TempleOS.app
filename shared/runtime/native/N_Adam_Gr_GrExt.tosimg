@@ -1,0 +1,6 @@
+TOSIMG 1
+unit C:/Adam/Gr/GrExt.HC#0
+fn 704 $init:C:/Adam/Gr/GrExt.HC#0 (I64;;-)
+sym f SpriteSetSettings 703 (*$CSprite;*$CDC,*$CSprite,I64,I64,I64,*$CColorROPU32,*I64,*I64,*I64;-)
+init 704
+unit C:/Adam/Gr/GrExt.HC#1

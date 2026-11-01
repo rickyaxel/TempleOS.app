@@ -1,0 +1,6 @@
+runtime: swift
+target: nesting (probe if-directive)
+seed: n/a (probe depth 10000; depth 3000 ok)
+signature: process killed by SIGBUS (stack overflow) on the 16 MiB kernel-thread stack, debug build
+also found by the compiler fuzzer: seed 2187591166346300394 (#if followed by 6869 parens)
+replay: TEMPLEOS_FUZZ_REPLAY=<this .HC> swift test --filter FuzzTests/testReplay

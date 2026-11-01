@@ -1,0 +1,425 @@
+{
+ "about": "Talons (::/Demo/Games/Talons.HC) measured in the original TempleOS V5.03 (reference VM, 1 GiB, 2 CPUs). INSTRUMENTED DRIVER tools/reference-vm/harness/Talons.HC including an instrumented copy of Talons.HC (see harness.talons_copy). Memory numbers are TempleOS's own accounting in bytes: sys_code_bp/sys_data_bp = the system block pools (with <=2 GiB RAM all memory is the code pool and sys_data_bp is NULL; BlkPoolsInit in Kernel/Mem/BlkPool.HC), code_heap/data_heap = the harness task's heaps, task_used/task_alloced = Adam/AMem.HC TaskMemUsed/TaskMemAlloced. JIT-compiled globals are allocated on Fs->code_heap (Compiler/PrsStmt.HC). Hashes are FNV-1a 64 over the raw array bytes (whole array, then 16 equal row blocks) after Seed(12345) in the harness task.",
+ "harness": {
+  "driver": "tools/reference-vm/harness/Talons.HC",
+  "talons_copy": {
+   "original": "::/Demo/Games/Talons.HC",
+   "original_sha256": "af31e209e1b13b4363c81b2a244b2876fe2592ac56b1b67c3074b6396a5c66b6",
+   "copy_sha256": "75f082e08a1a36976d0decb1cfa51c8df0e4d9b6e299a6f8a0c32f19e936b085",
+   "change": "removed the 8 bytes 'Talons;\\n' at byte offset 24138 (text line 1233, the auto-run call; the DolDoc binary sprite section after the text is unchanged)"
+  },
+  "seed": 12345,
+  "synthetic": "synthetic_* = CalcNormals on an elevation field filled by the driver's own integer LCG (s=s*6364136223846793005+1442695040888963407 from 0x9E3779B97F4A7C15; elevation=(s>>40)&0x3FFF), independent of Rand"
+ },
+ "sizes": {
+  "elevations": 2097152,
+  "normals": 25165824,
+  "panels": 8388608,
+  "CD3": 24,
+  "mp_cnt": 2
+ },
+ "memory": [
+  {
+   "label": "before-include",
+   "sys_code_bp.used": 232140800,
+   "sys_code_bp.alloced": 1068326912,
+   "sys_data_bp": 0,
+   "sys_data_bp.used": 0,
+   "sys_data_bp.alloced": 0,
+   "code_heap.used": 379224,
+   "code_heap.alloced": 472064,
+   "data_heap.used": 379224,
+   "data_heap.alloced": 472064,
+   "task_used": 379224,
+   "task_alloced": 472064,
+   "mem_heap_limit": 1073610751
+  },
+  {
+   "label": "after-include",
+   "sys_code_bp.used": 276972032,
+   "sys_code_bp.alloced": 1068326912,
+   "sys_data_bp": 0,
+   "sys_data_bp.used": 0,
+   "sys_data_bp.alloced": 0,
+   "code_heap.used": 44535232,
+   "code_heap.alloced": 45303296,
+   "data_heap.used": 44535232,
+   "data_heap.alloced": 45303296,
+   "task_used": 44535232,
+   "task_alloced": 45303296,
+   "mem_heap_limit": 1073610751
+  },
+  {
+   "label": "after-terrain",
+   "sys_code_bp.used": 276980224,
+   "sys_code_bp.alloced": 1068326912,
+   "sys_data_bp": 0,
+   "sys_data_bp.used": 0,
+   "sys_data_bp.alloced": 0,
+   "code_heap.used": 44544768,
+   "code_heap.alloced": 45311488,
+   "data_heap.used": 44544768,
+   "data_heap.alloced": 45311488,
+   "task_used": 44544768,
+   "task_alloced": 45311488,
+   "mem_heap_limit": 1073610751
+  },
+  {
+   "label": "after-PreInit",
+   "sys_code_bp.used": 276994048,
+   "sys_code_bp.alloced": 1068326912,
+   "sys_data_bp": 0,
+   "sys_data_bp.used": 0,
+   "sys_data_bp.alloced": 0,
+   "code_heap.used": 44559024,
+   "code_heap.alloced": 45325312,
+   "data_heap.used": 44559024,
+   "data_heap.alloced": 45325312,
+   "task_used": 44559024,
+   "task_alloced": 45325312,
+   "mem_heap_limit": 1073610751
+  },
+  {
+   "label": "after-Init",
+   "sys_code_bp.used": 308201472,
+   "sys_code_bp.alloced": 1068326912,
+   "sys_data_bp": 0,
+   "sys_data_bp.used": 0,
+   "sys_data_bp.alloced": 0,
+   "code_heap.used": 75039200,
+   "code_heap.alloced": 75965440,
+   "data_heap.used": 75039200,
+   "data_heap.alloced": 75965440,
+   "task_used": 75039200,
+   "task_alloced": 75965440,
+   "mem_heap_limit": 1073610751
+  },
+  {
+   "label": "after-CleanUp",
+   "sys_code_bp.used": 305564160,
+   "sys_code_bp.alloced": 1068326912,
+   "sys_data_bp": 0,
+   "sys_data_bp.used": 0,
+   "sys_data_bp.alloced": 0,
+   "code_heap.used": 44544768,
+   "code_heap.alloced": 73328128,
+   "data_heap.used": 44544768,
+   "data_heap.alloced": 73328128,
+   "task_used": 44544768,
+   "task_alloced": 73328128,
+   "mem_heap_limit": 1073610751
+  }
+ ],
+ "memory_deltas_bytes": {
+  "include (compile Talons.HC: code + globals)": 44831232,
+  "terrain (InitElevations+CalcNormals, no allocation expected)": 8192,
+  "PreInit (large sprites)": 13824,
+  "Init (panels, objects, depth buffer, birds)": 31207424,
+  "CleanUp+PostCleanUp": -2637312
+ },
+ "water_cells": 368600,
+ "hashes": {
+  "elevations": {
+   "fnv1a64": "B44ED90F99C6DCDD",
+   "row_blocks": [
+    "9457BBCA09002843",
+    "DFBB64133074F71E",
+    "B37223536654B486",
+    "CECC0DF6762A3910",
+    "4363470EAA793335",
+    "61BC438A92913D97",
+    "EA89549EA302B2B7",
+    "126ACD150D2580DC",
+    "BBE777C9A1D0FE0C",
+    "7F7F5E0FB83B768D",
+    "F4D4854E3B4F7AF7",
+    "446553342851A53F",
+    "F06E8232BDB9893D",
+    "36D9E7ACD4B6A2D1",
+    "8483DED2D352042C",
+    "B41A66B1F2E35E3B"
+   ]
+  },
+  "normals": {
+   "fnv1a64": "C2A30725013801D9",
+   "row_blocks": [
+    "FB73E2E67B5D526D",
+    "CBC6AA09C730E019",
+    "3EC22C1698584AD8",
+    "4FCF0E99292B47CF",
+    "E79931403367499E",
+    "8F479D9EB22745CA",
+    "C56B2B4E64806121",
+    "DED85451FE60EC1C",
+    "B745489BD32043AF",
+    "FEC94A43D8C94760",
+    "DC0083D9374FF74F",
+    "D18A9EA93FAD242E",
+    "8FD5486DA8288DB8",
+    "90A93A1B036BD330",
+    "9DDD91CD63E8B9D2",
+    "8412A13C7D0201E6"
+   ]
+  },
+  "synthetic_elevations": {
+   "fnv1a64": "D21DBE94068D8294",
+   "row_blocks": [
+    "6252AB097BB7AC7C",
+    "E9D4E3A2D440FDB8",
+    "F3D456C9D7E213BE",
+    "C452F7746A5C0D81",
+    "4088745093D23B90",
+    "1C54ECA9242520E8",
+    "F38B1CF237745455",
+    "8CF6D5E02C2190A8",
+    "F259254E7668F3A2",
+    "19AEA9BB2AA1A0BF",
+    "02EAA600339635B7",
+    "D7F7483FB2CBF2BC",
+    "C532354C2935B912",
+    "5C2C68CC6B01B44B",
+    "596FA146EEB4CC27",
+    "EBDADF33574D94D3"
+   ]
+  },
+  "synthetic_normals": {
+   "fnv1a64": "C87E9B49EC7FB777",
+   "row_blocks": [
+    "A23DA44A6039DA0F",
+    "25F4470FDF512E36",
+    "FBC6E272E4115A28",
+    "71FAA9BBF129FF3B",
+    "E21BE78D981BB562",
+    "276314E1E05963A1",
+    "31EC07A2AF65CDD7",
+    "004CA221F5643F7C",
+    "5EF1884DF3C13586",
+    "EE6FDC06B7829C1A",
+    "1B152F8EEB018BDD",
+    "AEAA6EBA9BCE1EF8",
+    "5F03C5294FB5E416",
+    "997166BD0C54836F",
+    "223DB07DCA1FF001",
+    "767913F0D5595B05"
+   ]
+  },
+  "elevations_after_Init": {
+   "fnv1a64": "B44ED90F99C6DCDD",
+   "row_blocks": [
+    "9457BBCA09002843",
+    "DFBB64133074F71E",
+    "B37223536654B486",
+    "CECC0DF6762A3910",
+    "4363470EAA793335",
+    "61BC438A92913D97",
+    "EA89549EA302B2B7",
+    "126ACD150D2580DC",
+    "BBE777C9A1D0FE0C",
+    "7F7F5E0FB83B768D",
+    "F4D4854E3B4F7AF7",
+    "446553342851A53F",
+    "F06E8232BDB9893D",
+    "36D9E7ACD4B6A2D1",
+    "8483DED2D352042C",
+    "B41A66B1F2E35E3B"
+   ]
+  }
+ },
+ "samples": {
+  "elevations": "[0,0]=2250 [512,512]=2250 [100,900]=4350 [1023,1023]=2250 [777,333]=4875",
+  "normals": "[0,0]=0000000000000000,0000000000000000,BFF0000000000000 [512,512]=0000000000000000,0000000000000000,BFF0000000000000 [100,900]=0000000000000000,3FEFFFEB49A658D1,BF72344AB0280504 [1022,1022]=0000000000000000,0000000000000000,BFF0000000000000 [777,333]=BFE6A05C7F6590A0,3FE6A05C7F6590A0,BF834ED0A3534163",
+  "synthetic_normals": "[0,0]=BFEFA4D05436DABE,BFC30B89BECC7750,BF17D75CF15A16ED [512,512]=3FEFFF09A117937C,3F8F636C0B3D9833,BF2C4B3284B9531C [100,900]=BFEFF635A5233083,BFA90632F3EB8469,BF1BE9E9A353ADEA [1022,1022]=BF9A86FF0C9B985A,BFEFFD402B64E9CC,BF1D65F3DD35DAB6 [777,333]=BFE70701A628C86F,BFE638634B5F12B7,BF346822402B3B35"
+ },
+ "panels_after_Init": {
+  "panels": 213931,
+  "objects": 6334
+ },
+ "vm_run": {
+  "date_utc": "2026-10-20T12:24:30+00:00",
+  "iso": {
+   "path": "reference/iso/TempleOS.ISO",
+   "sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26",
+   "expected_sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26"
+  },
+  "qemu_version": "QEMU emulator version 11.1.2\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+  "qemu_args": [
+   "qemu-system-x86_64",
+   "-m",
+   "1024",
+   "-smp",
+   "2",
+   "-cdrom",
+   "reference/iso/TempleOS.ISO",
+   "-boot",
+   "d",
+   "-nic",
+   "none",
+   "-display",
+   "none",
+   "-vga",
+   "std",
+   "-audiodev",
+   "none,id=snd0",
+   "-machine",
+   "pc,pcspk-audiodev=snd0",
+   "-qmp",
+   "tcp:127.0.0.1:57814,server,nowait",
+   "-rtc",
+   "base=localtime,clock=vm",
+   "-accel",
+   "tcg",
+   "-cpu",
+   "qemu64",
+   "-chardev",
+   "file,id=dbg0,path=build/reference-vm/talons/harness.log",
+   "-device",
+   "isa-debugcon,iobase=0xe9,chardev=dbg0",
+   "-chardev",
+   "file,id=dbg1,path=build/reference-vm/talons/console.log",
+   "-device",
+   "isa-debugcon,iobase=0xea,chardev=dbg1",
+   "-fw_cfg",
+   "name=opt/templeos/boot,file=tools/reference-vm/harness/VmIO.HC",
+   "-fw_cfg",
+   "name=opt/templeos/h0,file=tools/reference-vm/harness/Talons.HC",
+   "-fw_cfg",
+   "name=opt/templeos/d/TalonsNoRun.HC,file=build/reference-vm/talons/TalonsNoRun.HC",
+   "-icount",
+   "shift=auto"
+  ],
+  "guest": {
+   "machine": "pc",
+   "cpu": "qemu64",
+   "smp": 2,
+   "mem_mib": 1024,
+   "accelerator": "tcg (software emulation of x86-64; no hardware virtualization on this host)",
+   "icount": "shift=auto",
+   "rtc": "base=localtime,clock=vm",
+   "network": "none",
+   "disk": "none (live CD only)"
+  },
+  "host": {
+   "os": "macOS-27.0.1-arm64-arm-64bit",
+   "machine": "arm64",
+   "uname": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030 arm64",
+   "python": "3.10.6"
+  },
+  "files": {
+   "boot (VmIO.HC)": {
+    "path": "tools/reference-vm/harness/VmIO.HC",
+    "sha256": "3d837449e6a4c976f609086f887b7485c11237dceb9f9f615700ac666765259f"
+   },
+   "h0": {
+    "path": "tools/reference-vm/harness/Talons.HC",
+    "sha256": "fffb387a98c2ce439f5a5e1799b4d6c58d79ffd6edee7990d918a6f657c7f949",
+    "fnv1a64": "F7F7852D3808B44F"
+   },
+   "d/TalonsNoRun.HC": {
+    "path": "build/reference-vm/talons/TalonsNoRun.HC",
+    "sha256": "75f082e08a1a36976d0decb1cfa51c8df0e4d9b6e299a6f8a0c32f19e936b085"
+   }
+  },
+  "result": {
+   "status": "done",
+   "seconds_after_boot": 111.0,
+   "seconds_total": 197.2,
+   "events": [
+    {
+     "t": 52.2,
+     "event": "shell ready (probe 3)"
+    },
+    {
+     "t": 86.2,
+     "event": "boot-ok (typing attempt 1, hold 25 ms)"
+    }
+   ],
+   "loader": [
+    "BOOT-OK mp_cnt=2 sys_code_bp.alloced=1068326912",
+    "LOADER begin opt/templeos/h0 size=3648 fnv=F7F7852D3808B44F",
+    "LOADER end opt/templeos/h0 res=00000000000000A0",
+    "HARNESS-DONE"
+   ],
+   "harness_bytes_exact": {
+    "h0": true
+   }
+  }
+ },
+ "raw_logs": "shared/test-vectors/reference-vm/logs/talons",
+ "guest_ram_limits": {
+  "about": "UNMODIFIED Talons (#include \"::/Demo/Games/Talons.HC\") in the reference VM at several guest RAM sizes (2 CPUs). Loaded through the harness channel only to copy every task's printed text to console.log (TalonsUnmodified.HC: HMirrorAll + one memory snapshot); vm_status 'timeout' = still running in its game loop or halted when the host stopped it (see debugger_entered: the console copy shows the TempleOS debugger; the CPU-1 heartbeat stops while the debugger holds the machine).",
+  "runs": [
+   {
+    "mem_mib": 128,
+    "vm_status": "timeout",
+    "boot": [
+     "BOOT-OK mp_cnt=2 sys_code_bp.alloced=128802816",
+     "MEM before-Talons sys_code_bp.used=64780800 sys_code_bp.alloced=128802816 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812616 code_heap.alloced=891392 data_heap.used=812616 data_heap.alloced=891392 task_used=812616 task_alloced=891392 mem_heap_limit=134086655"
+    ],
+    "exceptions_printed": [
+     "OutMem"
+    ],
+    "debugger_entered": true,
+    "heartbeat_stopped": false,
+    "initializing_seen": true,
+    "console_tail": "Panic+0x002E  RSP:01328408\n\n!!! Unhandled Exception !!!\n\nCallerRep:\n05421D48:00018961:Fault3+0x0133\n05421D78:00018B1F:Fault2+0x0171\n05421DF0:0000FB2D:INT_FAULT+0x007E\n05421E30:000197EB:&throw+0x0190\n05421E98:0000D728:&MAlloc+0x00ED\n05421ED0:0000D965:&CAlloc+0x001C\n05421F10:04478D5D:&MPDoPanels+0x0135\n05421FF0:0001CE3B:&Exit+0x0000\n           &Panic+0x002E 9D           POPFD\nT:/Home>\u00baRAX:0000000001332028\n\u00baRCX:0000000000000050\n\u00baRDX:0000000001331A28\n\u00baRBX:0000000000000000\n\u00baRSP:0000000005421E08\n\u00baRBP:0000000005421E28\n\u00baRSI:0000000000000001\n\u00baRDI:0000000000000000\n\u00ba R8:00000000013323A0\n\u00ba R9:0000000000000000\n\u00baR10:000000000001981B\n\u00baR11:0000000000000001\n\u00baR12:0000000000000194\n\u00baR13:0000000000000205\n\u00baR14:0000000000000001\n\u00baR15:00000000033C4C08\n\u00baRIP:0000000000018C04\n\u00ba&Panic+0x002E                         \n\u00baPOPFD\n\u00c8\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00cd\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b\u00db\b",
+    "evidence": "docs/native-validation/vm/talons-mem128-console"
+   },
+   {
+    "mem_mib": 160,
+    "vm_status": "timeout",
+    "boot": [
+     "BOOT-OK mp_cnt=2 sys_code_bp.alloced=162357248",
+     "MEM before-Talons sys_code_bp.used=64780800 sys_code_bp.alloced=162357248 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812616 code_heap.alloced=891392 data_heap.used=812616 data_heap.alloced=891392 task_used=812616 task_alloced=891392 mem_heap_limit=167641087"
+    ],
+    "exceptions_printed": [],
+    "debugger_entered": false,
+    "heartbeat_stopped": false,
+    "initializing_seen": true,
+    "console_tail": "Initializing...\n",
+    "evidence": "docs/native-validation/vm/talons-mem160-console"
+   },
+   {
+    "mem_mib": 192,
+    "vm_status": "timeout",
+    "boot": [
+     "BOOT-OK mp_cnt=2 sys_code_bp.alloced=195911680",
+     "MEM before-Talons sys_code_bp.used=64780800 sys_code_bp.alloced=195911680 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812616 code_heap.alloced=891392 data_heap.used=812616 data_heap.alloced=891392 task_used=812616 task_alloced=891392 mem_heap_limit=201195519"
+    ],
+    "exceptions_printed": [],
+    "debugger_entered": false,
+    "heartbeat_stopped": false,
+    "initializing_seen": true,
+    "console_tail": "Initializing...\n",
+    "evidence": "docs/native-validation/vm/talons-mem192-console"
+   },
+   {
+    "mem_mib": 256,
+    "vm_status": "timeout",
+    "boot": [
+     "BOOT-OK mp_cnt=2 sys_code_bp.alloced=263020544",
+     "MEM before-Talons sys_code_bp.used=98335232 sys_code_bp.alloced=263020544 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812616 code_heap.alloced=891392 data_heap.used=812616 data_heap.alloced=891392 task_used=812616 task_alloced=891392 mem_heap_limit=268304383"
+    ],
+    "exceptions_printed": [],
+    "debugger_entered": false,
+    "heartbeat_stopped": false,
+    "initializing_seen": true,
+    "console_tail": "Initializing...\n",
+    "evidence": "docs/native-validation/vm/talons-mem256-console"
+   },
+   {
+    "mem_mib": 512,
+    "vm_status": "timeout",
+    "boot": [
+     "BOOT-OK mp_cnt=2 sys_code_bp.alloced=531456000",
+     "MEM before-Talons sys_code_bp.used=165442560 sys_code_bp.alloced=531456000 sys_data_bp=0 sys_data_bp.used=0 sys_data_bp.alloced=0 code_heap.used=812624 code_heap.alloced=889856 data_heap.used=812624 data_heap.alloced=889856 task_used=812624 task_alloced=889856 mem_heap_limit=536739839"
+    ],
+    "exceptions_printed": [],
+    "debugger_entered": false,
+    "heartbeat_stopped": false,
+    "initializing_seen": true,
+    "console_tail": "Initializing...\n",
+    "evidence": "docs/native-validation/vm/talons-mem512-console"
+   }
+  ]
+ }
+}

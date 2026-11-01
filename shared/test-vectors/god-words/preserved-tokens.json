@@ -1,0 +1,396 @@
+{
+ "count": 7569,
+ "sha256": "5c8d0fef1b73e2a0bea0806fcdd61ec75279fd1b67a0f2631831de287f7e3cce",
+ "policy": "Only previously blank entries are filled. Ambiguous source fragments, abbreviations, names and standalone function words retain their exact original token rather than inventing a meaning. These are preserved source tokens, not certified translations; native review may replace them explicitly.",
+ "tokens": [
+  {
+   "index": 168,
+   "english": "agito",
+   "catalogs": [
+    "fil"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 978,
+   "english": "chatto",
+   "catalogs": [
+    "zh-Hant"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 1071,
+   "english": "co",
+   "catalogs": [
+    "fil"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 1079,
+   "english": "cogo",
+   "catalogs": [
+    "fil"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 1090,
+   "english": "com",
+   "catalogs": [
+    "ru"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 1779,
+   "english": "dir",
+   "catalogs": [
+    "az",
+    "fil",
+    "gl",
+    "hy",
+    "is",
+    "mn",
+    "ru"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 3101,
+   "english": "gutindex",
+   "catalogs": [
+    "ru"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 3555,
+   "english": "ingrated",
+   "catalogs": [
+    "az",
+    "da",
+    "fil",
+    "gl",
+    "is",
+    "lt",
+    "pa"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 4220,
+   "english": "mget",
+   "catalogs": [
+    "fa",
+    "he",
+    "ja",
+    "ka"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 4556,
+   "english": "ofthe",
+   "catalogs": [
+    "et"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 4927,
+   "english": "pmb",
+   "catalogs": [
+    "bg",
+    "fa",
+    "he",
+    "ja",
+    "kk"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 4973,
+   "english": "prairienet",
+   "catalogs": [
+    "bg",
+    "he",
+    "ja"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 5266,
+   "english": "rais",
+   "catalogs": [
+    "af",
+    "am",
+    "bg",
+    "bn",
+    "ca",
+    "cs",
+    "fa",
+    "fi",
+    "fil",
+    "gl",
+    "he",
+    "hy",
+    "is",
+    "ja",
+    "ka",
+    "kk",
+    "ko",
+    "lt",
+    "lv",
+    "ru",
+    "sk",
+    "sv",
+    "th",
+    "uk",
+    "ur",
+    "zh-Hans"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 5700,
+   "english": "s",
+   "catalogs": [
+    "am",
+    "az",
+    "bg",
+    "et",
+    "fa",
+    "he",
+    "ja",
+    "sv",
+    "uk"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 6407,
+   "english": "subdu",
+   "catalogs": [
+    "af",
+    "am",
+    "bn",
+    "ca",
+    "cs",
+    "fa",
+    "fi",
+    "fil",
+    "he",
+    "hy",
+    "is",
+    "it",
+    "ja",
+    "ka",
+    "ko",
+    "lv",
+    "sk",
+    "uk",
+    "ur"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 6532,
+   "english": "sweetlyvain",
+   "catalogs": [
+    "ca",
+    "et",
+    "he"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 6658,
+   "english": "the",
+   "catalogs": [
+    "am",
+    "az",
+    "be",
+    "et",
+    "ka",
+    "lv"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 6770,
+   "english": "toment",
+   "catalogs": [
+    "af",
+    "bn",
+    "ca",
+    "fi",
+    "fil",
+    "ka",
+    "lv",
+    "ro",
+    "ru",
+    "sk",
+    "uk"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 6771,
+   "english": "tomenting",
+   "catalogs": [
+    "af",
+    "bn",
+    "ca",
+    "fi",
+    "fil",
+    "ka",
+    "lv",
+    "ro",
+    "ru",
+    "sk",
+    "uk"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 6916,
+   "english": "uman",
+   "catalogs": [
+    "af",
+    "am",
+    "be",
+    "bg",
+    "bn",
+    "ca",
+    "cs",
+    "da",
+    "el",
+    "es",
+    "et",
+    "fa",
+    "fi",
+    "fil",
+    "fr",
+    "gl",
+    "he",
+    "hr",
+    "hy",
+    "id",
+    "is",
+    "it",
+    "ja",
+    "ka",
+    "km",
+    "kn",
+    "ko",
+    "lo",
+    "lt",
+    "lv",
+    "mk",
+    "ms",
+    "my",
+    "nl",
+    "pl",
+    "ro",
+    "ru",
+    "sk",
+    "sv",
+    "sw",
+    "th",
+    "tr",
+    "uk",
+    "ur",
+    "vi",
+    "zh-Hans",
+    "zh-Hant",
+    "zu"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 7032,
+   "english": "unravelied",
+   "catalogs": [
+    "it",
+    "ka",
+    "sk"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 7165,
+   "english": "ver",
+   "catalogs": [
+    "af",
+    "am",
+    "bg",
+    "bn",
+    "ca",
+    "cs",
+    "es",
+    "et",
+    "fa",
+    "fil",
+    "gl",
+    "he",
+    "hr",
+    "hy",
+    "is",
+    "it",
+    "ja",
+    "ka",
+    "km",
+    "kn",
+    "ko",
+    "lo",
+    "lt",
+    "lv",
+    "mk",
+    "my",
+    "rm",
+    "ro",
+    "ru",
+    "sk",
+    "sw",
+    "th",
+    "tr",
+    "uk",
+    "ur",
+    "zh-Hant",
+    "zu"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 7430,
+   "english": "windus",
+   "catalogs": [
+    "bg",
+    "et",
+    "fr",
+    "he",
+    "it",
+    "ja",
+    "ka",
+    "ko",
+    "lv",
+    "sw",
+    "tr",
+    "zh-Hans"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  },
+  {
+   "index": 7488,
+   "english": "wordly",
+   "catalogs": [
+    "bn",
+    "fa",
+    "fil"
+   ],
+   "review": "Original source token retained; linguistic review required for a contextual equivalent."
+  }
+ ]
+}

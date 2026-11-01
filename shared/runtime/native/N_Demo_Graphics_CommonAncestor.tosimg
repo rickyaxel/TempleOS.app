@@ -1,0 +1,35 @@
+TOSIMG 1
+unit C:/Demo/Graphics/CommonAncestor.HC#0
+value ARROW_SPACING 3
+value N 32
+value X_SPACING 16
+value Y_SPACING 45
+class Node 24 0 - -
+m left 0 *$Node
+m right 8 *$Node
+m n 16 I64
+g 17fd38 8
+g 17fd50 8
+g 17fd68 8
+g 17fd80 8
+s 131e0 2564
+s 17fd98 5363726f6c6c2077697468207b4354524c2d4c65667420477261627d2e0a
+fn 703 ShowTree (U0;*$CDC,*$Node,*I64,*I64,I64;-)
+fn 704 DrawIt (U0;*$CTask,*$CDC;-)
+fn 705 TreeAdd (U0;**$Node,*$Node;-)
+fn 706 TreeNew (U0;;-)
+fn 707 TreeCommonAncestorFind (U0;*$Node;-)
+fn 708 TreeCommonAncestor (U0;;-)
+fn 709 $init:C:/Demo/Graphics/CommonAncestor.HC#0 (I64;;-)
+sym f DrawIt 704 (U0;*$CTask,*$CDC;-)
+sym f ShowTree 703 (U0;*$CDC,*$Node,*I64,*I64,I64;-)
+sym f TreeAdd 705 (U0;**$Node,*$Node;-)
+sym f TreeCommonAncestor 708 (U0;;-)
+sym f TreeCommonAncestorFind 707 (U0;*$Node;-)
+sym f TreeNew 706 (U0;;-)
+sym g common_ancestor 17fd68 I64
+sym g n1 17fd38 I64
+sym g n2 17fd50 I64
+sym g root 17fd80 *$Node
+init 709
+unit C:/Demo/Graphics/CommonAncestor.HC#1

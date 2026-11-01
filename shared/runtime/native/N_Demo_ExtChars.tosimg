@@ -1,0 +1,28 @@
+TOSIMG 1
+unit C:/Demo/ExtChars.HC#0
+g 17fd38 8
+c 17fd38 1 3c
+c 17fd39 1 42
+c 17fd3a 1 a5
+c 17fd3b 1 81
+c 17fd3c 1 c3
+c 17fd3d 1 bd
+c 17fd3e 1 42
+c 17fd3f 1 3c
+fn 703 $init:C:/Demo/ExtChars.HC#0 (I64;;-)
+sym g face 17fd38 [8]U8
+init 703
+unit C:/Demo/ExtChars.HC#1
+fn 704 $init:C:/Demo/ExtChars.HC#1 (I64;;-)
+init 704
+unit C:/Demo/ExtChars.HC#2
+s 17fd50 466163653aff0a
+fn 705 $init:C:/Demo/ExtChars.HC#2 (I64;;-)
+init 705
+unit C:/Demo/ExtChars.HC#3
+s 17fd68 66ffff3d25640a
+fn 706 SrcExample (U0;;-)
+fn 707 $init:C:/Demo/ExtChars.HC#3 (I64;;-)
+sym f SrcExample 706 (U0;;-)
+init 707
+unit C:/Demo/ExtChars.HC#4

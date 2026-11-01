@@ -1,0 +1,109 @@
+{
+ "about": "Byte-exactness proof of the reference-VM channels (tools/reference-vm/templeos_harness.py roundtrip): 1 MiB (bytes 0..255 sixteen times, then bytes from random.Random(20261020)) attached as fw_cfg file opt/templeos/d/rt.bin, read in TempleOS with RepInU8 on port 0x511, its FNV-1a 64 computed in HolyC, copied to the RAM drive (B:/HData/rt.bin, FNV checked again) and echoed raw over debugcon port 0xE9 (harness/RoundTrip.HC). The harness files themselves are also checked: the loader prints the FNV-1a 64 of every file it received (harness_bytes_exact).",
+ "result": {
+  "status": "done",
+  "sent_bytes": 1048576,
+  "sent_sha256": "581b0a2480f21da69b83ca2df7eecdb37b493da3d00d3f12b91ba431d2d6588a",
+  "sent_fnv1a64": "FDA6F0A01BA76DE0",
+  "guest_report": "RT size=1048576 fnv=FDA6F0A01BA76DE0",
+  "echoed_bytes": 1048576,
+  "echoed_sha256": "581b0a2480f21da69b83ca2df7eecdb37b493da3d00d3f12b91ba431d2d6588a",
+  "echo_identical": true,
+  "guest_fnv_matches": true,
+  "harness_bytes_exact": {
+   "h0": true
+  }
+ },
+ "loader_lines": [
+  "BOOT-OK mp_cnt=2 sys_code_bp.alloced=1068326912",
+  "LOADER begin opt/templeos/h0 size=503 fnv=964C0230B1F302EB",
+  "LOADER end opt/templeos/h0 res=00000000001007A8",
+  "HARNESS-DONE"
+ ],
+ "vm_run": {
+  "date_utc": "2026-10-20T12:22:41+00:00",
+  "iso": {
+   "path": "reference/iso/TempleOS.ISO",
+   "sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26",
+   "expected_sha256": "5d0fc944e5d89c155c0fc17c148646715bc1db6fa5750c0b913772cfec19ba26"
+  },
+  "qemu_version": "QEMU emulator version 11.1.2\nCopyright (c) 2003-2026 Fabrice Bellard and the QEMU Project developers",
+  "qemu_args": [
+   "qemu-system-x86_64",
+   "-m",
+   "1024",
+   "-smp",
+   "2",
+   "-cdrom",
+   "reference/iso/TempleOS.ISO",
+   "-boot",
+   "d",
+   "-nic",
+   "none",
+   "-display",
+   "none",
+   "-vga",
+   "std",
+   "-audiodev",
+   "none,id=snd0",
+   "-machine",
+   "pc,pcspk-audiodev=snd0",
+   "-qmp",
+   "tcp:127.0.0.1:57821,server,nowait",
+   "-rtc",
+   "base=localtime,clock=vm",
+   "-accel",
+   "tcg",
+   "-cpu",
+   "qemu64",
+   "-chardev",
+   "file,id=dbg0,path=build/reference-vm/roundtrip/harness.log",
+   "-device",
+   "isa-debugcon,iobase=0xe9,chardev=dbg0",
+   "-chardev",
+   "file,id=dbg1,path=build/reference-vm/roundtrip/console.log",
+   "-device",
+   "isa-debugcon,iobase=0xea,chardev=dbg1",
+   "-fw_cfg",
+   "name=opt/templeos/boot,file=tools/reference-vm/harness/VmIO.HC",
+   "-fw_cfg",
+   "name=opt/templeos/h0,file=tools/reference-vm/harness/RoundTrip.HC",
+   "-fw_cfg",
+   "name=opt/templeos/d/rt.bin,file=build/reference-vm/roundtrip/rt.bin",
+   "-icount",
+   "shift=auto"
+  ],
+  "guest": {
+   "machine": "pc",
+   "cpu": "qemu64",
+   "smp": 2,
+   "mem_mib": 1024,
+   "accelerator": "tcg (software emulation of x86-64; no hardware virtualization on this host)",
+   "icount": "shift=auto",
+   "rtc": "base=localtime,clock=vm",
+   "network": "none",
+   "disk": "none (live CD only)"
+  },
+  "host": {
+   "os": "macOS-27.0.1-arm64-arm-64bit",
+   "machine": "arm64",
+   "uname": "Darwin 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:06:24 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6030 arm64",
+   "python": "3.10.6"
+  },
+  "files": {
+   "boot (VmIO.HC)": {
+    "path": "tools/reference-vm/harness/VmIO.HC",
+    "sha256": "3d837449e6a4c976f609086f887b7485c11237dceb9f9f615700ac666765259f"
+   },
+   "h0": {
+    "path": "tools/reference-vm/harness/RoundTrip.HC",
+    "sha256": "ab7b17aa92f6bfd019f52ad271fb73500c5b198ffa94ba7959f65a80244e48ec",
+    "fnv1a64": "964C0230B1F302EB"
+   },
+   "d/rt.bin": {
+    "path": "build/reference-vm/roundtrip/rt.bin",
+    "sha256": "581b0a2480f21da69b83ca2df7eecdb37b493da3d00d3f12b91ba431d2d6588a"
+   }
+  }
+ }
+}

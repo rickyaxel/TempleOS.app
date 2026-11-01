@@ -1,0 +1,15 @@
+TOSIMG 1
+unit C:/Demo/SubSwitch.HC#0
+s 17fd38 5a65726f20
+s 17fd50 54776f20
+s 17fd68 466f757220
+s 17fd80 5b
+s 17fd98 4f6e65
+s 17fdb0 5468726565
+s 17fdc8 46697665
+s 17fde0 5d20
+fn 703 SubSwitch (U0;;-)
+fn 704 $init:C:/Demo/SubSwitch.HC#0 (I64;;-)
+sym f SubSwitch 703 (U0;;-)
+init 704
+unit C:/Demo/SubSwitch.HC#1

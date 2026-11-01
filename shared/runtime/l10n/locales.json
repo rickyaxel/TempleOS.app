@@ -1,0 +1,1830 @@
+{
+ "schema": 1,
+ "$comment": "TempleOS Mobile UI locales. Adapted on 2026-10-16 from an earlier locale set by the same author: 89 canonical locales over 73 translation catalogs. TempleOS Mobile reads only this copy at runtime. Country candidates are used only with the device's own region subtag (never geography). See docs/localization.md.",
+ "app_name": "TempleOS.app",
+ "$app_name": "The apps' name (README, Names): the iOS/Android label written by tools/l10n/gen_platform.py, and {app} in every catalog. A proper name: never translated. Brand.APP_NAME (Kotlin) and Brand.appName (Swift) must equal it. TempleOS alone always means Terry A. Davis' operating system.",
+ "default_locale": "en-US",
+ "input_tag": "[a-z]{2,3}(?:-[a-z]{4})?(?:-(?:[a-z]{2}|[0-9]{3}))?(?:-(?:[a-z0-9]{5,8}|[0-9][a-z0-9]{3}))*(?:-[0-9a-wy-z](?:-[a-z0-9]{2,8})+)*(?:-x(?:-[a-z0-9]{1,8})+)?",
+ "family_scripts": [
+  "zh"
+ ],
+ "exclusions": [
+  "az-Arab",
+  "az-Cyrl",
+  "az-IR",
+  "kk-Arab",
+  "kk-CN",
+  "kk-Latn",
+  "ky-Arab",
+  "ky-CN",
+  "mn-CN",
+  "mn-Mong",
+  "ms-Arab",
+  "pa-Arab",
+  "pa-PK",
+  "sr-Latn",
+  "sr-ME",
+  "zh-Latn"
+ ],
+ "locales": [
+  {
+   "id": "en-US",
+   "catalog": "en",
+   "parent": null,
+   "language": "en",
+   "script": null,
+   "region": "US",
+   "english_name": "English (United States)",
+   "native_name": "English (United States)",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "en-Latn-US"
+   ],
+   "sort_order": 100
+  },
+  {
+   "id": "en-GB",
+   "catalog": "en",
+   "parent": "en-US",
+   "language": "en",
+   "script": null,
+   "region": "GB",
+   "english_name": "English (United Kingdom)",
+   "native_name": "English (United Kingdom)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [
+    "en-UK"
+   ],
+   "sort_order": 101
+  },
+  {
+   "id": "en-AU",
+   "catalog": "en",
+   "parent": "en-GB",
+   "language": "en",
+   "script": null,
+   "region": "AU",
+   "english_name": "English (Australia)",
+   "native_name": "English (Australia)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 102
+  },
+  {
+   "id": "en-CA",
+   "catalog": "en",
+   "parent": "en-GB",
+   "language": "en",
+   "script": null,
+   "region": "CA",
+   "english_name": "English (Canada)",
+   "native_name": "English (Canada)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 103
+  },
+  {
+   "id": "en-IN",
+   "catalog": "en",
+   "parent": "en-GB",
+   "language": "en",
+   "script": null,
+   "region": "IN",
+   "english_name": "English (India)",
+   "native_name": "English (India)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 104
+  },
+  {
+   "id": "en-SG",
+   "catalog": "en",
+   "parent": "en-GB",
+   "language": "en",
+   "script": null,
+   "region": "SG",
+   "english_name": "English (Singapore)",
+   "native_name": "English (Singapore)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 105
+  },
+  {
+   "id": "en-ZA",
+   "catalog": "en",
+   "parent": "en-GB",
+   "language": "en",
+   "script": null,
+   "region": "ZA",
+   "english_name": "English (South Africa)",
+   "native_name": "English (South Africa)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 106
+  },
+  {
+   "id": "es-419",
+   "catalog": "es",
+   "parent": null,
+   "language": "es",
+   "script": null,
+   "region": "419",
+   "english_name": "Spanish (Latin America)",
+   "native_name": "Español (Latinoamérica)",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 200
+  },
+  {
+   "id": "es-ES",
+   "catalog": "es",
+   "parent": "es-419",
+   "language": "es",
+   "script": null,
+   "region": "ES",
+   "english_name": "Spanish (Spain)",
+   "native_name": "Español (España)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 201
+  },
+  {
+   "id": "es-MX",
+   "catalog": "es",
+   "parent": "es-419",
+   "language": "es",
+   "script": null,
+   "region": "MX",
+   "english_name": "Spanish (Mexico)",
+   "native_name": "Español (México)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 202
+  },
+  {
+   "id": "es-US",
+   "catalog": "es",
+   "parent": "es-419",
+   "language": "es",
+   "script": null,
+   "region": "US",
+   "english_name": "Spanish (United States)",
+   "native_name": "Español (Estados Unidos)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 203
+  },
+  {
+   "id": "fr-FR",
+   "catalog": "fr",
+   "parent": null,
+   "language": "fr",
+   "script": null,
+   "region": "FR",
+   "english_name": "French (France)",
+   "native_name": "Français (France)",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 300
+  },
+  {
+   "id": "fr-CA",
+   "catalog": "fr",
+   "parent": "fr-FR",
+   "language": "fr",
+   "script": null,
+   "region": "CA",
+   "english_name": "French (Canada)",
+   "native_name": "Français (Canada)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 301
+  },
+  {
+   "id": "pt-BR",
+   "catalog": "pt-BR",
+   "parent": null,
+   "language": "pt",
+   "script": null,
+   "region": "BR",
+   "english_name": "Portuguese (Brazil)",
+   "native_name": "Português (Brasil)",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "pt-Latn-BR"
+   ],
+   "sort_order": 400
+  },
+  {
+   "id": "pt-PT",
+   "catalog": "pt-BR",
+   "parent": "pt-BR",
+   "language": "pt",
+   "script": null,
+   "region": "PT",
+   "english_name": "Portuguese (Portugal)",
+   "native_name": "Português (Portugal)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [
+    "pt-Latn-PT"
+   ],
+   "sort_order": 401
+  },
+  {
+   "id": "hi-IN",
+   "catalog": "hi",
+   "parent": null,
+   "language": "hi",
+   "script": null,
+   "region": "IN",
+   "english_name": "Hindi",
+   "native_name": "हिन्दी",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 500
+  },
+  {
+   "id": "id",
+   "catalog": "id",
+   "parent": null,
+   "language": "id",
+   "script": null,
+   "region": null,
+   "english_name": "Indonesian",
+   "native_name": "Bahasa Indonesia",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "in",
+    "in-ID"
+   ],
+   "sort_order": 600
+  },
+  {
+   "id": "zh-CN",
+   "catalog": "zh-Hans",
+   "parent": null,
+   "language": "zh",
+   "script": "Hans",
+   "region": "CN",
+   "english_name": "Chinese (Simplified, China)",
+   "native_name": "简体中文",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "zh-Hans-CN",
+    "zh-Hans-MY",
+    "zh-Hans-SG",
+    "zh-MY",
+    "zh-SG"
+   ],
+   "sort_order": 700
+  },
+  {
+   "id": "ar",
+   "catalog": "ar",
+   "parent": null,
+   "language": "ar",
+   "script": null,
+   "region": null,
+   "english_name": "Arabic",
+   "native_name": "العربية",
+   "direction": "rtl",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 800
+  },
+  {
+   "id": "bn-BD",
+   "catalog": "bn",
+   "parent": null,
+   "language": "bn",
+   "script": null,
+   "region": "BD",
+   "english_name": "Bengali",
+   "native_name": "বাংলা",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 900
+  },
+  {
+   "id": "ur",
+   "catalog": "ur",
+   "parent": null,
+   "language": "ur",
+   "script": null,
+   "region": null,
+   "english_name": "Urdu",
+   "native_name": "اردو",
+   "direction": "rtl",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1000
+  },
+  {
+   "id": "ja-JP",
+   "catalog": "ja",
+   "parent": null,
+   "language": "ja",
+   "script": null,
+   "region": "JP",
+   "english_name": "Japanese",
+   "native_name": "日本語",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1100
+  },
+  {
+   "id": "ca",
+   "catalog": "ca",
+   "parent": null,
+   "language": "ca",
+   "script": null,
+   "region": null,
+   "english_name": "Catalan",
+   "native_name": "Català",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1200
+  },
+  {
+   "id": "zh-TW",
+   "catalog": "zh-Hant",
+   "parent": null,
+   "language": "zh",
+   "script": "Hant",
+   "region": "TW",
+   "english_name": "Chinese (Traditional, Taiwan)",
+   "native_name": "繁體中文（台灣）",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "zh-Hant-TW"
+   ],
+   "sort_order": 1300
+  },
+  {
+   "id": "zh-HK",
+   "catalog": "zh-Hant",
+   "parent": "zh-TW",
+   "language": "zh",
+   "script": "Hant",
+   "region": "HK",
+   "english_name": "Chinese (Hong Kong)",
+   "native_name": "繁體中文（香港）",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [
+    "zh-Hant-HK",
+    "zh-Hant-MO",
+    "zh-MO"
+   ],
+   "sort_order": 1301
+  },
+  {
+   "id": "hr",
+   "catalog": "hr",
+   "parent": null,
+   "language": "hr",
+   "script": null,
+   "region": null,
+   "english_name": "Croatian",
+   "native_name": "Hrvatski",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1400
+  },
+  {
+   "id": "cs-CZ",
+   "catalog": "cs",
+   "parent": null,
+   "language": "cs",
+   "script": null,
+   "region": "CZ",
+   "english_name": "Czech",
+   "native_name": "Čeština",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1500
+  },
+  {
+   "id": "da-DK",
+   "catalog": "da",
+   "parent": null,
+   "language": "da",
+   "script": null,
+   "region": "DK",
+   "english_name": "Danish",
+   "native_name": "Dansk",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1600
+  },
+  {
+   "id": "nl-NL",
+   "catalog": "nl",
+   "parent": null,
+   "language": "nl",
+   "script": null,
+   "region": "NL",
+   "english_name": "Dutch",
+   "native_name": "Nederlands",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1700
+  },
+  {
+   "id": "fi-FI",
+   "catalog": "fi",
+   "parent": null,
+   "language": "fi",
+   "script": null,
+   "region": "FI",
+   "english_name": "Finnish",
+   "native_name": "Suomi",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1800
+  },
+  {
+   "id": "de-DE",
+   "catalog": "de",
+   "parent": null,
+   "language": "de",
+   "script": null,
+   "region": "DE",
+   "english_name": "German",
+   "native_name": "Deutsch",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 1900
+  },
+  {
+   "id": "el-GR",
+   "catalog": "el",
+   "parent": null,
+   "language": "el",
+   "script": null,
+   "region": "GR",
+   "english_name": "Greek",
+   "native_name": "Ελληνικά",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 2000
+  },
+  {
+   "id": "gu",
+   "catalog": "gu",
+   "parent": null,
+   "language": "gu",
+   "script": null,
+   "region": null,
+   "english_name": "Gujarati",
+   "native_name": "ગુજરાતી",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 2100
+  },
+  {
+   "id": "he-IL",
+   "catalog": "he",
+   "parent": null,
+   "language": "he",
+   "script": null,
+   "region": "IL",
+   "english_name": "Hebrew",
+   "native_name": "עברית",
+   "direction": "rtl",
+   "family_default": true,
+   "aliases": [
+    "iw",
+    "iw-IL"
+   ],
+   "sort_order": 2200
+  },
+  {
+   "id": "hu-HU",
+   "catalog": "hu",
+   "parent": null,
+   "language": "hu",
+   "script": null,
+   "region": "HU",
+   "english_name": "Hungarian",
+   "native_name": "Magyar",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 2300
+  },
+  {
+   "id": "it-IT",
+   "catalog": "it",
+   "parent": null,
+   "language": "it",
+   "script": null,
+   "region": "IT",
+   "english_name": "Italian",
+   "native_name": "Italiano",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 2400
+  },
+  {
+   "id": "kn-IN",
+   "catalog": "kn",
+   "parent": null,
+   "language": "kn",
+   "script": null,
+   "region": "IN",
+   "english_name": "Kannada",
+   "native_name": "ಕನ್ನಡ",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 2500
+  },
+  {
+   "id": "ko-KR",
+   "catalog": "ko",
+   "parent": null,
+   "language": "ko",
+   "script": null,
+   "region": "KR",
+   "english_name": "Korean",
+   "native_name": "한국어",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 2600
+  },
+  {
+   "id": "ms",
+   "catalog": "ms",
+   "parent": null,
+   "language": "ms",
+   "script": null,
+   "region": null,
+   "english_name": "Malay",
+   "native_name": "Bahasa Melayu",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "ms-Latn"
+   ],
+   "sort_order": 2700
+  },
+  {
+   "id": "ms-MY",
+   "catalog": "ms",
+   "parent": "ms",
+   "language": "ms",
+   "script": null,
+   "region": "MY",
+   "english_name": "Malay (Malaysia)",
+   "native_name": "Bahasa Melayu (Malaysia)",
+   "direction": "ltr",
+   "family_default": false,
+   "aliases": [
+    "ms-Latn-MY"
+   ],
+   "sort_order": 2701
+  },
+  {
+   "id": "ml-IN",
+   "catalog": "ml",
+   "parent": null,
+   "language": "ml",
+   "script": null,
+   "region": "IN",
+   "english_name": "Malayalam",
+   "native_name": "മലയാളം",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 2800
+  },
+  {
+   "id": "mr-IN",
+   "catalog": "mr",
+   "parent": null,
+   "language": "mr",
+   "script": null,
+   "region": "IN",
+   "english_name": "Marathi",
+   "native_name": "मराठी",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 2900
+  },
+  {
+   "id": "no-NO",
+   "catalog": "nb",
+   "parent": null,
+   "language": "no",
+   "script": null,
+   "region": "NO",
+   "english_name": "Norwegian Bokmål",
+   "native_name": "Norsk bokmål",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "nb",
+    "nb-NO",
+    "nn",
+    "nn-NO",
+    "no"
+   ],
+   "sort_order": 3000
+  },
+  {
+   "id": "or-IN",
+   "catalog": "or",
+   "parent": null,
+   "language": "or",
+   "script": null,
+   "region": "IN",
+   "english_name": "Odia",
+   "native_name": "ଓଡ଼ିଆ",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 3100
+  },
+  {
+   "id": "pl-PL",
+   "catalog": "pl",
+   "parent": null,
+   "language": "pl",
+   "script": null,
+   "region": "PL",
+   "english_name": "Polish",
+   "native_name": "Polski",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 3200
+  },
+  {
+   "id": "pa",
+   "catalog": "pa",
+   "parent": null,
+   "language": "pa",
+   "script": null,
+   "region": null,
+   "english_name": "Punjabi",
+   "native_name": "ਪੰਜਾਬੀ",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 3300
+  },
+  {
+   "id": "ro",
+   "catalog": "ro",
+   "parent": null,
+   "language": "ro",
+   "script": null,
+   "region": null,
+   "english_name": "Romanian",
+   "native_name": "Română",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "mo"
+   ],
+   "sort_order": 3400
+  },
+  {
+   "id": "ru-RU",
+   "catalog": "ru",
+   "parent": null,
+   "language": "ru",
+   "script": null,
+   "region": "RU",
+   "english_name": "Russian",
+   "native_name": "Русский",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 3500
+  },
+  {
+   "id": "sk",
+   "catalog": "sk",
+   "parent": null,
+   "language": "sk",
+   "script": null,
+   "region": null,
+   "english_name": "Slovak",
+   "native_name": "Slovenčina",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 3600
+  },
+  {
+   "id": "sl",
+   "catalog": "sl",
+   "parent": null,
+   "language": "sl",
+   "script": null,
+   "region": null,
+   "english_name": "Slovenian",
+   "native_name": "Slovenščina",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 3700
+  },
+  {
+   "id": "sv-SE",
+   "catalog": "sv",
+   "parent": null,
+   "language": "sv",
+   "script": null,
+   "region": "SE",
+   "english_name": "Swedish",
+   "native_name": "Svenska",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 3800
+  },
+  {
+   "id": "ta-IN",
+   "catalog": "ta",
+   "parent": null,
+   "language": "ta",
+   "script": null,
+   "region": "IN",
+   "english_name": "Tamil",
+   "native_name": "தமிழ்",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 3900
+  },
+  {
+   "id": "te-IN",
+   "catalog": "te",
+   "parent": null,
+   "language": "te",
+   "script": null,
+   "region": "IN",
+   "english_name": "Telugu",
+   "native_name": "తెలుగు",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4000
+  },
+  {
+   "id": "th",
+   "catalog": "th",
+   "parent": null,
+   "language": "th",
+   "script": null,
+   "region": null,
+   "english_name": "Thai",
+   "native_name": "ไทย",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4100
+  },
+  {
+   "id": "tr-TR",
+   "catalog": "tr",
+   "parent": null,
+   "language": "tr",
+   "script": null,
+   "region": "TR",
+   "english_name": "Turkish",
+   "native_name": "Türkçe",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4200
+  },
+  {
+   "id": "uk",
+   "catalog": "uk",
+   "parent": null,
+   "language": "uk",
+   "script": null,
+   "region": null,
+   "english_name": "Ukrainian",
+   "native_name": "Українська",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4300
+  },
+  {
+   "id": "vi",
+   "catalog": "vi",
+   "parent": null,
+   "language": "vi",
+   "script": null,
+   "region": null,
+   "english_name": "Vietnamese",
+   "native_name": "Tiếng Việt",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4400
+  },
+  {
+   "id": "af",
+   "catalog": "af",
+   "parent": null,
+   "language": "af",
+   "script": null,
+   "region": null,
+   "english_name": "Afrikaans",
+   "native_name": "Afrikaans",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4500
+  },
+  {
+   "id": "sq",
+   "catalog": "sq",
+   "parent": null,
+   "language": "sq",
+   "script": null,
+   "region": null,
+   "english_name": "Albanian",
+   "native_name": "Shqip",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4600
+  },
+  {
+   "id": "am",
+   "catalog": "am",
+   "parent": null,
+   "language": "am",
+   "script": null,
+   "region": null,
+   "english_name": "Amharic",
+   "native_name": "አማርኛ",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4700
+  },
+  {
+   "id": "hy-AM",
+   "catalog": "hy",
+   "parent": null,
+   "language": "hy",
+   "script": null,
+   "region": "AM",
+   "english_name": "Armenian",
+   "native_name": "Հայերեն",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4800
+  },
+  {
+   "id": "az-AZ",
+   "catalog": "az",
+   "parent": null,
+   "language": "az",
+   "script": null,
+   "region": "AZ",
+   "english_name": "Azerbaijani",
+   "native_name": "Azərbaycan",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 4900
+  },
+  {
+   "id": "eu-ES",
+   "catalog": "eu",
+   "parent": null,
+   "language": "eu",
+   "script": null,
+   "region": "ES",
+   "english_name": "Basque",
+   "native_name": "Euskara",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5000
+  },
+  {
+   "id": "be",
+   "catalog": "be",
+   "parent": null,
+   "language": "be",
+   "script": null,
+   "region": null,
+   "english_name": "Belarusian",
+   "native_name": "Беларуская",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5100
+  },
+  {
+   "id": "bg",
+   "catalog": "bg",
+   "parent": null,
+   "language": "bg",
+   "script": null,
+   "region": null,
+   "english_name": "Bulgarian",
+   "native_name": "Български",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5200
+  },
+  {
+   "id": "my-MM",
+   "catalog": "my",
+   "parent": null,
+   "language": "my",
+   "script": null,
+   "region": "MM",
+   "english_name": "Burmese",
+   "native_name": "မြန်မာ",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5300
+  },
+  {
+   "id": "et",
+   "catalog": "et",
+   "parent": null,
+   "language": "et",
+   "script": null,
+   "region": null,
+   "english_name": "Estonian",
+   "native_name": "Eesti",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5400
+  },
+  {
+   "id": "fil",
+   "catalog": "fil",
+   "parent": null,
+   "language": "fil",
+   "script": null,
+   "region": null,
+   "english_name": "Filipino",
+   "native_name": "Filipino",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [
+    "tl",
+    "tl-PH"
+   ],
+   "sort_order": 5500
+  },
+  {
+   "id": "gl-ES",
+   "catalog": "gl",
+   "parent": null,
+   "language": "gl",
+   "script": null,
+   "region": "ES",
+   "english_name": "Galician",
+   "native_name": "Galego",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5600
+  },
+  {
+   "id": "ka-GE",
+   "catalog": "ka",
+   "parent": null,
+   "language": "ka",
+   "script": null,
+   "region": "GE",
+   "english_name": "Georgian",
+   "native_name": "ქართული",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5700
+  },
+  {
+   "id": "is-IS",
+   "catalog": "is",
+   "parent": null,
+   "language": "is",
+   "script": null,
+   "region": "IS",
+   "english_name": "Icelandic",
+   "native_name": "Íslenska",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5800
+  },
+  {
+   "id": "kk",
+   "catalog": "kk",
+   "parent": null,
+   "language": "kk",
+   "script": null,
+   "region": null,
+   "english_name": "Kazakh",
+   "native_name": "Қазақ тілі",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 5900
+  },
+  {
+   "id": "km-KH",
+   "catalog": "km",
+   "parent": null,
+   "language": "km",
+   "script": null,
+   "region": "KH",
+   "english_name": "Khmer",
+   "native_name": "ខ្មែរ",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6000
+  },
+  {
+   "id": "ky-KG",
+   "catalog": "ky",
+   "parent": null,
+   "language": "ky",
+   "script": null,
+   "region": "KG",
+   "english_name": "Kyrgyz",
+   "native_name": "Кыргызча",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6100
+  },
+  {
+   "id": "lo-LA",
+   "catalog": "lo",
+   "parent": null,
+   "language": "lo",
+   "script": null,
+   "region": "LA",
+   "english_name": "Lao",
+   "native_name": "ລາວ",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6200
+  },
+  {
+   "id": "lv",
+   "catalog": "lv",
+   "parent": null,
+   "language": "lv",
+   "script": null,
+   "region": null,
+   "english_name": "Latvian",
+   "native_name": "Latviešu",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6300
+  },
+  {
+   "id": "lt",
+   "catalog": "lt",
+   "parent": null,
+   "language": "lt",
+   "script": null,
+   "region": null,
+   "english_name": "Lithuanian",
+   "native_name": "Lietuvių",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6400
+  },
+  {
+   "id": "mk-MK",
+   "catalog": "mk",
+   "parent": null,
+   "language": "mk",
+   "script": null,
+   "region": "MK",
+   "english_name": "Macedonian",
+   "native_name": "Македонски",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6500
+  },
+  {
+   "id": "mn-MN",
+   "catalog": "mn",
+   "parent": null,
+   "language": "mn",
+   "script": null,
+   "region": "MN",
+   "english_name": "Mongolian",
+   "native_name": "Монгол",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6600
+  },
+  {
+   "id": "ne-NP",
+   "catalog": "ne",
+   "parent": null,
+   "language": "ne",
+   "script": null,
+   "region": "NP",
+   "english_name": "Nepali",
+   "native_name": "नेपाली",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6700
+  },
+  {
+   "id": "fa",
+   "catalog": "fa",
+   "parent": null,
+   "language": "fa",
+   "script": null,
+   "region": null,
+   "english_name": "Persian",
+   "native_name": "فارسی",
+   "direction": "rtl",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6800
+  },
+  {
+   "id": "fa-IR",
+   "catalog": "fa",
+   "parent": "fa",
+   "language": "fa",
+   "script": null,
+   "region": "IR",
+   "english_name": "Persian (Iran)",
+   "native_name": "فارسی (ایران)",
+   "direction": "rtl",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 6801
+  },
+  {
+   "id": "fa-AF",
+   "catalog": "fa",
+   "parent": "fa",
+   "language": "fa",
+   "script": null,
+   "region": "AF",
+   "english_name": "Persian (Afghanistan)",
+   "native_name": "فارسی دری (افغانستان)",
+   "direction": "rtl",
+   "family_default": false,
+   "aliases": [
+    "prs",
+    "prs-AF"
+   ],
+   "sort_order": 6802
+  },
+  {
+   "id": "fa-AE",
+   "catalog": "fa",
+   "parent": "fa",
+   "language": "fa",
+   "script": null,
+   "region": "AE",
+   "english_name": "Persian (United Arab Emirates)",
+   "native_name": "فارسی (امارات)",
+   "direction": "rtl",
+   "family_default": false,
+   "aliases": [],
+   "sort_order": 6803
+  },
+  {
+   "id": "rm",
+   "catalog": "rm",
+   "parent": null,
+   "language": "rm",
+   "script": null,
+   "region": null,
+   "english_name": "Romansh",
+   "native_name": "Rumantsch",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 6900
+  },
+  {
+   "id": "sr",
+   "catalog": "sr",
+   "parent": null,
+   "language": "sr",
+   "script": null,
+   "region": null,
+   "english_name": "Serbian",
+   "native_name": "Српски",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 7000
+  },
+  {
+   "id": "si-LK",
+   "catalog": "si",
+   "parent": null,
+   "language": "si",
+   "script": null,
+   "region": "LK",
+   "english_name": "Sinhala",
+   "native_name": "සිංහල",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 7100
+  },
+  {
+   "id": "sw",
+   "catalog": "sw",
+   "parent": null,
+   "language": "sw",
+   "script": null,
+   "region": null,
+   "english_name": "Swahili",
+   "native_name": "Kiswahili",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 7200
+  },
+  {
+   "id": "zu",
+   "catalog": "zu",
+   "parent": null,
+   "language": "zu",
+   "script": null,
+   "region": null,
+   "english_name": "Zulu",
+   "native_name": "isiZulu",
+   "direction": "ltr",
+   "family_default": true,
+   "aliases": [],
+   "sort_order": 7300
+  }
+ ],
+ "countries": {
+  "AD": [
+   "ca"
+  ],
+  "AE": [
+   "ar",
+   "fa-AE"
+  ],
+  "AF": [
+   "fa-AF"
+  ],
+  "AL": [
+   "sq"
+  ],
+  "AM": [
+   "hy-AM"
+  ],
+  "AO": [
+   "pt-PT"
+  ],
+  "AR": [
+   "es-419"
+  ],
+  "AT": [
+   "de-DE"
+  ],
+  "AU": [
+   "en-AU"
+  ],
+  "AX": [
+   "sv-SE"
+  ],
+  "AZ": [
+   "az-AZ"
+  ],
+  "BD": [
+   "bn-BD"
+  ],
+  "BE": [
+   "nl-NL",
+   "fr-FR",
+   "de-DE"
+  ],
+  "BF": [
+   "fr-FR"
+  ],
+  "BG": [
+   "bg"
+  ],
+  "BH": [
+   "ar"
+  ],
+  "BI": [
+   "fr-FR"
+  ],
+  "BJ": [
+   "fr-FR"
+  ],
+  "BL": [
+   "fr-FR"
+  ],
+  "BN": [
+   "ms"
+  ],
+  "BO": [
+   "es-419"
+  ],
+  "BR": [
+   "pt-BR"
+  ],
+  "BY": [
+   "ru-RU"
+  ],
+  "CA": [
+   "en-CA",
+   "fr-CA"
+  ],
+  "CD": [
+   "fr-FR"
+  ],
+  "CF": [
+   "fr-FR"
+  ],
+  "CG": [
+   "fr-FR"
+  ],
+  "CH": [
+   "de-DE",
+   "fr-FR",
+   "it-IT",
+   "rm"
+  ],
+  "CI": [
+   "fr-FR"
+  ],
+  "CL": [
+   "es-419"
+  ],
+  "CN": [
+   "zh-CN"
+  ],
+  "CO": [
+   "es-419"
+  ],
+  "CR": [
+   "es-419"
+  ],
+  "CU": [
+   "es-419"
+  ],
+  "CV": [
+   "pt-PT"
+  ],
+  "CY": [
+   "el-GR",
+   "tr-TR"
+  ],
+  "CZ": [
+   "cs-CZ"
+  ],
+  "DE": [
+   "de-DE"
+  ],
+  "DK": [
+   "da-DK"
+  ],
+  "DO": [
+   "es-419"
+  ],
+  "DZ": [
+   "ar"
+  ],
+  "EC": [
+   "es-419"
+  ],
+  "EE": [
+   "et"
+  ],
+  "EG": [
+   "ar"
+  ],
+  "EH": [
+   "ar"
+  ],
+  "ES": [
+   "es-ES",
+   "ca",
+   "gl-ES",
+   "eu-ES"
+  ],
+  "ET": [
+   "am"
+  ],
+  "FI": [
+   "fi-FI"
+  ],
+  "FR": [
+   "fr-FR"
+  ],
+  "GA": [
+   "fr-FR"
+  ],
+  "GB": [
+   "en-GB"
+  ],
+  "GE": [
+   "ka-GE"
+  ],
+  "GF": [
+   "fr-FR"
+  ],
+  "GN": [
+   "fr-FR"
+  ],
+  "GP": [
+   "fr-FR"
+  ],
+  "GQ": [
+   "es-ES"
+  ],
+  "GR": [
+   "el-GR"
+  ],
+  "GT": [
+   "es-419"
+  ],
+  "GW": [
+   "pt-PT"
+  ],
+  "HK": [
+   "zh-HK",
+   "en-GB"
+  ],
+  "HN": [
+   "es-419"
+  ],
+  "HR": [
+   "hr"
+  ],
+  "HT": [
+   "fr-FR"
+  ],
+  "HU": [
+   "hu-HU"
+  ],
+  "ID": [
+   "id"
+  ],
+  "IE": [
+   "en-GB"
+  ],
+  "IL": [
+   "he-IL"
+  ],
+  "IN": [
+   "en-IN",
+   "hi-IN",
+   "bn-BD",
+   "ta-IN",
+   "te-IN",
+   "mr-IN",
+   "gu",
+   "kn-IN",
+   "ml-IN",
+   "or-IN",
+   "pa"
+  ],
+  "IQ": [
+   "ar"
+  ],
+  "IR": [
+   "fa-IR"
+  ],
+  "IS": [
+   "is-IS"
+  ],
+  "IT": [
+   "it-IT"
+  ],
+  "JO": [
+   "ar"
+  ],
+  "JP": [
+   "ja-JP"
+  ],
+  "KE": [
+   "sw"
+  ],
+  "KG": [
+   "ky-KG"
+  ],
+  "KH": [
+   "km-KH"
+  ],
+  "KP": [
+   "ko-KR"
+  ],
+  "KR": [
+   "ko-KR"
+  ],
+  "KW": [
+   "ar"
+  ],
+  "KZ": [
+   "kk"
+  ],
+  "LA": [
+   "lo-LA"
+  ],
+  "LB": [
+   "ar"
+  ],
+  "LI": [
+   "de-DE"
+  ],
+  "LK": [
+   "si-LK"
+  ],
+  "LT": [
+   "lt"
+  ],
+  "LU": [
+   "fr-FR",
+   "de-DE"
+  ],
+  "LV": [
+   "lv"
+  ],
+  "LY": [
+   "ar"
+  ],
+  "MA": [
+   "ar"
+  ],
+  "MC": [
+   "fr-FR"
+  ],
+  "MD": [
+   "ro"
+  ],
+  "MF": [
+   "fr-FR"
+  ],
+  "MG": [
+   "fr-FR"
+  ],
+  "MK": [
+   "mk-MK"
+  ],
+  "ML": [
+   "fr-FR"
+  ],
+  "MM": [
+   "my-MM"
+  ],
+  "MN": [
+   "mn-MN"
+  ],
+  "MO": [
+   "zh-HK"
+  ],
+  "MQ": [
+   "fr-FR"
+  ],
+  "MR": [
+   "ar"
+  ],
+  "MX": [
+   "es-MX"
+  ],
+  "MY": [
+   "ms-MY",
+   "ms",
+   "zh-CN",
+   "ta-IN"
+  ],
+  "MZ": [
+   "pt-PT"
+  ],
+  "NC": [
+   "fr-FR"
+  ],
+  "NE": [
+   "fr-FR"
+  ],
+  "NI": [
+   "es-419"
+  ],
+  "NL": [
+   "nl-NL"
+  ],
+  "NO": [
+   "no-NO"
+  ],
+  "NP": [
+   "ne-NP"
+  ],
+  "NZ": [
+   "en-GB"
+  ],
+  "OM": [
+   "ar"
+  ],
+  "PA": [
+   "es-419"
+  ],
+  "PE": [
+   "es-419"
+  ],
+  "PF": [
+   "fr-FR"
+  ],
+  "PH": [
+   "fil",
+   "en-US"
+  ],
+  "PK": [
+   "ur"
+  ],
+  "PL": [
+   "pl-PL"
+  ],
+  "PM": [
+   "fr-FR"
+  ],
+  "PR": [
+   "es-419"
+  ],
+  "PS": [
+   "ar"
+  ],
+  "PT": [
+   "pt-PT"
+  ],
+  "PY": [
+   "es-419"
+  ],
+  "QA": [
+   "ar"
+  ],
+  "RE": [
+   "fr-FR"
+  ],
+  "RO": [
+   "ro"
+  ],
+  "RS": [
+   "sr"
+  ],
+  "RU": [
+   "ru-RU"
+  ],
+  "SA": [
+   "ar"
+  ],
+  "SD": [
+   "ar"
+  ],
+  "SE": [
+   "sv-SE"
+  ],
+  "SG": [
+   "en-SG",
+   "zh-CN",
+   "ms",
+   "ta-IN"
+  ],
+  "SI": [
+   "sl"
+  ],
+  "SJ": [
+   "no-NO"
+  ],
+  "SK": [
+   "sk"
+  ],
+  "SM": [
+   "it-IT"
+  ],
+  "SN": [
+   "fr-FR"
+  ],
+  "SR": [
+   "nl-NL"
+  ],
+  "ST": [
+   "pt-PT"
+  ],
+  "SV": [
+   "es-419"
+  ],
+  "SY": [
+   "ar"
+  ],
+  "TG": [
+   "fr-FR"
+  ],
+  "TH": [
+   "th"
+  ],
+  "TN": [
+   "ar"
+  ],
+  "TR": [
+   "tr-TR"
+  ],
+  "TW": [
+   "zh-TW"
+  ],
+  "TZ": [
+   "sw"
+  ],
+  "UA": [
+   "uk"
+  ],
+  "US": [
+   "en-US",
+   "es-US"
+  ],
+  "UY": [
+   "es-419"
+  ],
+  "VA": [
+   "it-IT"
+  ],
+  "VE": [
+   "es-419"
+  ],
+  "VN": [
+   "vi"
+  ],
+  "WF": [
+   "fr-FR"
+  ],
+  "XK": [
+   "sq"
+  ],
+  "YE": [
+   "ar"
+  ],
+  "YT": [
+   "fr-FR"
+  ],
+  "ZA": [
+   "en-ZA",
+   "af",
+   "zu"
+  ]
+ }
+}

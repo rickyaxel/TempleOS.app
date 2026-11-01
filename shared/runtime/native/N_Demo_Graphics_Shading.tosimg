@@ -1,0 +1,14 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Shading.HC#0
+value FACES 32
+value RINGS 8
+s 17fd38 0a0a4d6f7665206d6f75736520746f206368616e6765206c6967687420736f757263652e0a0a
+fn 703 Lighting (U0;*$CDC,*$CD3I32,*$CD3I32,I64;-)
+fn 704 DrawIt (U0;*$CTask,*$CDC;-)
+fn 705 Main (U0;;-)
+fn 706 $init:C:/Demo/Graphics/Shading.HC#0 (I64;;-)
+sym f DrawIt 704 (U0;*$CTask,*$CDC;-)
+sym f Lighting 703 (U0;*$CDC,*$CD3I32,*$CD3I32,I64;-)
+sym f Main 705 (U0;;-)
+init 706
+unit C:/Demo/Graphics/Shading.HC#1

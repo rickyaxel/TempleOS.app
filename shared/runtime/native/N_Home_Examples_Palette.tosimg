@@ -1,0 +1,46 @@
+TOSIMG 1
+unit C:/Home/Examples/Palette.HC#0
+g 17fd38 128
+s 14f30 424c41434b
+c 17fd38 8 14f30 s
+s 14f48 424c5545
+c 17fd40 8 14f48 s
+s 14f60 475245454e
+c 17fd48 8 14f60 s
+s 14f78 4359414e
+c 17fd50 8 14f78 s
+s 14f90 524544
+c 17fd58 8 14f90 s
+s 14fa8 505552504c45
+c 17fd60 8 14fa8 s
+s 14fc0 42524f574e
+c 17fd68 8 14fc0 s
+s 14fd8 4c5447524159
+c 17fd70 8 14fd8 s
+s 14ff0 444b47524159
+c 17fd78 8 14ff0 s
+s 15008 4c54424c5545
+c 17fd80 8 15008 s
+s 15020 4c54475245454e
+c 17fd88 8 15020 s
+s 15038 4c544359414e
+c 17fd90 8 15038 s
+s 15050 4c54524544
+c 17fd98 8 15050 s
+s 15068 4c54505552504c45
+c 17fda0 8 15068 s
+s 15088 59454c4c4f57
+c 17fda8 8 15088 s
+s 150a0 5748495445
+c 17fdb0 8 150a0 s
+fn 703 $init:C:/Home/Examples/Palette.HC#0 (I64;;-)
+sym g names 17fd38 [16]*U8
+init 703
+unit C:/Home/Examples/Palette.HC#1
+s 17fdc8 253264202573
+s 17fde0 50726573732061206b657920746f20657869742e0a
+fn 704 PaletteDemo (U0;;-)
+fn 705 $init:C:/Home/Examples/Palette.HC#1 (I64;;-)
+sym f PaletteDemo 704 (U0;;-)
+init 705
+unit C:/Home/Examples/Palette.HC#2

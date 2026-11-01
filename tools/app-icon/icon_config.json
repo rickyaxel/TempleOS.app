@@ -1,0 +1,40 @@
+{
+  "$comment": "Inputs of tools/app-icon/build_app_icon.py (docs/app-icon/README.md). Seed colors only start the palette measurement; the published palette is what the source actually contains (shared/app-icon/icon-palette.json).",
+  "source": "TempleOS.png",
+  "grid_pitch_range_px": [6, 14],
+  "palette_seeds": [
+    {"name": "background",   "family": "background", "rgb": [45, 249, 253],  "role": "flat cyan field"},
+    {"name": "black",        "family": "line",   "rgb": [0, 0, 0],       "role": "lettering outline, diagonal strings", "snap": "black"},
+    {"name": "slate",        "family": "line",   "rgb": [62, 68, 66],    "role": "vertical center strings"},
+    {"name": "text_yellow",  "family": "text",   "rgb": [253, 251, 58],  "role": "TempleOS lettering fill"},
+    {"name": "gold_pale",    "family": "gold",   "rgb": [251, 251, 110], "role": "gold highlight"},
+    {"name": "gold_yellow",  "family": "gold",   "rgb": [253, 242, 22],  "role": "gold light"},
+    {"name": "gold_amber",   "family": "gold",   "rgb": [243, 195, 4],   "role": "gold mid-light"},
+    {"name": "gold_orange",  "family": "gold",   "rgb": [222, 145, 2],   "role": "gold mid"},
+    {"name": "gold_dark",    "family": "gold",   "rgb": [200, 114, 1],   "role": "gold shade"},
+    {"name": "gold_brown",   "family": "gold",   "rgb": [168, 82, 2],    "role": "gold deep shade, roof beam"},
+    {"name": "silver_white", "family": "silver", "rgb": [252, 252, 252], "role": "blade edge highlight, birds"},
+    {"name": "silver_light", "family": "silver", "rgb": [208, 206, 205], "role": "blade light"},
+    {"name": "silver_mid",   "family": "silver", "rgb": [181, 180, 179], "role": "blade ridge"},
+    {"name": "silver_shade", "family": "silver", "rgb": [157, 156, 155], "role": "blade shade"},
+    {"name": "silver_dark",  "family": "silver", "rgb": [112, 110, 108], "role": "blade dark edge"}
+  ],
+  "outputs": {"shared": "shared/app-icon", "docs": "docs/app-icon"},
+  "layout": {
+    "$comment": "By owner direction (2026-10-16) the sword runs out of the frame so the wordmark can be large (sword = bleed; sword = whole keeps the entire sword inside every mask); everything else stays inside every mask. center_blend: 0 centers the whole artwork, 1 centers the wordmark vertically. Clearances are measured from every kept art pixel to each mask outline (layout.py).",
+    "sword": "bleed",
+    "canvas_pad": 128,
+    "center_blend": 0.5,
+    "ios": {"canvas_px": 1024, "max_cell_px": 12, "min_clearance": 0.035},
+    "android": {"art_radius_dp": 33.0, "min_circle_clearance_dp": 3.0}
+  },
+  "ios": {
+    "appiconset": "temple_os_swift/App/TempleOSMobile/Assets.xcassets/AppIcon.appiconset",
+    "filename": "AppIcon-1024.png"
+  },
+  "android": {
+    "res_dir": "temple_os_kotlin/app/src/main/res",
+    "densities": {"mdpi": 1.0, "hdpi": 1.5, "xhdpi": 2.0, "xxhdpi": 3.0, "xxxhdpi": 4.0},
+    "playstore": {"path": "temple_os_kotlin/app/src/main/ic_launcher-playstore.png", "size": 512}
+  }
+}

@@ -1,0 +1,21 @@
+TOSIMG 1
+unit C:/Apps/Budget/BgtStrs.HC#0
+value SFT_GENERIC 1
+s 13eb0 2446472c256424
+s 13ec8 25730a
+s 17fd38 25642c25730a
+fn 703 StrFileRead (**U8;*U8,*I64,**U8,Bool;-)
+fn 704 StrFileArrDel (U0;**U8,I64;-)
+fn 705 StrFileAdd (I64;*U8,*I64,*$CHashTable,I64;-)
+fn 706 StrEntriesCompare (I64;*$CHashGeneric,*$CHashGeneric;-)
+fn 707 StrFileWrite (U0;*U8,*$CHashTable,Bool;-)
+fn 708 StrFileDel (U0;*$CHashTable;-)
+fn 709 $init:C:/Apps/Budget/BgtStrs.HC#0 (I64;;-)
+sym f StrEntriesCompare 706 (I64;*$CHashGeneric,*$CHashGeneric;-)
+sym f StrFileAdd 705 (I64;*U8,*I64,*$CHashTable,I64;-)
+sym f StrFileArrDel 704 (U0;**U8,I64;-)
+sym f StrFileDel 708 (U0;*$CHashTable;-)
+sym f StrFileRead 703 (**U8;*U8,*I64,**U8,Bool;-)
+sym f StrFileWrite 707 (U0;*U8,*$CHashTable,Bool;-)
+init 709
+unit C:/Apps/Budget/BgtStrs.HC#1

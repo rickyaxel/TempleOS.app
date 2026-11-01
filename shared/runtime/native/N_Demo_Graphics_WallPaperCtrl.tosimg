@@ -1,0 +1,24 @@
+TOSIMG 1
+unit C:/Demo/Graphics/WallPaperCtrl.HC#0
+value SLIDER_BORDER 2
+value SLIDER_RANGE 30
+value SLIDER_SPACING 20
+class CSliderState 16 0 - -
+m left_pos 0 I64
+m right_pos 8 I64
+s 131e0 2564
+s 131e0 2564
+s 17fd38 4d757374206265204164616d20496e636c7564656420776974682053484946542d46352e0a28576f756c64206372617368207768656e20636f6465206d656d207761732066726565642e290a
+fn 703 DrawCtrlSlider (U0;*$CDC,*$CCtrl;-)
+fn 704 UpdateDerivedCtrlSlider (U0;*$CCtrl;-)
+fn 705 LeftClickSlider (U0;*$CCtrl,I64,I64,Bool;-)
+fn 706 SliderNew (*$CCtrl;;-)
+fn 707 SliderDel (U0;*$CCtrl;-)
+fn 708 $init:C:/Demo/Graphics/WallPaperCtrl.HC#0 (I64;;-)
+sym f DrawCtrlSlider 703 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickSlider 705 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f SliderDel 707 (U0;*$CCtrl;-)
+sym f SliderNew 706 (*$CCtrl;;-)
+sym f UpdateDerivedCtrlSlider 704 (U0;*$CCtrl;-)
+init 708
+unit C:/Demo/Graphics/WallPaperCtrl.HC#1

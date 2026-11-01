@@ -1,0 +1,24 @@
+TOSIMG 1
+unit C:/Home/Examples/Functions.HC#0
+s 17fd38 24505552504c45242d2d2054656d706c654f532e617070202d2d244647240a
+fn 703 Area (I64;I64,I64;-)
+fn 704 Fib (I64;I64;-)
+fn 705 Banner (U0;;-)
+fn 706 $init:C:/Home/Examples/Functions.HC#0 (I64;;-)
+sym f Area 703 (I64;I64,I64;-)
+sym f Banner 705 (U0;;-)
+sym f Fib 704 (I64;I64;-)
+init 706
+unit C:/Home/Examples/Functions.HC#1
+s 17fd68 41726561282c3429203d2025640a
+fn 707 $init:C:/Home/Examples/Functions.HC#1 (I64;;-)
+init 707
+unit C:/Home/Examples/Functions.HC#2
+s 17fd88 4172656128332c3429203d2025640a
+fn 708 $init:C:/Home/Examples/Functions.HC#2 (I64;;-)
+init 708
+unit C:/Home/Examples/Functions.HC#3
+s 17fda8 46696228323029203d2025640a
+fn 709 $init:C:/Home/Examples/Functions.HC#3 (I64;;-)
+init 709
+unit C:/Home/Examples/Functions.HC#4

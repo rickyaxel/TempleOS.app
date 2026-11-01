@@ -1,0 +1,101 @@
+TOSIMG 1
+unit C:/Adam/ASnd.HC#0
+class CMusicGlbls 104 0 - -
+m cur_song 0 *U8
+m cur_song_task 8 *$CTask
+m octave 16 I64
+m note_len 24 F64
+m note_map 32 [7]U8
+m mute 39 Bool
+m meter_top 40 I64
+m meter_bottom 48 I64
+m tempo 56 F64
+m stacatto_factor 64 F64
+m play_note_num 72 I64
+m tM_correction 80 F64
+m last_Beat 88 F64
+m last_tM 96 F64
+c 134b0 8 0
+c 134b8 8 0
+c 134c0 8 4
+c 134c8 8 3ff0000000000000
+c 134d0 1 0
+c 134d1 1 2
+c 134d2 1 3
+c 134d3 1 5
+c 134d4 1 7
+c 134d5 1 8
+c 134d6 1 a
+c 134d7 1 0
+c 134d8 8 4
+c 134e0 8 4
+c 134e8 8 4004000000000000
+c 134f0 8 3feccccccccccccd
+c 134f8 8 0
+c 13500 8 0
+c 13508 8 0
+c 13510 8 0
+fn 703 SndTaskEndCB (U0;;-)
+fn 704 Saw (F64;F64,F64;-)
+fn 705 FullSaw (F64;F64,F64;-)
+fn 706 Caw (F64;F64,F64;-)
+fn 707 FullCaw (F64;F64,F64;-)
+fn 708 Tri (F64;F64,F64;-)
+fn 709 FullTri (F64;F64,F64;-)
+fn 710 $init:C:/Adam/ASnd.HC#0 (I64;;-)
+sym f Caw 706 (F64;F64,F64;-)
+sym f FullCaw 707 (F64;F64,F64;-)
+sym f FullSaw 705 (F64;F64,F64;-)
+sym f FullTri 709 (F64;F64,F64;-)
+sym f Saw 704 (F64;F64,F64;-)
+sym f SndTaskEndCB 703 (U0;;-)
+sym f Tri 708 (F64;F64,F64;-)
+init 710
+unit C:/Adam/ASnd.HC#1
+s 13680 1f
+s 132c0 2573
+fn 711 tM (F64;;-)
+fn 712 Beat (F64;;-)
+fn 713 MusicSetOctave (*U8;*U8;-)
+fn 714 MusicSetMeter (*U8;*U8;-)
+fn 715 MusicSetNoteLen (*U8;*U8;-)
+fn 716 Note2Ona (I8;I64,I64;-)
+fn 717 Ona2Note (I8;I8;-)
+fn 718 Ona2Octave (I8;I8;-)
+fn 719 Play (U0;*U8,*U8;-)
+fn 720 MusicSettingsRst (U0;;-)
+fn 721 $init:C:/Adam/ASnd.HC#1 (I64;;-)
+sym f Beat 712 (F64;;-)
+sym f MusicSetMeter 714 (*U8;*U8;-)
+sym f MusicSetNoteLen 715 (*U8;*U8;-)
+sym f MusicSetOctave 713 (*U8;*U8;-)
+sym f MusicSettingsRst 720 (U0;;-)
+sym f Note2Ona 716 (I8;I64,I64;-)
+sym f Ona2Note 717 (I8;I8;-)
+sym f Ona2Octave 718 (I8;I8;-)
+sym f Play 719 (U0;*U8,*U8;-)
+sym f tM 711 (F64;;-)
+init 721
+unit C:/Adam/ASnd.HC#2
+class CSoundEffectFrame 14 0 - -
+m type 0 I32
+m ona1 4 I8
+m ona2 5 I8
+m duration 6 F64
+s 13698 43536f756e644566666563744672616d65
+s 13698 43536f756e644566666563744672616d65
+s 136c0 4e6f697365
+s 136c0 4e6f697365
+fn 722 CurSongTask (U0;;-)
+fn 723 SoundEffectEndTaskCB (U0;;-)
+fn 724 SoundEffectTask (U0;*$CSoundEffectFrame;-)
+fn 725 Noise (*$CTask;I64,F64,F64;-)
+fn 726 Sweep (*$CTask;I64,F64,F64;-)
+fn 727 $init:C:/Adam/ASnd.HC#2 (I64;;-)
+sym f CurSongTask 722 (U0;;-)
+sym f Noise 725 (*$CTask;I64,F64,F64;-)
+sym f SoundEffectEndTaskCB 723 (U0;;-)
+sym f SoundEffectTask 724 (U0;*$CSoundEffectFrame;-)
+sym f Sweep 726 (*$CTask;I64,F64,F64;-)
+init 727
+unit C:/Adam/ASnd.HC#3

@@ -1,0 +1,93 @@
+TOSIMG 1
+unit C:/Adam/Gr/GrPrimatives.HC#0
+class CFFRay 56 0 - -
+m state 0 I64
+m x 8 I64
+m y 16 I64
+m j 24 I64
+m x1 32 I64
+m ray_len 40 I64
+m ray_len2 48 I64
+s 132c0 2573
+s 132c0 2573
+fn 703 GrClamp (Bool;*$CDC,*I64,*I64,*I64,*I64,I64,I64;-)
+fn 704 DCClipLine (Bool;*$CDC,*I64,*I64,*I64,*I64,I64,I64;-)
+fn 705 GrPlot (Bool;*$CDC,I64,I64;-)
+fn 706 GrPlot1 (Bool;*$CDC,I64,I64;-)
+fn 707 GrPeek (I64;*$CDC,I64,I64;-)
+fn 708 GrFloodFillRay (I64;*$CDC,I64,I64,I64,*I32;-)
+fn 709 GrFloodFill (I64;*$CDC,I64,I64,Bool,I64,*I32;-)
+fn 710 GrFillSemiCircle (I64;*$CDC,I64,I64,I64,I64,I64;-)
+fn 711 GrFillCircle (I64;*$CDC,I64,I64,I64,I64;-)
+fn 712 GrPlot3B (Bool;*$CDC,I64,I64,I64;-)
+fn 713 GrPlot3 (Bool;*$CDC,I64,I64,I64;-)
+fn 714 GrLinePlot0 (Bool;*$CDC,I64,I64,I64;-)
+fn 715 GrLinePlot (Bool;*$CDC,I64,I64,I64;-)
+fn 716 GrLine (Bool;*$CDC,I64,I64,I64,I64,I64,I64;-)
+fn 717 GrCircle (Bool;*$CDC,I64,I64,I64,I64,F64,F64;-)
+fn 718 GrEllipse (Bool;*$CDC,I64,I64,I64,I64,F64,I64,F64,F64;-)
+fn 719 GrRegPoly (Bool;*$CDC,I64,I64,I64,I64,I64,F64,I64,F64,F64;-)
+fn 720 Gr2Bezier (Bool;*$CDC,*$CD3I32;-)
+fn 721 Gr3Bezier (Bool;*$CDC,*$CD3I32;-)
+fn 722 Gr2BSpline (Bool;*$CDC,*$CD3I32,I64,Bool;-)
+fn 723 Gr3BSpline (Bool;*$CDC,*$CD3I32,I64,Bool;-)
+fn 724 GrLineFat3 (I64;*$CDC,I64,I64,I64,I64,I64,I64,I64,I64;-)
+fn 725 GrLine3 (Bool;*$CDC,I64,I64,I64,I64,I64,I64,I64,I64;-)
+fn 726 GrPutChar3 (Bool;*$CDC,I64,I64,I64,U8;-)
+fn 727 GrPrint3 (I64;*$CDC,I64,I64,I64,*U8;v)
+fn 728 GrVPrint3 (I64;*$CDC,I64,I64,I64,*U8;v)
+fn 729 GrEllipse3 (Bool;*$CDC,I64,I64,I64,I64,I64,F64,I64,F64,F64;-)
+fn 730 GrCircle3 (Bool;*$CDC,I64,I64,I64,I64,I64,F64,F64;-)
+fn 731 GrRegPoly3 (Bool;*$CDC,I64,I64,I64,I64,I64,I64,F64,I64,F64,F64;-)
+fn 732 GrFloodFill3 (I64;*$CDC,I64,I64,I64,Bool;-)
+fn 733 $init:C:/Adam/Gr/GrPrimatives.HC#0 (I64;;-)
+sym f DCClipLine 704 (Bool;*$CDC,*I64,*I64,*I64,*I64,I64,I64;-)
+sym f Gr2BSpline 722 (Bool;*$CDC,*$CD3I32,I64,Bool;-)
+sym f Gr2Bezier 720 (Bool;*$CDC,*$CD3I32;-)
+sym f Gr3BSpline 723 (Bool;*$CDC,*$CD3I32,I64,Bool;-)
+sym f Gr3Bezier 721 (Bool;*$CDC,*$CD3I32;-)
+sym f GrCircle 717 (Bool;*$CDC,I64,I64,I64,I64,F64,F64;-)
+sym f GrCircle3 730 (Bool;*$CDC,I64,I64,I64,I64,I64,F64,F64;-)
+sym f GrClamp 703 (Bool;*$CDC,*I64,*I64,*I64,*I64,I64,I64;-)
+sym f GrEllipse 718 (Bool;*$CDC,I64,I64,I64,I64,F64,I64,F64,F64;-)
+sym f GrEllipse3 729 (Bool;*$CDC,I64,I64,I64,I64,I64,F64,I64,F64,F64;-)
+sym f GrFillCircle 711 (I64;*$CDC,I64,I64,I64,I64;-)
+sym f GrFillSemiCircle 710 (I64;*$CDC,I64,I64,I64,I64,I64;-)
+sym f GrFloodFill 709 (I64;*$CDC,I64,I64,Bool,I64,*I32;-)
+sym f GrFloodFill3 732 (I64;*$CDC,I64,I64,I64,Bool;-)
+sym f GrFloodFillRay 708 (I64;*$CDC,I64,I64,I64,*I32;-)
+sym f GrLine 716 (Bool;*$CDC,I64,I64,I64,I64,I64,I64;-)
+sym f GrLine3 725 (Bool;*$CDC,I64,I64,I64,I64,I64,I64,I64,I64;-)
+sym f GrLineFat3 724 (I64;*$CDC,I64,I64,I64,I64,I64,I64,I64,I64;-)
+sym f GrLinePlot 715 (Bool;*$CDC,I64,I64,I64;-)
+sym f GrLinePlot0 714 (Bool;*$CDC,I64,I64,I64;-)
+sym f GrPeek 707 (I64;*$CDC,I64,I64;-)
+sym f GrPlot 705 (Bool;*$CDC,I64,I64;-)
+sym f GrPlot1 706 (Bool;*$CDC,I64,I64;-)
+sym f GrPlot3 713 (Bool;*$CDC,I64,I64,I64;-)
+sym f GrPlot3B 712 (Bool;*$CDC,I64,I64,I64;-)
+sym f GrPrint3 727 (I64;*$CDC,I64,I64,I64,*U8;v)
+sym f GrPutChar3 726 (Bool;*$CDC,I64,I64,I64,U8;-)
+sym f GrRegPoly 719 (Bool;*$CDC,I64,I64,I64,I64,I64,F64,I64,F64,F64;-)
+sym f GrRegPoly3 731 (Bool;*$CDC,I64,I64,I64,I64,I64,I64,F64,I64,F64,F64;-)
+sym f GrVPrint3 728 (I64;*$CDC,I64,I64,I64,*U8;v)
+init 733
+unit C:/Adam/Gr/GrPrimatives.HC#1
+fn 734 GrBlot3 (I64;*$CDC,I64,I64,I64,*$CDC;-)
+fn 735 $init:C:/Adam/Gr/GrPrimatives.HC#1 (I64;;-)
+sym f GrBlot3 734 (I64;*$CDC,I64,I64,I64,*$CDC;-)
+init 735
+unit C:/Adam/Gr/GrPrimatives.HC#2
+fn 736 Gr2Bezier3 (Bool;*$CDC,*$CD3I32;-)
+fn 737 Gr3Bezier3 (Bool;*$CDC,*$CD3I32;-)
+fn 738 Gr2BSpline3 (I64;*$CDC,*$CD3I32,I64,Bool;-)
+fn 739 Gr3BSpline3 (Bool;*$CDC,*$CD3I32,I64,Bool;-)
+fn 740 GrFillTri0 (I64;*$CDC,*$CD3I32,*$CD3I32,*$CD3I32;-)
+fn 741 $init:C:/Adam/Gr/GrPrimatives.HC#2 (I64;;-)
+sym f Gr2BSpline3 738 (I64;*$CDC,*$CD3I32,I64,Bool;-)
+sym f Gr2Bezier3 736 (Bool;*$CDC,*$CD3I32;-)
+sym f Gr3BSpline3 739 (Bool;*$CDC,*$CD3I32,I64,Bool;-)
+sym f Gr3Bezier3 737 (Bool;*$CDC,*$CD3I32;-)
+sym f GrFillTri0 740 (I64;*$CDC,*$CD3I32,*$CD3I32,*$CD3I32;-)
+init 741
+unit C:/Adam/Gr/GrPrimatives.HC#3

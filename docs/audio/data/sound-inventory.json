@@ -1,0 +1,1165 @@
+{
+ "generated_by": "tools/audio/sound_inventory.py",
+ "programs": 96,
+ "with_sound": 38,
+ "mismatch_with_catalog_capability": [],
+ "rows": [
+  {
+   "id": "game.battlelines",
+   "title": "BattleLines",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/BattleLines.HC",
+   "original": "Demo/Games/BattleLines.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/BattleLines.HC"
+   ],
+   "uses": {
+    "Snd": 3
+   },
+   "sound_files": {
+    "Demo/Games/BattleLines.HC": {
+     "Snd": 3
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.bigguns",
+   "title": "BigGuns",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/BigGuns.HC",
+   "original": "Demo/Games/BigGuns.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/BigGuns.HC"
+   ],
+   "uses": {
+    "Snd": 2,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/BigGuns.HC": {
+     "Snd": 2,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "A",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.blackdiamond",
+   "title": "BlackDiamond",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/BlackDiamond.HC",
+   "original": "Demo/Games/BlackDiamond.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/BlackDiamond.HC"
+   ],
+   "uses": {
+    "Snd": 3,
+    "Beep": 2
+   },
+   "sound_files": {
+    "Demo/Games/BlackDiamond.HC": {
+     "Snd": 3,
+     "Beep": 2
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.bombergolf",
+   "title": "BomberGolf",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/BomberGolf.HC",
+   "original": "Demo/Games/BomberGolf.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/BomberGolf.HC"
+   ],
+   "uses": {
+    "Snd": 6,
+    "Noise": 1,
+    "Sweep": 1,
+    "Ona2Freq/Freq2Ona": 1
+   },
+   "sound_files": {
+    "Demo/Games/BomberGolf.HC": {
+     "Snd": 6,
+     "Noise": 1,
+     "Sweep": 1,
+     "Ona2Freq/Freq2Ona": 1
+    }
+   },
+   "sound_categories": [
+    "A",
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.castlefrankenstein",
+   "title": "CastleFrankenstein",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/CastleFrankenstein.HC",
+   "original": "Demo/Games/CastleFrankenstein.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/CastleFrankenstein.HC"
+   ],
+   "uses": {
+    "Play": 3,
+    "Noise": 1,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/CastleFrankenstein.HC": {
+     "Play": 3,
+     "Noise": 1,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "B",
+    "C",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.circletrace",
+   "title": "CircleTrace",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/CircleTrace.HC",
+   "original": "Demo/Games/CircleTrace.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/CircleTrace.HC"
+   ],
+   "uses": {
+    "Snd": 8,
+    "Play": 1,
+    "music": 2,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/CircleTrace.HC": {
+     "Snd": 8,
+     "Play": 1,
+     "music": 2,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "A",
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.digits",
+   "title": "Digits",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Digits.HC",
+   "original": "Demo/Games/Digits.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Digits.HC"
+   ],
+   "uses": {
+    "Beep": 2
+   },
+   "sound_files": {
+    "Demo/Games/Digits.HC": {
+     "Beep": 2
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.dungen",
+   "title": "DunGen",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/DunGen.HC",
+   "original": "Demo/Games/DunGen.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/DunGen.HC"
+   ],
+   "uses": {
+    "Noise": 1
+   },
+   "sound_files": {
+    "Demo/Games/DunGen.HC": {
+     "Noise": 1
+    }
+   },
+   "sound_categories": [
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.flapbat",
+   "title": "FlapBat",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/FlapBat.HC",
+   "original": "Demo/Games/FlapBat.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/FlapBat.HC"
+   ],
+   "uses": {
+    "Snd": 2,
+    "Play": 3,
+    "song task": 6
+   },
+   "sound_files": {
+    "Demo/Games/FlapBat.HC": {
+     "Snd": 2,
+     "Play": 3,
+     "song task": 6
+    }
+   },
+   "sound_categories": [
+    "A",
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.flattops",
+   "title": "FlatTops",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/FlatTops.HC",
+   "original": "Demo/Games/FlatTops.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/FlatTops.HC"
+   ],
+   "uses": {
+    "Noise": 2,
+    "Sweep": 1
+   },
+   "sound_files": {
+    "Demo/Games/FlatTops.HC": {
+     "Noise": 2,
+     "Sweep": 1
+    }
+   },
+   "sound_categories": [
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.halogen",
+   "title": "Halogen",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Halogen.HC",
+   "original": "Demo/Games/Halogen.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Halogen.HC"
+   ],
+   "uses": {
+    "Snd": 3,
+    "Ona2Freq/Freq2Ona": 1
+   },
+   "sound_files": {
+    "Demo/Games/Halogen.HC": {
+     "Snd": 3,
+     "Ona2Freq/Freq2Ona": 1
+    }
+   },
+   "sound_categories": [
+    "A",
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.maze",
+   "title": "Maze",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Maze.HC",
+   "original": "Demo/Games/Maze.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Maze.HC"
+   ],
+   "uses": {
+    "Beep": 2
+   },
+   "sound_files": {
+    "Demo/Games/Maze.HC": {
+     "Beep": 2
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.rawhide",
+   "title": "RawHide",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/RawHide.HC",
+   "original": "Demo/Games/RawHide.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/RawHide.HC"
+   ],
+   "uses": {
+    "Snd": 4,
+    "Play": 4,
+    "music": 2,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/RawHide.HC": {
+     "Snd": 4,
+     "Play": 4,
+     "music": 2,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "A",
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.rocket",
+   "title": "Rocket",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Rocket.HC",
+   "original": "Demo/Games/Rocket.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Rocket.HC"
+   ],
+   "uses": {
+    "Snd": 2,
+    "song task": 1
+   },
+   "sound_files": {
+    "Demo/Games/Rocket.HC": {
+     "Snd": 2,
+     "song task": 1
+    }
+   },
+   "sound_categories": [
+    "A",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.rocketscience",
+   "title": "RocketScience",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/RocketScience.HC",
+   "original": "Demo/Games/RocketScience.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/RocketScience.HC"
+   ],
+   "uses": {
+    "Snd": 2,
+    "Noise": 1,
+    "song task": 1
+   },
+   "sound_files": {
+    "Demo/Games/RocketScience.HC": {
+     "Snd": 2,
+     "Noise": 1,
+     "song task": 1
+    }
+   },
+   "sound_categories": [
+    "A",
+    "C",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.squirt",
+   "title": "Squirt",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Squirt.HC",
+   "original": "Demo/Games/Squirt.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Squirt.HC"
+   ],
+   "uses": {
+    "Play": 4,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/Squirt.HC": {
+     "Play": 4,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.talons",
+   "title": "Talons",
+   "category": "game",
+   "status": "partial",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Talons.HC",
+   "original": "Demo/Games/Talons.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Talons.HC"
+   ],
+   "uses": {
+    "Snd": 2,
+    "Beep": 1,
+    "Play": 4,
+    "music": 4,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/Talons.HC": {
+     "Snd": 2,
+     "Beep": 1,
+     "Play": 4,
+     "music": 4,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "A",
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.thedead",
+   "title": "TheDead",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/TheDead.HC",
+   "original": "Demo/Games/TheDead.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/TheDead.HC"
+   ],
+   "uses": {
+    "Play": 1,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/TheDead.HC": {
+     "Play": 1,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.tictactoe",
+   "title": "TicTacToe",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/TicTacToe.HC",
+   "original": "Demo/Games/TicTacToe.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/TicTacToe.HC"
+   ],
+   "uses": {
+    "Beep": 8
+   },
+   "sound_files": {
+    "Demo/Games/TicTacToe.HC": {
+     "Beep": 8
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.treecheckers",
+   "title": "TreeCheckers",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/TreeCheckers.HC",
+   "original": "Demo/Games/TreeCheckers.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/TreeCheckers.HC"
+   ],
+   "uses": {
+    "Snd": 4
+   },
+   "sound_files": {
+    "Demo/Games/TreeCheckers.HC": {
+     "Snd": 4
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.varoom",
+   "title": "Varoom",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Varoom.HC",
+   "original": "Demo/Games/Varoom.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Varoom.HC"
+   ],
+   "uses": {
+    "Snd": 2,
+    "Beep": 2,
+    "Noise": 1
+   },
+   "sound_files": {
+    "Demo/Games/Varoom.HC": {
+     "Snd": 2,
+     "Beep": 2,
+     "Noise": 1
+    }
+   },
+   "sound_categories": [
+    "A",
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.wenceslas",
+   "title": "Wenceslas",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Wenceslas.HC",
+   "original": "Demo/Games/Wenceslas.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Wenceslas.HC"
+   ],
+   "uses": {
+    "Snd": 4,
+    "Play": 3,
+    "music": 4,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/Wenceslas.HC": {
+     "Snd": 4,
+     "Play": 3,
+     "music": 4,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "A",
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.whap",
+   "title": "Whap",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Whap.HC",
+   "original": "Demo/Games/Whap.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Whap.HC"
+   ],
+   "uses": {
+    "Snd": 2,
+    "Noise": 1
+   },
+   "sound_files": {
+    "Demo/Games/Whap.HC": {
+     "Snd": 2,
+     "Noise": 1
+    }
+   },
+   "sound_categories": [
+    "A",
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.zing",
+   "title": "Zing",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/Zing.HC",
+   "original": "Demo/Games/Zing.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/Zing.HC"
+   ],
+   "uses": {
+    "Noise": 1
+   },
+   "sound_files": {
+    "Demo/Games/Zing.HC": {
+     "Noise": 1
+    }
+   },
+   "sound_categories": [
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "game.zoneout",
+   "title": "ZoneOut",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Games/ZoneOut.HC",
+   "original": "Demo/Games/ZoneOut.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Games/ZoneOut.HC"
+   ],
+   "uses": {
+    "Play": 4,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Games/ZoneOut.HC": {
+     "Play": 4,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "app.titanium",
+   "title": "Titanium",
+   "category": "game",
+   "status": "partial",
+   "author": "Terry A. Davis",
+   "source": "Apps/Titanium/Run.HC",
+   "original": "Apps/Titanium/Run.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Apps/Titanium/Run.HC",
+    "Apps/Titanium/Load.HC",
+    "Apps/Titanium/Titanium.HC"
+   ],
+   "uses": {
+    "Snd": 8
+   },
+   "sound_files": {
+    "Apps/Titanium/Titanium.HC": {
+     "Snd": 8
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "app.tothefront",
+   "title": "ToTheFront",
+   "category": "game",
+   "status": "unsupported",
+   "author": "Terry A. Davis",
+   "source": "Apps/ToTheFront/Run.HC",
+   "original": "Apps/ToTheFront/Run.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Apps/ToTheFront/Run.HC",
+    "Apps/ToTheFront/Install.HC",
+    "Apps/ToTheFront/Load.HC",
+    "Apps/ToTheFront/TTFDraw.HC",
+    "Apps/ToTheFront/TTFFire.HC",
+    "Apps/ToTheFront/TTFGlbls.HC",
+    "Apps/ToTheFront/TTFInit.HC",
+    "Apps/ToTheFront/TTFLib.HC",
+    "Apps/ToTheFront/TTFMove.HC",
+    "Apps/ToTheFront/TTFVis.HC",
+    "Apps/ToTheFront/ToTheFront.HC",
+    "Apps/ToTheFront/AIs/Human.HC",
+    "Apps/ToTheFront/AIs/SimpleAI.HC"
+   ],
+   "uses": {
+    "Snd": 9,
+    "Noise": 7,
+    "Beep": 5
+   },
+   "sound_files": {
+    "Apps/ToTheFront/TTFDraw.HC": {
+     "Snd": 1
+    },
+    "Apps/ToTheFront/TTFFire.HC": {
+     "Noise": 7
+    },
+    "Apps/ToTheFront/TTFMove.HC": {
+     "Snd": 4
+    },
+    "Apps/ToTheFront/ToTheFront.HC": {
+     "Snd": 4
+    },
+    "Apps/ToTheFront/AIs/Human.HC": {
+     "Beep": 5
+    }
+   },
+   "sound_categories": [
+    "A",
+    "C",
+    "F"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "app.x-caliber",
+   "title": "X-Caliber",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Apps/X-Caliber/Run.HC",
+   "original": "Apps/X-Caliber/Run.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Apps/X-Caliber/Run.HC",
+    "Apps/X-Caliber/Load.HC",
+    "Apps/X-Caliber/X-Caliber.HC",
+    "Apps/X-Caliber/XCCtrls.HC"
+   ],
+   "uses": {
+    "Snd": 3,
+    "Noise": 3,
+    "Sweep": 2,
+    "Ona2Freq/Freq2Ona": 1
+   },
+   "sound_files": {
+    "Apps/X-Caliber/X-Caliber.HC": {
+     "Snd": 3,
+     "Noise": 3,
+     "Sweep": 2,
+     "Ona2Freq/Freq2Ona": 1
+    }
+   },
+   "sound_categories": [
+    "A",
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "app.keepaway",
+   "title": "KeepAway",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Apps/KeepAway/Run.HC",
+   "original": "Apps/KeepAway/Run.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Apps/KeepAway/Run.HC",
+    "Apps/KeepAway/KeepAway.HC",
+    "Apps/KeepAway/Load.HC"
+   ],
+   "uses": {
+    "Snd": 4,
+    "Beep": 1,
+    "Noise": 8
+   },
+   "sound_files": {
+    "Apps/KeepAway/KeepAway.HC": {
+     "Snd": 4,
+     "Beep": 1,
+     "Noise": 8
+    }
+   },
+   "sound_categories": [
+    "A",
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "app.strut",
+   "title": "Strut",
+   "category": "game",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Apps/Strut/Run.HC",
+   "original": "Apps/Strut/Run.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Apps/Strut/Run.HC",
+    "Apps/Strut/Load.HC",
+    "Apps/Strut/Strut.HC"
+   ],
+   "uses": {
+    "Noise": 1
+   },
+   "sound_files": {
+    "Apps/Strut/Strut.HC": {
+     "Noise": 1
+    }
+   },
+   "sound_categories": [
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "app.psalmody",
+   "title": "Psalmody",
+   "category": "app",
+   "status": "unsupported",
+   "author": "Terry A. Davis",
+   "source": "Apps/Psalmody/Run.HC",
+   "original": "Apps/Psalmody/Run.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Apps/Psalmody/Run.HC",
+    "Apps/Psalmody/Install.HC",
+    "Apps/Psalmody/JukeBox.HC",
+    "Apps/Psalmody/JukePuppet.HC",
+    "Apps/Psalmody/Load.HC",
+    "Apps/Psalmody/Psalmody.HC",
+    "Apps/Psalmody/PsalmodyCtrls.HC",
+    "Apps/Psalmody/PsalmodyDraw.HC",
+    "Apps/Psalmody/PsalmodyFile.HC",
+    "Apps/Psalmody/PsalmodyMain.HC",
+    "Apps/Psalmody/Examples/childish.HC",
+    "Apps/Psalmody/Examples/night.HC",
+    "Apps/Psalmody/Examples/prosper.HC"
+   ],
+   "uses": {
+    "Beep": 1,
+    "music": 28,
+    "Snd": 7,
+    "song task": 4,
+    "Play": 13
+   },
+   "sound_files": {
+    "Apps/Psalmody/JukeBox.HC": {
+     "Beep": 1
+    },
+    "Apps/Psalmody/PsalmodyDraw.HC": {
+     "music": 1
+    },
+    "Apps/Psalmody/PsalmodyFile.HC": {
+     "Snd": 1,
+     "music": 12,
+     "song task": 1
+    },
+    "Apps/Psalmody/PsalmodyMain.HC": {
+     "Snd": 5,
+     "Play": 1,
+     "music": 11
+    },
+    "Apps/Psalmody/Examples/childish.HC": {
+     "Snd": 1,
+     "Play": 4,
+     "music": 2,
+     "song task": 1
+    },
+    "Apps/Psalmody/Examples/night.HC": {
+     "Play": 4,
+     "music": 1,
+     "song task": 1
+    },
+    "Apps/Psalmody/Examples/prosper.HC": {
+     "Play": 4,
+     "music": 1,
+     "song task": 1
+    }
+   },
+   "sound_categories": [
+    "A",
+    "B",
+    "E",
+    "F"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "app.span",
+   "title": "Span",
+   "category": "app",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Apps/Span/Run.HC",
+   "original": "Apps/Span/Run.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Apps/Span/Run.HC",
+    "Apps/Span/Install.HC",
+    "Apps/Span/Load.HC",
+    "Apps/Span/Span.HH",
+    "Apps/Span/SpanBridge.HC",
+    "Apps/Span/SpanDerive.HC",
+    "Apps/Span/SpanMain.HC",
+    "Apps/Span/SpanNew.HC"
+   ],
+   "uses": {
+    "Play": 4,
+    "music": 2,
+    "song task": 2
+   },
+   "sound_files": {
+    "Apps/Span/SpanMain.HC": {
+     "Play": 4,
+     "music": 2,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "app.vocabulary",
+   "title": "Vocabulary",
+   "category": "app",
+   "status": "unsupported",
+   "author": "Terry A. Davis",
+   "source": "Apps/Vocabulary/Run.HC",
+   "original": "Apps/Vocabulary/Run.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Apps/Vocabulary/Run.HC",
+    "Apps/Vocabulary/Load.HC",
+    "Apps/Vocabulary/VocabQuiz.HC"
+   ],
+   "uses": {
+    "Snd": 3
+   },
+   "sound_files": {
+    "Apps/Vocabulary/VocabQuiz.HC": {
+     "Snd": 3
+    }
+   },
+   "sound_categories": [
+    "A",
+    "F"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "demo.hanoi",
+   "title": "Hanoi",
+   "category": "demo",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Graphics/Hanoi.HC",
+   "original": "Demo/Graphics/Hanoi.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Graphics/Hanoi.HC"
+   ],
+   "uses": {
+    "Beep": 2
+   },
+   "sound_files": {
+    "Demo/Graphics/Hanoi.HC": {
+     "Beep": 2
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "demo.elephant",
+   "title": "Elephant",
+   "category": "demo",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Graphics/Elephant.HC",
+   "original": "Demo/Graphics/Elephant.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Graphics/Elephant.HC"
+   ],
+   "uses": {
+    "Play": 4,
+    "song task": 2
+   },
+   "sound_files": {
+    "Demo/Graphics/Elephant.HC": {
+     "Play": 4,
+     "song task": 2
+    }
+   },
+   "sound_categories": [
+    "B",
+    "E"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "demo.lighttable",
+   "title": "LightTable",
+   "category": "demo",
+   "status": "runs",
+   "author": "Terry A. Davis",
+   "source": "Demo/Graphics/LightTable.HC",
+   "original": "Demo/Graphics/LightTable.HC",
+   "identical_to_iso": true,
+   "files": [
+    "Demo/Graphics/LightTable.HC"
+   ],
+   "uses": {
+    "Sweep": 3
+   },
+   "sound_files": {
+    "Demo/Graphics/LightTable.HC": {
+     "Sweep": 3
+    }
+   },
+   "sound_categories": [
+    "C"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "example.sound",
+   "title": "Sound",
+   "category": "example",
+   "status": "runs",
+   "author": "TempleOS Mobile contributors",
+   "source": "Home/Examples/Sound.HC",
+   "original": null,
+   "identical_to_iso": null,
+   "files": [
+    "Home/Examples/Sound.HC"
+   ],
+   "uses": {
+    "Snd": 3,
+    "Play": 2
+   },
+   "sound_files": {
+    "Home/Examples/Sound.HC": {
+     "Snd": 3,
+     "Play": 2
+    }
+   },
+   "sound_categories": [
+    "A",
+    "B"
+   ],
+   "declares_sound": true
+  },
+  {
+   "id": "example.catchgame",
+   "title": "CatchGame",
+   "category": "example",
+   "status": "runs",
+   "author": "TempleOS Mobile contributors",
+   "source": "Home/Examples/CatchGame.HC",
+   "original": null,
+   "identical_to_iso": null,
+   "files": [
+    "Home/Examples/CatchGame.HC"
+   ],
+   "uses": {
+    "Snd": 4
+   },
+   "sound_files": {
+    "Home/Examples/CatchGame.HC": {
+     "Snd": 4
+    }
+   },
+   "sound_categories": [
+    "A"
+   ],
+   "declares_sound": true
+  }
+ ]
+}

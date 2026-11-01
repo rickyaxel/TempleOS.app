@@ -1,0 +1,9 @@
+TOSIMG 1
+unit C:/Demo/Lectures/ScrnMemory.HC#0
+fn 703 PlotXY (U0;I64,I64;-)
+fn 704 Main (U0;;-)
+fn 705 $init:C:/Demo/Lectures/ScrnMemory.HC#0 (I64;;-)
+sym f Main 704 (U0;;-)
+sym f PlotXY 703 (U0;I64,I64;-)
+init 705
+unit C:/Demo/Lectures/ScrnMemory.HC#1

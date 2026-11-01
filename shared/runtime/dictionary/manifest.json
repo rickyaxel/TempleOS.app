@@ -1,0 +1,13 @@
+{
+ "sourceVersion": "TempleOS V5.03",
+ "wordSource": "Adam/AutoComplete/ACWords.DATA",
+ "definitionSource": "Adam/AutoComplete/ACDefs.DATA",
+ "wordSHA256": "11b9b9e48333ba16db4af61126d218ae8db4f5373a445e29442c0808f575c7de",
+ "definitionSHA256": "9a3640279135d84068fe1b851073010ac082178b45d08e64f21f4b854346b702",
+ "wordBytes": 1253930,
+ "definitionBytes": 26381073,
+ "packedDefinitionBytes": 10417964,
+ "blocks": 1611,
+ "blockSize": 16384,
+ "encoding": "TODI, LE U32 raw-size/block-size/count, count+1 LE U32 offsets, independently zlib-compressed original blocks"
+}

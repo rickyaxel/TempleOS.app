@@ -1,0 +1,61 @@
+TOSIMG 1
+unit C:/Kernel/KDate.HC#0
+g 17fd38 24
+c 17fd38 2 0
+c 17fd3a 2 1f
+c 17fd3c 2 3b
+c 17fd3e 2 5a
+c 17fd40 2 78
+c 17fd42 2 97
+c 17fd44 2 b5
+c 17fd46 2 d4
+c 17fd48 2 f3
+c 17fd4a 2 111
+c 17fd4c 2 130
+c 17fd4e 2 14e
+fn 703 $init:C:/Kernel/KDate.HC#0 (I64;;-)
+sym g mon_start_days1 17fd38 [12]U16
+init 703
+unit C:/Kernel/KDate.HC#1
+g 17fd60 24
+c 17fd60 2 0
+c 17fd62 2 1f
+c 17fd64 2 3c
+c 17fd66 2 5b
+c 17fd68 2 79
+c 17fd6a 2 98
+c 17fd6c 2 b6
+c 17fd6e 2 d5
+c 17fd70 2 f4
+c 17fd72 2 112
+c 17fd74 2 131
+c 17fd76 2 14f
+fn 704 $init:C:/Kernel/KDate.HC#1 (I64;;-)
+sym g mon_start_days2 17fd60 [12]U16
+init 704
+unit C:/Kernel/KDate.HC#2
+fn 705 YearStartDate (I64;I64;-)
+fn 706 Struct2Date ($CDate;*$CDateStruct;-)
+fn 707 DayOfWeek (I64;I64;-)
+fn 708 Date2Struct (U0;*$CDateStruct,$CDate;-)
+fn 709 FirstDayOfMon (I64;I64;-)
+fn 710 LastDayOfMon (I64;I64;-)
+fn 711 FirstDayOfYear (I64;I64;-)
+fn 712 LastDayOfYear (I64;I64;-)
+fn 713 Bcd2Bin (I64;U64;-)
+fn 714 NowDateTimeStruct (U0;*$CDateStruct;-)
+fn 715 Now ($CDate;;-)
+fn 716 $init:C:/Kernel/KDate.HC#2 (I64;;-)
+sym f Bcd2Bin 713 (I64;U64;-)
+sym f Date2Struct 708 (U0;*$CDateStruct,$CDate;-)
+sym f DayOfWeek 707 (I64;I64;-)
+sym f FirstDayOfMon 709 (I64;I64;-)
+sym f FirstDayOfYear 711 (I64;I64;-)
+sym f LastDayOfMon 710 (I64;I64;-)
+sym f LastDayOfYear 712 (I64;I64;-)
+sym f Now 715 ($CDate;;-)
+sym f NowDateTimeStruct 714 (U0;*$CDateStruct;-)
+sym f Struct2Date 706 ($CDate;*$CDateStruct;-)
+sym f YearStartDate 705 (I64;I64;-)
+init 716
+unit C:/Kernel/KDate.HC#3

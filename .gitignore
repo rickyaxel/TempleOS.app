@@ -1,0 +1,34 @@
+# Reference material is fetched/extracted by tools (see docs/upstream-research.md); not part of the product.
+/reference/
+.DS_Store
+build/
+.gradle/
+local.properties
+*.iml
+.idea/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+.build/
+.swiftpm/
+__pycache__/
+
+# Android upload key (never commit signing material)
+/temple_os_kotlin/keystore.properties
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+*.pepk
+*.p12
+# Signed release binaries (built locally, uploaded to Google Play, never committed)
+*.aab
+*.apk
+*.apks
+
+# Keep local Xcode audit bundles without adding their large binary diagnostics.
+/docs/distribution-audit/evidence/**/*.xcresult/
+
+# Full localization campaigns stay available locally; reports retain selected screenshots.
+/docs/localization-validation/evidence/*.xcresult/
+/docs/localization-validation/evidence/screenshots/

@@ -1,0 +1,25 @@
+TOSIMG 1
+unit C:/Demo/MultiCore/MPAdd.HC#0
+value PERCENT_MAX 200
+value SAMPLE_SIZE 100
+value TEST_MAX 7
+value TEST_MIN 3
+value VAL_MIN 1000
+g 17fd38 8
+s 17fd50 56616c3a252c640a
+s 17fd70 24524544244e3a2531322c642054696d653a2531302e3866244647240a
+s 17fda0 24475245454e2425382e34662525244647240a0a
+s 17fdc8 2533642525
+s 17fde0 3130652564
+fn 703 MPSum (I64;I64;-)
+fn 704 Sum (I64;I64,I64;-)
+fn 705 Test (F64;I64,I64;-)
+fn 706 MPAdd (U0;;-)
+fn 707 $init:C:/Demo/MultiCore/MPAdd.HC#0 (I64;;-)
+sym f MPAdd 706 (U0;;-)
+sym f MPSum 703 (I64;I64;-)
+sym f Sum 704 (I64;I64,I64;-)
+sym f Test 705 (F64;I64,I64;-)
+sym g mp_n 17fd38 I64
+init 707
+unit C:/Demo/MultiCore/MPAdd.HC#1

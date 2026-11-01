@@ -1,0 +1,11 @@
+TOSIMG 1
+unit C:/Demo/Graphics/ScrnCapture.HC#0
+s 17fd38 43617074757265207363726e2e2e2e0a
+s 17fd60 7e2f44656d6f5363726e53686f74
+s 17fd80 56696577206361707475726564207363726e2e2e2e0a
+s 17fd60 7e2f44656d6f5363726e53686f74
+fn 703 Main (U0;;-)
+fn 704 $init:C:/Demo/Graphics/ScrnCapture.HC#0 (I64;;-)
+sym f Main 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/ScrnCapture.HC#1

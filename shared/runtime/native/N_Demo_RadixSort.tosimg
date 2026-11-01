@@ -1,0 +1,30 @@
+TOSIMG 1
+unit C:/Demo/RadixSort.HC#0
+value N 16
+value RADIX 256
+class Lst 16 0 - -
+m next 0 *$Lst
+m a 8 *U8
+g 17fd38 16
+g 17fd58 256
+g 17fe68 2048
+s 180678 24524544240a0a496e707574244647240a
+s 1806a0 25643a25640a
+s 1806b8 24524544240a0a4f7574707574244647240a
+s 1806a0 25643a25640a
+fn 703 DumpIn (U0;;-)
+fn 704 DumpOut (U0;;-)
+fn 705 Init (U0;;-)
+fn 706 Sort (U0;;-)
+fn 707 RadixSort (U0;;-)
+fn 708 $init:C:/Demo/RadixSort.HC#0 (I64;;-)
+sym f DumpIn 703 (U0;;-)
+sym f DumpOut 704 (U0;;-)
+sym f Init 705 (U0;;-)
+sym f RadixSort 707 (U0;;-)
+sym f Sort 706 (U0;;-)
+sym g a 17fd38 [16]U8
+sym g l 17fd58 [16]$Lst
+sym g r 17fe68 [256]*$Lst
+init 708
+unit C:/Demo/RadixSort.HC#1

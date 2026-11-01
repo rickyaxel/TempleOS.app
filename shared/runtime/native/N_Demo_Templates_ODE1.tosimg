@@ -1,0 +1,48 @@
+TOSIMG 1
+unit C:/Demo/Templates/ODE1.HC#0
+class MyMass 112 0 - CMass
+m next 0 *$CMass
+m last 8 *$CMass
+m state 16 *$COrder2D3
+m DstateDt 24 *$COrder2D3
+m start 32 U0
+m flags 32 U32
+m num 36 U32
+m mass 40 F64
+m drag_profile_factor 48 F64
+m saved_state 56 U0
+m x 56 F64
+m y 64 F64
+m z 72 F64
+m DxDt 80 F64
+m DyDt 88 F64
+m DzDt 96 F64
+m end 104 U0
+m radius 104 F64
+class MySpring 80 0 - CSpring
+m next 0 *$CSpring
+m last 8 *$CSpring
+m end1 16 *$CMass
+m end2 24 *$CMass
+m f 32 F64
+m displacement 40 F64
+m start 48 U0
+m flags 48 U32
+m num 52 U32
+m end1_num 56 U32
+m end2_num 60 U32
+m const 64 F64
+m rest_len 72 F64
+m end 80 U0
+g 17fd38 8
+c 17fd38 8 0
+fn 703 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 704 Init (U0;;-)
+fn 705 CleanUp (U0;;-)
+fn 706 $init:C:/Demo/Templates/ODE1.HC#0 (I64;;-)
+sym f CleanUp 705 (U0;;-)
+sym f Init 704 (U0;;-)
+sym f MyDerivative 703 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym g ode 17fd38 *$CMathODE
+init 706
+unit C:/Demo/Templates/ODE1.HC#1

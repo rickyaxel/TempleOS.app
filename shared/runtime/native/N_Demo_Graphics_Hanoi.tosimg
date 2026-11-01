@@ -1,0 +1,36 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Hanoi.HC#0
+value DISKS_NUM 6
+value DISK_HEIGHT 7
+value DISK_UNIT_WIDTH 5
+value PEDESTAL_HEIGHT 20
+g 17fd38 24
+g 17fd60 48
+g 17fda0 48
+g 17fde0 48
+s 17fe20 24434d2b42592c302c30244469736b3a25642066726f6d20256420746f2025640a
+fn 703 OtherPole (I64;I64,I64;-)
+fn 704 TopDisk (I64;I64;-)
+fn 705 PosInStk (I64;I64,I64;-)
+fn 706 SetDisksRestXY (U0;;-)
+fn 707 DrawIt (U0;*$CTask,*$CDC;-)
+fn 708 MySleep (U0;;-)
+fn 709 MoveDisks (U0;I64,I64,I64;-)
+fn 710 Init (U0;;-)
+fn 711 Hanoi (U0;;-)
+fn 712 $init:C:/Demo/Graphics/Hanoi.HC#0 (I64;;-)
+sym f DrawIt 707 (U0;*$CTask,*$CDC;-)
+sym f Hanoi 711 (U0;;-)
+sym f Init 710 (U0;;-)
+sym f MoveDisks 709 (U0;I64,I64,I64;-)
+sym f MySleep 708 (U0;;-)
+sym f OtherPole 703 (I64;I64,I64;-)
+sym f PosInStk 705 (I64;I64,I64;-)
+sym f SetDisksRestXY 706 (U0;;-)
+sym f TopDisk 704 (I64;I64;-)
+sym g disks_pole 17fde0 [6]I64
+sym g disks_x 17fd60 [6]I64
+sym g disks_y 17fda0 [6]I64
+sym g poles_x 17fd38 [3]I64
+init 712
+unit C:/Demo/Graphics/Hanoi.HC#1

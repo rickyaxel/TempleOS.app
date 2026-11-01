@@ -1,0 +1,27 @@
+TOSIMG 1
+unit C:/Apps/Psalmody/PsalmodyCtrls.HC#0
+value TEMPO_BORDER 2
+value TEMPO_RANGE 80
+value TEMPO_SPACING 15
+class TempoState 16 0 - -
+m tempo 0 I64
+m stacatto 8 I64
+g 17fd38 16
+s 131e0 2564
+s 131e0 2564
+s 17fd58 54656d706f
+s 17fd70 537461636174746f
+fn 703 DrawTempoCtrl (U0;*$CDC,*$CCtrl;-)
+fn 704 UpdateDerivedTempoCtrl (U0;*$CCtrl;-)
+fn 705 LeftClickTempo (U0;*$CCtrl,I64,I64,Bool;-)
+fn 706 TempoNew (*$CCtrl;;-)
+fn 707 TempoDel (U0;*$CCtrl;-)
+fn 708 $init:C:/Apps/Psalmody/PsalmodyCtrls.HC#0 (I64;;-)
+sym f DrawTempoCtrl 703 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickTempo 705 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f TempoDel 707 (U0;*$CCtrl;-)
+sym f TempoNew 706 (*$CCtrl;;-)
+sym f UpdateDerivedTempoCtrl 704 (U0;*$CCtrl;-)
+sym g tempo_state 17fd38 $TempoState
+init 708
+unit C:/Apps/Psalmody/PsalmodyCtrls.HC#1

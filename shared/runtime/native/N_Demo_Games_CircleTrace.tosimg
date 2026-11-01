@@ -1,0 +1,52 @@
+TOSIMG 1
+unit C:/Demo/Games/CircleTrace.HC#0
+s 17fd38 46363420626573745f73636f72653d3939393b0a
+s 17fd60 54656d706c654f532f436972636c655472616365
+fn 703 $init:C:/Demo/Games/CircleTrace.HC#0 (I64;;-)
+init 703
+unit C:/Demo/Games/CircleTrace.HC#1
+s 17fd60 54656d706c654f532f436972636c655472616365
+fn 704 $init:C:/Demo/Games/CircleTrace.HC#1 (I64;;-)
+init 704
+unit C:/Home/Registry.HC#0
+registry TempleOS/CircleTrace
+g 17fd88 8
+c 17fd88 8 408f380000000000
+fn 705 $init:C:/Home/Registry.HC#0 (I64;;-)
+sym g best_score 17fd88 F64
+init 705
+unit C:/Home/Registry.HC#1
+unit C:/Demo/Games/CircleTrace.HC#2
+value CIRCLE_RADIUS 100
+g 17fda0 8
+g 17fdb8 8
+g 17fdd0 8
+g 17fde8 8
+g 17fe00 8
+g 17fe18 8
+s 17fe30 3568454443344135524344454352
+s 17fe50 4572726f723a25362e33661f1f54696d653a25362e33661f1f53636f72653a25362e33661f1f426573743a25382e3366
+s 17fe98 536f6e67
+s 17feb0 46363420626573745f73636f72653d25352e34663b0a
+s 17fd60 54656d706c654f532f436972636c655472616365
+c 17fdd0 8 0
+c 17fde8 8 0
+c 17fe00 8 0
+c 17fe18 8 408f380000000000
+fn 706 SongTask (U0;I64;-)
+fn 707 DrawIt (U0;*$CTask,*$CDC;-)
+fn 708 CTPlot (Bool;*$CDC,I64,I64,I64;-)
+fn 709 CircleTrace (U0;;-)
+fn 710 $init:C:/Demo/Games/CircleTrace.HC#2 (I64;;-)
+sym f CTPlot 708 (Bool;*$CDC,I64,I64,I64;-)
+sym f CircleTrace 709 (U0;;-)
+sym f DrawIt 707 (U0;*$CTask,*$CDC;-)
+sym f SongTask 706 (U0;I64;-)
+sym g avg_error 17fdd0 F64
+sym g cx 17fda0 I64
+sym g cy 17fdb8 I64
+sym g elapsed_time 17fde8 F64
+sym g score 17fe18 F64
+sym g total_error 17fe00 F64
+init 710
+unit C:/Demo/Games/CircleTrace.HC#3

@@ -1,0 +1,20 @@
+TOSIMG 1
+unit C:/Demo/Graphics/PredatorPrey.HC#0
+value OX 10
+class State 32 0 - -
+m wabbits 0 F64
+m hawks 8 F64
+m d_wabbits 16 F64
+m d_hawks 24 F64
+g 17fd38 8
+s 17fd50 546869732077696c6c20706c6f74206d756c7469706c65207072656461746f722d707265790a7472616a6563746f726965732e1f1f4974207265737461727473206d616e792074696d65730a7769746820646966666572656e742c2072616e646f6d2c20696e697469616c20706f70756c6174696f6e732e0a
+fn 703 Steps (U0;*$State;-)
+fn 704 PlotTrajectory (U0;*$CTask;-)
+fn 705 PredatorPrey (U0;;-)
+fn 706 $init:C:/Demo/Graphics/PredatorPrey.HC#0 (I64;;-)
+sym f PlotTrajectory 704 (U0;*$CTask;-)
+sym f PredatorPrey 705 (U0;;-)
+sym f Steps 703 (U0;*$State;-)
+sym g mp_not_done_flags 17fd38 I64
+init 706
+unit C:/Demo/Graphics/PredatorPrey.HC#1

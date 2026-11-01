@@ -1,0 +1,23 @@
+TOSIMG 1
+unit C:/Demo/Games/Whap.HC#0
+value BALLS_NUM 7
+value BALL_RADIUS 5
+value BASE_SIZE 10
+value SPRINGS_NUM 3
+g 17fd38 728
+g 180020 240
+g 180120 8
+s 180138 50726f7465637420796f757220626173652e
+s 180160 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 705 Whap (U0;;-)
+fn 706 $init:C:/Demo/Games/Whap.HC#0 (I64;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym f MyDerivative 704 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym f Whap 705 (U0;;-)
+sym g balls 17fd38 [7]$CMass
+sym g collision_t 180120 F64
+sym g springs 180020 [3]$CSpring
+init 706
+unit C:/Demo/Games/Whap.HC#1

@@ -1,0 +1,178 @@
+TOSIMG 1
+unit C:/Apps/Span/Load.HC#0
+s 17fd38 433a2f417070732f5370616e
+fn 703 $init:C:/Apps/Span/Load.HC#0 (I64;;-)
+init 703
+unit C:/Apps/Span/Load.HC#1
+class MyMass 132 0 - CMass
+m next 0 *$CMass
+m last 8 *$CMass
+m state 16 *$COrder2D3
+m DstateDt 24 *$COrder2D3
+m start 32 U0
+m flags 32 U32
+m num 36 U32
+m mass 40 F64
+m drag_profile_factor 48 F64
+m saved_state 56 U0
+m x 56 F64
+m y 64 F64
+m z 72 F64
+m DxDt 80 F64
+m DyDt 88 F64
+m DzDt 96 F64
+m end 104 U0
+m radius 104 F64
+m cost 112 F64
+m load_t 120 F64
+m color 128 $CColorROPU32
+class MySpring 144 0 - CSpring
+m next 0 *$CSpring
+m last 8 *$CSpring
+m end1 16 *$CMass
+m end2 24 *$CMass
+m f 32 F64
+m displacement 40 F64
+m start 48 U0
+m flags 48 U32
+m num 52 U32
+m end1_num 56 U32
+m end2_num 60 U32
+m const 64 F64
+m rest_len 72 F64
+m end 80 U0
+m compression_strength 80 F64
+m tensile_strength 88 F64
+m cost 96 F64
+m base_compression_strength 104 F64
+m base_tensile_strength 112 F64
+m base_const 120 F64
+m base_cost 128 F64
+m color 136 $CColorROPU32
+m thick 140 I32
+class SpanHeader 16 0 - -
+m version 0 F64
+m num_masses 8 I32
+m num_springs 12 I32
+g 17fd58 8
+g 17fd70 8
+g 17fd88 40
+g 17fdc0 40
+g 17fdf8 8
+c 17fd70 8 0
+c 17fdf8 4 4
+c 17fdfc 4 2
+fn 704 $init:C:/Apps/Span/Load.HC#1 (I64;;-)
+sym g cursor_mass 17fd58 *$MyMass
+sym g mode_bttn 17fdc0 $CCtrlBttnState
+sym g ode 17fd70 *$CMathODE
+sym g run_bttn 17fd88 $CCtrlBttnState
+sym g run_colors 17fdf8 [2]$CColorROPU32
+init 704
+unit C:/Apps/Span/Load.HC#2
+value MD_CONCRETE 1
+value MD_DELETE 5
+value MD_MASS 0
+value MD_MODES_NUM 6
+value MD_MOVE 4
+value MD_STEEL 2
+value MD_WIRE 3
+g 17fe10 24
+c 17fe10 4 6
+c 17fe14 4 7
+c 17fe18 4 8
+c 17fe1c 4 4
+c 17fe20 4 5
+c 17fe24 4 4
+fn 705 $init:C:/Apps/Span/Load.HC#2 (I64;;-)
+sym g mode_colors 17fe10 [6]$CColorROPU32
+init 705
+unit C:/Apps/Span/Load.HC#3
+s 17fe38 4d61737300436f6e637265746500537465656c0057697265004d6f76650044656c65746500
+s 17fe70 53545f5350414e5f4d4f444553
+fn 706 $init:C:/Apps/Span/Load.HC#3 (I64;;-)
+init 706
+unit C:/Apps/Span/Load.HC#4
+value LOAD_WEIGHTS 8
+value RIVER_BANK_COLS 5
+value SKY_LINES 40
+class SpanAnimateStruct 24 0 - -
+m saved_ode 0 *U8
+m elapsed_t 8 F64
+m start_wall_t 16 F64
+g 17fe90 24
+s 17feb8 2442472c4c544359414e2425682a63
+s 17fed8 2442472c42524f574e2425682a63
+s 17feb8 2442472c4c544359414e2425682a63
+s 17fef8 2442472c42524f574e2425682a630a
+s 17fed8 2442472c42524f574e2425682a63
+s 17ff18 2442472c424c55452425682a63
+s 17fed8 2442472c42524f574e2425682a63
+s 17ff18 2442472c424c55452425682a63
+s 17fef8 2442472c42524f574e2425682a630a
+s 17ff38 7e2f5370616e
+s 17ff50 7e2f5370616e2f47616d652e44415441
+s 17ff38 7e2f5370616e
+s 17ff38 7e2f5370616e
+s 17ff78 436f73743a2531322e322c66
+s 17ff98 54696d653a2531322e3266
+s 17ffb8 35712e456544714544344735446845
+s 17ffb8 35712e456544714544344735446845
+s 17ffd8 35712e46654546457146344735456846
+s 17ffd8 35712e46654546457146344735456846
+s 180000 536f6e67
+s 180018 53746f707065640052756e6e696e6700
+s 17fe70 53545f5350414e5f4d4f444553
+s 180040 46696c65207b20204e6577282c43485f4354524c4e293b20204f70656e282c43485f4354524c4f293b2020536176654173282c43485f4354524c41293b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b202052756e53746f70282c43485f5350414345293b20204d617373282c276d27293b2020436f6e6372657465282c276327293b2020537465656c282c277327293b202057697265282c277727293b20204d6f7665282c277627293b202044656c657465282c276427293b7d
+s 180138 416e696d617465
+s 180150 4275696c6420612062726964676520746f20686f6c642d7570207468650a726564206d61737365732e1f1f5465737420796f75722064657369676e0a6279207072657373696e672072756e2f73746f702e0a0a546865206c6f7765737420636f73742062726964676520746861740a7374617973207374616e64696e672077696e732e0a0a466f72206120766172696174696f6e2c2074727920776974686f75740a7573696e67207468652063656e746572206261736520706f696e742e0a0a5573650a0924475245454e24276d27244647246173730a0924475245454e24276327244647246f6e63726574650a0924475245454e24277327244647247465656c0a0924475245454e24277727244647246972650a0a746f2073656c206d6174657269616c732e0a
+fn 709 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 710 SpanBridge1Init (U0;*$CMathODE;-)
+fn 711 AdjustLoads (U0;*$CMathODE;-)
+fn 712 SpanNew (*$CMathODE;;-)
+fn 713 SpanDel (U0;*$CMathODE;-)
+fn 714 SpanSave (*U8;*$CMathODE,*I64;-)
+fn 715 SpanWrite (Bool;*$CMathODE;-)
+fn 716 SpanLoad (U0;*$CMathODE,*U8;-)
+fn 717 SpanRead (*U8;;-)
+fn 708 SpanTime (F64;;-)
+fn 718 Cost (F64;*$CMathODE;-)
+fn 719 DrawIt (U0;*$CTask,*$CDC;-)
+fn 707 PlaceMass (*$MyMass;I64,I64;-)
+fn 720 NullSpring (U0;*$MySpring,F64;-)
+fn 721 MoveMass (U0;*$MyMass,I64,I64;-)
+fn 722 DelSpring (U0;*$MySpring;-)
+fn 723 DelMass (U0;*$MyMass;-)
+fn 724 DrawSpring (U0;*$CDC,*$MyMass,I64,I64;-)
+fn 725 PlaceSpring (U0;*$MyMass,*$MyMass;-)
+fn 726 AnimateTask (U0;*$SpanAnimateStruct;-)
+fn 727 Init (U0;*$SpanAnimateStruct;-)
+fn 728 SongTask (U0;I64;-)
+fn 729 Span (U0;;-)
+fn 730 $init:C:/Apps/Span/Load.HC#4 (I64;;-)
+sym f AdjustLoads 711 (U0;*$CMathODE;-)
+sym f AnimateTask 726 (U0;*$SpanAnimateStruct;-)
+sym f Cost 718 (F64;*$CMathODE;-)
+sym f DelMass 723 (U0;*$MyMass;-)
+sym f DelSpring 722 (U0;*$MySpring;-)
+sym f DrawIt 719 (U0;*$CTask,*$CDC;-)
+sym f DrawSpring 724 (U0;*$CDC,*$MyMass,I64,I64;-)
+sym f Init 727 (U0;*$SpanAnimateStruct;-)
+sym f MoveMass 721 (U0;*$MyMass,I64,I64;-)
+sym f MyDerivative 709 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym f NullSpring 720 (U0;*$MySpring,F64;-)
+sym f PlaceMass 707 (*$MyMass;I64,I64;-)
+sym f PlaceSpring 725 (U0;*$MyMass,*$MyMass;-)
+sym f SongTask 728 (U0;I64;-)
+sym f Span 729 (U0;;-)
+sym f SpanBridge1Init 710 (U0;*$CMathODE;-)
+sym f SpanDel 713 (U0;*$CMathODE;-)
+sym f SpanLoad 716 (U0;*$CMathODE,*U8;-)
+sym f SpanNew 712 (*$CMathODE;;-)
+sym f SpanRead 717 (*U8;;-)
+sym f SpanSave 714 (*U8;*$CMathODE,*I64;-)
+sym f SpanTime 708 (F64;;-)
+sym f SpanWrite 715 (Bool;*$CMathODE;-)
+sym g a 17fe90 $SpanAnimateStruct
+init 730
+unit C:/Apps/Span/Load.HC#5

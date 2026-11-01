@@ -1,0 +1,10 @@
+TOSIMG 1
+unit C:/Demo/Graphics/WinZBuf.HC#0
+s 17fd38 4d6f7665207468652077696e646f77732061726f756e6420616e642077617463682e
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 ScrollBars (U0;;-)
+fn 705 $init:C:/Demo/Graphics/WinZBuf.HC#0 (I64;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym f ScrollBars 704 (U0;;-)
+init 705
+unit C:/Demo/Graphics/WinZBuf.HC#1

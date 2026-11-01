@@ -1,0 +1,27 @@
+TOSIMG 1
+unit C:/Home/Examples/Sound.HC#0
+s 17fd38 5363616c65207769746820536e6428293a0a
+fn 703 $init:C:/Home/Examples/Sound.HC#0 (I64;;-)
+init 703
+unit C:/Home/Examples/Sound.HC#1
+g 17fd60 8
+s 17fd78 256420
+fn 704 $init:C:/Home/Examples/Sound.HC#1 (I64;;-)
+sym g ona 17fd60 I64
+init 704
+unit C:/Home/Examples/Sound.HC#2
+fn 705 $init:C:/Home/Examples/Sound.HC#2 (I64;;-)
+init 705
+unit C:/Home/Examples/Sound.HC#3
+s 17fd90 0a412074756e65207769746820506c617928293a0a
+fn 706 $init:C:/Home/Examples/Sound.HC#3 (I64;;-)
+init 706
+unit C:/Home/Examples/Sound.HC#4
+s 17fdb8 3465434445464741423543
+fn 707 $init:C:/Home/Examples/Sound.HC#4 (I64;;-)
+init 707
+unit C:/Home/Examples/Sound.HC#5
+s 17fdd8 446f6e652e0a
+fn 708 $init:C:/Home/Examples/Sound.HC#5 (I64;;-)
+init 708
+unit C:/Home/Examples/Sound.HC#6

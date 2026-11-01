@@ -1,0 +1,8 @@
+TOSIMG 1
+unit C:/Demo/Graphics/LowPassFilter.HC#0
+value STEP_SIZE 400
+fn 703 LowPassFilterDemo (U0;;-)
+fn 704 $init:C:/Demo/Graphics/LowPassFilter.HC#0 (I64;;-)
+sym f LowPassFilterDemo 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/LowPassFilter.HC#1

@@ -1,0 +1,156 @@
+{
+ "program": "C:/Home/Examples/Sound.HC",
+ "derivation": "tools/audio/templeos_snd.py from Kernel/KMisc.HC Snd/Ona2Freq/Sleep and Adam/ASnd.HC Play (TempleOS V5.03); confirmed jiffy for jiffy on the original in the reference VM (vm-sound-example)",
+ "jiffy_ns": 999009.3715795244,
+ "tolerance": {
+  "t_ms": 3,
+  "hz_rel": 0.003
+ },
+ "events": [
+  {
+   "jiffy": 0,
+   "t_ms": 0.0,
+   "ona": 60,
+   "hz": 437.063
+  },
+  {
+   "jiffy": 150,
+   "t_ms": 149.8514,
+   "ona": 62,
+   "hz": 490.6176
+  },
+  {
+   "jiffy": 300,
+   "t_ms": 299.7028,
+   "ona": 64,
+   "hz": 550.6147
+  },
+  {
+   "jiffy": 450,
+   "t_ms": 449.5542,
+   "ona": 66,
+   "hz": 618.229
+  },
+  {
+   "jiffy": 600,
+   "t_ms": 599.4056,
+   "ona": 68,
+   "hz": 693.7105
+  },
+  {
+   "jiffy": 750,
+   "t_ms": 749.257,
+   "ona": 70,
+   "hz": 778.8394
+  },
+  {
+   "jiffy": 900,
+   "t_ms": 899.1084,
+   "ona": 72,
+   "hz": 874.126
+  },
+  {
+   "jiffy": 1050,
+   "t_ms": 1048.9598,
+   "ona": 0,
+   "hz": 0.0
+  },
+  {
+   "jiffy": 1050,
+   "t_ms": 1048.9598,
+   "ona": 51,
+   "hz": 259.8393
+  },
+  {
+   "jiffy": 1230,
+   "t_ms": 1228.7815,
+   "ona": 0,
+   "hz": 0.0
+  },
+  {
+   "jiffy": 1250,
+   "t_ms": 1248.7617,
+   "ona": 53,
+   "hz": 291.6602
+  },
+  {
+   "jiffy": 1430,
+   "t_ms": 1428.5834,
+   "ona": 0,
+   "hz": 0.0
+  },
+  {
+   "jiffy": 1450,
+   "t_ms": 1448.5636,
+   "ona": 55,
+   "hz": 327.4374
+  },
+  {
+   "jiffy": 1630,
+   "t_ms": 1628.3853,
+   "ona": 0,
+   "hz": 0.0
+  },
+  {
+   "jiffy": 1650,
+   "t_ms": 1648.3655,
+   "ona": 56,
+   "hz": 346.8552
+  },
+  {
+   "jiffy": 1830,
+   "t_ms": 1828.1871,
+   "ona": 0,
+   "hz": 0.0
+  },
+  {
+   "jiffy": 1850,
+   "t_ms": 1848.1673,
+   "ona": 58,
+   "hz": 389.2927
+  },
+  {
+   "jiffy": 2030,
+   "t_ms": 2027.989,
+   "ona": 0,
+   "hz": 0.0
+  },
+  {
+   "jiffy": 2050,
+   "t_ms": 2047.9692,
+   "ona": 60,
+   "hz": 437.063
+  },
+  {
+   "jiffy": 2230,
+   "t_ms": 2227.7909,
+   "ona": 0,
+   "hz": 0.0
+  },
+  {
+   "jiffy": 2250,
+   "t_ms": 2247.7711,
+   "ona": 62,
+   "hz": 490.6176
+  },
+  {
+   "jiffy": 2430,
+   "t_ms": 2427.5928,
+   "ona": 0,
+   "hz": 0.0
+  },
+  {
+   "jiffy": 2450,
+   "t_ms": 2447.573,
+   "ona": 63,
+   "hz": 519.6786
+  },
+  {
+   "jiffy": 2630,
+   "t_ms": 2627.3946,
+   "ona": 0,
+   "hz": 0.0
+  }
+ ],
+ "end_jiffy": 2650
+}

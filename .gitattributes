@@ -1,0 +1,14 @@
+# TempleOS DolDoc/HolyC files contain binary sprite records after a NUL byte:
+# never let git normalize line endings in them.
+*.HC binary
+*.HH binary
+*.DD binary
+*.TXT binary
+*.GR binary
+*.BIN binary
+*.bin binary
+shared/bundled-fs/** binary
+# Generated image records retain a separator even when their hex string is empty.
+*.tosimg -whitespace
+# Audit captures retain the tools' original bytes, including diagnostic spacing.
+docs/**/evidence/** -text -whitespace

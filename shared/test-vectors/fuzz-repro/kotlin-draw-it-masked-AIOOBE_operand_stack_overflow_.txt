@@ -1,0 +1,17 @@
+runtime: kotlin
+target: draw-it
+seed: 2132958540388863
+signature: masked-AIOOBE(operand stack overflow)
+minimized input (142 bytes): U8 *b0=MAlloc(256),*b1=MAlloc(4096),*s0="hello",x,i;
+U0 DrawIt(CTask *tasdc){
+  x=Spawn(0x7,2,0x0,0x1b8);
+}
+Fs->draw_it=&DrawIt; Sleep(200);ZZ
+
+console tail: 
+Exception in draw_it: Unhandled exception 'BadCall' in DrawIt (C:/Home/Fuzz.HC:5): call of undefined function 'DocClear'
+Except::
+
+Unhandled exception 'StkOver' in PutExcept (::/Prelude.HC:107): operand stack overflow
+FUZZDONE
+

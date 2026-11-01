@@ -1,0 +1,36 @@
+TOSIMG 1
+unit C:/Apps/GrModels/BallGen.HC#0
+value TRIS_NUM 1024
+value VERTICES_NUM 1024
+class Ball 28680 0 - -
+m vertex_cnt 0 I32
+m tri_cnt 4 I32
+m v 8 [1024]$CD3I32
+m t 12296 [1024]$CMeshTri
+class BallDefineStruct 24 0 - -
+m radius 0 F64 2444412d54524d2c413d225261646975731f1f1f1f1f1f1f1f1f3a25382e336622240a
+m n_longitude 8 I64 2444412d54524d2c413d224c6f6e6769747564652046616365733a25356422240a
+m n_lattitude 16 I64 2444412d54524d2c413d224c61747469747564652052696e67733a25356422240a
+g 17fd38 8
+s 17fd50 42616c6c446566696e65537472756374
+s 17fd78 25683763
+s 17fd90 09092453502c223c313e222c42493d256424
+s 17fd78 25683763
+s 17fdb8 56657274696365733a25640a
+s 17fdd8 446f20616e6f74686572
+fn 703 BDInit (U0;*$BallDefineStruct;-)
+fn 704 BDCorrect (U0;*$BallDefineStruct;-)
+fn 705 AddVertex (I64;*$BallDefineStruct,I64,I64,I64;-)
+fn 706 AddTri (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
+fn 707 Ball2CSprite (*U8;;-)
+fn 708 BallGen (*U8;;-)
+fn 709 $init:C:/Apps/GrModels/BallGen.HC#0 (I64;;-)
+sym f AddTri 706 (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
+sym f AddVertex 705 (I64;*$BallDefineStruct,I64,I64,I64;-)
+sym f BDCorrect 704 (U0;*$BallDefineStruct;-)
+sym f BDInit 703 (U0;*$BallDefineStruct;-)
+sym f Ball2CSprite 707 (*U8;;-)
+sym f BallGen 708 (*U8;;-)
+sym g b 17fd38 *$Ball
+init 709
+unit C:/Apps/GrModels/BallGen.HC#1

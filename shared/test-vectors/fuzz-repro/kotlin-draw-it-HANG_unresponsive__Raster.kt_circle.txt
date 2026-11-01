@@ -1,0 +1,29 @@
+runtime: kotlin
+target: draw-it
+seed: 2132958540388864
+signature: HANG(unresponsive)@Raster.kt:circle
+minimized input (448 bytes): I64 Cmp(I64 a,I64 b){return a-b;}
+U8 *b0=MAlloc(256),*b1=MAlloc(4096),*s0="hello",*p; I64 *q,x,i; F64 d;
+U0 DrawIt(CTask *task,CDC *dc){
+  x=Copy((b1+4096-5),"%q$FG,99$");
+  x=Sinh((0x7FF8000000000000)(F64));
+  x=Arg(0x186(F64),1.5);
+  x=Circle(b1+1493,0x2d,0x2,0x3f,0x1003,&Cmp,0x7ffffffe,(0x7FF8000000000000)(F64),(b1+4096-4));
+  x=Str2I64(b0+18,0x40000001);
+  x=AutoComplete(0x18d59d0b0e4e4737);
+}
+Fs->draw_it=&DrawIt; Sleep(200); "FUZZDONE\n";
+
+
+  at io.github.templeosmobile.core.kernel.Raster.circle(Raster.kt:1015)
+  at io.github.templeosmobile.core.kernel.Natives.graphics$lambda$170(Natives.kt:725)
+  at io.github.templeosmobile.core.kernel.Natives$reg$1.call(Natives.kt:30)
+  at io.github.templeosmobile.core.holyc.Vm.exec(Vm.kt:480)
+  at io.github.templeosmobile.core.holyc.Vm.run(Vm.kt:241)
+  at io.github.templeosmobile.core.holyc.Vm.callFunction(Vm.kt:145)
+  at io.github.templeosmobile.core.kernel.Kernel.compose(Kernel.kt:1247)
+  at io.github.templeosmobile.core.kernel.Kernel.frame(Kernel.kt:1189)
+  at io.github.templeosmobile.core.kernel.Kernel.step(Kernel.kt:901)
+  at io.github.templeosmobile.core.FuzzTest.runProgramCase$lambda$18(FuzzTest.kt:201)
+  at io.github.templeosmobile.core.FuzzTest.isolated$lambda$1(FuzzTest.kt:62)
+  at java.base/java.lang.Thread.run(Thread.java:1583)

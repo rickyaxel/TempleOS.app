@@ -1,0 +1,30 @@
+I64 Cmp(I64 a,I64 b){return a-b;}
+U8 *b0=MAlloc(256),*b1=MAlloc(4096),*s0="hello world",*p; I64 *q,x,i; F64 d;
+for(i=0;i<256;i++) b0[i]=(i*30+12)&255;
+for(i=0;i<4096;i++) b1[i]=(i*46)&127;
+try{x=RandI16();}catch{Fs->catch_except=TRUE;}
+try{x=Ona2Freq(0x3e);}catch{Fs->catch_except=TRUE;}
+try{x=GrPeek(b1+316,0x267,0x3ef);}catch{Fs->catch_except=TRUE;}
+try{x=Sinh(-0.0);}catch{Fs->catch_except=TRUE;}
+try{x=Floor(1e-320);}catch{Fs->catch_except=TRUE;}
+try{x=Type("ab$FG,99$%h-1c%Q",(-18));}catch{Fs->catch_except=TRUE;}
+try{x=Log10(-0.0);}catch{Fs->catch_except=TRUE;}
+try{d=0x8000(F64); x=d; x=ToI64(d*0x1d39b0f0717a5c25);}catch{Fs->catch_except=TRUE;}
+try{x=GrPlot1(gr.dc,0x3a6,0x2e6);}catch{Fs->catch_except=TRUE;}
+try{x=RegCnt(0xffff);}catch{Fs->catch_except=TRUE;}
+try{x=Floor(0x40(F64));}catch{Fs->catch_except=TRUE;}
+try{x=GrFillTri0(b1,s0,b1,b0+282);}catch{Fs->catch_except=TRUE;}
+try{x=StrLen(b0+5);}catch{Fs->catch_except=TRUE;}
+try{x=StrCmp(NULL,"*");}catch{Fs->catch_except=TRUE;}
+try{x=FileNameAbs(b1,(-16));}catch{Fs->catch_except=TRUE;}
+try{x=GrUsed();}catch{Fs->catch_except=TRUE;}
+try{x=Trunc(1e-320);}catch{Fs->catch_except=TRUE;}
+try{x=Seed((-2147483649),b0+4);}catch{Fs->catch_except=TRUE;}
+try{Print("$FG,99$",0x40000000,NULL,0x7ffffffffffffffe);}catch{Fs->catch_except=TRUE;}
+try{x=0x1fe%0xffff; x=0x2cbda1406ad314d6/(-2147483649);}catch{Fs->catch_except=TRUE;}
+try{x=Str2I64("ab%s",0x20000000,Fs);}catch{Fs->catch_except=TRUE;}
+try{x=Line(b0+62,0x295,0x62,0x221,0x21b,0x2fd,0x4ae,0x458,0x2fb,0x373);}catch{Fs->catch_except=TRUE;}
+try{x=BFieldExtU32(NULL,0x8000,0x1f);}catch{Fs->catch_except=TRUE;}
+try{x=QSortI64(b1+4053,0x0,(-3579849515588543891));}catch{Fs->catch_except=TRUE;}
+try{x=FramePtrAdd(b0,(-4097),0x3);}catch{Fs->catch_except=TRUE;}
+"FUZZDONE\n";

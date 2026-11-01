@@ -1,0 +1,145 @@
+{
+  "scope": "Mobile-authored Paint wrapper only, NOT original sprite editor or four-engine parity",
+  "width": 320,
+  "height": 240,
+  "steps": [
+    {
+      "op": "color",
+      "value": "Red"
+    },
+    {
+      "op": "pointer",
+      "action": "down",
+      "x": 10,
+      "y": 10
+    },
+    {
+      "op": "pointer",
+      "action": "move",
+      "x": 30,
+      "y": 20
+    },
+    {
+      "op": "pointer",
+      "action": "up",
+      "x": 50,
+      "y": 30
+    },
+    {
+      "op": "tool",
+      "value": "LINE"
+    },
+    {
+      "op": "pointer",
+      "action": "down",
+      "x": 60,
+      "y": 40
+    },
+    {
+      "op": "pointer",
+      "action": "move",
+      "x": 80,
+      "y": 90
+    },
+    {
+      "op": "pointer",
+      "action": "cancel",
+      "x": 319,
+      "y": 239
+    },
+    {
+      "op": "pointer",
+      "action": "down",
+      "x": 60,
+      "y": 40
+    },
+    {
+      "op": "pointer",
+      "action": "up",
+      "x": 80,
+      "y": 90
+    },
+    {
+      "op": "tool",
+      "value": "RECT"
+    },
+    {
+      "op": "pointer",
+      "action": "down",
+      "x": 100,
+      "y": 100
+    },
+    {
+      "op": "pointer",
+      "action": "up",
+      "x": 140,
+      "y": 140
+    },
+    {
+      "op": "tool",
+      "value": "FILL"
+    },
+    {
+      "op": "pointer",
+      "action": "down",
+      "x": 110,
+      "y": 110
+    },
+    {
+      "op": "pointer",
+      "action": "up",
+      "x": 110,
+      "y": 110
+    },
+    {
+      "op": "tool",
+      "value": "ERASE"
+    },
+    {
+      "op": "pointer",
+      "action": "down",
+      "x": 50,
+      "y": 30
+    },
+    {
+      "op": "pointer",
+      "action": "move",
+      "x": 40,
+      "y": 25
+    },
+    {
+      "op": "pointer",
+      "action": "up",
+      "x": 30,
+      "y": 20
+    },
+    {
+      "op": "undo"
+    },
+    {
+      "op": "tool",
+      "value": "PEN"
+    },
+    {
+      "op": "pointer",
+      "action": "down",
+      "x": 200,
+      "y": 200
+    },
+    {
+      "op": "release"
+    },
+    {
+      "op": "pointer",
+      "action": "up",
+      "x": 319,
+      "y": 239
+    },
+    {
+      "op": "save"
+    },
+    {
+      "op": "reload"
+    }
+  ]
+}

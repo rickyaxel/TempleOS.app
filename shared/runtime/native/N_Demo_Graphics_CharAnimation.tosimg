@@ -1,0 +1,27 @@
+TOSIMG 1
+unit C:/Demo/Graphics/CharAnimation.HC#0
+g 17fd38 8
+fn 703 $init:C:/Demo/Graphics/CharAnimation.HC#0 (I64;;-)
+sym g old_font 17fd38 *U8
+init 703
+unit C:/Demo/Graphics/CharAnimation.HC#1
+g 17fd50 32
+c 17fd50 8 11aa440011aa44
+c 17fd58 8 22558800225588
+c 17fd60 8 44aa110044aa11
+c 17fd68 8 88552200885522
+fn 704 $init:C:/Demo/Graphics/CharAnimation.HC#1 (I64;;-)
+sym g waves 17fd50 [4]U64
+init 704
+unit C:/Demo/Graphics/CharAnimation.HC#2
+s 17fd80 416e696d617465
+fn 705 AnimateEndCB (U0;;-)
+fn 706 AnimateTask (U0;I64;-)
+fn 707 $init:C:/Demo/Graphics/CharAnimation.HC#2 (I64;;-)
+sym f AnimateEndCB 705 (U0;;-)
+sym f AnimateTask 706 (U0;I64;-)
+init 707
+unit C:/Demo/Graphics/CharAnimation.HC#3
+fn 708 $init:C:/Demo/Graphics/CharAnimation.HC#3 (I64;;-)
+init 708
+unit C:/Demo/Graphics/CharAnimation.HC#4

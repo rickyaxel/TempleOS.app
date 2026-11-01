@@ -1,0 +1,35 @@
+TOSIMG 1
+unit C:/Adam/Gr/GrComposites.HC#0
+s 132c0 2573
+s 132c0 2573
+s 132c0 2573
+fn 703 GrFillPoly3 (I64;*$CDC,I64,*$CD3I32;-)
+fn 704 GrRectB (I64;*$CDC,I64,I64,I64,I64;-)
+fn 705 GrRect3 (I64;*$CDC,I64,I64,I64,I64,I64;-)
+fn 706 GrBorder (U0;*$CDC,I64,I64,I64,I64,I64,I64;-)
+fn 707 GrArrow3 (Bool;*$CDC,I64,I64,I64,I64,I64,I64,F64,I64,I64;-)
+fn 708 GrTextBox3 (Bool;*$CDC,I64,I64,I64,*U8,I64;-)
+fn 709 GrTextDiamond3 (Bool;*$CDC,I64,I64,I64,*U8,I64;-)
+fn 710 Gr3Mesh (I64;*$CDC,I64,*$CD3I32,I64,*$CMeshTri;-)
+fn 711 DrawStdMs (U0;*$CDC,I64,I64;-)
+fn 712 $init:C:/Adam/Gr/GrComposites.HC#0 (I64;;-)
+sym f DrawStdMs 711 (U0;*$CDC,I64,I64;-)
+sym f Gr3Mesh 710 (I64;*$CDC,I64,*$CD3I32,I64,*$CMeshTri;-)
+sym f GrArrow3 707 (Bool;*$CDC,I64,I64,I64,I64,I64,I64,F64,I64,I64;-)
+sym f GrBorder 706 (U0;*$CDC,I64,I64,I64,I64,I64,I64;-)
+sym f GrFillPoly3 703 (I64;*$CDC,I64,*$CD3I32;-)
+sym f GrRect3 705 (I64;*$CDC,I64,I64,I64,I64,I64;-)
+sym f GrRectB 704 (I64;*$CDC,I64,I64,I64,I64;-)
+sym f GrTextBox3 708 (Bool;*$CDC,I64,I64,I64,*U8,I64;-)
+sym f GrTextDiamond3 709 (Bool;*$CDC,I64,I64,I64,*U8,I64;-)
+init 712
+unit C:/Adam/Gr/GrComposites.HC#1
+fn 713 DrawWaitMs (U0;*$CDC,I64,I64;-)
+fn 714 GRScrnCaptureRead (Bool;*U8,*$CDC,I64,I64;-)
+fn 715 GRScrnCaptureWrite (I64;*U8,Bool;-)
+fn 716 $init:C:/Adam/Gr/GrComposites.HC#1 (I64;;-)
+sym f DrawWaitMs 713 (U0;*$CDC,I64,I64;-)
+sym f GRScrnCaptureRead 714 (Bool;*U8,*$CDC,I64,I64;-)
+sym f GRScrnCaptureWrite 715 (I64;*U8,Bool;-)
+init 716
+unit C:/Adam/Gr/GrComposites.HC#2

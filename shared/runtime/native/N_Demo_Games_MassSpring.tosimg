@@ -1,0 +1,58 @@
+TOSIMG 1
+unit C:/Demo/Games/MassSpring.HC#0
+class MyMass 112 0 - CMass
+m next 0 *$CMass
+m last 8 *$CMass
+m state 16 *$COrder2D3
+m DstateDt 24 *$COrder2D3
+m start 32 U0
+m flags 32 U32
+m num 36 U32
+m mass 40 F64
+m drag_profile_factor 48 F64
+m saved_state 56 U0
+m x 56 F64
+m y 64 F64
+m z 72 F64
+m DxDt 80 F64
+m DyDt 88 F64
+m DzDt 96 F64
+m end 104 U0
+m radius 104 F64
+class MySpring 80 0 - CSpring
+m next 0 *$CSpring
+m last 8 *$CSpring
+m end1 16 *$CMass
+m end2 24 *$CMass
+m f 32 F64
+m displacement 40 F64
+m start 48 U0
+m flags 48 U32
+m num 52 U32
+m end1_num 56 U32
+m end2_num 60 U32
+m const 64 F64
+m rest_len 72 F64
+m end 80 U0
+g 17fd38 8
+s 17fd50 4c6566742d436c69636b20746f20706c616365206d61730a52696768742d436c69636b20616e64206472616720746f0a636f6e6e656374207769746820737072696e672e0a0a537072696e677320617265203130302070697873206c6f6e672e0a
+s 17fdc8 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b7d
+c 17fd38 8 0
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 705 PlaceMass (U0;I64,I64;-)
+fn 706 PlaceSpring (U0;*$MyMass,*$MyMass;-)
+fn 707 Init (U0;;-)
+fn 708 CleanUp (U0;;-)
+fn 709 MassSpringDemo (U0;;-)
+fn 710 $init:C:/Demo/Games/MassSpring.HC#0 (I64;;-)
+sym f CleanUp 708 (U0;;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym f Init 707 (U0;;-)
+sym f MassSpringDemo 709 (U0;;-)
+sym f MyDerivative 704 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym f PlaceMass 705 (U0;I64,I64;-)
+sym f PlaceSpring 706 (U0;*$MyMass,*$MyMass;-)
+sym g ode 17fd38 *$CMathODE
+init 710
+unit C:/Demo/Games/MassSpring.HC#1

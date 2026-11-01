@@ -1,0 +1,79 @@
+TOSIMG 1
+unit C:/Demo/Games/TreeCheckers.HC#0
+s 1c04d8 53697a650a
+s 131e0 2564
+s 1c04f0 554e4954535f4e554d
+s 131e0 2564
+s 1c0510 434952434c455f524144
+s 131e0 2564
+s 1c0530 4d4f56455f434952434c4553
+s 131e0 2564
+s 1c0550 424f524445525f58
+s 131e0 2564
+s 1c0570 424f524445525f59
+fn 703 InitDefines (U0;;-)
+fn 704 $init:C:/Demo/Games/TreeCheckers.HC#0 (I64;;-)
+sym f InitDefines 703 (U0;;-)
+init 704
+unit C:/Demo/Games/TreeCheckers.HC#1
+value BORDER_X 50
+value BORDER_Y 20
+value CIRCLE_RAD 12
+value MOVE_CIRCLES 3
+value UNITS_NUM 28
+class Unit 50 0 - -
+m num 0 I64
+m x 8 I64
+m y 16 I64
+m player 24 I64
+m link 32 I64
+m color 40 I64
+m alive 48 Bool
+m king 49 Bool
+g 1c1868 1400
+g 1c1e78 8
+g 1c1e90 8
+g 1c17d0 16
+g 1c1ea8 8
+g 1c1ec0 8
+g 1c1ed8 8
+g 1c1ef0 8
+g 1c1f08 8
+s 1c1f20 506c61796572202564
+s 1c1f40 47616d65204f766572
+s 1c1f60 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b7d
+s 1c17f0 53746570206f6e20746865206c696e6b206d696420706f696e74732e0a
+fn 705 S2Circle (U0;*I64,*I64;-)
+fn 706 Circle2S (U0;*I64,*I64;-)
+fn 707 S2W (U0;*I64,*I64;-)
+fn 708 DrawIt (U0;*$CTask,*$CDC;-)
+fn 709 UnitFind (*$Unit;I64,I64,I64;-)
+fn 710 KillsChk (U0;I64,I64,I64;-)
+fn 711 UnitMove (Bool;*$Unit,I64,I64;-)
+fn 712 DrawHexMap (*$CDC;*I64,*I64;-)
+fn 713 Init (U0;;-)
+fn 714 CleanUp (U0;;-)
+fn 715 TreeCheckers (U0;;-)
+fn 716 $init:C:/Demo/Games/TreeCheckers.HC#1 (I64;;-)
+sym f Circle2S 706 (U0;*I64,*I64;-)
+sym f CleanUp 714 (U0;;-)
+sym f DrawHexMap 712 (*$CDC;*I64,*I64;-)
+sym f DrawIt 708 (U0;*$CTask,*$CDC;-)
+sym f Init 713 (U0;;-)
+sym f KillsChk 710 (U0;I64,I64,I64;-)
+sym f S2Circle 705 (U0;*I64,*I64;-)
+sym f S2W 707 (U0;*I64,*I64;-)
+sym f TreeCheckers 715 (U0;;-)
+sym f UnitFind 709 (*$Unit;I64,I64,I64;-)
+sym f UnitMove 711 (Bool;*$Unit,I64,I64;-)
+sym g cur_player 1c1e90 I64
+sym g end_x 1c1ed8 I64
+sym g end_y 1c1ef0 I64
+sym g map_dc 1c1e78 *$CDC
+sym g num_alive 1c17d0 [2]I64
+sym g show_start 1c1f08 Bool
+sym g start_x 1c1ea8 I64
+sym g start_y 1c1ec0 I64
+sym g u 1c1868 [28]$Unit
+init 716
+unit C:/Demo/Games/TreeCheckers.HC#2

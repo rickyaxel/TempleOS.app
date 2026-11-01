@@ -1,0 +1,29 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Slider.HC#0
+value SLIDER_BORDER 2
+value SLIDER_RANGE 30
+value SLIDER_SPACING 20
+class CSliderState 16 0 - -
+m left_pos 0 I64
+m right_pos 8 I64
+g 17fd38 16
+s 131e0 2564
+s 131e0 2564
+s 17fd58 5468697320697320746f2064656d6f206374726c732e0a
+s 17fd80 4c6566743a202564202052696768743a2025640a
+fn 703 DrawCtrlSlider (U0;*$CDC,*$CCtrl;-)
+fn 704 UpdateDerivedCtrlSlider (U0;*$CCtrl;-)
+fn 705 LeftClickSlider (U0;*$CCtrl,I64,I64,Bool;-)
+fn 706 SliderNew (*$CCtrl;;-)
+fn 707 SliderDel (U0;*$CCtrl;-)
+fn 708 Main (U0;;-)
+fn 709 $init:C:/Demo/Graphics/Slider.HC#0 (I64;;-)
+sym f DrawCtrlSlider 703 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickSlider 705 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f Main 708 (U0;;-)
+sym f SliderDel 707 (U0;*$CCtrl;-)
+sym f SliderNew 706 (*$CCtrl;;-)
+sym f UpdateDerivedCtrlSlider 704 (U0;*$CCtrl;-)
+sym g sld 17fd38 $CSliderState
+init 709
+unit C:/Demo/Graphics/Slider.HC#1

@@ -1,0 +1,127 @@
+{
+ "$comment": "Targeted input for SoundSweepTest(s) where a program's sound needs a particular action (steps use the scenario format plus hold/move). expect_silent: the exercised path is silent by design. generic_s: seconds of the generic play script.",
+ "programs": {
+  "game.treecheckers": {
+   "only_targeted": true,
+   "note": "Sounds only when a move captures (KillsChk: Snd(62);Sleep(100);Snd). The drags are a capture on the layout entropy 12345 gives (found by a greedy two-player driver reading u[] from the VM).",
+   "steps": [
+    [
+     "wait_ms",
+     1500
+    ],
+    [
+     "drag",
+     267,
+     169,
+     307,
+     213
+    ],
+    [
+     "wait_ms",
+     400
+    ],
+    [
+     "drag",
+     372,
+     319,
+     334,
+     273
+    ],
+    [
+     "wait_ms",
+     400
+    ],
+    [
+     "drag",
+     312,
+     199,
+     350,
+     245
+    ],
+    [
+     "wait_ms",
+     400
+    ],
+    [
+     "drag",
+     342,
+     259,
+     292,
+     226
+    ],
+    [
+     "wait_ms",
+     400
+    ],
+    [
+     "drag",
+     342,
+     259,
+     364,
+     274
+    ],
+    [
+     "wait_ms",
+     1500
+    ]
+   ]
+  },
+  "game.maze": {
+   "only_targeted": true,
+   "note": "Beep;Beep when SolveMaze, started by a right-click, leaves the window; any key aborts the solve (ScanChar -> throw), so no keys.",
+   "steps": [
+    [
+     "wait_ms",
+     2000
+    ],
+    [
+     "rclick",
+     320,
+     240
+    ],
+    [
+     "wait_ms",
+     12000
+    ]
+   ]
+  },
+  "demo.hanoi": {
+   "only_targeted": true,
+   "note": "Beep;Beep once all 63 moves of the 6 disks are done, then PressAKey.",
+   "steps": [
+    [
+     "wait_ms",
+     150000
+    ]
+   ]
+  },
+  "game.battlelines": {
+   "only_targeted": true,
+   "note": "Snd(86) while troopers of both sides are within range and fire; holding the left button pulls the human troopers toward the pointer, into the enemy.",
+   "steps": [
+    [
+     "wait_ms",
+     2000
+    ],
+    [
+     "press",
+     500,
+     240,
+     12000
+    ],
+    [
+     "press",
+     320,
+     240,
+     8000
+    ],
+    [
+     "press",
+     560,
+     200,
+     8000
+    ]
+   ]
+  }
+ }
+}

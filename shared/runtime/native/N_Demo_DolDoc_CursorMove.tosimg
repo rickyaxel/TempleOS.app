@@ -1,0 +1,11 @@
+TOSIMG 1
+unit C:/Demo/DolDoc/CursorMove.HC#0
+s 17fd38 2530336420
+s 17fd50 24434d2c2d342c3124
+s 17fd70 24434d2c342c2d313024
+s 17fd90 24434d2b4c582c302c2b3130240a
+fn 703 CursorMovementDemo (U0;;-)
+fn 704 $init:C:/Demo/DolDoc/CursorMove.HC#0 (I64;;-)
+sym f CursorMovementDemo 703 (U0;;-)
+init 704
+unit C:/Demo/DolDoc/CursorMove.HC#1

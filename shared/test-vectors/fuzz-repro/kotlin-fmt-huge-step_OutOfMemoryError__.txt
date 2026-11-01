@@ -1,0 +1,10 @@
+runtime: kotlin
+target: fmt-huge
+seed: 0
+signature: step:OutOfMemoryError@?
+minimized input (97 bytes): U8 b[64];
+try{StrPrint(b,"%h*c",0x7FFFFFFFFFFF,'x');}catch{Fs->catch_except=TRUE;}
+"FUZZDONE\n";
+
+
+java.lang.OutOfMemoryError: Java heap space

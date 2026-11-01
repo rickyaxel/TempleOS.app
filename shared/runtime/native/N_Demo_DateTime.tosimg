@@ -1,0 +1,25 @@
+TOSIMG 1
+unit C:/Demo/DateTime.HC#0
+s 17fd38 0a0a25442025540a0a0a
+fn 703 $init:C:/Demo/DateTime.HC#0 (I64;;-)
+init 703
+unit C:/Demo/DateTime.HC#1
+g 17fd58 12
+fn 704 $init:C:/Demo/DateTime.HC#1 (I64;;-)
+sym g ds 17fd58 $CDateStruct
+init 704
+unit C:/Demo/DateTime.HC#2
+s 17fd78 486f75723a25303264204d696e7574653a25303264205365636f6e643a253032640a0a0a
+fn 705 $init:C:/Demo/DateTime.HC#2 (I64;;-)
+init 705
+unit C:/Demo/DateTime.HC#3
+s 15140 53545f444159535f4f465f5745454b
+s 17fdb0 446179204e616d653a253033745a0a0a0a
+fn 706 $init:C:/Demo/DateTime.HC#3 (I64;;-)
+init 706
+unit C:/Demo/DateTime.HC#4
+s 151c8 53545f4d4f4e544853
+s 17fdd8 4d6f6e7468204e616d653a253033745a0a0a0a
+fn 707 $init:C:/Demo/DateTime.HC#4 (I64;;-)
+init 707
+unit C:/Demo/DateTime.HC#5

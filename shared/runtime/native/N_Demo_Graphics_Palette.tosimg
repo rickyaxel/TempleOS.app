@@ -1,0 +1,9 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Palette.HC#0
+s 13d00 53545f434f4c4f5253
+s 17fd38 24424c41434b242442472c2564245f5f252d385a5f5f24464724244247240a
+fn 703 PaletteDemo (U0;;-)
+fn 704 $init:C:/Demo/Graphics/Palette.HC#0 (I64;;-)
+sym f PaletteDemo 703 (U0;;-)
+init 704
+unit C:/Demo/Graphics/Palette.HC#1

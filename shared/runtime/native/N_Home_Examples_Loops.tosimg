@@ -1,0 +1,31 @@
+TOSIMG 1
+unit C:/Home/Examples/Loops.HC#0
+g 17fd38 8
+g 17fd50 8
+c 17fd50 8 0
+fn 703 $init:C:/Home/Examples/Loops.HC#0 (I64;;-)
+sym g i 17fd38 I64
+sym g sum 17fd50 I64
+init 703
+unit C:/Home/Examples/Loops.HC#1
+s 17fd68 53756d206f6620312e2e31302069732025640a
+fn 704 $init:C:/Home/Examples/Loops.HC#1 (I64;;-)
+init 704
+unit C:/Home/Examples/Loops.HC#2
+fn 705 $init:C:/Home/Examples/Loops.HC#2 (I64;;-)
+init 705
+unit C:/Home/Examples/Loops.HC#3
+s 17fd90 2564206973206265747765656e203120616e6420330a
+fn 706 $init:C:/Home/Examples/Loops.HC#3 (I64;;-)
+init 706
+unit C:/Home/Examples/Loops.HC#4
+s 17fdb8 7a65726f20
+s 17fdd0 736d616c6c20
+s 17fde8 62696720
+fn 707 $init:C:/Home/Examples/Loops.HC#4 (I64;;-)
+init 707
+unit C:/Home/Examples/Loops.HC#5
+s 13060 0a
+fn 708 $init:C:/Home/Examples/Loops.HC#5 (I64;;-)
+init 708
+unit C:/Home/Examples/Loops.HC#6

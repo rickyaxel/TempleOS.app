@@ -1,0 +1,8 @@
+TOSIMG 1
+unit C:/Demo/DbgDemo.HC#0
+s 132f0 2e
+fn 703 DbgDemo (U0;;-)
+fn 704 $init:C:/Demo/DbgDemo.HC#0 (I64;;-)
+sym f DbgDemo 703 (U0;;-)
+init 704
+unit C:/Demo/DbgDemo.HC#1

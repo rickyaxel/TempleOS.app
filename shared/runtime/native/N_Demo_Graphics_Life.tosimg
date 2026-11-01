@@ -1,0 +1,18 @@
+TOSIMG 1
+unit C:/Demo/Graphics/Life.HC#0
+g 17fd38 16
+g 17fd58 8
+g 17fd70 8
+s 17fd88 416e696d617465
+fn 703 DrawIt (U0;*$CTask,*$CDC;-)
+fn 704 AnimateTask (U0;I64;-)
+fn 705 Life (U0;;-)
+fn 706 $init:C:/Demo/Graphics/Life.HC#0 (I64;;-)
+sym f AnimateTask 704 (U0;I64;-)
+sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+sym f Life 705 (U0;;-)
+sym g cur_dc 17fd58 I64
+sym g dc 17fd38 [2]*$CDC
+sym g restart 17fd70 Bool
+init 706
+unit C:/Demo/Graphics/Life.HC#1
