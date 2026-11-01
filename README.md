@@ -12,6 +12,10 @@ compiler, HolyC language, graphics, games and documentation and placed them in
 the public domain. This project is not affiliated with him or his estate and
 is not an official TempleOS release.
 
+TempleOS.app was made by me, Ricky Axel, as a hobby project. It was a lot of fun making it
+and truly a bit surreal at times going through Terry's files he wrote himself when I was
+vibecoding this.
+
 ## Wiki
 
 New here? The [TempleOS.app Wiki](https://github.com/rickyaxel/TempleOS.app/wiki) is a guided
