@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA0000000000000000000002 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Signing.xcconfig; sourceTree = SOURCE_ROOT; };
 		A1B2C3D40000000000000006 /* TempleOSMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TempleOSMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B2C3D40000000000000017 /* TempleOSMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TempleOSMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B2C3D40000000000000020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		A1B2C3D40000000000000002 = {
 			isa = PBXGroup;
 			children = (
+				AA0000000000000000000002 /* Signing.xcconfig */,
 				A1B2C3D40000000000000004 /* TempleOSMobile */,
 				A1B2C3D40000000000000016 /* TempleOSMobileUITests */,
 				A1B2C3D40000000000000005 /* Shared */,
@@ -285,6 +287,7 @@
 /* Begin XCBuildConfiguration section */
 		A1B2C3D40000000000000012 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA0000000000000000000002 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -307,6 +310,7 @@
 		};
 		A1B2C3D40000000000000013 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA0000000000000000000002 /* Signing.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -333,7 +337,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LOCAL_SIGNING_TEAM;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = TempleOSMobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TempleOS.app;
@@ -360,7 +363,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LOCAL_SIGNING_TEAM;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = TempleOSMobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TempleOS.app;

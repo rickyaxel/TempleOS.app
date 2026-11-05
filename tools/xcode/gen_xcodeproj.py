@@ -9,9 +9,9 @@ references, and one UI test target (TempleOSMobileUITests).
 Usage: gen_xcodeproj.py           write the project (run from anywhere; paths are resolved from this file)
        gen_xcodeproj.py --check   exit 1 if the committed project differs from what this script writes
 
-The app target carries the App Store identity (STORE_* below): the team and bundle identifier of
-the published app. Changing them breaks updates for existing users (AGENTS.md). Version numbers
-are bumped in Xcode; the generator keeps the ones it finds in the existing project file.
+The app target carries the published app's bundle identifier (STORE_* below). The signing team
+comes from Config/Signing.local.xcconfig, which is ignored by Git (docs/releasing.md). Version
+numbers are bumped in Xcode; the generator keeps the ones it finds in the existing project file.
 
 Device validation builds (docs/native-validation) enable the headless benchmark mode:
   xcodebuild ... TOS_GIT_REV=$(git rev-parse --short HEAD) \
@@ -30,8 +30,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 APP_DIR = os.path.join(ROOT, 'temple_os_swift', 'App')
 PROJ = os.path.join(APP_DIR, 'TempleOSMobile.xcodeproj')
 
-# App Store identity of the published app (public values, not secrets; never change them)
-STORE_TEAM = 'LOCAL_SIGNING_TEAM'
+# Public App Store identity of the published app; never change it.
 STORE_BUNDLE_ID = 'com.digitalcircuitstudios.templeosapp'
 STORE_DISPLAY_NAME = 'TempleOS.app'
 STORE_CATEGORY = 'public.app-category.education'
@@ -88,8 +87,10 @@ def build():
     UG = i('uitestgroup'); UPROD = i('uitest.product'); UT = i('uitesttarget'); USB = i('uitest.sources')
     UFB = i('uitest.frameworks'); UCL = i('uitest.conflist'); UD = i('uitest.debug'); UR = i('uitest.release')
     PROXY = i('uitest.proxy'); TDEP = i('uitest.targetdep')
+    SIGNING = 'AA0000000000000000000002'
 
     fr = []
+    fr.append(f'\t\t{SIGNING} /* Signing.xcconfig */ = {{isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Signing.xcconfig; sourceTree = SOURCE_ROOT; }};')
     for s in SRCS:
         fr.append(f'\t\t{i("fr." + s)} /* {s} */ = {{isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = {s}; sourceTree = "<group>"; }};')
     for s in UITESTS:
@@ -126,7 +127,6 @@ def build():
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = {build_number};
-				DEVELOPMENT_TEAM = {STORE_TEAM};
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = TempleOSMobile/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = {STORE_DISPLAY_NAME};
@@ -204,6 +204,7 @@ def build():
 		{MG} = {{
 			isa = PBXGroup;
 			children = (
+				{SIGNING} /* Signing.xcconfig */,
 				{AG} /* TempleOSMobile */,
 				{UG} /* TempleOSMobileUITests */,
 				{RG} /* Shared */,
@@ -377,6 +378,7 @@ def build():
 /* Begin XCBuildConfiguration section */
 		{PD} /* Debug */ = {{
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = {SIGNING} /* Signing.xcconfig */;
 			buildSettings = {{
 {common_proj}
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -390,6 +392,7 @@ def build():
 		}};
 		{PR} /* Release */ = {{
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = {SIGNING} /* Signing.xcconfig */;
 			buildSettings = {{
 {common_proj}
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";

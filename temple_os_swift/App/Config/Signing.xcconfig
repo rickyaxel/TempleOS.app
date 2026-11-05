@@ -1,0 +1,4 @@
+// Shared by Debug and Release, including the UI test target through project inheritance.
+// Set up once with python3 tools/xcode/configure_signing.py (see docs/releasing.md).
+// Keep account-specific values in the ignored file; never add them to the Xcode project.
+#include? "Signing.local.xcconfig"

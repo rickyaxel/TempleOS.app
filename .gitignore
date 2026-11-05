@@ -46,6 +46,7 @@ signing.properties
 .env
 .env.*
 *.local.xcconfig
+# Apple team is supplied locally; the tracked Signing.xcconfig only includes this ignored file.
 *service-account*.json
 
 # Device and validation evidence (test results, screenshots, crash reports, device logs) stays on

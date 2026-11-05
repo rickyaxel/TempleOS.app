@@ -8,13 +8,13 @@ never enter the repository. Rules for contributors and coding agents: [`AGENTS.m
 
 | What | Where it lives | Needed for |
 |---|---|---|
-| Apple developer account, team `LOCAL_SIGNING_TEAM` | Apple; signed in to Xcode (Settings → Accounts) | every iOS upload |
+| Apple developer account and signing team | Apple; signed in to Xcode (Settings → Accounts); team identifier in ignored `temple_os_swift/App/Config/Signing.local.xcconfig` | every iOS upload |
 | Apple Distribution signing | Xcode automatic signing creates and fetches certificates and profiles | every iOS upload |
 | Google Play upload key: keystore file, store password, key alias, key password | the owner's machine, outside any repository, plus an encrypted backup kept off that machine | every Android upload |
 | Google Play app signing key | Google Play (Play App Signing) | Google re-signs each upload |
 | App Store Connect and Play Console access | Apple and Google accounts with two-factor authentication | uploading and publishing |
 
-None of these go into Git, the wiki, issues or pull requests. Release outputs (`*.aab`, `*.apk`,
+None of these are tracked in Git or posted to the wiki, issues or pull requests. Release outputs (`*.aab`, `*.apk`,
 `*.ipa`, `*.xcarchive`, `temple_os_kotlin/app/release/`) are gitignored; don't force-add them.
 
 ## Before every upload: version numbers
@@ -29,14 +29,29 @@ The Xcode project generator keeps the version numbers it finds, so
 
 ## iOS: archive and upload
 
-1. Sign in to Xcode with an Apple ID on team `LOCAL_SIGNING_TEAM` whose role can distribute to the App
+1. Sign in to Xcode with an Apple ID on the existing app owner's team whose role can distribute to the App
    Store (Account Holder or Admin, or a role with access to cloud-managed distribution certificates).
+   Once per clone, run `python3 tools/xcode/configure_signing.py` from the repository root and enter
+   that team's identifier from the Apple developer account. The prompt hides the value and writes
+   only `temple_os_swift/App/Config/Signing.local.xcconfig`, which Git ignores.
+   Use `python3 tools/xcode/configure_signing.py --check`
+   to check setup without displaying the value.
 2. Open `temple_os_swift/App/TempleOSMobile.xcodeproj`, choose the `TempleOSMobile` scheme and
    **Any iOS Device (arm64)**.
 3. **Product → Archive** (the scheme archives the Release configuration).
 4. In the Organizer: **Distribute App → App Store Connect → Upload**, with automatic signing.
 5. Commit only the version change. If Xcode changed anything else in the project, check it with
    `git diff` and `python3 tools/xcode/gen_xcodeproj.py --check` before committing.
+
+Both Debug and Release inherit the ignored file through `Config/Signing.xcconfig`. After the
+one-time setup, **Product → Archive → Distribute App → App Store Connect → Upload** works as
+usual. Keep automatic signing enabled. Keep the published bundle identifier and the app owner's
+team unchanged when shipping updates. Don't select a team in Xcode's project editor: it can write
+the identifier into the tracked project. Edit the local configuration instead. The pre-commit
+check rejects team identifiers and local signing files if they are staged.
+
+For development under another Apple account, use your own team in the ignored file and a local
+bundle-identifier override for device builds. Never commit that override or use it for store updates.
 
 If Xcode reports that no distribution certificate is available, an Admin creates one in
 Xcode → Settings → Accounts → Manage Certificates. A certificate's private key stays in that Mac's
@@ -84,7 +99,8 @@ Upload to an internal testing release first, then promote it.
 - Clone the repository, run `git config core.hooksPath tools/git-hooks`, and install Xcode 16+,
   JDK 21, the Android SDK with platform 36 (`temple_os_kotlin/local.properties` or `ANDROID_HOME`)
   and Python 3. Build details are in the wiki's Build Android and Build iOS pages.
-- iOS: sign in to Xcode. There is nothing to copy.
+- iOS: sign in to Xcode and run `python3 tools/xcode/configure_signing.py` with the existing app
+  owner's team identifier. No signing keys or profiles need copying.
 - Android: restore the upload keystore from the encrypted backup to a folder outside any
   repository, then supply the passwords through the wizard, `keystore.properties` or environment
   variables.

@@ -4,7 +4,7 @@
 Fails when tracked files, or the files staged for the next commit, contain signing keys, store
 credentials, release artifacts, validation evidence, or text that identifies a machine, a device
 or a person: home-directory paths, device UDIDs, signing identity names, personal e-mail
-addresses. It reports the file and line only, never the matched text.
+addresses, or Apple signing team identifiers. It reports the file and line only, never the matched text.
 
   python3 tools/public-safety/check_public_tree.py            every tracked file
   python3 tools/public-safety/check_public_tree.py --staged   the next commit (tools/git-hooks/pre-commit)
@@ -26,6 +26,7 @@ NAME_ONLY = re.compile(r'^shared/bundled-fs/')
 PATHS = [(re.compile(p, re.I), why) for p, why in [
     (r'\.(jks|keystore|p12|pfx|p8|pem|key|cer|crt|der|pepk|mobileprovision|provisionprofile|certsigningrequest)$', 'signing key or certificate'),
     (r'(^|/)(keystore|signing|local)\.properties$', 'local signing or machine configuration'),
+    (r'\.local\.xcconfig$', 'local Apple signing configuration'),
     (r'(^|/)\.env(\.(?!example$)[^/]*)?$', 'environment file'),
     (r'service[-_]?account[^/]*\.json$', 'service-account credentials'),
     (r'\.(xcarchive|ipa|aab|apks?|dsym)(/|$)|\.dsym\.zip$', 'release artifact'),
@@ -43,6 +44,14 @@ CONTENT = [(re.compile(p), why, re.compile(only) if only else None) for p, why, 
     (rb'/(?:Users|home)/(?!Shared/)[A-Za-z0-9][\w.-]*/', 'home-directory path', None),
     (rb'\b0000[0-9A-F]{4}-[0-9A-F]{16}\b', 'device identifier (UDID)', None),
     (rb'Apple (?:Development|Distribution)[^\n:]{0,20}: [^\n()]{1,80}\([A-Z0-9]{10}\)', 'signing identity name', None),
+    (rb'\b(?:DEVELOPMENT_TEAM|DevelopmentTeam|TeamIdentifier|teamID|team_id|team-id|STORE_TEAM)\b(?:\[[^\]\r\n]+\])*[\x22\x27]?[ \t]*[=:][ \t]*[\x22\x27]?[A-Z0-9]{10}\b',
+     'Apple signing team identifier', None),
+    (rb'(?i:\b(?:apple[ \t]+)?team(?:[ \t]+(?:id|identifier))?)[ \t|:=`\x22\x27]+[A-Z0-9]{10}\b',
+     'Apple signing team identifier', None),
+    (rb'<key>(?:teamID|TeamIdentifier|com\.apple\.developer\.team-identifier)</key>\s*(?:<array>\s*)?<string>[A-Z0-9]{10}</string>',
+     'Apple signing team identifier', None),
+    (rb'<key>(?:application-identifier|keychain-access-groups)</key>\s*(?:<array>\s*)?<string>[A-Z0-9]{10}\.',
+     'Apple signing application prefix', None),
 ]]
 EMAIL = re.compile(rb'(?<![\w.%+-])[\w.%+-]{1,64}@([\w-]{1,63}(?:\.[\w-]{1,63}){0,8}\.([A-Za-z]{2,24}))\b')
 EMAIL_OK = re.compile(rb'(?:^|\.)(?:users\.noreply\.github\.com|example\.(?:com|org|net)|invalid)$', re.I)

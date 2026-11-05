@@ -17,12 +17,13 @@ signing keys and store-account access. Treat every commit as published the momen
    personal devices. Validation evidence stays on the machine that produced it (`docs/**/evidence/`
    is ignored); commit a summary written without those details, or nothing.
 3. **Never change the store identity.** These values connect the code to the published apps;
-   changing them breaks updates for every existing user. They are public, not secrets.
+   changing them breaks updates for every existing user. Bundle and application identifiers are
+   public; the Apple signing team identifier stays local even though it is not an access credential.
 
    | Identity | Value | Where |
    |---|---|---|
    | iOS bundle identifier | `com.digitalcircuitstudios.templeosapp` | `project.pbxproj` (app target), `tools/xcode/gen_xcodeproj.py` |
-   | Apple team | `LOCAL_SIGNING_TEAM` | `project.pbxproj` (`DEVELOPMENT_TEAM`), `tools/xcode/gen_xcodeproj.py` |
+   | Apple team | The existing app owner's team, configured locally | ignored `temple_os_swift/App/Config/Signing.local.xcconfig`; never publish the value |
    | Android application id | `com.digitalcircuitstudios.templeosapp` | `temple_os_kotlin/app/build.gradle.kts` |
 
    The `io.github.templeosmobile` names (Kotlin packages, Android namespace, test and bench ids) are
@@ -30,7 +31,10 @@ signing keys and store-account access. Treat every commit as published the momen
 4. **Don't give the source a second home:** no private repository, mirror, submodule or extra remote,
    and no importing history from elsewhere into this repository.
 5. **Keep release signing outside the repository.** Xcode stays on automatic signing with no
-   certificates or profiles committed. Android release signing keeps reading the upload key from
+   certificates or profiles committed. The Apple team identifier stays in the ignored local
+   configuration; never put it in the project, generator, documentation, wiki or commit messages.
+   Set it up with `python3 tools/xcode/configure_signing.py`; do not change the team used to update
+   the published app. Android release signing keeps reading the upload key from
    outside the repository, and `bundleRelease` keeps refusing to build without it
    (`temple_os_kotlin/app/build.gradle.kts`). Don't add CI that signs or uploads unless the owner asks.
 6. **Commit as a GitHub noreply address** (`…@users.noreply.github.com`), never a personal one.
@@ -58,7 +62,8 @@ steps to the owner, and don't move, copy or recreate signing files.
 - `temple_os_swift/App/TempleOSMobile.xcodeproj` comes from `tools/xcode/gen_xcodeproj.py`. After
   changing the project in Xcode, run `python3 tools/xcode/gen_xcodeproj.py --check`; if it reports a
   difference, update the generator so it writes the intended project. The generator writes the
-  store identity and keeps the version numbers already in the project.
+  public bundle identity and keeps the version numbers already in the project. It never reads or
+  writes the local signing team.
 - `Info.plist` languages and display name come from `tools/l10n/gen_platform.py` (`--check`).
 - `PureSwift/Generated` and the Pure Kotlin `gen` sources come from the translator in
   `temple_os_kotlin/translator`; don't edit them by hand.
