@@ -126,7 +126,8 @@ def package_check(path, catalogs, aapt2=None, android=None, ios=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)
-    parser.add_argument('--baseline', default='ca74cb7')
+    # the commit whose en.json RECENT_STRINGS.tsv compares with (the former default predates this repository's history)
+    parser.add_argument('--baseline', default='HEAD')
     parser.add_argument('--apk', type=Path, action='append', default=[])
     parser.add_argument('--ios-app', type=Path)
     parser.add_argument('--aapt2', type=Path, help='Also verify compiled Android locale XML and its manifest reference')

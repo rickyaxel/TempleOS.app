@@ -1475,6 +1475,50 @@ final class TempleOSMobileUITests: XCTestCase {
         shot("l10n_ar_menu")
     }
 
+    /**
+     * The game controls and the end line in the UI language (docs/localization-audit): BattleLines from the
+     * localized Games menu shows translated touch-mode and wheel buttons (VoiceOver labels from the catalog), the
+     * toggle cycles, landscape keeps them, and Stop ends with the app's own line. TEMPLEOS_CONTROLS_LOCALES
+     * (comma separated) overrides the locales. Simulator only (reads the repository's catalogs).
+     */
+    func testLocalizedGameControlsAndEndLine() throws {
+        let locales = ProcessInfo.processInfo.environment["TEMPLEOS_CONTROLS_LOCALES"]?.split(separator: ",").map(String.init)
+            ?? ["en-US", "es-ES", "de-DE", "ar", "he-IL", "hi-IN", "ja-JP", "zh-CN", "zh-TW", "ko-KR", "th", "id", "ru-RU", "ml-IN"]
+        for loc in locales {
+            app.terminate()
+            app.launchArguments = ["-uitest-reset", "-AppleLanguages", "(\(loc))"]
+            app.launch()
+            XCUIDevice.shared.orientation = .portrait
+            readLayout(); sleep(2)
+            startMenu()
+            menuItem(ui(loc, "menu.start.games"), locale: loc)
+            menuItem("BattleLines", locale: loc)
+            // the program boots and compiles first: wait for its own PopUp (its text, the same in every language);
+            // the window's chrome is not exposed while the PopUp is modal
+            let okay = app.buttons["OKAY"]
+            XCTAssertTrue(okay.waitForExistence(timeout: 60), "\(loc): the game's PopUp shows an OKAY item")
+            okay.tap(); sleep(4)
+            let menu = app.buttons[ui(loc, "a11y.window_menu").replacingOccurrences(of: "{title}", with: "BattleLines")]
+            XCTAssertTrue(menu.waitForExistence(timeout: 10), "\(loc): BattleLines window")
+            let toggle = app.buttons[ui(loc, "controls.a11y.left_click")]
+            XCTAssertTrue(toggle.waitForExistence(timeout: 10), "\(loc): touch-mode toggle")
+            XCTAssertTrue(app.buttons[ui(loc, "controls.a11y.wheel_up")].exists, "\(loc): wheel up")
+            XCTAssertTrue(app.buttons[ui(loc, "controls.a11y.wheel_down")].exists, "\(loc): wheel down")
+            shot("l10n-controls-\(loc)-portrait")
+            toggle.tap(); sleep(1)
+            XCTAssertTrue(app.buttons[ui(loc, "controls.a11y.right_click")].waitForExistence(timeout: 5), "\(loc): toggle cycles")
+            shot("l10n-controls-\(loc)-right-click")
+            XCUIDevice.shared.orientation = .landscapeLeft; sleep(3)
+            XCTAssertTrue(app.buttons[ui(loc, "controls.a11y.right_click")].waitForExistence(timeout: 5), "\(loc): landscape controls")
+            shot("l10n-controls-\(loc)-landscape")
+            XCUIDevice.shared.orientation = .portrait; sleep(3)
+            XCTAssertTrue(menu.waitForExistence(timeout: 5), "\(loc): window menu"); menu.tap(); usleep(500_000)
+            menuItem(ui(loc, "menu.stop_program"), locale: loc); sleep(4)
+            XCTAssertTrue(app.staticTexts[ui(loc, "program.ended")].waitForExistence(timeout: 10), "\(loc): the end line is the app's own")
+            shot("l10n-controls-\(loc)-ended")
+        }
+    }
+
     /** Manifest rows of the Language window: label -> locale id (labels are "native - English", LanguageList). */
     private func languageRows() -> [String: String] {
         let m = try! JSONSerialization.jsonObject(with: Data(contentsOf: Self.repo.appendingPathComponent("shared/runtime/l10n/locales.json"))) as! [String: Any]
