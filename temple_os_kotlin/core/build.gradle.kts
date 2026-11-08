@@ -27,6 +27,9 @@ tasks.test {
     System.getProperties().filter { it.key.toString().startsWith("templeos.") && it.key != "templeos.shared" && it.key != "templeos.reference" }
         .forEach { systemProperty(it.key.toString(), it.value) }
     maxHeapSize = "2g"
+    // the interpreter loop (Vm.exec) is above HotSpot's 8000-byte compile limit: without this the host JVM
+    // interprets it, about 10x slower (ART has no such limit); :purekotlin passes the same flag
+    jvmArgs("-XX:-DontCompileHugeMethods")
     // profiling (PerfTest): -Dtempleos.jfr=/path/out.jfr records a JFR method-sampling profile
     System.getProperty("templeos.jfr")?.let { jvmArgs("-XX:StartFlightRecording=filename=$it,settings=profile") }
     testLogging { events("failed"); exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL }
