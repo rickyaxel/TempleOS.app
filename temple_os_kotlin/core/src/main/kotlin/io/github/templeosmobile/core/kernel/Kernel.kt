@@ -363,7 +363,53 @@ class Kernel(val env: KernelEnv, val name: String, val shellMode: Boolean = fals
         hostCpuAddr = cpu
         mem.st8(cpu + o.member("CCPU", "addr"), cpu.toLong())
         mem.st8(o.global("Gs"), cpu.toLong())
-        callHolyC("GrSetUpPens")
+        if (holyCPens) callHolyC("GrSetUpPens") else setUpPens()
+    }
+
+    /** Test hook: boot with the prelude's HolyC GrSetUpPens instead of [setUpPens] (PenTablesTest compares the two). */
+    internal var holyCPens = false
+
+    /**
+     * The prelude's GrSetUpPens (TempleOS Adam/Gr/GrInitB.HC GrSetUpTables: the pen brushes and bit tables), done
+     * here with the same allocations in the same order and the same stored bytes. Interpreted, its ~350,000 loop
+     * iterations were most of every program's start; TempleOS runs it once, when the OS starts. The HolyC function
+     * stays in the prelude, and PenTablesTest boots both ways and compares the whole arena.
+     */
+    private fun setUpPens() {
+        val g = o.grAddr
+        fun gr(m: String) = g + o.member("CGrGlbls", m)
+        val toBits = mem.malloc(256L * 8)
+        val toColors = mem.malloc(256L * 8)
+        mem.st8(gr("to_8_bits"), toBits.toLong())
+        mem.st8(gr("to_8_colors"), toColors.toLong())
+        mem.st8(gr("scrn_zoom"), 1)
+        for (i in 0 until 256) for (j in 0 until 8) {
+            mem.st1(toBits + i * 8 + j, if ((i shr j) and 1 != 0) 0xFF else 0)
+            mem.st1(toColors + i * 8 + j, i.toLong())
+        }
+        val n = 64 // GR_PEN_BRUSHES_NUM
+        val lo = gr("circle_lo"); val hi = gr("circle_hi")
+        for (i in 0 until n) {
+            val k = i + 1; val rr = k * k
+            fun inside(x: Int, y: Int) = (y * 2 - k) * (y * 2 - k) + (x * 2 - k) * (x * 2 - k) < rr
+            for (y in 1 until k) for (x in 1 until k) if (inside(x, y)) {
+                val v = x - 1 - (i shr 1) // HolyC: x-1-i>>1 (shifts bind tighter than + and -)
+                val a = lo + i * n + i - y; val b = hi + i * n + i - y
+                if (v < mem.ld1(a).toByte()) mem.st1(a, v.toLong())
+                if (v > mem.ld1(b).toByte()) mem.st1(b, v.toLong())
+            }
+            // dc=DCNew(i,i); gr.<table>[i]=dc; dc->color=<color>; GrPlot0 at each pixel of the disc (COLOR_MONO 0xFF, COLOR_INVALID 16)
+            fun brush(table: String, color: Long, keep: (Int, Int) -> Boolean) {
+                val dc = callHolyC("DCNew", i.toLong(), i.toLong(), 0, 0)
+                mem.st8(gr(table) + i * 8, dc)
+                mem.st4(dc.toInt() + o.dc("color"), color)
+                for (y in 1 until k) for (x in 1 until k) if (keep(x, y) && inside(x, y)) gfx.plot0(dc, (x - 1).toLong(), (y - 1).toLong())
+            }
+            brush("pen_brushes", 0xFF) { _, _ -> true }
+            brush("collision_pen_brushes", 16) { _, _ -> true }
+            brush("even_pen_brushes", 0xFF) { x, y -> ((x - 1) xor (y - 1)) and 1 == 0 }
+            brush("odd_pen_brushes", 0xFF) { x, y -> ((x - 1) xor (y - 1)) and 1 != 0 }
+        }
     }
 
     private fun runInit(init: FuncSym) {

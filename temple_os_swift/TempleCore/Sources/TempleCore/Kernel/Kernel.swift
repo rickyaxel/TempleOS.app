@@ -367,7 +367,53 @@ public final class Kernel {
         hostCpuAddr = cpu
         mem.st8(cpu + o.member("CCPU", "addr"), Int64(cpu))
         mem.st8(o.global("Gs"), Int64(cpu))
-        try callHolyC("GrSetUpPens")
+        if holyCPens { try callHolyC("GrSetUpPens") } else { try setUpPens() }
+    }
+
+    /** Test hook: boot with the prelude's HolyC GrSetUpPens instead of [setUpPens] (PenTablesTests compares the two). */
+    var holyCPens = false
+
+    /**
+     * The prelude's GrSetUpPens (TempleOS Adam/Gr/GrInitB.HC GrSetUpTables: the pen brushes and bit tables), done
+     * here with the same allocations in the same order and the same stored bytes. Interpreted, its ~350,000 loop
+     * iterations were most of every program's start; TempleOS runs it once, when the OS starts. The HolyC function
+     * stays in the prelude, and PenTablesTests boots both ways and compares the arena. Port of Kernel.kt.
+     */
+    private func setUpPens() throws {
+        let g = o.grAddr
+        func gr(_ m: String) -> Int { g + o.member("CGrGlbls", m) }
+        let toBits = try mem.malloc(256 * 8)
+        let toColors = try mem.malloc(256 * 8)
+        mem.st8(gr("to_8_bits"), Int64(toBits))
+        mem.st8(gr("to_8_colors"), Int64(toColors))
+        mem.st8(gr("scrn_zoom"), 1)
+        for i in 0..<256 { for j in 0..<8 {
+            mem.st1(toBits + i * 8 + j, (i >> j) & 1 != 0 ? 0xFF : 0)
+            mem.st1(toColors + i * 8 + j, Int64(i))
+        } }
+        let n = 64 // GR_PEN_BRUSHES_NUM
+        let lo = gr("circle_lo"), hi = gr("circle_hi")
+        for i in 0..<n {
+            let k = i + 1, rr = k * k
+            func inside(_ x: Int, _ y: Int) -> Bool { (y * 2 - k) * (y * 2 - k) + (x * 2 - k) * (x * 2 - k) < rr }
+            for y in 1..<max(1, k) { for x in 1..<max(1, k) where inside(x, y) {
+                let v = Int64(x - 1 - (i >> 1)) // HolyC: x-1-i>>1 (shifts bind tighter than + and -)
+                let a = lo + i * n + i - y, b = hi + i * n + i - y
+                if v < Int64(Int8(truncatingIfNeeded: mem.ld1(a))) { mem.st1(a, v) }
+                if v > Int64(Int8(truncatingIfNeeded: mem.ld1(b))) { mem.st1(b, v) }
+            } }
+            // dc=DCNew(i,i); gr.<table>[i]=dc; dc->color=<color>; GrPlot0 at each pixel of the disc (COLOR_MONO 0xFF, COLOR_INVALID 16)
+            func brush(_ table: String, _ color: Int64, _ keep: (Int, Int) -> Bool) throws {
+                let dc = try callHolyC("DCNew", Int64(i), Int64(i), 0, 0)
+                mem.st8(gr(table) + i * 8, dc)
+                mem.st4(Int(dc) + o.dc("color"), color)
+                for y in 1..<max(1, k) { for x in 1..<max(1, k) where keep(x, y) && inside(x, y) { try gfx.plot0(dc, Int64(x - 1), Int64(y - 1)) } }
+            }
+            try brush("pen_brushes", 0xFF) { _, _ in true }
+            try brush("collision_pen_brushes", 16) { _, _ in true }
+            try brush("even_pen_brushes", 0xFF) { x, y in ((x - 1) ^ (y - 1)) & 1 == 0 }
+            try brush("odd_pen_brushes", 0xFF) { x, y in ((x - 1) ^ (y - 1)) & 1 != 0 }
+        }
     }
 
     private func runInit(_ initF: FuncSym) throws {
