@@ -45,6 +45,8 @@ class LayeredFs(
     private val journalFile = File(overlayRoot, "import-journal.txt")
     private val whiteouts = HashSet<String>()                // lower-case logical paths
     private var used = 0L
+    /** [filesDir]'s canonical path, resolved once: every lookup compares against it ([hostFile]). */
+    private val filesCanonical: String
 
     init {
         filesDir.mkdirs()
@@ -60,7 +62,9 @@ class LayeredFs(
         if (whiteoutFile.exists()) whiteoutFile.readLines().filter { it.isNotBlank() }.forEach { whiteouts.add(it) }
         recoverImports()
         used = filesDir.walkTopDown().filter { it.isFile }.sumOf { it.length() }
+        filesCanonical = filesDir.canonicalPath
     }
+
 
     // ------------------------------------------------------------ mapping
 
@@ -72,7 +76,7 @@ class LayeredFs(
         val rel = logical.removePrefix("C:/")
         val f = if (rel.isEmpty()) filesDir else File(filesDir, rel)
         val canon = try { f.canonicalFile } catch (e: java.io.IOException) { throw FsError("Invalid path: $logical", "fs.error.invalid_path", mapOf("path" to logical)) }
-        if (!canon.path.startsWith(filesDir.canonicalPath)) throw FsError("Invalid path: $logical", "fs.error.invalid_path", mapOf("path" to logical))
+        if (!canon.path.startsWith(filesCanonical)) throw FsError("Invalid path: $logical", "fs.error.invalid_path", mapOf("path" to logical))
         return f
     }
 

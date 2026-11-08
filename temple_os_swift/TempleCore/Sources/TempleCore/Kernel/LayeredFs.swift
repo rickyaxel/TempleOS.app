@@ -123,6 +123,8 @@ public final class LayeredFs: VirtualFs {
     private var bundled: [String: BEntry] = [:]              // lower-case logical path -> entry
     private var bundledChildren: [String: [BEntry]] = [:]    // lower-case dir -> children
     private let filesDir: String
+    /** [filesDir]'s canonical path, resolved once: every lookup compares against it ([hostFile]). Port of LayeredFs.kt. */
+    private let filesCanonical: String
     private let whiteoutFile: String
     /** Pending import replacements (see [publishStaged]): "aside<TAB>target" relative to [filesDir]. */
     private let journalFile: String
@@ -155,6 +157,7 @@ public final class LayeredFs: VirtualFs {
         }
         recoverImports()
         used = HostFile.treeSize(filesDir)
+        filesCanonical = HostFile.canonicalPath(filesDir)
     }
 
     // ------------------------------------------------------------ text helpers (Kotlin semantics)
@@ -210,7 +213,7 @@ public final class LayeredFs: VirtualFs {
         let rel = LayeredFs.removePrefix(logical, "C:/")
         let f = rel.isEmpty ? filesDir : HostFile.child(filesDir, rel)
         let canon = HostFile.canonicalPath(f)
-        if !canon.hasPrefix(HostFile.canonicalPath(filesDir)) { throw FsError("Invalid path: \(logical)", "fs.error.invalid_path", ["path": logical]) }
+        if !canon.hasPrefix(filesCanonical) { throw FsError("Invalid path: \(logical)", "fs.error.invalid_path", ["path": logical]) }
         return f
     }
 
