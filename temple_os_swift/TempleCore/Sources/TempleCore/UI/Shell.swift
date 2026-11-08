@@ -876,8 +876,11 @@ public final class Shell {
         if let t = toast { drawToast(s, t.value) }
         needsRender = false
         windows.forEach { $0.app.dirty = false }
-        s.touch()
+        s.commit(force: systemChrome != committedChrome) // the platforms apply the chrome with a new surface version
+        committedChrome = systemChrome
     }
+
+    private var committedChrome: SystemChrome?
 
     // MARK: system chrome
 

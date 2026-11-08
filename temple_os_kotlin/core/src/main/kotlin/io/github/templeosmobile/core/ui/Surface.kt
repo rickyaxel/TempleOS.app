@@ -41,13 +41,34 @@ class Surface(width: Int, height: Int, private val font: ByteArray) {
     private var clip = Rect(0, 0, width, height)
 
     fun resize(w: Int, h: Int) {
+        forceCommit = true // the platform re-lays out its layers even when the logical size stays the same
         if (w == width && h == height) return
         width = w; height = h
         px = ByteArray(w * h)
         clip = Rect(0, 0, w, h)
     }
 
-    fun touch() { version++ }
+    /** The pixels, text runs and occluders of the frame the platform last received ([version]); see [commit]. */
+    private var committed = ByteArray(0)
+    private var committedRuns: List<TextRun> = emptyList()
+    private var committedOccluders: List<Occluder> = emptyList()
+    private var forceCommit = true
+
+    /**
+     * Ends a full render. [version] advances only when the frame differs from the one the platform last received
+     * (pixels, text runs, occluders), or with [force]: a redraw that produces the same frame, such as each new
+     * program frame under unchanged window chrome and game controls, is not converted and uploaded again.
+     */
+    fun commit(force: Boolean = false) {
+        val same = !force && !forceCommit && committed.size == px.size && java.util.Arrays.equals(committed, px) &&
+            runs == committedRuns && occluders == committedOccluders
+        forceCommit = false
+        if (same) return
+        if (committed.size != px.size) committed = ByteArray(px.size)
+        System.arraycopy(px, 0, committed, 0, px.size)
+        committedRuns = ArrayList(runs); committedOccluders = ArrayList(occluders)
+        version++
+    }
 
     // ------------------------------------------------------------ text the TempleOS font cannot show
 
@@ -57,12 +78,12 @@ class Surface(width: Int, height: Int, private val font: ByteArray) {
      * device resolution (shaping, bidi), inside [clip] and outside every [Occluder] with a
      * higher [z]. [x], [y], [w] are logical px; [y] is the top of the 8 px TempleOS text row.
      */
-    class TextRun(val x: Int, val y: Int, val w: Int, val text: String, val fg: Int, val rtl: Boolean, val clip: Rect, val z: Int,
+    data class TextRun(val x: Int, val y: Int, val w: Int, val text: String, val fg: Int, val rtl: Boolean, val clip: Rect, val z: Int,
                   /** Text magnification, as for TempleOS glyphs ([MenuMetrics.textScale]): 10*scale px on an 8*scale px row. */
                   val scale: Int = 1)
 
     /** Something drawn opaquely above earlier text runs (a window, menu, dialog, keyboard…). */
-    class Occluder(val rect: Rect, val z: Int)
+    data class Occluder(val rect: Rect, val z: Int)
 
     companion object {
         /**

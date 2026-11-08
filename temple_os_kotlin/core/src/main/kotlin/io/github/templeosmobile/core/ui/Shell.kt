@@ -556,8 +556,11 @@ class Shell(val env: ShellEnv) {
         toast?.let { drawToast(s, it.value) }
         needsRender = false
         windows.forEach { it.app.dirty = false }
-        s.touch()
+        s.commit(force = systemChrome != committedChrome) // the platforms apply the chrome with a new surface version
+        committedChrome = systemChrome
     }
+
+    private var committedChrome: SystemChrome? = null
 
     // ------------------------------------------------------------ system chrome
 

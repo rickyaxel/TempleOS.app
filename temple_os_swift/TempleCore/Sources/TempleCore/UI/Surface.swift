@@ -54,9 +54,10 @@ public final class Surface {
         clip = Rect(0, 0, width, height)
     }
 
-    deinit { px.deallocate() }
+    deinit { px.deallocate(); committed?.deallocate() }
 
     public func resize(_ w: Int, _ h: Int) {
+        forceCommit = true // the platform re-lays out its layers even when the logical size stays the same
         if w == width && h == height { return }
         width = w; height = h
         px.deallocate()
@@ -65,7 +66,34 @@ public final class Surface {
         clip = Rect(0, 0, w, h)
     }
 
-    public func touch() { version += 1 }
+    /** The pixels, text runs and occluders of the frame the platform last received ([version]); see [commit]. */
+    private var committed: UnsafeMutablePointer<UInt8>?
+    private var committedCount = 0
+    private var committedRuns: [TextRun] = []
+    private var committedOccluders: [Occluder] = []
+    private var forceCommit = true
+
+    /**
+     * Ends a full render. [version] advances only when the frame differs from the one the platform last received
+     * (pixels, text runs, occluders), or with [force]: a redraw that produces the same frame, such as each new
+     * program frame under unchanged window chrome and game controls, is not converted and uploaded again.
+     * Port of Surface.kt.
+     */
+    public func commit(force: Bool = false) {
+        let n = max(1, width * height)
+        let same = !force && !forceCommit && committedCount == n && memcmp(committed!, px, n) == 0 &&
+            runs == committedRuns && occluders == committedOccluders
+        forceCommit = false
+        if same { return }
+        if committedCount != n {
+            committed?.deallocate()
+            committed = .allocate(capacity: n)
+            committedCount = n
+        }
+        committed!.update(from: px, count: n)
+        committedRuns = runs; committedOccluders = occluders
+        version += 1
+    }
 
     // ------------------------------------------------------------ text the TempleOS font cannot show
 
@@ -75,19 +103,23 @@ public final class Surface {
      * device resolution (shaping, bidi), inside [clip] and outside every [Occluder] with a
      * higher [z]. [x], [y], [w] are logical px; [y] is the top of the 8 px TempleOS text row.
      */
-    public final class TextRun {
+    public final class TextRun: Equatable {
         public let x: Int, y: Int, w: Int, text: String, fg: Int, rtl: Bool, clip: Rect, z: Int
         /** Text magnification, as for TempleOS glyphs ([MenuMetrics.textScale]): 10*scale px on an 8*scale px row. */
         public let scale: Int
         public init(_ x: Int, _ y: Int, _ w: Int, _ text: String, _ fg: Int, _ rtl: Bool, _ clip: Rect, _ z: Int, _ scale: Int = 1) {
             self.x = x; self.y = y; self.w = w; self.text = text; self.fg = fg; self.rtl = rtl; self.clip = clip; self.z = z; self.scale = scale
         }
+        public static func == (a: TextRun, b: TextRun) -> Bool {
+            a.x == b.x && a.y == b.y && a.w == b.w && a.text == b.text && a.fg == b.fg && a.rtl == b.rtl && a.clip == b.clip && a.z == b.z && a.scale == b.scale
+        }
     }
 
     /** Something drawn opaquely above earlier text runs (a window, menu, dialog, keyboard…). */
-    public final class Occluder {
+    public final class Occluder: Equatable {
         public let rect: Rect, z: Int
         public init(_ rect: Rect, _ z: Int) { self.rect = rect; self.z = z }
+        public static func == (a: Occluder, b: Occluder) -> Bool { a.rect == b.rect && a.z == b.z }
     }
 
     /**
