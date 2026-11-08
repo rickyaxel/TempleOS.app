@@ -877,6 +877,15 @@ public final class Raster {
         // calling peek() and plot()/plot1() per pixel (RasterDiffTests.testBlot3).
         let src = try geom(img), dst = try geom(dc)
         let srcWi = s32(m.ld4(img + oWI)), srcBody = m.ld8(img + oBody)
+        // Fast path for the usual case: plot0 would neither record extents or the nearest point, nor skip drawing, nor
+        // dither (which draws random numbers): the depth test and the pixel are written here with plot0's rules, and
+        // dc->color / dc->db_z are stored when their value changes (the same final values as storing them per pixel).
+        // Port of Raster.kt.
+        let db = m.ld8(dc + oDb)
+        let fast = m.ld4(dc + oFlags) & (Raster.NEAREST | Raster.EXTENTS | Raster.DONT_DRAW) == 0 && (!mono || oldColor & 0x80000000 == 0)
+        let dstWi = s32(m.ld4(dc + oWI)), dstBody = m.ld8(dc + oBody)
+        let monoColor = oldColor & ~Int64(0x40000000), keep = oldColor & ~Int64(0xFFFF00FF)
+        var storedColor: Int64 = -1, storedZ = Int64.min
         if d1 >= 0 {
             for _ in 0...d1 {
                 try poll()
@@ -891,7 +900,32 @@ public final class Raster {
                             if src.inside(px, py) { color = m.ld1(try m.check(srcBody &+ srcWi &* py &+ px, 1)) }
                             if color >= 0 {
                                 let draw = mono ? color != 0 : color != 0xFF
-                                if draw {
+                                if draw && fast {
+                                    let col = mono ? monoColor : keep | color
+                                    if col != storedColor { m.st4(dc + oColor, col); storedColor = col }
+                                    let z = hi(z2)
+                                    if db != 0 && z != storedZ { m.st8(dc + oDbZ, z); storedZ = z }
+                                    try poll()
+                                    let qx = hi(x2) &+ dst.dx, qy = hi(y2) &+ dst.dy
+                                    if dst.inside(qx, qy) {
+                                        let d = dstWi &* qy &+ qx
+                                        var visible = true
+                                        if db != 0 {
+                                            let pa = try m.check(db &+ d &* 4, 4)
+                                            if z >= 0 && z <= s32(m.ld4(pa)) { m.st4(pa, z) } else { visible = false }
+                                        }
+                                        if visible {
+                                            let p = try m.check(dstBody &+ d, 1)
+                                            switch Int((col >> 8) & 0xFF) {
+                                            case Raster.ROP_XOR: m.st1(p, m.ld1(p) ^ (col & 0xFF))
+                                            case Raster.ROP_COLLISION:
+                                                let c = m.ld1(p)
+                                                if c != 0xFF && c != (m.ld4(dc + oBk) & 0xFF) { m.st8(dc + oCollision, m.ld8(dc + oCollision) &+ 1) }
+                                            default: m.st1(p, col & 0xFF)
+                                            }
+                                        }
+                                    }
+                                } else if draw {
                                     m.st4(dc + oColor, mono ? oldColor & ~Int64(0x40000000) : (oldColor & ~Int64(0xFFFF00FF)) | color)
                                     let depth = m.ld8(dc + oDb) != 0
                                     if depth { m.st8(dc + oDbZ, hi(z2)) }

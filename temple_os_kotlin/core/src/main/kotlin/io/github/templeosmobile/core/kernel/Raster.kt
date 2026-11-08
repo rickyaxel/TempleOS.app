@@ -793,6 +793,52 @@ class Raster(private val k: Kernel) {
         // NULL, plot0 writes only pixels, depth, collision count and extents): read it once. Same pixels as
         // calling peek() and plot()/plot1() per pixel (RasterDiffTest.blot3).
         val src = PeekGeom(img); val dst = PlotGeom(dc)
+        // Fast path for the usual case: plot0 would neither record extents or the nearest point, nor skip drawing, nor
+        // dither (which draws random numbers): the depth test and the pixel are written here with plot0's rules, and
+        // dc->color / dc->db_z are stored when their value changes (the same final values as storing them per pixel).
+        val db = m.ld8(dc + oDb)
+        if (m.ld4(dc + oFlags) and (NEAREST or EXTENTS or DONT_DRAW) == 0L && (!mono || oldColor and 0x80000000L == 0L)) {
+            val wi = m.ld4(dc + oWI).toInt().toLong(); val body = m.ld8(dc + oBody)
+            val monoColor = oldColor and 0x40000000L.inv(); val keep = oldColor and 0xFFFF00FFL.inv()
+            var storedColor = -1L; var storedZ = Long.MIN_VALUE
+            for (j in 0..d1) {
+                poll()
+                var x2 = x1; var y2 = y1; var z2 = z1
+                var y = 0L
+                for (i in 0..d2) {
+                    poll()
+                    if (hi(x2) != lastX || hi(y2) != lastY || first) {
+                        val color = src.peek(hi(x), hi(y))
+                        if (color >= 0 && (if (mono) color != 0L else color != 0xFFL)) {
+                            val col = if (mono) monoColor else keep or color
+                            if (col != storedColor) { m.st4(dc + oColor, col); storedColor = col }
+                            val z = hi(z2)
+                            if (db != 0L && z != storedZ) { m.st8(dc + oDbZ, z); storedZ = z }
+                            poll()
+                            val d = dst.index(hi(x2), hi(y2), wi)
+                            if (d >= 0 && (db == 0L || m.check(db + d * 4, 4).let { pa -> (z in 0..m.ld4(pa).toInt().toLong()).also { ok -> if (ok) m.st4(pa, z) } })) {
+                                val p = m.check(body + d, 1)
+                                when (((col ushr 8) and 0xFF).toInt()) {
+                                    ROP_XOR -> m.st1(p, m.ld1(p) xor (col and 0xFF))
+                                    ROP_COLLISION -> {
+                                        val c = m.ld1(p)
+                                        if (c != 0xFFL && c != (m.ld4(dc + oBk) and 0xFF)) m.st8(dc + oCollision, m.ld8(dc + oCollision) + 1)
+                                    }
+                                    else -> m.st1(p, col and 0xFF)
+                                }
+                            }
+                        }
+                    }
+                    first = false
+                    lastX = hi(x2); lastY = hi(y2)
+                    x2 += dx2; y2 += dy2; z2 += dz2
+                    y += dh
+                }
+                x1 += dx1; y1 += dy1; z1 += dz1
+                x += dw
+            }
+            return true
+        }
         for (j in 0..d1) {
             poll()
             var x2 = x1; var y2 = y1; var z2 = z1
@@ -849,6 +895,13 @@ class Raster(private val k: Kernel) {
         private val dy = if (scrn) m.ld8(t + oPixT) + m.ld8(t + oSY) else 0L
         private val l = if (scrn) m.ld8(t + oPixL) else 0L; private val r = if (scrn) m.ld8(t + oPixR) else 0L
         private val tp = if (scrn) m.ld8(t + oPixT) else 0L; private val b = if (scrn) m.ld8(t + oPixB) else 0L
+        /** The pixel's offset in the body (width_internal [wi]) as [plot] would draw it, or -1 when it is clipped. */
+        fun index(x0: Long, y0: Long, wi: Long): Long {
+            val x = x0 + dx; val y = y0 + dy
+            if (scrn && (x !in l..r || y !in tp..b)) return -1
+            if (x !in 0 until w || y !in 0 until h) return -1
+            return wi * y + x
+        }
         fun plot(x0: Long, y0: Long, depth: Boolean) {
             poll()
             val x = x0 + dx; val y = y0 + dy
