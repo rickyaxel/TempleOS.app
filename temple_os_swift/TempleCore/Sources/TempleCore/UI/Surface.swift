@@ -273,6 +273,18 @@ public final class Surface {
         let fb: [UInt8]? = (code >= 0x10 && code <= 0x1B && isBlank(code)) ? UI_GLYPHS[code - 0x10] : nil
         let base = code * 8
         let f = UInt8(truncatingIfNeeded: fg), b = UInt8(truncatingIfNeeded: bg)
+        let c = clip
+        if x >= c.x && y >= c.y && x + 8 <= c.right && y + 8 <= c.bottom {
+            // wholly inside the clip (almost every glyph of a terminal, editor or menu): no per-pixel clip tests
+            for r in 0..<8 {
+                var bits = fb != nil ? Int(fb![r]) : Int(font[base + r])
+                if underline && r == 7 { bits = 0xFF }
+                let row = px + ((y + r) * width + x)
+                if bg >= 0 { for i in 0..<8 { row[i] = (bits >> i) & 1 != 0 ? f : b } }
+                else if bits != 0 { for i in 0..<8 where (bits >> i) & 1 != 0 { row[i] = f } }
+            }
+            return
+        }
         for r in 0..<8 {
             let yy = y + r
             if yy < clip.y || yy >= clip.bottom { continue }

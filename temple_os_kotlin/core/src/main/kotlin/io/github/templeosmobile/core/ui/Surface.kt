@@ -241,6 +241,18 @@ class Surface(width: Int, height: Int, private val font: ByteArray) {
         val fb = if (code in 0x10..0x1B && isBlank(code)) UI_GLYPHS[code - 0x10] else null
         val base = code * 8
         val f = fg.toByte(); val b = bg.toByte()
+        val c = clip
+        if (x >= c.x && y >= c.y && x + 8 <= c.right && y + 8 <= c.bottom) {
+            // wholly inside the clip (almost every glyph of a terminal, editor or menu): no per-pixel clip tests
+            for (r in 0 until 8) {
+                var bits = if (fb != null) (fb[r].toInt() and 0xFF) else (font[base + r].toInt() and 0xFF)
+                if (underline && r == 7) bits = 0xFF
+                val row = (y + r) * width + x
+                if (bg >= 0) for (i in 0 until 8) px[row + i] = if ((bits ushr i) and 1 != 0) f else b
+                else if (bits != 0) for (i in 0 until 8) if ((bits ushr i) and 1 != 0) px[row + i] = f
+            }
+            return
+        }
         for (r in 0 until 8) {
             val yy = y + r
             if (yy < clip.y || yy >= clip.bottom) continue

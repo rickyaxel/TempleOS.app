@@ -198,13 +198,15 @@ class ShellPerfTest {
         // ---- a game: UI-thread work per second of play (portrait, controls shown)
         for (id in listOf("game.bombergolf", "game.varoom")) {
             val name = "game.ui.${id.removePrefix("game.")}"
-            if (!wanted(name)) continue
+            val renderName = "render.program.${id.removePrefix("game.")}"
+            if (!section(name, renderName)) continue
             val info = sh.catalog.programs.first { it.id == id }
             Launch.program(sh, info.path, info); sh.tick()
             val prog = sh.focused!!.app as ProgramApp
             // a start PopUp (BattleLines' instructions) is answered as a player would
             waitFor(sh, 60000) { if (sh.dialogOpen) typeKey(sh, '\n'); prog.kernel.frameCount > 30 && sh.overlays().isNotEmpty() }
-            gameUi(name, sh, samples)
+            scenario(renderName, samples, batch = 20) { redraw(sh) } // the program window with its controls, as each new frame redraws it
+            if (wanted(name)) gameUi(name, sh, samples)
             closeAll(sh)
         }
     }

@@ -201,13 +201,15 @@ final class ShellPerfTests: XCTestCase {
         // ---- a game: UI-thread work per second of play (portrait, controls shown)
         for id in ["game.bombergolf", "game.varoom"] {
             let name = "game.ui." + id.dropFirst("game.".count)
-            guard wanted(name) else { continue }
+            let renderName = "render.program." + id.dropFirst("game.".count)
+            guard section(name, renderName) else { continue }
             let info = sh.catalog.programs.first { $0.id == id }!
             Launch.program(sh, info.path, info); _ = sh.tick()
             let prog = sh.focused!.app as! ProgramApp
             // a start PopUp (BattleLines' instructions) is answered as a player would
             waitFor(sh, 60000) { if sh.dialogOpen { typeKey(sh, "\n") }; return prog.kernel.frameCount > 30 && !sh.overlays().isEmpty }
-            gameUi(name, sh, samples)
+            scenario(renderName, samples, batch: 20) { _ in redraw(sh) } // the program window with its controls, as each new frame redraws it
+            if wanted(name) { gameUi(name, sh, samples) }
             closeAll(sh)
         }
     }
