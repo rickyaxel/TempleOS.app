@@ -46,7 +46,7 @@ public final class TerminalApp: App {
         runner.start { [weak self] k in
             k.onShellIdle = { [weak self] in self?.prompt() }
             // the banner is console text (8-bit TempleOS cells): translated when the TempleOS font can show it
-            k.console.write("$PURPLE$\(Brand.appName) Terminal$FG$ - " + L10n.tr8("terminal.banner", ("dir", "$GREEN$Dir;$FG$"), ("help", "$GREEN$Help;$FG$")) + "\n")
+            k.console.write("$PURPLE$\(Brand.appName) " + L10n.tr8("app.terminal.title") + "$FG$ - " + L10n.tr8("terminal.banner", ("dir", "$GREEN$Dir;$FG$"), ("help", "$GREEN$Help;$FG$")) + "\n")
             if startDir != "C:/Home" { k.post(.exec("Cd(\"\(startDir)\");")) }
             else { self?.prompt() }
             self?.ready = true

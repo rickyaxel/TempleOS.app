@@ -1,5 +1,7 @@
 package io.github.templeosmobile.core.ui
 
+import io.github.templeosmobile.core.Brand
+
 /** Build-time source indexes. References open a file, document, or directory. */
 class ProgramGroup(val id: String, val title: String, val parent: String, val source: String,
                    val directory: String, val document: String, val programIds: List<String>, val menuIds: List<String>, val references: List<Reference>) {
@@ -40,6 +42,8 @@ class ProgramInfo(
     } ?: note
     /** The example's description in the UI language (catalog.<id>.description). */
     val localizedDescription get() = if (L10n.has("catalog.$id.description")) tr("catalog.$id.description") else description
+    /** The author in the UI language: a person's name stays as written; the project's own examples say whose they are. */
+    val localizedAuthor get() = if (author == PROJECT_AUTHOR) tr("catalog.author.project") else author
     val unsupported get() = status == "unsupported"
     val usesMouse get() = "mouse" in controls
     val usesArrows get() = "arrows" in controls
@@ -50,6 +54,11 @@ class ProgramInfo(
     /** Instruments and keyboard-driven programs open with the TempleOS keyboard. */
     val prefersFullKeyboard get() = "full_keyboard" in controls
     val usesGraphics get() = "graphics" in capabilities
+
+    companion object {
+        /** catalog.json's author of the examples written for this project (catalog.author.project). */
+        const val PROJECT_AUTHOR = "${Brand.APP_NAME} contributors"
+    }
 }
 
 /**

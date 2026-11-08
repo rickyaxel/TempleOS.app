@@ -136,6 +136,9 @@ class KernelRunner(val kernel: Kernel, private val onFinished: () -> Unit = {}) 
         private set
     @Volatile var bootError: String? = null
         private set
+    /** The host runtime failed (a bug, not the program): the kernel's exit message is then the host's, not HolyC's. */
+    @Volatile var internalError = false
+        private set
     private var thread: Thread? = null
 
     fun start(beforeRun: (Kernel) -> Unit) {
@@ -167,6 +170,7 @@ class KernelRunner(val kernel: Kernel, private val onFinished: () -> Unit = {}) 
         while (running) {
             if (paused) { synchronized(lock) { if (paused && running) lock.wait(200) }; continue }
             val wait = try { kernel.step(12_000_000) } catch (e: Throwable) {
+                internalError = true
                 kernel.console.write("\n\$RED\$" + L10n.tr8("program.internal_error", "error" to e) + "\$FG\$\n"); kernel.terminate("internal error"); -1L
             }
             if (wait < 0) {

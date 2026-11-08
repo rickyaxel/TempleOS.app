@@ -107,11 +107,11 @@ public final class DocumentRuntime {
     /// Export an ended program's actual DolDoc, including original-format binary sprite attachments.
     public func export(_ path:String) throws {
         guard canExport(),let task=k.mainTask else {throw FsError("Program document is still running")}
-        guard let target=Paths.normalize("C:/Home",path) else {throw FsError("Invalid path")}
+        guard let target=Paths.normalize("C:/Home",path) else {throw FsError("Invalid path","fs.error.invalid_path",["path":path])}
         let doc=try m.check(m.ld8(task.fsAddr+k.o.task("put_doc")),k.prog.classes["CDoc"]!.size)
         let name=doc+k.o.member("CDoc","filename")+k.o.member("CEdFileName","name")
         let capacity=k.prog.classes["CEdFileName"]!.members["name"]!.type.size,bytes=latin1(target)
-        if bytes.count>=capacity {throw FsError("Path is too long")}
+        if bytes.count>=capacity {throw FsError("Path is too long","fs.error.path_too_long")}
         let saved=m.readBytes(name,capacity);defer {m.writeBytes(name,saved)}
         m.writeBytes(name,bytes);m.st1(name+bytes.count,0)
         try k.callHolyC("DocWrite",Int64(doc),0,task:k.adamTask)

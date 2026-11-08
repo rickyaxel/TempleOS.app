@@ -63,6 +63,10 @@ public final class ProgramInfo {
     }
     /** The example's description in the UI language (catalog.<id>.description). */
     public var localizedDescription: String { L10n.has("catalog.\(id).description") ? tr("catalog.\(id).description") : description }
+    /** catalog.json's author of the examples written for this project (catalog.author.project). */
+    public static let projectAuthor = Brand.appName + " contributors"
+    /** The author in the UI language: a person's name stays as written; the project's own examples say whose they are. */
+    public var localizedAuthor: String { author == ProgramInfo.projectAuthor ? tr("catalog.author.project") : author }
     public var unsupported: Bool { status == "unsupported" }
 
     public var usesMouse: Bool { controls.contains("mouse") }

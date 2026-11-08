@@ -118,11 +118,11 @@ class DocumentRuntime(private val k: Kernel) {
     /** An ended program's original DolDoc, including generated binary sprite records. */
     fun export(path:String) {
         if(!canExport()) throw FsError("Program document is still running")
-        val target=Paths.normalize("C:/Home",path) ?: throw FsError("Invalid path")
+        val target=Paths.normalize("C:/Home",path) ?: throw FsError("Invalid path","fs.error.invalid_path",mapOf("path" to path))
         val task=k.mainTask!!;val doc=m.check(m.ld8(task.fsAddr+k.o.task("put_doc")),k.prog.classes["CDoc"]!!.size)
         val name=doc+k.o.member("CDoc","filename")+k.o.member("CEdFileName","name")
         val capacity=k.prog.classes["CEdFileName"]!!.members["name"]!!.type.size
-        val bytes=latin1(target);if(bytes.size>=capacity) throw FsError("Path is too long")
+        val bytes=latin1(target);if(bytes.size>=capacity) throw FsError("Path is too long","fs.error.path_too_long")
         val saved=m.readBytes(name,capacity)
         try {m.writeBytes(name,bytes);m.st1(name+bytes.size,0);k.callHolyC("DocWrite",doc.toLong(),0,task=k.adamTask)}
         finally {m.writeBytes(name,saved)}

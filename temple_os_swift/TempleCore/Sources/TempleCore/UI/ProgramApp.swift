@@ -32,6 +32,8 @@ public final class ProgramApp: App {
     private let consoleView = ConsoleView()
     private var controls: GameControls!
     private var finished = false // Kotlin @Volatile
+    /** The user chose Stop: the end line is then the app's own, whatever the engine reported (Break, Stopped.). */
+    private var stoppedByUser = false // Kotlin @Volatile
     private var documentLinks:[(Rect,OriginalProgramLink)]=[]
     private var showConsole = false
     private var keyboardRequested = false
@@ -222,8 +224,12 @@ public final class ProgramApp: App {
         controls.accessibility { cr, label, on in self.a11yButton(cr, label, selected: on) }
         if showFps { s.text(canvas.right - 56, canvas.bottom + 2, String(format: "%3ld FPS", fps), Palette.YELLOW, Palette.BLACK) }
         if isFinished {
-            // the exit reason is the kernel's own (HolyC/TempleOS) text; only the frame is translated
-            let msg = kernel.exitMessage.map { tr("program.ended_with", ("reason", $0.take(40))) } ?? tr("program.ended")
+            // the exit reason is the kernel's own (HolyC/TempleOS) text; only the frame is translated. A stop the
+            // user chose and a host failure are the app's own: their text stays in the console and exitMessage
+            let msg: String
+            if stoppedByUser || kernel.exitMessage == nil { msg = tr("program.ended") }
+            else if runner.internalError { msg = tr("program.ended_with", ("reason", tr("error.generic"))) }
+            else { msg = tr("program.ended_with", ("reason", kernel.exitMessage!.take(40))) }
             s.uiText(r.x + 4, r.bottom - 10, msg, Palette.YELLOW, r.w - 8, Palette.BLACK)
             a11yText(Rect(r.x, r.bottom - 10, r.w, 10), msg)
         }
@@ -295,7 +301,7 @@ public final class ProgramApp: App {
         if let info = info {
             items.append(MenuItem(tr("program.menu.about")) { [self] in
                 let license = { info.license.hasPrefix("Public domain") ? tr("catalog.license.public_domain") : tr("catalog.license.project") }
-                shell.showDialog(Dialog.confirm(info.title, tr("program.about.details", ("author", info.author), ("license", license()), ("source", info.source), ("file", info.path)) +
+                shell.showDialog(Dialog.confirm(info.title, tr("program.about.details", ("author", info.localizedAuthor), ("license", license()), ("source", info.source), ("file", info.path)) +
                     (!info.localizedDescription.isEmpty ? "\n\n\(info.localizedDescription)" : "") +
                     (!info.note.isEmpty ? "\n\n" + tr("program.about.compatibility", ("status", tr("catalog.status.\(info.status)")), ("note", info.localizedNote)) : ""), tr("button.ok")) {})
             })
@@ -320,6 +326,7 @@ public final class ProgramApp: App {
 
     public func stop() {
         if isFinished { return }
+        stoppedByUser = true
         runner.stop(hard: false)
         // escalate if the program does not end within 1.5 s (spec: Stop raises Break first)
         let t = Thread { [weak self] in

@@ -35,7 +35,7 @@ class TerminalApp(shell: Shell, startDir: String = "C:/Home") : App(shell) {
         runner.start { k ->
             k.onShellIdle = { prompt() }
             // the banner is console text (8-bit TempleOS cells): translated when the TempleOS font can show it
-            k.console.write("\$PURPLE\$${Brand.APP_NAME} Terminal\$FG\$ - " + L10n.tr8("terminal.banner", "dir" to "\$GREEN\$Dir;\$FG\$", "help" to "\$GREEN\$Help;\$FG\$") + "\n")
+            k.console.write("\$PURPLE\$${Brand.APP_NAME} " + L10n.tr8("app.terminal.title") + "\$FG\$ - " + L10n.tr8("terminal.banner", "dir" to "\$GREEN\$Dir;\$FG\$", "help" to "\$GREEN\$Help;\$FG\$") + "\n")
             if (startDir != "C:/Home") k.post(KInput.Exec("Cd(\"$startDir\");"))
             else prompt()
             ready = true

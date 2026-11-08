@@ -31,6 +31,8 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
     private var lastPointer = Kernel.W / 2 to Kernel.H / 2 // TempleOS starts the pointer mid-screen
     private var lastButtons = false to false
     @Volatile private var finished = false
+    /** The user chose Stop: the end line is then the app's own, whatever the engine reported (Break, Stopped.). */
+    @Volatile private var stoppedByUser = false
     private val documentLinks=ArrayList<Pair<Rect,OriginalProgramLink>>()
     private var showConsole = false
     private var keyboardRequested = false
@@ -186,8 +188,14 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
         controls.accessibility { cr, label, on -> a11yButton(cr, label, on) }
         if (showFps) s.text(canvas.right - 56, canvas.bottom + 2, "%3d FPS".format(java.util.Locale.ROOT, fps), Palette.YELLOW, Palette.BLACK)
         if (isFinished) {
-            // the exit reason is the kernel's own (HolyC/TempleOS) text; only the frame is translated
-            val msg = kernel.exitMessage?.let { tr("program.ended_with", "reason" to it.take(40)) } ?: tr("program.ended")
+            // the exit reason is the kernel's own (HolyC/TempleOS) text; only the frame is translated. A stop the
+            // user chose and a host failure are the app's own: their text stays in the console and exitMessage
+            val reason = kernel.exitMessage
+            val msg = when {
+                stoppedByUser || reason == null -> tr("program.ended")
+                runner.internalError -> tr("program.ended_with", "reason" to tr("error.generic"))
+                else -> tr("program.ended_with", "reason" to reason.take(40))
+            }
             s.uiText(r.x + 4, r.bottom - 10, msg, Palette.YELLOW, r.w - 8, Palette.BLACK)
             a11yText(Rect(r.x, r.bottom - 10, r.w, 10), msg)
         }
@@ -250,14 +258,14 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
         })
         if(runner.booted && isFinished && kernel.documents.canExport()) items.add(MenuItem( { tr("menu.save_as") }) {
             shell.showDialog(Dialog.input( { tr("editor.dialog.save_as") },"C:/Home/"+path.substringAfterLast('/').substringBefore('.')+".DD") {target ->
-                if(target!=null) try {kernel.documents.export(target);shell.showToast( { tr("toast.saved","path" to target) })} catch(e:FsError) {shell.showToast( { e.localized() })} catch(e:Exception) {shell.showToast( { e.message.orEmpty() })}
+                if(target!=null) try {kernel.documents.export(target);shell.showToast( { tr("toast.saved","path" to target) })} catch(e:FsError) {shell.showToast( { e.localized() })} catch(e:Exception) {shell.showToast( { e.message ?: tr("error.generic") })}
             })
         })
         items.add(MenuItem( { tr("menu.edit_source") }) { Launch.editor(shell, path) })
         if (kernel.graphicsUsed) items.add(MenuItem( { tr("program.menu.show_frame_rate") }, checked = showFps) { showFps = !showFps; fpsAt = 0; invalidate() })
         if (info != null) items.add(MenuItem( { tr("program.menu.about") }) {
             val license = { if (info.license.startsWith("Public domain")) tr("catalog.license.public_domain") else tr("catalog.license.project") }
-            shell.showDialog(Dialog.confirm( { info.title }, { tr("program.about.details", "author" to info.author, "license" to license(), "source" to info.source, "file" to info.path) +
+            shell.showDialog(Dialog.confirm( { info.title }, { tr("program.about.details", "author" to info.localizedAuthor, "license" to license(), "source" to info.source, "file" to info.path) +
                 (if (info.localizedDescription.isNotEmpty()) "\n\n${info.localizedDescription}" else "") +
                 (if (info.note.isNotEmpty()) "\n\n" + tr("program.about.compatibility", "status" to tr("catalog.status.${info.status}"), "note" to info.localizedNote) else "") }, { tr("button.ok") }) {})
         })
@@ -278,6 +286,7 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
 
     fun stop() {
         if (isFinished) return
+        stoppedByUser = true
         runner.stop(hard = false)
         // escalate if the program does not end within 1.5 s (spec: Stop raises Break first)
         Thread {

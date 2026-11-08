@@ -222,6 +222,125 @@ class LocalizationRegressionTest {
         }
     }
 
+    /**
+     * The game controls' own labels (touch mode, wheel) are translated and fit their buttons, the key caps stay as
+     * they are, and every button sends exactly what it sends in English: the same key codes, wheel notches and touch
+     * modes, in the same order. The labels never decide what a button does.
+     */
+    @Test fun gameControlsAreTranslatedWithoutChangingTheirInput() {
+        shell.resize(720, 720)
+        val info = ProgramInfo("test", "Test", "game", "C:/Test.HC", "interpreted_holyc", "Terry A. Davis", "Public domain (TempleOS)",
+            "TempleOS V5.03 ISO", listOf("arrows", "ctrl", "shift", "wheel", "mouse"), listOf("graphics"), "any", "")
+        val portrait = Rect(0, 300, 360, 360)
+        val landscape = Rect(0, 0, 100, 360) to Rect(544, 0, 96, 360)
+        class Result(val events: List<String>, val labels: List<List<String>>, val spoken: List<List<String>>, val rects: List<List<Rect>>, val modes: List<Int>)
+        fun press(locale: String, landscapeGutter: Boolean): Result {
+            L10n.use(locale)
+            val sent = ArrayList<String>()
+            val controls = GameControls { e -> if (e is io.github.templeosmobile.core.kernel.KInput.Key) sent.add("key ${e.ch} ${e.sc} ${e.down}") }
+            controls.onWheel = { sent.add("wheel $it") }
+            val labels = ArrayList<List<String>>(); val spoken = ArrayList<List<String>>(); val rects = ArrayList<List<Rect>>(); val modes = ArrayList<Int>()
+            fun layout() {
+                if (landscapeGutter) controls.draw(shell.surface, landscape.first, emptyList(), vertical = false, showDpad = true, actionArea = landscape.second, info = info)
+                else controls.draw(shell.surface, portrait, emptyList(), vertical = true, showDpad = true, info = info)
+                val s = ArrayList<String>(); val r = ArrayList<Rect>()
+                controls.accessibility { rect, label, _ -> r.add(rect); s.add(label) }
+                labels.add(controls.labels); spoken.add(s); rects.add(r); modes.add(controls.clickMode)
+            }
+            layout()
+            val events = ArrayList<String>()
+            // every button once, then the touch-mode toggle until it is back where it started
+            for (i in rects[0].indices + List(2) { rects[0].lastIndex }) {
+                val r = rects.last()[i]
+                controls.pointer(PointerEvent(Ptr.DOWN, r.x + r.w / 2, r.y + r.h / 2, id = 1))
+                controls.pointer(PointerEvent(Ptr.UP, r.x + r.w / 2, r.y + r.h / 2, id = 1))
+                events.add("$i: $sent mode ${controls.clickMode}"); sent.clear()
+                layout()
+            }
+            return Result(events, labels, spoken, rects, modes)
+        }
+        val modeKeys = listOf("left_click", "right_click", "hover")
+        for (gutter in listOf(false, true)) {
+            val english = press("en-US", gutter)
+            val keyCaps = english.labels[0].dropLast(3) // arrows, SPACE ENTER ESC, CTRL SHIFT
+            assertEquals(listOf("\u0018", "\u001B", "\u001A", "\u0019", "SPACE", "ENTER", "ESC", "CTRL", "SHIFT"), keyCaps)
+            assertEquals("the toggle cycles through all three modes", listOf(1, 2, 0), english.modes.takeLast(3))
+            for (locale in L10n.resolver!!.locales) {
+                val result = press(locale.id, gutter)
+                L10n.use(locale.id)
+                assertEquals("${locale.id}: input", english.events, result.events)
+                for ((step, labels) in result.labels.withIndex()) {
+                    val mode = modeKeys[result.modes[step]]
+                    assertEquals("${locale.id}: key caps", keyCaps, labels.dropLast(3))
+                    assertEquals(listOf(tr("controls.button.wheel_up"), tr("controls.button.wheel_down"), tr("controls.button.$mode")), labels.takeLast(3))
+                    assertEquals(listOf(tr("controls.a11y.wheel_up"), tr("controls.a11y.wheel_down"), tr("controls.a11y.$mode")), result.spoken[step].takeLast(3))
+                    val rects = result.rects[step]
+                    assertEquals("${locale.id}: the toggle keeps its place and size while it cycles", result.rects[0].last(), rects.last())
+                    val area = if (gutter) landscape.second else portrait
+                    for ((i, r) in rects.withIndex()) {
+                        if (i >= 4) assertTrue("${locale.id}: ${labels[i]} $r inside $area", r.x >= area.x && r.right <= area.right && r.bottom <= area.bottom)
+                        for (o in rects.drop(i + 1)) assertTrue("${locale.id}: $r overlaps $o", r.intersect(o).w <= 0 || r.intersect(o).h <= 0)
+                        if (!gutter || Cp437.representable(labels[i]))
+                            assertTrue("${locale.id}: \"${labels[i]}\" fits ${r.w}", shell.surface.measureUi(labels[i]) <= r.w - 4)
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Stop is the app's command: the end line is the app's own, while the engine's message stays for the console.
+     * The program catches nothing, so Break ends it with the engine's message (a game with its own catch ends normally).
+     */
+    @Test fun stoppingAProgramEndsWithALocalizedLine() {
+        shell.resize(360, 640)
+        val source = io.github.templeosmobile.core.holyc.latin1("U0 DrawIt(CTask *,CDC *dc) { dc->color=RED; GrRect(dc,10,10,50,50); }\nFs->draw_it=&DrawIt;\nwhile (TRUE) Sleep(20);\n")
+        val app = ProgramApp(shell, "C:/Home/StopTest.HC", null, source)
+        shell.open(app, maximized = true)
+        val end = System.currentTimeMillis() + 20_000
+        while (System.currentTimeMillis() < end && !(app.kernel.graphicsUsed && app.kernel.frameCount >= 5)) { shell.tick(); Thread.sleep(16) }
+        assertTrue("the program draws", app.kernel.graphicsUsed)
+        L10n.use("es-ES")
+        app.stop()
+        val stopped = System.currentTimeMillis() + 10_000
+        while (System.currentTimeMillis() < stopped && !app.isFinished) { shell.tick(); Thread.sleep(16) }
+        assertTrue(app.isFinished)
+        shell.invalidate(); shell.tick()
+        val labels = shell.accessibilityNodes().map { it.label }
+        assertTrue(labels.toString(), tr("program.ended") in labels)
+        assertFalse(labels.toString(), labels.any { it.startsWith(tr("program.ended_with", "reason" to "")) })
+        val engine = app.kernel.exitMessage
+        assertNotNull("the engine's own message is kept", engine)
+        assertFalse(labels.toString(), labels.any { it.contains(engine!!.take(40)) })
+        assertEquals(io.github.templeosmobile.core.kernel.ExitCategory.STOPPED, app.kernel.exitCategory)
+    }
+
+    @Test fun programAuthorsArePeopleOrTheProject() {
+        for (locale in listOf("en-US", "es-ES", "ja-JP", "ar")) {
+            L10n.use(locale)
+            for (p in shell.catalog.programs) {
+                assertTrue("${p.id}: ${p.author}", p.author == "Terry A. Davis" || p.author == ProgramInfo.PROJECT_AUTHOR)
+                if (p.author == ProgramInfo.PROJECT_AUTHOR) assertEquals(tr("catalog.author.project"), p.localizedAuthor)
+                else assertEquals("a person's name is never translated", p.author, p.localizedAuthor)
+            }
+        }
+        L10n.use("es-ES")
+        assertTrue(tr("catalog.author.project"), tr("catalog.author.project").contains(Brand.APP_NAME))
+    }
+
+    /** The Terminal banner is console text: translated where the TempleOS font can show it, otherwise English. */
+    @Test fun terminalBannerNamesTheTerminalInTheUiLanguage() {
+        for ((locale, expected) in listOf("it-IT" to "Terminale", "ja-JP" to "Terminal")) {
+            L10n.use(locale)
+            Launch.terminal(shell)
+            val term = shell.focused!!.app as TerminalApp
+            val end = System.currentTimeMillis() + 10_000
+            while (System.currentTimeMillis() < end && !term.kernel.console.plainText().contains(Brand.APP_NAME)) { shell.tick(); Thread.sleep(20) }
+            assertTrue(term.kernel.console.plainText(), term.kernel.console.plainText().contains("${Brand.APP_NAME} $expected - "))
+            shell.close(shell.focused!!, force = true)
+        }
+    }
+
     @Test fun dialogTextScrollReachesTheEndWithoutActivatingAnAction() {
         shell.resize(320, 240)
         val message = "日本語の説明 ".repeat(80) + "終端"

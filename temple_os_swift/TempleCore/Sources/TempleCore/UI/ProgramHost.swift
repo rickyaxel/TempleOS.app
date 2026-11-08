@@ -216,6 +216,9 @@ public final class GameControls {
 
     public init(_ typematic: Typematic = Typematic(), _ send: @escaping (KInput) -> Void) { self.typematic = typematic; self.send = send }
 
+    /** The labels of the buttons drawn last, in order (tests, diagnostics). */
+    var labels: [String] { buttons.map { $0.label } }
+
     /** Screen-reader nodes for the buttons drawn last (label, toggle state). */
     public func accessibility(_ add: (Rect, String, Bool) -> Void) {
         for b in buttons {
@@ -224,8 +227,6 @@ public final class GameControls {
                 switch b.label {
                 case "\u{18}": label = tr("key.up"); case "\u{19}": label = tr("key.down"); case "\u{1B}": label = tr("key.left"); case "\u{1A}": label = tr("key.right")
                 case "SPACE": label = tr("key.space"); case "ENTER": label = tr("key.enter"); case "ESC": label = tr("key.escape")
-                case "L-CLICK": label = tr("controls.a11y.left_click"); case "R-CLICK": label = tr("controls.a11y.right_click")
-                case "MOVE": label = tr("controls.a11y.hover")
                 default: label = Cp437.decode(b.label)
                 }
             }
@@ -264,8 +265,8 @@ public final class GameControls {
         if info?.usesCtrl == true { extras.append(Btn("CTRL", Rect(0, 0, 0, 0), 0, Int64(Keys.SC_CTRL), tr("key.control"))) }
         if info?.usesShift == true { extras.append(Btn("SHIFT", Rect(0, 0, 0, 0), 0, Int64(Keys.SC_SHIFT), tr("key.shift"))) }
         if info?.usesWheel == true {
-            extras.append(Btn("WHL+", Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_up"), wheel: 1))
-            extras.append(Btn("WHL-", Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_down"), wheel: -1))
+            extras.append(Btn(tr("controls.button.wheel_up"), Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_up"), wheel: 1))
+            extras.append(Btn(tr("controls.button.wheel_down"), Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_down"), wheel: -1))
         }
         let area = actionArea ?? r
         let x0 = actionArea != nil ? area.x + 4 : showDpad ? pad.right + 8 : r.x + 4
@@ -279,17 +280,24 @@ public final class GameControls {
             let rows = (count + max(1, (area.w - 4) / bw) - 1) / max(1, (area.w - 4) / bw)
             by = area.y + max(4, (area.h - rows * (Touch.button + 4)) / 2)
         } else { by = showDpad ? pad.y : r.y + 4 }
-        func place() -> Rect {
-            if bx + bw > area.right { bx = x0; by += Touch.button + 4 }
-            let rr = Rect(bx, by, bw - 4, Touch.button); bx += bw; return rr
+        // one grid cell per button; a translated label wider than its cell takes the cells it needs on its row
+        func place(_ labelW: Int = 0) -> Rect {
+            let w = bw * min(max((labelW + 8 + bw - 1) / bw, 1), max(1, (area.right - x0) / bw))
+            if bx + w > area.right { bx = x0; by += Touch.button + 4 }
+            let rr = Rect(bx, by, w - 4, Touch.button); bx += w; return rr
         }
         for (l, ch, sc) in actions { add(l, place(), -1, ch, sc) }
         for m in menuKeys {
             let (ch, sc) = menuKey(m.a1, m.a2)
             buttons.append(Btn(m.label.take(10), place(), ch, sc))
         }
-        for b in extras { buttons.append(Btn(b.label, place(), b.ch, b.sc, b.a11y, wheel: b.wheel)) }
-        buttons.append(Btn(clickMode == 1 ? "R-CLICK" : clickMode == 2 ? "MOVE" : "L-CLICK", place(), 0, 0,
+        for b in extras { buttons.append(Btn(b.label, place(s.measureUi(b.label)), b.ch, b.sc, b.a11y, wheel: b.wheel)) }
+        // the touch mode's label and spoken name are the app's (translated); the toggle never reads them. Sized
+        // for its widest label, so it keeps its place and size while it cycles.
+        let modes = [(tr("controls.button.left_click"), tr("controls.a11y.left_click")),
+                     (tr("controls.button.right_click"), tr("controls.a11y.right_click")), (tr("controls.button.hover"), tr("controls.a11y.hover"))]
+        let (mode, modeA11y) = modes[clickMode]
+        buttons.append(Btn(mode, place(modes.map { s.measureUi($0.0) }.max() ?? 0), 0, 0, modeA11y,
                            toggle: { [unowned self] in clickMode = (clickMode + 1) % 3 }))
         for b in buttons {
             let pressed = held.values.contains { $0 === b }

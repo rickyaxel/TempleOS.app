@@ -13,6 +13,8 @@ public final class KernelRunner {
     private var running = true
     public private(set) var booted = false
     public private(set) var bootError: String?
+    /** The host runtime failed (a bug, not the program): the kernel's exit message is then the host's, not HolyC's. */
+    public private(set) var internalError = false
     private var thread: Thread?
     /** Set when the runner thread has exited (replaces Thread.join). Guarded by [lock]. */
     private var threadDone = false
@@ -53,6 +55,7 @@ public final class KernelRunner {
             if paused { lock.sync { if paused && running { lock.wait(ms: 200) } }; continue }
             let wait: Int64
             do { wait = try kernel.step(12_000_000) } catch {
+                internalError = true
                 kernel.console.write("\n$RED$" + L10n.tr8("program.internal_error", ("error", error)) + "$FG$\n"); kernel.terminate("internal error"); wait = -1
             }
             if wait < 0 {

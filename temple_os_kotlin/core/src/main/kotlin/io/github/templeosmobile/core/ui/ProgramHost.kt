@@ -166,12 +166,14 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
         }
     }
 
+    /** The labels of the buttons drawn last, in order (tests, diagnostics). */
+    internal val labels get() = buttons.map { it.label }
+
     /** Screen-reader nodes for the buttons drawn last (label, toggle state). */
     fun accessibility(add: (Rect, String, Boolean) -> Unit) {
         for (b in buttons) add(b.rect, b.a11y ?: when (b.label) {
             "\u0018" -> tr("key.up"); "\u0019" -> tr("key.down"); "\u001B" -> tr("key.left"); "\u001A" -> tr("key.right")
             "SPACE" -> tr("key.space"); "ENTER" -> tr("key.enter"); "ESC" -> tr("key.escape")
-            "L-CLICK" -> tr("controls.a11y.left_click"); "R-CLICK" -> tr("controls.a11y.right_click"); "MOVE" -> tr("controls.a11y.hover")
             else -> Cp437.decode(b.label)
         }, b.toggle != null && clickMode != 0)
     }
@@ -206,8 +208,8 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
         if (info?.usesCtrl == true) extras.add(Btn("CTRL", Rect(0, 0, 0, 0), 0, Keys.SC_CTRL.toLong(), tr("key.control")))
         if (info?.usesShift == true) extras.add(Btn("SHIFT", Rect(0, 0, 0, 0), 0, Keys.SC_SHIFT.toLong(), tr("key.shift")))
         if (info?.usesWheel == true) {
-            extras.add(Btn("WHL+", Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_up"), wheel = 1))
-            extras.add(Btn("WHL-", Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_down"), wheel = -1))
+            extras.add(Btn(tr("controls.button.wheel_up"), Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_up"), wheel = 1))
+            extras.add(Btn(tr("controls.button.wheel_down"), Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_down"), wheel = -1))
         }
         val area = actionArea ?: r
         val x0 = if (actionArea != null) area.x + 4 else if (showDpad) pad.right + 8 else r.x + 4
@@ -220,18 +222,24 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
             val rows = (count + maxOf(1, (area.w - 4) / bw) - 1) / maxOf(1, (area.w - 4) / bw)
             area.y + maxOf(4, (area.h - rows * (Touch.button + 4)) / 2)
         } else if (showDpad) pad.y else r.y + 4
-        fun place(): Rect {
-            if (bx + bw > area.right) { bx = x0; by += Touch.button + 4 }
-            val rr = Rect(bx, by, bw - 4, Touch.button); bx += bw; return rr
+        // one grid cell per button; a translated label wider than its cell takes the cells it needs on its row
+        fun place(labelW: Int = 0): Rect {
+            val w = bw * ((labelW + 8 + bw - 1) / bw).coerceIn(1, maxOf(1, (area.right - x0) / bw))
+            if (bx + w > area.right) { bx = x0; by += Touch.button + 4 }
+            val rr = Rect(bx, by, w - 4, Touch.button); bx += w; return rr
         }
         for ((l, ch, sc) in actions) add(l, place(), -1, ch, sc)
         for (m in menuKeys) {
             val (ch, sc) = menuKey(m.a1, m.a2)
             buttons.add(Btn(m.label.take(10), place(), ch, sc))
         }
-        for (b in extras) buttons.add(Btn(b.label, place(), b.ch, b.sc, b.a11y, wheel = b.wheel))
-        buttons.add(Btn(when (clickMode) { 1 -> "R-CLICK"; 2 -> "MOVE"; else -> "L-CLICK" }, place(), 0, 0,
-            toggle = { clickMode = (clickMode + 1) % 3 }))
+        for (b in extras) buttons.add(Btn(b.label, place(s.measureUi(b.label)), b.ch, b.sc, b.a11y, wheel = b.wheel))
+        // the touch mode's label and spoken name are the app's (translated); the toggle never reads them. Sized
+        // for its widest label, so it keeps its place and size while it cycles.
+        val modes = listOf(tr("controls.button.left_click") to tr("controls.a11y.left_click"),
+            tr("controls.button.right_click") to tr("controls.a11y.right_click"), tr("controls.button.hover") to tr("controls.a11y.hover"))
+        val (mode, modeA11y) = modes[clickMode]
+        buttons.add(Btn(mode, place(modes.maxOf { s.measureUi(it.first) }), 0, 0, modeA11y, toggle = { clickMode = (clickMode + 1) % 3 }))
         for (b in buttons) {
             val pressed = held.values.any { it === b }
             val on = b.toggle != null && clickMode != 0

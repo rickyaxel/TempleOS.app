@@ -222,6 +222,126 @@ final class LocalizationRegressionTests: XCTestCase {
         }
     }
 
+    /**
+     * The game controls' own labels (touch mode, wheel) are translated and fit their buttons, the key caps stay as
+     * they are, and every button sends exactly what it sends in English: the same key codes, wheel notches and touch
+     * modes, in the same order. The labels never decide what a button does.
+     */
+    func testGameControlsAreTranslatedWithoutChangingTheirInput() {
+        shell.resize(720, 720)
+        let info = ProgramInfo("test", "Test", "game", "C:/Test.HC", "interpreted_holyc", "Terry A. Davis", "Public domain (TempleOS)",
+                               "TempleOS V5.03 ISO", ["arrows", "ctrl", "shift", "wheel", "mouse"], ["graphics"], "any", "")
+        let portrait = Rect(0, 300, 360, 360)
+        let landscape = (Rect(0, 0, 100, 360), Rect(544, 0, 96, 360))
+        struct Result { var events: [String] = [], labels: [[String]] = [], spoken: [[String]] = [], rects: [[Rect]] = [], modes: [Int] = [] }
+        func press(_ locale: String, _ gutter: Bool) -> Result {
+            L10n.use(locale)
+            var sent: [String] = []
+            let controls = GameControls { e in if case let .key(ch, sc, down) = e { sent.append("key \(ch) \(sc) \(down)") } }
+            controls.onWheel = { sent.append("wheel \($0)") }
+            var result = Result()
+            func layout() {
+                if gutter { controls.draw(shell.surface, landscape.0, [], vertical: false, showDpad: true, actionArea: landscape.1, info: info) }
+                else { controls.draw(shell.surface, portrait, [], vertical: true, showDpad: true, info: info) }
+                var s: [String] = [], r: [Rect] = []
+                controls.accessibility { rect, label, _ in r.append(rect); s.append(label) }
+                result.labels.append(controls.labels); result.spoken.append(s); result.rects.append(r); result.modes.append(controls.clickMode)
+            }
+            layout()
+            // every button once, then the touch-mode toggle until it is back where it started
+            let count = result.rects[0].count
+            for i in Array(0..<count) + [count - 1, count - 1] {
+                let r = result.rects.last![i]
+                _ = controls.pointer(PointerEvent(Ptr.DOWN, r.x + r.w / 2, r.y + r.h / 2, id: 1))
+                _ = controls.pointer(PointerEvent(Ptr.UP, r.x + r.w / 2, r.y + r.h / 2, id: 1))
+                result.events.append("\(i): \(sent) mode \(controls.clickMode)"); sent.removeAll()
+                layout()
+            }
+            return result
+        }
+        let modeKeys = ["left_click", "right_click", "hover"]
+        for gutter in [false, true] {
+            let english = press("en-US", gutter)
+            let keyCaps = Array(english.labels[0].dropLast(3)) // arrows, SPACE ENTER ESC, CTRL SHIFT
+            XCTAssertEqual(["\u{18}", "\u{1B}", "\u{1A}", "\u{19}", "SPACE", "ENTER", "ESC", "CTRL", "SHIFT"], keyCaps)
+            XCTAssertEqual([1, 2, 0], Array(english.modes.suffix(3)), "the toggle cycles through all three modes")
+            for locale in L10n.resolver!.locales {
+                let result = press(locale.id, gutter)
+                L10n.use(locale.id)
+                XCTAssertEqual(english.events, result.events, "\(locale.id): input")
+                for (step, labels) in result.labels.enumerated() {
+                    let mode = modeKeys[result.modes[step]]
+                    XCTAssertEqual(keyCaps, Array(labels.dropLast(3)), "\(locale.id): key caps")
+                    XCTAssertEqual([tr("controls.button.wheel_up"), tr("controls.button.wheel_down"), tr("controls.button.\(mode)")], Array(labels.suffix(3)))
+                    XCTAssertEqual([tr("controls.a11y.wheel_up"), tr("controls.a11y.wheel_down"), tr("controls.a11y.\(mode)")], Array(result.spoken[step].suffix(3)))
+                    let rects = result.rects[step]
+                    XCTAssertEqual(result.rects[0].last, rects.last, "\(locale.id): the toggle keeps its place and size while it cycles")
+                    let area = gutter ? landscape.1 : portrait
+                    for (i, r) in rects.enumerated() {
+                        if i >= 4 { XCTAssertTrue(r.x >= area.x && r.right <= area.right && r.bottom <= area.bottom, "\(locale.id): \(labels[i]) \(r) inside \(area)") }
+                        for o in rects.dropFirst(i + 1) { let x = r.intersect(o); XCTAssertTrue(x.w <= 0 || x.h <= 0, "\(locale.id): \(r) overlaps \(o)") }
+                        if !gutter || Cp437.representable(labels[i]) {
+                            XCTAssertLessThanOrEqual(shell.surface.measureUi(labels[i]), r.w - 4, "\(locale.id): \"\(labels[i])\" fits")
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Stop is the app's command: the end line is the app's own, while the engine's message stays for the console.
+     * The program catches nothing, so Break ends it with the engine's message (a game with its own catch ends normally).
+     */
+    func testStoppingAProgramEndsWithALocalizedLine() throws {
+        shell.resize(360, 640)
+        let source = latin1("U0 DrawIt(CTask *,CDC *dc) { dc->color=RED; GrRect(dc,10,10,50,50); }\nFs->draw_it=&DrawIt;\nwhile (TRUE) Sleep(20);\n")
+        let app = ProgramApp(shell, "C:/Home/StopTest.HC", nil, source)
+        _ = shell.open(app, maximized: true)
+        let end = Date().addingTimeInterval(20)
+        while Date() < end && !(app.kernel.graphicsUsed && app.kernel.frameCount >= 5) { _ = shell.tick(); Thread.sleep(forTimeInterval: 0.016) }
+        XCTAssertTrue(app.kernel.graphicsUsed, "the program draws")
+        L10n.use("es-ES")
+        app.stop()
+        let stopped = Date().addingTimeInterval(10)
+        while Date() < stopped && !app.isFinished { _ = shell.tick(); Thread.sleep(forTimeInterval: 0.016) }
+        XCTAssertTrue(app.isFinished)
+        shell.invalidate(); _ = shell.tick()
+        let labels = shell.accessibilityNodes().map(\.label)
+        XCTAssertTrue(labels.contains(tr("program.ended")), "\(labels)")
+        XCTAssertFalse(labels.contains { $0.hasPrefix(tr("program.ended_with", ("reason", ""))) }, "\(labels)")
+        let engine = try XCTUnwrap(app.kernel.exitMessage, "the engine's own message is kept")
+        XCTAssertFalse(labels.contains { $0.contains(String(engine.prefix(40))) }, "\(labels)")
+        XCTAssertEqual(ExitCategory.STOPPED, app.kernel.exitCategory)
+    }
+
+    func testProgramAuthorsArePeopleOrTheProject() {
+        for locale in ["en-US", "es-ES", "ja-JP", "ar"] {
+            L10n.use(locale)
+            for p in shell.catalog.programs {
+                XCTAssertTrue(p.author == "Terry A. Davis" || p.author == ProgramInfo.projectAuthor, "\(p.id): \(p.author)")
+                if p.author == ProgramInfo.projectAuthor { XCTAssertEqual(tr("catalog.author.project"), p.localizedAuthor) }
+                else { XCTAssertEqual(p.author, p.localizedAuthor, "a person's name is never translated") }
+            }
+        }
+        L10n.use("es-ES")
+        XCTAssertTrue(tr("catalog.author.project").contains(Brand.appName))
+    }
+
+    /** The Terminal banner is console text: translated where the TempleOS font can show it, otherwise English. */
+    func testTerminalBannerNamesTheTerminalInTheUiLanguage() {
+        for (locale, expected) in [("it-IT", "Terminale"), ("ja-JP", "Terminal")] {
+            L10n.use(locale)
+            Launch.terminal(shell)
+            let term = shell.focused!.app as! TerminalApp
+            let end = Date().addingTimeInterval(10)
+            while Date() < end && !(term.kernel?.console.plainText().contains(Brand.appName) ?? false) { _ = shell.tick(); Thread.sleep(forTimeInterval: 0.02) }
+            let banner = term.kernel.console.plainText()
+            XCTAssertTrue(banner.contains("\(Brand.appName) \(expected) - "), banner)
+            shell.close(shell.focused!, force: true)
+        }
+    }
+
     func testDialogTextScrollReachesTheEndWithoutActivatingAnAction() throws {
         shell.resize(320, 240)
         let message = String(repeating: "日本語の説明 ", count: 80) + "終端"
