@@ -140,6 +140,21 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
     private val heldSince = HashMap<Int, Long>() // pointer id -> first tick time (-1 until then)
     private val lastRepeat = HashMap<Int, Long>()
     private val ticket = HashMap<Int, Long>()
+    /**
+     * The controls' own labels in the UI language (touch modes with their spoken names, wheel) and the widths
+     * the layout gives them: resolved when the language changes, not on every frame (the shell's surface
+     * measures with one fixed font).
+     */
+    private class ControlText(s: Surface) {
+        val modes = listOf(tr("controls.button.left_click") to tr("controls.a11y.left_click"),
+            tr("controls.button.right_click") to tr("controls.a11y.right_click"), tr("controls.button.hover") to tr("controls.a11y.hover"))
+        val modeW = modes.maxOf { s.measureUi(it.first) }
+        val wheelUp = tr("controls.button.wheel_up")
+        val wheelDown = tr("controls.button.wheel_down")
+        val wheelUpW = s.measureUi(wheelUp)
+        val wheelDownW = s.measureUi(wheelDown)
+    }
+    private var controlText: L10n.Presentation<ControlText>? = null
     /** What a touch on the picture is: 0 left button, 1 right button, 2 pointer move only (hover). */
     var clickMode = 0
     val rightClick get() = clickMode == 1
@@ -207,9 +222,10 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
         val extras = ArrayList<Btn>()
         if (info?.usesCtrl == true) extras.add(Btn("CTRL", Rect(0, 0, 0, 0), 0, Keys.SC_CTRL.toLong(), tr("key.control")))
         if (info?.usesShift == true) extras.add(Btn("SHIFT", Rect(0, 0, 0, 0), 0, Keys.SC_SHIFT.toLong(), tr("key.shift")))
+        val t = (controlText ?: L10n.Presentation { ControlText(s) }.also { controlText = it }).value
         if (info?.usesWheel == true) {
-            extras.add(Btn(tr("controls.button.wheel_up"), Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_up"), wheel = 1))
-            extras.add(Btn(tr("controls.button.wheel_down"), Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_down"), wheel = -1))
+            extras.add(Btn(t.wheelUp, Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_up"), wheel = 1))
+            extras.add(Btn(t.wheelDown, Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_down"), wheel = -1))
         }
         val area = actionArea ?: r
         val x0 = if (actionArea != null) area.x + 4 else if (showDpad) pad.right + 8 else r.x + 4
@@ -233,13 +249,12 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
             val (ch, sc) = menuKey(m.a1, m.a2)
             buttons.add(Btn(m.label.take(10), place(), ch, sc))
         }
-        for (b in extras) buttons.add(Btn(b.label, place(s.measureUi(b.label)), b.ch, b.sc, b.a11y, wheel = b.wheel))
+        // CTRL and SHIFT are key caps and keep one cell; a translated wheel label may need more
+        for (b in extras) buttons.add(Btn(b.label, place(when (b.wheel) { 1 -> t.wheelUpW; -1 -> t.wheelDownW; else -> 0 }), b.ch, b.sc, b.a11y, wheel = b.wheel))
         // the touch mode's label and spoken name are the app's (translated); the toggle never reads them. Sized
         // for its widest label, so it keeps its place and size while it cycles.
-        val modes = listOf(tr("controls.button.left_click") to tr("controls.a11y.left_click"),
-            tr("controls.button.right_click") to tr("controls.a11y.right_click"), tr("controls.button.hover") to tr("controls.a11y.hover"))
-        val (mode, modeA11y) = modes[clickMode]
-        buttons.add(Btn(mode, place(modes.maxOf { s.measureUi(it.first) }), 0, 0, modeA11y, toggle = { clickMode = (clickMode + 1) % 3 }))
+        val (mode, modeA11y) = t.modes[clickMode]
+        buttons.add(Btn(mode, place(t.modeW), 0, 0, modeA11y, toggle = { clickMode = (clickMode + 1) % 3 }))
         for (b in buttons) {
             val pressed = held.values.any { it === b }
             val on = b.toggle != null && clickMode != 0

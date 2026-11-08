@@ -45,8 +45,8 @@ Ethiopic, Hangul, Han (Simplified/Traditional), Japanese kana. Locales sharing a
    it reaches the screen or a screen reader.
 3. Traced generated text: kernel exit messages, `FsError` messages, catalog metadata fields shown in
    dialogs, console banners, accessibility labels assigned in the platform layers.
-4. Compared the catalog keys each platform references (identical except a Kotlin-only null-message
-   fallback) and the two implementations of every affected surface.
+4. Compared the catalog keys each platform references and the two implementations of every affected
+   surface.
 
 ## Findings
 
@@ -59,7 +59,6 @@ Ethiopic, Hangul, Han (Simplified/Traditional), Japanese kana. Locales sharing a
 | L-05 | Medium | About this program (9 examples written for the project) | `Author: TempleOS.app contributors` | The catalog's `author` field shown raw (the license field was already mapped) | Fixed (both) |
 | L-06 | Low | Save as after a document program ends | `Invalid path`, `Path is too long` | `FsError` created without a catalog key, so `localized()` showed its message | Fixed (both) |
 | L-07 | Low | Terminal banner | `TempleOS.app Terminal` | The word "Terminal" written as a literal beside the `tr8` banner text | Fixed (both) |
-| L-08 | Low | Save as error toast (Android) | empty toast | A non-`FsError` exception without a message produced an empty toast | Fixed (Kotlin; Swift already showed the error text) |
 
 Not defects (classified and left as they are, with reasons in the boundary document): key caps on the
 keyboard, key row and game controls; game buttons named by the program's own menu; kernel and
@@ -71,8 +70,9 @@ Tooling defects found on the way:
 - `hardcoded_audit.py` only matched single-line calls from a fixed list, so it missed all of the
   above. It now also checks the game controls' `Btn`, multi-line calls, platform accessibility
   assignments and keyless `FsError`s; on the original code it reports 14 findings, on the fixed code 0.
-- `census.py` defaulted to a baseline commit that predates this repository's history and crashed
-  without `--baseline`; it now defaults to `HEAD`.
+- `census.py` defaults to a baseline commit that predates this repository's history and stops with an
+  error without `--baseline`; pass `--baseline <commit>`. Left as it is (a tooling fix, not part of the
+  UI translation).
 
 ## Changes
 
@@ -80,17 +80,33 @@ Tooling defects found on the way:
   spoken text is attached to each button; the touch-mode toggle takes its label and spoken name from
   one table indexed by the mode; a translated label wider than its grid cell takes the cells it needs
   on its row (only these labels; key and menu buttons keep one cell, and English layouts are
-  unchanged on screens at least 360 logical px wide, which every automatic display scale gives). Scan codes, wheel deltas, typematic repeat and the toggle
-  action are unchanged.
+  unchanged on screens at least 360 logical px wide, which every automatic display scale gives). The
+  translated labels, the toggle's spoken names and the label widths are resolved when the language
+  changes (`L10n.Presentation`, the shell's existing per-language refresh) and reused by every frame;
+  `CTRL` and `SHIFT` are key caps and are not measured. Scan codes, wheel deltas, typematic repeat and
+  the toggle action are unchanged.
 - **End line** (`ProgramApp`, `KernelRunner`): `stoppedByUser` and `internalError` decide the app's own
   line; `Kernel.exitMessage` and the exit category are untouched.
 - **Author** (`ProgramInfo.localizedAuthor`), **export errors** (`DocumentRuntime.export` now passes
   `fs.error.invalid_path` / `fs.error.path_too_long`), **Terminal banner** (`tr8("app.terminal.title")`).
 - **Catalogs**: 7 keys added to `en.json` and all 72 translations; the five control labels are listed
   in every catalog's `$review`, the two sentences in the catalogs that already carry many review flags.
-- **Tests**: `LocalizationRegressionTest(s)` gained four tests per platform, and the iOS UI tests
+- **Tests**: `LocalizationRegressionTest(s)` gained five tests per platform, and the iOS UI tests
   gained `testLocalizedGameControlsAndEndLine` (see the verification results). **Tools**:
-  `hardcoded_audit.py`, `census.py` as above.
+  `hardcoded_audit.py` as above.
+
+## Scope review
+
+A review of the three commits against their parent kept the change to UI translation:
+- The first version of the game controls looked up the toggle's six strings (three labels, three spoken names)
+  and the two wheel labels and measured the three toggle labels and every extra button on each frame. They
+  are now resolved once per language as described above. The end line is built when an ended
+  program's window is redrawn (no game runs then; it makes the same single lookup as before, two after
+  a host failure); the author, the export errors and the Terminal banner are looked up when their
+  dialog, toast or banner appears.
+- Two fixes outside UI translation were backed out: an Android fallback that replaced the empty toast of a
+  message-less export error (empty in every language, English included) with `error.generic`, and a new
+  default baseline for `census.py`.
 
 ## Final assessment
 

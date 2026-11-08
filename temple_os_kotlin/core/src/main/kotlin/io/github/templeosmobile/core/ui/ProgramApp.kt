@@ -258,7 +258,7 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
         })
         if(runner.booted && isFinished && kernel.documents.canExport()) items.add(MenuItem( { tr("menu.save_as") }) {
             shell.showDialog(Dialog.input( { tr("editor.dialog.save_as") },"C:/Home/"+path.substringAfterLast('/').substringBefore('.')+".DD") {target ->
-                if(target!=null) try {kernel.documents.export(target);shell.showToast( { tr("toast.saved","path" to target) })} catch(e:FsError) {shell.showToast( { e.localized() })} catch(e:Exception) {shell.showToast( { e.message ?: tr("error.generic") })}
+                if(target!=null) try {kernel.documents.export(target);shell.showToast( { tr("toast.saved","path" to target) })} catch(e:FsError) {shell.showToast( { e.localized() })} catch(e:Exception) {shell.showToast( { e.message.orEmpty() })}
             })
         })
         items.add(MenuItem( { tr("menu.edit_source") }) { Launch.editor(shell, path) })

@@ -25,7 +25,7 @@ Pro).
 | Validator self-test | `python3 tools/l10n/test_validate.py` | 4 tests OK |
 | Platform language declarations | `python3 tools/l10n/gen_platform.py --check` | 89 locales, up to date |
 | Hard-coded UI text | `python3 tools/l10n/hardcoded_audit.py` | 0 findings (the same script reports 14 on the original code: the five control labels on both platforms and the two keyless `FsError`s on both platforms) |
-| Census, strict | `python3 tools/l10n/census.py --out <dir> --strict-coverage` | 89 locales / 73 catalogs / 386 keys; 193 metadata rows triaged; 0 English-copy findings; 7 keys added, only `fil` keeps two values equal to English (intentional loanwords) |
+| Census, strict | `python3 tools/l10n/census.py --out <dir> --strict-coverage --baseline d1d85bc` | 89 locales / 73 catalogs / 386 keys; 193 metadata rows triaged; 0 English-copy findings; 7 keys added, only `fil` keeps two values equal to English (intentional loanwords) |
 | Label widths | AppKit measurement of every control label in all 72 catalogs (bold system font at 10 pt, as the iOS text runs; CP437 labels at 8 px per character) | every label fits one 64-px cell except `id`/`ms` `KLIK KIRI`/`KLIK KANAN`, `ky` `ЖЫЛДЫРУУ`, `zu` `SOBUNXELE` (67–80 px), which take two cells. In landscape every label fits: a one-column gutter (controls need at least 96 px) leaves at least 80 px of label room, and in a two-column gutter a wide label takes both cells |
 | Original assets | `git status` of `shared/bundled-fs`, program manifests, generated PureSwift/purekotlin sources | unchanged |
 
@@ -42,6 +42,7 @@ platforms):
 | Test | What it proves |
 |---|---|
 | `gameControlsAreTranslatedWithoutChangingTheirInput` | In all 89 locales, portrait and landscape: the touch-mode and wheel labels and spoken names come from the catalog; key caps unchanged; every button sends the same key codes, wheel notches and mode changes in the same order as English; buttons stay inside their area and do not overlap; labels fit (CP437 labels exactly, others by the headless estimate); the toggle keeps its place and size while it cycles |
+| `gameControlsResolveTheirLabelsOncePerLanguage` (added in the scope review below) | In Japanese and Korean (labels the platform measures), the toggle's hidden labels are measured when the language changes and never during the following frames; the shown label is the current mode's. With the controls code of the first version the test fails on both platforms: every frame measured all three labels |
 | `stoppingAProgramEndsWithALocalizedLine` | A HolyC program that catches nothing, stopped from the app in Spanish: the end line is `program.ended`; the engine's `Break` message is kept in `Kernel.exitMessage` and not shown; exit category stays `STOPPED`. With the fix disabled the test fails on both platforms (Swift showed `Finalizado: Break`) |
 | `programAuthorsArePeopleOrTheProject` | Every catalog author is Terry A. Davis or the project; only the project's is translated |
 | `terminalBannerNamesTheTerminalInTheUiLanguage` | Italian banner `TempleOS.app Terminale`; Japanese falls back to English console text, as documented for `tr8` |
@@ -70,6 +71,25 @@ Diagnosis:
 
 Pre-existing, unrelated to this work: `gen_platform.py --check` fails on the committed tree (`Info.plist`
 lacks the comment the generator writes); the owner's uncommitted `Info.plist` edit adds it.
+
+### Scope review
+
+The game controls now resolve their translated labels, the toggle's spoken names and the label widths
+once per language (see "Scope review" in the audit), and two fixes outside the translation work were
+backed out (`ProgramApp.kt`'s export toast and `census.py` match their parent commit again). Checked on
+the tree exported from the index before committing:
+
+| Check | Result |
+|---|---|
+| Kotlin `LocalizationRegressionTest`, `ControlsFidelityTest`, `AppBehaviorTest`, `L10nTest` | 37 tests, 0 failures |
+| Swift `LocalizationRegressionTests`, `ControlsFidelityTests`, `GameInputTests`, `L10nTests` | 38 tests, 0 failures |
+| New test on the first version's controls code | fails on both platforms (all three toggle labels measured on each of the ten frames) |
+| Layout before and after, both platforms (a throwaway test, not committed): every control's label, rectangle, spoken name and toggle state for 4 control sets × 89 locales × 5 layouts (portrait 360 px with and without d-pad, portrait 320 px, landscape gutters of 96 and 140 px) × 3 touch modes | byte-identical: 5,340 configurations per platform |
+| `validate.py`, `hardcoded_audit.py`, census as above | 386 keys, 72/72 catalogs complete, 0 errors; 0 findings; census passes |
+| Working tree with the owner's uncommitted work, Kotlin `LocalizationRegressionTest`, `ControlsFidelityTest`, `L10nTest` | 31 tests, 0 failures |
+
+The emulator and simulator runs below used the first version of the controls code and were not
+repeated; the change keeps their layout and input identical (table above).
 
 ## Runtime: Android emulator
 
@@ -188,5 +208,7 @@ E = existing test re-run in the full suites (not new), — = not executed in thi
 - Export errors (`fs.error.invalid_path`, `fs.error.path_too_long`) were checked statically, not
   triggered on a device.
 - The iOS UI test ran in the Debug configuration; the Release configuration was built, not run.
+- The runtime runs predate the scope review; its change was verified by host tests and the layout
+  comparison only.
 - The APK and app were built from the working tree, which includes the owner's uncommitted resolver
   work; the committed tree was verified by host tests only.

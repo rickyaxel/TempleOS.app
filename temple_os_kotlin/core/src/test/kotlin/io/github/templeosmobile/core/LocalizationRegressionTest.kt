@@ -289,6 +289,26 @@ class LocalizationRegressionTest {
     }
 
     /**
+     * The touch-mode toggle is sized for its widest label, so its hidden labels are measured when the language
+     * changes; frames in between only draw the label shown.
+     */
+    @Test fun gameControlsResolveTheirLabelsOncePerLanguage() {
+        val measured = ArrayList<String>()
+        shell.surface.measureNative = { measured.add(it); it.codePointCount(0, it.length) * 10 }
+        val controls = GameControls { }
+        fun frame() = controls.draw(shell.surface, Rect(0, 300, 360, 360), emptyList(), vertical = true, showDpad = true)
+        for (locale in listOf("ja-JP", "ko-KR")) { // labels outside the TempleOS font: measured by the platform
+            L10n.use(locale)
+            val hidden = listOf(tr("controls.button.right_click"), tr("controls.button.hover"))
+            measured.clear(); frame()
+            assertTrue("$locale: $measured", measured.containsAll(hidden))
+            measured.clear(); repeat(10) { frame() }
+            assertTrue("$locale: $measured", measured.none { it in hidden })
+            assertEquals(tr("controls.button.left_click"), controls.labels.last())
+        }
+    }
+
+    /**
      * Stop is the app's command: the end line is the app's own, while the engine's message stays for the console.
      * The program catches nothing, so Break ends it with the engine's message (a game with its own catch ends normally).
      */

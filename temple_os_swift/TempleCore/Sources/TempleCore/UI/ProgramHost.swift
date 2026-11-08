@@ -185,6 +185,23 @@ public final class GameControls {
     private var heldSince: [Int: Int64] = [:] // pointer id -> first tick time (-1 until then)
     private var lastRepeat: [Int: Int64] = [:]
     private var ticket: [Int: Int64] = [:]
+    /**
+     * The controls' own labels in the UI language (touch modes with their spoken names, wheel) and the widths
+     * the layout gives them: resolved when the language changes, not on every frame (the shell's surface
+     * measures with one fixed font).
+     */
+    private struct ControlText {
+        let modes: [(String, String)], modeW: Int
+        let wheelUp: String, wheelDown: String, wheelUpW: Int, wheelDownW: Int
+        init(_ s: Surface) {
+            let modes = [(tr("controls.button.left_click"), tr("controls.a11y.left_click")),
+                         (tr("controls.button.right_click"), tr("controls.a11y.right_click")), (tr("controls.button.hover"), tr("controls.a11y.hover"))]
+            self.modes = modes; modeW = modes.map { s.measureUi($0.0) }.max() ?? 0
+            wheelUp = tr("controls.button.wheel_up"); wheelDown = tr("controls.button.wheel_down")
+            wheelUpW = s.measureUi(wheelUp); wheelDownW = s.measureUi(wheelDown)
+        }
+    }
+    private var controlText: L10n.Presentation<ControlText>?
     private let typematic: Typematic
     /** What a touch on the picture is: 0 left button, 1 right button, 2 pointer move only (hover). */
     public var clickMode = 0
@@ -264,9 +281,11 @@ public final class GameControls {
         var extras: [Btn] = []
         if info?.usesCtrl == true { extras.append(Btn("CTRL", Rect(0, 0, 0, 0), 0, Int64(Keys.SC_CTRL), tr("key.control"))) }
         if info?.usesShift == true { extras.append(Btn("SHIFT", Rect(0, 0, 0, 0), 0, Int64(Keys.SC_SHIFT), tr("key.shift"))) }
+        if controlText == nil { controlText = L10n.Presentation { ControlText(s) } }
+        let t = controlText!.value
         if info?.usesWheel == true {
-            extras.append(Btn(tr("controls.button.wheel_up"), Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_up"), wheel: 1))
-            extras.append(Btn(tr("controls.button.wheel_down"), Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_down"), wheel: -1))
+            extras.append(Btn(t.wheelUp, Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_up"), wheel: 1))
+            extras.append(Btn(t.wheelDown, Rect(0, 0, 0, 0), 0, 0, tr("controls.a11y.wheel_down"), wheel: -1))
         }
         let area = actionArea ?? r
         let x0 = actionArea != nil ? area.x + 4 : showDpad ? pad.right + 8 : r.x + 4
@@ -291,13 +310,12 @@ public final class GameControls {
             let (ch, sc) = menuKey(m.a1, m.a2)
             buttons.append(Btn(m.label.take(10), place(), ch, sc))
         }
-        for b in extras { buttons.append(Btn(b.label, place(s.measureUi(b.label)), b.ch, b.sc, b.a11y, wheel: b.wheel)) }
+        // CTRL and SHIFT are key caps and keep one cell; a translated wheel label may need more
+        for b in extras { buttons.append(Btn(b.label, place(b.wheel == 1 ? t.wheelUpW : b.wheel == -1 ? t.wheelDownW : 0), b.ch, b.sc, b.a11y, wheel: b.wheel)) }
         // the touch mode's label and spoken name are the app's (translated); the toggle never reads them. Sized
         // for its widest label, so it keeps its place and size while it cycles.
-        let modes = [(tr("controls.button.left_click"), tr("controls.a11y.left_click")),
-                     (tr("controls.button.right_click"), tr("controls.a11y.right_click")), (tr("controls.button.hover"), tr("controls.a11y.hover"))]
-        let (mode, modeA11y) = modes[clickMode]
-        buttons.append(Btn(mode, place(modes.map { s.measureUi($0.0) }.max() ?? 0), 0, 0, modeA11y,
+        let (mode, modeA11y) = t.modes[clickMode]
+        buttons.append(Btn(mode, place(t.modeW), 0, 0, modeA11y,
                            toggle: { [unowned self] in clickMode = (clickMode + 1) % 3 }))
         for b in buttons {
             let pressed = held.values.contains { $0 === b }

@@ -290,6 +290,26 @@ final class LocalizationRegressionTests: XCTestCase {
     }
 
     /**
+     * The touch-mode toggle is sized for its widest label, so its hidden labels are measured when the language
+     * changes; frames in between only draw the label shown.
+     */
+    func testGameControlsResolveTheirLabelsOncePerLanguage() {
+        var measured: [String] = []
+        shell.surface.measureNative = { measured.append($0); return $0.unicodeScalars.count * 10 }
+        let controls = GameControls { _ in }
+        func frame() { controls.draw(shell.surface, Rect(0, 300, 360, 360), [], vertical: true, showDpad: true) }
+        for locale in ["ja-JP", "ko-KR"] { // labels outside the TempleOS font: measured by the platform
+            L10n.use(locale)
+            let hidden = [tr("controls.button.right_click"), tr("controls.button.hover")]
+            measured.removeAll(); frame()
+            XCTAssertTrue(hidden.allSatisfy { measured.contains($0) }, "\(locale): \(measured)")
+            measured.removeAll(); for _ in 0..<10 { frame() }
+            XCTAssertFalse(measured.contains { hidden.contains($0) }, "\(locale): \(measured)")
+            XCTAssertEqual(tr("controls.button.left_click"), controls.labels.last)
+        }
+    }
+
+    /**
      * Stop is the app's command: the end line is the app's own, while the engine's message stays for the console.
      * The program catches nothing, so Break ends it with the engine's message (a game with its own catch ends normally).
      */
