@@ -38,7 +38,7 @@ and other Western European languages). Otherwise it shows English.
 | File | Role |
 |---|---|
 | `shared/runtime/l10n/locales.json` | The manifest: 89 locales (id, catalog, parent, script, direction, native and English names, aliases), language families, exclusions, device-region candidates, input tag grammar. |
-| `shared/runtime/l10n/en.json` | English source: 379 keys. `$comment` explains the conventions. |
+| `shared/runtime/l10n/en.json` | English source: 386 keys. `$comment` explains the conventions. |
 | `shared/runtime/l10n/<catalog>.json` | One catalog per language (72 plus English). `$review` lists keys a native speaker should check. |
 | `shared/test-vectors/l10n/resolver_vectors.json` | 108 resolution cases run by Python, Kotlin and Swift. |
 | `temple_os_kotlin/core/.../ui/L10n.kt`, `temple_os_swift/TempleCore/.../UI/L10n.swift` | `LocaleResolver`, `L10n` (`tr`, `tr8`, `use`), `Cp437`. Line-for-line ports. |
@@ -253,11 +253,16 @@ The current regression audit and its explicit limits are in
 localization-validation. Catalog key parity is a
 resource check; copied English values and unregistered metadata require separate coverage review.
 
+The English-leakage audit of 2026-11-08 (game controls, end line, authors, export errors) and the rule
+for what stays English are in [localization-audit](localization-audit/TEMPLEOS_MOBILE_LOCALIZATION_AUDIT.md)
+and [TEMPLEOS_LOCALIZATION_AUTHENTICITY_BOUNDARY.md](localization-audit/TEMPLEOS_LOCALIZATION_AUTHENTICITY_BOUNDARY.md).
+
 | Check | Command |
 |---|---|
 | Catalogs: keys, placeholders, line breaks, Unicode, branding | `python3 tools/l10n/validate.py` |
 | Coverage table | `python3 tools/l10n/validate.py --report docs/localization-coverage.md` |
-| Hard-coded strings | `python3 tools/l10n/hardcoded_audit.py` |
+| Hard-coded strings, literal screen-reader labels, `FsError`s without a key | `python3 tools/l10n/hardcoded_audit.py` |
+| Game controls in every locale (labels, input parity), end line after Stop | Kotlin `LocalizationRegressionTest`, Swift `LocalizationRegressionTests`; on a simulator `testLocalizedGameControlsAndEndLine` |
 | Platform language lists up to date | `python3 tools/l10n/gen_platform.py --check` |
 | Language window order | Kotlin `LanguageListTest`, Swift `LanguageListTests`; on devices `testLanguageListOrder` (iOS) and `tools/l10n/language_order.py android` + `compare` |
 | Resolver vectors, catalogs, switching, text runs, RTL | Kotlin `L10nTest`, Swift `L10nTests` |
