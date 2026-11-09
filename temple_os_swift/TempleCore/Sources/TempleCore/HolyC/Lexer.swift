@@ -635,12 +635,18 @@ public final class Lexer {
 
     private func punct(_ inp: Input) throws -> Token {
         let b = inp.src.text
+        // the longest punctuator at pos, matched on the bytes (no candidate strings: punctuation is a large share of tokens)
         for len in stride(from: 3, through: 1, by: -1) {
             if inp.pos + len > b.count { continue }
-            let s = latin1(b, inp.pos, len)
-            if Lexer.PUNCTS.contains(s) {
-                inp.pos += len
-                return Token(.PUNCT, s, inp.src.name, inp.line)
+            let cands = Lexer.PUNCT_BYTES[len]
+            for c in cands.indices {
+                let p = cands[c]
+                var i = 0
+                while i < len && b[inp.pos + i] == p[i] { i += 1 }
+                if i == len {
+                    inp.pos += len
+                    return Token(.PUNCT, Lexer.PUNCT_TEXT[len][c], inp.src.name, inp.line)
+                }
             }
         }
         let ch = Int(b[inp.pos])
@@ -654,6 +660,9 @@ public final class Lexer {
         "+", "-", "*", "/", "%", "&", "|", "^", "~", "!", "<", ">", "=", "(", ")",
         "[", "]", "{", "}", ",", ";", ":", ".", "?", "`", "#", "@", "\\",
     ]
+    /** [PUNCTS] by length (index 1...3), as text and as Latin-1 bytes, for [punct]. Port of Lexer.kt. */
+    private static let PUNCT_TEXT: [[String]] = (0...3).map { n in PUNCTS.filter { $0.count == n }.sorted() }
+    private static let PUNCT_BYTES: [[[UInt8]]] = PUNCT_TEXT.map { $0.map { Array($0.utf8) } }
 
     public static func resolvePath(_ dir: String, _ path: String) -> String {
         // Work on unicode scalars: Kotlin strings index UTF-16 units (Latin-1 here),
