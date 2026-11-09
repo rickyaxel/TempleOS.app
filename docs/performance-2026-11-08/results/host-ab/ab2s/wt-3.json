@@ -1,0 +1,10 @@
+{"platform":"swift","samples":20,"scenarios":[
+  {"name":"boot.kernel","unit":"us/op","n":10,"cpuP50":42239.08,"cpuP95":null,"cpuMin":41989.42,"cpuMax":44886.38,"cpuMean":42624.41,"wallP50":42238.04,"wallP95":null,"wallMin":41986.33,"wallMax":44874.25},
+  {"name":"shell.start","unit":"us/op","n":20,"cpuP50":51.12,"cpuP95":63.29,"cpuMin":50.25,"cpuMax":2977.00,"cpuMean":198.99,"wallP50":50.88,"wallP95":62.96,"wallMin":50.00,"wallMax":2976.62},
+  {"name":"window.open-close","unit":"us/op","n":20,"cpuP50":716.92,"cpuP95":766.45,"cpuMin":703.99,"cpuMax":884.35,"cpuMean":728.83,"wallP50":716.85,"wallP95":766.32,"wallMin":703.92,"wallMax":884.29},
+  {"name":"window.focus.landscape4","unit":"us/op","n":20,"cpuP50":264.04,"cpuP95":266.41,"cpuMin":262.32,"cpuMax":267.73,"cpuMean":264.31,"wallP50":264.03,"wallP95":266.39,"wallMin":262.30,"wallMax":267.70},
+  {"name":"window.drag.landscape4","unit":"us/op","n":20,"cpuP50":330.09,"cpuP95":331.07,"cpuMin":329.14,"cpuMax":331.24,"cpuMean":330.20,"wallP50":330.08,"wallP95":331.06,"wallMin":329.12,"wallMax":331.23},
+  {"name":"fs.list.all-dirs","unit":"us/op","n":20,"cpuP50":7296.54,"cpuP95":7413.29,"cpuMin":7254.46,"cpuMax":7427.29,"cpuMean":7300.96,"wallP50":7296.21,"wallP95":7413.12,"wallMin":7254.33,"wallMax":7427.04},
+  {"name":"fs.read.all-files","unit":"us/op","n":20,"cpuP50":54589.46,"cpuP95":56602.62,"cpuMin":54045.62,"cpuMax":61047.79,"cpuMean":55014.07,"wallP50":54589.17,"wallP95":56679.25,"wallMin":54045.38,"wallMax":61047.46},
+  {"name":"fs.stat.all-files","unit":"us/op","n":20,"cpuP50":39724.92,"cpuP95":39874.50,"cpuMin":39656.83,"cpuMax":39894.42,"cpuMean":39742.13,"wallP50":39724.71,"wallP95":39873.88,"wallMin":39656.58,"wallMax":39894.12}
+]}

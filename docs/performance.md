@@ -1,5 +1,13 @@
 # Performance
 
+> **Performance pass (2026-11-08), [performance-2026-11-08/](performance-2026-11-08/OVERNIGHT_FINAL_SUMMARY.md).**
+> - Program and terminal start: the prelude's pen tables are set up natively; on the OPPO CPH2669 boot plus program
+>   load went from about 570 to about 245 ms.
+> - A running program no longer makes the desktop surface re-upload 30 times a second (`Surface.commit`); on the
+>   OPPO, BomberGolf's janky UI frames dropped from 15-36 to 0-3 per 25 s.
+> - Typing and window redraws 15-44% cheaper (glyph drawing), a GrBlot3 fast path, a lexer change (Swift).
+> - New opt-in harness `ShellPerfTest` / `ShellPerfTests`; the Kotlin test JVM now compiles the interpreter loop.
+
 > **Native engines (2026-10-20), `docs/native-translation/REPORT.md` §F.**
 > Bundled programs can run as ahead-of-time translated Kotlin/Swift (Settings › Engine). Same program,
 > same input, alternating runs: on the OPPO CPH2669, Squirt 14→30 fps, PredatorPrey 5→30 fps,

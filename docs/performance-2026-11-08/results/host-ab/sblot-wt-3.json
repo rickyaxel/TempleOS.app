@@ -1,0 +1,4 @@
+[
+  {"id": "game.bombergolf", "input": "keys", "finished": false, "bootMs": 41.37, "fps": 30.00, "composeMeanMs": 1.18, "composeP50Ms": 1.19, "composeP95Ms": 1.39, "composeMaxMs": 2.67, "cpuPct": 4.09, "minstrPerSec": 1.19, "publishedPerSec": 30.00, "tonesPerSec": 1604.73},
+  {"id": "game.rawhide", "input": "keys", "finished": false, "bootMs": 38.99, "fps": 30.03, "composeMeanMs": 1.60, "composeP50Ms": 1.60, "composeP95Ms": 1.65, "composeMaxMs": 1.68, "cpuPct": 9.66, "minstrPerSec": 18.07, "publishedPerSec": 30.03, "tonesPerSec": 10.51}
+]

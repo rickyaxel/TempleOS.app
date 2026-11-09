@@ -1,0 +1,4 @@
+{"platform":"swift","samples":40,"scenarios":[
+  {"name":"boot.kernel","unit":"us/op","n":20,"cpuP50":37703.79,"cpuP95":40173.88,"cpuMin":36949.79,"cpuMax":40904.46,"cpuMean":37915.00,"wallP50":37703.12,"wallP95":40173.21,"wallMin":36949.38,"wallMax":40896.75},
+  {"name":"shell.start","unit":"us/op","n":40,"cpuP50":44.33,"cpuP95":53.00,"cpuMin":43.50,"cpuMax":2801.00,"cpuMean":114.43,"wallP50":44.12,"wallP95":52.79,"wallMin":43.33,"wallMax":2800.58}
+]}

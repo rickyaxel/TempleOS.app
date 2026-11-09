@@ -1,0 +1,15 @@
+{"platform":"swift","samples":20,"scenarios":[
+  {"name":"boot.kernel","unit":"us/op","n":10,"cpuP50":79551.75,"cpuP95":null,"cpuMin":78739.50,"cpuMax":84296.75,"cpuMean":80189.02,"wallP50":80329.38,"wallP95":null,"wallMin":78738.58,"wallMax":84914.58},
+  {"name":"render.desktop","unit":"us/op","n":20,"cpuP50":23.55,"cpuP95":24.04,"cpuMin":23.13,"cpuMax":24.93,"cpuMean":23.61,"wallP50":23.54,"wallP95":24.03,"wallMin":23.11,"wallMax":24.90},
+  {"name":"render.terminal","unit":"us/op","n":20,"cpuP50":315.46,"cpuP95":340.97,"cpuMin":311.98,"cpuMax":342.38,"cpuMean":320.50,"wallP50":316.96,"wallP95":348.25,"wallMin":313.17,"wallMax":352.40},
+  {"name":"terminal.key","unit":"us/op","n":20,"cpuP50":314.95,"cpuP95":324.97,"cpuMin":311.46,"cpuMax":344.55,"cpuMean":317.61,"wallP50":315.70,"wallP95":328.95,"wallMin":311.53,"wallMax":348.69},
+  {"name":"editor.open.large","unit":"us/op","n":20,"cpuP50":403.92,"cpuP95":437.96,"cpuMin":388.71,"cpuMax":636.00,"cpuMean":416.64,"wallP50":403.58,"wallP95":437.71,"wallMin":388.42,"wallMax":635.12},
+  {"name":"render.editor","unit":"us/op","n":20,"cpuP50":209.21,"cpuP95":240.33,"cpuMin":206.58,"cpuMax":243.36,"cpuMean":213.50,"wallP50":209.31,"wallP95":246.26,"wallMin":206.54,"wallMax":251.58},
+  {"name":"editor.key","unit":"us/op","n":20,"cpuP50":214.16,"cpuP95":260.44,"cpuMin":210.72,"cpuMax":286.14,"cpuMean":223.62,"wallP50":215.26,"wallP95":262.93,"wallMin":210.68,"wallMax":294.02},
+  {"name":"editor.cursor","unit":"us/op","n":20,"cpuP50":208.51,"cpuP95":213.11,"cpuMin":206.91,"cpuMax":237.27,"cpuMean":210.18,"wallP50":208.46,"wallP95":213.60,"wallMin":206.88,"wallMax":238.80},
+  {"name":"editor.scroll","unit":"us/op","n":20,"cpuP50":187.43,"cpuP95":191.11,"cpuMin":177.29,"cpuMax":191.42,"cpuMean":183.93,"wallP50":187.40,"wallP95":191.35,"wallMin":177.26,"wallMax":191.72},
+  {"name":"window.open-close","unit":"us/op","n":20,"cpuP50":773.75,"cpuP95":899.97,"cpuMin":759.71,"cpuMax":1212.59,"cpuMean":805.01,"wallP50":773.59,"wallP95":901.50,"wallMin":759.59,"wallMax":1215.30},
+  {"name":"render.landscape4","unit":"us/op","n":20,"cpuP50":344.11,"cpuP95":367.97,"cpuMin":335.96,"cpuMax":529.02,"cpuMean":355.80,"wallP50":345.21,"wallP95":373.57,"wallMin":335.93,"wallMax":637.39},
+  {"name":"window.focus.landscape4","unit":"us/op","n":20,"cpuP50":277.72,"cpuP95":301.41,"cpuMin":273.66,"cpuMax":324.96,"cpuMean":283.15,"wallP50":277.93,"wallP95":303.61,"wallMin":273.64,"wallMax":329.23},
+  {"name":"window.drag.landscape4","unit":"us/op","n":20,"cpuP50":345.60,"cpuP95":365.46,"cpuMin":339.94,"cpuMax":372.54,"cpuMean":347.83,"wallP50":345.57,"wallP95":365.44,"wallMin":339.92,"wallMax":373.81}
+]}

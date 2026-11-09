@@ -1,0 +1,3 @@
+{"platform":"kotlin-jvm","jvm":"21.0.11","samples":60,"scenarios":[
+  {"name":"boot.kernel","unit":"us/op","n":30,"cpuP50":22354.00,"cpuP95":41377.00,"cpuMin":17734.00,"cpuMax":166087.00,"cpuMean":27944.53,"wallP50":22347.63,"wallP95":41877.75,"wallMin":17729.58,"wallMax":172292.54}
+]}

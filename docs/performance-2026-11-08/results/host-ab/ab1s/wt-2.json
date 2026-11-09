@@ -1,0 +1,4 @@
+{"platform":"swift","samples":15,"scenarios":[
+  {"name":"game.ui.bombergolf","unit":"uiCpuMs/s","n":15,"cpuP50":13.29,"cpuP95":null,"cpuMin":11.01,"cpuMax":14.69,"cpuMean":13.24,"wallP50":1001.27,"wallP95":null,"wallMin":1000.13,"wallMax":1005.93,"surfaceUploadsPerSec":0.13,"frameUploadsPerSec":29.68,"ticksPerSec":59.89},
+  {"name":"game.ui.varoom","unit":"uiCpuMs/s","n":15,"cpuP50":8.50,"cpuP95":null,"cpuMin":8.13,"cpuMax":9.09,"cpuMean":8.54,"wallP50":1001.31,"wallP95":null,"wallMin":1000.13,"wallMax":1007.64,"surfaceUploadsPerSec":0.07,"frameUploadsPerSec":30.07,"ticksPerSec":59.86}
+]}

@@ -1,0 +1,4 @@
+{"platform":"kotlin-jvm","jvm":"21.0.11","samples":15,"scenarios":[
+  {"name":"game.ui.bombergolf","unit":"uiCpuMs/s","n":15,"cpuP50":20.84,"cpuP95":null,"cpuMin":16.51,"cpuMax":25.20,"cpuMean":20.64,"wallP50":1002.89,"wallP95":null,"wallMin":1000.12,"wallMax":1007.48,"surfaceUploadsPerSec":0.07,"frameUploadsPerSec":29.38,"ticksPerSec":59.82},
+  {"name":"game.ui.varoom","unit":"uiCpuMs/s","n":15,"cpuP50":12.39,"cpuP95":null,"cpuMin":10.95,"cpuMax":16.57,"cpuMean":13.06,"wallP50":1001.57,"wallP95":null,"wallMin":1000.15,"wallMax":1006.83,"surfaceUploadsPerSec":0.07,"frameUploadsPerSec":25.94,"ticksPerSec":59.86}
+]}

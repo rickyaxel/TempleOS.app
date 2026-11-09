@@ -1,0 +1,10 @@
+{"platform":"kotlin-jvm","jvm":"21.0.11","samples":20,"scenarios":[
+  {"name":"boot.kernel","unit":"us/op","n":10,"cpuP50":116207.00,"cpuP95":null,"cpuMin":106961.00,"cpuMax":386879.00,"cpuMean":164826.60,"wallP50":116206.38,"wallP95":null,"wallMin":112021.21,"wallMax":407551.96},
+  {"name":"shell.start","unit":"us/op","n":20,"cpuP50":218.00,"cpuP95":1164.00,"cpuMin":187.00,"cpuMax":13643.00,"cpuMean":1083.85,"wallP50":216.79,"wallP95":1162.58,"wallMin":185.54,"wallMax":17810.54},
+  {"name":"window.open-close","unit":"us/op","n":20,"cpuP50":777.25,"cpuP95":1127.50,"cpuMin":582.75,"cpuMax":3881.25,"cpuMean":921.56,"wallP50":776.93,"wallP95":1128.24,"wallMin":582.39,"wallMax":4605.39},
+  {"name":"window.focus.landscape4","unit":"us/op","n":20,"cpuP50":206.80,"cpuP95":290.45,"cpuMin":185.90,"cpuMax":345.15,"cpuMean":223.91,"wallP50":206.73,"wallP95":290.42,"wallMin":185.81,"wallMax":345.77},
+  {"name":"window.drag.landscape4","unit":"us/op","n":20,"cpuP50":191.25,"cpuP95":227.40,"cpuMin":183.50,"cpuMax":247.55,"cpuMean":201.88,"wallP50":191.15,"wallP95":233.25,"wallMin":183.39,"wallMax":281.92},
+  {"name":"fs.list.all-dirs","unit":"us/op","n":20,"cpuP50":8669.00,"cpuP95":9408.00,"cpuMin":8318.00,"cpuMax":9491.00,"cpuMean":8725.20,"wallP50":8667.21,"wallP95":9405.63,"wallMin":8316.67,"wallMax":9487.71},
+  {"name":"fs.read.all-files","unit":"us/op","n":20,"cpuP50":64230.00,"cpuP95":75439.00,"cpuMin":61982.00,"cpuMax":85374.00,"cpuMean":65849.40,"wallP50":64230.17,"wallP95":77655.63,"wallMin":61979.17,"wallMax":132657.38},
+  {"name":"fs.stat.all-files","unit":"us/op","n":20,"cpuP50":47509.00,"cpuP95":49883.00,"cpuMin":47188.00,"cpuMax":50420.00,"cpuMean":48031.80,"wallP50":47507.46,"wallP95":49878.42,"wallMin":47187.46,"wallMax":52540.79}
+]}

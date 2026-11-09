@@ -1,5 +1,11 @@
 # Testing
 
+> **Performance pass (2026-11-08):** new `PenTablesTest(s)` (the native pen setup leaves the same arena and draws the same
+> frames as the prelude's HolyC `GrSetUpPens`) and the opt-in timing harness `ShellPerfTest(s)`
+> (`-Dtempleos.shellperf=20` / `TEMPLEOS_SHELLPERF=20`); the Kotlin test JVM passes `-XX:-DontCompileHugeMethods`.
+> In `swift test -c release` the deep-nesting fuzz probe overflows the stack (pre-existing; debug passes). See
+> `docs/performance-2026-11-08/`.
+
 Paint investigation and bounded wrapper repairs (2026-10-22): see
 paint-restoration/REPORT.md. `PaintRestorationTest(s)`
 exercise indexed GR/archive compatibility, real pixels and preview frames, pointer

@@ -1,0 +1,8 @@
+[
+  {"id": "game.battlelines", "input": "keys", "finished": false, "bootMs": 928.0, "fps": 7.0, "composeMeanMs": 125.27, "composeP50Ms": 125.08, "composeP95Ms": 128.29, "composeMaxMs": 130.17, "cpuPct": 99.8, "minstrPerSec": 17.4, "publishedPerSec": 7.0, "tonesPerSec": 0.0},
+  {"id": "game.bombergolf", "input": "keys", "finished": false, "bootMs": 819.0, "fps": 30.0, "composeMeanMs": 4.99, "composeP50Ms": 4.92, "composeP95Ms": 5.9, "composeMaxMs": 6.46, "cpuPct": 18.1, "minstrPerSec": 1.2, "publishedPerSec": 30.0, "tonesPerSec": 1519.3},
+  {"id": "game.maze", "input": "keys", "finished": false, "bootMs": 790.0, "fps": 30.0, "composeMeanMs": 0.82, "composeP50Ms": 0.79, "composeP95Ms": 1.17, "composeMaxMs": 1.84, "cpuPct": 2.7, "minstrPerSec": 0.1, "publishedPerSec": 7.2, "tonesPerSec": 0.0},
+  {"id": "game.squirt", "input": "keys", "finished": false, "bootMs": 793.0, "fps": 6.6, "composeMeanMs": 152.12, "composeP50Ms": 146.32, "composeP95Ms": 233.41, "composeMaxMs": 242.14, "cpuPct": 99.8, "minstrPerSec": 17.5, "publishedPerSec": 6.6, "tonesPerSec": 8.8},
+  {"id": "game.talons", "input": "mouse", "finished": true, "bootMs": 770.0, "fps": 378.9, "composeMeanMs": 0.11, "composeP50Ms": 0.11, "composeP95Ms": 0.11, "composeMaxMs": 0.11, "cpuPct": 784877.1, "minstrPerSec": 5336.9, "publishedPerSec": 0.0, "tonesPerSec": 757.8},
+  {"id": "game.varoom", "input": "keys", "finished": false, "bootMs": 773.0, "fps": 4.6, "composeMeanMs": 216.82, "composeP50Ms": 215.26, "composeP95Ms": 226.19, "composeMaxMs": 233.78, "cpuPct": 99.8, "minstrPerSec": 17.7, "publishedPerSec": 4.6, "tonesPerSec": 0.0}
+]

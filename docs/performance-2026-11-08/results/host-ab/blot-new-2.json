@@ -1,0 +1,4 @@
+[
+  {"id": "game.blackdiamond", "input": "keys", "finished": false, "bootMs": 156.0, "fps": 30.0, "composeMeanMs": 2.1, "composeP50Ms": 1.84, "composeP95Ms": 3.63, "composeMaxMs": 7.52, "cpuPct": 6.5, "minstrPerSec": 3.5, "publishedPerSec": 30.0, "tonesPerSec": 1.4},
+  {"id": "game.bombergolf", "input": "keys", "finished": false, "bootMs": 43.0, "fps": 30.0, "composeMeanMs": 1.98, "composeP50Ms": 1.98, "composeP95Ms": 2.17, "composeMaxMs": 6.37, "cpuPct": 6.7, "minstrPerSec": 1.2, "publishedPerSec": 30.0, "tonesPerSec": 1604.3}
+]
