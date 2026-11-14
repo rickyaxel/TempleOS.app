@@ -120,6 +120,10 @@ public enum TempleArc {
         var valid = [Bool](repeating: false, count: 4096)
         var free = minimum, bits = type == 2 ? 8 : 9, limit = 1 << bits
         var current = -1, pending = -1, bit = 17 * 8
+        // Total work bound: genuine files take at most 8 inner steps per output byte (927 files on the V5.03 ISO and
+        // supplemental discs, mean 1.2); a crafted stream (every code the same literal) would take ~4000 per byte.
+        var work = 0
+        let maxWork = 32 * expanded + 65536
         func entry() throws {
             current = pending
             if bits < 12 {
@@ -128,8 +132,8 @@ public enum TempleArc {
             } else {
                 var tries = 0
                 repeat {
-                    free += 1; if free == limit { free = minimum }; tries += 1
-                    if tries > 4096 { throw bad() }
+                    free += 1; if free == limit { free = minimum }; tries += 1; work += 1
+                    if tries > 4096 || work > maxWork { throw bad() }
                 } while hash[free] != -1
                 pending = free
                 let head = base[free]
@@ -137,7 +141,7 @@ public enum TempleArc {
                 else {
                     var p = hash[head], steps = 0
                     while p != -1 && next[p] != free {
-                        p = next[p]; steps += 1; if steps > 4096 { throw bad() }
+                        p = next[p]; steps += 1; work += 1; if steps > 4096 || work > maxWork { throw bad() }
                     }
                     if p != -1 { next[p] = next[free] }
                 }
@@ -162,8 +166,8 @@ public enum TempleArc {
             if code == current { stack.append(lastChar); cursor = last }
             var hops = 0
             while cursor >= minimum {
-                guard cursor < 4096, valid[cursor], hops < 4096 else { throw bad() }
-                stack.append(char[cursor]); cursor = base[cursor]; hops += 1
+                guard cursor < 4096, valid[cursor], hops < 4096, work <= maxWork else { throw bad() }
+                stack.append(char[cursor]); cursor = base[cursor]; hops += 1; work += 1
             }
             lastChar = UInt8(cursor); stack.append(lastChar)
             guard current >= minimum, last < 4096, stack.count <= expanded - out.count else { throw bad() }

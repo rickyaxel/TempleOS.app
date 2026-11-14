@@ -159,6 +159,55 @@ class ImportTest {
         }
     }
 
+    /** A valid TempleOS archive (type 2) whose every code is the literal "A": each new string is a child of "A". */
+    private fun sameLiteralStream(codes: Int): ByteArray {
+        val bits = ArrayList<Boolean>()
+        var free = 128; var width = 8; var limit = 256
+        fun entry() { if (width < 12) { free++; if (free == limit) { width++; limit = limit shl 1 } } }
+        fun put(c: Int) { for (i in 0 until width) bits.add((c shr i) and 1 == 1) }
+        entry(); put(65); entry()
+        repeat(codes) { put(65); entry() }
+        val body = ByteArray((bits.size + 7) / 8)
+        for ((i, b) in bits.withIndex()) if (b) body[i / 8] = (body[i / 8].toInt() or (1 shl (i % 8))).toByte()
+        val out = ByteArray(17)
+        for (i in 0..7) { out[i] = ((17L + body.size) shr (8 * i)).toByte(); out[8 + i] = ((codes + 1L) shr (8 * i)).toByte() }
+        out[16] = 2
+        return out + body
+    }
+
+    @Test fun craftedCompressionCannotBurnUnboundedTime() {
+        // short: well inside the work bound, decodes to the expected bytes
+        assertArrayEquals(ByteArray(1001) { 65 }, TempleArc.expand(sameLiteralStream(1000), limit = 1 shl 20))
+        // long: past the 12-bit dictionary, every reused slot is at the end of a ~4000-long list; refused, quickly
+        val crafted = sameLiteralStream(200_000)
+        val t0 = System.nanoTime()
+        assertThrows(FsError::class.java) { TempleArc.expand(crafted, limit = FileImport.MAX_FILE_BYTES) }
+        assertTrue("bounded work", System.nanoTime() - t0 < 5_000_000_000L)
+        val dir = tmp(); val fs = drive(dir)
+        assertEquals("import.error.corrupt_z", key(FileImport.prepare(fs, picked("Slow.HC.Z", crafted))))
+    }
+
+    @Test fun namesAreCheckedTheSameWayOnBothPlatforms() {
+        // folder spellings that differ only in case are one folder (the first spelling), never two
+        val dir = tmp(); val fs = drive(dir)
+        assertEquals("C:/Home/Imports/Pkg", importNow(fs, picked("Pkg.zip", zip(listOf(ZEntry("Pkg/Sub/a.HC", byteArrayOf(1)), ZEntry("Pkg/SUB/b.HC", byteArrayOf(2)), ZEntry("Pkg/sub/"))))))
+        assertEquals(listOf("Sub"), fs.list("C:/Home/Imports/Pkg")!!.map { it.name })
+        assertEquals(listOf("a.HC", "b.HC"), fs.list("C:/Home/Imports/Pkg/Sub")!!.map { it.name }.sorted())
+        // what one platform's path trimming would change is refused on both (CP437 a-grave, a-acute, spaces)
+        assertEquals("import.error.bad_name", archiveKey(listOf(ZEntry("D\u00E9j\u00E0/x.HC", byteArrayOf(1)))))
+        assertEquals("import.error.bad_name", archiveKey(listOf(ZEntry("\u00E1rbol/x.HC", byteArrayOf(1)))))
+        assertNull("inside a name they are fine", archiveKey(listOf(ZEntry("Mam\u00E1.HC", byteArrayOf(1)))))
+        // X.Z is read as X on the drive: a folder may not end in .Z
+        assertEquals("import.error.bad_name", archiveKey(listOf(ZEntry("Tools.Z/a.HC", byteArrayOf(1)))))
+        // names in messages cannot add lines or reorder text
+        val r = FileImport.prepare(fs, picked("Lines.zip", zip(listOf(ZEntry("x\nGame.zip: imported\u202E/../Evil.HC", byteArrayOf(1))))))
+        val e = r.error as ImportError
+        assertEquals("a newline is no TempleOS name character", "import.error.bad_name", e.key)
+        val entry = e.args.first { it.first == "entry" }.second as String
+        assertFalse(entry, entry.contains("\n") || entry.contains("\u202E"))
+        assertEquals("A?B", FileImport.shown("A\u2028B"))
+    }
+
     // ------------------------------------------------------------ the ZIP reader
 
     @Test fun realArchivesReadEntryForEntry() {
@@ -367,6 +416,13 @@ class ImportTest {
         assertEquals(emptyList<String>(), leftovers(dir))
         assertFalse(File(dir, "drive/import-journal.txt").exists())
         assertEquals(437L, after.usedBytes())
+        // ".." inside a name is an ordinary name, not a parent folder
+        val again = drive(dir)
+        importNow(again, picked("My..Prog.HC", bytes("1;")))
+        stage.mkdirs()
+        assertTrue(File(files, "Home/Imports/My..Prog.HC").renameTo(File(stage, ".replaced-2")))
+        File(dir, "drive/import-journal.txt").writeText(".tmp-import-crash/.replaced-2\tHome/Imports/My..Prog.HC")
+        assertArrayEquals("restored", bytes("1;"), drive(dir).readFile("C:/Home/Imports/My..Prog.HC"))
     }
 
     // ------------------------------------------------------------ the flow, through the real shell

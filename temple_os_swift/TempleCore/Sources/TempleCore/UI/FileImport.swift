@@ -75,9 +75,9 @@ public enum FileImport {
         /** Files staged (an archive's count; 1 otherwise). */
         public let files: Int
         let stage: LayeredFs.Stage?
-        init(_ source: String, error: Error) { self.source = source; self.error = error; kind = nil; name = ""; isDir = false; files = 0; stage = nil }
+        init(_ source: String, error: Error) { self.source = FileImport.shown(source); self.error = error; kind = nil; name = ""; isDir = false; files = 0; stage = nil }
         init(_ source: String, _ kind: Kind, _ name: String, _ isDir: Bool, _ files: Int, _ stage: LayeredFs.Stage) {
-            self.source = source; error = nil; self.kind = kind; self.name = name; self.isDir = isDir; self.files = files; self.stage = stage
+            self.source = FileImport.shown(source); error = nil; self.kind = kind; self.name = name; self.isDir = isDir; self.files = files; self.stage = stage
         }
     }
 
@@ -119,7 +119,7 @@ public enum FileImport {
                     throw ImportError("import.error.is_compressed")
                 }
             }
-            guard let driveName = driveName(name) else { throw ImportError("import.error.bad_name", ("entry", name)) }
+            guard let driveName = driveName(name) else { throw ImportError("import.error.bad_name", ("entry", shown(name))) }
             let stage = try fs.beginStage()
             do { try fs.stageFile(stage, driveName, bytes) } catch { fs.discardStage(stage); throw error }
             return Prepared(p.name, kind, driveName, false, 1, stage)
@@ -134,12 +134,21 @@ public enum FileImport {
         let utf8 = e.utf8 || (e.rawName.contains { $0 >= 0x80 } && String(bytes: e.rawName, encoding: .utf8) != nil)
         if utf8 {
             guard let u = String(bytes: e.rawName, encoding: .utf8) else { return ("?", nil) }
-            let shown = u.replacingOccurrences(of: "\\", with: "/")
-            return (shown, InputCharacterPolicy.encode(shown, singleLine: true))
+            let name = u.replacingOccurrences(of: "\\", with: "/")
+            return (shown(name), InputCharacterPolicy.encode(name, singleLine: true))
         }
         // CP437, the ZIP default, is also TempleOS's character set: the bytes are the name
         let bytes = String(String.UnicodeScalarView(e.rawName.map { Unicode.Scalar($0) })).replacingOccurrences(of: "\\", with: "/")
-        return (InputCharacterPolicy.display(bytes), bytes)
+        return (shown(InputCharacterPolicy.display(bytes)), bytes)
+    }
+
+    /** [s] for a message: control, line-separator and bidi-control characters become "?" (a name cannot add lines or reorder text). */
+    public static func shown(_ s: String) -> String {
+        String(String.UnicodeScalarView(s.unicodeScalars.map { c -> Unicode.Scalar in
+            let v = c.value
+            return v < 0x20 || (v >= 0x7F && v < 0xA0) || v == 0x2028 || v == 0x2029 || v == 0x061C || (0x200E...0x200F).contains(v)
+                || (0x202A...0x202E).contains(v) || (0x2066...0x2069).contains(v) ? "?" : c
+        }))
     }
 
     /** A provider's or archive's name as one C: name (NFC, CP437), or nil when it cannot be one. */
@@ -149,9 +158,15 @@ public enum FileImport {
         return bytes
     }
 
-    /** One RedSea name ([Paths.normalize]: at most 38 characters, no : * ? " < > |), not hidden from listings. */
+    /**
+     * One RedSea name ([Paths.normalize]: at most 38 characters, no : * ? " < > |), not hidden from listings, not ending
+     * in .Z (the drive reads X.Z as X), and not starting or ending with a character either platform trims from a path
+     * (spaces and controls; also CP437 a-grave 0x85 and a-acute 0xA0, which Swift's trimming treats as whitespace).
+     */
     static func validSegment(_ b: String) -> Bool {
-        if b.isEmpty || b == "." || b == ".." || b.contains("/") || b.contains("\\") || b.hasPrefix(".tmp-") { return false }
+        if b.isEmpty || b == "." || b == ".." || b.contains("/") || b.contains("\\") || b.hasPrefix(".tmp-") || b.uppercased().hasSuffix(".Z") { return false }
+        func trimmable(_ c: Unicode.Scalar?) -> Bool { guard let v = c?.value else { return true }; return v <= 0x20 || v == 0x85 || v == 0xA0 }
+        if trimmable(b.unicodeScalars.first) || trimmable(b.unicodeScalars.last) { return false }
         return Paths.normalize(DESTINATION, b) == DESTINATION + "/" + b
     }
 
@@ -185,6 +200,8 @@ public enum FileImport {
         defer { zip.close() }
         var items: [Item] = []
         var files = Set<String>(), dirs = Set<String>()
+        /** The first spelling of each folder (lower-case path): "A/Sub" and "A/SUB" are one folder on C:. */
+        var spelling: [String: String] = [:]
         var total = 0
         for e in zip.entries {
             let (shown, b) = entryName(e)
@@ -205,6 +222,10 @@ public enum FileImport {
                 parts[parts.count - 1] = String(last.unicodeScalars.dropLast(2)); expand = true
             }
             if !parts.allSatisfy(validSegment) { throw ImportError("import.error.bad_name", ("entry", shown)) }
+            for k in 0..<(e.isDir ? parts.count : parts.count - 1) {
+                let folder = parts[0...k].joined(separator: "/").lowercased()
+                if let first = spelling[folder] { parts[k] = first } else { spelling[folder] = parts[k] }
+            }
             if parts.count - (e.isDir ? 0 : 1) > MAX_DEPTH { throw ImportError("import.error.too_deep", ("entry", shown), ("count", MAX_DEPTH)) }
             if !e.isDir {
                 if e.size > MAX_FILE_BYTES { throw ImportError("import.error.entry_too_large", ("entry", shown), ("mib", MAX_FILE_BYTES >> 20)) }
@@ -238,7 +259,7 @@ public enum FileImport {
         let folder: String
         if single { folder = items.first { $0.parts.count > 1 }?.parts[0] ?? items[0].parts[0] } else {
             let base = String(source.trimmed().unicodeScalars.dropLast(4))
-            guard let n = driveName(base) else { throw ImportError("import.error.bad_name", ("entry", base)) }
+            guard let n = driveName(base) else { throw ImportError("import.error.bad_name", ("entry", shown(base))) }
             folder = n
         }
         let stage = try fs.beginStage()

@@ -565,8 +565,10 @@ public final class LayeredFs: VirtualFs {
     /** Deletes [s] with whatever it still holds (unpublished files, a replaced entry); gives its bytes back. */
     public func discardStage(_ s: Stage) {
         lock.lock(); defer { lock.unlock() }
-        used -= HostFile.treeSize(s.host)
+        let before = HostFile.treeSize(s.host)
         _ = HostFile.deleteRecursively(s.host)
+        // what could not be deleted still counts (the next start removes it)
+        used -= before - (HostFile.exists(s.host) ? HostFile.treeSize(s.host) : 0)
     }
 
     private func relToFiles(_ host: String) -> String { LayeredFs.removePrefix(host, filesDir + "/") }
@@ -587,7 +589,8 @@ public final class LayeredFs: VirtualFs {
     private func recoverImports() {
         if let d = try? Data(contentsOf: URL(fileURLWithPath: journalFile)) {
             let f = LayeredFs.splitScalars(String(decoding: d, as: UTF8.self), "\t")
-            if f.count == 2, !f[0].isEmpty, !f[1].isEmpty, !f[0].contains(".."), !f[1].contains("..") {
+            func inside(_ rel: String) -> Bool { !rel.isEmpty && !rel.hasPrefix("/") && !LayeredFs.splitScalars(rel, "/").contains("..") }
+            if f.count == 2, inside(f[0]), inside(f[1]) {
                 let aside = HostFile.child(filesDir, f[0]), target = HostFile.child(filesDir, f[1])
                 if HostFile.exists(aside) && !HostFile.exists(target) { _ = HostFile.renameTo(aside, target) }
             }

@@ -59,8 +59,12 @@ and the three supplemental discs.
 - **Protected files:** a bundled original is never replaced by an import, even when asked.
 - **Names:** RedSea rules (`Paths.normalize`): at most 38 characters, TempleOS character set (CP437,
   the same set the editor accepts; names are normalized to NFC first, so decomposed `é` works), no
-  `: * ? " < > |`, no `.`/`..`, no `.tmp-` prefix. The drive ignores case, so names that differ only in
-  case collide. ZIP names in UTF-8 (flag 11, or valid UTF-8 without it, as macOS and Linux tools write)
+  `: * ? " < > |`, no `.`/`..`, no `.tmp-` prefix, no name ending in `.Z` (the drive reads `X.Z` as `X`),
+  and no name starting or ending with a character that either platform trims from a path (spaces;
+  also `à` and `á`, whose TempleOS codes 0x85 and 0xA0 Swift's trimming treats as whitespace; inside a
+  name they are fine). The drive ignores case, so names that differ only in case collide, and folders
+  of an archive spelled differently (`Pkg/Sub`, `Pkg/SUB`) become one folder with the first spelling.
+  Names shown in messages have control, line-separator and bidi-control characters replaced by `?`. ZIP names in UTF-8 (flag 11, or valid UTF-8 without it, as macOS and Linux tools write)
   are converted to CP437; names without the flag are CP437, which is TempleOS's own character set.
 
 ## 4. Archive checks and limits
@@ -90,8 +94,10 @@ directory and every local header (`ZipArchive`, the same parser on both platform
 | files per selection | 32 |
 
 Inflating writes into a buffer of exactly the declared size plus one spare byte (a stream that fills it is
-refused); TempleOS `.Z` expansion checks the declared size before allocating. Work is bounded by these
-limits. Swift inflates with the Compression framework (`COMPRESSION_ZLIB` is raw RFC 1951 Deflate) and its
+refused); TempleOS `.Z` expansion checks the declared size before allocating and is bounded in work: at
+most 32 inner steps per output byte (plus 65,536). Genuine files need at most 8 (927 files on the V5.03 ISO
+and the supplemental discs, mean 1.2); a crafted stream that makes every dictionary entry a child of one
+code would otherwise cost about 4,000 steps per byte, minutes for 16 MiB. Swift inflates with the Compression framework (`COMPRESSION_ZLIB` is raw RFC 1951 Deflate) and its
 own CRC-32; Kotlin with `java.util.zip.Inflater` and `CRC32`. Apple platforms have no public API that reads
 ZIP archives, so the container format is parsed by our own bounded reader on both platforms, rather than by
 `ZipFile` on Android only, so that both refuse exactly the same archives.
@@ -136,13 +142,13 @@ the platform adapters (`DocumentImportAdapter.swift` / `.kt`):
 | | iOS | Android |
 |---|---|---|
 | Picker | `UIDocumentPickerViewController(forOpeningContentTypes: [.data], asCopy: true)` | `ACTION_OPEN_DOCUMENT`, `*/*`, `CATEGORY_OPENABLE` |
-| Copy | by the system (asCopy: cloud files are downloaded first) into the app's temporary folder | by the app from the content URI into its cache, stopping at the largest accepted size |
+| Copy | by the system (asCopy: cloud files are downloaded first) into the app's temporary folder | by the app from the content URI into its cache, stopping at the largest accepted size; only the first 32 documents of a selection are copied |
 | Name | the copy's file name | `OpenableColumns.DISPLAY_NAME` |
 | Permissions | none (no document types, no entitlements) | none (no storage permission, no persistable grant) |
 
 ## 8. Tests and fixtures
 
-`ImportTests` / `ImportTest` (17 tests each) drive the real paths: start menu, explanation, picker hook,
+`ImportTests` / `ImportTest` (19 tests each) drive the real paths: start menu, explanation, picker hook,
 `FileImport`, the drive, Files (tap, Run) and the interpreter. Genuine programs the app does not bundle,
 from TempleOS supplemental disc 1, are in `shared/test-vectors/import` with their origin, license
 (public domain) and SHA-256: a hymn (`o.HC.Z`) plays, `B17.HC.Z` and `DiningStars.HC` draw, `Span.zip`
@@ -160,6 +166,12 @@ still refuses URL handlers, other pickers and inbound intent filters.
   inline assembly, some DolDoc and graphics internals); they import fine and report the compile error.
 - iOS: when two chosen documents have the same name, the system's copy of the second may be renamed
   (for example with a number); it is then imported under that name.
+- If the user deleted the bundled `C:/Home` folder, an import creates `C:/Home` again, and with it the
+  bundled files in it come back (the drive's existing rule for a folder created where a bundled one was
+  deleted).
+- The paths the drive trims differ between the platforms for names starting or ending with `à`/`á`
+  (`Paths.normalize`: Swift trims Unicode whitespace, Kotlin only spaces and controls). Import refuses such
+  names on both; the difference itself exists outside Import too and is not changed here.
 - Not done, from `security-model.md` §7 and `future-developer-mode.md` §4-§5: an external security review,
   a per-program capability model, a provenance or "imported" label in the UI, and a re-reading of the App
   Store Review Guidelines (2.5.2, 4.7) and Google Play's policies for user-imported source code. The owner

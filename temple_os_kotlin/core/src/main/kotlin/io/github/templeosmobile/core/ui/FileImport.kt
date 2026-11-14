@@ -77,9 +77,9 @@ object FileImport {
         val files: Int,
         internal val stage: LayeredFs.Stage?,
     ) {
-        internal constructor(source: String, error: Throwable) : this(source, error, null, "", false, 0, null)
+        internal constructor(source: String, error: Throwable) : this(shown(source), error, null, "", false, 0, null)
         internal constructor(source: String, kind: Kind, name: String, isDir: Boolean, files: Int, stage: LayeredFs.Stage) :
-            this(source, null, kind, name, isDir, files, stage)
+            this(shown(source), null, kind, name, isDir, files, stage)
     }
 
     /** A picked file that is not imported at all (deletes its copy). */
@@ -117,12 +117,12 @@ object FileImport {
                 if (h != null && h.first == bytes.size && runCatching { TempleArc.expand(bytes, limit = MAX_FILE_BYTES) }.isSuccess)
                     throw ImportError("import.error.is_compressed")
             }
-            val driveName = driveName(name) ?: throw ImportError("import.error.bad_name", "entry" to name)
+            val driveName = driveName(name) ?: throw ImportError("import.error.bad_name", "entry" to shown(name))
             val stage = fs.beginStage()
             try { fs.stageFile(stage, driveName, bytes) } catch (e: Throwable) { fs.discardStage(stage); throw e }
             Prepared(p.name, kind, driveName, false, 1, stage)
         }
-    } catch (e: Exception) {
+    } catch (e: Throwable) { // also OutOfMemoryError: reported, and the import goes on (allocations are bounded)
         Prepared(p.name, e)
     } finally {
         p.hostPath?.let { File(it).delete() }
@@ -140,13 +140,20 @@ object FileImport {
         val utf8 = e.utf8 || (e.rawName.any { it < 0 } && utf8OrNull(e.rawName) != null)
         if (utf8) {
             val u = utf8OrNull(e.rawName) ?: return "?" to null
-            val shown = u.replace('\\', '/')
-            return shown to InputCharacterPolicy.encode(shown, singleLine = true)
+            val name = u.replace('\\', '/')
+            return shown(name) to InputCharacterPolicy.encode(name, singleLine = true)
         }
         // CP437, the ZIP default, is also TempleOS's character set: the bytes are the name
         val bytes = String(CharArray(e.rawName.size) { (e.rawName[it].toInt() and 255).toChar() }).replace('\\', '/')
-        return InputCharacterPolicy.display(bytes) to bytes
+        return shown(InputCharacterPolicy.display(bytes)) to bytes
     }
+
+    /** [s] for a message: control, line-separator and bidi-control characters become "?" (a name cannot add lines or reorder text). */
+    fun shown(s: String): String = String(CharArray(s.length) { i ->
+        val v = s[i].code
+        if (v < 0x20 || (v in 0x7F until 0xA0) || v == 0x2028 || v == 0x2029 || v == 0x061C || v in 0x200E..0x200F ||
+            v in 0x202A..0x202E || v in 0x2066..0x2069) '?' else s[i]
+    })
 
     /** A provider's or archive's name as one C: name (NFC, CP437), or null when it cannot be one. */
     fun driveName(unicode: String): String? {
@@ -156,9 +163,15 @@ object FileImport {
         return bytes.takeIf { validSegment(it) }
     }
 
-    /** One RedSea name ([Paths.normalize]: at most 38 characters, no : * ? " < > |), not hidden from listings. */
+    /**
+     * One RedSea name ([Paths.normalize]: at most 38 characters, no : * ? " < > |), not hidden from listings, not ending
+     * in .Z (the drive reads X.Z as X), and not starting or ending with a character either platform trims from a path
+     * (spaces and controls; also CP437 a-grave 0x85 and a-acute 0xA0, which Swift's trimming treats as whitespace).
+     */
     internal fun validSegment(b: String): Boolean {
-        if (b.isEmpty() || b == "." || b == ".." || b.contains('/') || b.contains('\\') || b.startsWith(".tmp-")) return false
+        if (b.isEmpty() || b == "." || b == ".." || b.contains('/') || b.contains('\\') || b.startsWith(".tmp-") || b.uppercase().endsWith(".Z")) return false
+        fun trimmable(c: Char) = c.code <= 0x20 || c.code == 0x85 || c.code == 0xA0
+        if (trimmable(b.first()) || trimmable(b.last())) return false
         return Paths.normalize(DESTINATION, b) == "$DESTINATION/$b"
     }
 
@@ -184,6 +197,8 @@ object FileImport {
         try {
             val items = ArrayList<Item>()
             val files = HashSet<String>(); val dirs = HashSet<String>()
+            /** The first spelling of each folder (lower-case path): "A/Sub" and "A/SUB" are one folder on C:. */
+            val spelling = HashMap<String, String>()
             var total = 0L
             for (e in zip.entries) {
                 val (shown, b) = entryName(e)
@@ -202,6 +217,11 @@ object FileImport {
                 val last = parts[parts.size - 1]
                 if (!e.isDir && last.length > 2 && last.uppercase().endsWith(".Z")) { parts[parts.size - 1] = last.dropLast(2); expand = true }
                 if (!parts.all { validSegment(it) }) throw ImportError("import.error.bad_name", "entry" to shown)
+                for (k in 0 until (if (e.isDir) parts.size else parts.size - 1)) {
+                    val folder = parts.subList(0, k + 1).joinToString("/").lowercase()
+                    val first = spelling[folder]
+                    if (first != null) parts[k] = first else spelling[folder] = parts[k]
+                }
                 if (parts.size - (if (e.isDir) 0 else 1) > MAX_DEPTH) throw ImportError("import.error.too_deep", "entry" to shown, "count" to MAX_DEPTH)
                 if (!e.isDir) {
                     if (e.size > MAX_FILE_BYTES) throw ImportError("import.error.entry_too_large", "entry" to shown, "mib" to (MAX_FILE_BYTES shr 20))
@@ -234,7 +254,7 @@ object FileImport {
             val single = items.all { it.parts[0].lowercase() == top && (it.parts.size > 1 || it.entry.isDir) }
             val folder = if (single) (items.firstOrNull { it.parts.size > 1 }?.parts?.get(0) ?: items[0].parts[0]) else {
                 val base = source.trim().dropLast(4)
-                driveName(base) ?: throw ImportError("import.error.bad_name", "entry" to base)
+                driveName(base) ?: throw ImportError("import.error.bad_name", "entry" to shown(base))
             }
             val stage = fs.beginStage()
             try {

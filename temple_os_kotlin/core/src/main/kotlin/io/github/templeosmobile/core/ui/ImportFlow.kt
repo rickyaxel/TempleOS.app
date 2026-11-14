@@ -68,8 +68,12 @@ class ImportFlow internal constructor(private val shell: Shell) {
         val fs = shell.fs; val sh = shell
         val picked = files.take(FileImport.MAX_PICKED); val extra = files.drop(FileImport.MAX_PICKED)
         Thread({
-            val prepared = picked.map { FileImport.prepare(fs, it) } +
-                extra.map { FileImport.refuse(it, ImportError("import.error.too_many_files", "count" to FileImport.MAX_PICKED)) }
+            val prepared = try {
+                picked.map { FileImport.prepare(fs, it) } +
+                    extra.map { FileImport.refuse(it, ImportError("import.error.too_many_files", "count" to FileImport.MAX_PICKED)) }
+            } catch (e: Throwable) { // never leave the flow busy: every file is reported
+                files.map { FileImport.refuse(it, ImportError("import.error.interrupted")) }
+            }
             sh.post {
                 working--
                 queue.addAll(prepared)

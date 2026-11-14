@@ -161,6 +161,55 @@ final class ImportTests: XCTestCase {
         }
     }
 
+    /** A valid TempleOS archive (type 2) whose every code is the literal "A": each new string is a child of "A". */
+    private static func sameLiteralStream(_ codes: Int) -> [UInt8] {
+        var bits: [Bool] = []
+        var free = 128, width = 8, limit = 256
+        func entry() { if width < 12 { free += 1; if free == limit { width += 1; limit <<= 1 } } }
+        func put(_ c: Int) { for i in 0..<width { bits.append((c >> i) & 1 == 1) } }
+        entry(); put(65); entry()
+        for _ in 0..<codes { put(65); entry() }
+        var body = [UInt8](repeating: 0, count: (bits.count + 7) / 8)
+        for (i, b) in bits.enumerated() where b { body[i / 8] |= 1 << (i % 8) }
+        var out = [UInt8](repeating: 0, count: 17)
+        for i in 0..<8 { out[i] = UInt8(truncatingIfNeeded: (17 + body.count) >> (8 * i)); out[8 + i] = UInt8(truncatingIfNeeded: (codes + 1) >> (8 * i)) }
+        out[16] = 2
+        return out + body
+    }
+
+    func testCraftedCompressionCannotBurnUnboundedTime() throws {
+        // short: well inside the work bound, decodes to the expected bytes
+        XCTAssertEqual([UInt8](repeating: 65, count: 1001), try TempleArc.expand(ImportTests.sameLiteralStream(1000), limit: 1 << 20))
+        // long: past the 12-bit dictionary, every reused slot is at the end of a ~4000-long list; refused, quickly
+        let crafted = ImportTests.sameLiteralStream(200_000)
+        let t0 = Date()
+        XCTAssertThrowsError(try TempleArc.expand(crafted, limit: FileImport.MAX_FILE_BYTES))
+        XCTAssertLessThan(Date().timeIntervalSince(t0), 5, "bounded work")
+        let dir = tmp(), fs = drive(dir)
+        XCTAssertEqual("import.error.corrupt_z", key(FileImport.prepare(fs, picked("Slow.HC.Z", crafted))))
+    }
+
+    func testNamesAreCheckedTheSameWayOnBothPlatforms() throws {
+        // folder spellings that differ only in case are one folder (the first spelling), never two
+        let dir = tmp(), fs = drive(dir)
+        XCTAssertEqual("C:/Home/Imports/Pkg", try importNow(fs, picked("Pkg.zip", zip([ZEntry("Pkg/Sub/a.HC", [1]), ZEntry("Pkg/SUB/b.HC", [2]), ZEntry("Pkg/sub/", [])]))))
+        XCTAssertEqual(["Sub"], fs.list("C:/Home/Imports/Pkg")!.map { $0.name })
+        XCTAssertEqual(["a.HC", "b.HC"], fs.list("C:/Home/Imports/Pkg/Sub")!.map { $0.name }.sorted())
+        // what one platform's path trimming would change is refused on both (CP437 a-grave, a-acute, spaces)
+        XCTAssertEqual("import.error.bad_name", archiveKey([ZEntry("D\u{E9}j\u{E0}/x.HC", [1])]))
+        XCTAssertEqual("import.error.bad_name", archiveKey([ZEntry("\u{E1}rbol/x.HC", [1])]))
+        XCTAssertNil(archiveKey([ZEntry("Mam\u{E1}.HC", [1])]), "inside a name they are fine")
+        // X.Z is read as X on the drive: a folder may not end in .Z
+        XCTAssertEqual("import.error.bad_name", archiveKey([ZEntry("Tools.Z/a.HC", [1])]))
+        // names in messages cannot add lines or reorder text
+        let r = FileImport.prepare(fs, picked("Lines.zip", zip([ZEntry("x\nGame.zip: imported\u{202E}/../Evil.HC", [1])])))
+        let e = try XCTUnwrap(r.error as? ImportError)
+        XCTAssertEqual("import.error.bad_name", e.key, "a newline is no TempleOS name character")
+        let entry = try XCTUnwrap(e.args.first { $0.0 == "entry" }?.1 as? String)
+        XCTAssertFalse(entry.contains("\n") || entry.contains("\u{202E}"), entry)
+        XCTAssertEqual("A?B", FileImport.shown("A\u{2028}B"))
+    }
+
     // ------------------------------------------------------------ the ZIP reader
 
     func testRealArchivesReadEntryForEntry() throws {
@@ -388,6 +437,13 @@ final class ImportTests: XCTestCase {
         XCTAssertEqual([], leftovers(dir))
         XCTAssertFalse(FileManager.default.fileExists(atPath: dir.appendingPathComponent("drive/import-journal.txt").path))
         XCTAssertEqual(after.usedBytes(), Int64(437))
+        // ".." inside a name is an ordinary name, not a parent folder
+        let again = drive(dir)
+        try importNow(again, picked("My..Prog.HC", Array("1;".utf8)))
+        try FileManager.default.createDirectory(at: stage, withIntermediateDirectories: true)
+        try FileManager.default.moveItem(at: files.appendingPathComponent("Home/Imports/My..Prog.HC"), to: stage.appendingPathComponent(".replaced-2"))
+        try Data(".tmp-import-crash/.replaced-2\tHome/Imports/My..Prog.HC".utf8).write(to: dir.appendingPathComponent("drive/import-journal.txt"))
+        XCTAssertEqual(Array("1;".utf8), drive(dir).readFile("C:/Home/Imports/My..Prog.HC"), "restored")
     }
 
     // ------------------------------------------------------------ the flow, through the real shell

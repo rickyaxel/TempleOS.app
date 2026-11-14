@@ -106,6 +106,7 @@ public final class ZipArchive {
             let external = ZipArchive.u32(cd, p + 38), local = ZipArchive.u32(cd, p + 42)
             guard p + 46 + nameLen + extraLen + commentLen <= cd.count else { throw ZipError.invalid }
             if csize == 0xFFFF_FFFF || usize == 0xFFFF_FFFF || local == 0xFFFF_FFFF { throw ZipError.unsupported }
+            if csize > Int(Int32.max) || usize > Int(Int32.max) { throw ZipError.invalid }
             let raw = Array(cd[(p + 46)..<(p + 46 + nameLen)])
             p += 46 + nameLen + extraLen + commentLen
             // Unix (3) and OS X (19) keep the file type in the high half of the external attributes; DOS has a folder bit

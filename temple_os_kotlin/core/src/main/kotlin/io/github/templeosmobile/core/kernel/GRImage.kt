@@ -115,6 +115,10 @@ object TempleArc {
         val char = ByteArray(4096); val hash = IntArray(4096) { -1 }; val valid = BooleanArray(4096)
         var free = minimum; var bits = if (type == 2) 8 else 9; var limit = 1 shl bits
         var current = -1; var pending = -1; var bit = 17L * 8
+        // Total work bound: genuine files take at most 8 inner steps per output byte (927 files on the V5.03 ISO and
+        // supplemental discs, mean 1.2); a crafted stream (every code the same literal) would take ~4000 per byte.
+        var work = 0L
+        val maxWork = 32L * expanded + 65536
         fun entry() {
             current = pending
             if (bits < 12) {
@@ -124,7 +128,7 @@ object TempleArc {
                 var tries = 0
                 do {
                     if (++free == limit) free = minimum
-                    if (++tries > 4096) bad()
+                    if (++tries > 4096 || ++work > maxWork) bad()
                 } while (hash[free] != -1)
                 pending = free
                 val head = base[free]
@@ -132,7 +136,7 @@ object TempleArc {
                 else {
                     var p = hash[head]; var steps = 0
                     while (p != -1 && next[p] != free) {
-                        p = next[p]; if (++steps > 4096) bad()
+                        p = next[p]; if (++steps > 4096 || ++work > maxWork) bad()
                     }
                     if (p != -1) next[p] = next[free]
                 }
@@ -157,7 +161,7 @@ object TempleArc {
             if (code == current) { stack[sp++] = lastChar; cursor = last }
             var hops = 0
             while (cursor >= minimum) {
-                if (cursor >= 4096 || !valid[cursor] || hops++ >= 4096) bad()
+                if (cursor >= 4096 || !valid[cursor] || hops++ >= 4096 || ++work > maxWork) bad()
                 stack[sp++] = char[cursor]; cursor = base[cursor]
             }
             lastChar = cursor.toByte(); stack[sp++] = lastChar

@@ -364,8 +364,11 @@ class LayeredFs(
 
     /** Deletes [s] with whatever it still holds (unpublished files, a replaced entry); gives its bytes back. */
     @Synchronized fun discardStage(s: Stage) {
-        used -= s.host.walkTopDown().filter { it.isFile }.sumOf { it.length() }
+        fun size() = s.host.walkTopDown().filter { it.isFile }.sumOf { it.length() }
+        val before = size()
         s.host.deleteRecursively()
+        // what could not be deleted still counts (the next start removes it)
+        used -= before - (if (s.host.exists()) size() else 0L)
     }
 
     private fun relToFiles(f: File) = f.path.removePrefix(filesDir.path + File.separator)
@@ -386,7 +389,8 @@ class LayeredFs(
     private fun recoverImports() {
         if (journalFile.exists()) {
             val f = try { journalFile.readText().split('\t') } catch (_: java.io.IOException) { emptyList() }
-            if (f.size == 2 && f[0].isNotEmpty() && f[1].isNotEmpty() && !f[0].contains("..") && !f[1].contains("..")) {
+            fun inside(rel: String) = rel.isNotEmpty() && !rel.startsWith("/") && ".." !in rel.split('/')
+            if (f.size == 2 && inside(f[0]) && inside(f[1])) {
                 val aside = File(filesDir, f[0]); val target = File(filesDir, f[1])
                 if (aside.exists() && !target.exists()) aside.renameTo(target)
             }

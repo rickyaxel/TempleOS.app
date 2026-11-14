@@ -60,24 +60,35 @@ class DocumentImportAdapter(private val activity: Activity, private val deliver:
             else data.data?.let { uris.add(it) }
         }
         if (uris.isEmpty()) { deliver(emptyList()); return true }
-        Thread({ deliver(uris.map { copy(it) }) }, "TempleOS-ImportCopy").apply { isDaemon = true }.start()
+        // only as many as one import takes are copied; the rest are reported by name
+        Thread({
+            deliver(uris.take(FileImport.MAX_PICKED).map { copy(it) } +
+                uris.drop(FileImport.MAX_PICKED).map { PickedFile(displayName(it), null, ImportError("import.error.too_many_files", "count" to FileImport.MAX_PICKED)) })
+        }, "TempleOS-ImportCopy").apply { isDaemon = true }.start()
         return true
     }
 
-    /** One document, copied into the cache with a size limit; or why it could not be. Background thread. */
-    private fun copy(uri: Uri): PickedFile {
-        val resolver = activity.contentResolver
+    /** The provider's display name and size (-1 when unknown). */
+    private fun describe(uri: Uri): Pair<String, Long> {
         var name: String? = null
         var size = -1L
         try {
-            resolver.query(uri, arrayOf(OpenableColumns.DISPLAY_NAME, OpenableColumns.SIZE), null, null, null)?.use { c ->
+            activity.contentResolver.query(uri, arrayOf(OpenableColumns.DISPLAY_NAME, OpenableColumns.SIZE), null, null, null)?.use { c ->
                 if (c.moveToFirst()) {
                     if (!c.isNull(0)) name = c.getString(0)
                     if (!c.isNull(1)) size = c.getLong(1)
                 }
             }
         } catch (e: Exception) { Log.w(TAG, "document name", e) } // SecurityException, a provider that failed
-        val shown = name ?: uri.lastPathSegment?.substringAfterLast('/') ?: "?"
+        return (name ?: uri.lastPathSegment?.substringAfterLast('/') ?: "?") to size
+    }
+
+    private fun displayName(uri: Uri) = describe(uri).first
+
+    /** One document, copied into the cache with a size limit; or why it could not be. Background thread. */
+    private fun copy(uri: Uri): PickedFile {
+        val resolver = activity.contentResolver
+        val (shown, size) = describe(uri)
         // nothing larger than the largest accepted input is copied (FileImport checks each kind's own limit)
         val max = maxOf(FileImport.MAX_ARCHIVE_BYTES, FileImport.MAX_FILE_BYTES).toLong()
         if (size > max) return PickedFile(shown, null, ImportError("import.error.too_large", "mib" to (max shr 20)))
