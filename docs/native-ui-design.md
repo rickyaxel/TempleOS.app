@@ -91,12 +91,31 @@ Generated per program from its catalog entry and its own TempleOS menu:
 - L-CLICK/R-CLICK toggle for canvas touches.
 - Held buttons send key-down and key-up; focus loss, rotation and going to the
   background release everything so no key sticks.
+- Where the program has the d-pad, a JOYSTICK / D-PAD button (last in the
+  button grid) swaps the four arrow buttons for a joystick in the same square.
+  The choice is a setting (`Settings.directional`, `j=` in the session) shared
+  by every program; a program without the d-pad never shows either. The
+  joystick (`Joystick` in `ProgramHost`) is a digital stick: a push holds the
+  same arrow keys the d-pad buttons hold (key-down, typematic repeat, key-up),
+  one arrow per direction and two on a diagonal, as two fingers on the d-pad.
+  It follows one finger from anywhere on it; other fingers stay free for the
+  buttons. Dead zone: 30% of the knob's travel to engage, 22% to let go.
+  Arrows own 30° either side of their axis, diagonals the 30° between, with a
+  6° margin before a held direction changes. Only changes are sent. Its keys
+  go up when its finger lifts or is cancelled, when the mode switches, when
+  the control area or the d-pad goes away, when it moves under the finger
+  (rotation), and with everything else on focus loss and backgrounding. The
+  picture is drawn once per size from integer pixel arithmetic (the same
+  pixels on both platforms); the rim lights up on the side of each held arrow.
 
 ## 8. Not implemented (honest list)
 
 - Pinch-zoom and pan of program frames, immersive full-screen mode.
-- Virtual analog joystick; user-configurable control placement and opacity
-  (a `controlsOpacity` setting exists in the settings model but has no UI and
-  is not applied yet).
+- An analog joystick (the joystick sends arrow keys, as TempleOS games read
+  them); user-configurable control placement and opacity (a `controlsOpacity`
+  setting exists in the settings model but has no UI and is not applied yet).
+- Android system gesture exclusion for the controls: on a device with gesture
+  navigation, a drag that starts on the joystick's leftmost few pixels could
+  be taken as the back gesture (not observed: the test phone uses buttons).
 - Precision cursor mode for mouse-driven programs.
 - Double-tap gestures.

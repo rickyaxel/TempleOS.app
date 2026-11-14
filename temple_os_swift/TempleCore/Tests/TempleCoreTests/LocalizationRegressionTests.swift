@@ -223,9 +223,9 @@ final class LocalizationRegressionTests: XCTestCase {
     }
 
     /**
-     * The game controls' own labels (touch mode, wheel) are translated and fit their buttons, the key caps stay as
-     * they are, and every button sends exactly what it sends in English: the same key codes, wheel notches and touch
-     * modes, in the same order. The labels never decide what a button does.
+     * The game controls' own labels (touch mode, wheel, d-pad/joystick) are translated and fit their buttons, the key
+     * caps stay as they are, and every button sends exactly what it sends in English: the same key codes, wheel notches
+     * and touch modes, in the same order. The labels never decide what a button does.
      */
     func testGameControlsAreTranslatedWithoutChangingTheirInput() {
         shell.resize(720, 720)
@@ -233,49 +233,60 @@ final class LocalizationRegressionTests: XCTestCase {
                                "TempleOS V5.03 ISO", ["arrows", "ctrl", "shift", "wheel", "mouse"], ["graphics"], "any", "")
         let portrait = Rect(0, 300, 360, 360)
         let landscape = (Rect(0, 0, 100, 360), Rect(544, 0, 96, 360))
-        struct Result { var events: [String] = [], labels: [[String]] = [], spoken: [[String]] = [], rects: [[Rect]] = [], modes: [Int] = [] }
+        struct Result { var events: [String] = [], labels: [[String]] = [], spoken: [[String]] = [], rects: [[Rect]] = [], modes: [Int] = []
+            var stick: (label: String, spoken: String, rect: Rect)? = nil }
         func press(_ locale: String, _ gutter: Bool) -> Result {
             L10n.use(locale)
             var sent: [String] = []
             let controls = GameControls { e in if case let .key(ch, sc, down) = e { sent.append("key \(ch) \(sc) \(down)") } }
             controls.onWheel = { sent.append("wheel \($0)") }
             var result = Result()
-            func layout() {
-                if gutter { controls.draw(shell.surface, landscape.0, [], vertical: false, showDpad: true, actionArea: landscape.1, info: info) }
-                else { controls.draw(shell.surface, portrait, [], vertical: true, showDpad: true, info: info) }
+            func layout(_ directional: DirectionalControl = .dpad) {
+                if gutter { controls.draw(shell.surface, landscape.0, [], vertical: false, showDpad: true, directional: directional, actionArea: landscape.1, info: info) }
+                else { controls.draw(shell.surface, portrait, [], vertical: true, showDpad: true, directional: directional, info: info) }
                 var s: [String] = [], r: [Rect] = []
                 controls.accessibility { rect, label, _ in r.append(rect); s.append(label) }
+                if directional == .joystick { result.stick = (controls.labels.last!, s.last!, r.last!); return }
                 result.labels.append(controls.labels); result.spoken.append(s); result.rects.append(r); result.modes.append(controls.clickMode)
             }
             layout()
-            // every button once, then the touch-mode toggle until it is back where it started
+            // every button once, then the touch-mode toggle (before the d-pad/joystick switch) until it is back where it started
             let count = result.rects[0].count
-            for i in Array(0..<count) + [count - 1, count - 1] {
+            for i in Array(0..<count) + [count - 2, count - 2] {
                 let r = result.rects.last![i]
                 _ = controls.pointer(PointerEvent(Ptr.DOWN, r.x + r.w / 2, r.y + r.h / 2, id: 1))
                 _ = controls.pointer(PointerEvent(Ptr.UP, r.x + r.w / 2, r.y + r.h / 2, id: 1))
                 result.events.append("\(i): \(sent) mode \(controls.clickMode)"); sent.removeAll()
                 layout()
             }
+            layout(.joystick)
             return result
         }
         let modeKeys = ["left_click", "right_click", "hover"]
         for gutter in [false, true] {
             let english = press("en-US", gutter)
-            let keyCaps = Array(english.labels[0].dropLast(3)) // arrows, SPACE ENTER ESC, CTRL SHIFT
+            let keyCaps = Array(english.labels[0].dropLast(4)) // arrows, SPACE ENTER ESC, CTRL SHIFT
             XCTAssertEqual(["\u{18}", "\u{1B}", "\u{1A}", "\u{19}", "SPACE", "ENTER", "ESC", "CTRL", "SHIFT"], keyCaps)
             XCTAssertEqual([1, 2, 0], Array(english.modes.suffix(3)), "the toggle cycles through all three modes")
             for locale in L10n.resolver!.locales {
                 let result = press(locale.id, gutter)
                 L10n.use(locale.id)
                 XCTAssertEqual(english.events, result.events, "\(locale.id): input")
+                // the d-pad/joystick switch names the mode it switches to, in the same place and size in both modes
+                let stick = result.stick!
+                XCTAssertEqual(tr("controls.button.dpad"), stick.label); XCTAssertEqual(tr("controls.a11y.dpad_mode"), stick.spoken)
+                XCTAssertEqual(result.rects[0].last, stick.rect, "\(locale.id): the d-pad/joystick switch keeps its place and size")
+                if !gutter || Cp437.representable(stick.label) {
+                    XCTAssertLessThanOrEqual(shell.surface.measureUi(stick.label), stick.rect.w - 4, "\(locale.id): \"\(stick.label)\" fits")
+                }
                 for (step, labels) in result.labels.enumerated() {
                     let mode = modeKeys[result.modes[step]]
-                    XCTAssertEqual(keyCaps, Array(labels.dropLast(3)), "\(locale.id): key caps")
-                    XCTAssertEqual([tr("controls.button.wheel_up"), tr("controls.button.wheel_down"), tr("controls.button.\(mode)")], Array(labels.suffix(3)))
-                    XCTAssertEqual([tr("controls.a11y.wheel_up"), tr("controls.a11y.wheel_down"), tr("controls.a11y.\(mode)")], Array(result.spoken[step].suffix(3)))
+                    XCTAssertEqual(keyCaps, Array(labels.dropLast(4)), "\(locale.id): key caps")
+                    XCTAssertEqual([tr("controls.button.wheel_up"), tr("controls.button.wheel_down"), tr("controls.button.\(mode)"), tr("controls.button.joystick")], Array(labels.suffix(4)))
+                    XCTAssertEqual([tr("controls.a11y.wheel_up"), tr("controls.a11y.wheel_down"), tr("controls.a11y.\(mode)"), tr("controls.a11y.joystick_mode")],
+                                   Array(result.spoken[step].suffix(4)))
                     let rects = result.rects[step]
-                    XCTAssertEqual(result.rects[0].last, rects.last, "\(locale.id): the toggle keeps its place and size while it cycles")
+                    XCTAssertEqual(result.rects[0].dropLast().last, rects.dropLast().last, "\(locale.id): the toggle keeps its place and size while it cycles")
                     let area = gutter ? landscape.1 : portrait
                     for (i, r) in rects.enumerated() {
                         if i >= 4 { XCTAssertTrue(r.x >= area.x && r.right <= area.right && r.bottom <= area.bottom, "\(locale.id): \(labels[i]) \(r) inside \(area)") }
@@ -290,8 +301,8 @@ final class LocalizationRegressionTests: XCTestCase {
     }
 
     /**
-     * The touch-mode toggle is sized for its widest label, so its hidden labels are measured when the language
-     * changes; frames in between only draw the label shown.
+     * The touch-mode toggle is sized for its widest label (the d-pad/joystick switch for its wider one), so their hidden
+     * labels are measured when the language changes; frames in between only draw the labels shown.
      */
     func testGameControlsResolveTheirLabelsOncePerLanguage() {
         var measured: [String] = []
@@ -300,12 +311,12 @@ final class LocalizationRegressionTests: XCTestCase {
         func frame() { controls.draw(shell.surface, Rect(0, 300, 360, 360), [], vertical: true, showDpad: true) }
         for locale in ["ja-JP", "ko-KR"] { // labels outside the TempleOS font: measured by the platform
             L10n.use(locale)
-            let hidden = [tr("controls.button.right_click"), tr("controls.button.hover")]
+            let hidden = [tr("controls.button.right_click"), tr("controls.button.hover"), tr("controls.button.dpad")]
             measured.removeAll(); frame()
             XCTAssertTrue(hidden.allSatisfy { measured.contains($0) }, "\(locale): \(measured)")
             measured.removeAll(); for _ in 0..<10 { frame() }
             XCTAssertFalse(measured.contains { hidden.contains($0) }, "\(locale): \(measured)")
-            XCTAssertEqual(tr("controls.button.left_click"), controls.labels.last)
+            XCTAssertEqual([tr("controls.button.left_click"), tr("controls.button.joystick")], Array(controls.labels.suffix(2)))
         }
     }
 

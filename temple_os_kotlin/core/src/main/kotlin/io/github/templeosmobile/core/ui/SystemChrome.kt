@@ -27,6 +27,11 @@ data class SystemChrome(
     val deviceKeyboard: Boolean = false,
     /** The focused app asks for the bottom-edge system gestures to be deferred (its controls sit there). */
     val defersEdgeGestures: Boolean = false,
+    /**
+     * Where the focused app's drag controls are (logical px): the system's edge gestures stay out of them
+     * (Android: View.setSystemGestureExclusionRects; iOS has no edge gesture over the controls).
+     */
+    val gestureExclusion: List<Rect> = emptyList(),
 ) {
     enum class Owner { DESKTOP, WINDOW, APP_OVERRIDE, POPUP, KEY_ROW, KEYBOARD }
 
@@ -69,6 +74,7 @@ data class SystemChrome(
         fun resolve(
             desktop: Int, content: List<Layer>, contentBottom: Int, bars: List<Layer>, usableBottom: Int,
             left: Int, right: Int, deviceKeyboard: Boolean = false, defersEdgeGestures: Boolean = false,
+            gestureExclusion: List<Rect> = emptyList(),
         ): SystemChrome {
             fun owns(l: Layer, edge: Int) = l.rect.bottom >= edge && l.rect.x <= left && l.rect.right >= right && l.rect.w > 0 && l.rect.h > 0
             val c = content.lastOrNull { owns(it, contentBottom) }
@@ -77,7 +83,7 @@ data class SystemChrome(
             return SystemChrome(
                 bottom = b?.color ?: sideColor, side = sideColor,
                 owner = b?.owner ?: c?.owner ?: Owner.DESKTOP,
-                deviceKeyboard = deviceKeyboard, defersEdgeGestures = defersEdgeGestures,
+                deviceKeyboard = deviceKeyboard, defersEdgeGestures = defersEdgeGestures, gestureExclusion = gestureExclusion,
             )
         }
     }

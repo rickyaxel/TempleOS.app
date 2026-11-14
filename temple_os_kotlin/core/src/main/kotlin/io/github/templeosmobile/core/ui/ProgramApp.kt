@@ -26,6 +26,8 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
     private val consoleView = ConsoleView()
     private val controls = GameControls(shell.typematic) { e -> kernel.post(e); runner.wake() }.also { c ->
         c.onWheel = { d -> kernel.post(KInput.Mouse(lastPointer.first, lastPointer.second, lastButtons.first, lastButtons.second, d)); runner.wake() }
+        // the d-pad or the joystick is the user's choice for every program (Settings), kept with the session
+        c.onDirectional = { mode -> shell.settings.directional = mode; shell.saveSession() }
     }
     /** Where the last touch put the TempleOS pointer and its buttons (wheel notches keep them). */
     private var lastPointer = Kernel.W / 2 to Kernel.H / 2 // TempleOS starts the pointer mid-screen
@@ -73,8 +75,7 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
 
     override fun tick(nowMs: Long): Boolean {
         env.refresh()
-        controls.tick(nowMs)
-        var d = false
+        var d = controls.tick(nowMs) // the joystick's knob on its way back
         if (isFinished && !finished) { finished = true; controls.releaseAll(); d = true }
         val cv = kernel.console.version
         if (cv != lastConsoleVersion) { lastConsoleVersion = cv; if (!kernel.graphicsUsed || showConsole) d = true }
@@ -176,8 +177,9 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
             if (shell.landscape) {
                 // left gutter: d-pad; right gutter: action buttons (they do not fit beside the pad)
                 val right = Rect(canvas.right + 4, r.y, r.right - canvas.right - 4, r.h)
-                controls.draw(s, ctl, kernel.menuSnapshot, vertical = false, showDpad = wantsDpad(), actionArea = right, info = info)
-            } else controls.draw(s, ctl, kernel.menuSnapshot, vertical = true, showDpad = wantsDpad(), info = info)
+                controls.draw(s, ctl, kernel.menuSnapshot, vertical = false, showDpad = wantsDpad(), directional = shell.settings.directional,
+                    actionArea = right, info = info)
+            } else controls.draw(s, ctl, kernel.menuSnapshot, vertical = true, showDpad = wantsDpad(), directional = shell.settings.directional, info = info)
         } else controls.clearLayout() // no room for controls: only what is drawn may take touches
         for(link in kernel.console.spriteLinks(maxOf(1,win.w/8))) {
             val action=OriginalProgramLink.parse(link.format,Paths.parent(path)) ?: continue
@@ -202,6 +204,9 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
     }
 
     private fun wantsDpad() = info?.usesArrows ?: true
+
+    /** A drag that starts on the joystick near the screen's edge steers; it is not Android's back gesture. */
+    override val gestureExclusion get() = if (controls.joystick.shown) listOf(controls.joystick.rect) else emptyList()
 
     override fun overlays(r: Rect): List<Overlay> =
         if (kernel.graphicsUsed && !showConsole && canvasRect.w > 0 && !finished) listOf(Overlay(canvasRect, frame, shownWindow)) else emptyList()

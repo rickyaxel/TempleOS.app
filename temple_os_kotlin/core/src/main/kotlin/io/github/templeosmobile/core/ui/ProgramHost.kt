@@ -127,19 +127,38 @@ class Typematic {
     fun repeats(ticket: Long) = ticket == seq
 }
 
+/** How a program's arrow keys are offered (Settings.directional): the four d-pad buttons, or the joystick in their place. */
+enum class DirectionalControl { DPAD, JOYSTICK }
+
 class GameControls(private val typematic: Typematic = Typematic(), private val send: (KInput) -> Unit) {
     /**
      * A button. Key buttons ([ch], [sc]) are physical keys: down while held, typematic repeat, up on
      * release (menu shortcuts too: the button stands for the key the menu names). [wheel] buttons turn
-     * the mouse wheel one notch per press and repeat; modifier keys never repeat (KbdBuildSC).
+     * the mouse wheel one notch per press and repeat; modifier keys never repeat (KbdBuildSC). [dir] is the
+     * arrow ([Joystick.UP]...) of a d-pad button or of a joystick push; [touchMode] marks the touch-mode toggle.
      */
     private class Btn(val label: String, val rect: Rect, val ch: Int, val sc: Long, val a11y: String? = null,
-                      val toggle: (() -> Unit)? = null, val wheel: Int = 0)
+                      val toggle: (() -> Unit)? = null, val wheel: Int = 0, val dir: Int = 0, val touchMode: Boolean = false)
     private val buttons = ArrayList<Btn>()
-    private val held = HashMap<Int, Btn>()  // pointer id -> held button
-    private val heldSince = HashMap<Int, Long>() // pointer id -> first tick time (-1 until then)
+    private val held = HashMap<Int, Btn>()  // hold id (a pointer id, or -arrow for the joystick) -> held button
+    private val heldSince = HashMap<Int, Long>() // hold id -> first tick time (-1 until then)
     private val lastRepeat = HashMap<Int, Long>()
     private val ticket = HashMap<Int, Long>()
+    /** The joystick, laid out in the d-pad's square in [DirectionalControl.JOYSTICK] mode. */
+    val joystick = Joystick()
+    /** The finger that drives the joystick (one at a time), and the arrows its push holds. */
+    private var stickPointer: Int? = null
+    private var stickHeld = 0
+    /**
+     * The arrow keys the joystick holds, the d-pad's keys. Their hold ids are -[dir]: pointer ids are never
+     * negative, so a push and a finger on a button never share an entry.
+     */
+    private val stickKeys = listOf(Joystick.UP to Keys.SC_CURSOR_UP, Joystick.DOWN to Keys.SC_CURSOR_DOWN,
+        Joystick.LEFT to Keys.SC_CURSOR_LEFT, Joystick.RIGHT to Keys.SC_CURSOR_RIGHT).map { (dir, code) ->
+        val (c, s) = Keys.special(code); Btn("", Rect(0, 0, 0, 0), c, s, dir = dir)
+    }
+    /** The joystick toggle asks for the other directional control: the owner keeps it (Settings) and draws with it. */
+    var onDirectional: (DirectionalControl) -> Unit = {}
     /**
      * The controls' own labels in the UI language (touch modes with their spoken names, wheel) and the widths
      * the layout gives them: resolved when the language changes, not on every frame (the shell's surface
@@ -153,6 +172,12 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
         val wheelDown = tr("controls.button.wheel_down")
         val wheelUpW = s.measureUi(wheelUp)
         val wheelDownW = s.measureUi(wheelDown)
+        val toJoystick = tr("controls.button.joystick")
+        val toDpad = tr("controls.button.dpad")
+        val directionalW = maxOf(s.measureUi(toJoystick), s.measureUi(toDpad))
+        val toJoystickA11y = tr("controls.a11y.joystick_mode")
+        val toDpadA11y = tr("controls.a11y.dpad_mode")
+        val stickA11y = tr("controls.a11y.joystick")
     }
     private var controlText: L10n.Presentation<ControlText>? = null
     /** What a touch on the picture is: 0 left button, 1 right button, 2 pointer move only (hover). */
@@ -164,9 +189,10 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
     /**
      * Typematic repeat for held key buttons, like a PC keyboard: TempleOS boots with
      * KbdTypeMatic(0) (HomeLocalize.HC) = 250 ms delay, then 30 key-downs per second.
-     * Games that move one step per key message (GetKey: CastleFrankenstein) need it.
+     * Games that move one step per key message (GetKey: CastleFrankenstein) need it. Returns true while the
+     * joystick's knob is easing back to the centre (the controls need drawing).
      */
-    fun tick(nowMs: Long) {
+    fun tick(nowMs: Long): Boolean {
         for ((id, b) in held) {
             if (b.toggle != null || isModifier(b)) continue
             if (b.wheel == 0 && !typematic.repeats(ticket[id] ?: -1)) continue
@@ -179,36 +205,43 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
             if (nowMs - last >= REPEAT_PERIOD_MS) last = nowMs // do not queue a burst after a stall
             lastRepeat[id] = last
         }
+        return joystick.settle(nowMs)
     }
 
     /** The labels of the buttons drawn last, in order (tests, diagnostics). */
     internal val labels get() = buttons.map { it.label }
 
-    /** Screen-reader nodes for the buttons drawn last (label, toggle state). */
+    /** Screen-reader nodes for the joystick and the buttons drawn last (label, toggle state). */
     fun accessibility(add: (Rect, String, Boolean) -> Unit) {
+        controlText?.value?.let { t -> if (joystick.shown) add(joystick.rect, t.stickA11y, false) }
         for (b in buttons) add(b.rect, b.a11y ?: when (b.label) {
             "\u0018" -> tr("key.up"); "\u0019" -> tr("key.down"); "\u001B" -> tr("key.left"); "\u001A" -> tr("key.right")
             "SPACE" -> tr("key.space"); "ENTER" -> tr("key.enter"); "ESC" -> tr("key.escape")
             else -> Cp437.decode(b.label)
-        }, b.toggle != null && clickMode != 0)
+        }, b.touchMode && clickMode != 0)
     }
 
     /**
      * Lays out controls in [r] and draws them into [s]. With [actionArea] (landscape: the gutter right
-     * of the picture) the action buttons go there instead of next to the d-pad.
+     * of the picture) the action buttons go there instead of next to the d-pad. A program with the d-pad
+     * ([showDpad]) shows it as four buttons or, in [DirectionalControl.JOYSTICK] mode, as the joystick in the
+     * same square, and gets the button that switches between them; [directional] never adds either one.
      */
-    fun draw(s: Surface, r: Rect, menu: List<MenuSnap>, vertical: Boolean, showDpad: Boolean, actionArea: Rect? = null,
-             info: ProgramInfo? = null) {
+    fun draw(s: Surface, r: Rect, menu: List<MenuSnap>, vertical: Boolean, showDpad: Boolean, directional: DirectionalControl = DirectionalControl.DPAD,
+             actionArea: Rect? = null, info: ProgramInfo? = null) {
         buttons.clear()
-        if (r.w < 40 || r.h < 40) return
+        if (r.w < 40 || r.h < 40) { hideStick(); return }
         val size = minOf(44, minOf(r.w, r.h) / 3)
         val pad = Rect(r.x + 4, if (vertical) r.y + 4 else r.y + (r.h - size * 3) / 2, size * 3, size * 3)
-        if (showDpad) {
-            add("\u0018", Rect(pad.x + size, pad.y, size, size), Keys.SC_CURSOR_UP)
-            add("\u001B", Rect(pad.x, pad.y + size, size, size), Keys.SC_CURSOR_LEFT)
-            add("\u001A", Rect(pad.x + 2 * size, pad.y + size, size, size), Keys.SC_CURSOR_RIGHT)
-            add("\u0019", Rect(pad.x + size, pad.y + 2 * size, size, size), Keys.SC_CURSOR_DOWN)
+        val stick = showDpad && directional == DirectionalControl.JOYSTICK
+        if (showDpad && !stick) {
+            add("\u0018", Rect(pad.x + size, pad.y, size, size), Keys.SC_CURSOR_UP, dir = Joystick.UP)
+            add("\u001B", Rect(pad.x, pad.y + size, size, size), Keys.SC_CURSOR_LEFT, dir = Joystick.LEFT)
+            add("\u001A", Rect(pad.x + 2 * size, pad.y + size, size, size), Keys.SC_CURSOR_RIGHT, dir = Joystick.RIGHT)
+            add("\u0019", Rect(pad.x + size, pad.y + 2 * size, size, size), Keys.SC_CURSOR_DOWN, dir = Joystick.DOWN)
         }
+        // a joystick whose square moved under the finger (rotation, a resized window) lets go
+        if (stick) { if (joystick.layout(pad) && stickPointer != null) releaseStick() } else hideStick()
         // action buttons: next to the pad, or in [actionArea]
         val actions = ArrayList<Triple<String, Int, Long>>()
         actions.add(Triple("SPACE", ' '.code, Keys.forChar(' '.code).second))
@@ -234,7 +267,7 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
             else maxOf(56, (r.w - (if (showDpad) pad.w + 12 else 4)) / 3).coerceAtMost(96)
         var bx = x0
         var by = if (actionArea != null) {
-            val count = actions.size + menuKeys.size + extras.size + 1
+            val count = actions.size + menuKeys.size + extras.size + if (showDpad) 2 else 1
             val rows = (count + maxOf(1, (area.w - 4) / bw) - 1) / maxOf(1, (area.w - 4) / bw)
             area.y + maxOf(4, (area.h - rows * (Touch.button + 4)) / 2)
         } else if (showDpad) pad.y else r.y + 4
@@ -254,12 +287,20 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
         // the touch mode's label and spoken name are the app's (translated); the toggle never reads them. Sized
         // for its widest label, so it keeps its place and size while it cycles.
         val (mode, modeA11y) = t.modes[clickMode]
-        buttons.add(Btn(mode, place(t.modeW), 0, 0, modeA11y, toggle = { clickMode = (clickMode + 1) % 3 }))
+        buttons.add(Btn(mode, place(t.modeW), 0, 0, modeA11y, toggle = { clickMode = (clickMode + 1) % 3 }, touchMode = true))
+        // the d-pad/joystick switch is the app's too, named for the mode it switches to; last, so the buttons
+        // before it keep their places, and sized for its wider label
+        if (showDpad) {
+            val next = if (stick) DirectionalControl.DPAD else DirectionalControl.JOYSTICK
+            buttons.add(Btn(if (stick) t.toDpad else t.toJoystick, place(t.directionalW), 0, 0, if (stick) t.toDpadA11y else t.toJoystickA11y,
+                toggle = { releaseArrows(); onDirectional(next) }))
+        }
         for (b in buttons) {
             val pressed = held.values.any { it === b }
-            val on = b.toggle != null && clickMode != 0
+            val on = b.touchMode && clickMode != 0
             s.templeButton(b.rect, b.label, if (pressed) ButtonFace.PRESSED else if (on) ButtonFace.SELECTED else ButtonFace.NORMAL)
         }
+        if (stick) joystick.draw(s, stickHeld)
     }
 
     /**
@@ -277,31 +318,84 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
 
     private fun press(b: Btn) { if (b.wheel != 0) onWheel(b.wheel) else send(KInput.Key(b.ch, b.sc, true)) }
 
-    private fun add(label: String, rect: Rect, scCode: Int, ch: Int = 0, sc: Long = 0) {
+    private fun add(label: String, rect: Rect, scCode: Int, ch: Int = 0, sc: Long = 0, dir: Int = 0) {
         if (scCode >= 0) {
             val (c, s) = Keys.special(scCode)
-            buttons.add(Btn(label, rect, c, s))
+            buttons.add(Btn(label, rect, c, s, dir = dir))
         } else buttons.add(Btn(label, rect, ch, sc))
     }
 
-    /** Returns true if the pointer hit a control. */
+    /** [b] goes down for hold id [id]: pressed now, repeated by [tick], up on [release]. */
+    private fun hold(id: Int, b: Btn) {
+        held[id] = b; heldSince[id] = -1; lastRepeat.remove(id)
+        if (b.wheel == 0 && !isModifier(b)) ticket[id] = typematic.pressed()
+        press(b)
+    }
+
+    /** Lets go of what hold id [id] holds; false if it holds nothing. */
+    private fun release(id: Int): Boolean {
+        heldSince.remove(id); lastRepeat.remove(id); ticket.remove(id)
+        val b = held.remove(id) ?: return false
+        if (b.wheel == 0) send(KInput.Key(b.ch, b.sc or Keys.SCF_KEY_UP, false))
+        return true
+    }
+
+    /** The joystick's finger is at ([x], [y]): the knob follows, and the push holds its arrows. */
+    private fun steer(x: Int, y: Int) {
+        val (dx, dy) = joystick.push(x, y)
+        holdArrows(Joystick.keys(dx, dy, joystick.travel, stickHeld))
+    }
+
+    /**
+     * Makes the joystick hold exactly the arrows in [bits], as d-pad buttons hold them: the arrows it no
+     * longer pushes go up, new ones go down (and become the typematic key); one it keeps is not sent again.
+     */
+    private fun holdArrows(bits: Int) {
+        for (b in stickKeys) if ((stickHeld and b.dir) != 0 && (bits and b.dir) == 0) release(-b.dir)
+        for (b in stickKeys) if ((bits and b.dir) != 0 && (stickHeld and b.dir) == 0) hold(-b.dir, b)
+        stickHeld = bits
+    }
+
+    /** The joystick's finger lifted (or the joystick went away): its arrows go up at once, the knob eases home. */
+    private fun releaseStick() {
+        holdArrows(0); stickPointer = null; joystick.letGo()
+    }
+
+    private fun hideStick() { if (joystick.shown) { releaseStick(); joystick.hide() } }
+
+    /**
+     * Switching between the d-pad and the joystick: the arrows either one holds go up, so nothing keeps
+     * moving (a finger still on a d-pad button or on the joystick holds nothing more); other keys stay held.
+     */
+    private fun releaseArrows() {
+        for (id in held.filterValues { it.dir != 0 }.keys) release(id)
+        stickHeld = 0; stickPointer = null; joystick.center()
+    }
+
+    /**
+     * Returns true if the pointer hit a control. The joystick follows one finger from anywhere on it until
+     * that finger lifts; another finger on it is taken and ignored. Fingers on buttons are independent of it.
+     */
     fun pointer(e: PointerEvent): Boolean {
         when (e.action) {
             Ptr.DOWN -> {
+                if (joystick.shown && joystick.rect.contains(e.x, e.y)) {
+                    if (stickPointer == null) { stickPointer = e.id; steer(e.x, e.y) }
+                    return true
+                }
                 val b = buttons.firstOrNull { it.rect.contains(e.x, e.y) } ?: return false
                 if (b.toggle != null) { b.toggle.invoke(); return true }
-                held[e.id] = b; heldSince[e.id] = -1; lastRepeat.remove(e.id)
-                if (b.wheel == 0 && !isModifier(b)) ticket[e.id] = typematic.pressed()
-                press(b)
+                hold(e.id, b)
                 return true
             }
             Ptr.UP, Ptr.CANCEL -> {
-                heldSince.remove(e.id); lastRepeat.remove(e.id); ticket.remove(e.id)
-                val b = held.remove(e.id) ?: return false
-                if (b.wheel == 0) send(KInput.Key(b.ch, b.sc or Keys.SCF_KEY_UP, false))
-                return true
+                if (e.id == stickPointer) { releaseStick(); return true }
+                return release(e.id)
             }
-            Ptr.MOVE -> return held.containsKey(e.id)
+            Ptr.MOVE -> {
+                if (e.id == stickPointer) { steer(e.x, e.y); return true }
+                return held.containsKey(e.id)
+            }
         }
         return false
     }
@@ -310,14 +404,15 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
      * The current layout has no control area (landscape gutters under 96 px, console view): forget the
      * last layout's buttons. They are hit-tested before the picture, so leftovers were invisible keys and
      * a tap beside the picture could send Abort (Shift-Esc) and end the program. Held keys stay held
-     * until their finger lifts.
+     * until their finger lifts; the joystick lets go (there is no joystick without the control area).
      */
-    fun clearLayout() = buttons.clear()
+    fun clearLayout() { buttons.clear(); hideStick() }
 
     /** Releases everything (focus loss, rotation) so no key stays stuck. */
     fun releaseAll() {
         for (b in held.values) if (b.wheel == 0) send(KInput.Key(b.ch, b.sc or Keys.SCF_KEY_UP, false))
         held.clear(); heldSince.clear(); lastRepeat.clear()
+        stickHeld = 0; stickPointer = null; joystick.letGo()
     }
 
     companion object {
@@ -326,6 +421,181 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
     }
 
     val anyHeld get() = held.isNotEmpty()
+}
+
+/**
+ * The joystick that can take the d-pad's place ([GameControls], Settings.directional): a stick drawn in
+ * TempleOS colors and pixels in the pad's square. It keeps the geometry, the picture and the knob; a push
+ * ([keys]) becomes the arrow keys the d-pad buttons hold, through the same key path.
+ */
+class Joystick {
+    /** The square it fills: the pad's, one pixel less when even, so its crosshair and knob have a centre pixel. */
+    var rect = Rect(0, 0, 0, 0); private set
+    val shown get() = rect.w > 0
+    val cx get() = rect.x + rect.w / 2
+    val cy get() = rect.y + rect.h / 2
+    /** How far the knob's centre moves from the centre. */
+    var travel = 1; private set
+    /** The knob's offset from the centre. */
+    var knobX = 0; private set
+    var knobY = 0; private set
+    private var returnX = 0
+    private var returnY = 0
+    private var returnAt = 0L
+    private var returning = false
+    private var knob = 0
+    /** The picture as rows of one color (built once per size, drawn as filled spans). */
+    private class Run(val x: Int, val y: Int, val w: Int, val kind: Int)
+    private var art: List<Run> = emptyList()
+    private var knobArt: List<Run> = emptyList()
+
+    /** Places it in the d-pad's square [pad]; returns true when it moved or changed size. */
+    fun layout(pad: Rect): Boolean {
+        val s = minOf(pad.w, pad.h)
+        val d = if (s % 2 == 1) s else s - 1
+        val r = Rect(pad.x + (pad.w - d) / 2, pad.y + (pad.h - d) / 2, d, d)
+        if (r == rect) return false
+        if (d != rect.w) build(d)
+        rect = r
+        return true
+    }
+
+    fun hide() { rect = Rect(0, 0, 0, 0); center() }
+
+    fun center() { knobX = 0; knobY = 0; returning = false }
+
+    /** A finger at ([x], [y]): the knob goes as far towards it as it travels. Returns the push from the centre. */
+    fun push(x: Int, y: Int): Pair<Int, Int> {
+        returning = false
+        val dx = x - cx; val dy = y - cy; val q = dx * dx + dy * dy
+        if (q <= travel * travel) { knobX = dx; knobY = dy } else {
+            val f = travel.toDouble() / Math.sqrt(q.toDouble())
+            knobX = round(dx * f); knobY = round(dy * f)
+        }
+        return dx to dy
+    }
+
+    /** The finger let go: the knob eases back to the centre ([settle]). */
+    fun letGo() { if (knobX != 0 || knobY != 0) { returnX = knobX; returnY = knobY; returnAt = -1; returning = true } }
+
+    /** Moves a returning knob on; true while it moves (and once more when it arrives). */
+    fun settle(nowMs: Long): Boolean {
+        if (!returning) return false
+        if (returnAt < 0) returnAt = nowMs
+        val f = 1.0 - (nowMs - returnAt).toDouble() / RETURN_MS
+        if (f <= 0) { center(); return true }
+        knobX = round(returnX * f); knobY = round(returnY * f)
+        return true
+    }
+
+    /** The rim lights up on the side of each arrow the push holds. */
+    fun draw(s: Surface, keys: Int) {
+        for (r in art) s.fillRect(rect.x + r.x, rect.y + r.y, r.w, 1, color(r.kind, keys))
+        val kx = cx + knobX - knob / 2; val ky = cy + knobY - knob / 2
+        for (r in knobArt) s.fillRect(kx + r.x, ky + r.y, r.w, 1, color(r.kind, keys))
+    }
+
+    /**
+     * Draws the picture for diameter [d] (odd) in whole pixels, with integer arithmetic only (the same pixels on
+     * every platform). Coordinates are doubled, from the centre pixel: X = 2x + 1 - d.
+     */
+    private fun build(d: Int) {
+        val rim = if (d >= 100) 3 else if (d >= 60) 2 else 1
+        knob = maxOf(7, (d * 2 / 5) or 1)
+        travel = maxOf(1, d / 2 - rim - knob / 2 - 1)
+        val inner = d - 2 * rim; val marks = inner - 6; val guide = 2 * travel
+        art = runs(d) { x, y ->
+            val q = x * x + y * y
+            when {
+                q >= d * d -> -1
+                q >= inner * inner -> RIM or (if (Math.abs(x) > Math.abs(y)) (if (x < 0) LEFT else RIGHT) else if (y < 0) UP else DOWN)
+                (x == 0 || y == 0) && q < marks * marks -> {
+                    // the crosshair: a solid centre, then dashes out to the rim
+                    val along = (Math.abs(x) + Math.abs(y)) / 2
+                    if (along <= 3) MARK else if ((along / 3) % 2 == 0) GUIDE else BASE
+                }
+                // the ring the knob's centre can reach, dashed
+                q >= (guide - 1) * (guide - 1) && q < (guide + 1) * (guide + 1) && (minOf(Math.abs(x), Math.abs(y)) / 8) % 2 == 0 -> GUIDE
+                else -> BASE
+            }
+        }
+        val k = knob; val shift = 2 * maxOf(1, k / 12)
+        knobArt = runs(k) { x, y ->
+            val q = x * x + y * y
+            when {
+                q >= k * k -> -1
+                q >= (k - 2) * (k - 2) -> KNOB_EDGE
+                // flat, with a shaded crescent down-right in whole pixels
+                (x + shift) * (x + shift) + (y + shift) * (y + shift) >= (k - 2) * (k - 2) -> KNOB_SHADE
+                else -> KNOB
+            }
+        }
+    }
+
+    companion object {
+        /** Arrow bits (a d-pad button's or a push's [GameControls] dir). */
+        const val UP = 1; const val DOWN = 2; const val LEFT = 4; const val RIGHT = 8
+        /**
+         * A push holds keys from [ENGAGE] of the knob's travel and lets go below [RELEASE], so a thumb resting at
+         * the edge of the dead zone does not chatter. Each arrow takes [CARDINAL] degrees either side of its axis,
+         * a diagonal (two arrows) the 30 degrees between, and a held direction stays until the push is [STICKY]
+         * degrees past its edge.
+         */
+        const val ENGAGE = 0.30; const val RELEASE = 0.22; const val CARDINAL = 30.0; const val STICKY = 6.0
+        /** How long the released knob takes back to the centre (its keys go up at once). */
+        const val RETURN_MS = 80L
+        /** Counter-clockwise from right, 45 degrees apart. */
+        private val SECTORS = intArrayOf(RIGHT, UP or RIGHT, UP, UP or LEFT, LEFT, DOWN or LEFT, DOWN, DOWN or RIGHT)
+
+        /**
+         * The arrow keys a push of ([dx], [dy]) from the centre holds (y grows downwards) for a knob that travels
+         * [travel] px, given the keys [held] now: none in the dead zone, else one arrow, or two on a diagonal,
+         * as two fingers on the d-pad hold them.
+         */
+        fun keys(dx: Int, dy: Int, travel: Int, held: Int): Int {
+            val dist = Math.sqrt((dx * dx + dy * dy).toDouble())
+            if (dist < (if (held == 0) ENGAGE else RELEASE) * maxOf(1, travel)) return 0
+            var a = Math.atan2(-dy.toDouble(), dx.toDouble()) * 180 / Math.PI
+            if (a < 0) a += 360
+            fun apart(b: Double): Double { val d = Math.abs(a - b) % 360; return if (d > 180) 360 - d else d }
+            val i = SECTORS.indexOf(held)
+            if (i >= 0 && apart(i * 45.0) <= (if (i % 2 == 0) CARDINAL else 45 - CARDINAL) + STICKY) return held
+            val axis = Math.floor(a / 90 + 0.5).toInt() % 4
+            return if (apart(axis * 90.0) <= CARDINAL) SECTORS[axis * 2] else SECTORS[(a / 90).toInt() % 4 * 2 + 1]
+        }
+
+        /** Halves round up, as on every platform (the knob lands on the same pixel). */
+        private fun round(v: Double) = Math.floor(v + 0.5).toInt()
+
+        // what a pixel of the picture is: the base, its guide marks, the rim (by quadrant: RIM or an arrow), the knob
+        private const val BASE = 0; private const val GUIDE = 1; private const val MARK = 2; private const val RIM = 16
+        private const val KNOB = 32; private const val KNOB_SHADE = 33; private const val KNOB_EDGE = 34
+
+        private fun color(kind: Int, keys: Int) = when (kind) {
+            BASE -> Palette.BLACK
+            GUIDE -> Palette.CYAN
+            MARK, KNOB -> Palette.LTCYAN
+            KNOB_SHADE -> Palette.CYAN
+            KNOB_EDGE -> Palette.WHITE
+            else -> if ((keys and (kind and 15)) != 0) Palette.LTCYAN else Palette.CYAN
+        }
+
+        /** Run-length encodes a [d] x [d] picture whose pixel at doubled offset (X, Y) is [kind] (-1: none). */
+        private fun runs(d: Int, kind: (Int, Int) -> Int): List<Run> {
+            val out = ArrayList<Run>()
+            for (y in 0 until d) {
+                var x = 0
+                while (x < d) {
+                    val k = kind(2 * x + 1 - d, 2 * y + 1 - d)
+                    var e = x + 1
+                    while (e < d && kind(2 * e + 1 - d, 2 * y + 1 - d) == k) e++
+                    if (k >= 0) out.add(Run(x, y, e - x, k))
+                    x = e
+                }
+            }
+            return out
+        }
+    }
 }
 
 /** Largest 4:3 rectangle centred in [r] (programs keep their 640x480 aspect). */

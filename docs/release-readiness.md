@@ -39,7 +39,7 @@ license and the content and branding decisions are outstanding.
 | 8 | P2 | **Accessibility**: the desktop is one custom view; screen readers get a single element. | Expose menu items/buttons as accessibility elements. |
 | 9 | P2 | **Program start time** 0.5–1.1 s (prelude compiled per program). | Compiled-prelude snapshot. |
 | 10 | P3 | Float last-bit differences between platforms (3 of 91 frames). | Shared deterministic math (fdlibm port) if exact parity is required. |
-| 11 | P3 | Pinch-zoom, joystick, configurable controls not implemented (`native-ui-design.md` §8). | — |
+| 11 | P3 | Pinch-zoom, an analog joystick, configurable controls not implemented (`native-ui-design.md` §8); the digital joystick that can replace the d-pad is in §7. | — |
 | 12 | P3 | Store assets (screenshots, descriptions, privacy labels/data-safety form) not prepared. | Data safety: no data collected. |
 
 No P0 items are known.

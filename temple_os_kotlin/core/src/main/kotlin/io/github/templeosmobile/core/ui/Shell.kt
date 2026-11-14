@@ -579,6 +579,8 @@ class Shell(val env: ShellEnv) {
             insetLeft, width - insetRight,
             deviceKeyboard = false,
             defersEdgeGestures = focused?.app?.defersEdgeGestures == true,
+            // under a menu or dialog the app's controls take no drags
+            gestureExclusion = if (menu == null && dialog == null) focused?.app?.gestureExclusion.orEmpty() else emptyList(),
         )
     }
 
@@ -1268,11 +1270,13 @@ class Settings(
     var language: String = "",
     /** How bundled programs run: [ENGINE_TERRY] (the HolyC interpreter) or [ENGINE_NATIVE] (their Kotlin translation). */
     var engine: Int = ENGINE_TERRY,
+    /** How programs with arrow keys show them: the d-pad's four buttons, or the joystick (GameControls). */
+    var directional: DirectionalControl = DirectionalControl.DPAD,
 ) {
     var keyboardMode: Int
         get() = KEYBOARD_TEMPLEOS
         set(@Suppress("UNUSED_PARAMETER") value) {}
-    fun encode() = "d=$desktopColor;s=${if (sound) 1 else 0};o=$controlsOpacity;u=$uiScale;c=${if (crispScaling) 1 else 0};t=${if (largeTouch) 1 else 0};k=$keyboardMode;g=$language;e=$engine"
+    fun encode() = "d=$desktopColor;s=${if (sound) 1 else 0};o=$controlsOpacity;u=$uiScale;c=${if (crispScaling) 1 else 0};t=${if (largeTouch) 1 else 0};k=$keyboardMode;g=$language;e=$engine;j=${directional.ordinal}"
     companion object {
         /** The in-app TempleOS keyboard ([TempleKeyboard]). */
         const val KEYBOARD_TEMPLEOS = 0
@@ -1293,6 +1297,8 @@ class Settings(
                 // an unknown or stale id falls back to the device language (LocaleResolver ignores it)
                 (m["g"] ?: "").filter { it.isLetterOrDigit() || it == '-' }.take(35),
                 if (m["e"] == "1") ENGINE_NATIVE else ENGINE_TERRY,
+                // sessions saved before the joystick existed have no "j": the d-pad, as before
+                if (m["j"] == "1") DirectionalControl.JOYSTICK else DirectionalControl.DPAD,
             )
         }
     }

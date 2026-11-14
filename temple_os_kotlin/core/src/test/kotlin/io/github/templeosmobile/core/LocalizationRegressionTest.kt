@@ -223,9 +223,9 @@ class LocalizationRegressionTest {
     }
 
     /**
-     * The game controls' own labels (touch mode, wheel) are translated and fit their buttons, the key caps stay as
-     * they are, and every button sends exactly what it sends in English: the same key codes, wheel notches and touch
-     * modes, in the same order. The labels never decide what a button does.
+     * The game controls' own labels (touch mode, wheel, d-pad/joystick) are translated and fit their buttons, the key
+     * caps stay as they are, and every button sends exactly what it sends in English: the same key codes, wheel notches
+     * and touch modes, in the same order. The labels never decide what a button does.
      */
     @Test fun gameControlsAreTranslatedWithoutChangingTheirInput() {
         shell.resize(720, 720)
@@ -233,49 +233,61 @@ class LocalizationRegressionTest {
             "TempleOS V5.03 ISO", listOf("arrows", "ctrl", "shift", "wheel", "mouse"), listOf("graphics"), "any", "")
         val portrait = Rect(0, 300, 360, 360)
         val landscape = Rect(0, 0, 100, 360) to Rect(544, 0, 96, 360)
-        class Result(val events: List<String>, val labels: List<List<String>>, val spoken: List<List<String>>, val rects: List<List<Rect>>, val modes: List<Int>)
+        class Result(val events: List<String>, val labels: List<List<String>>, val spoken: List<List<String>>, val rects: List<List<Rect>>, val modes: List<Int>,
+                     val stick: Triple<String, String, Rect>)
         fun press(locale: String, landscapeGutter: Boolean): Result {
             L10n.use(locale)
             val sent = ArrayList<String>()
             val controls = GameControls { e -> if (e is io.github.templeosmobile.core.kernel.KInput.Key) sent.add("key ${e.ch} ${e.sc} ${e.down}") }
             controls.onWheel = { sent.add("wheel $it") }
             val labels = ArrayList<List<String>>(); val spoken = ArrayList<List<String>>(); val rects = ArrayList<List<Rect>>(); val modes = ArrayList<Int>()
-            fun layout() {
-                if (landscapeGutter) controls.draw(shell.surface, landscape.first, emptyList(), vertical = false, showDpad = true, actionArea = landscape.second, info = info)
-                else controls.draw(shell.surface, portrait, emptyList(), vertical = true, showDpad = true, info = info)
+            var stick: Triple<String, String, Rect>? = null
+            fun layout(directional: DirectionalControl = DirectionalControl.DPAD) {
+                if (landscapeGutter) controls.draw(shell.surface, landscape.first, emptyList(), vertical = false, showDpad = true, directional = directional,
+                    actionArea = landscape.second, info = info)
+                else controls.draw(shell.surface, portrait, emptyList(), vertical = true, showDpad = true, directional = directional, info = info)
                 val s = ArrayList<String>(); val r = ArrayList<Rect>()
                 controls.accessibility { rect, label, _ -> r.add(rect); s.add(label) }
+                if (directional == DirectionalControl.JOYSTICK) { stick = Triple(controls.labels.last(), s.last(), r.last()); return }
                 labels.add(controls.labels); spoken.add(s); rects.add(r); modes.add(controls.clickMode)
             }
             layout()
             val events = ArrayList<String>()
-            // every button once, then the touch-mode toggle until it is back where it started
-            for (i in rects[0].indices + List(2) { rects[0].lastIndex }) {
+            // every button once, then the touch-mode toggle (before the d-pad/joystick switch) until it is back where it started
+            for (i in rects[0].indices + List(2) { rects[0].lastIndex - 1 }) {
                 val r = rects.last()[i]
                 controls.pointer(PointerEvent(Ptr.DOWN, r.x + r.w / 2, r.y + r.h / 2, id = 1))
                 controls.pointer(PointerEvent(Ptr.UP, r.x + r.w / 2, r.y + r.h / 2, id = 1))
                 events.add("$i: $sent mode ${controls.clickMode}"); sent.clear()
                 layout()
             }
-            return Result(events, labels, spoken, rects, modes)
+            layout(DirectionalControl.JOYSTICK)
+            return Result(events, labels, spoken, rects, modes, stick!!)
         }
         val modeKeys = listOf("left_click", "right_click", "hover")
         for (gutter in listOf(false, true)) {
             val english = press("en-US", gutter)
-            val keyCaps = english.labels[0].dropLast(3) // arrows, SPACE ENTER ESC, CTRL SHIFT
+            val keyCaps = english.labels[0].dropLast(4) // arrows, SPACE ENTER ESC, CTRL SHIFT
             assertEquals(listOf("\u0018", "\u001B", "\u001A", "\u0019", "SPACE", "ENTER", "ESC", "CTRL", "SHIFT"), keyCaps)
             assertEquals("the toggle cycles through all three modes", listOf(1, 2, 0), english.modes.takeLast(3))
             for (locale in L10n.resolver!!.locales) {
                 val result = press(locale.id, gutter)
                 L10n.use(locale.id)
                 assertEquals("${locale.id}: input", english.events, result.events)
+                // the d-pad/joystick switch names the mode it switches to, in the same place and size in both modes
+                val (stickLabel, stickSpoken, stickRect) = result.stick
+                assertEquals(tr("controls.button.dpad"), stickLabel); assertEquals(tr("controls.a11y.dpad_mode"), stickSpoken)
+                assertEquals("${locale.id}: the d-pad/joystick switch keeps its place and size", result.rects[0].last(), stickRect)
+                if (!gutter || Cp437.representable(stickLabel))
+                    assertTrue("${locale.id}: \"$stickLabel\" fits ${stickRect.w}", shell.surface.measureUi(stickLabel) <= stickRect.w - 4)
                 for ((step, labels) in result.labels.withIndex()) {
                     val mode = modeKeys[result.modes[step]]
-                    assertEquals("${locale.id}: key caps", keyCaps, labels.dropLast(3))
-                    assertEquals(listOf(tr("controls.button.wheel_up"), tr("controls.button.wheel_down"), tr("controls.button.$mode")), labels.takeLast(3))
-                    assertEquals(listOf(tr("controls.a11y.wheel_up"), tr("controls.a11y.wheel_down"), tr("controls.a11y.$mode")), result.spoken[step].takeLast(3))
+                    assertEquals("${locale.id}: key caps", keyCaps, labels.dropLast(4))
+                    assertEquals(listOf(tr("controls.button.wheel_up"), tr("controls.button.wheel_down"), tr("controls.button.$mode"), tr("controls.button.joystick")), labels.takeLast(4))
+                    assertEquals(listOf(tr("controls.a11y.wheel_up"), tr("controls.a11y.wheel_down"), tr("controls.a11y.$mode"), tr("controls.a11y.joystick_mode")),
+                        result.spoken[step].takeLast(4))
                     val rects = result.rects[step]
-                    assertEquals("${locale.id}: the toggle keeps its place and size while it cycles", result.rects[0].last(), rects.last())
+                    assertEquals("${locale.id}: the toggle keeps its place and size while it cycles", result.rects[0].dropLast(1).last(), rects.dropLast(1).last())
                     val area = if (gutter) landscape.second else portrait
                     for ((i, r) in rects.withIndex()) {
                         if (i >= 4) assertTrue("${locale.id}: ${labels[i]} $r inside $area", r.x >= area.x && r.right <= area.right && r.bottom <= area.bottom)
@@ -289,8 +301,8 @@ class LocalizationRegressionTest {
     }
 
     /**
-     * The touch-mode toggle is sized for its widest label, so its hidden labels are measured when the language
-     * changes; frames in between only draw the label shown.
+     * The touch-mode toggle is sized for its widest label (the d-pad/joystick switch for its wider one), so their hidden
+     * labels are measured when the language changes; frames in between only draw the labels shown.
      */
     @Test fun gameControlsResolveTheirLabelsOncePerLanguage() {
         val measured = ArrayList<String>()
@@ -299,12 +311,12 @@ class LocalizationRegressionTest {
         fun frame() = controls.draw(shell.surface, Rect(0, 300, 360, 360), emptyList(), vertical = true, showDpad = true)
         for (locale in listOf("ja-JP", "ko-KR")) { // labels outside the TempleOS font: measured by the platform
             L10n.use(locale)
-            val hidden = listOf(tr("controls.button.right_click"), tr("controls.button.hover"))
+            val hidden = listOf(tr("controls.button.right_click"), tr("controls.button.hover"), tr("controls.button.dpad"))
             measured.clear(); frame()
             assertTrue("$locale: $measured", measured.containsAll(hidden))
             measured.clear(); repeat(10) { frame() }
             assertTrue("$locale: $measured", measured.none { it in hidden })
-            assertEquals(tr("controls.button.left_click"), controls.labels.last())
+            assertEquals(listOf(tr("controls.button.left_click"), tr("controls.button.joystick")), controls.labels.takeLast(2))
         }
     }
 

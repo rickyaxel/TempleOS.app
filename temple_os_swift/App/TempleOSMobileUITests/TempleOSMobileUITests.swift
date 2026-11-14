@@ -936,6 +936,51 @@ final class TempleOSMobileUITests: XCTestCase {
         XCUIDevice.shared.orientation = .portrait
     }
 
+    /**
+     * The joystick takes the d-pad's square where a program has the d-pad (CastleFrankenstein), in both
+     * orientations, steers the program, keeps the choice across a relaunch, and switches back.
+     */
+    func testJoystickReplacesTheDpad() throws {
+        let pic = openProgram("Games...", "CastleFrankenstein")
+        XCTAssertTrue(pic.exists); sleep(3)
+        XCTAssertTrue(app.buttons["Up arrow"].exists, "the d-pad by default")
+        shot("joystick-1-dpad")
+        app.buttons["Switch to the joystick"].tap(); sleep(1)
+        let stick = app.buttons["Joystick: drag to move"]
+        XCTAssertTrue(stick.waitForExistence(timeout: 5))
+        XCTAssertFalse(app.buttons["Up arrow"].exists, "the joystick replaces the four buttons")
+        XCTAssertTrue(app.buttons["Switch to the arrow buttons"].exists)
+        XCTAssertFalse(stick.frame.intersects(pic.frame), "the joystick \(stick.frame) is not under the picture \(pic.frame)")
+        shot("joystick-2-joystick")
+        // hold the knob up for two seconds: the player walks (compare the shots)
+        let centre = stick.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+        centre.press(forDuration: 0.05, thenDragTo: stick.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.05)), withVelocity: .fast, thenHoldForDuration: 2)
+        sleep(1); shot("joystick-3-walked-up")
+        centre.press(forDuration: 0.05, thenDragTo: stick.coordinate(withNormalizedOffset: CGVector(dx: 0.95, dy: 0.5)), withVelocity: .fast, thenHoldForDuration: 1.5)
+        sleep(1); shot("joystick-4-walked-right")
+        XCUIDevice.shared.orientation = .landscapeLeft; sleep(3)
+        XCTAssertTrue(stick.waitForExistence(timeout: 5), "landscape: the joystick in the left gutter")
+        XCTAssertFalse(app.buttons["Up arrow"].exists)
+        let landPic = app.staticTexts["Program picture: CastleFrankenstein"]
+        XCTAssertFalse(stick.frame.intersects(landPic.frame), "landscape: \(stick.frame) is not under the picture \(landPic.frame)")
+        XCTAssertFalse(app.buttons["Switch to the arrow buttons"].frame.intersects(landPic.frame))
+        shot("joystick-5-landscape")
+        XCUIDevice.shared.orientation = .portrait; sleep(2)
+        // the choice is a setting, kept with the session
+        app.terminate()
+        app.launchArguments = ["-AppleLanguages", "(en-US)"]
+        app.launch(); readLayout(); sleep(2)
+        if !app.staticTexts["Program picture: CastleFrankenstein"].waitForExistence(timeout: 10) {
+            app.buttons["MENU"].tap(); sleep(1); app.buttons["Games..."].tap(); sleep(1); menuItem("CastleFrankenstein")
+        }
+        XCTAssertTrue(app.buttons["Joystick: drag to move"].waitForExistence(timeout: 30), "still the joystick after a relaunch")
+        shot("joystick-6-relaunched")
+        app.buttons["Switch to the arrow buttons"].tap(); sleep(1)
+        XCTAssertTrue(app.buttons["Up arrow"].waitForExistence(timeout: 5), "back to the d-pad")
+        XCTAssertFalse(app.buttons["Joystick: drag to move"].exists)
+        shot("joystick-7-dpad-again")
+    }
+
     // MARK: fidelity audit (docs/fidelity-audit): the programs its fixes touched, on a device
 
     /** Launches a clean app and opens [title] from the Games or Demos menu; returns its picture. */

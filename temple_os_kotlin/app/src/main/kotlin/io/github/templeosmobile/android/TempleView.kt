@@ -19,9 +19,11 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputConnection
 import io.github.templeosmobile.core.kernel.Keys
 import io.github.templeosmobile.core.kernel.Palette
+import io.github.templeosmobile.core.ui.ChangeGate
 import io.github.templeosmobile.core.ui.FrameSource
 import io.github.templeosmobile.core.ui.PointerEvent
 import io.github.templeosmobile.core.ui.Ptr
+import io.github.templeosmobile.core.ui.Rect
 import io.github.templeosmobile.core.ui.Shell
 
 /**
@@ -136,7 +138,7 @@ class TempleView(context: Context, private val shell: Shell) : View(context), Ch
         looping = false; delayed = false
         shell.uiFrames.frame(System.nanoTime(), loopRestarted); loopRestarted = false
         var changed = shell.tick()
-        if (changed) systemBars?.apply(shell.systemChrome)
+        if (changed) { systemBars?.apply(shell.systemChrome); gestureExclusion.offer(shell.systemChrome.gestureExclusion to scale) }
         a11y.sync()
         val overlays = shell.overlays()
         for (o in overlays) if (o.source.frameVersion != frames[o.source]?.version) changed = true
@@ -264,6 +266,11 @@ class TempleView(context: Context, private val shell: Shell) : View(context), Ch
         }
         frames.keys.retainAll(live)
         live.clear()
+    }
+
+    /** The back gesture stays out of the joystick (SystemChrome.gestureExclusion), in view pixels; set per change. */
+    private val gestureExclusion = ChangeGate<Pair<List<Rect>, Int>> { (rects, k) ->
+        if (Build.VERSION.SDK_INT >= 29) systemGestureExclusionRects = rects.map { ARect(it.x * k, it.y * k, it.right * k, it.bottom * k) }
     }
 
     // Reused by onDraw (no per-frame allocations).

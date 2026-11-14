@@ -107,6 +107,9 @@ abstract class App(val shell: Shell) {
     /** True while focused: the platform defers its bottom-edge gestures (iOS home indicator). */
     open val defersEdgeGestures: Boolean get() = false
 
+    /** Controls a finger drags across (the joystick): while focused, the system's edge gestures stay out of them. */
+    open val gestureExclusion: List<Rect> get() = emptyList()
+
     fun invalidate() { dirty = true; shell.invalidate() }
 
     /**

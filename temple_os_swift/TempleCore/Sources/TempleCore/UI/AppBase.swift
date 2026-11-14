@@ -143,6 +143,9 @@ open class App {
     /** True while focused: the platform defers its bottom-edge gestures (iOS home indicator). */
     open var defersEdgeGestures: Bool { false }
 
+    /** Controls a finger drags across (the joystick): while focused, the system's edge gestures stay out of them. */
+    open var gestureExclusion: [Rect] { [] }
+
     public func invalidate() { dirty = true; shell.invalidate() }
 
     /** Screen-reader nodes filled by [draw] (the shell clears them before each draw). */

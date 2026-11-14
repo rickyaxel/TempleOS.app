@@ -27,10 +27,15 @@ public struct SystemChrome: Equatable {
     public let deviceKeyboard: Bool
     /** The focused app asks for the bottom-edge system gestures to be deferred (its controls sit there). */
     public let defersEdgeGestures: Bool
+    /**
+     * Where the focused app's drag controls are (logical px): the system's edge gestures stay out of them
+     * (Android: View.setSystemGestureExclusionRects; iOS has no edge gesture over the controls).
+     */
+    public let gestureExclusion: [Rect]
 
-    public init(bottom: Int, side: Int, owner: Owner, deviceKeyboard: Bool = false, defersEdgeGestures: Bool = false) {
+    public init(bottom: Int, side: Int, owner: Owner, deviceKeyboard: Bool = false, defersEdgeGestures: Bool = false, gestureExclusion: [Rect] = []) {
         self.bottom = bottom; self.side = side; self.owner = owner
-        self.deviceKeyboard = deviceKeyboard; self.defersEdgeGestures = defersEdgeGestures
+        self.deviceKeyboard = deviceKeyboard; self.defersEdgeGestures = defersEdgeGestures; self.gestureExclusion = gestureExclusion
     }
 
     /** The color under a navigation bar on [edge]. */
@@ -65,13 +70,14 @@ public struct SystemChrome: Equatable {
      * the content.
      */
     public static func resolve(desktop: Int, content: [Layer], contentBottom: Int, bars: [Layer], usableBottom: Int,
-                               left: Int, right: Int, deviceKeyboard: Bool = false, defersEdgeGestures: Bool = false) -> SystemChrome {
+                               left: Int, right: Int, deviceKeyboard: Bool = false, defersEdgeGestures: Bool = false,
+                               gestureExclusion: [Rect] = []) -> SystemChrome {
         func owns(_ l: Layer, _ edge: Int) -> Bool { l.rect.bottom >= edge && l.rect.x <= left && l.rect.right >= right && l.rect.w > 0 && l.rect.h > 0 }
         let c = content.last { owns($0, contentBottom) }
         let sideColor = c?.color ?? desktop
         let b = bars.last { owns($0, usableBottom) }
         return SystemChrome(bottom: b?.color ?? sideColor, side: sideColor, owner: b?.owner ?? c?.owner ?? .desktop,
-                            deviceKeyboard: deviceKeyboard, defersEdgeGestures: defersEdgeGestures)
+                            deviceKeyboard: deviceKeyboard, defersEdgeGestures: defersEdgeGestures, gestureExclusion: gestureExclusion)
     }
 }
 

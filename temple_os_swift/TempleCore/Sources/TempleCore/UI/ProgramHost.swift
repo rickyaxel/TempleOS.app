@@ -167,24 +167,45 @@ public final class Typematic {
     public func repeats(_ ticket: Int64) -> Bool { ticket == seq }
 }
 
+/** How a program's arrow keys are offered (Settings.directional): the four d-pad buttons, or the joystick in their place. */
+public enum DirectionalControl: Int { case dpad = 0, joystick = 1 }
+
 public final class GameControls {
     /**
      * A button. Key buttons ([ch], [sc]) are physical keys: down while held, typematic repeat, up on
      * release (menu shortcuts too: the button stands for the key the menu names). [wheel] buttons turn
-     * the mouse wheel one notch per press and repeat; modifier keys never repeat (KbdBuildSC).
+     * the mouse wheel one notch per press and repeat; modifier keys never repeat (KbdBuildSC). [dir] is the
+     * arrow ([Joystick.UP]...) of a d-pad button or of a joystick push; [touchMode] marks the touch-mode toggle.
      */
     private final class Btn {
-        let label: String, rect: Rect, ch: Int, sc: Int64, a11y: String?, toggle: (() -> Void)?, wheel: Int
-        init(_ label: String, _ rect: Rect, _ ch: Int, _ sc: Int64, _ a11y: String? = nil, toggle: (() -> Void)? = nil, wheel: Int = 0) {
+        let label: String, rect: Rect, ch: Int, sc: Int64, a11y: String?, toggle: (() -> Void)?, wheel: Int, dir: Int, touchMode: Bool
+        init(_ label: String, _ rect: Rect, _ ch: Int, _ sc: Int64, _ a11y: String? = nil, toggle: (() -> Void)? = nil, wheel: Int = 0,
+             dir: Int = 0, touchMode: Bool = false) {
             self.label = label; self.rect = rect; self.ch = ch; self.sc = sc; self.a11y = a11y; self.toggle = toggle; self.wheel = wheel
+            self.dir = dir; self.touchMode = touchMode
         }
     }
     private let send: (KInput) -> Void
     private var buttons: [Btn] = []
-    private var held: [Int: Btn] = [:]  // pointer id -> held button
-    private var heldSince: [Int: Int64] = [:] // pointer id -> first tick time (-1 until then)
+    private var held: [Int: Btn] = [:]  // hold id (a pointer id, or -arrow for the joystick) -> held button
+    private var heldSince: [Int: Int64] = [:] // hold id -> first tick time (-1 until then)
     private var lastRepeat: [Int: Int64] = [:]
     private var ticket: [Int: Int64] = [:]
+    /** The joystick, laid out in the d-pad's square in [DirectionalControl.joystick] mode. */
+    let joystick = Joystick()
+    /** The finger that drives the joystick (one at a time), and the arrows its push holds. */
+    private var stickPointer: Int?
+    private var stickHeld = 0
+    /**
+     * The arrow keys the joystick holds, the d-pad's keys. Their hold ids are -[dir]: pointer ids are never
+     * negative, so a push and a finger on a button never share an entry.
+     */
+    private let stickKeys: [Btn] = [(Joystick.UP, Keys.SC_CURSOR_UP), (Joystick.DOWN, Keys.SC_CURSOR_DOWN),
+                                    (Joystick.LEFT, Keys.SC_CURSOR_LEFT), (Joystick.RIGHT, Keys.SC_CURSOR_RIGHT)].map { dir, code in
+        let (c, s) = Keys.special(code); return Btn("", Rect(0, 0, 0, 0), c, s, dir: dir)
+    }
+    /** The joystick toggle asks for the other directional control: the owner keeps it (Settings) and draws with it. */
+    public var onDirectional: (DirectionalControl) -> Void = { _ in }
     /**
      * The controls' own labels in the UI language (touch modes with their spoken names, wheel) and the widths
      * the layout gives them: resolved when the language changes, not on every frame (the shell's surface
@@ -193,12 +214,16 @@ public final class GameControls {
     private struct ControlText {
         let modes: [(String, String)], modeW: Int
         let wheelUp: String, wheelDown: String, wheelUpW: Int, wheelDownW: Int
+        let toJoystick: String, toDpad: String, directionalW: Int, toJoystickA11y: String, toDpadA11y: String, stickA11y: String
         init(_ s: Surface) {
             let modes = [(tr("controls.button.left_click"), tr("controls.a11y.left_click")),
                          (tr("controls.button.right_click"), tr("controls.a11y.right_click")), (tr("controls.button.hover"), tr("controls.a11y.hover"))]
             self.modes = modes; modeW = modes.map { s.measureUi($0.0) }.max() ?? 0
             wheelUp = tr("controls.button.wheel_up"); wheelDown = tr("controls.button.wheel_down")
             wheelUpW = s.measureUi(wheelUp); wheelDownW = s.measureUi(wheelDown)
+            toJoystick = tr("controls.button.joystick"); toDpad = tr("controls.button.dpad")
+            directionalW = max(s.measureUi(toJoystick), s.measureUi(toDpad))
+            toJoystickA11y = tr("controls.a11y.joystick_mode"); toDpadA11y = tr("controls.a11y.dpad_mode"); stickA11y = tr("controls.a11y.joystick")
         }
     }
     private var controlText: L10n.Presentation<ControlText>?
@@ -214,9 +239,11 @@ public final class GameControls {
     /**
      * Typematic repeat for held key buttons, like a PC keyboard: TempleOS boots with
      * KbdTypeMatic(0) (HomeLocalize.HC) = 250 ms delay, then 30 key-downs per second.
-     * Games that move one step per key message (GetKey: CastleFrankenstein) need it.
+     * Games that move one step per key message (GetKey: CastleFrankenstein) need it. Returns true while the
+     * joystick's knob is easing back to the centre (the controls need drawing).
      */
-    public func tick(_ nowMs: Int64) {
+    @discardableResult
+    public func tick(_ nowMs: Int64) -> Bool {
         for (id, b) in held {
             if b.toggle != nil || isModifier(b) { continue }
             if b.wheel == 0 && !typematic.repeats(ticket[id] ?? -1) { continue }
@@ -229,6 +256,7 @@ public final class GameControls {
             if nowMs - last >= GameControls.REPEAT_PERIOD_MS { last = nowMs } // do not queue a burst after a stall
             lastRepeat[id] = last
         }
+        return joystick.settle(nowMs)
     }
 
     public init(_ typematic: Typematic = Typematic(), _ send: @escaping (KInput) -> Void) { self.typematic = typematic; self.send = send }
@@ -236,8 +264,9 @@ public final class GameControls {
     /** The labels of the buttons drawn last, in order (tests, diagnostics). */
     var labels: [String] { buttons.map { $0.label } }
 
-    /** Screen-reader nodes for the buttons drawn last (label, toggle state). */
+    /** Screen-reader nodes for the joystick and the buttons drawn last (label, toggle state). */
     public func accessibility(_ add: (Rect, String, Bool) -> Void) {
+        if joystick.shown, let t = controlText?.value { add(joystick.rect, t.stickA11y, false) }
         for b in buttons {
             let label: String
             if let a = b.a11y { label = a } else {
@@ -247,26 +276,31 @@ public final class GameControls {
                 default: label = Cp437.decode(b.label)
                 }
             }
-            add(b.rect, label, b.toggle != nil && clickMode != 0)
+            add(b.rect, label, b.touchMode && clickMode != 0)
         }
     }
 
     /**
      * Lays out controls in [r] and draws them into [s]. With [actionArea] (landscape: the gutter right
-     * of the picture) the action buttons go there instead of next to the d-pad.
+     * of the picture) the action buttons go there instead of next to the d-pad. A program with the d-pad
+     * ([showDpad]) shows it as four buttons or, in [DirectionalControl.joystick] mode, as the joystick in the
+     * same square, and gets the button that switches between them; [directional] never adds either one.
      */
-    public func draw(_ s: Surface, _ r: Rect, _ menu: [MenuSnap], vertical: Bool, showDpad: Bool, actionArea: Rect? = nil,
-                     info: ProgramInfo? = nil) {
+    public func draw(_ s: Surface, _ r: Rect, _ menu: [MenuSnap], vertical: Bool, showDpad: Bool, directional: DirectionalControl = .dpad,
+                     actionArea: Rect? = nil, info: ProgramInfo? = nil) {
         buttons.removeAll()
-        if r.w < 40 || r.h < 40 { return }
+        if r.w < 40 || r.h < 40 { hideStick(); return }
         let size = min(44, min(r.w, r.h) / 3)
         let pad = Rect(r.x + 4, vertical ? r.y + 4 : r.y + (r.h - size * 3) / 2, size * 3, size * 3)
-        if showDpad {
-            add("\u{18}", Rect(pad.x + size, pad.y, size, size), Keys.SC_CURSOR_UP)
-            add("\u{1B}", Rect(pad.x, pad.y + size, size, size), Keys.SC_CURSOR_LEFT)
-            add("\u{1A}", Rect(pad.x + 2 * size, pad.y + size, size, size), Keys.SC_CURSOR_RIGHT)
-            add("\u{19}", Rect(pad.x + size, pad.y + 2 * size, size, size), Keys.SC_CURSOR_DOWN)
+        let stick = showDpad && directional == .joystick
+        if showDpad && !stick {
+            add("\u{18}", Rect(pad.x + size, pad.y, size, size), Keys.SC_CURSOR_UP, dir: Joystick.UP)
+            add("\u{1B}", Rect(pad.x, pad.y + size, size, size), Keys.SC_CURSOR_LEFT, dir: Joystick.LEFT)
+            add("\u{1A}", Rect(pad.x + 2 * size, pad.y + size, size, size), Keys.SC_CURSOR_RIGHT, dir: Joystick.RIGHT)
+            add("\u{19}", Rect(pad.x + size, pad.y + 2 * size, size, size), Keys.SC_CURSOR_DOWN, dir: Joystick.DOWN)
         }
+        // a joystick whose square moved under the finger (rotation, a resized window) lets go
+        if stick { if joystick.layout(pad) && stickPointer != nil { releaseStick() } } else { hideStick() }
         // action buttons: next to the pad, or in [actionArea]
         var actions: [(String, Int, Int64)] = []
         actions.append(("SPACE", 32, Keys.forChar(32).1))
@@ -295,7 +329,7 @@ public final class GameControls {
         var bx = x0
         var by: Int
         if actionArea != nil {
-            let count = actions.count + menuKeys.count + extras.count + 1
+            let count = actions.count + menuKeys.count + extras.count + (showDpad ? 2 : 1)
             let rows = (count + max(1, (area.w - 4) / bw) - 1) / max(1, (area.w - 4) / bw)
             by = area.y + max(4, (area.h - rows * (Touch.button + 4)) / 2)
         } else { by = showDpad ? pad.y : r.y + 4 }
@@ -316,12 +350,20 @@ public final class GameControls {
         // for its widest label, so it keeps its place and size while it cycles.
         let (mode, modeA11y) = t.modes[clickMode]
         buttons.append(Btn(mode, place(t.modeW), 0, 0, modeA11y,
-                           toggle: { [unowned self] in clickMode = (clickMode + 1) % 3 }))
+                           toggle: { [unowned self] in clickMode = (clickMode + 1) % 3 }, touchMode: true))
+        // the d-pad/joystick switch is the app's too, named for the mode it switches to; last, so the buttons
+        // before it keep their places, and sized for its wider label
+        if showDpad {
+            let next: DirectionalControl = stick ? .dpad : .joystick
+            buttons.append(Btn(stick ? t.toDpad : t.toJoystick, place(t.directionalW), 0, 0, stick ? t.toDpadA11y : t.toJoystickA11y,
+                               toggle: { [unowned self] in releaseArrows(); onDirectional(next) }))
+        }
         for b in buttons {
             let pressed = held.values.contains { $0 === b }
-            let on = b.toggle != nil && clickMode != 0
+            let on = b.touchMode && clickMode != 0
             s.templeButton(b.rect, b.label, pressed ? ButtonFace.PRESSED : on ? ButtonFace.SELECTED : ButtonFace.NORMAL)
         }
+        if stick { joystick.draw(s, stickHeld) }
     }
 
     /**
@@ -342,29 +384,82 @@ public final class GameControls {
 
     private func press(_ b: Btn) { if b.wheel != 0 { onWheel(b.wheel) } else { send(.key(ch: b.ch, sc: b.sc, down: true)) } }
 
-    private func add(_ label: String, _ rect: Rect, _ scCode: Int, _ ch: Int = 0, _ sc: Int64 = 0) {
+    private func add(_ label: String, _ rect: Rect, _ scCode: Int, _ ch: Int = 0, _ sc: Int64 = 0, dir: Int = 0) {
         if scCode >= 0 {
             let (c, s) = Keys.special(scCode)
-            buttons.append(Btn(label, rect, c, s))
+            buttons.append(Btn(label, rect, c, s, dir: dir))
         } else { buttons.append(Btn(label, rect, ch, sc)) }
     }
 
-    /** Returns true if the pointer hit a control. */
+    /** [b] goes down for hold id [id]: pressed now, repeated by [tick], up on [release]. */
+    private func hold(_ id: Int, _ b: Btn) {
+        held[id] = b; heldSince[id] = -1; lastRepeat[id] = nil
+        if b.wheel == 0 && !isModifier(b) { ticket[id] = typematic.pressed() }
+        press(b)
+    }
+
+    /** Lets go of what hold id [id] holds; false if it holds nothing. */
+    @discardableResult
+    private func release(_ id: Int) -> Bool {
+        heldSince[id] = nil; lastRepeat[id] = nil; ticket[id] = nil
+        guard let b = held.removeValue(forKey: id) else { return false }
+        if b.wheel == 0 { send(.key(ch: b.ch, sc: b.sc | Keys.SCF_KEY_UP, down: false)) }
+        return true
+    }
+
+    /** The joystick's finger is at ([x], [y]): the knob follows, and the push holds its arrows. */
+    private func steer(_ x: Int, _ y: Int) {
+        let (dx, dy) = joystick.push(x, y)
+        holdArrows(Joystick.keys(dx, dy, joystick.travel, stickHeld))
+    }
+
+    /**
+     * Makes the joystick hold exactly the arrows in [bits], as d-pad buttons hold them: the arrows it no
+     * longer pushes go up, new ones go down (and become the typematic key); one it keeps is not sent again.
+     */
+    private func holdArrows(_ bits: Int) {
+        for b in stickKeys where stickHeld & b.dir != 0 && bits & b.dir == 0 { release(-b.dir) }
+        for b in stickKeys where bits & b.dir != 0 && stickHeld & b.dir == 0 { hold(-b.dir, b) }
+        stickHeld = bits
+    }
+
+    /** The joystick's finger lifted (or the joystick went away): its arrows go up at once, the knob eases home. */
+    private func releaseStick() {
+        holdArrows(0); stickPointer = nil; joystick.letGo()
+    }
+
+    private func hideStick() { if joystick.shown { releaseStick(); joystick.hide() } }
+
+    /**
+     * Switching between the d-pad and the joystick: the arrows either one holds go up, so nothing keeps
+     * moving (a finger still on a d-pad button or on the joystick holds nothing more); other keys stay held.
+     */
+    private func releaseArrows() {
+        for (id, b) in held where b.dir != 0 { release(id) }
+        stickHeld = 0; stickPointer = nil; joystick.center()
+    }
+
+    /**
+     * Returns true if the pointer hit a control. The joystick follows one finger from anywhere on it until
+     * that finger lifts; another finger on it is taken and ignored. Fingers on buttons are independent of it.
+     */
     public func pointer(_ e: PointerEvent) -> Bool {
         switch e.action {
         case Ptr.DOWN:
+            if joystick.shown && joystick.rect.contains(e.x, e.y) {
+                if stickPointer == nil { stickPointer = e.id; steer(e.x, e.y) }
+                return true
+            }
             guard let b = buttons.first(where: { $0.rect.contains(e.x, e.y) }) else { return false }
             if let toggle = b.toggle { toggle(); return true }
-            held[e.id] = b; heldSince[e.id] = -1; lastRepeat[e.id] = nil
-            if b.wheel == 0 && !isModifier(b) { ticket[e.id] = typematic.pressed() }
-            press(b)
+            hold(e.id, b)
             return true
         case Ptr.UP, Ptr.CANCEL:
-            heldSince[e.id] = nil; lastRepeat[e.id] = nil; ticket[e.id] = nil
-            guard let b = held.removeValue(forKey: e.id) else { return false }
-            if b.wheel == 0 { send(.key(ch: b.ch, sc: b.sc | Keys.SCF_KEY_UP, down: false)) }
-            return true
-        case Ptr.MOVE: return held[e.id] != nil
+            if e.id == stickPointer { releaseStick(); return true }
+            return release(e.id)
+        case Ptr.MOVE:
+            if e.id == stickPointer { steer(e.x, e.y); return true }
+            return held[e.id] != nil
         default: return false
         }
     }
@@ -373,17 +468,182 @@ public final class GameControls {
      * The current layout has no control area (landscape gutters under 96 px, console view): forget the
      * last layout's buttons. They are hit-tested before the picture, so leftovers were invisible keys and
      * a tap beside the picture could send Abort (Shift-Esc) and end the program. Held keys stay held
-     * until their finger lifts.
+     * until their finger lifts; the joystick lets go (there is no joystick without the control area).
      */
-    public func clearLayout() { buttons.removeAll() }
+    public func clearLayout() { buttons.removeAll(); hideStick() }
 
     /** Releases everything (focus loss, rotation) so no key stays stuck. */
     public func releaseAll() {
         for b in held.values where b.wheel == 0 { send(.key(ch: b.ch, sc: b.sc | Keys.SCF_KEY_UP, down: false)) }
         held.removeAll(); heldSince.removeAll(); lastRepeat.removeAll()
+        stickHeld = 0; stickPointer = nil; joystick.letGo()
     }
 
     public var anyHeld: Bool { !held.isEmpty }
+}
+
+/**
+ * The joystick that can take the d-pad's place ([GameControls], Settings.directional): a stick drawn in
+ * TempleOS colors and pixels in the pad's square. It keeps the geometry, the picture and the knob; a push
+ * ([keys]) becomes the arrow keys the d-pad buttons hold, through the same key path.
+ */
+final class Joystick {
+    /** Arrow bits (a d-pad button's or a push's [GameControls] dir). */
+    static let UP = 1, DOWN = 2, LEFT = 4, RIGHT = 8
+    /**
+     * A push holds keys from [ENGAGE] of the knob's travel and lets go below [RELEASE], so a thumb resting at
+     * the edge of the dead zone does not chatter. Each arrow takes [CARDINAL] degrees either side of its axis,
+     * a diagonal (two arrows) the 30 degrees between, and a held direction stays until the push is [STICKY]
+     * degrees past its edge.
+     */
+    static let ENGAGE = 0.30, RELEASE = 0.22, CARDINAL = 30.0, STICKY = 6.0
+    /** How long the released knob takes back to the centre (its keys go up at once). */
+    static let RETURN_MS: Int64 = 80
+    /** Counter-clockwise from right, 45 degrees apart. */
+    private static let SECTORS = [RIGHT, UP | RIGHT, UP, UP | LEFT, LEFT, DOWN | LEFT, DOWN, DOWN | RIGHT]
+
+    /**
+     * The arrow keys a push of ([dx], [dy]) from the centre holds (y grows downwards) for a knob that travels
+     * [travel] px, given the keys [held] now: none in the dead zone, else one arrow, or two on a diagonal,
+     * as two fingers on the d-pad hold them.
+     */
+    static func keys(_ dx: Int, _ dy: Int, _ travel: Int, _ held: Int) -> Int {
+        let dist = Double(dx * dx + dy * dy).squareRoot()
+        if dist < (held == 0 ? ENGAGE : RELEASE) * Double(max(1, travel)) { return 0 }
+        var a = atan2(Double(-dy), Double(dx)) * 180 / Double.pi
+        if a < 0 { a += 360 }
+        func apart(_ b: Double) -> Double { let d = abs(a - b).truncatingRemainder(dividingBy: 360); return d > 180 ? 360 - d : d }
+        if let i = SECTORS.firstIndex(of: held), apart(Double(i) * 45) <= (i % 2 == 0 ? CARDINAL : 45 - CARDINAL) + STICKY { return held }
+        let axis = Int((a / 90 + 0.5).rounded(.down)) % 4
+        return apart(Double(axis) * 90) <= CARDINAL ? SECTORS[axis * 2] : SECTORS[Int(a / 90) % 4 * 2 + 1]
+    }
+
+    /** The square it fills: the pad's, one pixel less when even, so its crosshair and knob have a centre pixel. */
+    private(set) var rect = Rect(0, 0, 0, 0)
+    var shown: Bool { rect.w > 0 }
+    var cx: Int { rect.x + rect.w / 2 }
+    var cy: Int { rect.y + rect.h / 2 }
+    /** How far the knob's centre moves from the centre. */
+    private(set) var travel = 1
+    /** The knob's offset from the centre. */
+    private(set) var knobX = 0, knobY = 0
+    private var returning: (x: Int, y: Int, at: Int64)?
+    private var knob = 0
+    /** The picture as rows of one color (built once per size, drawn as filled spans). */
+    private struct Run { let x: Int, y: Int, w: Int, kind: Int }
+    private var art: [Run] = []
+    private var knobArt: [Run] = []
+
+    /** Places it in the d-pad's square [pad]; returns true when it moved or changed size. */
+    func layout(_ pad: Rect) -> Bool {
+        let s = min(pad.w, pad.h), d = s % 2 == 1 ? s : s - 1
+        let r = Rect(pad.x + (pad.w - d) / 2, pad.y + (pad.h - d) / 2, d, d)
+        if r == rect { return false }
+        if d != rect.w { build(d) }
+        rect = r
+        return true
+    }
+
+    func hide() { rect = Rect(0, 0, 0, 0); center() }
+
+    func center() { knobX = 0; knobY = 0; returning = nil }
+
+    /** A finger at ([x], [y]): the knob goes as far towards it as it travels. Returns the push from the centre. */
+    func push(_ x: Int, _ y: Int) -> (Int, Int) {
+        returning = nil
+        let dx = x - cx, dy = y - cy, q = dx * dx + dy * dy
+        if q <= travel * travel { knobX = dx; knobY = dy } else {
+            let f = Double(travel) / Double(q).squareRoot()
+            knobX = Joystick.round(Double(dx) * f); knobY = Joystick.round(Double(dy) * f)
+        }
+        return (dx, dy)
+    }
+
+    /** The finger let go: the knob eases back to the centre ([settle]). */
+    func letGo() { if knobX != 0 || knobY != 0 { returning = (knobX, knobY, -1) } }
+
+    /** Moves a returning knob on; true while it moves (and once more when it arrives). */
+    func settle(_ nowMs: Int64) -> Bool {
+        guard var r = returning else { return false }
+        if r.at < 0 { r.at = nowMs; returning = r }
+        let f = 1.0 - Double(nowMs - r.at) / Double(Joystick.RETURN_MS)
+        if f <= 0 { center(); return true }
+        knobX = Joystick.round(Double(r.x) * f); knobY = Joystick.round(Double(r.y) * f)
+        return true
+    }
+
+    /** Halves round up, as on every platform (the knob lands on the same pixel). */
+    private static func round(_ v: Double) -> Int { Int((v + 0.5).rounded(.down)) }
+
+    // what a pixel of the picture is: the base, its guide marks, the rim (by quadrant: RIM | an arrow), the knob
+    private static let BASE = 0, GUIDE = 1, MARK = 2, RIM = 16, KNOB = 32, KNOB_SHADE = 33, KNOB_EDGE = 34
+
+    /** The rim lights up on the side of each arrow the push holds. */
+    func draw(_ s: Surface, _ keys: Int) {
+        for r in art { s.fillRect(rect.x + r.x, rect.y + r.y, r.w, 1, Joystick.color(r.kind, keys)) }
+        let kx = cx + knobX - knob / 2, ky = cy + knobY - knob / 2
+        for r in knobArt { s.fillRect(kx + r.x, ky + r.y, r.w, 1, Joystick.color(r.kind, keys)) }
+    }
+
+    private static func color(_ kind: Int, _ keys: Int) -> Int {
+        switch kind {
+        case BASE: return Palette.BLACK
+        case GUIDE: return Palette.CYAN
+        case MARK, KNOB: return Palette.LTCYAN
+        case KNOB_SHADE: return Palette.CYAN
+        case KNOB_EDGE: return Palette.WHITE
+        default: return keys & (kind & 15) != 0 ? Palette.LTCYAN : Palette.CYAN
+        }
+    }
+
+    /**
+     * Draws the picture for diameter [d] (odd) in whole pixels, with integer arithmetic only (the same pixels on
+     * every platform). Coordinates are doubled, from the centre pixel: X = 2x + 1 - d.
+     */
+    private func build(_ d: Int) {
+        let rim = d >= 100 ? 3 : d >= 60 ? 2 : 1
+        knob = max(7, (d * 2 / 5) | 1)
+        travel = max(1, d / 2 - rim - knob / 2 - 1)
+        let inner = d - 2 * rim, marks = inner - 6, guide = 2 * travel
+        art = Joystick.runs(d) { X, Y in
+            let q = X * X + Y * Y
+            if q >= d * d { return -1 }
+            if q >= inner * inner { return Joystick.RIM | (abs(X) > abs(Y) ? (X < 0 ? Joystick.LEFT : Joystick.RIGHT) : (Y < 0 ? Joystick.UP : Joystick.DOWN)) }
+            if (X == 0 || Y == 0) && q < marks * marks {
+                // the crosshair: a solid centre, then dashes out to the rim
+                let along = (abs(X) + abs(Y)) / 2
+                return along <= 3 ? Joystick.MARK : (along / 3) % 2 == 0 ? Joystick.GUIDE : Joystick.BASE
+            }
+            // the ring the knob's centre can reach, dashed
+            if q >= (guide - 1) * (guide - 1) && q < (guide + 1) * (guide + 1) && (min(abs(X), abs(Y)) / 8) % 2 == 0 { return Joystick.GUIDE }
+            return Joystick.BASE
+        }
+        let k = knob, shift = 2 * max(1, k / 12)
+        knobArt = Joystick.runs(k) { X, Y in
+            let q = X * X + Y * Y
+            if q >= k * k { return -1 }
+            if q >= (k - 2) * (k - 2) { return Joystick.KNOB_EDGE }
+            // flat, with a shaded crescent down-right in whole pixels
+            if (X + shift) * (X + shift) + (Y + shift) * (Y + shift) >= (k - 2) * (k - 2) { return Joystick.KNOB_SHADE }
+            return Joystick.KNOB
+        }
+    }
+
+    /** Run-length encodes a [d] x [d] picture whose pixel at doubled offset (X, Y) is [kind] (-1: none). */
+    private static func runs(_ d: Int, _ kind: (Int, Int) -> Int) -> [Run] {
+        var out: [Run] = []
+        for y in 0..<d {
+            var x = 0
+            while x < d {
+                let k = kind(2 * x + 1 - d, 2 * y + 1 - d)
+                var e = x + 1
+                while e < d && kind(2 * e + 1 - d, 2 * y + 1 - d) == k { e += 1 }
+                if k >= 0 { out.append(Run(x: x, y: y, w: e - x, kind: k)) }
+                x = e
+            }
+        }
+        return out
+    }
 }
 
 /** Largest 4:3 rectangle centred in [r] (programs keep their 640x480 aspect). */

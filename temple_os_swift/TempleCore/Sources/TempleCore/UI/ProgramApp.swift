@@ -72,6 +72,11 @@ public final class ProgramApp: App {
             self.kernel.post(.mouse(x: self.lastPointer.0, y: self.lastPointer.1, lb: self.lastButtons.0, rb: self.lastButtons.1, wheel: d))
             self.runner.wake()
         }
+        // the d-pad or the joystick is the user's choice for every program (Settings), kept with the session
+        controls.onDirectional = { [weak self] mode in
+            guard let shell = self?.liveShell else { return }
+            shell.settings.directional = mode; shell.saveSession()
+        }
         start()
     }
 
@@ -96,8 +101,7 @@ public final class ProgramApp: App {
 
     override public func tick(_ nowMs: Int64) -> Bool {
         env.refresh()
-        controls.tick(nowMs)
-        var d = false
+        var d = controls.tick(nowMs) // the joystick's knob on its way back
         if isFinished && !finished { finished = true; controls.releaseAll(); d = true }
         let cv = kernel.console.version
         if cv != lastConsoleVersion { lastConsoleVersion = cv; if !kernel.graphicsUsed || showConsole { d = true } }
@@ -212,8 +216,9 @@ public final class ProgramApp: App {
             if ctl.y < canvas.bottom {
                 // left gutter: d-pad; right gutter: action buttons (they do not fit beside the pad)
                 let right = Rect(canvas.right + 4, r.y, r.right - canvas.right - 4, r.h)
-                controls.draw(s, ctl, kernel.menuSnapshot, vertical: false, showDpad: wantsDpad(), actionArea: right, info: info)
-            } else { controls.draw(s, ctl, kernel.menuSnapshot, vertical: true, showDpad: wantsDpad(), info: info) }
+                controls.draw(s, ctl, kernel.menuSnapshot, vertical: false, showDpad: wantsDpad(), directional: shell.settings.directional,
+                              actionArea: right, info: info)
+            } else { controls.draw(s, ctl, kernel.menuSnapshot, vertical: true, showDpad: wantsDpad(), directional: shell.settings.directional, info: info) }
         } else { controls.clearLayout() } // no room for controls: only what is drawn may take touches
         for link in kernel.console.spriteLinks(max(1,win.w/8)) {
             guard let action=OriginalProgramLink.parse(link.format,Paths.parent(path)) else {continue}
@@ -236,6 +241,9 @@ public final class ProgramApp: App {
     }
 
     private func wantsDpad() -> Bool { info?.usesArrows ?? true }
+
+    /** A drag that starts on the joystick near the screen's edge steers; it is not Android's back gesture. */
+    override public var gestureExclusion: [Rect] { controls.joystick.shown ? [controls.joystick.rect] : [] }
 
     override public func overlays(_ r: Rect) -> [Overlay] {
         kernel.graphicsUsed && !showConsole && canvasRect.w > 0 && !finished ? [Overlay(canvasRect, frame, shownWindow)] : []
