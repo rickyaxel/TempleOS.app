@@ -258,6 +258,8 @@ final class IOSShellEnv: ShellEnv {
     let stateStore: StateStore
     let sound: ToneGenerator
     var renderHandler: () -> Void = {}
+    /** Start menu > Import...: presents the document picker (DocumentImportAdapter, set by the view controller). */
+    var importPicker: () -> Bool = { false }
     private var runtimeCache: [String: [UInt8]] = [:]
     private let cacheLock = NSLock()
     private let resources: URL
@@ -321,6 +323,7 @@ final class IOSShellEnv: ShellEnv {
         UIApplication.shared.open(url)
     }
     func requestRender() { renderHandler() }
+    func pickImportFiles() -> Bool { importPicker() }
     /**
      * Each program gets its own HolyC heap; larger on devices with more memory (TempleOS has no
      * per-program limit: Talons keeps about 65 MB, so it needs the 96 MiB class).

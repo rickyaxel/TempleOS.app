@@ -4,8 +4,9 @@ import UIKit
 
 /**
  * TempleOS Mobile Classic for iOS. One window hosting one Shell (the TempleOS
- * Mobile desktop). Fully offline: no network code, no accounts, no analytics,
- * and no way to import programs from outside the app.
+ * Mobile desktop). Fully offline: no network code, no accounts, no analytics.
+ * Programs come from outside the app only when the user imports them (Start
+ * menu > Import..., the system document picker: DocumentImportAdapter).
  */
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -57,6 +58,14 @@ final class TempleViewController: UIViewController {
     // awaitingRestore until onFirstLayout has read the saved session (Shell.awaitingRestore)
     private lazy var shell: Shell = { let s = Shell(env); s.awaitingRestore = true; return s }()
     private var templeView: TempleView!
+    /** Start menu > Import...: the system document picker; its copies go to the shell's ImportFlow. */
+    private lazy var importer: DocumentImportAdapter = {
+        let flow = shell.importFlow // taken on the main thread; receive() may be called from any thread
+        return DocumentImportAdapter(presenter: self, deliver: { files in flow.receive(files) }, dismissed: { [weak self] in
+            // the picker had the keyboard focus: hardware keys go to the desktop again
+            self?.templeView.acquireHardwareFocus(); self?.templeView.kick()
+        })
+    }()
 
     override func loadView() {
         // Pure Swift mode: the bundled programs' ahead-of-time Swift translations (Settings > Engine)
@@ -66,6 +75,7 @@ final class TempleViewController: UIViewController {
         let v = TempleView(shell: shell)
         templeView = v
         env.renderHandler = { [weak v] in v?.kick() }
+        env.importPicker = { [unowned self] in importer.present() }
         v.onFirstLayout = { [unowned self] in
             shell.restoreSession()
             // benchmarks: launch with -engine native|terry to select the engine (Settings > Engine) for automated runs

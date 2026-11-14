@@ -46,7 +46,8 @@ def i(name):
 
 SRCS = ['AppDelegate.swift', 'TempleView.swift', 'IOSShellEnv.swift', 'BenchMode.swift',
         # platform adapters (docs/ui-normalization/PLATFORM_UI_ABSTRACTION.md)
-        'NativeKeyboardDiagnostics.swift', 'HardwareKeyAdapter.swift', 'AccessibilityAdapter.swift', 'DisplayContextAdapter.swift']
+        'NativeKeyboardDiagnostics.swift', 'HardwareKeyAdapter.swift', 'AccessibilityAdapter.swift', 'DisplayContextAdapter.swift',
+        'DocumentImportAdapter.swift']
 UITESTS = ['TempleOSMobileUITests.swift', 'DuoPostureUITests.swift']
 SHARED = [('runtime', 'folder', '../../shared/runtime'), ('bundled-fs', 'folder', '../../shared/bundled-fs'),
           ('bundled-fs.index', 'text', '../../shared/bundled-fs.index'),
