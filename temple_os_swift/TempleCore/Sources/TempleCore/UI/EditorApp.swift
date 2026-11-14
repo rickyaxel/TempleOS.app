@@ -27,7 +27,7 @@ fileprivate func startsAt(_ a: [Unicode.Scalar], _ i: Int, _ p: String) -> Bool 
 /**
  * HolyC source editor. Edits the text part of a file; a DolDoc binary section
  * (embedded sprites) is preserved unchanged on save. Source is saved only in
- * the app's virtual drive; there is no import from outside the app.
+ * the app's virtual drive (files come from outside only through Import..., FileImport).
  */
 public final class EditorApp: App {
     public override var kind: String { "editor" }

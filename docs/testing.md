@@ -78,6 +78,7 @@ unless enabled with a `-Dtempleos.*` property. Last full run: **31 tests,
 | `HolyCVectorTest` | 1 (16 vectors) | every `shared/test-vectors/holyc/*.HC` program's console output or expected error |
 | `RasterDiffTest` | 10 | native graphics routines vs the original HolyC on random inputs (pixels, depth buffer, collisions, extents, return values, RNG use), `Line`, `SpriteSize` on all 325 bundled sprites |
 | `LayeredFsTest` | 6 | path normalization and traversal, copy-on-write, whiteouts, restore, quota, atomic writes, HolyC file I/O and `#include` from the virtual drive |
+| `ImportTest` | 17 | Start menu > Import... (`file-import.md`): kind by name, `.HC.Z` expansion equal to TempleOS's TOSZ, the ZIP reader and archive policy on adversarial archives, staging, collisions, quota, recovery, the flow through the shell, and genuine external programs (`shared/test-vectors/import`) run from Files and after a restart |
 | `GraphicsDemoTest` | 2 | prelude + graphics library boot; `Demo/Graphics/Lines.HC` runs without error and draws at least 3 colours |
 | `ShellUiTest` | 3 | headless desktop: every app opens, terminal runs HolyC, graphics program publishes frames, session save/restore, landscape tiling, Paint `.GR` round trip, menus after dialogs with per-touch ids |
 | `DragTest` | 2 | drags reach programs (Maze draws walls); quick taps register (TicTacToe), verified by mutation |
@@ -93,6 +94,7 @@ run: **14 tests, 0 failures**.
 |---|---|---|
 | `HolyCVectorTests` | 1 (16 vectors) | same vectors as Kotlin |
 | `LayeredFsTests` | 6 | same cases as Kotlin |
+| `ImportTests` | 17 | same cases as Kotlin `ImportTest` |
 | `ShellUiTests` | 7 | same headless shell checks as Kotlin plus drag, quick tap, iOS-style touch ids, menu after an editor run |
 | `SweepTests` *(opt-in)* | 1 | Swift sweep; writes frames for parity |
 
@@ -141,9 +143,11 @@ iOS app bundle and both source trees: no permissions, no INTERNET, only the
 launcher intent, no data/URL intent filters, no providers/services/receivers,
 backup disabled, no networking classes in dex, no URL types / document types
 / ATS keys / file sharing / app extensions on iOS, no Network/WebKit/
-JavaScriptCore linkage or URLSession/socket/WebView symbols, no document
-pickers or URL handlers in sources, no third-party dependencies. Last run:
-**all checks passed**.
+JavaScriptCore linkage or URLSession/socket/WebView symbols, no URL handlers
+or other content entry points in sources, document pickers only in the two
+Import adapters (`DocumentImportAdapter.swift` / `.kt`, user-initiated), no
+third-party dependencies. Last run (2026-11-14, release APK and a Debug
+simulator build): **all checks passed**.
 
 ## 2. Manual and device testing
 

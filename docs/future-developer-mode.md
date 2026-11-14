@@ -1,8 +1,10 @@
 # Future Developer Mode — design notes (NOT implemented)
 
-**Status: documentation only.** Version 1 contains no import feature, no file
-picker, no package format, no permission prompts, no paywall and no dormant
-code for any of this. Nothing described here exists in the apps.
+**Status: documentation only.** A basic import now exists: Start menu >
+Import... copies .HC, .HC.Z and .zip files chosen in the system picker onto
+`C:/Home/Imports` (`file-import.md`). Everything else described here (a
+separate Developer Mode, review before running, capabilities, provenance
+labels, per-project quotas, packages, payment) does not exist in the apps.
 
 This document records how a later version could let users bring their own
 HolyC programs into TempleOS Mobile, what the current architecture already

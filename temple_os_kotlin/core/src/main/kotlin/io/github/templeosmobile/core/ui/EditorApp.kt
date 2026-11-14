@@ -6,7 +6,7 @@ import io.github.templeosmobile.core.kernel.*
 /**
  * HolyC source editor. Edits the text part of a file; a DolDoc binary section
  * (embedded sprites) is preserved unchanged on save. Source is saved only in
- * the app's virtual drive; there is no import from outside the app.
+ * the app's virtual drive (files come from outside only through Import..., FileImport).
  */
 class EditorApp(shell: Shell, initialPath: String?, draft: String? = null) : App(shell) {
     override val kind = "editor"

@@ -38,7 +38,7 @@ and other Western European languages). Otherwise it shows English.
 | File | Role |
 |---|---|
 | `shared/runtime/l10n/locales.json` | The manifest: 89 locales (id, catalog, parent, script, direction, native and English names, aliases), language families, exclusions, device-region candidates, input tag grammar. |
-| `shared/runtime/l10n/en.json` | English source: 386 keys. `$comment` explains the conventions. |
+| `shared/runtime/l10n/en.json` | English source: 432 keys. `$comment` explains the conventions. |
 | `shared/runtime/l10n/<catalog>.json` | One catalog per language (72 plus English). `$review` lists keys a native speaker should check. |
 | `shared/test-vectors/l10n/resolver_vectors.json` | 108 resolution cases run by Python, Kotlin and Swift. |
 | `temple_os_kotlin/core/.../ui/L10n.kt`, `temple_os_swift/TempleCore/.../UI/L10n.swift` | `LocaleResolver`, `L10n` (`tr`, `tr8`, `use`), `Cp437`. Line-for-line ports. |

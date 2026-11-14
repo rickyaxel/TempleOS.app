@@ -18,7 +18,9 @@ what it deliberately excludes, and how each property is verified.
 
 ## 2. Excluded (not present in any form)
 
-No file import (Files app / Storage Access Framework / document pickers),
+No file import other than Start menu > Import... (added 2026-11: the system
+document picker, opened by the user, copies .HC, .HC.Z and .zip files onto
+the C: drive; no permission, no document types; see `file-import.md`),
 no URL schemes or deep links, no share extensions or intent filters for
 content, no drag-and-drop import, no program downloads, no online catalog or
 community, no cloud sync, no accounts or login, no analytics, no ads, no
@@ -51,9 +53,12 @@ operation and is the only way text enters the app from outside.
 
 ## 5. Store-review notes
 
-- The app executes code: HolyC typed by the user or bundled with the app,
+- The app executes code: HolyC typed by the user, bundled with the app, or
+  imported by the user from a file they chose (Start menu > Import...),
   interpreted in a sandbox with no access outside the app (no network, no
-  host files, no native code). No code is downloaded.
+  host files, no native code). No code is downloaded by the app. Whether
+  user-imported source is acceptable under the guidelines below has not been
+  re-checked since Import was added (`file-import.md` §9).
   Relevant guidelines to cite in review notes: Apple App Review Guidelines
   2.5.2 (apps may not download executable code; this app does not), Google
   Play Device and Network Abuse policy (no code downloaded from outside
