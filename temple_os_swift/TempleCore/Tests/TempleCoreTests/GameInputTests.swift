@@ -67,6 +67,44 @@ final class GameInputTests: XCTestCase {
     }
 
     /**
+     * A frame with nothing new draws the last layout again instead of building new buttons, so a held button is
+     * the one drawn: PRESSED while held. The menu the kernel re-reads every 15 frames (new entries, the same
+     * shortcuts) does not rebuild it; a new shortcut, the touch mode, the language and the area do.
+     * Port of AppBehaviorTest.heldButtonsDrawPressedAndFramesReuseTheLayout.
+     */
+    func testHeldButtonsDrawPressedAndFramesReuseTheLayout() throws {
+        let dir = FileManager.default.temporaryDirectory.appendingPathComponent("gcl-\(UUID().uuidString)")
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: dir) }
+        let sh = Shell(HeadlessEnv(dir))
+        let s = Surface(300, 300, sh.font)
+        let gc = GameControls { _ in }
+        func entry(_ label: String, _ a1: Int64) -> MenuSnap { MenuSnap("File/\(label)", label, -2, a1, 0, false, false) }
+        var menu = [entry("Abort", Int64(Keys.CH_SHIFT_ESC))]
+        var area = Rect(0, 0, 300, 300)
+        func frame() { gc.draw(s, area, menu, vertical: true, showDpad: true) }
+        // the up button (vertical: the pad from (4,4), 44 px cells); its face inside the 2 px black edge
+        let up = Rect(4 + 44, 4, 44, 44)
+        func face() -> Int { Int(s.px[(up.y + 3) * s.width + up.x + 3]) }
+        frame(); XCTAssertEqual(ButtonFace.NORMAL, face())
+        _ = gc.pointer(PointerEvent(Ptr.DOWN, up.x + 20, up.y + 20, id: 7)); frame()
+        XCTAssertEqual(ButtonFace.PRESSED, face(), "a held button is drawn pressed")
+        _ = gc.pointer(PointerEvent(Ptr.UP, up.x + 20, up.y + 20, id: 7)); frame()
+        XCTAssertEqual(ButtonFace.NORMAL, face())
+        let built = gc.layouts
+        for _ in 0..<100 { frame() }
+        menu = [entry("Abort", Int64(Keys.CH_SHIFT_ESC))] // the kernel's next read: new entries, the same shortcuts
+        for _ in 0..<100 { frame() }
+        XCTAssertEqual(built, gc.layouts, "frames with nothing new reuse the layout")
+        menu = menu + [entry("TimeLapse", 116)]; frame()
+        XCTAssertEqual(built + 1, gc.layouts, "a new shortcut"); XCTAssertTrue(gc.labels.contains("TimeLapse"))
+        gc.clickMode = 1; frame(); XCTAssertEqual(built + 2, gc.layouts, "the touch mode's label")
+        L10n.use("de-DE"); frame(); XCTAssertEqual(built + 3, gc.layouts, "a new language"); L10n.use("en-US")
+        frame(); area = Rect(0, 0, 300, 260); frame(); XCTAssertEqual(built + 5, gc.layouts, "a new area")
+        gc.clearLayout(); frame(); XCTAssertEqual(built + 6, gc.layouts, "after clearLayout")
+    }
+
+    /**
      * Every on-screen control is visible (outside the program picture, which the platform draws on
      * top of the shell) and reaches the game: BomberGolf counts each key in key_cnt. Landscape used
      * to put SPACE/ENTER/ESC under the picture (the left gutter is too narrow for pad + buttons).

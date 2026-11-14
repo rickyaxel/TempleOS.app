@@ -160,6 +160,18 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
     /** The joystick toggle asks for the other directional control: the owner keeps it (Settings) and draws with it. */
     var onDirectional: (DirectionalControl) -> Unit = {}
     /**
+     * What the layout depends on. While it stays the same, a frame draws the last layout's buttons again instead of
+     * building new ones: a held button is the one drawn (PRESSED), and a frame only compares and draws.
+     */
+    private data class LayoutKey(val r: Rect, val vertical: Boolean, val showDpad: Boolean, val directional: DirectionalControl, val actionArea: Rect?,
+                                 val ctrl: Boolean, val shift: Boolean, val wheel: Boolean, val clickMode: Int, val language: Int, val buttonH: Int)
+    private var layoutKey: LayoutKey? = null
+    /** The menu snapshot the shortcut buttons were read from, and those shortcuts. */
+    private var menuSeen: List<MenuSnap> = emptyList()
+    private var shortcuts: List<MenuSnap> = emptyList()
+    /** Layouts built (tests: frames with nothing new reuse the last one). */
+    internal var layouts = 0; private set
+    /**
      * The controls' own labels in the UI language (touch modes with their spoken names, wheel) and the widths
      * the layout gives them: resolved when the language changes, not on every frame (the shell's surface
      * measures with one fixed font).
@@ -229,6 +241,47 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
      */
     fun draw(s: Surface, r: Rect, menu: List<MenuSnap>, vertical: Boolean, showDpad: Boolean, directional: DirectionalControl = DirectionalControl.DPAD,
              actionArea: Rect? = null, info: ProgramInfo? = null) {
+        val key = LayoutKey(r, vertical, showDpad, directional, actionArea, info?.usesCtrl == true, info?.usesShift == true, info?.usesWheel == true,
+            clickMode, L10n.version, Touch.button)
+        if (newShortcuts(menu) || key != layoutKey) {
+            layout(s, r, vertical, showDpad, directional, actionArea, info)
+            layoutKey = key; layouts++
+        }
+        for (b in buttons) {
+            val pressed = held.values.any { it === b }
+            val on = b.touchMode && clickMode != 0
+            s.templeButton(b.rect, b.label, if (pressed) ButtonFace.PRESSED else if (on) ButtonFace.SELECTED else ButtonFace.NORMAL)
+        }
+        if (joystick.shown) joystick.draw(s, stickHeld)
+    }
+
+    /**
+     * Reads the program's menu shortcuts (the menu keys that get a button) when the kernel published a new snapshot:
+     * it re-reads the menu every 15 frames, mostly with the same entries. True if the shortcuts changed.
+     */
+    private fun newShortcuts(menu: List<MenuSnap>): Boolean {
+        if (sameEntries(menu, menuSeen)) return false
+        menuSeen = menu
+        // SPACE, ENTER and ESC have their own buttons, the arrows the d-pad
+        val now = menu.filter { !it.isDir && (it.a1 != 0L || it.a2 != 0L) && it.msgCode == -2L }
+            .filter { m -> !(m.a1 != 0L && m.a1 in listOf(' '.code.toLong(), '\n'.code.toLong(), Keys.CH_ESC.toLong())) }
+            .filter { m -> (m.a2 and 0x7F).toInt() !in listOf(Keys.SC_CURSOR_UP, Keys.SC_CURSOR_DOWN, Keys.SC_CURSOR_LEFT, Keys.SC_CURSOR_RIGHT) }
+            .take(6)
+        val same = now.size == shortcuts.size && now.indices.all { now[it].label == shortcuts[it].label && now[it].a1 == shortcuts[it].a1 && now[it].a2 == shortcuts[it].a2 }
+        shortcuts = now
+        return !same
+    }
+
+    /** The same snapshot entries (the same objects): what every frame checks, without allocating. */
+    private fun sameEntries(a: List<MenuSnap>, b: List<MenuSnap>): Boolean {
+        if (a === b) return true
+        if (a.size != b.size) return false
+        for (i in a.indices) if (a[i] !== b[i]) return false
+        return true
+    }
+
+    /** Builds the buttons (and places the joystick) for [draw]. */
+    private fun layout(s: Surface, r: Rect, vertical: Boolean, showDpad: Boolean, directional: DirectionalControl, actionArea: Rect?, info: ProgramInfo?) {
         buttons.clear()
         if (r.w < 40 || r.h < 40) { hideStick(); return }
         val size = minOf(44, minOf(r.w, r.h) / 3)
@@ -247,10 +300,7 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
         actions.add(Triple("SPACE", ' '.code, Keys.forChar(' '.code).second))
         actions.add(Triple("ENTER", '\n'.code, Keys.special(Keys.SC_ENTER).second))
         actions.add(Triple("ESC", Keys.CH_ESC, Keys.special(Keys.SC_ESC).second))
-        val menuKeys = menu.filter { !it.isDir && (it.a1 != 0L || it.a2 != 0L) && it.msgCode == -2L }
-            .filter { m -> actions.none { it.second.toLong() == m.a1 && m.a1 != 0L } }
-            .filter { m -> (m.a2 and 0x7F).toInt() !in listOf(Keys.SC_CURSOR_UP, Keys.SC_CURSOR_DOWN, Keys.SC_CURSOR_LEFT, Keys.SC_CURSOR_RIGHT) }
-            .take(6)
+        val menuKeys = shortcuts
         // keys and mouse parts the program needs that a phone lacks (catalog: source-derived)
         val extras = ArrayList<Btn>()
         if (info?.usesCtrl == true) extras.add(Btn("CTRL", Rect(0, 0, 0, 0), 0, Keys.SC_CTRL.toLong(), tr("key.control")))
@@ -295,12 +345,6 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
             buttons.add(Btn(if (stick) t.toDpad else t.toJoystick, place(t.directionalW), 0, 0, if (stick) t.toDpadA11y else t.toJoystickA11y,
                 toggle = { releaseArrows(); onDirectional(next) }))
         }
-        for (b in buttons) {
-            val pressed = held.values.any { it === b }
-            val on = b.touchMode && clickMode != 0
-            s.templeButton(b.rect, b.label, if (pressed) ButtonFace.PRESSED else if (on) ButtonFace.SELECTED else ButtonFace.NORMAL)
-        }
-        if (stick) joystick.draw(s, stickHeld)
     }
 
     /**
@@ -406,7 +450,7 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
      * a tap beside the picture could send Abort (Shift-Esc) and end the program. Held keys stay held
      * until their finger lifts; the joystick lets go (there is no joystick without the control area).
      */
-    fun clearLayout() { buttons.clear(); hideStick() }
+    fun clearLayout() { buttons.clear(); hideStick(); layoutKey = null }
 
     /** Releases everything (focus loss, rotation) so no key stays stuck. */
     fun releaseAll() {

@@ -110,6 +110,40 @@ class AppBehaviorTest {
         assertEquals("no repeats after release", n, downs())
     }
 
+    /**
+     * A frame with nothing new draws the last layout again instead of building new buttons, so a held button is
+     * the one drawn: PRESSED while held. The menu the kernel re-reads every 15 frames (new entries, the same
+     * shortcuts) does not rebuild it; a new shortcut, the touch mode, the language and the area do.
+     */
+    @Test fun heldButtonsDrawPressedAndFramesReuseTheLayout() {
+        val (sh, _) = shell()
+        val s = Surface(300, 300, sh.font)
+        val gc = GameControls { }
+        fun entry(label: String, a1: Long) = MenuSnap("File/$label", label, -2, a1, 0, false, false)
+        var menu = listOf(entry("Abort", Keys.CH_SHIFT_ESC.toLong()))
+        var area = Rect(0, 0, 300, 300)
+        fun frame() = gc.draw(s, area, menu, vertical = true, showDpad = true)
+        // the up button (vertical: the pad from (4,4), 44 px cells); its face inside the 2 px black edge
+        val up = Rect(4 + 44, 4, 44, 44)
+        fun face() = s.px[(up.y + 3) * s.width + up.x + 3].toInt()
+        frame(); assertEquals(ButtonFace.NORMAL, face())
+        gc.pointer(PointerEvent(Ptr.DOWN, up.x + 20, up.y + 20, id = 7)); frame()
+        assertEquals("a held button is drawn pressed", ButtonFace.PRESSED, face())
+        gc.pointer(PointerEvent(Ptr.UP, up.x + 20, up.y + 20, id = 7)); frame()
+        assertEquals(ButtonFace.NORMAL, face())
+        val built = gc.layouts
+        repeat(100) { frame() }
+        menu = listOf(entry("Abort", Keys.CH_SHIFT_ESC.toLong())) // the kernel's next read: new entries, the same shortcuts
+        repeat(100) { frame() }
+        assertEquals("frames with nothing new reuse the layout", built, gc.layouts)
+        menu = menu + entry("TimeLapse", 't'.code.toLong()); frame()
+        assertEquals("a new shortcut", built + 1, gc.layouts); assertTrue("TimeLapse" in gc.labels)
+        gc.clickMode = 1; frame(); assertEquals("the touch mode's label", built + 2, gc.layouts)
+        try { L10n.use("de-DE"); frame(); assertEquals("a new language", built + 3, gc.layouts) } finally { L10n.use("en-US") }
+        frame(); area = Rect(0, 0, 300, 260); frame(); assertEquals("a new area", built + 5, gc.layouts)
+        gc.clearLayout(); frame(); assertEquals("after clearLayout", built + 6, gc.layouts)
+    }
+
     /** Landscape: a program picture covered by another window is not composited over it (z-order). */
     @Test fun coveredProgramPictureRespectsStacking() {
         val (sh, _) = shell()

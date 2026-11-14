@@ -207,6 +207,20 @@ public final class GameControls {
     /** The joystick toggle asks for the other directional control: the owner keeps it (Settings) and draws with it. */
     public var onDirectional: (DirectionalControl) -> Void = { _ in }
     /**
+     * What the layout depends on. While it stays the same, a frame draws the last layout's buttons again instead of
+     * building new ones: a held button is the one drawn (PRESSED), and a frame only compares and draws.
+     */
+    private struct LayoutKey: Equatable {
+        let r: Rect, vertical: Bool, showDpad: Bool, directional: DirectionalControl, actionArea: Rect?
+        let ctrl: Bool, shift: Bool, wheel: Bool, clickMode: Int, language: Int, buttonH: Int
+    }
+    private var layoutKey: LayoutKey?
+    /** The menu snapshot the shortcut buttons were read from, and those shortcuts. */
+    private var menuSeen: [MenuSnap] = []
+    private var shortcuts: [MenuSnap] = []
+    /** Layouts built (tests: frames with nothing new reuse the last one). */
+    private(set) var layouts = 0
+    /**
      * The controls' own labels in the UI language (touch modes with their spoken names, wheel) and the widths
      * the layout gives them: resolved when the language changes, not on every frame (the shell's surface
      * measures with one fixed font).
@@ -288,6 +302,42 @@ public final class GameControls {
      */
     public func draw(_ s: Surface, _ r: Rect, _ menu: [MenuSnap], vertical: Bool, showDpad: Bool, directional: DirectionalControl = .dpad,
                      actionArea: Rect? = nil, info: ProgramInfo? = nil) {
+        let key = LayoutKey(r: r, vertical: vertical, showDpad: showDpad, directional: directional, actionArea: actionArea,
+                            ctrl: info?.usesCtrl == true, shift: info?.usesShift == true, wheel: info?.usesWheel == true,
+                            clickMode: clickMode, language: L10n.version, buttonH: Touch.button)
+        if newShortcuts(menu) || key != layoutKey {
+            layout(s, r, vertical: vertical, showDpad: showDpad, directional: directional, actionArea: actionArea, info: info)
+            layoutKey = key; layouts += 1
+        }
+        for b in buttons {
+            let pressed = held.values.contains { $0 === b }
+            let on = b.touchMode && clickMode != 0
+            s.templeButton(b.rect, b.label, pressed ? ButtonFace.PRESSED : on ? ButtonFace.SELECTED : ButtonFace.NORMAL)
+        }
+        if joystick.shown { joystick.draw(s, stickHeld) }
+    }
+
+    /**
+     * Reads the program's menu shortcuts (the menu keys that get a button) when the kernel published a new snapshot:
+     * it re-reads the menu every 15 frames, mostly with the same entries. True if the shortcuts changed.
+     */
+    private func newShortcuts(_ menu: [MenuSnap]) -> Bool {
+        if menu.count == menuSeen.count && zip(menu, menuSeen).allSatisfy({ $0 === $1 }) { return false }
+        menuSeen = menu
+        // SPACE, ENTER and ESC have their own buttons, the arrows the d-pad
+        let arrows = [Keys.SC_CURSOR_UP, Keys.SC_CURSOR_DOWN, Keys.SC_CURSOR_LEFT, Keys.SC_CURSOR_RIGHT]
+        let now = Array(menu.filter { !$0.isDir && ($0.a1 != 0 || $0.a2 != 0) && $0.msgCode == -2 }
+            .filter { m in !(m.a1 != 0 && [Int64(32), Int64(10), Int64(Keys.CH_ESC)].contains(m.a1)) }
+            .filter { m in !arrows.contains(Int(m.a2 & 0x7F)) }
+            .prefix(6))
+        let same = now.count == shortcuts.count && zip(now, shortcuts).allSatisfy { $0.label == $1.label && $0.a1 == $1.a1 && $0.a2 == $1.a2 }
+        shortcuts = now
+        return !same
+    }
+
+    /** Builds the buttons (and places the joystick) for [draw]. */
+    private func layout(_ s: Surface, _ r: Rect, vertical: Bool, showDpad: Bool, directional: DirectionalControl, actionArea: Rect?,
+                        info: ProgramInfo?) {
         buttons.removeAll()
         if r.w < 40 || r.h < 40 { hideStick(); return }
         let size = min(44, min(r.w, r.h) / 3)
@@ -306,11 +356,7 @@ public final class GameControls {
         actions.append(("SPACE", 32, Keys.forChar(32).1))
         actions.append(("ENTER", 10, Keys.special(Keys.SC_ENTER).1))
         actions.append(("ESC", Keys.CH_ESC, Keys.special(Keys.SC_ESC).1))
-        let arrows = [Keys.SC_CURSOR_UP, Keys.SC_CURSOR_DOWN, Keys.SC_CURSOR_LEFT, Keys.SC_CURSOR_RIGHT]
-        let menuKeys = Array(menu.filter { !$0.isDir && ($0.a1 != 0 || $0.a2 != 0) && $0.msgCode == -2 }
-            .filter { m in !actions.contains { Int64($0.1) == m.a1 && m.a1 != 0 } }
-            .filter { m in !arrows.contains(Int(m.a2 & 0x7F)) }
-            .prefix(6))
+        let menuKeys = shortcuts
         // keys and mouse parts the program needs that a phone lacks (catalog: source-derived)
         var extras: [Btn] = []
         if info?.usesCtrl == true { extras.append(Btn("CTRL", Rect(0, 0, 0, 0), 0, Int64(Keys.SC_CTRL), tr("key.control"))) }
@@ -358,12 +404,6 @@ public final class GameControls {
             buttons.append(Btn(stick ? t.toDpad : t.toJoystick, place(t.directionalW), 0, 0, stick ? t.toDpadA11y : t.toJoystickA11y,
                                toggle: { [unowned self] in releaseArrows(); onDirectional(next) }))
         }
-        for b in buttons {
-            let pressed = held.values.contains { $0 === b }
-            let on = b.touchMode && clickMode != 0
-            s.templeButton(b.rect, b.label, pressed ? ButtonFace.PRESSED : on ? ButtonFace.SELECTED : ButtonFace.NORMAL)
-        }
-        if stick { joystick.draw(s, stickHeld) }
     }
 
     /**
@@ -470,7 +510,7 @@ public final class GameControls {
      * a tap beside the picture could send Abort (Shift-Esc) and end the program. Held keys stay held
      * until their finger lifts; the joystick lets go (there is no joystick without the control area).
      */
-    public func clearLayout() { buttons.removeAll(); hideStick() }
+    public func clearLayout() { buttons.removeAll(); hideStick(); layoutKey = nil }
 
     /** Releases everything (focus loss, rotation) so no key stays stuck. */
     public func releaseAll() {
