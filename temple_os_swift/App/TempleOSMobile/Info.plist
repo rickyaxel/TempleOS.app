@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  TempleOS Mobile Classic: fully offline. No URL schemes, no document types,
+  no file sharing, no network usage descriptions: nothing can import programs
+  or data into the app, and the app requests no permissions.
+-->
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>

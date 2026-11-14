@@ -364,6 +364,7 @@ class LanguageApp(shell: Shell) : App(shell) {
         val row = rows.indexOfFirst { it.first.contains(x, y) }.takeIf { it >= 0 } ?: return
         val id = rows[row].second
         shell.settings.language = id
+        shell.env.selectApplicationLanguage(id.ifEmpty { null })
         shell.applyLanguage()
         shell.saveSession()
         // the new UI language collates the list differently: keep the chosen row under the finger

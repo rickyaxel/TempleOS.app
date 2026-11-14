@@ -22,13 +22,16 @@ class UiLocale(
  * own region setting only picks a member of a family (bare "fr" on a Canadian device -> fr-CA);
  * no geography is ever used.
  */
-class LocaleResolver(manifest: Map<String, Any?>) {
+class LocaleResolver(manifest: Map<String, Any?>, private val regionalPolicy: Map<String, Any?> = emptyMap()) {
     val default = manifest["default_locale"] as String
     val locales: List<UiLocale>
     private val inputTag = Regex(manifest["input_tag"] as String)
     private val countries: Map<String, List<String>>
     private val ids: Map<String, String>
     private val families = HashMap<String, Pair<List<String>, String?>>()
+    private val prefixIndex: Map<String, Triple<String, Int, String?>>
+    private val localeIndex: Map<String, UiLocale>
+    private val variantCountry: Map<String, Map<String, String>>
     private val prefixes: List<Triple<String, Int, String?>> // (prefix, kind, target); kind 0 locale, 1 family, 2 exclude
 
     init {
@@ -40,12 +43,12 @@ class LocaleResolver(manifest: Map<String, Any?>) {
         }
         @Suppress("UNCHECKED_CAST")
         countries = (manifest["countries"] as Map<String, List<String>>)
-        ids = locales.associate { it.id.lowercase() to it.id }
+        ids = locales.associate { it.id.lowercase(java.util.Locale.ROOT) to it.id }
         @Suppress("UNCHECKED_CAST")
         val familyScripts = (manifest["family_scripts"] as List<String>).toSet()
         val groups = LinkedHashMap<String, MutableList<UiLocale>>()
         for (l in locales) {
-            val key = (l.language + (if (l.script != null) "-" + l.script else "")).lowercase()
+            val key = (l.language + (if (l.script != null) "-" + l.script else "")).lowercase(java.util.Locale.ROOT)
             groups.getOrPut(key) { ArrayList() }.add(l)
             if (l.language in familyScripts) groups.getOrPut(l.language) { ArrayList() }.add(l)
         }
@@ -55,17 +58,23 @@ class LocaleResolver(manifest: Map<String, Any?>) {
         }
         val items = ArrayList<Triple<String, Int, String?>>()
         for (k in families.keys) items.add(Triple(k, 1, k))
-        for (l in locales) for (tag in listOf(l.id) + l.aliases) if (tag.lowercase() !in families) items.add(Triple(tag.lowercase(), 0, l.id))
+        for (l in locales) for (tag in listOf(l.id) + l.aliases) if (tag.lowercase(java.util.Locale.ROOT) !in families) items.add(Triple(tag.lowercase(java.util.Locale.ROOT), 0, l.id))
         @Suppress("UNCHECKED_CAST")
-        for (x in manifest["exclusions"] as List<String>) items.add(Triple(x.lowercase(), 2, null))
+        for (x in manifest["exclusions"] as List<String>) items.add(Triple(x.lowercase(java.util.Locale.ROOT), 2, null))
         prefixes = items.sortedWith(compareBy({ -it.first.length }, { it.first }))
+        prefixIndex = prefixes.associateBy { it.first }
+        localeIndex = locales.associateBy { it.id }
+        variantCountry = families.mapValues { (_, family) -> countries.mapNotNull { (country, candidates) ->
+            candidates.firstOrNull { it in family.first }?.let { country to it }
+        }.toMap() }
     }
 
-    fun byId(id: String) = locales.firstOrNull { it.id == id }
+    fun byId(id: String) = localeIndex[id]
 
     private fun tagRegion(tag: String): String? {
         for (part in tag.split('-').drop(1)) {
-            if (part.length == 2 && part.all { it.isLetter() }) return part.uppercase()
+            if (part.length == 1) break
+            if (part.length == 2 && part.all { it.isLetter() }) return part.uppercase(java.util.Locale.ROOT)
             if (part.length == 3 && part.all { it.isDigit() }) return null
         }
         return null
@@ -73,12 +82,22 @@ class LocaleResolver(manifest: Map<String, Any?>) {
 
     /** Normalizes one tag (device, persisted or legacy value) to a supported locale id, or null. */
     fun match(value: String?, deviceRegion: String? = null): String? {
-        if (value == null) return null
-        val tag = value.trim(' ', '\t', '\r', '\n').replace('_', '-').lowercase()
+        if (value == null || value.length > 64) return null
+        val tag = value.trim(' ', '\t', '\r', '\n').replace('_', '-').lowercase(java.util.Locale.ROOT)
         if (!inputTag.matches(tag)) return null
         ids[tag]?.let { return it }
-        val region = deviceRegion?.takeIf { it.length == 2 && it.all { c -> c in 'A'..'Z' || c in 'a'..'z' } }?.uppercase()
-        for ((prefix, kind, target) in prefixes) {
+        val region = deviceRegion?.takeIf { it.length == 2 && it.all { c -> c in 'A'..'Z' || c in 'a'..'z' } }?.uppercase(java.util.Locale.ROOT)
+        val parts = tag.split('-')
+        if (parts.size > 1 && parts[1].length == 4 && parts[1].all { it.isLetter() }) {
+            @Suppress("UNCHECKED_CAST") val scripts = regionalPolicy["scripts"] as? Map<String, String>
+            val expected = if (parts[0] == "zh") setOf("hans", "hant") else setOfNotNull(scripts?.get(parts[0])?.lowercase(java.util.Locale.ROOT))
+            if (expected.isNotEmpty() && parts[1] !in expected) return null
+        }
+        var key = tag
+        while (true) {
+            val entry = prefixIndex[key]
+            if (entry == null) { val i = key.lastIndexOf('-'); if (i < 0) return null; key = key.substring(0, i); continue }
+            val (prefix, kind, target) = entry
             if (tag == prefix || tag.startsWith("$prefix-")) {
                 when (kind) {
                     0 -> return target
@@ -94,11 +113,36 @@ class LocaleResolver(manifest: Map<String, Any?>) {
         return null
     }
 
-    /** (locale id, source): "manual", "preferred" or "default". */
-    fun resolve(manual: String?, preferred: List<String>, deviceRegion: String?): Pair<String, String> {
-        match(manual, deviceRegion)?.let { return it to "manual" }
-        for (p in preferred) match(p, deviceRegion)?.let { return it to "preferred" }
-        return default to "default"
+    private fun family(id: String): String { val l = localeIndex.getValue(id); return (l.language + (l.script?.let { "-$it" } ?: "")).lowercase(java.util.Locale.ROOT) }
+    fun variant(seed: String, explicit: String?, preferred: List<String>, country: String?, deviceRegion: String?): String {
+        val f = family(seed)
+        if (families[f]?.first?.size == 1) return seed
+        if (explicit != null) {
+            val parts = explicit.trim().replace('_', '-').lowercase(java.util.Locale.ROOT).split('-')
+            val core = parts.take(1) + parts.drop(1).takeWhile { it.length != 1 }
+            if (ids[core.joinToString("-")] != null && core.drop(1).any { it.length == 2 || (it.length == 3 && it.all(Char::isDigit)) }) return seed
+        }
+        variantCountry[f]?.get(country?.uppercase(java.util.Locale.ROOT))?.let { return it }
+        for (p in preferred.take(128)) { val id = match(p); if (id != null && family(id) == f && (tagRegion(p) != null || id != families[f]?.second)) return id }
+        // Device region is a formatting preference, never a territorial language default.
+        variantCountry[f]?.get(deviceRegion?.uppercase(java.util.Locale.ROOT))?.let { return it }
+        return families[f]?.second ?: seed
+    }
+    /** Trusted geography is optional; production TempleOS clients do not obtain it. */
+    fun resolve(manual: String?, preferred: List<String>, deviceRegion: String?, country: String? = null,
+                subdivision: String? = null, appLanguage: String? = null, wholeValencia: Boolean = false): Pair<String, String> {
+        for ((source, value) in listOf("manual" to manual, "app" to appLanguage)) match(value)?.let { return variant(it, value, preferred, country, deviceRegion) to source }
+        for (p in preferred.take(128)) match(p, country ?: deviceRegion)?.let { return variant(it, null, preferred, country, deviceRegion) to "preferred" }
+        val cc = country?.uppercase(java.util.Locale.ROOT)?.takeIf { it.length == 2 && it.all { c -> c in 'A'..'Z' } }
+        val region = subdivision?.uppercase(java.util.Locale.ROOT)?.removePrefix("$cc-")?.takeIf { it.length in 1..3 && it.all { c -> c in 'A'..'Z' || c in '0'..'9' } }
+        val catalanCountries = regionalPolicy["catalan_countries"] as? List<*> ?: emptyList<String>()
+        val catalanRegions = regionalPolicy["catalan_regions"] as? List<*> ?: emptyList<String>()
+        val territory = "$cc-$region"
+        val valencia = wholeValencia || regionalPolicy["valencia_whole_region"] == true
+        if (cc in catalanCountries || territory in catalanRegions || territory == "ES-VC" && valencia) match("ca")?.let { return it to "region" }
+        @Suppress("UNCHECKED_CAST") val ambiguous = regionalPolicy["ambiguous_countries"] as? List<String> ?: listOf("BE", "CA", "CH", "CY", "IN", "LU", "SG", "ZA")
+        if (cc != null && cc !in ambiguous) countries[cc]?.firstOrNull()?.let { return it to "country" }
+        return variant(default, null, emptyList(), cc, null) to "default"
     }
 }
 
@@ -139,7 +183,7 @@ object L10n {
         source = runtimeFile
         val m = runtimeFile("l10n/locales.json")
         @Suppress("UNCHECKED_CAST")
-        resolver = m?.let { LocaleResolver(Json.parse(String(it, Charsets.UTF_8)) as Map<String, Any?>) }
+        resolver = m?.let { LocaleResolver(Json.parse(String(it, Charsets.UTF_8)) as Map<String, Any?>, runtimeFile("l10n/regional-policy.json")?.let { bytes -> Json.parse(String(bytes, Charsets.UTF_8)) as Map<String, Any?> } ?: emptyMap()) }
         english = catalog("en")
         if (locale == null) { locale = resolver?.byId("en-US"); strings = english }
     }

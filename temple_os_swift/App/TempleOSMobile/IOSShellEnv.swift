@@ -298,6 +298,11 @@ final class IOSShellEnv: ShellEnv {
 
     /** The app's languages, most preferred first: includes the per-app language from iOS Settings. */
     func preferredLanguages() -> [String] { Locale.preferredLanguages }
+    func applicationLanguage() -> String? {
+        guard let id = Bundle.main.bundleIdentifier,
+              let tags = UserDefaults.standard.persistentDomain(forName: id)?["AppleLanguages"] as? [String] else { return nil }
+        return tags.prefix(128).first { L10n.resolver?.match($0) != nil }
+    }
 
     func deviceRegion() -> String? {
         if #available(iOS 16, *) { return Locale.current.region?.identifier }

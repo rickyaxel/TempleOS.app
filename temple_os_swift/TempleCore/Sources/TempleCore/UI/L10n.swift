@@ -38,6 +38,10 @@ public final class LocaleResolver {
     public let `default`: String
     public let locales: [UiLocale]
     private let inputTag: NSRegularExpression?
+    private let regionalPolicy: [String: Any?]
+    private var localeIndex: [String: UiLocale] = [:]
+    private var prefixIndex: [String: (String, Int, String?)] = [:]
+    private var variantCountry: [String: [String: String]] = [:]
     private let countries: [String: [String]]
     private let ids: [String: String]
     private var families: [String: ([String], String?)] = [:]
@@ -47,7 +51,8 @@ public final class LocaleResolver {
      * Kotlin casts the manifest's fields (a malformed manifest throws ClassCastException);
      * Swift reads them defensively (a missing or mistyped field is treated as empty).
      */
-    public init(_ manifest: [String: Any?]) {
+    public init(_ manifest: [String: Any?], _ regionalPolicy: [String: Any?] = [:]) {
+        self.regionalPolicy = regionalPolicy
         `default` = jget(manifest, "default_locale", String.self) ?? "en-US"
         locales = (jget(manifest, "locales", [Any?].self) ?? []).compactMap { $0 as? [String: Any?] }.map { m in
             UiLocale(jget(m, "id", String.self) ?? "", jget(m, "catalog", String.self) ?? "", jget(m, "parent", String.self),
@@ -94,14 +99,22 @@ public final class LocaleResolver {
             if a.element.0 != b.element.0 { return a.element.0.utf16.lexicographicallyPrecedes(b.element.0.utf16) }
             return a.offset < b.offset
         }.map { $0.element }
+        localeIndex = Dictionary(uniqueKeysWithValues: locales.map { ($0.id, $0) })
+        prefixIndex = Dictionary(prefixes.map { ($0.0, $0) }, uniquingKeysWith: { first, _ in first })
+        for (key, family) in families {
+            var variants: [String: String] = [:]
+            for (country, candidates) in countries { variants[country] = candidates.first { family.0.contains($0) } }
+            variantCountry[key] = variants
+        }
     }
 
-    public func byId(_ id: String) -> UiLocale? { locales.first { $0.id == id } }
+    public func byId(_ id: String) -> UiLocale? { localeIndex[id] }
 
     private static func isAsciiLetter(_ c: Character) -> Bool { ("a"..."z").contains(c) || ("A"..."Z").contains(c) }
 
     private func tagRegion(_ tag: String) -> String? {
         for part in tag.split(separator: "-", omittingEmptySubsequences: false).dropFirst() {
+            if part.count == 1 { break }
             if part.count == 2 && part.allSatisfy({ $0.isLetter }) { return part.uppercased() }
             if part.count == 3 && part.allSatisfy({ $0.isNumber }) { return nil }
         }
@@ -110,13 +123,23 @@ public final class LocaleResolver {
 
     /** Normalizes one tag (device, persisted or legacy value) to a supported locale id, or nil. */
     public func match(_ value: String?, _ deviceRegion: String? = nil) -> String? {
-        guard let value = value else { return nil }
+        guard let value = value, value.utf8.count <= 64 else { return nil }
         let tag = value.trimmingCharacters(in: CharacterSet(charactersIn: " \t\r\n")).replacingOccurrences(of: "_", with: "-").lowercased()
         guard let re = inputTag, re.firstMatch(in: tag, range: NSRange(location: 0, length: tag.utf16.count)) != nil else { return nil }
         if let id = ids[tag] { return id }
         var region: String? = nil
         if let d = deviceRegion, d.count == 2, d.allSatisfy({ LocaleResolver.isAsciiLetter($0) }) { region = d.uppercased() }
-        for (prefix, kind, target) in prefixes {
+        let parts = tag.split(separator: "-")
+        if parts.count > 1, parts[1].count == 4, parts[1].allSatisfy({ $0.isLetter }) {
+            let scripts = jget(regionalPolicy, "scripts", [String: String].self) ?? [:]
+            let expected = parts[0] == "zh" ? ["hans", "hant"] : scripts[String(parts[0])].map { [$0.lowercased()] } ?? []
+            if !expected.isEmpty && !expected.contains(String(parts[1])) { return nil }
+        }
+        var key = tag
+        while true {
+            guard let (prefix, kind, target) = prefixIndex[key] else {
+                guard let i = key.lastIndex(of: "-") else { return nil }; key = String(key[..<i]); continue
+            }
             if tag == prefix || tag.hasPrefix(prefix + "-") {
                 switch kind {
                 case 0: return target
@@ -131,14 +154,40 @@ public final class LocaleResolver {
                 return def
             }
         }
-        return nil
     }
 
-    /** (locale id, source): "manual", "preferred" or "default". */
-    public func resolve(_ manual: String?, _ preferred: [String], _ deviceRegion: String?) -> (String, String) {
-        if let m = match(manual, deviceRegion) { return (m, "manual") }
-        for p in preferred { if let m = match(p, deviceRegion) { return (m, "preferred") } }
-        return (`default`, "default")
+    private func family(_ id: String) -> String { let l = localeIndex[id]!; return (l.language + (l.script.map { "-" + $0 } ?? "")).lowercased() }
+    public func variant(_ seed: String, _ explicit: String?, _ preferred: [String], _ country: String?, _ deviceRegion: String?) -> String {
+        let f = family(seed)
+        if families[f]?.0.count == 1 { return seed }
+        if let explicit {
+            let parts = explicit.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "_", with: "-").lowercased().split(separator: "-")
+            let core = [parts.first.map(String.init) ?? ""] + parts.dropFirst().prefix { $0.count != 1 }.map(String.init)
+            if ids[core.joined(separator: "-")] != nil && core.dropFirst().contains(where: { $0.count == 2 || ($0.count == 3 && $0.allSatisfy(\.isNumber)) }) { return seed }
+        }
+        if let cc = country?.uppercased(), let id = variantCountry[f]?[cc] { return id }
+        for p in preferred.prefix(128) { if let id = match(p), family(id) == f, tagRegion(p) != nil || id != families[f]?.1 { return id } }
+        if let cc = deviceRegion?.uppercased(), let id = variantCountry[f]?[cc] { return id }
+        return families[f]?.1 ?? seed
+    }
+    /// Geography is optional. Production TempleOS apps remain entirely offline.
+    public func resolve(_ manual: String?, _ preferred: [String], _ deviceRegion: String?, country: String? = nil,
+                        subdivision: String? = nil, appLanguage: String? = nil, wholeValencia: Bool = false) -> (String, String) {
+        for (source, value) in [("manual", manual), ("app", appLanguage)] { if let id = match(value) { return (variant(id, value, preferred, country, deviceRegion), source) } }
+        for p in preferred.prefix(128) { if let id = match(p, country ?? deviceRegion) { return (variant(id, nil, preferred, country, deviceRegion), "preferred") } }
+        let cc = country?.uppercased()
+        var region = subdivision?.uppercased()
+        if let cc, region?.hasPrefix(cc + "-") == true { region = String(region!.dropFirst(3)) }
+        let catalanCountries = jget(regionalPolicy, "catalan_countries", [String].self) ?? []
+        let catalanRegions = jget(regionalPolicy, "catalan_regions", [String].self) ?? []
+        let valencia = wholeValencia || jget(regionalPolicy, "valencia_whole_region", Bool.self) == true
+        let territory = (cc ?? "") + "-" + (region ?? "")
+        if catalanCountries.contains(cc ?? "") || catalanRegions.contains(territory) || territory == "ES-VC" && valencia {
+            if let id = match("ca") { return (id, "region") }
+        }
+        let ambiguous = jget(regionalPolicy, "ambiguous_countries", [String].self) ?? ["BE", "CA", "CH", "CY", "IN", "LU", "SG", "ZA"]
+        if let cc, !ambiguous.contains(cc), let id = countries[cc]?.first { return (id, "country") }
+        return (variant(`default`, nil, [], cc, nil), "default")
     }
 }
 
@@ -188,7 +237,10 @@ public enum L10n {
         if source != nil && resolver != nil { return }
         source = runtimeFile
         let m = runtimeFile("l10n/locales.json")
-        resolver = m.flatMap { (try? Json.parse(String(decoding: $0, as: UTF8.self))) as? [String: Any?] }.map { LocaleResolver($0) }
+        resolver = m.flatMap { (try? Json.parse(String(decoding: $0, as: UTF8.self))) as? [String: Any?] }.map { manifest in
+            let policy = runtimeFile("l10n/regional-policy.json").flatMap { (try? Json.parse(String(decoding: $0, as: UTF8.self))) as? [String: Any?] } ?? [:]
+            return LocaleResolver(manifest, policy)
+        }
         english = catalog("en")
         if locale == nil { locale = resolver?.byId("en-US"); strings = english }
     }

@@ -59,6 +59,18 @@ final class L10nTests: XCTestCase {
         }
     }
 
+    func testHierarchicalSharedVectors() {
+        let r = LocaleResolver(json(l10n.appendingPathComponent("locales.json")), json(l10n.appendingPathComponent("regional-policy.json")))
+        let vectors = json(SHARED.appendingPathComponent("test-vectors/l10n/hierarchical-v1.json"))["vectors"] as! [[String: Any?]]
+        for v in vectors {
+            let value: (String) -> String? = { (v[$0] ?? nil) as? String }
+            let result = r.resolve(value("manual"), v["preferred"] as! [String], nil, country: value("country"), subdivision: value("region"))
+            XCTAssertEqual(result.0, value("expected"), value("name") ?? "")
+        }
+        XCTAssertEqual(r.resolve(nil, [], nil, country: "ES", subdivision: "VC", wholeValencia: true).0, "ca")
+        XCTAssertEqual(r.resolve(nil, [], "ES").0, "en-US", "device region is not geography")
+    }
+
     func testManifestAndCatalogs() {
         let m = json(l10n.appendingPathComponent("locales.json"))
         let locales = (m["locales"] as! [Any?]).map { $0 as! [String: Any?] }

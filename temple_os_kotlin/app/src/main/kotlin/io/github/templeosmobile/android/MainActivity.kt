@@ -47,6 +47,7 @@ class MainActivity : Activity() {
             // benchmarks: --ez nosession true starts with no restored windows (ColorOS refuses `pm clear` from adb)
             if (!automation || intent?.getBooleanExtra("nosession", false) != true) shell.restoreSession()
             else shell.awaitingRestore = false // test tools: start empty and save as usual
+            reconcilePlatformLanguage(migrate = true)
             // benchmarks: --es engine native|terry selects the engine (Settings > Engine) for automated runs
             if (automation) when (intent?.getStringExtra("engine")) {
                 "native" -> shell.settings.engine = io.github.templeosmobile.core.ui.Settings.ENGINE_NATIVE
@@ -79,7 +80,7 @@ class MainActivity : Activity() {
             "portrait" -> requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
             "user" -> requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_USER
         }
-        request?.getStringExtra("inputLanguage")?.let { shell.settings.language = it; shell.applyLanguage(); shell.invalidate() }
+        request?.getStringExtra("inputLanguage")?.let { shell.settings.language = it; env.selectApplicationLanguage(it); shell.applyLanguage(); shell.invalidate() }
     }
 
     override fun onNewIntent(request: Intent) {
@@ -90,6 +91,23 @@ class MainActivity : Activity() {
         if (request.getBooleanExtra("inputRecreate", false)) {
             request.removeExtra("inputRecreate")
             shell.saveSession(); recreate()
+        }
+    }
+
+    private fun reconcilePlatformLanguage(migrate: Boolean) {
+        if (Build.VERSION.SDK_INT < 33) return
+        val storage = getSharedPreferences("language_platform", MODE_PRIVATE)
+        val platform = env.applicationLanguage().orEmpty()
+        if (migrate && !storage.getBoolean("synced", false)) {
+            storage.edit().putBoolean("synced", true).apply()
+            if (platform.isEmpty() && shell.settings.language.isNotEmpty()) {
+                env.selectApplicationLanguage(shell.settings.language)
+                return
+            }
+        }
+        if (shell.settings.language != platform) {
+            shell.settings.language = platform
+            shell.applyLanguage()
         }
     }
 
@@ -110,6 +128,7 @@ class MainActivity : Activity() {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         if (benchOnly) return
+        reconcilePlatformLanguage(migrate = false)
         shell.applyLanguage()
         systemBars.invalidate()
         shell.invalidate() // re-render: the bars are applied after it

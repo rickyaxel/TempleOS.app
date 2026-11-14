@@ -293,6 +293,18 @@ class AndroidShellEnv(private val context: Context, soundCapture: File? = null, 
         return (0 until l.size()).map { l[it].toLanguageTag() }
     }
 
+    override fun applicationLanguage(): String? = if (android.os.Build.VERSION.SDK_INT >= 33) {
+        context.getSystemService(android.app.LocaleManager::class.java).applicationLocales.toLanguageTags().split(',').take(128).firstOrNull { io.github.templeosmobile.core.ui.L10n.resolver?.match(it) != null }
+    } else null
+
+    override fun selectApplicationLanguage(value: String?) {
+        if (android.os.Build.VERSION.SDK_INT >= 33) {
+            val manager = context.getSystemService(android.app.LocaleManager::class.java)
+            val next = android.os.LocaleList.forLanguageTags(value.orEmpty())
+            if (manager.applicationLocales != next) manager.applicationLocales = next
+        }
+    }
+
     override fun deviceRegion(): String? =
         android.content.res.Resources.getSystem().configuration.locales.takeIf { !it.isEmpty }?.get(0)?.country?.ifEmpty { null }
 

@@ -30,6 +30,8 @@ interface ShellEnv {
     fun preferredLanguages(): List<String> = listOf("en-US")
     /** The device's region setting (ISO 3166 code), used only to pick a variant of a language. */
     fun deviceRegion(): String? = null
+    fun applicationLanguage(): String? = null
+    fun selectApplicationLanguage(value: String?) {}
     /** Width in logical px of [s] drawn by the platform's text engine (see [Surface.TextRun]). */
     fun measureText(s: String): Int = s.length * 8
     val memoryLimitBytes: Int get() = 32 shl 20
@@ -67,7 +69,7 @@ class Shell(val env: ShellEnv) {
     /** Re-resolves the UI language (settings changed, device language changed); keeps all state. */
     fun applyLanguage() {
         val r = L10n.resolver ?: return
-        val (id, _) = r.resolve(settings.language.ifEmpty { null }, env.preferredLanguages(), env.deviceRegion())
+        val (id, _) = r.resolve(settings.language.ifEmpty { null }, env.preferredLanguages(), env.deviceRegion(), appLanguage = env.applicationLanguage())
         val before = L10n.version
         L10n.use(id)
         if (L10n.version != before) { windows.forEach { it.app.dirty = true }; invalidate() }

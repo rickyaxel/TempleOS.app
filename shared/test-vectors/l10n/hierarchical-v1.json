@@ -1,0 +1,425 @@
+{
+  "version": "hierarchical-locale-v1",
+  "vectors": [
+    {
+      "name": "spanish-spain",
+      "manual": null,
+      "preferred": [
+        "es"
+      ],
+      "country": "ES",
+      "region": null,
+      "expected": "es-ES"
+    },
+    {
+      "name": "spanish-mexico",
+      "manual": null,
+      "preferred": [
+        "es"
+      ],
+      "country": "MX",
+      "region": null,
+      "expected": "es-MX"
+    },
+    {
+      "name": "spanish-argentina",
+      "manual": null,
+      "preferred": [
+        "es"
+      ],
+      "country": "AR",
+      "region": null,
+      "expected": "es-419"
+    },
+    {
+      "name": "english-britain",
+      "manual": null,
+      "preferred": [
+        "en"
+      ],
+      "country": "GB",
+      "region": null,
+      "expected": "en-GB"
+    },
+    {
+      "name": "english-us",
+      "manual": null,
+      "preferred": [
+        "en"
+      ],
+      "country": "US",
+      "region": null,
+      "expected": "en-US"
+    },
+    {
+      "name": "english-spain",
+      "manual": null,
+      "preferred": [
+        "en"
+      ],
+      "country": "ES",
+      "region": null,
+      "expected": "en-US"
+    },
+    {
+      "name": "portuguese-brazil",
+      "manual": null,
+      "preferred": [
+        "pt"
+      ],
+      "country": "BR",
+      "region": null,
+      "expected": "pt-BR"
+    },
+    {
+      "name": "portuguese-portugal",
+      "manual": null,
+      "preferred": [
+        "pt-BR"
+      ],
+      "country": "PT",
+      "region": null,
+      "expected": "pt-PT"
+    },
+    {
+      "name": "japanese-spain",
+      "manual": null,
+      "preferred": [
+        "ja"
+      ],
+      "country": "ES",
+      "region": null,
+      "expected": "ja-JP"
+    },
+    {
+      "name": "korean-mexico",
+      "manual": null,
+      "preferred": [
+        "ko"
+      ],
+      "country": "MX",
+      "region": null,
+      "expected": "ko-KR"
+    },
+    {
+      "name": "catalan-us",
+      "manual": null,
+      "preferred": [
+        "ca"
+      ],
+      "country": "US",
+      "region": null,
+      "expected": "ca"
+    },
+    {
+      "name": "french-germany",
+      "manual": null,
+      "preferred": [
+        "fr"
+      ],
+      "country": "DE",
+      "region": null,
+      "expected": "fr-FR"
+    },
+    {
+      "name": "catalonia-default",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": "CT",
+      "expected": "ca"
+    },
+    {
+      "name": "catalonia-english",
+      "manual": null,
+      "preferred": [
+        "en"
+      ],
+      "country": "ES",
+      "region": "CT",
+      "expected": "en-US"
+    },
+    {
+      "name": "catalonia-spanish",
+      "manual": null,
+      "preferred": [
+        "es"
+      ],
+      "country": "ES",
+      "region": "CT",
+      "expected": "es-ES"
+    },
+    {
+      "name": "madrid",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": "MD",
+      "expected": "es-ES"
+    },
+    {
+      "name": "andorra",
+      "manual": null,
+      "preferred": [],
+      "country": "AD",
+      "region": null,
+      "expected": "ca"
+    },
+    {
+      "name": "spain-unknown-region",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": null,
+      "expected": "es-ES"
+    },
+    {
+      "name": "explicit-mexican",
+      "manual": "es-MX",
+      "preferred": [
+        "en"
+      ],
+      "country": "ES",
+      "region": null,
+      "expected": "es-MX"
+    },
+    {
+      "name": "offline-catalan",
+      "manual": null,
+      "preferred": [
+        "ca"
+      ],
+      "country": null,
+      "region": null,
+      "expected": "ca"
+    },
+    {
+      "name": "generic-spanish-travel",
+      "manual": "es",
+      "preferred": [
+        "en"
+      ],
+      "country": "MX",
+      "region": null,
+      "expected": "es-MX"
+    },
+    {
+      "name": "supported-secondary",
+      "manual": null,
+      "preferred": [
+        "cy-GB",
+        "ja"
+      ],
+      "country": "ES",
+      "region": "CT",
+      "expected": "ja-JP"
+    },
+    {
+      "name": "automatic-mexican-spain",
+      "manual": null,
+      "preferred": [
+        "es-MX"
+      ],
+      "country": "ES",
+      "region": null,
+      "expected": "es-ES"
+    },
+    {
+      "name": "balearics",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": "IB",
+      "expected": "ca"
+    },
+    {
+      "name": "valencia-disabled",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": "VC",
+      "expected": "es-ES"
+    },
+    {
+      "name": "aragon-negative",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": "AR",
+      "expected": "es-ES"
+    },
+    {
+      "name": "murcia-negative",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": "MC",
+      "expected": "es-ES"
+    },
+    {
+      "name": "occitanie-negative",
+      "manual": null,
+      "preferred": [],
+      "country": "FR",
+      "region": "OCC",
+      "expected": "fr-FR"
+    },
+    {
+      "name": "sardinia-negative",
+      "manual": null,
+      "preferred": [],
+      "country": "IT",
+      "region": "88",
+      "expected": "it-IT"
+    },
+    {
+      "name": "italy-negative",
+      "manual": null,
+      "preferred": [],
+      "country": "IT",
+      "region": null,
+      "expected": "it-IT"
+    },
+    {
+      "name": "malformed-region",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": "CT,MD",
+      "expected": "es-ES"
+    },
+    {
+      "name": "wrong-country-region",
+      "manual": null,
+      "preferred": [],
+      "country": "FR",
+      "region": "CT",
+      "expected": "fr-FR"
+    },
+    {
+      "name": "traditional-in-china",
+      "manual": null,
+      "preferred": [
+        "zh-TW"
+      ],
+      "country": "CN",
+      "region": null,
+      "expected": "zh-TW"
+    },
+    {
+      "name": "simplified-in-taiwan",
+      "manual": null,
+      "preferred": [
+        "zh-Hans"
+      ],
+      "country": "TW",
+      "region": null,
+      "expected": "zh-CN"
+    },
+    {
+      "name": "explicit-traditional",
+      "manual": "zh-HK",
+      "preferred": [
+        "zh-CN"
+      ],
+      "country": "CN",
+      "region": null,
+      "expected": "zh-HK"
+    },
+    {
+      "name": "unsupported-script",
+      "manual": null,
+      "preferred": [
+        "fr-Cyrl",
+        "ja"
+      ],
+      "country": "ES",
+      "region": null,
+      "expected": "ja-JP"
+    },
+    {
+      "name": "unknown-everything",
+      "manual": null,
+      "preferred": [
+        "zz-ZZ"
+      ],
+      "country": null,
+      "region": null,
+      "expected": "en-US"
+    },
+    {
+      "name": "regional-secondary",
+      "manual": null,
+      "preferred": [
+        "fr",
+        "fr-CA"
+      ],
+      "country": null,
+      "region": null,
+      "expected": "fr-CA"
+    },
+    {
+      "name": "unsupported-manual-variant",
+      "manual": "es-AR",
+      "preferred": [],
+      "country": "ES",
+      "region": null,
+      "expected": "es-ES"
+    },
+    {
+      "name": "explicit-unicode-extension",
+      "manual": "es-MX-u-ca-gregory",
+      "preferred": [],
+      "country": "ES",
+      "region": null,
+      "expected": "es-MX"
+    },
+    {
+      "name": "automatic-extension-is-not-geography",
+      "manual": null,
+      "preferred": [
+        "en-u-ca-gregory"
+      ],
+      "country": null,
+      "region": null,
+      "expected": "en-US"
+    },
+    {
+      "name": "full-subdivision",
+      "manual": null,
+      "preferred": [],
+      "country": "ES",
+      "region": "ES-CT",
+      "expected": "ca"
+    },
+    {
+      "name": "numeric-regional-pin",
+      "manual": "es-419",
+      "preferred": [],
+      "country": "ES",
+      "region": null,
+      "expected": "es-419"
+    },
+    {
+      "name": "unknown-country-with-supported-language",
+      "manual": null,
+      "preferred": [
+        "ja"
+      ],
+      "country": "QQ",
+      "region": "CT",
+      "expected": "ja-JP"
+    },
+    {
+      "name": "unspecified-chinese-script",
+      "manual": null,
+      "preferred": [
+        "zh",
+        "ja"
+      ],
+      "country": "TW",
+      "region": null,
+      "expected": "zh-TW"
+    }
+  ]
+}

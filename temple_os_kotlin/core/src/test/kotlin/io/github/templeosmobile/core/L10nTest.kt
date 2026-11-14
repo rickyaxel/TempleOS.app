@@ -40,6 +40,17 @@ class L10nTest {
         }
     }
 
+    @Test fun hierarchicalSharedVectors() {
+        val r = LocaleResolver(json(File(l10n, "locales.json")), json(File(l10n, "regional-policy.json")))
+        @Suppress("UNCHECKED_CAST") val vectors = json(File(SHARED, "test-vectors/l10n/hierarchical-v1.json"))["vectors"] as List<Map<String, Any?>>
+        for (v in vectors) {
+            @Suppress("UNCHECKED_CAST") val result = r.resolve(v["manual"] as String?, v["preferred"] as List<String>, null, country=v["country"] as String?, subdivision=v["region"] as String?)
+            assertEquals(v["name"] as String, v["expected"], result.first)
+        }
+        assertEquals("ca", r.resolve(null, emptyList(), null, country="ES", subdivision="VC", wholeValencia=true).first)
+        assertEquals("en-US", r.resolve(null, emptyList(), "ES").first)
+    }
+
     @Test fun manifestAndCatalogs() {
         val m = json(File(l10n, "locales.json"))
         @Suppress("UNCHECKED_CAST")

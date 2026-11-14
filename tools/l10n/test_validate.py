@@ -41,6 +41,7 @@ class CatalogValidationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             (root / 'locales.json').write_text(json.dumps(manifest))
+            (root / 'regional-policy.json').write_text((original / 'regional-policy.json').read_text())
             for locale in manifest['locales']:
                 (root / (locale['catalog'] + '.json')).write_text('{}')
             (root / 'unused.json').write_text('{}')

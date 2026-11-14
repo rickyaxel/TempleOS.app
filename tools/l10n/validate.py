@@ -92,12 +92,21 @@ def check_manifest():
         if row in rows: errors.append(f"manifest: {l['id']} and {rows[row]} show the same language-list row")
         rows.setdefault(row, l['id'])
     if not str(m.get('app_name') or '').strip(): errors.append('manifest: app_name missing')
+    policy = load(os.path.join(L10N, 'regional-policy.json'))
+    if policy.get('version') != 'hierarchical-locale-v1': errors.append('regional policy: unsupported version')
+    for region in policy.get('catalan_regions', []):
+        if not re.fullmatch('[A-Z]{2}-[A-Z0-9]{1,3}', region): errors.append('regional policy: invalid subdivision')
+    if not isinstance(policy.get('valencia_whole_region'), bool): errors.append('regional policy: Valencia switch must be boolean')
+    for country in policy.get('catalan_countries', []) + policy.get('ambiguous_countries', []):
+        if not re.fullmatch('[A-Z]{2}', country): errors.append('regional policy: invalid country')
+    for language, script in policy.get('scripts', {}).items():
+        if not re.fullmatch('[a-z]{2,3}', language) or not re.fullmatch('[A-Z][a-z]{3}', script): errors.append('regional policy: invalid script')
     cats = sorted({l['catalog'] for l in locs})
     if len(cats) != 73: errors.append(f'manifest: {len(cats)} catalogs, expected 73')
     for c in cats:
         if not os.path.exists(os.path.join(L10N, c + '.json')):
             errors.append(f'catalog file missing: {c}.json')
-    files = {f[:-5] for f in os.listdir(L10N) if f.endswith('.json') and f != 'locales.json'}
+    files = {f[:-5] for f in os.listdir(L10N) if f.endswith('.json') and f not in ('locales.json', 'regional-policy.json')}
     for c in sorted(files - set(cats)): errors.append(f'orphaned catalog file: {c}.json')
     parents = {l['id']: l.get('parent') for l in locs}
     for locale in ids:

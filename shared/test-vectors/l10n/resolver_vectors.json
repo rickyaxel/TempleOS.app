@@ -725,13 +725,13 @@
    "source": "manual"
   },
   {
-   "name": "Stored canonical generic Malay stays generic",
+   "name": "Generic Malay follows formatting preference",
    "device_region": "MY",
    "preferred": [
     "en-US"
    ],
    "manual": "ms",
-   "expected": "ms",
+   "expected": "ms-MY",
    "source": "manual"
   },
   {

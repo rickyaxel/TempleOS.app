@@ -6,10 +6,11 @@ Same contract as the Kotlin (core/l10n/LocaleResolver.kt) and Swift
 shared/test-vectors/l10n/resolver_vectors.json.
 
 Adapted from an earlier resolver by the same author,
-with one deliberate difference: TempleOS Mobile never uses geography. The only "country" input
-is the device's own region setting, and it is used only to choose a member of a language family
-(bare `fr` on a device set to Canada -> fr-CA). There are no region/country default steps:
-after the explicit choice and the device's preferred languages comes en-US.
+with an offline production boundary: TempleOS Mobile does not obtain geography.
+Its ordinary region input is the device setting, used only as a variant preference.
+The optional country/subdivision arguments exercise the shared hierarchical
+policy in parity tests; production callers leave them absent. No device setting is
+promoted to trusted geography, and startup never waits for a server.
 
 Usage: resolver.py --make-vectors REFERENCE.json   (regenerates the shared vectors from a reference set)
 """
@@ -21,6 +22,7 @@ MANIFEST = os.path.join(ROOT, 'shared/runtime/l10n/locales.json')
 
 class Resolver:
     def __init__(self, manifest):
+        self.policy=json.load(open(os.path.join(ROOT,'shared/runtime/l10n/regional-policy.json')))
         self.default = manifest['default_locale']
         self.locales = manifest['locales']
         self.input_tag = re.compile(manifest['input_tag'])
@@ -48,6 +50,7 @@ class Resolver:
     @staticmethod
     def tag_region(tag):
         for part in tag.split('-')[1:]:
+            if len(part) == 1: break
             if len(part) == 2 and part.isalpha():
                 return part.upper()
             if len(part) == 3 and part.isdigit():
@@ -55,11 +58,15 @@ class Resolver:
         return None
 
     def match(self, value, device_region=None):
-        if not isinstance(value, str):
+        if not isinstance(value, str) or len(value)>64:
             return None
         tag = value.strip(' \t\r\n').replace('_', '-').lower()
         if not self.input_tag.fullmatch(tag):
             return None
+        parts=tag.split('-')
+        if len(parts)>1 and len(parts[1])==4 and parts[1].isalpha():
+            scripts=['hans','hant'] if parts[0]=='zh' else [self.policy['scripts'].get(parts[0],'').lower()]
+            if parts[1] not in scripts:return None
         if tag in self.ids:
             return self.ids[tag]
         region = device_region.upper() if isinstance(device_region, str) and re.fullmatch(r'[A-Za-z]{2}', device_region) else None
@@ -77,16 +84,31 @@ class Resolver:
                 return default
         return None
 
-    def resolve(self, manual=None, preferred=(), device_region=None):
-        """(locale id, source): manual -> first supported preferred language -> en-US."""
-        found = self.match(manual, device_region)
-        if found:
-            return found, 'manual'
-        for value in preferred or ():
-            found = self.match(value, device_region)
-            if found:
-                return found, 'preferred'
-        return self.default, 'default'
+    def variant(self, seed, explicit, preferred, country=None, device_region=None):
+        item=next(l for l in self.locales if l['id']==seed)
+        f=(item['language']+('-'+item['script'] if item['script'] else '')).lower()
+        members,default=self.families[f]
+        if explicit:
+            core=re.split(r'-[a-z0-9]-',explicit.strip().replace('_','-').lower(),maxsplit=1)[0]
+            if core in self.ids and re.search(r'-(?:[a-z]{2}|[0-9]{3})$',core):return seed
+        for c in self.countries.get(country,[]):
+            if c in members:return c
+        for p in preferred[:128]:
+            v=self.match(p)
+            if v in members and (self.tag_region(p) or v!=default):return v
+        for c in self.countries.get(device_region,[]):
+            if c in members:return c
+        return default or seed
+
+    def resolve(self, manual=None, preferred=(), device_region=None, country=None, subdivision=None):
+        found=self.match(manual)
+        if found:return self.variant(found,manual,preferred,country,device_region),'manual'
+        for p in preferred[:128]:
+            found=self.match(p,country or device_region)
+            if found:return self.variant(found,None,preferred,country,device_region),'preferred'
+        if country in self.policy['catalan_countries'] or (country or '')+'-'+(subdivision or '').removeprefix((country or '')+'-') in self.policy['catalan_regions']:return 'ca','region'
+        if country and country not in ('BE','CA','CH','CY','IN','LU','SG','ZA') and self.countries.get(country):return self.countries[country][0],'country'
+        return self.variant(self.default,None,[],country,None),'default'
 
 
 def load():

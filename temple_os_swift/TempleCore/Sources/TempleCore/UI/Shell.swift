@@ -27,6 +27,7 @@ public protocol ShellEnv: AnyObject {
     func preferredLanguages() -> [String]
     /** The device's region setting (ISO 3166 code), used only to pick a variant of a language. */
     func deviceRegion() -> String?
+    func applicationLanguage() -> String?
     /** Width in logical px of [s] drawn by the platform's text engine (see [Surface.TextRun]). */
     func measureText(_ s: String) -> Int
     var memoryLimitBytes: Int { get }
@@ -51,6 +52,7 @@ public extension ShellEnv {
     func requestRender() {}
     func preferredLanguages() -> [String] { ["en-US"] }
     func deviceRegion() -> String? { nil }
+    func applicationLanguage() -> String? { nil }
     func measureText(_ s: String) -> Int { s.scLen * 8 }
     var memoryLimitBytes: Int { 32 << 20 }
     var touchTargetDp: Double { 48.0 }
@@ -132,7 +134,7 @@ public final class Shell {
     /** Re-resolves the UI language (settings changed, device language changed); keeps all state. */
     public func applyLanguage() {
         guard let r = L10n.resolver else { return }
-        let (id, _) = r.resolve(settings.language.isEmpty ? nil : settings.language, env.preferredLanguages(), env.deviceRegion())
+        let (id, _) = r.resolve(settings.language.isEmpty ? nil : settings.language, env.preferredLanguages(), env.deviceRegion(), appLanguage: env.applicationLanguage())
         let before = L10n.version
         L10n.use(id)
         if L10n.version != before { windows.forEach { $0.app.dirty = true }; invalidate() }

@@ -1,5 +1,7 @@
 # Localization
 
+Current resolution and OS integration (2026-11-03): [hierarchical-language-resolution.md](hierarchical-language-resolution.md). Dated resolver audits below describe earlier behavior; the linked policy supersedes them.
+
 > How localized text is rendered (TempleOS font vs platform text runs, sharpness, tall scripts): see
 > `typography/TEMPLEOS_TYPOGRAPHY.md`.
 
