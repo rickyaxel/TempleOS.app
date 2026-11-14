@@ -104,6 +104,7 @@ run: **14 tests, 0 failures**.
 |---|---|
 | `testAcceptanceFlow` | **passed** (Debug): first launch, start menu, Terminal `Dir;` and an expression, rotation to landscape and back, editor typing, Save as `C:/Home/MyTest.HC`, RUN output, Games → BattleLines, popup OKAY, drag on the battlefield, Pause and Resume from the window menu, relaunch with session restore |
 | `testFrameRates` | **passed** (Release): BattleLines and Varoom show 30 FPS |
+| `testImportThroughTheDocumentPicker` | **passed** (Debug, iPhone 17 Pro simulator, iOS 27.0, 2026-11-14): Start menu > Import... through the real document picker (`file-import.md` §8); needs the import fixtures in Files > On My iPhone > ImportKit, skipped otherwise |
 
 Screenshots are attached to the test result and can be written to a folder
 with `TEST_RUNNER_TEMPLEOS_SHOTS=<dir>`.

@@ -153,15 +153,29 @@ the platform adapters (`DocumentImportAdapter.swift` / `.kt`):
 from TempleOS supplemental disc 1, are in `shared/test-vectors/import` with their origin, license
 (public domain) and SHA-256: a hymn (`o.HC.Z`) plays, `B17.HC.Z` and `DiningStars.HC` draw, `Span.zip`
 runs with its sibling includes, `NewOS.HC.Z` and `Sup1Snd.zip` import and stop with a clear compile error.
-Adversarial archives are built by the tests (section 4). The offline audit
+Adversarial archives are built by the tests (section 4).
+
+The iOS UI test `testImportThroughTheDocumentPicker` drives the real system picker. It needs the files of
+`shared/test-vectors/import` in Files > On My iPhone > ImportKit; on a simulator, copy them into
+`File Provider Storage/ImportKit` of the group container that
+`xcrun simctl get_app_container <device> com.apple.DocumentsApp groups` lists as
+`group.com.apple.FileProvider.LocalStorage`. Without them the test is skipped. It checks the explanation
+(Cancel keeps it unseen), cancelling the picker, the picker surviving the app going to the background and a
+rotation, six documents chosen at once, the summary, Files, the programs running from `C:/Home/Imports` (their
+own perf lines: the hymn's speaker changes, Span's frames), a relaunch, and Keep Both.
+
+The offline audit
 (`tools/compatibility-validation/offline_audit.sh`) allows document pickers only in the two adapters and
 still refuses URL handlers, other pickers and inbound intent filters.
 
 ## 9. Known limitations and open items
 
-- The import has been verified by the headless tests on both platforms and by building both apps. The
-  picker itself (Files/SAF UI, cloud providers, cancellation, rotation and background with the picker open,
-  activity recreation) still needs a run on the iOS simulator and on an Android device.
+- Verified on 2026-11-14: the headless tests on both platforms, builds of both apps, and on an iPhone 17 Pro
+  simulator (iOS 27.0) the real document picker, with the UI test above plus a run over 17 malformed and
+  adversarial files (each refused with the expected reason, the valid ones imported, an endless imported
+  program stopped, an import while a program ran, the app usable afterwards). Not verified: the Android
+  picker on a device or emulator (the SAF adapter is built and its core path tested on the JVM only), iCloud
+  Drive or other cloud providers, an iPad, and VoiceOver/TalkBack reading the new dialogs aloud.
 - Many supplemental programs need TempleOS services the interpreter lacks (HD Audio, block devices,
   inline assembly, some DolDoc and graphics internals); they import fine and report the compile error.
 - iOS: when two chosen documents have the same name, the system's copy of the second may be renamed
