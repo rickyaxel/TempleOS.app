@@ -157,7 +157,8 @@ class ContentModerationTest {
             DocViewerApp(sh, "C:/Adam/God/HSNotes.DD").documentText(80)
         }
         assertEquals("the document does not change with the language", 1, texts.toSet().size)
-        val files = File(SHARED, "runtime/l10n").listFiles()!!.filter { it.name.endsWith(".json") && it.name != "locales.json" }
+        // the catalogs: not the manifest or the regional policy beside them
+        val files = File(SHARED, "runtime/l10n").listFiles()!!.filter { it.name.endsWith(".json") && it.name !in setOf("locales.json", "regional-policy.json") }
         assertEquals(73, files.size)
         for (f in files) {
             val c = Json.parse(f.readText()) as Map<String, Any?>

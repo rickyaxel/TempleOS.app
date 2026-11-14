@@ -183,7 +183,8 @@ final class ContentModerationTests: XCTestCase {
         XCTAssertEqual(Set(texts).count, 1, "the document does not change with the language")
         // every catalog has the moderation notice and About wording; machine translations are flagged for review
         let l10n = SHARED.appendingPathComponent("runtime/l10n")
-        let files = try! FileManager.default.contentsOfDirectory(atPath: l10n.path).filter { $0.hasSuffix(".json") && $0 != "locales.json" }
+        // the catalogs: not the manifest or the regional policy beside them
+        let files = try! FileManager.default.contentsOfDirectory(atPath: l10n.path).filter { $0.hasSuffix(".json") && !["locales.json", "regional-policy.json"].contains($0) }
         XCTAssertEqual(files.count, 73)
         for f in files {
             let c = try! Json.parse(String(decoding: readFileBytes(l10n.appendingPathComponent(f))!, as: UTF8.self)) as! [String: Any?]
