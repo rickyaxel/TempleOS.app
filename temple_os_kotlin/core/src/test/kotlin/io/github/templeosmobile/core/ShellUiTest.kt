@@ -25,6 +25,9 @@ class HeadlessEnv(overlay: File) : ShellEnv {
     /** Whether the device keyboard is requested. */
     var systemKeyboard = false
     fun showKeyboard(show: Boolean) { systemKeyboard = show }
+    /** Start menu > Import...: the document picker's stand-in (ImportTest); no picker when null. */
+    var picker: (() -> Boolean)? = null
+    override fun pickImportFiles() = picker?.invoke() ?: false
 }
 
 class ShellUiTest {
