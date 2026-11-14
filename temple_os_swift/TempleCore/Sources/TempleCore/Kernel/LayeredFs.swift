@@ -124,6 +124,8 @@ public final class LayeredFs: VirtualFs {
     private var bundledChildren: [String: [BEntry]] = [:]    // lower-case dir -> children
     private let filesDir: String
     private let whiteoutFile: String
+    /** Pending import replacements (see [publishStaged]): "aside<TAB>target" relative to [filesDir]. */
+    private let journalFile: String
     private var whiteouts = Set<String>()                    // lower-case logical paths
     private var used: Int64 = 0
 
@@ -137,6 +139,7 @@ public final class LayeredFs: VirtualFs {
         self.quotaBytes = quotaBytes
         filesDir = HostFile.child(overlayRoot, "files")
         whiteoutFile = HostFile.child(overlayRoot, "deleted.txt")
+        journalFile = HostFile.child(overlayRoot, "import-journal.txt")
         HostFile.mkdirs(filesDir)
         bundled["c:/"] = BEntry("C:/", true, 0)
         for line in LayeredFs.splitScalars(bundle.index(), "\n") {
@@ -150,6 +153,7 @@ public final class LayeredFs: VirtualFs {
         if HostFile.exists(whiteoutFile), let d = try? Data(contentsOf: URL(fileURLWithPath: whiteoutFile)) {
             for l in LayeredFs.readLines(String(decoding: d, as: UTF8.self)) where !LayeredFs.isBlank(l) { whiteouts.insert(l) }
         }
+        recoverImports()
         used = HostFile.treeSize(filesDir)
     }
 
@@ -465,6 +469,133 @@ public final class LayeredFs: VirtualFs {
         let p = try check(path)
         if let f = try overlayFind(p) { used -= HostFile.length(f); _ = HostFile.delete(f) }
         try unWhiteout(p)
+    }
+
+    // ------------------------------------------------------------ import staging (ui/FileImport)
+
+    /**
+     * A hidden folder in the overlay (".tmp-import-<id>" at the top of the drive; [list] skips ".tmp-" names)
+     * that an import fills before anything of it is visible. [publishStaged] then moves the result into place
+     * with one rename, so a failed or interrupted import leaves nothing behind on C:; the next start removes
+     * what an interrupted one left ([recoverImports]). Staged bytes count toward the quota.
+     */
+    public final class Stage {
+        fileprivate let host: String
+        fileprivate init(_ host: String) { self.host = host }
+    }
+
+    public static let STAGE_PREFIX = ".tmp-import-"
+
+    public func beginStage() throws -> Stage {
+        lock.lock(); defer { lock.unlock() }
+        let host = HostFile.child(filesDir, LayeredFs.STAGE_PREFIX + UUID().uuidString)
+        HostFile.mkdirs(host)
+        if !HostFile.isDirectory(host) { throw FsError("Could not save \(host)", "fs.error.could_not_save", ["path": "C:/"]) }
+        return Stage(host)
+    }
+
+    /** Host path of [rel] ("Folder/File.HC", checked by [Paths.normalize]) inside [s]; never outside it. */
+    private func stagedPath(_ s: Stage, _ rel: String) throws -> String {
+        guard let p = Paths.normalize("C:/", rel), p != "C:/" else { throw FsError("Invalid path: \(rel)", "fs.error.invalid_path", ["path": rel]) }
+        let f = HostFile.child(s.host, LayeredFs.removePrefix(p, "C:/"))
+        if !HostFile.canonicalPath(f).hasPrefix(HostFile.canonicalPath(s.host) + "/") { throw FsError("Invalid path: \(rel)", "fs.error.invalid_path", ["path": rel]) }
+        return f
+    }
+
+    /** Writes [data] at [rel] inside [s] (parent folders are created); the quota applies. */
+    public func stageFile(_ s: Stage, _ rel: String, _ data: [UInt8]) throws {
+        lock.lock(); defer { lock.unlock() }
+        let f = try stagedPath(s, rel)
+        if used + Int64(data.count) > quotaBytes {
+            throw FsError("Storage full: \(Brand.appName) keeps at most \(quotaBytes >> 20) MiB of your files", "fs.error.storage_full", ["mib": quotaBytes >> 20])
+        }
+        HostFile.mkdirs(HostFile.parent(f))
+        guard (try? Data(data).write(to: URL(fileURLWithPath: f))) != nil else {
+            _ = HostFile.delete(f)
+            throw FsError("Could not save \(rel)", "fs.error.could_not_save", ["path": rel])
+        }
+        used += Int64(data.count)
+    }
+
+    /** Creates the folder [rel] inside [s] (an empty folder of an archive). */
+    public func stageDir(_ s: Stage, _ rel: String) throws {
+        lock.lock(); defer { lock.unlock() }
+        let f = try stagedPath(s, rel)
+        HostFile.mkdirs(f)
+        if !HostFile.isDirectory(f) { throw FsError("Could not save \(rel)", "fs.error.could_not_save", ["path": rel]) }
+    }
+
+    /**
+     * Makes the staged [rel] (a file or a folder) visible at [logical], whose parent folder must exist. A path
+     * that is taken is an error unless [replace]; a bundled original is never replaced. Replacing first moves
+     * the earlier entry aside into [s] and records that in a journal, so an interruption between the two
+     * renames is undone on the next start; [discardStage] then deletes it.
+     */
+    public func publishStaged(_ s: Stage, _ rel: String, _ logical: String, replace: Bool) throws {
+        lock.lock(); defer { lock.unlock() }
+        let p = try check(logical)
+        if p == "C:/" { throw FsError("Invalid path: \(logical)", "fs.error.invalid_path", ["path": logical]) }
+        let src = try stagedPath(s, rel)
+        if !HostFile.exists(src) { throw FsError("File not found: \(rel)", "fs.error.not_found", ["path": rel]) }
+        let parent = Paths.parent(p)
+        if !isDir(parent) { throw FsError("Directory not found: \(parent)", "fs.error.dir_not_found", ["path": parent]) }
+        if bundledEntry(p) != nil || (exists(p) && !replace) { throw FsError("Already exists: \(p)", "fs.error.already_exists", ["path": p]) }
+        let parentHost: String
+        if parent == "C:/" { parentHost = filesDir } else if let f = try overlayFind(parent) { parentHost = f } else {
+            parentHost = try hostFile(parent); HostFile.mkdirs(parentHost)
+        }
+        let target = HostFile.child(parentHost, Paths.name(p))
+        if !HostFile.canonicalPath(target).hasPrefix(HostFile.canonicalPath(filesDir) + "/") { throw FsError("Invalid path: \(logical)", "fs.error.invalid_path", ["path": logical]) }
+        let failed = FsError("Could not save \(p)", "fs.error.could_not_save", ["path": p])
+        var aside: (String, String)? = nil
+        if let old = try overlayFind(p) {
+            let a = HostFile.child(s.host, ".replaced-" + UUID().uuidString)
+            guard writeJournal(a, old), HostFile.renameTo(old, a) else { clearJournal(); throw failed }
+            aside = (a, old)
+        }
+        if !HostFile.renameTo(src, target) {
+            if let back = aside { _ = HostFile.renameTo(back.0, back.1) }
+            clearJournal()
+            throw failed
+        }
+        clearJournal()
+        try unWhiteout(p)
+    }
+
+    /** Deletes [s] with whatever it still holds (unpublished files, a replaced entry); gives its bytes back. */
+    public func discardStage(_ s: Stage) {
+        lock.lock(); defer { lock.unlock() }
+        used -= HostFile.treeSize(s.host)
+        _ = HostFile.deleteRecursively(s.host)
+    }
+
+    private func relToFiles(_ host: String) -> String { LayeredFs.removePrefix(host, filesDir + "/") }
+
+    private func writeJournal(_ aside: String, _ target: String) -> Bool {
+        let tmp = journalFile + ".tmp"
+        let ok = (try? Data((relToFiles(aside) + "\t" + relToFiles(target)).utf8).write(to: URL(fileURLWithPath: tmp))) != nil && HostFile.renameTo(tmp, journalFile)
+        if !ok { _ = HostFile.delete(tmp) }
+        return ok
+    }
+
+    private func clearJournal() { _ = HostFile.delete(journalFile) }
+
+    /**
+     * Start-up: an import interrupted between its two renames gets the entry it was replacing back, and the
+     * staging folders of interrupted imports are removed (nothing of them was visible).
+     */
+    private func recoverImports() {
+        if let d = try? Data(contentsOf: URL(fileURLWithPath: journalFile)) {
+            let f = LayeredFs.splitScalars(String(decoding: d, as: UTF8.self), "\t")
+            if f.count == 2, !f[0].isEmpty, !f[1].isEmpty, !f[0].contains(".."), !f[1].contains("..") {
+                let aside = HostFile.child(filesDir, f[0]), target = HostFile.child(filesDir, f[1])
+                if HostFile.exists(aside) && !HostFile.exists(target) { _ = HostFile.renameTo(aside, target) }
+            }
+            clearJournal()
+        }
+        for f in HostFile.listFiles(filesDir) ?? [] where HostFile.name(f).hasPrefix(LayeredFs.STAGE_PREFIX) {
+            _ = HostFile.deleteRecursively(f)
+        }
     }
 
     public func usedBytes() -> Int64 { lock.lock(); defer { lock.unlock() }; return used }

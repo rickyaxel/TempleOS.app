@@ -79,7 +79,19 @@ object TempleArc {
         bytes.copyInto(out, 17)
         return out
     }
-    fun expand(src: ByteArray, expected: Int? = null): ByteArray {
+    /** The CArcCompress header (compressed size, expanded size, type) when [src] can be an archive, else null.
+     *  Reading it costs nothing: [io.github.templeosmobile.core.ui.FileImport] checks the declared size before anything is expanded. */
+    fun header(src: ByteArray): Triple<Int, Int, Int>? {
+        if (src.size < 17) return null
+        var c = 0L; var e = 0L
+        for (i in 0..7) { c = c or ((src[i].toLong() and 255) shl (8*i)); e = e or ((src[8+i].toLong() and 255) shl (8*i)) }
+        val type = src[16].toInt() and 255
+        if (c < 17 || c > src.size || e < 0 || e > Int.MAX_VALUE || type !in 1..3) return null
+        return Triple(c.toInt(), e.toInt(), type)
+    }
+
+    /** [limit] caps the expanded size instead of the GR image bound (imported sources, FileImport). */
+    fun expand(src: ByteArray, expected: Int? = null, limit: Int? = null): ByteArray {
         fun bad(): Nothing = throw FsError("Invalid TempleOS compressed data")
         if (src.size < 17) bad()
         fun size(o: Int): Int {
@@ -89,7 +101,7 @@ object TempleArc {
             return n.toInt()
         }
         val compressed = size(0); val expanded = size(8); val type = src[16].toInt() and 255
-        val maxExpanded = if (expected == null) GRImage.MAX_BODY + 160 else GRImage.MAX_BODY
+        val maxExpanded = limit ?: if (expected == null) GRImage.MAX_BODY + 160 else GRImage.MAX_BODY
         if (compressed < 17 || compressed > src.size || expanded > maxExpanded ||
             expected != null && expected != expanded) bad()
         if (type == 1) {

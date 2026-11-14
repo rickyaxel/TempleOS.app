@@ -84,7 +84,19 @@ public enum TempleArc {
         out[16] = 1 // CT_NONE (Kernel/Compress.HC CompressBuf)
         return out + bytes
     }
-    public static func expand(_ src: [UInt8], expected: Int? = nil) throws -> [UInt8] {
+    /// The CArcCompress header (compressed size, expanded size, type) when [src] can be an archive, else nil.
+    /// Reading it costs nothing: [FileImport] checks the declared size before anything is expanded.
+    public static func header(_ src: [UInt8]) -> (compressed: Int, expanded: Int, type: Int)? {
+        guard src.count >= 17 else { return nil }
+        var c: UInt64 = 0, e: UInt64 = 0
+        for i in 0..<8 { c |= UInt64(src[i]) << (8*i); e |= UInt64(src[8+i]) << (8*i) }
+        let type = Int(src[16])
+        guard c >= 17, c <= UInt64(src.count), e <= UInt64(Int32.max), (1...3).contains(type) else { return nil }
+        return (Int(c), Int(e), type)
+    }
+
+    /// [limit] caps the expanded size instead of the GR image bound (imported sources, FileImport).
+    public static func expand(_ src: [UInt8], expected: Int? = nil, limit: Int? = nil) throws -> [UInt8] {
         func bad() -> FsError { FsError("Invalid TempleOS compressed data") }
         guard src.count >= 17 else { throw bad() }
         func size(_ o: Int) throws -> Int {
@@ -93,7 +105,7 @@ public enum TempleArc {
             guard n <= UInt64(Int.max) else { throw bad() }; return Int(n)
         }
         let compressed = try size(0), expanded = try size(8), type = Int(src[16])
-        let maxExpanded = expected == nil ? GRImage.maxBody + 160 : GRImage.maxBody
+        let maxExpanded = limit ?? (expected == nil ? GRImage.maxBody + 160 : GRImage.maxBody)
         guard compressed >= 17, compressed <= src.count, expanded <= maxExpanded,
               expected == nil || expected == expanded else { throw bad() }
         if type == 1 {

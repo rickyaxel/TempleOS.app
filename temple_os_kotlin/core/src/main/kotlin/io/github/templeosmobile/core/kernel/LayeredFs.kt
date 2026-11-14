@@ -41,6 +41,8 @@ class LayeredFs(
     private val bundledChildren = HashMap<String, MutableList<BEntry>>() // lower-case dir -> children
     private val filesDir = File(overlayRoot, "files")
     private val whiteoutFile = File(overlayRoot, "deleted.txt")
+    /** Pending import replacements (see [publishStaged]): "aside<TAB>target" relative to [filesDir]. */
+    private val journalFile = File(overlayRoot, "import-journal.txt")
     private val whiteouts = HashSet<String>()                // lower-case logical paths
     private var used = 0L
 
@@ -56,6 +58,7 @@ class LayeredFs(
             bundledChildren.getOrPut(Paths.parent(path).lowercase()) { ArrayList() }.add(e)
         }
         if (whiteoutFile.exists()) whiteoutFile.readLines().filter { it.isNotBlank() }.forEach { whiteouts.add(it) }
+        recoverImports()
         used = filesDir.walkTopDown().filter { it.isFile }.sumOf { it.length() }
     }
 
@@ -281,6 +284,121 @@ class LayeredFs(
         unWhiteout(p)
     }
 
+    // ------------------------------------------------------------ import staging (ui/FileImport)
+
+    /**
+     * A hidden folder in the overlay (".tmp-import-<id>" at the top of the drive; [list] skips ".tmp-" names)
+     * that an import fills before anything of it is visible. [publishStaged] then moves the result into place
+     * with one rename, so a failed or interrupted import leaves nothing behind on C:; the next start removes
+     * what an interrupted one left ([recoverImports]). Staged bytes count toward the quota.
+     */
+    class Stage internal constructor(internal val host: File)
+
+    @Synchronized fun beginStage(): Stage {
+        val host = File(filesDir, STAGE_PREFIX + java.util.UUID.randomUUID())
+        host.mkdirs()
+        if (!host.isDirectory) throw FsError("Could not save $host", "fs.error.could_not_save", mapOf("path" to "C:/"))
+        return Stage(host)
+    }
+
+    /** Host path of [rel] ("Folder/File.HC", checked by [Paths.normalize]) inside [s]; never outside it. */
+    private fun stagedPath(s: Stage, rel: String): File {
+        val p = Paths.normalize("C:/", rel)?.takeIf { it != "C:/" } ?: throw FsError("Invalid path: $rel", "fs.error.invalid_path", mapOf("path" to rel))
+        val f = File(s.host, p.removePrefix("C:/"))
+        if (!f.canonicalPath.startsWith(s.host.canonicalPath + File.separator)) throw FsError("Invalid path: $rel", "fs.error.invalid_path", mapOf("path" to rel))
+        return f
+    }
+
+    /** Writes [data] at [rel] inside [s] (parent folders are created); the quota applies. */
+    @Synchronized fun stageFile(s: Stage, rel: String, data: ByteArray) {
+        val f = stagedPath(s, rel)
+        if (used + data.size > quotaBytes)
+            throw FsError("Storage full: ${Brand.APP_NAME} keeps at most ${quotaBytes shr 20} MiB of your files", "fs.error.storage_full", mapOf("mib" to (quotaBytes shr 20)))
+        f.parentFile.mkdirs()
+        try { f.writeBytes(data) } catch (e: java.io.IOException) {
+            f.delete()
+            throw FsError("Could not save $rel", "fs.error.could_not_save", mapOf("path" to rel))
+        }
+        used += data.size
+    }
+
+    /** Creates the folder [rel] inside [s] (an empty folder of an archive). */
+    @Synchronized fun stageDir(s: Stage, rel: String) {
+        val f = stagedPath(s, rel)
+        f.mkdirs()
+        if (!f.isDirectory) throw FsError("Could not save $rel", "fs.error.could_not_save", mapOf("path" to rel))
+    }
+
+    /**
+     * Makes the staged [rel] (a file or a folder) visible at [logical], whose parent folder must exist. A path
+     * that is taken is an error unless [replace]; a bundled original is never replaced. Replacing first moves
+     * the earlier entry aside into [s] and records that in a journal, so an interruption between the two
+     * renames is undone on the next start; [discardStage] then deletes it.
+     */
+    @Synchronized fun publishStaged(s: Stage, rel: String, logical: String, replace: Boolean) {
+        val p = check(logical)
+        if (p == "C:/") throw FsError("Invalid path: $logical", "fs.error.invalid_path", mapOf("path" to logical))
+        val src = stagedPath(s, rel)
+        if (!src.exists()) throw FsError("File not found: $rel", "fs.error.not_found", mapOf("path" to rel))
+        val parent = Paths.parent(p)
+        if (!isDir(parent)) throw FsError("Directory not found: $parent", "fs.error.dir_not_found", mapOf("path" to parent))
+        if (bundledEntry(p) != null || (exists(p) && !replace)) throw FsError("Already exists: $p", "fs.error.already_exists", mapOf("path" to p))
+        val parentHost = if (parent == "C:/") filesDir else overlayFind(parent) ?: hostFile(parent).also { it.mkdirs() }
+        val target = File(parentHost, Paths.name(p))
+        if (!target.canonicalPath.startsWith(filesDir.canonicalPath + File.separator)) throw FsError("Invalid path: $logical", "fs.error.invalid_path", mapOf("path" to logical))
+        val failed = FsError("Could not save $p", "fs.error.could_not_save", mapOf("path" to p))
+        var aside: Pair<File, File>? = null
+        overlayFind(p)?.let { old ->
+            val a = File(s.host, ".replaced-" + java.util.UUID.randomUUID())
+            if (!writeJournal(a, old) || !old.renameTo(a)) { clearJournal(); throw failed }
+            aside = a to old
+        }
+        if (!src.renameTo(target)) {
+            aside?.let { (a, old) -> a.renameTo(old) }
+            clearJournal()
+            throw failed
+        }
+        clearJournal()
+        unWhiteout(p)
+    }
+
+    /** Deletes [s] with whatever it still holds (unpublished files, a replaced entry); gives its bytes back. */
+    @Synchronized fun discardStage(s: Stage) {
+        used -= s.host.walkTopDown().filter { it.isFile }.sumOf { it.length() }
+        s.host.deleteRecursively()
+    }
+
+    private fun relToFiles(f: File) = f.path.removePrefix(filesDir.path + File.separator)
+
+    private fun writeJournal(aside: File, target: File): Boolean {
+        val tmp = File(overlayRoot, "import-journal.txt.tmp")
+        val ok = try { tmp.writeText(relToFiles(aside) + "\t" + relToFiles(target)); tmp.renameTo(journalFile) } catch (_: java.io.IOException) { false }
+        if (!ok) tmp.delete()
+        return ok
+    }
+
+    private fun clearJournal() { journalFile.delete() }
+
+    /**
+     * Start-up: an import interrupted between its two renames gets the entry it was replacing back, and the
+     * staging folders of interrupted imports are removed (nothing of them was visible).
+     */
+    private fun recoverImports() {
+        if (journalFile.exists()) {
+            val f = try { journalFile.readText().split('\t') } catch (_: java.io.IOException) { emptyList() }
+            if (f.size == 2 && f[0].isNotEmpty() && f[1].isNotEmpty() && !f[0].contains("..") && !f[1].contains("..")) {
+                val aside = File(filesDir, f[0]); val target = File(filesDir, f[1])
+                if (aside.exists() && !target.exists()) aside.renameTo(target)
+            }
+            clearJournal()
+        }
+        filesDir.listFiles()?.filter { it.name.startsWith(STAGE_PREFIX) }?.forEach { it.deleteRecursively() }
+    }
+
     @Synchronized fun usedBytes() = used
     val quota get() = quotaBytes
+
+    companion object {
+        const val STAGE_PREFIX = ".tmp-import-"
+    }
 }
