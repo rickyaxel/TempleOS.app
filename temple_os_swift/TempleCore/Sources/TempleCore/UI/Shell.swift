@@ -32,6 +32,12 @@ public protocol ShellEnv: AnyObject {
     var memoryLimitBytes: Int { get }
     /** The platform's minimum touch target in dp/pt (Material 48 dp, Apple HIG 44 pt): sizes menu rows. */
     var touchTargetDp: Double { get }
+    /**
+     * Start menu > Import...: shows the system document picker (iOS UIDocumentPickerViewController, Android
+     * ACTION_OPEN_DOCUMENT). The platform copies the chosen documents into app storage and hands them to
+     * [Shell.importFlow] ([ImportFlow.receive]), none when cancelled. False when no picker can be shown.
+     */
+    func pickImportFiles() -> Bool
 }
 
 public extension ShellEnv {
@@ -54,6 +60,7 @@ public extension ShellEnv {
     func measureText(_ s: String) -> Int { s.scLen * 8 }
     var memoryLimitBytes: Int { 32 << 20 }
     var touchTargetDp: Double { 48.0 }
+    func pickImportFiles() -> Bool { false }
 }
 
 /** Small key-value persistence for the session (platform file or preferences). Errors are ignored by the shell. */
@@ -192,6 +199,8 @@ public final class Shell {
     public lazy var catalog: Catalog = Catalog.load(self)
     public lazy var historicalMenus: HistoricalMenus = HistoricalMenus.load(self)
     public var settings = Settings() { didSet { Touch.large = settings.largeTouch } }
+    /** Start menu > Import... (FileImport onto C:/Home/Imports). */
+    public private(set) lazy var importFlow = ImportFlow(self)
 
     public init(_ env: ShellEnv) {
         self.env = env
@@ -1484,6 +1493,7 @@ public final class Shell {
         items.append(MenuItem(tr("menu.start.terminal")) { [unowned self] in Launch.terminal(self) })
         items.append(MenuItem(tr("menu.start.editor")) { [unowned self] in Launch.editor(self, nil) })
         items.append(MenuItem(tr("menu.start.files")) { [unowned self] in Launch.files(self, "C:/Home") })
+        items.append(MenuItem(tr("menu.start.import")) { [unowned self] in self.importFlow.start() })
         items.append(MenuItem(tr("menu.start.games")) { [unowned self] in Launch.games(self) })
         for id in ["applications","programs","demos"] { if let g=catalog.group(id) {items.append(MenuItem(id == "demos" ? tr("menu.start.demos") : g.localizedTitle) { [unowned self] in Launch.programs(self,id) })} }
         items.append(MenuItem(tr("menu.start.examples")) { [unowned self] in self.showMenu(self.catalog.menuItems(self, "example"), self.menuChipX + 4, self.insetTop + self.barH, tr("menu.examples.title")) })
@@ -1674,6 +1684,8 @@ public final class Settings {
     public var language: String
     /** How bundled programs run: [ENGINE_TERRY] (the HolyC interpreter) or [ENGINE_NATIVE] (their Swift translation). */
     public var engine: Int
+    /** The user continued past Import's first-time explanation ([ImportFlow]); it is not shown again. */
+    public var importIntroSeen: Bool
 
     /** Pure Terry: every program runs on the HolyC compiler and interpreter. */
     public static let ENGINE_TERRY = 0
@@ -1685,14 +1697,14 @@ public final class Settings {
     /** The device's own keyboard (international input, dictation, accessibility). */
     public static let KEYBOARD_SYSTEM = 1 // Legacy serialized value only; cannot activate a device keyboard.
 
-    public init(_ desktopColor: Int = Palette.DKGRAY, _ sound: Bool = true, _ controlsOpacity: Int = 2, _ uiScale: Int = 0, _ crispScaling: Bool = false, _ largeTouch: Bool = false, _ keyboardMode: Int = Settings.KEYBOARD_TEMPLEOS, _ language: String = "", _ engine: Int = Settings.ENGINE_TERRY) {
+    public init(_ desktopColor: Int = Palette.DKGRAY, _ sound: Bool = true, _ controlsOpacity: Int = 2, _ uiScale: Int = 0, _ crispScaling: Bool = false, _ largeTouch: Bool = false, _ keyboardMode: Int = Settings.KEYBOARD_TEMPLEOS, _ language: String = "", _ engine: Int = Settings.ENGINE_TERRY, _ importIntroSeen: Bool = false) {
         self.desktopColor = desktopColor; self.sound = sound; self.controlsOpacity = controlsOpacity
         self.uiScale = uiScale; self.crispScaling = crispScaling; self.largeTouch = largeTouch
-        self.language = language; self.engine = engine
+        self.language = language; self.engine = engine; self.importIntroSeen = importIntroSeen
     }
 
     public func encode() -> String {
-        "d=\(desktopColor);s=\(sound ? 1 : 0);o=\(controlsOpacity);u=\(uiScale);c=\(crispScaling ? 1 : 0);t=\(largeTouch ? 1 : 0);k=\(keyboardMode);g=\(language);e=\(engine)"
+        "d=\(desktopColor);s=\(sound ? 1 : 0);o=\(controlsOpacity);u=\(uiScale);c=\(crispScaling ? 1 : 0);t=\(largeTouch ? 1 : 0);k=\(keyboardMode);g=\(language);e=\(engine);i=\(importIntroSeen ? 1 : 0)"
     }
 
     /** Kotlin Char.isLetterOrDigit(): Unicode letters (L*) and decimal digits (Nd). */
@@ -1715,7 +1727,8 @@ public final class Settings {
             KEYBOARD_TEMPLEOS,
             // an unknown or stale id falls back to the device language (LocaleResolver ignores it)
             scString((m["g"] ?? "").unicodeScalars.filter { Settings.isLetterOrDigit($0) || $0 == "-" }.prefix(35)),
-            m["e"] == "1" ? ENGINE_NATIVE : ENGINE_TERRY
+            m["e"] == "1" ? ENGINE_NATIVE : ENGINE_TERRY,
+            m["i"] == "1"
         )
     }
 }

@@ -24,7 +24,7 @@ CODE = [os.path.join(ROOT, 'temple_os_kotlin/core/src/main/kotlin/io/github/temp
         os.path.join(ROOT, 'temple_os_kotlin/app/src/main/kotlin'),
         os.path.join(ROOT, 'temple_os_swift/App/TempleOSMobile')]
 # keys built at run time from data (colors, symbol names, catalog ids, filesystem errors, ...)
-DYNAMIC = ('color.', 'engine.reason.', 'char.', 'files.button.', 'files.a11y.', 'catalog.', 'fs.error.', 'editor.a11y.position', 'doc.notice.')
+DYNAMIC = ('color.', 'engine.reason.', 'char.', 'files.button.', 'files.a11y.', 'catalog.', 'fs.error.', 'import.error.', 'editor.a11y.position', 'doc.notice.')
 PLACEHOLDER = re.compile(r'\{[a-z_]+\}')
 # a translation may not bring in a web domain (another product's branding) that English lacks
 DOMAIN = re.compile(r'\b[a-z0-9-]+\.(?:com|org|net|io|edu|education|app|dev)\b', re.I)

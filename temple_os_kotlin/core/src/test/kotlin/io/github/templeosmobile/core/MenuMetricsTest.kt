@@ -100,7 +100,7 @@ class MenuMetricsTest {
             val b = menu.bounds
             assertTrue("$w x $h: menu on screen $b", b.x >= 0 && b.y >= 20 && b.right <= w && b.bottom <= h - 20)
             val rows = sh.accessibilityNodes().filter { it.button && b.contains(it.rect.x + 1, it.rect.y + 1) }
-            assertEquals(14, menu.items.size)
+            assertEquals(15, menu.items.size)
             assertTrue(rows.isNotEmpty() && rows.size <= menu.items.size + 2)
             for (r in rows) {
                 assertTrue("$w x $h row ${r.label} ${r.rect} is ${m.rowH} tall", r.rect.h >= m.rowH)
