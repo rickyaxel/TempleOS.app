@@ -23,6 +23,8 @@ class MainActivity : Activity() {
     private lateinit var shell: Shell
     private lateinit var view: TempleView
     private lateinit var systemBars: SystemBarsAdapter
+    /** Start menu > Import...: the Storage Access Framework picker; its copies go to the shell's ImportFlow. */
+    private lateinit var importer: DocumentImportAdapter
     private var benchOnly = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +43,9 @@ class MainActivity : Activity() {
         // Pure Kotlin mode: the bundled programs' ahead-of-time Kotlin translations (Settings > Engine)
         io.github.templeosmobile.core.purenative.NativePrograms.catalog = io.github.templeosmobile.purekotlin.gen.NativeCatalog
         shell = Shell(env).also { it.awaitingRestore = true } // until onFirstLayout has read the saved session
+        val importFlow = shell.importFlow // created here, on the UI thread; receive() may be called from any thread
+        importer = DocumentImportAdapter(this) { importFlow.receive(it) }
+        env.importPicker = { importer.present() }
         view = TempleView(this, shell)
         view.systemBars = systemBars
         view.onFirstLayout = {
@@ -114,6 +119,13 @@ class MainActivity : Activity() {
         systemBars.invalidate()
         shell.invalidate() // re-render: the bars are applied after it
         view.kick()
+    }
+
+    /** The document picker's result (Start menu > Import...), also after the process was recreated. */
+    @Deprecated("Framework Activity result API (the app uses no AndroidX)")
+    @Suppress("DEPRECATION")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (benchOnly || !importer.onResult(requestCode, resultCode, data)) super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onResume() {
