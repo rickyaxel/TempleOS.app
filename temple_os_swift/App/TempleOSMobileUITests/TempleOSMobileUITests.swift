@@ -2120,10 +2120,13 @@ final class TempleOSMobileUITests: XCTestCase {
         startMenu(); menuItem("Files")
         app.buttons["Folder Imports"].tap(); usleep(500_000); app.buttons["Folder Span"].tap(); usleep(500_000)
         runFromFiles("File Run.HC, 36 B")
-        let span = perfLine(30) { $0.contains("program=C:/Home/Imports/Span/Run.HC ") && self.perfValue($0, "kernel_frames") >= 30 }
-        XCTAssertNotNil(span, "Span draws"); print("IMPORT-EVIDENCE Span \(span ?? "-")")
+        // Span's own instructions (PopUpOk) come first and the program waits for them, after however many frames
+        // its start took: past them, it keeps drawing
+        XCTAssertTrue(app.buttons["OKAY"].waitForExistence(timeout: 30), "Span's instructions")
         shot("import-07-span")
-        if app.buttons["OKAY"].exists { app.buttons["OKAY"].tap(); sleep(1) } // Span's own instructions
+        app.buttons["OKAY"].tap(); sleep(1)
+        let span = perfLine(30) { $0.contains("program=C:/Home/Imports/Span/Run.HC ") && self.perfValue($0, "kernel_frames") >= 90 }
+        XCTAssertNotNil(span, "Span draws"); print("IMPORT-EVIDENCE Span \(span ?? "-")")
         windowMenu("Run"); menuItem("Close"); sleep(1)
         // a restart: the files are still there and run
         app.terminate()
