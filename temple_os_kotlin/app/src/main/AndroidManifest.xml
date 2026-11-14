@@ -2,7 +2,8 @@
 <!--
   TempleOS Mobile Classic: fully offline. No permissions are requested
   (in particular no INTERNET), no intent filters accept files or URLs from other
-  apps, and nothing is exported except the launcher activity.
+  apps, and nothing is exported except the launcher activity. Start menu > Import...
+  uses the system document picker (Storage Access Framework), which needs no permission.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">

@@ -84,7 +84,19 @@ public enum TempleArc {
         out[16] = 1 // CT_NONE (Kernel/Compress.HC CompressBuf)
         return out + bytes
     }
-    public static func expand(_ src: [UInt8], expected: Int? = nil) throws -> [UInt8] {
+    /// The CArcCompress header (compressed size, expanded size, type) when [src] can be an archive, else nil.
+    /// Reading it costs nothing: [FileImport] checks the declared size before anything is expanded.
+    public static func header(_ src: [UInt8]) -> (compressed: Int, expanded: Int, type: Int)? {
+        guard src.count >= 17 else { return nil }
+        var c: UInt64 = 0, e: UInt64 = 0
+        for i in 0..<8 { c |= UInt64(src[i]) << (8*i); e |= UInt64(src[8+i]) << (8*i) }
+        let type = Int(src[16])
+        guard c >= 17, c <= UInt64(src.count), e <= UInt64(Int32.max), (1...3).contains(type) else { return nil }
+        return (Int(c), Int(e), type)
+    }
+
+    /// [limit] caps the expanded size instead of the GR image bound (imported sources, FileImport).
+    public static func expand(_ src: [UInt8], expected: Int? = nil, limit: Int? = nil) throws -> [UInt8] {
         func bad() -> FsError { FsError("Invalid TempleOS compressed data") }
         guard src.count >= 17 else { throw bad() }
         func size(_ o: Int) throws -> Int {
@@ -93,7 +105,7 @@ public enum TempleArc {
             guard n <= UInt64(Int.max) else { throw bad() }; return Int(n)
         }
         let compressed = try size(0), expanded = try size(8), type = Int(src[16])
-        let maxExpanded = expected == nil ? GRImage.maxBody + 160 : GRImage.maxBody
+        let maxExpanded = limit ?? (expected == nil ? GRImage.maxBody + 160 : GRImage.maxBody)
         guard compressed >= 17, compressed <= src.count, expanded <= maxExpanded,
               expected == nil || expected == expanded else { throw bad() }
         if type == 1 {
@@ -108,6 +120,10 @@ public enum TempleArc {
         var valid = [Bool](repeating: false, count: 4096)
         var free = minimum, bits = type == 2 ? 8 : 9, limit = 1 << bits
         var current = -1, pending = -1, bit = 17 * 8
+        // Total work bound: genuine files take at most 8 inner steps per output byte (927 files on the V5.03 ISO and
+        // supplemental discs, mean 1.2); a crafted stream (every code the same literal) would take ~4000 per byte.
+        var work = 0
+        let maxWork = 32 * expanded + 65536
         func entry() throws {
             current = pending
             if bits < 12 {
@@ -116,8 +132,8 @@ public enum TempleArc {
             } else {
                 var tries = 0
                 repeat {
-                    free += 1; if free == limit { free = minimum }; tries += 1
-                    if tries > 4096 { throw bad() }
+                    free += 1; if free == limit { free = minimum }; tries += 1; work += 1
+                    if tries > 4096 || work > maxWork { throw bad() }
                 } while hash[free] != -1
                 pending = free
                 let head = base[free]
@@ -125,7 +141,7 @@ public enum TempleArc {
                 else {
                     var p = hash[head], steps = 0
                     while p != -1 && next[p] != free {
-                        p = next[p]; steps += 1; if steps > 4096 { throw bad() }
+                        p = next[p]; steps += 1; work += 1; if steps > 4096 || work > maxWork { throw bad() }
                     }
                     if p != -1 { next[p] = next[free] }
                 }
@@ -150,8 +166,8 @@ public enum TempleArc {
             if code == current { stack.append(lastChar); cursor = last }
             var hops = 0
             while cursor >= minimum {
-                guard cursor < 4096, valid[cursor], hops < 4096 else { throw bad() }
-                stack.append(char[cursor]); cursor = base[cursor]; hops += 1
+                guard cursor < 4096, valid[cursor], hops < 4096, work <= maxWork else { throw bad() }
+                stack.append(char[cursor]); cursor = base[cursor]; hops += 1; work += 1
             }
             lastChar = UInt8(cursor); stack.append(lastChar)
             guard current >= minimum, last < 4096, stack.count <= expanded - out.count else { throw bad() }

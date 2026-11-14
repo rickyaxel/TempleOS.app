@@ -61,9 +61,14 @@ src_net="$(grep -rEl 'java\.net\.|HttpURLConnection|okhttp|URLSession|NWConnecti
   "$ROOT/temple_os_kotlin/core/src/main" "$ROOT/temple_os_kotlin/app/src/main" \
   "$ROOT/temple_os_swift/TempleCore/Sources" "$ROOT/temple_os_swift/App/TempleOSMobile" 2>/dev/null || true)"
 [ -z "$src_net" ] && pass "no networking or WebView APIs in app sources" || bad "networking APIs in: $src_net"
-src_imp="$(grep -rEl 'ACTION_OPEN_DOCUMENT|ACTION_GET_CONTENT|UIDocumentPicker|UIDocumentBrowser|openURL|onOpenURL|application\(_ app: UIApplication, open' \
+# The one import path is Start menu > Import...: the system document picker, opened by the user, in the two
+# platform adapters only (docs/file-import.md). Anything else that brings content in is still refused.
+src_imp="$(grep -rEl 'ACTION_GET_CONTENT|ACTION_SEND|UIDocumentBrowser|openURL|onOpenURL|application\(_ app: UIApplication, open|scene\(_ scene: UIScene, openURLContexts' \
   "$ROOT/temple_os_kotlin/app/src/main" "$ROOT/temple_os_swift/App/TempleOSMobile" 2>/dev/null || true)"
-[ -z "$src_imp" ] && pass "no document pickers or URL-open handlers (no import path)" || bad "import paths in: $src_imp"
+[ -z "$src_imp" ] && pass "no URL-open handlers or other content entry points" || bad "import paths in: $src_imp"
+src_pick="$(grep -rEl 'ACTION_OPEN_DOCUMENT|UIDocumentPicker' "$ROOT/temple_os_kotlin/app/src/main" "$ROOT/temple_os_swift/App/TempleOSMobile" 2>/dev/null \
+  | grep -vE '/(DocumentImportAdapter\.(kt|swift))$' || true)"
+[ -z "$src_pick" ] && pass "document pickers only in the Import adapters (user-initiated)" || bad "document pickers outside the Import adapters: $src_pick"
 deps="$(grep -E 'implementation\(|api\(' "$ROOT/temple_os_kotlin/app/build.gradle.kts" "$ROOT/temple_os_kotlin/core/build.gradle.kts" | grep -vE 'project\(":(core|purekotlin)"\)' || true)"
 [ -z "$deps" ] && pass "Android app depends only on :core and :purekotlin (no third-party libraries)" || bad "dependencies: $deps"
 grep -q 'dependencies:' "$ROOT/temple_os_swift/TempleCore/Package.swift" && grep -A3 'dependencies:' "$ROOT/temple_os_swift/TempleCore/Package.swift" | grep -q 'url:' && bad "Swift package has remote dependencies" || pass "Swift package has no remote dependencies"

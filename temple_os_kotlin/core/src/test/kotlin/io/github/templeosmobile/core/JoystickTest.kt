@@ -243,7 +243,7 @@ class JoystickTest {
         assertEquals(DirectionalControl.DPAD, Settings().directional)
         assertEquals("a session from before the joystick", DirectionalControl.DPAD, Settings.decode("d=8;s=1;o=2;u=0;c=0;t=0;k=0;g=;e=0").directional)
         val st = Settings(); st.directional = DirectionalControl.JOYSTICK
-        assertTrue(st.encode().endsWith(";j=1"))
+        assertTrue(st.encode().contains(";j=1;"))
         assertEquals(DirectionalControl.JOYSTICK, Settings.decode(st.encode()).directional)
         assertEquals(DirectionalControl.DPAD, Settings.decode("j=7").directional)
     }

@@ -79,7 +79,19 @@ object TempleArc {
         bytes.copyInto(out, 17)
         return out
     }
-    fun expand(src: ByteArray, expected: Int? = null): ByteArray {
+    /** The CArcCompress header (compressed size, expanded size, type) when [src] can be an archive, else null.
+     *  Reading it costs nothing: [io.github.templeosmobile.core.ui.FileImport] checks the declared size before anything is expanded. */
+    fun header(src: ByteArray): Triple<Int, Int, Int>? {
+        if (src.size < 17) return null
+        var c = 0L; var e = 0L
+        for (i in 0..7) { c = c or ((src[i].toLong() and 255) shl (8*i)); e = e or ((src[8+i].toLong() and 255) shl (8*i)) }
+        val type = src[16].toInt() and 255
+        if (c < 17 || c > src.size || e < 0 || e > Int.MAX_VALUE || type !in 1..3) return null
+        return Triple(c.toInt(), e.toInt(), type)
+    }
+
+    /** [limit] caps the expanded size instead of the GR image bound (imported sources, FileImport). */
+    fun expand(src: ByteArray, expected: Int? = null, limit: Int? = null): ByteArray {
         fun bad(): Nothing = throw FsError("Invalid TempleOS compressed data")
         if (src.size < 17) bad()
         fun size(o: Int): Int {
@@ -89,7 +101,7 @@ object TempleArc {
             return n.toInt()
         }
         val compressed = size(0); val expanded = size(8); val type = src[16].toInt() and 255
-        val maxExpanded = if (expected == null) GRImage.MAX_BODY + 160 else GRImage.MAX_BODY
+        val maxExpanded = limit ?: if (expected == null) GRImage.MAX_BODY + 160 else GRImage.MAX_BODY
         if (compressed < 17 || compressed > src.size || expanded > maxExpanded ||
             expected != null && expected != expanded) bad()
         if (type == 1) {
@@ -103,6 +115,10 @@ object TempleArc {
         val char = ByteArray(4096); val hash = IntArray(4096) { -1 }; val valid = BooleanArray(4096)
         var free = minimum; var bits = if (type == 2) 8 else 9; var limit = 1 shl bits
         var current = -1; var pending = -1; var bit = 17L * 8
+        // Total work bound: genuine files take at most 8 inner steps per output byte (927 files on the V5.03 ISO and
+        // supplemental discs, mean 1.2); a crafted stream (every code the same literal) would take ~4000 per byte.
+        var work = 0L
+        val maxWork = 32L * expanded + 65536
         fun entry() {
             current = pending
             if (bits < 12) {
@@ -112,7 +128,7 @@ object TempleArc {
                 var tries = 0
                 do {
                     if (++free == limit) free = minimum
-                    if (++tries > 4096) bad()
+                    if (++tries > 4096 || ++work > maxWork) bad()
                 } while (hash[free] != -1)
                 pending = free
                 val head = base[free]
@@ -120,7 +136,7 @@ object TempleArc {
                 else {
                     var p = hash[head]; var steps = 0
                     while (p != -1 && next[p] != free) {
-                        p = next[p]; if (++steps > 4096) bad()
+                        p = next[p]; if (++steps > 4096 || ++work > maxWork) bad()
                     }
                     if (p != -1) next[p] = next[free]
                 }
@@ -145,7 +161,7 @@ object TempleArc {
             if (code == current) { stack[sp++] = lastChar; cursor = last }
             var hops = 0
             while (cursor >= minimum) {
-                if (cursor >= 4096 || !valid[cursor] || hops++ >= 4096) bad()
+                if (cursor >= 4096 || !valid[cursor] || hops++ >= 4096 || ++work > maxWork) bad()
                 stack[sp++] = char[cursor]; cursor = base[cursor]
             }
             lastChar = cursor.toByte(); stack[sp++] = lastChar

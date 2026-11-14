@@ -313,6 +313,10 @@ class AndroidShellEnv(private val context: Context, soundCapture: File? = null, 
 
     override fun requestRender() = onRender()
 
+    /** Start menu > Import...: shows the document picker ([DocumentImportAdapter], set by [MainActivity]). */
+    var importPicker: () -> Boolean = { false }
+    override fun pickImportFiles(): Boolean = importPicker()
+
     /**
      * Each program gets its own HolyC heap; larger on devices with more memory per app (TempleOS has no
      * per-program limit). Talons, the largest, needs 65 MiB to start and about 67 MiB after 15 minutes of play

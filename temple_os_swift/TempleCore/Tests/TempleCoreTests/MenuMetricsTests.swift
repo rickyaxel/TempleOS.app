@@ -101,7 +101,7 @@ final class MenuMetricsTests: XCTestCase {
                 let b = menu.bounds
                 XCTAssertTrue(b.x >= 0 && b.y >= 20 && b.right <= w && b.bottom <= h - 20, "\(w)x\(h) \(b)")
                 let rows = sh.accessibilityNodes().filter { $0.button && b.contains($0.rect.x + 1, $0.rect.y + 1) }
-                XCTAssertEqual(menu.items.count, 14)
+                XCTAssertEqual(menu.items.count, 15)
                 XCTAssertTrue(!rows.isEmpty && rows.count <= menu.items.count + 2)
                 for r in rows {
                     XCTAssertTrue(r.rect.h >= m.rowH, "\(r.label)")

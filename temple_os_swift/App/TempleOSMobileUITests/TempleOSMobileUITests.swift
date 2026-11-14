@@ -2005,6 +2005,150 @@ final class TempleOSMobileUITests: XCTestCase {
         }
     }
 
+    // ------------------------------------------------------------ Start menu > Import... (docs/file-import.md)
+
+    /**
+     * In the open document picker: Files > On My iPhone > ImportKit (the picker may reopen where it was last).
+     * Skipped when the folder is not there (it holds the files of shared/test-vectors/import; on a simulator, copy
+     * them into "File Provider Storage/ImportKit" of the group container group.com.apple.FileProvider.LocalStorage).
+     */
+    private func openImportKit() throws {
+        XCTAssertTrue(app.buttons["Cancel"].waitForExistence(timeout: 30), "the document picker")
+        let inside = app.cells["DiningStars.HC, HC"]
+        if inside.waitForExistence(timeout: 3) { return }
+        let kit = app.cells["ImportKit, Folder"]
+        if !kit.exists { app.buttons["Browse"].tap(); sleep(2) }
+        let onPhone = app.descendants(matching: .any).matching(NSPredicate(format: "label == 'On My iPhone'")).firstMatch
+        if !kit.exists && onPhone.exists { onPhone.tap(); sleep(2) }
+        guard kit.waitForExistence(timeout: 5) else {
+            app.buttons["Cancel"].tap()
+            throw XCTSkip("Files > On My iPhone > ImportKit with the import fixtures is not on this device")
+        }
+        kit.tap()
+        XCTAssertTrue(inside.waitForExistence(timeout: 10), "ImportKit opened")
+    }
+
+    /** Selects documents in the open folder by name (scrolling to them when needed), then Open. */
+    private func pickAndOpen(_ names: [String]) {
+        for name in names {
+            let cell = app.cells.matching(NSPredicate(format: "identifier BEGINSWITH %@", name + ", ")).firstMatch
+            var tries = 0
+            while !cell.isHittable && tries < 8 { if tries < 4 { app.swipeUp() } else { app.swipeDown() }; tries += 1; usleep(300_000) }
+            XCTAssertTrue(cell.isHittable, name); cell.tap(); usleep(300_000)
+        }
+        app.buttons["Open"].tap()
+    }
+
+    /** The perf line of the focused program (-perflog) once [ok] accepts it (ProgramApp.perfLine). */
+    @discardableResult private func perfLine(_ timeout: Double, _ ok: (String) -> Bool) -> String? {
+        let v = app.descendants(matching: .any)["templeView"]
+        let end = Date().addingTimeInterval(timeout)
+        while Date() < end {
+            if let s = v.value as? String, let r = s.range(of: ";perf=") { let l = String(s[r.upperBound...]); if ok(l) { return l } }
+            usleep(500_000)
+        }
+        return nil
+    }
+
+    private func perfValue(_ line: String, _ key: String) -> Int {
+        guard let r = line.range(of: key + "=") else { return -1 }
+        return Int(line[r.upperBound...].prefix { $0.isNumber }) ?? -1
+    }
+
+    private func staticText(containing s: String) -> XCUIElement {
+        app.staticTexts.matching(NSPredicate(format: "label CONTAINS %@", s)).firstMatch
+    }
+
+    /** Opens [file] in Files' current folder and runs it (tap, Run), as a user runs any file. */
+    private func runFromFiles(_ fileLabel: String) {
+        let f = app.buttons[fileLabel]
+        XCTAssertTrue(f.waitForExistence(timeout: 10), fileLabel); f.tap(); usleep(500_000)
+        menuItem("Run")
+    }
+
+    /**
+     * Start menu > Import... through the real system document picker: the first-time explanation (Cancel keeps it
+     * unseen), the picker (cancel, background, rotation), several genuine external programs at once (.HC.Z, .HC,
+     * archives), the summary, Files, running them on the interpreter (the program's own perf line shows it running),
+     * a restart, and a name collision (Keep Both).
+     */
+    func testImportThroughTheDocumentPicker() throws {
+        app.launchArguments = ["-uitest-reset", "-perflog", "-AppleLanguages", "(en-US)"]
+        app.launch(); readLayout()
+        startMenu(); menuItem("Import...")
+        XCTAssertTrue(app.staticTexts["Import TempleOS Programs"].waitForExistence(timeout: 5), "the explanation comes first")
+        shot("import-01-explanation")
+        app.buttons["CANCEL"].tap(); sleep(1)
+        XCTAssertFalse(app.buttons["Cancel"].exists, "no picker after Cancel")
+        startMenu(); menuItem("Import...")
+        XCTAssertTrue(app.buttons["CHOOSE FILES"].waitForExistence(timeout: 5), "shown again after Cancel")
+        app.buttons["CHOOSE FILES"].tap()
+        try openImportKit()
+        shot("import-02-picker")
+        app.buttons["Cancel"].tap()
+        XCTAssertTrue(app.buttons["MENU"].waitForExistence(timeout: 10), "back on the desktop")
+        // later: straight to the picker
+        startMenu(); menuItem("Import...")
+        XCTAssertFalse(app.buttons["CHOOSE FILES"].waitForExistence(timeout: 2), "no explanation the second time")
+        try openImportKit()
+        // the picker survives the app going to the background and a rotation
+        backgroundApp(); app.activate()
+        XCTAssertTrue(app.buttons["Cancel"].waitForExistence(timeout: 10), "picker still open after the background")
+        XCUIDevice.shared.orientation = .landscapeLeft; sleep(2); shot("import-03-picker-landscape")
+        XCUIDevice.shared.orientation = .portrait; sleep(2)
+        pickAndOpen(["o.HC.Z", "DiningStars.HC", "B17.HC.Z", "NewOS.HC.Z", "Span.zip", "Sup1Snd.zip"])
+        XCTAssertTrue(app.staticTexts["Import complete"].waitForExistence(timeout: 60), "summary")
+        for line in ["o.HC.Z was imported as C:/Home/Imports/o.HC", "DiningStars.HC was imported as C:/Home/Imports/DiningStars.HC",
+                     "B17.HC.Z was imported as C:/Home/Imports/B17.HC", "Span.zip was extracted to C:/Home/Imports/Span (files: 8)",
+                     "Sup1Snd.zip was extracted to C:/Home/Imports/Sup1Snd (files: 5)"] {
+            XCTAssertTrue(staticText(containing: line).exists, line)
+        }
+        XCTAssertFalse(app.buttons["RUN"].exists, "Run only for a single program")
+        shot("import-04-summary")
+        app.buttons["OPEN FOLDER"].tap(); sleep(1)
+        for f in ["File o.HC, 437 B", "File DiningStars.HC, 30942 B", "File B17.HC, 2775 B", "Folder Span", "Folder Sup1Snd"] {
+            XCTAssertTrue(app.buttons[f].waitForExistence(timeout: 5), f)
+        }
+        shot("import-05-files")
+        // the hymn plays: its speaker changes, on the interpreter, from C:/Home/Imports
+        runFromFiles("File o.HC, 437 B")
+        let hymn = perfLine(20) { $0.contains("program=C:/Home/Imports/o.HC ") && self.perfValue($0, "speaker_per_s") > 0 }
+        XCTAssertNotNil(hymn, "o.HC sounds"); print("IMPORT-EVIDENCE o.HC \(hymn ?? "-")")
+        shot("import-06-hymn")
+        windowMenu("o"); menuItem("Close"); sleep(1)
+        // a program in folders from an archive: Run.HC includes its siblings
+        startMenu(); menuItem("Files")
+        app.buttons["Folder Imports"].tap(); usleep(500_000); app.buttons["Folder Span"].tap(); usleep(500_000)
+        runFromFiles("File Run.HC, 36 B")
+        let span = perfLine(30) { $0.contains("program=C:/Home/Imports/Span/Run.HC ") && self.perfValue($0, "kernel_frames") >= 30 }
+        XCTAssertNotNil(span, "Span draws"); print("IMPORT-EVIDENCE Span \(span ?? "-")")
+        shot("import-07-span")
+        if app.buttons["OKAY"].exists { app.buttons["OKAY"].tap(); sleep(1) } // Span's own instructions
+        windowMenu("Run"); menuItem("Close"); sleep(1)
+        // a restart: the files are still there and run
+        app.terminate()
+        app.launchArguments = ["-perflog", "-AppleLanguages", "(en-US)"]
+        app.launch(); readLayout(); sleep(2)
+        for _ in 0..<3 where app.buttons["OKAY"].exists { app.buttons["OKAY"].tap(); sleep(1) } // a restored program's popup
+        startMenu(); menuItem("Files")
+        if app.buttons["Folder Imports"].waitForExistence(timeout: 3) { app.buttons["Folder Imports"].tap(); usleep(500_000) }
+        runFromFiles("File DiningStars.HC, 30942 B")
+        let dining = perfLine(30) { $0.contains("program=C:/Home/Imports/DiningStars.HC ") && self.perfValue($0, "kernel_frames") >= 30 }
+        XCTAssertNotNil(dining, "DiningStars after a restart"); print("IMPORT-EVIDENCE DiningStars \(dining ?? "-")")
+        shot("import-08-after-restart")
+        // the same name again: asked, Keep Both
+        startMenu(); menuItem("Import...")
+        try openImportKit()
+        pickAndOpen(["o.HC.Z"])
+        XCTAssertTrue(app.staticTexts["Replace o.HC?"].waitForExistence(timeout: 30), "asked before replacing")
+        shot("import-09-collision")
+        app.buttons["KEEP BOTH"].tap()
+        XCTAssertTrue(staticText(containing: "o.HC.Z was imported as C:/Home/Imports/o_2.HC").waitForExistence(timeout: 10))
+        XCTAssertTrue(app.buttons["RUN"].exists, "Run offered for one program")
+        app.buttons["CLOSE"].tap(); sleep(1)
+        XCTAssertTrue(app.buttons["MENU"].exists)
+    }
+
 }
 
 extension XCUIApplication {

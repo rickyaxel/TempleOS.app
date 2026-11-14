@@ -24,6 +24,9 @@ final class HeadlessEnv: ShellEnv {
     /** Whether the device keyboard is requested. */
     var systemKeyboard = false
     func showKeyboard(_ show: Bool) { systemKeyboard = show }
+    /** Start menu > Import...: the document picker's stand-in (ImportTests); no picker when nil. */
+    var picker: (() -> Bool)?
+    func pickImportFiles() -> Bool { picker?() ?? false }
 }
 
 /** Port of ShellUiTest.kt: every app opens, HolyC runs, a graphics program publishes frames, the session restores. */

@@ -50,7 +50,7 @@ No P0 items are known.
 |---|---|
 | Builds (Kotlin debug + release, Swift package, iOS app Debug + Release) | `testing.md` §4 commands; all succeed |
 | Automated tests | Kotlin 31 (24 active + 7 diagnostics), Swift 14 + sweep, iOS XCUITest 2: all pass |
-| Offline, no network, no import paths | offline audit: all checks pass; airplane-mode first launch on the emulator |
+| Offline, no network, no import paths | offline audit: all checks pass; airplane-mode first launch on the emulator. Since 2026-11 one user-initiated import path exists (Start menu > Import..., `file-import.md`); the audit allows document pickers only in its two adapters |
 | HolyC conformance | 16 shared vectors pass on both runtimes |
 | Original programs | catalog sweep: same status on both runtimes for all 96; 88/91 frames identical |
 | Security model | `security-model.md`; StkOver/BadMem/DivZero vectors; filesystem traversal tests |

@@ -34,7 +34,8 @@ their reach, and the deferred work for imported code is listed at the end.
 | Original TempleOS V5.03 programs and libraries bundled read-only in the app | yes | trusted content, still executed through the same checks |
 | Examples written for this project (`C:/Home/Examples`) | yes | trusted content, same checks |
 | Code the user types in the Terminal or the Editor on the device | yes | untrusted input from the device owner, same checks |
-| Code imported from Files/SAF, URLs, share sheets, other apps | **no** — no import path exists | — |
+| Code the user imports with Start menu > Import... (system document picker: Files/SAF) | yes, since 2026-11 (`file-import.md`) | untrusted, same checks; stored on C: like the user's own files |
+| Code from URLs, share sheets, other apps | **no** — no other import path exists | — |
 | Code downloaded from the network | **no** — no network access exists | — |
 
 There is exactly one execution path for all of these: source text from the
@@ -213,11 +214,14 @@ These checks are covered by the shared HolyC test vectors (`012_Errors.HC`,
 - Arena-granular (not per-allocation) memory checks, as described in §3.1.
 - No per-program capability enforcement (§3.4); acceptable in V1 because the
   surface is identical for all code and contains no network or host access.
-- The interpreter has not been fuzzed. Before any import feature (see
-  `future-developer-mode.md`), add: grammar-aware fuzzing of the lexer,
-  parser and codegen; randomized bytecode/VM fuzzing; fuzzing of every host
-  function's argument validation; resource quotas per imported project;
-  source/size limits; provenance display and capability prompts.
+- Fuzzing is bounded and fixed-seed (`FuzzTest.kt` / `FuzzTests.swift`: compiler,
+  compile-and-run, random VM programs, host calls, paths and the drive, sprites).
+  Start menu > Import... now brings in untrusted HolyC (`file-import.md`): its
+  archive and format input has size, count, depth and ratio limits and
+  adversarial tests, and imports share the drive's quota. Still open from the
+  list kept for imports (`future-developer-mode.md` §3-§4): grammar-aware and
+  longer-running fuzzing, per-project resource quotas, provenance display and
+  capability prompts, and an external security review.
 - DolDoc rendering in the document viewer is a subset; malformed documents
   render as text, they are never executed. `$MA$`/`$BT$` macro links only
   run when the user taps them, in a terminal, through the same interpreter.

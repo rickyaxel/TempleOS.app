@@ -37,6 +37,12 @@ interface ShellEnv {
     val memoryLimitBytes: Int get() = 32 shl 20
     /** The platform's minimum touch target in dp/pt (Material 48 dp, Apple HIG 44 pt): sizes menu rows. */
     val touchTargetDp: Double get() = 48.0
+    /**
+     * Start menu > Import...: shows the system document picker (iOS UIDocumentPickerViewController, Android
+     * ACTION_OPEN_DOCUMENT). The platform copies the chosen documents into app storage and hands them to
+     * [Shell.importFlow] ([ImportFlow.receive]), none when cancelled. False when no picker can be shown.
+     */
+    fun pickImportFiles(): Boolean = false
 }
 
 /** Small key-value persistence for the session (platform file or preferences). */
@@ -114,6 +120,8 @@ class Shell(val env: ShellEnv) {
     val historicalMenus: HistoricalMenus by lazy {HistoricalMenus.load(this)}
     var settings = Settings().also { Touch.large = it.largeTouch }
         set(v) { field = v; Touch.large = v.largeTouch }
+    /** Start menu > Import... (FileImport onto C:/Home/Imports). */
+    val importFlow by lazy { ImportFlow(this) }
 
     // ------------------------------------------------------------ lifecycle
 
@@ -1112,6 +1120,7 @@ class Shell(val env: ShellEnv) {
         items.add(MenuItem( { tr("menu.start.terminal") }) { Launch.terminal(this) })
         items.add(MenuItem( { tr("menu.start.editor") }) { Launch.editor(this, null) })
         items.add(MenuItem( { tr("menu.start.files") }) { Launch.files(this, "C:/Home") })
+        items.add(MenuItem( { tr("menu.start.import") }) { importFlow.start() })
         items.add(MenuItem( { tr("menu.start.games") }) { Launch.games(this) })
         for(id in listOf("applications","programs","demos")) catalog.group(id)?.let {g->items.add(MenuItem( { if(id=="demos")tr("menu.start.demos") else g.localizedTitle }) {Launch.programs(this,id)})}
         items.add(MenuItem( { tr("menu.start.examples") }) { showMenu(catalog.menuItems(this, "example"), insetLeft + 4, insetTop + barH, { tr("menu.examples.title") }) })
@@ -1272,11 +1281,13 @@ class Settings(
     var engine: Int = ENGINE_TERRY,
     /** How programs with arrow keys show them: the d-pad's four buttons, or the joystick (GameControls). */
     var directional: DirectionalControl = DirectionalControl.DPAD,
+    /** The user continued past Import's first-time explanation ([ImportFlow]); it is not shown again. */
+    var importIntroSeen: Boolean = false,
 ) {
     var keyboardMode: Int
         get() = KEYBOARD_TEMPLEOS
         set(@Suppress("UNUSED_PARAMETER") value) {}
-    fun encode() = "d=$desktopColor;s=${if (sound) 1 else 0};o=$controlsOpacity;u=$uiScale;c=${if (crispScaling) 1 else 0};t=${if (largeTouch) 1 else 0};k=$keyboardMode;g=$language;e=$engine;j=${directional.ordinal}"
+    fun encode() = "d=$desktopColor;s=${if (sound) 1 else 0};o=$controlsOpacity;u=$uiScale;c=${if (crispScaling) 1 else 0};t=${if (largeTouch) 1 else 0};k=$keyboardMode;g=$language;e=$engine;j=${directional.ordinal};i=${if (importIntroSeen) 1 else 0}"
     companion object {
         /** The in-app TempleOS keyboard ([TempleKeyboard]). */
         const val KEYBOARD_TEMPLEOS = 0
@@ -1299,6 +1310,7 @@ class Settings(
                 if (m["e"] == "1") ENGINE_NATIVE else ENGINE_TERRY,
                 // sessions saved before the joystick existed have no "j": the d-pad, as before
                 if (m["j"] == "1") DirectionalControl.JOYSTICK else DirectionalControl.DPAD,
+                m["i"] == "1",
             )
         }
     }

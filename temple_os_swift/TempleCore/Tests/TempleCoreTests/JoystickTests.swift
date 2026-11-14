@@ -248,7 +248,7 @@ final class JoystickTests: XCTestCase {
         XCTAssertEqual(.dpad, Settings().directional)
         XCTAssertEqual(.dpad, Settings.decode("d=8;s=1;o=2;u=0;c=0;t=0;k=0;g=;e=0").directional, "a session from before the joystick")
         let st = Settings(); st.directional = .joystick
-        XCTAssertTrue(st.encode().hasSuffix(";j=1"))
+        XCTAssertTrue(st.encode().contains(";j=1;"))
         XCTAssertEqual(.joystick, Settings.decode(st.encode()).directional)
         XCTAssertEqual(.dpad, Settings.decode("j=7").directional)
     }
