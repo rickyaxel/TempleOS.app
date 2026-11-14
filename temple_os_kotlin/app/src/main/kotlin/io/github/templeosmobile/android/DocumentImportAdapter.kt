@@ -40,7 +40,6 @@ class DocumentImportAdapter(private val activity: Activity, private val deliver:
             .setType("*/*")
             .putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
         return try {
-            @Suppress("DEPRECATION") // framework Activity (no AndroidX): startActivityForResult is its API
             activity.startActivityForResult(intent, REQUEST)
             open = true
             true

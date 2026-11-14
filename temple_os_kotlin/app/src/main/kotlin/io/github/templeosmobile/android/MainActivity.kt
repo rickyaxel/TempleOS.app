@@ -122,8 +122,6 @@ class MainActivity : Activity() {
     }
 
     /** The document picker's result (Start menu > Import...), also after the process was recreated. */
-    @Deprecated("Framework Activity result API (the app uses no AndroidX)")
-    @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (benchOnly || !importer.onResult(requestCode, resultCode, data)) super.onActivityResult(requestCode, resultCode, data)
     }
