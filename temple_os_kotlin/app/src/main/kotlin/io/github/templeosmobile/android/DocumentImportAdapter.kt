@@ -32,6 +32,9 @@ class DocumentImportAdapter(private val activity: Activity, private val deliver:
     /** Shows the picker (UI thread). False when there is none on this device or one is already open. */
     fun present(): Boolean {
         if (open) return false
+        // copies left by an import the process did not live to finish (a copy in progress is never this old)
+        val now = System.currentTimeMillis()
+        File(activity.cacheDir, "import").listFiles()?.filter { now - it.lastModified() > 10 * 60_000L }?.forEach { it.delete() }
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             .addCategory(Intent.CATEGORY_OPENABLE)
             .setType("*/*")
