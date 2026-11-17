@@ -8,7 +8,7 @@ import io.github.templeosmobile.core.holyc.*
  * Everything above GrPlot0 is the original TempleOS HolyC graphics library.
  */
 class Gfx(private val k: Kernel) {
-    private val m get() = k.mem
+    private val m = k.mem // fixed for the kernel's life (as k.vm)
     private val o get() = k.o
 
     // CDC member offsets

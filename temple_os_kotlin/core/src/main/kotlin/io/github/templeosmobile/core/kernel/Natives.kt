@@ -11,8 +11,8 @@ internal val COMPILER = chCode("Compiler")
  * the complete list of things HolyC code can ask the host to do.
  */
 class Natives(private val k: Kernel) {
-    private val mem get() = k.mem
-    private val vm get() = k.vm
+    private val mem = k.mem // fixed for the kernel's life (as k.vm): a field read instead of a getter chain per native call
+    private val vm = k.vm
 
     val SCF_SHIFT = 1L shl 9
     val SCF_CTRL = 1L shl 10

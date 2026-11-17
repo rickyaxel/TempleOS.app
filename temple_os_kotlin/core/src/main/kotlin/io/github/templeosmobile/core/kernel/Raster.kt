@@ -16,7 +16,7 @@ class Raster(private val k: Kernel) {
     private var pollCount = 0
     private fun poll() { if ((++pollCount and 0xFFFF) == 0 && k.vm.interrupt) throw VmKill("Stopped.") }
 
-    private val m get() = k.mem
+    private val m = k.mem // the VM's arena, fixed for the kernel's life (a getter chain cost 4% of Varoom on ART)
     private val o get() = k.o
 
     private val oFlags = o.dc("flags"); private val oWidth = o.dc("width"); private val oWI = o.dc("width_internal")
@@ -424,10 +424,19 @@ class Raster(private val k: Kernel) {
         var db = db0; var dst = dst0; var z = z0
         val dbStep = step * 4
         var res = 0L
-        if (!dither && rop0 != ROP_COLLISION && rop0 != ROP_XOR) {
+        if (!dither && rop0 != ROP_COLLISION && rop0 != ROP_XOR && (db0 and 3) == 0) {
+            // the usual span: an aligned depth buffer (each I32 inside one arena word), plain stores, on the words
+            val w = m.words
+            val c = cur0 and 0xFF
             for (i in 0 until n) {
                 val zi = (z shr 32).toInt()
-                if (zi >= 0 && zi <= m.ld4(db).toInt()) { m.st4(db, zi.toLong()); m.st1(dst, cur0); res++ }
+                val dw = db ushr 3; val dsh = (db and 7) shl 3
+                if (zi >= 0 && zi <= (w[dw] ushr dsh).toInt()) {
+                    w[dw] = (w[dw] and (0xFFFFFFFFL shl dsh).inv()) or ((zi.toLong() and 0xFFFFFFFFL) shl dsh)
+                    val pw = dst ushr 3; val psh = (dst and 7) shl 3
+                    w[pw] = (w[pw] and (0xFFL shl psh).inv()) or (c shl psh)
+                    res++
+                }
                 db += dbStep; dst += step; z += dz
             }
             return res
