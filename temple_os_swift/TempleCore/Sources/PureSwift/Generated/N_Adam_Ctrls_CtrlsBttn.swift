@@ -35,7 +35,7 @@ public final class N_Adam_Ctrls_CtrlsBttn: NativeModule {
     }
 
     /// HolyC DrawCtrlBttn (CtrlsBttn.HC:12)
-    public final func f703_DrawCtrlBttn(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawCtrlBttn(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -70,7 +70,7 @@ public final class N_Adam_Ctrls_CtrlsBttn: NativeModule {
             ln = 28 // CtrlsBttn.HC:28
             try tick(t)
             let vb0 = try push1(t, l32_st)
-            _ = try P.f369_GrPrint(t, p0_dc, ((((ld8((p1_c &+ 40)) &+ ld8((p1_c &+ 48))) &+ 1) &- (l24_l &* 8)) &>> 1), ((((ld8((p1_c &+ 56)) &+ ld8((p1_c &+ 64))) &+ 1) &- 8) &>> 1), s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, ((((ld8((p1_c &+ 40)) &+ ld8((p1_c &+ 48))) &+ 1) &- (l24_l &* 8)) &>> 1), ((((ld8((p1_c &+ 56)) &+ ld8((p1_c &+ 64))) &+ 1) &- 8) &>> 1), s0, vb0, 1)
             t.sp = vb0
             t.depth -= 1
             return
@@ -78,7 +78,7 @@ public final class N_Adam_Ctrls_CtrlsBttn: NativeModule {
     }
 
     /// HolyC LeftClickCtrlBttn (CtrlsBttn.HC:32)
-    public final func f704_LeftClickCtrlBttn(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_LeftClickCtrlBttn(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -109,7 +109,7 @@ public final class N_Adam_Ctrls_CtrlsBttn: NativeModule {
     }
 
     /// HolyC CtrlBttnNew (CtrlsBttn.HC:42)
-    @discardableResult public final func f705_CtrlBttnNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64) throws -> Int64 {
+    @discardableResult public final func f710_CtrlBttnNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -189,9 +189,9 @@ public final class N_Adam_Ctrls_CtrlsBttn: NativeModule {
             ln = 74 // CtrlsBttn.HC:74
             try st8((l64_res &+ 104), l72_s)
             ln = 75 // CtrlsBttn.HC:75
-            try st8((l64_res &+ 120), 9223090561878065855)
+            try st8((l64_res &+ 120), 9223090561878065860)
             ln = 76 // CtrlsBttn.HC:76
-            try st8((l64_res &+ 136), 9223090561878065856)
+            try st8((l64_res &+ 136), 9223090561878065861)
             ln = 77 // CtrlsBttn.HC:77
             try st8((l64_res &+ 40), p0_x)
             ln = 78 // CtrlsBttn.HC:78
@@ -212,7 +212,7 @@ public final class N_Adam_Ctrls_CtrlsBttn: NativeModule {
     }
 
     /// HolyC CtrlBttnDel (CtrlsBttn.HC:85)
-    public final func f706_CtrlBttnDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f711_CtrlBttnDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -233,7 +233,7 @@ public final class N_Adam_Ctrls_CtrlsBttn: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Ctrls/CtrlsBttn.HC#0 (CtrlsBttn.HC:1)
-    @discardableResult public final func f707_init_C__Adam_Ctrls_CtrlsBttn_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Adam_Ctrls_CtrlsBttn_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -245,17 +245,17 @@ public final class N_Adam_Ctrls_CtrlsBttn: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawCtrlBttn(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_LeftClickCtrlBttn(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: return try f705_CtrlBttnNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0))
-        case 706: try f706_CtrlBttnDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 707: return try f707_init_C__Adam_Ctrls_CtrlsBttn_HC_0(t)
+        case 708: try f708_DrawCtrlBttn(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_LeftClickCtrlBttn(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: return try f710_CtrlBttnNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0))
+        case 711: try f711_CtrlBttnDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 712: return try f712_init_C__Adam_Ctrls_CtrlsBttn_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "DrawCtrlBttn", 704: "LeftClickCtrlBttn", 705: "CtrlBttnNew", 706: "CtrlBttnDel", 707: "$init:C:/Adam/Ctrls/CtrlsBttn.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "DrawCtrlBttn", 709: "LeftClickCtrlBttn", 710: "CtrlBttnNew", 711: "CtrlBttnDel", 712: "$init:C:/Adam/Ctrls/CtrlsBttn.HC#0"]
     private static let FILES: [String] = ["C:/Adam/Ctrls/CtrlsBttn.HC"]
     public override var files: [String] { N_Adam_Ctrls_CtrlsBttn.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Ctrls_CtrlsBttn.DEFINED.contains(index) }

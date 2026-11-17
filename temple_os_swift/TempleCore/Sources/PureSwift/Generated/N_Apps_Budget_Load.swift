@@ -121,7 +121,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Budget/Load.HC#0 (Load.HC:3)
-    @discardableResult public final func f703_init_C__Apps_Budget_Load_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Budget_Load_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -135,7 +135,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC StrFileRead (BgtStrs.HC:3)
-    @discardableResult public final func f704_StrFileRead(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f709_StrFileRead(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -155,7 +155,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             p3_no_nums = (p3_no_nums & 0xFF)
             ln = 1048582 // BgtStrs.HC:6
             try tick(t)
-            let t0: Int64 = try P.f617_DocRead(t, p0_name, 40)
+            let t0: Int64 = try P.f622_DocRead(t, p0_name, 40)
             l32_doc = t0
             ln = 1048583 // BgtStrs.HC:7
             l40_doc_e = try ld8(l32_doc)
@@ -237,7 +237,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 1048616 // BgtStrs.HC:40
             try tick(t)
-            try P.f605_DocDel(t, l32_doc)
+            try P.f610_DocDel(t, l32_doc)
             ln = 1048617 // BgtStrs.HC:41
             if (p1__max_num != 0) {
                 try st8(p1__max_num, l56_max_num)
@@ -261,7 +261,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC StrFileArrDel (BgtStrs.HC:49)
-    public final func f705_StrFileArrDel(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_StrFileArrDel(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -285,7 +285,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC StrFileAdd (BgtStrs.HC:57)
-    @discardableResult public final func f706_StrFileAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f711_StrFileAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -301,7 +301,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 1048638 // BgtStrs.HC:62
             try tick(t)
-            let t0: Int64 = try P.f586_HashFind(t, p0_st, p2_table, 1, 1)
+            let t0: Int64 = try P.f591_HashFind(t, p0_st, p2_table, 1, 1)
             l32_tmph = t0
             if (t0 == 0) {
                 ln = 1048639 // BgtStrs.HC:63
@@ -320,7 +320,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 try st8((l32_tmph &+ 24), t4)
                 ln = 1048643 // BgtStrs.HC:67
                 try tick(t)
-                try P.f587_HashAdd(t, l32_tmph, p2_table)
+                try P.f592_HashAdd(t, l32_tmph, p2_table)
             }
             ln = 1048645 // BgtStrs.HC:69
             if (p3_color != 16) {
@@ -337,7 +337,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC StrEntriesCompare (BgtStrs.HC:74)
-    @discardableResult public final func f707_StrEntriesCompare(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f712_StrEntriesCompare(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -353,7 +353,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC StrFileWrite (BgtStrs.HC:79)
-    public final func f708_StrFileWrite(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f713_StrFileWrite(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -373,7 +373,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             l48_color = 0
             ln = 1048658 // BgtStrs.HC:82
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, p0_name, 0)
+            let t0: Int64 = try P.f606_DocNew(t, p0_name, 0)
             l56_doc = t0
             ln = 1048660 // BgtStrs.HC:84
             if (p1_table != 0) {
@@ -384,7 +384,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 loop0: while try (l24_i <= ld8((p1_table &+ 8))) {
                     ln = 1048663 // BgtStrs.HC:87
                     try tick(t)
-                    let t1: Int64 = try P.f588_LinkedLstCnt(t, ld8((ld8((p1_table &+ 24)) &+ (l24_i &* 8))))
+                    let t1: Int64 = try P.f593_LinkedLstCnt(t, ld8((ld8((p1_table &+ 24)) &+ (l24_i &* 8))))
                     l40_cnt = (l40_cnt &+ t1)
                     ln = 1048662 // BgtStrs.HC:86
                     l24_i = (l24_i &+ 1)
@@ -415,7 +415,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                     try tick(t)
                 }
                 ln = 1048673 // BgtStrs.HC:97
-                _ = try nat(t, n_QSortI64, try push3(t, l72_a, l40_cnt, 9223090561878065859))
+                _ = try nat(t, n_QSortI64, try push3(t, l72_a, l40_cnt, 9223090561878065864))
                 ln = 1048674 // BgtStrs.HC:98
                 l24_i = 0
                 loop6: while (l24_i < l40_cnt) {
@@ -457,17 +457,17 @@ public final class N_Apps_Budget_Load: NativeModule {
             try st8(t4, (ld8(t4) | 8))
             ln = 1048688 // BgtStrs.HC:112
             try tick(t)
-            _ = try P.f618_DocWrite(t, l56_doc, 0)
+            _ = try P.f623_DocWrite(t, l56_doc, 0)
             ln = 1048689 // BgtStrs.HC:113
             try tick(t)
-            try P.f605_DocDel(t, l56_doc)
+            try P.f610_DocDel(t, l56_doc)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "StrFileWrite", ln) }
     }
 
     /// HolyC StrFileDel (BgtStrs.HC:116)
-    public final func f709_StrFileDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f714_StrFileDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -511,7 +511,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Budget/Load.HC#1 (Load.HC:37)
-    @discardableResult public final func f710_init_C__Apps_Budget_Load_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Apps_Budget_Load_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -525,7 +525,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC MyStr2Date (Budget.HC:60)
-    @discardableResult public final func f711_MyStr2Date(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f716_MyStr2Date(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -551,7 +551,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                     } else {
                         ln = 2097222 // Budget.HC:70
                         try tick(t)
-                        let t2: Int64 = try P.f583_Str2Date(t, p0_st)
+                        let t2: Int64 = try P.f588_Str2Date(t, p0_st)
                         l24_res = t2
                     }
                 }
@@ -571,7 +571,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 2097228 // Budget.HC:76
             try tick(t)
-            let t5: Int64 = try P.f578_Struct2Date(t, (fp &+ 8))
+            let t5: Int64 = try P.f583_Struct2Date(t, (fp &+ 8))
             t.msp = msp0
             t.depth -= 1
             return t5
@@ -582,7 +582,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtAcctsUpdate (BgtAccts.HC:1)
-    public final func f712_BgtAcctsUpdate(_ t: HTask) throws {
+    public final func f717_BgtAcctsUpdate(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -596,11 +596,11 @@ public final class N_Apps_Budget_Load: NativeModule {
                 if try (ld2u((l0_tmpb &+ 24)) != 4) {
                     ln = 3145736 // BgtAccts.HC:8
                     try tick(t)
-                    let t0: Int64 = try f706_StrFileAdd(t, ld8((l0_tmpb &+ 48)), g_accts_table_strs, ld8(g_accts_table), 16)
+                    let t0: Int64 = try f711_StrFileAdd(t, ld8((l0_tmpb &+ 48)), g_accts_table_strs, ld8(g_accts_table), 16)
                     try st4((l0_tmpb &+ 28), t0)
                     ln = 3145738 // BgtAccts.HC:10
                     try tick(t)
-                    let t1: Int64 = try f706_StrFileAdd(t, ld8((l0_tmpb &+ 56)), g_accts_table_strs, ld8(g_accts_table), 16)
+                    let t1: Int64 = try f711_StrFileAdd(t, ld8((l0_tmpb &+ 56)), g_accts_table_strs, ld8(g_accts_table), 16)
                     try st4((l0_tmpb &+ 32), t1)
                 }
                 ln = 3145741 // BgtAccts.HC:13
@@ -613,11 +613,11 @@ public final class N_Apps_Budget_Load: NativeModule {
             loop2: while (l8_tmpt != g_t_head) {
                 ln = 3145745 // BgtAccts.HC:17
                 try tick(t)
-                let t2: Int64 = try f706_StrFileAdd(t, ld8(((l8_tmpt &+ 60) &+ 48)), g_accts_table_strs, ld8(g_accts_table), 16)
+                let t2: Int64 = try f711_StrFileAdd(t, ld8(((l8_tmpt &+ 60) &+ 48)), g_accts_table_strs, ld8(g_accts_table), 16)
                 try st4(((l8_tmpt &+ 60) &+ 28), t2)
                 ln = 3145747 // BgtAccts.HC:19
                 try tick(t)
-                let t3: Int64 = try f706_StrFileAdd(t, ld8(((l8_tmpt &+ 60) &+ 56)), g_accts_table_strs, ld8(g_accts_table), 16)
+                let t3: Int64 = try f711_StrFileAdd(t, ld8(((l8_tmpt &+ 60) &+ 56)), g_accts_table_strs, ld8(g_accts_table), 16)
                 try st4(((l8_tmpt &+ 60) &+ 32), t3)
                 ln = 3145749 // BgtAccts.HC:21
                 l8_tmpt = try ld8(l8_tmpt)
@@ -629,23 +629,23 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtAcctsWrite (BgtAccts.HC:25)
-    public final func f713_BgtAcctsWrite(_ t: HTask) throws {
+    public final func f718_BgtAcctsWrite(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 3145755 // BgtAccts.HC:27
             try tick(t)
-            try f712_BgtAcctsUpdate(t)
+            try f717_BgtAcctsUpdate(t)
             ln = 3145756 // BgtAccts.HC:28
             try tick(t)
-            try f708_StrFileWrite(t, ld8(g_bgt_accts_file), ld8(g_accts_table), 1)
+            try f713_StrFileWrite(t, ld8(g_bgt_accts_file), ld8(g_accts_table), 1)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "BgtAcctsWrite", ln) }
     }
 
     /// HolyC BgtAcctsRead (BgtAccts.HC:31)
-    public final func f714_BgtAcctsRead(_ t: HTask) throws {
+    public final func f719_BgtAcctsRead(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -655,14 +655,14 @@ public final class N_Apps_Budget_Load: NativeModule {
             var l24_s: Int64 = 0
             ln = 3145762 // BgtAccts.HC:34
             try tick(t)
-            let t0: Int64 = try f704_StrFileRead(t, ld8(g_bgt_accts_file), (fp &+ 8), (fp &+ 16), 1)
+            let t0: Int64 = try f709_StrFileRead(t, ld8(g_bgt_accts_file), (fp &+ 8), (fp &+ 16), 1)
             l24_s = t0
             ln = 3145763 // BgtAccts.HC:35
             try tick(t)
-            try f709_StrFileDel(t, ld8(g_accts_table))
+            try f714_StrFileDel(t, ld8(g_accts_table))
             ln = 3145764 // BgtAccts.HC:36
             try tick(t)
-            let t1: Int64 = try P.f585_HashTableNew(t, 512, 0)
+            let t1: Int64 = try P.f590_HashTableNew(t, 512, 0)
             try st8(g_accts_table, t1)
             ln = 3145765 // BgtAccts.HC:37
             try st8(g_accts_table_strs, 0)
@@ -673,7 +673,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 if try (ld8((l24_s &+ (l0_i &* 8))) != 0) {
                     ln = 3145768 // BgtAccts.HC:40
                     try tick(t)
-                    _ = try f706_StrFileAdd(t, ld8((l24_s &+ (l0_i &* 8))), g_accts_table_strs, ld8(g_accts_table), ld1u((ld8((fp &+ 16)) &+ l0_i)))
+                    _ = try f711_StrFileAdd(t, ld8((l24_s &+ (l0_i &* 8))), g_accts_table_strs, ld8(g_accts_table), ld1u((ld8((fp &+ 16)) &+ l0_i)))
                 }
                 ln = 3145766 // BgtAccts.HC:38
                 l0_i = (l0_i &+ 1)
@@ -681,7 +681,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 3145769 // BgtAccts.HC:41
             try tick(t)
-            try f705_StrFileArrDel(t, l24_s, ld8((fp &+ 8)))
+            try f710_StrFileArrDel(t, l24_s, ld8((fp &+ 8)))
             ln = 3145770 // BgtAccts.HC:42
             _ = try nat(t, n_Free, try push1(t, ld8((fp &+ 16))))
             t.msp = msp0
@@ -691,7 +691,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtAcctColor (BgtAccts.HC:45)
-    @discardableResult public final func f715_BgtAcctColor(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f720_BgtAcctColor(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -699,7 +699,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             var l8_tmph: Int64 = 0
             ln = 3145776 // BgtAccts.HC:48
             try tick(t)
-            let t0: Int64 = try P.f586_HashFind(t, p0_st, ld8(g_accts_table), 1, 1)
+            let t0: Int64 = try P.f591_HashFind(t, p0_st, ld8(g_accts_table), 1, 1)
             l8_tmph = t0
             if (t0 != 0) {
                 ln = 3145777 // BgtAccts.HC:49
@@ -717,7 +717,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtPopUpAcct (BgtAccts.HC:54)
-    @discardableResult public final func f716_BgtPopUpAcct(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f721_BgtPopUpAcct(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -731,7 +731,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             var l56_tmph: Int64 = 0
             ln = 3145786 // BgtAccts.HC:58
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l32_doc = t0
             ln = 3145787 // BgtAccts.HC:59
             l48_doc_dft = 0
@@ -783,11 +783,11 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 3145808 // BgtAccts.HC:80
             try tick(t)
-            let t4: Int64 = try P.f621_PopUpMenu(t, l32_doc, 4)
+            let t4: Int64 = try P.f626_PopUpMenu(t, l32_doc, 4)
             l24_res = t4
             ln = 3145809 // BgtAccts.HC:81
             try tick(t)
-            try P.f605_DocDel(t, l32_doc)
+            try P.f610_DocDel(t, l32_doc)
             ln = 3145810 // BgtAccts.HC:82
             t.depth -= 1
             return l24_res
@@ -797,7 +797,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtEntryDel2 (BgtEntry.HC:1)
-    public final func f717_BgtEntryDel2(_ t: HTask, _ a0: Int64) throws {
+    public final func f722_BgtEntryDel2(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -817,7 +817,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtEntryCopy (BgtEntry.HC:10)
-    @discardableResult public final func f718_BgtEntryCopy(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f723_BgtEntryCopy(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -855,14 +855,14 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtEntryDel (BgtEntry.HC:22)
-    public final func f719_BgtEntryDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f724_BgtEntryDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_tmpb: Int64 = a0
             ln = 4194328 // BgtEntry.HC:24
             try tick(t)
-            try f717_BgtEntryDel2(t, p0_tmpb)
+            try f722_BgtEntryDel2(t, p0_tmpb)
             ln = 4194329 // BgtEntry.HC:25
             _ = try nat(t, n_Free, try push1(t, p0_tmpb))
             t.depth -= 1
@@ -871,7 +871,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtIns (BgtEntry.HC:28)
-    public final func f720_BgtIns(_ t: HTask, _ a0: Int64) throws {
+    public final func f725_BgtIns(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -894,7 +894,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtEntryPmt (BgtEntry.HC:45)
-    @discardableResult public final func f721_BgtEntryPmt(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f726_BgtEntryPmt(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -928,13 +928,13 @@ public final class N_Apps_Budget_Load: NativeModule {
             loop0: while (1 != 0) {
                 ln = 4194364 // BgtEntry.HC:60
                 try tick(t)
-                let t0: Int64 = try P.f600_PopUpForm(t, (fp &+ 8), s10)
+                let t0: Int64 = try P.f605_PopUpForm(t, (fp &+ 8), s10)
                 if (t0 != 0) {
                     ln = 4194365 // BgtEntry.HC:61
                     if try (ld1u(((fp &+ 8) &+ 520)) == 0) {
                         ln = 4194366 // BgtEntry.HC:62
                         try tick(t)
-                        let t1: Int64 = try f716_BgtPopUpAcct(t, s11, 0)
+                        let t1: Int64 = try f721_BgtPopUpAcct(t, s11, 0)
                         l2072_st = t1
                         ln = 4194367 // BgtEntry.HC:63
                         if (l2072_st != (-1)) {
@@ -947,7 +947,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                         if try (ld1u(((fp &+ 8) &+ 1032)) == 0) {
                             ln = 4194370 // BgtEntry.HC:66
                             try tick(t)
-                            let t2: Int64 = try f716_BgtPopUpAcct(t, s12, 0)
+                            let t2: Int64 = try f721_BgtPopUpAcct(t, s12, 0)
                             l2072_st = t2
                             ln = 4194371 // BgtEntry.HC:67
                             if (l2072_st != (-1)) {
@@ -961,7 +961,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                             l2064_tmpb = t3
                             ln = 4194375 // BgtEntry.HC:71
                             try tick(t)
-                            let t4: Int64 = try P.f583_Str2Date(t, (fp &+ 8))
+                            let t4: Int64 = try P.f588_Str2Date(t, (fp &+ 8))
                             try st8((l2064_tmpb &+ 16), t4)
                             ln = 4194376 // BgtEntry.HC:72
                             try st8((l2064_tmpb &+ 40), bits(ldf(((fp &+ 8) &+ 512))))
@@ -981,10 +981,10 @@ public final class N_Apps_Budget_Load: NativeModule {
                             try st2((l2064_tmpb &+ 24), 0)
                             ln = 4194381 // BgtEntry.HC:77
                             try tick(t)
-                            _ = try f706_StrFileAdd(t, ld8((l2064_tmpb &+ 48)), g_accts_table_strs, ld8(g_accts_table), 16)
+                            _ = try f711_StrFileAdd(t, ld8((l2064_tmpb &+ 48)), g_accts_table_strs, ld8(g_accts_table), 16)
                             ln = 4194382 // BgtEntry.HC:78
                             try tick(t)
-                            _ = try f706_StrFileAdd(t, ld8((l2064_tmpb &+ 56)), g_accts_table_strs, ld8(g_accts_table), 16)
+                            _ = try f711_StrFileAdd(t, ld8((l2064_tmpb &+ 56)), g_accts_table_strs, ld8(g_accts_table), 16)
                             ln = 4194383 // BgtEntry.HC:79
                             t.msp = msp0
                             t.depth -= 1
@@ -1006,7 +1006,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtTemplatePurge (BgtTemplate.HC:1)
-    public final func f722_BgtTemplatePurge(_ t: HTask, _ a0: Int64) throws {
+    public final func f727_BgtTemplatePurge(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1026,7 +1026,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                     try P.f155_QueRem(t, l8_tmpb)
                     ln = 5242889 // BgtTemplate.HC:9
                     try tick(t)
-                    try f717_BgtEntryDel2(t, l8_tmpb)
+                    try f722_BgtEntryDel2(t, l8_tmpb)
                     ln = 5242890 // BgtTemplate.HC:10
                     _ = try nat(t, n_Free, try push1(t, l8_tmpb))
                 }
@@ -1040,17 +1040,17 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtTemplateDel (BgtTemplate.HC:16)
-    public final func f723_BgtTemplateDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f728_BgtTemplateDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_tmpt: Int64 = a0
             ln = 5242898 // BgtTemplate.HC:18
             try tick(t)
-            try f722_BgtTemplatePurge(t, p0_tmpt)
+            try f727_BgtTemplatePurge(t, p0_tmpt)
             ln = 5242899 // BgtTemplate.HC:19
             try tick(t)
-            try f717_BgtEntryDel2(t, (p0_tmpt &+ 60))
+            try f722_BgtEntryDel2(t, (p0_tmpt &+ 60))
             ln = 5242900 // BgtTemplate.HC:20
             _ = try nat(t, n_Free, try push1(t, p0_tmpt))
             t.depth -= 1
@@ -1059,7 +1059,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtTemplateExpand (BgtTemplate.HC:23)
-    public final func f724_BgtTemplateExpand(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f729_BgtTemplateExpand(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1078,11 +1078,11 @@ public final class N_Apps_Budget_Load: NativeModule {
             l64_first = 1
             ln = 5242910 // BgtTemplate.HC:30
             try tick(t)
-            let t0: Int64 = try f711_MyStr2Date(t, (p0_tmpt &+ 20))
+            let t0: Int64 = try f716_MyStr2Date(t, (p0_tmpt &+ 20))
             l24_start = t0
             ln = 5242911 // BgtTemplate.HC:31
             try tick(t)
-            let t1: Int64 = try f711_MyStr2Date(t, (p0_tmpt &+ 36))
+            let t1: Int64 = try f716_MyStr2Date(t, (p0_tmpt &+ 36))
             l32_end = t1
             ln = 5242912 // BgtTemplate.HC:32
             try st8(((p0_tmpt &+ 60) &+ 72), p0_tmpt)
@@ -1099,7 +1099,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                         if ((l64_first == 0) || (p1_periodic_copy == 0)) {
                             ln = 5242918 // BgtTemplate.HC:38
                             try tick(t)
-                            let t3: Int64 = try f718_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
+                            let t3: Int64 = try f723_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
                             l56_tmpb = t3
                             ln = 5242919 // BgtTemplate.HC:39
                             try st8((l56_tmpb &+ 16), l16_d)
@@ -1113,7 +1113,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                             }
                             ln = 5242924 // BgtTemplate.HC:44
                             try tick(t)
-                            try f720_BgtIns(t, l56_tmpb)
+                            try f725_BgtIns(t, l56_tmpb)
                         }
                         ln = 5242926 // BgtTemplate.HC:46
                         l16_d = try f2i((Double(l16_d) + (ldf((p0_tmpt &+ 52)) * 4.294967296E9)))
@@ -1129,7 +1129,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                     loop3: while (1 != 0) {
                         ln = 5242933 // BgtTemplate.HC:53
                         try tick(t)
-                        let t4: Int64 = try P.f578_Struct2Date(t, (fp &+ 40))
+                        let t4: Int64 = try P.f583_Struct2Date(t, (fp &+ 40))
                         l16_d = t4
                         ln = 5242934 // BgtTemplate.HC:54
                         if (l16_d <= l32_end) {
@@ -1137,7 +1137,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                             if ((l64_first == 0) || (p1_periodic_copy == 0)) {
                                 ln = 5242936 // BgtTemplate.HC:56
                                 try tick(t)
-                                let t5: Int64 = try f718_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
+                                let t5: Int64 = try f723_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
                                 l56_tmpb = t5
                                 ln = 5242937 // BgtTemplate.HC:57
                                 try st8((l56_tmpb &+ 16), l16_d)
@@ -1151,7 +1151,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                                 }
                                 ln = 5242942 // BgtTemplate.HC:62
                                 try tick(t)
-                                try f720_BgtIns(t, l56_tmpb)
+                                try f725_BgtIns(t, l56_tmpb)
                             }
                         } else {
                             ln = 5242945 // BgtTemplate.HC:65
@@ -1182,7 +1182,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                     loop5: while (1 != 0) {
                         ln = 5242956 // BgtTemplate.HC:76
                         try tick(t)
-                        let t11: Int64 = try P.f578_Struct2Date(t, (fp &+ 40))
+                        let t11: Int64 = try P.f583_Struct2Date(t, (fp &+ 40))
                         l16_d = t11
                         ln = 5242957 // BgtTemplate.HC:77
                         if (l16_d <= l32_end) {
@@ -1190,7 +1190,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                             if ((l64_first == 0) || (p1_periodic_copy == 0)) {
                                 ln = 5242959 // BgtTemplate.HC:79
                                 try tick(t)
-                                let t12: Int64 = try f718_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
+                                let t12: Int64 = try f723_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
                                 l56_tmpb = t12
                                 ln = 5242960 // BgtTemplate.HC:80
                                 try st8((l56_tmpb &+ 16), l16_d)
@@ -1204,7 +1204,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                                 }
                                 ln = 5242965 // BgtTemplate.HC:85
                                 try tick(t)
-                                try f720_BgtIns(t, l56_tmpb)
+                                try f725_BgtIns(t, l56_tmpb)
                             }
                         } else {
                             ln = 5242968 // BgtTemplate.HC:88
@@ -1235,7 +1235,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                     loop7: while (1 != 0) {
                         ln = 5242980 // BgtTemplate.HC:100
                         try tick(t)
-                        let t17: Int64 = try P.f578_Struct2Date(t, (fp &+ 40))
+                        let t17: Int64 = try P.f583_Struct2Date(t, (fp &+ 40))
                         l16_d = t17
                         ln = 5242981 // BgtTemplate.HC:101
                         if (l16_d <= l32_end) {
@@ -1243,7 +1243,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                             if ((l64_first == 0) || (p1_periodic_copy == 0)) {
                                 ln = 5242983 // BgtTemplate.HC:103
                                 try tick(t)
-                                let t18: Int64 = try f718_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
+                                let t18: Int64 = try f723_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
                                 l56_tmpb = t18
                                 ln = 5242984 // BgtTemplate.HC:104
                                 try st8((l56_tmpb &+ 16), l16_d)
@@ -1257,7 +1257,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                                 }
                                 ln = 5242989 // BgtTemplate.HC:109
                                 try tick(t)
-                                try f720_BgtIns(t, l56_tmpb)
+                                try f725_BgtIns(t, l56_tmpb)
                             }
                         } else {
                             ln = 5242992 // BgtTemplate.HC:112
@@ -1288,7 +1288,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                     loop9: while (1 != 0) {
                         ln = 5243004 // BgtTemplate.HC:124
                         try tick(t)
-                        let t23: Int64 = try P.f578_Struct2Date(t, (fp &+ 40))
+                        let t23: Int64 = try P.f583_Struct2Date(t, (fp &+ 40))
                         l16_d = t23
                         ln = 5243005 // BgtTemplate.HC:125
                         if (l16_d <= l32_end) {
@@ -1296,7 +1296,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                             if ((l64_first == 0) || (p1_periodic_copy == 0)) {
                                 ln = 5243007 // BgtTemplate.HC:127
                                 try tick(t)
-                                let t24: Int64 = try f718_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
+                                let t24: Int64 = try f723_BgtEntryCopy(t, (p0_tmpt &+ 60), p1_periodic_copy)
                                 l56_tmpb = t24
                                 ln = 5243008 // BgtTemplate.HC:128
                                 try st8((l56_tmpb &+ 16), l16_d)
@@ -1310,7 +1310,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                                 }
                                 ln = 5243013 // BgtTemplate.HC:133
                                 try tick(t)
-                                try f720_BgtIns(t, l56_tmpb)
+                                try f725_BgtIns(t, l56_tmpb)
                             }
                         } else {
                             ln = 5243016 // BgtTemplate.HC:136
@@ -1335,7 +1335,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC CBgtTemplatesExpand (BgtTemplate.HC:144)
-    public final func f725_CBgtTemplatesExpand(_ t: HTask) throws {
+    public final func f730_CBgtTemplatesExpand(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1346,7 +1346,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             loop0: while (l0_tmpt != g_t_head) {
                 ln = 5243028 // BgtTemplate.HC:148
                 try tick(t)
-                try f724_BgtTemplateExpand(t, l0_tmpt, 0)
+                try f729_BgtTemplateExpand(t, l0_tmpt, 0)
                 ln = 5243029 // BgtTemplate.HC:149
                 l0_tmpt = try ld8(l0_tmpt)
                 try tick(t)
@@ -1357,7 +1357,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtTemplatePmt (BgtTemplate.HC:153)
-    @discardableResult public final func f726_BgtTemplatePmt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f731_BgtTemplatePmt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1395,11 +1395,11 @@ public final class N_Apps_Budget_Load: NativeModule {
             loop0: while (1 != 0) {
                 ln = 5243050 // BgtTemplate.HC:170
                 try tick(t)
-                let t0: Int64 = try P.f600_PopUpForm(t, (fp &+ 16), s15)
+                let t0: Int64 = try P.f605_PopUpForm(t, (fp &+ 16), s15)
                 if try ((t0 != 0) && (((ld2u(((fp &+ 16) &+ 16)) == 1) && (ldf(((fp &+ 16) &+ 52)) > 0.0)) || gtu(ld2u(((fp &+ 16) &+ 16)), 1))) {
                     ln = 5243052 // BgtTemplate.HC:172
                     try tick(t)
-                    let t1: Int64 = try f721_BgtEntryPmt(t, p1_dft_b)
+                    let t1: Int64 = try f726_BgtEntryPmt(t, p1_dft_b)
                     l176_tmpb = t1
                     if (t1 != 0) {
                         ln = 5243053 // BgtTemplate.HC:173
@@ -1433,7 +1433,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtDataRead (BgtFile.HC:1)
-    public final func f727_BgtDataRead(_ t: HTask) throws {
+    public final func f732_BgtDataRead(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1448,7 +1448,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             var l8_tmpt: Int64 = 0
             ln = 6291464 // BgtFile.HC:8
             try tick(t)
-            let t0: Int64 = try f704_StrFileRead(t, ld8(g_bgt_string_file), (fp &+ 56), 0, 0)
+            let t0: Int64 = try f709_StrFileRead(t, ld8(g_bgt_string_file), (fp &+ 56), 0, 0)
             l64_s = t0
             ln = 6291466 // BgtFile.HC:10
             _ = try nat(t, n_MemSet, try push3(t, g_b_head, 0, 88))
@@ -1544,12 +1544,12 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 6291499 // BgtFile.HC:43
             try tick(t)
-            try f705_StrFileArrDel(t, l64_s, ld8((fp &+ 56)))
+            try f710_StrFileArrDel(t, l64_s, ld8((fp &+ 56)))
             ln = 6291500 // BgtFile.HC:44
             _ = try nat(t, n_Free, try push1(t, l40_b))
             ln = 6291502 // BgtFile.HC:46
             try tick(t)
-            try f712_BgtAcctsUpdate(t)
+            try f717_BgtAcctsUpdate(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -1557,7 +1557,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtDataWrite (BgtFile.HC:49)
-    public final func f728_BgtDataWrite(_ t: HTask) throws {
+    public final func f733_BgtDataWrite(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1575,7 +1575,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             try st8((fp &+ 8), 0)
             ln = 6291508 // BgtFile.HC:52
             try tick(t)
-            let t0: Int64 = try P.f585_HashTableNew(t, 1024, 0)
+            let t0: Int64 = try P.f590_HashTableNew(t, 1024, 0)
             l40_table = t0
             ln = 6291514 // BgtFile.HC:58
             l0_i = 0
@@ -1586,7 +1586,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 loop2: while (l64_tmph != 0) {
                     ln = 6291517 // BgtFile.HC:61
                     try tick(t)
-                    _ = try f706_StrFileAdd(t, ld8((l64_tmph &+ 8)), (fp &+ 8), l40_table, 16)
+                    _ = try f711_StrFileAdd(t, ld8((l64_tmph &+ 8)), (fp &+ 8), l40_table, 16)
                     ln = 6291518 // BgtFile.HC:62
                     l64_tmph = try ld8(l64_tmph)
                     try tick(t)
@@ -1605,15 +1605,15 @@ public final class N_Apps_Budget_Load: NativeModule {
                 if try (ld2u((l48_tmpb &+ 24)) != 4) {
                     ln = 6291526 // BgtFile.HC:70
                     try tick(t)
-                    let t1: Int64 = try f706_StrFileAdd(t, ld8((l48_tmpb &+ 48)), (fp &+ 8), l40_table, 16)
+                    let t1: Int64 = try f711_StrFileAdd(t, ld8((l48_tmpb &+ 48)), (fp &+ 8), l40_table, 16)
                     try st4((l48_tmpb &+ 28), t1)
                     ln = 6291527 // BgtFile.HC:71
                     try tick(t)
-                    let t2: Int64 = try f706_StrFileAdd(t, ld8((l48_tmpb &+ 56)), (fp &+ 8), l40_table, 16)
+                    let t2: Int64 = try f711_StrFileAdd(t, ld8((l48_tmpb &+ 56)), (fp &+ 8), l40_table, 16)
                     try st4((l48_tmpb &+ 32), t2)
                     ln = 6291528 // BgtFile.HC:72
                     try tick(t)
-                    let t3: Int64 = try f706_StrFileAdd(t, ld8((l48_tmpb &+ 64)), (fp &+ 8), l40_table, 16)
+                    let t3: Int64 = try f711_StrFileAdd(t, ld8((l48_tmpb &+ 64)), (fp &+ 8), l40_table, 16)
                     try st4((l48_tmpb &+ 36), t3)
                     ln = 6291529 // BgtFile.HC:73
                     let t4: Int64 = try ld8((fp &+ 24))
@@ -1631,15 +1631,15 @@ public final class N_Apps_Budget_Load: NativeModule {
             loop6: while (l56_tmpt != g_t_head) {
                 ln = 6291537 // BgtFile.HC:81
                 try tick(t)
-                let t5: Int64 = try f706_StrFileAdd(t, ld8(((l56_tmpt &+ 60) &+ 48)), (fp &+ 8), l40_table, 16)
+                let t5: Int64 = try f711_StrFileAdd(t, ld8(((l56_tmpt &+ 60) &+ 48)), (fp &+ 8), l40_table, 16)
                 try st4(((l56_tmpt &+ 60) &+ 28), t5)
                 ln = 6291538 // BgtFile.HC:82
                 try tick(t)
-                let t6: Int64 = try f706_StrFileAdd(t, ld8(((l56_tmpt &+ 60) &+ 56)), (fp &+ 8), l40_table, 16)
+                let t6: Int64 = try f711_StrFileAdd(t, ld8(((l56_tmpt &+ 60) &+ 56)), (fp &+ 8), l40_table, 16)
                 try st4(((l56_tmpt &+ 60) &+ 32), t6)
                 ln = 6291539 // BgtFile.HC:83
                 try tick(t)
-                let t7: Int64 = try f706_StrFileAdd(t, ld8(((l56_tmpt &+ 60) &+ 64)), (fp &+ 8), l40_table, 16)
+                let t7: Int64 = try f711_StrFileAdd(t, ld8(((l56_tmpt &+ 60) &+ 64)), (fp &+ 8), l40_table, 16)
                 try st4(((l56_tmpt &+ 60) &+ 36), t7)
                 ln = 6291540 // BgtFile.HC:84
                 let t8: Int64 = try ld8((fp &+ 32))
@@ -1650,10 +1650,10 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 6291543 // BgtFile.HC:87
             try tick(t)
-            try f708_StrFileWrite(t, ld8(g_bgt_string_file), l40_table, 0)
+            try f713_StrFileWrite(t, ld8(g_bgt_string_file), l40_table, 0)
             ln = 6291544 // BgtFile.HC:88
             try tick(t)
-            try f709_StrFileDel(t, l40_table)
+            try f714_StrFileDel(t, l40_table)
             ln = 6291546 // BgtFile.HC:90
             l16_size = try ((16 &+ (ld8((fp &+ 24)) &* 32)) &+ (ld8((fp &+ 32)) &* 76))
             ln = 6291547 // BgtFile.HC:91
@@ -1710,7 +1710,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtDel (BgtFile.HC:119)
-    public final func f729_BgtDel(_ t: HTask) throws {
+    public final func f734_BgtDel(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1726,7 +1726,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 l8_tmpb1 = try ld8(l0_tmpb)
                 ln = 6291582 // BgtFile.HC:126
                 try tick(t)
-                try f717_BgtEntryDel2(t, l0_tmpb)
+                try f722_BgtEntryDel2(t, l0_tmpb)
                 ln = 6291583 // BgtFile.HC:127
                 _ = try nat(t, n_Free, try push1(t, l0_tmpb))
                 ln = 6291584 // BgtFile.HC:128
@@ -1741,7 +1741,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 l24_tmpt1 = try ld8(l16_tmpt)
                 ln = 6291589 // BgtFile.HC:133
                 try tick(t)
-                try f717_BgtEntryDel2(t, (l16_tmpt &+ 60))
+                try f722_BgtEntryDel2(t, (l16_tmpt &+ 60))
                 ln = 6291590 // BgtFile.HC:134
                 _ = try nat(t, n_Free, try push1(t, l16_tmpt))
                 ln = 6291591 // BgtFile.HC:135
@@ -1750,7 +1750,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 6291593 // BgtFile.HC:137
             try tick(t)
-            try f709_StrFileDel(t, ld8(g_accts_table))
+            try f714_StrFileDel(t, ld8(g_accts_table))
             ln = 6291594 // BgtFile.HC:138
             try st8(g_accts_table, 0)
             ln = 6291595 // BgtFile.HC:139
@@ -1761,7 +1761,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC BgtRegen (BgtMain.HC:103)
-    public final func f730_BgtRegen(_ t: HTask) throws {
+    public final func f735_BgtRegen(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1783,7 +1783,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             l64_tmpb = try ld8(g_b_head)
             ln = 7340142 // BgtMain.HC:110
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l32_doc = t0
             ln = 7340143 // BgtMain.HC:111
             let t1: Int64 = (l32_doc &+ 88)
@@ -1804,7 +1804,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 }
                 ln = 7340149 // BgtMain.HC:117
                 try tick(t)
-                let t4: Int64 = try f715_BgtAcctColor(t, ld8((l64_tmpb &+ 48)))
+                let t4: Int64 = try f720_BgtAcctColor(t, ld8((l64_tmpb &+ 48)))
                 l8_c = t4
                 ln = 7340150 // BgtMain.HC:118
                 if (l8_c != l16_color) {
@@ -1828,7 +1828,7 @@ public final class N_Apps_Budget_Load: NativeModule {
             }
             ln = 7340160 // BgtMain.HC:128
             try tick(t)
-            try P.f614_DocRecalc(t, l32_doc)
+            try P.f619_DocRecalc(t, l32_doc)
             ln = 7340162 // BgtMain.HC:130
             skip_2: do {
                 let t6: Int64 = try ld8((ld8(P.g_Fs) &+ 48))
@@ -1836,7 +1836,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 if (t6 != 0) {
                     ln = 7340163 // BgtMain.HC:131
                     try tick(t)
-                    _ = try P.f610_DocLock(t, l40_pdoc)
+                    _ = try P.f615_DocLock(t, l40_pdoc)
                     ln = 7340171 // BgtMain.HC:139
                     l56_doc_ce = try ld8((l40_pdoc &+ 104))
                     ln = 7340172 // BgtMain.HC:140
@@ -1872,7 +1872,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                                 try st4((l32_doc &+ 120), 0)
                                 ln = 7340183 // BgtMain.HC:151
                                 try tick(t)
-                                try P.f613_DocCenter(t, l32_doc)
+                                try P.f618_DocCenter(t, l32_doc)
                                 ln = 7340184 // BgtMain.HC:152
                                 break skip_2
                             }
@@ -1894,22 +1894,22 @@ public final class N_Apps_Budget_Load: NativeModule {
             try st8((ld8(P.g_Fs) &+ 56), l32_doc)
             ln = 7340196 // BgtMain.HC:164
             try tick(t)
-            try P.f605_DocDel(t, l40_pdoc)
+            try P.f610_DocDel(t, l40_pdoc)
             ln = 7340197 // BgtMain.HC:165
             if (l40_pdoc != l48_ddoc) {
                 ln = 7340198 // BgtMain.HC:166
                 try tick(t)
-                try P.f605_DocDel(t, l48_ddoc)
+                try P.f610_DocDel(t, l48_ddoc)
             }
             ln = 7340199 // BgtMain.HC:167
-            try st8((l32_doc &+ 600), 9223090561878065883)
+            try st8((l32_doc &+ 600), 9223090561878065888)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "BgtRegen", ln) }
     }
 
     /// HolyC BgtPutKey (BgtMain.HC:3)
-    @discardableResult public final func f731_BgtPutKey(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f736_BgtPutKey(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1940,7 +1940,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                         if (t2 != 0) {
                             ln = 7340048 // BgtMain.HC:16
                             try tick(t)
-                            let t3: Int64 = try f726_BgtTemplatePmt(t, l48_tmpt, 0)
+                            let t3: Int64 = try f731_BgtTemplatePmt(t, l48_tmpt, 0)
                             l56_tmpt1 = t3
                             if (t3 != 0) {
                                 ln = 7340049 // BgtMain.HC:17
@@ -1948,10 +1948,10 @@ public final class N_Apps_Budget_Load: NativeModule {
                                 try P.f155_QueRem(t, l48_tmpt)
                                 ln = 7340050 // BgtMain.HC:18
                                 try tick(t)
-                                try f722_BgtTemplatePurge(t, l48_tmpt)
+                                try f727_BgtTemplatePurge(t, l48_tmpt)
                                 ln = 7340051 // BgtMain.HC:19
                                 try tick(t)
-                                try f717_BgtEntryDel2(t, (l48_tmpt &+ 60))
+                                try f722_BgtEntryDel2(t, (l48_tmpt &+ 60))
                                 ln = 7340052 // BgtMain.HC:20
                                 _ = try nat(t, n_Free, try push1(t, l48_tmpt))
                                 ln = 7340053 // BgtMain.HC:21
@@ -1959,15 +1959,15 @@ public final class N_Apps_Budget_Load: NativeModule {
                                 _ = try P.f153_QueIns(t, l56_tmpt1, ld8((g_t_head &+ 8)))
                                 ln = 7340054 // BgtMain.HC:22
                                 try tick(t)
-                                try f724_BgtTemplateExpand(t, l56_tmpt1, 0)
+                                try f729_BgtTemplateExpand(t, l56_tmpt1, 0)
                                 ln = 7340055 // BgtMain.HC:23
                                 try tick(t)
-                                try f730_BgtRegen(t)
+                                try f735_BgtRegen(t)
                             }
                         } else {
                             ln = 7340058 // BgtMain.HC:26
                             try tick(t)
-                            let t4: Int64 = try f721_BgtEntryPmt(t, l32_tmpb)
+                            let t4: Int64 = try f726_BgtEntryPmt(t, l32_tmpb)
                             l40_tmpb1 = t4
                             if (t4 != 0) {
                                 ln = 7340059 // BgtMain.HC:27
@@ -1975,13 +1975,13 @@ public final class N_Apps_Budget_Load: NativeModule {
                                 try P.f155_QueRem(t, l32_tmpb)
                                 ln = 7340060 // BgtMain.HC:28
                                 try tick(t)
-                                try f719_BgtEntryDel(t, l32_tmpb)
+                                try f724_BgtEntryDel(t, l32_tmpb)
                                 ln = 7340061 // BgtMain.HC:29
                                 try tick(t)
-                                try f720_BgtIns(t, l40_tmpb1)
+                                try f725_BgtIns(t, l40_tmpb1)
                                 ln = 7340062 // BgtMain.HC:30
                                 try tick(t)
-                                try f730_BgtRegen(t)
+                                try f735_BgtRegen(t)
                             }
                         }
                     }
@@ -2005,18 +2005,18 @@ public final class N_Apps_Budget_Load: NativeModule {
                             try P.f155_QueRem(t, l48_tmpt)
                             ln = 7340073 // BgtMain.HC:41
                             try tick(t)
-                            try f723_BgtTemplateDel(t, l48_tmpt)
+                            try f728_BgtTemplateDel(t, l48_tmpt)
                         } else {
                             ln = 7340075 // BgtMain.HC:43
                             try tick(t)
                             try P.f155_QueRem(t, l32_tmpb)
                             ln = 7340076 // BgtMain.HC:44
                             try tick(t)
-                            try f719_BgtEntryDel(t, l32_tmpb)
+                            try f724_BgtEntryDel(t, l32_tmpb)
                         }
                         ln = 7340078 // BgtMain.HC:46
                         try tick(t)
-                        try f730_BgtRegen(t)
+                        try f735_BgtRegen(t)
                     }
                     ln = 7340080 // BgtMain.HC:48
                     let rv11: Int64 = 1
@@ -2028,14 +2028,14 @@ public final class N_Apps_Budget_Load: NativeModule {
                     _ = try P.f201_PopUpOk(t, s17, 0)
                     ln = 7340085 // BgtMain.HC:53
                     try tick(t)
-                    let t7: Int64 = try P.f627_PopUpEd(t, ld8(g_bgt_accts_file), ld8(P.g_Fs), 0)
+                    let t7: Int64 = try P.f632_PopUpEd(t, ld8(g_bgt_accts_file), ld8(P.g_Fs), 0)
                     if (t7 != 0) {
                         ln = 7340086 // BgtMain.HC:54
                         try tick(t)
-                        try f714_BgtAcctsRead(t)
+                        try f719_BgtAcctsRead(t)
                         ln = 7340087 // BgtMain.HC:55
                         try tick(t)
-                        try f730_BgtRegen(t)
+                        try f735_BgtRegen(t)
                     }
                     ln = 7340089 // BgtMain.HC:57
                     let rv12: Int64 = 1
@@ -2044,7 +2044,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 case 118:
                     ln = 7340091 // BgtMain.HC:59
                     try tick(t)
-                    let t8: Int64 = try f716_BgtPopUpAcct(t, s18, g_view_acct)
+                    let t8: Int64 = try f721_BgtPopUpAcct(t, s18, g_view_acct)
                     l72_st = t8
                     if geu(t8, 0) {
                         ln = 7340092 // BgtMain.HC:60
@@ -2052,7 +2052,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                         _ = try P.f33_StrCpy(t, g_view_acct, l72_st)
                         ln = 7340093 // BgtMain.HC:61
                         try tick(t)
-                        try f730_BgtRegen(t)
+                        try f735_BgtRegen(t)
                     }
                     ln = 7340095 // BgtMain.HC:63
                     let rv13: Int64 = 1
@@ -2061,15 +2061,15 @@ public final class N_Apps_Budget_Load: NativeModule {
                 case 110:
                     ln = 7340097 // BgtMain.HC:65
                     try tick(t)
-                    let t9: Int64 = try f721_BgtEntryPmt(t, 0)
+                    let t9: Int64 = try f726_BgtEntryPmt(t, 0)
                     l40_tmpb1 = t9
                     if (t9 != 0) {
                         ln = 7340098 // BgtMain.HC:66
                         try tick(t)
-                        try f720_BgtIns(t, l40_tmpb1)
+                        try f725_BgtIns(t, l40_tmpb1)
                         ln = 7340099 // BgtMain.HC:67
                         try tick(t)
-                        try f730_BgtRegen(t)
+                        try f735_BgtRegen(t)
                     }
                     ln = 7340101 // BgtMain.HC:69
                     let rv14: Int64 = 1
@@ -2078,7 +2078,7 @@ public final class N_Apps_Budget_Load: NativeModule {
                 case 116:
                     ln = 7340103 // BgtMain.HC:71
                     try tick(t)
-                    let t10: Int64 = try f726_BgtTemplatePmt(t, 0, 0)
+                    let t10: Int64 = try f731_BgtTemplatePmt(t, 0, 0)
                     l56_tmpt1 = t10
                     if (t10 != 0) {
                         ln = 7340104 // BgtMain.HC:72
@@ -2086,10 +2086,10 @@ public final class N_Apps_Budget_Load: NativeModule {
                         _ = try P.f153_QueIns(t, l56_tmpt1, ld8((g_t_head &+ 8)))
                         ln = 7340105 // BgtMain.HC:73
                         try tick(t)
-                        try f724_BgtTemplateExpand(t, l56_tmpt1, 0)
+                        try f729_BgtTemplateExpand(t, l56_tmpt1, 0)
                         ln = 7340106 // BgtMain.HC:74
                         try tick(t)
-                        try f730_BgtRegen(t)
+                        try f735_BgtRegen(t)
                     }
                     ln = 7340108 // BgtMain.HC:76
                     let rv15: Int64 = 1
@@ -2108,15 +2108,15 @@ public final class N_Apps_Budget_Load: NativeModule {
                     }
                     ln = 7340115 // BgtMain.HC:83
                     try tick(t)
-                    let t12: Int64 = try f721_BgtEntryPmt(t, l32_tmpb)
+                    let t12: Int64 = try f726_BgtEntryPmt(t, l32_tmpb)
                     l40_tmpb1 = t12
                     if (t12 != 0) {
                         ln = 7340116 // BgtMain.HC:84
                         try tick(t)
-                        try f720_BgtIns(t, l40_tmpb1)
+                        try f725_BgtIns(t, l40_tmpb1)
                         ln = 7340117 // BgtMain.HC:85
                         try tick(t)
-                        try f730_BgtRegen(t)
+                        try f735_BgtRegen(t)
                     }
                     ln = 7340119 // BgtMain.HC:87
                     let rv16: Int64 = 1
@@ -2131,18 +2131,18 @@ public final class N_Apps_Budget_Load: NativeModule {
                         l32_tmpb = try ld8((l64_doc_ce &+ 80))
                         ln = 7340124 // BgtMain.HC:92
                         try tick(t)
-                        let t14: Int64 = try f726_BgtTemplatePmt(t, 0, l32_tmpb)
+                        let t14: Int64 = try f731_BgtTemplatePmt(t, 0, l32_tmpb)
                         l56_tmpt1 = t14
                         if (t14 != 0) {
                             ln = 7340125 // BgtMain.HC:93
                             try tick(t)
-                            try f724_BgtTemplateExpand(t, l56_tmpt1, 1)
+                            try f729_BgtTemplateExpand(t, l56_tmpt1, 1)
                             ln = 7340126 // BgtMain.HC:94
                             try tick(t)
-                            try f723_BgtTemplateDel(t, l56_tmpt1)
+                            try f728_BgtTemplateDel(t, l56_tmpt1)
                             ln = 7340127 // BgtMain.HC:95
                             try tick(t)
-                            try f730_BgtRegen(t)
+                            try f735_BgtRegen(t)
                         }
                     }
                     ln = 7340130 // BgtMain.HC:98
@@ -2163,7 +2163,7 @@ public final class N_Apps_Budget_Load: NativeModule {
     }
 
     /// HolyC Budget (BgtMain.HC:170)
-    public final func f732_Budget(_ t: HTask, _ a0: Int64) throws {
+    public final func f737_Budget(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2185,13 +2185,13 @@ public final class N_Apps_Budget_Load: NativeModule {
             try st8(g_bgt_data_file, t2)
             ln = 7340211 // BgtMain.HC:179
             try tick(t)
-            try f714_BgtAcctsRead(t)
+            try f719_BgtAcctsRead(t)
             ln = 7340212 // BgtMain.HC:180
             try tick(t)
-            try f727_BgtDataRead(t)
+            try f732_BgtDataRead(t)
             ln = 7340213 // BgtMain.HC:181
             try tick(t)
-            try f725_CBgtTemplatesExpand(t)
+            try f730_CBgtTemplatesExpand(t)
             ln = 7340214 // BgtMain.HC:182
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -2205,13 +2205,13 @@ public final class N_Apps_Budget_Load: NativeModule {
             try P.f220_WinMax(t, 0)
             ln = 7340218 // BgtMain.HC:186
             try tick(t)
-            _ = try P.f507_MenuPush(t, s22)
+            _ = try P.f512_MenuPush(t, s22)
             ln = 7340236 // BgtMain.HC:204
             try tick(t)
             _ = try P.f33_StrCpy(t, g_view_acct, s23)
             ln = 7340237 // BgtMain.HC:205
             try tick(t)
-            try P.f612_DocMax(t, 0)
+            try P.f617_DocMax(t, 0)
             ln = 7340238 // BgtMain.HC:206
             l24_old_put = try ld8((ld8(P.g_Fs) &+ 48))
             ln = 7340239 // BgtMain.HC:207
@@ -2222,21 +2222,21 @@ public final class N_Apps_Budget_Load: NativeModule {
             try st8((ld8(P.g_Fs) &+ 56), 0)
             ln = 7340242 // BgtMain.HC:210
             try tick(t)
-            try f730_BgtRegen(t)
+            try f735_BgtRegen(t)
             ln = 7340243 // BgtMain.HC:211
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
             do {
                 ln = 7340244 // BgtMain.HC:212
                 try tick(t)
-                let t3: Int64 = try P.f625_View(t)
+                let t3: Int64 = try P.f630_View(t)
                 if (t3 != 0) {
                     ln = 7340245 // BgtMain.HC:213
                     try tick(t)
-                    try f728_BgtDataWrite(t)
+                    try f733_BgtDataWrite(t)
                     ln = 7340246 // BgtMain.HC:214
                     try tick(t)
-                    try f713_BgtAcctsWrite(t)
+                    try f718_BgtAcctsWrite(t)
                 }
                 t.hCount = h0c
             } catch {
@@ -2257,29 +2257,29 @@ public final class N_Apps_Budget_Load: NativeModule {
             try st8((ld8(P.g_Fs) &+ 56), l32_old_display)
             ln = 7340255 // BgtMain.HC:223
             try tick(t)
-            try P.f605_DocDel(t, l8_pdoc)
+            try P.f610_DocDel(t, l8_pdoc)
             ln = 7340256 // BgtMain.HC:224
             if (l8_pdoc != l16_ddoc) {
                 ln = 7340257 // BgtMain.HC:225
                 try tick(t)
-                try P.f605_DocDel(t, l16_ddoc)
+                try P.f610_DocDel(t, l16_ddoc)
             }
             ln = 7340259 // BgtMain.HC:227
             try tick(t)
             try P.f228_SettingsPop(t, 0, 0)
             ln = 7340260 // BgtMain.HC:228
             try tick(t)
-            try f729_BgtDel(t)
+            try f734_BgtDel(t)
             ln = 7340261 // BgtMain.HC:229
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Budget", ln) }
     }
 
     /// HolyC $init:C:/Apps/Budget/Load.HC#2 (Load.HC:57)
-    @discardableResult public final func f733_init_C__Apps_Budget_Load_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f738_init_C__Apps_Budget_Load_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2291,43 +2291,43 @@ public final class N_Apps_Budget_Load: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Budget_Load_HC_0(t)
-        case 704: return try f704_StrFileRead(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 705: try f705_StrFileArrDel(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: return try f706_StrFileAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 707: return try f707_StrEntriesCompare(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 708: try f708_StrFileWrite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 709: try f709_StrFileDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 710: return try f710_init_C__Apps_Budget_Load_HC_1(t)
-        case 711: return try f711_MyStr2Date(t, (n > 0 ? st[base + 0] : 0))
-        case 712: try f712_BgtAcctsUpdate(t); return 0
-        case 713: try f713_BgtAcctsWrite(t); return 0
-        case 714: try f714_BgtAcctsRead(t); return 0
-        case 715: return try f715_BgtAcctColor(t, (n > 0 ? st[base + 0] : 0))
-        case 716: return try f716_BgtPopUpAcct(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 717: try f717_BgtEntryDel2(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 718: return try f718_BgtEntryCopy(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 719: try f719_BgtEntryDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 720: try f720_BgtIns(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 721: return try f721_BgtEntryPmt(t, (n > 0 ? st[base + 0] : 0))
-        case 722: try f722_BgtTemplatePurge(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 723: try f723_BgtTemplateDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 724: try f724_BgtTemplateExpand(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 725: try f725_CBgtTemplatesExpand(t); return 0
-        case 726: return try f726_BgtTemplatePmt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 727: try f727_BgtDataRead(t); return 0
-        case 728: try f728_BgtDataWrite(t); return 0
-        case 729: try f729_BgtDel(t); return 0
-        case 730: try f730_BgtRegen(t); return 0
-        case 731: return try f731_BgtPutKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 732: try f732_Budget(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 733: return try f733_init_C__Apps_Budget_Load_HC_2(t)
+        case 708: return try f708_init_C__Apps_Budget_Load_HC_0(t)
+        case 709: return try f709_StrFileRead(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 710: try f710_StrFileArrDel(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: return try f711_StrFileAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 712: return try f712_StrEntriesCompare(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 713: try f713_StrFileWrite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 714: try f714_StrFileDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 715: return try f715_init_C__Apps_Budget_Load_HC_1(t)
+        case 716: return try f716_MyStr2Date(t, (n > 0 ? st[base + 0] : 0))
+        case 717: try f717_BgtAcctsUpdate(t); return 0
+        case 718: try f718_BgtAcctsWrite(t); return 0
+        case 719: try f719_BgtAcctsRead(t); return 0
+        case 720: return try f720_BgtAcctColor(t, (n > 0 ? st[base + 0] : 0))
+        case 721: return try f721_BgtPopUpAcct(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 722: try f722_BgtEntryDel2(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 723: return try f723_BgtEntryCopy(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 724: try f724_BgtEntryDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 725: try f725_BgtIns(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 726: return try f726_BgtEntryPmt(t, (n > 0 ? st[base + 0] : 0))
+        case 727: try f727_BgtTemplatePurge(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 728: try f728_BgtTemplateDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 729: try f729_BgtTemplateExpand(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 730: try f730_CBgtTemplatesExpand(t); return 0
+        case 731: return try f731_BgtTemplatePmt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 732: try f732_BgtDataRead(t); return 0
+        case 733: try f733_BgtDataWrite(t); return 0
+        case 734: try f734_BgtDel(t); return 0
+        case 735: try f735_BgtRegen(t); return 0
+        case 736: return try f736_BgtPutKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 737: try f737_Budget(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 738: return try f738_init_C__Apps_Budget_Load_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Budget/Load.HC#0", 704: "StrFileRead", 705: "StrFileArrDel", 706: "StrFileAdd", 707: "StrEntriesCompare", 708: "StrFileWrite", 709: "StrFileDel", 710: "$init:C:/Apps/Budget/Load.HC#1", 711: "MyStr2Date", 712: "BgtAcctsUpdate", 713: "BgtAcctsWrite", 714: "BgtAcctsRead", 715: "BgtAcctColor", 716: "BgtPopUpAcct", 717: "BgtEntryDel2", 718: "BgtEntryCopy", 719: "BgtEntryDel", 720: "BgtIns", 721: "BgtEntryPmt", 722: "BgtTemplatePurge", 723: "BgtTemplateDel", 724: "BgtTemplateExpand", 725: "CBgtTemplatesExpand", 726: "BgtTemplatePmt", 727: "BgtDataRead", 728: "BgtDataWrite", 729: "BgtDel", 730: "BgtRegen", 731: "BgtPutKey", 732: "Budget", 733: "$init:C:/Apps/Budget/Load.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Budget/Load.HC#0", 709: "StrFileRead", 710: "StrFileArrDel", 711: "StrFileAdd", 712: "StrEntriesCompare", 713: "StrFileWrite", 714: "StrFileDel", 715: "$init:C:/Apps/Budget/Load.HC#1", 716: "MyStr2Date", 717: "BgtAcctsUpdate", 718: "BgtAcctsWrite", 719: "BgtAcctsRead", 720: "BgtAcctColor", 721: "BgtPopUpAcct", 722: "BgtEntryDel2", 723: "BgtEntryCopy", 724: "BgtEntryDel", 725: "BgtIns", 726: "BgtEntryPmt", 727: "BgtTemplatePurge", 728: "BgtTemplateDel", 729: "BgtTemplateExpand", 730: "CBgtTemplatesExpand", 731: "BgtTemplatePmt", 732: "BgtDataRead", 733: "BgtDataWrite", 734: "BgtDel", 735: "BgtRegen", 736: "BgtPutKey", 737: "Budget", 738: "$init:C:/Apps/Budget/Load.HC#2"]
     private static let FILES: [String] = ["C:/Apps/Budget/Load.HC", "C:/Apps/Budget/BgtStrs.HC", "C:/Apps/Budget/Budget.HC", "C:/Apps/Budget/BgtAccts.HC", "C:/Apps/Budget/BgtEntry.HC", "C:/Apps/Budget/BgtTemplate.HC", "C:/Apps/Budget/BgtFile.HC", "C:/Apps/Budget/BgtMain.HC"]
     public override var files: [String] { N_Apps_Budget_Load.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Budget_Load.DEFINED.contains(index) }

@@ -17,7 +17,7 @@ class N_Adam_AExts(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Adam/AExts.HC#0 (AExts.HC:1) */
-    fun f737_init_C__Adam_AExts_HC_0(t: Task): Long {
+    fun f742_init_C__Adam_AExts_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -29,7 +29,7 @@ class N_Adam_AExts(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            737 -> f737_init_C__Adam_AExts_HC_0(t)
+            742 -> f742_init_C__Adam_AExts_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -41,7 +41,7 @@ class N_Adam_AExts(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(737)
+        private val DEFINED = intArrayOf(742)
         private val NAMES = arrayOf("\$init:C:/Adam/AExts.HC#0")
         private val FILES = arrayOf<String>()
     }

@@ -39,7 +39,7 @@ public final class N_Demo_Templates_MultiCore1: NativeModule {
     }
 
     /// HolyC MPRoutine (MultiCore1.HC:5)
-    public final func f703_MPRoutine(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_MPRoutine(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -83,7 +83,7 @@ public final class N_Demo_Templates_MultiCore1: NativeModule {
     }
 
     /// HolyC Main (MultiCore1.HC:17)
-    public final func f704_Main(_ t: HTask) throws {
+    public final func f709_Main(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -100,8 +100,8 @@ public final class N_Demo_Templates_MultiCore1: NativeModule {
                 if !((l0_i < t2)) { break loop0 }
                 ln = 23 // MultiCore1.HC:23
                 try tick(t)
-                let t1: Int64 = try P.f602_DocPut(t, 0)
-                _ = try nat(t, n_Spawn, try push(t, 9223090561878065855, t1, 0, l0_i, 0, 0, 0))
+                let t1: Int64 = try P.f607_DocPut(t, 0)
+                _ = try nat(t, n_Spawn, try push(t, 9223090561878065860, t1, 0, l0_i, 0, 0, 0))
                 ln = 22 // MultiCore1.HC:22
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -120,13 +120,13 @@ public final class N_Demo_Templates_MultiCore1: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Templates/MultiCore1.HC#0 (MultiCore1.HC:29)
-    @discardableResult public final func f705_init_C__Demo_Templates_MultiCore1_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Templates_MultiCore1_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 29 // MultiCore1.HC:29
             try tick(t)
-            try f704_Main(t)
+            try f709_Main(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Templates/MultiCore1.HC#0", ln) }
@@ -135,15 +135,15 @@ public final class N_Demo_Templates_MultiCore1: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_MPRoutine(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_Main(t); return 0
-        case 705: return try f705_init_C__Demo_Templates_MultiCore1_HC_0(t)
+        case 708: try f708_MPRoutine(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_Main(t); return 0
+        case 710: return try f710_init_C__Demo_Templates_MultiCore1_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "MPRoutine", 704: "Main", 705: "$init:C:/Demo/Templates/MultiCore1.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "MPRoutine", 709: "Main", 710: "$init:C:/Demo/Templates/MultiCore1.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Templates/MultiCore1.HC"]
     public override var files: [String] { N_Demo_Templates_MultiCore1.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Templates_MultiCore1.DEFINED.contains(index) }

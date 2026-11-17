@@ -112,7 +112,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $eval0 (LightTable.HC:11) */
-    fun f703_eval0(t: Task): Long {
+    fun f708_eval0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -126,7 +126,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $eval1 (LightTable.HC:16) */
-    fun f704_eval1(t: Task): Long {
+    fun f709_eval1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -140,7 +140,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC BmpPeek (LightTable.HC:30) */
-    fun f705_BmpPeek(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f710_BmpPeek(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -157,7 +157,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC BmpPlot (LightTable.HC:35) */
-    fun f706_BmpPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f711_BmpPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -176,7 +176,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC BmpLine (LightTable.HC:41) */
-    fun f707_BmpLine(t: Task, a0: Long, a1: Double, a2: Double, a3: Double, a4: Double) {
+    fun f712_BmpLine(t: Task, a0: Long, a1: Double, a2: Double, a3: Double, a4: Double) {
         var ln = 0
         try {
             enter(t)
@@ -186,14 +186,14 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             var p3_x2: Double = a3
             var p4_y2: Double = a4
             ln = 43 // LightTable.HC:43
-            nat(t, n_Line, push(t, p0_bmp, f2i((p1_x1 * ldf(g_bmp_scale))), f2i((p2_y1 * ldf(g_bmp_scale))), 0L, f2i((p3_x2 * ldf(g_bmp_scale))), f2i((p4_y2 * ldf(g_bmp_scale))), 0L, 9223090561878065858L, 1L, 0L))
+            nat(t, n_Line, push(t, p0_bmp, f2i((p1_x1 * ldf(g_bmp_scale))), f2i((p2_y1 * ldf(g_bmp_scale))), 0L, f2i((p3_x2 * ldf(g_bmp_scale))), f2i((p4_y2 * ldf(g_bmp_scale))), 0L, 9223090561878065863L, 1L, 0L))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "BmpLine", ln) }
     }
 
     /** HolyC PhotonNew (LightTable.HC:46) */
-    fun f708_PhotonNew(t: Task): Long {
+    fun f713_PhotonNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -231,7 +231,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC DrawIt (LightTable.HC:58) */
-    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f714_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -246,12 +246,12 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             ln = 64 // LightTable.HC:64
             tick(t)
             val vb0 = push(t, ld8(g_bmp_mem), divs(divs(ld8(g_bmp_mem), 1024L), 1024L), bits(ldf(g_bmp_scale)), ld4s((ld8(g_map) + 16L)), ld4s((ld8(g_map) + 24L)), ld8(g_bmp_width), ld8(g_bmp_height))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 7)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 7)
             t.sp = vb0
             ln = 67 // LightTable.HC:67
             tick(t)
             val vb1 = push(t, ld8(g_photon_cnt), ld8(g_mirror_cnt), ld8(g_snell_cnt), ld8(g_normal_inhibit), ld8(g_zero_normal))
-            P.f369_GrPrint(t, p1_dc, 0L, 8L, s1, vb1, 5)
+            P.f370_GrPrint(t, p1_dc, 0L, 8L, s1, vb1, 5)
             t.sp = vb1
             ln = 70 // LightTable.HC:70
             l16_i = 0L
@@ -275,14 +275,14 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                     st4((p1_dc + 160L), 12L)
                     ln = 76 // LightTable.HC:76
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i((ldf((l24_tmpp + 16L)) - (20.0 * ldf((l24_tmpp + 40L))))), f2i((ldf(((l24_tmpp + 16L) + 8L)) - (20.0 * ldf(((l24_tmpp + 40L) + 8L))))), f2i(ldf((l24_tmpp + 16L))), f2i(ldf(((l24_tmpp + 16L) + 8L))), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i((ldf((l24_tmpp + 16L)) - (20.0 * ldf((l24_tmpp + 40L))))), f2i((ldf(((l24_tmpp + 16L) + 8L)) - (20.0 * ldf(((l24_tmpp + 40L) + 8L))))), f2i(ldf((l24_tmpp + 16L))), f2i(ldf(((l24_tmpp + 16L) + 8L))), 1L, 0L)
                     ln = 78 // LightTable.HC:78
                     if ((ld1u(g_show_normals) != 0L)) {
                         ln = 79 // LightTable.HC:79
                         st4((p1_dc + 160L), 10L)
                         ln = 80 // LightTable.HC:80
                         tick(t)
-                        P.f396_GrLine(t, p1_dc, f2i(ldf((l24_tmpp + 16L))), f2i(ldf(((l24_tmpp + 16L) + 8L))), f2i((ldf((l24_tmpp + 16L)) + (20.0 * ldf((l24_tmpp + 64L))))), f2i((ldf(((l24_tmpp + 16L) + 8L)) + (20.0 * ldf(((l24_tmpp + 64L) + 8L))))), 1L, 0L)
+                        P.f397_GrLine(t, p1_dc, f2i(ldf((l24_tmpp + 16L))), f2i(ldf(((l24_tmpp + 16L) + 8L))), f2i((ldf((l24_tmpp + 16L)) + (20.0 * ldf((l24_tmpp + 64L))))), f2i((ldf(((l24_tmpp + 16L) + 8L)) + (20.0 * ldf(((l24_tmpp + 64L) + 8L))))), 1L, 0L)
                     }
                     ln = 83 // LightTable.HC:83
                     l24_tmpp = ld8(l24_tmpp)
@@ -301,7 +301,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC RayBurst (LightTable.HC:91) */
-    fun f710_RayBurst(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f715_RayBurst(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -329,7 +329,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                 P.f131_D3Equ(t, (fp + 80), ldf(((fp + 56) + 8L)), (-ldf((fp + 56))), 0.0)
                 ln = 103 // LightTable.HC:103
                 tick(t)
-                val t0: Long = f708_PhotonNew(t)
+                val t0: Long = f713_PhotonNew(t)
                 l136_tmpp = t0
                 ln = 104 // LightTable.HC:104
                 tick(t)
@@ -345,7 +345,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                     P.f136_D3Mul(t, (fp + 104), l128_i.toDouble(), (fp + 80))
                     ln = 110 // LightTable.HC:110
                     tick(t)
-                    val t1: Long = f708_PhotonNew(t)
+                    val t1: Long = f713_PhotonNew(t)
                     l136_tmpp = t1
                     ln = 111 // LightTable.HC:111
                     tick(t)
@@ -355,7 +355,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                     P.f133_D3Copy(t, (l136_tmpp + 40L), (fp + 56))
                     ln = 114 // LightTable.HC:114
                     tick(t)
-                    val t2: Long = f708_PhotonNew(t)
+                    val t2: Long = f713_PhotonNew(t)
                     l136_tmpp = t2
                     ln = 115 // LightTable.HC:115
                     tick(t)
@@ -375,7 +375,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC RandomBurst (LightTable.HC:121) */
-    fun f711_RandomBurst(t: Task) {
+    fun f716_RandomBurst(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -387,7 +387,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             loop0@ while ((l0_i < 256L)) {
                 ln = 127 // LightTable.HC:127
                 tick(t)
-                val t0: Long = f708_PhotonNew(t)
+                val t0: Long = f713_PhotonNew(t)
                 l16_tmpp = t0
                 ln = 129 // LightTable.HC:129
                 val t2: Long = (ld8((ld8(P.g_Fs) + 248L)) - 20L)
@@ -415,7 +415,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC FindNormal (LightTable.HC:135) */
-    fun f712_FindNormal(t: Task, a0: Long, a1: Long) {
+    fun f717_FindNormal(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -447,7 +447,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             ln = 151 // LightTable.HC:151
             loop0@ while (true) {
                 tick(t)
-                val t1: Long = f705_BmpPeek(t, p0_bmp, f2i(ldf((fp + 40))), f2i(ldf(((fp + 40) + 8L))))
+                val t1: Long = f710_BmpPeek(t, p0_bmp, f2i(ldf((fp + 40))), f2i(ldf(((fp + 40) + 8L))))
                 ln = 152 // LightTable.HC:152
                 var r3: Boolean = (t1 == 0L)
                 if (r3) {
@@ -486,7 +486,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                         l104_y = (t9 + (t8.toDouble() * t7))
                         ln = 162 // LightTable.HC:162
                         tick(t)
-                        val t10: Long = f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        val t10: Long = f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t10
                         if ((t10 != 0L)) {
                             ln = 163 // LightTable.HC:163
@@ -504,7 +504,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                         l104_y = (t16 + (t15.toDouble() * t14))
                         ln = 166 // LightTable.HC:166
                         tick(t)
-                        val t17: Long = f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        val t17: Long = f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t17
                         if ((t17 != 0L)) {
                             ln = 167 // LightTable.HC:167
@@ -528,7 +528,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                         l104_y = (t23 + (t22.toDouble() * t21))
                         ln = 172 // LightTable.HC:172
                         tick(t)
-                        val t24: Long = f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        val t24: Long = f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t24
                         if ((t24 != 0L)) {
                             ln = 173 // LightTable.HC:173
@@ -572,7 +572,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                         l104_y = (t30 + (t29.toDouble() * t28))
                         ln = 187 // LightTable.HC:187
                         tick(t)
-                        val t31: Long = f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        val t31: Long = f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t31
                         if ((t31 != 0L)) {
                             ln = 188 // LightTable.HC:188
@@ -590,7 +590,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                         l104_y = (t37 + (t36.toDouble() * t35))
                         ln = 191 // LightTable.HC:191
                         tick(t)
-                        val t38: Long = f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        val t38: Long = f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t38
                         if ((t38 != 0L)) {
                             ln = 192 // LightTable.HC:192
@@ -614,7 +614,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                         l104_y = (t44 + (t43.toDouble() * t42))
                         ln = 197 // LightTable.HC:197
                         tick(t)
-                        val t45: Long = f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        val t45: Long = f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t45
                         if ((t45 != 0L)) {
                             ln = 198 // LightTable.HC:198
@@ -677,7 +677,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC Mirror (LightTable.HC:219) */
-    fun f713_Mirror(t: Task, a0: Long) {
+    fun f718_Mirror(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -689,7 +689,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             l8__ = t0
             ln = 235 // LightTable.HC:235
             tick(t)
-            f712_FindNormal(t, ld8(g_bmp_reflect), p0_tmpp)
+            f717_FindNormal(t, ld8(g_bmp_reflect), p0_tmpp)
             ln = 236 // LightTable.HC:236
             val t1: Double = f(nat(t, n_Arg, push2(t, bits(ldf((p0_tmpp + 64L))), bits(ldf(((p0_tmpp + 64L) + 8L))))))
             l16__n = t1
@@ -707,7 +707,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC SnellsLaw (LightTable.HC:242) */
-    fun f714_SnellsLaw(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f719_SnellsLaw(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -741,7 +741,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             }
             ln = 255 // LightTable.HC:255
             tick(t)
-            f712_FindNormal(t, ld8(g_bmp_refract), p0_tmpp)
+            f717_FindNormal(t, ld8(g_bmp_refract), p0_tmpp)
             ln = 256 // LightTable.HC:256
             val t1: Double = f(nat(t, n_Arg, push2(t, bits(ldf((p0_tmpp + 64L))), bits(ldf(((p0_tmpp + 64L) + 8L))))))
             l32__n = t1
@@ -749,16 +749,16 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             tick(t)
             val t2: Double = P.f142_D3Dot(t, (p0_tmpp + 64L), (p0_tmpp + 40L))
             tick(t)
-            val t3: Double = P.f544_ACos(t, t2)
+            val t3: Double = P.f549_ACos(t, t2)
             l56__1 = t3
             ln = 260 // LightTable.HC:260
             val t4: Double = f(nat(t, n_Sin, push1(t, bits(l56__1))))
             tick(t)
-            val t5: Double = P.f543_ASin(t, ((l40_n1 * t4) / l48_n2))
+            val t5: Double = P.f548_ASin(t, ((l40_n1 * t4) / l48_n2))
             l64__2 = t5
             ln = 261 // LightTable.HC:261
             tick(t)
-            val t6: Double = P.f542_Wrap(t, (l24__ - l32__n), (-f(4614256656552045848L)))
+            val t6: Double = P.f547_Wrap(t, (l24__ - l32__n), (-f(4614256656552045848L)))
             if ((t6 >= 0.0)) {
                 ln = 262 // LightTable.HC:262
                 l24__ = (l32__n + l64__2)
@@ -780,7 +780,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC AnimateTask (LightTable.HC:270) */
-    fun f715_AnimateTask(t: Task, a0: Long) {
+    fun f720_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -804,7 +804,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC MPAnimateTask (LightTable.HC:282) */
-    fun f716_MPAnimateTask(t: Task, a0: Long) {
+    fun f721_MPAnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -907,7 +907,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                 } else {
                                     ln = 328 // LightTable.HC:328
                                     tick(t)
-                                    f714_SnellsLaw(t, l80_tmpp, l32_last, l40_next)
+                                    f719_SnellsLaw(t, l80_tmpp, l32_last, l40_next)
                                 }
                             } else {
                                 ln = 329 // LightTable.HC:329
@@ -920,7 +920,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                     } else {
                                         ln = 333 // LightTable.HC:333
                                         tick(t)
-                                        f713_Mirror(t, l80_tmpp)
+                                        f718_Mirror(t, l80_tmpp)
                                     }
                                 } else {
                                     ln = 334 // LightTable.HC:334
@@ -986,7 +986,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC Init (LightTable.HC:359) */
-    fun f717_Init(t: Task) {
+    fun f722_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1057,7 +1057,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC CleanUp (LightTable.HC:391) */
-    fun f718_CleanUp(t: Task) {
+    fun f723_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1099,7 +1099,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC LTMenuSet (LightTable.HC:412) */
-    fun f719_LTMenuSet(t: Task, a0: Long) {
+    fun f724_LTMenuSet(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1107,7 +1107,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             var l8_entry: Long = 0L
             ln = 414 // LightTable.HC:414
             tick(t)
-            val t0: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s2)
+            val t0: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s2)
             l8_entry = t0
             ln = 415 // LightTable.HC:415
             if ((ld1u(g_show_normals) != 0L)) {
@@ -1119,7 +1119,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             }
             ln = 420 // LightTable.HC:420
             tick(t)
-            val t1: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s3)
+            val t1: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s3)
             l8_entry = t1
             ln = 421 // LightTable.HC:421
             if ((p0_mode == 0L)) {
@@ -1131,7 +1131,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             }
             ln = 425 // LightTable.HC:425
             tick(t)
-            val t2: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s4)
+            val t2: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s4)
             l8_entry = t2
             ln = 426 // LightTable.HC:426
             if ((p0_mode == 1L)) {
@@ -1143,7 +1143,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             }
             ln = 430 // LightTable.HC:430
             tick(t)
-            val t3: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s5)
+            val t3: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s5)
             l8_entry = t3
             ln = 431 // LightTable.HC:431
             if ((p0_mode == 2L)) {
@@ -1155,7 +1155,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             }
             ln = 435 // LightTable.HC:435
             tick(t)
-            val t4: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s6)
+            val t4: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s6)
             l8_entry = t4
             ln = 436 // LightTable.HC:436
             if ((p0_mode == 3L)) {
@@ -1167,7 +1167,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             }
             ln = 440 // LightTable.HC:440
             tick(t)
-            val t5: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s7)
+            val t5: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s7)
             l8_entry = t5
             ln = 441 // LightTable.HC:441
             if ((p0_mode == 4L)) {
@@ -1179,7 +1179,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             }
             ln = 445 // LightTable.HC:445
             tick(t)
-            val t6: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s8)
+            val t6: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s8)
             l8_entry = t6
             ln = 446 // LightTable.HC:446
             if ((p0_mode == 5L)) {
@@ -1195,7 +1195,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC LightTable (LightTable.HC:453) */
-    fun f720_LightTable(t: Task) {
+    fun f725_LightTable(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1219,13 +1219,13 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             st8(g_p_root_locks, 0L)
             ln = 459 // LightTable.HC:459
             tick(t)
-            P.f507_MenuPush(t, s9)
+            P.f512_MenuPush(t, s9)
             ln = 481 // LightTable.HC:481
             tick(t)
-            f719_LTMenuSet(t, l8_mode)
+            f724_LTMenuSet(t, l8_mode)
             ln = 483 // LightTable.HC:483
             tick(t)
-            P.f564_MemBIOSRep(t)
+            P.f569_MemBIOSRep(t)
             ln = 484 // LightTable.HC:484
             tick(t)
             val t1: Long = P.f191_GetI64(t, s10, 16777216L, Long.MIN_VALUE, 9223372036854775807L)
@@ -1251,12 +1251,12 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             nat(t, n_DocClear, push1(t, 0L))
             ln = 500 // LightTable.HC:500
             tick(t)
-            f717_Init(t)
+            f722_Init(t)
             ln = 501 // LightTable.HC:501
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065866L)
             ln = 502 // LightTable.HC:502
             val t3: Long = (ld8(P.g_Fs) + 1088L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065867L, 0L, s11, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065872L, 0L, s11, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 503 // LightTable.HC:503
             l16_i = 0L
@@ -1264,7 +1264,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                 val t5: Long = nat(t, n_mp_cnt, push0(t))
                 if (!((l16_i < t5))) break@loop0
                 ln = 504 // LightTable.HC:504
-                val t4: Long = nat(t, n_Spawn, push(t, 9223090561878065868L, 0L, s12, l16_i, 0L, 0L, 0L))
+                val t4: Long = nat(t, n_Spawn, push(t, 9223090561878065873L, 0L, s12, l16_i, 0L, 0L, 0L))
                 st8((g_animate_tasks + (l16_i * 8L)), t4)
                 ln = 503 // LightTable.HC:503
                 l16_i = (l16_i + 1L)
@@ -1288,7 +1288,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                     6L -> {
                                         ln = 512 // LightTable.HC:512
                                         tick(t)
-                                        P.f500_Sweep(t, 100L, 90.0, 100.0)
+                                        P.f505_Sweep(t, 100L, 90.0, 100.0)
                                         ln = 513 // LightTable.HC:513
                                         l64_x2 = ld8((fp + 32))
                                         l72_y2 = ld8((fp + 40))
@@ -1301,17 +1301,17 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                     st4((ld8(g_map) + 160L), 15L)
                                                     ln = 517 // LightTable.HC:517
                                                     tick(t)
-                                                    P.f387_GrFloodFill(t, ld8(g_map), l64_x2, l72_y2, 0L, 0L, 0L)
+                                                    P.f388_GrFloodFill(t, ld8(g_map), l64_x2, l72_y2, 0L, 0L, 0L)
                                                     ln = 518 // LightTable.HC:518
                                                     l8_mode = 0L
                                                     ln = 519 // LightTable.HC:519
                                                     tick(t)
-                                                    f719_LTMenuSet(t, l8_mode)
+                                                    f724_LTMenuSet(t, l8_mode)
                                                 }
                                                 5L -> {
                                                     ln = 522 // LightTable.HC:522
                                                     tick(t)
-                                                    f710_RayBurst(t, l48_x1, l56_y1, l64_x2, l72_y2)
+                                                    f715_RayBurst(t, l48_x1, l56_y1, l64_x2, l72_y2)
                                                 }
                                                 else -> {
                                                 }
@@ -1342,13 +1342,13 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                         l72_y2 = ld8((fp + 40))
                                                         ln = 537 // LightTable.HC:537
                                                         tick(t)
-                                                        P.f396_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1L, 0L)
+                                                        P.f397_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1L, 0L)
                                                         ln = 538 // LightTable.HC:538
                                                         val t10: Long = nat(t, n_GetMsg, push4(t, (fp + 32), (fp + 40), 84L, 0L))
                                                         l0_msg_code = t10
                                                         ln = 540 // LightTable.HC:540
                                                         tick(t)
-                                                        P.f396_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1L, 0L)
+                                                        P.f397_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1L, 0L)
                                                         ln = 541 // LightTable.HC:541
                                                         if ((l0_msg_code == 2L)) {
                                                             ln = 542 // LightTable.HC:542
@@ -1359,7 +1359,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                             if ((l0_msg_code == 6L)) {
                                                                 ln = 544 // LightTable.HC:544
                                                                 tick(t)
-                                                                P.f500_Sweep(t, 100L, 90.0, 100.0)
+                                                                P.f505_Sweep(t, 100L, 90.0, 100.0)
                                                                 ln = 545 // LightTable.HC:545
                                                                 l64_x2 = ld8((fp + 32))
                                                                 l72_y2 = ld8((fp + 40))
@@ -1379,16 +1379,16 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                     }
                                                     ln = 553 // LightTable.HC:553
                                                     tick(t)
-                                                    P.f396_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1L, 0L)
+                                                    P.f397_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1L, 0L)
                                                     ln = 554 // LightTable.HC:554
                                                     if ((l8_mode == 0L)) {
                                                         ln = 555 // LightTable.HC:555
                                                         tick(t)
-                                                        f707_BmpLine(t, ld8(g_bmp_reflect), l48_x1.toDouble(), l56_y1.toDouble(), l64_x2.toDouble(), l72_y2.toDouble())
+                                                        f712_BmpLine(t, ld8(g_bmp_reflect), l48_x1.toDouble(), l56_y1.toDouble(), l64_x2.toDouble(), l72_y2.toDouble())
                                                     } else {
                                                         ln = 557 // LightTable.HC:557
                                                         tick(t)
-                                                        f707_BmpLine(t, ld8(g_bmp_refract), l48_x1.toDouble(), l56_y1.toDouble(), l64_x2.toDouble(), l72_y2.toDouble())
+                                                        f712_BmpLine(t, ld8(g_bmp_refract), l48_x1.toDouble(), l56_y1.toDouble(), l64_x2.toDouble(), l72_y2.toDouble())
                                                     }
                                                 }
                                                 1L, 3L -> {
@@ -1410,13 +1410,13 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                         st4(((l80_c + (l24_cnt * 12L)) + 8L), 0L)
                                                         ln = 568 // LightTable.HC:568
                                                         tick(t)
-                                                        P.f402_Gr2BSpline(t, ld8(g_map), l80_c, (l24_cnt + 1L), 0L)
+                                                        P.f403_Gr2BSpline(t, ld8(g_map), l80_c, (l24_cnt + 1L), 0L)
                                                         ln = 569 // LightTable.HC:569
                                                         val t11: Long = nat(t, n_GetMsg, push4(t, (fp + 32), (fp + 40), 1108L, 0L))
                                                         l0_msg_code = t11
                                                         ln = 571 // LightTable.HC:571
                                                         tick(t)
-                                                        P.f402_Gr2BSpline(t, ld8(g_map), l80_c, (l24_cnt + 1L), 0L)
+                                                        P.f403_Gr2BSpline(t, ld8(g_map), l80_c, (l24_cnt + 1L), 0L)
                                                         ln = 572 // LightTable.HC:572
                                                         if ((l0_msg_code == 2L)) {
                                                             ln = 573 // LightTable.HC:573
@@ -1427,7 +1427,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                             if ((l0_msg_code == 6L)) {
                                                                 ln = 575 // LightTable.HC:575
                                                                 tick(t)
-                                                                P.f500_Sweep(t, 100L, 90.0, 100.0)
+                                                                P.f505_Sweep(t, 100L, 90.0, 100.0)
                                                                 ln = 576 // LightTable.HC:576
                                                                 l24_cnt = (l24_cnt + 1L)
                                                             }
@@ -1445,7 +1445,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                     }
                                                     ln = 583 // LightTable.HC:583
                                                     tick(t)
-                                                    P.f418_Gr2BSpline3(t, ld8(g_map), l80_c, l24_cnt, 0L)
+                                                    P.f420_Gr2BSpline3(t, ld8(g_map), l80_c, l24_cnt, 0L)
                                                     ln = 584 // LightTable.HC:584
                                                     l16_i = 0L
                                                     loop13@ while ((l16_i < l24_cnt)) {
@@ -1463,17 +1463,17 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                     if ((l8_mode == 1L)) {
                                                         ln = 589 // LightTable.HC:589
                                                         tick(t)
-                                                        P.f358_BSpline2(t, ld8(g_bmp_reflect), l80_c, l24_cnt, 9223090561878065858L, 0L)
+                                                        P.f359_BSpline2(t, ld8(g_bmp_reflect), l80_c, l24_cnt, 9223090561878065863L, 0L)
                                                     } else {
                                                         ln = 591 // LightTable.HC:591
                                                         tick(t)
-                                                        P.f358_BSpline2(t, ld8(g_bmp_refract), l80_c, l24_cnt, 9223090561878065858L, 0L)
+                                                        P.f359_BSpline2(t, ld8(g_bmp_refract), l80_c, l24_cnt, 9223090561878065863L, 0L)
                                                     }
                                                     ln = 592 // LightTable.HC:592
                                                     l8_mode = 0L
                                                     ln = 593 // LightTable.HC:593
                                                     tick(t)
-                                                    f719_LTMenuSet(t, l8_mode)
+                                                    f724_LTMenuSet(t, l8_mode)
                                                 }
                                                 else -> {
                                                 }
@@ -1491,7 +1491,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                             l8_mode = l16_i
                                             ln = 602 // LightTable.HC:602
                                             tick(t)
-                                            f719_LTMenuSet(t, l8_mode)
+                                            f724_LTMenuSet(t, l8_mode)
                                         }
                                     }
                                     2L -> {
@@ -1502,20 +1502,20 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                 10L -> {
                                                     ln = 608 // LightTable.HC:608
                                                     tick(t)
-                                                    f718_CleanUp(t)
+                                                    f723_CleanUp(t)
                                                     ln = 609 // LightTable.HC:609
                                                     tick(t)
-                                                    f717_Init(t)
+                                                    f722_Init(t)
                                                     ln = 610 // LightTable.HC:610
                                                     l8_mode = 0L
                                                     ln = 611 // LightTable.HC:611
                                                     tick(t)
-                                                    f719_LTMenuSet(t, l8_mode)
+                                                    f724_LTMenuSet(t, l8_mode)
                                                 }
                                                 114L -> {
                                                     ln = 614 // LightTable.HC:614
                                                     tick(t)
-                                                    f711_RandomBurst(t)
+                                                    f716_RandomBurst(t)
                                                 }
                                                 101L -> {
                                                     ln = 617 // LightTable.HC:617
@@ -1532,14 +1532,14 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                                     st1(g_show_normals, b2i((ld1u(g_show_normals) == 0L)))
                                                     ln = 624 // LightTable.HC:624
                                                     tick(t)
-                                                    f719_LTMenuSet(t, l8_mode)
+                                                    f724_LTMenuSet(t, l8_mode)
                                                 }
                                                 in 48L..53L -> {
                                                     ln = 627 // LightTable.HC:627
                                                     l8_mode = (ld8((fp + 32)) - 48L)
                                                     ln = 628 // LightTable.HC:628
                                                     tick(t)
-                                                    f719_LTMenuSet(t, l8_mode)
+                                                    f724_LTMenuSet(t, l8_mode)
                                                 }
                                                 27L, 28L -> {
                                                     ln = 632 // LightTable.HC:632
@@ -1588,10 +1588,10 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
             }
             ln = 645 // LightTable.HC:645
             tick(t)
-            f718_CleanUp(t)
+            f723_CleanUp(t)
             ln = 646 // LightTable.HC:646
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -1599,13 +1599,13 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Graphics/LightTable.HC#0 (LightTable.HC:649) */
-    fun f721_init_C__Demo_Graphics_LightTable_HC_0(t: Task): Long {
+    fun f726_init_C__Demo_Graphics_LightTable_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 649 // LightTable.HC:649
             tick(t)
-            f720_LightTable(t)
+            f725_LightTable(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/LightTable.HC#0", ln) }
@@ -1614,25 +1614,25 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_eval0(t)
-            704 -> f704_eval1(t)
-            705 -> f705_BmpPeek(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            706 -> { f706_BmpPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            707 -> { f707_BmpLine(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L))); 0L }
-            708 -> f708_PhotonNew(t)
-            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> { f710_RayBurst(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            711 -> { f711_RandomBurst(t); 0L }
-            712 -> { f712_FindNormal(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            713 -> { f713_Mirror(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            714 -> { f714_SnellsLaw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            715 -> { f715_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            716 -> { f716_MPAnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            717 -> { f717_Init(t); 0L }
-            718 -> { f718_CleanUp(t); 0L }
-            719 -> { f719_LTMenuSet(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            720 -> { f720_LightTable(t); 0L }
-            721 -> f721_init_C__Demo_Graphics_LightTable_HC_0(t)
+            708 -> f708_eval0(t)
+            709 -> f709_eval1(t)
+            710 -> f710_BmpPeek(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            711 -> { f711_BmpPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            712 -> { f712_BmpLine(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L))); 0L }
+            713 -> f713_PhotonNew(t)
+            714 -> { f714_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> { f715_RayBurst(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            716 -> { f716_RandomBurst(t); 0L }
+            717 -> { f717_FindNormal(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            718 -> { f718_Mirror(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            719 -> { f719_SnellsLaw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            720 -> { f720_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            721 -> { f721_MPAnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            722 -> { f722_Init(t); 0L }
+            723 -> { f723_CleanUp(t); 0L }
+            724 -> { f724_LTMenuSet(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            725 -> { f725_LightTable(t); 0L }
+            726 -> f726_init_C__Demo_Graphics_LightTable_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1644,7 +1644,7 @@ class N_Demo_Graphics_LightTable(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726)
         private val NAMES = arrayOf("\$eval0", "\$eval1", "BmpPeek", "BmpPlot", "BmpLine", "PhotonNew", "DrawIt", "RayBurst", "RandomBurst", "FindNormal", "Mirror", "SnellsLaw", "AnimateTask", "MPAnimateTask", "Init", "CleanUp", "LTMenuSet", "LightTable", "\$init:C:/Demo/Graphics/LightTable.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/LightTable.HC")
     }

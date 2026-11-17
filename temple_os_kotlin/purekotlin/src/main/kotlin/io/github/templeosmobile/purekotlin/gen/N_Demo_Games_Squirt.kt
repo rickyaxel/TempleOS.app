@@ -18,12 +18,14 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GetKey = rt.vm.natives.find("GetKey")!!.index
+    @JvmField val n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!!.index
     @JvmField val n_GrRect = rt.vm.natives.find("GrRect")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
     @JvmField val n_Refresh = rt.vm.natives.find("Refresh")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
@@ -70,7 +72,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (Squirt.HC:52) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -94,8 +96,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l88_y1a: Long = 0L
             var l96_x2a: Long = 0L
             ln = 62 // Squirt.HC:62
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 0L, 456L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 0L, 456L, 0L, b0, 0L))
             ln = 63 // Squirt.HC:63
             val t1: Double = ldf(g_start_up_timeout)
             val t0: Double = f(nat(t, n_tS, push0(t)))
@@ -109,7 +110,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 ln = 67 // Squirt.HC:67
                 tick(t)
                 val vb0 = push0(t)
-                P.f369_GrPrint(t, p1_dc, 296L, 240L, s0, vb0, 0)
+                P.f370_GrPrint(t, p1_dc, 296L, 240L, s0, vb0, 0)
                 t.sp = vb0
                 ln = 68 // Squirt.HC:68
                 t.msp = msp0
@@ -128,18 +129,17 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 76 // Squirt.HC:76
             nat(t, n_GrRect, push(t, p1_dc, f2i((ldf((l112_tmpm + 56L)) + 8.0)), f2i(ldf((l112_tmpm + 64L))), 8L, 72L))
             ln = 77 // Squirt.HC:77
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, b1, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, b1, 0L))
             ln = 78 // Squirt.HC:78
             st4((p1_dc + 160L), 0L)
             ln = 79 // Squirt.HC:79
             tick(t)
-            P.f397_GrCircle(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), f2i(ldf((l112_tmpm + 112L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), f2i(ldf((l112_tmpm + 112L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 80 // Squirt.HC:80
             st4((p1_dc + 160L), 2L)
             ln = 81 // Squirt.HC:81
             tick(t)
-            P.f387_GrFloodFill(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, 0L, 0L)
+            P.f388_GrFloodFill(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, 0L, 0L)
             ln = 83 // Squirt.HC:83
             l112_tmpm = ld8(g_nozzle)
             ln = 84 // Squirt.HC:84
@@ -151,21 +151,21 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 87 // Squirt.HC:87
             val t2: Double = f(nat(t, n_Arg, push2(t, bits(l24_dx), bits(l32_dy))))
             tick(t)
-            val t3: Double = P.f542_Wrap(t, t2, (-f(4614256656552045848L)))
+            val t3: Double = P.f547_Wrap(t, t2, (-f(4614256656552045848L)))
             st8(g_nozzle__, bits(t3))
             ln = 88 // Squirt.HC:88
             tick(t)
-            P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, b2, ldf(g_nozzle__))
+            P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, b2, ldf(g_nozzle__))
             ln = 89 // Squirt.HC:89
             st4((p1_dc + 160L), 0L)
             ln = 90 // Squirt.HC:90
             tick(t)
-            P.f397_GrCircle(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), f2i(ldf((l112_tmpm + 112L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), f2i(ldf((l112_tmpm + 112L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 91 // Squirt.HC:91
             st4((p1_dc + 160L), 2L)
             ln = 92 // Squirt.HC:92
             tick(t)
-            P.f387_GrFloodFill(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, 0L, 0L)
+            P.f388_GrFloodFill(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, 0L, 0L)
             ln = 94 // Squirt.HC:94
             l16_first = 1L
             ln = 95 // Squirt.HC:95
@@ -229,12 +229,11 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         ln = 124 // Squirt.HC:124
                         st4((((fp + 136) + 36L) + 8L), 0L)
                         ln = 125 // Squirt.HC:125
-                        tick(t)
-                        P.f422_GrFillPoly3(t, p1_dc, 4L, (fp + 136))
+                        nat(t, n_GrFillPoly3, push3(t, p1_dc, 4L, (fp + 136)))
                     }
                     ln = 129 // Squirt.HC:129
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, l96_x2a, l104_y2a, l64_x2b, l72_y2b, 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, l96_x2a, l104_y2a, l64_x2b, l72_y2b, 1L, 0L)
                     ln = 131 // Squirt.HC:131
                     l80_x1a = l96_x2a
                     ln = 132 // Squirt.HC:132
@@ -247,8 +246,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     ln = 135 // Squirt.HC:135
                     if ((ld8((l112_tmpm + 104L)) == 2L)) {
                         ln = 136 // Squirt.HC:136
-                        tick(t)
-                        P.f440_Sprite3(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, b3, 0L)
+                        nat(t, n_Sprite3, push(t, p1_dc, f2i(ldf((l112_tmpm + 56L))), f2i(ldf((l112_tmpm + 64L))), 0L, b3, 0L))
                     }
                 }
                 ln = 137 // Squirt.HC:137
@@ -278,10 +276,10 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     st4((p1_dc + 160L), 0L)
                     ln = 149 // Squirt.HC:149
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i((ldf((ld8((l128_tmps + 16L)) + 56L)) - l32_dy)), f2i((ldf((ld8((l128_tmps + 16L)) + 64L)) + l24_dx)), f2i((ldf((ld8((l128_tmps + 24L)) + 56L)) - l32_dy)), f2i((ldf((ld8((l128_tmps + 24L)) + 64L)) + l24_dx)), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i((ldf((ld8((l128_tmps + 16L)) + 56L)) - l32_dy)), f2i((ldf((ld8((l128_tmps + 16L)) + 64L)) + l24_dx)), f2i((ldf((ld8((l128_tmps + 24L)) + 56L)) - l32_dy)), f2i((ldf((ld8((l128_tmps + 24L)) + 64L)) + l24_dx)), 1L, 0L)
                     ln = 151 // Squirt.HC:151
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i((ldf((ld8((l128_tmps + 16L)) + 56L)) + l32_dy)), f2i((ldf((ld8((l128_tmps + 16L)) + 64L)) - l24_dx)), f2i((ldf((ld8((l128_tmps + 24L)) + 56L)) + l32_dy)), f2i((ldf((ld8((l128_tmps + 24L)) + 64L)) - l24_dx)), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i((ldf((ld8((l128_tmps + 16L)) + 56L)) + l32_dy)), f2i((ldf((ld8((l128_tmps + 16L)) + 64L)) - l24_dx)), f2i((ldf((ld8((l128_tmps + 24L)) + 56L)) + l32_dy)), f2i((ldf((ld8((l128_tmps + 24L)) + 64L)) - l24_dx)), 1L, 0L)
                 }
                 ln = 154 // Squirt.HC:154
                 l128_tmps = ld8(l128_tmps)
@@ -294,7 +292,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC MyDerivative (Squirt.HC:158) */
-    fun f704_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f709_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -351,7 +349,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PlaceMass (Squirt.HC:182) */
-    fun f705_PlaceMass(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Double, a5: Double, a6: Double, a7: Long): Long {
+    fun f710_PlaceMass(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Double, a5: Double, a6: Double, a7: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -395,7 +393,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PlaceSpring (Squirt.HC:198) */
-    fun f706_PlaceSpring(t: Task, a0: Long, a1: Long): Long {
+    fun f711_PlaceSpring(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -423,7 +421,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC HoseNew (Squirt.HC:208) */
-    fun f707_HoseNew(t: Task) {
+    fun f712_HoseNew(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -438,13 +436,13 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l0_i < 640L)) {
                 ln = 214 // Squirt.HC:214
                 tick(t)
-                val t0: Long = f705_PlaceMass(t, 1L, divs(l0_i, 2L), 453L, 3.0, 0.0, 0.0, 1.0, ld8(P.g_Fs))
+                val t0: Long = f710_PlaceMass(t, 1L, divs(l0_i, 2L), 453L, 3.0, 0.0, 0.0, 1.0, ld8(P.g_Fs))
                 l16_tmpm = t0
                 ln = 215 // Squirt.HC:215
                 if ((l8_tmpm1 != 0L)) {
                     ln = 216 // Squirt.HC:216
                     tick(t)
-                    val t1: Long = f706_PlaceSpring(t, l16_tmpm, l8_tmpm1)
+                    val t1: Long = f711_PlaceSpring(t, l16_tmpm, l8_tmpm1)
                     l24_tmps = t1
                     ln = 217 // Squirt.HC:217
                     st8((l24_tmps + 72L), bits(6.0))
@@ -474,7 +472,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC AnimateTask (Squirt.HC:229) */
-    fun f708_AnimateTask(t: Task, a0: Long) {
+    fun f713_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -493,13 +491,13 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 l32_dy = t1
                 ln = 236 // Squirt.HC:236
                 tick(t)
-                f705_PlaceMass(t, 2L, f2i((ldf((ld8(g_nozzle) + 56L)) + (18.0 * l24_dx))), f2i((ldf((ld8(g_nozzle) + 64L)) + (18.0 * l32_dy))), 3.0, (500.0 * l24_dx), (500.0 * l32_dy), 100.0, ld8((ld8(P.g_Fs) + 120L)))
+                f710_PlaceMass(t, 2L, f2i((ldf((ld8(g_nozzle) + 56L)) + (18.0 * l24_dx))), f2i((ldf((ld8(g_nozzle) + 64L)) + (18.0 * l32_dy))), 3.0, (500.0 * l24_dx), (500.0 * l32_dy), 100.0, ld8((ld8(P.g_Fs) + 120L)))
                 ln = 239 // Squirt.HC:239
                 val t2: Double = f(nat(t, n_Rand, push0(t)))
                 if ((t2 < 0.05)) {
                     ln = 240 // Squirt.HC:240
                     tick(t)
-                    f705_PlaceMass(t, 2L, f2i(ldf((ld8(g_faucet) + 56L))), f2i(ldf((ld8(g_faucet) + 64L))), 3.0, 0.0, 0.0, 100.0, ld8((ld8(P.g_Fs) + 120L)))
+                    f710_PlaceMass(t, 2L, f2i(ldf((ld8(g_faucet) + 56L))), f2i(ldf((ld8(g_faucet) + 64L))), 3.0, 0.0, 0.0, 100.0, ld8((ld8(P.g_Fs) + 120L)))
                 }
                 ln = 244 // Squirt.HC:244
                 l8_tmpm = ld8((ld8(g_ode) + 40L))
@@ -529,7 +527,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC MoveNozzleTaskX (Squirt.HC:259) */
-    fun f709_MoveNozzleTaskX(t: Task, a0: Long) {
+    fun f714_MoveNozzleTaskX(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -555,7 +553,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC MoveNozzleTaskY (Squirt.HC:269) */
-    fun f710_MoveNozzleTaskY(t: Task, a0: Long) {
+    fun f715_MoveNozzleTaskY(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -581,7 +579,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Init (Squirt.HC:279) */
-    fun f711_Init(t: Task) {
+    fun f716_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -594,15 +592,15 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st8(g_start_up_timeout, bits((t0 + 0.5)))
             ln = 287 // Squirt.HC:287
             tick(t)
-            val t1: Long = P.f453_ODENew(t, 0L, 0.05, 1L)
+            val t1: Long = P.f458_ODENew(t, 0L, 0.05, 1L)
             st8(g_ode, t1)
             ln = 288 // Squirt.HC:288
-            st8((ld8(g_ode) + 304L), 9223090561878065856L)
+            st8((ld8(g_ode) + 304L), 9223090561878065861L)
             ln = 289 // Squirt.HC:289
             st8((ld8(g_ode) + 96L), bits(5000.0))
             ln = 291 // Squirt.HC:291
             tick(t)
-            f707_HoseNew(t)
+            f712_HoseNew(t)
             ln = 292 // Squirt.HC:292
             tick(t)
             P.f153_QueIns(t, ld8(g_ode), ld8((ld8(P.g_Fs) + 960L)))
@@ -612,7 +610,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CleanUp (Squirt.HC:295) */
-    fun f712_CleanUp(t: Task) {
+    fun f717_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -629,7 +627,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f156_QueDel(t, (ld8(g_ode) + 56L), 1L)
             ln = 301 // Squirt.HC:301
             tick(t)
-            P.f455_ODEDel(t, ld8(g_ode))
+            P.f460_ODEDel(t, ld8(g_ode))
             ln = 302 // Squirt.HC:302
             nat(t, n_DocClear, push1(t, 0L))
             t.depth--
@@ -638,30 +636,30 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SongTask (Squirt.HC:305) */
-    fun f713_SongTask(t: Task, a0: Long) {
+    fun f718_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 307 // Squirt.HC:307
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 308 // Squirt.HC:308
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 309 // Squirt.HC:309
             loop0@ while ((1L != 0L)) {
                 ln = 310 // Squirt.HC:310
                 tick(t)
-                P.f494_Play(t, s2, 0L)
+                P.f499_Play(t, s2, 0L)
                 ln = 311 // Squirt.HC:311
                 tick(t)
-                P.f494_Play(t, s2, 0L)
+                P.f499_Play(t, s2, 0L)
                 ln = 312 // Squirt.HC:312
                 tick(t)
-                P.f494_Play(t, s3, 0L)
+                P.f499_Play(t, s3, 0L)
                 ln = 313 // Squirt.HC:313
                 tick(t)
-                P.f494_Play(t, s3, 0L)
+                P.f499_Play(t, s3, 0L)
                 tick(t)
             }
             t.depth--
@@ -670,7 +668,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Squirt (Squirt.HC:317) */
-    fun f714_Squirt(t: Task) {
+    fun f719_Squirt(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -683,7 +681,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st1((ld8(P.g_Fs) + 778L), 225L)
             ln = 322 // Squirt.HC:322
             val t1: Long = (ld8(P.g_Fs) + 1080L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065865L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065870L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 323 // Squirt.HC:323
             nat(t, n_AutoComplete, push1(t, 0L))
@@ -697,16 +695,16 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             nat(t, n_DocCursor, push2(t, 0L, 0L))
             ln = 328 // Squirt.HC:328
             tick(t)
-            P.f507_MenuPush(t, s5)
+            P.f512_MenuPush(t, s5)
             ln = 342 // Squirt.HC:342
             tick(t)
-            f711_Init(t)
+            f716_Init(t)
             ln = 343 // Squirt.HC:343
             val t3: Long = (ld8(P.g_Fs) + 1088L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065860L, 0L, s6, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065865L, 0L, s6, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 344 // Squirt.HC:344
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 346 // Squirt.HC:346
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -725,19 +723,19 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                         when (t5) {
                                             75L -> {
                                                 ln = 352 // Squirt.HC:352
-                                                nat(t, n_Spawn, push(t, 9223090561878065861L, -1L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065866L, -1L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
                                             }
                                             77L -> {
                                                 ln = 355 // Squirt.HC:355
-                                                nat(t, n_Spawn, push(t, 9223090561878065861L, 1L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065866L, 1L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
                                             }
                                             72L -> {
                                                 ln = 358 // Squirt.HC:358
-                                                nat(t, n_Spawn, push(t, 9223090561878065862L, -1L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065867L, -1L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
                                             }
                                             80L -> {
                                                 ln = 361 // Squirt.HC:361
-                                                nat(t, n_Spawn, push(t, 9223090561878065862L, 1L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065867L, 1L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
                                             }
                                             else -> {
                                             }
@@ -747,10 +745,10 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 10L -> {
                                     ln = 366 // Squirt.HC:366
                                     tick(t)
-                                    f712_CleanUp(t)
+                                    f717_CleanUp(t)
                                     ln = 367 // Squirt.HC:367
                                     tick(t)
-                                    f711_Init(t)
+                                    f716_Init(t)
                                 }
                                 27L, 28L -> {
                                     ln = 371 // Squirt.HC:371
@@ -777,10 +775,10 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 378 // Squirt.HC:378
             tick(t)
-            f712_CleanUp(t)
+            f717_CleanUp(t)
             ln = 379 // Squirt.HC:379
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -788,13 +786,13 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Squirt.HC#0 (Squirt.HC:49) */
-    fun f715_init_C__Demo_Games_Squirt_HC_0(t: Task): Long {
+    fun f720_init_C__Demo_Games_Squirt_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 382 // Squirt.HC:382
             tick(t)
-            f714_Squirt(t)
+            f719_Squirt(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Squirt.HC#0", ln) }
@@ -803,19 +801,19 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> f705_PlaceMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L)), f((if (n > 5) st[base + 5] else 0L)), f((if (n > 6) st[base + 6] else 0L)), (if (n > 7) st[base + 7] else 0L))
-            706 -> f706_PlaceSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            707 -> { f707_HoseNew(t); 0L }
-            708 -> { f708_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> { f709_MoveNozzleTaskX(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            710 -> { f710_MoveNozzleTaskY(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            711 -> { f711_Init(t); 0L }
-            712 -> { f712_CleanUp(t); 0L }
-            713 -> { f713_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            714 -> { f714_Squirt(t); 0L }
-            715 -> f715_init_C__Demo_Games_Squirt_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> f710_PlaceMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L)), f((if (n > 5) st[base + 5] else 0L)), f((if (n > 6) st[base + 6] else 0L)), (if (n > 7) st[base + 7] else 0L))
+            711 -> f711_PlaceSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            712 -> { f712_HoseNew(t); 0L }
+            713 -> { f713_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> { f714_MoveNozzleTaskX(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            715 -> { f715_MoveNozzleTaskY(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            716 -> { f716_Init(t); 0L }
+            717 -> { f717_CleanUp(t); 0L }
+            718 -> { f718_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            719 -> { f719_Squirt(t); 0L }
+            720 -> f720_init_C__Demo_Games_Squirt_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -827,7 +825,7 @@ class N_Demo_Games_Squirt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720)
         private val NAMES = arrayOf("DrawIt", "MyDerivative", "PlaceMass", "PlaceSpring", "HoseNew", "AnimateTask", "MoveNozzleTaskX", "MoveNozzleTaskY", "Init", "CleanUp", "SongTask", "Squirt", "\$init:C:/Demo/Games/Squirt.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/Squirt.HC")
     }

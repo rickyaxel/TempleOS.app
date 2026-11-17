@@ -46,21 +46,21 @@ s 17fe10 25683763
 s 17fe28 09092453502c223c313e222c42493d256424
 s 17fe10 25683763
 s 17fe50 446f20616e6f74686572
-fn 703 MDInit (U0;*$ManDefineStruct;-)
-fn 704 MDCorrect (U0;*$ManDefineStruct;-)
-fn 705 AddVertex (I64;*$ManDefineStruct,I64,I64,I64;-)
-fn 706 AddTri (I64;*$ManDefineStruct,I64,I64,I64,I64;-)
-fn 707 AddBox (U0;*$ManDefineStruct,I64,I64,I64,I64,F64,F64,F64,F64,F64,F64,F64,F64,*I64,*I64,*I64;-)
-fn 708 Man2CSprite (*U8;;-)
-fn 709 ManGen (*U8;;-)
-fn 710 $init:C:/Apps/GrModels/ManGen.HC#0 (I64;;-)
-sym f AddBox 707 (U0;*$ManDefineStruct,I64,I64,I64,I64,F64,F64,F64,F64,F64,F64,F64,F64,*I64,*I64,*I64;-)
-sym f AddTri 706 (I64;*$ManDefineStruct,I64,I64,I64,I64;-)
-sym f AddVertex 705 (I64;*$ManDefineStruct,I64,I64,I64;-)
-sym f MDCorrect 704 (U0;*$ManDefineStruct;-)
-sym f MDInit 703 (U0;*$ManDefineStruct;-)
-sym f Man2CSprite 708 (*U8;;-)
-sym f ManGen 709 (*U8;;-)
+fn 708 MDInit (U0;*$ManDefineStruct;-)
+fn 709 MDCorrect (U0;*$ManDefineStruct;-)
+fn 710 AddVertex (I64;*$ManDefineStruct,I64,I64,I64;-)
+fn 711 AddTri (I64;*$ManDefineStruct,I64,I64,I64,I64;-)
+fn 712 AddBox (U0;*$ManDefineStruct,I64,I64,I64,I64,F64,F64,F64,F64,F64,F64,F64,F64,*I64,*I64,*I64;-)
+fn 713 Man2CSprite (*U8;;-)
+fn 714 ManGen (*U8;;-)
+fn 715 $init:C:/Apps/GrModels/ManGen.HC#0 (I64;;-)
+sym f AddBox 712 (U0;*$ManDefineStruct,I64,I64,I64,I64,F64,F64,F64,F64,F64,F64,F64,F64,*I64,*I64,*I64;-)
+sym f AddTri 711 (I64;*$ManDefineStruct,I64,I64,I64,I64;-)
+sym f AddVertex 710 (I64;*$ManDefineStruct,I64,I64,I64;-)
+sym f MDCorrect 709 (U0;*$ManDefineStruct;-)
+sym f MDInit 708 (U0;*$ManDefineStruct;-)
+sym f Man2CSprite 713 (*U8;;-)
+sym f ManGen 714 (*U8;;-)
 sym g m 17fd38 *$Man
-init 710
+init 715
 unit C:/Apps/GrModels/ManGen.HC#1

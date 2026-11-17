@@ -44,7 +44,7 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PrintDigit (Digits.HC:8) */
-    fun f703_PrintDigit(t: Task, a0: Long) {
+    fun f708_PrintDigit(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -62,7 +62,7 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PrintPattern (Digits.HC:15) */
-    fun f704_PrintPattern(t: Task, a0: Long) {
+    fun f709_PrintPattern(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -77,7 +77,7 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 if (!((t1 != 0L))) break@loop0
                 ln = 19 // Digits.HC:19
                 tick(t)
-                f703_PrintDigit(t, l8_ch)
+                f708_PrintDigit(t, l8_ch)
                 tick(t)
             }
             ln = 20 // Digits.HC:20
@@ -88,7 +88,7 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Digits (Digits.HC:23) */
-    fun f705_Digits(t: Task) {
+    fun f710_Digits(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -150,7 +150,7 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             st1(((fp + 24) + t2), (mods(t1, 10L) + 48L))
                             ln = 52 // Digits.HC:52
                             tick(t)
-                            f704_PrintPattern(t, (fp + 24))
+                            f709_PrintPattern(t, (fp + 24))
                             ln = 53 // Digits.HC:53
                             tick(t)
                             val t3: Long = P.f188_PressAKey(t)
@@ -177,14 +177,14 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 }
                                 ln = 61 // Digits.HC:61
                                 tick(t)
-                                f703_PrintDigit(t, l8_ch)
+                                f708_PrintDigit(t, l8_ch)
                                 ln = 62 // Digits.HC:62
                                 if ((l8_ch != ld1u(((fp + 24) + l16_i)))) {
                                     ln = 63 // Digits.HC:63
                                     nat(t, n_Print, push2(t, s8, l0_num))
                                     ln = 64 // Digits.HC:64
                                     tick(t)
-                                    f704_PrintPattern(t, (fp + 24))
+                                    f709_PrintPattern(t, (fp + 24))
                                     ln = 65 // Digits.HC:65
                                     tick(t)
                                     P.f250_Beep(t, 62L, 0L)
@@ -227,13 +227,13 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Digits.HC#0 (Digits.HC:80) */
-    fun f706_init_C__Demo_Games_Digits_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Games_Digits_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 80 // Digits.HC:80
             tick(t)
-            f705_Digits(t)
+            f710_Digits(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Digits.HC#0", ln) }
@@ -242,10 +242,10 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_PrintDigit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_PrintPattern(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_Digits(t); 0L }
-            706 -> f706_init_C__Demo_Games_Digits_HC_0(t)
+            708 -> { f708_PrintDigit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_PrintPattern(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_Digits(t); 0L }
+            711 -> f711_init_C__Demo_Games_Digits_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -257,7 +257,7 @@ class N_Demo_Games_Digits(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("PrintDigit", "PrintPattern", "Digits", "\$init:C:/Demo/Games/Digits.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/Digits.HC")
     }

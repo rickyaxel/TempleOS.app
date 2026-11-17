@@ -15,6 +15,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     public let n_Free: Int
     public let n_GrBlot: Int
     public let n_GrFillTri0: Int
+    public let n_GrLine3: Int
     public let n_GrRect: Int
     public let n_Line: Int
     public let n_MAlloc: Int
@@ -32,6 +33,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
         n_Free = rt.vm.natives.find("Free")!.index
         n_GrBlot = rt.vm.natives.find("GrBlot")!.index
         n_GrFillTri0 = rt.vm.natives.find("GrFillTri0")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_GrRect = rt.vm.natives.find("GrRect")!.index
         n_Line = rt.vm.natives.find("Line")!.index
         n_MAlloc = rt.vm.natives.find("MAlloc")!.index
@@ -51,7 +53,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC GrFillPoly3 (GrComposites.HC:2)
-    @discardableResult public final func f703_GrFillPoly3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f708_GrFillPoly3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -220,7 +222,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC GrRectB (GrComposites.HC:68)
-    @discardableResult public final func f704_GrRectB(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f709_GrRectB(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -257,7 +259,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC GrRect3 (GrComposites.HC:75)
-    @discardableResult public final func f705_GrRect3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
+    @discardableResult public final func f710_GrRect3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -295,7 +297,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
             try st4((((fp &+ 48) &+ 36) &+ 8), p3_z)
             ln = 90 // GrComposites.HC:90
             try tick(t)
-            let t0: Int64 = try f703_GrFillPoly3(t, p0_dc, 4, (fp &+ 48))
+            let t0: Int64 = try f708_GrFillPoly3(t, p0_dc, 4, (fp &+ 48))
             t.msp = msp0
             t.depth -= 1
             return t0
@@ -306,7 +308,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC GrBorder (GrComposites.HC:93)
-    public final func f706_GrBorder(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws {
+    public final func f711_GrBorder(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -318,24 +320,20 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
             var p5_step: Int64 = a5
             var p6_start: Int64 = a6
             ln = 97 // GrComposites.HC:97
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, p1_x1, p2_y1, 0, p3_x2, p2_y1, 0, p5_step, p6_start)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, p1_x1, p2_y1, 0, p3_x2, p2_y1, 0, p5_step, p6_start))
             ln = 98 // GrComposites.HC:98
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, p3_x2, p2_y1, 0, p3_x2, p4_y2, 0, p5_step, p6_start)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, p3_x2, p2_y1, 0, p3_x2, p4_y2, 0, p5_step, p6_start))
             ln = 99 // GrComposites.HC:99
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, p3_x2, p4_y2, 0, p1_x1, p4_y2, 0, p5_step, p6_start)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, p3_x2, p4_y2, 0, p1_x1, p4_y2, 0, p5_step, p6_start))
             ln = 100 // GrComposites.HC:100
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, p1_x1, p4_y2, 0, p1_x1, p2_y1, 0, p5_step, p6_start)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, p1_x1, p4_y2, 0, p1_x1, p2_y1, 0, p5_step, p6_start))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "GrBorder", ln) }
     }
 
     /// HolyC GrArrow3 (GrComposites.HC:103)
-    @discardableResult public final func f707_GrArrow3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Double, _ a8: Int64, _ a9: Int64) throws -> Int64 {
+    @discardableResult public final func f712_GrArrow3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Double, _ a8: Int64, _ a9: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -399,7 +397,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
                     let t1: Int64 = (p0_dc &+ 28)
                     try st4(t1, (ld4s(t1) & (-513)))
                     ln = 121 // GrComposites.HC:121
-                    let t2: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 80)), ld8((fp &+ 88)), ld8((fp &+ 96)), ld8((fp &+ 104)), ld8((fp &+ 112)), ld8((fp &+ 120)), 9223090561878065545, p8_step, p9_start))
+                    let t2: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 80)), ld8((fp &+ 88)), ld8((fp &+ 96)), ld8((fp &+ 104)), ld8((fp &+ 112)), ld8((fp &+ 120)), 9223090561878065546, p8_step, p9_start))
                     l152_res = (t2 & 0xFF)
                     ln = 122 // GrComposites.HC:122
                     l128_dx = try (ld8((fp &+ 104)) &- ld8((fp &+ 80)))
@@ -411,10 +409,10 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
                         ln = 124 // GrComposites.HC:124
                         l144_d = try ((p7_w * Double(ld4s((p0_dc &+ 228)))) / l144_d)
                         ln = 125 // GrComposites.HC:125
-                        let t4: Int64 = try nat(t, n_Line, try push(t, p0_dc, f2i((((Double(ld8((fp &+ 104))) - (Double(l128_dx) * l144_d)) + (Double(l136_dy) * l144_d)) + 0.5)), f2i((((Double(ld8((fp &+ 112))) - (Double(l136_dy) * l144_d)) - (Double(l128_dx) * l144_d)) + 0.5)), ld8((fp &+ 120)), ld8((fp &+ 104)), ld8((fp &+ 112)), ld8((fp &+ 120)), 9223090561878065545, p8_step, 0))
+                        let t4: Int64 = try nat(t, n_Line, try push(t, p0_dc, f2i((((Double(ld8((fp &+ 104))) - (Double(l128_dx) * l144_d)) + (Double(l136_dy) * l144_d)) + 0.5)), f2i((((Double(ld8((fp &+ 112))) - (Double(l136_dy) * l144_d)) - (Double(l128_dx) * l144_d)) + 0.5)), ld8((fp &+ 120)), ld8((fp &+ 104)), ld8((fp &+ 112)), ld8((fp &+ 120)), 9223090561878065546, p8_step, 0))
                         l152_res = ((l152_res | t4) & 0xFF)
                         ln = 127 // GrComposites.HC:127
-                        let t5: Int64 = try nat(t, n_Line, try push(t, p0_dc, f2i((((Double(ld8((fp &+ 104))) - (Double(l128_dx) * l144_d)) - (Double(l136_dy) * l144_d)) + 0.5)), f2i((((Double(ld8((fp &+ 112))) - (Double(l136_dy) * l144_d)) + (Double(l128_dx) * l144_d)) + 0.5)), ld8((fp &+ 120)), ld8((fp &+ 104)), ld8((fp &+ 112)), ld8((fp &+ 120)), 9223090561878065545, p8_step, 0))
+                        let t5: Int64 = try nat(t, n_Line, try push(t, p0_dc, f2i((((Double(ld8((fp &+ 104))) - (Double(l128_dx) * l144_d)) - (Double(l136_dy) * l144_d)) + 0.5)), f2i((((Double(ld8((fp &+ 112))) - (Double(l136_dy) * l144_d)) + (Double(l128_dx) * l144_d)) + 0.5)), ld8((fp &+ 120)), ld8((fp &+ 104)), ld8((fp &+ 112)), ld8((fp &+ 120)), 9223090561878065546, p8_step, 0))
                         l152_res = ((l152_res | t5) & 0xFF)
                     }
                     ln = 130 // GrComposites.HC:130
@@ -426,7 +424,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
                     }
                 }
                 ln = 134 // GrComposites.HC:134
-                let t6: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), 9223090561878065545, p8_step, p9_start))
+                let t6: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), 9223090561878065546, p8_step, p9_start))
                 l152_res = ((l152_res | t6) & 0xFF)
                 ln = 135 // GrComposites.HC:135
                 l128_dx = try (ld8((fp &+ 32)) &- ld8((fp &+ 8)))
@@ -438,10 +436,10 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
                     ln = 137 // GrComposites.HC:137
                     l144_d = try ((p7_w * Double(ld4s((p0_dc &+ 228)))) / l144_d)
                     ln = 138 // GrComposites.HC:138
-                    let t8: Int64 = try nat(t, n_Line, try push(t, p0_dc, f2i((((Double(ld8((fp &+ 32))) - (Double(l128_dx) * l144_d)) + (Double(l136_dy) * l144_d)) + 0.5)), f2i((((Double(ld8((fp &+ 40))) - (Double(l136_dy) * l144_d)) - (Double(l128_dx) * l144_d)) + 0.5)), ld8((fp &+ 48)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), 9223090561878065545, p8_step, 0))
+                    let t8: Int64 = try nat(t, n_Line, try push(t, p0_dc, f2i((((Double(ld8((fp &+ 32))) - (Double(l128_dx) * l144_d)) + (Double(l136_dy) * l144_d)) + 0.5)), f2i((((Double(ld8((fp &+ 40))) - (Double(l136_dy) * l144_d)) - (Double(l128_dx) * l144_d)) + 0.5)), ld8((fp &+ 48)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), 9223090561878065546, p8_step, 0))
                     l152_res = ((l152_res | t8) & 0xFF)
                     ln = 140 // GrComposites.HC:140
-                    let t9: Int64 = try nat(t, n_Line, try push(t, p0_dc, f2i((((Double(ld8((fp &+ 32))) - (Double(l128_dx) * l144_d)) - (Double(l136_dy) * l144_d)) + 0.5)), f2i((((Double(ld8((fp &+ 40))) - (Double(l136_dy) * l144_d)) + (Double(l128_dx) * l144_d)) + 0.5)), ld8((fp &+ 48)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), 9223090561878065545, p8_step, 0))
+                    let t9: Int64 = try nat(t, n_Line, try push(t, p0_dc, f2i((((Double(ld8((fp &+ 32))) - (Double(l128_dx) * l144_d)) - (Double(l136_dy) * l144_d)) + 0.5)), f2i((((Double(ld8((fp &+ 40))) - (Double(l136_dy) * l144_d)) + (Double(l128_dx) * l144_d)) + 0.5)), ld8((fp &+ 48)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), 9223090561878065546, p8_step, 0))
                     l152_res = ((l152_res | t9) & 0xFF)
                 }
             }
@@ -469,7 +467,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC GrTextBox3 (GrComposites.HC:152)
-    @discardableResult public final func f708_GrTextBox3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
+    @discardableResult public final func f713_GrTextBox3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -546,24 +544,24 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
             ln = 173 // GrComposites.HC:173
             try tick(t)
             let vb2 = try push1(t, p4_s)
-            let t3: Int64 = try P.f369_GrPrint(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), s0, vb2, 1)
+            let t3: Int64 = try P.f370_GrPrint(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), s0, vb2, 1)
             t.sp = vb2
             l64_res = t3
             ln = 174 // GrComposites.HC:174
             try tick(t)
-            let t4: Int64 = try P.f396_GrLine(t, p0_dc, (ld8((fp &+ 8)) &- p5_border), (ld8((fp &+ 16)) &- p5_border), ((ld8((fp &+ 8)) &+ l80_w_max) &+ p5_border), (ld8((fp &+ 16)) &- p5_border), 1, 0)
+            let t4: Int64 = try P.f397_GrLine(t, p0_dc, (ld8((fp &+ 8)) &- p5_border), (ld8((fp &+ 16)) &- p5_border), ((ld8((fp &+ 8)) &+ l80_w_max) &+ p5_border), (ld8((fp &+ 16)) &- p5_border), 1, 0)
             l64_res = (l64_res | t4)
             ln = 175 // GrComposites.HC:175
             try tick(t)
-            let t5: Int64 = try P.f396_GrLine(t, p0_dc, (ld8((fp &+ 8)) &- p5_border), ((ld8((fp &+ 16)) &+ l88_h) &+ p5_border), ((ld8((fp &+ 8)) &+ l80_w_max) &+ p5_border), ((ld8((fp &+ 16)) &+ l88_h) &+ p5_border), 1, 0)
+            let t5: Int64 = try P.f397_GrLine(t, p0_dc, (ld8((fp &+ 8)) &- p5_border), ((ld8((fp &+ 16)) &+ l88_h) &+ p5_border), ((ld8((fp &+ 8)) &+ l80_w_max) &+ p5_border), ((ld8((fp &+ 16)) &+ l88_h) &+ p5_border), 1, 0)
             l64_res = (l64_res | t5)
             ln = 176 // GrComposites.HC:176
             try tick(t)
-            let t6: Int64 = try P.f396_GrLine(t, p0_dc, (ld8((fp &+ 8)) &- p5_border), (ld8((fp &+ 16)) &- p5_border), (ld8((fp &+ 8)) &- p5_border), ((ld8((fp &+ 16)) &+ l88_h) &+ p5_border), 1, 0)
+            let t6: Int64 = try P.f397_GrLine(t, p0_dc, (ld8((fp &+ 8)) &- p5_border), (ld8((fp &+ 16)) &- p5_border), (ld8((fp &+ 8)) &- p5_border), ((ld8((fp &+ 16)) &+ l88_h) &+ p5_border), 1, 0)
             l64_res = (l64_res | t6)
             ln = 177 // GrComposites.HC:177
             try tick(t)
-            let t7: Int64 = try P.f396_GrLine(t, p0_dc, ((ld8((fp &+ 8)) &+ l80_w_max) &+ p5_border), (ld8((fp &+ 16)) &- p5_border), ((ld8((fp &+ 8)) &+ l80_w_max) &+ p5_border), ((ld8((fp &+ 16)) &+ l88_h) &+ p5_border), 1, 0)
+            let t7: Int64 = try P.f397_GrLine(t, p0_dc, ((ld8((fp &+ 8)) &+ l80_w_max) &+ p5_border), (ld8((fp &+ 16)) &- p5_border), ((ld8((fp &+ 8)) &+ l80_w_max) &+ p5_border), ((ld8((fp &+ 16)) &+ l88_h) &+ p5_border), 1, 0)
             l64_res = (l64_res | t7)
             ln = 178 // GrComposites.HC:178
             let t8: Int64 = try nat(t, n_ToBool, try push1(t, l64_res))
@@ -578,7 +576,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC GrTextDiamond3 (GrComposites.HC:183)
-    @discardableResult public final func f709_GrTextDiamond3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
+    @discardableResult public final func f714_GrTextDiamond3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -683,7 +681,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
                     ln = 217 // GrComposites.HC:217
                     try tick(t)
                     let vb5 = try push1(t, l80_st)
-                    let t4: Int64 = try P.f369_GrPrint(t, p0_dc, (ld8((fp &+ 8)) &- l144_w), l104_y, s0, vb5, 1)
+                    let t4: Int64 = try P.f370_GrPrint(t, p0_dc, (ld8((fp &+ 8)) &- l144_w), l104_y, s0, vb5, 1)
                     t.sp = vb5
                     l96_res = (l96_res | t4)
                     ln = 218 // GrComposites.HC:218
@@ -692,7 +690,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
                     ln = 220 // GrComposites.HC:220
                     try tick(t)
                     let vb6 = try push1(t, l80_st)
-                    let t5: Int64 = try P.f369_GrPrint(t, p0_dc, (ld8((fp &+ 8)) &- l144_w), l104_y, s0, vb6, 1)
+                    let t5: Int64 = try P.f370_GrPrint(t, p0_dc, (ld8((fp &+ 8)) &- l144_w), l104_y, s0, vb6, 1)
                     t.sp = vb6
                     l96_res = (l96_res | t5)
                 }
@@ -755,19 +753,19 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
             _ = try nat(t, n_Free, try push1(t, l88_s))
             ln = 241 // GrComposites.HC:241
             try tick(t)
-            let t17: Int64 = try P.f396_GrLine(t, p0_dc, ld8((fp &+ 8)), (ld8((fp &+ 16)) &- l120_dy), (ld8((fp &+ 8)) &+ l112_dx), ld8((fp &+ 16)), 1, 0)
+            let t17: Int64 = try P.f397_GrLine(t, p0_dc, ld8((fp &+ 8)), (ld8((fp &+ 16)) &- l120_dy), (ld8((fp &+ 8)) &+ l112_dx), ld8((fp &+ 16)), 1, 0)
             l96_res = (l96_res | t17)
             ln = 242 // GrComposites.HC:242
             try tick(t)
-            let t18: Int64 = try P.f396_GrLine(t, p0_dc, (ld8((fp &+ 8)) &+ l112_dx), ld8((fp &+ 16)), ld8((fp &+ 8)), (ld8((fp &+ 16)) &+ l120_dy), 1, 0)
+            let t18: Int64 = try P.f397_GrLine(t, p0_dc, (ld8((fp &+ 8)) &+ l112_dx), ld8((fp &+ 16)), ld8((fp &+ 8)), (ld8((fp &+ 16)) &+ l120_dy), 1, 0)
             l96_res = (l96_res | t18)
             ln = 243 // GrComposites.HC:243
             try tick(t)
-            let t19: Int64 = try P.f396_GrLine(t, p0_dc, ld8((fp &+ 8)), (ld8((fp &+ 16)) &+ l120_dy), (ld8((fp &+ 8)) &- l112_dx), ld8((fp &+ 16)), 1, 0)
+            let t19: Int64 = try P.f397_GrLine(t, p0_dc, ld8((fp &+ 8)), (ld8((fp &+ 16)) &+ l120_dy), (ld8((fp &+ 8)) &- l112_dx), ld8((fp &+ 16)), 1, 0)
             l96_res = (l96_res | t19)
             ln = 244 // GrComposites.HC:244
             try tick(t)
-            let t20: Int64 = try P.f396_GrLine(t, p0_dc, (ld8((fp &+ 8)) &- l112_dx), ld8((fp &+ 16)), ld8((fp &+ 8)), (ld8((fp &+ 16)) &- l120_dy), 1, 0)
+            let t20: Int64 = try P.f397_GrLine(t, p0_dc, (ld8((fp &+ 8)) &- l112_dx), ld8((fp &+ 16)), ld8((fp &+ 8)), (ld8((fp &+ 16)) &- l120_dy), 1, 0)
             l96_res = (l96_res | t20)
             ln = 245 // GrComposites.HC:245
             let t21: Int64 = try nat(t, n_ToBool, try push1(t, l96_res))
@@ -782,7 +780,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC Gr3Mesh (GrComposites.HC:249)
-    @discardableResult public final func f710_Gr3Mesh(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f715_Gr3Mesh(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -919,7 +917,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC DrawStdMs (GrComposites.HC:298)
-    public final func f711_DrawStdMs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f716_DrawStdMs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -933,28 +931,28 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
             try st4(t0, (ld4s(t0) & (-769)))
             ln = 304 // GrComposites.HC:304
             try tick(t)
-            _ = try f707_GrArrow3(t, p0_dc, (p1_x &+ 8), (p2_y &+ 8), 0, p1_x, p2_y, 0, 2.75, 1, 0)
+            _ = try f712_GrArrow3(t, p0_dc, (p1_x &+ 8), (p2_y &+ 8), 0, p1_x, p2_y, 0, 2.75, 1, 0)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawStdMs", ln) }
     }
 
     /// HolyC $init:C:/Adam/Gr/GrComposites.HC#0 (GrComposites.HC:307)
-    @discardableResult public final func f712_init_C__Adam_Gr_GrComposites_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Adam_Gr_GrComposites_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 307 // GrComposites.HC:307
-            try st8((P.g_gr &+ 144), 9223090561878065863)
+            try st8((P.g_gr &+ 144), 9223090561878065868)
             t.depth -= 1
-            return 9223090561878065863
+            return 9223090561878065868
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Adam/Gr/GrComposites.HC#0", ln) }
     }
 
     /// HolyC DrawWaitMs (GrComposites.HC:309)
-    public final func f713_DrawWaitMs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f718_DrawWaitMs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -973,18 +971,17 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
             try st4((p0_dc &+ 160), 12)
             ln = 315 // GrComposites.HC:315
             try tick(t)
-            _ = try P.f411_GrCircle3(t, p0_dc, p1_x, p2_y, 0, 7, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f413_GrCircle3(t, p0_dc, p1_x, p2_y, 0, 7, 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 316 // GrComposites.HC:316
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, (p1_x &- 6), (p2_y &+ 6), 0, (p1_x &+ 6), (p2_y &- 6), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, (p1_x &- 6), (p2_y &+ 6), 0, (p1_x &+ 6), (p2_y &- 6), 0, 1, 0))
             ln = 317 // GrComposites.HC:317
             try st4((p0_dc &+ 160), 4)
             ln = 318 // GrComposites.HC:318
             try tick(t)
-            _ = try P.f397_GrCircle(t, p0_dc, p1_x, p2_y, 7, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f398_GrCircle(t, p0_dc, p1_x, p2_y, 7, 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 319 // GrComposites.HC:319
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, (p1_x &- 6), (p2_y &+ 6), (p1_x &+ 6), (p2_y &- 6), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, (p1_x &- 6), (p2_y &+ 6), (p1_x &+ 6), (p2_y &- 6), 1, 0)
             ln = 320 // GrComposites.HC:320
             try st4((p0_dc &+ 228), l24_old_pen_width)
             ln = 321 // GrComposites.HC:321
@@ -995,7 +992,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC GRScrnCaptureRead (GrComposites.HC:325)
-    @discardableResult public final func f714_GRScrnCaptureRead(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f719_GRScrnCaptureRead(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1006,7 +1003,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
             var l32_dc2: Int64 = 0
             ln = 328 // GrComposites.HC:328
             try tick(t)
-            let t0: Int64 = try P.f630_GRRead(t, p0_filename, 0)
+            let t0: Int64 = try P.f635_GRRead(t, p0_filename, 0)
             l32_dc2 = t0
             if (t0 != 0) {
                 ln = 329 // GrComposites.HC:329
@@ -1031,7 +1028,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC GRScrnCaptureWrite (GrComposites.HC:337)
-    @discardableResult public final func f715_GRScrnCaptureWrite(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f720_GRScrnCaptureWrite(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1046,7 +1043,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
             l24_dc = t0
             ln = 341 // GrComposites.HC:341
             try tick(t)
-            let t1: Int64 = try P.f629_GRWrite(t, p0_filename, l24_dc, 3)
+            let t1: Int64 = try P.f634_GRWrite(t, p0_filename, l24_dc, 3)
             l16_size = t1
             ln = 342 // GrComposites.HC:342
             try tick(t)
@@ -1060,7 +1057,7 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrComposites.HC#1 (GrComposites.HC:1)
-    @discardableResult public final func f716_init_C__Adam_Gr_GrComposites_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f721_init_C__Adam_Gr_GrComposites_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1072,26 +1069,26 @@ public final class N_Adam_Gr_GrComposites: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_GrFillPoly3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 704: return try f704_GrRectB(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 705: return try f705_GrRect3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
-        case 706: try f706_GrBorder(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0)); return 0
-        case 707: return try f707_GrArrow3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), (n > 8 ? st[base + 8] : 0), (n > 9 ? st[base + 9] : 0))
-        case 708: return try f708_GrTextBox3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
-        case 709: return try f709_GrTextDiamond3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
-        case 710: return try f710_Gr3Mesh(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 711: try f711_DrawStdMs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 712: return try f712_init_C__Adam_Gr_GrComposites_HC_0(t)
-        case 713: try f713_DrawWaitMs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 714: return try f714_GRScrnCaptureRead(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 715: return try f715_GRScrnCaptureWrite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 716: return try f716_init_C__Adam_Gr_GrComposites_HC_1(t)
+        case 708: return try f708_GrFillPoly3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 709: return try f709_GrRectB(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 710: return try f710_GrRect3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
+        case 711: try f711_GrBorder(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0)); return 0
+        case 712: return try f712_GrArrow3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), (n > 8 ? st[base + 8] : 0), (n > 9 ? st[base + 9] : 0))
+        case 713: return try f713_GrTextBox3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
+        case 714: return try f714_GrTextDiamond3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
+        case 715: return try f715_Gr3Mesh(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 716: try f716_DrawStdMs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 717: return try f717_init_C__Adam_Gr_GrComposites_HC_0(t)
+        case 718: try f718_DrawWaitMs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 719: return try f719_GRScrnCaptureRead(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 720: return try f720_GRScrnCaptureWrite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 721: return try f721_init_C__Adam_Gr_GrComposites_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716]
-    private static let NAMES: [Int: String] = [703: "GrFillPoly3", 704: "GrRectB", 705: "GrRect3", 706: "GrBorder", 707: "GrArrow3", 708: "GrTextBox3", 709: "GrTextDiamond3", 710: "Gr3Mesh", 711: "DrawStdMs", 712: "$init:C:/Adam/Gr/GrComposites.HC#0", 713: "DrawWaitMs", 714: "GRScrnCaptureRead", 715: "GRScrnCaptureWrite", 716: "$init:C:/Adam/Gr/GrComposites.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721]
+    private static let NAMES: [Int: String] = [708: "GrFillPoly3", 709: "GrRectB", 710: "GrRect3", 711: "GrBorder", 712: "GrArrow3", 713: "GrTextBox3", 714: "GrTextDiamond3", 715: "Gr3Mesh", 716: "DrawStdMs", 717: "$init:C:/Adam/Gr/GrComposites.HC#0", 718: "DrawWaitMs", 719: "GRScrnCaptureRead", 720: "GRScrnCaptureWrite", 721: "$init:C:/Adam/Gr/GrComposites.HC#1"]
     private static let FILES: [String] = ["C:/Adam/Gr/GrComposites.HC"]
     public override var files: [String] { N_Adam_Gr_GrComposites.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_GrComposites.DEFINED.contains(index) }

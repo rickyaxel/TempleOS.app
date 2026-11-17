@@ -43,7 +43,7 @@ public final class N_Demo_Graphics_Bounce: NativeModule {
     }
 
     /// HolyC Init (Bounce.HC:5)
-    public final func f703_Init(_ t: HTask) throws {
+    public final func f708_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -75,7 +75,7 @@ public final class N_Demo_Graphics_Bounce: NativeModule {
     }
 
     /// HolyC Bounce (Bounce.HC:18)
-    public final func f704_Bounce(_ t: HTask) throws {
+    public final func f709_Bounce(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -88,7 +88,7 @@ public final class N_Demo_Graphics_Bounce: NativeModule {
             l0_dc = t0
             ln = 22 // Bounce.HC:22
             try tick(t)
-            try f703_Init(t)
+            try f708_Init(t)
             ln = 23 // Bounce.HC:23
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -174,13 +174,13 @@ public final class N_Demo_Graphics_Bounce: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Bounce.HC#0 (Bounce.HC:47)
-    @discardableResult public final func f705_init_C__Demo_Graphics_Bounce_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_Bounce_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 47 // Bounce.HC:47
             try tick(t)
-            try f704_Bounce(t)
+            try f709_Bounce(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Bounce.HC#0", ln) }
@@ -189,15 +189,15 @@ public final class N_Demo_Graphics_Bounce: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Init(t); return 0
-        case 704: try f704_Bounce(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_Bounce_HC_0(t)
+        case 708: try f708_Init(t); return 0
+        case 709: try f709_Bounce(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_Bounce_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "Init", 704: "Bounce", 705: "$init:C:/Demo/Graphics/Bounce.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "Init", 709: "Bounce", 710: "$init:C:/Demo/Graphics/Bounce.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Bounce.HC"]
     public override var files: [String] { N_Demo_Graphics_Bounce.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Bounce.DEFINED.contains(index) }

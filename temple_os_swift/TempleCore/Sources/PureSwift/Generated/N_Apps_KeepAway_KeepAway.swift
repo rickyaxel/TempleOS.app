@@ -30,6 +30,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     public let n_Sleep: Int
     public let n_Snd: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_ToI64: Int
     public let n_tS: Int
@@ -113,6 +114,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_ToI64 = rt.vm.natives.find("ToI64")!.index
         n_tS = rt.vm.natives.find("tS")!.index
@@ -186,7 +188,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/KeepAway/KeepAway.HC#0 (KeepAway.HC:206)
-    @discardableResult public final func f703_init_C__Apps_KeepAway_KeepAway_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_KeepAway_KeepAway_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -253,7 +255,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/KeepAway/KeepAway.HC#1 (KeepAway.HC:221)
-    @discardableResult public final func f704_init_C__Apps_KeepAway_KeepAway_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_KeepAway_KeepAway_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -267,7 +269,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/KeepAway/KeepAway.HC#2 (KeepAway.HC:222)
-    @discardableResult public final func f705_init_C__Apps_KeepAway_KeepAway_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Apps_KeepAway_KeepAway_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -281,7 +283,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f706_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -291,7 +293,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC DrawObj (KeepAway.HC:254)
-    public final func f707_DrawObj(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double) throws {
+    public final func f712_DrawObj(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -318,23 +320,22 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
             }
             ln = 263 // KeepAway.HC:263
             try tick(t)
-            _ = try P.f398_GrEllipse(t, p0_dc, f2i(ldf((p1_o &+ 8))), f2i((ldf((p1_o &+ 16)) / 2.0)), f2i(l32_r1), f2i(l40_r2), 0.0, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f399_GrEllipse(t, p0_dc, f2i(ldf((p1_o &+ 8))), f2i((ldf((p1_o &+ 16)) / 2.0)), f2i(l32_r1), f2i(l40_r2), 0.0, 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 264 // KeepAway.HC:264
             try tick(t)
-            _ = try P.f387_GrFloodFill(t, p0_dc, f2i(ldf((p1_o &+ 8))), f2i((ldf((p1_o &+ 16)) / 2.0)), 0, 0, 0)
+            _ = try P.f388_GrFloodFill(t, p0_dc, f2i(ldf((p1_o &+ 8))), f2i((ldf((p1_o &+ 16)) / 2.0)), 0, 0, 0)
             ln = 266 // KeepAway.HC:266
             if try (p1_o == ld8(g_ball)) {
                 ln = 267 // KeepAway.HC:267
-                try tick(t)
-                try P.f440_Sprite3(t, p0_dc, f2i(ldf((p1_o &+ 8))), f2i(((ldf((p1_o &+ 16)) - ldf((p1_o &+ 24))) / 2.0)), f2i((Double(divs(2147483647, 2)) - ldf((p1_o &+ 16)))), b30, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p0_dc, f2i(ldf((p1_o &+ 8))), f2i(((ldf((p1_o &+ 16)) - ldf((p1_o &+ 24))) / 2.0)), f2i((Double(divs(2147483647, 2)) - ldf((p1_o &+ 16)))), b30, 0))
             } else {
                 ln = 269 // KeepAway.HC:269
                 try tick(t)
-                let t2: Int64 = try P.f448_SpriteInterpolate(t, ((p2_tt - ldf((p1_o &+ 104))) / (ldf((p1_o &+ 112)) - ldf((p1_o &+ 104)))), ld8(((g_imgs &+ (ld8((p1_o &+ 128)) &* 24)) &+ (ld8(p1_o) &* 8))), ld8(((g_imgs &+ (ld8((p1_o &+ 136)) &* 24)) &+ (ld8(p1_o) &* 8))))
+                let t2: Int64 = try P.f453_SpriteInterpolate(t, ((p2_tt - ldf((p1_o &+ 104))) / (ldf((p1_o &+ 112)) - ldf((p1_o &+ 104)))), ld8(((g_imgs &+ (ld8((p1_o &+ 128)) &* 24)) &+ (ld8(p1_o) &* 8))), ld8(((g_imgs &+ (ld8((p1_o &+ 136)) &* 24)) &+ (ld8(p1_o) &* 8))))
                 l24_tmps = t2
                 ln = 272 // KeepAway.HC:272
                 try tick(t)
-                try P.f444_Sprite3YB(t, p0_dc, f2i(ldf((p1_o &+ 8))), f2i(((ldf((p1_o &+ 16)) - ldf((p1_o &+ 24))) / 2.0)), f2i((Double(divs(2147483647, 2)) - ldf((p1_o &+ 16)))), l24_tmps, ldf((p1_o &+ 56)))
+                try P.f449_Sprite3YB(t, p0_dc, f2i(ldf((p1_o &+ 8))), f2i(((ldf((p1_o &+ 16)) - ldf((p1_o &+ 24))) / 2.0)), f2i((Double(divs(2147483647, 2)) - ldf((p1_o &+ 16)))), l24_tmps, ldf((p1_o &+ 56)))
                 ln = 273 // KeepAway.HC:273
                 _ = try nat(t, n_Free, try push1(t, l24_tmps))
             }
@@ -344,7 +345,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC ObjCompare (KeepAway.HC:277)
-    @discardableResult public final func f708_ObjCompare(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f713_ObjCompare(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -360,7 +361,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC DrawIt (KeepAway.HC:282)
-    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -388,7 +389,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
             try st4(((p1_dc &+ 172) &+ 8), 10000)
             ln = 292 // KeepAway.HC:292
             try tick(t)
-            let t1: Double = try P.f355_D3I32Norm(t, (p1_dc &+ 172))
+            let t1: Double = try P.f356_D3I32Norm(t, (p1_dc &+ 172))
             l24_d = (65535.0 / t1)
             ln = 293 // KeepAway.HC:293
             let t2: Int64 = (p1_dc &+ 172)
@@ -405,7 +406,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
             try st4((p1_dc &+ 160), 4)
             ln = 299 // KeepAway.HC:299
             try tick(t)
-            try P.f425_GrBorder(t, p1_dc, 10, 10, ((ld8((p0_task &+ 224)) &- 1) &- 10), ((ld8((p0_task &+ 248)) &- 1) &- 10), 1, 0)
+            try P.f428_GrBorder(t, p1_dc, 10, 10, ((ld8((p0_task &+ 224)) &- 1) &- 10), ((ld8((p0_task &+ 248)) &- 1) &- 10), 1, 0)
             ln = 302 // KeepAway.HC:302
             l48_i = 0
             loop0: while (l48_i < 7) {
@@ -636,13 +637,13 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                 try tick(t)
             }
             ln = 374 // KeepAway.HC:374
-            _ = try nat(t, n_QSortI64, try push3(t, (fp &+ 56), 7, 9223090561878065860))
+            _ = try nat(t, n_QSortI64, try push3(t, (fp &+ 56), 7, 9223090561878065865))
             ln = 375 // KeepAway.HC:375
             l48_i = 0
             loop2: while (l48_i < 7) {
                 ln = 376 // KeepAway.HC:376
                 try tick(t)
-                try f707_DrawObj(t, p1_dc, ld8(((fp &+ 56) &+ (l48_i &* 8))), l16_tt)
+                try f712_DrawObj(t, p1_dc, ld8(((fp &+ 56) &+ (l48_i &* 8))), l16_tt)
                 ln = 375 // KeepAway.HC:375
                 l48_i = (l48_i &+ 1)
                 try tick(t)
@@ -664,7 +665,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                     ln = 382 // KeepAway.HC:382
                     try tick(t)
                     let vb1 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, ((ld8((p0_task &+ 224)) &- 72) &>> 1), ((ld8((p0_task &+ 248)) &- 8) &>> 1), s2, vb1, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, ((ld8((p0_task &+ 224)) &- 72) &>> 1), ((ld8((p0_task &+ 248)) &- 8) &>> 1), s2, vb1, 0)
                     t.sp = vb1
                 }
             } else {
@@ -680,7 +681,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                         ln = 388 // KeepAway.HC:388
                         try tick(t)
                         let vb2 = push0(t)
-                        _ = try P.f369_GrPrint(t, p1_dc, ((ld8((p0_task &+ 224)) &- 32) &>> 1), ((ld8((p0_task &+ 248)) &- 8) &>> 1), s3, vb2, 0)
+                        _ = try P.f370_GrPrint(t, p1_dc, ((ld8((p0_task &+ 224)) &- 32) &>> 1), ((ld8((p0_task &+ 248)) &- 8) &>> 1), s3, vb2, 0)
                         t.sp = vb2
                     }
                 }
@@ -692,40 +693,40 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
             let t63: Int64 = try nat(t, n_ToI64, try push1(t, bits(l16_tt)))
             try tick(t)
             let vb3 = try push2(t, t63, bits(((l16_tt - Double(t62)) * 60.0)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s4, vb3, 2)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s4, vb3, 2)
             t.sp = vb3
             ln = 394 // KeepAway.HC:394
             try tick(t)
             let vb4 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, 216, 0, s5, vb4, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, 216, 0, s5, vb4, 0)
             t.sp = vb4
             ln = 396 // KeepAway.HC:396
             try st4((p1_dc &+ 160), 11)
             ln = 397 // KeepAway.HC:397
             try tick(t)
             let vb5 = try push1(t, ld8(g_score0))
-            _ = try P.f369_GrPrint(t, p1_dc, 160, 0, s6, vb5, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 160, 0, s6, vb5, 1)
             t.sp = vb5
             ln = 398 // KeepAway.HC:398
             try st4((p1_dc &+ 160), 13)
             ln = 399 // KeepAway.HC:399
             try tick(t)
             let vb6 = try push1(t, ld8(g_score1))
-            _ = try P.f369_GrPrint(t, p1_dc, 184, 0, s6, vb6, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 184, 0, s6, vb6, 1)
             t.sp = vb6
             ln = 401 // KeepAway.HC:401
             try st4((p1_dc &+ 160), 11)
             ln = 402 // KeepAway.HC:402
             try tick(t)
             let vb7 = try push1(t, ld8(g_best_score0))
-            _ = try P.f369_GrPrint(t, p1_dc, 312, 0, s6, vb7, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 312, 0, s6, vb7, 1)
             t.sp = vb7
             ln = 403 // KeepAway.HC:403
             try st4((p1_dc &+ 160), 13)
             ln = 404 // KeepAway.HC:404
             try tick(t)
             let vb8 = try push1(t, ld8(g_best_score1))
-            _ = try P.f369_GrPrint(t, p1_dc, 336, 0, s6, vb8, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 336, 0, s6, vb8, 1)
             t.sp = vb8
             t.msp = msp0
             t.depth -= 1
@@ -734,7 +735,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC Shoot (KeepAway.HC:407)
-    public final func f710_Shoot(_ t: HTask, _ a0: Int64) throws {
+    public final func f715_Shoot(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -754,7 +755,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC AnimateTask (KeepAway.HC:415)
-    public final func f711_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f716_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -931,7 +932,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                                                     }
                                                     ln = 487 // KeepAway.HC:487
                                                     try tick(t)
-                                                    _ = try P.f499_Noise(t, 250, 74.0, 74.0)
+                                                    _ = try P.f504_Noise(t, 250, 74.0, 74.0)
                                                 } else {
                                                     ln = 489 // KeepAway.HC:489
                                                     if try (l56_t0 < (ldf(g_shot_land_t) + 0.1)) {
@@ -943,7 +944,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                                                     }
                                                     ln = 493 // KeepAway.HC:493
                                                     try tick(t)
-                                                    _ = try P.f499_Noise(t, 250, 86.0, 86.0)
+                                                    _ = try P.f504_Noise(t, 250, 86.0, 86.0)
                                                 }
                                                 ln = 495 // KeepAway.HC:495
                                                 try st8(g_last_owner, l88_o)
@@ -961,7 +962,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                                 if r12 {
                                     ln = 501 // KeepAway.HC:501
                                     try tick(t)
-                                    try f710_Shoot(t, l88_o)
+                                    try f715_Shoot(t, l88_o)
                                 }
                             }
                             ln = 502 // KeepAway.HC:502
@@ -1054,7 +1055,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                                                     if try (((((l88_o == ld8(g_human)) && (l56_t0 > (ldf((l88_o &+ 120)) + 1.0))) && (l32_dt != 0.0)) && ((l8_d / l32_dt) > 50.0)) && (ld8((g_objs &+ (l72_j &* 152))) != 0)) {
                                                         ln = 540 // KeepAway.HC:540
                                                         try tick(t)
-                                                        _ = try P.f499_Noise(t, 250, 62.0, 62.0)
+                                                        _ = try P.f504_Noise(t, 250, 62.0, 62.0)
                                                         ln = 541 // KeepAway.HC:541
                                                         try st8(g_score1, (ld8(g_score1) &+ 1))
                                                         ln = 542 // KeepAway.HC:542
@@ -1106,7 +1107,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                             if try (l88_o == ld8(g_ball)) {
                                 ln = 566 // KeepAway.HC:566
                                 try tick(t)
-                                _ = try P.f499_Noise(t, 10, 74.0, 86.0)
+                                _ = try P.f504_Noise(t, 10, 74.0, 86.0)
                             }
                         }
                         ln = 568 // KeepAway.HC:568
@@ -1119,7 +1120,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                             if try (l88_o == ld8(g_ball)) {
                                 ln = 572 // KeepAway.HC:572
                                 try tick(t)
-                                _ = try P.f499_Noise(t, 10, 74.0, 86.0)
+                                _ = try P.f504_Noise(t, 10, 74.0, 86.0)
                             }
                         }
                         ln = 575 // KeepAway.HC:575
@@ -1132,7 +1133,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                             if try (l88_o == ld8(g_ball)) {
                                 ln = 579 // KeepAway.HC:579
                                 try tick(t)
-                                _ = try P.f499_Noise(t, 10, 74.0, 86.0)
+                                _ = try P.f504_Noise(t, 10, 74.0, 86.0)
                             }
                         }
                         ln = 581 // KeepAway.HC:581
@@ -1145,7 +1146,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                             if try (l88_o == ld8(g_ball)) {
                                 ln = 585 // KeepAway.HC:585
                                 try tick(t)
-                                _ = try P.f499_Noise(t, 10, 74.0, 86.0)
+                                _ = try P.f504_Noise(t, 10, 74.0, 86.0)
                             }
                         }
                         ln = 588 // KeepAway.HC:588
@@ -1158,7 +1159,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                             if try (ldf((l88_o &+ 48)) > 100.0) {
                                 ln = 592 // KeepAway.HC:592
                                 try tick(t)
-                                _ = try P.f499_Noise(t, 10, 74.0, 86.0)
+                                _ = try P.f504_Noise(t, 10, 74.0, 86.0)
                             }
                             ln = 593 // KeepAway.HC:593
                             if try (l88_o != ld8(g_ball)) {
@@ -1204,7 +1205,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC Init (KeepAway.HC:609)
-    public final func f712_Init(_ t: HTask) throws {
+    public final func f717_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1261,7 +1262,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC KeepAway (KeepAway.HC:634)
-    public final func f713_KeepAway(_ t: HTask) throws {
+    public final func f718_KeepAway(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1300,15 +1301,15 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                         _ = try nat(t, n_DocClear, try push1(t, 0))
                         ln = 654 // KeepAway.HC:654
                         try tick(t)
-                        _ = try P.f507_MenuPush(t, s8)
+                        _ = try P.f512_MenuPush(t, s8)
                         ln = 666 // KeepAway.HC:666
                         try tick(t)
-                        try f712_Init(t)
+                        try f717_Init(t)
                         ln = 667 // KeepAway.HC:667
-                        try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
+                        try st8((ld8(P.g_Fs) &+ 448), 9223090561878065866)
                         ln = 668 // KeepAway.HC:668
                         let t2: Int64 = try (ld8(P.g_Fs) &+ 1088)
-                        let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065863, ld8(P.g_Fs), s9, (-1), ld8(P.g_Fs), 0, 0))
+                        let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065868, ld8(P.g_Fs), s9, (-1), ld8(P.g_Fs), 0, 0))
                         try st8(t2, t1)
                         ln = 670 // KeepAway.HC:670
                         rg0sp = t.sp; rg0msp = t.msp; rg0d = t.depth; rg0c = t.hCount; t.hCount = rg0c + 1
@@ -1377,7 +1378,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                             case 10:
                                 ln = 686 // KeepAway.HC:686
                                 try tick(t)
-                                try f712_Init(t)
+                                try f717_Init(t)
                             case 106:
                                 ln = 689 // KeepAway.HC:689
                                 state = 13
@@ -1411,7 +1412,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                     case 12:
                         ln = 677 // KeepAway.HC:677
                         try tick(t)
-                        try f710_Shoot(t, ld8(g_human))
+                        try f715_Shoot(t, ld8(g_human))
                         ln = 678 // KeepAway.HC:678
                         state = 10
                         continue machine0
@@ -1437,7 +1438,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
                         try P.f228_SettingsPop(t, 0, 0)
                         ln = 704 // KeepAway.HC:704
                         try tick(t)
-                        try P.f509_MenuPop(t)
+                        try P.f514_MenuPop(t)
                         ln = 705 // KeepAway.HC:705
                         _ = try nat(t, n_RegWrite, try push4(t, s1, s10, ld8(g_best_score0), ld8(g_best_score1)))
                         t.msp = msp0
@@ -1462,7 +1463,7 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/KeepAway/KeepAway.HC#3 (KeepAway.HC:1)
-    @discardableResult public final func f714_init_C__Apps_KeepAway_KeepAway_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f719_init_C__Apps_KeepAway_KeepAway_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1474,24 +1475,24 @@ public final class N_Apps_KeepAway_KeepAway: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_KeepAway_KeepAway_HC_0(t)
-        case 704: return try f704_init_C__Apps_KeepAway_KeepAway_HC_1(t)
-        case 705: return try f705_init_C__Apps_KeepAway_KeepAway_HC_2(t)
-        case 706: return try f706_init_C__Home_Registry_HC_0(t)
-        case 707: try f707_DrawObj(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0))); return 0
-        case 708: return try f708_ObjCompare(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: try f710_Shoot(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 711: try f711_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 712: try f712_Init(t); return 0
-        case 713: try f713_KeepAway(t); return 0
-        case 714: return try f714_init_C__Apps_KeepAway_KeepAway_HC_3(t)
+        case 708: return try f708_init_C__Apps_KeepAway_KeepAway_HC_0(t)
+        case 709: return try f709_init_C__Apps_KeepAway_KeepAway_HC_1(t)
+        case 710: return try f710_init_C__Apps_KeepAway_KeepAway_HC_2(t)
+        case 711: return try f711_init_C__Home_Registry_HC_0(t)
+        case 712: try f712_DrawObj(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0))); return 0
+        case 713: return try f713_ObjCompare(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 714: try f714_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: try f715_Shoot(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 716: try f716_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 717: try f717_Init(t); return 0
+        case 718: try f718_KeepAway(t); return 0
+        case 719: return try f719_init_C__Apps_KeepAway_KeepAway_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/KeepAway/KeepAway.HC#0", 704: "$init:C:/Apps/KeepAway/KeepAway.HC#1", 705: "$init:C:/Apps/KeepAway/KeepAway.HC#2", 706: "$init:C:/Home/Registry.HC#0", 707: "DrawObj", 708: "ObjCompare", 709: "DrawIt", 710: "Shoot", 711: "AnimateTask", 712: "Init", 713: "KeepAway", 714: "$init:C:/Apps/KeepAway/KeepAway.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/KeepAway/KeepAway.HC#0", 709: "$init:C:/Apps/KeepAway/KeepAway.HC#1", 710: "$init:C:/Apps/KeepAway/KeepAway.HC#2", 711: "$init:C:/Home/Registry.HC#0", 712: "DrawObj", 713: "ObjCompare", 714: "DrawIt", 715: "Shoot", 716: "AnimateTask", 717: "Init", 718: "KeepAway", 719: "$init:C:/Apps/KeepAway/KeepAway.HC#3"]
     private static let FILES: [String] = ["C:/Apps/KeepAway/KeepAway.HC"]
     public override var files: [String] { N_Apps_KeepAway_KeepAway.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_KeepAway_KeepAway.DEFINED.contains(index) }

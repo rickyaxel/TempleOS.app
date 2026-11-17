@@ -46,7 +46,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC TimeFileRead (TimeClk.HC:15) */
-    fun f703_TimeFileRead(t: Task, a0: Long) {
+    fun f708_TimeFileRead(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -105,7 +105,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC TimeFileWrite (TimeClk.HC:36) */
-    fun f704_TimeFileWrite(t: Task, a0: Long) {
+    fun f709_TimeFileWrite(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -166,7 +166,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC TimeEntriesDel (TimeClk.HC:63) */
-    fun f705_TimeEntriesDel(t: Task, a0: Long) {
+    fun f710_TimeEntriesDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -195,7 +195,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC TimeRep (TimeClk.HC:75) */
-    fun f706_TimeRep(t: Task, a0: Long): Long {
+    fun f711_TimeRep(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -221,7 +221,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             }
             ln = 81 // TimeClk.HC:81
             tick(t)
-            f703_TimeFileRead(t, l56_header)
+            f708_TimeFileRead(t, l56_header)
             ln = 82 // TimeClk.HC:82
             l48_tmpt = ld8(l56_header)
             ln = 83 // TimeClk.HC:83
@@ -289,7 +289,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             if ((p0__header == 0L)) {
                 ln = 113 // TimeClk.HC:113
                 tick(t)
-                f705_TimeEntriesDel(t, l56_header)
+                f710_TimeEntriesDel(t, l56_header)
             }
             ln = 114 // TimeClk.HC:114
             t.depth--
@@ -300,7 +300,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PunchOut (TimeClk.HC:117) */
-    fun f707_PunchOut(t: Task) {
+    fun f712_PunchOut(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -309,7 +309,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             var l0_tmpt: Long = 0L
             ln = 120 // TimeClk.HC:120
             tick(t)
-            val t0: Long = f706_TimeRep(t, (fp + 8))
+            val t0: Long = f711_TimeRep(t, (fp + 8))
             if ((t0 == 0L)) {
                 ln = 121 // TimeClk.HC:121
                 nat(t, n_Print, push1(t, s6))
@@ -338,11 +338,11 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 P.f153_QueIns(t, l0_tmpt, ld8((ld8((fp + 8)) + 8L)))
                 ln = 130 // TimeClk.HC:130
                 tick(t)
-                f704_TimeFileWrite(t, ld8((fp + 8)))
+                f709_TimeFileWrite(t, ld8((fp + 8)))
             }
             ln = 132 // TimeClk.HC:132
             tick(t)
-            f705_TimeEntriesDel(t, ld8((fp + 8)))
+            f710_TimeEntriesDel(t, ld8((fp + 8)))
             t.msp = msp0
             t.depth--
             return
@@ -350,7 +350,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PunchIn (TimeClk.HC:135) */
-    fun f708_PunchIn(t: Task) {
+    fun f713_PunchIn(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -359,7 +359,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             var l0_tmpt: Long = 0L
             ln = 138 // TimeClk.HC:138
             tick(t)
-            val t0: Long = f706_TimeRep(t, (fp + 8))
+            val t0: Long = f711_TimeRep(t, (fp + 8))
             if ((t0 != 0L)) {
                 ln = 139 // TimeClk.HC:139
                 nat(t, n_Print, push1(t, s8))
@@ -388,11 +388,11 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 P.f153_QueIns(t, l0_tmpt, ld8((ld8((fp + 8)) + 8L)))
                 ln = 148 // TimeClk.HC:148
                 tick(t)
-                f704_TimeFileWrite(t, ld8((fp + 8)))
+                f709_TimeFileWrite(t, ld8((fp + 8)))
             }
             ln = 150 // TimeClk.HC:150
             tick(t)
-            f705_TimeEntriesDel(t, ld8((fp + 8)))
+            f710_TimeEntriesDel(t, ld8((fp + 8)))
             t.msp = msp0
             t.depth--
             return
@@ -400,7 +400,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/TimeClock/TimeClk.HC#0 (TimeClk.HC:1) */
-    fun f709_init_C__Apps_TimeClock_TimeClk_HC_0(t: Task): Long {
+    fun f714_init_C__Apps_TimeClock_TimeClk_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -412,13 +412,13 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_TimeFileRead(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_TimeFileWrite(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_TimeEntriesDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            706 -> f706_TimeRep(t, (if (n > 0) st[base + 0] else 0L))
-            707 -> { f707_PunchOut(t); 0L }
-            708 -> { f708_PunchIn(t); 0L }
-            709 -> f709_init_C__Apps_TimeClock_TimeClk_HC_0(t)
+            708 -> { f708_TimeFileRead(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_TimeFileWrite(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_TimeEntriesDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            711 -> f711_TimeRep(t, (if (n > 0) st[base + 0] else 0L))
+            712 -> { f712_PunchOut(t); 0L }
+            713 -> { f713_PunchIn(t); 0L }
+            714 -> f714_init_C__Apps_TimeClock_TimeClk_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -430,7 +430,7 @@ class N_Apps_TimeClock_TimeClk(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714)
         private val NAMES = arrayOf("TimeFileRead", "TimeFileWrite", "TimeEntriesDel", "TimeRep", "PunchOut", "PunchIn", "\$init:C:/Apps/TimeClock/TimeClk.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/TimeClock/TimeClk.HC")
     }

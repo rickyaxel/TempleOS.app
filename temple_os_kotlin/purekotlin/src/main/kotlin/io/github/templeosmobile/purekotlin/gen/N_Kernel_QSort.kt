@@ -20,7 +20,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC QSortI64 (QSort.HC:1) */
-    fun f703_QSortI64(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f708_QSortI64(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -76,7 +76,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
                 if (((1L < l24_i) && (l24_i < p1_num))) {
                     ln = 25 // QSort.HC:25
                     tick(t)
-                    f703_QSortI64(t, p0_base, l24_i, p2_fp_compare)
+                    f708_QSortI64(t, p0_base, l24_i, p2_fp_compare)
                 }
                 ln = 26 // QSort.HC:26
                 l24_i = divs(((p0_base + (p1_num * 8L)) - l32_left), 8L)
@@ -84,7 +84,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
                 if (((1L < l24_i) && (l24_i < p1_num))) {
                     ln = 28 // QSort.HC:28
                     tick(t)
-                    f703_QSortI64(t, l32_left, l24_i, p2_fp_compare)
+                    f708_QSortI64(t, l32_left, l24_i, p2_fp_compare)
                 }
             }
             t.depth--
@@ -93,7 +93,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC QSort2a (QSort.HC:32) */
-    fun f704_QSort2a(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f709_QSort2a(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -148,7 +148,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             if (((1L < l24_i) && (l24_i < p1_num))) {
                 ln = 50 // QSort.HC:50
                 tick(t)
-                f704_QSort2a(t, p0_base, l24_i, p2_fp_compare)
+                f709_QSort2a(t, p0_base, l24_i, p2_fp_compare)
             }
             ln = 51 // QSort.HC:51
             l24_i = divs(((p0_base + (p1_num * 8L)) - l32_left), 8L)
@@ -156,7 +156,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             if (((1L < l24_i) && (l24_i < p1_num))) {
                 ln = 53 // QSort.HC:53
                 tick(t)
-                f704_QSort2a(t, l32_left, l24_i, p2_fp_compare)
+                f709_QSort2a(t, l32_left, l24_i, p2_fp_compare)
             }
             t.msp = msp0
             t.depth--
@@ -165,7 +165,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC QSort2b (QSort.HC:55) */
-    fun f705_QSort2b(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
+    fun f710_QSort2b(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
         var ln = 0
         try {
             enter(t)
@@ -229,7 +229,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             if (((1L < l40_i) && (l40_i < p1_num))) {
                 ln = 80 // QSort.HC:80
                 tick(t)
-                f705_QSort2b(t, p0_base, l40_i, p2_width, p3_fp_compare, p4_tmp)
+                f710_QSort2b(t, p0_base, l40_i, p2_width, p3_fp_compare, p4_tmp)
             }
             ln = 81 // QSort.HC:81
             l40_i = (p1_num + divs((p0_base - l48_left), p2_width))
@@ -237,7 +237,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             if (((1L < l40_i) && (l40_i < p1_num))) {
                 ln = 83 // QSort.HC:83
                 tick(t)
-                f705_QSort2b(t, l48_left, l40_i, p2_width, p3_fp_compare, p4_tmp)
+                f710_QSort2b(t, l48_left, l40_i, p2_width, p3_fp_compare, p4_tmp)
             }
             t.depth--
             return
@@ -245,7 +245,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC QSort (QSort.HC:85) */
-    fun f706_QSort(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f711_QSort(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -260,14 +260,14 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
                 if ((p2_width == 8L)) {
                     ln = 97 // QSort.HC:97
                     tick(t)
-                    f704_QSort2a(t, p0_base, p1_num, p3_fp_compare)
+                    f709_QSort2a(t, p0_base, p1_num, p3_fp_compare)
                 } else {
                     ln = 99 // QSort.HC:99
                     val t0: Long = nat(t, n_MAlloc, push2(t, (p2_width * 2L), 0L))
                     l32_tmp = t0
                     ln = 100 // QSort.HC:100
                     tick(t)
-                    f705_QSort2b(t, p0_base, p1_num, p2_width, p3_fp_compare, l32_tmp)
+                    f710_QSort2b(t, p0_base, p1_num, p2_width, p3_fp_compare, l32_tmp)
                     ln = 101 // QSort.HC:101
                     nat(t, n_Free, push1(t, l32_tmp))
                 }
@@ -278,7 +278,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC $init:C:/Kernel/QSort.HC#0 (QSort.HC:1) */
-    fun f707_init_C__Kernel_QSort_HC_0(t: Task): Long {
+    fun f712_init_C__Kernel_QSort_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -290,11 +290,11 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_QSortI64(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            704 -> { f704_QSort2a(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            705 -> { f705_QSort2b(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
-            706 -> { f706_QSort(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            707 -> f707_init_C__Kernel_QSort_HC_0(t)
+            708 -> { f708_QSortI64(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            709 -> { f709_QSort2a(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            710 -> { f710_QSort2b(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
+            711 -> { f711_QSort(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            712 -> f712_init_C__Kernel_QSort_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -306,7 +306,7 @@ class N_Kernel_QSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("QSortI64", "QSort2a", "QSort2b", "QSort", "\$init:C:/Kernel/QSort.HC#0")
         private val FILES = arrayOf<String>("C:/Kernel/QSort.HC")
     }

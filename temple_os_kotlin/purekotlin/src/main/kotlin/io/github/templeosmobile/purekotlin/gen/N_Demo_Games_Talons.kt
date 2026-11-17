@@ -20,8 +20,11 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_Exit = rt.vm.natives.find("Exit")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GrBlot = rt.vm.natives.find("GrBlot")!!.index
+    @JvmField val n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_MAlloc = rt.vm.natives.find("MAlloc")!!.index
     @JvmField val n_Mat4x4MulXYZ = rt.vm.natives.find("Mat4x4MulXYZ")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
@@ -37,6 +40,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_ToF64 = rt.vm.natives.find("ToF64")!!.index
     @JvmField val n_Yield = rt.vm.natives.find("Yield")!!.index
@@ -160,7 +164,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Talons.HC#0 (Talons.HC:3) */
-    fun f703_init_C__Demo_Games_Talons_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_Talons_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -174,7 +178,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Talons.HC#1 (Talons.HC:4) */
-    fun f704_init_C__Demo_Games_Talons_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_Talons_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -188,7 +192,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -198,7 +202,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Talons.HC#2 (Talons.HC:142) */
-    fun f706_init_C__Demo_Games_Talons_HC_2(t: Task): Long {
+    fun f711_init_C__Demo_Games_Talons_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -212,7 +216,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $eval0 (Talons.HC:151) */
-    fun f707_eval0(t: Task): Long {
+    fun f712_eval0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -226,7 +230,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC WrapAngles (Talons.HC:186) */
-    fun f708_WrapAngles(t: Task) {
+    fun f713_WrapAngles(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -234,11 +238,11 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val fp = frame(t, 160)
             ln = 190 // Talons.HC:190
             tick(t)
-            val t0: Double = P.f542_Wrap(t, ldf(g__), (-f(4614256656552045848L)))
+            val t0: Double = P.f547_Wrap(t, ldf(g__), (-f(4614256656552045848L)))
             st8(g__, bits(t0))
             ln = 191 // Talons.HC:191
             tick(t)
-            val t1: Double = P.f542_Wrap(t, ((-ldf(g__)) - (f(4614256656552045848L) / 2.0)), (-f(4614256656552045848L)))
+            val t1: Double = P.f547_Wrap(t, ((-ldf(g__)) - (f(4614256656552045848L) / 2.0)), (-f(4614256656552045848L)))
             st8(g_pitch, bits(t1))
             ln = 192 // Talons.HC:192
             val t2: Double = f(nat(t, n_Abs, push1(t, bits(ldf(g_pitch)))))
@@ -247,7 +251,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st1(g_invert_pitch, 1L)
                 ln = 194 // Talons.HC:194
                 tick(t)
-                val t3: Double = P.f542_Wrap(t, (f(4614256656552045848L) - ldf(g_pitch)), (-f(4614256656552045848L)))
+                val t3: Double = P.f547_Wrap(t, (f(4614256656552045848L) - ldf(g_pitch)), (-f(4614256656552045848L)))
                 st8(g_pitch, bits(t3))
             } else {
                 ln = 196 // Talons.HC:196
@@ -255,7 +259,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 197 // Talons.HC:197
             tick(t)
-            val t4: Double = P.f542_Wrap(t, ldf(g_roll), (-f(4614256656552045848L)))
+            val t4: Double = P.f547_Wrap(t, ldf(g_roll), (-f(4614256656552045848L)))
             st8(g_roll, bits(t4))
             ln = 198 // Talons.HC:198
             var r5: Boolean = false
@@ -276,7 +280,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 202 // Talons.HC:202
             tick(t)
-            val t9: Double = P.f542_Wrap(t, ldf(g_heading), 0.0)
+            val t9: Double = P.f547_Wrap(t, ldf(g_heading), 0.0)
             st8(g_heading, bits(t9))
             ln = 205 // Talons.HC:205
             tick(t)
@@ -313,7 +317,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC EDTransform (Talons.HC:216) */
-    fun f709_EDTransform(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f714_EDTransform(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -346,7 +350,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CalcNormals (Talons.HC:230) */
-    fun f710_CalcNormals(t: Task) {
+    fun f715_CalcNormals(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -392,7 +396,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC TestSameSlope (Talons.HC:256) */
-    fun f711_TestSameSlope(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f716_TestSameSlope(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -450,7 +454,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC MPDoPanels (Talons.HC:270) */
-    fun f712_MPDoPanels(t: Task, a0: Long) {
+    fun f717_MPDoPanels(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -505,7 +509,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 var r5: Boolean = (l48_w < 16L)
                                 if (r5) {
                                     tick(t)
-                                    val t4: Long = f711_TestSameSlope(t, l8_i, l16_j, (l48_w + 1L), l56_h)
+                                    val t4: Long = f716_TestSameSlope(t, l8_i, l16_j, (l48_w + 1L), l56_h)
                                     r5 = (t4 != 0L)
                                 }
                                 if (r5) {
@@ -518,7 +522,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 var r7: Boolean = (l56_h < 16L)
                                 if (r7) {
                                     tick(t)
-                                    val t6: Long = f711_TestSameSlope(t, l8_i, l16_j, l48_w, (l56_h + 1L))
+                                    val t6: Long = f716_TestSameSlope(t, l8_i, l16_j, l48_w, (l56_h + 1L))
                                     r7 = (t6 != 0L)
                                 }
                                 if (r7) {
@@ -767,7 +771,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC InitElevations (Talons.HC:400) */
-    fun f713_InitElevations(t: Task) {
+    fun f718_InitElevations(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -883,19 +887,19 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC InitMap (Talons.HC:431) */
-    fun f714_InitMap(t: Task) {
+    fun f719_InitMap(t: Task) {
         var ln = 0
         try {
             enter(t)
             var l0_i: Long = 0L
             ln = 437 // Talons.HC:437
             tick(t)
-            f713_InitElevations(t)
+            f718_InitElevations(t)
             ln = 438 // Talons.HC:438
             nat(t, n_MemSet, push3(t, g_panels, 0L, 8388608L))
             ln = 439 // Talons.HC:439
             tick(t)
-            f710_CalcNormals(t)
+            f715_CalcNormals(t)
             ln = 440 // Talons.HC:440
             st8(g_panel_head, 0L)
             ln = 441 // Talons.HC:441
@@ -907,7 +911,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 val t1: Long = nat(t, n_mp_cnt, push0(t))
                 if (!((l0_i < t1))) break@loop0
                 ln = 443 // Talons.HC:443
-                nat(t, n_Spawn, push(t, 9223090561878065864L, ld8(P.g_Fs), s2, l0_i, 0L, 0L, 0L))
+                nat(t, n_Spawn, push(t, 9223090561878065869L, ld8(P.g_Fs), s2, l0_i, 0L, 0L, 0L))
                 ln = 442 // Talons.HC:442
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -924,7 +928,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC ClawDraw (Talons.HC:461) */
-    fun f715_ClawDraw(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long) {
+    fun f720_ClawDraw(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long) {
         var ln = 0
         try {
             enter(t)
@@ -949,15 +953,13 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 ln = 466 // Talons.HC:466
                 st4((p0_dc + 160L), 0L)
                 ln = 467 // Talons.HC:467
-                tick(t)
-                P.f406_GrLine3(t, p0_dc, (divs((l72_j * p1_x1), p6_segments) + divs((l64_i * p3_x2), p6_segments)), (divs((l72_j * p2_y1), p6_segments) + divs((l64_i * p4_y2), p6_segments)), 0L, (divs(((l72_j - 1L) * p1_x1), p6_segments) + divs(((l64_i + 1L) * p3_x2), p6_segments)), (divs(((l72_j - 1L) * p2_y1), p6_segments) + divs(((l64_i + 1L) * p4_y2), p6_segments)), 0L, 1L, 0L)
+                nat(t, n_GrLine3, push(t, p0_dc, (divs((l72_j * p1_x1), p6_segments) + divs((l64_i * p3_x2), p6_segments)), (divs((l72_j * p2_y1), p6_segments) + divs((l64_i * p4_y2), p6_segments)), 0L, (divs(((l72_j - 1L) * p1_x1), p6_segments) + divs(((l64_i + 1L) * p3_x2), p6_segments)), (divs(((l72_j - 1L) * p2_y1), p6_segments) + divs(((l64_i + 1L) * p4_y2), p6_segments)), 0L, 1L, 0L))
                 ln = 472 // Talons.HC:472
                 st4((p0_dc + 228L), (p5_w - 2L))
                 ln = 473 // Talons.HC:473
                 st4((p0_dc + 160L), 14L)
                 ln = 474 // Talons.HC:474
-                tick(t)
-                P.f406_GrLine3(t, p0_dc, (divs((l72_j * p1_x1), p6_segments) + divs((l64_i * p3_x2), p6_segments)), (divs((l72_j * p2_y1), p6_segments) + divs((l64_i * p4_y2), p6_segments)), 0L, (divs(((l72_j - 1L) * p1_x1), p6_segments) + divs(((l64_i + 1L) * p3_x2), p6_segments)), (divs(((l72_j - 1L) * p2_y1), p6_segments) + divs(((l64_i + 1L) * p4_y2), p6_segments)), 0L, 1L, 0L)
+                nat(t, n_GrLine3, push(t, p0_dc, (divs((l72_j * p1_x1), p6_segments) + divs((l64_i * p3_x2), p6_segments)), (divs((l72_j * p2_y1), p6_segments) + divs((l64_i * p4_y2), p6_segments)), 0L, (divs(((l72_j - 1L) * p1_x1), p6_segments) + divs(((l64_i + 1L) * p3_x2), p6_segments)), (divs(((l72_j - 1L) * p2_y1), p6_segments) + divs(((l64_i + 1L) * p4_y2), p6_segments)), 0L, 1L, 0L))
                 ln = 464 // Talons.HC:464
                 l64_i = (l64_i + 1L)
                 l72_j = (l72_j + -1L)
@@ -969,11 +971,11 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 if ((p2_y1 < p4_y2)) {
                     ln = 482 // Talons.HC:482
                     tick(t)
-                    P.f441_Sprite3B(t, p0_dc, p1_x1, p2_y1, 0L, b4)
+                    P.f446_Sprite3B(t, p0_dc, p1_x1, p2_y1, 0L, b4)
                 } else {
                     ln = 484 // Talons.HC:484
                     tick(t)
-                    P.f441_Sprite3B(t, p0_dc, p1_x1, p2_y1, 0L, b5)
+                    P.f446_Sprite3B(t, p0_dc, p1_x1, p2_y1, 0L, b5)
                 }
             }
             t.depth--
@@ -982,7 +984,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC ClawsDraw (Talons.HC:488) */
-    fun f716_ClawsDraw(t: Task, a0: Long, a1: Long) {
+    fun f721_ClawsDraw(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1001,32 +1003,32 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4(t0, (ld4s(t0) or 512L))
             ln = 493 // Talons.HC:493
             tick(t)
-            P.f314_DCSymmetrySet(t, p1_dc, (l24_w shr 1), 0L, (l24_w shr 1), 1L)
+            P.f315_DCSymmetrySet(t, p1_dc, (l24_w shr 1), 0L, (l24_w shr 1), 1L)
             ln = 495 // Talons.HC:495
             tick(t)
-            f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) - 30.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) - (50.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) - 5.0)), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
+            f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) - 30.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) - (50.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) - 5.0)), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
             ln = 496 // Talons.HC:496
             tick(t)
-            f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) - 10.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) - (60.0 * l16_claws_up))), f2i((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble())))), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
+            f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) - 10.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) - (60.0 * l16_claws_up))), f2i((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble())))), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
             ln = 497 // Talons.HC:497
             tick(t)
-            f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 10.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) - (60.0 * l16_claws_up))), f2i((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble())))), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
+            f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 10.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) - (60.0 * l16_claws_up))), f2i((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble())))), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
             ln = 498 // Talons.HC:498
             tick(t)
-            f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 30.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) - (50.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 5.0)), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
+            f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 30.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) - (50.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 5.0)), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
             ln = 499 // Talons.HC:499
             tick(t)
-            f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 25.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) + (40.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 5.0)), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
+            f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 25.0)), f2i(((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble())) + (40.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble()))) + 5.0)), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), 22L, 4L, 1L)
             ln = 501 // Talons.HC:501
             tick(t)
-            f715_ClawDraw(t, p1_dc, f2i((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble())))), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), divs((6L * l24_w), 20L), l32_h, 38L, 5L, 0L)
+            f720_ClawDraw(t, p1_dc, f2i((((1.0 - ldf(g_claws_down)) * (0.3 * l24_w.toDouble())) + (ldf(g_claws_down) * (0.4 * l24_w.toDouble())))), f2i((((1.0 - ldf(g_claws_down)) * (l32_h - 125L).toDouble()) + (ldf(g_claws_down) * l32_h.toDouble()))), divs((6L * l24_w), 20L), l32_h, 38L, 5L, 0L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "ClawsDraw", ln) }
     }
 
     /** HolyC DrawIt (Talons.HC:505) */
-    fun f717_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f722_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1041,7 +1043,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             if ((ldf(g_claws_down) != 0.0)) {
                 ln = 510 // Talons.HC:510
                 tick(t)
-                f716_ClawsDraw(t, p0_task, p1_dc)
+                f721_ClawsDraw(t, p0_task, p1_dc)
             }
             t.depth--
             return
@@ -1049,7 +1051,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC MPDrawIt (Talons.HC:575) */
-    fun f718_MPDrawIt(t: Task, a0: Long, a1: Long) {
+    fun f723_MPDrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1131,7 +1133,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val t1: Long = (p1_dc + 28L)
             st4(t1, (ld4s(t1) or 256L))
             ln = 617 // Talons.HC:617
-            st8((p1_dc + 232L), 9223090561878065861L)
+            st8((p1_dc + 232L), 9223090561878065866L)
             ln = 618 // Talons.HC:618
             st4((p1_dc + 216L), l216_cx)
             ln = 619 // Talons.HC:619
@@ -1146,7 +1148,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             nat(t, n_Mat4x4MulXYZ, push4(t, ld8((p1_dc + 200L)), (fp + 48), (fp + 56), (fp + 64)))
             ln = 629 // Talons.HC:629
             tick(t)
-            P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), ld8((fp + 48)), ld8((fp + 56)), ld8((fp + 64)))
+            P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), ld8((fp + 48)), ld8((fp + 56)), ld8((fp + 64)))
             ln = 632 // Talons.HC:632
             val t2: Double = f(nat(t, n_Abs, push1(t, bits(((ldf(g__) * 180.0) / f(4614256656552045848L))))))
             if ((t2 > 90.0)) {
@@ -1243,8 +1245,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 ln = 673 // Talons.HC:673
                                 st4((p1_dc + 160L), ld4u((l376_tmpp + 28L)))
                                 ln = 674 // Talons.HC:674
-                                tick(t)
-                                val t9: Long = P.f422_GrFillPoly3(t, p1_dc, ld2u((l376_tmpp + 26L)), ld8((l376_tmpp + 8L)))
+                                val t9: Long = nat(t, n_GrFillPoly3, push3(t, p1_dc, ld2u((l376_tmpp + 26L)), ld8((l376_tmpp + 8L))))
                                 st8((l376_tmpp + 16L), t9)
                             } else {
                                 ln = 676 // Talons.HC:676
@@ -1257,8 +1258,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             ln = 678 // Talons.HC:678
                             loop4@ while ((l392_tmpo != (l376_tmpp + 32L))) {
                                 ln = 679 // Talons.HC:679
-                                tick(t)
-                                P.f440_Sprite3(t, p1_dc, ld8((l392_tmpo + 16L)), ld8(((l392_tmpo + 16L) + 8L)), ld8(((l392_tmpo + 16L) + 16L)), ld8((l392_tmpo + 40L)), 0L)
+                                nat(t, n_Sprite3, push(t, p1_dc, ld8((l392_tmpo + 16L)), ld8(((l392_tmpo + 16L) + 8L)), ld8(((l392_tmpo + 16L) + 16L)), ld8((l392_tmpo + 40L)), 0L))
                                 ln = 680 // Talons.HC:680
                                 l392_tmpo = ld8(l392_tmpo)
                                 tick(t)
@@ -1337,9 +1337,9 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 ln = 714 // Talons.HC:714
                 val t14: Double = f(nat(t, n_tS, push0(t)))
                 tick(t)
-                val t15: Double = P.f484_Tri(t, t14, 0.2)
+                val t15: Double = P.f489_Tri(t, t14, 0.2)
                 tick(t)
-                val t16: Long = P.f448_SpriteInterpolate(t, t15, b7, b6)
+                val t16: Long = P.f453_SpriteInterpolate(t, t15, b7, b6)
                 l360_elems1 = t16
                 ln = 716 // Talons.HC:716
                 tick(t)
@@ -1349,11 +1349,10 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 P.f307_Mat4x4RotZ(t, (fp + 232), ldf((l384_tmpb + 40L)))
                 ln = 718 // Talons.HC:718
                 tick(t)
-                val t17: Long = P.f540_SpriteTransform(t, l360_elems1, (fp + 232))
+                val t17: Long = P.f545_SpriteTransform(t, l360_elems1, (fp + 232))
                 l368_elems_hard = t17
                 ln = 720 // Talons.HC:720
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, ld8((l384_tmpb + 16L)), ld8(((l384_tmpb + 16L) + 8L)), ld8(((l384_tmpb + 16L) + 16L)), l368_elems_hard, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, ld8((l384_tmpb + 16L)), ld8(((l384_tmpb + 16L) + 8L)), ld8(((l384_tmpb + 16L) + 16L)), l368_elems_hard, 0L))
                 ln = 721 // Talons.HC:721
                 nat(t, n_Free, push1(t, l368_elems_hard))
                 ln = 722 // Talons.HC:722
@@ -1376,7 +1375,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CoreAPTalonsTask (Talons.HC:732) */
-    fun f719_CoreAPTalonsTask(t: Task, a0: Long) {
+    fun f724_CoreAPTalonsTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1400,7 +1399,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 if ((ld1u((g_mp + 1048L)) == 0L)) {
                     ln = 739 // Talons.HC:739
                     tick(t)
-                    f718_MPDrawIt(t, p0_master_task, l8_dc)
+                    f723_MPDrawIt(t, p0_master_task, l8_dc)
                 }
                 tick(t)
             }
@@ -1418,7 +1417,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawHorizon (Talons.HC:749) */
-    fun f720_DrawHorizon(t: Task, a0: Long) {
+    fun f725_DrawHorizon(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1452,7 +1451,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 var r1: Boolean = false
                 val t2: Double = ((-f(4614256656552045848L)) / 4.0)
                 tick(t)
-                val t3: Double = P.f542_Wrap(t, (ldf(g__) - f(4614256656552045848L)), (-f(4614256656552045848L)))
+                val t3: Double = P.f547_Wrap(t, (ldf(g__) - f(4614256656552045848L)), (-f(4614256656552045848L)))
                 if ((t2 <= t3)) {
                     val t4: Double = (f(4614256656552045848L) / 4.0)
                     if ((t3 < t4)) {
@@ -1491,7 +1490,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     val t5: Long = (p0_dc + 28L)
                     st4(t5, (ld4s(t5) and -257L))
                     ln = 776 // Talons.HC:776
-                    st8((p0_dc + 232L), 9223090561878065861L)
+                    st8((p0_dc + 232L), 9223090561878065866L)
                     ln = 777 // Talons.HC:777
                     st4((p0_dc + 216L), l88_cx)
                     ln = 778 // Talons.HC:778
@@ -1529,7 +1528,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     ptr(t, ld8((p0_dc + 232L)), push4(t, p0_dc, (fp + 32), (fp + 40), (fp + 48)))
                     ln = 794 // Talons.HC:794
                     tick(t)
-                    P.f380_DCClipLine(t, p0_dc, (fp + 8), (fp + 16), (fp + 32), (fp + 40), 0L, 0L)
+                    P.f381_DCClipLine(t, p0_dc, (fp + 8), (fp + 16), (fp + 32), (fp + 40), 0L, 0L)
                     ln = 796 // Talons.HC:796
                     nat(t, n_MemSet, push3(t, (fp + 104), 0L, 48L))
                     ln = 797 // Talons.HC:797
@@ -1568,8 +1567,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             st4((p0_dc + 160L), 11L)
                         }
                         ln = 814 // Talons.HC:814
-                        tick(t)
-                        P.f422_GrFillPoly3(t, p0_dc, 4L, (fp + 104))
+                        nat(t, n_GrFillPoly3, push3(t, p0_dc, 4L, (fp + 104)))
                         ln = 815 // Talons.HC:815
                         st4(((fp + 104) + 4L), (ld4s((p0_dc + 24L)) - 1L))
                         ln = 816 // Talons.HC:816
@@ -1583,8 +1581,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             st4((p0_dc + 160L), l160_ground_color)
                         }
                         ln = 821 // Talons.HC:821
-                        tick(t)
-                        P.f422_GrFillPoly3(t, p0_dc, 4L, (fp + 104))
+                        nat(t, n_GrFillPoly3, push3(t, p0_dc, 4L, (fp + 104)))
                     } else {
                         ln = 823 // Talons.HC:823
                         if ((ld8((fp + 40)) < ld8((fp + 16)))) {
@@ -1622,8 +1619,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 st4((p0_dc + 160L), 11L)
                             }
                             ln = 840 // Talons.HC:840
-                            tick(t)
-                            P.f422_GrFillPoly3(t, p0_dc, 4L, (fp + 104))
+                            nat(t, n_GrFillPoly3, push3(t, p0_dc, 4L, (fp + 104)))
                             ln = 841 // Talons.HC:841
                             st4((fp + 104), (ld4s((p0_dc + 16L)) - 1L))
                             ln = 842 // Talons.HC:842
@@ -1637,8 +1633,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 st4((p0_dc + 160L), l160_ground_color)
                             }
                             ln = 847 // Talons.HC:847
-                            tick(t)
-                            P.f422_GrFillPoly3(t, p0_dc, 4L, (fp + 104))
+                            nat(t, n_GrFillPoly3, push3(t, p0_dc, 4L, (fp + 104)))
                         } else {
                             ln = 849 // Talons.HC:849
                             tick(t)
@@ -1656,7 +1651,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Core0Talons (Talons.HC:856) */
-    fun f721_Core0Talons(t: Task) {
+    fun f726_Core0Talons(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1708,7 +1703,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 879 // Talons.HC:879
             tick(t)
-            f720_DrawHorizon(t, l0_dc)
+            f725_DrawHorizon(t, l0_dc)
             ln = 881 // Talons.HC:881
             if ((ldf(g_game_tf) != 0.0)) {
                 ln = 882 // Talons.HC:882
@@ -1722,7 +1717,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     ln = 885 // Talons.HC:885
                     tick(t)
                     val vb0 = push0(t)
-                    P.f369_GrPrint(t, l0_dc, divs((ld8((ld8(P.g_Fs) + 224L)) - 72L), 2L), divs((ld8((ld8(P.g_Fs) + 248L)) - 8L), 2L), s3, vb0, 0)
+                    P.f370_GrPrint(t, l0_dc, divs((ld8((ld8(P.g_Fs) + 224L)) - 72L), 2L), divs((ld8((ld8(P.g_Fs) + 248L)) - 8L), 2L), s3, vb0, 0)
                     t.sp = vb0
                 }
             } else {
@@ -1734,7 +1729,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st8((g_mp + 8L), ((1L shl t3.toInt()) - 1L))
                 ln = 891 // Talons.HC:891
                 tick(t)
-                f718_MPDrawIt(t, ld8(P.g_Fs), l0_dc)
+                f723_MPDrawIt(t, ld8(P.g_Fs), l0_dc)
                 ln = 892 // Talons.HC:892
                 loop0@ while ((ld8((g_mp + 8L)) != 0L)) {
                     ln = 893 // Talons.HC:893
@@ -1780,7 +1775,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     ln = 905 // Talons.HC:905
                     tick(t)
                     val vb1 = push0(t)
-                    P.f369_GrPrint(t, l0_dc, divs((ld8((ld8(P.g_Fs) + 224L)) - 104L), 2L), (divs((ld8((ld8(P.g_Fs) + 248L)) - 8L), 2L) - 32L), s4, vb1, 0)
+                    P.f370_GrPrint(t, l0_dc, divs((ld8((ld8(P.g_Fs) + 224L)) - 104L), 2L), (divs((ld8((ld8(P.g_Fs) + 248L)) - 8L), 2L) - 32L), s4, vb1, 0)
                     t.sp = vb1
                 }
             }
@@ -1798,35 +1793,33 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val t12: Long = (l0_dc + 28L)
             st4(t12, (ld4s(t12) and -257L))
             ln = 916 // Talons.HC:916
-            tick(t)
-            P.f406_GrLine3(t, l0_dc, (l48_cx + 5L), l56_cy, 0L, (l48_cx - 5L), l56_cy, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, l0_dc, (l48_cx + 5L), l56_cy, 0L, (l48_cx - 5L), l56_cy, 0L, 1L, 0L))
             ln = 917 // Talons.HC:917
-            tick(t)
-            P.f406_GrLine3(t, l0_dc, l48_cx, (l56_cy + 5L), 0L, l48_cx, (l56_cy - 5L), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, l0_dc, l48_cx, (l56_cy + 5L), 0L, l48_cx, (l56_cy - 5L), 0L, 1L, 0L))
             ln = 918 // Talons.HC:918
             if ((ld1u(g_invert_pitch) != 0L)) {
                 ln = 921 // Talons.HC:921
                 val t14: Long = ld8(g_strip_height)
                 tick(t)
-                val t13: Double = P.f542_Wrap(t, (ldf(g_heading) + f(4614256656552045848L)), 0.0)
+                val t13: Double = P.f547_Wrap(t, (ldf(g_heading) + f(4614256656552045848L)), 0.0)
                 tick(t)
-                val t15: Double = P.f542_Wrap(t, (ldf(g_roll) + f(4614256656552045848L)), (-f(4614256656552045848L)))
+                val t15: Double = P.f547_Wrap(t, (ldf(g_roll) + f(4614256656552045848L)), (-f(4614256656552045848L)))
                 ln = 919 // Talons.HC:919
                 tick(t)
                 val vb2 = push(t, bits(((ldf(g_pitch) * 180.0) / f(4614256656552045848L))), bits(((t15 * 180.0) / f(4614256656552045848L))), bits(((t13 * 180.0) / f(4614256656552045848L))), l40_height, t14)
-                P.f369_GrPrint(t, l0_dc, 0L, 0L, s5, vb2, 5)
+                P.f370_GrPrint(t, l0_dc, 0L, 0L, s5, vb2, 5)
                 t.sp = vb2
             } else {
                 ln = 924 // Talons.HC:924
                 tick(t)
                 val vb3 = push(t, bits(((ldf(g_pitch) * 180.0) / f(4614256656552045848L))), bits(((ldf(g_roll) * 180.0) / f(4614256656552045848L))), bits(((ldf(g_heading) * 180.0) / f(4614256656552045848L))), l40_height, ld8(g_strip_height))
-                P.f369_GrPrint(t, l0_dc, 0L, 0L, s5, vb3, 5)
+                P.f370_GrPrint(t, l0_dc, 0L, 0L, s5, vb3, 5)
                 t.sp = vb3
             }
             ln = 927 // Talons.HC:927
             tick(t)
             val vb4 = push3(t, ld8(g_fish_left), bits(l72_tt), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, l0_dc, 0L, 8L, s6, vb4, 3)
+            P.f370_GrPrint(t, l0_dc, 0L, 8L, s6, vb4, 3)
             t.sp = vb4
             ln = 931 // Talons.HC:931
             st8((l0_dc + 392L), 0L)
@@ -1841,7 +1834,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC FishFind (Talons.HC:937) */
-    fun f722_FishFind(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f727_FishFind(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1900,7 +1893,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC AnimateTask (Talons.HC:962) */
-    fun f723_AnimateTask(t: Task, a0: Long) {
+    fun f728_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1990,7 +1983,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             }
                             ln = 993 // Talons.HC:993
                             tick(t)
-                            f708_WrapAngles(t)
+                            f713_WrapAngles(t)
                         }
                         ln = 995 // Talons.HC:995
                         st8(g_speed, bits(1.0))
@@ -1998,7 +1991,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         var r9: Boolean = (ld1u(g_rolled_over) != 0L)
                         if (!r9) {
                             tick(t)
-                            val t8: Long = f722_FishFind(t, l24_x1, l32_y1, (fp + 72))
+                            val t8: Long = f727_FishFind(t, l24_x1, l32_y1, (fp + 72))
                             l112_tmpo = t8
                             r9 = (t8 == 0L)
                         }
@@ -2015,13 +2008,13 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             l32_y1 = (l32_y1 - ld8(((l112_tmpo + 16L) + 8L)))
                             ln = 1002 // Talons.HC:1002
                             tick(t)
-                            val t11: Double = P.f544_ACos(t, (((ld8((fp + 48)) * l24_x1) + (ld8((fp + 56)) * l32_y1)).toDouble() / (l104_d * 65536.0)))
+                            val t11: Double = P.f549_ACos(t, (((ld8((fp + 48)) * l24_x1) + (ld8((fp + 56)) * l32_y1)).toDouble() / (l104_d * 65536.0)))
                             l96__ = t11
                             ln = 1003 // Talons.HC:1003
                             if (((l96__ > 0.0) && (l104_d < 600.0))) {
                                 ln = 1004 // Talons.HC:1004
                                 tick(t)
-                                val t12: Double = P.f480_Saw(t, l104_d, 600.0)
+                                val t12: Double = P.f485_Saw(t, l104_d, 600.0)
                                 st8(g_claws_down, bits(t12))
                             } else {
                                 ln = 1006 // Talons.HC:1006
@@ -2144,7 +2137,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC MPEnd (Talons.HC:1047) */
-    fun f724_MPEnd(t: Task) {
+    fun f729_MPEnd(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2167,13 +2160,13 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC TaskEndCB (Talons.HC:1057) */
-    fun f725_TaskEndCB(t: Task) {
+    fun f730_TaskEndCB(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 1059 // Talons.HC:1059
             tick(t)
-            f724_MPEnd(t)
+            f729_MPEnd(t)
             ln = 1060 // Talons.HC:1060
             nat(t, n_Exit, push0(t))
             t.depth--
@@ -2182,30 +2175,30 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SongTask (Talons.HC:1063) */
-    fun f726_SongTask(t: Task, a0: Long) {
+    fun f731_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 1065 // Talons.HC:1065
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 1066 // Talons.HC:1066
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 1067 // Talons.HC:1067
             loop0@ while ((1L != 0L)) {
                 ln = 1068 // Talons.HC:1068
                 tick(t)
-                P.f494_Play(t, s7, 0L)
+                P.f499_Play(t, s7, 0L)
                 ln = 1069 // Talons.HC:1069
                 tick(t)
-                P.f494_Play(t, s7, 0L)
+                P.f499_Play(t, s7, 0L)
                 ln = 1070 // Talons.HC:1070
                 tick(t)
-                P.f494_Play(t, s8, 0L)
+                P.f499_Play(t, s8, 0L)
                 ln = 1071 // Talons.HC:1071
                 tick(t)
-                P.f494_Play(t, s8, 0L)
+                P.f499_Play(t, s8, 0L)
                 tick(t)
             }
             t.depth--
@@ -2214,7 +2207,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PreInit (Talons.HC:1075) */
-    fun f727_PreInit(t: Task) {
+    fun f732_PreInit(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2225,14 +2218,13 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val t0: Long = P.f281_Mat4x4IdentNew(t, 0L)
             l8_r = t0
             ln = 1078 // Talons.HC:1078
-            tick(t)
-            P.f308_Mat4x4Scale(t, l8_r, 10.0)
+            nat(t, n_Mat4x4Scale, push2(t, l8_r, bits(10.0)))
             ln = 1079 // Talons.HC:1079
             l0_i = 0L
             loop0@ while ((l0_i < 3L)) {
                 ln = 1080 // Talons.HC:1080
                 tick(t)
-                val t1: Long = P.f540_SpriteTransform(t, ld8((g_landscape_small_imgs + (l0_i * 8L))), l8_r)
+                val t1: Long = P.f545_SpriteTransform(t, ld8((g_landscape_small_imgs + (l0_i * 8L))), l8_r)
                 st8((g_landscape_large_imgs + (l0_i * 8L)), t1)
                 ln = 1079 // Talons.HC:1079
                 l0_i = (l0_i + 1L)
@@ -2246,7 +2238,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PostCleanUp (Talons.HC:1084) */
-    fun f728_PostCleanUp(t: Task) {
+    fun f733_PostCleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2266,7 +2258,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Init (Talons.HC:1091) */
-    fun f729_Init(t: Task) {
+    fun f734_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2288,7 +2280,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             nat(t, n_MemSet, push3(t, g_mp, 0L, 1049L))
             ln = 1102 // Talons.HC:1102
             tick(t)
-            f714_InitMap(t)
+            f719_InitMap(t)
             ln = 1103 // Talons.HC:1103
             tick(t)
             P.f296_DCDepthBufAlloc(t, ld8(g_main_dc))
@@ -2306,7 +2298,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st8(g_claws_down, bits(0.0))
             ln = 1112 // Talons.HC:1112
             tick(t)
-            f708_WrapAngles(t)
+            f713_WrapAngles(t)
             ln = 1114 // Talons.HC:1114
             st8(g_x, 19660800L)
             ln = 1115 // Talons.HC:1115
@@ -2362,13 +2354,13 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 val t7: Long = nat(t, n_mp_cnt, push0(t))
                 if (!((l0_i < t7))) break@loop4
                 ln = 1136 // Talons.HC:1136
-                nat(t, n_Spawn, push(t, 9223090561878065871L, ld8(P.g_Fs), s9, l0_i, 0L, 0L, 0L))
+                nat(t, n_Spawn, push(t, 9223090561878065876L, ld8(P.g_Fs), s9, l0_i, 0L, 0L, 0L))
                 ln = 1135 // Talons.HC:1135
                 l0_i = (l0_i + 1L)
                 tick(t)
             }
             ln = 1137 // Talons.HC:1137
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065877L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065882L)
             ln = 1138 // Talons.HC:1138
             val t8: Double = f(nat(t, n_tS, push0(t)))
             st8(g_game_t0, bits(t8))
@@ -2378,7 +2370,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CleanUp (Talons.HC:1141) */
-    fun f730_CleanUp(t: Task) {
+    fun f735_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2389,7 +2381,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             l8_tmpp = ld8(g_panel_head)
             ln = 1145 // Talons.HC:1145
             tick(t)
-            f724_MPEnd(t)
+            f729_MPEnd(t)
             ln = 1146 // Talons.HC:1146
             loop0@ while ((l8_tmpp != 0L)) {
                 ln = 1147 // Talons.HC:1147
@@ -2429,7 +2421,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Talons (Talons.HC:1160) */
-    fun f731_Talons(t: Task) {
+    fun f736_Talons(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2440,7 +2432,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 1164 // Talons.HC:1164
             tick(t)
-            P.f507_MenuPush(t, s10)
+            P.f512_MenuPush(t, s10)
             ln = 1177 // Talons.HC:1177
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 1178 // Talons.HC:1178
@@ -2457,20 +2449,20 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             nat(t, n_Print, push1(t, s11))
             ln = 1183 // Talons.HC:1183
             val t1: Long = (ld8(P.g_Fs) + 1080L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065878L, 0L, s12, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065883L, 0L, s12, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 1184 // Talons.HC:1184
             tick(t)
-            f727_PreInit(t)
+            f732_PreInit(t)
             ln = 1185 // Talons.HC:1185
             tick(t)
-            f729_Init(t)
+            f734_Init(t)
             ln = 1186 // Talons.HC:1186
             val t3: Long = (ld8(P.g_Fs) + 1088L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065875L, 0L, s13, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065880L, 0L, s13, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 1187 // Talons.HC:1187
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065869L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065874L)
             ln = 1188 // Talons.HC:1188
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -2571,7 +2563,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                         } while (false)
                                         ln = 1210 // Talons.HC:1210
                                         tick(t)
-                                        f708_WrapAngles(t)
+                                        f713_WrapAngles(t)
                                     } while (false)
                                 }
                                 10L -> {
@@ -2579,14 +2571,14 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     st8((ld8(P.g_Fs) + 448L), 0L)
                                     ln = 1215 // Talons.HC:1215
                                     tick(t)
-                                    f730_CleanUp(t)
+                                    f735_CleanUp(t)
                                     ln = 1216 // Talons.HC:1216
                                     nat(t, n_Refresh, push2(t, 1L, 0L))
                                     ln = 1217 // Talons.HC:1217
                                     tick(t)
-                                    f729_Init(t)
+                                    f734_Init(t)
                                     ln = 1218 // Talons.HC:1218
-                                    st8((ld8(P.g_Fs) + 448L), 9223090561878065869L)
+                                    st8((ld8(P.g_Fs) + 448L), 9223090561878065874L)
                                 }
                                 else -> {
                                 }
@@ -2595,7 +2587,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     } else {
                         ln = 1222 // Talons.HC:1222
                         tick(t)
-                        f721_Core0Talons(t)
+                        f726_Core0Talons(t)
                     }
                     if (!(((ld8(fp) != 28L) && (ld8(fp) != 27L)))) break@loop0
                     tick(t)
@@ -2614,13 +2606,13 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 1227 // Talons.HC:1227
             tick(t)
-            f730_CleanUp(t)
+            f735_CleanUp(t)
             ln = 1228 // Talons.HC:1228
             tick(t)
-            f728_PostCleanUp(t)
+            f733_PostCleanUp(t)
             ln = 1229 // Talons.HC:1229
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 1230 // Talons.HC:1230
             nat(t, n_RegWrite, push3(t, s1, s14, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -2630,13 +2622,13 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Talons.HC#3 (Talons.HC:1233) */
-    fun f732_init_C__Demo_Games_Talons_HC_3(t: Task): Long {
+    fun f737_init_C__Demo_Games_Talons_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 1233 // Talons.HC:1233
             tick(t)
-            f731_Talons(t)
+            f736_Talons(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Talons.HC#3", ln) }
@@ -2645,36 +2637,36 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_Talons_HC_0(t)
-            704 -> f704_init_C__Demo_Games_Talons_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> f706_init_C__Demo_Games_Talons_HC_2(t)
-            707 -> f707_eval0(t)
-            708 -> { f708_WrapAngles(t); 0L }
-            709 -> { f709_EDTransform(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            710 -> { f710_CalcNormals(t); 0L }
-            711 -> f711_TestSameSlope(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            712 -> { f712_MPDoPanels(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            713 -> { f713_InitElevations(t); 0L }
-            714 -> { f714_InitMap(t); 0L }
-            715 -> { f715_ClawDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L)); 0L }
-            716 -> { f716_ClawsDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            717 -> { f717_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            718 -> { f718_MPDrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            719 -> { f719_CoreAPTalonsTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            720 -> { f720_DrawHorizon(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            721 -> { f721_Core0Talons(t); 0L }
-            722 -> f722_FishFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            723 -> { f723_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            724 -> { f724_MPEnd(t); 0L }
-            725 -> { f725_TaskEndCB(t); 0L }
-            726 -> { f726_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            727 -> { f727_PreInit(t); 0L }
-            728 -> { f728_PostCleanUp(t); 0L }
-            729 -> { f729_Init(t); 0L }
-            730 -> { f730_CleanUp(t); 0L }
-            731 -> { f731_Talons(t); 0L }
-            732 -> f732_init_C__Demo_Games_Talons_HC_3(t)
+            708 -> f708_init_C__Demo_Games_Talons_HC_0(t)
+            709 -> f709_init_C__Demo_Games_Talons_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> f711_init_C__Demo_Games_Talons_HC_2(t)
+            712 -> f712_eval0(t)
+            713 -> { f713_WrapAngles(t); 0L }
+            714 -> { f714_EDTransform(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            715 -> { f715_CalcNormals(t); 0L }
+            716 -> f716_TestSameSlope(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            717 -> { f717_MPDoPanels(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            718 -> { f718_InitElevations(t); 0L }
+            719 -> { f719_InitMap(t); 0L }
+            720 -> { f720_ClawDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L)); 0L }
+            721 -> { f721_ClawsDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            722 -> { f722_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            723 -> { f723_MPDrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            724 -> { f724_CoreAPTalonsTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            725 -> { f725_DrawHorizon(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            726 -> { f726_Core0Talons(t); 0L }
+            727 -> f727_FishFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            728 -> { f728_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            729 -> { f729_MPEnd(t); 0L }
+            730 -> { f730_TaskEndCB(t); 0L }
+            731 -> { f731_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            732 -> { f732_PreInit(t); 0L }
+            733 -> { f733_PostCleanUp(t); 0L }
+            734 -> { f734_Init(t); 0L }
+            735 -> { f735_CleanUp(t); 0L }
+            736 -> { f736_Talons(t); 0L }
+            737 -> f737_init_C__Demo_Games_Talons_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -2686,7 +2678,7 @@ class N_Demo_Games_Talons(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/Talons.HC#0", "\$init:C:/Demo/Games/Talons.HC#1", "\$init:C:/Home/Registry.HC#0", "\$init:C:/Demo/Games/Talons.HC#2", "\$eval0", "WrapAngles", "EDTransform", "CalcNormals", "TestSameSlope", "MPDoPanels", "InitElevations", "InitMap", "ClawDraw", "ClawsDraw", "DrawIt", "MPDrawIt", "CoreAPTalonsTask", "DrawHorizon", "Core0Talons", "FishFind", "AnimateTask", "MPEnd", "TaskEndCB", "SongTask", "PreInit", "PostCleanUp", "Init", "CleanUp", "Talons", "\$init:C:/Demo/Games/Talons.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/Games/Talons.HC")
     }

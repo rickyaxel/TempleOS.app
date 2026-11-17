@@ -31,7 +31,7 @@ public final class N_Demo_Graphics_BSpline: NativeModule {
     }
 
     /// HolyC BSplineDemo (BSpline.HC:3)
-    public final func f703_BSplineDemo(_ t: HTask) throws {
+    public final func f708_BSplineDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -73,7 +73,7 @@ public final class N_Demo_Graphics_BSpline: NativeModule {
                     try st4((l0_dc &+ 160), 2)
                     ln = 20 // BSpline.HC:20
                     try tick(t)
-                    _ = try P.f397_GrCircle(t, l0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), 10, 1, 0.0, (2.0 * d(4614256656552045848)))
+                    _ = try P.f398_GrCircle(t, l0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), 10, 1, 0.0, (2.0 * d(4614256656552045848)))
                     ln = 21 // BSpline.HC:21
                     l24_i = (l24_i &+ 1)
                 }
@@ -84,12 +84,12 @@ public final class N_Demo_Graphics_BSpline: NativeModule {
             try st4((l0_dc &+ 160), 4)
             ln = 25 // BSpline.HC:25
             try tick(t)
-            _ = try P.f402_Gr2BSpline(t, l0_dc, (fp &+ 40), l24_i, 1)
+            _ = try P.f403_Gr2BSpline(t, l0_dc, (fp &+ 40), l24_i, 1)
             ln = 26 // BSpline.HC:26
             try st4((l0_dc &+ 160), 1)
             ln = 27 // BSpline.HC:27
             try tick(t)
-            _ = try P.f403_Gr3BSpline(t, l0_dc, (fp &+ 40), l24_i, 1)
+            _ = try P.f404_Gr3BSpline(t, l0_dc, (fp &+ 40), l24_i, 1)
             ln = 28 // BSpline.HC:28
             try tick(t)
             try P.f293_DCDel(t, l0_dc)
@@ -109,13 +109,13 @@ public final class N_Demo_Graphics_BSpline: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/BSpline.HC#0 (BSpline.HC:35)
-    @discardableResult public final func f704_init_C__Demo_Graphics_BSpline_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_BSpline_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 35 // BSpline.HC:35
             try tick(t)
-            try f703_BSplineDemo(t)
+            try f708_BSplineDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/BSpline.HC#0", ln) }
@@ -124,14 +124,14 @@ public final class N_Demo_Graphics_BSpline: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_BSplineDemo(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_BSpline_HC_0(t)
+        case 708: try f708_BSplineDemo(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_BSpline_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "BSplineDemo", 704: "$init:C:/Demo/Graphics/BSpline.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "BSplineDemo", 709: "$init:C:/Demo/Graphics/BSpline.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/BSpline.HC"]
     public override var files: [String] { N_Demo_Graphics_BSpline.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_BSpline.DEFINED.contains(index) }

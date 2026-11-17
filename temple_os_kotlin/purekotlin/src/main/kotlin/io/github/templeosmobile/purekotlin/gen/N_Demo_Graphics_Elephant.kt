@@ -15,6 +15,7 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
     /** binary literal, 246 bytes */ @JvmField var b0: Long = 0L
@@ -50,7 +51,7 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawIt (Elephant.HC:163) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -58,27 +59,22 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             var p1_dc: Long = a1
             var l16_tmps: Long = 0L
             ln = 166 // Elephant.HC:166
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 100L, (ld8((p0_task + 248L)) - 60L), 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 100L, (ld8((p0_task + 248L)) - 60L), 0L, b0, 0L))
             ln = 167 // Elephant.HC:167
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 194L, (ld8((p0_task + 248L)) - 140L), 0L, b1, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 194L, (ld8((p0_task + 248L)) - 140L), 0L, b1, 0L))
             ln = 168 // Elephant.HC:168
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 400L, (ld8((p0_task + 248L)) - 10L), 0L, b2, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 400L, (ld8((p0_task + 248L)) - 10L), 0L, b2, 0L))
             ln = 169 // Elephant.HC:169
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 50L, (ld8((p0_task + 248L)) - 160L), 0L, b3, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 50L, (ld8((p0_task + 248L)) - 160L), 0L, b3, 0L))
             ln = 170 // Elephant.HC:170
             val t0: Double = f(nat(t, n_tS, push0(t)))
             tick(t)
-            val t1: Double = P.f484_Tri(t, t0, 2.0)
+            val t1: Double = P.f489_Tri(t, t0, 2.0)
             tick(t)
-            val t2: Long = P.f448_SpriteInterpolate(t, t1, b5, b4)
+            val t2: Long = P.f453_SpriteInterpolate(t, t1, b5, b4)
             l16_tmps = t2
             ln = 171 // Elephant.HC:171
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 0L, ld8((p0_task + 248L)), 0L, l16_tmps, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 0L, ld8((p0_task + 248L)), 0L, l16_tmps, 0L))
             ln = 172 // Elephant.HC:172
             nat(t, n_Free, push1(t, l16_tmps))
             t.depth--
@@ -87,30 +83,30 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC SongTask (Elephant.HC:175) */
-    fun f704_SongTask(t: Task, a0: Long) {
+    fun f709_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 177 // Elephant.HC:177
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 178 // Elephant.HC:178
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 179 // Elephant.HC:179
             loop0@ while ((1L != 0L)) {
                 ln = 180 // Elephant.HC:180
                 tick(t)
-                P.f494_Play(t, s0, 0L)
+                P.f499_Play(t, s0, 0L)
                 ln = 181 // Elephant.HC:181
                 tick(t)
-                P.f494_Play(t, s1, 0L)
+                P.f499_Play(t, s1, 0L)
                 ln = 182 // Elephant.HC:182
                 tick(t)
-                P.f494_Play(t, s2, 0L)
+                P.f499_Play(t, s2, 0L)
                 ln = 183 // Elephant.HC:183
                 tick(t)
-                P.f494_Play(t, s3, 0L)
+                P.f499_Play(t, s3, 0L)
                 tick(t)
             }
             t.depth--
@@ -119,7 +115,7 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC Main (Elephant.HC:187) */
-    fun f705_Main(t: Task) {
+    fun f710_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -127,10 +123,10 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 190 // Elephant.HC:190
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 191 // Elephant.HC:191
             val t1: Long = (ld8(P.g_Fs) + 1080L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065856L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 192 // Elephant.HC:192
             nat(t, n_AutoComplete, push1(t, 0L))
@@ -148,7 +144,7 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             nat(t, n_Print, push2(t, s5, 10L))
             ln = 198 // Elephant.HC:198
             tick(t)
-            P.f625_View(t)
+            P.f630_View(t)
             ln = 199 // Elephant.HC:199
             tick(t)
             P.f228_SettingsPop(t, 0L, 0L)
@@ -158,13 +154,13 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/Graphics/Elephant.HC#0 (Elephant.HC:202) */
-    fun f706_init_C__Demo_Graphics_Elephant_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_Elephant_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 202 // Elephant.HC:202
             tick(t)
-            f705_Main(t)
+            f710_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Elephant.HC#0", ln) }
@@ -173,10 +169,10 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_Main(t); 0L }
-            706 -> f706_init_C__Demo_Graphics_Elephant_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_Main(t); 0L }
+            711 -> f711_init_C__Demo_Graphics_Elephant_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -188,7 +184,7 @@ class N_Demo_Graphics_Elephant(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("DrawIt", "SongTask", "Main", "\$init:C:/Demo/Graphics/Elephant.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Elephant.HC")
     }

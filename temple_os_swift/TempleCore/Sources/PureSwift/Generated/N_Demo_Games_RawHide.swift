@@ -33,6 +33,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     public let n_Sleep: Int
     public let n_Snd: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_Yield: Int
     public let n_tS: Int
@@ -112,6 +113,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_Yield = rt.vm.natives.find("Yield")!.index
         n_tS = rt.vm.natives.find("tS")!.index
@@ -178,7 +180,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/RawHide.HC#0 (RawHide.HC:3)
-    @discardableResult public final func f703_init_C__Demo_Games_RawHide_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_RawHide_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -192,7 +194,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/RawHide.HC#1 (RawHide.HC:4)
-    @discardableResult public final func f704_init_C__Demo_Games_RawHide_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_RawHide_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -206,7 +208,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -216,7 +218,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/RawHide.HC#2 (RawHide.HC:44)
-    @discardableResult public final func f706_init_C__Demo_Games_RawHide_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_RawHide_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -241,7 +243,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC RiverNew (RawHide.HC:67)
-    public final func f707_RiverNew(_ t: HTask) throws {
+    public final func f712_RiverNew(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -266,7 +268,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC RiverMake (RawHide.HC:76)
-    public final func f708_RiverMake(_ t: HTask) throws {
+    public final func f713_RiverMake(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -333,7 +335,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
             }
             ln = 98 // RawHide.HC:98
             try tick(t)
-            try P.f441_Sprite3B(t, ld8(g_map_dc), ld8(g_waterfall_x), ld8(g_waterfall_y), 0, b12)
+            try P.f446_Sprite3B(t, ld8(g_map_dc), ld8(g_waterfall_x), ld8(g_waterfall_y), 0, b12)
             ln = 101 // RawHide.HC:101
             try st8((fp &+ 8), 0)
             ln = 102 // RawHide.HC:102
@@ -348,7 +350,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                     try st4((ld8(g_map_dc) &+ 228), (ld4s((ld8(g_r_width) &+ (l16_y &* 4))) &+ 10))
                     ln = 106 // RawHide.HC:106
                     try tick(t)
-                    _ = try P.f393_GrPlot3(t, ld8(g_map_dc), (ld4s((ld8(g_r_x) &+ (l16_y &* 4))) &+ ld4s(((fp &+ 8) &+ 4))), l16_y, 0)
+                    _ = try P.f394_GrPlot3(t, ld8(g_map_dc), (ld4s((ld8(g_r_x) &+ (l16_y &* 4))) &+ ld4s(((fp &+ 8) &+ 4))), l16_y, 0)
                 }
                 ln = 108 // RawHide.HC:108
                 let t14: Int64 = try ld8((fp &+ 8))
@@ -369,7 +371,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                 try st4((ld8(g_map_dc) &+ 228), ld4s((ld8(g_r_width) &+ (l16_y &* 4))))
                 ln = 115 // RawHide.HC:115
                 try tick(t)
-                _ = try P.f393_GrPlot3(t, ld8(g_map_dc), ld4s((ld8(g_r_x) &+ (l16_y &* 4))), l16_y, 0)
+                _ = try P.f394_GrPlot3(t, ld8(g_map_dc), ld4s((ld8(g_r_x) &+ (l16_y &* 4))), l16_y, 0)
                 ln = 112 // RawHide.HC:112
                 l16_y = (l16_y &+ 1)
                 try tick(t)
@@ -381,7 +383,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC RiverDel (RawHide.HC:119)
-    public final func f709_RiverDel(_ t: HTask) throws {
+    public final func f714_RiverDel(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -399,7 +401,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC RiverDropsDel (RawHide.HC:135)
-    public final func f710_RiverDropsDel(_ t: HTask) throws {
+    public final func f715_RiverDropsDel(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -427,7 +429,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC RiverDropsNext (RawHide.HC:144)
-    public final func f711_RiverDropsNext(_ t: HTask, _ a0: Int64) throws {
+    public final func f716_RiverDropsNext(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -531,7 +533,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC RiverDropsDraw (RawHide.HC:178)
-    public final func f712_RiverDropsDraw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f717_RiverDropsDraw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -577,7 +579,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                 let t5: Int64 = try ld8(g_waterfall_y)
                 let t3: Double = try ldf(g_waterfall_tf)
                 try tick(t)
-                let t2: Double = try P.f480_Saw(t, (l32_t - ldf((ld8(g_wfd_t0) &+ (l24_i &* 8)))), ldf(g_waterfall_tf))
+                let t2: Double = try P.f485_Saw(t, (l32_t - ldf((ld8(g_wfd_t0) &+ (l24_i &* 8)))), ldf(g_waterfall_tf))
                 try tick(t)
                 let t4: Double = try P.f102_Sqr(t, (t3 * t2))
                 ln = 195 // RawHide.HC:195
@@ -592,7 +594,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC DrawIt (RawHide.HC:200)
-    public final func f713_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f718_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -637,7 +639,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
             _ = try nat(t, n_GrBlot, try push4(t, p1_dc, (0 &- l40_cx), (0 &- l48_cy), ld8(g_map_dc)))
             ln = 220 // RawHide.HC:220
             try tick(t)
-            try f712_RiverDropsDraw(t, p1_dc, l40_cx, l48_cy)
+            try f717_RiverDropsDraw(t, p1_dc, l40_cx, l48_cy)
             ln = 222 // RawHide.HC:222
             l24_i = 0
             loop0: while (l24_i < 100) {
@@ -650,11 +652,10 @@ public final class N_Demo_Games_RawHide: NativeModule {
                         try st4(t2, (ld4s(t2) | 1536))
                         ln = 226 // RawHide.HC:226
                         try tick(t)
-                        _ = try P.f314_DCSymmetrySet(t, p1_dc, (ld4s((((ld8(g_a) &+ (l24_i &* 56)) &+ 8) &+ 4)) &- l40_cx), 0, (ld4s((((ld8(g_a) &+ (l24_i &* 56)) &+ 8) &+ 4)) &- l40_cx), 1)
+                        _ = try P.f315_DCSymmetrySet(t, p1_dc, (ld4s((((ld8(g_a) &+ (l24_i &* 56)) &+ 8) &+ 4)) &- l40_cx), 0, (ld4s((((ld8(g_a) &+ (l24_i &* 56)) &+ 8) &+ 4)) &- l40_cx), 1)
                     }
                     ln = 228 // RawHide.HC:228
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, (ld4s((((ld8(g_a) &+ (l24_i &* 56)) &+ 8) &+ 4)) &- l40_cx), (ld4s((((ld8(g_a) &+ (l24_i &* 56)) &+ 16) &+ 4)) &- l48_cy), 0, ld8((ld8(((ld8(g_a) &+ (l24_i &* 56)) &+ 40)) &+ (((l32_frame &+ ld1u(((ld8(g_a) &+ (l24_i &* 56)) &+ 53))) & 3) &* 8))), 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, (ld4s((((ld8(g_a) &+ (l24_i &* 56)) &+ 8) &+ 4)) &- l40_cx), (ld4s((((ld8(g_a) &+ (l24_i &* 56)) &+ 16) &+ 4)) &- l48_cy), 0, ld8((ld8(((ld8(g_a) &+ (l24_i &* 56)) &+ 40)) &+ (((l32_frame &+ ld1u(((ld8(g_a) &+ (l24_i &* 56)) &+ 53))) & 3) &* 8))), 0))
                     ln = 230 // RawHide.HC:230
                     let t3: Int64 = (p1_dc &+ 28)
                     try st4(t3, (ld4s(t3) & (-1537)))
@@ -681,11 +682,10 @@ public final class N_Demo_Games_RawHide: NativeModule {
                 try st4(t4, (ld4s(t4) | 1536))
                 ln = 239 // RawHide.HC:239
                 try tick(t)
-                _ = try P.f314_DCSymmetrySet(t, p1_dc, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), 0, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), 1)
+                _ = try P.f315_DCSymmetrySet(t, p1_dc, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), 0, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), 1)
             }
             ln = 242 // RawHide.HC:242
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((p0_task &+ 232))) &- ld8((p0_task &+ 264))), 0, ld8((g_horse_imgs &+ ((l32_frame & 3) &* 8))), 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((p0_task &+ 232))) &- ld8((p0_task &+ 264))), 0, ld8((g_horse_imgs &+ ((l32_frame & 3) &* 8))), 0))
             ln = 244 // RawHide.HC:244
             let t5: Int64 = (p1_dc &+ 28)
             try st4(t5, (ld4s(t5) & (-1537)))
@@ -704,7 +704,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                     ln = 251 // RawHide.HC:251
                     try tick(t)
                     let vb0 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, (((ld8((p0_task &+ 224)) &- 112) &>> 1) &- ld8((p0_task &+ 256))), (((ld8((p0_task &+ 248)) &- 8) &>> 1) &- ld8((p0_task &+ 264))), s2, vb0, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, (((ld8((p0_task &+ 224)) &- 112) &>> 1) &- ld8((p0_task &+ 256))), (((ld8((p0_task &+ 248)) &- 8) &>> 1) &- ld8((p0_task &+ 264))), s2, vb0, 0)
                     t.sp = vb0
                 }
             } else {
@@ -717,7 +717,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
             ln = 258 // RawHide.HC:258
             try tick(t)
             let vb1 = try push3(t, ld8(g_outside_cnt), bits(l16_t), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), (0 &- ld8((p0_task &+ 264))), s3, vb1, 3)
+            _ = try P.f370_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), (0 &- ld8((p0_task &+ 264))), s3, vb1, 3)
             t.sp = vb1
             t.depth -= 1
             return
@@ -725,7 +725,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC BuddySel (RawHide.HC:263)
-    public final func f714_BuddySel(_ t: HTask, _ a0: Int64) throws {
+    public final func f719_BuddySel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -771,7 +771,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC RedrawGate (RawHide.HC:281)
-    public final func f715_RedrawGate(_ t: HTask) throws {
+    public final func f720_RedrawGate(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -814,47 +814,47 @@ public final class N_Demo_Games_RawHide: NativeModule {
             try st4((ld8(g_map_dc) &+ 160), 0)
             ln = 299 // RawHide.HC:299
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, (l8_x1 &+ l24_dx), (l16_y1 &+ l32_dy), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, (l8_x1 &+ l24_dx), (l16_y1 &+ l32_dy), 1, 0)
             ln = 300 // RawHide.HC:300
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, l8_x1, (l16_y1 &- 7), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, l8_x1, (l16_y1 &- 7), 1, 0)
             ln = 301 // RawHide.HC:301
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 &+ l24_dx), (l16_y1 &+ l32_dy), (l8_x1 &+ l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 &+ l24_dx), (l16_y1 &+ l32_dy), (l8_x1 &+ l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
             ln = 302 // RawHide.HC:302
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), l8_x1, (l16_y1 &- 7), (l8_x1 &+ l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), l8_x1, (l16_y1 &- 7), (l8_x1 &+ l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
             ln = 303 // RawHide.HC:303
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, (l8_x1 &+ l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, (l8_x1 &+ l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
             ln = 304 // RawHide.HC:304
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), l8_x1, (l16_y1 &- 7), (l8_x1 &+ l24_dx), (l16_y1 &+ l32_dy), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), l8_x1, (l16_y1 &- 7), (l8_x1 &+ l24_dx), (l16_y1 &+ l32_dy), 1, 0)
             ln = 306 // RawHide.HC:306
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), l16_y1, ((l8_x1 &+ 45) &- l24_dx), (l16_y1 &+ l32_dy), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), l16_y1, ((l8_x1 &+ 45) &- l24_dx), (l16_y1 &+ l32_dy), 1, 0)
             ln = 307 // RawHide.HC:307
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), l16_y1, (l8_x1 &+ 45), (l16_y1 &- 7), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), l16_y1, (l8_x1 &+ 45), (l16_y1 &- 7), 1, 0)
             ln = 308 // RawHide.HC:308
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), ((l8_x1 &+ 45) &- l24_dx), (l16_y1 &+ l32_dy), ((l8_x1 &+ 45) &- l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), ((l8_x1 &+ 45) &- l24_dx), (l16_y1 &+ l32_dy), ((l8_x1 &+ 45) &- l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
             ln = 309 // RawHide.HC:309
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), (l16_y1 &- 7), ((l8_x1 &+ 45) &- l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), (l16_y1 &- 7), ((l8_x1 &+ 45) &- l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
             ln = 310 // RawHide.HC:310
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), l16_y1, ((l8_x1 &+ 45) &- l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), l16_y1, ((l8_x1 &+ 45) &- l24_dx), ((l16_y1 &+ l32_dy) &- 7), 1, 0)
             ln = 311 // RawHide.HC:311
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), (l16_y1 &- 7), ((l8_x1 &+ 45) &- l24_dx), (l16_y1 &+ l32_dy), 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 &+ 45), (l16_y1 &- 7), ((l8_x1 &+ 45) &- l24_dx), (l16_y1 &+ l32_dy), 1, 0)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "RedrawGate", ln) }
     }
 
     /// HolyC CheckMap (RawHide.HC:314)
-    @discardableResult public final func f716_CheckMap(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f721_CheckMap(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -910,7 +910,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC AnimateTask (RawHide.HC:329)
-    public final func f717_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f722_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -965,7 +965,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                 }
                 ln = 345 // RawHide.HC:345
                 try tick(t)
-                try f715_RedrawGate(t)
+                try f720_RedrawGate(t)
                 ln = 346 // RawHide.HC:346
                 l8_i = 0
                 loop2: while (l8_i < 100) {
@@ -1006,7 +1006,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                         if try ((ld1u((l160_tmpa1 &+ 54)) != 0) || (l8_i == mods(l88_updates, 100))) {
                             ln = 364 // RawHide.HC:364
                             try tick(t)
-                            try f714_BuddySel(t, l8_i)
+                            try f719_BuddySel(t, l8_i)
                             ln = 365 // RawHide.HC:365
                             l160_tmpa1 = try (ld8(g_a) &+ (ld4u((l152_tmpa &+ 48)) &* 56))
                         }
@@ -1072,7 +1072,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                         }
                         ln = 396 // RawHide.HC:396
                         try tick(t)
-                        let t24: Int64 = try f716_CheckMap(t, ((ld8((l152_tmpa &+ 8)) &+ ld8((l152_tmpa &+ 24))) &>> 32), ((ld8((l152_tmpa &+ 16)) &+ ld8((l152_tmpa &+ 32))) &>> 32))
+                        let t24: Int64 = try f721_CheckMap(t, ((ld8((l152_tmpa &+ 8)) &+ ld8((l152_tmpa &+ 24))) &>> 32), ((ld8((l152_tmpa &+ 16)) &+ ld8((l152_tmpa &+ 32))) &>> 32))
                         if (t24 != 0) {
                             ln = 397 // RawHide.HC:397
                             let t25: Int64 = (l152_tmpa &+ 8)
@@ -1135,7 +1135,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                 if ((l88_updates & 15) == 0) {
                     ln = 420 // RawHide.HC:420
                     try tick(t)
-                    try f711_RiverDropsNext(t, p0_parent)
+                    try f716_RiverDropsNext(t, p0_parent)
                 }
                 ln = 422 // RawHide.HC:422
                 if try ((ldf(g_tf) == 0.0) && (ld8(g_outside_cnt) == 0)) {
@@ -1192,30 +1192,30 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC SongTask (RawHide.HC:449)
-    public final func f718_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f723_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 451 // RawHide.HC:451
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 452 // RawHide.HC:452
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 453 // RawHide.HC:453
             loop0: while (1 != 0) {
                 ln = 454 // RawHide.HC:454
                 try tick(t)
-                try P.f494_Play(t, s4, 0)
+                try P.f499_Play(t, s4, 0)
                 ln = 455 // RawHide.HC:455
                 try tick(t)
-                try P.f494_Play(t, s5, 0)
+                try P.f499_Play(t, s5, 0)
                 ln = 456 // RawHide.HC:456
                 try tick(t)
-                try P.f494_Play(t, s6, 0)
+                try P.f499_Play(t, s6, 0)
                 ln = 457 // RawHide.HC:457
                 try tick(t)
-                try P.f494_Play(t, s6, 0)
+                try P.f499_Play(t, s6, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -1224,27 +1224,26 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC ReInit (RawHide.HC:461)
-    public final func f719_ReInit(_ t: HTask) throws {
+    public final func f724_ReInit(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             var l0_i: Int64 = 0
             ln = 465 // RawHide.HC:465
             try tick(t)
-            try f710_RiverDropsDel(t)
+            try f715_RiverDropsDel(t)
             ln = 466 // RawHide.HC:466
             try st4((ld8(g_map_dc) &+ 160), 10)
             ln = 467 // RawHide.HC:467
             _ = try nat(t, n_GrRect, try push(t, ld8(g_map_dc), 2, 2, 996, 996))
             ln = 469 // RawHide.HC:469
             try tick(t)
-            try f708_RiverMake(t)
+            try f713_RiverMake(t)
             ln = 472 // RawHide.HC:472
             l0_i = 320
             loop0: while (l0_i > 0) {
                 ln = 473 // RawHide.HC:473
-                try tick(t)
-                try P.f440_Sprite3(t, ld8(g_map_dc), l0_i, 200, 0, b13, 0)
+                _ = try nat(t, n_Sprite3, try push(t, ld8(g_map_dc), l0_i, 200, 0, b13, 0))
                 ln = 472 // RawHide.HC:472
                 l0_i = (l0_i &- 16)
                 try tick(t)
@@ -1258,7 +1257,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
             loop2: while (l0_i < 184) {
                 ln = 477 // RawHide.HC:477
                 try tick(t)
-                _ = try P.f396_GrLine(t, ld8(g_map_dc), 319, l0_i, 319, (l0_i &+ 7), 1, 0)
+                _ = try P.f397_GrLine(t, ld8(g_map_dc), 319, l0_i, 319, (l0_i &+ 7), 1, 0)
                 ln = 476 // RawHide.HC:476
                 l0_i = (l0_i &+ 16)
                 try tick(t)
@@ -1267,23 +1266,23 @@ public final class N_Demo_Games_RawHide: NativeModule {
             try st4((ld8(g_map_dc) &+ 160), 7)
             ln = 479 // RawHide.HC:479
             try tick(t)
-            _ = try P.f396_GrLine(t, ld8(g_map_dc), 320, 0, 320, 194, 1, 0)
+            _ = try P.f397_GrLine(t, ld8(g_map_dc), 320, 0, 320, 194, 1, 0)
             ln = 480 // RawHide.HC:480
             try tick(t)
-            try f715_RedrawGate(t)
+            try f720_RedrawGate(t)
             ln = 482 // RawHide.HC:482
             try st4((ld8(g_map_dc) &+ 228), 3)
             ln = 483 // RawHide.HC:483
             try st4((ld8(g_map_dc) &+ 160), 4)
             ln = 484 // RawHide.HC:484
             try tick(t)
-            try P.f425_GrBorder(t, ld8(g_map_dc), divs(3, 2), divs(3, 2), (1000 &- divs(4, 2)), (1000 &- divs(4, 2)), 1, 0)
+            try P.f428_GrBorder(t, ld8(g_map_dc), divs(3, 2), divs(3, 2), (1000 &- divs(4, 2)), (1000 &- divs(4, 2)), 1, 0)
             ln = 487 // RawHide.HC:487
             l0_i = 3
             loop4: while (l0_i <= 997) {
                 ln = 488 // RawHide.HC:488
                 try tick(t)
-                try f711_RiverDropsNext(t, ld8(P.g_Fs))
+                try f716_RiverDropsNext(t, ld8(P.g_Fs))
                 ln = 487 // RawHide.HC:487
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -1307,7 +1306,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                     try st8(t3, ((64 &+ mods(t2, 872)) &<< 32))
                     ln = 496 // RawHide.HC:496
                     try tick(t)
-                    let t4: Int64 = try f716_CheckMap(t, (ld8(((ld8(g_a) &+ (l0_i &* 56)) &+ 8)) &>> 32), (ld8(((ld8(g_a) &+ (l0_i &* 56)) &+ 16)) &>> 32))
+                    let t4: Int64 = try f721_CheckMap(t, (ld8(((ld8(g_a) &+ (l0_i &* 56)) &+ 8)) &>> 32), (ld8(((ld8(g_a) &+ (l0_i &* 56)) &+ 16)) &>> 32))
                     if !((t4 == 0)) { break loop8 }
                     try tick(t)
                 }
@@ -1325,7 +1324,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                 try st1(t6, (t5 & 3))
                 ln = 502 // RawHide.HC:502
                 try tick(t)
-                try f714_BuddySel(t, l0_i)
+                try f719_BuddySel(t, l0_i)
                 ln = 491 // RawHide.HC:491
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -1347,13 +1346,13 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC Init (RawHide.HC:511)
-    public final func f720_Init(_ t: HTask) throws {
+    public final func f725_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 513 // RawHide.HC:513
             try tick(t)
-            try f707_RiverNew(t)
+            try f712_RiverNew(t)
             ln = 514 // RawHide.HC:514
             try st1(g_rd_lock, 0)
             ln = 515 // RawHide.HC:515
@@ -1368,14 +1367,14 @@ public final class N_Demo_Games_RawHide: NativeModule {
             try st8(g_a, t1)
             ln = 518 // RawHide.HC:518
             try tick(t)
-            try f719_ReInit(t)
+            try f724_ReInit(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Init", ln) }
     }
 
     /// HolyC CleanUp (RawHide.HC:521)
-    public final func f721_CleanUp(_ t: HTask) throws {
+    public final func f726_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1386,17 +1385,17 @@ public final class N_Demo_Games_RawHide: NativeModule {
             _ = try nat(t, n_Free, try push1(t, ld8(g_a)))
             ln = 525 // RawHide.HC:525
             try tick(t)
-            try f710_RiverDropsDel(t)
+            try f715_RiverDropsDel(t)
             ln = 526 // RawHide.HC:526
             try tick(t)
-            try f709_RiverDel(t)
+            try f714_RiverDel(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "CleanUp", ln) }
     }
 
     /// HolyC RawHide (RawHide.HC:529)
-    public final func f722_RawHide(_ t: HTask) throws {
+    public final func f727_RawHide(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1408,10 +1407,10 @@ public final class N_Demo_Games_RawHide: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 533 // RawHide.HC:533
             try tick(t)
-            _ = try P.f507_MenuPush(t, s7)
+            _ = try P.f512_MenuPush(t, s7)
             ln = 542 // RawHide.HC:542
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065870, 0, s8, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065875, 0, s8, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 544 // RawHide.HC:544
             try tick(t)
@@ -1432,13 +1431,13 @@ public final class N_Demo_Games_RawHide: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 557 // RawHide.HC:557
             try tick(t)
-            try f720_Init(t)
+            try f725_Init(t)
             ln = 558 // RawHide.HC:558
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065869, ld8(P.g_Fs), s10, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065874, ld8(P.g_Fs), s10, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 559 // RawHide.HC:559
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065865)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065870)
             ln = 560 // RawHide.HC:560
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -1465,7 +1464,7 @@ public final class N_Demo_Games_RawHide: NativeModule {
                                     case 10:
                                         ln = 572 // RawHide.HC:572
                                         try tick(t)
-                                        try f719_ReInit(t)
+                                        try f724_ReInit(t)
                                     case 27, 28:
                                         ln = 576 // RawHide.HC:576
                                         break skip_0
@@ -1496,10 +1495,10 @@ public final class N_Demo_Games_RawHide: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 586 // RawHide.HC:586
             try tick(t)
-            try f721_CleanUp(t)
+            try f726_CleanUp(t)
             ln = 587 // RawHide.HC:587
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 588 // RawHide.HC:588
             _ = try nat(t, n_RegWrite, try push3(t, s1, s11, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1509,13 +1508,13 @@ public final class N_Demo_Games_RawHide: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/RawHide.HC#3 (RawHide.HC:591)
-    @discardableResult public final func f723_init_C__Demo_Games_RawHide_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f728_init_C__Demo_Games_RawHide_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 591 // RawHide.HC:591
             try tick(t)
-            try f722_RawHide(t)
+            try f727_RawHide(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/RawHide.HC#3", ln) }
@@ -1524,33 +1523,33 @@ public final class N_Demo_Games_RawHide: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_RawHide_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_RawHide_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: return try f706_init_C__Demo_Games_RawHide_HC_2(t)
-        case 707: try f707_RiverNew(t); return 0
-        case 708: try f708_RiverMake(t); return 0
-        case 709: try f709_RiverDel(t); return 0
-        case 710: try f710_RiverDropsDel(t); return 0
-        case 711: try f711_RiverDropsNext(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 712: try f712_RiverDropsDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 713: try f713_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 714: try f714_BuddySel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 715: try f715_RedrawGate(t); return 0
-        case 716: return try f716_CheckMap(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 717: try f717_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 718: try f718_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 719: try f719_ReInit(t); return 0
-        case 720: try f720_Init(t); return 0
-        case 721: try f721_CleanUp(t); return 0
-        case 722: try f722_RawHide(t); return 0
-        case 723: return try f723_init_C__Demo_Games_RawHide_HC_3(t)
+        case 708: return try f708_init_C__Demo_Games_RawHide_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_RawHide_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: return try f711_init_C__Demo_Games_RawHide_HC_2(t)
+        case 712: try f712_RiverNew(t); return 0
+        case 713: try f713_RiverMake(t); return 0
+        case 714: try f714_RiverDel(t); return 0
+        case 715: try f715_RiverDropsDel(t); return 0
+        case 716: try f716_RiverDropsNext(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 717: try f717_RiverDropsDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 718: try f718_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 719: try f719_BuddySel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 720: try f720_RedrawGate(t); return 0
+        case 721: return try f721_CheckMap(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 722: try f722_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 723: try f723_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 724: try f724_ReInit(t); return 0
+        case 725: try f725_Init(t); return 0
+        case 726: try f726_CleanUp(t); return 0
+        case 727: try f727_RawHide(t); return 0
+        case 728: return try f728_init_C__Demo_Games_RawHide_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/RawHide.HC#0", 704: "$init:C:/Demo/Games/RawHide.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "$init:C:/Demo/Games/RawHide.HC#2", 707: "RiverNew", 708: "RiverMake", 709: "RiverDel", 710: "RiverDropsDel", 711: "RiverDropsNext", 712: "RiverDropsDraw", 713: "DrawIt", 714: "BuddySel", 715: "RedrawGate", 716: "CheckMap", 717: "AnimateTask", 718: "SongTask", 719: "ReInit", 720: "Init", 721: "CleanUp", 722: "RawHide", 723: "$init:C:/Demo/Games/RawHide.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/RawHide.HC#0", 709: "$init:C:/Demo/Games/RawHide.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "$init:C:/Demo/Games/RawHide.HC#2", 712: "RiverNew", 713: "RiverMake", 714: "RiverDel", 715: "RiverDropsDel", 716: "RiverDropsNext", 717: "RiverDropsDraw", 718: "DrawIt", 719: "BuddySel", 720: "RedrawGate", 721: "CheckMap", 722: "AnimateTask", 723: "SongTask", 724: "ReInit", 725: "Init", 726: "CleanUp", 727: "RawHide", 728: "$init:C:/Demo/Games/RawHide.HC#3"]
     private static let FILES: [String] = ["C:/Demo/Games/RawHide.HC"]
     public override var files: [String] { N_Demo_Games_RawHide.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_RawHide.DEFINED.contains(index) }

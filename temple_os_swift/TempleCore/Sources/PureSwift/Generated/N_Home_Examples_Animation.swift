@@ -37,7 +37,7 @@ public final class N_Home_Examples_Animation: NativeModule {
     }
 
     /// HolyC DrawIt (Animation.HC:6)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -66,7 +66,7 @@ public final class N_Home_Examples_Animation: NativeModule {
                 ln = 14 // Animation.HC:14
                 let t5: Double = d(try nat(t, n_Sin, try push1(t, bits(((l16_t * 3.0) + Double(l24_i))))))
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, l32_x, l40_y, f2i((10.0 + (5.0 * t5))), 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, l32_x, l40_y, f2i((10.0 + (5.0 * t5))), 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 10 // Animation.HC:10
                 l24_i = (l24_i &+ 1)
                 try tick(t)
@@ -76,7 +76,7 @@ public final class N_Home_Examples_Animation: NativeModule {
             ln = 17 // Animation.HC:17
             try tick(t)
             let vb0 = try push1(t, bits(l16_t))
-            _ = try P.f369_GrPrint(t, p1_dc, 8, 8, s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 8, 8, s0, vb0, 1)
             t.sp = vb0
             t.depth -= 1
             return
@@ -84,7 +84,7 @@ public final class N_Home_Examples_Animation: NativeModule {
     }
 
     /// HolyC Animation (Animation.HC:20)
-    public final func f704_Animation(_ t: HTask) throws {
+    public final func f709_Animation(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -97,7 +97,7 @@ public final class N_Home_Examples_Animation: NativeModule {
             ln = 24 // Animation.HC:24
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 25 // Animation.HC:25
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 26 // Animation.HC:26
             _ = try nat(t, n_GetChar, try push3(t, 0, 0, 0))
             ln = 27 // Animation.HC:27
@@ -109,13 +109,13 @@ public final class N_Home_Examples_Animation: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Animation.HC#0 (Animation.HC:30)
-    @discardableResult public final func f705_init_C__Home_Examples_Animation_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Examples_Animation_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 30 // Animation.HC:30
             try tick(t)
-            try f704_Animation(t)
+            try f709_Animation(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Home/Examples/Animation.HC#0", ln) }
@@ -124,15 +124,15 @@ public final class N_Home_Examples_Animation: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_Animation(t); return 0
-        case 705: return try f705_init_C__Home_Examples_Animation_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_Animation(t); return 0
+        case 710: return try f710_init_C__Home_Examples_Animation_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "Animation", 705: "$init:C:/Home/Examples/Animation.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "Animation", 710: "$init:C:/Home/Examples/Animation.HC#0"]
     private static let FILES: [String] = ["C:/Home/Examples/Animation.HC"]
     public override var files: [String] { N_Home_Examples_Animation.FILES }
     public override func defines(_ index: Int) -> Bool { N_Home_Examples_Animation.DEFINED.contains(index) }

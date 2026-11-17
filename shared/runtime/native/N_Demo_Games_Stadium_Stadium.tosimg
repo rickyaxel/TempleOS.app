@@ -18,15 +18,15 @@ s 180428 433a2f44656d6f2f47616d65732f5374616469756d
 s 180450 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b7d
 s 1804a8 416e696d617465
 s 1804c0 5374616469756d4247
-fn 703 DrawIt (U0;*$CTask,*$CDC;-)
-fn 704 AnimateTask (U0;I64;-)
-fn 705 Init (U0;;-)
-fn 706 Stadium (U0;;-)
-fn 707 $init:C:/Demo/Games/Stadium/Stadium.HC#0 (I64;;-)
-sym f AnimateTask 704 (U0;I64;-)
-sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
-sym f Init 705 (U0;;-)
-sym f Stadium 706 (U0;;-)
+fn 708 DrawIt (U0;*$CTask,*$CDC;-)
+fn 709 AnimateTask (U0;I64;-)
+fn 710 Init (U0;;-)
+fn 711 Stadium (U0;;-)
+fn 712 $init:C:/Demo/Games/Stadium/Stadium.HC#0 (I64;;-)
+sym f AnimateTask 709 (U0;I64;-)
+sym f DrawIt 708 (U0;*$CTask,*$CDC;-)
+sym f Init 710 (U0;;-)
+sym f Stadium 711 (U0;;-)
 sym g background 17fd38 *$CDC
 sym g ball_t 17fe90 F64
 sym g hit 17fe10 [10]Bool
@@ -37,5 +37,5 @@ sym g target_y 17fec0 I64
 sym g x 17fd50 [10]I64
 sym g y 17fdb0 [10]I64
 sym g é 17fe30 [10]F64
-init 707
+init 712
 unit C:/Demo/Games/Stadium/Stadium.HC#1

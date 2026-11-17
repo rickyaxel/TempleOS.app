@@ -150,7 +150,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/X-Caliber/Run.HC#0 (Run.HC:1) */
-    fun f703_init_C__Apps_X_Caliber_Run_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_X_Caliber_Run_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -164,7 +164,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/X-Caliber/Run.HC#1 (Run.HC:3) */
-    fun f704_init_C__Apps_X_Caliber_Run_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_X_Caliber_Run_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -178,7 +178,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawCtrlPanelCtrl (XCCtrls.HC:19) */
-    fun f705_DrawCtrlPanelCtrl(t: Task, a0: Long, a1: Long) {
+    fun f710_DrawCtrlPanelCtrl(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -201,10 +201,10 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st4((p0_dc + 160L), 0L)
             ln = 2097185 // XCCtrls.HC:33
             tick(t)
-            P.f396_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 33L), ((ld8((p1_c + 56L)) + 12L) + 33L), (ld8((p1_c + 40L)) + 33L), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 33L), ((ld8((p1_c + 56L)) + 12L) + 33L), (ld8((p1_c + 40L)) + 33L), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L), 1L, 0L)
             ln = 2097188 // XCCtrls.HC:36
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 66L) + 1L), ((ld8((p1_c + 56L)) + 12L) + 33L), ((ld8((p1_c + 40L)) + 66L) + 1L), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 66L) + 1L), ((ld8((p1_c + 56L)) + 12L) + 33L), ((ld8((p1_c + 40L)) + 66L) + 1L), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L), 1L, 0L)
             ln = 2097192 // XCCtrls.HC:40
             st4((p0_dc + 160L), 0L)
             ln = 2097193 // XCCtrls.HC:41
@@ -224,29 +224,29 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 2097206 // XCCtrls.HC:54
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p0_dc, (divs(((ld8((p1_c + 40L)) + ld8((p1_c + 48L))) + 1L), 2L) - divs(72L, 2L)), (((ld8((p1_c + 56L)) + 2L) + 3L) + divs(25L, 2L)), s1, vb0, 0)
+            P.f370_GrPrint(t, p0_dc, (divs(((ld8((p1_c + 40L)) + ld8((p1_c + 48L))) + 1L), 2L) - divs(72L, 2L)), (((ld8((p1_c + 56L)) + 2L) + 3L) + divs(25L, 2L)), s1, vb0, 0)
             t.sp = vb0
             ln = 2097209 // XCCtrls.HC:57
             tick(t)
             val vb1 = push0(t)
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - divs(32L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) - 8L) - 2L), s2, vb1, 0)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - divs(32L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) - 8L) - 2L), s2, vb1, 0)
             t.sp = vb1
             ln = 2097212 // XCCtrls.HC:60
             tick(t)
             val vb2 = push0(t)
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 1L) - divs(32L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) - 8L) - 2L), s3, vb2, 0)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 1L) - divs(32L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) - 8L) - 2L), s3, vb2, 0)
             t.sp = vb2
             ln = 2097215 // XCCtrls.HC:63
             st4((p0_dc + 160L), 12L)
             ln = 2097216 // XCCtrls.HC:64
             tick(t)
             val vb3 = push1(t, divs((ld8(l16_s) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - divs(8L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) + 3L), s4, vb3, 1)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - divs(8L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) + 3L), s4, vb3, 1)
             t.sp = vb3
             ln = 2097219 // XCCtrls.HC:67
             tick(t)
             val vb4 = push1(t, divs((ld8((l16_s + 8L)) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 1L) - divs(8L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) + 3L), s4, vb4, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 1L) - divs(8L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) + 3L), s4, vb4, 1)
             t.sp = vb4
             ln = 2097222 // XCCtrls.HC:70
             nat(t, n_GrRect, push(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - 3L), ((((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L) - ld8(l16_s)) - 2L), 7L, 5L))
@@ -298,7 +298,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC UpdateDerivedCtrlPanelCtrl (XCCtrls.HC:103) */
-    fun f706_UpdateDerivedCtrlPanelCtrl(t: Task, a0: Long) {
+    fun f711_UpdateDerivedCtrlPanelCtrl(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -328,7 +328,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC LeftClickCtrlPanel (XCCtrls.HC:116) */
-    fun f707_LeftClickCtrlPanel(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f712_LeftClickCtrlPanel(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -366,7 +366,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CtrlPanelNew (XCCtrls.HC:134) */
-    fun f708_CtrlPanelNew(t: Task): Long {
+    fun f713_CtrlPanelNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -385,11 +385,11 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 2097293 // XCCtrls.HC:141
             st8((l0_c + 104L), g_ctrl_panel)
             ln = 2097294 // XCCtrls.HC:142
-            st8((l0_c + 120L), 9223090561878065857L)
+            st8((l0_c + 120L), 9223090561878065862L)
             ln = 2097295 // XCCtrls.HC:143
-            st8((l0_c + 136L), 9223090561878065859L)
+            st8((l0_c + 136L), 9223090561878065864L)
             ln = 2097296 // XCCtrls.HC:144
-            st8((l0_c + 112L), 9223090561878065858L)
+            st8((l0_c + 112L), 9223090561878065863L)
             ln = 2097297 // XCCtrls.HC:145
             tick(t)
             P.f153_QueIns(t, l0_c, ld8((ld8(P.g_Fs) + 928L)))
@@ -405,7 +405,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CtrlPanelDel (XCCtrls.HC:150) */
-    fun f709_CtrlPanelDel(t: Task, a0: Long) {
+    fun f714_CtrlPanelDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -421,7 +421,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/X-Caliber/Run.HC#2 (Run.HC:3) */
-    fun f710_init_C__Apps_X_Caliber_Run_HC_2(t: Task): Long {
+    fun f715_init_C__Apps_X_Caliber_Run_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -435,7 +435,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/X-Caliber/Run.HC#3 (Run.HC:7) */
-    fun f711_init_C__Apps_X_Caliber_Run_HC_3(t: Task): Long {
+    fun f716_init_C__Apps_X_Caliber_Run_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -449,7 +449,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f712_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f717_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -459,7 +459,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CheckOverlap (X-Caliber.HC:118) */
-    fun f713_CheckOverlap(t: Task): Long {
+    fun f718_CheckOverlap(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -511,7 +511,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MissileNew (X-Caliber.HC:138) */
-    fun f714_MissileNew(t: Task, a0: Long, a1: Long) {
+    fun f719_MissileNew(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -652,7 +652,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ShipNew (X-Caliber.HC:197) */
-    fun f715_ShipNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f720_ShipNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -782,10 +782,10 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         }
                         ln = 3145985 // X-Caliber.HC:257
                         tick(t)
-                        f714_MissileNew(t, l32_tmpsp, 0L)
+                        f719_MissileNew(t, l32_tmpsp, 0L)
                         ln = 3145986 // X-Caliber.HC:258
                         tick(t)
-                        f714_MissileNew(t, l32_tmpsp, 1L)
+                        f719_MissileNew(t, l32_tmpsp, 1L)
                         ln = 3145987 // X-Caliber.HC:259
                         st8(g_remaining, 0L)
                     }
@@ -981,7 +981,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MissileDel (X-Caliber.HC:354) */
-    fun f716_MissileDel(t: Task, a0: Long) {
+    fun f721_MissileDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1017,7 +1017,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ShipDel (X-Caliber.HC:367) */
-    fun f717_ShipDel(t: Task, a0: Long) {
+    fun f722_ShipDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1053,7 +1053,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             loop4@ while ((l8_i < 2L)) {
                 ln = 3146104 // X-Caliber.HC:376
                 tick(t)
-                f716_MissileDel(t, ((p0_tmpsp + 2728L) + (l8_i * 826L)))
+                f721_MissileDel(t, ((p0_tmpsp + 2728L) + (l8_i * 826L)))
                 ln = 3146103 // X-Caliber.HC:375
                 l8_i = (l8_i + 1L)
                 tick(t)
@@ -1072,7 +1072,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC PlaceShip (X-Caliber.HC:382) */
-    fun f718_PlaceShip(t: Task, a0: Long) {
+    fun f723_PlaceShip(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1080,7 +1080,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             var l8_tmpsp: Long = 0L
             ln = 3146113 // X-Caliber.HC:385
             tick(t)
-            val t0: Long = f713_CheckOverlap(t)
+            val t0: Long = f718_CheckOverlap(t)
             if ((t0 != 0L)) {
                 ln = 3146114 // X-Caliber.HC:386
                 t.depth--
@@ -1094,15 +1094,15 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 val t3: Long = (mods(t1, (ld8((ld8(P.g_Fs) + 248L)) - 20L)) + 10L)
                 val t2: Long = nat(t, n_RandU16, push0(t))
                 tick(t)
-                val t4: Long = f715_ShipNew(t, (mods(t2, (ld8((ld8(P.g_Fs) + 224L)) - 20L)) + 10L), t3, p0_type)
+                val t4: Long = f720_ShipNew(t, (mods(t2, (ld8((ld8(P.g_Fs) + 224L)) - 20L)) + 10L), t3, p0_type)
                 l8_tmpsp = t4
                 ln = 3146118 // X-Caliber.HC:390
                 tick(t)
-                val t5: Long = f713_CheckOverlap(t)
+                val t5: Long = f718_CheckOverlap(t)
                 if ((t5 != 0L)) {
                     ln = 3146119 // X-Caliber.HC:391
                     tick(t)
-                    f717_ShipDel(t, l8_tmpsp)
+                    f722_ShipDel(t, l8_tmpsp)
                 } else {
                     ln = 3146121 // X-Caliber.HC:393
                     break@loop0
@@ -1115,7 +1115,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Tweaked (X-Caliber.HC:399) */
-    fun f719_Tweaked(t: Task): Long {
+    fun f724_Tweaked(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1186,7 +1186,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC AllDel (X-Caliber.HC:418) */
-    fun f720_AllDel(t: Task, a0: Long) {
+    fun f725_AllDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1204,7 +1204,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 l16_tmpsp1 = ld8(l8_tmpsp)
                 ln = 3146153 // X-Caliber.HC:425
                 tick(t)
-                f717_ShipDel(t, l8_tmpsp)
+                f722_ShipDel(t, l8_tmpsp)
                 ln = 3146154 // X-Caliber.HC:426
                 l8_tmpsp = l16_tmpsp1
                 tick(t)
@@ -1216,14 +1216,14 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f156_QueDel(t, g_shot_head, 1L)
             ln = 3146158 // X-Caliber.HC:430
             tick(t)
-            P.f455_ODEDel(t, p0_ode)
+            P.f460_ODEDel(t, p0_ode)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "AllDel", ln) }
     }
 
     /** HolyC LaserPlot (X-Caliber.HC:433) */
-    fun f721_LaserPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f726_LaserPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1253,7 +1253,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (X-Caliber.HC:446) */
-    fun f722_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f727_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1290,7 +1290,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 3146191 // X-Caliber.HC:463
             tick(t)
             val vb5 = push3(t, ld8(g_level), ld8(g_score), ld8(g_best_score))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s9, vb5, 3)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s9, vb5, 3)
             t.sp = vb5
             ln = 3146192 // X-Caliber.HC:464
             if ((ld1u(g_game_over) != 0L)) {
@@ -1301,7 +1301,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     ln = 3146194 // X-Caliber.HC:466
                     tick(t)
                     val vb6 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, divs((ld8((p0_task + 224L)) - 72L), 2L), divs((ld8((p0_task + 248L)) - 8L), 2L), s10, vb6, 0)
+                    P.f370_GrPrint(t, p1_dc, divs((ld8((p0_task + 224L)) - 72L), 2L), divs((ld8((p0_task + 248L)) - 8L), 2L), s10, vb6, 0)
                     t.sp = vb6
                 }
             } else {
@@ -1314,7 +1314,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         ln = 3146198 // X-Caliber.HC:470
                         tick(t)
                         val vb7 = push1(t, ld8(g_level))
-                        P.f369_GrPrint(t, p1_dc, divs((ld8((p0_task + 224L)) - 64L), 2L), (divs((ld8((p0_task + 248L)) - 8L), 2L) + 50L), s11, vb7, 1)
+                        P.f370_GrPrint(t, p1_dc, divs((ld8((p0_task + 224L)) - 64L), 2L), (divs((ld8((p0_task + 248L)) - 8L), 2L) + 50L), s11, vb7, 1)
                         t.sp = vb7
                     }
                 }
@@ -1361,7 +1361,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     st4((p1_dc + 160L), ld8((l184_tmpsps + 88L)))
                     ln = 3146221 // X-Caliber.HC:493
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i(ldf((ld8((l184_tmpsps + 16L)) + 56L))), f2i(ldf((ld8((l184_tmpsps + 16L)) + 64L))), f2i(ldf((ld8((l184_tmpsps + 24L)) + 56L))), f2i(ldf((ld8((l184_tmpsps + 24L)) + 64L))), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i(ldf((ld8((l184_tmpsps + 16L)) + 56L))), f2i(ldf((ld8((l184_tmpsps + 16L)) + 64L))), f2i(ldf((ld8((l184_tmpsps + 24L)) + 56L))), f2i(ldf((ld8((l184_tmpsps + 24L)) + 64L))), 1L, 0L)
                 }
                 ln = 3146224 // X-Caliber.HC:496
                 l184_tmpsps = ld8(l184_tmpsps)
@@ -1394,7 +1394,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                             }
                             ln = 3146238 // X-Caliber.HC:510
                             tick(t)
-                            P.f397_GrCircle(t, p1_dc, f2i(ldf(((l56_tmpmi + 40L) + 56L))), f2i(ldf(((l56_tmpmi + 40L) + 64L))), l16_i, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                            P.f398_GrCircle(t, p1_dc, f2i(ldf(((l56_tmpmi + 40L) + 56L))), f2i(ldf(((l56_tmpmi + 40L) + 64L))), l16_i, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                             ln = 3146233 // X-Caliber.HC:505
                             l16_i = (l16_i + 1L)
                             tick(t)
@@ -1404,7 +1404,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         val t4: Double = f(nat(t, n_Arg, push2(t, bits((ldf(((l56_tmpmi + 40L) + 56L)) - ldf(((l56_tmpmi + 177L) + 56L)))), bits((ldf(((l56_tmpmi + 40L) + 64L)) - ldf(((l56_tmpmi + 177L) + 64L)))))))
                         ln = 3146241 // X-Caliber.HC:513
                         tick(t)
-                        P.f445_Sprite3ZB(t, p1_dc, f2i(((ldf(((l56_tmpmi + 40L) + 56L)) + ldf(((l56_tmpmi + 177L) + 56L))) / 2.0)), f2i(((ldf(((l56_tmpmi + 40L) + 64L)) + ldf(((l56_tmpmi + 177L) + 64L))) / 2.0)), 0L, ld8((l56_tmpmi + 794L)), t4)
+                        P.f450_Sprite3ZB(t, p1_dc, f2i(((ldf(((l56_tmpmi + 40L) + 56L)) + ldf(((l56_tmpmi + 177L) + 56L))) / 2.0)), f2i(((ldf(((l56_tmpmi + 40L) + 64L)) + ldf(((l56_tmpmi + 177L) + 64L))) / 2.0)), 0L, ld8((l56_tmpmi + 794L)), t4)
                     }
                 }
                 ln = 3146246 // X-Caliber.HC:518
@@ -1517,13 +1517,13 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                     P.f138_D3AddEqu(t, t13, (((l40_tmpsp + 40L) + 411L) + 56L))
                                     ln = 3146284 // X-Caliber.HC:556
                                     tick(t)
-                                    P.f396_GrLine(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 137L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 137L) + 64L))), f2i(ldf((fp + 88))), f2i(ldf(((fp + 88) + 8L))), 1L, 0L)
+                                    P.f397_GrLine(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 137L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 137L) + 64L))), f2i(ldf((fp + 88))), f2i(ldf(((fp + 88) + 8L))), 1L, 0L)
                                     ln = 3146285 // X-Caliber.HC:557
                                     val t14: Double = f(nat(t, n_Arg, push2(t, bits(ldf((fp + 64))), bits(ldf(((fp + 64) + 8L))))))
                                     l32_arg = t14
                                     ln = 3146286 // X-Caliber.HC:558
                                     tick(t)
-                                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 411L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 411L) + 64L))), 0L, b1, l32_arg)
+                                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 411L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 411L) + 64L))), 0L, b1, l32_arg)
                                 }
                                 ln = 3146289 // X-Caliber.HC:561
                                 if (((ld4u((((l40_tmpsp + 1136L) + 480L) + 48L)) and 1L) == 0L)) {
@@ -1536,13 +1536,13 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                     P.f138_D3AddEqu(t, t15, (((l40_tmpsp + 40L) + 548L) + 56L))
                                     ln = 3146292 // X-Caliber.HC:564
                                     tick(t)
-                                    P.f396_GrLine(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 274L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 274L) + 64L))), f2i(ldf((fp + 112))), f2i(ldf(((fp + 112) + 8L))), 1L, 0L)
+                                    P.f397_GrLine(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 274L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 274L) + 64L))), f2i(ldf((fp + 112))), f2i(ldf(((fp + 112) + 8L))), 1L, 0L)
                                     ln = 3146293 // X-Caliber.HC:565
                                     val t16: Double = f(nat(t, n_Arg, push2(t, bits(ldf((fp + 64))), bits(ldf(((fp + 64) + 8L))))))
                                     l32_arg = t16
                                     ln = 3146294 // X-Caliber.HC:566
                                     tick(t)
-                                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 548L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 548L) + 64L))), 0L, b2, l32_arg)
+                                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 548L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 548L) + 64L))), 0L, b2, l32_arg)
                                 }
                                 ln = 3146297 // X-Caliber.HC:569
                                 val t17: Double = f(nat(t, n_tS, push0(t)))
@@ -1586,37 +1586,37 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                 if (((ld4u((((l40_tmpsp + 1136L) + 288L) + 48L)) and 1L) == 0L)) {
                                                     ln = 3146305 // X-Caliber.HC:577
                                                     tick(t)
-                                                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 411L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 411L) + 64L))), 0L, l200_img, l32_arg)
+                                                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 411L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 411L) + 64L))), 0L, l200_img, l32_arg)
                                                 }
                                                 ln = 3146306 // X-Caliber.HC:578
                                                 if (((ld4u((((l40_tmpsp + 1136L) + 480L) + 48L)) and 1L) == 0L)) {
                                                     ln = 3146307 // X-Caliber.HC:579
                                                     tick(t)
-                                                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 548L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 548L) + 64L))), 0L, l200_img, l32_arg)
+                                                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 548L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 548L) + 64L))), 0L, l200_img, l32_arg)
                                                 }
                                             } while (false)
                                             ln = 3146309 // X-Caliber.HC:581
                                             if (((ld4u((((l40_tmpsp + 1136L) + 96L) + 48L)) and 1L) == 0L)) {
                                                 ln = 3146310 // X-Caliber.HC:582
                                                 tick(t)
-                                                P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 137L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 137L) + 64L))), 0L, l200_img, l32_arg)
+                                                P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 137L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 137L) + 64L))), 0L, l200_img, l32_arg)
                                             }
                                             ln = 3146311 // X-Caliber.HC:583
                                             if (((ld4u((((l40_tmpsp + 1136L) + 192L) + 48L)) and 1L) == 0L)) {
                                                 ln = 3146312 // X-Caliber.HC:584
                                                 tick(t)
-                                                P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 274L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 274L) + 64L))), 0L, l200_img, l32_arg)
+                                                P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + 274L) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + 274L) + 64L))), 0L, l200_img, l32_arg)
                                             }
                                         } while (false)
                                         ln = 3146314 // X-Caliber.HC:586
                                         tick(t)
-                                        P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(((l40_tmpsp + 40L) + 56L))), f2i(ldf(((l40_tmpsp + 40L) + 64L))), 0L, l200_img, l32_arg)
+                                        P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(((l40_tmpsp + 40L) + 56L))), f2i(ldf(((l40_tmpsp + 40L) + 64L))), 0L, l200_img, l32_arg)
                                         ln = 3146315 // X-Caliber.HC:587
                                         break@switch13_12
                                     } while (false)
                                     ln = 3146317 // X-Caliber.HC:589
                                     tick(t)
-                                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(((l40_tmpsp + 40L) + 56L))), f2i(ldf(((l40_tmpsp + 40L) + 64L))), 0L, b5, l32_arg)
+                                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(((l40_tmpsp + 40L) + 56L))), f2i(ldf(((l40_tmpsp + 40L) + 64L))), 0L, b5, l32_arg)
                                     ln = 3146318 // X-Caliber.HC:590
                                     if (((ld1u((l40_tmpsp + 4380L)) != 0L) && (ld1u((l40_tmpsp + 4382L)) == 0L))) {
                                         ln = 3146319 // X-Caliber.HC:591
@@ -1660,14 +1660,14 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                         val t22: Double = f(nat(t, n_tS, push0(t)))
                                         val t23: Double = f(nat(t, n_Sin, push1(t, bits((t22 * 2.0)))))
                                         tick(t)
-                                        P.f445_Sprite3ZB(t, p1_dc, f2i(l168_x), f2i(l176_y), 0L, b6, (l32_arg + (0.75 * t23)))
+                                        P.f450_Sprite3ZB(t, p1_dc, f2i(l168_x), f2i(l176_y), 0L, b6, (l32_arg + (0.75 * t23)))
                                     }
                                 } else {
                                     ln = 3146348 // X-Caliber.HC:620
                                     if ((ld1u((g_ctrl_panel + 24L)) != 0L)) {
                                         ln = 3146349 // X-Caliber.HC:621
                                         tick(t)
-                                        val t24: Long = f719_Tweaked(t)
+                                        val t24: Long = f724_Tweaked(t)
                                         st8((l40_tmpsp + 2712L), t24)
                                         if ((t24 != 0L)) {
                                             ln = 3146350 // X-Caliber.HC:622
@@ -1689,15 +1689,15 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 st4((p1_dc + 160L), 5L)
                                 ln = 3146359 // X-Caliber.HC:631
                                 tick(t)
-                                P.f397_GrCircle(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 64L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 112L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                                P.f398_GrCircle(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 64L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 112L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                                 ln = 3146360 // X-Caliber.HC:632
                                 tick(t)
-                                P.f387_GrFloodFill(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 56L))), f2i((ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 64L)) + 2.0)), 1L, 0L, 0L)
+                                P.f388_GrFloodFill(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 56L))), f2i((ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 64L)) + 2.0)), 1L, 0L, 0L)
                                 ln = 3146361 // X-Caliber.HC:633
                                 st4((p1_dc + 160L), 15L)
                                 ln = 3146362 // X-Caliber.HC:634
                                 tick(t)
-                                P.f397_GrCircle(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 64L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 112L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                                P.f398_GrCircle(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 64L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 112L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                                 ln = 3146357 // X-Caliber.HC:629
                                 l16_i = (l16_i + 1L)
                                 tick(t)
@@ -1732,19 +1732,19 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         l32_arg = t30
                         ln = 3146373 // X-Caliber.HC:645
                         tick(t)
-                        P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(((l40_tmpsp + 40L) + 56L))), f2i(ldf(((l40_tmpsp + 40L) + 64L))), 0L, l200_img, l32_arg)
+                        P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(((l40_tmpsp + 40L) + 56L))), f2i(ldf(((l40_tmpsp + 40L) + 64L))), 0L, l200_img, l32_arg)
                         ln = 3146374 // X-Caliber.HC:646
                         val t31: Double = f(nat(t, n_Arg, push2(t, bits(ldf((fp + 88))), bits(ldf(((fp + 88) + 8L))))))
                         l32_arg = t31
                         ln = 3146375 // X-Caliber.HC:647
                         tick(t)
-                        P.f445_Sprite3ZB(t, p1_dc, f2i((ldf(((l40_tmpsp + 40L) + 56L)) + ldf((fp + 88)))), f2i((ldf(((l40_tmpsp + 40L) + 64L)) + ldf(((fp + 88) + 8L)))), 0L, b9, l32_arg)
+                        P.f450_Sprite3ZB(t, p1_dc, f2i((ldf(((l40_tmpsp + 40L) + 56L)) + ldf((fp + 88)))), f2i((ldf(((l40_tmpsp + 40L) + 64L)) + ldf(((fp + 88) + 8L)))), 0L, b9, l32_arg)
                         ln = 3146377 // X-Caliber.HC:649
                         val t32: Double = f(nat(t, n_Arg, push2(t, bits(ldf((fp + 112))), bits(ldf(((fp + 112) + 8L))))))
                         l32_arg = t32
                         ln = 3146378 // X-Caliber.HC:650
                         tick(t)
-                        P.f445_Sprite3ZB(t, p1_dc, f2i((ldf(((l40_tmpsp + 40L) + 56L)) + ldf((fp + 112)))), f2i((ldf(((l40_tmpsp + 40L) + 64L)) + ldf(((fp + 112) + 8L)))), 0L, b10, l32_arg)
+                        P.f450_Sprite3ZB(t, p1_dc, f2i((ldf(((l40_tmpsp + 40L) + 56L)) + ldf((fp + 112)))), f2i((ldf(((l40_tmpsp + 40L) + 64L)) + ldf(((fp + 112) + 8L)))), 0L, b10, l32_arg)
                         ln = 3146380 // X-Caliber.HC:652
                         break@switch12_27
                     } while (false)
@@ -1757,7 +1757,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         if ((ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 104L)) >= 1.0)) {
                             ln = 3146385 // X-Caliber.HC:657
                             tick(t)
-                            P.f397_GrCircle(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 64L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                            P.f398_GrCircle(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 64L))), f2i(ldf((((l40_tmpsp + 40L) + (l16_i * 137L)) + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                         }
                         ln = 3146382 // X-Caliber.HC:654
                         l16_i = (l16_i + 1L)
@@ -1797,7 +1797,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 }
                                 ln = 3146398 // X-Caliber.HC:670
                                 tick(t)
-                                P.f397_GrCircle(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l24_j * 137L)) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + (l24_j * 137L)) + 64L))), l16_i, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                                P.f398_GrCircle(t, p1_dc, f2i(ldf((((l40_tmpsp + 40L) + (l24_j * 137L)) + 56L))), f2i(ldf((((l40_tmpsp + 40L) + (l24_j * 137L)) + 64L))), l16_i, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                                 ln = 3146393 // X-Caliber.HC:665
                                 l16_i = (l16_i + 1L)
                                 tick(t)
@@ -1827,18 +1827,18 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     st4((p1_dc + 160L), 14L)
                     ln = 3146411 // X-Caliber.HC:683
                     tick(t)
-                    P.f397_GrCircle(t, p1_dc, f2i(ldf(((l48_tmps + 40L) + 56L))), f2i(ldf(((l48_tmps + 40L) + 64L))), f2i(ldf((l48_tmps + 16L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                    P.f398_GrCircle(t, p1_dc, f2i(ldf(((l48_tmps + 40L) + 56L))), f2i(ldf(((l48_tmps + 40L) + 64L))), f2i(ldf((l48_tmps + 16L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                     ln = 3146412 // X-Caliber.HC:684
                     if ((ldf((l48_tmps + 16L)) >= 2.0)) {
                         ln = 3146413 // X-Caliber.HC:685
                         tick(t)
-                        P.f387_GrFloodFill(t, p1_dc, f2i(ldf(((l48_tmps + 40L) + 56L))), f2i(ldf(((l48_tmps + 40L) + 64L))), 1L, 0L, 0L)
+                        P.f388_GrFloodFill(t, p1_dc, f2i(ldf(((l48_tmps + 40L) + 56L))), f2i(ldf(((l48_tmps + 40L) + 64L))), 1L, 0L, 0L)
                     }
                     ln = 3146414 // X-Caliber.HC:686
                     st4((p1_dc + 160L), 10L)
                     ln = 3146415 // X-Caliber.HC:687
                     tick(t)
-                    P.f397_GrCircle(t, p1_dc, f2i(ldf(((l48_tmps + 40L) + 56L))), f2i(ldf(((l48_tmps + 40L) + 64L))), f2i(ldf((l48_tmps + 16L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                    P.f398_GrCircle(t, p1_dc, f2i(ldf(((l48_tmps + 40L) + 56L))), f2i(ldf(((l48_tmps + 40L) + 64L))), f2i(ldf((l48_tmps + 16L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 }
                 ln = 3146417 // X-Caliber.HC:689
                 l48_tmps = ld8(l48_tmps)
@@ -1860,7 +1860,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 ln = 3146424 // X-Caliber.HC:696
                 st4((p1_dc + 160L), 9L)
                 ln = 3146425 // X-Caliber.HC:697
-                nat(t, n_Line, push(t, p1_dc, f2i((ldf(((ld8(g_human) + 40L) + 56L)) - (10.0 * ldf((fp + 64))))), f2i((ldf(((ld8(g_human) + 40L) + 64L)) - (10.0 * ldf(((fp + 64) + 8L))))), 0L, f2i((ldf(((ld8(g_human) + 40L) + 56L)) - (800.0 * ldf((fp + 64))))), f2i((ldf(((ld8(g_human) + 40L) + 64L)) - (800.0 * ldf(((fp + 64) + 8L))))), 0L, 9223090561878065873L, 1L, 0L))
+                nat(t, n_Line, push(t, p1_dc, f2i((ldf(((ld8(g_human) + 40L) + 56L)) - (10.0 * ldf((fp + 64))))), f2i((ldf(((ld8(g_human) + 40L) + 64L)) - (10.0 * ldf(((fp + 64) + 8L))))), 0L, f2i((ldf(((ld8(g_human) + 40L) + 56L)) - (800.0 * ldf((fp + 64))))), f2i((ldf(((ld8(g_human) + 40L) + 64L)) - (800.0 * ldf(((fp + 64) + 8L))))), 0L, 9223090561878065878L, 1L, 0L))
             }
             ln = 3146429 // X-Caliber.HC:701
             l56_tmpmi = ld8(g_missile_head)
@@ -1874,11 +1874,11 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     st4((p1_dc + 160L), 12L)
                     ln = 3146433 // X-Caliber.HC:705
                     tick(t)
-                    P.f397_GrCircle(t, p1_dc, f2i(ldf(((l40_tmpsp + 40L) + 56L))), f2i(ldf(((l40_tmpsp + 40L) + 64L))), 10L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                    P.f398_GrCircle(t, p1_dc, f2i(ldf(((l40_tmpsp + 40L) + 56L))), f2i(ldf(((l40_tmpsp + 40L) + 64L))), 10L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                     ln = 3146434 // X-Caliber.HC:706
                     tick(t)
                     val vb8 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, f2i((ldf(((l40_tmpsp + 40L) + 56L)) + 12.0)), f2i((ldf(((l40_tmpsp + 40L) + 64L)) - 4.0)), (l56_tmpmi + 821L), vb8, 0)
+                    P.f370_GrPrint(t, p1_dc, f2i((ldf(((l40_tmpsp + 40L) + 56L)) + 12.0)), f2i((ldf(((l40_tmpsp + 40L) + 64L)) - 4.0)), (l56_tmpmi + 821L), vb8, 0)
                     t.sp = vb8
                 }
                 ln = 3146436 // X-Caliber.HC:708
@@ -1892,7 +1892,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Explosion (X-Caliber.HC:712) */
-    fun f723_Explosion(t: Task, a0: Long, a1: Long, a2: Double) {
+    fun f728_Explosion(t: Task, a0: Long, a1: Long, a2: Double) {
         var ln = 0
         try {
             enter(t)
@@ -1948,7 +1948,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC TargetGet (X-Caliber.HC:737) */
-    fun f724_TargetGet(t: Task, a0: Long): Long {
+    fun f729_TargetGet(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2031,7 +2031,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MyDerivative (X-Caliber.HC:764) */
-    fun f725_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f730_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2219,7 +2219,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     loop6@ while ((l32_i < ld8((l192_tmpsp + 24L)))) {
                         ln = 3146551 // X-Caliber.HC:823
                         tick(t)
-                        f723_Explosion(t, ((l192_tmpsp + 40L) + (l32_i * 137L)), 0L, (ldf((((l192_tmpsp + 40L) + (l32_i * 137L)) + 112L)) / 250.0))
+                        f728_Explosion(t, ((l192_tmpsp + 40L) + (l32_i * 137L)), 0L, (ldf((((l192_tmpsp + 40L) + (l32_i * 137L)) + 112L)) / 250.0))
                         ln = 3146550 // X-Caliber.HC:822
                         l32_i = (l32_i + 1L)
                         tick(t)
@@ -2377,7 +2377,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         if ((ld1u((l200_tmpmi + 820L)) != 0L)) {
                             ln = 3146617 // X-Caliber.HC:889
                             tick(t)
-                            f723_Explosion(t, (l200_tmpmi + 40L), (l200_tmpmi + 177L), ldf((l200_tmpmi + 16L)))
+                            f728_Explosion(t, (l200_tmpmi + 40L), (l200_tmpmi + 177L), ldf((l200_tmpmi + 16L)))
                         } else {
                             ln = 3146620 // X-Caliber.HC:892
                             val t50: Long = ld8((l200_tmpmi + 810L))
@@ -2445,7 +2445,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     } else {
                         ln = 3146640 // X-Caliber.HC:912
                         tick(t)
-                        val t65: Long = f724_TargetGet(t, l200_tmpmi)
+                        val t65: Long = f729_TargetGet(t, l200_tmpmi)
                         st8((l200_tmpmi + 810L), t65)
                     }
                 } else {
@@ -2463,7 +2463,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CheckDamage (X-Caliber.HC:919) */
-    fun f726_CheckDamage(t: Task) {
+    fun f731_CheckDamage(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2680,7 +2680,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 if ((t17 > ldf((l24_tmpsp + 2704L)))) {
                                     ln = 3146741 // X-Caliber.HC:1013
                                     tick(t)
-                                    f717_ShipDel(t, l24_tmpsp)
+                                    f722_ShipDel(t, l24_tmpsp)
                                     ln = 3146742 // X-Caliber.HC:1014
                                     st8(g_human, 0L)
                                 }
@@ -2698,13 +2698,13 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                         if ((l0_i == 4L)) {
                                             ln = 3146749 // X-Caliber.HC:1021
                                             tick(t)
-                                            f716_MissileDel(t, (l24_tmpsp + 2728L))
+                                            f721_MissileDel(t, (l24_tmpsp + 2728L))
                                         } else {
                                             ln = 3146750 // X-Caliber.HC:1022
                                             if ((l0_i == 5L)) {
                                                 ln = 3146751 // X-Caliber.HC:1023
                                                 tick(t)
-                                                f716_MissileDel(t, ((l24_tmpsp + 2728L) + 826L))
+                                                f721_MissileDel(t, ((l24_tmpsp + 2728L) + 826L))
                                             }
                                         }
                                     }
@@ -2727,7 +2727,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 if ((t20 > ldf((l24_tmpsp + 2704L)))) {
                                     ln = 3146760 // X-Caliber.HC:1032
                                     tick(t)
-                                    f717_ShipDel(t, l24_tmpsp)
+                                    f722_ShipDel(t, l24_tmpsp)
                                     ln = 3146761 // X-Caliber.HC:1033
                                     st8(g_score, (ld8(g_score) + ld8(g_level)))
                                     ln = 3146762 // X-Caliber.HC:1034
@@ -2796,7 +2796,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         st8((l24_tmpsp + 2704L), bits((t24 + 0.75)))
                         ln = 3146787 // X-Caliber.HC:1059
                         tick(t)
-                        P.f499_Noise(t, 750L, 74.0, 93.0)
+                        P.f504_Noise(t, 750L, 74.0, 93.0)
                         ln = 3146788 // X-Caliber.HC:1060
                         if ((ld8((l24_tmpsp + 16L)) == 0L)) {
                             ln = 3146789 // X-Caliber.HC:1061
@@ -2815,7 +2815,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ShotNew (X-Caliber.HC:1070) */
-    fun f727_ShotNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Double, a5: Long): Long {
+    fun f732_ShotNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Double, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2866,7 +2866,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC SolarFlares (X-Caliber.HC:1087) */
-    fun f728_SolarFlares(t: Task) {
+    fun f733_SolarFlares(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2892,7 +2892,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             if (r4) {
                 ln = 3146820 // X-Caliber.HC:1092
                 tick(t)
-                P.f500_Sweep(t, 2000L, 74.0, 93.0)
+                P.f505_Sweep(t, 2000L, 74.0, 93.0)
                 ln = 3146821 // X-Caliber.HC:1093
                 st1(g_alarm, 1L)
             }
@@ -2915,7 +2915,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         P.f131_D3Equ(t, (fp + 24), 200.0, 0.0, 0.0)
                         ln = 3146828 // X-Caliber.HC:1100
                         tick(t)
-                        f727_ShotNew(t, 2L, fp, (fp + 24), 25.0, 0.1, 0L)
+                        f732_ShotNew(t, 2L, fp, (fp + 24), 25.0, 0.1, 0L)
                     }
                 } else {
                     ln = 3146831 // X-Caliber.HC:1103
@@ -2933,7 +2933,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC FireOneGun (X-Caliber.HC:1109) */
-    fun f729_FireOneGun(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
+    fun f734_FireOneGun(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
         var ln = 0
         try {
             enter(t)
@@ -2971,7 +2971,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f138_D3AddEqu(t, t4, (((p0_tmpsp + 40L) + (p1_n * 137L)) + 80L))
             ln = 3146847 // X-Caliber.HC:1119
             tick(t)
-            val t5: Long = f727_ShotNew(t, 4L, (((p0_tmpsp + 40L) + (p1_n * 137L)) + 56L), (fp + 64), p2_r, p3_fuse_time, (fp + 88))
+            val t5: Long = f732_ShotNew(t, 4L, (((p0_tmpsp + 40L) + (p1_n * 137L)) + 56L), (fp + 64), p2_r, p3_fuse_time, (fp + 88))
             l136_tmps = t5
             ln = 3146848 // X-Caliber.HC:1120
             tick(t)
@@ -2987,7 +2987,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             l32_ona = t7
             ln = 3146852 // X-Caliber.HC:1124
             tick(t)
-            P.f499_Noise(t, 100L, l32_ona.toDouble(), (l32_ona + 12L).toDouble())
+            P.f504_Noise(t, 100L, l32_ona.toDouble(), (l32_ona + 12L).toDouble())
             t.msp = msp0
             t.depth--
             return
@@ -2995,7 +2995,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC FireOneMissile (X-Caliber.HC:1127) */
-    fun f730_FireOneMissile(t: Task, a0: Long, a1: Long) {
+    fun f735_FireOneMissile(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3028,7 +3028,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st1((l24_tmpmi + 819L), 1L)
                 ln = 3146866 // X-Caliber.HC:1138
                 tick(t)
-                P.f500_Sweep(t, 250L, 53.0, 56.0)
+                P.f505_Sweep(t, 250L, 53.0, 56.0)
             }
             t.depth--
             return
@@ -3036,7 +3036,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC HumanFireGunBegin (X-Caliber.HC:1142) */
-    fun f731_HumanFireGunBegin(t: Task) {
+    fun f736_HumanFireGunBegin(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3084,31 +3084,31 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 if (((ld4u((((ld8(g_human) + 1136L) + 288L) + 48L)) and 1L) == 0L)) {
                                     ln = 3146879 // X-Caliber.HC:1151
                                     tick(t)
-                                    f729_FireOneGun(t, ld8(g_human), 3L, l0_r, l8_fuse_time)
+                                    f734_FireOneGun(t, ld8(g_human), 3L, l0_r, l8_fuse_time)
                                 }
                                 ln = 3146880 // X-Caliber.HC:1152
                                 if (((ld4u((((ld8(g_human) + 1136L) + 480L) + 48L)) and 1L) == 0L)) {
                                     ln = 3146881 // X-Caliber.HC:1153
                                     tick(t)
-                                    f729_FireOneGun(t, ld8(g_human), 4L, l0_r, l8_fuse_time)
+                                    f734_FireOneGun(t, ld8(g_human), 4L, l0_r, l8_fuse_time)
                                 }
                             } while (false)
                             ln = 3146883 // X-Caliber.HC:1155
                             if (((ld4u((((ld8(g_human) + 1136L) + 96L) + 48L)) and 1L) == 0L)) {
                                 ln = 3146884 // X-Caliber.HC:1156
                                 tick(t)
-                                f729_FireOneGun(t, ld8(g_human), 1L, l0_r, l8_fuse_time)
+                                f734_FireOneGun(t, ld8(g_human), 1L, l0_r, l8_fuse_time)
                             }
                             ln = 3146885 // X-Caliber.HC:1157
                             if (((ld4u((((ld8(g_human) + 1136L) + 192L) + 48L)) and 1L) == 0L)) {
                                 ln = 3146886 // X-Caliber.HC:1158
                                 tick(t)
-                                f729_FireOneGun(t, ld8(g_human), 2L, l0_r, l8_fuse_time)
+                                f734_FireOneGun(t, ld8(g_human), 2L, l0_r, l8_fuse_time)
                             }
                         } while (false)
                         ln = 3146888 // X-Caliber.HC:1160
                         tick(t)
-                        f729_FireOneGun(t, ld8(g_human), 0L, l0_r, l8_fuse_time)
+                        f734_FireOneGun(t, ld8(g_human), 0L, l0_r, l8_fuse_time)
                         ln = 3146889 // X-Caliber.HC:1161
                         break@switch0_9
                     } while (false)
@@ -3120,7 +3120,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC HumanFireMissileBegin (X-Caliber.HC:1166) */
-    fun f732_HumanFireMissileBegin(t: Task, a0: Long) {
+    fun f737_HumanFireMissileBegin(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3135,7 +3135,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             if (r1) {
                 ln = 3146898 // X-Caliber.HC:1170
                 tick(t)
-                f730_FireOneMissile(t, ld8(g_human), p0_n)
+                f735_FireOneMissile(t, ld8(g_human), p0_n)
             }
             t.depth--
             return
@@ -3143,7 +3143,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC HumanFireLaserBegin (X-Caliber.HC:1173) */
-    fun f733_HumanFireLaserBegin(t: Task) {
+    fun f738_HumanFireLaserBegin(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3164,7 +3164,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC HumanFireLaserEnd (X-Caliber.HC:1179) */
-    fun f734_HumanFireLaserEnd(t: Task) {
+    fun f739_HumanFireLaserEnd(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3181,7 +3181,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC SplatNew (X-Caliber.HC:1187) */
-    fun f735_SplatNew(t: Task, a0: Long, a1: Double, a2: Double, a3: Double) {
+    fun f740_SplatNew(t: Task, a0: Long, a1: Double, a2: Double, a3: Double) {
         var ln = 0
         try {
             enter(t)
@@ -3257,7 +3257,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ExpireShots (X-Caliber.HC:1211) */
-    fun f736_ExpireShots(t: Task) {
+    fun f741_ExpireShots(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3276,11 +3276,11 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     if ((ld8(((l0_tmps + 40L) + 128L)) == 2L)) {
                         ln = 3146946 // X-Caliber.HC:1218
                         tick(t)
-                        f735_SplatNew(t, l0_tmps, 1.0, ((3.0 * f(4614256656552045848L)) / 8.0), ((5.0 * f(4614256656552045848L)) / 8.0))
+                        f740_SplatNew(t, l0_tmps, 1.0, ((3.0 * f(4614256656552045848L)) / 8.0), ((5.0 * f(4614256656552045848L)) / 8.0))
                     } else {
                         ln = 3146948 // X-Caliber.HC:1220
                         tick(t)
-                        f735_SplatNew(t, l0_tmps, 0.2, 0.0, (2.0 * f(4614256656552045848L)))
+                        f740_SplatNew(t, l0_tmps, 0.2, 0.0, (2.0 * f(4614256656552045848L)))
                     }
                     ln = 3146949 // X-Caliber.HC:1221
                     tick(t)
@@ -3301,7 +3301,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ExpireSplats (X-Caliber.HC:1229) */
-    fun f737_ExpireSplats(t: Task) {
+    fun f742_ExpireSplats(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3337,7 +3337,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ExpireMissiles (X-Caliber.HC:1244) */
-    fun f738_ExpireMissiles(t: Task) {
+    fun f743_ExpireMissiles(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3394,14 +3394,14 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         st1((l24_tmpmi + 820L), 1L)
                         ln = 3146991 // X-Caliber.HC:1263
                         tick(t)
-                        P.f499_Noise(t, 50L, 93.0, 105.0)
+                        P.f504_Noise(t, 50L, 93.0, 105.0)
                     } else {
                         ln = 3146992 // X-Caliber.HC:1264
                         val t4: Double = f(nat(t, n_tS, push0(t)))
                         if ((t4 > ldf((l24_tmpmi + 32L)))) {
                             ln = 3146993 // X-Caliber.HC:1265
                             tick(t)
-                            f716_MissileDel(t, l24_tmpmi)
+                            f721_MissileDel(t, l24_tmpmi)
                         }
                     }
                 }
@@ -3415,7 +3415,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC AI (X-Caliber.HC:1273) */
-    fun f739_AI(t: Task) {
+    fun f744_AI(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3457,7 +3457,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     if (r4) {
                         ln = 3147013 // X-Caliber.HC:1285
                         tick(t)
-                        f729_FireOneGun(t, l72_tmpsp, 0L, (1.5 + 0.5), 0.4)
+                        f734_FireOneGun(t, l72_tmpsp, 0L, (1.5 + 0.5), 0.4)
                     }
                     ln = 3147015 // X-Caliber.HC:1287
                     l72_tmpsp = ld8(l72_tmpsp)
@@ -3471,7 +3471,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC InitLevel (X-Caliber.HC:1293) */
-    fun f740_InitLevel(t: Task) {
+    fun f745_InitLevel(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3502,43 +3502,43 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             if ((ld8(g_level) == 1L)) {
                 ln = 3147038 // X-Caliber.HC:1310
                 tick(t)
-                P.f562_OneTimePopUp(t, g_msg_flags, 1L, s12)
+                P.f567_OneTimePopUp(t, g_msg_flags, 1L, s12)
             }
             ln = 3147040 // X-Caliber.HC:1312
             if ((ld8(g_level) == 4L)) {
                 ln = 3147041 // X-Caliber.HC:1313
                 tick(t)
-                P.f562_OneTimePopUp(t, g_msg_flags, 0L, s13)
+                P.f567_OneTimePopUp(t, g_msg_flags, 0L, s13)
             }
             ln = 3147043 // X-Caliber.HC:1315
             tick(t)
-            val t0: Long = f715_ShipNew(t, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), divs(ld8((ld8(P.g_Fs) + 248L)), 2L), 0L)
+            val t0: Long = f720_ShipNew(t, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), divs(ld8((ld8(P.g_Fs) + 248L)), 2L), 0L)
             st8(g_human, t0)
             ln = 3147044 // X-Caliber.HC:1316
             l0_i = 0L
             loop2@ while ((l0_i < (ld8(g_level) + 2L))) {
                 ln = 3147045 // X-Caliber.HC:1317
                 tick(t)
-                f718_PlaceShip(t, 1L)
+                f723_PlaceShip(t, 1L)
                 ln = 3147044 // X-Caliber.HC:1316
                 l0_i = (l0_i + 1L)
                 tick(t)
             }
             ln = 3147046 // X-Caliber.HC:1318
             tick(t)
-            f718_PlaceShip(t, 2L)
+            f723_PlaceShip(t, 2L)
             ln = 3147047 // X-Caliber.HC:1319
             st1(g_show_level_msg, 1L)
             ln = 3147048 // X-Caliber.HC:1320
             tick(t)
-            P.f454_ODEPause(t, ld8(g_ode), 1L)
+            P.f459_ODEPause(t, ld8(g_ode), 1L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "InitLevel", ln) }
     }
 
     /** HolyC Init (X-Caliber.HC:1323) */
-    fun f741_Init(t: Task) {
+    fun f746_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3579,14 +3579,14 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st8(g_human_antispin, bits(0.0))
             ln = 3147071 // X-Caliber.HC:1343
             tick(t)
-            f740_InitLevel(t)
+            f745_InitLevel(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Init", ln) }
     }
 
     /** HolyC XCaliber (X-Caliber.HC:1347) */
-    fun f742_XCaliber(t: Task) {
+    fun f747_XCaliber(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3597,7 +3597,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             var l8_msg_code: Long = 0L
             ln = 3147078 // X-Caliber.HC:1350
             tick(t)
-            val t0: Long = f708_CtrlPanelNew(t)
+            val t0: Long = f713_CtrlPanelNew(t)
             l40_cp = t0
             ln = 3147080 // X-Caliber.HC:1352
             tick(t)
@@ -3606,7 +3606,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st1((ld8(P.g_Fs) + 778L), 15L)
             ln = 3147082 // X-Caliber.HC:1354
             tick(t)
-            P.f507_MenuPush(t, s14)
+            P.f512_MenuPush(t, s14)
             ln = 3147107 // X-Caliber.HC:1379
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 3147108 // X-Caliber.HC:1380
@@ -3622,22 +3622,22 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 3147113 // X-Caliber.HC:1385
             st4((ld8(P.g_Fs) + 12L), 5305082L)
             ln = 3147114 // X-Caliber.HC:1386
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065874L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065879L)
             ln = 3147115 // X-Caliber.HC:1387
             loop0@ while (true) {
                 ln = 3147116 // X-Caliber.HC:1388
                 tick(t)
-                val t1: Long = P.f453_ODENew(t, 0L, 0.01, 1L)
+                val t1: Long = P.f458_ODENew(t, 0L, 0.01, 1L)
                 st8(g_ode, t1)
                 ln = 3147117 // X-Caliber.HC:1389
-                st8((ld8(g_ode) + 304L), 9223090561878065877L)
+                st8((ld8(g_ode) + 304L), 9223090561878065882L)
                 ln = 3147118 // X-Caliber.HC:1390
                 st8((ld8(g_ode) + 152L), bits(1.0E-9))
                 ln = 3147119 // X-Caliber.HC:1391
                 st8((ld8(g_ode) + 88L), bits(1.0E-5))
                 ln = 3147120 // X-Caliber.HC:1392
                 tick(t)
-                f741_Init(t)
+                f746_Init(t)
                 ln = 3147121 // X-Caliber.HC:1393
                 tick(t)
                 P.f153_QueIns(t, ld8(g_ode), ld8((ld8(P.g_Fs) + 960L)))
@@ -3677,7 +3677,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                             if (((ld8((fp + 32)) and 1024L) != 0L)) {
                                                                 ln = 3147134 // X-Caliber.HC:1406
                                                                 tick(t)
-                                                                f732_HumanFireMissileBegin(t, 0L)
+                                                                f737_HumanFireMissileBegin(t, 0L)
                                                             } else {
                                                                 ln = 3147135 // X-Caliber.HC:1407
                                                                 if (((ld8((fp + 32)) and 512L) != 0L)) {
@@ -3695,7 +3695,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                             if (((ld8((fp + 32)) and 1024L) != 0L)) {
                                                                 ln = 3147142 // X-Caliber.HC:1414
                                                                 tick(t)
-                                                                f732_HumanFireMissileBegin(t, 1L)
+                                                                f737_HumanFireMissileBegin(t, 1L)
                                                             } else {
                                                                 ln = 3147143 // X-Caliber.HC:1415
                                                                 if (((ld8((fp + 32)) and 512L) != 0L)) {
@@ -3740,11 +3740,11 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                 if ((ld8(g_level) < 4L)) {
                                                     ln = 3147166 // X-Caliber.HC:1438
                                                     tick(t)
-                                                    f731_HumanFireGunBegin(t)
+                                                    f736_HumanFireGunBegin(t)
                                                 } else {
                                                     ln = 3147168 // X-Caliber.HC:1440
                                                     tick(t)
-                                                    f733_HumanFireLaserBegin(t)
+                                                    f738_HumanFireLaserBegin(t)
                                                 }
                                             }
                                             119L -> {
@@ -3811,7 +3811,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                 if ((ld8(g_level) >= 4L)) {
                                                     ln = 3147206 // X-Caliber.HC:1478
                                                     tick(t)
-                                                    f734_HumanFireLaserEnd(t)
+                                                    f739_HumanFireLaserEnd(t)
                                                 }
                                             }
                                             else -> {
@@ -3827,22 +3827,22 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     }
                     ln = 3147212 // X-Caliber.HC:1484
                     tick(t)
-                    f739_AI(t)
+                    f744_AI(t)
                     ln = 3147213 // X-Caliber.HC:1485
                     tick(t)
-                    f728_SolarFlares(t)
+                    f733_SolarFlares(t)
                     ln = 3147214 // X-Caliber.HC:1486
                     tick(t)
-                    f736_ExpireShots(t)
+                    f741_ExpireShots(t)
                     ln = 3147215 // X-Caliber.HC:1487
                     tick(t)
-                    f737_ExpireSplats(t)
+                    f742_ExpireSplats(t)
                     ln = 3147216 // X-Caliber.HC:1488
                     tick(t)
-                    f738_ExpireMissiles(t)
+                    f743_ExpireMissiles(t)
                     ln = 3147217 // X-Caliber.HC:1489
                     tick(t)
-                    f726_CheckDamage(t)
+                    f731_CheckDamage(t)
                     ln = 3147218 // X-Caliber.HC:1490
                     nat(t, n_Refresh, push2(t, 1L, 0L))
                     ln = 3147219 // X-Caliber.HC:1491
@@ -3857,7 +3857,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         }
                         ln = 3147223 // X-Caliber.HC:1495
                         tick(t)
-                        P.f454_ODEPause(t, ld8(g_ode), 0L)
+                        P.f459_ODEPause(t, ld8(g_ode), 0L)
                         ln = 3147224 // X-Caliber.HC:1496
                         st1(g_show_level_msg, 0L)
                     } else {
@@ -3875,12 +3875,12 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 st8(g_level, (t15 + 1L))
                                 ln = 3147230 // X-Caliber.HC:1502
                                 tick(t)
-                                f717_ShipDel(t, ld8(g_human))
+                                f722_ShipDel(t, ld8(g_human))
                                 ln = 3147231 // X-Caliber.HC:1503
                                 st8(g_human, 0L)
                                 ln = 3147232 // X-Caliber.HC:1504
                                 tick(t)
-                                f740_InitLevel(t)
+                                f745_InitLevel(t)
                             }
                         }
                     }
@@ -3889,7 +3889,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 }
                 ln = 3147236 // X-Caliber.HC:1508
                 tick(t)
-                f720_AllDel(t, ld8(g_ode))
+                f725_AllDel(t, ld8(g_ode))
                 if (!(((l0_ch != 27L) && (l0_ch != 28L)))) break@loop0
                 tick(t)
             }
@@ -3898,10 +3898,10 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 3147239 // X-Caliber.HC:1511
             tick(t)
-            f709_CtrlPanelDel(t, l40_cp)
+            f714_CtrlPanelDel(t, l40_cp)
             ln = 3147240 // X-Caliber.HC:1512
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 3147241 // X-Caliber.HC:1513
             nat(t, n_RegWrite, push4(t, s6, s15, ld8(g_best_score), ld8(g_msg_flags)))
             t.msp = msp0
@@ -3911,13 +3911,13 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/X-Caliber/Run.HC#4 (Run.HC:95) */
-    fun f743_init_C__Apps_X_Caliber_Run_HC_4(t: Task): Long {
+    fun f748_init_C__Apps_X_Caliber_Run_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 3 // Run.HC:3
             tick(t)
-            f742_XCaliber(t)
+            f747_XCaliber(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/X-Caliber/Run.HC#4", ln) }
@@ -3926,47 +3926,47 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_X_Caliber_Run_HC_0(t)
-            704 -> f704_init_C__Apps_X_Caliber_Run_HC_1(t)
-            705 -> { f705_DrawCtrlPanelCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_UpdateDerivedCtrlPanelCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            707 -> { f707_LeftClickCtrlPanel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            708 -> f708_CtrlPanelNew(t)
-            709 -> { f709_CtrlPanelDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            710 -> f710_init_C__Apps_X_Caliber_Run_HC_2(t)
-            711 -> f711_init_C__Apps_X_Caliber_Run_HC_3(t)
-            712 -> f712_init_C__Home_Registry_HC_0(t)
-            713 -> f713_CheckOverlap(t)
-            714 -> { f714_MissileNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            715 -> f715_ShipNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            716 -> { f716_MissileDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            717 -> { f717_ShipDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            718 -> { f718_PlaceShip(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            719 -> f719_Tweaked(t)
-            720 -> { f720_AllDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            721 -> f721_LaserPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            722 -> { f722_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            723 -> { f723_Explosion(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))); 0L }
-            724 -> f724_TargetGet(t, (if (n > 0) st[base + 0] else 0L))
-            725 -> { f725_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            726 -> { f726_CheckDamage(t); 0L }
-            727 -> f727_ShotNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L)), (if (n > 5) st[base + 5] else 0L))
-            728 -> { f728_SolarFlares(t); 0L }
-            729 -> { f729_FireOneGun(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
-            730 -> { f730_FireOneMissile(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            731 -> { f731_HumanFireGunBegin(t); 0L }
-            732 -> { f732_HumanFireMissileBegin(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            733 -> { f733_HumanFireLaserBegin(t); 0L }
-            734 -> { f734_HumanFireLaserEnd(t); 0L }
-            735 -> { f735_SplatNew(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
-            736 -> { f736_ExpireShots(t); 0L }
-            737 -> { f737_ExpireSplats(t); 0L }
-            738 -> { f738_ExpireMissiles(t); 0L }
-            739 -> { f739_AI(t); 0L }
-            740 -> { f740_InitLevel(t); 0L }
-            741 -> { f741_Init(t); 0L }
-            742 -> { f742_XCaliber(t); 0L }
-            743 -> f743_init_C__Apps_X_Caliber_Run_HC_4(t)
+            708 -> f708_init_C__Apps_X_Caliber_Run_HC_0(t)
+            709 -> f709_init_C__Apps_X_Caliber_Run_HC_1(t)
+            710 -> { f710_DrawCtrlPanelCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_UpdateDerivedCtrlPanelCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            712 -> { f712_LeftClickCtrlPanel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            713 -> f713_CtrlPanelNew(t)
+            714 -> { f714_CtrlPanelDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            715 -> f715_init_C__Apps_X_Caliber_Run_HC_2(t)
+            716 -> f716_init_C__Apps_X_Caliber_Run_HC_3(t)
+            717 -> f717_init_C__Home_Registry_HC_0(t)
+            718 -> f718_CheckOverlap(t)
+            719 -> { f719_MissileNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            720 -> f720_ShipNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            721 -> { f721_MissileDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            722 -> { f722_ShipDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            723 -> { f723_PlaceShip(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            724 -> f724_Tweaked(t)
+            725 -> { f725_AllDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            726 -> f726_LaserPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            727 -> { f727_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            728 -> { f728_Explosion(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))); 0L }
+            729 -> f729_TargetGet(t, (if (n > 0) st[base + 0] else 0L))
+            730 -> { f730_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            731 -> { f731_CheckDamage(t); 0L }
+            732 -> f732_ShotNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L)), (if (n > 5) st[base + 5] else 0L))
+            733 -> { f733_SolarFlares(t); 0L }
+            734 -> { f734_FireOneGun(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
+            735 -> { f735_FireOneMissile(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            736 -> { f736_HumanFireGunBegin(t); 0L }
+            737 -> { f737_HumanFireMissileBegin(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            738 -> { f738_HumanFireLaserBegin(t); 0L }
+            739 -> { f739_HumanFireLaserEnd(t); 0L }
+            740 -> { f740_SplatNew(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
+            741 -> { f741_ExpireShots(t); 0L }
+            742 -> { f742_ExpireSplats(t); 0L }
+            743 -> { f743_ExpireMissiles(t); 0L }
+            744 -> { f744_AI(t); 0L }
+            745 -> { f745_InitLevel(t); 0L }
+            746 -> { f746_Init(t); 0L }
+            747 -> { f747_XCaliber(t); 0L }
+            748 -> f748_init_C__Apps_X_Caliber_Run_HC_4(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -3978,7 +3978,7 @@ class N_Apps_X_Caliber_Run(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748)
         private val NAMES = arrayOf("\$init:C:/Apps/X-Caliber/Run.HC#0", "\$init:C:/Apps/X-Caliber/Run.HC#1", "DrawCtrlPanelCtrl", "UpdateDerivedCtrlPanelCtrl", "LeftClickCtrlPanel", "CtrlPanelNew", "CtrlPanelDel", "\$init:C:/Apps/X-Caliber/Run.HC#2", "\$init:C:/Apps/X-Caliber/Run.HC#3", "\$init:C:/Home/Registry.HC#0", "CheckOverlap", "MissileNew", "ShipNew", "MissileDel", "ShipDel", "PlaceShip", "Tweaked", "AllDel", "LaserPlot", "DrawIt", "Explosion", "TargetGet", "MyDerivative", "CheckDamage", "ShotNew", "SolarFlares", "FireOneGun", "FireOneMissile", "HumanFireGunBegin", "HumanFireMissileBegin", "HumanFireLaserBegin", "HumanFireLaserEnd", "SplatNew", "ExpireShots", "ExpireSplats", "ExpireMissiles", "AI", "InitLevel", "Init", "XCaliber", "\$init:C:/Apps/X-Caliber/Run.HC#4")
         private val FILES = arrayOf<String>("C:/Apps/X-Caliber/Run.HC", "C:/Apps/X-Caliber/Load.HC", "C:/Apps/X-Caliber/XCCtrls.HC", "C:/Apps/X-Caliber/X-Caliber.HC")
     }

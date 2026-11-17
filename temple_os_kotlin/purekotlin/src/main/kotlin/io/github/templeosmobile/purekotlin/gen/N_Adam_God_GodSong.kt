@@ -34,7 +34,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Adam/God/GodSong.HC#0 (GodSong.HC:3) */
-    fun f703_init_C__Adam_God_GodSong_HC_0(t: Task): Long {
+    fun f708_init_C__Adam_God_GodSong_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -48,7 +48,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC InsNote (GodSong.HC:14) */
-    fun f704_InsNote(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f709_InsNote(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -113,7 +113,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Adam/God/GodSong.HC#1 (GodSong.HC:52) */
-    fun f705_init_C__Adam_God_GodSong_HC_1(t: Task): Long {
+    fun f710_init_C__Adam_God_GodSong_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -123,7 +123,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Adam/God/GodSong.HC#2 (GodSong.HC:53) */
-    fun f706_init_C__Adam_God_GodSong_HC_2(t: Task): Long {
+    fun f711_init_C__Adam_God_GodSong_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -133,7 +133,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Adam/God/GodSong.HC#3 (GodSong.HC:54) */
-    fun f707_init_C__Adam_God_GodSong_HC_3(t: Task): Long {
+    fun f712_init_C__Adam_God_GodSong_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -143,7 +143,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GodSongStr (GodSong.HC:57) */
-    fun f708_GodSongStr(t: Task): Long {
+    fun f713_GodSongStr(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -170,7 +170,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             st8((fp + 10L), ld8((P.g_music + 16L)))
             ln = 68 // GodSong.HC:68
             tick(t)
-            val t0: Long = P.f600_PopUpForm(t, fp, s2)
+            val t0: Long = P.f605_PopUpForm(t, fp, s2)
             if ((t0 == 0L)) {
                 ln = 69 // GodSong.HC:69
                 t.msp = msp0
@@ -228,13 +228,13 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 89 // GodSong.HC:89
             tick(t)
-            P.f679_FifoU8Flush(t, ld8(P.g_god))
+            P.f684_FifoU8Flush(t, ld8(P.g_god))
             ln = 90 // GodSong.HC:90
             l40_i = 0L
             loop0@ while ((l40_i < l96_len)) {
                 ln = 91 // GodSong.HC:91
                 tick(t)
-                val t9: Long = P.f687_GodBits(t, 8L, 0L)
+                val t9: Long = P.f692_GodBits(t, 8L, 0L)
                 l64_n = t9
                 ln = 92 // GodSong.HC:92
                 if ((ld8(fp) == 2L)) {
@@ -264,14 +264,14 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             }
                             ln = 103 // GodSong.HC:103
                             tick(t)
-                            val t12: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t12: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t12, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t12, (fp + 48))
                             ln = 104 // GodSong.HC:104
                             tick(t)
-                            val t13: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t13: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t13, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t13, (fp + 48))
                         }
                         4L -> {
                             ln = 107 // GodSong.HC:107
@@ -284,18 +284,18 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             st1((l32_buf + t15), 46L)
                             ln = 109 // GodSong.HC:109
                             tick(t)
-                            val t16: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t16: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t16, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t16, (fp + 48))
                             ln = 110 // GodSong.HC:110
                             val t17: Long = ld8((fp + 48))
                             st8((fp + 48), (t17 + 1L))
                             st1((l32_buf + t17), 115L)
                             ln = 111 // GodSong.HC:111
                             tick(t)
-                            val t18: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t18: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t18, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t18, (fp + 48))
                             ln = 112 // GodSong.HC:112
                             l80_duration = 3L
                         }
@@ -313,19 +313,19 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             }
                             ln = 119 // GodSong.HC:119
                             tick(t)
-                            val t21: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t21: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t21, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t21, (fp + 48))
                             ln = 120 // GodSong.HC:120
                             tick(t)
-                            val t22: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t22: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t22, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t22, (fp + 48))
                             ln = 121 // GodSong.HC:121
                             tick(t)
-                            val t23: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t23: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t23, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t23, (fp + 48))
                         }
                         5L -> {
                             ln = 124 // GodSong.HC:124
@@ -337,23 +337,23 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             }
                             ln = 126 // GodSong.HC:126
                             tick(t)
-                            val t25: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t25: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t25, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t25, (fp + 48))
                             ln = 127 // GodSong.HC:127
                             val t26: Long = ld8((fp + 48))
                             st8((fp + 48), (t26 + 1L))
                             st1((l32_buf + t26), 115L)
                             ln = 128 // GodSong.HC:128
                             tick(t)
-                            val t27: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t27: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t27, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t27, (fp + 48))
                             ln = 129 // GodSong.HC:129
                             tick(t)
-                            val t28: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t28: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t28, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t28, (fp + 48))
                             ln = 130 // GodSong.HC:130
                             l80_duration = 3L
                         }
@@ -367,23 +367,23 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             }
                             ln = 135 // GodSong.HC:135
                             tick(t)
-                            val t30: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t30: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t30, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t30, (fp + 48))
                             ln = 136 // GodSong.HC:136
                             tick(t)
-                            val t31: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t31: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t31, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t31, (fp + 48))
                             ln = 137 // GodSong.HC:137
                             val t32: Long = ld8((fp + 48))
                             st8((fp + 48), (t32 + 1L))
                             st1((l32_buf + t32), 101L)
                             ln = 138 // GodSong.HC:138
                             tick(t)
-                            val t33: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t33: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t33, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t33, (fp + 48))
                             ln = 139 // GodSong.HC:139
                             l80_duration = 1L
                         }
@@ -397,24 +397,24 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             }
                             ln = 144 // GodSong.HC:144
                             tick(t)
-                            val t35: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t35: Long = P.f692_GodBits(t, 4L, 0L)
                             l56_k = t35
                             ln = 145 // GodSong.HC:145
                             tick(t)
-                            val t36: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t36: Long = P.f692_GodBits(t, 4L, 0L)
                             l72_k2 = t36
                             ln = 146 // GodSong.HC:146
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, l56_k, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, l56_k, (fp + 48))
                             ln = 147 // GodSong.HC:147
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, l72_k2, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, l72_k2, (fp + 48))
                             ln = 148 // GodSong.HC:148
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, l56_k, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, l56_k, (fp + 48))
                             ln = 149 // GodSong.HC:149
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, l72_k2, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, l72_k2, (fp + 48))
                         }
                         else -> {
                             ln = 152 // GodSong.HC:152
@@ -426,9 +426,9 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             }
                             ln = 154 // GodSong.HC:154
                             tick(t)
-                            val t38: Long = P.f687_GodBits(t, 4L, 0L)
+                            val t38: Long = P.f692_GodBits(t, 4L, 0L)
                             tick(t)
-                            f704_InsNote(t, fp, l32_buf, t38, (fp + 48))
+                            f709_InsNote(t, fp, l32_buf, t38, (fp + 48))
                         }
                     }
                 } while (false)
@@ -459,7 +459,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GodSong (GodSong.HC:164) */
-    fun f709_GodSong(t: Task) {
+    fun f714_GodSong(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -467,16 +467,16 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             var l8_st2: Long = 0L
             ln = 166 // GodSong.HC:166
             tick(t)
-            val t0: Long = f708_GodSongStr(t)
+            val t0: Long = f713_GodSongStr(t)
             l0_st1 = t0
             tick(t)
-            val t1: Long = f708_GodSongStr(t)
+            val t1: Long = f713_GodSongStr(t)
             l8_st2 = t1
             ln = 167 // GodSong.HC:167
             if (((l0_st1 != 0L) && (l8_st2 != 0L))) {
                 ln = 168 // GodSong.HC:168
                 tick(t)
-                val t2: Long = P.f602_DocPut(t, 0L)
+                val t2: Long = P.f607_DocPut(t, 0L)
                 tick(t)
                 val vb0 = push4(t, l0_st1, l0_st1, l8_st2, l8_st2)
                 P.f29_DocPrint(t, t2, s3, vb0, 4)
@@ -492,7 +492,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Adam/God/GodSong.HC#4 (GodSong.HC:1) */
-    fun f710_init_C__Adam_God_GodSong_HC_4(t: Task): Long {
+    fun f715_init_C__Adam_God_GodSong_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -504,14 +504,14 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Adam_God_GodSong_HC_0(t)
-            704 -> { f704_InsNote(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> f705_init_C__Adam_God_GodSong_HC_1(t)
-            706 -> f706_init_C__Adam_God_GodSong_HC_2(t)
-            707 -> f707_init_C__Adam_God_GodSong_HC_3(t)
-            708 -> f708_GodSongStr(t)
-            709 -> { f709_GodSong(t); 0L }
-            710 -> f710_init_C__Adam_God_GodSong_HC_4(t)
+            708 -> f708_init_C__Adam_God_GodSong_HC_0(t)
+            709 -> { f709_InsNote(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> f710_init_C__Adam_God_GodSong_HC_1(t)
+            711 -> f711_init_C__Adam_God_GodSong_HC_2(t)
+            712 -> f712_init_C__Adam_God_GodSong_HC_3(t)
+            713 -> f713_GodSongStr(t)
+            714 -> { f714_GodSong(t); 0L }
+            715 -> f715_init_C__Adam_God_GodSong_HC_4(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -523,7 +523,7 @@ class N_Adam_God_GodSong(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715)
         private val NAMES = arrayOf("\$init:C:/Adam/God/GodSong.HC#0", "InsNote", "\$init:C:/Adam/God/GodSong.HC#1", "\$init:C:/Adam/God/GodSong.HC#2", "\$init:C:/Adam/God/GodSong.HC#3", "GodSongStr", "GodSong", "\$init:C:/Adam/God/GodSong.HC#4")
         private val FILES = arrayOf<String>("C:/Adam/God/GodSong.HC")
     }

@@ -31,7 +31,7 @@ class N_Demo_ExtChars(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/ExtChars.HC#0 (ExtChars.HC:1) */
-    fun f703_init_C__Demo_ExtChars_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_ExtChars_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -41,7 +41,7 @@ class N_Demo_ExtChars(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/ExtChars.HC#1 (ExtChars.HC:15) */
-    fun f704_init_C__Demo_ExtChars_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_ExtChars_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -56,7 +56,7 @@ class N_Demo_ExtChars(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/ExtChars.HC#2 (ExtChars.HC:17) */
-    fun f705_init_C__Demo_ExtChars_HC_2(t: Task): Long {
+    fun f710_init_C__Demo_ExtChars_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -70,7 +70,7 @@ class N_Demo_ExtChars(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC SrcExample (ExtChars.HC:25) */
-    fun f706_SrcExample(t: Task) {
+    fun f711_SrcExample(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -85,13 +85,13 @@ class N_Demo_ExtChars(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/ExtChars.HC#3 (ExtChars.HC:31) */
-    fun f707_init_C__Demo_ExtChars_HC_3(t: Task): Long {
+    fun f712_init_C__Demo_ExtChars_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 31 // ExtChars.HC:31
             tick(t)
-            f706_SrcExample(t)
+            f711_SrcExample(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/ExtChars.HC#3", ln) }
@@ -100,11 +100,11 @@ class N_Demo_ExtChars(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_ExtChars_HC_0(t)
-            704 -> f704_init_C__Demo_ExtChars_HC_1(t)
-            705 -> f705_init_C__Demo_ExtChars_HC_2(t)
-            706 -> { f706_SrcExample(t); 0L }
-            707 -> f707_init_C__Demo_ExtChars_HC_3(t)
+            708 -> f708_init_C__Demo_ExtChars_HC_0(t)
+            709 -> f709_init_C__Demo_ExtChars_HC_1(t)
+            710 -> f710_init_C__Demo_ExtChars_HC_2(t)
+            711 -> { f711_SrcExample(t); 0L }
+            712 -> f712_init_C__Demo_ExtChars_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -116,7 +116,7 @@ class N_Demo_ExtChars(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("\$init:C:/Demo/ExtChars.HC#0", "\$init:C:/Demo/ExtChars.HC#1", "\$init:C:/Demo/ExtChars.HC#2", "SrcExample", "\$init:C:/Demo/ExtChars.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/ExtChars.HC")
     }

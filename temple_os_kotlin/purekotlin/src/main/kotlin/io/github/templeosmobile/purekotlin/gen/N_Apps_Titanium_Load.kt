@@ -22,8 +22,10 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GetChar = rt.vm.natives.find("GetChar")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_GrRect = rt.vm.natives.find("GrRect")!!.index
     @JvmField val n_JobQue = rt.vm.natives.find("JobQue")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
@@ -40,6 +42,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_SleepUntil = rt.vm.natives.find("SleepUntil")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Yield = rt.vm.natives.find("Yield")!!.index
     @JvmField val n_mp_cnt = rt.vm.natives.find("mp_cnt")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
@@ -205,7 +208,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#0 (Load.HC:3) */
-    fun f703_init_C__Apps_Titanium_Load_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Titanium_Load_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -219,7 +222,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#1 (Load.HC:1) */
-    fun f704_init_C__Apps_Titanium_Load_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_Titanium_Load_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -233,7 +236,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#2 (Load.HC:2) */
-    fun f705_init_C__Apps_Titanium_Load_HC_2(t: Task): Long {
+    fun f710_init_C__Apps_Titanium_Load_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -247,7 +250,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f706_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f711_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -257,7 +260,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#3 (Load.HC:77) */
-    fun f707_init_C__Apps_Titanium_Load_HC_3(t: Task): Long {
+    fun f712_init_C__Apps_Titanium_Load_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -272,7 +275,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#4 (Load.HC:94) */
-    fun f708_init_C__Apps_Titanium_Load_HC_4(t: Task): Long {
+    fun f713_init_C__Apps_Titanium_Load_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -287,7 +290,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#5 (Load.HC:114) */
-    fun f709_init_C__Apps_Titanium_Load_HC_5(t: Task): Long {
+    fun f714_init_C__Apps_Titanium_Load_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -302,7 +305,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#6 (Load.HC:131) */
-    fun f710_init_C__Apps_Titanium_Load_HC_6(t: Task): Long {
+    fun f715_init_C__Apps_Titanium_Load_HC_6(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -317,7 +320,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#7 (Load.HC:168) */
-    fun f711_init_C__Apps_Titanium_Load_HC_7(t: Task): Long {
+    fun f716_init_C__Apps_Titanium_Load_HC_7(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -332,7 +335,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#8 (Load.HC:211) */
-    fun f712_init_C__Apps_Titanium_Load_HC_8(t: Task): Long {
+    fun f717_init_C__Apps_Titanium_Load_HC_8(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -347,7 +350,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ExplosionDraw (Titanium.HC:214) */
-    fun f713_ExplosionDraw(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f718_ExplosionDraw(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -496,7 +499,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 val t8: Long = ld8(p1_tmpe)
                 val t7: Double = f(nat(t, n_Rand, push0(t)))
                 tick(t)
-                P.f396_GrLine(t, p0_dc, f2i((t8.toDouble() + (l40_n2.toDouble() * (t7 - 0.5)))), f2i((p2_y.toDouble() + (divs(l48_n3, 2L).toDouble() * t6))), f2i((t5.toDouble() + ((l56_n4.toDouble() * l72_t) * (t4 - 0.5)))), f2i((p2_y.toDouble() - ((divs(l64_n5, 2L).toDouble() * l72_t) * t3))), 1L, 0L)
+                P.f397_GrLine(t, p0_dc, f2i((t8.toDouble() + (l40_n2.toDouble() * (t7 - 0.5)))), f2i((p2_y.toDouble() + (divs(l48_n3, 2L).toDouble() * t6))), f2i((t5.toDouble() + ((l56_n4.toDouble() * l72_t) * (t4 - 0.5)))), f2i((p2_y.toDouble() - ((divs(l64_n5, 2L).toDouble() * l72_t) * t3))), 1L, 0L)
                 ln = 1048802 // Titanium.HC:226
                 l24_i = (l24_i + 1L)
                 tick(t)
@@ -507,7 +510,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MPMenDraw (Titanium.HC:273) */
-    fun f714_MPMenDraw(t: Task, a0: Long) {
+    fun f719_MPMenDraw(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -558,7 +561,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 if ((((-32L <= l176_yy) && (l176_yy <= (ld8((l8_task + 240L)) + 32L))) && (ld1u((l208_tmpe + 48L)) == 0L))) {
                     ln = 1048864 // Titanium.HC:288
                     tick(t)
-                    f713_ExplosionDraw(t, l16_dc, l208_tmpe, l176_yy)
+                    f718_ExplosionDraw(t, l16_dc, l208_tmpe, l176_yy)
                     ln = 1048865 // Titanium.HC:289
                     val t7: Double = f(nat(t, n_tS, push0(t)))
                     if ((t7 > ldf((l208_tmpe + 40L)))) {
@@ -592,13 +595,12 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         tick(t)
                         P.f305_Mat4x4RotX(t, (fp + 32), (f(4614256656552045848L) / 6.0))
                         ln = 1048877 // Titanium.HC:301
-                        tick(t)
-                        P.f308_Mat4x4Scale(t, (fp + 32), 0.3)
+                        nat(t, n_Mat4x4Scale, push2(t, (fp + 32), bits(0.3)))
                         ln = 1048878 // Titanium.HC:302
                         if ((ld1u((l200_tmpu + 42L)) != 0L)) {
                             ln = 1048879 // Titanium.HC:303
                             tick(t)
-                            P.f442_Sprite3Mat4x4B(t, l16_dc, ld8(l200_tmpu), l176_yy, divs(2147483647L, 2L), b24, (fp + 32))
+                            P.f447_Sprite3Mat4x4B(t, l16_dc, ld8(l200_tmpu), l176_yy, divs(2147483647L, 2L), b24, (fp + 32))
                         } else {
                             ln = 1048881 // Titanium.HC:305
                             if ((ld8((l200_tmpu + 16L)) < 100L)) {
@@ -612,7 +614,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 }
                                 ln = 1048886 // Titanium.HC:310
                                 tick(t)
-                                val t9: Double = P.f542_Wrap(t, (ldf((l200_tmpu + 32L)) + (20.0 * l240_ts)), 0.0)
+                                val t9: Double = P.f547_Wrap(t, (ldf((l200_tmpu + 32L)) + (20.0 * l240_ts)), 0.0)
                                 l232_tt = ((4.0 * t9) / (2.0 * f(4614256656552045848L)))
                             } else {
                                 ln = 1048888 // Titanium.HC:312
@@ -637,7 +639,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 }
                                 ln = 1048895 // Titanium.HC:319
                                 tick(t)
-                                val t12: Double = P.f542_Wrap(t, (ldf((l200_tmpu + 32L)) + (5.0 * l240_ts)), 0.0)
+                                val t12: Double = P.f547_Wrap(t, (ldf((l200_tmpu + 32L)) + (5.0 * l240_ts)), 0.0)
                                 l232_tt = ((4.0 * t12) / (2.0 * f(4614256656552045848L)))
                             }
                             ln = 1048897 // Titanium.HC:321
@@ -645,11 +647,11 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                             l232_tt = (l232_tt % 1.0)
                             ln = 1048898 // Titanium.HC:322
                             tick(t)
-                            val t13: Long = P.f448_SpriteInterpolate(t, l232_tt, ld8((l224__tmps + ((l184_phase and 3L) * 8L))), ld8((l224__tmps + (((l184_phase + 1L) and 3L) * 8L))))
+                            val t13: Long = P.f453_SpriteInterpolate(t, l232_tt, ld8((l224__tmps + ((l184_phase and 3L) * 8L))), ld8((l224__tmps + (((l184_phase + 1L) and 3L) * 8L))))
                             l216_tmps = t13
                             ln = 1048899 // Titanium.HC:323
                             tick(t)
-                            P.f442_Sprite3Mat4x4B(t, l16_dc, ld8(l200_tmpu), l176_yy, divs(2147483647L, 2L), l216_tmps, (fp + 32))
+                            P.f447_Sprite3Mat4x4B(t, l16_dc, ld8(l200_tmpu), l176_yy, divs(2147483647L, 2L), l216_tmps, (fp + 32))
                             ln = 1048900 // Titanium.HC:324
                             nat(t, n_Free, push1(t, l216_tmps))
                         }
@@ -676,7 +678,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MissilePos (Titanium.HC:336) */
-    fun f715_MissilePos(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f720_MissilePos(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -709,7 +711,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (Titanium.HC:347) */
-    fun f716_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f721_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -733,7 +735,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st4((p1_dc + 160L), 1074135054L)
             ln = 1048930 // Titanium.HC:354
             tick(t)
-            P.f424_GrRect3(t, p1_dc, 0L, 0L, 0L, ld4s((p1_dc + 16L)), ld4s((p1_dc + 24L)))
+            P.f427_GrRect3(t, p1_dc, 0L, 0L, 0L, ld4s((p1_dc + 16L)), ld4s((p1_dc + 24L)))
             ln = 1048932 // Titanium.HC:356
             l16_i = 0L
             loop0@ while ((l16_i < 128L)) {
@@ -750,8 +752,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 }
                 if (r2) {
                     ln = 1048935 // Titanium.HC:359
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, ld8((g_ls + (l16_i * 24L))), ld8((fp + 40)), 0L, ld8(((g_ls + (l16_i * 24L)) + 16L)), 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, ld8((g_ls + (l16_i * 24L))), ld8((fp + 40)), 0L, ld8(((g_ls + (l16_i * 24L)) + 16L)), 0L))
                 }
                 ln = 1048932 // Titanium.HC:356
                 l16_i = (l16_i + 1L)
@@ -762,8 +763,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 1048939 // Titanium.HC:363
             st4((p1_dc + 160L), 6L)
             ln = 1048940 // Titanium.HC:364
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 0L, ((ld8(g_finish_line) - l48_scroll_y) and 4095L), 0L, 640L, ((ld8(g_finish_line) - l48_scroll_y) and 4095L), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 0L, ((ld8(g_finish_line) - l48_scroll_y) and 4095L), 0L, 640L, ((ld8(g_finish_line) - l48_scroll_y) and 4095L), 0L, 1L, 0L))
             ln = 1048943 // Titanium.HC:367
             st4((p1_dc + 160L), 7L)
             ln = 1048944 // Titanium.HC:368
@@ -777,11 +777,11 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         ln = 1048947 // Titanium.HC:371
                         val t5: Double = f(nat(t, n_Arg, push2(t, bits(ld8((l72_tmpb + 16L)).toDouble()), bits(ld8((l72_tmpb + 24L)).toDouble()))))
                         tick(t)
-                        P.f445_Sprite3ZB(t, p1_dc, (ld8(l72_tmpb) shr 32), (ld8((l72_tmpb + 8L)) shr 32), 0L, b25, ((f(4614256656552045848L) / 2.0) + t5))
+                        P.f450_Sprite3ZB(t, p1_dc, (ld8(l72_tmpb) shr 32), (ld8((l72_tmpb + 8L)) shr 32), 0L, b25, ((f(4614256656552045848L) / 2.0) + t5))
                     } else {
                         ln = 1048949 // Titanium.HC:373
                         tick(t)
-                        P.f396_GrLine(t, p1_dc, (ld8(l72_tmpb) shr 32), (ld8((l72_tmpb + 8L)) shr 32), ((ld8(l72_tmpb) + (ld8((l72_tmpb + 24L)) * 10L)) shr 32), ((ld8((l72_tmpb + 8L)) + (ld8((l72_tmpb + 16L)) * 10L)) shr 32), 1L, 0L)
+                        P.f397_GrLine(t, p1_dc, (ld8(l72_tmpb) shr 32), (ld8((l72_tmpb + 8L)) shr 32), ((ld8(l72_tmpb) + (ld8((l72_tmpb + 24L)) * 10L)) shr 32), ((ld8((l72_tmpb + 8L)) + (ld8((l72_tmpb + 16L)) * 10L)) shr 32), 1L, 0L)
                     }
                 }
                 ln = 1048944 // Titanium.HC:368
@@ -801,7 +801,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 val t7: Long = nat(t, n_mp_cnt, push0(t))
                 if (!((l16_i < t7))) break@loop4
                 ln = 1048957 // Titanium.HC:381
-                nat(t, n_JobQue, push(t, 9223090561878065866L, p1_dc, l16_i, 0L, 0L, 0L, 0L, 0L))
+                nat(t, n_JobQue, push(t, 9223090561878065871L, p1_dc, l16_i, 0L, 0L, 0L, 0L, 0L))
                 ln = 1048956 // Titanium.HC:380
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -824,10 +824,10 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 if ((t8 != 0L)) {
                     ln = 1048965 // Titanium.HC:389
                     tick(t)
-                    f715_MissilePos(t, l24_m, ldf(g__), (fp + 32), (fp + 40))
+                    f720_MissilePos(t, l24_m, ldf(g__), (fp + 32), (fp + 40))
                     ln = 1048966 // Titanium.HC:390
                     tick(t)
-                    P.f445_Sprite3ZB(t, p1_dc, ld8((fp + 32)), ld8((fp + 40)), 0L, b26, ldf(g__))
+                    P.f450_Sprite3ZB(t, p1_dc, ld8((fp + 32)), ld8((fp + 40)), 0L, b26, ldf(g__))
                 }
                 ln = 1048963 // Titanium.HC:387
                 l24_m = (l24_m + 1L)
@@ -835,7 +835,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             }
             ln = 1048968 // Titanium.HC:392
             tick(t)
-            P.f445_Sprite3ZB(t, p1_dc, ld8(g_x), ld8(g_y), 0L, b27, ldf(g__))
+            P.f450_Sprite3ZB(t, p1_dc, ld8(g_x), ld8(g_y), 0L, b27, ldf(g__))
             ln = 1048970 // Titanium.HC:394
             if ((ldf(g_tf) != 0.0)) {
                 ln = 1048971 // Titanium.HC:395
@@ -853,7 +853,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     ln = 1048974 // Titanium.HC:398
                     tick(t)
                     val vb0 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, (divs(ld8((p0_task + 224L)), 2L) - divs(72L, 2L)), divs(ld8((p0_task + 248L)), 2L), s3, vb0, 0)
+                    P.f370_GrPrint(t, p1_dc, (divs(ld8((p0_task + 224L)), 2L) - divs(72L, 2L)), divs(ld8((p0_task + 248L)), 2L), s3, vb0, 0)
                     t.sp = vb0
                 }
             } else {
@@ -870,12 +870,12 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 1048982 // Titanium.HC:406
             tick(t)
             val vb1 = push(t, ld8(g_enemy_left), ld8(g_friendly_left), ld8(g_friendly_fire), bits((l56_tt - ldf(g_t0))), ld8(g_bullets_fired))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s4, vb1, 5)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s4, vb1, 5)
             t.sp = vb1
             ln = 1048984 // Titanium.HC:408
             tick(t)
             val vb2 = push2(t, ld8(g_total_score), ld8(g_best_score))
-            P.f369_GrPrint(t, p1_dc, 0L, 8L, s5, vb2, 2)
+            P.f370_GrPrint(t, p1_dc, 0L, 8L, s5, vb2, 2)
             t.sp = vb2
             t.msp = msp0
             t.depth--
@@ -884,7 +884,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ExplosionNew (Titanium.HC:412) */
-    fun f717_ExplosionNew(t: Task, a0: Long, a1: Long): Long {
+    fun f722_ExplosionNew(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -919,7 +919,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ManDie (Titanium.HC:425) */
-    fun f718_ManDie(t: Task, a0: Long, a1: Long) {
+    fun f723_ManDie(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -934,7 +934,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             if ((p1_by_human != 0L)) {
                 ln = 1049007 // Titanium.HC:431
                 tick(t)
-                val t0: Long = f717_ExplosionNew(t, ld8(p0_tmpu), ld8((p0_tmpu + 8L)))
+                val t0: Long = f722_ExplosionNew(t, ld8(p0_tmpu), ld8((p0_tmpu + 8L)))
                 l16_tmpe = t0
                 if ((t0 != 0L)) {
                     ln = 1049008 // Titanium.HC:432
@@ -996,7 +996,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ExplosionDo (Titanium.HC:461) */
-    fun f719_ExplosionDo(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f724_ExplosionDo(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1010,7 +1010,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             var l56_tmpu: Long = 0L
             ln = 1049042 // Titanium.HC:466
             tick(t)
-            val t0: Long = f717_ExplosionNew(t, p0_x, (p1_y + p2_scroll_y))
+            val t0: Long = f722_ExplosionNew(t, p0_x, (p1_y + p2_scroll_y))
             l48_tmpe = t0
             if ((t0 != 0L)) {
                 ln = 1049043 // Titanium.HC:467
@@ -1039,7 +1039,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     if (((t2 + t3) < 10000L)) {
                         ln = 1049052 // Titanium.HC:476
                         tick(t)
-                        f718_ManDie(t, l56_tmpu, 1L)
+                        f723_ManDie(t, l56_tmpu, 1L)
                     }
                 }
                 ln = 1049047 // Titanium.HC:471
@@ -1062,7 +1062,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 if (((t4 + t5) < 10000L)) {
                     ln = 1049059 // Titanium.HC:483
                     tick(t)
-                    val t6: Long = f717_ExplosionNew(t, l32_x2, (l40_y2 + p2_scroll_y))
+                    val t6: Long = f722_ExplosionNew(t, l32_x2, (l40_y2 + p2_scroll_y))
                     l48_tmpe = t6
                     if ((t6 != 0L)) {
                         ln = 1049060 // Titanium.HC:484
@@ -1084,7 +1084,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CheckCollisions (Titanium.HC:492) */
-    fun f720_CheckCollisions(t: Task) {
+    fun f725_CheckCollisions(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1113,7 +1113,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 if (((ld1u((l48_tmpb + 48L)) == 0L) && (ld1u((l48_tmpb + 49L)) == 0L))) {
                     ln = 1049077 // Titanium.HC:501
                     tick(t)
-                    P.f396_GrLine(t, l56_dc2, (ld8(l48_tmpb) shr 32), (ld8((l48_tmpb + 8L)) shr 32), ((ld8(l48_tmpb) + (ld8((l48_tmpb + 16L)) * 10L)) shr 32), ((ld8((l48_tmpb + 8L)) + (ld8((l48_tmpb + 24L)) * 10L)) shr 32), 1L, 0L)
+                    P.f397_GrLine(t, l56_dc2, (ld8(l48_tmpb) shr 32), (ld8((l48_tmpb + 8L)) shr 32), ((ld8(l48_tmpb) + (ld8((l48_tmpb + 16L)) * 10L)) shr 32), ((ld8((l48_tmpb + 8L)) + (ld8((l48_tmpb + 24L)) * 10L)) shr 32), 1L, 0L)
                 }
                 ln = 1049075 // Titanium.HC:499
                 l0_i = (l0_i + 1L)
@@ -1144,7 +1144,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         if ((ld8((l56_dc2 + 304L)) != 0L)) {
                             ln = 1049091 // Titanium.HC:515
                             tick(t)
-                            f718_ManDie(t, l40_tmpu, 1L)
+                            f723_ManDie(t, l40_tmpu, 1L)
                         }
                     }
                 }
@@ -1195,7 +1195,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                             st1((l48_tmpb + 48L), 1L)
                             ln = 1049109 // Titanium.HC:533
                             tick(t)
-                            f719_ExplosionDo(t, l16_x, l24_y, l32_scroll_y)
+                            f724_ExplosionDo(t, l16_x, l24_y, l32_scroll_y)
                         }
                         ln = 1049101 // Titanium.HC:525
                         l0_i = (l0_i + 1L)
@@ -1219,7 +1219,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 st1((l48_tmpb + 48L), 1L)
                                 ln = 1049117 // Titanium.HC:541
                                 tick(t)
-                                f719_ExplosionDo(t, l16_x, l24_y, l32_scroll_y)
+                                f724_ExplosionDo(t, l16_x, l24_y, l32_scroll_y)
                             }
                             ln = 1049113 // Titanium.HC:537
                             l0_i = (l0_i + 1L)
@@ -1238,7 +1238,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Init (Titanium.HC:546) */
-    fun f721_Init(t: Task) {
+    fun f726_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1415,7 +1415,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC FireBullet (Titanium.HC:621) */
-    fun f722_FireBullet(t: Task) {
+    fun f727_FireBullet(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1485,7 +1485,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC FireMissile (Titanium.HC:650) */
-    fun f723_FireMissile(t: Task, a0: Long): Long {
+    fun f728_FireMissile(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1532,7 +1532,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 l32_tmpb = (g_b + (l8_i * 56L))
                 ln = 1049243 // Titanium.HC:667
                 tick(t)
-                f715_MissilePos(t, l16_m, ldf(g__), l32_tmpb, (l32_tmpb + 8L))
+                f720_MissilePos(t, l16_m, ldf(g__), l32_tmpb, (l32_tmpb + 8L))
                 ln = 1049244 // Titanium.HC:668
                 val t5: Long = l32_tmpb
                 st8(t5, (ld8(t5) shl 32))
@@ -1573,7 +1573,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MenMove (Titanium.HC:685) */
-    fun f724_MenMove(t: Task, a0: Long) {
+    fun f729_MenMove(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1703,7 +1703,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MenFight (Titanium.HC:732) */
-    fun f725_MenFight(t: Task, a0: Long) {
+    fun f730_MenFight(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1756,7 +1756,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     if (r3) {
                         ln = 1049326 // Titanium.HC:750
                         tick(t)
-                        f718_ManDie(t, (g_u + (l32_best * 48L)), 0L)
+                        f723_ManDie(t, (g_u + (l32_best * 48L)), 0L)
                     }
                 }
                 ln = 1049311 // Titanium.HC:735
@@ -1806,7 +1806,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     if (r7) {
                         ln = 1049344 // Titanium.HC:768
                         tick(t)
-                        f718_ManDie(t, (g_u + (l32_best * 48L)), 0L)
+                        f723_ManDie(t, (g_u + (l32_best * 48L)), 0L)
                     }
                 }
                 ln = 1049329 // Titanium.HC:753
@@ -1819,7 +1819,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Titanium (Titanium.HC:773) */
-    fun f726_Titanium(t: Task) {
+    fun f731_Titanium(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1834,7 +1834,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 1049357 // Titanium.HC:781
             tick(t)
-            P.f507_MenuPush(t, s6)
+            P.f512_MenuPush(t, s6)
             ln = 1049371 // Titanium.HC:795
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 1049372 // Titanium.HC:796
@@ -1854,11 +1854,11 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f188_PressAKey(t)
             ln = 1049388 // Titanium.HC:812
             tick(t)
-            f721_Init(t)
+            f726_Init(t)
             ln = 1049389 // Titanium.HC:813
             nat(t, n_DocClear, push1(t, 0L))
             ln = 1049390 // Titanium.HC:814
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065868L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065873L)
             ln = 1049392 // Titanium.HC:816
             l32_gun_on = 0L
             ln = 1049394 // Titanium.HC:818
@@ -1894,7 +1894,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                                 if (((ld8((fp + 24)) and 1024L) != 0L)) {
                                                                     ln = 1049405 // Titanium.HC:829
                                                                     tick(t)
-                                                                    f723_FireMissile(t, 1L)
+                                                                    f728_FireMissile(t, 1L)
                                                                 }
                                                             }
                                                             75L -> {
@@ -1902,7 +1902,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                                 if (((ld8((fp + 24)) and 1024L) != 0L)) {
                                                                     ln = 1049409 // Titanium.HC:833
                                                                     tick(t)
-                                                                    f723_FireMissile(t, -1L)
+                                                                    f728_FireMissile(t, -1L)
                                                                 }
                                                             }
                                                             else -> {
@@ -1917,7 +1917,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                 10L -> {
                                                     ln = 1049417 // Titanium.HC:841
                                                     tick(t)
-                                                    f721_Init(t)
+                                                    f726_Init(t)
                                                 }
                                                 32L -> {
                                                     ln = 1049420 // Titanium.HC:844
@@ -2107,7 +2107,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                                             } while (false)
                                                                             ln = 1049470 // Titanium.HC:894
                                                                             tick(t)
-                                                                            f725_MenFight(t, mods((ld8(g_main_loop_pass) shr 4), 8L))
+                                                                            f730_MenFight(t, mods((ld8(g_main_loop_pass) shr 4), 8L))
                                                                             ln = 1049471 // Titanium.HC:895
                                                                             break@switch15_13
                                                                         } while (false)
@@ -2116,7 +2116,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                             } while (false)
                                                             ln = 1049476 // Titanium.HC:900
                                                             tick(t)
-                                                            f724_MenMove(t, mods((ld8(g_main_loop_pass) shr 4), 8L))
+                                                            f729_MenMove(t, mods((ld8(g_main_loop_pass) shr 4), 8L))
                                                             ln = 1049477 // Titanium.HC:901
                                                             break@switch15_13
                                                         } while (false)
@@ -2129,7 +2129,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                             if ((l32_gun_on != 0L)) {
                                                 ln = 1049484 // Titanium.HC:908
                                                 tick(t)
-                                                f722_FireBullet(t)
+                                                f727_FireBullet(t)
                                             }
                                             ln = 1049485 // Titanium.HC:909
                                             break@switch14_14
@@ -2139,7 +2139,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                             } while (false)
                             ln = 1049490 // Titanium.HC:914
                             tick(t)
-                            f720_CheckCollisions(t)
+                            f725_CheckCollisions(t)
                             ln = 1049491 // Titanium.HC:915
                             break@switch14_14
                         } while (false)
@@ -2216,7 +2216,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                             l32_gun_on = 0L
                             ln = 1049520 // Titanium.HC:944
                             tick(t)
-                            f721_Init(t)
+                            f726_Init(t)
                         }
                         tick(t)
                     }
@@ -2237,7 +2237,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 1049529 // Titanium.HC:953
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 1049530 // Titanium.HC:954
             nat(t, n_RegWrite, push3(t, s2, s8, ld8(g_best_score)))
             t.msp = msp0
@@ -2247,7 +2247,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Apps/Titanium/Load.HC#9 (Load.HC:1) */
-    fun f727_init_C__Apps_Titanium_Load_HC_9(t: Task): Long {
+    fun f732_init_C__Apps_Titanium_Load_HC_9(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2259,31 +2259,31 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Titanium_Load_HC_0(t)
-            704 -> f704_init_C__Apps_Titanium_Load_HC_1(t)
-            705 -> f705_init_C__Apps_Titanium_Load_HC_2(t)
-            706 -> f706_init_C__Home_Registry_HC_0(t)
-            707 -> f707_init_C__Apps_Titanium_Load_HC_3(t)
-            708 -> f708_init_C__Apps_Titanium_Load_HC_4(t)
-            709 -> f709_init_C__Apps_Titanium_Load_HC_5(t)
-            710 -> f710_init_C__Apps_Titanium_Load_HC_6(t)
-            711 -> f711_init_C__Apps_Titanium_Load_HC_7(t)
-            712 -> f712_init_C__Apps_Titanium_Load_HC_8(t)
-            713 -> { f713_ExplosionDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            714 -> { f714_MPMenDraw(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            715 -> { f715_MissilePos(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            716 -> { f716_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            717 -> f717_ExplosionNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            718 -> { f718_ManDie(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            719 -> { f719_ExplosionDo(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            720 -> { f720_CheckCollisions(t); 0L }
-            721 -> { f721_Init(t); 0L }
-            722 -> { f722_FireBullet(t); 0L }
-            723 -> f723_FireMissile(t, (if (n > 0) st[base + 0] else 0L))
-            724 -> { f724_MenMove(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            725 -> { f725_MenFight(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            726 -> { f726_Titanium(t); 0L }
-            727 -> f727_init_C__Apps_Titanium_Load_HC_9(t)
+            708 -> f708_init_C__Apps_Titanium_Load_HC_0(t)
+            709 -> f709_init_C__Apps_Titanium_Load_HC_1(t)
+            710 -> f710_init_C__Apps_Titanium_Load_HC_2(t)
+            711 -> f711_init_C__Home_Registry_HC_0(t)
+            712 -> f712_init_C__Apps_Titanium_Load_HC_3(t)
+            713 -> f713_init_C__Apps_Titanium_Load_HC_4(t)
+            714 -> f714_init_C__Apps_Titanium_Load_HC_5(t)
+            715 -> f715_init_C__Apps_Titanium_Load_HC_6(t)
+            716 -> f716_init_C__Apps_Titanium_Load_HC_7(t)
+            717 -> f717_init_C__Apps_Titanium_Load_HC_8(t)
+            718 -> { f718_ExplosionDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            719 -> { f719_MPMenDraw(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            720 -> { f720_MissilePos(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            721 -> { f721_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            722 -> f722_ExplosionNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            723 -> { f723_ManDie(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            724 -> { f724_ExplosionDo(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            725 -> { f725_CheckCollisions(t); 0L }
+            726 -> { f726_Init(t); 0L }
+            727 -> { f727_FireBullet(t); 0L }
+            728 -> f728_FireMissile(t, (if (n > 0) st[base + 0] else 0L))
+            729 -> { f729_MenMove(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            730 -> { f730_MenFight(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            731 -> { f731_Titanium(t); 0L }
+            732 -> f732_init_C__Apps_Titanium_Load_HC_9(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -2295,7 +2295,7 @@ class N_Apps_Titanium_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732)
         private val NAMES = arrayOf("\$init:C:/Apps/Titanium/Load.HC#0", "\$init:C:/Apps/Titanium/Load.HC#1", "\$init:C:/Apps/Titanium/Load.HC#2", "\$init:C:/Home/Registry.HC#0", "\$init:C:/Apps/Titanium/Load.HC#3", "\$init:C:/Apps/Titanium/Load.HC#4", "\$init:C:/Apps/Titanium/Load.HC#5", "\$init:C:/Apps/Titanium/Load.HC#6", "\$init:C:/Apps/Titanium/Load.HC#7", "\$init:C:/Apps/Titanium/Load.HC#8", "ExplosionDraw", "MPMenDraw", "MissilePos", "DrawIt", "ExplosionNew", "ManDie", "ExplosionDo", "CheckCollisions", "Init", "FireBullet", "FireMissile", "MenMove", "MenFight", "Titanium", "\$init:C:/Apps/Titanium/Load.HC#9")
         private val FILES = arrayOf<String>("C:/Apps/Titanium/Load.HC", "C:/Apps/Titanium/Titanium.HC")
     }

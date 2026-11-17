@@ -9,6 +9,7 @@ import TempleCore
 
 public final class N_Demo_Graphics_Collision: NativeModule {
     public let P: Prelude
+    public let n_Sprite3: Int
     /** binary literal, 698 bytes */ public var b0: Int64 = 0
     /** binary literal, 698 bytes */ public var b1: Int64 = 0
     /** "Collisions:%d" */ public var s0: Int64 = 0
@@ -17,6 +18,7 @@ public final class N_Demo_Graphics_Collision: NativeModule {
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -33,7 +35,7 @@ public final class N_Demo_Graphics_Collision: NativeModule {
     }
 
     /// HolyC DrawIt (Collision.HC:8)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -46,8 +48,7 @@ public final class N_Demo_Graphics_Collision: NativeModule {
             ln = 13 // Collision.HC:13
             l24_y = try (ld8((P.g_ms &+ 8)) &- ld8((p0_task &+ 232)))
             ln = 14 // Collision.HC:14
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, l16_x, l24_y, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, l16_x, l24_y, 0, b0, 0))
             ln = 16 // Collision.HC:16
             l16_x = try (ld8((p0_task &+ 224)) &>> 1)
             ln = 17 // Collision.HC:17
@@ -59,24 +60,21 @@ public final class N_Demo_Graphics_Collision: NativeModule {
             ln = 21 // Collision.HC:21
             try st8((p1_dc &+ 304), 0)
             ln = 22 // Collision.HC:22
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, l16_x, l24_y, 0, b1, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, l16_x, l24_y, 0, b1, 0))
             ln = 24 // Collision.HC:24
             try st4((p1_dc &+ 160), 0)
             ln = 25 // Collision.HC:25
             try tick(t)
             let vb0 = try push1(t, ld8((p1_dc &+ 304)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, ((ld8((p0_task &+ 248)) &- 8) &>> 1), s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, ((ld8((p0_task &+ 248)) &- 8) &>> 1), s0, vb0, 1)
             t.sp = vb0
             ln = 28 // Collision.HC:28
             if try (ld8((p1_dc &+ 304)) == 0) {
                 ln = 29 // Collision.HC:29
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, l16_x, l24_y, 0, b2, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, l16_x, l24_y, 0, b2, 0))
             } else {
                 ln = 31 // Collision.HC:31
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, l16_x, l24_y, 0, b3, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, l16_x, l24_y, 0, b3, 0))
             }
             t.depth -= 1
             return
@@ -84,7 +82,7 @@ public final class N_Demo_Graphics_Collision: NativeModule {
     }
 
     /// HolyC Collision (Collision.HC:34)
-    public final func f704_Collision(_ t: HTask) throws {
+    public final func f709_Collision(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -92,7 +90,7 @@ public final class N_Demo_Graphics_Collision: NativeModule {
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 37 // Collision.HC:37
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 38 // Collision.HC:38
             try tick(t)
             _ = try P.f188_PressAKey(t)
@@ -105,13 +103,13 @@ public final class N_Demo_Graphics_Collision: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Collision.HC#0 (Collision.HC:42)
-    @discardableResult public final func f705_init_C__Demo_Graphics_Collision_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_Collision_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 42 // Collision.HC:42
             try tick(t)
-            try f704_Collision(t)
+            try f709_Collision(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Collision.HC#0", ln) }
@@ -120,15 +118,15 @@ public final class N_Demo_Graphics_Collision: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_Collision(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_Collision_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_Collision(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_Collision_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "Collision", 705: "$init:C:/Demo/Graphics/Collision.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "Collision", 710: "$init:C:/Demo/Graphics/Collision.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Collision.HC"]
     public override var files: [String] { N_Demo_Graphics_Collision.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Collision.DEFINED.contains(index) }

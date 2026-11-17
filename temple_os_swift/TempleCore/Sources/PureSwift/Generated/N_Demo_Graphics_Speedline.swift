@@ -12,12 +12,14 @@ public final class N_Demo_Graphics_Speedline: NativeModule {
     public let n_AutoComplete: Int
     public let n_DocClear: Int
     public let n_GetMsg: Int
+    public let n_GrLine3: Int
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
         n_AutoComplete = rt.vm.natives.find("AutoComplete")!.index
         n_DocClear = rt.vm.natives.find("DocClear")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         super.init(rt)
     }
 
@@ -28,7 +30,7 @@ public final class N_Demo_Graphics_Speedline: NativeModule {
     }
 
     /// HolyC SpeedLineDemo (Speedline.HC:3)
-    public final func f703_SpeedLineDemo(_ t: HTask) throws {
+    public final func f708_SpeedLineDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -101,8 +103,7 @@ public final class N_Demo_Graphics_Speedline: NativeModule {
                             ln = 31 // Speedline.HC:31
                             try st4((l72_dc &+ 228), f2i((0.04 * ldf((P.g_ms &+ 120)))))
                             ln = 32 // Speedline.HC:32
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0))
                             ln = 33 // Speedline.HC:33
                             let t4: Int64 = try nat(t, n_GetMsg, try push4(t, (fp &+ 48), (fp &+ 56), 80, 0))
                             l0_msg_code = t4
@@ -115,8 +116,7 @@ public final class N_Demo_Graphics_Speedline: NativeModule {
                             try tick(t)
                         }
                         ln = 38 // Speedline.HC:38
-                        try tick(t)
-                        _ = try P.f406_GrLine3(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0)
+                        _ = try nat(t, n_GrLine3, try push(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0))
                     case 2:
                         break
                     default:
@@ -144,13 +144,13 @@ public final class N_Demo_Graphics_Speedline: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Speedline.HC#0 (Speedline.HC:50)
-    @discardableResult public final func f704_init_C__Demo_Graphics_Speedline_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_Speedline_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 50 // Speedline.HC:50
             try tick(t)
-            try f703_SpeedLineDemo(t)
+            try f708_SpeedLineDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Speedline.HC#0", ln) }
@@ -159,14 +159,14 @@ public final class N_Demo_Graphics_Speedline: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SpeedLineDemo(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_Speedline_HC_0(t)
+        case 708: try f708_SpeedLineDemo(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_Speedline_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "SpeedLineDemo", 704: "$init:C:/Demo/Graphics/Speedline.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "SpeedLineDemo", 709: "$init:C:/Demo/Graphics/Speedline.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Speedline.HC"]
     public override var files: [String] { N_Demo_Graphics_Speedline.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Speedline.DEFINED.contains(index) }

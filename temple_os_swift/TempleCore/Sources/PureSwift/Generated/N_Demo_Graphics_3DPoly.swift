@@ -9,10 +9,12 @@ import TempleCore
 
 public final class N_Demo_Graphics_3DPoly: NativeModule {
     public let P: Prelude
+    public let n_GrFillPoly3: Int
     public let n_Refresh: Int
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
+        n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!.index
         n_Refresh = rt.vm.natives.find("Refresh")!.index
         super.init(rt)
     }
@@ -24,7 +26,7 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
     }
 
     /// HolyC Main (3DPoly.HC:1)
-    public final func f703_Main(_ t: HTask) throws {
+    public final func f708_Main(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -62,12 +64,12 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
                     _ = try P.f295_DCDepthBufRst(t, l72_dc)
                     ln = 11 // 3DPoly.HC:11
                     try tick(t)
-                    _ = try P.f314_DCSymmetrySet(t, l72_dc, divs(ld8((ld8(P.g_Fs) &+ 224)), 2), divs(ld8((ld8(P.g_Fs) &+ 248)), 2), ((ld8(P.g_ms) &- ld8((ld8(P.g_Fs) &+ 208))) &- ld8((ld8(P.g_Fs) &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((ld8(P.g_Fs) &+ 232))) &- ld8((ld8(P.g_Fs) &+ 264))))
+                    _ = try P.f315_DCSymmetrySet(t, l72_dc, divs(ld8((ld8(P.g_Fs) &+ 224)), 2), divs(ld8((ld8(P.g_Fs) &+ 248)), 2), ((ld8(P.g_ms) &- ld8((ld8(P.g_Fs) &+ 208))) &- ld8((ld8(P.g_Fs) &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((ld8(P.g_Fs) &+ 232))) &- ld8((ld8(P.g_Fs) &+ 264))))
                     ln = 14 // 3DPoly.HC:14
                     try st4((l72_dc &+ 160), 9)
                     ln = 15 // 3DPoly.HC:15
                     try tick(t)
-                    _ = try P.f396_GrLine(t, l72_dc, divs(ld8((ld8(P.g_Fs) &+ 224)), 2), divs(ld8((ld8(P.g_Fs) &+ 248)), 2), ((ld8(P.g_ms) &- ld8((ld8(P.g_Fs) &+ 208))) &- ld8((ld8(P.g_Fs) &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((ld8(P.g_Fs) &+ 232))) &- ld8((ld8(P.g_Fs) &+ 264))), 1, 0)
+                    _ = try P.f397_GrLine(t, l72_dc, divs(ld8((ld8(P.g_Fs) &+ 224)), 2), divs(ld8((ld8(P.g_Fs) &+ 248)), 2), ((ld8(P.g_ms) &- ld8((ld8(P.g_Fs) &+ 208))) &- ld8((ld8(P.g_Fs) &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((ld8(P.g_Fs) &+ 232))) &- ld8((ld8(P.g_Fs) &+ 264))), 1, 0)
                     ln = 19 // 3DPoly.HC:19
                     try tick(t)
                     _ = try P.f280_Mat4x4IdentEqu(t, ld8((l72_dc &+ 200)))
@@ -116,8 +118,7 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
                     ln = 41 // 3DPoly.HC:41
                     try st4((((fp &+ 24) &+ 36) &+ 8), 0)
                     ln = 42 // 3DPoly.HC:42
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, l72_dc, 4, (fp &+ 24))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, l72_dc, 4, (fp &+ 24)))
                     ln = 44 // 3DPoly.HC:44
                     try st4((l72_dc &+ 160), 4)
                     ln = 45 // 3DPoly.HC:45
@@ -145,8 +146,7 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
                     ln = 56 // 3DPoly.HC:56
                     try st4((((fp &+ 24) &+ 36) &+ 8), 50)
                     ln = 57 // 3DPoly.HC:57
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, l72_dc, 4, (fp &+ 24))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, l72_dc, 4, (fp &+ 24)))
                     ln = 59 // 3DPoly.HC:59
                     try st4((l72_dc &+ 160), 1)
                     ln = 60 // 3DPoly.HC:60
@@ -174,8 +174,7 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
                     ln = 71 // 3DPoly.HC:71
                     try st4((((fp &+ 24) &+ 36) &+ 8), (-50))
                     ln = 72 // 3DPoly.HC:72
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, l72_dc, 4, (fp &+ 24))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, l72_dc, 4, (fp &+ 24)))
                     ln = 74 // 3DPoly.HC:74
                     try st4((l72_dc &+ 160), 1073872900)
                     ln = 75 // 3DPoly.HC:75
@@ -203,8 +202,7 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
                     ln = 86 // 3DPoly.HC:86
                     try st4((((fp &+ 24) &+ 36) &+ 8), 0)
                     ln = 87 // 3DPoly.HC:87
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, l72_dc, 4, (fp &+ 24))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, l72_dc, 4, (fp &+ 24)))
                     ln = 89 // 3DPoly.HC:89
                     try st4((l72_dc &+ 160), 1073872897)
                     ln = 90 // 3DPoly.HC:90
@@ -232,8 +230,7 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
                     ln = 101 // 3DPoly.HC:101
                     try st4((((fp &+ 24) &+ 36) &+ 8), 0)
                     ln = 102 // 3DPoly.HC:102
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, l72_dc, 4, (fp &+ 24))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, l72_dc, 4, (fp &+ 24)))
                     ln = 104 // 3DPoly.HC:104
                     _ = try nat(t, n_Refresh, try push2(t, 1, 0))
                     ln = 105 // 3DPoly.HC:105
@@ -269,13 +266,13 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/3DPoly.HC#0 (3DPoly.HC:117)
-    @discardableResult public final func f704_init_C__Demo_Graphics_3DPoly_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_3DPoly_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 117 // 3DPoly.HC:117
             try tick(t)
-            try f703_Main(t)
+            try f708_Main(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/3DPoly.HC#0", ln) }
@@ -284,14 +281,14 @@ public final class N_Demo_Graphics_3DPoly: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Main(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_3DPoly_HC_0(t)
+        case 708: try f708_Main(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_3DPoly_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "Main", 704: "$init:C:/Demo/Graphics/3DPoly.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "Main", 709: "$init:C:/Demo/Graphics/3DPoly.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/3DPoly.HC"]
     public override var files: [String] { N_Demo_Graphics_3DPoly.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_3DPoly.DEFINED.contains(index) }

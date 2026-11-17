@@ -56,7 +56,7 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Demo/Define.HC#0 (Define.HC:4) */
-    fun f703_init_C__Demo_Define_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Define_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -70,7 +70,7 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Demo/Define.HC#1 (Define.HC:5) */
-    fun f704_init_C__Demo_Define_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Define_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -84,7 +84,7 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Demo/Define.HC#2 (Define.HC:6) */
-    fun f705_init_C__Demo_Define_HC_2(t: Task): Long {
+    fun f710_init_C__Demo_Define_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -98,7 +98,7 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Demo/Define.HC#3 (Define.HC:11) */
-    fun f706_init_C__Demo_Define_HC_3(t: Task): Long {
+    fun f711_init_C__Demo_Define_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -112,7 +112,7 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Demo/Define.HC#4 (Define.HC:12) */
-    fun f707_init_C__Demo_Define_HC_4(t: Task): Long {
+    fun f712_init_C__Demo_Define_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -133,7 +133,7 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC Quit (Define.HC:18) */
-    fun f708_Quit(t: Task): Long {
+    fun f713_Quit(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -150,7 +150,7 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
                 l8_st = t0
                 ln = 26 // Define.HC:26
                 tick(t)
-                val t1: Long = P.f573_DefineMatch(t, l8_st, s5, 1L)
+                val t1: Long = P.f578_DefineMatch(t, l8_st, s5, 1L)
                 l16_i = t1
                 ln = 27 // Define.HC:27
                 if ((l16_i >= 0L)) {
@@ -172,13 +172,13 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Demo/Define.HC#5 (Define.HC:36) */
-    fun f709_init_C__Demo_Define_HC_5(t: Task): Long {
+    fun f714_init_C__Demo_Define_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 36 // Define.HC:36
             tick(t)
-            val t0: Long = f708_Quit(t)
+            val t0: Long = f713_Quit(t)
             t.depth--
             return t0
             t.depth--
@@ -189,13 +189,13 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Define_HC_0(t)
-            704 -> f704_init_C__Demo_Define_HC_1(t)
-            705 -> f705_init_C__Demo_Define_HC_2(t)
-            706 -> f706_init_C__Demo_Define_HC_3(t)
-            707 -> f707_init_C__Demo_Define_HC_4(t)
-            708 -> f708_Quit(t)
-            709 -> f709_init_C__Demo_Define_HC_5(t)
+            708 -> f708_init_C__Demo_Define_HC_0(t)
+            709 -> f709_init_C__Demo_Define_HC_1(t)
+            710 -> f710_init_C__Demo_Define_HC_2(t)
+            711 -> f711_init_C__Demo_Define_HC_3(t)
+            712 -> f712_init_C__Demo_Define_HC_4(t)
+            713 -> f713_Quit(t)
+            714 -> f714_init_C__Demo_Define_HC_5(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -207,7 +207,7 @@ class N_Demo_Define(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714)
         private val NAMES = arrayOf("\$init:C:/Demo/Define.HC#0", "\$init:C:/Demo/Define.HC#1", "\$init:C:/Demo/Define.HC#2", "\$init:C:/Demo/Define.HC#3", "\$init:C:/Demo/Define.HC#4", "Quit", "\$init:C:/Demo/Define.HC#5")
         private val FILES = arrayOf<String>("C:/Demo/Define.HC")
     }

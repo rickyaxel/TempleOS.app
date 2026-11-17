@@ -40,7 +40,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrMath.HC#0 (GrMath.HC:3)
-    @discardableResult public final func f703_init_C__Adam_Gr_GrMath_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Adam_Gr_GrMath_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -50,7 +50,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Line (GrMath.HC:8)
-    @discardableResult public final func f704_Line(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Int64, _ a9: Int64) throws -> Int64 {
+    @discardableResult public final func f709_Line(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Int64, _ a9: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -260,7 +260,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4MulMat4x4Equ (GrMath.HC:80)
-    @discardableResult public final func f705_Mat4x4MulMat4x4Equ(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f710_Mat4x4MulMat4x4Equ(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -309,7 +309,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4MulMat4x4New (GrMath.HC:96)
-    @discardableResult public final func f706_Mat4x4MulMat4x4New(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f711_Mat4x4MulMat4x4New(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -319,7 +319,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             ln = 99 // GrMath.HC:99
             let t0: Int64 = try nat(t, n_MAlloc, try push2(t, 128, p2_mem_task))
             try tick(t)
-            let t1: Int64 = try f705_Mat4x4MulMat4x4Equ(t, t0, p0_m1, p1_m2)
+            let t1: Int64 = try f710_Mat4x4MulMat4x4Equ(t, t0, p0_m1, p1_m2)
             t.depth -= 1
             return t1
             t.depth -= 1
@@ -328,7 +328,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4Equ (GrMath.HC:102)
-    @discardableResult public final func f707_Mat4x4Equ(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f712_Mat4x4Equ(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -345,7 +345,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4New (GrMath.HC:108)
-    @discardableResult public final func f708_Mat4x4New(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f713_Mat4x4New(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -354,7 +354,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             ln = 110 // GrMath.HC:110
             let t0: Int64 = try nat(t, n_MAlloc, try push2(t, 128, p1_mem_task))
             try tick(t)
-            let t1: Int64 = try f707_Mat4x4Equ(t, t0, p0_src)
+            let t1: Int64 = try f712_Mat4x4Equ(t, t0, p0_src)
             t.depth -= 1
             return t1
             t.depth -= 1
@@ -363,7 +363,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4RotX (GrMath.HC:113)
-    @discardableResult public final func f709_Mat4x4RotX(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
+    @discardableResult public final func f714_Mat4x4RotX(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -394,9 +394,9 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             try st8(((fp &+ 32) &+ 120), 4294967296)
             ln = 124 // GrMath.HC:124
             try tick(t)
-            let t2: Int64 = try f705_Mat4x4MulMat4x4Equ(t, (fp &+ 160), (fp &+ 32), p0_m)
+            let t2: Int64 = try f710_Mat4x4MulMat4x4Equ(t, (fp &+ 160), (fp &+ 32), p0_m)
             try tick(t)
-            let t3: Int64 = try f707_Mat4x4Equ(t, p0_m, t2)
+            let t3: Int64 = try f712_Mat4x4Equ(t, p0_m, t2)
             t.msp = msp0
             t.depth -= 1
             return t3
@@ -407,7 +407,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4RotY (GrMath.HC:127)
-    @discardableResult public final func f710_Mat4x4RotY(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
+    @discardableResult public final func f715_Mat4x4RotY(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -438,9 +438,9 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             try st8(((fp &+ 32) &+ 120), 4294967296)
             ln = 138 // GrMath.HC:138
             try tick(t)
-            let t2: Int64 = try f705_Mat4x4MulMat4x4Equ(t, (fp &+ 160), (fp &+ 32), p0_m)
+            let t2: Int64 = try f710_Mat4x4MulMat4x4Equ(t, (fp &+ 160), (fp &+ 32), p0_m)
             try tick(t)
-            let t3: Int64 = try f707_Mat4x4Equ(t, p0_m, t2)
+            let t3: Int64 = try f712_Mat4x4Equ(t, p0_m, t2)
             t.msp = msp0
             t.depth -= 1
             return t3
@@ -451,7 +451,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4RotZ (GrMath.HC:141)
-    @discardableResult public final func f711_Mat4x4RotZ(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
+    @discardableResult public final func f716_Mat4x4RotZ(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -482,9 +482,9 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             try st8(((fp &+ 32) &+ 120), 4294967296)
             ln = 152 // GrMath.HC:152
             try tick(t)
-            let t2: Int64 = try f705_Mat4x4MulMat4x4Equ(t, (fp &+ 160), (fp &+ 32), p0_m)
+            let t2: Int64 = try f710_Mat4x4MulMat4x4Equ(t, (fp &+ 160), (fp &+ 32), p0_m)
             try tick(t)
-            let t3: Int64 = try f707_Mat4x4Equ(t, p0_m, t2)
+            let t3: Int64 = try f712_Mat4x4Equ(t, p0_m, t2)
             t.msp = msp0
             t.depth -= 1
             return t3
@@ -495,7 +495,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4Scale (GrMath.HC:155)
-    @discardableResult public final func f712_Mat4x4Scale(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
+    @discardableResult public final func f717_Mat4x4Scale(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -521,7 +521,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC DCThickScale (GrMath.HC:163)
-    public final func f713_DCThickScale(_ t: HTask, _ a0: Int64) throws {
+    public final func f718_DCThickScale(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -550,7 +550,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4TranslationEqu (GrMath.HC:176)
-    @discardableResult public final func f714_Mat4x4TranslationEqu(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f719_Mat4x4TranslationEqu(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -575,7 +575,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Mat4x4TranslationAdd (GrMath.HC:185)
-    @discardableResult public final func f715_Mat4x4TranslationAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f720_Mat4x4TranslationAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -603,7 +603,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC DCSymmetrySet (GrMath.HC:194)
-    @discardableResult public final func f716_DCSymmetrySet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f721_DCSymmetrySet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -667,7 +667,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC DCSymmetry3Set (GrMath.HC:216)
-    @discardableResult public final func f717_DCSymmetry3Set(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Int64, _ a9: Int64) throws -> Int64 {
+    @discardableResult public final func f722_DCSymmetry3Set(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Int64, _ a9: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -779,7 +779,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC DCReflect (GrMath.HC:252)
-    public final func f718_DCReflect(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f723_DCReflect(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -861,7 +861,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Circle (GrMath.HC:282)
-    @discardableResult public final func f719_Circle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Double, _ a8: Double) throws -> Int64 {
+    @discardableResult public final func f724_Circle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Double, _ a8: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -972,7 +972,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Ellipse (GrMath.HC:321)
-    @discardableResult public final func f720_Ellipse(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Double, _ a8: Int64, _ a9: Double, _ a10: Double) throws -> Int64 {
+    @discardableResult public final func f725_Ellipse(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Double, _ a8: Int64, _ a9: Double, _ a10: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1139,7 +1139,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC RegPoly (GrMath.HC:388)
-    @discardableResult public final func f721_RegPoly(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Double, _ a9: Int64, _ a10: Double, _ a11: Double) throws -> Int64 {
+    @discardableResult public final func f726_RegPoly(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Double, _ a9: Int64, _ a10: Double, _ a11: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1256,7 +1256,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
                 l184_yy2 = (p2_cy &+ (l120_y &>> 8))
                 ln = 440 // GrMath.HC:440
                 try tick(t)
-                let t6: Int64 = try f704_Line(t, p0_aux_data, l160_xx1, l168_yy1, p3_cz, l176_xx2, l184_yy2, p3_cz, p7_fp_plot, p9_step, 0)
+                let t6: Int64 = try f709_Line(t, p0_aux_data, l160_xx1, l168_yy1, p3_cz, l176_xx2, l184_yy2, p3_cz, p7_fp_plot, p9_step, 0)
                 if (t6 == 0) {
                     ln = 441 // GrMath.HC:441
                     let rv14: Int64 = 0
@@ -1280,7 +1280,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC D3I32Dist (GrMath.HC:448)
-    @discardableResult public final func f722_D3I32Dist(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Double {
+    @discardableResult public final func f727_D3I32Dist(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -1302,7 +1302,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC D3I32DistSqr (GrMath.HC:453)
-    @discardableResult public final func f723_D3I32DistSqr(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f728_D3I32DistSqr(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1324,7 +1324,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC D3I32Norm (GrMath.HC:458)
-    @discardableResult public final func f724_D3I32Norm(_ t: HTask, _ a0: Int64) throws -> Double {
+    @discardableResult public final func f729_D3I32Norm(_ t: HTask, _ a0: Int64) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -1345,7 +1345,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC D3I32NormSqr (GrMath.HC:463)
-    @discardableResult public final func f725_D3I32NormSqr(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f730_D3I32NormSqr(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1366,7 +1366,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Bezier2 (GrMath.HC:469)
-    @discardableResult public final func f726_Bezier2(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f731_Bezier2(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1414,13 +1414,13 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             l176_z2 = try (Double(ld4s(((p1_ctrl &+ 24) &+ 8))) - l128_z0)
             ln = 476 // GrMath.HC:476
             try tick(t)
-            let t0: Double = try f722_D3I32Dist(t, p1_ctrl, (p1_ctrl &+ 12))
+            let t0: Double = try f727_D3I32Dist(t, p1_ctrl, (p1_ctrl &+ 12))
             ln = 477 // GrMath.HC:477
             try tick(t)
-            let t1: Double = try f722_D3I32Dist(t, (p1_ctrl &+ 12), (p1_ctrl &+ 24))
+            let t1: Double = try f727_D3I32Dist(t, (p1_ctrl &+ 12), (p1_ctrl &+ 24))
             ln = 478 // GrMath.HC:478
             try tick(t)
-            let t2: Double = try f722_D3I32Dist(t, (p1_ctrl &+ 24), p1_ctrl)
+            let t2: Double = try f727_D3I32Dist(t, (p1_ctrl &+ 24), p1_ctrl)
             l192_d = ((t0 + t1) + t2)
             ln = 479 // GrMath.HC:479
             l200_s = (0.5 / l192_d)
@@ -1529,7 +1529,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC Bezier3 (GrMath.HC:514)
-    @discardableResult public final func f727_Bezier3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f732_Bezier3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1586,16 +1586,16 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             l200_z3 = try (Double(ld4s(((p1_ctrl &+ 36) &+ 8))) - l128_z0)
             ln = 522 // GrMath.HC:522
             try tick(t)
-            let t0: Double = try f722_D3I32Dist(t, p1_ctrl, (p1_ctrl &+ 12))
+            let t0: Double = try f727_D3I32Dist(t, p1_ctrl, (p1_ctrl &+ 12))
             ln = 523 // GrMath.HC:523
             try tick(t)
-            let t1: Double = try f722_D3I32Dist(t, (p1_ctrl &+ 12), (p1_ctrl &+ 24))
+            let t1: Double = try f727_D3I32Dist(t, (p1_ctrl &+ 12), (p1_ctrl &+ 24))
             ln = 524 // GrMath.HC:524
             try tick(t)
-            let t2: Double = try f722_D3I32Dist(t, (p1_ctrl &+ 24), (p1_ctrl &+ 36))
+            let t2: Double = try f727_D3I32Dist(t, (p1_ctrl &+ 24), (p1_ctrl &+ 36))
             ln = 525 // GrMath.HC:525
             try tick(t)
-            let t3: Double = try f722_D3I32Dist(t, (p1_ctrl &+ 36), p1_ctrl)
+            let t3: Double = try f727_D3I32Dist(t, (p1_ctrl &+ 36), p1_ctrl)
             l216_d = (((t0 + t1) + t2) + t3)
             ln = 526 // GrMath.HC:526
             l224_s = (0.5 / l216_d)
@@ -1708,7 +1708,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC BSpline2 (GrMath.HC:563)
-    @discardableResult public final func f728_BSpline2(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f733_BSpline2(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1846,7 +1846,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             loop8: while (l40_i < ((p2_cnt &* 2) &- 2)) {
                 ln = 622 // GrMath.HC:622
                 try tick(t)
-                let t2: Int64 = try f726_Bezier2(t, p0_aux_data, (l56_c &+ (l40_i &* 12)), p3_fp_plot, l64_first)
+                let t2: Int64 = try f731_Bezier2(t, p0_aux_data, (l56_c &+ (l40_i &* 12)), p3_fp_plot, l64_first)
                 if (t2 == 0) {
                     ln = 623 // GrMath.HC:623
                     let rv27: Int64 = 0
@@ -1871,7 +1871,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC BSpline3 (GrMath.HC:630)
-    @discardableResult public final func f729_BSpline3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f734_BSpline3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2054,7 +2054,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
             loop8: while (l40_i < ((p2_cnt &* 3) &- 3)) {
                 ln = 712 // GrMath.HC:712
                 try tick(t)
-                let t2: Int64 = try f727_Bezier3(t, p0_aux_data, (l80_c &+ (l40_i &* 12)), p3_fp_plot, l88_first)
+                let t2: Int64 = try f732_Bezier3(t, p0_aux_data, (l80_c &+ (l40_i &* 12)), p3_fp_plot, l88_first)
                 if (t2 == 0) {
                     ln = 713 // GrMath.HC:713
                     let rv30: Int64 = 0
@@ -2079,7 +2079,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC ClipLine (GrMath.HC:725)
-    @discardableResult public final func f730_ClipLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64) throws -> Int64 {
+    @discardableResult public final func f735_ClipLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2285,7 +2285,7 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrMath.HC#1 (GrMath.HC:1)
-    @discardableResult public final func f731_init_C__Adam_Gr_GrMath_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f736_init_C__Adam_Gr_GrMath_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2297,41 +2297,41 @@ public final class N_Adam_Gr_GrMath: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Adam_Gr_GrMath_HC_0(t)
-        case 704: return try f704_Line(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), (n > 8 ? st[base + 8] : 0), (n > 9 ? st[base + 9] : 0))
-        case 705: return try f705_Mat4x4MulMat4x4Equ(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 706: return try f706_Mat4x4MulMat4x4New(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 707: return try f707_Mat4x4Equ(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 708: return try f708_Mat4x4New(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 709: return try f709_Mat4x4RotX(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
-        case 710: return try f710_Mat4x4RotY(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
-        case 711: return try f711_Mat4x4RotZ(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
-        case 712: return try f712_Mat4x4Scale(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
-        case 713: try f713_DCThickScale(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 714: return try f714_Mat4x4TranslationEqu(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 715: return try f715_Mat4x4TranslationAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 716: return try f716_DCSymmetrySet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 717: return try f717_DCSymmetry3Set(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), (n > 8 ? st[base + 8] : 0), (n > 9 ? st[base + 9] : 0))
-        case 718: try f718_DCReflect(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 719: return try f719_Circle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), d((n > 8 ? st[base + 8] : 0)))
-        case 720: return try f720_Ellipse(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), (n > 8 ? st[base + 8] : 0), d((n > 9 ? st[base + 9] : 0)), d((n > 10 ? st[base + 10] : 0)))
-        case 721: return try f721_RegPoly(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), d((n > 8 ? st[base + 8] : 0)), (n > 9 ? st[base + 9] : 0), d((n > 10 ? st[base + 10] : 0)), d((n > 11 ? st[base + 11] : 0)))
-        case 722: return bits(try f722_D3I32Dist(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)))
-        case 723: return try f723_D3I32DistSqr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 724: return bits(try f724_D3I32Norm(t, (n > 0 ? st[base + 0] : 0)))
-        case 725: return try f725_D3I32NormSqr(t, (n > 0 ? st[base + 0] : 0))
-        case 726: return try f726_Bezier2(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 727: return try f727_Bezier3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 728: return try f728_BSpline2(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 729: return try f729_BSpline3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 730: return try f730_ClipLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0))
-        case 731: return try f731_init_C__Adam_Gr_GrMath_HC_1(t)
+        case 708: return try f708_init_C__Adam_Gr_GrMath_HC_0(t)
+        case 709: return try f709_Line(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), (n > 8 ? st[base + 8] : 0), (n > 9 ? st[base + 9] : 0))
+        case 710: return try f710_Mat4x4MulMat4x4Equ(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 711: return try f711_Mat4x4MulMat4x4New(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 712: return try f712_Mat4x4Equ(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 713: return try f713_Mat4x4New(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 714: return try f714_Mat4x4RotX(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
+        case 715: return try f715_Mat4x4RotY(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
+        case 716: return try f716_Mat4x4RotZ(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
+        case 717: return try f717_Mat4x4Scale(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
+        case 718: try f718_DCThickScale(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 719: return try f719_Mat4x4TranslationEqu(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 720: return try f720_Mat4x4TranslationAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 721: return try f721_DCSymmetrySet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 722: return try f722_DCSymmetry3Set(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), (n > 8 ? st[base + 8] : 0), (n > 9 ? st[base + 9] : 0))
+        case 723: try f723_DCReflect(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 724: return try f724_Circle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), d((n > 8 ? st[base + 8] : 0)))
+        case 725: return try f725_Ellipse(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), (n > 8 ? st[base + 8] : 0), d((n > 9 ? st[base + 9] : 0)), d((n > 10 ? st[base + 10] : 0)))
+        case 726: return try f726_RegPoly(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), d((n > 8 ? st[base + 8] : 0)), (n > 9 ? st[base + 9] : 0), d((n > 10 ? st[base + 10] : 0)), d((n > 11 ? st[base + 11] : 0)))
+        case 727: return bits(try f727_D3I32Dist(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)))
+        case 728: return try f728_D3I32DistSqr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 729: return bits(try f729_D3I32Norm(t, (n > 0 ? st[base + 0] : 0)))
+        case 730: return try f730_D3I32NormSqr(t, (n > 0 ? st[base + 0] : 0))
+        case 731: return try f731_Bezier2(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 732: return try f732_Bezier3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 733: return try f733_BSpline2(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 734: return try f734_BSpline3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 735: return try f735_ClipLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0))
+        case 736: return try f736_init_C__Adam_Gr_GrMath_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Adam/Gr/GrMath.HC#0", 704: "Line", 705: "Mat4x4MulMat4x4Equ", 706: "Mat4x4MulMat4x4New", 707: "Mat4x4Equ", 708: "Mat4x4New", 709: "Mat4x4RotX", 710: "Mat4x4RotY", 711: "Mat4x4RotZ", 712: "Mat4x4Scale", 713: "DCThickScale", 714: "Mat4x4TranslationEqu", 715: "Mat4x4TranslationAdd", 716: "DCSymmetrySet", 717: "DCSymmetry3Set", 718: "DCReflect", 719: "Circle", 720: "Ellipse", 721: "RegPoly", 722: "D3I32Dist", 723: "D3I32DistSqr", 724: "D3I32Norm", 725: "D3I32NormSqr", 726: "Bezier2", 727: "Bezier3", 728: "BSpline2", 729: "BSpline3", 730: "ClipLine", 731: "$init:C:/Adam/Gr/GrMath.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Adam/Gr/GrMath.HC#0", 709: "Line", 710: "Mat4x4MulMat4x4Equ", 711: "Mat4x4MulMat4x4New", 712: "Mat4x4Equ", 713: "Mat4x4New", 714: "Mat4x4RotX", 715: "Mat4x4RotY", 716: "Mat4x4RotZ", 717: "Mat4x4Scale", 718: "DCThickScale", 719: "Mat4x4TranslationEqu", 720: "Mat4x4TranslationAdd", 721: "DCSymmetrySet", 722: "DCSymmetry3Set", 723: "DCReflect", 724: "Circle", 725: "Ellipse", 726: "RegPoly", 727: "D3I32Dist", 728: "D3I32DistSqr", 729: "D3I32Norm", 730: "D3I32NormSqr", 731: "Bezier2", 732: "Bezier3", 733: "BSpline2", 734: "BSpline3", 735: "ClipLine", 736: "$init:C:/Adam/Gr/GrMath.HC#1"]
     private static let FILES: [String] = ["C:/Adam/Gr/GrMath.HC"]
     public override var files: [String] { N_Adam_Gr_GrMath.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_GrMath.DEFINED.contains(index) }

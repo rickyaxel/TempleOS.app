@@ -2,19 +2,19 @@ TOSIMG 1
 unit C:/Demo/Games/CastleFrankenstein.HC#0
 s 17fd38 46363420626573745f73636f72653d393939393b0a
 s 17fd60 54656d706c654f532f436173746c654672616e6b656e737465696e
-fn 703 $init:C:/Demo/Games/CastleFrankenstein.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Demo/Games/CastleFrankenstein.HC#0 (I64;;-)
+init 708
 unit C:/Demo/Games/CastleFrankenstein.HC#1
 s 17fd60 54656d706c654f532f436173746c654672616e6b656e737465696e
-fn 704 $init:C:/Demo/Games/CastleFrankenstein.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Demo/Games/CastleFrankenstein.HC#1 (I64;;-)
+init 709
 unit C:/Home/Registry.HC#0
 registry TempleOS/CastleFrankenstein
 g 17fd90 8
 c 17fd90 8 40c3878000000000
-fn 705 $init:C:/Home/Registry.HC#0 (I64;;-)
+fn 710 $init:C:/Home/Registry.HC#0 (I64;;-)
 sym g best_score 17fd90 F64
-init 705
+init 710
 unit C:/Home/Registry.HC#1
 unit C:/Demo/Games/CastleFrankenstein.HC#2
 value LOS_SCALE 4
@@ -61,31 +61,31 @@ s 182bf8 46363420626573745f73636f72653d25352e34663b0a
 s 17fd60 54656d706c654f532f436173746c654672616e6b656e737465696e
 c 17fdd8 8 0
 c 17fdf0 8 0
-fn 706 CFTransform (U0;*$CDC,*I64,*I64,*I64;-)
-fn 707 LOSPlot (Bool;*U8,I64,I64,I64;-)
-fn 708 LOS (Bool;I64,I64,I64,I64;-)
-fn 709 DrawIt (U0;*$CTask,*$CDC;-)
-fn 710 Fire (U0;;-)
-fn 711 Init (U0;;-)
-fn 712 AnimateTask (U0;I64;-)
-fn 713 CleanUp (U0;;-)
-fn 714 SongTask (U0;I64;-)
-fn 715 MoveMan (U0;F64;-)
-fn 716 RotateMan (U0;F64;-)
-fn 717 CastleFrankenstein (U0;;-)
-fn 718 $init:C:/Demo/Games/CastleFrankenstein.HC#2 (I64;;-)
-sym f AnimateTask 712 (U0;I64;-)
-sym f CFTransform 706 (U0;*$CDC,*I64,*I64,*I64;-)
-sym f CastleFrankenstein 717 (U0;;-)
-sym f CleanUp 713 (U0;;-)
-sym f DrawIt 709 (U0;*$CTask,*$CDC;-)
-sym f Fire 710 (U0;;-)
-sym f Init 711 (U0;;-)
-sym f LOS 708 (Bool;I64,I64,I64,I64;-)
-sym f LOSPlot 707 (Bool;*U8,I64,I64,I64;-)
-sym f MoveMan 715 (U0;F64;-)
-sym f RotateMan 716 (U0;F64;-)
-sym f SongTask 714 (U0;I64;-)
+fn 711 CFTransform (U0;*$CDC,*I64,*I64,*I64;-)
+fn 712 LOSPlot (Bool;*U8,I64,I64,I64;-)
+fn 713 LOS (Bool;I64,I64,I64,I64;-)
+fn 714 DrawIt (U0;*$CTask,*$CDC;-)
+fn 715 Fire (U0;;-)
+fn 716 Init (U0;;-)
+fn 717 AnimateTask (U0;I64;-)
+fn 718 CleanUp (U0;;-)
+fn 719 SongTask (U0;I64;-)
+fn 720 MoveMan (U0;F64;-)
+fn 721 RotateMan (U0;F64;-)
+fn 722 CastleFrankenstein (U0;;-)
+fn 723 $init:C:/Demo/Games/CastleFrankenstein.HC#2 (I64;;-)
+sym f AnimateTask 717 (U0;I64;-)
+sym f CFTransform 711 (U0;*$CDC,*I64,*I64,*I64;-)
+sym f CastleFrankenstein 722 (U0;;-)
+sym f CleanUp 718 (U0;;-)
+sym f DrawIt 714 (U0;*$CTask,*$CDC;-)
+sym f Fire 715 (U0;;-)
+sym f Init 716 (U0;;-)
+sym f LOS 713 (Bool;I64,I64,I64,I64;-)
+sym f LOSPlot 712 (Bool;*U8,I64,I64,I64;-)
+sym f MoveMan 720 (U0;F64;-)
+sym f RotateMan 721 (U0;F64;-)
+sym f SongTask 719 (U0;I64;-)
 sym g man_xx 17fe08 I64
 sym g man_yy 17fe20 I64
 sym g man_é 17fe38 F64
@@ -97,5 +97,5 @@ sym g monsters_left 17fe80 I64
 sym g panels_processed_bitmap 17fdf0 *U8
 sym g t0 17fe50 F64
 sym g tf 17fe68 F64
-init 718
+init 723
 unit C:/Demo/Games/CastleFrankenstein.HC#3

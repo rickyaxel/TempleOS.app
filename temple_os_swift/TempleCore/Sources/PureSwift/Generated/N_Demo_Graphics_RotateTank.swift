@@ -10,16 +10,20 @@ import TempleCore
 public final class N_Demo_Graphics_RotateTank: NativeModule {
     public let P: Prelude
     public let n_DocClear: Int
+    public let n_Mat4x4Scale: Int
     public let n_Refresh: Int
     public let n_Sin: Int
+    public let n_Sprite3: Int
     public let n_tS: Int
     /** binary literal, 1970 bytes */ public var b0: Int64 = 0
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
         n_DocClear = rt.vm.natives.find("DocClear")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_Refresh = rt.vm.natives.find("Refresh")!.index
         n_Sin = rt.vm.natives.find("Sin")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
     }
@@ -33,7 +37,7 @@ public final class N_Demo_Graphics_RotateTank: NativeModule {
     }
 
     /// HolyC RotateTank (RotateTank.HC:25)
-    public final func f703_RotateTank(_ t: HTask) throws {
+    public final func f708_RotateTank(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -89,9 +93,8 @@ public final class N_Demo_Graphics_RotateTank: NativeModule {
                     ln = 40 // RotateTank.HC:40
                     let t8: Double = d(try nat(t, n_tS, push0(t)))
                     try tick(t)
-                    let t9: Double = try P.f480_Saw(t, t8, 5.0)
-                    try tick(t)
-                    _ = try P.f308_Mat4x4Scale(t, ld8((l0_dc &+ 200)), (0.25 + t9))
+                    let t9: Double = try P.f485_Saw(t, t8, 5.0)
+                    _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((l0_dc &+ 200)), bits((0.25 + t9))))
                     ln = 41 // RotateTank.HC:41
                     try tick(t)
                     try P.f283_DCMat4x4Set(t, l0_dc, ld8((l0_dc &+ 200)))
@@ -102,8 +105,7 @@ public final class N_Demo_Graphics_RotateTank: NativeModule {
                     ln = 47 // RotateTank.HC:47
                     try st4((l0_dc &+ 224), divs(2147483647, 2))
                     ln = 49 // RotateTank.HC:49
-                    try tick(t)
-                    try P.f440_Sprite3(t, l0_dc, 0, 0, 0, b0, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, l0_dc, 0, 0, 0, b0, 0))
                     ln = 50 // RotateTank.HC:50
                     _ = try nat(t, n_Refresh, try push2(t, 1, 0))
                     ln = 51 // RotateTank.HC:51
@@ -132,13 +134,13 @@ public final class N_Demo_Graphics_RotateTank: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/RotateTank.HC#0 (RotateTank.HC:60)
-    @discardableResult public final func f704_init_C__Demo_Graphics_RotateTank_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_RotateTank_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 60 // RotateTank.HC:60
             try tick(t)
-            try f703_RotateTank(t)
+            try f708_RotateTank(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/RotateTank.HC#0", ln) }
@@ -147,14 +149,14 @@ public final class N_Demo_Graphics_RotateTank: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_RotateTank(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_RotateTank_HC_0(t)
+        case 708: try f708_RotateTank(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_RotateTank_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "RotateTank", 704: "$init:C:/Demo/Graphics/RotateTank.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "RotateTank", 709: "$init:C:/Demo/Graphics/RotateTank.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/RotateTank.HC"]
     public override var files: [String] { N_Demo_Graphics_RotateTank.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_RotateTank.DEFINED.contains(index) }

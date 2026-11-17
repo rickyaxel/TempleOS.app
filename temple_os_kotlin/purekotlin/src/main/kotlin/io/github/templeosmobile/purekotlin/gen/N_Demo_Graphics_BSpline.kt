@@ -25,7 +25,7 @@ class N_Demo_Graphics_BSpline(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC BSplineDemo (BSpline.HC:3) */
-    fun f703_BSplineDemo(t: Task) {
+    fun f708_BSplineDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -67,7 +67,7 @@ class N_Demo_Graphics_BSpline(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     st4((l0_dc + 160L), 2L)
                     ln = 20 // BSpline.HC:20
                     tick(t)
-                    P.f397_GrCircle(t, l0_dc, ld8((fp + 8)), ld8((fp + 16)), 10L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                    P.f398_GrCircle(t, l0_dc, ld8((fp + 8)), ld8((fp + 16)), 10L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                     ln = 21 // BSpline.HC:21
                     l24_i = (l24_i + 1L)
                 }
@@ -78,12 +78,12 @@ class N_Demo_Graphics_BSpline(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st4((l0_dc + 160L), 4L)
             ln = 25 // BSpline.HC:25
             tick(t)
-            P.f402_Gr2BSpline(t, l0_dc, (fp + 40), l24_i, 1L)
+            P.f403_Gr2BSpline(t, l0_dc, (fp + 40), l24_i, 1L)
             ln = 26 // BSpline.HC:26
             st4((l0_dc + 160L), 1L)
             ln = 27 // BSpline.HC:27
             tick(t)
-            P.f403_Gr3BSpline(t, l0_dc, (fp + 40), l24_i, 1L)
+            P.f404_Gr3BSpline(t, l0_dc, (fp + 40), l24_i, 1L)
             ln = 28 // BSpline.HC:28
             tick(t)
             P.f293_DCDel(t, l0_dc)
@@ -103,13 +103,13 @@ class N_Demo_Graphics_BSpline(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Graphics/BSpline.HC#0 (BSpline.HC:35) */
-    fun f704_init_C__Demo_Graphics_BSpline_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_BSpline_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 35 // BSpline.HC:35
             tick(t)
-            f703_BSplineDemo(t)
+            f708_BSplineDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/BSpline.HC#0", ln) }
@@ -118,8 +118,8 @@ class N_Demo_Graphics_BSpline(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_BSplineDemo(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_BSpline_HC_0(t)
+            708 -> { f708_BSplineDemo(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_BSpline_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -131,7 +131,7 @@ class N_Demo_Graphics_BSpline(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("BSplineDemo", "\$init:C:/Demo/Graphics/BSpline.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/BSpline.HC")
     }

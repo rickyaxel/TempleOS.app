@@ -57,7 +57,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/SpriteNew.HC#0 (SpriteNew.HC:4)
-    @discardableResult public final func f703_init_C__Adam_Gr_SpriteNew_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Adam_Gr_SpriteNew_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -67,7 +67,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/SpriteNew.HC#1 (SpriteNew.HC:6)
-    @discardableResult public final func f704_init_C__Adam_Gr_SpriteNew_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Adam_Gr_SpriteNew_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -77,7 +77,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC SpriteElemQuedBaseSize (SpriteNew.HC:39)
-    @discardableResult public final func f705_SpriteElemQuedBaseSize(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f710_SpriteElemQuedBaseSize(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -92,7 +92,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC SpriteElemSize (SpriteNew.HC:44)
-    @discardableResult public final func f706_SpriteElemSize(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f711_SpriteElemSize(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -139,7 +139,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC SpriteSize (SpriteNew.HC:80)
-    @discardableResult public final func f707_SpriteSize(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f712_SpriteSize(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -153,7 +153,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
             loop0: while try ((ld1u((l8_tmpg &+ 16)) & 127) != 0) {
                 ln = 84 // SpriteNew.HC:84
                 try tick(t)
-                let t0: Int64 = try f706_SpriteElemSize(t, l8_tmpg)
+                let t0: Int64 = try f711_SpriteElemSize(t, l8_tmpg)
                 l8_tmpg = (l8_tmpg &+ t0)
                 try tick(t)
             }
@@ -167,7 +167,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC SpriteTypeMask (SpriteNew.HC:88)
-    @discardableResult public final func f708_SpriteTypeMask(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f713_SpriteTypeMask(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -193,7 +193,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
                 _ = try nat(t, n_Bts, try push2(t, (fp &+ 8), (ld1u((l16_tmpg &+ 16)) & 127)))
                 ln = 96 // SpriteNew.HC:96
                 try tick(t)
-                let t0: Int64 = try f706_SpriteElemSize(t, l16_tmpg)
+                let t0: Int64 = try f711_SpriteElemSize(t, l16_tmpg)
                 l16_tmpg = (l16_tmpg &+ t0)
                 try tick(t)
             }
@@ -209,7 +209,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC SpriteSelAll (SpriteNew.HC:101)
-    public final func f709_SpriteSelAll(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_SpriteSelAll(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -227,7 +227,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
                 _ = try P.f101_BEqu(t, (l16_tmpg &+ 16), 7, p1_val)
                 ln = 106 // SpriteNew.HC:106
                 try tick(t)
-                let t0: Int64 = try f706_SpriteElemSize(t, l16_tmpg)
+                let t0: Int64 = try f711_SpriteElemSize(t, l16_tmpg)
                 l16_tmpg = (l16_tmpg &+ t0)
                 try tick(t)
             }
@@ -237,7 +237,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC DC2Sprite (SpriteNew.HC:110)
-    @discardableResult public final func f710_DC2Sprite(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f715_DC2Sprite(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -269,7 +269,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC SpriteElem2Summary (SpriteNew.HC:126)
-    @discardableResult public final func f711_SpriteElem2Summary(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f716_SpriteElem2Summary(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -286,12 +286,12 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
                 case 1:
                     ln = 133 // SpriteNew.HC:133
                     try tick(t)
-                    let t1: Int64 = try P.f697_Color2Str(t, (fp &+ 152), ld1u(((p0_tmpg &+ 16) &+ 1)))
+                    let t1: Int64 = try P.f702_Color2Str(t, (fp &+ 152), ld1u(((p0_tmpg &+ 16) &+ 1)))
                     _ = try nat(t, n_CatPrint, try push3(t, (fp &+ 8), s2, t1))
                 case 2:
                     ln = 136 // SpriteNew.HC:136
                     try tick(t)
-                    let t2: Int64 = try P.f697_Color2Str(t, (fp &+ 152), ((1073741824 | ld1u(((p0_tmpg &+ 16) &+ 1))) | (ld1u((((p0_tmpg &+ 16) &+ 1) &+ 1)) &<< 16)))
+                    let t2: Int64 = try P.f702_Color2Str(t, (fp &+ 152), ((1073741824 | ld1u(((p0_tmpg &+ 16) &+ 1))) | (ld1u((((p0_tmpg &+ 16) &+ 1) &+ 1)) &<< 16)))
                     _ = try nat(t, n_CatPrint, try push3(t, (fp &+ 8), s2, t2))
                 case 7, 8, 21, 22:
                     ln = 143 // SpriteNew.HC:143
@@ -342,7 +342,7 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/SpriteNew.HC#2 (SpriteNew.HC:1)
-    @discardableResult public final func f712_init_C__Adam_Gr_SpriteNew_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Adam_Gr_SpriteNew_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -354,22 +354,22 @@ public final class N_Adam_Gr_SpriteNew: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Adam_Gr_SpriteNew_HC_0(t)
-        case 704: return try f704_init_C__Adam_Gr_SpriteNew_HC_1(t)
-        case 705: return try f705_SpriteElemQuedBaseSize(t, (n > 0 ? st[base + 0] : 0))
-        case 706: return try f706_SpriteElemSize(t, (n > 0 ? st[base + 0] : 0))
-        case 707: return try f707_SpriteSize(t, (n > 0 ? st[base + 0] : 0))
-        case 708: return try f708_SpriteTypeMask(t, (n > 0 ? st[base + 0] : 0))
-        case 709: try f709_SpriteSelAll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: return try f710_DC2Sprite(t, (n > 0 ? st[base + 0] : 0))
-        case 711: return try f711_SpriteElem2Summary(t, (n > 0 ? st[base + 0] : 0))
-        case 712: return try f712_init_C__Adam_Gr_SpriteNew_HC_2(t)
+        case 708: return try f708_init_C__Adam_Gr_SpriteNew_HC_0(t)
+        case 709: return try f709_init_C__Adam_Gr_SpriteNew_HC_1(t)
+        case 710: return try f710_SpriteElemQuedBaseSize(t, (n > 0 ? st[base + 0] : 0))
+        case 711: return try f711_SpriteElemSize(t, (n > 0 ? st[base + 0] : 0))
+        case 712: return try f712_SpriteSize(t, (n > 0 ? st[base + 0] : 0))
+        case 713: return try f713_SpriteTypeMask(t, (n > 0 ? st[base + 0] : 0))
+        case 714: try f714_SpriteSelAll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: return try f715_DC2Sprite(t, (n > 0 ? st[base + 0] : 0))
+        case 716: return try f716_SpriteElem2Summary(t, (n > 0 ? st[base + 0] : 0))
+        case 717: return try f717_init_C__Adam_Gr_SpriteNew_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Adam/Gr/SpriteNew.HC#0", 704: "$init:C:/Adam/Gr/SpriteNew.HC#1", 705: "SpriteElemQuedBaseSize", 706: "SpriteElemSize", 707: "SpriteSize", 708: "SpriteTypeMask", 709: "SpriteSelAll", 710: "DC2Sprite", 711: "SpriteElem2Summary", 712: "$init:C:/Adam/Gr/SpriteNew.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Adam/Gr/SpriteNew.HC#0", 709: "$init:C:/Adam/Gr/SpriteNew.HC#1", 710: "SpriteElemQuedBaseSize", 711: "SpriteElemSize", 712: "SpriteSize", 713: "SpriteTypeMask", 714: "SpriteSelAll", 715: "DC2Sprite", 716: "SpriteElem2Summary", 717: "$init:C:/Adam/Gr/SpriteNew.HC#2"]
     private static let FILES: [String] = ["C:/Adam/Gr/SpriteNew.HC"]
     public override var files: [String] { N_Adam_Gr_SpriteNew.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_SpriteNew.DEFINED.contains(index) }

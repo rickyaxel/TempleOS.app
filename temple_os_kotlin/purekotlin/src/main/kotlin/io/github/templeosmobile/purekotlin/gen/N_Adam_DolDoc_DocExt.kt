@@ -17,7 +17,7 @@ class N_Adam_DolDoc_DocExt(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Adam/DolDoc/DocExt.HC#0 (DocExt.HC:1) */
-    fun f712_init_C__Adam_DolDoc_DocExt_HC_0(t: Task): Long {
+    fun f717_init_C__Adam_DolDoc_DocExt_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -29,7 +29,7 @@ class N_Adam_DolDoc_DocExt(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            712 -> f712_init_C__Adam_DolDoc_DocExt_HC_0(t)
+            717 -> f717_init_C__Adam_DolDoc_DocExt_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -41,7 +41,7 @@ class N_Adam_DolDoc_DocExt(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(712)
+        private val DEFINED = intArrayOf(717)
         private val NAMES = arrayOf("\$init:C:/Adam/DolDoc/DocExt.HC#0")
         private val FILES = arrayOf<String>()
     }

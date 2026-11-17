@@ -15,6 +15,7 @@ class N_Demo_KeyBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     @JvmField val n_FlushMsgs = rt.vm.natives.find("FlushMsgs")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Yield = rt.vm.natives.find("Yield")!!.index
 
     /** binary literal, 39 bytes */ @JvmField var b0: Long = 0L
@@ -32,22 +33,21 @@ class N_Demo_KeyBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DrawIt (KeyBitMap.HC:9) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             var p1_dc: Long = a1
             ln = 11 // KeyBitMap.HC:11
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, mods(ld8(g_x), 100L), 100L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, mods(ld8(g_x), 100L), 100L, 0L, b0, 0L))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawIt", ln) }
     }
 
     /** HolyC KeyDownBitMapDemo (KeyBitMap.HC:14) */
-    fun f704_KeyDownBitMapDemo(t: Task) {
+    fun f709_KeyDownBitMapDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -69,7 +69,7 @@ class N_Demo_KeyBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 24 // KeyBitMap.HC:24
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 32 // KeyBitMap.HC:32
             loop2@ while (true) {
                 val t3: Long = nat(t, n_Bt, push2(t, (P.g_kbd + 64L), l0_i_sc))
@@ -92,13 +92,13 @@ class N_Demo_KeyBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Demo/KeyBitMap.HC#0 (KeyBitMap.HC:7) */
-    fun f705_init_C__Demo_KeyBitMap_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_KeyBitMap_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 40 // KeyBitMap.HC:40
             tick(t)
-            f704_KeyDownBitMapDemo(t)
+            f709_KeyDownBitMapDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/KeyBitMap.HC#0", ln) }
@@ -107,9 +107,9 @@ class N_Demo_KeyBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_KeyDownBitMapDemo(t); 0L }
-            705 -> f705_init_C__Demo_KeyBitMap_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_KeyDownBitMapDemo(t); 0L }
+            710 -> f710_init_C__Demo_KeyBitMap_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -121,7 +121,7 @@ class N_Demo_KeyBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "KeyDownBitMapDemo", "\$init:C:/Demo/KeyBitMap.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/KeyBitMap.HC")
     }

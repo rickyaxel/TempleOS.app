@@ -2,19 +2,19 @@ TOSIMG 1
 unit C:/Demo/Games/ZoneOut.HC#0
 s 17fd38 46363420626573745f73636f72653d393939393b0a
 s 17fd60 54656d706c654f532f5a6f6e654f7574
-fn 703 $init:C:/Demo/Games/ZoneOut.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Demo/Games/ZoneOut.HC#0 (I64;;-)
+init 708
 unit C:/Demo/Games/ZoneOut.HC#1
 s 17fd60 54656d706c654f532f5a6f6e654f7574
-fn 704 $init:C:/Demo/Games/ZoneOut.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Demo/Games/ZoneOut.HC#1 (I64;;-)
+init 709
 unit C:/Home/Registry.HC#0
 registry TempleOS/ZoneOut
 g 17fd88 8
 c 17fd88 8 40c3878000000000
-fn 705 $init:C:/Home/Registry.HC#0 (I64;;-)
+fn 710 $init:C:/Home/Registry.HC#0 (I64;;-)
 sym g best_score 17fd88 F64
-init 705
+init 710
 unit C:/Home/Registry.HC#1
 unit C:/Demo/Games/ZoneOut.HC#2
 value SCRN_SCALE 512
@@ -55,30 +55,30 @@ s 1ccab0 416e696d617465
 s 1ccac8 536f6e67
 s 1ccae0 46363420626573745f73636f72653d25352e34663b0a
 s 17fd60 54656d706c654f532f5a6f6e654f7574
-fn 706 ZOTransform (U0;*$CDC,*I64,*I64,*I64;-)
-fn 707 DrawIt (U0;*$CTask,*$CDC;-)
-fn 708 Fire (U0;;-)
-fn 709 MoveUs (U0;F64;-)
-fn 710 AnimateTask (U0;I64;-)
-fn 711 Init (U0;;-)
-fn 712 CleanUp (U0;;-)
-fn 713 SongTask (U0;I64;-)
-fn 714 ZoneOut (U0;;-)
-fn 715 $init:C:/Demo/Games/ZoneOut.HC#2 (I64;;-)
-sym f AnimateTask 710 (U0;I64;-)
-sym f CleanUp 712 (U0;;-)
-sym f DrawIt 707 (U0;*$CTask,*$CDC;-)
-sym f Fire 708 (U0;;-)
-sym f Init 711 (U0;;-)
-sym f MoveUs 709 (U0;F64;-)
-sym f SongTask 713 (U0;I64;-)
-sym f ZOTransform 706 (U0;*$CDC,*I64,*I64,*I64;-)
-sym f ZoneOut 714 (U0;;-)
+fn 711 ZOTransform (U0;*$CDC,*I64,*I64,*I64;-)
+fn 712 DrawIt (U0;*$CTask,*$CDC;-)
+fn 713 Fire (U0;;-)
+fn 714 MoveUs (U0;F64;-)
+fn 715 AnimateTask (U0;I64;-)
+fn 716 Init (U0;;-)
+fn 717 CleanUp (U0;;-)
+fn 718 SongTask (U0;I64;-)
+fn 719 ZoneOut (U0;;-)
+fn 720 $init:C:/Demo/Games/ZoneOut.HC#2 (I64;;-)
+sym f AnimateTask 715 (U0;I64;-)
+sym f CleanUp 717 (U0;;-)
+sym f DrawIt 712 (U0;*$CTask,*$CDC;-)
+sym f Fire 713 (U0;;-)
+sym f Init 716 (U0;;-)
+sym f MoveUs 714 (U0;F64;-)
+sym f SongTask 718 (U0;I64;-)
+sym f ZOTransform 711 (U0;*$CDC,*I64,*I64,*I64;-)
+sym f ZoneOut 719 (U0;;-)
 sym g num_them 1800d0 I64
 sym g shots 180080 $Obj
 sym g t0 1800e8 F64
 sym g tf 180100 F64
 sym g them 17fdf0 [10]$Obj
 sym g us 17fda0 $Obj
-init 715
+init 720
 unit C:/Demo/Games/ZoneOut.HC#3

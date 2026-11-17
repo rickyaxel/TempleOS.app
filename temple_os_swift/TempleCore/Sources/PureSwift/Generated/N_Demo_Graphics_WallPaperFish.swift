@@ -13,6 +13,7 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
     public let n_Rand: Int
     public let n_RandI16: Int
     public let n_RandU16: Int
+    public let n_Sprite3: Int
     public let n_tS: Int
     /** imgs: U8 *[4][3] */ public var g_imgs: Int64 = 0
     /** binary literal, 530 bytes */ public var b0: Int64 = 0
@@ -37,6 +38,7 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
         n_Rand = rt.vm.natives.find("Rand")!.index
         n_RandI16 = rt.vm.natives.find("RandI16")!.index
         n_RandU16 = rt.vm.natives.find("RandU16")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
     }
@@ -66,7 +68,7 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/WallPaperFish.HC#0 (WallPaperFish.HC:42)
-    @discardableResult public final func f703_init_C__Demo_Graphics_WallPaperFish_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Graphics_WallPaperFish_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -91,7 +93,7 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
     }
 
     /// HolyC WallPaperFish (WallPaperFish.HC:57)
-    public final func f704_WallPaperFish(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_WallPaperFish(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -118,11 +120,11 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
                 ln = 66 // WallPaperFish.HC:66
                 let t1: Double = d(try nat(t, n_tS, push0(t)))
                 try tick(t)
-                let t2: Double = try P.f484_Tri(t, (t1 * 10.0), 20.0)
+                let t2: Double = try P.f489_Tri(t, (t1 * 10.0), 20.0)
                 l16_j = f2i((16.0 * t2))
                 ln = 67 // WallPaperFish.HC:67
                 try tick(t)
-                _ = try P.f396_GrLine(t, l40_dc, 0, ((480 &- l8_i) &- l16_j), ((480 &- l8_i) &- l16_j), 480, 1, 0)
+                _ = try P.f397_GrLine(t, l40_dc, 0, ((480 &- l8_i) &- l16_j), ((480 &- l8_i) &- l16_j), 480, 1, 0)
                 ln = 65 // WallPaperFish.HC:65
                 l8_i = (l8_i &+ 20)
                 try tick(t)
@@ -152,15 +154,14 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
                     try st4(t4, (ld4s(t4) | 1536))
                     ln = 77 // WallPaperFish.HC:77
                     try tick(t)
-                    _ = try P.f314_DCSymmetrySet(t, l40_dc, l24_x, (l32_y &- 1), l24_x, (l32_y &+ 1))
+                    _ = try P.f315_DCSymmetrySet(t, l40_dc, l24_x, (l32_y &- 1), l24_x, (l32_y &+ 1))
                 } else {
                     ln = 79 // WallPaperFish.HC:79
                     let t5: Int64 = (l40_dc &+ 28)
                     try st4(t5, (ld4s(t5) & (-1537)))
                 }
                 ln = 80 // WallPaperFish.HC:80
-                try tick(t)
-                try P.f440_Sprite3(t, l40_dc, l24_x, l32_y, 0, ld8(((g_imgs &+ (ld8((l48_c &+ 32)) &* 32)) &+ (l16_j &* 8))), 0)
+                _ = try nat(t, n_Sprite3, try push(t, l40_dc, l24_x, l32_y, 0, ld8(((g_imgs &+ (ld8((l48_c &+ 32)) &* 32)) &+ (l16_j &* 8))), 0))
                 ln = 81 // WallPaperFish.HC:81
                 let t6: Int64 = l48_c
                 try st8(t6, (ld8(t6) &+ ld8((l48_c &+ 16))))
@@ -180,7 +181,7 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
     }
 
     /// HolyC WallInit (WallPaperFish.HC:89)
-    public final func f705_WallInit(_ t: HTask) throws {
+    public final func f710_WallInit(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -235,20 +236,20 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
                 try tick(t)
             }
             ln = 112 // WallPaperFish.HC:112
-            try st8((P.g_gr &+ 136), 9223090561878065856)
+            try st8((P.g_gr &+ 136), 9223090561878065861)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "WallInit", ln) }
     }
 
     /// HolyC $init:C:/Demo/Graphics/WallPaperFish.HC#1 (WallPaperFish.HC:115)
-    @discardableResult public final func f706_init_C__Demo_Graphics_WallPaperFish_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Graphics_WallPaperFish_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 115 // WallPaperFish.HC:115
             try tick(t)
-            try f705_WallInit(t)
+            try f710_WallInit(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/WallPaperFish.HC#1", ln) }
@@ -257,16 +258,16 @@ public final class N_Demo_Graphics_WallPaperFish: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Graphics_WallPaperFish_HC_0(t)
-        case 704: try f704_WallPaperFish(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_WallInit(t); return 0
-        case 706: return try f706_init_C__Demo_Graphics_WallPaperFish_HC_1(t)
+        case 708: return try f708_init_C__Demo_Graphics_WallPaperFish_HC_0(t)
+        case 709: try f709_WallPaperFish(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_WallInit(t); return 0
+        case 711: return try f711_init_C__Demo_Graphics_WallPaperFish_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Graphics/WallPaperFish.HC#0", 704: "WallPaperFish", 705: "WallInit", 706: "$init:C:/Demo/Graphics/WallPaperFish.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Graphics/WallPaperFish.HC#0", 709: "WallPaperFish", 710: "WallInit", 711: "$init:C:/Demo/Graphics/WallPaperFish.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Graphics/WallPaperFish.HC"]
     public override var files: [String] { N_Demo_Graphics_WallPaperFish.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_WallPaperFish.DEFINED.contains(index) }

@@ -50,7 +50,7 @@ public final class N_Home_Examples_Arithmetic: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Arithmetic.HC#0 (Arithmetic.HC:5)
-    @discardableResult public final func f703_init_C__Home_Examples_Arithmetic_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Home_Examples_Arithmetic_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -64,7 +64,7 @@ public final class N_Home_Examples_Arithmetic: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Arithmetic.HC#1 (Arithmetic.HC:9)
-    @discardableResult public final func f704_init_C__Home_Examples_Arithmetic_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Home_Examples_Arithmetic_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -78,7 +78,7 @@ public final class N_Home_Examples_Arithmetic: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Arithmetic.HC#2 (Arithmetic.HC:10)
-    @discardableResult public final func f705_init_C__Home_Examples_Arithmetic_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Examples_Arithmetic_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -92,7 +92,7 @@ public final class N_Home_Examples_Arithmetic: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Arithmetic.HC#3 (Arithmetic.HC:11)
-    @discardableResult public final func f706_init_C__Home_Examples_Arithmetic_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Home_Examples_Arithmetic_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -106,7 +106,7 @@ public final class N_Home_Examples_Arithmetic: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Arithmetic.HC#4 (Arithmetic.HC:12)
-    @discardableResult public final func f707_init_C__Home_Examples_Arithmetic_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Home_Examples_Arithmetic_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -121,7 +121,7 @@ public final class N_Home_Examples_Arithmetic: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Arithmetic.HC#5 (Arithmetic.HC:13)
-    @discardableResult public final func f708_init_C__Home_Examples_Arithmetic_HC_5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Home_Examples_Arithmetic_HC_5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -137,18 +137,18 @@ public final class N_Home_Examples_Arithmetic: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Home_Examples_Arithmetic_HC_0(t)
-        case 704: return try f704_init_C__Home_Examples_Arithmetic_HC_1(t)
-        case 705: return try f705_init_C__Home_Examples_Arithmetic_HC_2(t)
-        case 706: return try f706_init_C__Home_Examples_Arithmetic_HC_3(t)
-        case 707: return try f707_init_C__Home_Examples_Arithmetic_HC_4(t)
-        case 708: return try f708_init_C__Home_Examples_Arithmetic_HC_5(t)
+        case 708: return try f708_init_C__Home_Examples_Arithmetic_HC_0(t)
+        case 709: return try f709_init_C__Home_Examples_Arithmetic_HC_1(t)
+        case 710: return try f710_init_C__Home_Examples_Arithmetic_HC_2(t)
+        case 711: return try f711_init_C__Home_Examples_Arithmetic_HC_3(t)
+        case 712: return try f712_init_C__Home_Examples_Arithmetic_HC_4(t)
+        case 713: return try f713_init_C__Home_Examples_Arithmetic_HC_5(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Home/Examples/Arithmetic.HC#0", 704: "$init:C:/Home/Examples/Arithmetic.HC#1", 705: "$init:C:/Home/Examples/Arithmetic.HC#2", 706: "$init:C:/Home/Examples/Arithmetic.HC#3", 707: "$init:C:/Home/Examples/Arithmetic.HC#4", 708: "$init:C:/Home/Examples/Arithmetic.HC#5"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Home/Examples/Arithmetic.HC#0", 709: "$init:C:/Home/Examples/Arithmetic.HC#1", 710: "$init:C:/Home/Examples/Arithmetic.HC#2", 711: "$init:C:/Home/Examples/Arithmetic.HC#3", 712: "$init:C:/Home/Examples/Arithmetic.HC#4", 713: "$init:C:/Home/Examples/Arithmetic.HC#5"]
     private static let FILES: [String] = ["C:/Home/Examples/Arithmetic.HC"]
     public override var files: [String] { N_Home_Examples_Arithmetic.FILES }
     public override func defines(_ index: Int) -> Bool { N_Home_Examples_Arithmetic.DEFINED.contains(index) }

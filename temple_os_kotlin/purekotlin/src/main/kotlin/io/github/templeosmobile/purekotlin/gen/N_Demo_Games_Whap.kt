@@ -39,7 +39,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC DrawIt (Whap.HC:13) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -60,7 +60,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             ln = 20 // Whap.HC:20
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 0)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 0)
             t.sp = vb0
             ln = 21 // Whap.HC:21
             nat(t, n_GrRect, push(t, p1_dc, (l24_cx - 10L), (l32_cy - 10L), 20L, 20L))
@@ -72,13 +72,13 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             st4((p1_dc + 160L), 14L)
             ln = 25 // Whap.HC:25
             tick(t)
-            P.f396_GrLine(t, p1_dc, f2i(ldf((g_balls + 56L))), f2i(ldf((g_balls + 64L))), ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), ((ld8((P.g_ms + 8L)) - ld8((p0_task + 232L))) - ld8((p0_task + 264L))), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, f2i(ldf((g_balls + 56L))), f2i(ldf((g_balls + 64L))), ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), ((ld8((P.g_ms + 8L)) - ld8((p0_task + 232L))) - ld8((p0_task + 264L))), 1L, 0L)
             ln = 28 // Whap.HC:28
             l16_i = 0L
             loop0@ while ((l16_i < 3L)) {
                 ln = 29 // Whap.HC:29
                 tick(t)
-                P.f396_GrLine(t, p1_dc, f2i(ldf((ld8(((g_springs + (l16_i * 80L)) + 16L)) + 56L))), f2i(ldf((ld8(((g_springs + (l16_i * 80L)) + 16L)) + 64L))), f2i(ldf((ld8(((g_springs + (l16_i * 80L)) + 24L)) + 56L))), f2i(ldf((ld8(((g_springs + (l16_i * 80L)) + 24L)) + 64L))), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, f2i(ldf((ld8(((g_springs + (l16_i * 80L)) + 16L)) + 56L))), f2i(ldf((ld8(((g_springs + (l16_i * 80L)) + 16L)) + 64L))), f2i(ldf((ld8(((g_springs + (l16_i * 80L)) + 24L)) + 56L))), f2i(ldf((ld8(((g_springs + (l16_i * 80L)) + 24L)) + 64L))), 1L, 0L)
                 ln = 28 // Whap.HC:28
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -87,15 +87,15 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             st4((p1_dc + 160L), 11L)
             ln = 33 // Whap.HC:33
             tick(t)
-            P.f397_GrCircle(t, p1_dc, f2i(ldf((g_balls + 56L))), f2i(ldf((g_balls + 64L))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, p1_dc, f2i(ldf((g_balls + 56L))), f2i(ldf((g_balls + 64L))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 34 // Whap.HC:34
             tick(t)
-            P.f387_GrFloodFill(t, p1_dc, f2i(ldf((g_balls + 56L))), f2i(ldf((g_balls + 64L))), 1L, 0L, 0L)
+            P.f388_GrFloodFill(t, p1_dc, f2i(ldf((g_balls + 56L))), f2i(ldf((g_balls + 64L))), 1L, 0L, 0L)
             ln = 35 // Whap.HC:35
             st4((p1_dc + 160L), 0L)
             ln = 36 // Whap.HC:36
             tick(t)
-            P.f397_GrCircle(t, p1_dc, f2i(ldf((g_balls + 56L))), f2i(ldf((g_balls + 64L))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, p1_dc, f2i(ldf((g_balls + 56L))), f2i(ldf((g_balls + 64L))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 38 // Whap.HC:38
             l16_i = 1L
             loop2@ while ((l16_i < 7L)) {
@@ -103,10 +103,10 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 st4((p1_dc + 160L), 13L)
                 ln = 40 // Whap.HC:40
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, f2i(ldf(((g_balls + (l16_i * 104L)) + 56L))), f2i(ldf(((g_balls + (l16_i * 104L)) + 64L))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, f2i(ldf(((g_balls + (l16_i * 104L)) + 56L))), f2i(ldf(((g_balls + (l16_i * 104L)) + 64L))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 41 // Whap.HC:41
                 tick(t)
-                P.f387_GrFloodFill(t, p1_dc, f2i(ldf(((g_balls + (l16_i * 104L)) + 56L))), f2i(ldf(((g_balls + (l16_i * 104L)) + 64L))), 1L, 0L, 0L)
+                P.f388_GrFloodFill(t, p1_dc, f2i(ldf(((g_balls + (l16_i * 104L)) + 56L))), f2i(ldf(((g_balls + (l16_i * 104L)) + 64L))), 1L, 0L, 0L)
                 ln = 42 // Whap.HC:42
                 var r0: Boolean = false
                 val t1: Double = ((l24_cx - 10L) - 5L).toDouble()
@@ -140,7 +140,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 st4((p1_dc + 160L), 0L)
                 ln = 46 // Whap.HC:46
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, f2i(ldf(((g_balls + (l16_i * 104L)) + 56L))), f2i(ldf(((g_balls + (l16_i * 104L)) + 64L))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, f2i(ldf(((g_balls + (l16_i * 104L)) + 56L))), f2i(ldf(((g_balls + (l16_i * 104L)) + 64L))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 38 // Whap.HC:38
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -159,7 +159,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC MyDerivative (Whap.HC:54) */
-    fun f704_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f709_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -231,7 +231,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                         if (((p1_t - ldf(g_collision_t)) > 0.05)) {
                             ln = 83 // Whap.HC:83
                             tick(t)
-                            P.f499_Noise(t, 50L, 102.0, 105.0)
+                            P.f504_Noise(t, 50L, 102.0, 105.0)
                             ln = 84 // Whap.HC:84
                             st8(g_collision_t, bits(p1_t))
                         }
@@ -325,7 +325,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Whap (Whap.HC:107) */
-    fun f705_Whap(t: Task) {
+    fun f710_Whap(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -333,7 +333,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             var l8_ode: Long = 0L
             ln = 110 // Whap.HC:110
             tick(t)
-            val t0: Long = P.f453_ODENew(t, 0L, 0.01, 1L)
+            val t0: Long = P.f458_ODENew(t, 0L, 0.01, 1L)
             l8_ode = t0
             ln = 112 // Whap.HC:112
             tick(t)
@@ -348,9 +348,9 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             P.f220_WinMax(t, 0L)
             ln = 117 // Whap.HC:117
             tick(t)
-            P.f507_MenuPush(t, s1)
+            P.f512_MenuPush(t, s1)
             ln = 123 // Whap.HC:123
-            st8((l8_ode + 304L), 9223090561878065856L)
+            st8((l8_ode + 304L), 9223090561878065861L)
             ln = 124 // Whap.HC:124
             st8((l8_ode + 80L), bits(0.002))
             ln = 125 // Whap.HC:125
@@ -447,7 +447,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             ln = 164 // Whap.HC:164
             nat(t, n_DocClear, push1(t, 0L))
             ln = 165 // Whap.HC:165
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 166 // Whap.HC:166
             nat(t, n_GetChar, push3(t, 0L, 1L, 0L))
             ln = 167 // Whap.HC:167
@@ -458,23 +458,23 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             P.f155_QueRem(t, l8_ode)
             ln = 169 // Whap.HC:169
             tick(t)
-            P.f455_ODEDel(t, l8_ode)
+            P.f460_ODEDel(t, l8_ode)
             ln = 170 // Whap.HC:170
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Whap", ln) }
     }
 
     /** HolyC $init:C:/Demo/Games/Whap.HC#0 (Whap.HC:173) */
-    fun f706_init_C__Demo_Games_Whap_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Games_Whap_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 173 // Whap.HC:173
             tick(t)
-            f705_Whap(t)
+            f710_Whap(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Whap.HC#0", ln) }
@@ -483,10 +483,10 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> { f705_Whap(t); 0L }
-            706 -> f706_init_C__Demo_Games_Whap_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> { f710_Whap(t); 0L }
+            711 -> f711_init_C__Demo_Games_Whap_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -498,7 +498,7 @@ class N_Demo_Games_Whap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("DrawIt", "MyDerivative", "Whap", "\$init:C:/Demo/Games/Whap.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/Whap.HC")
     }

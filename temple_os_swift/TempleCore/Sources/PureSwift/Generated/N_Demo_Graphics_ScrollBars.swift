@@ -13,7 +13,9 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
     public let n_DocCursor: Int
     public let n_DocScroll: Int
     public let n_GetChar: Int
+    public let n_GrLine3: Int
     public let n_RandU16: Int
+    public let n_Sprite3: Int
     /** binary literal, 3178 bytes */ public var b0: Int64 = 0
     /** tree_y: I64[256] */ public var g_tree_y: Int64 = 0
     /** tree_x: I64[256] */ public var g_tree_x: Int64 = 0
@@ -24,7 +26,9 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
         n_DocCursor = rt.vm.natives.find("DocCursor")!.index
         n_DocScroll = rt.vm.natives.find("DocScroll")!.index
         n_GetChar = rt.vm.natives.find("GetChar")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_RandU16 = rt.vm.natives.find("RandU16")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -39,7 +43,7 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
     }
 
     /// HolyC DrawIt (ScrollBars.HC:16)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -68,23 +72,18 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
             ln = 30 // ScrollBars.HC:30
             try st4((p1_dc &+ 228), 4)
             ln = 31 // ScrollBars.HC:31
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (2 &- l24_h), (2 &- l32_v), 0, (2045 &- l24_h), (2 &- l32_v), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (2 &- l24_h), (2 &- l32_v), 0, (2045 &- l24_h), (2 &- l32_v), 0, 1, 0))
             ln = 32 // ScrollBars.HC:32
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (2 &- l24_h), (2045 &- l32_v), 0, (2045 &- l24_h), (2045 &- l32_v), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (2 &- l24_h), (2045 &- l32_v), 0, (2045 &- l24_h), (2045 &- l32_v), 0, 1, 0))
             ln = 33 // ScrollBars.HC:33
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (2 &- l24_h), (2 &- l32_v), 0, (2 &- l24_h), (2045 &- l32_v), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (2 &- l24_h), (2 &- l32_v), 0, (2 &- l24_h), (2045 &- l32_v), 0, 1, 0))
             ln = 34 // ScrollBars.HC:34
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (2045 &- l24_h), (2 &- l32_v), 0, (2045 &- l24_h), (2045 &- l32_v), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (2045 &- l24_h), (2 &- l32_v), 0, (2045 &- l24_h), (2045 &- l32_v), 0, 1, 0))
             ln = 37 // ScrollBars.HC:37
             l16_i = 0
             loop0: while (l16_i < 256) {
                 ln = 38 // ScrollBars.HC:38
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, (ld8((g_tree_x &+ (l16_i &* 8))) &- l24_h), (ld8((g_tree_y &+ (l16_i &* 8))) &- l32_v), 0, b0, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, (ld8((g_tree_x &+ (l16_i &* 8))) &- l24_h), (ld8((g_tree_y &+ (l16_i &* 8))) &- l32_v), 0, b0, 0))
                 ln = 37 // ScrollBars.HC:37
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -95,7 +94,7 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
     }
 
     /// HolyC Init (ScrollBars.HC:41)
-    public final func f704_Init(_ t: HTask) throws {
+    public final func f709_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -119,7 +118,7 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
     }
 
     /// HolyC ScrollBars (ScrollBars.HC:50)
-    public final func f705_ScrollBars(_ t: HTask) throws {
+    public final func f710_ScrollBars(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -128,9 +127,9 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 53 // ScrollBars.HC:53
             try tick(t)
-            try f704_Init(t)
+            try f709_Init(t)
             ln = 54 // ScrollBars.HC:54
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 55 // ScrollBars.HC:55
             try tick(t)
             _ = try P.f221_WinBorder(t, 1, 0)
@@ -155,13 +154,13 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/ScrollBars.HC#0 (ScrollBars.HC:69)
-    @discardableResult public final func f706_init_C__Demo_Graphics_ScrollBars_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Graphics_ScrollBars_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 69 // ScrollBars.HC:69
             try tick(t)
-            try f705_ScrollBars(t)
+            try f710_ScrollBars(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/ScrollBars.HC#0", ln) }
@@ -170,16 +169,16 @@ public final class N_Demo_Graphics_ScrollBars: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_Init(t); return 0
-        case 705: try f705_ScrollBars(t); return 0
-        case 706: return try f706_init_C__Demo_Graphics_ScrollBars_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_Init(t); return 0
+        case 710: try f710_ScrollBars(t); return 0
+        case 711: return try f711_init_C__Demo_Graphics_ScrollBars_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "Init", 705: "ScrollBars", 706: "$init:C:/Demo/Graphics/ScrollBars.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "Init", 710: "ScrollBars", 711: "$init:C:/Demo/Graphics/ScrollBars.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/ScrollBars.HC"]
     public override var files: [String] { N_Demo_Graphics_ScrollBars.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_ScrollBars.DEFINED.contains(index) }

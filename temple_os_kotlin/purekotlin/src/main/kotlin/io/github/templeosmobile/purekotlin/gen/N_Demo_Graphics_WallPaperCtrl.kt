@@ -28,7 +28,7 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC DrawCtrlSlider (WallPaperCtrl.HC:25) */
-    fun f703_DrawCtrlSlider(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawCtrlSlider(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -49,21 +49,21 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((p0_dc + 160L), 0L)
             ln = 36 // WallPaperCtrl.HC:36
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 20L) + 0L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 20L) + 0L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 20L) + 0L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 20L) + 0L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
             ln = 38 // WallPaperCtrl.HC:38
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 40L) + 1L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 40L) + 1L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 40L) + 1L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 40L) + 1L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
             ln = 40 // WallPaperCtrl.HC:40
             st4((p0_dc + 160L), 12L)
             ln = 41 // WallPaperCtrl.HC:41
             tick(t)
             val vb0 = push1(t, divs((ld8(l16_s) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 20L) + 0L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb0, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 20L) + 0L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb0, 1)
             t.sp = vb0
             ln = 44 // WallPaperCtrl.HC:44
             tick(t)
             val vb1 = push1(t, divs((ld8((l16_s + 8L)) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 40L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb1, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 40L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb1, 1)
             t.sp = vb1
             ln = 47 // WallPaperCtrl.HC:47
             nat(t, n_GrRect, push(t, p0_dc, (((ld8((p1_c + 40L)) + 20L) + 0L) - 3L), (((((ld8((p1_c + 56L)) + 20L) + 30L) - 1L) - ld8(l16_s)) - 2L), 7L, 5L))
@@ -81,7 +81,7 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC UpdateDerivedCtrlSlider (WallPaperCtrl.HC:58) */
-    fun f704_UpdateDerivedCtrlSlider(t: Task, a0: Long) {
+    fun f709_UpdateDerivedCtrlSlider(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -111,7 +111,7 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC LeftClickSlider (WallPaperCtrl.HC:69) */
-    fun f705_LeftClickSlider(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f710_LeftClickSlider(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -143,7 +143,7 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC SliderNew (WallPaperCtrl.HC:80) */
-    fun f706_SliderNew(t: Task): Long {
+    fun f711_SliderNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -169,11 +169,11 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
             val t1: Long = nat(t, n_ACAlloc, push1(t, 16L))
             st8((l0_c + 104L), t1)
             ln = 93 // WallPaperCtrl.HC:93
-            st8((l0_c + 120L), 9223090561878065855L)
+            st8((l0_c + 120L), 9223090561878065860L)
             ln = 94 // WallPaperCtrl.HC:94
-            st8((l0_c + 136L), 9223090561878065857L)
+            st8((l0_c + 136L), 9223090561878065862L)
             ln = 95 // WallPaperCtrl.HC:95
-            st8((l0_c + 112L), 9223090561878065856L)
+            st8((l0_c + 112L), 9223090561878065861L)
             ln = 96 // WallPaperCtrl.HC:96
             tick(t)
             P.f153_QueIns(t, l0_c, ld8((ld8(P.g_sys_winmgr_task) + 928L)))
@@ -189,7 +189,7 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC SliderDel (WallPaperCtrl.HC:101) */
-    fun f707_SliderDel(t: Task, a0: Long) {
+    fun f712_SliderDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -207,13 +207,13 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC $init:C:/Demo/Graphics/WallPaperCtrl.HC#0 (WallPaperCtrl.HC:108) */
-    fun f708_init_C__Demo_Graphics_WallPaperCtrl_HC_0(t: Task): Long {
+    fun f713_init_C__Demo_Graphics_WallPaperCtrl_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 108 // WallPaperCtrl.HC:108
             tick(t)
-            val t0: Long = f706_SliderNew(t)
+            val t0: Long = f711_SliderNew(t)
             t.depth--
             return t0
             t.depth--
@@ -224,12 +224,12 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawCtrlSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_UpdateDerivedCtrlSlider(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_LeftClickSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            706 -> f706_SliderNew(t)
-            707 -> { f707_SliderDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> f708_init_C__Demo_Graphics_WallPaperCtrl_HC_0(t)
+            708 -> { f708_DrawCtrlSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_UpdateDerivedCtrlSlider(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_LeftClickSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            711 -> f711_SliderNew(t)
+            712 -> { f712_SliderDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> f713_init_C__Demo_Graphics_WallPaperCtrl_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -241,7 +241,7 @@ class N_Demo_Graphics_WallPaperCtrl(rt: NativeRuntime, @JvmField val P: Prelude)
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("DrawCtrlSlider", "UpdateDerivedCtrlSlider", "LeftClickSlider", "SliderNew", "SliderDel", "\$init:C:/Demo/Graphics/WallPaperCtrl.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/WallPaperCtrl.HC")
     }

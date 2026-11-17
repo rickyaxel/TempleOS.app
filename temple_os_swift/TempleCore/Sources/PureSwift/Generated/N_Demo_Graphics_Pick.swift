@@ -15,6 +15,7 @@ public final class N_Demo_Graphics_Pick: NativeModule {
     public let n_GetMsg: Int
     public let n_RandU16: Int
     public let n_Refresh: Int
+    public let n_Sprite3: Int
     /** binary literal, 369 bytes */ public var b0: Int64 = 0
     /** y: I64[128] */ public var g_y: Int64 = 0
     /** x: I64[128] */ public var g_x: Int64 = 0
@@ -31,6 +32,7 @@ public final class N_Demo_Graphics_Pick: NativeModule {
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
         n_RandU16 = rt.vm.natives.find("RandU16")!.index
         n_Refresh = rt.vm.natives.find("Refresh")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -49,7 +51,7 @@ public final class N_Demo_Graphics_Pick: NativeModule {
     }
 
     /// HolyC DrawIt (Pick.HC:10)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -74,8 +76,7 @@ public final class N_Demo_Graphics_Pick: NativeModule {
             l16_i = 0
             loop0: while (l16_i < 128) {
                 ln = 19 // Pick.HC:19
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, ld8((g_x &+ (l16_i &* 8))), ld8((g_y &+ (l16_i &* 8))), 0, b0, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((g_x &+ (l16_i &* 8))), ld8((g_y &+ (l16_i &* 8))), 0, b0, 0))
                 ln = 20 // Pick.HC:20
                 if try (ld8((p1_dc &+ 312)) <= l24_best_dist) {
                     ln = 23 // Pick.HC:23
@@ -99,7 +100,7 @@ public final class N_Demo_Graphics_Pick: NativeModule {
             ln = 32 // Pick.HC:32
             try tick(t)
             let vb0 = try push1(t, ld8(g_cur_dist))
-            _ = try P.f369_GrPrint(t, p1_dc, 8, 8, s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 8, 8, s0, vb0, 1)
             t.sp = vb0
             t.depth -= 1
             return
@@ -107,7 +108,7 @@ public final class N_Demo_Graphics_Pick: NativeModule {
     }
 
     /// HolyC Pick (Pick.HC:35)
-    public final func f704_Pick(_ t: HTask) throws {
+    public final func f709_Pick(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -145,7 +146,7 @@ public final class N_Demo_Graphics_Pick: NativeModule {
             try st8(g_cur_dist, 0)
             try st8(g_cur_apple, 0)
             ln = 50 // Pick.HC:50
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 51 // Pick.HC:51
             try st4((ld8(P.g_Fs) &+ 12), 5436158)
             ln = 53 // Pick.HC:53
@@ -214,13 +215,13 @@ public final class N_Demo_Graphics_Pick: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Pick.HC#0 (Pick.HC:86)
-    @discardableResult public final func f705_init_C__Demo_Graphics_Pick_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_Pick_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 86 // Pick.HC:86
             try tick(t)
-            try f704_Pick(t)
+            try f709_Pick(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Pick.HC#0", ln) }
@@ -229,15 +230,15 @@ public final class N_Demo_Graphics_Pick: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_Pick(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_Pick_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_Pick(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_Pick_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "Pick", 705: "$init:C:/Demo/Graphics/Pick.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "Pick", 710: "$init:C:/Demo/Graphics/Pick.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Pick.HC"]
     public override var files: [String] { N_Demo_Graphics_Pick.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Pick.DEFINED.contains(index) }

@@ -33,7 +33,7 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC DrawIt (MassSpring.HC:12) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -49,7 +49,7 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             loop0@ while ((l24_tmps != (ld8(g_ode) + 56L))) {
                 ln = 20 // MassSpring.HC:20
                 tick(t)
-                P.f396_GrLine(t, p1_dc, f2i(ldf((ld8((l24_tmps + 16L)) + 56L))), f2i(ldf((ld8((l24_tmps + 16L)) + 64L))), f2i(ldf((ld8((l24_tmps + 24L)) + 56L))), f2i(ldf((ld8((l24_tmps + 24L)) + 64L))), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, f2i(ldf((ld8((l24_tmps + 16L)) + 56L))), f2i(ldf((ld8((l24_tmps + 16L)) + 64L))), f2i(ldf((ld8((l24_tmps + 24L)) + 56L))), f2i(ldf((ld8((l24_tmps + 24L)) + 64L))), 1L, 0L)
                 ln = 21 // MassSpring.HC:21
                 l24_tmps = ld8(l24_tmps)
                 tick(t)
@@ -62,7 +62,7 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             loop2@ while ((l16_tmpm != (ld8(g_ode) + 40L))) {
                 ln = 27 // MassSpring.HC:27
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), f2i(ldf((l16_tmpm + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), f2i(ldf((l16_tmpm + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 28 // MassSpring.HC:28
                 l16_tmpm = ld8(l16_tmpm)
                 tick(t)
@@ -73,7 +73,7 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC MyDerivative (MassSpring.HC:32) */
-    fun f704_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f709_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -142,7 +142,7 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC PlaceMass (MassSpring.HC:59) */
-    fun f705_PlaceMass(t: Task, a0: Long, a1: Long) {
+    fun f710_PlaceMass(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -172,7 +172,7 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC PlaceSpring (MassSpring.HC:70) */
-    fun f706_PlaceSpring(t: Task, a0: Long, a1: Long) {
+    fun f711_PlaceSpring(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -199,16 +199,16 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Init (MassSpring.HC:80) */
-    fun f707_Init(t: Task) {
+    fun f712_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 82 // MassSpring.HC:82
             tick(t)
-            val t0: Long = P.f453_ODENew(t, 0L, 1.0E-4, 1L)
+            val t0: Long = P.f458_ODENew(t, 0L, 1.0E-4, 1L)
             st8(g_ode, t0)
             ln = 83 // MassSpring.HC:83
-            st8((ld8(g_ode) + 304L), 9223090561878065856L)
+            st8((ld8(g_ode) + 304L), 9223090561878065861L)
             ln = 84 // MassSpring.HC:84
             st8((ld8(g_ode) + 80L), bits(0.002))
             ln = 85 // MassSpring.HC:85
@@ -224,7 +224,7 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC CleanUp (MassSpring.HC:91) */
-    fun f708_CleanUp(t: Task) {
+    fun f713_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -239,14 +239,14 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f156_QueDel(t, (ld8(g_ode) + 56L), 1L)
             ln = 96 // MassSpring.HC:96
             tick(t)
-            P.f455_ODEDel(t, ld8(g_ode))
+            P.f460_ODEDel(t, ld8(g_ode))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "CleanUp", ln) }
     }
 
     /** HolyC MassSpringDemo (MassSpring.HC:99) */
-    fun f709_MassSpringDemo(t: Task) {
+    fun f714_MassSpringDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -281,12 +281,12 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st4(t0, (ld4u(t0) or 5242880L))
             ln = 117 // MassSpring.HC:117
             tick(t)
-            P.f507_MenuPush(t, s1)
+            P.f512_MenuPush(t, s1)
             ln = 127 // MassSpring.HC:127
             tick(t)
-            f707_Init(t)
+            f712_Init(t)
             ln = 128 // MassSpring.HC:128
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 130 // MassSpring.HC:130
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -304,12 +304,12 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                 5L -> {
                                     ln = 136 // MassSpring.HC:136
                                     tick(t)
-                                    f705_PlaceMass(t, ld8((fp + 8)), ld8((fp + 16)))
+                                    f710_PlaceMass(t, ld8((fp + 8)), ld8((fp + 16)))
                                 }
                                 9L -> {
                                     ln = 139 // MassSpring.HC:139
                                     tick(t)
-                                    val t3: Long = P.f461_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
+                                    val t3: Long = P.f466_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
                                     l24_tmpm1 = t3
                                     ln = 140 // MassSpring.HC:140
                                     l32_tmpm2 = 0L
@@ -319,14 +319,14 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                     var r5: Boolean = (l24_tmpm1 != 0L)
                                     if (r5) {
                                         tick(t)
-                                        val t4: Long = P.f461_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
+                                        val t4: Long = P.f466_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
                                         l32_tmpm2 = t4
                                         r5 = (t4 != 0L)
                                     }
                                     if ((r5 && (l24_tmpm1 != l32_tmpm2))) {
                                         ln = 144 // MassSpring.HC:144
                                         tick(t)
-                                        f706_PlaceSpring(t, l24_tmpm1, l32_tmpm2)
+                                        f711_PlaceSpring(t, l24_tmpm1, l32_tmpm2)
                                     }
                                     ln = 145 // MassSpring.HC:145
                                     l32_tmpm2 = 0L
@@ -340,10 +340,10 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                             10L -> {
                                                 ln = 150 // MassSpring.HC:150
                                                 tick(t)
-                                                f708_CleanUp(t)
+                                                f713_CleanUp(t)
                                                 ln = 151 // MassSpring.HC:151
                                                 tick(t)
-                                                f707_Init(t)
+                                                f712_Init(t)
                                             }
                                             27L, 28L -> {
                                                 ln = 155 // MassSpring.HC:155
@@ -377,10 +377,10 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 165 // MassSpring.HC:165
             tick(t)
-            f708_CleanUp(t)
+            f713_CleanUp(t)
             ln = 166 // MassSpring.HC:166
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -388,13 +388,13 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Games/MassSpring.HC#0 (MassSpring.HC:10) */
-    fun f710_init_C__Demo_Games_MassSpring_HC_0(t: Task): Long {
+    fun f715_init_C__Demo_Games_MassSpring_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 169 // MassSpring.HC:169
             tick(t)
-            f709_MassSpringDemo(t)
+            f714_MassSpringDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/MassSpring.HC#0", ln) }
@@ -403,14 +403,14 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> { f705_PlaceMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_PlaceSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> { f707_Init(t); 0L }
-            708 -> { f708_CleanUp(t); 0L }
-            709 -> { f709_MassSpringDemo(t); 0L }
-            710 -> f710_init_C__Demo_Games_MassSpring_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> { f710_PlaceMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_PlaceSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> { f712_Init(t); 0L }
+            713 -> { f713_CleanUp(t); 0L }
+            714 -> { f714_MassSpringDemo(t); 0L }
+            715 -> f715_init_C__Demo_Games_MassSpring_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -422,7 +422,7 @@ class N_Demo_Games_MassSpring(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715)
         private val NAMES = arrayOf("DrawIt", "MyDerivative", "PlaceMass", "PlaceSpring", "Init", "CleanUp", "MassSpringDemo", "\$init:C:/Demo/Games/MassSpring.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/MassSpring.HC")
     }

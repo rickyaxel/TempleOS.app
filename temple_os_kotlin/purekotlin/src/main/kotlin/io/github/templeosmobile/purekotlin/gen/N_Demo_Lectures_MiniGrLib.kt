@@ -31,7 +31,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MGInit (MiniGrLib.HC:7) */
-    fun f703_MGInit(t: Task) {
+    fun f708_MGInit(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -70,16 +70,16 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MGUpdate (MiniGrLib.HC:18) */
-    fun f704_MGUpdate(t: Task) {
+    fun f709_MGUpdate(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 22 // MiniGrLib.HC:22
             tick(t)
-            P.f570_OutU8(t, 964L, 2L)
+            P.f575_OutU8(t, 964L, 2L)
             ln = 23 // MiniGrLib.HC:23
             tick(t)
-            P.f570_OutU8(t, 965L, 15L)
+            P.f575_OutU8(t, 965L, 15L)
             ln = 24 // MiniGrLib.HC:24
             nat(t, n_MemCpy, push3(t, ld8((P.g_text + 56L)), g_image, 38400L))
             t.depth--
@@ -88,7 +88,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MGPlot (MiniGrLib.HC:27) */
-    fun f705_MGPlot(t: Task, a0: Long, a1: Long) {
+    fun f710_MGPlot(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -105,7 +105,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MGHLine (MiniGrLib.HC:33) */
-    fun f706_MGHLine(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f711_MGHLine(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -176,7 +176,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MGLine (MiniGrLib.HC:56) */
-    fun f707_MGLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f712_MGLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -217,7 +217,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 loop0@ while ((ld8(fp) != p2_x2)) {
                     ln = 65 // MiniGrLib.HC:65
                     tick(t)
-                    f705_MGPlot(t, ld4s((fp + 4L)), ld4s(((fp + 8) + 4L)))
+                    f710_MGPlot(t, ld4s((fp + 4L)), ld4s(((fp + 8) + 4L)))
                     ln = 66 // MiniGrLib.HC:66
                     st8(fp, (ld8(fp) + l32_dx))
                     st8((fp + 8), (ld8((fp + 8)) + l40_dy))
@@ -236,7 +236,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 loop2@ while ((ld8((fp + 8)) != p3_y2)) {
                     ln = 72 // MiniGrLib.HC:72
                     tick(t)
-                    f705_MGPlot(t, ld4s((fp + 4L)), ld4s(((fp + 8) + 4L)))
+                    f710_MGPlot(t, ld4s((fp + 4L)), ld4s(((fp + 8) + 4L)))
                     ln = 73 // MiniGrLib.HC:73
                     st8(fp, (ld8(fp) + l32_dx))
                     st8((fp + 8), (ld8((fp + 8)) + l40_dy))
@@ -245,7 +245,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
             }
             ln = 76 // MiniGrLib.HC:76
             tick(t)
-            f705_MGPlot(t, ld4s((fp + 4L)), ld4s(((fp + 8) + 4L)))
+            f710_MGPlot(t, ld4s((fp + 4L)), ld4s(((fp + 8) + 4L)))
             t.msp = msp0
             t.depth--
             return
@@ -253,7 +253,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MGCircle (MiniGrLib.HC:79) */
-    fun f708_MGCircle(t: Task, a0: Long, a1: Long, a2: Double) {
+    fun f713_MGCircle(t: Task, a0: Long, a1: Long, a2: Double) {
         var ln = 0
         try {
             enter(t)
@@ -285,7 +285,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
             l72_len = f2i(((2.0 * p2_r) * f(4614256656552045848L)))
             ln = 88 // MiniGrLib.HC:88
             tick(t)
-            f705_MGPlot(t, f2i((p0_x.toDouble() + l40_x1)), f2i((p1_y.toDouble() + l48_y1)))
+            f710_MGPlot(t, f2i((p0_x.toDouble() + l40_x1)), f2i((p1_y.toDouble() + l48_y1)))
             ln = 89 // MiniGrLib.HC:89
             loop0@ while (true) {
                 val t2: Long = l72_len
@@ -300,7 +300,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 l48_y1 = ((l24_s * l56_x2) + (l32_c * l64_y2))
                 ln = 100 // MiniGrLib.HC:100
                 tick(t)
-                f705_MGPlot(t, f2i((p0_x.toDouble() + l40_x1)), f2i((p1_y.toDouble() + l48_y1)))
+                f710_MGPlot(t, f2i((p0_x.toDouble() + l40_x1)), f2i((p1_y.toDouble() + l48_y1)))
                 tick(t)
             }
             t.depth--
@@ -309,20 +309,20 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MiniGrLibDemo (MiniGrLib.HC:105) */
-    fun f709_MiniGrLibDemo(t: Task) {
+    fun f714_MiniGrLibDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
             var l0_i: Long = 0L
             ln = 108 // MiniGrLib.HC:108
             tick(t)
-            f703_MGInit(t)
+            f708_MGInit(t)
             ln = 110 // MiniGrLib.HC:110
             l0_i = 0L
             loop0@ while ((l0_i < 100L)) {
                 ln = 111 // MiniGrLib.HC:111
                 tick(t)
-                f706_MGHLine(t, (200L + l0_i), (400L + l0_i), (300L + l0_i))
+                f711_MGHLine(t, (200L + l0_i), (400L + l0_i), (300L + l0_i))
                 ln = 110 // MiniGrLib.HC:110
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -332,7 +332,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
             loop2@ while ((l0_i < 500L)) {
                 ln = 113 // MiniGrLib.HC:113
                 tick(t)
-                f707_MGLine(t, l0_i, 0L, 0L, (480L - l0_i))
+                f712_MGLine(t, l0_i, 0L, 0L, (480L - l0_i))
                 ln = 112 // MiniGrLib.HC:112
                 l0_i = (l0_i + 10L)
                 tick(t)
@@ -342,32 +342,32 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
             loop4@ while ((l0_i < 300L)) {
                 ln = 115 // MiniGrLib.HC:115
                 tick(t)
-                f708_MGCircle(t, 200L, (100L + l0_i), l0_i.toDouble())
+                f713_MGCircle(t, 200L, (100L + l0_i), l0_i.toDouble())
                 ln = 114 // MiniGrLib.HC:114
                 l0_i = (l0_i + 4L)
                 tick(t)
             }
             ln = 116 // MiniGrLib.HC:116
             tick(t)
-            f704_MGUpdate(t)
+            f709_MGUpdate(t)
             ln = 117 // MiniGrLib.HC:117
             nat(t, n_Busy, push1(t, 1500000L))
             ln = 125 // MiniGrLib.HC:125
             tick(t)
-            P.f575_VGAFlush(t)
+            P.f580_VGAFlush(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "MiniGrLibDemo", ln) }
     }
 
     /** HolyC $init:C:/Demo/Lectures/MiniGrLib.HC#0 (MiniGrLib.HC:128) */
-    fun f710_init_C__Demo_Lectures_MiniGrLib_HC_0(t: Task): Long {
+    fun f715_init_C__Demo_Lectures_MiniGrLib_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 128 // MiniGrLib.HC:128
             tick(t)
-            f709_MiniGrLibDemo(t)
+            f714_MiniGrLibDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Lectures/MiniGrLib.HC#0", ln) }
@@ -376,14 +376,14 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MGInit(t); 0L }
-            704 -> { f704_MGUpdate(t); 0L }
-            705 -> { f705_MGPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_MGHLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            707 -> { f707_MGLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            708 -> { f708_MGCircle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))); 0L }
-            709 -> { f709_MiniGrLibDemo(t); 0L }
-            710 -> f710_init_C__Demo_Lectures_MiniGrLib_HC_0(t)
+            708 -> { f708_MGInit(t); 0L }
+            709 -> { f709_MGUpdate(t); 0L }
+            710 -> { f710_MGPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_MGHLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            712 -> { f712_MGLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            713 -> { f713_MGCircle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))); 0L }
+            714 -> { f714_MiniGrLibDemo(t); 0L }
+            715 -> f715_init_C__Demo_Lectures_MiniGrLib_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -395,7 +395,7 @@ class N_Demo_Lectures_MiniGrLib(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715)
         private val NAMES = arrayOf("MGInit", "MGUpdate", "MGPlot", "MGHLine", "MGLine", "MGCircle", "MiniGrLibDemo", "\$init:C:/Demo/Lectures/MiniGrLib.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Lectures/MiniGrLib.HC")
     }

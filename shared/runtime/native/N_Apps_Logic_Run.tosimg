@@ -1,12 +1,12 @@
 TOSIMG 1
 unit C:/Apps/Logic/Run.HC#0
 s 17fd38 433a2f417070732f4c6f676963
-fn 703 $init:C:/Apps/Logic/Run.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/Logic/Run.HC#0 (I64;;-)
+init 708
 unit C:/Apps/Logic/Run.HC#1
 s 17fd38 433a2f417070732f4c6f676963
-fn 704 $init:C:/Apps/Logic/Run.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Apps/Logic/Run.HC#1 (I64;;-)
+init 709
 unit C:/Apps/Logic/Run.HC#2
 value CONNECT_WIDTH 16
 value GATE_WIDTH 37
@@ -56,7 +56,7 @@ b 181068 17dcfffffff5ffffff2600000017000000ffffffffffffffff000000000000000000000
 b 181428 17dcfffffff4ffffff2500000018000000ffffffffff00000000000000000000000000000000000000ffffffffffffffffffffffffff000000ffffffffff0000ffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffff000000ffffffffffff00ffffffffffffffffffffffffffffffff000000ffffffffffffffffffffff000000ffffffffffffff00ffffffffffffffffffffffffffffffffff000000ffffffffffffffffff000000000000000000000000ffffffffffffffffffffffffffffffffffff0000ffffffffffffffff000000ffffffffffffffff0000ffffffffffffffffffffffffffffffffffff00ffffffffffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffff0000ffffffffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffff0000ffffffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff0000ffffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff00ffffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff0000ffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffff00ffffffff00000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffff0000000000000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffff00ffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff0000ffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff0000ffffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffffff0000ffffffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffff0000ffffffffffffff000000ffffffffffffffffff00ffffffffffffffffffffffffffffffffffff00ffffffffffffffff000000ffffffffffffffff0000ffffffffffffffffffffffffffffffffff0000ffffffffffffffff000000000000000000000000ffffffffffffffffffffffffffffffff000000ffffffffffffffffff000000ffffffffffff00ffffffffffffffffffffffffffffffff000000ffffffffffffffffffffff000000ffffffffff0000ffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffff000000ffffffffff00000000000000000000000000000000000000ffffffffffffffffffffffffff00000000
 b 181810 17dcfffffff5ffffff2500000017000000ffff0000000000000000000000000000000000000000ffffffffffffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffff000000000000ffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff00ff00000000ffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff0000ffffffff00ffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff0000ffffffff00ffffffff000000000000ffffffffffffffffffffffffffffffffffffffffffffff0000ffffffff0000000000000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff0000ffffffff00ffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff00ff00ff0000ffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff00ffff00ffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffffff000000000000ffffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffff000000ffff00ffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffffffffffff000000ffff0000000000000000000000000000000000000000ffffffffffffffffffffffffffffff00000000
 b 181bd0 17dcfffffff4ffffff2500000018000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffff00000000ffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffffffffffffffff00000000ffffffffffffffffffffffffffffffff000000ffffffffffffffffffffffffffffffffff000000ff00ffffffffffffffffffffffffffffffffff000000ffffffffffffffffffffffffffffff000000000000ffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffffff000000ffff0000ffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffffffffff00ffff00000000ffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffffffffff000000ffffffff00ffffffff000000ffffff00ffffffffffffffffffffffffffffffffffffffffffff0000ffffffff00ffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffff0000ffffffff0000000000000000ffffff00ffffffffffffffffffffffffffffffffffffffffffff0000ffffffff00ffffffff000000ffffff00ffffffffffffffffffffffffffffffffffffffffff0000ff00ff0000ffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffffffff0000ffffff00ffffffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffff000000ffffff00ffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffffffffff000000ffff0000ffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffffff000000000000ffffffffffffffffffffffffffffffff000000ffffffffffffffffffffffffffffff000000ff00ffffffffffffffffffffffffffffff000000ffffffffffffffffffffffffffffffffff00000000ffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffff00000000
-fn 705 $init:C:/Apps/Logic/Run.HC#2 (I64;;-)
+fn 710 $init:C:/Apps/Logic/Run.HC#2 (I64;;-)
 sym g added_this_pass 17fdd0 *U8
 sym g displayed_design 17fdb8 *U8
 sym g gate_type_lst 17fe30 *U8
@@ -68,7 +68,7 @@ sym g input3_table 17fe18 *U16
 sym g output_found 17fd58 I64
 sym g passes 17fd70 I64
 sym g table_size 17fd88 I64
-init 705
+init 710
 unit C:/Apps/Logic/Run.HC#3
 g 181fb8 8
 g 181fd0 8
@@ -101,44 +101,44 @@ s 182790 447570
 s 1827a8 2543
 s 1827c0 25303458
 s 1827d8 50617373203a2025640a
-fn 706 GetGates (U0;;-)
-fn 707 Init (U0;;-)
-fn 708 DrawDesign (U0;*$CDC,*I64,I64,I64,*I64,*I64;-)
-fn 709 DrawIt (U0;*$CTask,*$CDC;-)
-fn 710 FillNot (U0;*Bool,*I64;-)
-fn 711 FillAnd (U0;*Bool,*I64;-)
-fn 712 FillOr (U0;*Bool,*I64;-)
-fn 713 FillNAnd (U0;*Bool,*I64;-)
-fn 714 FillNOr (U0;*Bool,*I64;-)
-fn 715 FillXor (U0;*Bool,*I64;-)
-fn 716 FillAnd3 (U0;*Bool,*I64;-)
-fn 717 FillOr3 (U0;*Bool,*I64;-)
-fn 718 FillNAnd3 (U0;*Bool,*I64;-)
-fn 719 FillNOr3 (U0;*Bool,*I64;-)
-fn 720 FillGateTable (I64;;-)
-fn 721 CleanUp (U0;;-)
-fn 722 DigitalLogic (U0;;-)
-fn 723 $init:C:/Apps/Logic/Run.HC#3 (I64;;-)
-sym f CleanUp 721 (U0;;-)
-sym f DigitalLogic 722 (U0;;-)
-sym f DrawDesign 708 (U0;*$CDC,*I64,I64,I64,*I64,*I64;-)
-sym f DrawIt 709 (U0;*$CTask,*$CDC;-)
-sym f FillAnd 711 (U0;*Bool,*I64;-)
-sym f FillAnd3 716 (U0;*Bool,*I64;-)
-sym f FillGateTable 720 (I64;;-)
-sym f FillNAnd 713 (U0;*Bool,*I64;-)
-sym f FillNAnd3 718 (U0;*Bool,*I64;-)
-sym f FillNOr 714 (U0;*Bool,*I64;-)
-sym f FillNOr3 719 (U0;*Bool,*I64;-)
-sym f FillNot 710 (U0;*Bool,*I64;-)
-sym f FillOr 712 (U0;*Bool,*I64;-)
-sym f FillOr3 717 (U0;*Bool,*I64;-)
-sym f FillXor 715 (U0;*Bool,*I64;-)
-sym f GetGates 706 (U0;;-)
-sym f Init 707 (U0;;-)
+fn 711 GetGates (U0;;-)
+fn 712 Init (U0;;-)
+fn 713 DrawDesign (U0;*$CDC,*I64,I64,I64,*I64,*I64;-)
+fn 714 DrawIt (U0;*$CTask,*$CDC;-)
+fn 715 FillNot (U0;*Bool,*I64;-)
+fn 716 FillAnd (U0;*Bool,*I64;-)
+fn 717 FillOr (U0;*Bool,*I64;-)
+fn 718 FillNAnd (U0;*Bool,*I64;-)
+fn 719 FillNOr (U0;*Bool,*I64;-)
+fn 720 FillXor (U0;*Bool,*I64;-)
+fn 721 FillAnd3 (U0;*Bool,*I64;-)
+fn 722 FillOr3 (U0;*Bool,*I64;-)
+fn 723 FillNAnd3 (U0;*Bool,*I64;-)
+fn 724 FillNOr3 (U0;*Bool,*I64;-)
+fn 725 FillGateTable (I64;;-)
+fn 726 CleanUp (U0;;-)
+fn 727 DigitalLogic (U0;;-)
+fn 728 $init:C:/Apps/Logic/Run.HC#3 (I64;;-)
+sym f CleanUp 726 (U0;;-)
+sym f DigitalLogic 727 (U0;;-)
+sym f DrawDesign 713 (U0;*$CDC,*I64,I64,I64,*I64,*I64;-)
+sym f DrawIt 714 (U0;*$CTask,*$CDC;-)
+sym f FillAnd 716 (U0;*Bool,*I64;-)
+sym f FillAnd3 721 (U0;*Bool,*I64;-)
+sym f FillGateTable 725 (I64;;-)
+sym f FillNAnd 718 (U0;*Bool,*I64;-)
+sym f FillNAnd3 723 (U0;*Bool,*I64;-)
+sym f FillNOr 719 (U0;*Bool,*I64;-)
+sym f FillNOr3 724 (U0;*Bool,*I64;-)
+sym f FillNot 715 (U0;*Bool,*I64;-)
+sym f FillOr 717 (U0;*Bool,*I64;-)
+sym f FillOr3 722 (U0;*Bool,*I64;-)
+sym f FillXor 720 (U0;*Bool,*I64;-)
+sym f GetGates 711 (U0;;-)
+sym f Init 712 (U0;;-)
 sym g num_inputs_entered 181fb8 I64
 sym g num_outputs_entered 181fd0 I64
 sym g num_sel_gates 181fe8 I64
 sym g sel_gates 182000 [128]I64
-init 723
+init 728
 unit C:/Apps/Logic/Run.HC#4

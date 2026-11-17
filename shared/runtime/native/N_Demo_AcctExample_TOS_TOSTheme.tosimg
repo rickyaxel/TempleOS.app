@@ -1,9 +1,9 @@
 TOSIMG 1
 unit C:/Demo/AcctExample/TOS/TOSTheme.HC#0
 g 17fd38 8
-fn 703 $init:C:/Demo/AcctExample/TOS/TOSTheme.HC#0 (I64;;-)
+fn 708 $init:C:/Demo/AcctExample/TOS/TOSTheme.HC#0 (I64;;-)
 sym g t0 17fd38 F64
-init 703
+init 708
 unit C:/Demo/AcctExample/TOS/TOSTheme.HC#1
 value ARM 112
 value ARM_Z -45
@@ -26,14 +26,14 @@ s 186988 356544457146466574454546714465434444456574434746
 s 186988 356544457146466574454546714465434444456574434746
 s 1869b8 356544437144453465414135657445454645444734423544437146
 s 1869b8 356544437144453465414135657445454645444734423544437146
-fn 704 Bird (U0;*$CDC,F64;-)
-fn 705 DrawIt (U0;*$CTask,*$CDC;-)
-fn 706 TOSTheme (U0;;-)
-fn 707 $init:C:/Demo/AcctExample/TOS/TOSTheme.HC#1 (I64;;-)
-sym f Bird 704 (U0;*$CDC,F64;-)
-sym f DrawIt 705 (U0;*$CTask,*$CDC;-)
-sym f TOSTheme 706 (U0;;-)
+fn 709 Bird (U0;*$CDC,F64;-)
+fn 710 DrawIt (U0;*$CTask,*$CDC;-)
+fn 711 TOSTheme (U0;;-)
+fn 712 $init:C:/Demo/AcctExample/TOS/TOSTheme.HC#1 (I64;;-)
+sym f Bird 709 (U0;*$CDC,F64;-)
+sym f DrawIt 710 (U0;*$CTask,*$CDC;-)
+sym f TOSTheme 711 (U0;;-)
 sym g bx 17fd50 [7]F64
 sym g by 17fd98 [7]F64
-init 707
+init 712
 unit C:/Demo/AcctExample/TOS/TOSTheme.HC#2

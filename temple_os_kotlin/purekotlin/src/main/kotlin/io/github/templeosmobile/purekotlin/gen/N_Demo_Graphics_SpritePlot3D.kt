@@ -11,6 +11,7 @@ import io.github.templeosmobile.core.purenative.*
 
 class N_Demo_Graphics_SpritePlot3D(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** glbl_r: I64[4][4] */ @JvmField var g_glbl_r: Long = 0L
     /** binary literal, 210 bytes */ @JvmField var b0: Long = 0L
@@ -25,7 +26,7 @@ class N_Demo_Graphics_SpritePlot3D(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC DrawIt (SpritePlot3D.HC:21) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -53,8 +54,7 @@ class N_Demo_Graphics_SpritePlot3D(rt: NativeRuntime, @JvmField val P: Prelude) 
             tick(t)
             P.f295_DCDepthBufRst(t, p1_dc)
             ln = 31 // SpritePlot3D.HC:31
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 0L, 0L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 0L, 0L, 0L, b0, 0L))
             ln = 32 // SpritePlot3D.HC:32
             st8((p1_dc + 200L), l16_old_r)
             t.depth--
@@ -63,7 +63,7 @@ class N_Demo_Graphics_SpritePlot3D(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC SpritePlot3D (SpritePlot3D.HC:35) */
-    fun f704_SpritePlot3D(t: Task) {
+    fun f709_SpritePlot3D(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -76,7 +76,7 @@ class N_Demo_Graphics_SpritePlot3D(rt: NativeRuntime, @JvmField val P: Prelude) 
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 40 // SpritePlot3D.HC:40
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 41 // SpritePlot3D.HC:41
             loop0@ while (true) {
                 tick(t)
@@ -108,13 +108,13 @@ class N_Demo_Graphics_SpritePlot3D(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC $init:C:/Demo/Graphics/SpritePlot3D.HC#0 (SpritePlot3D.HC:53) */
-    fun f705_init_C__Demo_Graphics_SpritePlot3D_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_SpritePlot3D_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 53 // SpritePlot3D.HC:53
             tick(t)
-            f704_SpritePlot3D(t)
+            f709_SpritePlot3D(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/SpritePlot3D.HC#0", ln) }
@@ -123,9 +123,9 @@ class N_Demo_Graphics_SpritePlot3D(rt: NativeRuntime, @JvmField val P: Prelude) 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_SpritePlot3D(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_SpritePlot3D_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_SpritePlot3D(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_SpritePlot3D_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -137,7 +137,7 @@ class N_Demo_Graphics_SpritePlot3D(rt: NativeRuntime, @JvmField val P: Prelude) 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "SpritePlot3D", "\$init:C:/Demo/Graphics/SpritePlot3D.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/SpritePlot3D.HC")
     }

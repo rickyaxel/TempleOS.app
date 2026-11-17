@@ -34,7 +34,7 @@ class N_Demo_DolDoc_ClickCallBack(rt: NativeRuntime, @JvmField val P: Prelude) :
     }
 
     /** HolyC MyLeftCB1 (ClickCallBack.HC:1) */
-    fun f703_MyLeftCB1(t: Task, a0: Long, a1: Long): Long {
+    fun f708_MyLeftCB1(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -64,19 +64,19 @@ class N_Demo_DolDoc_ClickCallBack(rt: NativeRuntime, @JvmField val P: Prelude) :
     }
 
     /** HolyC ClickCallBack (ClickCallBack.HC:12) */
-    fun f704_ClickCallBack(t: Task) {
+    fun f709_ClickCallBack(t: Task) {
         var ln = 0
         try {
             enter(t)
             var l0_doc_e: Long = 0L
             ln = 15 // ClickCallBack.HC:15
             tick(t)
-            val t0: Long = P.f602_DocPut(t, 0L)
+            val t0: Long = P.f607_DocPut(t, 0L)
             tick(t)
-            P.f610_DocLock(t, t0)
+            P.f615_DocLock(t, t0)
             ln = 17 // ClickCallBack.HC:17
             tick(t)
-            val t1: Long = P.f602_DocPut(t, 0L)
+            val t1: Long = P.f607_DocPut(t, 0L)
             tick(t)
             val vb0 = push0(t)
             val t2: Long = P.f29_DocPrint(t, t1, s0, vb0, 0)
@@ -85,32 +85,32 @@ class N_Demo_DolDoc_ClickCallBack(rt: NativeRuntime, @JvmField val P: Prelude) :
             ln = 23 // ClickCallBack.HC:23
             nat(t, n_Print, push1(t, s1))
             ln = 24 // ClickCallBack.HC:24
-            st8((l0_doc_e + 88L), 9223090561878065855L)
+            st8((l0_doc_e + 88L), 9223090561878065860L)
             ln = 25 // ClickCallBack.HC:25
             tick(t)
-            val t3: Long = P.f602_DocPut(t, 0L)
+            val t3: Long = P.f607_DocPut(t, 0L)
             tick(t)
-            P.f611_DocUnlock(t, t3)
+            P.f616_DocUnlock(t, t3)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "ClickCallBack", ln) }
     }
 
     /** HolyC $init:C:/Demo/DolDoc/ClickCallBack.HC#0 (ClickCallBack.HC:28) */
-    fun f705_init_C__Demo_DolDoc_ClickCallBack_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_DolDoc_ClickCallBack_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 28 // ClickCallBack.HC:28
             tick(t)
-            f704_ClickCallBack(t)
+            f709_ClickCallBack(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/ClickCallBack.HC#0", ln) }
     }
 
     /** HolyC MyLeftCB2 (ClickCallBack.HC:30) */
-    fun f706_MyLeftCB2(t: Task, a0: Long, a1: Long): Long {
+    fun f711_MyLeftCB2(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -125,7 +125,7 @@ class N_Demo_DolDoc_ClickCallBack(rt: NativeRuntime, @JvmField val P: Prelude) :
     }
 
     /** HolyC PopUpJiffiesCallBack (ClickCallBack.HC:35) */
-    fun f707_PopUpJiffiesCallBack(t: Task, a0: Long) {
+    fun f712_PopUpJiffiesCallBack(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -134,7 +134,7 @@ class N_Demo_DolDoc_ClickCallBack(rt: NativeRuntime, @JvmField val P: Prelude) :
             var l8_doc: Long = 0L
             ln = 37 // ClickCallBack.HC:37
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l8_doc = t0
             ln = 38 // ClickCallBack.HC:38
             tick(t)
@@ -143,53 +143,53 @@ class N_Demo_DolDoc_ClickCallBack(rt: NativeRuntime, @JvmField val P: Prelude) :
             t.sp = vb1
             l16_doc_e = t1
             ln = 40 // ClickCallBack.HC:40
-            st8((l16_doc_e + 88L), 9223090561878065858L)
+            st8((l16_doc_e + 88L), 9223090561878065863L)
             ln = 41 // ClickCallBack.HC:41
             tick(t)
-            val t2: Long = P.f621_PopUpMenu(t, l8_doc, 0L)
+            val t2: Long = P.f626_PopUpMenu(t, l8_doc, 0L)
             nat(t, n_Print, push2(t, s3, t2))
             ln = 42 // ClickCallBack.HC:42
             tick(t)
-            P.f605_DocDel(t, l8_doc)
+            P.f610_DocDel(t, l8_doc)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "PopUpJiffiesCallBack", ln) }
     }
 
     /** HolyC $init:C:/Demo/DolDoc/ClickCallBack.HC#1 (ClickCallBack.HC:45) */
-    fun f708_init_C__Demo_DolDoc_ClickCallBack_HC_1(t: Task): Long {
+    fun f713_init_C__Demo_DolDoc_ClickCallBack_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 45 // ClickCallBack.HC:45
             tick(t)
-            f707_PopUpJiffiesCallBack(t, 3L)
+            f712_PopUpJiffiesCallBack(t, 3L)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/ClickCallBack.HC#1", ln) }
     }
 
     /** HolyC $init:C:/Demo/DolDoc/ClickCallBack.HC#2 (ClickCallBack.HC:46) */
-    fun f709_init_C__Demo_DolDoc_ClickCallBack_HC_2(t: Task): Long {
+    fun f714_init_C__Demo_DolDoc_ClickCallBack_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 46 // ClickCallBack.HC:46
             tick(t)
-            f707_PopUpJiffiesCallBack(t, 2L)
+            f712_PopUpJiffiesCallBack(t, 2L)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/ClickCallBack.HC#2", ln) }
     }
 
     /** HolyC $init:C:/Demo/DolDoc/ClickCallBack.HC#3 (ClickCallBack.HC:47) */
-    fun f710_init_C__Demo_DolDoc_ClickCallBack_HC_3(t: Task): Long {
+    fun f715_init_C__Demo_DolDoc_ClickCallBack_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 47 // ClickCallBack.HC:47
             tick(t)
-            f707_PopUpJiffiesCallBack(t, 1L)
+            f712_PopUpJiffiesCallBack(t, 1L)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/ClickCallBack.HC#3", ln) }
@@ -198,14 +198,14 @@ class N_Demo_DolDoc_ClickCallBack(rt: NativeRuntime, @JvmField val P: Prelude) :
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_MyLeftCB1(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            704 -> { f704_ClickCallBack(t); 0L }
-            705 -> f705_init_C__Demo_DolDoc_ClickCallBack_HC_0(t)
-            706 -> f706_MyLeftCB2(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            707 -> { f707_PopUpJiffiesCallBack(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> f708_init_C__Demo_DolDoc_ClickCallBack_HC_1(t)
-            709 -> f709_init_C__Demo_DolDoc_ClickCallBack_HC_2(t)
-            710 -> f710_init_C__Demo_DolDoc_ClickCallBack_HC_3(t)
+            708 -> f708_MyLeftCB1(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            709 -> { f709_ClickCallBack(t); 0L }
+            710 -> f710_init_C__Demo_DolDoc_ClickCallBack_HC_0(t)
+            711 -> f711_MyLeftCB2(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            712 -> { f712_PopUpJiffiesCallBack(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> f713_init_C__Demo_DolDoc_ClickCallBack_HC_1(t)
+            714 -> f714_init_C__Demo_DolDoc_ClickCallBack_HC_2(t)
+            715 -> f715_init_C__Demo_DolDoc_ClickCallBack_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -217,7 +217,7 @@ class N_Demo_DolDoc_ClickCallBack(rt: NativeRuntime, @JvmField val P: Prelude) :
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715)
         private val NAMES = arrayOf("MyLeftCB1", "ClickCallBack", "\$init:C:/Demo/DolDoc/ClickCallBack.HC#0", "MyLeftCB2", "PopUpJiffiesCallBack", "\$init:C:/Demo/DolDoc/ClickCallBack.HC#1", "\$init:C:/Demo/DolDoc/ClickCallBack.HC#2", "\$init:C:/Demo/DolDoc/ClickCallBack.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/DolDoc/ClickCallBack.HC")
     }

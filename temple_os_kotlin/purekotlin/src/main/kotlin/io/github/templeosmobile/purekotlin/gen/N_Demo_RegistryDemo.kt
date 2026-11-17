@@ -49,7 +49,7 @@ class N_Demo_RegistryDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/RegistryDemo.HC#0 (RegistryDemo.HC:10) */
-    fun f703_init_C__Demo_RegistryDemo_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_RegistryDemo_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -63,7 +63,7 @@ class N_Demo_RegistryDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/RegistryDemo.HC#1 (RegistryDemo.HC:11) */
-    fun f704_init_C__Demo_RegistryDemo_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_RegistryDemo_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -77,7 +77,7 @@ class N_Demo_RegistryDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/RegistryDemo.HC#2 (RegistryDemo.HC:12) */
-    fun f705_init_C__Demo_RegistryDemo_HC_2(t: Task): Long {
+    fun f710_init_C__Demo_RegistryDemo_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -91,7 +91,7 @@ class N_Demo_RegistryDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f706_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f711_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -101,7 +101,7 @@ class N_Demo_RegistryDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Game (RegistryDemo.HC:14) */
-    fun f707_Game(t: Task) {
+    fun f712_Game(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -128,13 +128,13 @@ class N_Demo_RegistryDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/RegistryDemo.HC#3 (RegistryDemo.HC:27) */
-    fun f708_init_C__Demo_RegistryDemo_HC_3(t: Task): Long {
+    fun f713_init_C__Demo_RegistryDemo_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 27 // RegistryDemo.HC:27
             tick(t)
-            f707_Game(t)
+            f712_Game(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/RegistryDemo.HC#3", ln) }
@@ -143,12 +143,12 @@ class N_Demo_RegistryDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_RegistryDemo_HC_0(t)
-            704 -> f704_init_C__Demo_RegistryDemo_HC_1(t)
-            705 -> f705_init_C__Demo_RegistryDemo_HC_2(t)
-            706 -> f706_init_C__Home_Registry_HC_0(t)
-            707 -> { f707_Game(t); 0L }
-            708 -> f708_init_C__Demo_RegistryDemo_HC_3(t)
+            708 -> f708_init_C__Demo_RegistryDemo_HC_0(t)
+            709 -> f709_init_C__Demo_RegistryDemo_HC_1(t)
+            710 -> f710_init_C__Demo_RegistryDemo_HC_2(t)
+            711 -> f711_init_C__Home_Registry_HC_0(t)
+            712 -> { f712_Game(t); 0L }
+            713 -> f713_init_C__Demo_RegistryDemo_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -160,7 +160,7 @@ class N_Demo_RegistryDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("\$init:C:/Demo/RegistryDemo.HC#0", "\$init:C:/Demo/RegistryDemo.HC#1", "\$init:C:/Demo/RegistryDemo.HC#2", "\$init:C:/Home/Registry.HC#0", "Game", "\$init:C:/Demo/RegistryDemo.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/RegistryDemo.HC")
     }

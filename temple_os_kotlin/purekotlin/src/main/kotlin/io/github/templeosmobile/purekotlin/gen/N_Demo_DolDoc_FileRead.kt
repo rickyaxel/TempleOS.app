@@ -43,7 +43,7 @@ class N_Demo_DolDoc_FileRead(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DocProfile (FileRead.HC:1) */
-    fun f703_DocProfile(t: Task, a0: Long, a1: Long) {
+    fun f708_DocProfile(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -66,7 +66,7 @@ class N_Demo_DolDoc_FileRead(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             l40_type_flags_stats = t2
             ln = 9 // FileRead.HC:9
             tick(t)
-            val t3: Long = P.f617_DocRead(t, p0_filename, p1_flags)
+            val t3: Long = P.f622_DocRead(t, p0_filename, p1_flags)
             l48_doc = t3
             ln = 13 // FileRead.HC:13
             l56_doc_e = ld8(l48_doc)
@@ -112,7 +112,7 @@ class N_Demo_DolDoc_FileRead(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             }
             ln = 24 // FileRead.HC:24
             tick(t)
-            P.f605_DocDel(t, l48_doc)
+            P.f610_DocDel(t, l48_doc)
             ln = 26 // FileRead.HC:26
             nat(t, n_Print, push2(t, s0, p0_filename))
             ln = 27 // FileRead.HC:27
@@ -172,26 +172,26 @@ class N_Demo_DolDoc_FileRead(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/DolDoc/FileRead.HC#0 (FileRead.HC:79) */
-    fun f704_init_C__Demo_DolDoc_FileRead_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_DolDoc_FileRead_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 79 // FileRead.HC:79
             tick(t)
-            f703_DocProfile(t, s8, 0L)
+            f708_DocProfile(t, s8, 0L)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/FileRead.HC#0", ln) }
     }
 
     /** HolyC $init:C:/Demo/DolDoc/FileRead.HC#1 (FileRead.HC:80) */
-    fun f705_init_C__Demo_DolDoc_FileRead_HC_1(t: Task): Long {
+    fun f710_init_C__Demo_DolDoc_FileRead_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 80 // FileRead.HC:80
             tick(t)
-            f703_DocProfile(t, s8, 1L)
+            f708_DocProfile(t, s8, 1L)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/FileRead.HC#1", ln) }
@@ -200,9 +200,9 @@ class N_Demo_DolDoc_FileRead(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DocProfile(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> f704_init_C__Demo_DolDoc_FileRead_HC_0(t)
-            705 -> f705_init_C__Demo_DolDoc_FileRead_HC_1(t)
+            708 -> { f708_DocProfile(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> f709_init_C__Demo_DolDoc_FileRead_HC_0(t)
+            710 -> f710_init_C__Demo_DolDoc_FileRead_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -214,7 +214,7 @@ class N_Demo_DolDoc_FileRead(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DocProfile", "\$init:C:/Demo/DolDoc/FileRead.HC#0", "\$init:C:/Demo/DolDoc/FileRead.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/DolDoc/FileRead.HC")
     }

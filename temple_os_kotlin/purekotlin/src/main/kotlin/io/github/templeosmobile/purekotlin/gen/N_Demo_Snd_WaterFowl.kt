@@ -43,7 +43,7 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (WaterFowl.HC:111) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -61,7 +61,7 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 114 // WaterFowl.HC:114
             val t0: Double = f(nat(t, n_tS, push0(t)))
             tick(t)
-            val t1: Double = P.f482_Caw(t, (t0 - ldf(g_t0)), 20.0)
+            val t1: Double = P.f487_Caw(t, (t0 - ldf(g_t0)), 20.0)
             l32_t = (1.04 - fpow((0.35 + (0.65 * t1)), 3.0))
             l40_s = (1.0 - (0.5 * l32_t))
             ln = 115 // WaterFowl.HC:115
@@ -73,53 +73,53 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             val t4: Long = ld8(g_poem)
             val t2: Double = f(nat(t, n_tS, push0(t)))
             tick(t)
-            val t3: Double = P.f482_Caw(t, (t2 - ldf(g_t0)), 65.0)
+            val t3: Double = P.f487_Caw(t, (t2 - ldf(g_t0)), 65.0)
             ln = 117 // WaterFowl.HC:117
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p1_dc, ((l16_w shr 1) - 212L), f2i((t3 * (l24_h - 24L).toDouble())), t4, vb0, 0)
+            P.f370_GrPrint(t, p1_dc, ((l16_w shr 1) - 212L), f2i((t3 * (l24_h - 24L).toDouble())), t4, vb0, 0)
             t.sp = vb0
             ln = 119 // WaterFowl.HC:119
             st4((p1_dc + 160L), 0L)
             ln = 120 // WaterFowl.HC:120
             val t5: Double = f(nat(t, n_tS, push0(t)))
             tick(t)
-            val t6: Double = P.f485_FullTri(t, t5, 0.4)
+            val t6: Double = P.f490_FullTri(t, t5, 0.4)
             tick(t)
-            P.f396_GrLine(t, p1_dc, f2i(l48_x), f2i(l56_y), f2i((l48_x - (8.0 * l40_s))), f2i((l56_y + ((6.0 * l40_s) * t6))), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, f2i(l48_x), f2i(l56_y), f2i((l48_x - (8.0 * l40_s))), f2i((l56_y + ((6.0 * l40_s) * t6))), 1L, 0L)
             ln = 121 // WaterFowl.HC:121
             val t7: Double = f(nat(t, n_tS, push0(t)))
             tick(t)
-            val t8: Double = P.f485_FullTri(t, t7, 0.4)
+            val t8: Double = P.f490_FullTri(t, t7, 0.4)
             tick(t)
-            P.f396_GrLine(t, p1_dc, f2i(l48_x), f2i(l56_y), f2i((l48_x + (8.0 * l40_s))), f2i((l56_y + ((6.0 * l40_s) * t8))), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, f2i(l48_x), f2i(l56_y), f2i((l48_x + (8.0 * l40_s))), f2i((l56_y + ((6.0 * l40_s) * t8))), 1L, 0L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawIt", ln) }
     }
 
     /** HolyC SongTask (WaterFowl.HC:124) */
-    fun f704_SongTask(t: Task, a0: Long) {
+    fun f709_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 128 // WaterFowl.HC:128
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 129 // WaterFowl.HC:129
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 130 // WaterFowl.HC:130
             loop0@ while ((1L != 0L)) {
                 ln = 131 // WaterFowl.HC:131
                 tick(t)
-                P.f494_Play(t, s0, 0L)
+                P.f499_Play(t, s0, 0L)
                 ln = 132 // WaterFowl.HC:132
                 tick(t)
-                P.f494_Play(t, s1, 0L)
+                P.f499_Play(t, s1, 0L)
                 ln = 133 // WaterFowl.HC:133
                 tick(t)
-                P.f494_Play(t, s2, 0L)
+                P.f499_Play(t, s2, 0L)
                 tick(t)
             }
             t.depth--
@@ -128,7 +128,7 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC WaterFowl (WaterFowl.HC:137) */
-    fun f705_WaterFowl(t: Task) {
+    fun f710_WaterFowl(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -137,7 +137,7 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 140 // WaterFowl.HC:140
             val t1: Long = (ld8(P.g_Fs) + 1080L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065856L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 141 // WaterFowl.HC:141
             nat(t, n_AutoComplete, push1(t, 0L))
@@ -153,7 +153,7 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             val t2: Double = f(nat(t, n_tS, push0(t)))
             st8(g_t0, bits(t2))
             ln = 146 // WaterFowl.HC:146
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 147 // WaterFowl.HC:147
             nat(t, n_Sprite, push2(t, b0, 0L))
             ln = 148 // WaterFowl.HC:148
@@ -171,13 +171,13 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Snd/WaterFowl.HC#0 (WaterFowl.HC:61) */
-    fun f706_init_C__Demo_Snd_WaterFowl_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Snd_WaterFowl_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 154 // WaterFowl.HC:154
             tick(t)
-            f705_WaterFowl(t)
+            f710_WaterFowl(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Snd/WaterFowl.HC#0", ln) }
@@ -186,10 +186,10 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_WaterFowl(t); 0L }
-            706 -> f706_init_C__Demo_Snd_WaterFowl_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_WaterFowl(t); 0L }
+            711 -> f711_init_C__Demo_Snd_WaterFowl_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -201,7 +201,7 @@ class N_Demo_Snd_WaterFowl(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("DrawIt", "SongTask", "WaterFowl", "\$init:C:/Demo/Snd/WaterFowl.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Snd/WaterFowl.HC")
     }

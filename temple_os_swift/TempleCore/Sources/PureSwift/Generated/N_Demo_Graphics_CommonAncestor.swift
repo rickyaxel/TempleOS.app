@@ -47,7 +47,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
     }
 
     /// HolyC ShowTree (CommonAncestor.HC:16)
-    public final func f703_ShowTree(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
+    public final func f708_ShowTree(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -64,12 +64,12 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
                 if try (ld8(p1_tmpn) != 0) {
                     ln = 21 // CommonAncestor.HC:21
                     try tick(t)
-                    try f703_ShowTree(t, p0_dc, ld8(p1_tmpn), (fp &+ 40), p3__tree_x, (p4_y &+ 45))
+                    try f708_ShowTree(t, p0_dc, ld8(p1_tmpn), (fp &+ 40), p3__tree_x, (p4_y &+ 45))
                     ln = 22 // CommonAncestor.HC:22
                     try st4((p0_dc &+ 160), 1)
                     ln = 23 // CommonAncestor.HC:23
                     try tick(t)
-                    _ = try P.f426_GrArrow3(t, p0_dc, ld8(p3__tree_x), p4_y, 0, (ld8((fp &+ 40)) &+ 3), ((p4_y &+ 45) &- 3), 0, 2.75, 1, 0)
+                    _ = try P.f429_GrArrow3(t, p0_dc, ld8(p3__tree_x), p4_y, 0, (ld8((fp &+ 40)) &+ 3), ((p4_y &+ 45) &- 3), 0, 2.75, 1, 0)
                 }
                 ln = 26 // CommonAncestor.HC:26
                 if try ((ld8((p1_tmpn &+ 16)) == ld8(g_n1)) || (ld8((p1_tmpn &+ 16)) == ld8(g_n2))) {
@@ -96,7 +96,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
                 ln = 37 // CommonAncestor.HC:37
                 try tick(t)
                 let vb0 = try push1(t, ld8((p1_tmpn &+ 16)))
-                _ = try P.f369_GrPrint(t, p0_dc, ld8(p2__node_x), p4_y, s0, vb0, 1)
+                _ = try P.f370_GrPrint(t, p0_dc, ld8(p2__node_x), p4_y, s0, vb0, 1)
                 t.sp = vb0
                 ln = 38 // CommonAncestor.HC:38
                 let t0: Int64 = p3__tree_x
@@ -105,12 +105,12 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
                 if try (ld8((p1_tmpn &+ 8)) != 0) {
                     ln = 41 // CommonAncestor.HC:41
                     try tick(t)
-                    try f703_ShowTree(t, p0_dc, ld8((p1_tmpn &+ 8)), (fp &+ 40), p3__tree_x, (p4_y &+ 45))
+                    try f708_ShowTree(t, p0_dc, ld8((p1_tmpn &+ 8)), (fp &+ 40), p3__tree_x, (p4_y &+ 45))
                     ln = 42 // CommonAncestor.HC:42
                     try st4((p0_dc &+ 160), 1)
                     ln = 43 // CommonAncestor.HC:43
                     try tick(t)
-                    _ = try P.f426_GrArrow3(t, p0_dc, ld8(p2__node_x), p4_y, 0, (ld8((fp &+ 40)) &- 3), ((p4_y &+ 45) &- 3), 0, 2.75, 1, 0)
+                    _ = try P.f429_GrArrow3(t, p0_dc, ld8(p2__node_x), p4_y, 0, (ld8((fp &+ 40)) &- 3), ((p4_y &+ 45) &- 3), 0, 2.75, 1, 0)
                 }
             }
             t.msp = msp0
@@ -120,7 +120,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
     }
 
     /// HolyC DrawIt (CommonAncestor.HC:49)
-    public final func f704_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -133,7 +133,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
             try st8((fp &+ 24), 0)
             ln = 52 // CommonAncestor.HC:52
             try tick(t)
-            try f703_ShowTree(t, p1_dc, ld8(g_root), (fp &+ 16), (fp &+ 24), 20)
+            try f708_ShowTree(t, p1_dc, ld8(g_root), (fp &+ 16), (fp &+ 24), 20)
             t.msp = msp0
             t.depth -= 1
             return
@@ -141,7 +141,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
     }
 
     /// HolyC TreeAdd (CommonAncestor.HC:55)
-    public final func f705_TreeAdd(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_TreeAdd(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -164,11 +164,11 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
                     if try (ld8((p1_tmpn &+ 16)) < ld8((l16_root &+ 16))) {
                         ln = 63 // CommonAncestor.HC:63
                         try tick(t)
-                        try f705_TreeAdd(t, l16_root, p1_tmpn)
+                        try f710_TreeAdd(t, l16_root, p1_tmpn)
                     } else {
                         ln = 65 // CommonAncestor.HC:65
                         try tick(t)
-                        try f705_TreeAdd(t, (l16_root &+ 8), p1_tmpn)
+                        try f710_TreeAdd(t, (l16_root &+ 8), p1_tmpn)
                     }
                 }
             }
@@ -178,7 +178,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
     }
 
     /// HolyC TreeNew (CommonAncestor.HC:68)
-    public final func f706_TreeNew(_ t: HTask) throws {
+    public final func f711_TreeNew(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -206,7 +206,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
                 }
                 ln = 81 // CommonAncestor.HC:81
                 try tick(t)
-                try f705_TreeAdd(t, g_root, l8_tmpn)
+                try f710_TreeAdd(t, g_root, l8_tmpn)
                 ln = 82 // CommonAncestor.HC:82
                 _ = try nat(t, n_Sleep, try push1(t, 50))
                 ln = 72 // CommonAncestor.HC:72
@@ -219,7 +219,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
     }
 
     /// HolyC TreeCommonAncestorFind (CommonAncestor.HC:86)
-    public final func f707_TreeCommonAncestorFind(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_TreeCommonAncestorFind(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -232,13 +232,13 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
                 if try ((ld8(g_n1) < ld8((p0_root &+ 16))) && (ld8(g_n2) < ld8((p0_root &+ 16)))) {
                     ln = 91 // CommonAncestor.HC:91
                     try tick(t)
-                    try f707_TreeCommonAncestorFind(t, ld8(p0_root))
+                    try f712_TreeCommonAncestorFind(t, ld8(p0_root))
                 } else {
                     ln = 92 // CommonAncestor.HC:92
                     if try ((ld8(g_n1) > ld8((p0_root &+ 16))) && (ld8(g_n2) > ld8((p0_root &+ 16)))) {
                         ln = 93 // CommonAncestor.HC:93
                         try tick(t)
-                        try f707_TreeCommonAncestorFind(t, ld8((p0_root &+ 8)))
+                        try f712_TreeCommonAncestorFind(t, ld8((p0_root &+ 8)))
                     }
                 }
             }
@@ -248,7 +248,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
     }
 
     /// HolyC TreeCommonAncestor (CommonAncestor.HC:97)
-    public final func f708_TreeCommonAncestor(_ t: HTask) throws {
+    public final func f713_TreeCommonAncestor(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -262,7 +262,7 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 103 // CommonAncestor.HC:103
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065856)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
             ln = 104 // CommonAncestor.HC:104
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 105 // CommonAncestor.HC:105
@@ -273,10 +273,10 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
             do {
                 ln = 107 // CommonAncestor.HC:107
                 try tick(t)
-                try f706_TreeNew(t)
+                try f711_TreeNew(t)
                 ln = 108 // CommonAncestor.HC:108
                 try tick(t)
-                try f707_TreeCommonAncestorFind(t, ld8(g_root))
+                try f712_TreeCommonAncestorFind(t, ld8(g_root))
                 ln = 109 // CommonAncestor.HC:109
                 try tick(t)
                 _ = try P.f188_PressAKey(t)
@@ -298,13 +298,13 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/CommonAncestor.HC#0 (CommonAncestor.HC:115)
-    @discardableResult public final func f709_init_C__Demo_Graphics_CommonAncestor_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Demo_Graphics_CommonAncestor_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 115 // CommonAncestor.HC:115
             try tick(t)
-            try f708_TreeCommonAncestor(t)
+            try f713_TreeCommonAncestor(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/CommonAncestor.HC#0", ln) }
@@ -313,19 +313,19 @@ public final class N_Demo_Graphics_CommonAncestor: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_ShowTree(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
-        case 704: try f704_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: try f705_TreeAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_TreeNew(t); return 0
-        case 707: try f707_TreeCommonAncestorFind(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_TreeCommonAncestor(t); return 0
-        case 709: return try f709_init_C__Demo_Graphics_CommonAncestor_HC_0(t)
+        case 708: try f708_ShowTree(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
+        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: try f710_TreeAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_TreeNew(t); return 0
+        case 712: try f712_TreeCommonAncestorFind(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_TreeCommonAncestor(t); return 0
+        case 714: return try f714_init_C__Demo_Graphics_CommonAncestor_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709]
-    private static let NAMES: [Int: String] = [703: "ShowTree", 704: "DrawIt", 705: "TreeAdd", 706: "TreeNew", 707: "TreeCommonAncestorFind", 708: "TreeCommonAncestor", 709: "$init:C:/Demo/Graphics/CommonAncestor.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714]
+    private static let NAMES: [Int: String] = [708: "ShowTree", 709: "DrawIt", 710: "TreeAdd", 711: "TreeNew", 712: "TreeCommonAncestorFind", 713: "TreeCommonAncestor", 714: "$init:C:/Demo/Graphics/CommonAncestor.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/CommonAncestor.HC"]
     public override var files: [String] { N_Demo_Graphics_CommonAncestor.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_CommonAncestor.DEFINED.contains(index) }

@@ -33,6 +33,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     public let n_LexExtStr: Int
     public let n_MAlloc: Int
     public let n_MStrPrint: Int
+    public let n_Mat4x4Scale: Int
     public let n_MemSet: Int
     public let n_Msg: Int
     public let n_PostMsg: Int
@@ -51,6 +52,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     public let n_Snd: Int
     public let n_Spawn: Int
     public let n_Sprite: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_StrCmp: Int
     public let n_StrLen: Int
@@ -218,6 +220,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
         n_LexExtStr = rt.vm.natives.find("LexExtStr")!.index
         n_MAlloc = rt.vm.natives.find("MAlloc")!.index
         n_MStrPrint = rt.vm.natives.find("MStrPrint")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_Msg = rt.vm.natives.find("Msg")!.index
         n_PostMsg = rt.vm.natives.find("PostMsg")!.index
@@ -236,6 +239,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
         n_Sprite = rt.vm.natives.find("Sprite")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_StrCmp = rt.vm.natives.find("StrCmp")!.index
         n_StrLen = rt.vm.natives.find("StrLen")!.index
@@ -399,7 +403,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#0 (Run.HC:1)
-    @discardableResult public final func f703_init_C__Apps_Psalmody_Run_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Psalmody_Run_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -413,7 +417,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#1 (Run.HC:3)
-    @discardableResult public final func f704_init_C__Apps_Psalmody_Run_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_Psalmody_Run_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -427,7 +431,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC JukeReward (JukeBox.HC:1)
-    @discardableResult public final func f705_JukeReward(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f710_JukeReward(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -436,7 +440,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l24_res: Int64 = 0
             var l8_buf: Int64 = 0
             ln = 2097157 // JukeBox.HC:5
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065810, 0, s1, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065815, 0, s1, (-1), ld8(P.g_Fs), 0, 0))
             l24_res = t0
             ln = 2097158 // JukeBox.HC:6
             try tick(t)
@@ -445,7 +449,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try st1((l24_res &+ 776), 1)
             ln = 2097161 // JukeBox.HC:9
             try tick(t)
-            let t1: Int64 = try P.f601_DocNew(t, 0, l24_res)
+            let t1: Int64 = try P.f606_DocNew(t, 0, l24_res)
             l16_doc = t1
             ln = 2097162 // JukeBox.HC:10
             try tick(t)
@@ -457,17 +461,17 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             l8_buf = t2
             ln = 2097165 // JukeBox.HC:13
             try tick(t)
-            _ = try P.f659_TaskExe(t, l24_res, 0, l8_buf, 132)
+            _ = try P.f664_TaskExe(t, l24_res, 0, l8_buf, 132)
             ln = 2097166 // JukeBox.HC:14
             _ = try nat(t, n_Free, try push1(t, l8_buf))
             ln = 2097167 // JukeBox.HC:15
             try tick(t)
-            try P.f660_TaskWait(t, l24_res, 0)
+            try P.f665_TaskWait(t, l24_res, 0)
             ln = 2097169 // JukeBox.HC:17
             try st1((l24_res &+ 777), 0)
             ln = 2097170 // JukeBox.HC:18
             try tick(t)
-            let t3: Int64 = try P.f663_DrvTextAttrGet(t, 58)
+            let t3: Int64 = try P.f668_DrvTextAttrGet(t, 58)
             try st1((l24_res &+ 779), (112 &+ (t3 & 15)))
             ln = 2097171 // JukeBox.HC:19
             try st1((l24_res &+ 778), 113)
@@ -490,7 +494,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC SingleSong (JukeBox.HC:28)
-    @discardableResult public final func f706_SingleSong(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f711_SingleSong(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -498,7 +502,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var p1_name: Int64 = a1
             var l16_task: Int64 = 0
             ln = 2097182 // JukeBox.HC:30
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065810, 0, p1_name, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065815, 0, p1_name, (-1), ld8(P.g_Fs), 0, 0))
             l16_task = t0
             ln = 2097183 // JukeBox.HC:31
             try tick(t)
@@ -507,7 +511,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try st1((l16_task &+ 776), 1)
             ln = 2097185 // JukeBox.HC:33
             try tick(t)
-            _ = try P.f659_TaskExe(t, l16_task, ld8(P.g_Fs), s4, 129)
+            _ = try P.f664_TaskExe(t, l16_task, ld8(P.g_Fs), s4, 129)
             ln = 2097186 // JukeBox.HC:34
             try tick(t)
             _ = try P.f222_WinHorz(t, ld8((l16_task &+ 72)), (ld8((l16_task &+ 72)) &+ 50), l16_task)
@@ -518,10 +522,10 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try st4((l16_task &+ 12), 193239)
             ln = 2097189 // JukeBox.HC:37
             try tick(t)
-            _ = try P.f659_TaskExe(t, l16_task, 0, p0_msg, 132)
+            _ = try P.f664_TaskExe(t, l16_task, 0, p0_msg, 132)
             ln = 2097190 // JukeBox.HC:38
             try tick(t)
-            let t1: Int64 = try P.f602_DocPut(t, l16_task)
+            let t1: Int64 = try P.f607_DocPut(t, l16_task)
             try st8((t1 &+ 280), 100)
             ln = 2097191 // JukeBox.HC:39
             t.depth -= 1
@@ -532,7 +536,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC JBPutKey (JukeBox.HC:46)
-    @discardableResult public final func f707_JBPutKey(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f712_JBPutKey(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -577,11 +581,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                         }
                         ln = 2097216 // JukeBox.HC:64
                         try tick(t)
-                        let t1: Int64 = try P.f617_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
+                        let t1: Int64 = try P.f622_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
                         l72_doc2 = t1
                         ln = 2097217 // JukeBox.HC:65
                         try tick(t)
-                        try P.f619_DocGoToLine(t, l72_doc2, 1)
+                        try P.f624_DocGoToLine(t, l72_doc2, 1)
                         ln = 2097218 // JukeBox.HC:66
                         l40_doc_e = try ld8((l72_doc2 &+ 104))
                         ln = 2097219 // JukeBox.HC:67
@@ -595,11 +599,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                             try st1((ld8((l40_doc_e &+ 16)) &+ 2), p2_ch)
                             ln = 2097221 // JukeBox.HC:69
                             try tick(t)
-                            _ = try P.f618_DocWrite(t, l72_doc2, 0)
+                            _ = try P.f623_DocWrite(t, l72_doc2, 0)
                         }
                         ln = 2097223 // JukeBox.HC:71
                         try tick(t)
-                        try P.f605_DocDel(t, l72_doc2)
+                        try P.f610_DocDel(t, l72_doc2)
                         ln = 2097224 // JukeBox.HC:72
                         let rv1: Int64 = 1
                         t.msp = msp0
@@ -610,15 +614,15 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                         if (p2_ch == 114) {
                             ln = 2097226 // JukeBox.HC:74
                             try tick(t)
-                            let t4: Int64 = try P.f672_DocTreeFFind(t, ld8((l48_tmpde &+ 24)), s5)
+                            let t4: Int64 = try P.f677_DocTreeFFind(t, ld8((l48_tmpde &+ 24)), s5)
                             if (t4 == 0) {
                                 ln = 2097227 // JukeBox.HC:75
                                 try tick(t)
-                                let t5: Int64 = try P.f617_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
+                                let t5: Int64 = try P.f622_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
                                 l72_doc2 = t5
                                 ln = 2097228 // JukeBox.HC:76
                                 try tick(t)
-                                try P.f619_DocGoToLine(t, l72_doc2, 2)
+                                try P.f624_DocGoToLine(t, l72_doc2, 2)
                                 ln = 2097229 // JukeBox.HC:77
                                 try tick(t)
                                 let vb2 = push0(t)
@@ -626,34 +630,34 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                 t.sp = vb2
                                 ln = 2097237 // JukeBox.HC:85
                                 try tick(t)
-                                _ = try P.f618_DocWrite(t, l72_doc2, 0)
+                                _ = try P.f623_DocWrite(t, l72_doc2, 0)
                                 ln = 2097238 // JukeBox.HC:86
                                 try tick(t)
-                                try P.f605_DocDel(t, l72_doc2)
+                                try P.f610_DocDel(t, l72_doc2)
                             }
                             ln = 2097240 // JukeBox.HC:88
                             try tick(t)
-                            let t6: Int64 = try P.f672_DocTreeFFind(t, ld8((l48_tmpde &+ 24)), s7)
+                            let t6: Int64 = try P.f677_DocTreeFFind(t, ld8((l48_tmpde &+ 24)), s7)
                             if (t6 != 0) {
                                 ln = 2097241 // JukeBox.HC:89
                                 l56_i = 0
                                 loop0: while (l56_i < 5) {
                                     ln = 2097243 // JukeBox.HC:91
                                     try tick(t)
-                                    let t7: Int64 = try P.f688_GodWordStr(t, 17)
+                                    let t7: Int64 = try P.f693_GodWordStr(t, 17)
                                     try tick(t)
-                                    let t8: Int64 = try P.f688_GodWordStr(t, 17)
+                                    let t8: Int64 = try P.f693_GodWordStr(t, 17)
                                     try tick(t)
-                                    let t9: Int64 = try P.f688_GodWordStr(t, 17)
+                                    let t9: Int64 = try P.f693_GodWordStr(t, 17)
                                     try tick(t)
-                                    let t10: Int64 = try P.f688_GodWordStr(t, 17)
+                                    let t10: Int64 = try P.f693_GodWordStr(t, 17)
                                     ln = 2097242 // JukeBox.HC:90
                                     let t11: Int64 = try nat(t, n_MStrPrint, try push(t, s8, t10, t9, t8, t7))
                                     l64_st = t11
                                     ln = 2097244 // JukeBox.HC:92
                                     try tick(t)
                                     let vb3 = try push1(t, l64_st)
-                                    _ = try P.f675_DocTreeFAppend(t, ld8((l48_tmpde &+ 24)), s7, s9, vb3, 1)
+                                    _ = try P.f680_DocTreeFAppend(t, ld8((l48_tmpde &+ 24)), s7, s9, vb3, 1)
                                     t.sp = vb3
                                     ln = 2097246 // JukeBox.HC:94
                                     _ = try nat(t, n_Free, try push1(t, l64_st))
@@ -663,7 +667,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                 }
                                 ln = 2097248 // JukeBox.HC:96
                                 try tick(t)
-                                try P.f668_In(t, s10)
+                                try P.f673_In(t, s10)
                             }
                             ln = 2097250 // JukeBox.HC:98
                             let rv4: Int64 = 1
@@ -694,7 +698,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC JukeBox (JukeBox.HC:107)
-    public final func f708_JukeBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f713_JukeBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -714,7 +718,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             l16_i = 0
             ln = 2097264 // JukeBox.HC:112
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l64_doc = t0
             ln = 2097266 // JukeBox.HC:114
             l88_task = 0
@@ -748,7 +752,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 ln = 2097276 // JukeBox.HC:124
                 _ = try nat(t, n_Free, try push1(t, p0_dirname))
                 ln = 2097277 // JukeBox.HC:125
-                try st8((l64_doc &+ 600), 9223090561878065859)
+                try st8((l64_doc &+ 600), 9223090561878065864)
                 ln = 2097278 // JukeBox.HC:126
                 try tick(t)
                 let vb6 = push0(t)
@@ -775,10 +779,10 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                         l32_st = t6
                         ln = 2097289 // JukeBox.HC:137
                         try tick(t)
-                        try P.f666_FileExtRem(t, l32_st)
+                        try P.f671_FileExtRem(t, l32_st)
                         ln = 2097290 // JukeBox.HC:138
                         try tick(t)
-                        let t7: Int64 = try P.f617_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
+                        let t7: Int64 = try P.f622_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
                         l72_s = t7
                         ln = 2097291 // JukeBox.HC:139
                         l80_doc_e = try ld8(l72_s)
@@ -857,7 +861,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                     try st4((l72_s &+ 120), 0)
                                                     ln = 2097311 // JukeBox.HC:159
                                                     try tick(t)
-                                                    try P.f603_DocEntryDel(t, l72_s, l80_doc_e)
+                                                    try P.f608_DocEntryDel(t, l72_s, l80_doc_e)
                                                     ln = 2097312 // JukeBox.HC:160
                                                     try tick(t)
                                                     let vb13 = push0(t)
@@ -865,7 +869,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                     t.sp = vb13
                                                     ln = 2097313 // JukeBox.HC:161
                                                     try tick(t)
-                                                    _ = try P.f618_DocWrite(t, l72_s, 0)
+                                                    _ = try P.f623_DocWrite(t, l72_s, 0)
                                                 }
                                             }
                                         }
@@ -882,7 +886,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                         }
                         ln = 2097319 // JukeBox.HC:167
                         try tick(t)
-                        try P.f605_DocDel(t, l72_s)
+                        try P.f610_DocDel(t, l72_s)
                         ln = 2097320 // JukeBox.HC:168
                         _ = try nat(t, n_Free, try push1(t, l32_st))
                     }
@@ -901,12 +905,12 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     if (p1__filename != 0) {
                         ln = 2097327 // JukeBox.HC:175
                         try tick(t)
-                        let t16: Int64 = try P.f621_PopUpMenu(t, l64_doc, 2)
+                        let t16: Int64 = try P.f626_PopUpMenu(t, l64_doc, 2)
                         l48_tmpde = t16
                     } else {
                         ln = 2097329 // JukeBox.HC:177
                         try tick(t)
-                        let t17: Int64 = try P.f621_PopUpMenu(t, l64_doc, 0)
+                        let t17: Int64 = try P.f626_PopUpMenu(t, l64_doc, 0)
                         l48_tmpde = t17
                     }
                     ln = 2097330 // JukeBox.HC:178
@@ -939,16 +943,16 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     try st8((l48_tmpde &+ 32), 0)
                     ln = 2097340 // JukeBox.HC:188
                     try tick(t)
-                    try P.f666_FileExtRem(t, l40_st2)
+                    try P.f671_FileExtRem(t, l40_st2)
                     ln = 2097341 // JukeBox.HC:189
                     let t20: Int64 = try nat(t, n_MStrPrint, try push2(t, s30, ld8((l48_tmpde &+ 24))))
                     l32_st = t20
                     ln = 2097342 // JukeBox.HC:190
                     try tick(t)
-                    try P.f495_MusicSettingsRst(t)
+                    try P.f500_MusicSettingsRst(t)
                     ln = 2097343 // JukeBox.HC:191
                     try tick(t)
-                    let t21: Int64 = try f706_SingleSong(t, l32_st, l40_st2)
+                    let t21: Int64 = try f711_SingleSong(t, l32_st, l40_st2)
                     l88_task = t21
                     ln = 2097344 // JukeBox.HC:192
                     _ = try nat(t, n_Free, try push1(t, l40_st2))
@@ -958,7 +962,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 }
                 ln = 2097347 // JukeBox.HC:195
                 try tick(t)
-                try P.f605_DocDel(t, l64_doc)
+                try P.f610_DocDel(t, l64_doc)
                 ln = 2097348 // JukeBox.HC:196
                 _ = try nat(t, n_DirTreeDel, try push1(t, l56_tmpde1))
                 t.hCount = h0c
@@ -979,7 +983,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC SongPuppet (JukePuppet.HC:1)
-    public final func f709_SongPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_SongPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1005,7 +1009,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 if !(r2) { break loop0 }
                 ln = 3145735 // JukePuppet.HC:7
                 try tick(t)
-                let t0: Int64 = try P.f586_HashFind(t, s31, ld8((p0_task &+ 976)), 64, 1)
+                let t0: Int64 = try P.f591_HashFind(t, s31, ld8((p0_task &+ 976)), 64, 1)
                 l64_tmpf = t0
                 if (t0 != 0) {
                     ln = 3145736 // JukePuppet.HC:8
@@ -1043,7 +1047,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                             let t8: Int64 = l24_i
                             l24_i = (t8 &+ 1)
                             try tick(t)
-                            let t9: Int64 = try P.f664_TaskCaller(t, p0_task, t8, 0)
+                            let t9: Int64 = try P.f669_TaskCaller(t, p0_task, t8, 0)
                             l48_rip = t9
                             r10 = (t9 != 0)
                         }
@@ -1078,7 +1082,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC JukeSongPuppet (JukePuppet.HC:29)
-    public final func f710_JukeSongPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f715_JukeSongPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1091,23 +1095,23 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l48_i: Int64 = 0
             ln = 3145763 // JukePuppet.HC:35
             try tick(t)
-            let t0: Int64 = try P.f665_FileExtDot(t, p3_name)
+            let t0: Int64 = try P.f670_FileExtDot(t, p3_name)
             if (t0 != 0) {
                 ln = 3145764 // JukePuppet.HC:36
                 try tick(t)
-                try P.f666_FileExtRem(t, p3_name)
+                try P.f671_FileExtRem(t, p3_name)
             }
             ln = 3145765 // JukePuppet.HC:37
             try tick(t)
-            try P.f661_BirthWait(t, (p0_juke_task &+ 1128))
+            try P.f666_BirthWait(t, (p0_juke_task &+ 1128))
             ln = 3145766 // JukePuppet.HC:38
             try tick(t)
-            try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+            try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
             ln = 3145767 // JukePuppet.HC:39
             _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 0, 1096, 0))
             ln = 3145768 // JukePuppet.HC:40
             try tick(t)
-            try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+            try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
             ln = 3145769 // JukePuppet.HC:41
             l48_i = 0
             loop0: while (l48_i < p2_song_num) {
@@ -1115,7 +1119,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 0, 77, 0))
                 ln = 3145771 // JukePuppet.HC:43
                 try tick(t)
-                try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+                try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
                 ln = 3145769 // JukePuppet.HC:41
                 l48_i = (l48_i &+ 1)
                 try tick(t)
@@ -1124,7 +1128,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 32, 0, 0))
             ln = 3145775 // JukePuppet.HC:47
             try tick(t)
-            try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+            try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
             ln = 3145776 // JukePuppet.HC:48
             _ = try nat(t, n_Sleep, try push1(t, 500))
             ln = 3145778 // JukePuppet.HC:50
@@ -1149,12 +1153,12 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             if (l32_found != 0) {
                 ln = 3145789 // JukePuppet.HC:61
                 try tick(t)
-                try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+                try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
                 ln = 3145790 // JukePuppet.HC:62
                 _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 0, 1096, 0))
                 ln = 3145791 // JukePuppet.HC:63
                 try tick(t)
-                try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+                try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
                 ln = 3145792 // JukePuppet.HC:64
                 l48_i = 0
                 loop4: while (l48_i < p2_song_num) {
@@ -1162,14 +1166,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 0, 77, 0))
                     ln = 3145794 // JukePuppet.HC:66
                     try tick(t)
-                    try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+                    try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
                     ln = 3145792 // JukePuppet.HC:64
                     l48_i = (l48_i &+ 1)
                     try tick(t)
                 }
                 ln = 3145796 // JukePuppet.HC:68
                 try tick(t)
-                try f709_SongPuppet(t, l40_task, p1_passes)
+                try f714_SongPuppet(t, l40_task, p1_passes)
             }
             ln = 3145798 // JukePuppet.HC:70
             _ = try nat(t, n_Kill, try push3(t, l40_task, 1, 0))
@@ -1179,7 +1183,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC JukeSongsPuppet (JukePuppet.HC:73)
-    public final func f711_JukeSongsPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f716_JukeSongsPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1195,7 +1199,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             ln = 3145806 // JukePuppet.HC:78
             try tick(t)
             let vb16 = try push1(t, p0_dirname)
-            let t0: Int64 = try P.f662_User(t, s32, vb16, 1)
+            let t0: Int64 = try P.f667_User(t, s32, vb16, 1)
             t.sp = vb16
             l56_juke_task = t0
             ln = 3145808 // JukePuppet.HC:80
@@ -1231,7 +1235,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 _ = try nat(t, n_Print, try push3(t, s34, bits((t3 - l64_t0)), t4))
                 ln = 3145818 // JukePuppet.HC:90
                 try tick(t)
-                try f710_JukeSongPuppet(t, l56_juke_task, p1_passes, l32_i, (l40_tmpde &+ 50))
+                try f715_JukeSongPuppet(t, l56_juke_task, p1_passes, l32_i, (l40_tmpde &+ 50))
                 ln = 3145819 // JukePuppet.HC:91
                 l40_tmpde = try ld8(l40_tmpde)
                 ln = 3145816 // JukePuppet.HC:88
@@ -1248,7 +1252,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#2 (Run.HC:61)
-    @discardableResult public final func f712_init_C__Apps_Psalmody_Run_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Apps_Psalmody_Run_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1258,7 +1262,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#3 (Run.HC:63)
-    @discardableResult public final func f713_init_C__Apps_Psalmody_Run_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Apps_Psalmody_Run_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1268,7 +1272,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawTempoCtrl (PsalmodyCtrls.HC:10)
-    public final func f714_DrawTempoCtrl(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f719_DrawTempoCtrl(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1289,21 +1293,21 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try st4((p0_dc &+ 160), 15)
             ln = 4194325 // PsalmodyCtrls.HC:21
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, (ld8((p1_c &+ 40)) &+ 15), (ld8((p1_c &+ 56)) &+ 15), (ld8((p1_c &+ 40)) &+ 15), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, (ld8((p1_c &+ 40)) &+ 15), (ld8((p1_c &+ 56)) &+ 15), (ld8((p1_c &+ 40)) &+ 15), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1), 1, 0)
             ln = 4194327 // PsalmodyCtrls.HC:23
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 30) &+ 1), (ld8((p1_c &+ 56)) &+ 15), ((ld8((p1_c &+ 40)) &+ 30) &+ 1), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 30) &+ 1), (ld8((p1_c &+ 56)) &+ 15), ((ld8((p1_c &+ 40)) &+ 30) &+ 1), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1), 1, 0)
             ln = 4194330 // PsalmodyCtrls.HC:26
             try st4((p0_dc &+ 160), 10)
             ln = 4194331 // PsalmodyCtrls.HC:27
             try tick(t)
             let vb17 = try push1(t, divs((ld8(l16_s) &* 10), 80))
-            _ = try P.f369_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 15) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &+ 3), s35, vb17, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 15) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &+ 3), s35, vb17, 1)
             t.sp = vb17
             ln = 4194333 // PsalmodyCtrls.HC:29
             try tick(t)
             let vb18 = try push1(t, divs((ld8((l16_s &+ 8)) &* 10), 80))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 30) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &+ 3), s35, vb18, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 30) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &+ 3), s35, vb18, 1)
             t.sp = vb18
             ln = 4194336 // PsalmodyCtrls.HC:32
             _ = try nat(t, n_GrRect, try push(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 15) &- 3), (((((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1) &- ld8(l16_s)) &- 2), 7, 5))
@@ -1320,12 +1324,12 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             ln = 4194347 // PsalmodyCtrls.HC:43
             try tick(t)
             let vb19 = push0(t)
-            _ = try P.f370_GrVPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 2) &+ 2), ((ld8((p1_c &+ 56)) &+ 15) &+ 2), s36, vb19, 0)
+            _ = try P.f371_GrVPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 2) &+ 2), ((ld8((p1_c &+ 56)) &+ 15) &+ 2), s36, vb19, 0)
             t.sp = vb19
             ln = 4194348 // PsalmodyCtrls.HC:44
             try tick(t)
             let vb20 = push0(t)
-            _ = try P.f370_GrVPrint(t, p0_dc, (((ld8((p1_c &+ 48)) &- 2) &- 2) &- 8), ((ld8((p1_c &+ 56)) &+ 15) &+ 2), s37, vb20, 0)
+            _ = try P.f371_GrVPrint(t, p0_dc, (((ld8((p1_c &+ 48)) &- 2) &- 2) &- 8), ((ld8((p1_c &+ 56)) &+ 15) &+ 2), s37, vb20, 0)
             t.sp = vb20
             t.depth -= 1
             return
@@ -1333,7 +1337,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC UpdateDerivedTempoCtrl (PsalmodyCtrls.HC:48)
-    public final func f715_UpdateDerivedTempoCtrl(_ t: HTask, _ a0: Int64) throws {
+    public final func f720_UpdateDerivedTempoCtrl(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1359,7 +1363,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC LeftClickTempo (PsalmodyCtrls.HC:57)
-    public final func f716_LeftClickTempo(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f721_LeftClickTempo(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1391,7 +1395,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC TempoNew (PsalmodyCtrls.HC:68)
-    @discardableResult public final func f717_TempoNew(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f722_TempoNew(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1408,11 +1412,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             ln = 4194378 // PsalmodyCtrls.HC:74
             try st8((l0_c &+ 104), g_tempo_state)
             ln = 4194379 // PsalmodyCtrls.HC:75
-            try st8((l0_c &+ 120), 9223090561878065866)
+            try st8((l0_c &+ 120), 9223090561878065871)
             ln = 4194380 // PsalmodyCtrls.HC:76
-            try st8((l0_c &+ 136), 9223090561878065868)
+            try st8((l0_c &+ 136), 9223090561878065873)
             ln = 4194381 // PsalmodyCtrls.HC:77
-            try st8((l0_c &+ 112), 9223090561878065867)
+            try st8((l0_c &+ 112), 9223090561878065872)
             ln = 4194382 // PsalmodyCtrls.HC:78
             try st8((l0_c &+ 40), 396)
             ln = 4194383 // PsalmodyCtrls.HC:79
@@ -1432,7 +1436,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC TempoDel (PsalmodyCtrls.HC:85)
-    public final func f718_TempoDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f723_TempoDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1448,7 +1452,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#4 (Run.HC:53)
-    @discardableResult public final func f719_init_C__Apps_Psalmody_Run_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f724_init_C__Apps_Psalmody_Run_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1458,7 +1462,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#5 (Run.HC:55)
-    @discardableResult public final func f720_init_C__Apps_Psalmody_Run_HC_5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f725_init_C__Apps_Psalmody_Run_HC_5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1481,7 +1485,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#6 (Run.HC:58)
-    @discardableResult public final func f721_init_C__Apps_Psalmody_Run_HC_6(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f726_init_C__Apps_Psalmody_Run_HC_6(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1491,7 +1495,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmBlink (PsalmodyDraw.HC:61)
-    @discardableResult public final func f722_PsmBlink(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f727_PsmBlink(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1515,7 +1519,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmHasWords (PsalmodyDraw.HC:69)
-    @discardableResult public final func f723_PsmHasWords(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f728_PsmHasWords(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1543,7 +1547,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmIsDotted (PsalmodyDraw.HC:77)
-    @discardableResult public final func f724_PsmIsDotted(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f729_PsmIsDotted(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1571,7 +1575,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmMarkSel (PsalmodyDraw.HC:86)
-    public final func f725_PsmMarkSel(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f730_PsmMarkSel(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1617,7 +1621,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmSetWidth (PsalmodyDraw.HC:99)
-    public final func f726_PsmSetWidth(_ t: HTask, _ a0: Int64) throws {
+    public final func f731_PsmSetWidth(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1631,7 +1635,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 try st8((p0_tmpn &+ 88), 9)
                 ln = 5242985 // PsalmodyDraw.HC:105
                 try tick(t)
-                let t0: Int64 = try f724_PsmIsDotted(t, ld8((p0_tmpn &+ 80)))
+                let t0: Int64 = try f729_PsmIsDotted(t, ld8((p0_tmpn &+ 80)))
                 if (t0 != 0) {
                     ln = 5242986 // PsalmodyDraw.HC:106
                     let t1: Int64 = (p0_tmpn &+ 88)
@@ -1656,7 +1660,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmSetOctave (PsalmodyDraw.HC:112)
-    public final func f727_PsmSetOctave(_ t: HTask, _ a0: Int64) throws {
+    public final func f732_PsmSetOctave(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1672,7 +1676,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 _ = try nat(t, n_StrPrint, try push3(t, (fp &+ 16), s38, l8_i))
                 ln = 5242999 // PsalmodyDraw.HC:119
                 try tick(t)
-                let t0: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), (fp &+ 16))
+                let t0: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), (fp &+ 16))
                 l160_tmpse = t0
                 if (t0 != 0) {
                     ln = 5243000 // PsalmodyDraw.HC:120
@@ -1695,7 +1699,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawNote (PsalmodyDraw.HC:128)
-    public final func f728_DrawNote(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f733_DrawNote(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1706,21 +1710,18 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             ln = 5243010 // PsalmodyDraw.HC:130
             if ((0 <= p3_duration) && (p3_duration <= 12)) {
                 ln = 5243011 // PsalmodyDraw.HC:131
-                try tick(t)
-                try P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0, ld8((g_psm_duration_imgs &+ (p3_duration &* 8))), 0)
+                _ = try nat(t, n_Sprite3, try push(t, p0_dc, p1_x, p2_y, 0, ld8((g_psm_duration_imgs &+ (p3_duration &* 8))), 0))
                 ln = 5243012 // PsalmodyDraw.HC:132
                 if try (ld1u((g_psm_triplet_durations &+ p3_duration)) != 0) {
                     ln = 5243013 // PsalmodyDraw.HC:133
-                    try tick(t)
-                    try P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0, b12, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p0_dc, p1_x, p2_y, 0, b12, 0))
                 }
                 ln = 5243014 // PsalmodyDraw.HC:134
                 try tick(t)
-                let t0: Int64 = try f724_PsmIsDotted(t, p3_duration)
+                let t0: Int64 = try f729_PsmIsDotted(t, p3_duration)
                 if (t0 != 0) {
                     ln = 5243015 // PsalmodyDraw.HC:135
-                    try tick(t)
-                    try P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0, b13, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p0_dc, p1_x, p2_y, 0, b13, 0))
                 }
             }
             t.depth -= 1
@@ -1729,7 +1730,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawTimeSignature (PsalmodyDraw.HC:139)
-    public final func f729_DrawTimeSignature(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
+    public final func f734_DrawTimeSignature(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1741,12 +1742,12 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             ln = 5243021 // PsalmodyDraw.HC:141
             try tick(t)
             let vb27 = try push1(t, p3_top)
-            _ = try P.f369_GrPrint(t, p0_dc, p1_x, p2_y, s35, vb27, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, p1_x, p2_y, s35, vb27, 1)
             t.sp = vb27
             ln = 5243022 // PsalmodyDraw.HC:142
             try tick(t)
             let vb28 = try push1(t, p4_bottom)
-            _ = try P.f369_GrPrint(t, p0_dc, p1_x, (p2_y &+ 8), s35, vb28, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, p1_x, (p2_y &+ 8), s35, vb28, 1)
             t.sp = vb28
             t.depth -= 1
             return
@@ -1754,7 +1755,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmRecalcNoteXY (PsalmodyDraw.HC:145)
-    public final func f730_PsmRecalcNoteXY(_ t: HTask) throws {
+    public final func f735_PsmRecalcNoteXY(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1803,11 +1804,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                             }
                             ln = 5243043 // PsalmodyDraw.HC:163
                             try tick(t)
-                            let t2: Int64 = try P.f493_Ona2Octave(t, l32_ona)
+                            let t2: Int64 = try P.f498_Ona2Octave(t, l32_ona)
                             l48_octave = t2
                             ln = 5243044 // PsalmodyDraw.HC:164
                             try tick(t)
-                            let t3: Int64 = try P.f492_Ona2Note(t, l32_ona)
+                            let t3: Int64 = try P.f497_Ona2Note(t, l32_ona)
                             l40_note = t3
                             ln = 5243045 // PsalmodyDraw.HC:165
                             try tick(t)
@@ -1852,7 +1853,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawIt (PsalmodyDraw.HC:186)
-    public final func f731_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f736_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1877,7 +1878,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             loop0: while (l24_i < 6) {
                 ln = 5243075 // PsalmodyDraw.HC:195
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, 0, (l24_i &* 8), l48_w, (l24_i &* 8), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, 0, (l24_i &* 8), l48_w, (l24_i &* 8), 1, 0)
                 ln = 5243074 // PsalmodyDraw.HC:194
                 l24_i = (l24_i &+ 1)
                 try tick(t)
@@ -1887,14 +1888,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             loop2: while (l24_i < 12) {
                 ln = 5243077 // PsalmodyDraw.HC:197
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, 0, (l24_i &* 8), l48_w, (l24_i &* 8), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, 0, (l24_i &* 8), l48_w, (l24_i &* 8), 1, 0)
                 ln = 5243076 // PsalmodyDraw.HC:196
                 l24_i = (l24_i &+ 1)
                 try tick(t)
             }
             ln = 5243079 // PsalmodyDraw.HC:199
             try tick(t)
-            try f730_PsmRecalcNoteXY(t)
+            try f735_PsmRecalcNoteXY(t)
             ln = 5243080 // PsalmodyDraw.HC:200
             if try (ld8((ld8((g_psm &+ 288)) &+ 16)) < 64) {
                 ln = 5243081 // PsalmodyDraw.HC:201
@@ -1902,7 +1903,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 try st8(t0, (ld8(t0) &- 128))
                 ln = 5243082 // PsalmodyDraw.HC:202
                 try tick(t)
-                try f730_PsmRecalcNoteXY(t)
+                try f735_PsmRecalcNoteXY(t)
             }
             ln = 5243084 // PsalmodyDraw.HC:204
             if try (ld8((ld8((g_psm &+ 288)) &+ 16)) >= 576) {
@@ -1911,7 +1912,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 try st8(t1, (ld8(t1) &+ 128))
                 ln = 5243086 // PsalmodyDraw.HC:206
                 try tick(t)
-                try f730_PsmRecalcNoteXY(t)
+                try f735_PsmRecalcNoteXY(t)
             }
             ln = 5243089 // PsalmodyDraw.HC:209
             l16_tmpn = try ld8(g_psm)
@@ -1927,7 +1928,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     try st4((p1_dc &+ 160), 0)
                     ln = 5243095 // PsalmodyDraw.HC:215
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, (l32_x &- 9), 8, (l32_x &- 9), 88, 1, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, (l32_x &- 9), 8, (l32_x &- 9), 88, 1, 0)
                     ln = 5243096 // PsalmodyDraw.HC:216
                     l64_measure_left = l56_measure_len
                 }
@@ -1937,7 +1938,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     var r3: Bool = try (l16_tmpn == ld8((g_psm &+ 288)))
                     if r3 {
                         try tick(t)
-                        let t2: Int64 = try f722_PsmBlink(t)
+                        let t2: Int64 = try f727_PsmBlink(t)
                         r3 = (t2 != 0)
                     }
                     if r3 {
@@ -1949,7 +1950,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     }
                     ln = 5243103 // PsalmodyDraw.HC:223
                     try tick(t)
-                    try f729_DrawTimeSignature(t, p1_dc, l32_x, 40, ld8((l16_tmpn &+ 64)), ld8((l16_tmpn &+ 72)))
+                    try f734_DrawTimeSignature(t, p1_dc, l32_x, 40, ld8((l16_tmpn &+ 64)), ld8((l16_tmpn &+ 72)))
                     ln = 5243104 // PsalmodyDraw.HC:224
                     l56_measure_len = try ((Double(ld8((l16_tmpn &+ 64))) * 4.0) / Double(ld8((l16_tmpn &+ 72))))
                     ln = 5243105 // PsalmodyDraw.HC:225
@@ -1959,7 +1960,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     var r5: Bool = try (l16_tmpn == ld8((g_psm &+ 288)))
                     if r5 {
                         try tick(t)
-                        let t4: Int64 = try f722_PsmBlink(t)
+                        let t4: Int64 = try f727_PsmBlink(t)
                         r5 = (t4 != 0)
                     }
                     if r5 {
@@ -1968,7 +1969,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                         ln = 5243109 // PsalmodyDraw.HC:229
                         try tick(t)
                         let vb29 = try push1(t, ld8((l16_tmpn &+ 32)))
-                        _ = try P.f369_GrPrint(t, p1_dc, (l32_x &+ 8), l40_y, s39, vb29, 1)
+                        _ = try P.f370_GrPrint(t, p1_dc, (l32_x &+ 8), l40_y, s39, vb29, 1)
                         t.sp = vb29
                     } else {
                         ln = 5243110 // PsalmodyDraw.HC:230
@@ -1986,7 +1987,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                             }
                             ln = 5243117 // PsalmodyDraw.HC:237
                             try tick(t)
-                            let t6: Int64 = try f723_PsmHasWords(t, ld8((l16_tmpn &+ 32)))
+                            let t6: Int64 = try f728_PsmHasWords(t, ld8((l16_tmpn &+ 32)))
                             if (t6 != 0) {
                                 ln = 5243118 // PsalmodyDraw.HC:238
                                 try st4((p1_dc &+ 160), 2)
@@ -1995,10 +1996,10 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     }
                     ln = 5243120 // PsalmodyDraw.HC:240
                     try tick(t)
-                    try f728_DrawNote(t, p1_dc, l32_x, l40_y, ld8((l16_tmpn &+ 80)))
+                    try f733_DrawNote(t, p1_dc, l32_x, l40_y, ld8((l16_tmpn &+ 80)))
                     ln = 5243121 // PsalmodyDraw.HC:241
                     try tick(t)
-                    let t7: Int64 = try f724_PsmIsDotted(t, ld8((l16_tmpn &+ 80)))
+                    let t7: Int64 = try f729_PsmIsDotted(t, ld8((l16_tmpn &+ 80)))
                     if (t7 != 0) {
                         ln = 5243122 // PsalmodyDraw.HC:242
                         l32_x = try (l32_x &+ divs(9, 2))
@@ -2007,15 +2008,13 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     let t8: Int64 = try nat(t, n_Bt, try push2(t, (l16_tmpn &+ 48), 1))
                     if (t8 != 0) {
                         ln = 5243124 // PsalmodyDraw.HC:244
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, l32_x, l40_y, 0, b14, 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, l32_x, l40_y, 0, b14, 0))
                     } else {
                         ln = 5243125 // PsalmodyDraw.HC:245
                         let t9: Int64 = try nat(t, n_Bt, try push2(t, (l16_tmpn &+ 48), 2))
                         if (t9 != 0) {
                             ln = 5243126 // PsalmodyDraw.HC:246
-                            try tick(t)
-                            try P.f440_Sprite3(t, p1_dc, l32_x, l40_y, 0, b15, 0)
+                            _ = try nat(t, n_Sprite3, try push(t, p1_dc, l32_x, l40_y, 0, b15, 0))
                         }
                     }
                     ln = 5243127 // PsalmodyDraw.HC:247
@@ -2029,7 +2028,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var r11: Bool = try (ld8((g_psm &+ 288)) == g_psm)
             if r11 {
                 try tick(t)
-                let t10: Int64 = try f722_PsmBlink(t)
+                let t10: Int64 = try f727_PsmBlink(t)
                 r11 = (t10 != 0)
             }
             if r11 {
@@ -2040,15 +2039,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 try st4((p1_dc &+ 160), 0)
             }
             ln = 5243136 // PsalmodyDraw.HC:256
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, ld8((g_psm &+ 16)), 50, 0, b16, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((g_psm &+ 16)), 50, 0, b16, 0))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawIt", ln) }
     }
 
     /// HolyC PsmSetPickNoteBoxX (PsalmodyDraw.HC:261)
-    public final func f732_PsmSetPickNoteBoxX(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f737_PsmSetPickNoteBoxX(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2062,7 +2060,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             loop0: while (l16_i < p0_duration) {
                 ln = 5243146 // PsalmodyDraw.HC:266
                 try tick(t)
-                let t0: Int64 = try f724_PsmIsDotted(t, l16_i)
+                let t0: Int64 = try f729_PsmIsDotted(t, l16_i)
                 if (t0 != 0) {
                     ln = 5243147 // PsalmodyDraw.HC:267
                     let t1: Int64 = p1_x
@@ -2081,7 +2079,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmGetPickNoteBoxDuration (PsalmodyDraw.HC:272)
-    @discardableResult public final func f733_PsmGetPickNoteBoxDuration(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f738_PsmGetPickNoteBoxDuration(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2097,10 +2095,10 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 loop0: while (l16_i < 12) {
                     ln = 5243157 // PsalmodyDraw.HC:277
                     try tick(t)
-                    try f732_PsmSetPickNoteBoxX(t, l16_i, (fp &+ 24))
+                    try f737_PsmSetPickNoteBoxX(t, l16_i, (fp &+ 24))
                     ln = 5243158 // PsalmodyDraw.HC:278
                     try tick(t)
-                    try f732_PsmSetPickNoteBoxX(t, (l16_i &+ 1), (fp &+ 32))
+                    try f737_PsmSetPickNoteBoxX(t, (l16_i &+ 1), (fp &+ 32))
                     ln = 5243159 // PsalmodyDraw.HC:279
                     var r0: Bool = false
                     let t1: Int64 = try ld8((fp &+ 24))
@@ -2133,7 +2131,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawPickNoteBox (PsalmodyDraw.HC:286)
-    public final func f734_DrawPickNoteBox(_ t: HTask) throws {
+    public final func f739_DrawPickNoteBox(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2145,10 +2143,10 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             loop0: while (l0_i < 12) {
                 ln = 5243170 // PsalmodyDraw.HC:290
                 try tick(t)
-                try f732_PsmSetPickNoteBoxX(t, l0_i, (fp &+ 8))
+                try f737_PsmSetPickNoteBoxX(t, l0_i, (fp &+ 8))
                 ln = 5243171 // PsalmodyDraw.HC:291
                 try tick(t)
-                let t0: Int64 = try f724_PsmIsDotted(t, l0_i)
+                let t0: Int64 = try f729_PsmIsDotted(t, l0_i)
                 if (t0 != 0) {
                     ln = 5243172 // PsalmodyDraw.HC:292
                     try st4((ld8((g_psm &+ 296)) &+ 160), 4)
@@ -2164,7 +2162,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 }
                 ln = 5243177 // PsalmodyDraw.HC:297
                 try tick(t)
-                try f728_DrawNote(t, ld8((g_psm &+ 296)), ld8((fp &+ 8)), 118, l0_i)
+                try f733_DrawNote(t, ld8((g_psm &+ 296)), ld8((fp &+ 8)), 118, l0_i)
                 ln = 5243169 // PsalmodyDraw.HC:289
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -2176,7 +2174,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawPickTools (PsalmodyDraw.HC:304)
-    public final func f735_DrawPickTools(_ t: HTask) throws {
+    public final func f740_DrawPickTools(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2190,7 +2188,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             }
             ln = 5243190 // PsalmodyDraw.HC:310
             try tick(t)
-            try P.f425_GrBorder(t, ld8((g_psm &+ 296)), 450, 104, 460, 114, 1, 0)
+            try P.f428_GrBorder(t, ld8((g_psm &+ 296)), 450, 104, 460, 114, 1, 0)
             ln = 5243192 // PsalmodyDraw.HC:312
             if try (ld8((g_psm &+ 280)) == 0) {
                 ln = 5243193 // PsalmodyDraw.HC:313
@@ -2209,7 +2207,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmGetPickToolBox (PsalmodyDraw.HC:320)
-    @discardableResult public final func f736_PsmGetPickToolBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f741_PsmGetPickToolBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2219,7 +2217,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             if (((450 <= p0_xx) && (p0_xx < 477)) && ((104 <= p1_yy) && (p1_yy < 119))) {
                 ln = 5243203 // PsalmodyDraw.HC:323
                 try tick(t)
-                try f725_PsmMarkSel(t, 0, 0, 0)
+                try f730_PsmMarkSel(t, 0, 0, 0)
                 ln = 5243204 // PsalmodyDraw.HC:324
                 if (p0_xx < 463) {
                     ln = 5243205 // PsalmodyDraw.HC:325
@@ -2244,7 +2242,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#7 (Run.HC:334)
-    @discardableResult public final func f737_init_C__Apps_Psalmody_Run_HC_7(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f742_init_C__Apps_Psalmody_Run_HC_7(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2254,7 +2252,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmGetPickMeterBox (PsalmodyDraw.HC:340)
-    @discardableResult public final func f738_PsmGetPickMeterBox(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f743_PsmGetPickMeterBox(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2287,7 +2285,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawPickMeterBox (PsalmodyDraw.HC:353)
-    public final func f739_DrawPickMeterBox(_ t: HTask) throws {
+    public final func f744_DrawPickMeterBox(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2299,7 +2297,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             loop0: while (l0_i < 7) {
                 ln = 5243238 // PsalmodyDraw.HC:358
                 try tick(t)
-                try f729_DrawTimeSignature(t, ld8((g_psm &+ 296)), (485 &+ (l0_i &* 12)), 104, ld8((g_meter_tops &+ (l0_i &* 8))), ld8((g_meter_bottoms &+ (l0_i &* 8))))
+                try f734_DrawTimeSignature(t, ld8((g_psm &+ 296)), (485 &+ (l0_i &* 12)), 104, ld8((g_meter_tops &+ (l0_i &* 8))), ld8((g_meter_bottoms &+ (l0_i &* 8))))
                 ln = 5243237 // PsalmodyDraw.HC:357
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -2310,7 +2308,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawDC2 (PsalmodyDraw.HC:362)
-    public final func f740_DrawDC2(_ t: HTask) throws {
+    public final func f745_DrawDC2(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2319,20 +2317,20 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try P.f286_DCFill(t, 0, 255)
             ln = 5243245 // PsalmodyDraw.HC:365
             try tick(t)
-            try f734_DrawPickNoteBox(t)
+            try f739_DrawPickNoteBox(t)
             ln = 5243246 // PsalmodyDraw.HC:366
             try tick(t)
-            try f739_DrawPickMeterBox(t)
+            try f744_DrawPickMeterBox(t)
             ln = 5243247 // PsalmodyDraw.HC:367
             try tick(t)
-            try f735_DrawPickTools(t)
+            try f740_DrawPickTools(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawDC2", ln) }
     }
 
     /// HolyC PsmMenu (PsalmodyDraw.HC:377)
-    public final func f741_PsmMenu(_ t: HTask, _ a0: Int64) throws {
+    public final func f746_PsmMenu(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2347,7 +2345,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             _ = try nat(t, n_PutChars, try push1(t, 43118103050))
             ln = 5243264 // PsalmodyDraw.HC:384
             try tick(t)
-            try f740_DrawDC2(t)
+            try f745_DrawDC2(t)
             ln = 5243266 // PsalmodyDraw.HC:386
             _ = try nat(t, n_Print, try push1(t, s41))
             ln = 5243270 // PsalmodyDraw.HC:390
@@ -2382,7 +2380,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             _ = try nat(t, n_Print, try push1(t, s47))
             ln = 5243287 // PsalmodyDraw.HC:407
             try tick(t)
-            try f727_PsmSetOctave(t, p0_psm_octave)
+            try f732_PsmSetOctave(t, p0_psm_octave)
             ln = 5243288 // PsalmodyDraw.HC:408
             _ = try nat(t, n_Refresh, try push2(t, 2, 0))
             t.depth -= 1
@@ -2391,7 +2389,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmNoteDel (PsalmodyFile.HC:1)
-    public final func f742_PsmNoteDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f747_PsmNoteDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2406,7 +2404,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmNoteCopy (PsalmodyFile.HC:7)
-    @discardableResult public final func f743_PsmNoteCopy(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f748_PsmNoteCopy(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2435,7 +2433,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmSongDel (PsalmodyFile.HC:17)
-    public final func f744_PsmSongDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f749_PsmSongDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2450,7 +2448,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 l16_tmpn1 = try ld8(l8_tmpn)
                 ln = 6291479 // PsalmodyFile.HC:23
                 try tick(t)
-                try f742_PsmNoteDel(t, l8_tmpn)
+                try f747_PsmNoteDel(t, l8_tmpn)
                 ln = 6291480 // PsalmodyFile.HC:24
                 l8_tmpn = l16_tmpn1
                 try tick(t)
@@ -2464,7 +2462,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmCutToClip (PsalmodyFile.HC:29)
-    public final func f745_PsmCutToClip(_ t: HTask) throws {
+    public final func f750_PsmCutToClip(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2472,7 +2470,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l8_tmpn1: Int64 = 0
             ln = 6291488 // PsalmodyFile.HC:32
             try tick(t)
-            try f744_PsmSongDel(t, (g_psm &+ 128))
+            try f749_PsmSongDel(t, (g_psm &+ 128))
             ln = 6291489 // PsalmodyFile.HC:33
             l0_tmpn = try ld8(g_psm)
             ln = 6291490 // PsalmodyFile.HC:34
@@ -2506,7 +2504,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmPasteClip (PsalmodyFile.HC:47)
-    public final func f746_PsmPasteClip(_ t: HTask) throws {
+    public final func f751_PsmPasteClip(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2518,7 +2516,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             loop0: while (l0_tmpn != (g_psm &+ 128)) {
                 ln = 6291508 // PsalmodyFile.HC:52
                 try tick(t)
-                let t0: Int64 = try f743_PsmNoteCopy(t, l0_tmpn)
+                let t0: Int64 = try f748_PsmNoteCopy(t, l0_tmpn)
                 l8_tmpn1 = t0
                 ln = 6291509 // PsalmodyFile.HC:53
                 try tick(t)
@@ -2533,7 +2531,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmCopyToClip (PsalmodyFile.HC:58)
-    public final func f747_PsmCopyToClip(_ t: HTask) throws {
+    public final func f752_PsmCopyToClip(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2541,7 +2539,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l8_tmpn1: Int64 = 0
             ln = 6291517 // PsalmodyFile.HC:61
             try tick(t)
-            try f744_PsmSongDel(t, (g_psm &+ 128))
+            try f749_PsmSongDel(t, (g_psm &+ 128))
             ln = 6291518 // PsalmodyFile.HC:62
             l0_tmpn = try ld8(g_psm)
             ln = 6291519 // PsalmodyFile.HC:63
@@ -2553,7 +2551,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     try st8(t0, (ld8(t0) & (-2)))
                     ln = 6291522 // PsalmodyFile.HC:66
                     try tick(t)
-                    let t1: Int64 = try f743_PsmNoteCopy(t, l0_tmpn)
+                    let t1: Int64 = try f748_PsmNoteCopy(t, l0_tmpn)
                     l8_tmpn1 = t1
                     ln = 6291523 // PsalmodyFile.HC:67
                     try tick(t)
@@ -2569,7 +2567,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmFindNote (PsalmodyFile.HC:73)
-    @discardableResult public final func f748_PsmFindNote(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f753_PsmFindNote(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2580,7 +2578,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             l16_tmpn = try ld8(g_psm)
             ln = 6291532 // PsalmodyFile.HC:76
             try tick(t)
-            try f730_PsmRecalcNoteXY(t)
+            try f735_PsmRecalcNoteXY(t)
             ln = 6291533 // PsalmodyFile.HC:77
             p0_x = try (p0_x &+ divs(9, 2))
             ln = 6291534 // PsalmodyFile.HC:78
@@ -2598,7 +2596,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmMusicSetOctave (PsalmodyFile.HC:83)
-    @discardableResult public final func f749_PsmMusicSetOctave(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f754_PsmMusicSetOctave(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2629,7 +2627,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmMusicSetNoteLen (PsalmodyFile.HC:90)
-    @discardableResult public final func f750_PsmMusicSetNoteLen(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f755_PsmMusicSetNoteLen(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2686,7 +2684,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmLoadSongStr (PsalmodyFile.HC:110)
-    public final func f751_PsmLoadSongStr(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f756_PsmLoadSongStr(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2768,7 +2766,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                         }
                         ln = 6291587 // PsalmodyFile.HC:131
                         try tick(t)
-                        try f726_PsmSetWidth(t, l32_tmpn1)
+                        try f731_PsmSetWidth(t, l32_tmpn1)
                         ln = 6291588 // PsalmodyFile.HC:132
                         try tick(t)
                         _ = try P.f153_QueIns(t, l32_tmpn1, ld8((g_psm &+ 8)))
@@ -2783,11 +2781,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     }
                     ln = 6291594 // PsalmodyFile.HC:138
                     try tick(t)
-                    let t8: Int64 = try f749_PsmMusicSetOctave(t, p0_st, p1_psm_octave)
+                    let t8: Int64 = try f754_PsmMusicSetOctave(t, p0_st, p1_psm_octave)
                     p0_st = t8
                     ln = 6291595 // PsalmodyFile.HC:139
                     try tick(t)
-                    let t9: Int64 = try f750_PsmMusicSetNoteLen(t, p0_st, p2_psm_duration)
+                    let t9: Int64 = try f755_PsmMusicSetNoteLen(t, p0_st, p2_psm_duration)
                     p0_st = t9
                     try tick(t)
                 }
@@ -2795,7 +2793,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 if try (ld1u(p0_st) == 0) {
                     ln = 6291598 // PsalmodyFile.HC:142
                     try tick(t)
-                    try f742_PsmNoteDel(t, l24_tmpn)
+                    try f747_PsmNoteDel(t, l24_tmpn)
                     ln = 6291599 // PsalmodyFile.HC:143
                     break loop0
                 }
@@ -2852,7 +2850,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     }
                     ln = 6291621 // PsalmodyFile.HC:165
                     try tick(t)
-                    let t16: Int64 = try P.f491_Note2Ona(t, l40_note, ld8(p1_psm_octave))
+                    let t16: Int64 = try P.f496_Note2Ona(t, l40_note, ld8(p1_psm_octave))
                     try st8((l24_tmpn &+ 56), t16)
                 } else {
                     ln = 6291623 // PsalmodyFile.HC:167
@@ -2932,7 +2930,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 try st8((l24_tmpn &+ 40), 1)
                 ln = 6291650 // PsalmodyFile.HC:194
                 try tick(t)
-                try f726_PsmSetWidth(t, l24_tmpn)
+                try f731_PsmSetWidth(t, l24_tmpn)
                 ln = 6291651 // PsalmodyFile.HC:195
                 try tick(t)
                 _ = try P.f153_QueIns(t, l24_tmpn, ld8((ld8((g_psm &+ 288)) &+ 8)))
@@ -2944,7 +2942,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmLoadSong (PsalmodyFile.HC:199)
-    public final func f752_PsmLoadSong(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f757_PsmLoadSong(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2989,7 +2987,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                 l24_st = t6
                                 ln = 6291671 // PsalmodyFile.HC:215
                                 try tick(t)
-                                try f751_PsmLoadSongStr(t, l24_st, p1_psm_octave, p2_psm_duration)
+                                try f756_PsmLoadSongStr(t, l24_st, p1_psm_octave, p2_psm_duration)
                                 ln = 6291672 // PsalmodyFile.HC:216
                                 if try (ld8((l40_cc &+ 16)) == 44) {
                                     ln = 6291673 // PsalmodyFile.HC:217
@@ -3089,7 +3087,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmCvtSong (PsalmodyFile.HC:248)
-    @discardableResult public final func f753_PsmCvtSong(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f758_PsmCvtSong(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3152,11 +3150,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                         }
                         ln = 6291728 // PsalmodyFile.HC:272
                         try tick(t)
-                        let t6: Int64 = try P.f493_Ona2Octave(t, l40_ona)
+                        let t6: Int64 = try P.f498_Ona2Octave(t, l40_ona)
                         l56_octave = t6
                         ln = 6291729 // PsalmodyFile.HC:273
                         try tick(t)
-                        let t7: Int64 = try P.f492_Ona2Note(t, l40_ona)
+                        let t7: Int64 = try P.f497_Ona2Note(t, l40_ona)
                         l48_note = t7
                         ln = 6291730 // PsalmodyFile.HC:274
                         try tick(t)
@@ -3285,7 +3283,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmSaveSong (PsalmodyFile.HC:318)
-    @discardableResult public final func f754_PsmSaveSong(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f759_PsmSaveSong(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3301,14 +3299,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l72_ptr: Int64 = 0
             ln = 6291776 // PsalmodyFile.HC:320
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, p1_full_filename, 0)
+            let t0: Int64 = try P.f606_DocNew(t, p1_full_filename, 0)
             l16_doc = t0
             ln = 6291779 // PsalmodyFile.HC:323
             l48_measure_len = 4.0
             l56_two_measure_left = (2.0 * l48_measure_len)
             ln = 6291783 // PsalmodyFile.HC:327
             try tick(t)
-            let t1: Int64 = try f753_PsmCvtSong(t)
+            let t1: Int64 = try f758_PsmCvtSong(t)
             _ = try nat(t, n_Free, try push1(t, t1))
             ln = 6291785 // PsalmodyFile.HC:329
             try st8((P.g_music &+ 56), bits((((4.4 * Double(ld8(g_tempo_state))) / 80.0) + 0.5)))
@@ -3322,7 +3320,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             loop0: while (l32_tmpn != g_psm) {
                 ln = 6291791 // PsalmodyFile.HC:335
                 try tick(t)
-                let t2: Int64 = try f723_PsmHasWords(t, ld8((l32_tmpn &+ 32)))
+                let t2: Int64 = try f728_PsmHasWords(t, ld8((l32_tmpn &+ 32)))
                 if (t2 != 0) {
                     l24_has_words = 1
                 }
@@ -3373,7 +3371,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 t.sp = vb38
                 ln = 6291817 // PsalmodyFile.HC:361
                 try tick(t)
-                let t3: Int64 = try f723_PsmHasWords(t, ld8((l32_tmpn &+ 32)))
+                let t3: Int64 = try f728_PsmHasWords(t, ld8((l32_tmpn &+ 32)))
                 if (t3 != 0) {
                     l24_has_words = 1
                 }
@@ -3506,7 +3504,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             t.sp = vb46
             ln = 6291874 // PsalmodyFile.HC:418
             try tick(t)
-            try P.f614_DocRecalc(t, l16_doc)
+            try P.f619_DocRecalc(t, l16_doc)
             ln = 6291875 // PsalmodyFile.HC:419
             if (p1_full_filename != 0) {
                 ln = 6291876 // PsalmodyFile.HC:420
@@ -3517,14 +3515,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             }
             ln = 6291879 // PsalmodyFile.HC:423
             try tick(t)
-            _ = try P.f618_DocWrite(t, l16_doc, 1)
+            _ = try P.f623_DocWrite(t, l16_doc, 1)
             ln = 6291880 // PsalmodyFile.HC:424
             try tick(t)
             let t8: Int64 = try P.f35_StrNew(t, ((l16_doc &+ 304) &+ 8), 0)
             p1_full_filename = t8
             ln = 6291881 // PsalmodyFile.HC:425
             try tick(t)
-            try P.f605_DocDel(t, l16_doc)
+            try P.f610_DocDel(t, l16_doc)
             ln = 6291882 // PsalmodyFile.HC:426
             t.depth -= 1
             return p1_full_filename
@@ -3534,7 +3532,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PopUpDuration (PsalmodyMain.HC:9)
-    @discardableResult public final func f755_PopUpDuration(_ t: HTask) throws -> Double {
+    @discardableResult public final func f760_PopUpDuration(_ t: HTask) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -3542,7 +3540,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l8_doc: Int64 = 0
             ln = 7340044 // PsalmodyMain.HC:12
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l8_doc = t0
             ln = 7340045 // PsalmodyMain.HC:13
             try tick(t)
@@ -3568,11 +3566,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             t.sp = vb49
             ln = 7340055 // PsalmodyMain.HC:23
             try tick(t)
-            let t1: Int64 = try P.f621_PopUpMenu(t, l8_doc, 0)
+            let t1: Int64 = try P.f626_PopUpMenu(t, l8_doc, 0)
             l0_i = t1
             ln = 7340056 // PsalmodyMain.HC:24
             try tick(t)
-            try P.f605_DocDel(t, l8_doc)
+            try P.f610_DocDel(t, l8_doc)
             ln = 7340057 // PsalmodyMain.HC:25
             let rv50: Double = Double(l0_i)
             t.depth -= 1
@@ -3583,7 +3581,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmRightClick (PsalmodyMain.HC:28)
-    public final func f756_PsmRightClick(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f761_PsmRightClick(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3597,15 +3595,15 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l56_old_doc_flags: Int64 = 0
             ln = 7340065 // PsalmodyMain.HC:33
             try tick(t)
-            let t0: Int64 = try P.f602_DocPut(t, 0)
+            let t0: Int64 = try P.f607_DocPut(t, 0)
             if (t0 != 0) {
                 try tick(t)
-                let t1: Int64 = try P.f602_DocPut(t, 0)
+                let t1: Int64 = try P.f607_DocPut(t, 0)
                 l56_old_doc_flags = try ld8((t1 &+ 88))
             }
             ln = 7340066 // PsalmodyMain.HC:34
             try tick(t)
-            let t2: Int64 = try f748_PsmFindNote(t, p0_x, p1_y)
+            let t2: Int64 = try f753_PsmFindNote(t, p0_x, p1_y)
             l32_tmpn = t2
             try st8((g_psm &+ 288), t2)
             ln = 7340067 // PsalmodyMain.HC:35
@@ -3614,7 +3612,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 try st4((ld8(P.g_Fs) &+ 12), 4096)
                 ln = 7340069 // PsalmodyMain.HC:37
                 try tick(t)
-                let t3: Double = try f755_PopUpDuration(t)
+                let t3: Double = try f760_PopUpDuration(t)
                 l48_i = f2i(t3)
                 ln = 7340070 // PsalmodyMain.HC:38
                 if ((0 <= l48_i) && (l48_i < 12)) {
@@ -3695,16 +3693,16 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                             if try (ld8((l32_tmpn &+ 40)) == 1) {
                                 ln = 7340105 // PsalmodyMain.HC:73
                                 try tick(t)
-                                let t21: Int64 = try P.f602_DocPut(t, 0)
+                                let t21: Int64 = try P.f607_DocPut(t, 0)
                                 if (t21 != 0) {
                                     try tick(t)
-                                    let t22: Int64 = try P.f602_DocPut(t, 0)
+                                    let t22: Int64 = try P.f607_DocPut(t, 0)
                                     let t23: Int64 = (t22 &+ 88)
                                     try st8(t23, (ld8(t23) & (-513)))
                                 }
                                 ln = 7340106 // PsalmodyMain.HC:74
                                 try tick(t)
-                                let t24: Int64 = try f723_PsmHasWords(t, ld8((l32_tmpn &+ 32)))
+                                let t24: Int64 = try f728_PsmHasWords(t, ld8((l32_tmpn &+ 32)))
                                 if (t24 != 0) {
                                     ln = 7340107 // PsalmodyMain.HC:75
                                     let t25: Int64 = try nat(t, n_MStrPrint, try push2(t, s65, ld8((l32_tmpn &+ 32))))
@@ -3739,20 +3737,20 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                 }
                                 ln = 7340119 // PsalmodyMain.HC:87
                                 try tick(t)
-                                let t30: Int64 = try P.f602_DocPut(t, 0)
+                                let t30: Int64 = try P.f607_DocPut(t, 0)
                                 if (t30 != 0) {
                                     try tick(t)
-                                    let t31: Int64 = try P.f602_DocPut(t, 0)
+                                    let t31: Int64 = try P.f607_DocPut(t, 0)
                                     let t33: Int64 = try ((ld8((t31 &+ 88)) & (-513)) | (l56_old_doc_flags & 512))
                                     try tick(t)
-                                    let t32: Int64 = try P.f602_DocPut(t, 0)
+                                    let t32: Int64 = try P.f607_DocPut(t, 0)
                                     try st8((t32 &+ 88), t33)
                                 }
                             }
                         case -4:
                             ln = 7340124 // PsalmodyMain.HC:92
                             try tick(t)
-                            let t34: Int64 = try f743_PsmNoteCopy(t, l32_tmpn)
+                            let t34: Int64 = try f748_PsmNoteCopy(t, l32_tmpn)
                             l40_tmpn1 = t34
                             ln = 7340125 // PsalmodyMain.HC:93
                             try tick(t)
@@ -3765,7 +3763,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                             try P.f155_QueRem(t, l32_tmpn)
                             ln = 7340130 // PsalmodyMain.HC:98
                             try tick(t)
-                            try f742_PsmNoteDel(t, l32_tmpn)
+                            try f747_PsmNoteDel(t, l32_tmpn)
                         default:
                             break
                         }
@@ -3773,7 +3771,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 }
                 ln = 7340134 // PsalmodyMain.HC:102
                 try tick(t)
-                try f726_PsmSetWidth(t, ld8((g_psm &+ 288)))
+                try f731_PsmSetWidth(t, ld8((g_psm &+ 288)))
                 ln = 7340136 // PsalmodyMain.HC:104
                 try st4((ld8(P.g_Fs) &+ 12), 5305082)
             }
@@ -3783,7 +3781,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmLeftClickPickNoteBox (PsalmodyMain.HC:108)
-    public final func f757_PsmLeftClickPickNoteBox(_ t: HTask, _ a0: Int64) throws {
+    public final func f762_PsmLeftClickPickNoteBox(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3804,10 +3802,10 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 if (l24_msg_code == 4) {
                     ln = 7340147 // PsalmodyMain.HC:115
                     try tick(t)
-                    try f740_DrawDC2(t)
+                    try f745_DrawDC2(t)
                     ln = 7340148 // PsalmodyMain.HC:116
                     try tick(t)
-                    try f728_DrawNote(t, ld8((g_psm &+ 296)), ld8((fp &+ 32)), ld8((fp &+ 40)), p0_duration)
+                    try f733_DrawNote(t, ld8((g_psm &+ 296)), ld8((fp &+ 32)), ld8((fp &+ 40)), p0_duration)
                 }
                 if !((l24_msg_code != 6)) { break loop0 }
                 try tick(t)
@@ -3826,7 +3824,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     } else {
                         ln = 7340157 // PsalmodyMain.HC:125
                         try tick(t)
-                        let t1: Int64 = try f748_PsmFindNote(t, (ld8((fp &+ 32)) &- divs(9, 2)), ld8((fp &+ 40)))
+                        let t1: Int64 = try f753_PsmFindNote(t, (ld8((fp &+ 32)) &- divs(9, 2)), ld8((fp &+ 40)))
                         l56_tmpn1 = t1
                     }
                 }
@@ -3857,13 +3855,13 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 }
                 ln = 7340170 // PsalmodyMain.HC:138
                 try tick(t)
-                let t3: Int64 = try P.f491_Note2Ona(t, l16_n, l8_o)
+                let t3: Int64 = try P.f496_Note2Ona(t, l16_n, l8_o)
                 try st8((l48_tmpn &+ 56), t3)
                 ln = 7340171 // PsalmodyMain.HC:139
                 try st8((l48_tmpn &+ 80), p0_duration)
                 ln = 7340172 // PsalmodyMain.HC:140
                 try tick(t)
-                try f726_PsmSetWidth(t, l48_tmpn)
+                try f731_PsmSetWidth(t, l48_tmpn)
                 ln = 7340173 // PsalmodyMain.HC:141
                 try tick(t)
                 _ = try P.f153_QueIns(t, l48_tmpn, l56_tmpn1)
@@ -3872,7 +3870,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             }
             ln = 7340176 // PsalmodyMain.HC:144
             try tick(t)
-            try f740_DrawDC2(t)
+            try f745_DrawDC2(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -3880,7 +3878,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmLeftClickPickMeterBox (PsalmodyMain.HC:147)
-    public final func f758_PsmLeftClickPickMeterBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f763_PsmLeftClickPickMeterBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3900,10 +3898,10 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 if (l16_msg_code == 4) {
                     ln = 7340186 // PsalmodyMain.HC:154
                     try tick(t)
-                    try f740_DrawDC2(t)
+                    try f745_DrawDC2(t)
                     ln = 7340187 // PsalmodyMain.HC:155
                     try tick(t)
-                    try f729_DrawTimeSignature(t, ld8((g_psm &+ 296)), ld8((fp &+ 24)), ld8((fp &+ 32)), p0_top, p1_bottom)
+                    try f734_DrawTimeSignature(t, ld8((g_psm &+ 296)), ld8((fp &+ 24)), ld8((fp &+ 32)), p0_top, p1_bottom)
                 }
                 if !((l16_msg_code != 6)) { break loop0 }
                 try tick(t)
@@ -3922,7 +3920,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     } else {
                         ln = 7340196 // PsalmodyMain.HC:164
                         try tick(t)
-                        let t1: Int64 = try f748_PsmFindNote(t, (ld8((fp &+ 24)) &- divs(9, 2)), ld8((fp &+ 32)))
+                        let t1: Int64 = try f753_PsmFindNote(t, (ld8((fp &+ 24)) &- divs(9, 2)), ld8((fp &+ 32)))
                         l48_tmpn1 = t1
                     }
                 }
@@ -3937,7 +3935,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 try st8((l40_tmpn &+ 72), p1_bottom)
                 ln = 7340201 // PsalmodyMain.HC:169
                 try tick(t)
-                try f726_PsmSetWidth(t, l40_tmpn)
+                try f731_PsmSetWidth(t, l40_tmpn)
                 ln = 7340202 // PsalmodyMain.HC:170
                 try tick(t)
                 _ = try P.f153_QueIns(t, l40_tmpn, l48_tmpn1)
@@ -3946,7 +3944,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             }
             ln = 7340205 // PsalmodyMain.HC:173
             try tick(t)
-            try f740_DrawDC2(t)
+            try f745_DrawDC2(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -3954,7 +3952,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmLeftClickStaffPtr (PsalmodyMain.HC:176)
-    public final func f759_PsmLeftClickStaffPtr(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f764_PsmLeftClickStaffPtr(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3976,7 +3974,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     case 0:
                         ln = 7340212 // PsalmodyMain.HC:180
                         try tick(t)
-                        let t0: Int64 = try f748_PsmFindNote(t, p0_x, p1_y)
+                        let t0: Int64 = try f753_PsmFindNote(t, p0_x, p1_y)
                         l16_tmpn = t0
                         try st8((g_psm &+ 288), t0)
                         ln = 7340213 // PsalmodyMain.HC:181
@@ -4004,11 +4002,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     case 3:
                         ln = 7340215 // PsalmodyMain.HC:183
                         try tick(t)
-                        let t1: Int64 = try P.f493_Ona2Octave(t, ld8((l16_tmpn &+ 56)))
+                        let t1: Int64 = try P.f498_Ona2Octave(t, ld8((l16_tmpn &+ 56)))
                         l80_o_original = t1
                         ln = 7340216 // PsalmodyMain.HC:184
                         try tick(t)
-                        let t2: Int64 = try P.f492_Ona2Note(t, ld8((l16_tmpn &+ 56)))
+                        let t2: Int64 = try P.f497_Ona2Note(t, ld8((l16_tmpn &+ 56)))
                         l72_n_original = t2
                         ln = 7340217 // PsalmodyMain.HC:185
                         state = 6
@@ -4045,13 +4043,13 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     case 8:
                         ln = 7340244 // PsalmodyMain.HC:212
                         try tick(t)
-                        try f726_PsmSetWidth(t, l16_tmpn)
+                        try f731_PsmSetWidth(t, l16_tmpn)
                         state = 4
                         continue machine0
                     case 9:
                         ln = 7340220 // PsalmodyMain.HC:188
                         try tick(t)
-                        let t4: Int64 = try f748_PsmFindNote(t, ld8((fp &+ 56)), ld8((fp &+ 64)))
+                        let t4: Int64 = try f753_PsmFindNote(t, ld8((fp &+ 56)), ld8((fp &+ 64)))
                         l24_tmpn1 = t4
                         ln = 7340221 // PsalmodyMain.HC:189
                         if ((l24_tmpn1 == g_psm) || (l24_tmpn1 == l16_tmpn)) {
@@ -4067,7 +4065,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                             try st8((l16_tmpn &+ 32), 0)
                             ln = 7340227 // PsalmodyMain.HC:195
                             try tick(t)
-                            let t5: Int64 = try P.f491_Note2Ona(t, l72_n_original, l80_o_original)
+                            let t5: Int64 = try P.f496_Note2Ona(t, l72_n_original, l80_o_original)
                             try st8((l16_tmpn &+ 56), t5)
                         }
                         ln = 7340221 // PsalmodyMain.HC:189
@@ -4104,7 +4102,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                         }
                         ln = 7340241 // PsalmodyMain.HC:209
                         try tick(t)
-                        let t6: Int64 = try P.f491_Note2Ona(t, l40_n, l32_o)
+                        let t6: Int64 = try P.f496_Note2Ona(t, l40_n, l32_o)
                         try st8((l16_tmpn &+ 56), t6)
                         state = 11
                         continue machine0
@@ -4118,7 +4116,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmLeftClickStaffBox (PsalmodyMain.HC:217)
-    public final func f760_PsmLeftClickStaffBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f765_PsmLeftClickStaffBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4135,12 +4133,12 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 l16_msg_code = t0
                 ln = 7340254 // PsalmodyMain.HC:222
                 try tick(t)
-                try f740_DrawDC2(t)
+                try f745_DrawDC2(t)
                 ln = 7340255 // PsalmodyMain.HC:223
                 try st4((ld8((g_psm &+ 296)) &+ 160), 1074724864)
                 ln = 7340256 // PsalmodyMain.HC:224
                 try tick(t)
-                try P.f425_GrBorder(t, ld8((g_psm &+ 296)), ld8(fp), p1_y, ld8((fp &+ 24)), ld8((fp &+ 32)), 1, 0)
+                try P.f428_GrBorder(t, ld8((g_psm &+ 296)), ld8(fp), p1_y, ld8((fp &+ 24)), ld8((fp &+ 32)), 1, 0)
                 ln = 7340257 // PsalmodyMain.HC:225
                 if (l16_msg_code == 6) {
                     ln = 7340258 // PsalmodyMain.HC:226
@@ -4150,14 +4148,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     }
                     ln = 7340259 // PsalmodyMain.HC:227
                     try tick(t)
-                    try f725_PsmMarkSel(t, ld8(fp), ld8((fp &+ 24)), 1)
+                    try f730_PsmMarkSel(t, ld8(fp), ld8((fp &+ 24)), 1)
                 }
                 if !((l16_msg_code != 6)) { break loop0 }
                 try tick(t)
             }
             ln = 7340262 // PsalmodyMain.HC:230
             try tick(t)
-            try f740_DrawDC2(t)
+            try f745_DrawDC2(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -4165,7 +4163,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmLeftClick (PsalmodyMain.HC:233)
-    public final func f761_PsmLeftClick(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f766_PsmLeftClick(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4180,38 +4178,38 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 if try (ld8((g_psm &+ 280)) == 0) {
                     ln = 7340270 // PsalmodyMain.HC:238
                     try tick(t)
-                    try f759_PsmLeftClickStaffPtr(t, p0_x, p1_y)
+                    try f764_PsmLeftClickStaffPtr(t, p0_x, p1_y)
                 } else {
                     ln = 7340272 // PsalmodyMain.HC:240
                     try tick(t)
-                    try f760_PsmLeftClickStaffBox(t, p0_x, p1_y)
+                    try f765_PsmLeftClickStaffBox(t, p0_x, p1_y)
                 }
             } else {
                 ln = 7340274 // PsalmodyMain.HC:242
                 try tick(t)
-                let t0: Int64 = try f733_PsmGetPickNoteBoxDuration(t, p0_x, p1_y)
+                let t0: Int64 = try f738_PsmGetPickNoteBoxDuration(t, p0_x, p1_y)
                 l16_duration = t0
                 ln = 7340275 // PsalmodyMain.HC:243
                 if ((0 <= l16_duration) && (l16_duration < 12)) {
                     ln = 7340276 // PsalmodyMain.HC:244
                     try tick(t)
-                    try f757_PsmLeftClickPickNoteBox(t, l16_duration)
+                    try f762_PsmLeftClickPickNoteBox(t, l16_duration)
                 } else {
                     ln = 7340277 // PsalmodyMain.HC:245
                     try tick(t)
-                    let t1: Int64 = try f738_PsmGetPickMeterBox(t, p0_x, p1_y, (fp &+ 24), (fp &+ 32))
+                    let t1: Int64 = try f743_PsmGetPickMeterBox(t, p0_x, p1_y, (fp &+ 24), (fp &+ 32))
                     if (t1 != 0) {
                         ln = 7340278 // PsalmodyMain.HC:246
                         try tick(t)
-                        try f758_PsmLeftClickPickMeterBox(t, ld8((fp &+ 24)), ld8((fp &+ 32)))
+                        try f763_PsmLeftClickPickMeterBox(t, ld8((fp &+ 24)), ld8((fp &+ 32)))
                     } else {
                         ln = 7340279 // PsalmodyMain.HC:247
                         try tick(t)
-                        let t2: Int64 = try f736_PsmGetPickToolBox(t, p0_x, p1_y)
+                        let t2: Int64 = try f741_PsmGetPickToolBox(t, p0_x, p1_y)
                         if (t2 != 0) {
                             ln = 7340280 // PsalmodyMain.HC:248
                             try tick(t)
-                            try f740_DrawDC2(t)
+                            try f745_DrawDC2(t)
                         }
                     }
                 }
@@ -4223,7 +4221,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmCvtDuration (PsalmodyMain.HC:252)
-    @discardableResult public final func f762_PsmCvtDuration(_ t: HTask, _ a0: Double) throws -> Int64 {
+    @discardableResult public final func f767_PsmCvtDuration(_ t: HTask, _ a0: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -4259,7 +4257,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#8 (Run.HC:276)
-    @discardableResult public final func f763_init_C__Apps_Psalmody_Run_HC_8(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f768_init_C__Apps_Psalmody_Run_HC_8(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -4269,7 +4267,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmDownKey (PsalmodyMain.HC:300)
-    public final func f764_PsmDownKey(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f769_PsmDownKey(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4308,7 +4306,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmUpKey (PsalmodyMain.HC:317)
-    public final func f765_PsmUpKey(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f770_PsmUpKey(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4347,7 +4345,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC PsmPushMode (PsalmodyMain.HC:334)
-    public final func f766_PsmPushMode(_ t: HTask, _ a0: Int64) throws {
+    public final func f771_PsmPushMode(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4356,14 +4354,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try st4((ld8(P.g_Fs) &+ 12), 5305082)
             ln = 7340370 // PsalmodyMain.HC:338
             try tick(t)
-            try f741_PsmMenu(t, p0_psm_octave)
+            try f746_PsmMenu(t, p0_psm_octave)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "PsmPushMode", ln) }
     }
 
     /// HolyC PsmPopMode (PsalmodyMain.HC:341)
-    public final func f767_PsmPopMode(_ t: HTask) throws {
+    public final func f772_PsmPopMode(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4378,7 +4376,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC Psalmody (PsalmodyMain.HC:350)
-    public final func f768_Psalmody(_ t: HTask, _ a0: Int64) throws {
+    public final func f773_Psalmody(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4421,14 +4419,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             l168_note_down_time = t1
             ln = 7340390 // PsalmodyMain.HC:358
             try tick(t)
-            let t2: Int64 = try f717_TempoNew(t)
+            let t2: Int64 = try f722_TempoNew(t)
             l176_c = t2
             ln = 7340392 // PsalmodyMain.HC:360
             try tick(t)
-            let t3: Int64 = try P.f602_DocPut(t, 0)
+            let t3: Int64 = try P.f607_DocPut(t, 0)
             if (t3 != 0) {
                 try tick(t)
-                let t4: Int64 = try P.f602_DocPut(t, 0)
+                let t4: Int64 = try P.f607_DocPut(t, 0)
                 l104_old_doc_flags = try ld8((t4 &+ 88))
             }
             ln = 7340393 // PsalmodyMain.HC:361
@@ -4436,7 +4434,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 7340395 // PsalmodyMain.HC:363
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 7340396 // PsalmodyMain.HC:364
             let t5: Double = d(try nat(t, n_Round, try push1(t, bits(((80.0 * (ldf((P.g_music &+ 56)) - 0.5)) / 4.4)))))
             try st8(g_tempo_state, f2i(t5))
@@ -4445,10 +4443,10 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try st8((g_tempo_state &+ 8), f2i(t6))
             ln = 7340399 // PsalmodyMain.HC:367
             try tick(t)
-            let t7: Int64 = try P.f602_DocPut(t, 0)
+            let t7: Int64 = try P.f607_DocPut(t, 0)
             if (t7 != 0) {
                 try tick(t)
-                let t8: Int64 = try P.f602_DocPut(t, 0)
+                let t8: Int64 = try P.f607_DocPut(t, 0)
                 let t9: Int64 = (t8 &+ 88)
                 try st8(t9, (ld8(t9) | 512))
             }
@@ -4470,14 +4468,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try st8((g_psm &+ 296), t10)
             ln = 7340408 // PsalmodyMain.HC:376
             try tick(t)
-            _ = try P.f507_MenuPush(t, s68)
+            _ = try P.f512_MenuPush(t, s68)
             ln = 7340449 // PsalmodyMain.HC:417
             try tick(t)
-            let t11: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s69)
+            let t11: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s69)
             try st8((g_psm &+ 256), t11)
             ln = 7340450 // PsalmodyMain.HC:418
             try tick(t)
-            let t12: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s70)
+            let t12: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s70)
             try st8((g_psm &+ 264), t12)
             ln = 7340452 // PsalmodyMain.HC:420
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
@@ -4493,11 +4491,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             p0_dirname = t13
             ln = 7340457 // PsalmodyMain.HC:425
             try tick(t)
-            try f766_PsmPushMode(t, ld8((fp &+ 80)))
+            try f771_PsmPushMode(t, ld8((fp &+ 80)))
             ln = 7340458 // PsalmodyMain.HC:426
             l56_col = 0
             ln = 7340459 // PsalmodyMain.HC:427
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065883)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065888)
             ln = 7340461 // PsalmodyMain.HC:429
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -4525,7 +4523,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                 if try (((l48_msg_code == 2) && (ld8((fp &+ 32)) == 32)) && (ld8((fp &+ 40)) == 0)) {
                                     ln = 7340478 // PsalmodyMain.HC:446
                                     try tick(t)
-                                    try P.f624_PutKey(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
+                                    try P.f629_PutKey(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
                                     ln = 7340479 // PsalmodyMain.HC:447
                                     try tick(t)
                                     continue retry_3
@@ -4538,20 +4536,20 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                     var r17: Bool = (l8_was_playing != 0)
                                     if !r17 {
                                         try tick(t)
-                                        let t16: Int64 = try P.f602_DocPut(t, 0)
+                                        let t16: Int64 = try P.f607_DocPut(t, 0)
                                         r17 = try (ld4s((ld8((t16 &+ 104)) &+ 44)) >= (ld8((ld8(P.g_Fs) &+ 200)) &- 2))
                                     }
                                     if r17 {
                                         ln = 7340484 // PsalmodyMain.HC:452
                                         try tick(t)
-                                        try f741_PsmMenu(t, ld8((fp &+ 80)))
+                                        try f746_PsmMenu(t, ld8((fp &+ 80)))
                                         ln = 7340485 // PsalmodyMain.HC:453
                                         l56_col = 0
                                     }
                                 }
                                 ln = 7340489 // PsalmodyMain.HC:457
                                 try tick(t)
-                                let t18: Int64 = try P.f491_Note2Ona(t, 3, (ld8((fp &+ 80)) &+ 1))
+                                let t18: Int64 = try P.f496_Note2Ona(t, 3, (ld8((fp &+ 80)) &+ 1))
                                 l64_ona = t18
                                 ln = 7340490 // PsalmodyMain.HC:458
                                 l16_is_null = 1
@@ -4562,7 +4560,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                     case 1:
                                         ln = 7340493 // PsalmodyMain.HC:461
                                         try tick(t)
-                                        try f767_PsmPopMode(t)
+                                        try f772_PsmPopMode(t)
                                         ln = 7340494 // PsalmodyMain.HC:462
                                         let t20: Int64 = try ld8((fp &+ 32))
                                         switch6: do {
@@ -4572,7 +4570,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                 l128_st2 = p0_dirname
                                                 ln = 7340497 // PsalmodyMain.HC:465
                                                 try tick(t)
-                                                let t21: Int64 = try P.f689_PopUpPickDir(t, 0)
+                                                let t21: Int64 = try P.f694_PopUpPickDir(t, 0)
                                                 p0_dirname = t21
                                                 if (t21 != 0) {
                                                     ln = 7340498 // PsalmodyMain.HC:466
@@ -4594,7 +4592,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                         }
                                         ln = 7340508 // PsalmodyMain.HC:476
                                         try tick(t)
-                                        try f766_PsmPushMode(t, ld8((fp &+ 80)))
+                                        try f771_PsmPushMode(t, ld8((fp &+ 80)))
                                         ln = 7340509 // PsalmodyMain.HC:477
                                         l56_col = 0
                                     case 2:
@@ -4614,7 +4612,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                             try st8((fp &+ 80), (ld8((fp &+ 32)) &- 48))
                                             ln = 7340515 // PsalmodyMain.HC:483
                                             try tick(t)
-                                            try f741_PsmMenu(t, ld8((fp &+ 80)))
+                                            try f746_PsmMenu(t, ld8((fp &+ 80)))
                                             ln = 7340516 // PsalmodyMain.HC:484
                                             l56_col = 0
                                         } else {
@@ -4959,7 +4957,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                                                             if try ((ld8((fp &+ 40)) & 512) != 0) {
                                                                                                                 ln = 7340578 // PsalmodyMain.HC:546
                                                                                                                 try tick(t)
-                                                                                                                try f745_PsmCutToClip(t)
+                                                                                                                try f750_PsmCutToClip(t)
                                                                                                             } else {
                                                                                                                 ln = 7340580 // PsalmodyMain.HC:548
                                                                                                                 l136_tmpn = try ld8((g_psm &+ 288))
@@ -4972,7 +4970,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                                                                     try P.f155_QueRem(t, l136_tmpn)
                                                                                                                     ln = 7340584 // PsalmodyMain.HC:552
                                                                                                                     try tick(t)
-                                                                                                                    try f742_PsmNoteDel(t, l136_tmpn)
+                                                                                                                    try f747_PsmNoteDel(t, l136_tmpn)
                                                                                                                 }
                                                                                                             }
                                                                                                         case 82:
@@ -4980,25 +4978,25 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                                                             if try ((ld8((fp &+ 40)) & 512) != 0) {
                                                                                                                 ln = 7340590 // PsalmodyMain.HC:558
                                                                                                                 try tick(t)
-                                                                                                                try f746_PsmPasteClip(t)
+                                                                                                                try f751_PsmPasteClip(t)
                                                                                                             } else {
                                                                                                                 ln = 7340591 // PsalmodyMain.HC:559
                                                                                                                 if try ((ld8((fp &+ 40)) & 1024) != 0) {
                                                                                                                     ln = 7340592 // PsalmodyMain.HC:560
                                                                                                                     try tick(t)
-                                                                                                                    try f747_PsmCopyToClip(t)
+                                                                                                                    try f752_PsmCopyToClip(t)
                                                                                                                 }
                                                                                                             }
                                                                                                         case 59:
                                                                                                             ln = 7340595 // PsalmodyMain.HC:563
                                                                                                             try tick(t)
-                                                                                                            try f767_PsmPopMode(t)
+                                                                                                            try f772_PsmPopMode(t)
                                                                                                             ln = 7340596 // PsalmodyMain.HC:564
                                                                                                             try tick(t)
-                                                                                                            _ = try P.f627_PopUpEd(t, s71, ld8(P.g_Fs), 0)
+                                                                                                            _ = try P.f632_PopUpEd(t, s71, ld8(P.g_Fs), 0)
                                                                                                             ln = 7340597 // PsalmodyMain.HC:565
                                                                                                             try tick(t)
-                                                                                                            try f766_PsmPushMode(t, ld8((fp &+ 80)))
+                                                                                                            try f771_PsmPushMode(t, ld8((fp &+ 80)))
                                                                                                             ln = 7340598 // PsalmodyMain.HC:566
                                                                                                             l56_col = 0
                                                                                                         default:
@@ -5014,23 +5012,23 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                                                 try st8((fp &+ 112), 0)
                                                                                                 ln = 7340605 // PsalmodyMain.HC:573
                                                                                                 try tick(t)
-                                                                                                try f767_PsmPopMode(t)
+                                                                                                try f772_PsmPopMode(t)
                                                                                                 ln = 7340606 // PsalmodyMain.HC:574
                                                                                                 try st8((P.g_music &+ 16), ld8((fp &+ 80)))
                                                                                                 ln = 7340607 // PsalmodyMain.HC:575
                                                                                                 try tick(t)
-                                                                                                let t27: Int64 = try P.f692_GodSongStr(t)
+                                                                                                let t27: Int64 = try P.f697_GodSongStr(t)
                                                                                                 l128_st2 = t27
                                                                                                 if (t27 != 0) {
                                                                                                     ln = 7340608 // PsalmodyMain.HC:576
                                                                                                     try tick(t)
-                                                                                                    try f751_PsmLoadSongStr(t, l128_st2, (fp &+ 80), (fp &+ 144))
+                                                                                                    try f756_PsmLoadSongStr(t, l128_st2, (fp &+ 80), (fp &+ 144))
                                                                                                     ln = 7340609 // PsalmodyMain.HC:577
                                                                                                     _ = try nat(t, n_Free, try push1(t, l128_st2))
                                                                                                 }
                                                                                                 ln = 7340611 // PsalmodyMain.HC:579
                                                                                                 try tick(t)
-                                                                                                try f766_PsmPushMode(t, ld8((fp &+ 80)))
+                                                                                                try f771_PsmPushMode(t, ld8((fp &+ 80)))
                                                                                                 ln = 7340612 // PsalmodyMain.HC:580
                                                                                                 l56_col = 0
                                                                                                 ln = 7340613 // PsalmodyMain.HC:581
@@ -5038,17 +5036,17 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                                             }
                                                                                             ln = 7340615 // PsalmodyMain.HC:583
                                                                                             try tick(t)
-                                                                                            try f767_PsmPopMode(t)
+                                                                                            try f772_PsmPopMode(t)
                                                                                             ln = 7340616 // PsalmodyMain.HC:584
                                                                                             try tick(t)
-                                                                                            try P.f690_RegOneTimePopUp(t, 3, s72)
+                                                                                            try P.f695_RegOneTimePopUp(t, 3, s72)
                                                                                             ln = 7340622 // PsalmodyMain.HC:590
                                                                                             _ = try nat(t, n_Free, try push1(t, ld8((fp &+ 112))))
                                                                                             ln = 7340623 // PsalmodyMain.HC:591
                                                                                             try st8((fp &+ 112), 0)
                                                                                             ln = 7340624 // PsalmodyMain.HC:592
                                                                                             try tick(t)
-                                                                                            try f708_JukeBox(t, p0_dirname, (fp &+ 112))
+                                                                                            try f713_JukeBox(t, p0_dirname, (fp &+ 112))
                                                                                             ln = 7340625 // PsalmodyMain.HC:593
                                                                                             if try (ld8((fp &+ 112)) != 0) {
                                                                                                 ln = 7340626 // PsalmodyMain.HC:594
@@ -5059,12 +5057,12 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                                                 try st8((fp &+ 80), 4)
                                                                                                 ln = 7340629 // PsalmodyMain.HC:597
                                                                                                 try tick(t)
-                                                                                                try f744_PsmSongDel(t, g_psm)
+                                                                                                try f749_PsmSongDel(t, g_psm)
                                                                                                 ln = 7340630 // PsalmodyMain.HC:598
                                                                                                 try st8((g_psm &+ 288), g_psm)
                                                                                                 ln = 7340631 // PsalmodyMain.HC:599
                                                                                                 try tick(t)
-                                                                                                try f752_PsmLoadSong(t, ld8((fp &+ 112)), (fp &+ 80), (fp &+ 144))
+                                                                                                try f757_PsmLoadSong(t, ld8((fp &+ 112)), (fp &+ 80), (fp &+ 144))
                                                                                                 ln = 7340632 // PsalmodyMain.HC:600
                                                                                                 try st1((ld8((g_psm &+ 264)) &+ 72), 0)
                                                                                                 ln = 7340633 // PsalmodyMain.HC:601
@@ -5072,7 +5070,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                                             }
                                                                                             ln = 7340635 // PsalmodyMain.HC:603
                                                                                             try tick(t)
-                                                                                            try f766_PsmPushMode(t, ld8((fp &+ 80)))
+                                                                                            try f771_PsmPushMode(t, ld8((fp &+ 80)))
                                                                                             ln = 7340636 // PsalmodyMain.HC:604
                                                                                             l56_col = 0
                                                                                             ln = 7340637 // PsalmodyMain.HC:605
@@ -5080,38 +5078,38 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                                         }
                                                                                         ln = 7340639 // PsalmodyMain.HC:607
                                                                                         try tick(t)
-                                                                                        try f767_PsmPopMode(t)
+                                                                                        try f772_PsmPopMode(t)
                                                                                         ln = 7340640 // PsalmodyMain.HC:608
                                                                                         try tick(t)
-                                                                                        let t28: Int64 = try f754_PsmSaveSong(t, p0_dirname, ld8((fp &+ 112)))
+                                                                                        let t28: Int64 = try f759_PsmSaveSong(t, p0_dirname, ld8((fp &+ 112)))
                                                                                         try st8((fp &+ 112), t28)
                                                                                         ln = 7340641 // PsalmodyMain.HC:609
                                                                                         try tick(t)
-                                                                                        try f766_PsmPushMode(t, ld8((fp &+ 80)))
+                                                                                        try f771_PsmPushMode(t, ld8((fp &+ 80)))
                                                                                         ln = 7340642 // PsalmodyMain.HC:610
                                                                                         break switch7_143
                                                                                     }
                                                                                     ln = 7340644 // PsalmodyMain.HC:612
                                                                                     try tick(t)
-                                                                                    try f747_PsmCopyToClip(t)
+                                                                                    try f752_PsmCopyToClip(t)
                                                                                     ln = 7340645 // PsalmodyMain.HC:613
                                                                                     break switch7_143
                                                                                 }
                                                                                 ln = 7340647 // PsalmodyMain.HC:615
                                                                                 try tick(t)
-                                                                                try f746_PsmPasteClip(t)
+                                                                                try f751_PsmPasteClip(t)
                                                                                 ln = 7340648 // PsalmodyMain.HC:616
                                                                                 break switch7_143
                                                                             }
                                                                             ln = 7340650 // PsalmodyMain.HC:618
                                                                             try tick(t)
-                                                                            try f745_PsmCutToClip(t)
+                                                                            try f750_PsmCutToClip(t)
                                                                             ln = 7340651 // PsalmodyMain.HC:619
                                                                             break switch7_143
                                                                         }
                                                                         ln = 7340653 // PsalmodyMain.HC:621
                                                                         try tick(t)
-                                                                        try f741_PsmMenu(t, ld8((fp &+ 80)))
+                                                                        try f746_PsmMenu(t, ld8((fp &+ 80)))
                                                                         ln = 7340654 // PsalmodyMain.HC:622
                                                                         l56_col = 0
                                                                         ln = 7340655 // PsalmodyMain.HC:623
@@ -5124,7 +5122,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                         try st8((fp &+ 80), 4)
                                                                         ln = 7340659 // PsalmodyMain.HC:627
                                                                         try tick(t)
-                                                                        try f744_PsmSongDel(t, g_psm)
+                                                                        try f749_PsmSongDel(t, g_psm)
                                                                         ln = 7340660 // PsalmodyMain.HC:628
                                                                         try st8((g_psm &+ 288), g_psm)
                                                                         ln = 7340661 // PsalmodyMain.HC:629
@@ -5136,7 +5134,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                     if try (ld8((g_psm &+ 288)) != g_psm) {
                                                                         ln = 7340665 // PsalmodyMain.HC:633
                                                                         try tick(t)
-                                                                        try f756_PsmRightClick(t, ld8((ld8((g_psm &+ 288)) &+ 16)), ld8((ld8((g_psm &+ 288)) &+ 24)))
+                                                                        try f761_PsmRightClick(t, ld8((ld8((g_psm &+ 288)) &+ 16)), ld8((ld8((g_psm &+ 288)) &+ 24)))
                                                                     }
                                                                     ln = 7340666 // PsalmodyMain.HC:634
                                                                     break switch7_143
@@ -5152,7 +5150,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                 try st1((g_psm &+ 304), 1)
                                                                 ln = 7340672 // PsalmodyMain.HC:640
                                                                 try tick(t)
-                                                                try f741_PsmMenu(t, ld8((fp &+ 80)))
+                                                                try f746_PsmMenu(t, ld8((fp &+ 80)))
                                                                 ln = 7340673 // PsalmodyMain.HC:641
                                                                 l136_tmpn = try ld8((g_psm &+ 288))
                                                                 ln = 7340674 // PsalmodyMain.HC:642
@@ -5197,7 +5195,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                         try st8(t31, f2i((Double(ld8(t31)) + (Double(ld8((l136_tmpn &+ 16))) - (0.33 * 640.0)))))
                                                                         ln = 7340695 // PsalmodyMain.HC:663
                                                                         try tick(t)
-                                                                        let t32: Int64 = try f723_PsmHasWords(t, ld8((l136_tmpn &+ 32)))
+                                                                        let t32: Int64 = try f728_PsmHasWords(t, ld8((l136_tmpn &+ 32)))
                                                                         if (t32 != 0) {
                                                                             ln = 7340696 // PsalmodyMain.HC:664
                                                                             _ = try nat(t, n_Print, try push2(t, s39, ld8((l136_tmpn &+ 32))))
@@ -5243,7 +5241,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                 try st1((g_psm &+ 304), 0)
                                                                 ln = 7340720 // PsalmodyMain.HC:688
                                                                 try tick(t)
-                                                                try f741_PsmMenu(t, ld8((fp &+ 80)))
+                                                                try f746_PsmMenu(t, ld8((fp &+ 80)))
                                                                 ln = 7340721 // PsalmodyMain.HC:689
                                                                 l56_col = 0
                                                                 ln = 7340722 // PsalmodyMain.HC:690
@@ -5260,7 +5258,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                                 try P.f155_QueRem(t, l136_tmpn)
                                                                 ln = 7340728 // PsalmodyMain.HC:696
                                                                 try tick(t)
-                                                                try f742_PsmNoteDel(t, l136_tmpn)
+                                                                try f747_PsmNoteDel(t, l136_tmpn)
                                                             }
                                                             ln = 7340730 // PsalmodyMain.HC:698
                                                             if (l56_col != 0) {
@@ -5288,7 +5286,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                         }
                                                         ln = 7340744 // PsalmodyMain.HC:712
                                                         try tick(t)
-                                                        try f741_PsmMenu(t, ld8((fp &+ 80)))
+                                                        try f746_PsmMenu(t, ld8((fp &+ 80)))
                                                         ln = 7340745 // PsalmodyMain.HC:713
                                                         l56_col = 0
                                                         ln = 7340746 // PsalmodyMain.HC:714
@@ -5296,14 +5294,14 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                                     }
                                                     ln = 7340748 // PsalmodyMain.HC:716
                                                     try tick(t)
-                                                    try f767_PsmPopMode(t)
+                                                    try f772_PsmPopMode(t)
                                                     ln = 7340749 // PsalmodyMain.HC:717
                                                     try tick(t)
-                                                    let t35: Int64 = try f754_PsmSaveSong(t, p0_dirname, ld8((fp &+ 112)))
+                                                    let t35: Int64 = try f759_PsmSaveSong(t, p0_dirname, ld8((fp &+ 112)))
                                                     try st8((fp &+ 112), t35)
                                                     ln = 7340750 // PsalmodyMain.HC:718
                                                     try tick(t)
-                                                    try f766_PsmPushMode(t, ld8((fp &+ 80)))
+                                                    try f771_PsmPushMode(t, ld8((fp &+ 80)))
                                                 }
                                                 ln = 7340752 // PsalmodyMain.HC:720
                                                 break skip_0
@@ -5325,18 +5323,18 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                     case 5:
                                         ln = 7340767 // PsalmodyMain.HC:735
                                         try tick(t)
-                                        try f764_PsmDownKey(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
+                                        try f769_PsmDownKey(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
                                         ln = 7340768 // PsalmodyMain.HC:736
                                         try tick(t)
-                                        try f761_PsmLeftClick(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
+                                        try f766_PsmLeftClick(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
                                     case 6:
                                         ln = 7340771 // PsalmodyMain.HC:739
                                         try tick(t)
-                                        try f765_PsmUpKey(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
+                                        try f770_PsmUpKey(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
                                     default:
                                         ln = 7340774 // PsalmodyMain.HC:742
                                         try tick(t)
-                                        try f756_PsmRightClick(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
+                                        try f761_PsmRightClick(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
                                     }
                                 }
                                 break retry_4
@@ -5364,7 +5362,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                 ln = 7340785 // PsalmodyMain.HC:753
                                 let t38: Int64 = try ld8(g_psm_note_lst)
                                 try tick(t)
-                                let t37: Int64 = try P.f492_Ona2Note(t, l64_ona)
+                                let t37: Int64 = try P.f497_Ona2Note(t, l64_ona)
                                 try tick(t)
                                 let t39: Int64 = try P.f52_LstSub(t, t37, t38)
                                 l120_st = t39
@@ -5381,11 +5379,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                                     try st8((P.g_music &+ 64), bits((((0.88 * Double(ld8((g_tempo_state &+ 8)))) / 80.0) + 0.12)))
                                     ln = 7340791 // PsalmodyMain.HC:759
                                     try tick(t)
-                                    let t40: Int64 = try f762_PsmCvtDuration(t, (ldf((P.g_music &+ 56)) * (l160_evt_time - l168_note_down_time)))
+                                    let t40: Int64 = try f767_PsmCvtDuration(t, (ldf((P.g_music &+ 56)) * (l160_evt_time - l168_note_down_time)))
                                     try st8((l136_tmpn &+ 80), t40)
                                     ln = 7340793 // PsalmodyMain.HC:761
                                     try tick(t)
-                                    try f726_PsmSetWidth(t, l136_tmpn)
+                                    try f731_PsmSetWidth(t, l136_tmpn)
                                     ln = 7340794 // PsalmodyMain.HC:762
                                     try tick(t)
                                     _ = try P.f153_QueIns(t, l136_tmpn, ld8((ld8((g_psm &+ 288)) &+ 8)))
@@ -5442,16 +5440,16 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             }
             ln = 7340819 // PsalmodyMain.HC:787
             try tick(t)
-            try f767_PsmPopMode(t)
+            try f772_PsmPopMode(t)
             ln = 7340820 // PsalmodyMain.HC:788
             try tick(t)
-            try f744_PsmSongDel(t, g_psm)
+            try f749_PsmSongDel(t, g_psm)
             ln = 7340821 // PsalmodyMain.HC:789
             try tick(t)
-            try f744_PsmSongDel(t, (g_psm &+ 128))
+            try f749_PsmSongDel(t, (g_psm &+ 128))
             ln = 7340822 // PsalmodyMain.HC:790
             try tick(t)
-            try f718_TempoDel(t, l176_c)
+            try f723_TempoDel(t, l176_c)
             ln = 7340823 // PsalmodyMain.HC:791
             try tick(t)
             try P.f286_DCFill(t, 0, 255)
@@ -5465,20 +5463,20 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 7340827 // PsalmodyMain.HC:795
             try tick(t)
-            let t44: Int64 = try P.f602_DocPut(t, 0)
+            let t44: Int64 = try P.f607_DocPut(t, 0)
             if (t44 != 0) {
                 try tick(t)
-                let t45: Int64 = try P.f602_DocPut(t, 0)
+                let t45: Int64 = try P.f607_DocPut(t, 0)
                 let t47: Int64 = try ((ld8((t45 &+ 88)) & (-513)) | (l104_old_doc_flags & 512))
                 try tick(t)
-                let t46: Int64 = try P.f602_DocPut(t, 0)
+                let t46: Int64 = try P.f607_DocPut(t, 0)
                 try st8((t46 &+ 88), t47)
             }
             ln = 7340828 // PsalmodyMain.HC:796
             _ = try nat(t, n_Free, try push1(t, p0_dirname))
             ln = 7340829 // PsalmodyMain.HC:797
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -5486,28 +5484,28 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Run.HC#9 (Run.HC:3)
-    @discardableResult public final func f769_init_C__Apps_Psalmody_Run_HC_9(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f774_init_C__Apps_Psalmody_Run_HC_9(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 3 // Run.HC:3
             try tick(t)
-            try f768_Psalmody(t, s74)
+            try f773_Psalmody(t, s74)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Run.HC#9", ln) }
     }
 
     /// HolyC Song (childish.HC:2)
-    public final func f770_Song(_ t: HTask) throws {
+    public final func f775_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 8388612 // childish.HC:4
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 8388613 // childish.HC:5
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 8388614 // childish.HC:6
             try st8((P.g_music &+ 56), bits(2.48))
             ln = 8388615 // childish.HC:7
@@ -5522,16 +5520,16 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     if !((t0 == 0)) { break loop0 }
                     ln = 8388618 // childish.HC:10
                     try tick(t)
-                    try P.f494_Play(t, s76, s75)
+                    try P.f499_Play(t, s76, s75)
                     ln = 8388621 // childish.HC:13
                     try tick(t)
-                    try P.f494_Play(t, s76, s77)
+                    try P.f499_Play(t, s76, s77)
                     ln = 8388624 // childish.HC:16
                     try tick(t)
-                    try P.f494_Play(t, s78, 0)
+                    try P.f499_Play(t, s78, 0)
                     ln = 8388625 // childish.HC:17
                     try tick(t)
-                    try P.f494_Play(t, s78, 0)
+                    try P.f499_Play(t, s78, 0)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -5551,26 +5549,26 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/childish.HC#0 (childish.HC:24)
-    @discardableResult public final func f771_init_C__Apps_Psalmody_Examples_childish_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f776_init_C__Apps_Psalmody_Examples_childish_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 8388632 // childish.HC:24
             try tick(t)
-            try f770_Song(t)
+            try f775_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/childish.HC#0", ln) }
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/night.HC#0 (night.HC:14)
-    @discardableResult public final func f772_init_C__Apps_Psalmody_Examples_night_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f777_init_C__Apps_Psalmody_Examples_night_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 9437198 // night.HC:14
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             try st8(g_t0, bits(t0))
             t.depth -= 1
             return 0
@@ -5578,7 +5576,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawIt (night.HC:16)
-    public final func f773_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f778_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5590,14 +5588,13 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l40_dt: Double = 0.0
             ln = 9437203 // night.HC:19
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             l40_dt = try (t0 - ldf(g_t0))
             ln = 9437204 // night.HC:20
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 330, 35, 0, b24, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 330, 35, 0, b24, 0))
             ln = 9437205 // night.HC:21
             try tick(t)
-            let t1: Double = try P.f487_Beat(t)
+            let t1: Double = try P.f492_Beat(t)
             if try ((t1 - ldf(g_t0)) < 24.0) {
                 ln = 9437206 // night.HC:22
                 let t2: Double = d(try nat(t, n_Rand, push0(t)))
@@ -5677,7 +5674,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC Song (night.HC:54)
-    public final func f774_Song(_ t: HTask) throws {
+    public final func f779_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5687,12 +5684,12 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             ln = 9437241 // night.HC:57
             try st1((ld8(P.g_Fs) &+ 778), 7)
             ln = 9437242 // night.HC:58
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065925)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065930)
             ln = 9437243 // night.HC:59
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 9437244 // night.HC:60
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 9437245 // night.HC:61
             try st8((P.g_music &+ 56), bits(2.0))
             ln = 9437246 // night.HC:62
@@ -5705,22 +5702,22 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                 loop0: while (1 != 0) {
                     ln = 9437249 // night.HC:65
                     try tick(t)
-                    let t0: Double = try P.f487_Beat(t)
+                    let t0: Double = try P.f492_Beat(t)
                     try st8(g_t0, bits(t0))
                     ln = 9437250 // night.HC:66
                     _ = try nat(t, n_Print, try push1(t, s80))
                     ln = 9437251 // night.HC:67
                     try tick(t)
-                    try P.f494_Play(t, s82, s81)
+                    try P.f499_Play(t, s82, s81)
                     ln = 9437253 // night.HC:69
                     try tick(t)
-                    try P.f494_Play(t, s82, s81)
+                    try P.f499_Play(t, s82, s81)
                     ln = 9437255 // night.HC:71
                     try tick(t)
-                    try P.f494_Play(t, s84, s83)
+                    try P.f499_Play(t, s84, s83)
                     ln = 9437257 // night.HC:73
                     try tick(t)
-                    try P.f494_Play(t, s84, s83)
+                    try P.f499_Play(t, s84, s83)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -5741,26 +5738,26 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/night.HC#1 (night.HC:81)
-    @discardableResult public final func f775_init_C__Apps_Psalmody_Examples_night_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f780_init_C__Apps_Psalmody_Examples_night_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 9437265 // night.HC:81
             try tick(t)
-            try f774_Song(t)
+            try f779_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/night.HC#1", ln) }
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#0 (prosper.HC:14)
-    @discardableResult public final func f776_init_C__Apps_Psalmody_Examples_prosper_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f781_init_C__Apps_Psalmody_Examples_prosper_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 10485774 // prosper.HC:14
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             try st8(g_t0, bits(t0))
             t.depth -= 1
             return 0
@@ -5768,7 +5765,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC DrawIt (prosper.HC:16)
-    public final func f777_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f782_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5777,7 +5774,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             var l16_dt: Double = 0.0
             ln = 10485778 // prosper.HC:18
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             l16_dt = try (t0 - ldf(g_t0))
             ln = 10485779 // prosper.HC:19
             let t1: Int64 = (p1_dc &+ 28)
@@ -5788,8 +5785,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             _ = try P.f307_Mat4x4RotZ(t, ld8((p1_dc &+ 200)), (0.25 * t2))
             ln = 10485781 // prosper.HC:21
             let t3: Double = d(try nat(t, n_Sin, try push1(t, bits((l16_dt / 3.0)))))
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, ld8((p1_dc &+ 200)), (1.5 + (0.5 * t3)))
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((p1_dc &+ 200)), bits((1.5 + (0.5 * t3)))))
             ln = 10485782 // prosper.HC:22
             try tick(t)
             try P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc &+ 200)))
@@ -5798,11 +5794,11 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             if ((t4 & 1) != 0) {
                 ln = 10485784 // prosper.HC:24
                 try tick(t)
-                try P.f441_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b25)
+                try P.f446_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b25)
             } else {
                 ln = 10485786 // prosper.HC:26
                 try tick(t)
-                try P.f441_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b26)
+                try P.f446_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b26)
             }
             t.depth -= 1
             return
@@ -5810,7 +5806,7 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC Song (prosper.HC:29)
-    public final func f778_Song(_ t: HTask) throws {
+    public final func f783_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5820,12 +5816,12 @@ public final class N_Apps_Psalmody_Run: NativeModule {
             ln = 10485792 // prosper.HC:32
             try st1((ld8(P.g_Fs) &+ 778), 46)
             ln = 10485793 // prosper.HC:33
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065929)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065934)
             ln = 10485794 // prosper.HC:34
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 10485796 // prosper.HC:36
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 10485797 // prosper.HC:37
             try st8((P.g_music &+ 56), bits(3.5))
             ln = 10485798 // prosper.HC:38
@@ -5838,20 +5834,20 @@ public final class N_Apps_Psalmody_Run: NativeModule {
                     if !((t1 == 0)) { break loop0 }
                     ln = 10485800 // prosper.HC:40
                     try tick(t)
-                    let t0: Double = try P.f487_Beat(t)
+                    let t0: Double = try P.f492_Beat(t)
                     try st8(g_t0, bits(t0))
                     ln = 10485801 // prosper.HC:41
                     try tick(t)
-                    try P.f494_Play(t, s86, s85)
+                    try P.f499_Play(t, s86, s85)
                     ln = 10485804 // prosper.HC:44
                     try tick(t)
-                    try P.f494_Play(t, s88, s87)
+                    try P.f499_Play(t, s88, s87)
                     ln = 10485806 // prosper.HC:46
                     try tick(t)
-                    try P.f494_Play(t, s90, s89)
+                    try P.f499_Play(t, s90, s89)
                     ln = 10485808 // prosper.HC:48
                     try tick(t)
-                    try P.f494_Play(t, s90, s89)
+                    try P.f499_Play(t, s90, s89)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -5872,13 +5868,13 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#1 (prosper.HC:56)
-    @discardableResult public final func f779_init_C__Apps_Psalmody_Examples_prosper_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f784_init_C__Apps_Psalmody_Examples_prosper_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 10485816 // prosper.HC:56
             try tick(t)
-            try f778_Song(t)
+            try f783_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/prosper.HC#1", ln) }
@@ -5887,89 +5883,89 @@ public final class N_Apps_Psalmody_Run: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Psalmody_Run_HC_0(t)
-        case 704: return try f704_init_C__Apps_Psalmody_Run_HC_1(t)
-        case 705: return try f705_JukeReward(t, (n > 0 ? st[base + 0] : 0))
-        case 706: return try f706_SingleSong(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 707: return try f707_JBPutKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 708: try f708_JukeBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 709: try f709_SongPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: try f710_JukeSongPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 711: try f711_JukeSongsPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 712: return try f712_init_C__Apps_Psalmody_Run_HC_2(t)
-        case 713: return try f713_init_C__Apps_Psalmody_Run_HC_3(t)
-        case 714: try f714_DrawTempoCtrl(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 715: try f715_UpdateDerivedTempoCtrl(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 716: try f716_LeftClickTempo(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 717: return try f717_TempoNew(t)
-        case 718: try f718_TempoDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 719: return try f719_init_C__Apps_Psalmody_Run_HC_4(t)
-        case 720: return try f720_init_C__Apps_Psalmody_Run_HC_5(t)
-        case 721: return try f721_init_C__Apps_Psalmody_Run_HC_6(t)
-        case 722: return try f722_PsmBlink(t)
-        case 723: return try f723_PsmHasWords(t, (n > 0 ? st[base + 0] : 0))
-        case 724: return try f724_PsmIsDotted(t, (n > 0 ? st[base + 0] : 0))
-        case 725: try f725_PsmMarkSel(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 726: try f726_PsmSetWidth(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 727: try f727_PsmSetOctave(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 728: try f728_DrawNote(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 729: try f729_DrawTimeSignature(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
-        case 730: try f730_PsmRecalcNoteXY(t); return 0
-        case 731: try f731_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 732: try f732_PsmSetPickNoteBoxX(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 733: return try f733_PsmGetPickNoteBoxDuration(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 734: try f734_DrawPickNoteBox(t); return 0
-        case 735: try f735_DrawPickTools(t); return 0
-        case 736: return try f736_PsmGetPickToolBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 737: return try f737_init_C__Apps_Psalmody_Run_HC_7(t)
-        case 738: return try f738_PsmGetPickMeterBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 739: try f739_DrawPickMeterBox(t); return 0
-        case 740: try f740_DrawDC2(t); return 0
-        case 741: try f741_PsmMenu(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 742: try f742_PsmNoteDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 743: return try f743_PsmNoteCopy(t, (n > 0 ? st[base + 0] : 0))
-        case 744: try f744_PsmSongDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 745: try f745_PsmCutToClip(t); return 0
-        case 746: try f746_PsmPasteClip(t); return 0
-        case 747: try f747_PsmCopyToClip(t); return 0
-        case 748: return try f748_PsmFindNote(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 749: return try f749_PsmMusicSetOctave(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 750: return try f750_PsmMusicSetNoteLen(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 751: try f751_PsmLoadSongStr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 752: try f752_PsmLoadSong(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 753: return try f753_PsmCvtSong(t)
-        case 754: return try f754_PsmSaveSong(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 755: return bits(try f755_PopUpDuration(t))
-        case 756: try f756_PsmRightClick(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 757: try f757_PsmLeftClickPickNoteBox(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 758: try f758_PsmLeftClickPickMeterBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 759: try f759_PsmLeftClickStaffPtr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 760: try f760_PsmLeftClickStaffBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 761: try f761_PsmLeftClick(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 762: return try f762_PsmCvtDuration(t, d((n > 0 ? st[base + 0] : 0)))
-        case 763: return try f763_init_C__Apps_Psalmody_Run_HC_8(t)
-        case 764: try f764_PsmDownKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 765: try f765_PsmUpKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 766: try f766_PsmPushMode(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 767: try f767_PsmPopMode(t); return 0
-        case 768: try f768_Psalmody(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 769: return try f769_init_C__Apps_Psalmody_Run_HC_9(t)
-        case 770: try f770_Song(t); return 0
-        case 771: return try f771_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
-        case 772: return try f772_init_C__Apps_Psalmody_Examples_night_HC_0(t)
-        case 773: try f773_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 774: try f774_Song(t); return 0
-        case 775: return try f775_init_C__Apps_Psalmody_Examples_night_HC_1(t)
-        case 776: return try f776_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
-        case 777: try f777_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 778: try f778_Song(t); return 0
-        case 779: return try f779_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
+        case 708: return try f708_init_C__Apps_Psalmody_Run_HC_0(t)
+        case 709: return try f709_init_C__Apps_Psalmody_Run_HC_1(t)
+        case 710: return try f710_JukeReward(t, (n > 0 ? st[base + 0] : 0))
+        case 711: return try f711_SingleSong(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 712: return try f712_JBPutKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 713: try f713_JukeBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 714: try f714_SongPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: try f715_JukeSongPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 716: try f716_JukeSongsPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 717: return try f717_init_C__Apps_Psalmody_Run_HC_2(t)
+        case 718: return try f718_init_C__Apps_Psalmody_Run_HC_3(t)
+        case 719: try f719_DrawTempoCtrl(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 720: try f720_UpdateDerivedTempoCtrl(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 721: try f721_LeftClickTempo(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 722: return try f722_TempoNew(t)
+        case 723: try f723_TempoDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 724: return try f724_init_C__Apps_Psalmody_Run_HC_4(t)
+        case 725: return try f725_init_C__Apps_Psalmody_Run_HC_5(t)
+        case 726: return try f726_init_C__Apps_Psalmody_Run_HC_6(t)
+        case 727: return try f727_PsmBlink(t)
+        case 728: return try f728_PsmHasWords(t, (n > 0 ? st[base + 0] : 0))
+        case 729: return try f729_PsmIsDotted(t, (n > 0 ? st[base + 0] : 0))
+        case 730: try f730_PsmMarkSel(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 731: try f731_PsmSetWidth(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 732: try f732_PsmSetOctave(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 733: try f733_DrawNote(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 734: try f734_DrawTimeSignature(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
+        case 735: try f735_PsmRecalcNoteXY(t); return 0
+        case 736: try f736_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 737: try f737_PsmSetPickNoteBoxX(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 738: return try f738_PsmGetPickNoteBoxDuration(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 739: try f739_DrawPickNoteBox(t); return 0
+        case 740: try f740_DrawPickTools(t); return 0
+        case 741: return try f741_PsmGetPickToolBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 742: return try f742_init_C__Apps_Psalmody_Run_HC_7(t)
+        case 743: return try f743_PsmGetPickMeterBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 744: try f744_DrawPickMeterBox(t); return 0
+        case 745: try f745_DrawDC2(t); return 0
+        case 746: try f746_PsmMenu(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 747: try f747_PsmNoteDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 748: return try f748_PsmNoteCopy(t, (n > 0 ? st[base + 0] : 0))
+        case 749: try f749_PsmSongDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 750: try f750_PsmCutToClip(t); return 0
+        case 751: try f751_PsmPasteClip(t); return 0
+        case 752: try f752_PsmCopyToClip(t); return 0
+        case 753: return try f753_PsmFindNote(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 754: return try f754_PsmMusicSetOctave(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 755: return try f755_PsmMusicSetNoteLen(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 756: try f756_PsmLoadSongStr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 757: try f757_PsmLoadSong(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 758: return try f758_PsmCvtSong(t)
+        case 759: return try f759_PsmSaveSong(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 760: return bits(try f760_PopUpDuration(t))
+        case 761: try f761_PsmRightClick(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 762: try f762_PsmLeftClickPickNoteBox(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 763: try f763_PsmLeftClickPickMeterBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 764: try f764_PsmLeftClickStaffPtr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 765: try f765_PsmLeftClickStaffBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 766: try f766_PsmLeftClick(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 767: return try f767_PsmCvtDuration(t, d((n > 0 ? st[base + 0] : 0)))
+        case 768: return try f768_init_C__Apps_Psalmody_Run_HC_8(t)
+        case 769: try f769_PsmDownKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 770: try f770_PsmUpKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 771: try f771_PsmPushMode(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 772: try f772_PsmPopMode(t); return 0
+        case 773: try f773_Psalmody(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 774: return try f774_init_C__Apps_Psalmody_Run_HC_9(t)
+        case 775: try f775_Song(t); return 0
+        case 776: return try f776_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
+        case 777: return try f777_init_C__Apps_Psalmody_Examples_night_HC_0(t)
+        case 778: try f778_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 779: try f779_Song(t); return 0
+        case 780: return try f780_init_C__Apps_Psalmody_Examples_night_HC_1(t)
+        case 781: return try f781_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
+        case 782: try f782_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 783: try f783_Song(t); return 0
+        case 784: return try f784_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Psalmody/Run.HC#0", 704: "$init:C:/Apps/Psalmody/Run.HC#1", 705: "JukeReward", 706: "SingleSong", 707: "JBPutKey", 708: "JukeBox", 709: "SongPuppet", 710: "JukeSongPuppet", 711: "JukeSongsPuppet", 712: "$init:C:/Apps/Psalmody/Run.HC#2", 713: "$init:C:/Apps/Psalmody/Run.HC#3", 714: "DrawTempoCtrl", 715: "UpdateDerivedTempoCtrl", 716: "LeftClickTempo", 717: "TempoNew", 718: "TempoDel", 719: "$init:C:/Apps/Psalmody/Run.HC#4", 720: "$init:C:/Apps/Psalmody/Run.HC#5", 721: "$init:C:/Apps/Psalmody/Run.HC#6", 722: "PsmBlink", 723: "PsmHasWords", 724: "PsmIsDotted", 725: "PsmMarkSel", 726: "PsmSetWidth", 727: "PsmSetOctave", 728: "DrawNote", 729: "DrawTimeSignature", 730: "PsmRecalcNoteXY", 731: "DrawIt", 732: "PsmSetPickNoteBoxX", 733: "PsmGetPickNoteBoxDuration", 734: "DrawPickNoteBox", 735: "DrawPickTools", 736: "PsmGetPickToolBox", 737: "$init:C:/Apps/Psalmody/Run.HC#7", 738: "PsmGetPickMeterBox", 739: "DrawPickMeterBox", 740: "DrawDC2", 741: "PsmMenu", 742: "PsmNoteDel", 743: "PsmNoteCopy", 744: "PsmSongDel", 745: "PsmCutToClip", 746: "PsmPasteClip", 747: "PsmCopyToClip", 748: "PsmFindNote", 749: "PsmMusicSetOctave", 750: "PsmMusicSetNoteLen", 751: "PsmLoadSongStr", 752: "PsmLoadSong", 753: "PsmCvtSong", 754: "PsmSaveSong", 755: "PopUpDuration", 756: "PsmRightClick", 757: "PsmLeftClickPickNoteBox", 758: "PsmLeftClickPickMeterBox", 759: "PsmLeftClickStaffPtr", 760: "PsmLeftClickStaffBox", 761: "PsmLeftClick", 762: "PsmCvtDuration", 763: "$init:C:/Apps/Psalmody/Run.HC#8", 764: "PsmDownKey", 765: "PsmUpKey", 766: "PsmPushMode", 767: "PsmPopMode", 768: "Psalmody", 769: "$init:C:/Apps/Psalmody/Run.HC#9", 770: "Song", 771: "$init:C:/Apps/Psalmody/Examples/childish.HC#0", 772: "$init:C:/Apps/Psalmody/Examples/night.HC#0", 773: "DrawIt", 774: "Song", 775: "$init:C:/Apps/Psalmody/Examples/night.HC#1", 776: "$init:C:/Apps/Psalmody/Examples/prosper.HC#0", 777: "DrawIt", 778: "Song", 779: "$init:C:/Apps/Psalmody/Examples/prosper.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Psalmody/Run.HC#0", 709: "$init:C:/Apps/Psalmody/Run.HC#1", 710: "JukeReward", 711: "SingleSong", 712: "JBPutKey", 713: "JukeBox", 714: "SongPuppet", 715: "JukeSongPuppet", 716: "JukeSongsPuppet", 717: "$init:C:/Apps/Psalmody/Run.HC#2", 718: "$init:C:/Apps/Psalmody/Run.HC#3", 719: "DrawTempoCtrl", 720: "UpdateDerivedTempoCtrl", 721: "LeftClickTempo", 722: "TempoNew", 723: "TempoDel", 724: "$init:C:/Apps/Psalmody/Run.HC#4", 725: "$init:C:/Apps/Psalmody/Run.HC#5", 726: "$init:C:/Apps/Psalmody/Run.HC#6", 727: "PsmBlink", 728: "PsmHasWords", 729: "PsmIsDotted", 730: "PsmMarkSel", 731: "PsmSetWidth", 732: "PsmSetOctave", 733: "DrawNote", 734: "DrawTimeSignature", 735: "PsmRecalcNoteXY", 736: "DrawIt", 737: "PsmSetPickNoteBoxX", 738: "PsmGetPickNoteBoxDuration", 739: "DrawPickNoteBox", 740: "DrawPickTools", 741: "PsmGetPickToolBox", 742: "$init:C:/Apps/Psalmody/Run.HC#7", 743: "PsmGetPickMeterBox", 744: "DrawPickMeterBox", 745: "DrawDC2", 746: "PsmMenu", 747: "PsmNoteDel", 748: "PsmNoteCopy", 749: "PsmSongDel", 750: "PsmCutToClip", 751: "PsmPasteClip", 752: "PsmCopyToClip", 753: "PsmFindNote", 754: "PsmMusicSetOctave", 755: "PsmMusicSetNoteLen", 756: "PsmLoadSongStr", 757: "PsmLoadSong", 758: "PsmCvtSong", 759: "PsmSaveSong", 760: "PopUpDuration", 761: "PsmRightClick", 762: "PsmLeftClickPickNoteBox", 763: "PsmLeftClickPickMeterBox", 764: "PsmLeftClickStaffPtr", 765: "PsmLeftClickStaffBox", 766: "PsmLeftClick", 767: "PsmCvtDuration", 768: "$init:C:/Apps/Psalmody/Run.HC#8", 769: "PsmDownKey", 770: "PsmUpKey", 771: "PsmPushMode", 772: "PsmPopMode", 773: "Psalmody", 774: "$init:C:/Apps/Psalmody/Run.HC#9", 775: "Song", 776: "$init:C:/Apps/Psalmody/Examples/childish.HC#0", 777: "$init:C:/Apps/Psalmody/Examples/night.HC#0", 778: "DrawIt", 779: "Song", 780: "$init:C:/Apps/Psalmody/Examples/night.HC#1", 781: "$init:C:/Apps/Psalmody/Examples/prosper.HC#0", 782: "DrawIt", 783: "Song", 784: "$init:C:/Apps/Psalmody/Examples/prosper.HC#1"]
     private static let FILES: [String] = ["C:/Apps/Psalmody/Run.HC", "C:/Apps/Psalmody/Load.HC", "C:/Apps/Psalmody/JukeBox.HC", "C:/Apps/Psalmody/JukePuppet.HC", "C:/Apps/Psalmody/PsalmodyCtrls.HC", "C:/Apps/Psalmody/PsalmodyDraw.HC", "C:/Apps/Psalmody/PsalmodyFile.HC", "C:/Apps/Psalmody/PsalmodyMain.HC", "C:/Apps/Psalmody/Examples/childish.HC", "C:/Apps/Psalmody/Examples/night.HC", "C:/Apps/Psalmody/Examples/prosper.HC"]
     public override var files: [String] { N_Apps_Psalmody_Run.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Psalmody_Run.DEFINED.contains(index) }

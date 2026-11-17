@@ -28,7 +28,7 @@ public final class N_Demo_Graphics_SunMoon: NativeModule {
     }
 
     /// HolyC SunMoon (SunMoon.HC:6)
-    public final func f703_SunMoon(_ t: HTask) throws {
+    public final func f708_SunMoon(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -59,12 +59,12 @@ public final class N_Demo_Graphics_SunMoon: NativeModule {
                 try st4((ld8((P.g_gr &+ 24)) &+ 160), 8)
                 ln = 20 // SunMoon.HC:20
                 try tick(t)
-                _ = try P.f397_GrCircle(t, ld8((P.g_gr &+ 24)), l8_x, l16_y, l24_radius, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, ld8((P.g_gr &+ 24)), l8_x, l16_y, l24_radius, 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 21 // SunMoon.HC:21
                 try st4((ld8((P.g_gr &+ 24)) &+ 160), 1074003982)
                 ln = 22 // SunMoon.HC:22
                 try tick(t)
-                _ = try P.f387_GrFloodFill(t, ld8((P.g_gr &+ 24)), l8_x, l16_y, 0, 0, 0)
+                _ = try P.f388_GrFloodFill(t, ld8((P.g_gr &+ 24)), l8_x, l16_y, 0, 0, 0)
                 ln = 25 // SunMoon.HC:25
                 l8_x = try f2i(((0.8 * 640.0) - Double(divs(l0_i, 512))))
                 l16_y = f2i((0.5 * 480.0))
@@ -73,22 +73,22 @@ public final class N_Demo_Graphics_SunMoon: NativeModule {
                 try st4((ld8((P.g_gr &+ 24)) &+ 160), 8)
                 ln = 27 // SunMoon.HC:27
                 try tick(t)
-                _ = try P.f397_GrCircle(t, ld8((P.g_gr &+ 24)), l8_x, l16_y, l24_radius, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, ld8((P.g_gr &+ 24)), l8_x, l16_y, l24_radius, 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 29 // SunMoon.HC:29
                 try tick(t)
-                _ = try P.f397_GrCircle(t, ld8((P.g_gr &+ 24)), f2i((Double(l8_x) + (0.5 * Double(l24_radius)))), l16_y, f2i((1.2 * Double(l24_radius))), 1, (d(4614256656552045848) - (0.31 * d(4614256656552045848))), (0.62 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, ld8((P.g_gr &+ 24)), f2i((Double(l8_x) + (0.5 * Double(l24_radius)))), l16_y, f2i((1.2 * Double(l24_radius))), 1, (d(4614256656552045848) - (0.31 * d(4614256656552045848))), (0.62 * d(4614256656552045848)))
                 ln = 30 // SunMoon.HC:30
                 try st4((ld8((P.g_gr &+ 24)) &+ 160), 2147942400)
                 ln = 31 // SunMoon.HC:31
                 try st8((ld8((P.g_gr &+ 24)) &+ 184), l0_i)
                 ln = 32 // SunMoon.HC:32
                 try tick(t)
-                _ = try P.f387_GrFloodFill(t, ld8((P.g_gr &+ 24)), f2i((Double(l8_x) + (0.5 * Double(l24_radius)))), l16_y, 0, 0, 0)
+                _ = try P.f388_GrFloodFill(t, ld8((P.g_gr &+ 24)), f2i((Double(l8_x) + (0.5 * Double(l24_radius)))), l16_y, 0, 0, 0)
                 ln = 33 // SunMoon.HC:33
                 try st8((ld8((P.g_gr &+ 24)) &+ 184), (2 &* l0_i))
                 ln = 34 // SunMoon.HC:34
                 try tick(t)
-                _ = try P.f387_GrFloodFill(t, ld8((P.g_gr &+ 24)), f2i((Double(l8_x) - (0.75 * Double(l24_radius)))), l16_y, 0, 0, 0)
+                _ = try P.f388_GrFloodFill(t, ld8((P.g_gr &+ 24)), f2i((Double(l8_x) - (0.75 * Double(l24_radius)))), l16_y, 0, 0, 0)
                 ln = 36 // SunMoon.HC:36
                 _ = try nat(t, n_Refresh, try push2(t, 1, 0))
                 ln = 37 // SunMoon.HC:37
@@ -106,13 +106,13 @@ public final class N_Demo_Graphics_SunMoon: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/SunMoon.HC#0 (SunMoon.HC:43)
-    @discardableResult public final func f704_init_C__Demo_Graphics_SunMoon_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_SunMoon_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 43 // SunMoon.HC:43
             try tick(t)
-            try f703_SunMoon(t)
+            try f708_SunMoon(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/SunMoon.HC#0", ln) }
@@ -121,14 +121,14 @@ public final class N_Demo_Graphics_SunMoon: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SunMoon(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_SunMoon_HC_0(t)
+        case 708: try f708_SunMoon(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_SunMoon_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "SunMoon", 704: "$init:C:/Demo/Graphics/SunMoon.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "SunMoon", 709: "$init:C:/Demo/Graphics/SunMoon.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/SunMoon.HC"]
     public override var files: [String] { N_Demo_Graphics_SunMoon.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_SunMoon.DEFINED.contains(index) }

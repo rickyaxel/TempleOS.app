@@ -41,7 +41,7 @@ class N_Home_Examples_CatchGame(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawIt (CatchGame.HC:7) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -55,16 +55,16 @@ class N_Home_Examples_CatchGame(rt: NativeRuntime, @JvmField val P: Prelude) : N
             st4((p1_dc + 160L), 14L)
             ln = 12 // CatchGame.HC:12
             tick(t)
-            P.f397_GrCircle(t, p1_dc, ld8(g_star_x), ld8(g_star_y), 6L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, p1_dc, ld8(g_star_x), ld8(g_star_y), 6L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 13 // CatchGame.HC:13
             tick(t)
-            P.f387_GrFloodFill(t, p1_dc, ld8(g_star_x), ld8(g_star_y), 0L, 0L, 0L)
+            P.f388_GrFloodFill(t, p1_dc, ld8(g_star_x), ld8(g_star_y), 0L, 0L, 0L)
             ln = 14 // CatchGame.HC:14
             st4((p1_dc + 160L), 0L)
             ln = 15 // CatchGame.HC:15
             tick(t)
             val vb0 = push2(t, ld8(g_score), ld8(g_missed))
-            P.f369_GrPrint(t, p1_dc, 8L, 8L, s0, vb0, 2)
+            P.f370_GrPrint(t, p1_dc, 8L, 8L, s0, vb0, 2)
             t.sp = vb0
             t.depth--
             return
@@ -72,7 +72,7 @@ class N_Home_Examples_CatchGame(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC CatchGame (CatchGame.HC:18) */
-    fun f704_CatchGame(t: Task) {
+    fun f709_CatchGame(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -91,7 +91,7 @@ class N_Home_Examples_CatchGame(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 25 // CatchGame.HC:25
             st8(g_star_y, 0L)
             ln = 26 // CatchGame.HC:26
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 27 // CatchGame.HC:27
             loop0@ while ((1L != 0L)) {
                 ln = 28 // CatchGame.HC:28
@@ -164,13 +164,13 @@ class N_Home_Examples_CatchGame(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Home/Examples/CatchGame.HC#0 (CatchGame.HC:53) */
-    fun f705_init_C__Home_Examples_CatchGame_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Examples_CatchGame_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 53 // CatchGame.HC:53
             tick(t)
-            f704_CatchGame(t)
+            f709_CatchGame(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Home/Examples/CatchGame.HC#0", ln) }
@@ -179,9 +179,9 @@ class N_Home_Examples_CatchGame(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_CatchGame(t); 0L }
-            705 -> f705_init_C__Home_Examples_CatchGame_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_CatchGame(t); 0L }
+            710 -> f710_init_C__Home_Examples_CatchGame_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -193,7 +193,7 @@ class N_Home_Examples_CatchGame(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "CatchGame", "\$init:C:/Home/Examples/CatchGame.HC#0")
         private val FILES = arrayOf<String>("C:/Home/Examples/CatchGame.HC")
     }

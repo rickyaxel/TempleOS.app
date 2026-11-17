@@ -33,7 +33,7 @@ public final class N_Apps_Budget_Budget: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Budget/Budget.HC#0 (Budget.HC:37)
-    @discardableResult public final func f703_init_C__Apps_Budget_Budget_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Budget_Budget_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -47,7 +47,7 @@ public final class N_Apps_Budget_Budget: NativeModule {
     }
 
     /// HolyC MyStr2Date (Budget.HC:60)
-    @discardableResult public final func f704_MyStr2Date(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f709_MyStr2Date(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -73,7 +73,7 @@ public final class N_Apps_Budget_Budget: NativeModule {
                     } else {
                         ln = 70 // Budget.HC:70
                         try tick(t)
-                        let t2: Int64 = try P.f583_Str2Date(t, p0_st)
+                        let t2: Int64 = try P.f588_Str2Date(t, p0_st)
                         l24_res = t2
                     }
                 }
@@ -93,7 +93,7 @@ public final class N_Apps_Budget_Budget: NativeModule {
             }
             ln = 76 // Budget.HC:76
             try tick(t)
-            let t5: Int64 = try P.f578_Struct2Date(t, (fp &+ 8))
+            let t5: Int64 = try P.f583_Struct2Date(t, (fp &+ 8))
             t.msp = msp0
             t.depth -= 1
             return t5
@@ -104,7 +104,7 @@ public final class N_Apps_Budget_Budget: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Budget/Budget.HC#1 (Budget.HC:57)
-    @discardableResult public final func f705_init_C__Apps_Budget_Budget_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Apps_Budget_Budget_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -116,15 +116,15 @@ public final class N_Apps_Budget_Budget: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Budget_Budget_HC_0(t)
-        case 704: return try f704_MyStr2Date(t, (n > 0 ? st[base + 0] : 0))
-        case 705: return try f705_init_C__Apps_Budget_Budget_HC_1(t)
+        case 708: return try f708_init_C__Apps_Budget_Budget_HC_0(t)
+        case 709: return try f709_MyStr2Date(t, (n > 0 ? st[base + 0] : 0))
+        case 710: return try f710_init_C__Apps_Budget_Budget_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Budget/Budget.HC#0", 704: "MyStr2Date", 705: "$init:C:/Apps/Budget/Budget.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Budget/Budget.HC#0", 709: "MyStr2Date", 710: "$init:C:/Apps/Budget/Budget.HC#1"]
     private static let FILES: [String] = ["C:/Apps/Budget/Budget.HC"]
     public override var files: [String] { N_Apps_Budget_Budget.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Budget_Budget.DEFINED.contains(index) }

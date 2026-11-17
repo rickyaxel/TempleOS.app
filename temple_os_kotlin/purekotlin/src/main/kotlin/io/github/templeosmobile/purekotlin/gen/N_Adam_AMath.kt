@@ -23,7 +23,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC R2P (AMath.HC:2) */
-    fun f703_R2P(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
+    fun f708_R2P(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
         var ln = 0
         try {
             enter(t)
@@ -49,7 +49,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC P2R (AMath.HC:11) */
-    fun f704_P2R(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
+    fun f709_P2R(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
         var ln = 0
         try {
             enter(t)
@@ -75,7 +75,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC Wrap (AMath.HC:19) */
-    fun f705_Wrap(t: Task, a0: Double, a1: Double): Double {
+    fun f710_Wrap(t: Task, a0: Double, a1: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -104,7 +104,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC DistSqrI64 (AMath.HC:29) */
-    fun f706_DistSqrI64(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f711_DistSqrI64(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -126,7 +126,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC ASin (AMath.HC:35) */
-    fun f707_ASin(t: Task, a0: Double): Double {
+    fun f712_ASin(t: Task, a0: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -153,7 +153,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC ACos (AMath.HC:45) */
-    fun f708_ACos(t: Task, a0: Double): Double {
+    fun f713_ACos(t: Task, a0: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -186,7 +186,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC Sinh (AMath.HC:57) */
-    fun f709_Sinh(t: Task, a0: Double): Double {
+    fun f714_Sinh(t: Task, a0: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -202,7 +202,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC Cosh (AMath.HC:62) */
-    fun f710_Cosh(t: Task, a0: Double): Double {
+    fun f715_Cosh(t: Task, a0: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -218,7 +218,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC CAdd (AMath.HC:68) */
-    fun f711_CAdd(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f716_CAdd(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -238,7 +238,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC CSub (AMath.HC:75) */
-    fun f712_CSub(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f717_CSub(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -258,7 +258,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC CMul (AMath.HC:82) */
-    fun f713_CMul(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f718_CMul(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -278,7 +278,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC CDiv (AMath.HC:89) */
-    fun f714_CDiv(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f719_CDiv(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -289,10 +289,10 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
             var p2_n2: Long = a2
             ln = 92 // AMath.HC:92
             tick(t)
-            f703_R2P(t, (fp + 24), (fp + 32), ldf(p1_n1), ldf((p1_n1 + 8L)))
+            f708_R2P(t, (fp + 24), (fp + 32), ldf(p1_n1), ldf((p1_n1 + 8L)))
             ln = 93 // AMath.HC:93
             tick(t)
-            f703_R2P(t, (fp + 40), (fp + 48), ldf(p2_n2), ldf((p2_n2 + 8L)))
+            f708_R2P(t, (fp + 40), (fp + 48), ldf(p2_n2), ldf((p2_n2 + 8L)))
             ln = 94 // AMath.HC:94
             st8((fp + 24), bits((ldf((fp + 24)) / ldf((fp + 40)))))
             ln = 95 // AMath.HC:95
@@ -316,7 +316,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC CScale (AMath.HC:101) */
-    fun f715_CScale(t: Task, a0: Long, a1: Double): Long {
+    fun f720_CScale(t: Task, a0: Long, a1: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -337,7 +337,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC CCopy (AMath.HC:108) */
-    fun f716_CCopy(t: Task, a0: Long, a1: Long): Long {
+    fun f721_CCopy(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -356,7 +356,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC CEqu (AMath.HC:115) */
-    fun f717_CEqu(t: Task, a0: Long, a1: Double, a2: Double): Long {
+    fun f722_CEqu(t: Task, a0: Long, a1: Double, a2: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -376,7 +376,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC CPoly (AMath.HC:122) */
-    fun f718_CPoly(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f723_CPoly(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -391,18 +391,18 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
             if ((p1_n > 0L)) {
                 ln = 127 // AMath.HC:127
                 tick(t)
-                f712_CSub(t, p0_dst, p3_x, p2_zeros)
+                f717_CSub(t, p0_dst, p3_x, p2_zeros)
                 ln = 128 // AMath.HC:128
                 l32_i = 1L
                 loop0@ while ((l32_i < p1_n)) {
                     ln = 129 // AMath.HC:129
                     tick(t)
-                    f716_CCopy(t, (fp + 40), p0_dst)
+                    f721_CCopy(t, (fp + 40), p0_dst)
                     ln = 130 // AMath.HC:130
                     tick(t)
-                    val t0: Long = f712_CSub(t, (fp + 56), p3_x, (p2_zeros + (l32_i * 16L)))
+                    val t0: Long = f717_CSub(t, (fp + 56), p3_x, (p2_zeros + (l32_i * 16L)))
                     tick(t)
-                    f713_CMul(t, p0_dst, (fp + 40), t0)
+                    f718_CMul(t, p0_dst, (fp + 40), t0)
                     ln = 128 // AMath.HC:128
                     l32_i = (l32_i + 1L)
                     tick(t)
@@ -410,7 +410,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
             } else {
                 ln = 133 // AMath.HC:133
                 tick(t)
-                f717_CEqu(t, p0_dst, 1.0, 0.0)
+                f722_CEqu(t, p0_dst, 1.0, 0.0)
             }
             ln = 134 // AMath.HC:134
             t.msp = msp0
@@ -423,7 +423,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Adam/AMath.HC#0 (AMath.HC:1) */
-    fun f719_init_C__Adam_AMath_HC_0(t: Task): Long {
+    fun f724_init_C__Adam_AMath_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -435,23 +435,23 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_R2P(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
-            704 -> { f704_P2R(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
-            705 -> bits(f705_Wrap(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
-            706 -> f706_DistSqrI64(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            707 -> bits(f707_ASin(t, f((if (n > 0) st[base + 0] else 0L))))
-            708 -> bits(f708_ACos(t, f((if (n > 0) st[base + 0] else 0L))))
-            709 -> bits(f709_Sinh(t, f((if (n > 0) st[base + 0] else 0L))))
-            710 -> bits(f710_Cosh(t, f((if (n > 0) st[base + 0] else 0L))))
-            711 -> f711_CAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            712 -> f712_CSub(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            713 -> f713_CMul(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            714 -> f714_CDiv(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            715 -> f715_CScale(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
-            716 -> f716_CCopy(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            717 -> f717_CEqu(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
-            718 -> f718_CPoly(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            719 -> f719_init_C__Adam_AMath_HC_0(t)
+            708 -> { f708_R2P(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
+            709 -> { f709_P2R(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
+            710 -> bits(f710_Wrap(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
+            711 -> f711_DistSqrI64(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            712 -> bits(f712_ASin(t, f((if (n > 0) st[base + 0] else 0L))))
+            713 -> bits(f713_ACos(t, f((if (n > 0) st[base + 0] else 0L))))
+            714 -> bits(f714_Sinh(t, f((if (n > 0) st[base + 0] else 0L))))
+            715 -> bits(f715_Cosh(t, f((if (n > 0) st[base + 0] else 0L))))
+            716 -> f716_CAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            717 -> f717_CSub(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            718 -> f718_CMul(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            719 -> f719_CDiv(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            720 -> f720_CScale(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
+            721 -> f721_CCopy(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            722 -> f722_CEqu(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
+            723 -> f723_CPoly(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            724 -> f724_init_C__Adam_AMath_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -463,7 +463,7 @@ class N_Adam_AMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724)
         private val NAMES = arrayOf("R2P", "P2R", "Wrap", "DistSqrI64", "ASin", "ACos", "Sinh", "Cosh", "CAdd", "CSub", "CMul", "CDiv", "CScale", "CCopy", "CEqu", "CPoly", "\$init:C:/Adam/AMath.HC#0")
         private val FILES = arrayOf<String>("C:/Adam/AMath.HC")
     }

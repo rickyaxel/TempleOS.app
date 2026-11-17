@@ -27,6 +27,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     public let n_Sin: Int
     public let n_Sleep: Int
     public let n_Snd: Int
+    public let n_Sprite3: Int
     public let n_tS: Int
     /** "I64 best_score=9999;." */ public var s0: Int64 = 0
     /** "TempleOS.BlackDiamond" */ public var s1: Int64 = 0
@@ -79,6 +80,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
         n_Sin = rt.vm.natives.find("Sin")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
     }
@@ -124,7 +126,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BlackDiamond.HC#0 (BlackDiamond.HC:141)
-    @discardableResult public final func f703_init_C__Demo_Games_BlackDiamond_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_BlackDiamond_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -138,7 +140,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BlackDiamond.HC#1 (BlackDiamond.HC:142)
-    @discardableResult public final func f704_init_C__Demo_Games_BlackDiamond_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_BlackDiamond_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -152,7 +154,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -162,7 +164,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BlackDiamond.HC#2 (BlackDiamond.HC:157)
-    @discardableResult public final func f706_init_C__Demo_Games_BlackDiamond_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_BlackDiamond_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -178,7 +180,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC DrawRunningWolf (BlackDiamond.HC:161)
-    public final func f707_DrawRunningWolf(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f712_DrawRunningWolf(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -200,7 +202,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
                 try st4(t1, (ld4s(t1) | 1792))
                 ln = 169 // BlackDiamond.HC:169
                 try tick(t)
-                _ = try P.f314_DCSymmetrySet(t, l24_dc_wolf, divs(48, 2), 0, divs(48, 2), 1)
+                _ = try P.f315_DCSymmetrySet(t, l24_dc_wolf, divs(48, 2), 0, divs(48, 2), 1)
             }
             ln = 171 // BlackDiamond.HC:171
             let t2: Double = d(try nat(t, n_tS, push0(t)))
@@ -216,7 +218,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
             let t4: Double = d(try nat(t, n_Sin, try push1(t, bits((7.0 * t3)))))
             ln = 175 // BlackDiamond.HC:175
             try tick(t)
-            try P.f445_Sprite3ZB(t, l24_dc_wolf, divs(48, 2), f2i((0.85 * 38.0)), 0, l16_tmps, (0.4 * t4))
+            try P.f450_Sprite3ZB(t, l24_dc_wolf, divs(48, 2), f2i((0.85 * 38.0)), 0, l16_tmps, (0.4 * t4))
             ln = 177 // BlackDiamond.HC:177
             _ = try nat(t, n_GrBlot, try push4(t, p0_dc, (ld8((g_obj_x &+ (p1_i &* 8))) &- divs(48, 2)), f2i((Double((ld8((g_obj_y &+ (p1_i &* 8))) &- ld8(g_scrn_top_y))) - (0.85 * 38.0))), l24_dc_wolf))
             ln = 179 // BlackDiamond.HC:179
@@ -244,7 +246,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC DrawMan (BlackDiamond.HC:184)
-    public final func f708_DrawMan(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_DrawMan(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -252,12 +254,10 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
             ln = 186 // BlackDiamond.HC:186
             if try (ld8((p0_dc &+ 304)) != 0) {
                 ln = 187 // BlackDiamond.HC:187
-                try tick(t)
-                try P.f440_Sprite3(t, p0_dc, ld8(g_x), (ld8(g_y) &- ld8(g_scrn_top_y)), 0, b7, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p0_dc, ld8(g_x), (ld8(g_y) &- ld8(g_scrn_top_y)), 0, b7, 0))
             } else {
                 ln = 189 // BlackDiamond.HC:189
-                try tick(t)
-                try P.f440_Sprite3(t, p0_dc, ld8(g_x), (ld8(g_y) &- ld8(g_scrn_top_y)), 0, b8, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p0_dc, ld8(g_x), (ld8(g_y) &- ld8(g_scrn_top_y)), 0, b8, 0))
             }
             t.depth -= 1
             return
@@ -265,7 +265,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC DrawUpperChairLift (BlackDiamond.HC:196)
-    public final func f709_DrawUpperChairLift(_ t: HTask, _ a0: Int64) throws {
+    public final func f714_DrawUpperChairLift(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -279,8 +279,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
             l8_i = try ld8(g_chair_lift_num)
             l32_y = try ((ld8((g_obj_y &+ (l8_i &* 8))) &- ld8(g_scrn_top_y)) &- 595)
             ln = 199 // BlackDiamond.HC:199
-            try tick(t)
-            try P.f440_Sprite3(t, p0_dc, ld8((g_obj_x &+ (l8_i &* 8))), (l32_y &+ 13), 0, b9, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p0_dc, ld8((g_obj_x &+ (l8_i &* 8))), (l32_y &+ 13), 0, b9, 0))
             ln = 200 // BlackDiamond.HC:200
             try st4((p0_dc &+ 228), 2)
             ln = 201 // BlackDiamond.HC:201
@@ -292,16 +291,16 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
                 let t0: Double = d(try nat(t, n_Ln, try push1(t, bits(800.0))))
                 let t1: Double = d(try nat(t, n_Abs, try push1(t, bits(Double(l24_x1)))))
                 try tick(t)
-                let t2: Double = try P.f546_Cosh(t, (t0 + ((t1 - 13.0) / 10000.0)))
+                let t2: Double = try P.f551_Cosh(t, (t0 + ((t1 - 13.0) / 10000.0)))
                 l40_y1 = try f2i(((Double((l32_y &- divs(800, 2))) + t2) + (0.1 * Double(l24_x1))))
                 ln = 204 // BlackDiamond.HC:204
                 if (b2i((((-13) < l24_x1) && (l24_x1 < 13))) == 0) {
                     ln = 205 // BlackDiamond.HC:205
                     try tick(t)
-                    _ = try P.f393_GrPlot3(t, p0_dc, (l16_x &- divs(121, 2)), l40_y1, 0)
+                    _ = try P.f394_GrPlot3(t, p0_dc, (l16_x &- divs(121, 2)), l40_y1, 0)
                     ln = 206 // BlackDiamond.HC:206
                     try tick(t)
-                    _ = try P.f393_GrPlot3(t, p0_dc, (l16_x &+ divs(121, 2)), l40_y1, 0)
+                    _ = try P.f394_GrPlot3(t, p0_dc, (l16_x &+ divs(121, 2)), l40_y1, 0)
                 }
                 ln = 201 // BlackDiamond.HC:201
                 l16_x = (l16_x &+ 2)
@@ -315,7 +314,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC DrawIt (BlackDiamond.HC:212)
-    public final func f710_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f715_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -349,11 +348,10 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
                     if r5 {
                         ln = 220 // BlackDiamond.HC:220
                         try tick(t)
-                        try f707_DrawRunningWolf(t, p1_dc, l16_i)
+                        try f712_DrawRunningWolf(t, p1_dc, l16_i)
                     } else {
                         ln = 222 // BlackDiamond.HC:222
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, ld8((g_obj_x &+ (l16_i &* 8))), (ld8((g_obj_y &+ (l16_i &* 8))) &- ld8(g_scrn_top_y)), 0, ld8((g_imgs &+ (ld8((g_obj_types &+ (l16_i &* 8))) &* 8))), 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((g_obj_x &+ (l16_i &* 8))), (ld8((g_obj_y &+ (l16_i &* 8))) &- ld8(g_scrn_top_y)), 0, ld8((g_imgs &+ (ld8((g_obj_types &+ (l16_i &* 8))) &* 8))), 0))
                     }
                 }
                 ln = 217 // BlackDiamond.HC:217
@@ -367,8 +365,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
             ln = 227 // BlackDiamond.HC:227
             try st4((p1_dc &+ 164), 15)
             ln = 228 // BlackDiamond.HC:228
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, ld8(g_x), (ld8(g_y) &- ld8(g_scrn_top_y)), 0, b10, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8(g_x), (ld8(g_y) &- ld8(g_scrn_top_y)), 0, b10, 0))
             ln = 229 // BlackDiamond.HC:229
             if try (ld1u(g_game_over) == 0) {
                 ln = 230 // BlackDiamond.HC:230
@@ -392,7 +389,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
                 if try ((l24_man_drawn == 0) && (ld8((g_obj_y &+ (l16_i &* 8))) >= ld8(g_y))) {
                     ln = 240 // BlackDiamond.HC:240
                     try tick(t)
-                    try f708_DrawMan(t, p1_dc)
+                    try f713_DrawMan(t, p1_dc)
                     ln = 241 // BlackDiamond.HC:241
                     l24_man_drawn = 1
                 }
@@ -406,11 +403,10 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
                 if r8 {
                     ln = 244 // BlackDiamond.HC:244
                     try tick(t)
-                    try f707_DrawRunningWolf(t, p1_dc, l16_i)
+                    try f712_DrawRunningWolf(t, p1_dc, l16_i)
                 } else {
                     ln = 246 // BlackDiamond.HC:246
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, ld8((g_obj_x &+ (l16_i &* 8))), (ld8((g_obj_y &+ (l16_i &* 8))) &- ld8(g_scrn_top_y)), 0, ld8((g_imgs &+ (ld8((g_obj_types &+ (l16_i &* 8))) &* 8))), 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((g_obj_x &+ (l16_i &* 8))), (ld8((g_obj_y &+ (l16_i &* 8))) &- ld8(g_scrn_top_y)), 0, ld8((g_imgs &+ (ld8((g_obj_types &+ (l16_i &* 8))) &* 8))), 0))
                 }
                 ln = 238 // BlackDiamond.HC:238
                 l16_i = (l16_i &+ 1)
@@ -420,17 +416,17 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
             if (l24_man_drawn == 0) {
                 ln = 249 // BlackDiamond.HC:249
                 try tick(t)
-                try f708_DrawMan(t, p1_dc)
+                try f713_DrawMan(t, p1_dc)
             }
             ln = 250 // BlackDiamond.HC:250
             try tick(t)
-            try f709_DrawUpperChairLift(t, p1_dc)
+            try f714_DrawUpperChairLift(t, p1_dc)
             ln = 252 // BlackDiamond.HC:252
             try st4((p1_dc &+ 160), 0)
             ln = 253 // BlackDiamond.HC:253
             try tick(t)
             let vb0 = try push2(t, ld8(g_penalty), ld8(g_best_score))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s2, vb0, 2)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s2, vb0, 2)
             t.sp = vb0
             ln = 254 // BlackDiamond.HC:254
             var r10: Bool = try (ld1u(g_game_over) != 0)
@@ -445,7 +441,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
                 ln = 256 // BlackDiamond.HC:256
                 try tick(t)
                 let vb1 = push0(t)
-                _ = try P.f369_GrPrint(t, p1_dc, divs((ld8((ld8(P.g_Fs) &+ 224)) &- 72), 2), divs((ld8((ld8(P.g_Fs) &+ 248)) &- 8), 2), s3, vb1, 0)
+                _ = try P.f370_GrPrint(t, p1_dc, divs((ld8((ld8(P.g_Fs) &+ 224)) &- 72), 2), divs((ld8((ld8(P.g_Fs) &+ 248)) &- 8), 2), s3, vb1, 0)
                 t.sp = vb1
             }
             t.depth -= 1
@@ -454,7 +450,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC Compare (BlackDiamond.HC:261)
-    @discardableResult public final func f711_Compare(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f716_Compare(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -470,7 +466,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC Init (BlackDiamond.HC:266)
-    public final func f712_Init(_ t: HTask) throws {
+    public final func f717_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -513,7 +509,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
                 try tick(t)
             }
             ln = 282 // BlackDiamond.HC:282
-            _ = try nat(t, n_QSortI64, try push3(t, g_obj_saved_y, 128, 9223090561878065863))
+            _ = try nat(t, n_QSortI64, try push3(t, g_obj_saved_y, 128, 9223090561878065868))
             ln = 284 // BlackDiamond.HC:284
             let t3: Int64 = try nat(t, n_RandU16, push0(t))
             try st8(g_chair_lift_num, mods(t3, 128))
@@ -525,7 +521,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC BlackDiamond (BlackDiamond.HC:288)
-    public final func f713_BlackDiamond(_ t: HTask) throws {
+    public final func f718_BlackDiamond(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -533,7 +529,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
             let fp = try frame(t, 32)
             ln = 292 // BlackDiamond.HC:292
             try tick(t)
-            _ = try P.f507_MenuPush(t, s4)
+            _ = try P.f512_MenuPush(t, s4)
             ln = 306 // BlackDiamond.HC:306
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -550,10 +546,10 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
             ln = 311 // BlackDiamond.HC:311
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 312 // BlackDiamond.HC:312
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065862)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065867)
             ln = 314 // BlackDiamond.HC:314
             try tick(t)
-            try f712_Init(t)
+            try f717_Init(t)
             ln = 315 // BlackDiamond.HC:315
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -623,7 +619,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
                                         case 10:
                                             ln = 353 // BlackDiamond.HC:353
                                             try tick(t)
-                                            try f712_Init(t)
+                                            try f717_Init(t)
                                             ln = 354 // BlackDiamond.HC:354
                                             try tick(t)
                                             continue retry_3
@@ -719,7 +715,7 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 395 // BlackDiamond.HC:395
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 396 // BlackDiamond.HC:396
             _ = try nat(t, n_RegWrite, try push3(t, s1, s5, ld8(g_best_score)))
             t.msp = msp0
@@ -729,13 +725,13 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BlackDiamond.HC#3 (BlackDiamond.HC:399)
-    @discardableResult public final func f714_init_C__Demo_Games_BlackDiamond_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f719_init_C__Demo_Games_BlackDiamond_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 399 // BlackDiamond.HC:399
             try tick(t)
-            try f713_BlackDiamond(t)
+            try f718_BlackDiamond(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/BlackDiamond.HC#3", ln) }
@@ -744,24 +740,24 @@ public final class N_Demo_Games_BlackDiamond: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_BlackDiamond_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_BlackDiamond_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: return try f706_init_C__Demo_Games_BlackDiamond_HC_2(t)
-        case 707: try f707_DrawRunningWolf(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 708: try f708_DrawMan(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: try f709_DrawUpperChairLift(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 710: try f710_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 711: return try f711_Compare(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 712: try f712_Init(t); return 0
-        case 713: try f713_BlackDiamond(t); return 0
-        case 714: return try f714_init_C__Demo_Games_BlackDiamond_HC_3(t)
+        case 708: return try f708_init_C__Demo_Games_BlackDiamond_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_BlackDiamond_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: return try f711_init_C__Demo_Games_BlackDiamond_HC_2(t)
+        case 712: try f712_DrawRunningWolf(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 713: try f713_DrawMan(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: try f714_DrawUpperChairLift(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 715: try f715_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 716: return try f716_Compare(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 717: try f717_Init(t); return 0
+        case 718: try f718_BlackDiamond(t); return 0
+        case 719: return try f719_init_C__Demo_Games_BlackDiamond_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/BlackDiamond.HC#0", 704: "$init:C:/Demo/Games/BlackDiamond.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "$init:C:/Demo/Games/BlackDiamond.HC#2", 707: "DrawRunningWolf", 708: "DrawMan", 709: "DrawUpperChairLift", 710: "DrawIt", 711: "Compare", 712: "Init", 713: "BlackDiamond", 714: "$init:C:/Demo/Games/BlackDiamond.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/BlackDiamond.HC#0", 709: "$init:C:/Demo/Games/BlackDiamond.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "$init:C:/Demo/Games/BlackDiamond.HC#2", 712: "DrawRunningWolf", 713: "DrawMan", 714: "DrawUpperChairLift", 715: "DrawIt", 716: "Compare", 717: "Init", 718: "BlackDiamond", 719: "$init:C:/Demo/Games/BlackDiamond.HC#3"]
     private static let FILES: [String] = ["C:/Demo/Games/BlackDiamond.HC"]
     public override var files: [String] { N_Demo_Games_BlackDiamond.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_BlackDiamond.DEFINED.contains(index) }

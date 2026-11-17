@@ -1,12 +1,12 @@
 TOSIMG 1
 unit C:/Apps/Budget/Run.HC#0
 s 17fd38 433a2f417070732f427564676574
-fn 703 $init:C:/Apps/Budget/Run.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/Budget/Run.HC#0 (I64;;-)
+init 708
 unit C:/Apps/Budget/Run.HC#1
 s 17fd38 433a2f417070732f427564676574
-fn 704 $init:C:/Apps/Budget/Run.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Apps/Budget/Run.HC#1 (I64;;-)
+init 709
 unit C:/Apps/Budget/Run.HC#2
 value BE_ANNIVERSARY 2
 value BE_GAS 1
@@ -57,24 +57,24 @@ g 17fda0 8
 g 17fdb8 88
 s 17fe20 4e756c6c00496e74657276616c004d6f6e74686c790042696d6f6e74686c790053656d69616e6e75616c00416e6e75616c00
 s 17fe68 53545f4247545f54454d504c4154455f5459504553
-fn 705 StrFileRead (**U8;*U8,*I64,**U8,Bool;-)
-fn 706 StrFileArrDel (U0;**U8,I64;-)
-fn 707 StrFileAdd (I64;*U8,*I64,*$CHashTable,I64;-)
-fn 708 StrEntriesCompare (I64;*$CHashGeneric,*$CHashGeneric;-)
-fn 709 StrFileWrite (U0;*U8,*$CHashTable,Bool;-)
-fn 710 StrFileDel (U0;*$CHashTable;-)
-fn 711 $init:C:/Apps/Budget/Run.HC#2 (I64;;-)
-sym f StrEntriesCompare 708 (I64;*$CHashGeneric,*$CHashGeneric;-)
-sym f StrFileAdd 707 (I64;*U8,*I64,*$CHashTable,I64;-)
-sym f StrFileArrDel 706 (U0;**U8,I64;-)
-sym f StrFileDel 710 (U0;*$CHashTable;-)
-sym f StrFileRead 705 (**U8;*U8,*I64,**U8,Bool;-)
-sym f StrFileWrite 709 (U0;*U8,*$CHashTable,Bool;-)
+fn 710 StrFileRead (**U8;*U8,*I64,**U8,Bool;-)
+fn 711 StrFileArrDel (U0;**U8,I64;-)
+fn 712 StrFileAdd (I64;*U8,*I64,*$CHashTable,I64;-)
+fn 713 StrEntriesCompare (I64;*$CHashGeneric,*$CHashGeneric;-)
+fn 714 StrFileWrite (U0;*U8,*$CHashTable,Bool;-)
+fn 715 StrFileDel (U0;*$CHashTable;-)
+fn 716 $init:C:/Apps/Budget/Run.HC#2 (I64;;-)
+sym f StrEntriesCompare 713 (I64;*$CHashGeneric,*$CHashGeneric;-)
+sym f StrFileAdd 712 (I64;*U8,*I64,*$CHashTable,I64;-)
+sym f StrFileArrDel 711 (U0;**U8,I64;-)
+sym f StrFileDel 715 (U0;*$CHashTable;-)
+sym f StrFileRead 710 (**U8;*U8,*I64,**U8,Bool;-)
+sym f StrFileWrite 714 (U0;*U8,*$CHashTable,Bool;-)
 sym g b_head 17fdb8 $CBgtEntry
 sym g bgt_accts_file 17fd88 *U8
 sym g bgt_data_file 17fda0 *U8
 sym g bgt_string_file 17fd70 *U8
-init 711
+init 716
 unit C:/Apps/Budget/Run.HC#3
 class CBgtEntryForm 2056 0 - -
 m date 0 [512]U8 2444412d502c413d22446174651f1f1f1f1f1f1f1f1f1f1f1f1f1f3a257322240a
@@ -109,65 +109,65 @@ s 1804b0 42414e4b
 c 180148 8 0
 c 180160 8 0
 s 17fd38 433a2f417070732f427564676574
-fn 712 MyStr2Date ($CDate;*U8;-)
-fn 713 BgtAcctsUpdate (U0;;-)
-fn 714 BgtAcctsWrite (U0;;-)
-fn 715 BgtAcctsRead (U0;;-)
-fn 716 BgtAcctColor (I64;*U8;-)
-fn 717 BgtPopUpAcct (*U8;*U8,*U8;-)
-fn 718 BgtEntryDel2 (U0;*$CBgtEntry;-)
-fn 719 BgtEntryCopy (*$CBgtEntry;*$CBgtEntry,Bool;-)
-fn 720 BgtEntryDel (U0;*$CBgtEntry;-)
-fn 721 BgtIns (U0;*$CBgtEntry;-)
-fn 722 BgtEntryPmt (*$CBgtEntry;*$CBgtEntry;-)
-fn 723 BgtTemplatePurge (U0;*$CBgtTemplate;-)
-fn 724 BgtTemplateDel (U0;*$CBgtTemplate;-)
-fn 725 BgtTemplateExpand (U0;*$CBgtTemplate,Bool;-)
-fn 726 CBgtTemplatesExpand (U0;;-)
-fn 727 BgtTemplatePmt (*$CBgtTemplate;*$CBgtTemplate,*$CBgtEntry;-)
-fn 728 BgtDataRead (U0;;-)
-fn 729 BgtDataWrite (U0;;-)
-fn 730 BgtDel (U0;;-)
-fn 732 BgtPutKey (Bool;*$CDoc,*U8,I64,I64;-)
-fn 731 BgtRegen (U0;;-)
-fn 733 Budget (U0;*U8;-)
-fn 734 $init:C:/Apps/Budget/Run.HC#3 (I64;;-)
-sym f BgtAcctColor 716 (I64;*U8;-)
-sym f BgtAcctsRead 715 (U0;;-)
-sym f BgtAcctsUpdate 713 (U0;;-)
-sym f BgtAcctsWrite 714 (U0;;-)
-sym f BgtDataRead 728 (U0;;-)
-sym f BgtDataWrite 729 (U0;;-)
-sym f BgtDel 730 (U0;;-)
-sym f BgtEntryCopy 719 (*$CBgtEntry;*$CBgtEntry,Bool;-)
-sym f BgtEntryDel 720 (U0;*$CBgtEntry;-)
-sym f BgtEntryDel2 718 (U0;*$CBgtEntry;-)
-sym f BgtEntryPmt 722 (*$CBgtEntry;*$CBgtEntry;-)
-sym f BgtIns 721 (U0;*$CBgtEntry;-)
-sym f BgtPopUpAcct 717 (*U8;*U8,*U8;-)
-sym f BgtPutKey 732 (Bool;*$CDoc,*U8,I64,I64;-)
-sym f BgtRegen 731 (U0;;-)
-sym f BgtTemplateDel 724 (U0;*$CBgtTemplate;-)
-sym f BgtTemplateExpand 725 (U0;*$CBgtTemplate,Bool;-)
-sym f BgtTemplatePmt 727 (*$CBgtTemplate;*$CBgtTemplate,*$CBgtEntry;-)
-sym f BgtTemplatePurge 723 (U0;*$CBgtTemplate;-)
-sym f Budget 733 (U0;*U8;-)
-sym f CBgtTemplatesExpand 726 (U0;;-)
-sym f MyStr2Date 712 ($CDate;*U8;-)
+fn 717 MyStr2Date ($CDate;*U8;-)
+fn 718 BgtAcctsUpdate (U0;;-)
+fn 719 BgtAcctsWrite (U0;;-)
+fn 720 BgtAcctsRead (U0;;-)
+fn 721 BgtAcctColor (I64;*U8;-)
+fn 722 BgtPopUpAcct (*U8;*U8,*U8;-)
+fn 723 BgtEntryDel2 (U0;*$CBgtEntry;-)
+fn 724 BgtEntryCopy (*$CBgtEntry;*$CBgtEntry,Bool;-)
+fn 725 BgtEntryDel (U0;*$CBgtEntry;-)
+fn 726 BgtIns (U0;*$CBgtEntry;-)
+fn 727 BgtEntryPmt (*$CBgtEntry;*$CBgtEntry;-)
+fn 728 BgtTemplatePurge (U0;*$CBgtTemplate;-)
+fn 729 BgtTemplateDel (U0;*$CBgtTemplate;-)
+fn 730 BgtTemplateExpand (U0;*$CBgtTemplate,Bool;-)
+fn 731 CBgtTemplatesExpand (U0;;-)
+fn 732 BgtTemplatePmt (*$CBgtTemplate;*$CBgtTemplate,*$CBgtEntry;-)
+fn 733 BgtDataRead (U0;;-)
+fn 734 BgtDataWrite (U0;;-)
+fn 735 BgtDel (U0;;-)
+fn 737 BgtPutKey (Bool;*$CDoc,*U8,I64,I64;-)
+fn 736 BgtRegen (U0;;-)
+fn 738 Budget (U0;*U8;-)
+fn 739 $init:C:/Apps/Budget/Run.HC#3 (I64;;-)
+sym f BgtAcctColor 721 (I64;*U8;-)
+sym f BgtAcctsRead 720 (U0;;-)
+sym f BgtAcctsUpdate 718 (U0;;-)
+sym f BgtAcctsWrite 719 (U0;;-)
+sym f BgtDataRead 733 (U0;;-)
+sym f BgtDataWrite 734 (U0;;-)
+sym f BgtDel 735 (U0;;-)
+sym f BgtEntryCopy 724 (*$CBgtEntry;*$CBgtEntry,Bool;-)
+sym f BgtEntryDel 725 (U0;*$CBgtEntry;-)
+sym f BgtEntryDel2 723 (U0;*$CBgtEntry;-)
+sym f BgtEntryPmt 727 (*$CBgtEntry;*$CBgtEntry;-)
+sym f BgtIns 726 (U0;*$CBgtEntry;-)
+sym f BgtPopUpAcct 722 (*U8;*U8,*U8;-)
+sym f BgtPutKey 737 (Bool;*$CDoc,*U8,I64,I64;-)
+sym f BgtRegen 736 (U0;;-)
+sym f BgtTemplateDel 729 (U0;*$CBgtTemplate;-)
+sym f BgtTemplateExpand 730 (U0;*$CBgtTemplate,Bool;-)
+sym f BgtTemplatePmt 732 (*$CBgtTemplate;*$CBgtTemplate,*$CBgtEntry;-)
+sym f BgtTemplatePurge 728 (U0;*$CBgtTemplate;-)
+sym f Budget 738 (U0;*U8;-)
+sym f CBgtTemplatesExpand 731 (U0;;-)
+sym f MyStr2Date 717 ($CDate;*U8;-)
 sym g accts_table 180148 *$CHashTable
 sym g accts_table_strs 180160 I64
 sym g t_head 17fe90 $CBgtTemplate
 sym g view_acct 17ff38 [512]U8
-init 734
+init 739
 unit C:/Apps/Budget/Run.HC#4
 s 1804c8 7e2f427564676574
 s 1804c8 7e2f427564676574
 s 1804c8 7e2f427564676574
 s 180388 41636374732e44442e5a
-fn 735 $init:C:/Apps/Budget/Run.HC#4 (I64;;-)
-init 735
+fn 740 $init:C:/Apps/Budget/Run.HC#4 (I64;;-)
+init 740
 unit C:/Apps/Budget/Run.HC#5
 s 1804c8 7e2f427564676574
-fn 736 $init:C:/Apps/Budget/Run.HC#5 (I64;;-)
-init 736
+fn 741 $init:C:/Apps/Budget/Run.HC#5 (I64;;-)
+init 741
 unit C:/Apps/Budget/Run.HC#6

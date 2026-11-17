@@ -35,7 +35,7 @@ class N_Demo_PhoneNumWords(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC PhoneNumWords (PhoneNumWords.HC:9) */
-    fun f703_PhoneNumWords(t: Task, a0: Long) {
+    fun f708_PhoneNumWords(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -152,7 +152,7 @@ class N_Demo_PhoneNumWords(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC PNWDemo (PhoneNumWords.HC:53) */
-    fun f704_PNWDemo(t: Task) {
+    fun f709_PNWDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -165,7 +165,7 @@ class N_Demo_PhoneNumWords(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 if (!(((t0 != 0L) && (ld1u(l0_st) != 0L)))) break@loop0
                 ln = 57 // PhoneNumWords.HC:57
                 tick(t)
-                f703_PhoneNumWords(t, l0_st)
+                f708_PhoneNumWords(t, l0_st)
                 ln = 58 // PhoneNumWords.HC:58
                 nat(t, n_Free, push1(t, l0_st))
                 tick(t)
@@ -178,13 +178,13 @@ class N_Demo_PhoneNumWords(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/PhoneNumWords.HC#0 (PhoneNumWords.HC:1) */
-    fun f705_init_C__Demo_PhoneNumWords_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_PhoneNumWords_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 63 // PhoneNumWords.HC:63
             tick(t)
-            f704_PNWDemo(t)
+            f709_PNWDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/PhoneNumWords.HC#0", ln) }
@@ -193,9 +193,9 @@ class N_Demo_PhoneNumWords(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_PhoneNumWords(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_PNWDemo(t); 0L }
-            705 -> f705_init_C__Demo_PhoneNumWords_HC_0(t)
+            708 -> { f708_PhoneNumWords(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_PNWDemo(t); 0L }
+            710 -> f710_init_C__Demo_PhoneNumWords_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -207,7 +207,7 @@ class N_Demo_PhoneNumWords(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("PhoneNumWords", "PNWDemo", "\$init:C:/Demo/PhoneNumWords.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/PhoneNumWords.HC")
     }

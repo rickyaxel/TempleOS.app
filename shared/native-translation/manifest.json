@@ -1,8 +1,8 @@
 {
-  "generator": "db117685d78e4e4cee1c022d1b98b724",
-  "runtime": "15d34faef0e7edd65e20b9740f6995b02324e73580510f5bbefda92eb5b67111",
+  "generator": "9bd518be2fcd9b642a5dfa7ae2f0d76b",
+  "runtime": "484b437fb5db5b783b61c28e96c035405556c11a9b3fec729882576375cdf556",
   "source_version": "TempleOS V5.03",
-  "prelude": {"sha256": "15d34faef0e7edd65e20b9740f6995b02324e73580510f5bbefda92eb5b67111", "functions": 468, "machine_functions": 1, "split": 703},
+  "prelude": {"sha256": "484b437fb5db5b783b61c28e96c035405556c11a9b3fec729882576375cdf556", "functions": 468, "machine_functions": 1, "split": 708},
   "sources": [
     {"path": "C:/Adam/ABlkDev/ADskA.HC", "status": "not-compilable", "module": null, "functions": 0, "machine_functions": 0, "chunks": 0, "requires_terry": null, "detail": "compile error: C:/Adam/ABlkDev/ADskA.HC:9: undefined identifier 'BlkRead'", "closure": {"C:/Adam/ABlkDev/ADskA.HC": "0966a8ed3301eb61c0b767dcbc0295e7fc2b9016cbb08773856adb59a61e1413"}},
     {"path": "C:/Adam/ABlkDev/ADskB.HC", "status": "not-compilable", "module": null, "functions": 0, "machine_functions": 0, "chunks": 0, "requires_terry": null, "detail": "compile error: C:/Adam/ABlkDev/ADskB.HC:71: undefined identifier 'DirEntryDel'", "closure": {"C:/Adam/ABlkDev/ADskB.HC": "d78cf30e58aabc4638532f6504e0eeb9879deafe4a6d9e00ea3ffc7836ded98d"}},

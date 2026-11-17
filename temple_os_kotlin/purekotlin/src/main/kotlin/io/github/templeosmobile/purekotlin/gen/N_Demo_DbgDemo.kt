@@ -23,7 +23,7 @@ class N_Demo_DbgDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC DbgDemo (DbgDemo.HC:17) */
-    fun f703_DbgDemo(t: Task) {
+    fun f708_DbgDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -47,13 +47,13 @@ class N_Demo_DbgDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC $init:C:/Demo/DbgDemo.HC#0 (DbgDemo.HC:25) */
-    fun f704_init_C__Demo_DbgDemo_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_DbgDemo_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 25 // DbgDemo.HC:25
             tick(t)
-            f703_DbgDemo(t)
+            f708_DbgDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DbgDemo.HC#0", ln) }
@@ -62,8 +62,8 @@ class N_Demo_DbgDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DbgDemo(t); 0L }
-            704 -> f704_init_C__Demo_DbgDemo_HC_0(t)
+            708 -> { f708_DbgDemo(t); 0L }
+            709 -> f709_init_C__Demo_DbgDemo_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -75,7 +75,7 @@ class N_Demo_DbgDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("DbgDemo", "\$init:C:/Demo/DbgDemo.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/DbgDemo.HC")
     }

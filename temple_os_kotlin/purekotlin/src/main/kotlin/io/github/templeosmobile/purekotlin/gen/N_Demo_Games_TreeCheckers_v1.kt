@@ -72,7 +72,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC InitDefines (TreeCheckers.HC:1) */
-    fun f703_InitDefines(t: Task) {
+    fun f708_InitDefines(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -116,20 +116,20 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC $init:C:/Demo/Games/TreeCheckers.HC#0 (TreeCheckers.HC:16) */
-    fun f704_init_C__Demo_Games_TreeCheckers_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Games_TreeCheckers_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 16 // TreeCheckers.HC:16
             tick(t)
-            f703_InitDefines(t)
+            f708_InitDefines(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/TreeCheckers.HC#0", ln) }
     }
 
     /** HolyC S2Circle (TreeCheckers.HC:28) */
-    fun f705_S2Circle(t: Task, a0: Long, a1: Long) {
+    fun f710_S2Circle(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -157,7 +157,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC Circle2S (TreeCheckers.HC:40) */
-    fun f706_Circle2S(t: Task, a0: Long, a1: Long) {
+    fun f711_Circle2S(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -183,7 +183,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC S2W (TreeCheckers.HC:48) */
-    fun f707_S2W(t: Task, a0: Long, a1: Long) {
+    fun f712_S2W(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -191,17 +191,17 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
             var p1__y: Long = a1
             ln = 50 // TreeCheckers.HC:50
             tick(t)
-            f705_S2Circle(t, p0__x, p1__y)
+            f710_S2Circle(t, p0__x, p1__y)
             ln = 51 // TreeCheckers.HC:51
             tick(t)
-            f706_Circle2S(t, p0__x, p1__y)
+            f711_Circle2S(t, p0__x, p1__y)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "S2W", ln) }
     }
 
     /** HolyC DrawIt (TreeCheckers.HC:54) */
-    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f713_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -219,7 +219,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                 st4((p1_dc + 160L), 11L)
                 ln = 62 // TreeCheckers.HC:62
                 tick(t)
-                P.f387_GrFloodFill(t, p1_dc, 0L, 0L, 0L, 0L, 0L)
+                P.f388_GrFloodFill(t, p1_dc, 0L, 0L, 0L, 0L, 0L)
                 ln = 63 // TreeCheckers.HC:63
                 st4((p1_dc + 160L), 3L)
             } else {
@@ -227,14 +227,14 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                 st4((p1_dc + 160L), 13L)
                 ln = 66 // TreeCheckers.HC:66
                 tick(t)
-                P.f387_GrFloodFill(t, p1_dc, 0L, 0L, 0L, 0L, 0L)
+                P.f388_GrFloodFill(t, p1_dc, 0L, 0L, 0L, 0L, 0L)
                 ln = 67 // TreeCheckers.HC:67
                 st4((p1_dc + 160L), 5L)
             }
             ln = 69 // TreeCheckers.HC:69
             tick(t)
             val vb0 = push1(t, (ld8(g_cur_player) + 1L))
-            P.f369_GrPrint(t, p1_dc, 2L, 2L, s7, vb0, 1)
+            P.f370_GrPrint(t, p1_dc, 2L, 2L, s7, vb0, 1)
             t.sp = vb0
             ln = 71 // TreeCheckers.HC:71
             l16_i = 0L
@@ -245,7 +245,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                     st4((p1_dc + 160L), ld8(((g_u + (l16_i * 50L)) + 40L)))
                     ln = 74 // TreeCheckers.HC:74
                     tick(t)
-                    P.f387_GrFloodFill(t, p1_dc, ld8(((g_u + (l16_i * 50L)) + 8L)), ld8(((g_u + (l16_i * 50L)) + 16L)), 0L, 0L, 0L)
+                    P.f388_GrFloodFill(t, p1_dc, ld8(((g_u + (l16_i * 50L)) + 8L)), ld8(((g_u + (l16_i * 50L)) + 16L)), 0L, 0L, 0L)
                 }
                 ln = 71 // TreeCheckers.HC:71
                 l16_i = (l16_i + 1L)
@@ -260,7 +260,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                     st4((p1_dc + 160L), 0L)
                     ln = 79 // TreeCheckers.HC:79
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, ld8(((g_u + (l16_i * 50L)) + 8L)), ld8(((g_u + (l16_i * 50L)) + 16L)), ld8(((g_u + (ld8(((g_u + (l16_i * 50L)) + 32L)) * 50L)) + 8L)), ld8(((g_u + (ld8(((g_u + (l16_i * 50L)) + 32L)) * 50L)) + 16L)), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, ld8(((g_u + (l16_i * 50L)) + 8L)), ld8(((g_u + (l16_i * 50L)) + 16L)), ld8(((g_u + (ld8(((g_u + (l16_i * 50L)) + 32L)) * 50L)) + 8L)), ld8(((g_u + (ld8(((g_u + (l16_i * 50L)) + 32L)) * 50L)) + 16L)), 1L, 0L)
                     ln = 80 // TreeCheckers.HC:80
                     tick(t)
                     val t1: Long = P.f269_Blink(t, 2.5)
@@ -271,7 +271,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                         st4((p1_dc + 228L), 6L)
                         ln = 83 // TreeCheckers.HC:83
                         tick(t)
-                        P.f393_GrPlot3(t, p1_dc, ((ld8(((g_u + (l16_i * 50L)) + 8L)) + ld8(((g_u + (ld8(((g_u + (l16_i * 50L)) + 32L)) * 50L)) + 8L))) shr 1), ((ld8(((g_u + (l16_i * 50L)) + 16L)) + ld8(((g_u + (ld8(((g_u + (l16_i * 50L)) + 32L)) * 50L)) + 16L))) shr 1), 0L)
+                        P.f394_GrPlot3(t, p1_dc, ((ld8(((g_u + (l16_i * 50L)) + 8L)) + ld8(((g_u + (ld8(((g_u + (l16_i * 50L)) + 32L)) * 50L)) + 8L))) shr 1), ((ld8(((g_u + (l16_i * 50L)) + 16L)) + ld8(((g_u + (ld8(((g_u + (l16_i * 50L)) + 32L)) * 50L)) + 16L))) shr 1), 0L)
                     }
                 }
                 ln = 76 // TreeCheckers.HC:76
@@ -284,13 +284,13 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                 st4((p1_dc + 160L), 12L)
                 ln = 88 // TreeCheckers.HC:88
                 tick(t)
-                P.f396_GrLine(t, p1_dc, (ld8(g_start_x) - 4L), (ld8(g_start_y) - 4L), (ld8(g_start_x) + 4L), (ld8(g_start_y) + 4L), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, (ld8(g_start_x) - 4L), (ld8(g_start_y) - 4L), (ld8(g_start_x) + 4L), (ld8(g_start_y) + 4L), 1L, 0L)
                 ln = 89 // TreeCheckers.HC:89
                 tick(t)
-                P.f396_GrLine(t, p1_dc, (ld8(g_start_x) - 4L), (ld8(g_start_y) + 4L), (ld8(g_start_x) + 4L), (ld8(g_start_y) - 4L), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, (ld8(g_start_x) - 4L), (ld8(g_start_y) + 4L), (ld8(g_start_x) + 4L), (ld8(g_start_y) - 4L), 1L, 0L)
                 ln = 90 // TreeCheckers.HC:90
                 tick(t)
-                P.f396_GrLine(t, p1_dc, ld8(g_start_x), ld8(g_start_y), ld8(g_end_x), ld8(g_end_y), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, ld8(g_start_x), ld8(g_start_y), ld8(g_end_x), ld8(g_end_y), 1L, 0L)
             }
             ln = 92 // TreeCheckers.HC:92
             var r3: Boolean = ((ld8(g_num_alive) == 1L) || (ld8((g_num_alive + 8L)) == 1L))
@@ -305,7 +305,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                 ln = 94 // TreeCheckers.HC:94
                 tick(t)
                 val vb1 = push0(t)
-                P.f369_GrPrint(t, p1_dc, ((ld8((p0_task + 224L)) - 72L) shr 1), ((ld8((p0_task + 248L)) - 8L) shr 1), s8, vb1, 0)
+                P.f370_GrPrint(t, p1_dc, ((ld8((p0_task + 224L)) - 72L) shr 1), ((ld8((p0_task + 248L)) - 8L) shr 1), s8, vb1, 0)
                 t.sp = vb1
             }
             t.depth--
@@ -314,7 +314,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC UnitFind (TreeCheckers.HC:99) */
-    fun f709_UnitFind(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f714_UnitFind(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -361,7 +361,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC KillsChk (TreeCheckers.HC:115) */
-    fun f710_KillsChk(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f715_KillsChk(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -444,7 +444,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC UnitMove (TreeCheckers.HC:144) */
-    fun f711_UnitMove(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f716_UnitMove(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -461,13 +461,13 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
             st8((fp + 72), ld8(g_start_y))
             ln = 147 // TreeCheckers.HC:147
             tick(t)
-            f707_S2W(t, (fp + 8), (fp + 16))
+            f712_S2W(t, (fp + 8), (fp + 16))
             ln = 148 // TreeCheckers.HC:148
             st8((fp + 56), ld8((fp + 8)))
             st8((fp + 48), ld8((fp + 16)))
             ln = 149 // TreeCheckers.HC:149
             tick(t)
-            f705_S2Circle(t, (fp + 56), (fp + 48))
+            f710_S2Circle(t, (fp + 56), (fp + 48))
             ln = 150 // TreeCheckers.HC:150
             l24_i = 0L
             loop0@ while ((l24_i < 3L)) {
@@ -476,7 +476,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                 st8((fp + 32), ld8((fp + 72)))
                 ln = 152 // TreeCheckers.HC:152
                 tick(t)
-                f705_S2Circle(t, (fp + 40), (fp + 32))
+                f710_S2Circle(t, (fp + 40), (fp + 32))
                 ln = 153 // TreeCheckers.HC:153
                 if (((ld8((fp + 40)) == ld8((fp + 56))) && (ld8((fp + 32)) == ld8((fp + 48))))) {
                     ln = 154 // TreeCheckers.HC:154
@@ -519,7 +519,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                     st8((fp + 72), t5)
                     ln = 167 // TreeCheckers.HC:167
                     tick(t)
-                    f706_Circle2S(t, (fp + 64), (fp + 72))
+                    f711_Circle2S(t, (fp + 64), (fp + 72))
                 } else {
                     ln = 168 // TreeCheckers.HC:168
                     if ((ld8((fp + 48)) < ld8((fp + 32)))) {
@@ -531,7 +531,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                         st8((fp + 72), t7)
                         ln = 170 // TreeCheckers.HC:170
                         tick(t)
-                        f706_Circle2S(t, (fp + 64), (fp + 72))
+                        f711_Circle2S(t, (fp + 64), (fp + 72))
                     } else {
                         ln = 171 // TreeCheckers.HC:171
                         if ((ld8((fp + 56)) > ld8((fp + 40)))) {
@@ -543,7 +543,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                             st8((fp + 72), ld8((fp + 32)))
                             ln = 173 // TreeCheckers.HC:173
                             tick(t)
-                            f706_Circle2S(t, (fp + 64), (fp + 72))
+                            f711_Circle2S(t, (fp + 64), (fp + 72))
                         } else {
                             ln = 174 // TreeCheckers.HC:174
                             if ((ld8((fp + 56)) < ld8((fp + 40)))) {
@@ -555,7 +555,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                                 st8((fp + 72), ld8((fp + 32)))
                                 ln = 176 // TreeCheckers.HC:176
                                 tick(t)
-                                f706_Circle2S(t, (fp + 64), (fp + 72))
+                                f711_Circle2S(t, (fp + 64), (fp + 72))
                             }
                         }
                     }
@@ -575,7 +575,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC DrawHexMap (TreeCheckers.HC:182) */
-    fun f712_DrawHexMap(t: Task, a0: Long, a1: Long): Long {
+    fun f717_DrawHexMap(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -615,10 +615,10 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                     }
                     ln = 195 // TreeCheckers.HC:195
                     tick(t)
-                    f707_S2W(t, (fp + 40), (fp + 48))
+                    f712_S2W(t, (fp + 40), (fp + 48))
                     ln = 196 // TreeCheckers.HC:196
                     tick(t)
-                    P.f397_GrCircle(t, l16_dc, ld8((fp + 40)), ld8((fp + 48)), 15L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                    P.f398_GrCircle(t, l16_dc, ld8((fp + 40)), ld8((fp + 48)), 15L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                     ln = 191 // TreeCheckers.HC:191
                     l24_i = (l24_i + 1L)
                     tick(t)
@@ -644,7 +644,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC Init (TreeCheckers.HC:204) */
-    fun f713_Init(t: Task) {
+    fun f718_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -662,7 +662,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
             st8((fp + 64), ld8((ld8(P.g_Fs) + 248L)))
             ln = 208 // TreeCheckers.HC:208
             tick(t)
-            val t0: Long = f712_DrawHexMap(t, (fp + 56), (fp + 64))
+            val t0: Long = f717_DrawHexMap(t, (fp + 56), (fp + 64))
             st8(g_map_dc, t0)
             ln = 209 // TreeCheckers.HC:209
             st8(g_cur_player, 0L)
@@ -733,10 +733,10 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                 st8(t10, (ld8(t10) + 42L))
                 ln = 238 // TreeCheckers.HC:238
                 tick(t)
-                f707_S2W(t, ((g_u + (l0_i * 50L)) + 8L), ((g_u + (l0_i * 50L)) + 16L))
+                f712_S2W(t, ((g_u + (l0_i * 50L)) + 8L), ((g_u + (l0_i * 50L)) + 16L))
                 ln = 239 // TreeCheckers.HC:239
                 tick(t)
-                f707_S2W(t, ((g_u + ((l0_i + divs(18L, 2L)) * 50L)) + 8L), ((g_u + ((l0_i + divs(18L, 2L)) * 50L)) + 16L))
+                f712_S2W(t, ((g_u + ((l0_i + divs(18L, 2L)) * 50L)) + 8L), ((g_u + ((l0_i + divs(18L, 2L)) * 50L)) + 16L))
                 ln = 241 // TreeCheckers.HC:241
                 st8(((g_u + (l0_i * 50L)) + 24L), 0L)
                 ln = 242 // TreeCheckers.HC:242
@@ -819,7 +819,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC CleanUp (TreeCheckers.HC:279) */
-    fun f714_CleanUp(t: Task) {
+    fun f719_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -832,7 +832,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC TreeCheckers (TreeCheckers.HC:284) */
-    fun f715_TreeCheckers(t: Task) {
+    fun f720_TreeCheckers(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -847,7 +847,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 290 // TreeCheckers.HC:290
             tick(t)
-            P.f507_MenuPush(t, s9)
+            P.f512_MenuPush(t, s9)
             ln = 299 // TreeCheckers.HC:299
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 300 // TreeCheckers.HC:300
@@ -873,13 +873,13 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                 retry_0@ while (true) {
                     ln = 309 // TreeCheckers.HC:309
                     tick(t)
-                    f713_Init(t)
+                    f718_Init(t)
                     ln = 310 // TreeCheckers.HC:310
                     l40_tmpu = 0L
                     ln = 311 // TreeCheckers.HC:311
                     st1(g_show_start, 0L)
                     ln = 312 // TreeCheckers.HC:312
-                    st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
+                    st8((ld8(P.g_Fs) + 448L), 9223090561878065865L)
                     ln = 313 // TreeCheckers.HC:313
                     skip_1@ do {
                         loop2@ while ((1L != 0L)) {
@@ -898,7 +898,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                                                 10L -> {
                                                     ln = 320 // TreeCheckers.HC:320
                                                     tick(t)
-                                                    f714_CleanUp(t)
+                                                    f719_CleanUp(t)
                                                     ln = 321 // TreeCheckers.HC:321
                                                     tick(t)
                                                     continue@retry_0
@@ -917,7 +917,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                                         if (((ld8(g_num_alive) > 1L) && (ld8((g_num_alive + 8L)) > 1L))) {
                                             ln = 329 // TreeCheckers.HC:329
                                             tick(t)
-                                            val t3: Long = f709_UnitFind(t, ld8((fp + 8)), ld8((fp + 16)), ld8(g_cur_player))
+                                            val t3: Long = f714_UnitFind(t, ld8((fp + 8)), ld8((fp + 16)), ld8(g_cur_player))
                                             l40_tmpu = t3
                                             ln = 330 // TreeCheckers.HC:330
                                             val t4: Long = ld8((l40_tmpu + 8L))
@@ -936,16 +936,16 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
                                         if ((l40_tmpu != 0L)) {
                                             ln = 337 // TreeCheckers.HC:337
                                             tick(t)
-                                            f711_UnitMove(t, l40_tmpu, ld8((fp + 8)), ld8((fp + 16)))
+                                            f716_UnitMove(t, l40_tmpu, ld8((fp + 8)), ld8((fp + 16)))
                                         }
                                     }
                                     6L -> {
                                         ln = 340 // TreeCheckers.HC:340
                                         tick(t)
-                                        f711_UnitMove(t, l40_tmpu, ld8((fp + 8)), ld8((fp + 16)))
+                                        f716_UnitMove(t, l40_tmpu, ld8((fp + 8)), ld8((fp + 16)))
                                         ln = 341 // TreeCheckers.HC:341
                                         tick(t)
-                                        f710_KillsChk(t, ld8((l40_tmpu + 8L)), ld8((l40_tmpu + 16L)), ld8(g_cur_player))
+                                        f715_KillsChk(t, ld8((l40_tmpu + 8L)), ld8((l40_tmpu + 16L)), ld8(g_cur_player))
                                         ln = 342 // TreeCheckers.HC:342
                                         st1(g_show_start, 0L)
                                         ln = 343 // TreeCheckers.HC:343
@@ -978,10 +978,10 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 353 // TreeCheckers.HC:353
             tick(t)
-            f714_CleanUp(t)
+            f719_CleanUp(t)
             ln = 354 // TreeCheckers.HC:354
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -989,13 +989,13 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC $init:C:/Demo/Games/TreeCheckers.HC#1 (TreeCheckers.HC:357) */
-    fun f716_init_C__Demo_Games_TreeCheckers_HC_1(t: Task): Long {
+    fun f721_init_C__Demo_Games_TreeCheckers_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 357 // TreeCheckers.HC:357
             tick(t)
-            f715_TreeCheckers(t)
+            f720_TreeCheckers(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/TreeCheckers.HC#1", ln) }
@@ -1004,20 +1004,20 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_InitDefines(t); 0L }
-            704 -> f704_init_C__Demo_Games_TreeCheckers_HC_0(t)
-            705 -> { f705_S2Circle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_Circle2S(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> { f707_S2W(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            709 -> f709_UnitFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            710 -> { f710_KillsChk(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            711 -> f711_UnitMove(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            712 -> f712_DrawHexMap(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            713 -> { f713_Init(t); 0L }
-            714 -> { f714_CleanUp(t); 0L }
-            715 -> { f715_TreeCheckers(t); 0L }
-            716 -> f716_init_C__Demo_Games_TreeCheckers_HC_1(t)
+            708 -> { f708_InitDefines(t); 0L }
+            709 -> f709_init_C__Demo_Games_TreeCheckers_HC_0(t)
+            710 -> { f710_S2Circle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_Circle2S(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> { f712_S2W(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            713 -> { f713_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            714 -> f714_UnitFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            715 -> { f715_KillsChk(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            716 -> f716_UnitMove(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            717 -> f717_DrawHexMap(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            718 -> { f718_Init(t); 0L }
+            719 -> { f719_CleanUp(t); 0L }
+            720 -> { f720_TreeCheckers(t); 0L }
+            721 -> f721_init_C__Demo_Games_TreeCheckers_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1029,7 +1029,7 @@ class N_Demo_Games_TreeCheckers_v1(rt: NativeRuntime, @JvmField val P: Prelude) 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721)
         private val NAMES = arrayOf("InitDefines", "\$init:C:/Demo/Games/TreeCheckers.HC#0", "S2Circle", "Circle2S", "S2W", "DrawIt", "UnitFind", "KillsChk", "UnitMove", "DrawHexMap", "Init", "CleanUp", "TreeCheckers", "\$init:C:/Demo/Games/TreeCheckers.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Games/TreeCheckers.HC")
     }

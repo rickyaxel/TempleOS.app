@@ -34,7 +34,7 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawCtrlPanelCtrl (XCCtrls.HC:19) */
-    fun f703_DrawCtrlPanelCtrl(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawCtrlPanelCtrl(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -57,10 +57,10 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st4((p0_dc + 160L), 0L)
             ln = 33 // XCCtrls.HC:33
             tick(t)
-            P.f396_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 33L), ((ld8((p1_c + 56L)) + 12L) + 33L), (ld8((p1_c + 40L)) + 33L), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 33L), ((ld8((p1_c + 56L)) + 12L) + 33L), (ld8((p1_c + 40L)) + 33L), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L), 1L, 0L)
             ln = 36 // XCCtrls.HC:36
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 66L) + 1L), ((ld8((p1_c + 56L)) + 12L) + 33L), ((ld8((p1_c + 40L)) + 66L) + 1L), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 66L) + 1L), ((ld8((p1_c + 56L)) + 12L) + 33L), ((ld8((p1_c + 40L)) + 66L) + 1L), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L), 1L, 0L)
             ln = 40 // XCCtrls.HC:40
             st4((p0_dc + 160L), 0L)
             ln = 41 // XCCtrls.HC:41
@@ -80,29 +80,29 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 54 // XCCtrls.HC:54
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p0_dc, (divs(((ld8((p1_c + 40L)) + ld8((p1_c + 48L))) + 1L), 2L) - divs(72L, 2L)), (((ld8((p1_c + 56L)) + 2L) + 3L) + divs(25L, 2L)), s0, vb0, 0)
+            P.f370_GrPrint(t, p0_dc, (divs(((ld8((p1_c + 40L)) + ld8((p1_c + 48L))) + 1L), 2L) - divs(72L, 2L)), (((ld8((p1_c + 56L)) + 2L) + 3L) + divs(25L, 2L)), s0, vb0, 0)
             t.sp = vb0
             ln = 57 // XCCtrls.HC:57
             tick(t)
             val vb1 = push0(t)
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - divs(32L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) - 8L) - 2L), s1, vb1, 0)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - divs(32L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) - 8L) - 2L), s1, vb1, 0)
             t.sp = vb1
             ln = 60 // XCCtrls.HC:60
             tick(t)
             val vb2 = push0(t)
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 1L) - divs(32L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) - 8L) - 2L), s2, vb2, 0)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 1L) - divs(32L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) - 8L) - 2L), s2, vb2, 0)
             t.sp = vb2
             ln = 63 // XCCtrls.HC:63
             st4((p0_dc + 160L), 12L)
             ln = 64 // XCCtrls.HC:64
             tick(t)
             val vb3 = push1(t, divs((ld8(l16_s) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - divs(8L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) + 3L), s3, vb3, 1)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - divs(8L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) + 3L), s3, vb3, 1)
             t.sp = vb3
             ln = 67 // XCCtrls.HC:67
             tick(t)
             val vb4 = push1(t, divs((ld8((l16_s + 8L)) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 1L) - divs(8L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) + 3L), s3, vb4, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 1L) - divs(8L, 2L)), ((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) + 3L), s3, vb4, 1)
             t.sp = vb4
             ln = 70 // XCCtrls.HC:70
             nat(t, n_GrRect, push(t, p0_dc, ((ld8((p1_c + 40L)) + 33L) - 3L), ((((((ld8((p1_c + 56L)) + 12L) + 33L) + 30L) - 1L) - ld8(l16_s)) - 2L), 7L, 5L))
@@ -154,7 +154,7 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UpdateDerivedCtrlPanelCtrl (XCCtrls.HC:103) */
-    fun f704_UpdateDerivedCtrlPanelCtrl(t: Task, a0: Long) {
+    fun f709_UpdateDerivedCtrlPanelCtrl(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -184,7 +184,7 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC LeftClickCtrlPanel (XCCtrls.HC:116) */
-    fun f705_LeftClickCtrlPanel(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f710_LeftClickCtrlPanel(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -222,7 +222,7 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CtrlPanelNew (XCCtrls.HC:134) */
-    fun f706_CtrlPanelNew(t: Task): Long {
+    fun f711_CtrlPanelNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -241,11 +241,11 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 141 // XCCtrls.HC:141
             st8((l0_c + 104L), g_ctrl_panel)
             ln = 142 // XCCtrls.HC:142
-            st8((l0_c + 120L), 9223090561878065855L)
+            st8((l0_c + 120L), 9223090561878065860L)
             ln = 143 // XCCtrls.HC:143
-            st8((l0_c + 136L), 9223090561878065857L)
+            st8((l0_c + 136L), 9223090561878065862L)
             ln = 144 // XCCtrls.HC:144
-            st8((l0_c + 112L), 9223090561878065856L)
+            st8((l0_c + 112L), 9223090561878065861L)
             ln = 145 // XCCtrls.HC:145
             tick(t)
             P.f153_QueIns(t, l0_c, ld8((ld8(P.g_Fs) + 928L)))
@@ -261,7 +261,7 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CtrlPanelDel (XCCtrls.HC:150) */
-    fun f707_CtrlPanelDel(t: Task, a0: Long) {
+    fun f712_CtrlPanelDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -277,7 +277,7 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/X-Caliber/XCCtrls.HC#0 (XCCtrls.HC:1) */
-    fun f708_init_C__Apps_X_Caliber_XCCtrls_HC_0(t: Task): Long {
+    fun f713_init_C__Apps_X_Caliber_XCCtrls_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -289,12 +289,12 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawCtrlPanelCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_UpdateDerivedCtrlPanelCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_LeftClickCtrlPanel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            706 -> f706_CtrlPanelNew(t)
-            707 -> { f707_CtrlPanelDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> f708_init_C__Apps_X_Caliber_XCCtrls_HC_0(t)
+            708 -> { f708_DrawCtrlPanelCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_UpdateDerivedCtrlPanelCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_LeftClickCtrlPanel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            711 -> f711_CtrlPanelNew(t)
+            712 -> { f712_CtrlPanelDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> f713_init_C__Apps_X_Caliber_XCCtrls_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -306,7 +306,7 @@ class N_Apps_X_Caliber_XCCtrls(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("DrawCtrlPanelCtrl", "UpdateDerivedCtrlPanelCtrl", "LeftClickCtrlPanel", "CtrlPanelNew", "CtrlPanelDel", "\$init:C:/Apps/X-Caliber/XCCtrls.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/X-Caliber/XCCtrls.HC")
     }

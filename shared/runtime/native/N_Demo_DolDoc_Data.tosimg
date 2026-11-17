@@ -8,12 +8,12 @@ s 17fe08 2444412d54524d2b52442b55442c52543d4931362c413d222525376422240a
 s 17fe38 5465727279
 s 17fe50 2444412d502b52442b55442c4c454e3d372c413d225374723a25257322240a
 c 17fd38 2 0
-fn 703 UpdateGlblTask (U0;I64;-)
-fn 704 DataDemo (U0;;-)
-fn 705 $init:C:/Demo/DolDoc/Data.HC#0 (I64;;-)
-sym f DataDemo 704 (U0;;-)
-sym f UpdateGlblTask 703 (U0;I64;-)
+fn 708 UpdateGlblTask (U0;I64;-)
+fn 709 DataDemo (U0;;-)
+fn 710 $init:C:/Demo/DolDoc/Data.HC#0 (I64;;-)
+sym f DataDemo 709 (U0;;-)
+sym f UpdateGlblTask 708 (U0;I64;-)
 sym g buf 17fd50 [8]U8
 sym g i 17fd38 I16
-init 705
+init 710
 unit C:/Demo/DolDoc/Data.HC#1

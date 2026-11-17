@@ -17,12 +17,14 @@ public final class N_Demo_Games_Squirt: NativeModule {
     public let n_DocCursor: Int
     public let n_Free: Int
     public let n_GetKey: Int
+    public let n_GrFillPoly3: Int
     public let n_GrRect: Int
     public let n_Print: Int
     public let n_Rand: Int
     public let n_Refresh: Int
     public let n_Sin: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_tS: Int
     /** binary literal, 75538 bytes */ public var b0: Int64 = 0
@@ -53,12 +55,14 @@ public final class N_Demo_Games_Squirt: NativeModule {
         n_DocCursor = rt.vm.natives.find("DocCursor")!.index
         n_Free = rt.vm.natives.find("Free")!.index
         n_GetKey = rt.vm.natives.find("GetKey")!.index
+        n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!.index
         n_GrRect = rt.vm.natives.find("GrRect")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Rand = rt.vm.natives.find("Rand")!.index
         n_Refresh = rt.vm.natives.find("Refresh")!.index
         n_Sin = rt.vm.natives.find("Sin")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
@@ -89,7 +93,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC DrawIt (Squirt.HC:52)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -113,8 +117,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
             var l88_y1a: Int64 = 0
             var l96_x2a: Int64 = 0
             ln = 62 // Squirt.HC:62
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 0, 456, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 0, 456, 0, b0, 0))
             ln = 63 // Squirt.HC:63
             let t1: Double = try ldf(g_start_up_timeout)
             let t0: Double = d(try nat(t, n_tS, push0(t)))
@@ -128,7 +131,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
                 ln = 67 // Squirt.HC:67
                 try tick(t)
                 let vb0 = push0(t)
-                _ = try P.f369_GrPrint(t, p1_dc, 296, 240, s0, vb0, 0)
+                _ = try P.f370_GrPrint(t, p1_dc, 296, 240, s0, vb0, 0)
                 t.sp = vb0
                 ln = 68 // Squirt.HC:68
                 t.msp = msp0
@@ -147,18 +150,17 @@ public final class N_Demo_Games_Squirt: NativeModule {
             ln = 76 // Squirt.HC:76
             _ = try nat(t, n_GrRect, try push(t, p1_dc, f2i((ldf((l112_tmpm &+ 56)) + 8.0)), f2i(ldf((l112_tmpm &+ 64))), 8, 72))
             ln = 77 // Squirt.HC:77
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, b1, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, b1, 0))
             ln = 78 // Squirt.HC:78
             try st4((p1_dc &+ 160), 0)
             ln = 79 // Squirt.HC:79
             try tick(t)
-            _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), f2i(ldf((l112_tmpm &+ 112))), 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), f2i(ldf((l112_tmpm &+ 112))), 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 80 // Squirt.HC:80
             try st4((p1_dc &+ 160), 2)
             ln = 81 // Squirt.HC:81
             try tick(t)
-            _ = try P.f387_GrFloodFill(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, 0, 0)
+            _ = try P.f388_GrFloodFill(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, 0, 0)
             ln = 83 // Squirt.HC:83
             l112_tmpm = try ld8(g_nozzle)
             ln = 84 // Squirt.HC:84
@@ -170,21 +172,21 @@ public final class N_Demo_Games_Squirt: NativeModule {
             ln = 87 // Squirt.HC:87
             let t2: Double = d(try nat(t, n_Arg, try push2(t, bits(l24_dx), bits(l32_dy))))
             try tick(t)
-            let t3: Double = try P.f542_Wrap(t, t2, (-d(4614256656552045848)))
+            let t3: Double = try P.f547_Wrap(t, t2, (-d(4614256656552045848)))
             try st8(g_nozzle__, bits(t3))
             ln = 88 // Squirt.HC:88
             try tick(t)
-            try P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, b2, ldf(g_nozzle__))
+            try P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, b2, ldf(g_nozzle__))
             ln = 89 // Squirt.HC:89
             try st4((p1_dc &+ 160), 0)
             ln = 90 // Squirt.HC:90
             try tick(t)
-            _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), f2i(ldf((l112_tmpm &+ 112))), 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), f2i(ldf((l112_tmpm &+ 112))), 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 91 // Squirt.HC:91
             try st4((p1_dc &+ 160), 2)
             ln = 92 // Squirt.HC:92
             try tick(t)
-            _ = try P.f387_GrFloodFill(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, 0, 0)
+            _ = try P.f388_GrFloodFill(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, 0, 0)
             ln = 94 // Squirt.HC:94
             l16_first = 1
             ln = 95 // Squirt.HC:95
@@ -248,12 +250,11 @@ public final class N_Demo_Games_Squirt: NativeModule {
                         ln = 124 // Squirt.HC:124
                         try st4((((fp &+ 136) &+ 36) &+ 8), 0)
                         ln = 125 // Squirt.HC:125
-                        try tick(t)
-                        _ = try P.f422_GrFillPoly3(t, p1_dc, 4, (fp &+ 136))
+                        _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 4, (fp &+ 136)))
                     }
                     ln = 129 // Squirt.HC:129
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, l96_x2a, l104_y2a, l64_x2b, l72_y2b, 1, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, l96_x2a, l104_y2a, l64_x2b, l72_y2b, 1, 0)
                     ln = 131 // Squirt.HC:131
                     l80_x1a = l96_x2a
                     ln = 132 // Squirt.HC:132
@@ -266,8 +267,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
                     ln = 135 // Squirt.HC:135
                     if try (ld8((l112_tmpm &+ 104)) == 2) {
                         ln = 136 // Squirt.HC:136
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, b3, 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i(ldf((l112_tmpm &+ 56))), f2i(ldf((l112_tmpm &+ 64))), 0, b3, 0))
                     }
                 }
                 ln = 137 // Squirt.HC:137
@@ -297,10 +297,10 @@ public final class N_Demo_Games_Squirt: NativeModule {
                     try st4((p1_dc &+ 160), 0)
                     ln = 149 // Squirt.HC:149
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, f2i((ldf((ld8((l128_tmps &+ 16)) &+ 56)) - l32_dy)), f2i((ldf((ld8((l128_tmps &+ 16)) &+ 64)) + l24_dx)), f2i((ldf((ld8((l128_tmps &+ 24)) &+ 56)) - l32_dy)), f2i((ldf((ld8((l128_tmps &+ 24)) &+ 64)) + l24_dx)), 1, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, f2i((ldf((ld8((l128_tmps &+ 16)) &+ 56)) - l32_dy)), f2i((ldf((ld8((l128_tmps &+ 16)) &+ 64)) + l24_dx)), f2i((ldf((ld8((l128_tmps &+ 24)) &+ 56)) - l32_dy)), f2i((ldf((ld8((l128_tmps &+ 24)) &+ 64)) + l24_dx)), 1, 0)
                     ln = 151 // Squirt.HC:151
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, f2i((ldf((ld8((l128_tmps &+ 16)) &+ 56)) + l32_dy)), f2i((ldf((ld8((l128_tmps &+ 16)) &+ 64)) - l24_dx)), f2i((ldf((ld8((l128_tmps &+ 24)) &+ 56)) + l32_dy)), f2i((ldf((ld8((l128_tmps &+ 24)) &+ 64)) - l24_dx)), 1, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, f2i((ldf((ld8((l128_tmps &+ 16)) &+ 56)) + l32_dy)), f2i((ldf((ld8((l128_tmps &+ 16)) &+ 64)) - l24_dx)), f2i((ldf((ld8((l128_tmps &+ 24)) &+ 56)) + l32_dy)), f2i((ldf((ld8((l128_tmps &+ 24)) &+ 64)) - l24_dx)), 1, 0)
                 }
                 ln = 154 // Squirt.HC:154
                 l128_tmps = try ld8(l128_tmps)
@@ -313,7 +313,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC MyDerivative (Squirt.HC:158)
-    public final func f704_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -370,7 +370,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC PlaceMass (Squirt.HC:182)
-    @discardableResult public final func f705_PlaceMass(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double, _ a4: Double, _ a5: Double, _ a6: Double, _ a7: Int64) throws -> Int64 {
+    @discardableResult public final func f710_PlaceMass(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double, _ a4: Double, _ a5: Double, _ a6: Double, _ a7: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -414,7 +414,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC PlaceSpring (Squirt.HC:198)
-    @discardableResult public final func f706_PlaceSpring(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f711_PlaceSpring(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -442,7 +442,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC HoseNew (Squirt.HC:208)
-    public final func f707_HoseNew(_ t: HTask) throws {
+    public final func f712_HoseNew(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -457,13 +457,13 @@ public final class N_Demo_Games_Squirt: NativeModule {
             loop0: while (l0_i < 640) {
                 ln = 214 // Squirt.HC:214
                 try tick(t)
-                let t0: Int64 = try f705_PlaceMass(t, 1, divs(l0_i, 2), 453, 3.0, 0.0, 0.0, 1.0, ld8(P.g_Fs))
+                let t0: Int64 = try f710_PlaceMass(t, 1, divs(l0_i, 2), 453, 3.0, 0.0, 0.0, 1.0, ld8(P.g_Fs))
                 l16_tmpm = t0
                 ln = 215 // Squirt.HC:215
                 if (l8_tmpm1 != 0) {
                     ln = 216 // Squirt.HC:216
                     try tick(t)
-                    let t1: Int64 = try f706_PlaceSpring(t, l16_tmpm, l8_tmpm1)
+                    let t1: Int64 = try f711_PlaceSpring(t, l16_tmpm, l8_tmpm1)
                     l24_tmps = t1
                     ln = 217 // Squirt.HC:217
                     try st8((l24_tmps &+ 72), bits(6.0))
@@ -493,7 +493,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC AnimateTask (Squirt.HC:229)
-    public final func f708_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -512,13 +512,13 @@ public final class N_Demo_Games_Squirt: NativeModule {
                 l32_dy = t1
                 ln = 236 // Squirt.HC:236
                 try tick(t)
-                _ = try f705_PlaceMass(t, 2, f2i((ldf((ld8(g_nozzle) &+ 56)) + (18.0 * l24_dx))), f2i((ldf((ld8(g_nozzle) &+ 64)) + (18.0 * l32_dy))), 3.0, (500.0 * l24_dx), (500.0 * l32_dy), 100.0, ld8((ld8(P.g_Fs) &+ 120)))
+                _ = try f710_PlaceMass(t, 2, f2i((ldf((ld8(g_nozzle) &+ 56)) + (18.0 * l24_dx))), f2i((ldf((ld8(g_nozzle) &+ 64)) + (18.0 * l32_dy))), 3.0, (500.0 * l24_dx), (500.0 * l32_dy), 100.0, ld8((ld8(P.g_Fs) &+ 120)))
                 ln = 239 // Squirt.HC:239
                 let t2: Double = d(try nat(t, n_Rand, push0(t)))
                 if (t2 < 0.05) {
                     ln = 240 // Squirt.HC:240
                     try tick(t)
-                    _ = try f705_PlaceMass(t, 2, f2i(ldf((ld8(g_faucet) &+ 56))), f2i(ldf((ld8(g_faucet) &+ 64))), 3.0, 0.0, 0.0, 100.0, ld8((ld8(P.g_Fs) &+ 120)))
+                    _ = try f710_PlaceMass(t, 2, f2i(ldf((ld8(g_faucet) &+ 56))), f2i(ldf((ld8(g_faucet) &+ 64))), 3.0, 0.0, 0.0, 100.0, ld8((ld8(P.g_Fs) &+ 120)))
                 }
                 ln = 244 // Squirt.HC:244
                 l8_tmpm = try ld8((ld8(g_ode) &+ 40))
@@ -548,7 +548,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC MoveNozzleTaskX (Squirt.HC:259)
-    public final func f709_MoveNozzleTaskX(_ t: HTask, _ a0: Int64) throws {
+    public final func f714_MoveNozzleTaskX(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -574,7 +574,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC MoveNozzleTaskY (Squirt.HC:269)
-    public final func f710_MoveNozzleTaskY(_ t: HTask, _ a0: Int64) throws {
+    public final func f715_MoveNozzleTaskY(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -600,7 +600,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC Init (Squirt.HC:279)
-    public final func f711_Init(_ t: HTask) throws {
+    public final func f716_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -613,15 +613,15 @@ public final class N_Demo_Games_Squirt: NativeModule {
             try st8(g_start_up_timeout, bits((t0 + 0.5)))
             ln = 287 // Squirt.HC:287
             try tick(t)
-            let t1: Int64 = try P.f453_ODENew(t, 0, 0.05, 1)
+            let t1: Int64 = try P.f458_ODENew(t, 0, 0.05, 1)
             try st8(g_ode, t1)
             ln = 288 // Squirt.HC:288
-            try st8((ld8(g_ode) &+ 304), 9223090561878065856)
+            try st8((ld8(g_ode) &+ 304), 9223090561878065861)
             ln = 289 // Squirt.HC:289
             try st8((ld8(g_ode) &+ 96), bits(5000.0))
             ln = 291 // Squirt.HC:291
             try tick(t)
-            try f707_HoseNew(t)
+            try f712_HoseNew(t)
             ln = 292 // Squirt.HC:292
             try tick(t)
             _ = try P.f153_QueIns(t, ld8(g_ode), ld8((ld8(P.g_Fs) &+ 960)))
@@ -631,7 +631,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC CleanUp (Squirt.HC:295)
-    public final func f712_CleanUp(_ t: HTask) throws {
+    public final func f717_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -648,7 +648,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
             try P.f156_QueDel(t, (ld8(g_ode) &+ 56), 1)
             ln = 301 // Squirt.HC:301
             try tick(t)
-            try P.f455_ODEDel(t, ld8(g_ode))
+            try P.f460_ODEDel(t, ld8(g_ode))
             ln = 302 // Squirt.HC:302
             _ = try nat(t, n_DocClear, try push1(t, 0))
             t.depth -= 1
@@ -657,30 +657,30 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC SongTask (Squirt.HC:305)
-    public final func f713_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f718_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 307 // Squirt.HC:307
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 308 // Squirt.HC:308
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 309 // Squirt.HC:309
             loop0: while (1 != 0) {
                 ln = 310 // Squirt.HC:310
                 try tick(t)
-                try P.f494_Play(t, s2, 0)
+                try P.f499_Play(t, s2, 0)
                 ln = 311 // Squirt.HC:311
                 try tick(t)
-                try P.f494_Play(t, s2, 0)
+                try P.f499_Play(t, s2, 0)
                 ln = 312 // Squirt.HC:312
                 try tick(t)
-                try P.f494_Play(t, s3, 0)
+                try P.f499_Play(t, s3, 0)
                 ln = 313 // Squirt.HC:313
                 try tick(t)
-                try P.f494_Play(t, s3, 0)
+                try P.f499_Play(t, s3, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -689,7 +689,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC Squirt (Squirt.HC:317)
-    public final func f714_Squirt(_ t: HTask) throws {
+    public final func f719_Squirt(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -702,7 +702,7 @@ public final class N_Demo_Games_Squirt: NativeModule {
             try st1((ld8(P.g_Fs) &+ 778), 225)
             ln = 322 // Squirt.HC:322
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065865, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065870, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 323 // Squirt.HC:323
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
@@ -716,16 +716,16 @@ public final class N_Demo_Games_Squirt: NativeModule {
             _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
             ln = 328 // Squirt.HC:328
             try tick(t)
-            _ = try P.f507_MenuPush(t, s5)
+            _ = try P.f512_MenuPush(t, s5)
             ln = 342 // Squirt.HC:342
             try tick(t)
-            try f711_Init(t)
+            try f716_Init(t)
             ln = 343 // Squirt.HC:343
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065860, 0, s6, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065865, 0, s6, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 344 // Squirt.HC:344
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 346 // Squirt.HC:346
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -744,16 +744,16 @@ public final class N_Demo_Games_Squirt: NativeModule {
                                     switch t5 {
                                     case 75:
                                         ln = 352 // Squirt.HC:352
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065861, (-1), s7, (-1), ld8(P.g_Fs), 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065866, (-1), s7, (-1), ld8(P.g_Fs), 0, 0))
                                     case 77:
                                         ln = 355 // Squirt.HC:355
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065861, 1, s7, (-1), ld8(P.g_Fs), 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065866, 1, s7, (-1), ld8(P.g_Fs), 0, 0))
                                     case 72:
                                         ln = 358 // Squirt.HC:358
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065862, (-1), s7, (-1), ld8(P.g_Fs), 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065867, (-1), s7, (-1), ld8(P.g_Fs), 0, 0))
                                     case 80:
                                         ln = 361 // Squirt.HC:361
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065862, 1, s7, (-1), ld8(P.g_Fs), 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065867, 1, s7, (-1), ld8(P.g_Fs), 0, 0))
                                     default:
                                         break
                                     }
@@ -761,10 +761,10 @@ public final class N_Demo_Games_Squirt: NativeModule {
                             case 10:
                                 ln = 366 // Squirt.HC:366
                                 try tick(t)
-                                try f712_CleanUp(t)
+                                try f717_CleanUp(t)
                                 ln = 367 // Squirt.HC:367
                                 try tick(t)
-                                try f711_Init(t)
+                                try f716_Init(t)
                             case 27, 28:
                                 ln = 371 // Squirt.HC:371
                                 break skip_0
@@ -789,10 +789,10 @@ public final class N_Demo_Games_Squirt: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 378 // Squirt.HC:378
             try tick(t)
-            try f712_CleanUp(t)
+            try f717_CleanUp(t)
             ln = 379 // Squirt.HC:379
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -800,13 +800,13 @@ public final class N_Demo_Games_Squirt: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Squirt.HC#0 (Squirt.HC:49)
-    @discardableResult public final func f715_init_C__Demo_Games_Squirt_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f720_init_C__Demo_Games_Squirt_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 382 // Squirt.HC:382
             try tick(t)
-            try f714_Squirt(t)
+            try f719_Squirt(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Squirt.HC#0", ln) }
@@ -815,25 +815,25 @@ public final class N_Demo_Games_Squirt: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: return try f705_PlaceMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0)), d((n > 4 ? st[base + 4] : 0)), d((n > 5 ? st[base + 5] : 0)), d((n > 6 ? st[base + 6] : 0)), (n > 7 ? st[base + 7] : 0))
-        case 706: return try f706_PlaceSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 707: try f707_HoseNew(t); return 0
-        case 708: try f708_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: try f709_MoveNozzleTaskX(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 710: try f710_MoveNozzleTaskY(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 711: try f711_Init(t); return 0
-        case 712: try f712_CleanUp(t); return 0
-        case 713: try f713_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 714: try f714_Squirt(t); return 0
-        case 715: return try f715_init_C__Demo_Games_Squirt_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: return try f710_PlaceMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0)), d((n > 4 ? st[base + 4] : 0)), d((n > 5 ? st[base + 5] : 0)), d((n > 6 ? st[base + 6] : 0)), (n > 7 ? st[base + 7] : 0))
+        case 711: return try f711_PlaceSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 712: try f712_HoseNew(t); return 0
+        case 713: try f713_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: try f714_MoveNozzleTaskX(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 715: try f715_MoveNozzleTaskY(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 716: try f716_Init(t); return 0
+        case 717: try f717_CleanUp(t); return 0
+        case 718: try f718_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 719: try f719_Squirt(t); return 0
+        case 720: return try f720_init_C__Demo_Games_Squirt_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "MyDerivative", 705: "PlaceMass", 706: "PlaceSpring", 707: "HoseNew", 708: "AnimateTask", 709: "MoveNozzleTaskX", 710: "MoveNozzleTaskY", 711: "Init", 712: "CleanUp", 713: "SongTask", 714: "Squirt", 715: "$init:C:/Demo/Games/Squirt.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "MyDerivative", 710: "PlaceMass", 711: "PlaceSpring", 712: "HoseNew", 713: "AnimateTask", 714: "MoveNozzleTaskX", 715: "MoveNozzleTaskY", 716: "Init", 717: "CleanUp", 718: "SongTask", 719: "Squirt", 720: "$init:C:/Demo/Games/Squirt.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/Squirt.HC"]
     public override var files: [String] { N_Demo_Games_Squirt.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Squirt.DEFINED.contains(index) }

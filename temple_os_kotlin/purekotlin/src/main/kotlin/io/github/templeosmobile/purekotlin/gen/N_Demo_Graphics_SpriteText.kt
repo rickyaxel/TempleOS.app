@@ -39,7 +39,7 @@ class N_Demo_Graphics_SpriteText(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC SpriteText (SpriteText.HC:33) */
-    fun f703_SpriteText(t: Task, a0: Long) {
+    fun f708_SpriteText(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -52,7 +52,7 @@ class N_Demo_Graphics_SpriteText(rt: NativeRuntime, @JvmField val P: Prelude) : 
             loop0@ while (((ld1u((l8_tmpg + 16L)) and 127L) != 0L)) {
                 ln = 39 // SpriteText.HC:39
                 tick(t)
-                val t0: Long = P.f699_SpriteElem2Summary(t, l8_tmpg)
+                val t0: Long = P.f704_SpriteElem2Summary(t, l8_tmpg)
                 l16_st = t0
                 ln = 40 // SpriteText.HC:40
                 nat(t, n_Print, push2(t, s0, l16_st))
@@ -69,7 +69,7 @@ class N_Demo_Graphics_SpriteText(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Graphics/SpriteText.HC#0 (SpriteText.HC:46) */
-    fun f704_init_C__Demo_Graphics_SpriteText_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_SpriteText_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -83,20 +83,20 @@ class N_Demo_Graphics_SpriteText(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Graphics/SpriteText.HC#1 (SpriteText.HC:47) */
-    fun f705_init_C__Demo_Graphics_SpriteText_HC_1(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_SpriteText_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 47 // SpriteText.HC:47
             tick(t)
-            f703_SpriteText(t, b0)
+            f708_SpriteText(t, b0)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/SpriteText.HC#1", ln) }
     }
 
     /** HolyC $init:C:/Demo/Graphics/SpriteText.HC#2 (SpriteText.HC:49) */
-    fun f706_init_C__Demo_Graphics_SpriteText_HC_2(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_SpriteText_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -110,13 +110,13 @@ class N_Demo_Graphics_SpriteText(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Graphics/SpriteText.HC#3 (SpriteText.HC:50) */
-    fun f707_init_C__Demo_Graphics_SpriteText_HC_3(t: Task): Long {
+    fun f712_init_C__Demo_Graphics_SpriteText_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 50 // SpriteText.HC:50
             tick(t)
-            P.f701_Sprite2Code(t, 0L, b1)
+            P.f706_Sprite2Code(t, 0L, b1)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/SpriteText.HC#3", ln) }
@@ -125,11 +125,11 @@ class N_Demo_Graphics_SpriteText(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SpriteText(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> f704_init_C__Demo_Graphics_SpriteText_HC_0(t)
-            705 -> f705_init_C__Demo_Graphics_SpriteText_HC_1(t)
-            706 -> f706_init_C__Demo_Graphics_SpriteText_HC_2(t)
-            707 -> f707_init_C__Demo_Graphics_SpriteText_HC_3(t)
+            708 -> { f708_SpriteText(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> f709_init_C__Demo_Graphics_SpriteText_HC_0(t)
+            710 -> f710_init_C__Demo_Graphics_SpriteText_HC_1(t)
+            711 -> f711_init_C__Demo_Graphics_SpriteText_HC_2(t)
+            712 -> f712_init_C__Demo_Graphics_SpriteText_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -141,7 +141,7 @@ class N_Demo_Graphics_SpriteText(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("SpriteText", "\$init:C:/Demo/Graphics/SpriteText.HC#0", "\$init:C:/Demo/Graphics/SpriteText.HC#1", "\$init:C:/Demo/Graphics/SpriteText.HC#2", "\$init:C:/Demo/Graphics/SpriteText.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/SpriteText.HC")
     }

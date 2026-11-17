@@ -31,7 +31,7 @@ public final class N_Demo_Graphics_WinZBuf: NativeModule {
     }
 
     /// HolyC DrawIt (WinZBuf.HC:1)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -47,7 +47,7 @@ public final class N_Demo_Graphics_WinZBuf: NativeModule {
             ln = 6 // WinZBuf.HC:6
             try tick(t)
             let vb0 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s0, vb0, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s0, vb0, 0)
             t.sp = vb0
             ln = 7 // WinZBuf.HC:7
             l16_i = 0
@@ -75,7 +75,7 @@ public final class N_Demo_Graphics_WinZBuf: NativeModule {
     }
 
     /// HolyC ScrollBars (WinZBuf.HC:14)
-    public final func f704_ScrollBars(_ t: HTask) throws {
+    public final func f709_ScrollBars(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -85,7 +85,7 @@ public final class N_Demo_Graphics_WinZBuf: NativeModule {
             ln = 17 // WinZBuf.HC:17
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 18 // WinZBuf.HC:18
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 19 // WinZBuf.HC:19
             _ = try nat(t, n_GetChar, try push3(t, 0, 0, 0))
             ln = 20 // WinZBuf.HC:20
@@ -97,13 +97,13 @@ public final class N_Demo_Graphics_WinZBuf: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/WinZBuf.HC#0 (WinZBuf.HC:23)
-    @discardableResult public final func f705_init_C__Demo_Graphics_WinZBuf_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_WinZBuf_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 23 // WinZBuf.HC:23
             try tick(t)
-            try f704_ScrollBars(t)
+            try f709_ScrollBars(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/WinZBuf.HC#0", ln) }
@@ -112,15 +112,15 @@ public final class N_Demo_Graphics_WinZBuf: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_ScrollBars(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_WinZBuf_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_ScrollBars(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_WinZBuf_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "ScrollBars", 705: "$init:C:/Demo/Graphics/WinZBuf.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "ScrollBars", 710: "$init:C:/Demo/Graphics/WinZBuf.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/WinZBuf.HC"]
     public override var files: [String] { N_Demo_Graphics_WinZBuf.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_WinZBuf.DEFINED.contains(index) }

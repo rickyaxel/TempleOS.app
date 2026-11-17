@@ -23,6 +23,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
     public let n_RandU16: Int
     public let n_Sin: Int
     public let n_Snd: Int
+    public let n_Sprite3: Int
     /** m2: CMass */ public var g_m2: Int64 = 0
     /** m1: CMass */ public var g_m1: Int64 = 0
     /** binary literal, 75538 bytes */ public var b0: Int64 = 0
@@ -49,6 +50,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
         n_RandU16 = rt.vm.natives.find("RandU16")!.index
         n_Sin = rt.vm.natives.find("Sin")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -69,7 +71,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
     }
 
     /// HolyC DrawIt (Rocket.HC:33)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -90,8 +92,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
             let t0: Double = d(try nat(t, n_Arg, try push2(t, bits((ldf((g_m2 &+ 56)) - ldf((g_m1 &+ 56)))), bits((ldf((g_m2 &+ 64)) - ldf((g_m1 &+ 64)))))))
             l72__ = t0
             ln = 39 // Rocket.HC:39
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 0, 456, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 0, 456, 0, b0, 0))
             ln = 41 // Rocket.HC:41
             let t1: Int64 = try nat(t, n_Bt, try push2(t, (P.g_kbd &+ 64), 72))
             if (t1 != 0) {
@@ -148,14 +149,14 @@ public final class N_Demo_Games_Rocket: NativeModule {
                     let t11: Double = try ldf((g_m1 &+ 56))
                     let t10: Double = d(try nat(t, n_Cos, try push1(t, bits((l72__ - (d(4614256656552045848) / 2.0))))))
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, f2i((Double(l40_cx) + (t11 + (Double(l16_i) * t10)))), f2i((Double(l48_cy) - (t9 + (Double(l16_i) * t8)))), (l40_cx &+ l24_x), (l48_cy &- l32_y), 1, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, f2i((Double(l40_cx) + (t11 + (Double(l16_i) * t10)))), f2i((Double(l48_cy) - (t9 + (Double(l16_i) * t8)))), (l40_cx &+ l24_x), (l48_cy &- l32_y), 1, 0)
                     ln = 62 // Rocket.HC:62
                     let t13: Double = try ldf((g_m1 &+ 64))
                     let t12: Double = d(try nat(t, n_Sin, try push1(t, bits((l72__ + (d(4614256656552045848) / 2.0))))))
                     let t15: Double = try ldf((g_m1 &+ 56))
                     let t14: Double = d(try nat(t, n_Cos, try push1(t, bits((l72__ + (d(4614256656552045848) / 2.0))))))
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, f2i((Double(l40_cx) + (t15 + (Double(l16_i) * t14)))), f2i((Double(l48_cy) - (t13 + (Double(l16_i) * t12)))), (l40_cx &+ l24_x), (l48_cy &- l32_y), 1, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, f2i((Double(l40_cx) + (t15 + (Double(l16_i) * t14)))), f2i((Double(l48_cy) - (t13 + (Double(l16_i) * t12)))), (l40_cx &+ l24_x), (l48_cy &- l32_y), 1, 0)
                     ln = 56 // Rocket.HC:56
                     l16_i = (l16_i &+ 1)
                     try tick(t)
@@ -200,14 +201,14 @@ public final class N_Demo_Games_Rocket: NativeModule {
             }
             ln = 77 // Rocket.HC:77
             try tick(t)
-            try P.f445_Sprite3ZB(t, p1_dc, f2i((Double(l40_cx) + ((ldf((g_m1 &+ 56)) + ldf((g_m2 &+ 56))) / 2.0))), f2i((Double(l48_cy) - ((ldf((g_m1 &+ 64)) + ldf((g_m2 &+ 64))) / 2.0))), 0, b1, (-l72__))
+            try P.f450_Sprite3ZB(t, p1_dc, f2i((Double(l40_cx) + ((ldf((g_m1 &+ 56)) + ldf((g_m2 &+ 56))) / 2.0))), f2i((Double(l48_cy) - ((ldf((g_m1 &+ 64)) + ldf((g_m2 &+ 64))) / 2.0))), 0, b1, (-l72__))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawIt", ln) }
     }
 
     /// HolyC MyDerivative (Rocket.HC:80)
-    public final func f704_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -278,7 +279,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
     }
 
     /// HolyC Init (Rocket.HC:107)
-    public final func f705_Init(_ t: HTask) throws {
+    public final func f710_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -315,7 +316,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
     }
 
     /// HolyC TaskEndCB (Rocket.HC:130)
-    public final func f706_TaskEndCB(_ t: HTask) throws {
+    public final func f711_TaskEndCB(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -324,21 +325,21 @@ public final class N_Demo_Games_Rocket: NativeModule {
             try P.f286_DCFill(t, 0, 255)
             ln = 133 // Rocket.HC:133
             try tick(t)
-            try P.f479_SndTaskEndCB(t)
+            try P.f484_SndTaskEndCB(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "TaskEndCB", ln) }
     }
 
     /// HolyC Rocket (Rocket.HC:136)
-    public final func f707_Rocket(_ t: HTask) throws {
+    public final func f712_Rocket(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             var l0_ode: Int64 = 0
             ln = 138 // Rocket.HC:138
             try tick(t)
-            let t0: Int64 = try P.f453_ODENew(t, 0, 0.01, 1)
+            let t0: Int64 = try P.f458_ODENew(t, 0, 0.01, 1)
             l0_ode = t0
             ln = 140 // Rocket.HC:140
             try tick(t)
@@ -347,7 +348,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
             try st1((ld8(P.g_Fs) &+ 778), 225)
             ln = 142 // Rocket.HC:142
             try tick(t)
-            _ = try P.f507_MenuPush(t, s1)
+            _ = try P.f512_MenuPush(t, s1)
             ln = 155 // Rocket.HC:155
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 156 // Rocket.HC:156
@@ -365,9 +366,9 @@ public final class N_Demo_Games_Rocket: NativeModule {
             let t1: Int64 = try P.f291_DCAlias(t, 0, 0)
             try st8(g_dc2, t1)
             ln = 161 // Rocket.HC:161
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065858)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065863)
             ln = 163 // Rocket.HC:163
-            try st8((l0_ode &+ 304), 9223090561878065856)
+            try st8((l0_ode &+ 304), 9223090561878065861)
             ln = 164 // Rocket.HC:164
             try st8((l0_ode &+ 80), bits(0.002))
             ln = 165 // Rocket.HC:165
@@ -376,7 +377,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
             try st8((l0_ode &+ 96), bits(5000.0))
             ln = 168 // Rocket.HC:168
             try tick(t)
-            try f705_Init(t)
+            try f710_Init(t)
             ln = 169 // Rocket.HC:169
             try tick(t)
             _ = try P.f153_QueIns(t, g_m1, ld8((l0_ode &+ 48)))
@@ -390,7 +391,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
             try tick(t)
             _ = try P.f153_QueIns(t, l0_ode, ld8((ld8(P.g_Fs) &+ 960)))
             ln = 175 // Rocket.HC:175
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 177 // Rocket.HC:177
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -409,7 +410,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
                             case 10:
                                 ln = 183 // Rocket.HC:183
                                 try tick(t)
-                                try f705_Init(t)
+                                try f710_Init(t)
                                 ln = 184 // Rocket.HC:184
                                 _ = try nat(t, n_GetKey, try push3(t, 0, 0, 0))
                                 ln = 185 // Rocket.HC:185
@@ -438,7 +439,7 @@ public final class N_Demo_Games_Rocket: NativeModule {
             try P.f155_QueRem(t, l0_ode)
             ln = 196 // Rocket.HC:196
             try tick(t)
-            try P.f455_ODEDel(t, l0_ode)
+            try P.f460_ODEDel(t, l0_ode)
             ln = 197 // Rocket.HC:197
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 198 // Rocket.HC:198
@@ -452,20 +453,20 @@ public final class N_Demo_Games_Rocket: NativeModule {
             try P.f293_DCDel(t, ld8(g_dc2))
             ln = 201 // Rocket.HC:201
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Rocket", ln) }
     }
 
     /// HolyC $init:C:/Demo/Games/Rocket.HC#0 (Rocket.HC:204)
-    @discardableResult public final func f708_init_C__Demo_Games_Rocket_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_Games_Rocket_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 204 // Rocket.HC:204
             try tick(t)
-            try f707_Rocket(t)
+            try f712_Rocket(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Rocket.HC#0", ln) }
@@ -474,18 +475,18 @@ public final class N_Demo_Games_Rocket: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: try f705_Init(t); return 0
-        case 706: try f706_TaskEndCB(t); return 0
-        case 707: try f707_Rocket(t); return 0
-        case 708: return try f708_init_C__Demo_Games_Rocket_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: try f710_Init(t); return 0
+        case 711: try f711_TaskEndCB(t); return 0
+        case 712: try f712_Rocket(t); return 0
+        case 713: return try f713_init_C__Demo_Games_Rocket_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "MyDerivative", 705: "Init", 706: "TaskEndCB", 707: "Rocket", 708: "$init:C:/Demo/Games/Rocket.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "MyDerivative", 710: "Init", 711: "TaskEndCB", 712: "Rocket", 713: "$init:C:/Demo/Games/Rocket.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/Rocket.HC"]
     public override var files: [String] { N_Demo_Games_Rocket.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Rocket.DEFINED.contains(index) }

@@ -1449,7 +1449,10 @@ public I64 *Mat4x4RotZ(I64 *m,F64 theta)
   return Mat4x4Equ(m,Mat4x4MulMat4x4Equ(r2,r,m));
 }
 
-public I64 *Mat4x4Scale(I64 *m,F64 s)
+//Mat4x4Scale runs natively (Raster.mat4x4Scale): Varoom scales a matrix for every bush it draws. The original
+//(Adam/Gr/GrMath.HC) is kept as Mat4x4Scale_HC for the differential test (RasterDiffTest).
+native public I64 *Mat4x4Scale(I64 *m,F64 s);
+public I64 *Mat4x4Scale_HC(I64 *m,F64 s)
 {//Scale 4x4 matrix by value.
   I64 i;
   for (i=0;i<16;i++)

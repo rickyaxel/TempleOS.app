@@ -11,11 +11,13 @@ public final class N_Demo_Graphics_Symmetry: NativeModule {
     public let P: Prelude
     public let n_DocClear: Int
     public let n_GetMsg: Int
+    public let n_GrLine3: Int
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
         n_DocClear = rt.vm.natives.find("DocClear")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         super.init(rt)
     }
 
@@ -26,7 +28,7 @@ public final class N_Demo_Graphics_Symmetry: NativeModule {
     }
 
     /// HolyC SymmetryDemo (Symmetry.HC:6)
-    public final func f703_SymmetryDemo(_ t: HTask) throws {
+    public final func f708_SymmetryDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -63,7 +65,7 @@ public final class N_Demo_Graphics_Symmetry: NativeModule {
             try st4(t1, (ld4s(t1) | 512))
             ln = 19 // Symmetry.HC:19
             try tick(t)
-            _ = try P.f314_DCSymmetrySet(t, l56_dc, divs(ld8((ld8(P.g_Fs) &+ 224)), 2), 0, divs(ld8((ld8(P.g_Fs) &+ 224)), 2), 1)
+            _ = try P.f315_DCSymmetrySet(t, l56_dc, divs(ld8((ld8(P.g_Fs) &+ 224)), 2), 0, divs(ld8((ld8(P.g_Fs) &+ 224)), 2), 1)
             ln = 20 // Symmetry.HC:20
             loop0: while true {
                 ln = 21 // Symmetry.HC:21
@@ -88,25 +90,22 @@ public final class N_Demo_Graphics_Symmetry: NativeModule {
                         ln = 30 // Symmetry.HC:30
                         loop3: while (l0_msg_code != 10) {
                             ln = 31 // Symmetry.HC:31
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0))
                             ln = 32 // Symmetry.HC:32
                             let t5: Int64 = try nat(t, n_GetMsg, try push4(t, (fp &+ 40), (fp &+ 48), 1040, 0))
                             l0_msg_code = t5
                             ln = 34 // Symmetry.HC:34
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0))
                             ln = 35 // Symmetry.HC:35
                             l24_x2 = try ld8((fp &+ 40))
                             l32_y2 = try ld8((fp &+ 48))
                             try tick(t)
                         }
                         ln = 37 // Symmetry.HC:37
-                        try tick(t)
-                        _ = try P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0)
+                        _ = try nat(t, n_GrLine3, try push(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0))
                         ln = 38 // Symmetry.HC:38
                         try tick(t)
-                        let t6: Int64 = try P.f315_DCSymmetry3Set(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, l24_x2, l32_y2, 1)
+                        let t6: Int64 = try P.f316_DCSymmetry3Set(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, l24_x2, l32_y2, 1)
                         if (t6 != 0) {
                             ln = 39 // Symmetry.HC:39
                             let t7: Int64 = (l56_dc &+ 28)
@@ -124,22 +123,19 @@ public final class N_Demo_Graphics_Symmetry: NativeModule {
                         ln = 45 // Symmetry.HC:45
                         loop5: while (l0_msg_code != 6) {
                             ln = 46 // Symmetry.HC:46
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0))
                             ln = 47 // Symmetry.HC:47
                             let t8: Int64 = try nat(t, n_GetMsg, try push4(t, (fp &+ 40), (fp &+ 48), 80, 0))
                             l0_msg_code = t8
                             ln = 49 // Symmetry.HC:49
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0))
                             ln = 50 // Symmetry.HC:50
                             l24_x2 = try ld8((fp &+ 40))
                             l32_y2 = try ld8((fp &+ 48))
                             try tick(t)
                         }
                         ln = 52 // Symmetry.HC:52
-                        try tick(t)
-                        _ = try P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0)
+                        _ = try nat(t, n_GrLine3, try push(t, l56_dc, l8_x1, l16_y1, 0, l24_x2, l32_y2, 0, 1, 0))
                     default:
                         break
                     }
@@ -165,13 +161,13 @@ public final class N_Demo_Graphics_Symmetry: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Symmetry.HC#0 (Symmetry.HC:62)
-    @discardableResult public final func f704_init_C__Demo_Graphics_Symmetry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_Symmetry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 62 // Symmetry.HC:62
             try tick(t)
-            try f703_SymmetryDemo(t)
+            try f708_SymmetryDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Symmetry.HC#0", ln) }
@@ -180,14 +176,14 @@ public final class N_Demo_Graphics_Symmetry: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SymmetryDemo(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_Symmetry_HC_0(t)
+        case 708: try f708_SymmetryDemo(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_Symmetry_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "SymmetryDemo", 704: "$init:C:/Demo/Graphics/Symmetry.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "SymmetryDemo", 709: "$init:C:/Demo/Graphics/Symmetry.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Symmetry.HC"]
     public override var files: [String] { N_Demo_Graphics_Symmetry.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Symmetry.DEFINED.contains(index) }

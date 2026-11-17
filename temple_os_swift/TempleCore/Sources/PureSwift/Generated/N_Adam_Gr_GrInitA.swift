@@ -33,7 +33,7 @@ public final class N_Adam_Gr_GrInitA: NativeModule {
     }
 
     /// HolyC GrInit1 (GrInitA.HC:3)
-    public final func f703_GrInit1(_ t: HTask) throws {
+    public final func f708_GrInit1(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -47,13 +47,13 @@ public final class N_Adam_Gr_GrInitA: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrInitA.HC#0 (GrInitA.HC:21)
-    @discardableResult public final func f704_init_C__Adam_Gr_GrInitA_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Adam_Gr_GrInitA_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 21 // GrInitA.HC:21
             try tick(t)
-            try f703_GrInit1(t)
+            try f708_GrInit1(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Adam/Gr/GrInitA.HC#0", ln) }
@@ -62,14 +62,14 @@ public final class N_Adam_Gr_GrInitA: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_GrInit1(t); return 0
-        case 704: return try f704_init_C__Adam_Gr_GrInitA_HC_0(t)
+        case 708: try f708_GrInit1(t); return 0
+        case 709: return try f709_init_C__Adam_Gr_GrInitA_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "GrInit1", 704: "$init:C:/Adam/Gr/GrInitA.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "GrInit1", 709: "$init:C:/Adam/Gr/GrInitA.HC#0"]
     private static let FILES: [String] = ["C:/Adam/Gr/GrInitA.HC"]
     public override var files: [String] { N_Adam_Gr_GrInitA.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_GrInitA.DEFINED.contains(index) }

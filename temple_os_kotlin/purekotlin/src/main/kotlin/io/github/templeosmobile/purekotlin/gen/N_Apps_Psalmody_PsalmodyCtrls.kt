@@ -31,7 +31,7 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC DrawTempoCtrl (PsalmodyCtrls.HC:10) */
-    fun f703_DrawTempoCtrl(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawTempoCtrl(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -52,21 +52,21 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((p0_dc + 160L), 15L)
             ln = 21 // PsalmodyCtrls.HC:21
             tick(t)
-            P.f396_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 15L), (ld8((p1_c + 56L)) + 15L), (ld8((p1_c + 40L)) + 15L), (((ld8((p1_c + 56L)) + 15L) + 80L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 15L), (ld8((p1_c + 56L)) + 15L), (ld8((p1_c + 40L)) + 15L), (((ld8((p1_c + 56L)) + 15L) + 80L) - 1L), 1L, 0L)
             ln = 23 // PsalmodyCtrls.HC:23
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 30L) + 1L), (ld8((p1_c + 56L)) + 15L), ((ld8((p1_c + 40L)) + 30L) + 1L), (((ld8((p1_c + 56L)) + 15L) + 80L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 30L) + 1L), (ld8((p1_c + 56L)) + 15L), ((ld8((p1_c + 40L)) + 30L) + 1L), (((ld8((p1_c + 56L)) + 15L) + 80L) - 1L), 1L, 0L)
             ln = 26 // PsalmodyCtrls.HC:26
             st4((p0_dc + 160L), 10L)
             ln = 27 // PsalmodyCtrls.HC:27
             tick(t)
             val vb0 = push1(t, divs((ld8(l16_s) * 10L), 80L))
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 15L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 15L) + 80L) + 3L), s0, vb0, 1)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 15L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 15L) + 80L) + 3L), s0, vb0, 1)
             t.sp = vb0
             ln = 29 // PsalmodyCtrls.HC:29
             tick(t)
             val vb1 = push1(t, divs((ld8((l16_s + 8L)) * 10L), 80L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 30L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 15L) + 80L) + 3L), s0, vb1, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 30L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 15L) + 80L) + 3L), s0, vb1, 1)
             t.sp = vb1
             ln = 32 // PsalmodyCtrls.HC:32
             nat(t, n_GrRect, push(t, p0_dc, ((ld8((p1_c + 40L)) + 15L) - 3L), (((((ld8((p1_c + 56L)) + 15L) + 80L) - 1L) - ld8(l16_s)) - 2L), 7L, 5L))
@@ -83,12 +83,12 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
             ln = 43 // PsalmodyCtrls.HC:43
             tick(t)
             val vb2 = push0(t)
-            P.f370_GrVPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 2L) + 2L), ((ld8((p1_c + 56L)) + 15L) + 2L), s1, vb2, 0)
+            P.f371_GrVPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 2L) + 2L), ((ld8((p1_c + 56L)) + 15L) + 2L), s1, vb2, 0)
             t.sp = vb2
             ln = 44 // PsalmodyCtrls.HC:44
             tick(t)
             val vb3 = push0(t)
-            P.f370_GrVPrint(t, p0_dc, (((ld8((p1_c + 48L)) - 2L) - 2L) - 8L), ((ld8((p1_c + 56L)) + 15L) + 2L), s2, vb3, 0)
+            P.f371_GrVPrint(t, p0_dc, (((ld8((p1_c + 48L)) - 2L) - 2L) - 8L), ((ld8((p1_c + 56L)) + 15L) + 2L), s2, vb3, 0)
             t.sp = vb3
             t.depth--
             return
@@ -96,7 +96,7 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC UpdateDerivedTempoCtrl (PsalmodyCtrls.HC:48) */
-    fun f704_UpdateDerivedTempoCtrl(t: Task, a0: Long) {
+    fun f709_UpdateDerivedTempoCtrl(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -122,7 +122,7 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC LeftClickTempo (PsalmodyCtrls.HC:57) */
-    fun f705_LeftClickTempo(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f710_LeftClickTempo(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -154,7 +154,7 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC TempoNew (PsalmodyCtrls.HC:68) */
-    fun f706_TempoNew(t: Task): Long {
+    fun f711_TempoNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -171,11 +171,11 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
             ln = 74 // PsalmodyCtrls.HC:74
             st8((l0_c + 104L), g_tempo_state)
             ln = 75 // PsalmodyCtrls.HC:75
-            st8((l0_c + 120L), 9223090561878065855L)
+            st8((l0_c + 120L), 9223090561878065860L)
             ln = 76 // PsalmodyCtrls.HC:76
-            st8((l0_c + 136L), 9223090561878065857L)
+            st8((l0_c + 136L), 9223090561878065862L)
             ln = 77 // PsalmodyCtrls.HC:77
-            st8((l0_c + 112L), 9223090561878065856L)
+            st8((l0_c + 112L), 9223090561878065861L)
             ln = 78 // PsalmodyCtrls.HC:78
             st8((l0_c + 40L), 396L)
             ln = 79 // PsalmodyCtrls.HC:79
@@ -195,7 +195,7 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC TempoDel (PsalmodyCtrls.HC:85) */
-    fun f707_TempoDel(t: Task, a0: Long) {
+    fun f712_TempoDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -211,7 +211,7 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC $init:C:/Apps/Psalmody/PsalmodyCtrls.HC#0 (PsalmodyCtrls.HC:1) */
-    fun f708_init_C__Apps_Psalmody_PsalmodyCtrls_HC_0(t: Task): Long {
+    fun f713_init_C__Apps_Psalmody_PsalmodyCtrls_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -223,12 +223,12 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawTempoCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_UpdateDerivedTempoCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_LeftClickTempo(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            706 -> f706_TempoNew(t)
-            707 -> { f707_TempoDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> f708_init_C__Apps_Psalmody_PsalmodyCtrls_HC_0(t)
+            708 -> { f708_DrawTempoCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_UpdateDerivedTempoCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_LeftClickTempo(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            711 -> f711_TempoNew(t)
+            712 -> { f712_TempoDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> f713_init_C__Apps_Psalmody_PsalmodyCtrls_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -240,7 +240,7 @@ class N_Apps_Psalmody_PsalmodyCtrls(rt: NativeRuntime, @JvmField val P: Prelude)
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("DrawTempoCtrl", "UpdateDerivedTempoCtrl", "LeftClickTempo", "TempoNew", "TempoDel", "\$init:C:/Apps/Psalmody/PsalmodyCtrls.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/Psalmody/PsalmodyCtrls.HC")
     }

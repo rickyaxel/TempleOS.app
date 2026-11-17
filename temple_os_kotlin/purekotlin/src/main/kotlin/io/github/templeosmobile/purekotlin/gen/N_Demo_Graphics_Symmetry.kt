@@ -12,6 +12,7 @@ import io.github.templeosmobile.core.purenative.*
 class N_Demo_Graphics_Symmetry(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
 
 
     override fun bind(unit: Int, seg: Segment) {
@@ -19,7 +20,7 @@ class N_Demo_Graphics_Symmetry(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC SymmetryDemo (Symmetry.HC:6) */
-    fun f703_SymmetryDemo(t: Task) {
+    fun f708_SymmetryDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -56,7 +57,7 @@ class N_Demo_Graphics_Symmetry(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st4(t1, (ld4s(t1) or 512L))
             ln = 19 // Symmetry.HC:19
             tick(t)
-            P.f314_DCSymmetrySet(t, l56_dc, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), 0L, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), 1L)
+            P.f315_DCSymmetrySet(t, l56_dc, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), 0L, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), 1L)
             ln = 20 // Symmetry.HC:20
             loop0@ while (true) {
                 ln = 21 // Symmetry.HC:21
@@ -81,25 +82,22 @@ class N_Demo_Graphics_Symmetry(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             ln = 30 // Symmetry.HC:30
                             loop3@ while ((l0_msg_code != 10L)) {
                                 ln = 31 // Symmetry.HC:31
-                                tick(t)
-                                P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L))
                                 ln = 32 // Symmetry.HC:32
                                 val t5: Long = nat(t, n_GetMsg, push4(t, (fp + 40), (fp + 48), 1040L, 0L))
                                 l0_msg_code = t5
                                 ln = 34 // Symmetry.HC:34
-                                tick(t)
-                                P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L))
                                 ln = 35 // Symmetry.HC:35
                                 l24_x2 = ld8((fp + 40))
                                 l32_y2 = ld8((fp + 48))
                                 tick(t)
                             }
                             ln = 37 // Symmetry.HC:37
-                            tick(t)
-                            P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L)
+                            nat(t, n_GrLine3, push(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L))
                             ln = 38 // Symmetry.HC:38
                             tick(t)
-                            val t6: Long = P.f315_DCSymmetry3Set(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, l24_x2, l32_y2, 1L)
+                            val t6: Long = P.f316_DCSymmetry3Set(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, l24_x2, l32_y2, 1L)
                             if ((t6 != 0L)) {
                                 ln = 39 // Symmetry.HC:39
                                 val t7: Long = (l56_dc + 28L)
@@ -118,22 +116,19 @@ class N_Demo_Graphics_Symmetry(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             ln = 45 // Symmetry.HC:45
                             loop5@ while ((l0_msg_code != 6L)) {
                                 ln = 46 // Symmetry.HC:46
-                                tick(t)
-                                P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L))
                                 ln = 47 // Symmetry.HC:47
                                 val t8: Long = nat(t, n_GetMsg, push4(t, (fp + 40), (fp + 48), 80L, 0L))
                                 l0_msg_code = t8
                                 ln = 49 // Symmetry.HC:49
-                                tick(t)
-                                P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L))
                                 ln = 50 // Symmetry.HC:50
                                 l24_x2 = ld8((fp + 40))
                                 l32_y2 = ld8((fp + 48))
                                 tick(t)
                             }
                             ln = 52 // Symmetry.HC:52
-                            tick(t)
-                            P.f406_GrLine3(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L)
+                            nat(t, n_GrLine3, push(t, l56_dc, l8_x1, l16_y1, 0L, l24_x2, l32_y2, 0L, 1L, 0L))
                         }
                         else -> {
                         }
@@ -160,13 +155,13 @@ class N_Demo_Graphics_Symmetry(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/Graphics/Symmetry.HC#0 (Symmetry.HC:62) */
-    fun f704_init_C__Demo_Graphics_Symmetry_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_Symmetry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 62 // Symmetry.HC:62
             tick(t)
-            f703_SymmetryDemo(t)
+            f708_SymmetryDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Symmetry.HC#0", ln) }
@@ -175,8 +170,8 @@ class N_Demo_Graphics_Symmetry(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SymmetryDemo(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_Symmetry_HC_0(t)
+            708 -> { f708_SymmetryDemo(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_Symmetry_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -188,7 +183,7 @@ class N_Demo_Graphics_Symmetry(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("SymmetryDemo", "\$init:C:/Demo/Graphics/Symmetry.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Symmetry.HC")
     }

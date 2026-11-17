@@ -18,9 +18,9 @@ c 190a28 8 1
 c 190a30 8 0
 c 190a38 8 ffffffffffffffff
 c 190a40 8 0
-fn 703 DrawIt (U0;*$CTask,*$CDC;-)
-fn 704 $init:C:/Demo/Games/Maze.HC#0 (I64;;-)
-sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
+fn 708 DrawIt (U0;*$CTask,*$CDC;-)
+fn 709 $init:C:/Demo/Games/Maze.HC#0 (I64;;-)
+sym f DrawIt 708 (U0;*$CTask,*$CDC;-)
 sym g dir_x 1909f8 [4]I64
 sym g dir_y 190a28 [4]I64
 sym g stk_dir 18c9e8 [2048]I64
@@ -28,12 +28,12 @@ sym g stk_ptr 1849b0 I64
 sym g stk_x 1849c8 [2048]I64
 sym g stk_y 1889d8 [2048]I64
 sym g text 17fd38 [60][80]U32
-init 704
+init 709
 unit C:/Demo/Games/Maze.HC#1
-fn 705 SolveMaze (U0;I64,I64;-)
-fn 706 Maze (U0;;-)
-fn 707 $init:C:/Demo/Games/Maze.HC#1 (I64;;-)
-sym f Maze 706 (U0;;-)
-sym f SolveMaze 705 (U0;I64,I64;-)
-init 707
+fn 710 SolveMaze (U0;I64,I64;-)
+fn 711 Maze (U0;;-)
+fn 712 $init:C:/Demo/Games/Maze.HC#1 (I64;;-)
+sym f Maze 711 (U0;;-)
+sym f SolveMaze 710 (U0;I64,I64;-)
+init 712
 unit C:/Demo/Games/Maze.HC#2

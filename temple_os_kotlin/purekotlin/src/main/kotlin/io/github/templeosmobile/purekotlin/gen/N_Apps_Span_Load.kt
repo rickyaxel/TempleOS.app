@@ -23,6 +23,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     @JvmField val n_FileWrite = rt.vm.natives.find("FileWrite")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_MAlloc = rt.vm.natives.find("MAlloc")!!.index
     @JvmField val n_MemCpy = rt.vm.natives.find("MemCpy")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
@@ -100,7 +101,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Apps/Span/Load.HC#0 (Load.HC:3) */
-    fun f703_init_C__Apps_Span_Load_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Span_Load_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -114,7 +115,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Apps/Span/Load.HC#1 (Load.HC:25) */
-    fun f704_init_C__Apps_Span_Load_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_Span_Load_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -124,7 +125,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Apps/Span/Load.HC#2 (Load.HC:38) */
-    fun f705_init_C__Apps_Span_Load_HC_2(t: Task): Long {
+    fun f710_init_C__Apps_Span_Load_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -134,7 +135,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Apps/Span/Load.HC#3 (Load.HC:40) */
-    fun f706_init_C__Apps_Span_Load_HC_3(t: Task): Long {
+    fun f711_init_C__Apps_Span_Load_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -148,7 +149,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC PlaceMass (SpanMain.HC:71) */
-    fun f707_PlaceMass(t: Task, a0: Long, a1: Long): Long {
+    fun f712_PlaceMass(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -184,7 +185,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SpanTime (SpanMain.HC:1) */
-    fun f708_SpanTime(t: Task): Double {
+    fun f713_SpanTime(t: Task): Double {
         var ln = 0
         try {
             enter(t)
@@ -206,7 +207,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC MyDerivative (SpanDerive.HC:1) */
-    fun f709_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f714_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -314,7 +315,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SpanBridge1Init (SpanBridge.HC:20) */
-    fun f710_SpanBridge1Init(t: Task, a0: Long) {
+    fun f715_SpanBridge1Init(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -323,49 +324,49 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             var l8_i: Long = 0L
             ln = 4194329 // SpanBridge.HC:25
             tick(t)
-            val t0: Long = f707_PlaceMass(t, 608L, 328L)
+            val t0: Long = f712_PlaceMass(t, 608L, 328L)
             l16_tmpm = t0
             ln = 4194330 // SpanBridge.HC:26
             val t1: Long = (l16_tmpm + 32L)
             st4(t1, (ld4u(t1) or 2L))
             ln = 4194331 // SpanBridge.HC:27
             tick(t)
-            val t2: Long = f707_PlaceMass(t, 632L, 328L)
+            val t2: Long = f712_PlaceMass(t, 632L, 328L)
             l16_tmpm = t2
             ln = 4194332 // SpanBridge.HC:28
             val t3: Long = (l16_tmpm + 32L)
             st4(t3, (ld4u(t3) or 2L))
             ln = 4194333 // SpanBridge.HC:29
             tick(t)
-            val t4: Long = f707_PlaceMass(t, 608L, 360L)
+            val t4: Long = f712_PlaceMass(t, 608L, 360L)
             l16_tmpm = t4
             ln = 4194334 // SpanBridge.HC:30
             val t5: Long = (l16_tmpm + 32L)
             st4(t5, (ld4u(t5) or 2L))
             ln = 4194335 // SpanBridge.HC:31
             tick(t)
-            val t6: Long = f707_PlaceMass(t, 32L, 328L)
+            val t6: Long = f712_PlaceMass(t, 32L, 328L)
             l16_tmpm = t6
             ln = 4194336 // SpanBridge.HC:32
             val t7: Long = (l16_tmpm + 32L)
             st4(t7, (ld4u(t7) or 2L))
             ln = 4194337 // SpanBridge.HC:33
             tick(t)
-            val t8: Long = f707_PlaceMass(t, 8L, 328L)
+            val t8: Long = f712_PlaceMass(t, 8L, 328L)
             l16_tmpm = t8
             ln = 4194338 // SpanBridge.HC:34
             val t9: Long = (l16_tmpm + 32L)
             st4(t9, (ld4u(t9) or 2L))
             ln = 4194339 // SpanBridge.HC:35
             tick(t)
-            val t10: Long = f707_PlaceMass(t, 32L, 360L)
+            val t10: Long = f712_PlaceMass(t, 32L, 360L)
             l16_tmpm = t10
             ln = 4194340 // SpanBridge.HC:36
             val t11: Long = (l16_tmpm + 32L)
             st4(t11, (ld4u(t11) or 2L))
             ln = 4194341 // SpanBridge.HC:37
             tick(t)
-            val t12: Long = f707_PlaceMass(t, 320L, 416L)
+            val t12: Long = f712_PlaceMass(t, 320L, 416L)
             l16_tmpm = t12
             ln = 4194342 // SpanBridge.HC:38
             val t13: Long = (l16_tmpm + 32L)
@@ -375,7 +376,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             loop0@ while ((l8_i < 8L)) {
                 ln = 4194345 // SpanBridge.HC:41
                 tick(t)
-                val t14: Long = f707_PlaceMass(t, (32L + divs(((l8_i + 1L) * 576L), 9L)), 328L)
+                val t14: Long = f712_PlaceMass(t, (32L + divs(((l8_i + 1L) * 576L), 9L)), 328L)
                 l16_tmpm = t14
                 ln = 4194347 // SpanBridge.HC:43
                 st8((l16_tmpm + 120L), bits(((l8_i.toDouble() + 1.0) / 8.0)))
@@ -425,7 +426,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC AdjustLoads (SpanBridge.HC:63) */
-    fun f711_AdjustLoads(t: Task, a0: Long) {
+    fun f716_AdjustLoads(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -437,7 +438,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             l8_tmpm = ld8((p0_ode + 40L))
             ln = 4194370 // SpanBridge.HC:66
             tick(t)
-            val t0: Double = f708_SpanTime(t)
+            val t0: Double = f713_SpanTime(t)
             l24_tt = (t0 / 10.0)
             ln = 4194371 // SpanBridge.HC:67
             loop0@ while ((l8_tmpm != (p0_ode + 40L))) {
@@ -474,17 +475,17 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SpanNew (SpanNew.HC:1) */
-    fun f712_SpanNew(t: Task): Long {
+    fun f717_SpanNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             var l0_ode: Long = 0L
             ln = 5242883 // SpanNew.HC:3
             tick(t)
-            val t0: Long = P.f453_ODENew(t, 0L, 1.0E-4, 3L)
+            val t0: Long = P.f458_ODENew(t, 0L, 1.0E-4, 3L)
             l0_ode = t0
             ln = 5242884 // SpanNew.HC:4
-            st8((l0_ode + 304L), 9223090561878065861L)
+            st8((l0_ode + 304L), 9223090561878065866L)
             ln = 5242885 // SpanNew.HC:5
             st8((l0_ode + 80L), bits(0.002))
             ln = 5242886 // SpanNew.HC:6
@@ -503,7 +504,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SpanDel (SpanNew.HC:12) */
-    fun f713_SpanDel(t: Task, a0: Long) {
+    fun f718_SpanDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -521,7 +522,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                 P.f156_QueDel(t, (p0_ode + 56L), 1L)
                 ln = 5242898 // SpanNew.HC:18
                 tick(t)
-                P.f455_ODEDel(t, p0_ode)
+                P.f460_ODEDel(t, p0_ode)
             }
             t.depth--
             return
@@ -529,7 +530,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SpanSave (SpanNew.HC:25) */
-    fun f714_SpanSave(t: Task, a0: Long, a1: Long): Long {
+    fun f719_SpanSave(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -544,7 +545,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             var l48_tmps: Long = 0L
             ln = 5242913 // SpanNew.HC:33
             tick(t)
-            P.f460_ODERenum(t, p0_ode)
+            P.f465_ODERenum(t, p0_ode)
             ln = 5242914 // SpanNew.HC:34
             st8((fp + 56), bits(1.0))
             ln = 5242915 // SpanNew.HC:35
@@ -612,7 +613,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SpanWrite (SpanNew.HC:67) */
-    fun f715_SpanWrite(t: Task, a0: Long): Long {
+    fun f720_SpanWrite(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -638,7 +639,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             if ((t1 != 0L)) {
                 ln = 5242955 // SpanNew.HC:75
                 tick(t)
-                val t2: Long = f714_SpanSave(t, p0_ode, (fp + 24))
+                val t2: Long = f719_SpanSave(t, p0_ode, (fp + 24))
                 l16_buf = t2
                 if ((t2 != 0L)) {
                     ln = 5242956 // SpanNew.HC:76
@@ -662,7 +663,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SpanLoad (SpanNew.HC:85) */
-    fun f716_SpanLoad(t: Task, a0: Long, a1: Long) {
+    fun f721_SpanLoad(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -715,11 +716,11 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                 P.f153_QueIns(t, l32_tmps, ld8((p0_ode + 64L)))
                 ln = 5242989 // SpanNew.HC:109
                 tick(t)
-                val t2: Long = P.f464_MassFindNum(t, p0_ode, ld4u((l32_tmps + 56L)))
+                val t2: Long = P.f469_MassFindNum(t, p0_ode, ld4u((l32_tmps + 56L)))
                 st8((l32_tmps + 16L), t2)
                 ln = 5242990 // SpanNew.HC:110
                 tick(t)
-                val t3: Long = P.f464_MassFindNum(t, p0_ode, ld4u((l32_tmps + 60L)))
+                val t3: Long = P.f469_MassFindNum(t, p0_ode, ld4u((l32_tmps + 60L)))
                 st8((l32_tmps + 24L), t3)
                 ln = 5242984 // SpanNew.HC:104
                 l16_i = (l16_i + 1L)
@@ -732,7 +733,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SpanRead (SpanNew.HC:114) */
-    fun f717_SpanRead(t: Task): Long {
+    fun f722_SpanRead(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -768,7 +769,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Cost (SpanMain.HC:9) */
-    fun f718_Cost(t: Task, a0: Long): Double {
+    fun f723_Cost(t: Task, a0: Long): Double {
         var ln = 0
         try {
             enter(t)
@@ -807,7 +808,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DrawIt (SpanMain.HC:27) */
-    fun f719_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f724_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -826,8 +827,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                     ln = 2097188 // SpanMain.HC:36
                     st4((p1_dc + 228L), ld4s((l24_tmps + 140L)))
                     ln = 2097189 // SpanMain.HC:37
-                    tick(t)
-                    P.f406_GrLine3(t, p1_dc, f2i(ldf((ld8((l24_tmps + 16L)) + 56L))), f2i(ldf((ld8((l24_tmps + 16L)) + 64L))), 0L, f2i(ldf((ld8((l24_tmps + 24L)) + 56L))), f2i(ldf((ld8((l24_tmps + 24L)) + 64L))), 0L, 1L, 0L)
+                    nat(t, n_GrLine3, push(t, p1_dc, f2i(ldf((ld8((l24_tmps + 16L)) + 56L))), f2i(ldf((ld8((l24_tmps + 16L)) + 64L))), 0L, f2i(ldf((ld8((l24_tmps + 24L)) + 56L))), f2i(ldf((ld8((l24_tmps + 24L)) + 64L))), 0L, 1L, 0L))
                 }
                 ln = 2097192 // SpanMain.HC:40
                 l24_tmps = ld8(l24_tmps)
@@ -840,8 +840,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                 ln = 2097197 // SpanMain.HC:45
                 st4((p1_dc + 228L), 2L)
                 ln = 2097198 // SpanMain.HC:46
-                tick(t)
-                P.f406_GrLine3(t, p1_dc, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), ((ld8((P.g_ms + 8L)) - ld8((p0_task + 232L))) - ld8((p0_task + 264L))), 0L, f2i(ldf((ld8(g_cursor_mass) + 56L))), f2i(ldf((ld8(g_cursor_mass) + 64L))), 0L, 1L, 0L)
+                nat(t, n_GrLine3, push(t, p1_dc, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), ((ld8((P.g_ms + 8L)) - ld8((p0_task + 232L))) - ld8((p0_task + 264L))), 0L, f2i(ldf((ld8(g_cursor_mass) + 56L))), f2i(ldf((ld8(g_cursor_mass) + 64L))), 0L, 1L, 0L))
             }
             ln = 2097203 // SpanMain.HC:51
             l16_tmpm = ld8((ld8(g_ode) + 40L))
@@ -853,23 +852,23 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                     st4((p1_dc + 160L), 0L)
                     ln = 2097207 // SpanMain.HC:55
                     tick(t)
-                    P.f397_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), f2i(ldf((l16_tmpm + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                    P.f398_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), f2i(ldf((l16_tmpm + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                     ln = 2097208 // SpanMain.HC:56
                     tick(t)
-                    P.f387_GrFloodFill(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), 1L, 0L, 0L)
+                    P.f388_GrFloodFill(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), 1L, 0L, 0L)
                     ln = 2097209 // SpanMain.HC:57
                     st4((p1_dc + 160L), ld4u((l16_tmpm + 128L)))
                     ln = 2097210 // SpanMain.HC:58
                     tick(t)
-                    P.f397_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), f2i(ldf((l16_tmpm + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                    P.f398_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), f2i(ldf((l16_tmpm + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                     ln = 2097211 // SpanMain.HC:59
                     tick(t)
-                    P.f387_GrFloodFill(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), 1L, 0L, 0L)
+                    P.f388_GrFloodFill(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), 1L, 0L, 0L)
                     ln = 2097212 // SpanMain.HC:60
                     st4((p1_dc + 160L), 0L)
                     ln = 2097213 // SpanMain.HC:61
                     tick(t)
-                    P.f397_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), f2i(ldf((l16_tmpm + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                    P.f398_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm + 56L))), f2i(ldf((l16_tmpm + 64L))), f2i(ldf((l16_tmpm + 104L))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 }
                 ln = 2097215 // SpanMain.HC:63
                 l16_tmpm = ld8(l16_tmpm)
@@ -879,17 +878,17 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             st4((p1_dc + 160L), 0L)
             ln = 2097219 // SpanMain.HC:67
             tick(t)
-            val t0: Double = f718_Cost(t, ld8(g_ode))
+            val t0: Double = f723_Cost(t, ld8(g_ode))
             tick(t)
             val vb0 = push1(t, bits(t0))
-            P.f369_GrPrint(t, p1_dc, 90L, 0L, s9, vb0, 1)
+            P.f370_GrPrint(t, p1_dc, 90L, 0L, s9, vb0, 1)
             t.sp = vb0
             ln = 2097220 // SpanMain.HC:68
             tick(t)
-            val t1: Double = f708_SpanTime(t)
+            val t1: Double = f713_SpanTime(t)
             tick(t)
             val vb1 = push1(t, bits(t1))
-            P.f369_GrPrint(t, p1_dc, 90L, 8L, s10, vb1, 1)
+            P.f370_GrPrint(t, p1_dc, 90L, 8L, s10, vb1, 1)
             t.sp = vb1
             t.depth--
             return
@@ -897,7 +896,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC NullSpring (SpanMain.HC:85) */
-    fun f720_NullSpring(t: Task, a0: Long, a1: Double) {
+    fun f725_NullSpring(t: Task, a0: Long, a1: Double) {
         var ln = 0
         try {
             enter(t)
@@ -924,7 +923,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC MoveMass (SpanMain.HC:96) */
-    fun f721_MoveMass(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f726_MoveMass(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -950,11 +949,11 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                     if (((ld4u((l24_tmps + 48L)) and 2L) != 0L)) {
                         ln = 2097259 // SpanMain.HC:107
                         tick(t)
-                        f720_NullSpring(t, l24_tmps, 0.99)
+                        f725_NullSpring(t, l24_tmps, 0.99)
                     } else {
                         ln = 2097261 // SpanMain.HC:109
                         tick(t)
-                        f720_NullSpring(t, l24_tmps, 1.0)
+                        f725_NullSpring(t, l24_tmps, 1.0)
                     }
                 }
                 ln = 2097263 // SpanMain.HC:111
@@ -967,7 +966,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DelSpring (SpanMain.HC:115) */
-    fun f722_DelSpring(t: Task, a0: Long) {
+    fun f727_DelSpring(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -983,7 +982,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DelMass (SpanMain.HC:121) */
-    fun f723_DelMass(t: Task, a0: Long) {
+    fun f728_DelMass(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1000,7 +999,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                 if (((ld8((l8_tmps + 16L)) == p0_tmpm) || (ld8((l8_tmps + 24L)) == p0_tmpm))) {
                     ln = 2097280 // SpanMain.HC:128
                     tick(t)
-                    f722_DelSpring(t, l8_tmps)
+                    f727_DelSpring(t, l8_tmps)
                 }
                 ln = 2097281 // SpanMain.HC:129
                 l8_tmps = l16_tmps1
@@ -1017,7 +1016,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DrawSpring (SpanMain.HC:135) */
-    fun f724_DrawSpring(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f729_DrawSpring(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1052,15 +1051,14 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                 }
             } while (false)
             ln = 2097303 // SpanMain.HC:151
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, f2i(ldf((p1_tmpm + 56L))), f2i(ldf((p1_tmpm + 64L))), 0L, p2_x, p3_y, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p0_dc, f2i(ldf((p1_tmpm + 56L))), f2i(ldf((p1_tmpm + 64L))), 0L, p2_x, p3_y, 0L, 1L, 0L))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawSpring", ln) }
     }
 
     /** HolyC PlaceSpring (SpanMain.HC:154) */
-    fun f725_PlaceSpring(t: Task, a0: Long, a1: Long) {
+    fun f730_PlaceSpring(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1089,7 +1087,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                         st8((l16_tmps + 128L), bits((0.3 * 375.0)))
                         ln = 2097317 // SpanMain.HC:165
                         tick(t)
-                        f720_NullSpring(t, l16_tmps, 1.0)
+                        f725_NullSpring(t, l16_tmps, 1.0)
                         ln = 2097318 // SpanMain.HC:166
                         st4((l16_tmps + 136L), 7L)
                         ln = 2097319 // SpanMain.HC:167
@@ -1106,7 +1104,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                         st8((l16_tmps + 128L), bits((1.0 * 375.0)))
                         ln = 2097326 // SpanMain.HC:174
                         tick(t)
-                        f720_NullSpring(t, l16_tmps, 1.0)
+                        f725_NullSpring(t, l16_tmps, 1.0)
                         ln = 2097327 // SpanMain.HC:175
                         st4((l16_tmps + 136L), 8L)
                         ln = 2097328 // SpanMain.HC:176
@@ -1123,7 +1121,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                         st8((l16_tmps + 128L), bits((0.1 * 375.0)))
                         ln = 2097335 // SpanMain.HC:183
                         tick(t)
-                        f720_NullSpring(t, l16_tmps, 0.99)
+                        f725_NullSpring(t, l16_tmps, 0.99)
                         ln = 2097336 // SpanMain.HC:184
                         st4((l16_tmps + 136L), 4L)
                         ln = 2097337 // SpanMain.HC:185
@@ -1145,7 +1143,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC AnimateTask (SpanMain.HC:192) */
-    fun f726_AnimateTask(t: Task, a0: Long) {
+    fun f731_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1178,7 +1176,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                 }
                 ln = 2097361 // SpanMain.HC:209
                 tick(t)
-                f711_AdjustLoads(t, ld8(g_ode))
+                f716_AdjustLoads(t, ld8(g_ode))
                 ln = 2097362 // SpanMain.HC:210
                 nat(t, n_Refresh, push2(t, 1L, 0L))
                 ln = 2097363 // SpanMain.HC:211
@@ -1191,7 +1189,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                             nat(t, n_Free, push1(t, ld8(p0_a)))
                             ln = 2097367 // SpanMain.HC:215
                             tick(t)
-                            val t1: Long = f714_SpanSave(t, ld8(g_ode), 0L)
+                            val t1: Long = f719_SpanSave(t, ld8(g_ode), 0L)
                             st8(p0_a, t1)
                         }
                         ln = 2097369 // SpanMain.HC:217
@@ -1199,11 +1197,11 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                         st8((p0_a + 16L), bits(t2))
                         ln = 2097370 // SpanMain.HC:218
                         tick(t)
-                        P.f454_ODEPause(t, ld8(g_ode), 0L)
+                        P.f459_ODEPause(t, ld8(g_ode), 0L)
                     } else {
                         ln = 2097372 // SpanMain.HC:220
                         tick(t)
-                        P.f454_ODEPause(t, ld8(g_ode), 1L)
+                        P.f459_ODEPause(t, ld8(g_ode), 1L)
                         ln = 2097373 // SpanMain.HC:221
                         val t3: Long = (p0_a + 8L)
                         val t5: Double = ldf(t3)
@@ -1221,17 +1219,17 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Init (SpanMain.HC:228) */
-    fun f727_Init(t: Task, a0: Long) {
+    fun f732_Init(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_a: Long = a0
             ln = 2097382 // SpanMain.HC:230
             tick(t)
-            f713_SpanDel(t, ld8(g_ode))
+            f718_SpanDel(t, ld8(g_ode))
             ln = 2097383 // SpanMain.HC:231
             tick(t)
-            val t0: Long = f712_SpanNew(t)
+            val t0: Long = f717_SpanNew(t)
             st8(g_ode, t0)
             ln = 2097385 // SpanMain.HC:233
             st8(g_run_bttn, 0L)
@@ -1241,11 +1239,11 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             if ((ld8(p0_a) != 0L)) {
                 ln = 2097389 // SpanMain.HC:237
                 tick(t)
-                f716_SpanLoad(t, ld8(g_ode), ld8(p0_a))
+                f721_SpanLoad(t, ld8(g_ode), ld8(p0_a))
             } else {
                 ln = 2097391 // SpanMain.HC:239
                 tick(t)
-                f710_SpanBridge1Init(t, ld8(g_ode))
+                f715_SpanBridge1Init(t, ld8(g_ode))
             }
             ln = 2097392 // SpanMain.HC:240
             st8((p0_a + 8L), bits(0.0))
@@ -1257,16 +1255,16 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SongTask (SpanMain.HC:244) */
-    fun f728_SongTask(t: Task, a0: Long) {
+    fun f733_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 2097398 // SpanMain.HC:246
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 2097399 // SpanMain.HC:247
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 2097400 // SpanMain.HC:248
             st8((P.g_music + 56L), bits(3.636))
             ln = 2097401 // SpanMain.HC:249
@@ -1275,16 +1273,16 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             loop0@ while ((1L != 0L)) {
                 ln = 2097403 // SpanMain.HC:251
                 tick(t)
-                P.f494_Play(t, s11, 0L)
+                P.f499_Play(t, s11, 0L)
                 ln = 2097404 // SpanMain.HC:252
                 tick(t)
-                P.f494_Play(t, s11, 0L)
+                P.f499_Play(t, s11, 0L)
                 ln = 2097405 // SpanMain.HC:253
                 tick(t)
-                P.f494_Play(t, s12, 0L)
+                P.f499_Play(t, s12, 0L)
                 ln = 2097406 // SpanMain.HC:254
                 tick(t)
-                P.f494_Play(t, s12, 0L)
+                P.f499_Play(t, s12, 0L)
                 tick(t)
             }
             t.depth--
@@ -1293,7 +1291,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Span (SpanMain.HC:258) */
-    fun f729_Span(t: Task) {
+    fun f734_Span(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1329,17 +1327,17 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             nat(t, n_DocCursor, push2(t, 0L, 0L))
             ln = 2097425 // SpanMain.HC:273
             val t2: Long = (ld8(P.g_Fs) + 1080L)
-            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065880L, 0L, s13, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065885L, 0L, s13, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t2, t1)
             ln = 2097427 // SpanMain.HC:275
             tick(t)
-            val t3: Long = P.f528_CtrlBttnNew(t, 0L, 0L, 80L, -1L, 2L, s14, g_run_colors, g_run_bttn)
+            val t3: Long = P.f533_CtrlBttnNew(t, 0L, 0L, 80L, -1L, 2L, s14, g_run_colors, g_run_bttn)
             l48_bt_run = t3
             ln = 2097430 // SpanMain.HC:278
             val t4: Long = nat(t, n_Define, push1(t, s2))
             ln = 2097429 // SpanMain.HC:277
             tick(t)
-            val t5: Long = P.f528_CtrlBttnNew(t, 0L, f2i((3.0 * 8.0)), 80L, -1L, 6L, t4, g_mode_colors, g_mode_bttn)
+            val t5: Long = P.f533_CtrlBttnNew(t, 0L, f2i((3.0 * 8.0)), 80L, -1L, 6L, t4, g_mode_colors, g_mode_bttn)
             l56_bt_mode = t5
             ln = 2097431 // SpanMain.HC:279
             st8(g_a, 0L)
@@ -1348,18 +1346,18 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             st4(t6, (ld4u(t6) or 5242880L))
             ln = 2097435 // SpanMain.HC:283
             tick(t)
-            P.f507_MenuPush(t, s15)
+            P.f512_MenuPush(t, s15)
             ln = 2097455 // SpanMain.HC:303
             st8(g_ode, 0L)
             ln = 2097456 // SpanMain.HC:304
             tick(t)
-            f727_Init(t, g_a)
+            f732_Init(t, g_a)
             ln = 2097457 // SpanMain.HC:305
             val t8: Long = (ld8(P.g_Fs) + 1088L)
-            val t7: Long = nat(t, n_Spawn, push(t, 9223090561878065878L, g_a, s16, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t7: Long = nat(t, n_Spawn, push(t, 9223090561878065883L, g_a, s16, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t8, t7)
             ln = 2097458 // SpanMain.HC:306
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065871L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065876L)
             ln = 2097460 // SpanMain.HC:308
             tick(t)
             P.f201_PopUpOk(t, s17, 0L)
@@ -1392,12 +1390,12 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                             0L -> {
                                                 ln = 2097486 // SpanMain.HC:334
                                                 tick(t)
-                                                f707_PlaceMass(t, ld8((fp + 8)), ld8((fp + 16)))
+                                                f712_PlaceMass(t, ld8((fp + 8)), ld8((fp + 16)))
                                             }
                                             1L, 2L, 3L -> {
                                                 ln = 2097491 // SpanMain.HC:339
                                                 tick(t)
-                                                val t12: Long = P.f461_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
+                                                val t12: Long = P.f466_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
                                                 st8((fp + 24), t12)
                                             }
                                             4L -> {
@@ -1405,35 +1403,35 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                                 if ((ld8(g_run_bttn) != 0L)) {
                                                     ln = 2097495 // SpanMain.HC:343
                                                     tick(t)
-                                                    val t13: Long = P.f461_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
+                                                    val t13: Long = P.f466_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
                                                     st8(g_cursor_mass, t13)
                                                 } else {
                                                     ln = 2097497 // SpanMain.HC:345
                                                     tick(t)
-                                                    val t14: Long = P.f461_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
+                                                    val t14: Long = P.f466_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
                                                     st8((fp + 24), t14)
                                                     if ((t14 != 0L)) {
                                                         ln = 2097498 // SpanMain.HC:346
                                                         tick(t)
-                                                        f721_MoveMass(t, ld8((fp + 24)), ld8((fp + 8)), ld8((fp + 16)))
+                                                        f726_MoveMass(t, ld8((fp + 24)), ld8((fp + 8)), ld8((fp + 16)))
                                                     }
                                                 }
                                             }
                                             5L -> {
                                                 ln = 2097501 // SpanMain.HC:349
                                                 tick(t)
-                                                P.f463_MassOrSpringFind(t, ld8(g_ode), (fp + 24), (fp + 40), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
+                                                P.f468_MassOrSpringFind(t, ld8(g_ode), (fp + 24), (fp + 40), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
                                                 ln = 2097502 // SpanMain.HC:350
                                                 if ((ld8((fp + 24)) != 0L)) {
                                                     ln = 2097503 // SpanMain.HC:351
                                                     tick(t)
-                                                    f723_DelMass(t, ld8((fp + 24)))
+                                                    f728_DelMass(t, ld8((fp + 24)))
                                                 }
                                                 ln = 2097504 // SpanMain.HC:352
                                                 if ((ld8((fp + 40)) != 0L)) {
                                                     ln = 2097505 // SpanMain.HC:353
                                                     tick(t)
-                                                    f722_DelSpring(t, ld8((fp + 40)))
+                                                    f727_DelSpring(t, ld8((fp + 40)))
                                                 }
                                             }
                                             else -> {
@@ -1451,14 +1449,14 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                                 var r17: Boolean = (ld8((fp + 24)) != 0L)
                                                 if (r17) {
                                                     tick(t)
-                                                    val t16: Long = P.f461_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
+                                                    val t16: Long = P.f466_MassFind(t, ld8(g_ode), ld8((fp + 8)).toDouble(), ld8((fp + 16)).toDouble(), 0.0)
                                                     l32_tmpm2 = t16
                                                     r17 = (t16 != 0L)
                                                 }
                                                 if ((r17 && (ld8((fp + 24)) != l32_tmpm2))) {
                                                     ln = 2097515 // SpanMain.HC:363
                                                     tick(t)
-                                                    f725_PlaceSpring(t, ld8((fp + 24)), l32_tmpm2)
+                                                    f730_PlaceSpring(t, ld8((fp + 24)), l32_tmpm2)
                                                 }
                                             }
                                             4L -> {
@@ -1466,7 +1464,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                                 if (((ld8(g_run_bttn) == 0L) && (ld8((fp + 24)) != 0L))) {
                                                     ln = 2097519 // SpanMain.HC:367
                                                     tick(t)
-                                                    f721_MoveMass(t, ld8((fp + 24)), ld8((fp + 8)), ld8((fp + 16)))
+                                                    f726_MoveMass(t, ld8((fp + 24)), ld8((fp + 8)), ld8((fp + 16)))
                                                 }
                                             }
                                             else -> {
@@ -1488,7 +1486,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                                 if (((ld8(g_run_bttn) == 0L) && (ld8((fp + 24)) != 0L))) {
                                                     ln = 2097528 // SpanMain.HC:376
                                                     tick(t)
-                                                    f721_MoveMass(t, ld8((fp + 24)), ld8((fp + 8)), ld8((fp + 16)))
+                                                    f726_MoveMass(t, ld8((fp + 24)), ld8((fp + 8)), ld8((fp + 16)))
                                                 }
                                             }
                                             1L, 2L, 3L -> {
@@ -1496,7 +1494,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                                 if ((ld8((fp + 24)) != 0L)) {
                                                     ln = 2097534 // SpanMain.HC:382
                                                     tick(t)
-                                                    f724_DrawSpring(t, l72_dc, ld8((fp + 24)), ld8((fp + 8)), ld8((fp + 16)))
+                                                    f729_DrawSpring(t, l72_dc, ld8((fp + 24)), ld8((fp + 8)), ld8((fp + 16)))
                                                 }
                                             }
                                             else -> {
@@ -1595,18 +1593,18 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                                                                         } while (false)
                                                                                         ln = 2097548 // SpanMain.HC:396
                                                                                         tick(t)
-                                                                                        val t21: Double = f708_SpanTime(t)
+                                                                                        val t21: Double = f713_SpanTime(t)
                                                                                         if (((t21 == 0.0) || (ld8(g_a) == 0L))) {
                                                                                             ln = 2097549 // SpanMain.HC:397
                                                                                             nat(t, n_Free, push1(t, ld8(g_a)))
                                                                                             ln = 2097550 // SpanMain.HC:398
                                                                                             tick(t)
-                                                                                            val t22: Long = f714_SpanSave(t, ld8(g_ode), 0L)
+                                                                                            val t22: Long = f719_SpanSave(t, ld8(g_ode), 0L)
                                                                                             st8(g_a, t22)
                                                                                         }
                                                                                         ln = 2097552 // SpanMain.HC:400
                                                                                         tick(t)
-                                                                                        f727_Init(t, g_a)
+                                                                                        f732_Init(t, g_a)
                                                                                         ln = 2097553 // SpanMain.HC:401
                                                                                         break@switch7_44
                                                                                     } while (false)
@@ -1616,13 +1614,13 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                                                                     st8(g_a, 0L)
                                                                                     ln = 2097557 // SpanMain.HC:405
                                                                                     tick(t)
-                                                                                    f727_Init(t, g_a)
+                                                                                    f732_Init(t, g_a)
                                                                                     ln = 2097558 // SpanMain.HC:406
                                                                                     break@switch7_44
                                                                                 } while (false)
                                                                                 ln = 2097560 // SpanMain.HC:408
                                                                                 tick(t)
-                                                                                val t23: Long = f717_SpanRead(t)
+                                                                                val t23: Long = f722_SpanRead(t)
                                                                                 l64_src = t23
                                                                                 if ((t23 != 0L)) {
                                                                                     ln = 2097561 // SpanMain.HC:409
@@ -1631,28 +1629,28 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                                                                     st8(g_a, l64_src)
                                                                                     ln = 2097563 // SpanMain.HC:411
                                                                                     tick(t)
-                                                                                    f727_Init(t, g_a)
+                                                                                    f732_Init(t, g_a)
                                                                                 }
                                                                                 ln = 2097565 // SpanMain.HC:413
                                                                                 break@switch7_44
                                                                             } while (false)
                                                                             ln = 2097567 // SpanMain.HC:415
                                                                             tick(t)
-                                                                            val t24: Double = f708_SpanTime(t)
+                                                                            val t24: Double = f713_SpanTime(t)
                                                                             if (((t24 == 0.0) || (ld8(g_a) == 0L))) {
                                                                                 ln = 2097568 // SpanMain.HC:416
                                                                                 nat(t, n_Free, push1(t, ld8(g_a)))
                                                                                 ln = 2097569 // SpanMain.HC:417
                                                                                 tick(t)
-                                                                                val t25: Long = f714_SpanSave(t, ld8(g_ode), 0L)
+                                                                                val t25: Long = f719_SpanSave(t, ld8(g_ode), 0L)
                                                                                 st8(g_a, t25)
                                                                             }
                                                                             ln = 2097571 // SpanMain.HC:419
                                                                             tick(t)
-                                                                            f727_Init(t, g_a)
+                                                                            f732_Init(t, g_a)
                                                                             ln = 2097572 // SpanMain.HC:420
                                                                             tick(t)
-                                                                            f715_SpanWrite(t, ld8(g_ode))
+                                                                            f720_SpanWrite(t, ld8(g_ode))
                                                                             ln = 2097573 // SpanMain.HC:421
                                                                             break@switch7_44
                                                                         } while (false)
@@ -1693,21 +1691,21 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                                             } while (false)
                                             ln = 2097596 // SpanMain.HC:444
                                             tick(t)
-                                            val t26: Double = f708_SpanTime(t)
+                                            val t26: Double = f713_SpanTime(t)
                                             if (((t26 == 0.0) || (ld8(g_a) == 0L))) {
                                                 ln = 2097597 // SpanMain.HC:445
                                                 nat(t, n_Free, push1(t, ld8(g_a)))
                                                 ln = 2097598 // SpanMain.HC:446
                                                 tick(t)
-                                                val t27: Long = f714_SpanSave(t, ld8(g_ode), 0L)
+                                                val t27: Long = f719_SpanSave(t, ld8(g_ode), 0L)
                                                 st8(g_a, t27)
                                             }
                                             ln = 2097600 // SpanMain.HC:448
                                             tick(t)
-                                            f727_Init(t, g_a)
+                                            f732_Init(t, g_a)
                                             ln = 2097601 // SpanMain.HC:449
                                             tick(t)
-                                            f715_SpanWrite(t, ld8(g_ode))
+                                            f720_SpanWrite(t, ld8(g_ode))
                                         } while (false)
                                         ln = 2097603 // SpanMain.HC:451
                                         break@skip_0
@@ -1738,13 +1736,13 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 2097614 // SpanMain.HC:462
             tick(t)
-            P.f529_CtrlBttnDel(t, l48_bt_run)
+            P.f534_CtrlBttnDel(t, l48_bt_run)
             ln = 2097615 // SpanMain.HC:463
             tick(t)
-            P.f529_CtrlBttnDel(t, l56_bt_mode)
+            P.f534_CtrlBttnDel(t, l56_bt_mode)
             ln = 2097616 // SpanMain.HC:464
             tick(t)
-            f713_SpanDel(t, ld8(g_ode))
+            f718_SpanDel(t, ld8(g_ode))
             ln = 2097617 // SpanMain.HC:465
             tick(t)
             P.f286_DCFill(t, l72_dc, 255L)
@@ -1753,7 +1751,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             P.f293_DCDel(t, l72_dc)
             ln = 2097619 // SpanMain.HC:467
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -1761,7 +1759,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Apps/Span/Load.HC#4 (Load.HC:1) */
-    fun f730_init_C__Apps_Span_Load_HC_4(t: Task): Long {
+    fun f735_init_C__Apps_Span_Load_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1773,34 +1771,34 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Span_Load_HC_0(t)
-            704 -> f704_init_C__Apps_Span_Load_HC_1(t)
-            705 -> f705_init_C__Apps_Span_Load_HC_2(t)
-            706 -> f706_init_C__Apps_Span_Load_HC_3(t)
-            707 -> f707_PlaceMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            708 -> bits(f708_SpanTime(t))
-            709 -> { f709_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            710 -> { f710_SpanBridge1Init(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            711 -> { f711_AdjustLoads(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            712 -> f712_SpanNew(t)
-            713 -> { f713_SpanDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            714 -> f714_SpanSave(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            715 -> f715_SpanWrite(t, (if (n > 0) st[base + 0] else 0L))
-            716 -> { f716_SpanLoad(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            717 -> f717_SpanRead(t)
-            718 -> bits(f718_Cost(t, (if (n > 0) st[base + 0] else 0L)))
-            719 -> { f719_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            720 -> { f720_NullSpring(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
-            721 -> { f721_MoveMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            722 -> { f722_DelSpring(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            723 -> { f723_DelMass(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            724 -> { f724_DrawSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            725 -> { f725_PlaceSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            726 -> { f726_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            727 -> { f727_Init(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            728 -> { f728_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            729 -> { f729_Span(t); 0L }
-            730 -> f730_init_C__Apps_Span_Load_HC_4(t)
+            708 -> f708_init_C__Apps_Span_Load_HC_0(t)
+            709 -> f709_init_C__Apps_Span_Load_HC_1(t)
+            710 -> f710_init_C__Apps_Span_Load_HC_2(t)
+            711 -> f711_init_C__Apps_Span_Load_HC_3(t)
+            712 -> f712_PlaceMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            713 -> bits(f713_SpanTime(t))
+            714 -> { f714_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            715 -> { f715_SpanBridge1Init(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            716 -> { f716_AdjustLoads(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            717 -> f717_SpanNew(t)
+            718 -> { f718_SpanDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            719 -> f719_SpanSave(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            720 -> f720_SpanWrite(t, (if (n > 0) st[base + 0] else 0L))
+            721 -> { f721_SpanLoad(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            722 -> f722_SpanRead(t)
+            723 -> bits(f723_Cost(t, (if (n > 0) st[base + 0] else 0L)))
+            724 -> { f724_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            725 -> { f725_NullSpring(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
+            726 -> { f726_MoveMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            727 -> { f727_DelSpring(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            728 -> { f728_DelMass(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            729 -> { f729_DrawSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            730 -> { f730_PlaceSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            731 -> { f731_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            732 -> { f732_Init(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            733 -> { f733_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            734 -> { f734_Span(t); 0L }
+            735 -> f735_init_C__Apps_Span_Load_HC_4(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1812,7 +1810,7 @@ class N_Apps_Span_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735)
         private val NAMES = arrayOf("\$init:C:/Apps/Span/Load.HC#0", "\$init:C:/Apps/Span/Load.HC#1", "\$init:C:/Apps/Span/Load.HC#2", "\$init:C:/Apps/Span/Load.HC#3", "PlaceMass", "SpanTime", "MyDerivative", "SpanBridge1Init", "AdjustLoads", "SpanNew", "SpanDel", "SpanSave", "SpanWrite", "SpanLoad", "SpanRead", "Cost", "DrawIt", "NullSpring", "MoveMass", "DelSpring", "DelMass", "DrawSpring", "PlaceSpring", "AnimateTask", "Init", "SongTask", "Span", "\$init:C:/Apps/Span/Load.HC#4")
         private val FILES = arrayOf<String>("C:/Apps/Span/Load.HC", "C:/Apps/Span/Span.HH", "C:/Apps/Span/SpanMain.HC", "C:/Apps/Span/SpanDerive.HC", "C:/Apps/Span/SpanBridge.HC", "C:/Apps/Span/SpanNew.HC")
     }

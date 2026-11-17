@@ -12,8 +12,10 @@ import io.github.templeosmobile.core.purenative.*
 class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_JobQue = rt.vm.natives.find("JobQue")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_mp_cnt = rt.vm.natives.find("mp_cnt")!!.index
 
     /** dc1: CDC * */ @JvmField var g_dc1: Long = 0L
@@ -41,7 +43,7 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrBlackLighting (Shadow.HC:21) */
-    fun f703_GrBlackLighting(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
+    fun f708_GrBlackLighting(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
         var ln = 0
         try {
             enter(t)
@@ -60,7 +62,7 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawShadow (Shadow.HC:26) */
-    fun f704_DrawShadow(t: Task, a0: Long) {
+    fun f709_DrawShadow(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -81,11 +83,10 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             tick(t)
             P.f307_Mat4x4RotZ(t, ld8((ld8(g_dc1) + 200L)), ldf(g___3))
             ln = 34 // Shadow.HC:34
-            tick(t)
-            P.f308_Mat4x4Scale(t, ld8((ld8(g_dc1) + 200L)), ldf(g_s))
+            nat(t, n_Mat4x4Scale, push2(t, ld8((ld8(g_dc1) + 200L)), bits(ldf(g_s))))
             ln = 35 // Shadow.HC:35
             tick(t)
-            P.f310_Mat4x4TranslationEqu(t, ld8((ld8(g_dc1) + 200L)), 200L, 200L, 5000L)
+            P.f311_Mat4x4TranslationEqu(t, ld8((ld8(g_dc1) + 200L)), 200L, 200L, 5000L)
             ln = 36 // Shadow.HC:36
             val t0: Long = (ld8(g_dc1) + 28L)
             st4(t0, (ld4s(t0) or 256L))
@@ -106,7 +107,7 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st8((((fp + 8) + 96L) + 24L), 4294967296L)
             ln = 47 // Shadow.HC:47
             tick(t)
-            P.f310_Mat4x4TranslationEqu(t, (fp + 8), 0L, -2200L, 1000L)
+            P.f311_Mat4x4TranslationEqu(t, (fp + 8), 0L, -2200L, 1000L)
             ln = 48 // Shadow.HC:48
             tick(t)
             val t1: Long = P.f301_Mat4x4MulMat4x4New(t, (fp + 8), ld8((ld8(g_dc1) + 200L)), p0_task)
@@ -117,10 +118,9 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             tick(t)
             P.f283_DCMat4x4Set(t, ld8(g_dc1), l136_r2)
             ln = 52 // Shadow.HC:52
-            st8((ld8(g_dc1) + 240L), 9223090561878065855L)
+            st8((ld8(g_dc1) + 240L), 9223090561878065860L)
             ln = 53 // Shadow.HC:53
-            tick(t)
-            P.f440_Sprite3(t, ld8(g_dc1), 0L, 0L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, ld8(g_dc1), 0L, 0L, 0L, b0, 0L))
             t.msp = msp0
             t.depth--
             return
@@ -128,7 +128,7 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawIt (Shadow.HC:56) */
-    fun f705_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f710_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -150,11 +150,10 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             tick(t)
             P.f307_Mat4x4RotZ(t, ld8((ld8(g_dc0) + 200L)), ldf(g___3))
             ln = 63 // Shadow.HC:63
-            tick(t)
-            P.f308_Mat4x4Scale(t, ld8((ld8(g_dc0) + 200L)), ldf(g_s))
+            nat(t, n_Mat4x4Scale, push2(t, ld8((ld8(g_dc0) + 200L)), bits(ldf(g_s))))
             ln = 64 // Shadow.HC:64
             tick(t)
-            P.f310_Mat4x4TranslationEqu(t, ld8((ld8(g_dc0) + 200L)), 200L, 200L, 5000L)
+            P.f311_Mat4x4TranslationEqu(t, ld8((ld8(g_dc0) + 200L)), 200L, 200L, 5000L)
             ln = 65 // Shadow.HC:65
             val t0: Long = (ld8(g_dc0) + 28L)
             st4(t0, (ld4s(t0) or 256L))
@@ -165,22 +164,21 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             val t1: Long = nat(t, n_mp_cnt, push0(t))
             if ((t1 > 1L)) {
                 ln = 68 // Shadow.HC:68
-                nat(t, n_JobQue, push(t, 9223090561878065856L, p0_task, 1L, 0L, 0L, 0L, 0L, 0L))
+                nat(t, n_JobQue, push(t, 9223090561878065861L, p0_task, 1L, 0L, 0L, 0L, 0L, 0L))
             } else {
                 ln = 70 // Shadow.HC:70
                 tick(t)
-                f704_DrawShadow(t, p0_task)
+                f709_DrawShadow(t, p0_task)
             }
             ln = 71 // Shadow.HC:71
-            tick(t)
-            P.f440_Sprite3(t, ld8(g_dc0), 0L, 0L, 0L, b1, 0L)
+            nat(t, n_Sprite3, push(t, ld8(g_dc0), 0L, 0L, 0L, b1, 0L))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawIt", ln) }
     }
 
     /** HolyC Shadow (Shadow.HC:74) */
-    fun f706_Shadow(t: Task) {
+    fun f711_Shadow(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -212,7 +210,7 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             tick(t)
             P.f220_WinMax(t, 0L)
             ln = 88 // Shadow.HC:88
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065857L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065862L)
             ln = 90 // Shadow.HC:90
             loop0@ while (true) {
                 tick(t)
@@ -245,13 +243,13 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Graphics/Shadow.HC#0 (Shadow.HC:102) */
-    fun f707_init_C__Demo_Graphics_Shadow_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_Graphics_Shadow_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 102 // Shadow.HC:102
             tick(t)
-            f706_Shadow(t)
+            f711_Shadow(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Shadow.HC#0", ln) }
@@ -260,11 +258,11 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_GrBlackLighting(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
-            704 -> { f704_DrawShadow(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_Shadow(t); 0L }
-            707 -> f707_init_C__Demo_Graphics_Shadow_HC_0(t)
+            708 -> { f708_GrBlackLighting(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
+            709 -> { f709_DrawShadow(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_Shadow(t); 0L }
+            712 -> f712_init_C__Demo_Graphics_Shadow_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -276,7 +274,7 @@ class N_Demo_Graphics_Shadow(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("GrBlackLighting", "DrawShadow", "DrawIt", "Shadow", "\$init:C:/Demo/Graphics/Shadow.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Shadow.HC")
     }

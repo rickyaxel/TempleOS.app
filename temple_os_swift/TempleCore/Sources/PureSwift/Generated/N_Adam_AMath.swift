@@ -34,7 +34,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC R2P (AMath.HC:2)
-    public final func f703_R2P(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws {
+    public final func f708_R2P(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -60,7 +60,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC P2R (AMath.HC:11)
-    public final func f704_P2R(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws {
+    public final func f709_P2R(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -86,7 +86,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC Wrap (AMath.HC:19)
-    @discardableResult public final func f705_Wrap(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
+    @discardableResult public final func f710_Wrap(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -115,7 +115,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC DistSqrI64 (AMath.HC:29)
-    @discardableResult public final func f706_DistSqrI64(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f711_DistSqrI64(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -138,7 +138,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC ASin (AMath.HC:35)
-    @discardableResult public final func f707_ASin(_ t: HTask, _ a0: Double) throws -> Double {
+    @discardableResult public final func f712_ASin(_ t: HTask, _ a0: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -166,7 +166,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC ACos (AMath.HC:45)
-    @discardableResult public final func f708_ACos(_ t: HTask, _ a0: Double) throws -> Double {
+    @discardableResult public final func f713_ACos(_ t: HTask, _ a0: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -200,7 +200,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC Sinh (AMath.HC:57)
-    @discardableResult public final func f709_Sinh(_ t: HTask, _ a0: Double) throws -> Double {
+    @discardableResult public final func f714_Sinh(_ t: HTask, _ a0: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -217,7 +217,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC Cosh (AMath.HC:62)
-    @discardableResult public final func f710_Cosh(_ t: HTask, _ a0: Double) throws -> Double {
+    @discardableResult public final func f715_Cosh(_ t: HTask, _ a0: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -234,7 +234,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC CAdd (AMath.HC:68)
-    @discardableResult public final func f711_CAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f716_CAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -254,7 +254,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC CSub (AMath.HC:75)
-    @discardableResult public final func f712_CSub(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f717_CSub(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -274,7 +274,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC CMul (AMath.HC:82)
-    @discardableResult public final func f713_CMul(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f718_CMul(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -294,7 +294,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC CDiv (AMath.HC:89)
-    @discardableResult public final func f714_CDiv(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f719_CDiv(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -305,10 +305,10 @@ public final class N_Adam_AMath: NativeModule {
             var p2_n2: Int64 = a2
             ln = 92 // AMath.HC:92
             try tick(t)
-            try f703_R2P(t, (fp &+ 24), (fp &+ 32), ldf(p1_n1), ldf((p1_n1 &+ 8)))
+            try f708_R2P(t, (fp &+ 24), (fp &+ 32), ldf(p1_n1), ldf((p1_n1 &+ 8)))
             ln = 93 // AMath.HC:93
             try tick(t)
-            try f703_R2P(t, (fp &+ 40), (fp &+ 48), ldf(p2_n2), ldf((p2_n2 &+ 8)))
+            try f708_R2P(t, (fp &+ 40), (fp &+ 48), ldf(p2_n2), ldf((p2_n2 &+ 8)))
             ln = 94 // AMath.HC:94
             try st8((fp &+ 24), bits((ldf((fp &+ 24)) / ldf((fp &+ 40)))))
             ln = 95 // AMath.HC:95
@@ -332,7 +332,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC CScale (AMath.HC:101)
-    @discardableResult public final func f715_CScale(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
+    @discardableResult public final func f720_CScale(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -353,7 +353,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC CCopy (AMath.HC:108)
-    @discardableResult public final func f716_CCopy(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f721_CCopy(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -372,7 +372,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC CEqu (AMath.HC:115)
-    @discardableResult public final func f717_CEqu(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
+    @discardableResult public final func f722_CEqu(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -392,7 +392,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC CPoly (AMath.HC:122)
-    @discardableResult public final func f718_CPoly(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f723_CPoly(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -407,18 +407,18 @@ public final class N_Adam_AMath: NativeModule {
             if (p1_n > 0) {
                 ln = 127 // AMath.HC:127
                 try tick(t)
-                _ = try f712_CSub(t, p0_dst, p3_x, p2_zeros)
+                _ = try f717_CSub(t, p0_dst, p3_x, p2_zeros)
                 ln = 128 // AMath.HC:128
                 l32_i = 1
                 loop0: while (l32_i < p1_n) {
                     ln = 129 // AMath.HC:129
                     try tick(t)
-                    _ = try f716_CCopy(t, (fp &+ 40), p0_dst)
+                    _ = try f721_CCopy(t, (fp &+ 40), p0_dst)
                     ln = 130 // AMath.HC:130
                     try tick(t)
-                    let t0: Int64 = try f712_CSub(t, (fp &+ 56), p3_x, (p2_zeros &+ (l32_i &* 16)))
+                    let t0: Int64 = try f717_CSub(t, (fp &+ 56), p3_x, (p2_zeros &+ (l32_i &* 16)))
                     try tick(t)
-                    _ = try f713_CMul(t, p0_dst, (fp &+ 40), t0)
+                    _ = try f718_CMul(t, p0_dst, (fp &+ 40), t0)
                     ln = 128 // AMath.HC:128
                     l32_i = (l32_i &+ 1)
                     try tick(t)
@@ -426,7 +426,7 @@ public final class N_Adam_AMath: NativeModule {
             } else {
                 ln = 133 // AMath.HC:133
                 try tick(t)
-                _ = try f717_CEqu(t, p0_dst, 1.0, 0.0)
+                _ = try f722_CEqu(t, p0_dst, 1.0, 0.0)
             }
             ln = 134 // AMath.HC:134
             t.msp = msp0
@@ -439,7 +439,7 @@ public final class N_Adam_AMath: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/AMath.HC#0 (AMath.HC:1)
-    @discardableResult public final func f719_init_C__Adam_AMath_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f724_init_C__Adam_AMath_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -451,29 +451,29 @@ public final class N_Adam_AMath: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_R2P(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))); return 0
-        case 704: try f704_P2R(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))); return 0
-        case 705: return bits(try f705_Wrap(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
-        case 706: return try f706_DistSqrI64(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 707: return bits(try f707_ASin(t, d((n > 0 ? st[base + 0] : 0))))
-        case 708: return bits(try f708_ACos(t, d((n > 0 ? st[base + 0] : 0))))
-        case 709: return bits(try f709_Sinh(t, d((n > 0 ? st[base + 0] : 0))))
-        case 710: return bits(try f710_Cosh(t, d((n > 0 ? st[base + 0] : 0))))
-        case 711: return try f711_CAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 712: return try f712_CSub(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 713: return try f713_CMul(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 714: return try f714_CDiv(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 715: return try f715_CScale(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
-        case 716: return try f716_CCopy(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 717: return try f717_CEqu(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
-        case 718: return try f718_CPoly(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 719: return try f719_init_C__Adam_AMath_HC_0(t)
+        case 708: try f708_R2P(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))); return 0
+        case 709: try f709_P2R(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))); return 0
+        case 710: return bits(try f710_Wrap(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
+        case 711: return try f711_DistSqrI64(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 712: return bits(try f712_ASin(t, d((n > 0 ? st[base + 0] : 0))))
+        case 713: return bits(try f713_ACos(t, d((n > 0 ? st[base + 0] : 0))))
+        case 714: return bits(try f714_Sinh(t, d((n > 0 ? st[base + 0] : 0))))
+        case 715: return bits(try f715_Cosh(t, d((n > 0 ? st[base + 0] : 0))))
+        case 716: return try f716_CAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 717: return try f717_CSub(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 718: return try f718_CMul(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 719: return try f719_CDiv(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 720: return try f720_CScale(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
+        case 721: return try f721_CCopy(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 722: return try f722_CEqu(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
+        case 723: return try f723_CPoly(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 724: return try f724_init_C__Adam_AMath_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719]
-    private static let NAMES: [Int: String] = [703: "R2P", 704: "P2R", 705: "Wrap", 706: "DistSqrI64", 707: "ASin", 708: "ACos", 709: "Sinh", 710: "Cosh", 711: "CAdd", 712: "CSub", 713: "CMul", 714: "CDiv", 715: "CScale", 716: "CCopy", 717: "CEqu", 718: "CPoly", 719: "$init:C:/Adam/AMath.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724]
+    private static let NAMES: [Int: String] = [708: "R2P", 709: "P2R", 710: "Wrap", 711: "DistSqrI64", 712: "ASin", 713: "ACos", 714: "Sinh", 715: "Cosh", 716: "CAdd", 717: "CSub", 718: "CMul", 719: "CDiv", 720: "CScale", 721: "CCopy", 722: "CEqu", 723: "CPoly", 724: "$init:C:/Adam/AMath.HC#0"]
     private static let FILES: [String] = ["C:/Adam/AMath.HC"]
     public override var files: [String] { N_Adam_AMath.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_AMath.DEFINED.contains(index) }

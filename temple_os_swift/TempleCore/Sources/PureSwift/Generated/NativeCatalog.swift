@@ -4,7 +4,7 @@ import TempleCore
 /// Every program translated to Swift, with the source hashes it was translated from.
 public enum NativeCatalog {
     public static let source = NativeCatalogSource(generator: "1",
-        prelude: NativePreludeImage(image: "Prelude.tosimg", sourceHash: "15d34faef0e7edd65e20b9740f6995b02324e73580510f5bbefda92eb5b67111", split: 703) { rt in Prelude(rt) },
+        prelude: NativePreludeImage(image: "Prelude.tosimg", sourceHash: "484b437fb5db5b783b61c28e96c035405556c11a9b3fec729882576375cdf556", split: 708) { rt in Prelude(rt) },
         programs: [
             NativeProgramImage(path: "C:/Adam/AExts.HC", image: "N_Adam_AExts.tosimg", closure: ["C:/Adam/AExts.HC": "5dc17012fe30bb44a7a5f176461b024a96442f4b8676c6d4337bda7af96d65e7"], requiresTerry: nil) { rt, pre in N_Adam_AExts(rt, pre as! Prelude) },
             NativeProgramImage(path: "C:/Adam/AMath.HC", image: "N_Adam_AMath.tosimg", closure: ["C:/Adam/AMath.HC": "3023888ca30f37c76548ffb67593a5a3d3ccbcb272205b9029081aa75adb88d9"], requiresTerry: nil) { rt, pre in N_Adam_AMath(rt, pre as! Prelude) },

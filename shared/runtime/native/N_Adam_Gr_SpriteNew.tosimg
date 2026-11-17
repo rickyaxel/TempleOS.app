@@ -9,8 +9,8 @@ c 1352d 1 4
 c 1352e 1 5
 c 1352f 1 6
 c 13530 1 7
-fn 703 $init:C:/Adam/Gr/SpriteNew.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Adam/Gr/SpriteNew.HC#0 (I64;;-)
+init 708
 unit C:/Adam/Gr/SpriteNew.HC#1
 c 13548 8 1
 c 13550 8 2
@@ -42,8 +42,8 @@ c 13618 8 11
 c 13620 8 9
 c 13628 8 9
 c 13630 8 9
-fn 704 $init:C:/Adam/Gr/SpriteNew.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Adam/Gr/SpriteNew.HC#1 (I64;;-)
+init 709
 unit C:/Adam/Gr/SpriteNew.HC#2
 s 14970 53545f5350524954455f454c454d5f5459504553
 s 14ab8 255a
@@ -59,20 +59,20 @@ s 14ba8 1f2825642c2564293a2564572c256448
 s 14b50 1f2564
 s 14bd0 1f2564562c256454
 s 14bd0 1f2564562c256454
-fn 705 SpriteElemQuedBaseSize (I64;I64;-)
-fn 706 SpriteElemSize (I64;*$CSprite;-)
-fn 707 SpriteSize (I64;*U8;-)
-fn 708 SpriteTypeMask (I64;*U8;-)
-fn 709 SpriteSelAll (U0;*U8,Bool;-)
-fn 710 DC2Sprite (*U8;*$CDC;-)
-fn 711 SpriteElem2Summary (*U8;*$CSprite;-)
-fn 712 $init:C:/Adam/Gr/SpriteNew.HC#2 (I64;;-)
-sym f DC2Sprite 710 (*U8;*$CDC;-)
-sym f SpriteElem2Summary 711 (*U8;*$CSprite;-)
-sym f SpriteElemQuedBaseSize 705 (I64;I64;-)
-sym f SpriteElemSize 706 (I64;*$CSprite;-)
-sym f SpriteSelAll 709 (U0;*U8,Bool;-)
-sym f SpriteSize 707 (I64;*U8;-)
-sym f SpriteTypeMask 708 (I64;*U8;-)
-init 712
+fn 710 SpriteElemQuedBaseSize (I64;I64;-)
+fn 711 SpriteElemSize (I64;*$CSprite;-)
+fn 712 SpriteSize (I64;*U8;-)
+fn 713 SpriteTypeMask (I64;*U8;-)
+fn 714 SpriteSelAll (U0;*U8,Bool;-)
+fn 715 DC2Sprite (*U8;*$CDC;-)
+fn 716 SpriteElem2Summary (*U8;*$CSprite;-)
+fn 717 $init:C:/Adam/Gr/SpriteNew.HC#2 (I64;;-)
+sym f DC2Sprite 715 (*U8;*$CDC;-)
+sym f SpriteElem2Summary 716 (*U8;*$CSprite;-)
+sym f SpriteElemQuedBaseSize 710 (I64;I64;-)
+sym f SpriteElemSize 711 (I64;*$CSprite;-)
+sym f SpriteSelAll 714 (U0;*U8,Bool;-)
+sym f SpriteSize 712 (I64;*U8;-)
+sym f SpriteTypeMask 713 (I64;*U8;-)
+init 717
 unit C:/Adam/Gr/SpriteNew.HC#3

@@ -12,12 +12,14 @@ public final class N_Demo_Graphics_Doodle: NativeModule {
     public let n_AutoComplete: Int
     public let n_DocClear: Int
     public let n_GetMsg: Int
+    public let n_GrLine3: Int
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
         n_AutoComplete = rt.vm.natives.find("AutoComplete")!.index
         n_DocClear = rt.vm.natives.find("DocClear")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         super.init(rt)
     }
 
@@ -28,7 +30,7 @@ public final class N_Demo_Graphics_Doodle: NativeModule {
     }
 
     /// HolyC Doodle (Doodle.HC:3)
-    public final func f703_Doodle(_ t: HTask) throws {
+    public final func f708_Doodle(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -98,14 +100,12 @@ public final class N_Demo_Graphics_Doodle: NativeModule {
                         ln = 29 // Doodle.HC:29
                         loop3: while true {
                             ln = 30 // Doodle.HC:30
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0))
                             ln = 31 // Doodle.HC:31
                             let t4: Int64 = try nat(t, n_GetMsg, try push4(t, (fp &+ 48), (fp &+ 56), 80, 0))
                             l0_msg_code = t4
                             ln = 32 // Doodle.HC:32
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0))
                             ln = 33 // Doodle.HC:33
                             l32_x2 = try ld8((fp &+ 48))
                             l40_y2 = try ld8((fp &+ 56))
@@ -113,8 +113,7 @@ public final class N_Demo_Graphics_Doodle: NativeModule {
                             try tick(t)
                         }
                         ln = 35 // Doodle.HC:35
-                        try tick(t)
-                        _ = try P.f406_GrLine3(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0)
+                        _ = try nat(t, n_GrLine3, try push(t, l72_dc, l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0))
                     case 2:
                         break
                     default:
@@ -142,13 +141,13 @@ public final class N_Demo_Graphics_Doodle: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Doodle.HC#0 (Doodle.HC:47)
-    @discardableResult public final func f704_init_C__Demo_Graphics_Doodle_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_Doodle_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 47 // Doodle.HC:47
             try tick(t)
-            try f703_Doodle(t)
+            try f708_Doodle(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Doodle.HC#0", ln) }
@@ -157,14 +156,14 @@ public final class N_Demo_Graphics_Doodle: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Doodle(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_Doodle_HC_0(t)
+        case 708: try f708_Doodle(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_Doodle_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "Doodle", 704: "$init:C:/Demo/Graphics/Doodle.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "Doodle", 709: "$init:C:/Demo/Graphics/Doodle.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Doodle.HC"]
     public override var files: [String] { N_Demo_Graphics_Doodle.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Doodle.DEFINED.contains(index) }

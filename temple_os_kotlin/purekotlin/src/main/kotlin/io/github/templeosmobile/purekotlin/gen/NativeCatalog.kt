@@ -8,7 +8,7 @@ import io.github.templeosmobile.core.purenative.*
 /** Every program translated to Kotlin, with the source hashes it was translated from. */
 object NativeCatalog : NativeCatalogSource {
     override val generator = "1"
-    override val prelude = NativePreludeImage("Prelude.tosimg", "15d34faef0e7edd65e20b9740f6995b02324e73580510f5bbefda92eb5b67111", 703) { rt -> Prelude(rt) }
+    override val prelude = NativePreludeImage("Prelude.tosimg", "484b437fb5db5b783b61c28e96c035405556c11a9b3fec729882576375cdf556", 708) { rt -> Prelude(rt) }
     override val programs = listOf(
         NativeProgramImage("C:/Adam/AExts.HC", "N_Adam_AExts.tosimg", mapOf("C:/Adam/AExts.HC" to "5dc17012fe30bb44a7a5f176461b024a96442f4b8676c6d4337bda7af96d65e7"), null) { rt, pre -> N_Adam_AExts(rt, pre as Prelude) },
         NativeProgramImage("C:/Adam/AMath.HC", "N_Adam_AMath.tosimg", mapOf("C:/Adam/AMath.HC" to "3023888ca30f37c76548ffb67593a5a3d3ccbcb272205b9029081aa75adb88d9"), null) { rt, pre -> N_Adam_AMath(rt, pre as Prelude) },

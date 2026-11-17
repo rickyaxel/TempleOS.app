@@ -18,10 +18,12 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GetKey = rt.vm.natives.find("GetKey")!!.index
+    @JvmField val n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!!.index
     @JvmField val n_GrPeek = rt.vm.natives.find("GrPeek")!!.index
     @JvmField val n_Line = rt.vm.natives.find("Line")!!.index
     @JvmField val n_MAlloc = rt.vm.natives.find("MAlloc")!!.index
     @JvmField val n_Mat4x4MulXYZ = rt.vm.natives.find("Mat4x4MulXYZ")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_RandU64 = rt.vm.natives.find("RandU64")!!.index
@@ -108,7 +110,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/Games/CastleFrankenstein.HC#0 (CastleFrankenstein.HC:3) */
-    fun f703_init_C__Demo_Games_CastleFrankenstein_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_CastleFrankenstein_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -122,7 +124,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/Games/CastleFrankenstein.HC#1 (CastleFrankenstein.HC:4) */
-    fun f704_init_C__Demo_Games_CastleFrankenstein_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_CastleFrankenstein_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -136,7 +138,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -146,7 +148,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC CFTransform (CastleFrankenstein.HC:109) */
-    fun f706_CFTransform(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f711_CFTransform(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -182,7 +184,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC LOSPlot (CastleFrankenstein.HC:124) */
-    fun f707_LOSPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f712_LOSPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -206,7 +208,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC LOS (CastleFrankenstein.HC:132) */
-    fun f708_LOS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f713_LOS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -215,7 +217,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             var p2_x2: Long = a2
             var p3_y2: Long = a3
             ln = 134 // CastleFrankenstein.HC:134
-            val t0: Long = nat(t, n_Line, push(t, 0L, divs((p0_x1 * 4L), 512L), divs((p1_y1 * 4L), 512L), 0L, divs((p2_x2 * 4L), 512L), divs((p3_y2 * 4L), 512L), 0L, 9223090561878065859L, 1L, 0L))
+            val t0: Long = nat(t, n_Line, push(t, 0L, divs((p0_x1 * 4L), 512L), divs((p1_y1 * 4L), 512L), 0L, divs((p2_x2 * 4L), 512L), divs((p3_y2 * 4L), 512L), 0L, 9223090561878065864L, 1L, 0L))
             t.depth--
             return (t0 and 0xFFL)
             t.depth--
@@ -224,7 +226,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC DrawIt (CastleFrankenstein.HC:138) */
-    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f714_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -276,7 +278,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             nat(t, n_Mat4x4MulXYZ, push4(t, ld8((p1_dc + 200L)), (fp + 168), (fp + 176), (fp + 184)))
             ln = 159 // CastleFrankenstein.HC:159
             tick(t)
-            P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), ld8((fp + 168)), ld8((fp + 176)), ld8((fp + 184)))
+            P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), ld8((fp + 168)), ld8((fp + 176)), ld8((fp + 184)))
             ln = 162 // CastleFrankenstein.HC:162
             tick(t)
             val t0: Long = P.f281_Mat4x4IdentNew(t, p0_task)
@@ -307,7 +309,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             val t1: Long = (p1_dc + 28L)
             st4(t1, (ld4s(t1) or 256L))
             ln = 174 // CastleFrankenstein.HC:174
-            st8((p1_dc + 232L), 9223090561878065858L)
+            st8((p1_dc + 232L), 9223090561878065863L)
             ln = 175 // CastleFrankenstein.HC:175
             st4((p1_dc + 216L), l192_cx)
             ln = 176 // CastleFrankenstein.HC:176
@@ -324,15 +326,13 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             tick(t)
             P.f307_Mat4x4RotZ(t, l32_r1, t3)
             ln = 180 // CastleFrankenstein.HC:180
-            tick(t)
-            P.f308_Mat4x4Scale(t, l32_r1, 2.0)
+            nat(t, n_Mat4x4Scale, push2(t, l32_r1, bits(2.0)))
             ln = 182 // CastleFrankenstein.HC:182
             tick(t)
             val t4: Long = P.f281_Mat4x4IdentNew(t, p0_task)
             l40_r2 = t4
             ln = 183 // CastleFrankenstein.HC:183
-            tick(t)
-            P.f308_Mat4x4Scale(t, l40_r2, 2.0)
+            nat(t, n_Mat4x4Scale, push2(t, l40_r2, bits(2.0)))
             ln = 185 // CastleFrankenstein.HC:185
             tick(t)
             val t5: Long = P.f281_Mat4x4IdentNew(t, p0_task)
@@ -341,8 +341,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             tick(t)
             P.f305_Mat4x4RotX(t, l48_r3, ((-f(4614256656552045848L)) / 2.0))
             ln = 187 // CastleFrankenstein.HC:187
-            tick(t)
-            P.f308_Mat4x4Scale(t, l48_r3, 2.0)
+            nat(t, n_Mat4x4Scale, push2(t, l48_r3, bits(2.0)))
             ln = 189 // CastleFrankenstein.HC:189
             nat(t, n_Seed, push2(t, 1L, 0L))
             ln = 190 // CastleFrankenstein.HC:190
@@ -405,7 +404,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                         var r17: Boolean = (t15 != 0L)
                         if (r17) {
                             tick(t)
-                            val t16: Long = f708_LOS(t, ((ld8((fp + 64)) * 512L) + divs(512L, 2L)), ((ld8((fp + 72)) * 512L) + divs(512L, 2L)), ld8(g_man_xx), ld8(g_man_yy))
+                            val t16: Long = f713_LOS(t, ((ld8((fp + 64)) * 512L) + divs(512L, 2L)), ((ld8((fp + 72)) * 512L) + divs(512L, 2L)), ld8(g_man_xx), ld8(g_man_yy))
                             r17 = (t16 != 0L)
                         }
                         ln = 201 // CastleFrankenstein.HC:201
@@ -443,8 +442,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                             ln = 219 // CastleFrankenstein.HC:219
                             st4((((fp + 224) + 36L) + 8L), 0L)
                             ln = 220 // CastleFrankenstein.HC:220
-                            tick(t)
-                            P.f422_GrFillPoly3(t, p1_dc, 4L, (fp + 224))
+                            nat(t, n_GrFillPoly3, push3(t, p1_dc, 4L, (fp + 224)))
                             ln = 221 // CastleFrankenstein.HC:221
                             if ((l128_c == 2L)) {
                                 ln = 222 // CastleFrankenstein.HC:222
@@ -459,7 +457,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                                 if ((ld8((fp + 120)) > 0L)) {
                                     ln = 227 // CastleFrankenstein.HC:227
                                     tick(t)
-                                    P.f442_Sprite3Mat4x4B(t, p1_dc, (l88_x + divs(512L, 2L)), (l96_y + divs(512L, 2L)), 0L, b0, l48_r3)
+                                    P.f447_Sprite3Mat4x4B(t, p1_dc, (l88_x + divs(512L, 2L)), (l96_y + divs(512L, 2L)), 0L, b0, l48_r3)
                                 }
                             } else {
                                 ln = 228 // CastleFrankenstein.HC:228
@@ -476,7 +474,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                                     if ((ld8((fp + 120)) > 0L)) {
                                         ln = 234 // CastleFrankenstein.HC:234
                                         tick(t)
-                                        P.f442_Sprite3Mat4x4B(t, p1_dc, (l88_x + divs(512L, 2L)), (l96_y + divs(512L, 2L)), 0L, b1, l48_r3)
+                                        P.f447_Sprite3Mat4x4B(t, p1_dc, (l88_x + divs(512L, 2L)), (l96_y + divs(512L, 2L)), 0L, b1, l48_r3)
                                     }
                                 }
                             }
@@ -509,8 +507,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                                 ln = 250 // CastleFrankenstein.HC:250
                                 st4((((fp + 224) + 36L) + 8L), 512L)
                                 ln = 251 // CastleFrankenstein.HC:251
-                                tick(t)
-                                P.f422_GrFillPoly3(t, p1_dc, 4L, (fp + 224))
+                                nat(t, n_GrFillPoly3, push3(t, p1_dc, 4L, (fp + 224)))
                             }
                             ln = 253 // CastleFrankenstein.HC:253
                             if ((ld1u((ld8(g_map) + (((ld8((fp + 72)) * ld8(g_map_width)) + ld8((fp + 64))) + 1L))) == 0L)) {
@@ -541,8 +538,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                                 ln = 266 // CastleFrankenstein.HC:266
                                 st4((((fp + 224) + 36L) + 8L), 512L)
                                 ln = 267 // CastleFrankenstein.HC:267
-                                tick(t)
-                                P.f422_GrFillPoly3(t, p1_dc, 4L, (fp + 224))
+                                nat(t, n_GrFillPoly3, push3(t, p1_dc, 4L, (fp + 224)))
                             }
                             ln = 269 // CastleFrankenstein.HC:269
                             if ((ld1u((ld8(g_map) + (((ld8((fp + 72)) - 1L) * ld8(g_map_width)) + ld8((fp + 64))))) == 0L)) {
@@ -573,8 +569,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                                 ln = 282 // CastleFrankenstein.HC:282
                                 st4((((fp + 224) + 36L) + 8L), 512L)
                                 ln = 283 // CastleFrankenstein.HC:283
-                                tick(t)
-                                P.f422_GrFillPoly3(t, p1_dc, 4L, (fp + 224))
+                                nat(t, n_GrFillPoly3, push3(t, p1_dc, 4L, (fp + 224)))
                             }
                             ln = 285 // CastleFrankenstein.HC:285
                             if ((ld1u((ld8(g_map) + (((ld8((fp + 72)) * ld8(g_map_width)) + ld8((fp + 64))) - 1L))) == 0L)) {
@@ -605,8 +600,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                                 ln = 298 // CastleFrankenstein.HC:298
                                 st4((((fp + 224) + 36L) + 8L), 512L)
                                 ln = 299 // CastleFrankenstein.HC:299
-                                tick(t)
-                                P.f422_GrFillPoly3(t, p1_dc, 4L, (fp + 224))
+                                nat(t, n_GrFillPoly3, push3(t, p1_dc, 4L, (fp + 224)))
                             }
                         }
                     }
@@ -636,7 +630,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                 l96_y = ld8((l272_tmpm + 8L))
                 ln = 314 // CastleFrankenstein.HC:314
                 tick(t)
-                val t18: Long = f708_LOS(t, l88_x, l96_y, ld8(g_man_xx), ld8(g_man_yy))
+                val t18: Long = f713_LOS(t, l88_x, l96_y, ld8(g_man_xx), ld8(g_man_yy))
                 if ((t18 != 0L)) {
                     ln = 315 // CastleFrankenstein.HC:315
                     l88_x = (l88_x - ld8(g_man_xx))
@@ -656,20 +650,20 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                         if ((ld1u((l272_tmpm + 16L)) != 0L)) {
                             ln = 323 // CastleFrankenstein.HC:323
                             tick(t)
-                            P.f442_Sprite3Mat4x4B(t, p1_dc, l88_x, l96_y, 0L, b2, l40_r2)
+                            P.f447_Sprite3Mat4x4B(t, p1_dc, l88_x, l96_y, 0L, b2, l40_r2)
                         } else {
                             ln = 325 // CastleFrankenstein.HC:325
                             val t19: Double = f(nat(t, n_tS, push0(t)))
                             tick(t)
-                            val t20: Double = P.f484_Tri(t, t19, 1.0)
+                            val t20: Double = P.f489_Tri(t, t19, 1.0)
                             l216_tt = t20
                             ln = 326 // CastleFrankenstein.HC:326
                             tick(t)
-                            val t21: Long = P.f448_SpriteInterpolate(t, l216_tt, b4, b3)
+                            val t21: Long = P.f453_SpriteInterpolate(t, l216_tt, b4, b3)
                             l208_tmps = t21
                             ln = 327 // CastleFrankenstein.HC:327
                             tick(t)
-                            P.f442_Sprite3Mat4x4B(t, p1_dc, l88_x, l96_y, 0L, l208_tmps, l32_r1)
+                            P.f447_Sprite3Mat4x4B(t, p1_dc, l88_x, l96_y, 0L, l208_tmps, l32_r1)
                             ln = 328 // CastleFrankenstein.HC:328
                             nat(t, n_Free, push1(t, l208_tmps))
                         }
@@ -713,7 +707,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                     st4((p1_dc + 160L), ld1u((ld8(g_map) + ((((ld8(g_map_height) - 1L) - l16_i) * ld8(g_map_width)) + l24_j))))
                     ln = 348 // CastleFrankenstein.HC:348
                     tick(t)
-                    P.f393_GrPlot3(t, p1_dc, (2L * l24_j), (2L * l16_i), 0L)
+                    P.f394_GrPlot3(t, p1_dc, (2L * l24_j), (2L * l16_i), 0L)
                     ln = 346 // CastleFrankenstein.HC:346
                     l24_j = (l24_j + 1L)
                     tick(t)
@@ -732,7 +726,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                 if ((ld1u((l272_tmpm + 16L)) == 0L)) {
                     ln = 355 // CastleFrankenstein.HC:355
                     tick(t)
-                    P.f393_GrPlot3(t, p1_dc, (2L * divs(ld8(l272_tmpm), 512L)), (2L * ((ld8(g_map_height) - 1L) - divs(ld8((l272_tmpm + 8L)), 512L))), 0L)
+                    P.f394_GrPlot3(t, p1_dc, (2L * divs(ld8(l272_tmpm), 512L)), (2L * ((ld8(g_map_height) - 1L) - divs(ld8((l272_tmpm + 8L)), 512L))), 0L)
                 }
                 ln = 353 // CastleFrankenstein.HC:353
                 l16_i = (l16_i + 1L)
@@ -743,7 +737,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             st4((p1_dc + 160L), 11L)
             ln = 358 // CastleFrankenstein.HC:358
             tick(t)
-            P.f393_GrPlot3(t, p1_dc, (2L * divs(ld8(g_man_xx), 512L)), (2L * ((ld8(g_map_height) - 1L) - divs(ld8(g_man_yy), 512L))), 0L)
+            P.f394_GrPlot3(t, p1_dc, (2L * divs(ld8(g_man_xx), 512L)), (2L * ((ld8(g_map_height) - 1L) - divs(ld8(g_man_yy), 512L))), 0L)
             ln = 360 // CastleFrankenstein.HC:360
             if ((ldf(g_tf) != 0.0)) {
                 ln = 361 // CastleFrankenstein.HC:361
@@ -755,7 +749,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                     ln = 363 // CastleFrankenstein.HC:363
                     tick(t)
                     val vb0 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, (l192_cx - divs(112L, 2L)), (l200_cy - divs(8L, 2L)), s2, vb0, 0)
+                    P.f370_GrPrint(t, p1_dc, (l192_cx - divs(112L, 2L)), (l200_cy - divs(8L, 2L)), s2, vb0, 0)
                     t.sp = vb0
                 }
                 ln = 364 // CastleFrankenstein.HC:364
@@ -765,10 +759,10 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                 st4((p1_dc + 160L), 10L)
                 ln = 367 // CastleFrankenstein.HC:367
                 tick(t)
-                P.f396_GrLine(t, p1_dc, (l192_cx - 5L), l200_cy, (l192_cx + 5L), l200_cy, 1L, 0L)
+                P.f397_GrLine(t, p1_dc, (l192_cx - 5L), l200_cy, (l192_cx + 5L), l200_cy, 1L, 0L)
                 ln = 368 // CastleFrankenstein.HC:368
                 tick(t)
-                P.f396_GrLine(t, p1_dc, l192_cx, (l200_cy - 5L), l192_cx, (l200_cy + 5L), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, l192_cx, (l200_cy - 5L), l192_cx, (l200_cy + 5L), 1L, 0L)
                 ln = 369 // CastleFrankenstein.HC:369
                 val t24: Double = f(nat(t, n_tS, push0(t)))
                 l216_tt = t24
@@ -776,7 +770,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             ln = 371 // CastleFrankenstein.HC:371
             tick(t)
             val vb1 = push3(t, ld8(g_monsters_left), bits((l216_tt - ldf(g_t0))), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
             t.sp = vb1
             ln = 373 // CastleFrankenstein.HC:373
             nat(t, n_Free, push1(t, l56_s2w))
@@ -789,7 +783,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC Fire (CastleFrankenstein.HC:377) */
-    fun f710_Fire(t: Task) {
+    fun f715_Fire(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -809,7 +803,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             l56_yy = t1
             ln = 383 // CastleFrankenstein.HC:383
             tick(t)
-            P.f499_Noise(t, 100L, 53.0, 74.0)
+            P.f504_Noise(t, 100L, 53.0, 74.0)
             ln = 384 // CastleFrankenstein.HC:384
             l0_i = 0L
             l64_tmpm = g_monsters
@@ -822,7 +816,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                 var r3: Boolean = (ld1u((l64_tmpm + 16L)) == 0L)
                 if (r3) {
                     tick(t)
-                    val t2: Long = f708_LOS(t, l8_x, l16_y, ld8(g_man_xx), ld8(g_man_yy))
+                    val t2: Long = f713_LOS(t, l8_x, l16_y, ld8(g_man_xx), ld8(g_man_yy))
                     r3 = (t2 != 0L)
                 }
                 ln = 387 // CastleFrankenstein.HC:387
@@ -871,7 +865,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC Init (CastleFrankenstein.HC:407) */
-    fun f711_Init(t: Task) {
+    fun f716_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -886,7 +880,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             nat(t, n_Print, push3(t, s4, divs(60L, 2L), 10L))
             ln = 416 // CastleFrankenstein.HC:416
             tick(t)
-            val t0: Long = P.f447_Sprite2DC(t, b5)
+            val t0: Long = P.f452_Sprite2DC(t, b5)
             l24_dc = t0
             ln = 417 // CastleFrankenstein.HC:417
             st8(g_map_width, (divs(ld4s((l24_dc + 16L)), 4L) + 2L))
@@ -964,7 +958,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC AnimateTask (CastleFrankenstein.HC:443) */
-    fun f712_AnimateTask(t: Task, a0: Long) {
+    fun f717_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1071,7 +1065,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC CleanUp (CastleFrankenstein.HC:479) */
-    fun f713_CleanUp(t: Task) {
+    fun f718_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1089,27 +1083,27 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC SongTask (CastleFrankenstein.HC:487) */
-    fun f714_SongTask(t: Task, a0: Long) {
+    fun f719_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 489 // CastleFrankenstein.HC:489
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 490 // CastleFrankenstein.HC:490
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 491 // CastleFrankenstein.HC:491
             loop0@ while ((1L != 0L)) {
                 ln = 492 // CastleFrankenstein.HC:492
                 tick(t)
-                P.f494_Play(t, s5, 0L)
+                P.f499_Play(t, s5, 0L)
                 ln = 493 // CastleFrankenstein.HC:493
                 tick(t)
-                P.f494_Play(t, s6, 0L)
+                P.f499_Play(t, s6, 0L)
                 ln = 494 // CastleFrankenstein.HC:494
                 tick(t)
-                P.f494_Play(t, s7, 0L)
+                P.f499_Play(t, s7, 0L)
                 tick(t)
             }
             t.depth--
@@ -1118,7 +1112,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC MoveMan (CastleFrankenstein.HC:498) */
-    fun f715_MoveMan(t: Task, a0: Double) {
+    fun f720_MoveMan(t: Task, a0: Double) {
         var ln = 0
         try {
             enter(t)
@@ -1170,7 +1164,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC RotateMan (CastleFrankenstein.HC:517) */
-    fun f716_RotateMan(t: Task, a0: Double) {
+    fun f721_RotateMan(t: Task, a0: Double) {
         var ln = 0
         try {
             enter(t)
@@ -1193,7 +1187,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC CastleFrankenstein (CastleFrankenstein.HC:526) */
-    fun f717_CastleFrankenstein(t: Task) {
+    fun f722_CastleFrankenstein(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1201,7 +1195,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             val fp = frame(t, 24)
             ln = 529 // CastleFrankenstein.HC:529
             tick(t)
-            P.f507_MenuPush(t, s8)
+            P.f512_MenuPush(t, s8)
             ln = 544 // CastleFrankenstein.HC:544
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -1219,17 +1213,17 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             nat(t, n_DocCursor, push2(t, 0L, 0L))
             ln = 550 // CastleFrankenstein.HC:550
             tick(t)
-            f711_Init(t)
+            f716_Init(t)
             ln = 551 // CastleFrankenstein.HC:551
             val t1: Long = (ld8(P.g_Fs) + 1088L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065864L, 0L, s9, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065869L, 0L, s9, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 552 // CastleFrankenstein.HC:552
             val t3: Long = (ld8(P.g_Fs) + 1080L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065866L, 0L, s10, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065871L, 0L, s10, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 553 // CastleFrankenstein.HC:553
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065866L)
             ln = 555 // CastleFrankenstein.HC:555
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -1244,12 +1238,12 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                                 32L -> {
                                     ln = 559 // CastleFrankenstein.HC:559
                                     tick(t)
-                                    f710_Fire(t)
+                                    f715_Fire(t)
                                 }
                                 10L -> {
                                     ln = 562 // CastleFrankenstein.HC:562
                                     tick(t)
-                                    f711_Init(t)
+                                    f716_Init(t)
                                 }
                                 27L, 28L -> {
                                     ln = 566 // CastleFrankenstein.HC:566
@@ -1262,21 +1256,21 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
                                         when (t5) {
                                             77L -> {
                                                 ln = 570 // CastleFrankenstein.HC:570
-                                                nat(t, n_Spawn, push(t, 9223090561878065868L, bits((f(4614256656552045848L) / 32.0)), 0L, -1L, 0L, 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065873L, bits((f(4614256656552045848L) / 32.0)), 0L, -1L, 0L, 0L, 0L))
                                             }
                                             75L -> {
                                                 ln = 573 // CastleFrankenstein.HC:573
-                                                nat(t, n_Spawn, push(t, 9223090561878065868L, bits(((-f(4614256656552045848L)) / 32.0)), 0L, -1L, 0L, 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065873L, bits(((-f(4614256656552045848L)) / 32.0)), 0L, -1L, 0L, 0L, 0L))
                                             }
                                             72L -> {
                                                 ln = 576 // CastleFrankenstein.HC:576
                                                 tick(t)
-                                                f715_MoveMan(t, ldf(g_man__))
+                                                f720_MoveMan(t, ldf(g_man__))
                                             }
                                             80L -> {
                                                 ln = 579 // CastleFrankenstein.HC:579
                                                 tick(t)
-                                                f715_MoveMan(t, (ldf(g_man__) + f(4614256656552045848L)))
+                                                f720_MoveMan(t, (ldf(g_man__) + f(4614256656552045848L)))
                                             }
                                             else -> {
                                             }
@@ -1306,10 +1300,10 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 590 // CastleFrankenstein.HC:590
             tick(t)
-            f713_CleanUp(t)
+            f718_CleanUp(t)
             ln = 591 // CastleFrankenstein.HC:591
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 592 // CastleFrankenstein.HC:592
             nat(t, n_RegWrite, push3(t, s1, s11, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1319,13 +1313,13 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/Games/CastleFrankenstein.HC#2 (CastleFrankenstein.HC:93) */
-    fun f718_init_C__Demo_Games_CastleFrankenstein_HC_2(t: Task): Long {
+    fun f723_init_C__Demo_Games_CastleFrankenstein_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 596 // CastleFrankenstein.HC:596
             tick(t)
-            f717_CastleFrankenstein(t)
+            f722_CastleFrankenstein(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/CastleFrankenstein.HC#2", ln) }
@@ -1334,22 +1328,22 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_CastleFrankenstein_HC_0(t)
-            704 -> f704_init_C__Demo_Games_CastleFrankenstein_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> { f706_CFTransform(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            707 -> f707_LOSPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            708 -> f708_LOS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> { f710_Fire(t); 0L }
-            711 -> { f711_Init(t); 0L }
-            712 -> { f712_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            713 -> { f713_CleanUp(t); 0L }
-            714 -> { f714_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            715 -> { f715_MoveMan(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
-            716 -> { f716_RotateMan(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
-            717 -> { f717_CastleFrankenstein(t); 0L }
-            718 -> f718_init_C__Demo_Games_CastleFrankenstein_HC_2(t)
+            708 -> f708_init_C__Demo_Games_CastleFrankenstein_HC_0(t)
+            709 -> f709_init_C__Demo_Games_CastleFrankenstein_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> { f711_CFTransform(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            712 -> f712_LOSPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            713 -> f713_LOS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            714 -> { f714_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> { f715_Fire(t); 0L }
+            716 -> { f716_Init(t); 0L }
+            717 -> { f717_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            718 -> { f718_CleanUp(t); 0L }
+            719 -> { f719_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            720 -> { f720_MoveMan(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
+            721 -> { f721_RotateMan(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
+            722 -> { f722_CastleFrankenstein(t); 0L }
+            723 -> f723_init_C__Demo_Games_CastleFrankenstein_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1361,7 +1355,7 @@ class N_Demo_Games_CastleFrankenstein(rt: NativeRuntime, @JvmField val P: Prelud
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/CastleFrankenstein.HC#0", "\$init:C:/Demo/Games/CastleFrankenstein.HC#1", "\$init:C:/Home/Registry.HC#0", "CFTransform", "LOSPlot", "LOS", "DrawIt", "Fire", "Init", "AnimateTask", "CleanUp", "SongTask", "MoveMan", "RotateMan", "CastleFrankenstein", "\$init:C:/Demo/Games/CastleFrankenstein.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Games/CastleFrankenstein.HC")
     }

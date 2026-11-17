@@ -24,6 +24,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** m2: CMass */ @JvmField var g_m2: Long = 0L
     /** m1: CMass */ @JvmField var g_m1: Long = 0L
@@ -52,7 +53,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (Rocket.HC:33) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -73,8 +74,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val t0: Double = f(nat(t, n_Arg, push2(t, bits((ldf((g_m2 + 56L)) - ldf((g_m1 + 56L)))), bits((ldf((g_m2 + 64L)) - ldf((g_m1 + 64L)))))))
             l72__ = t0
             ln = 39 // Rocket.HC:39
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 0L, 456L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 0L, 456L, 0L, b0, 0L))
             ln = 41 // Rocket.HC:41
             val t1: Long = nat(t, n_Bt, push2(t, (P.g_kbd + 64L), 72L))
             if ((t1 != 0L)) {
@@ -131,14 +131,14 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     val t11: Double = ldf((g_m1 + 56L))
                     val t10: Double = f(nat(t, n_Cos, push1(t, bits((l72__ - (f(4614256656552045848L) / 2.0))))))
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i((l40_cx.toDouble() + (t11 + (l16_i.toDouble() * t10)))), f2i((l48_cy.toDouble() - (t9 + (l16_i.toDouble() * t8)))), (l40_cx + l24_x), (l48_cy - l32_y), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i((l40_cx.toDouble() + (t11 + (l16_i.toDouble() * t10)))), f2i((l48_cy.toDouble() - (t9 + (l16_i.toDouble() * t8)))), (l40_cx + l24_x), (l48_cy - l32_y), 1L, 0L)
                     ln = 62 // Rocket.HC:62
                     val t13: Double = ldf((g_m1 + 64L))
                     val t12: Double = f(nat(t, n_Sin, push1(t, bits((l72__ + (f(4614256656552045848L) / 2.0))))))
                     val t15: Double = ldf((g_m1 + 56L))
                     val t14: Double = f(nat(t, n_Cos, push1(t, bits((l72__ + (f(4614256656552045848L) / 2.0))))))
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i((l40_cx.toDouble() + (t15 + (l16_i.toDouble() * t14)))), f2i((l48_cy.toDouble() - (t13 + (l16_i.toDouble() * t12)))), (l40_cx + l24_x), (l48_cy - l32_y), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i((l40_cx.toDouble() + (t15 + (l16_i.toDouble() * t14)))), f2i((l48_cy.toDouble() - (t13 + (l16_i.toDouble() * t12)))), (l40_cx + l24_x), (l48_cy - l32_y), 1L, 0L)
                     ln = 56 // Rocket.HC:56
                     l16_i = (l16_i + 1L)
                     tick(t)
@@ -187,14 +187,14 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 77 // Rocket.HC:77
             tick(t)
-            P.f445_Sprite3ZB(t, p1_dc, f2i((l40_cx.toDouble() + ((ldf((g_m1 + 56L)) + ldf((g_m2 + 56L))) / 2.0))), f2i((l48_cy.toDouble() - ((ldf((g_m1 + 64L)) + ldf((g_m2 + 64L))) / 2.0))), 0L, b1, (-l72__))
+            P.f450_Sprite3ZB(t, p1_dc, f2i((l40_cx.toDouble() + ((ldf((g_m1 + 56L)) + ldf((g_m2 + 56L))) / 2.0))), f2i((l48_cy.toDouble() - ((ldf((g_m1 + 64L)) + ldf((g_m2 + 64L))) / 2.0))), 0L, b1, (-l72__))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawIt", ln) }
     }
 
     /** HolyC MyDerivative (Rocket.HC:80) */
-    fun f704_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f709_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -265,7 +265,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Init (Rocket.HC:107) */
-    fun f705_Init(t: Task) {
+    fun f710_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -302,7 +302,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC TaskEndCB (Rocket.HC:130) */
-    fun f706_TaskEndCB(t: Task) {
+    fun f711_TaskEndCB(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -311,21 +311,21 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f286_DCFill(t, 0L, 255L)
             ln = 133 // Rocket.HC:133
             tick(t)
-            P.f479_SndTaskEndCB(t)
+            P.f484_SndTaskEndCB(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "TaskEndCB", ln) }
     }
 
     /** HolyC Rocket (Rocket.HC:136) */
-    fun f707_Rocket(t: Task) {
+    fun f712_Rocket(t: Task) {
         var ln = 0
         try {
             enter(t)
             var l0_ode: Long = 0L
             ln = 138 // Rocket.HC:138
             tick(t)
-            val t0: Long = P.f453_ODENew(t, 0L, 0.01, 1L)
+            val t0: Long = P.f458_ODENew(t, 0L, 0.01, 1L)
             l0_ode = t0
             ln = 140 // Rocket.HC:140
             tick(t)
@@ -334,7 +334,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st1((ld8(P.g_Fs) + 778L), 225L)
             ln = 142 // Rocket.HC:142
             tick(t)
-            P.f507_MenuPush(t, s1)
+            P.f512_MenuPush(t, s1)
             ln = 155 // Rocket.HC:155
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 156 // Rocket.HC:156
@@ -352,9 +352,9 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val t1: Long = P.f291_DCAlias(t, 0L, 0L)
             st8(g_dc2, t1)
             ln = 161 // Rocket.HC:161
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065858L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065863L)
             ln = 163 // Rocket.HC:163
-            st8((l0_ode + 304L), 9223090561878065856L)
+            st8((l0_ode + 304L), 9223090561878065861L)
             ln = 164 // Rocket.HC:164
             st8((l0_ode + 80L), bits(0.002))
             ln = 165 // Rocket.HC:165
@@ -363,7 +363,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st8((l0_ode + 96L), bits(5000.0))
             ln = 168 // Rocket.HC:168
             tick(t)
-            f705_Init(t)
+            f710_Init(t)
             ln = 169 // Rocket.HC:169
             tick(t)
             P.f153_QueIns(t, g_m1, ld8((l0_ode + 48L)))
@@ -377,7 +377,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             tick(t)
             P.f153_QueIns(t, l0_ode, ld8((ld8(P.g_Fs) + 960L)))
             ln = 175 // Rocket.HC:175
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 177 // Rocket.HC:177
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -396,7 +396,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 10L -> {
                                     ln = 183 // Rocket.HC:183
                                     tick(t)
-                                    f705_Init(t)
+                                    f710_Init(t)
                                     ln = 184 // Rocket.HC:184
                                     nat(t, n_GetKey, push3(t, 0L, 0L, 0L))
                                     ln = 185 // Rocket.HC:185
@@ -427,7 +427,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f155_QueRem(t, l0_ode)
             ln = 196 // Rocket.HC:196
             tick(t)
-            P.f455_ODEDel(t, l0_ode)
+            P.f460_ODEDel(t, l0_ode)
             ln = 197 // Rocket.HC:197
             nat(t, n_DocClear, push1(t, 0L))
             ln = 198 // Rocket.HC:198
@@ -441,20 +441,20 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f293_DCDel(t, ld8(g_dc2))
             ln = 201 // Rocket.HC:201
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Rocket", ln) }
     }
 
     /** HolyC $init:C:/Demo/Games/Rocket.HC#0 (Rocket.HC:204) */
-    fun f708_init_C__Demo_Games_Rocket_HC_0(t: Task): Long {
+    fun f713_init_C__Demo_Games_Rocket_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 204 // Rocket.HC:204
             tick(t)
-            f707_Rocket(t)
+            f712_Rocket(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Rocket.HC#0", ln) }
@@ -463,12 +463,12 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> { f705_Init(t); 0L }
-            706 -> { f706_TaskEndCB(t); 0L }
-            707 -> { f707_Rocket(t); 0L }
-            708 -> f708_init_C__Demo_Games_Rocket_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> { f710_Init(t); 0L }
+            711 -> { f711_TaskEndCB(t); 0L }
+            712 -> { f712_Rocket(t); 0L }
+            713 -> f713_init_C__Demo_Games_Rocket_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -480,7 +480,7 @@ class N_Demo_Games_Rocket(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("DrawIt", "MyDerivative", "Init", "TaskEndCB", "Rocket", "\$init:C:/Demo/Games/Rocket.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/Rocket.HC")
     }

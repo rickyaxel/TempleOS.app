@@ -1,8 +1,8 @@
 TOSIMG 1
 unit C:/Apps/Psalmody/Load.HC#0
 s 17fd38 433a2f417070732f5073616c6d6f6479
-fn 703 $init:C:/Apps/Psalmody/Load.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/Psalmody/Load.HC#0 (I64;;-)
+init 708
 unit C:/Apps/Psalmody/Load.HC#1
 value JB_RUN_LEVEL_NULL 0
 value JB_RUN_LEVEL_ONE 1
@@ -95,25 +95,25 @@ c 180370 1 1
 c 180371 1 1
 c 180372 1 0
 c 180373 1 0
-fn 704 JukeReward (*$CTask;*U8;-)
-fn 705 SingleSong (*$CTask;*U8,*U8;-)
-fn 706 JBPutKey (Bool;*$CDoc,*U8,I64,I64;-)
-fn 707 JukeBox (U0;*U8,**U8;-)
-fn 708 SongPuppet (U0;*$CTask,I64;-)
-fn 709 JukeSongPuppet (U0;*$CTask,I64,I64,*U8;-)
-fn 710 JukeSongsPuppet (U0;*U8,I64,I64,I64;-)
-fn 711 $init:C:/Apps/Psalmody/Load.HC#1 (I64;;-)
-sym f JBPutKey 706 (Bool;*$CDoc,*U8,I64,I64;-)
-sym f JukeBox 707 (U0;*U8,**U8;-)
-sym f JukeReward 704 (*$CTask;*U8;-)
-sym f JukeSongPuppet 709 (U0;*$CTask,I64,I64,*U8;-)
-sym f JukeSongsPuppet 710 (U0;*U8,I64,I64,I64;-)
-sym f SingleSong 705 (*$CTask;*U8,*U8;-)
-sym f SongPuppet 708 (U0;*$CTask,I64;-)
+fn 709 JukeReward (*$CTask;*U8;-)
+fn 710 SingleSong (*$CTask;*U8,*U8;-)
+fn 711 JBPutKey (Bool;*$CDoc,*U8,I64,I64;-)
+fn 712 JukeBox (U0;*U8,**U8;-)
+fn 713 SongPuppet (U0;*$CTask,I64;-)
+fn 714 JukeSongPuppet (U0;*$CTask,I64,I64,*U8;-)
+fn 715 JukeSongsPuppet (U0;*U8,I64,I64,I64;-)
+fn 716 $init:C:/Apps/Psalmody/Load.HC#1 (I64;;-)
+sym f JBPutKey 711 (Bool;*$CDoc,*U8,I64,I64;-)
+sym f JukeBox 712 (U0;*U8,**U8;-)
+sym f JukeReward 709 (*$CTask;*U8;-)
+sym f JukeSongPuppet 714 (U0;*$CTask,I64,I64,*U8;-)
+sym f JukeSongsPuppet 715 (U0;*U8,I64,I64,I64;-)
+sym f SingleSong 710 (*$CTask;*U8,*U8;-)
+sym f SongPuppet 713 (U0;*$CTask,I64;-)
 sym g psm 180208 $PsmCtrl
 sym g psm_note_lst 180350 *U8
 sym g psm_note_map 180368 [12]U8
-init 711
+init 716
 unit C:/Apps/Psalmody/Load.HC#2
 g 1803b8 8
 c 1803b8 1 a
@@ -123,9 +123,9 @@ c 1803bb 1 5
 c 1803bc 1 3
 c 1803bd 1 2
 c 1803be 1 0
-fn 712 $init:C:/Apps/Psalmody/Load.HC#2 (I64;;-)
+fn 717 $init:C:/Apps/Psalmody/Load.HC#2 (I64;;-)
 sym g psm_note_inverse_map 1803b8 [7]U8
-init 712
+init 717
 unit C:/Apps/Psalmody/Load.HC#3
 value PSM_DURATIONS_NUM 12
 value PSM_NOTE_SPACING 9
@@ -154,20 +154,20 @@ c 180470 8 4008000000000000
 c 180478 8 4010000000000000
 c 180480 8 4018000000000000
 c 180488 8 412e848000000000
-fn 713 DrawTempoCtrl (U0;*$CDC,*$CCtrl;-)
-fn 714 UpdateDerivedTempoCtrl (U0;*$CCtrl;-)
-fn 715 LeftClickTempo (U0;*$CCtrl,I64,I64,Bool;-)
-fn 716 TempoNew (*$CCtrl;;-)
-fn 717 TempoDel (U0;*$CCtrl;-)
-fn 718 $init:C:/Apps/Psalmody/Load.HC#3 (I64;;-)
-sym f DrawTempoCtrl 713 (U0;*$CDC,*$CCtrl;-)
-sym f LeftClickTempo 715 (U0;*$CCtrl,I64,I64,Bool;-)
-sym f TempoDel 717 (U0;*$CCtrl;-)
-sym f TempoNew 716 (*$CCtrl;;-)
-sym f UpdateDerivedTempoCtrl 714 (U0;*$CCtrl;-)
+fn 718 DrawTempoCtrl (U0;*$CDC,*$CCtrl;-)
+fn 719 UpdateDerivedTempoCtrl (U0;*$CCtrl;-)
+fn 720 LeftClickTempo (U0;*$CCtrl,I64,I64,Bool;-)
+fn 721 TempoNew (*$CCtrl;;-)
+fn 722 TempoDel (U0;*$CCtrl;-)
+fn 723 $init:C:/Apps/Psalmody/Load.HC#3 (I64;;-)
+sym f DrawTempoCtrl 718 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickTempo 720 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f TempoDel 722 (U0;*$CCtrl;-)
+sym f TempoNew 721 (*$CCtrl;;-)
+sym f UpdateDerivedTempoCtrl 719 (U0;*$CCtrl;-)
 sym g psm_durations 180428 [13]F64
 sym g tempo_state 1803d0 $TempoState
-init 718
+init 723
 unit C:/Apps/Psalmody/Load.HC#4
 g 1804a0 8
 g 1804b8 96
@@ -185,10 +185,10 @@ b 180d98 0afffffffffdfffffffcffffff000000000afcffffff0000000000000000030000000a0
 b 180e00 0afffffffffdfffffffcffffff000000000afcffffff0000000000000000030000000a000000000300000003000000ffffffff0a03000000ffffffff00000000fdffffff0a030000000000000005000000f2ffffff00
 b 180e68 0afffffffffdfffffffcffffff000000000afcffffff0000000000000000030000000a000000000300000003000000ffffffff0a03000000ffffffff00000000fdffffff00
 b 180ec0 0afffffffffdfffffffcffffff000000000afcffffff0000000000000000030000000a000000000300000003000000ffffffff0a03000000ffffffff00000000fdffffff00
-fn 719 $init:C:/Apps/Psalmody/Load.HC#4 (I64;;-)
+fn 724 $init:C:/Apps/Psalmody/Load.HC#4 (I64;;-)
 sym g psm_duration_imgs 1804b8 [12]*U8
 sym g psm_duration_lst 1804a0 *U8
-init 719
+init 724
 unit C:/Apps/Psalmody/Load.HC#5
 g 180f18 12
 c 180f18 1 1
@@ -203,9 +203,9 @@ c 180f20 1 0
 c 180f21 1 0
 c 180f22 1 0
 c 180f23 1 0
-fn 720 $init:C:/Apps/Psalmody/Load.HC#5 (I64;;-)
+fn 725 $init:C:/Apps/Psalmody/Load.HC#5 (I64;;-)
 sym g psm_triplet_durations 180f18 [12]Bool
-init 720
+init 725
 unit C:/Apps/Psalmody/Load.HC#6
 value PSM_METERS_NUM 7
 value PSM_NOTE_BOX_X 220
@@ -235,40 +235,40 @@ c 181128 8 4
 c 181130 8 8
 c 181138 8 8
 c 181140 8 8
-fn 721 PsmBlink (Bool;;-)
-fn 722 PsmHasWords (Bool;*U8;-)
-fn 723 PsmIsDotted (Bool;I64;-)
-fn 724 PsmMarkSel (U0;I64,I64,Bool;-)
-fn 725 PsmSetWidth (U0;*$PsmNote;-)
-fn 726 PsmSetOctave (U0;I64;-)
-fn 727 DrawNote (U0;*$CDC,I64,I64,I64;-)
-fn 728 DrawTimeSignature (U0;*$CDC,I64,I64,I64,I64;-)
-fn 729 PsmRecalcNoteXY (U0;;-)
-fn 730 DrawIt (U0;*$CTask,*$CDC;-)
-fn 731 PsmSetPickNoteBoxX (U0;I64,*I64;-)
-fn 732 PsmGetPickNoteBoxDuration (I64;I64,I64;-)
-fn 733 DrawPickNoteBox (U0;;-)
-fn 734 DrawPickTools (U0;;-)
-fn 735 PsmGetPickToolBox (Bool;I64,I64;-)
-fn 736 $init:C:/Apps/Psalmody/Load.HC#6 (I64;;-)
-sym f DrawIt 730 (U0;*$CTask,*$CDC;-)
-sym f DrawNote 727 (U0;*$CDC,I64,I64,I64;-)
-sym f DrawPickNoteBox 733 (U0;;-)
-sym f DrawPickTools 734 (U0;;-)
-sym f DrawTimeSignature 728 (U0;*$CDC,I64,I64,I64,I64;-)
-sym f PsmBlink 721 (Bool;;-)
-sym f PsmGetPickNoteBoxDuration 732 (I64;I64,I64;-)
-sym f PsmGetPickToolBox 735 (Bool;I64,I64;-)
-sym f PsmHasWords 722 (Bool;*U8;-)
-sym f PsmIsDotted 723 (Bool;I64;-)
-sym f PsmMarkSel 724 (U0;I64,I64,Bool;-)
-sym f PsmRecalcNoteXY 729 (U0;;-)
-sym f PsmSetOctave 726 (U0;I64;-)
-sym f PsmSetPickNoteBoxX 731 (U0;I64,*I64;-)
-sym f PsmSetWidth 725 (U0;*$PsmNote;-)
+fn 726 PsmBlink (Bool;;-)
+fn 727 PsmHasWords (Bool;*U8;-)
+fn 728 PsmIsDotted (Bool;I64;-)
+fn 729 PsmMarkSel (U0;I64,I64,Bool;-)
+fn 730 PsmSetWidth (U0;*$PsmNote;-)
+fn 731 PsmSetOctave (U0;I64;-)
+fn 732 DrawNote (U0;*$CDC,I64,I64,I64;-)
+fn 733 DrawTimeSignature (U0;*$CDC,I64,I64,I64,I64;-)
+fn 734 PsmRecalcNoteXY (U0;;-)
+fn 735 DrawIt (U0;*$CTask,*$CDC;-)
+fn 736 PsmSetPickNoteBoxX (U0;I64,*I64;-)
+fn 737 PsmGetPickNoteBoxDuration (I64;I64,I64;-)
+fn 738 DrawPickNoteBox (U0;;-)
+fn 739 DrawPickTools (U0;;-)
+fn 740 PsmGetPickToolBox (Bool;I64,I64;-)
+fn 741 $init:C:/Apps/Psalmody/Load.HC#6 (I64;;-)
+sym f DrawIt 735 (U0;*$CTask,*$CDC;-)
+sym f DrawNote 732 (U0;*$CDC,I64,I64,I64;-)
+sym f DrawPickNoteBox 738 (U0;;-)
+sym f DrawPickTools 739 (U0;;-)
+sym f DrawTimeSignature 733 (U0;*$CDC,I64,I64,I64,I64;-)
+sym f PsmBlink 726 (Bool;;-)
+sym f PsmGetPickNoteBoxDuration 737 (I64;I64,I64;-)
+sym f PsmGetPickToolBox 740 (Bool;I64,I64;-)
+sym f PsmHasWords 727 (Bool;*U8;-)
+sym f PsmIsDotted 728 (Bool;I64;-)
+sym f PsmMarkSel 729 (U0;I64,I64,Bool;-)
+sym f PsmRecalcNoteXY 734 (U0;;-)
+sym f PsmSetOctave 731 (U0;I64;-)
+sym f PsmSetPickNoteBoxX 736 (U0;I64,*I64;-)
+sym f PsmSetWidth 730 (U0;*$PsmNote;-)
 sym g meter_bottoms 181110 [7]I64
 sym g meter_tops 1810c8 [7]I64
-init 736
+init 741
 unit C:/Apps/Psalmody/Load.HC#7
 value PSMR_DELETE_NOTE -3
 value PSMR_FLAT -8
@@ -417,59 +417,59 @@ c 181f64 1 b0
 c 181f65 1 10
 c 181f66 1 24
 c 181f67 1 a
-fn 737 PsmGetPickMeterBox (Bool;I64,I64,*I64,*I64;-)
-fn 738 DrawPickMeterBox (U0;;-)
-fn 739 DrawDC2 (U0;;-)
-fn 740 PsmMenu (U0;I64;-)
-fn 741 PsmNoteDel (U0;*$PsmNote;-)
-fn 742 PsmNoteCopy (*$PsmNote;*$PsmNote;-)
-fn 743 PsmSongDel (U0;*$PsmNote;-)
-fn 744 PsmCutToClip (U0;;-)
-fn 745 PsmPasteClip (U0;;-)
-fn 746 PsmCopyToClip (U0;;-)
-fn 747 PsmFindNote (*$PsmNote;I64,I64;-)
-fn 748 PsmMusicSetOctave (*U8;*U8,*I64;-)
-fn 749 PsmMusicSetNoteLen (*U8;*U8,*F64;-)
-fn 750 PsmLoadSongStr (U0;*U8,*I64,*F64;-)
-fn 751 PsmLoadSong (U0;*U8,*I64,*F64;-)
-fn 752 PsmCvtSong (*U8;;-)
-fn 753 PsmSaveSong (*U8;*U8,*U8;-)
-fn 754 PopUpDuration (F64;;-)
-fn 755 PsmRightClick (U0;I64,I64;-)
-fn 756 PsmLeftClickPickNoteBox (U0;I64;-)
-fn 757 PsmLeftClickPickMeterBox (U0;I64,I64;-)
-fn 758 PsmLeftClickStaffPtr (U0;I64,I64;-)
-fn 759 PsmLeftClickStaffBox (U0;I64,I64;-)
-fn 760 PsmLeftClick (U0;I64,I64;-)
-fn 761 PsmCvtDuration (U8;F64;-)
-fn 762 $init:C:/Apps/Psalmody/Load.HC#7 (I64;;-)
-sym f DrawDC2 739 (U0;;-)
-sym f DrawPickMeterBox 738 (U0;;-)
-sym f PopUpDuration 754 (F64;;-)
-sym f PsmCopyToClip 746 (U0;;-)
-sym f PsmCutToClip 744 (U0;;-)
-sym f PsmCvtDuration 761 (U8;F64;-)
-sym f PsmCvtSong 752 (*U8;;-)
-sym f PsmFindNote 747 (*$PsmNote;I64,I64;-)
-sym f PsmGetPickMeterBox 737 (Bool;I64,I64,*I64,*I64;-)
-sym f PsmLeftClick 760 (U0;I64,I64;-)
-sym f PsmLeftClickPickMeterBox 757 (U0;I64,I64;-)
-sym f PsmLeftClickPickNoteBox 756 (U0;I64;-)
-sym f PsmLeftClickStaffBox 759 (U0;I64,I64;-)
-sym f PsmLeftClickStaffPtr 758 (U0;I64,I64;-)
-sym f PsmLoadSong 751 (U0;*U8,*I64,*F64;-)
-sym f PsmLoadSongStr 750 (U0;*U8,*I64,*F64;-)
-sym f PsmMenu 740 (U0;I64;-)
-sym f PsmMusicSetNoteLen 749 (*U8;*U8,*F64;-)
-sym f PsmMusicSetOctave 748 (*U8;*U8,*I64;-)
-sym f PsmNoteCopy 742 (*$PsmNote;*$PsmNote;-)
-sym f PsmNoteDel 741 (U0;*$PsmNote;-)
-sym f PsmPasteClip 745 (U0;;-)
-sym f PsmRightClick 755 (U0;I64,I64;-)
-sym f PsmSaveSong 753 (*U8;*U8,*U8;-)
-sym f PsmSongDel 743 (U0;*$PsmNote;-)
+fn 742 PsmGetPickMeterBox (Bool;I64,I64,*I64,*I64;-)
+fn 743 DrawPickMeterBox (U0;;-)
+fn 744 DrawDC2 (U0;;-)
+fn 745 PsmMenu (U0;I64;-)
+fn 746 PsmNoteDel (U0;*$PsmNote;-)
+fn 747 PsmNoteCopy (*$PsmNote;*$PsmNote;-)
+fn 748 PsmSongDel (U0;*$PsmNote;-)
+fn 749 PsmCutToClip (U0;;-)
+fn 750 PsmPasteClip (U0;;-)
+fn 751 PsmCopyToClip (U0;;-)
+fn 752 PsmFindNote (*$PsmNote;I64,I64;-)
+fn 753 PsmMusicSetOctave (*U8;*U8,*I64;-)
+fn 754 PsmMusicSetNoteLen (*U8;*U8,*F64;-)
+fn 755 PsmLoadSongStr (U0;*U8,*I64,*F64;-)
+fn 756 PsmLoadSong (U0;*U8,*I64,*F64;-)
+fn 757 PsmCvtSong (*U8;;-)
+fn 758 PsmSaveSong (*U8;*U8,*U8;-)
+fn 759 PopUpDuration (F64;;-)
+fn 760 PsmRightClick (U0;I64,I64;-)
+fn 761 PsmLeftClickPickNoteBox (U0;I64;-)
+fn 762 PsmLeftClickPickMeterBox (U0;I64,I64;-)
+fn 763 PsmLeftClickStaffPtr (U0;I64,I64;-)
+fn 764 PsmLeftClickStaffBox (U0;I64,I64;-)
+fn 765 PsmLeftClick (U0;I64,I64;-)
+fn 766 PsmCvtDuration (U8;F64;-)
+fn 767 $init:C:/Apps/Psalmody/Load.HC#7 (I64;;-)
+sym f DrawDC2 744 (U0;;-)
+sym f DrawPickMeterBox 743 (U0;;-)
+sym f PopUpDuration 759 (F64;;-)
+sym f PsmCopyToClip 751 (U0;;-)
+sym f PsmCutToClip 749 (U0;;-)
+sym f PsmCvtDuration 766 (U8;F64;-)
+sym f PsmCvtSong 757 (*U8;;-)
+sym f PsmFindNote 752 (*$PsmNote;I64,I64;-)
+sym f PsmGetPickMeterBox 742 (Bool;I64,I64,*I64,*I64;-)
+sym f PsmLeftClick 765 (U0;I64,I64;-)
+sym f PsmLeftClickPickMeterBox 762 (U0;I64,I64;-)
+sym f PsmLeftClickPickNoteBox 761 (U0;I64;-)
+sym f PsmLeftClickStaffBox 764 (U0;I64,I64;-)
+sym f PsmLeftClickStaffPtr 763 (U0;I64,I64;-)
+sym f PsmLoadSong 756 (U0;*U8,*I64,*F64;-)
+sym f PsmLoadSongStr 755 (U0;*U8,*I64,*F64;-)
+sym f PsmMenu 745 (U0;I64;-)
+sym f PsmMusicSetNoteLen 754 (*U8;*U8,*F64;-)
+sym f PsmMusicSetOctave 753 (*U8;*U8,*I64;-)
+sym f PsmNoteCopy 747 (*$PsmNote;*$PsmNote;-)
+sym f PsmNoteDel 746 (U0;*$PsmNote;-)
+sym f PsmPasteClip 750 (U0;;-)
+sym f PsmRightClick 760 (U0;I64,I64;-)
+sym f PsmSaveSong 758 (*U8;*U8,*U8;-)
+sym f PsmSongDel 748 (U0;*$PsmNote;-)
 sym g psm_kbd 181f18 [20]$PsmKey
-init 762
+init 767
 unit C:/Apps/Psalmody/Load.HC#8
 value PSMF_CD 1
 value PSMF_INCOMPLETE 2
@@ -482,18 +482,18 @@ s 132c0 2573
 s 130a8 
 s 182338 52
 s 132c0 2573
-fn 763 PsmDownKey (U0;I64,I64;-)
-fn 764 PsmUpKey (U0;I64,I64;-)
-fn 765 PsmPushMode (U0;I64;-)
-fn 766 PsmPopMode (U0;;-)
-fn 767 Psalmody (U0;*U8;-)
-fn 768 $init:C:/Apps/Psalmody/Load.HC#8 (I64;;-)
-sym f Psalmody 767 (U0;*U8;-)
-sym f PsmDownKey 763 (U0;I64,I64;-)
-sym f PsmPopMode 766 (U0;;-)
-sym f PsmPushMode 765 (U0;I64;-)
-sym f PsmUpKey 764 (U0;I64,I64;-)
-init 768
+fn 768 PsmDownKey (U0;I64,I64;-)
+fn 769 PsmUpKey (U0;I64,I64;-)
+fn 770 PsmPushMode (U0;I64;-)
+fn 771 PsmPopMode (U0;;-)
+fn 772 Psalmody (U0;*U8;-)
+fn 773 $init:C:/Apps/Psalmody/Load.HC#8 (I64;;-)
+sym f Psalmody 772 (U0;*U8;-)
+sym f PsmDownKey 768 (U0;I64,I64;-)
+sym f PsmPopMode 771 (U0;;-)
+sym f PsmPushMode 770 (U0;I64;-)
+sym f PsmUpKey 769 (U0;I64,I64;-)
+init 773
 unit C:/Apps/Psalmody/Load.HC#9
 unit C:/Apps/Psalmody/Examples/childish.HC#0
 registry file:C:/Apps/Psalmody/Examples/childish.HC
@@ -503,10 +503,10 @@ s 1823d8 4d6100747572001f0069001f0074791f001f001f001f00646f6e27741f001f006e65001
 s 1823a0 357145734344434471434465454773453442354534423565433442357344344135443441
 s 182420 346542354471463473474147417141414135657444344141357344344235443442
 s 182420 346542354471463473474147417141414135657444344141357344344235443442
-fn 769 Song (U0;;-)
-fn 770 $init:C:/Apps/Psalmody/Examples/childish.HC#0 (I64;;-)
-sym f Song 769 (U0;;-)
-init 770
+fn 774 Song (U0;;-)
+fn 775 $init:C:/Apps/Psalmody/Examples/childish.HC#0 (I64;;-)
+sym f Song 774 (U0;;-)
+init 775
 unit C:/Apps/Psalmody/Examples/childish.HC#1
 registry file:C:/Apps/Psalmody/Examples/childish.HC
 unit C:/Apps/Psalmody/Examples/night.HC#0
@@ -514,9 +514,9 @@ registry file:C:/Apps/Psalmody/Examples/night.HC
 value X 330
 value Y 35
 g 182458 8
-fn 771 $init:C:/Apps/Psalmody/Examples/night.HC#0 (I64;;-)
+fn 776 $init:C:/Apps/Psalmody/Examples/night.HC#0 (I64;;-)
 sym g t0 182458 F64
-init 771
+init 776
 unit C:/Apps/Psalmody/Examples/night.HC#1
 registry file:C:/Apps/Psalmody/Examples/night.HC
 b 182470 17f0fffffffaffffff1e00000037000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000ffffffffffffffffffffffffffffff0808ffffffffffffffffffffffffff0000ffffffff0707ffffffffffffffffff0807ffffffffffffffffffffffffff0000ffffffff070f07ffffffffffffffff0707ffffffffffffffffffffffffff0000ffffff070f0f07ffffffffffffffff0707ffffffffffffffffffffffffff0000ffffff070f0f0f07ffffffffffffff0707ffffffffffffffffffffffffff0000ffffff07080f0f0707ffffffff0707070007070707070707ffffffffffff0000ffffff07080f0f0f0707070707080f07000f0f0f0f0f0f0f07ffffffffff0000ffffff07080f070707080f0f0f0f0f07000f0f0f0f0f0f0f0f07ffffffff0000ffffff0707070f0f0f07070707070f07000707070f0f0f0f0f0f0708ffff0000ffff08070f0f0f0f070f0f0f0f0f0f07000f0f0f0f0f07070f0f0f08ffff0000ffff080808070f0f0f0f0f0f070f0f07070f0f0f0f0f0f0f07070708ffff0000ffff0807080f0707070f0f07070f0f0f070f0f0f070f070708070708ffff0000ffff08070f0f070f0707070707070f0f070f0f07070707080f0f0708ffff0000ffff08070f0f070f0f08080f0f07070707070708070f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0808070f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f0f0f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f0f0f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f070f070f0f0f0f0f0f0f0f070f0f0f0f08ffff0000ffff08070f0f070f0f0f07070f070f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f070f0f07070f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f07070708080f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f080708080f0f0f0f0f0f0f0f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f070f0f0f0f0f0f0f070f070f0f0f0708ffff0000ffff08070f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070f070f0f0f0708ffff0000ffff08070f0f070f0f0f070f0f0f0f0f0f0f0f0f070f0f070f0f0708ffff0000ffff08070f0f070f0f0f080707080f0f0f0f0f070f0f0f070f0f0708ffff0000ffff08070f0f070f0f0f0f08080f0f0f0f0f0f07070f07080f0f0708ffff0000ffff08070f0f070f0f0f0707070f0f0f0f0f0f080807080f0f0f0708ffff0000ffff08070f0f070f0f0f070f070f0f0f0f0f0f0f0f0f0f0f0f0f0708ffff0000ffff08070f0f070f070f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f070f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f070f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f070f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f0f0f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f0f0f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f0f0f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f0f0f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f0f0f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f0f0f0f0f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f070f070f070f0f0f0f0f0f0f0f0f0f0f0f0f070808ff0000ffff08070f0f070f070f070f070f0f0f0f0f0f0f070f0f0f0f0f070808ff000000
@@ -530,18 +530,18 @@ s 182d50 1f004173682000746f2e2e2e2000616e6420001f00647573742000746f2000647573742
 s 182d88 35447147714665474671467145714534714271
 s 182d50 1f004173682000746f2e2e2e2000616e6420001f00647573742000746f2000647573742e0a00
 s 182d88 35447147714665474671467145714534714271
-fn 772 DrawIt (U0;*$CTask,*$CDC;-)
-fn 773 Song (U0;;-)
-fn 774 $init:C:/Apps/Psalmody/Examples/night.HC#1 (I64;;-)
-sym f DrawIt 772 (U0;*$CTask,*$CDC;-)
-sym f Song 773 (U0;;-)
-init 774
+fn 777 DrawIt (U0;*$CTask,*$CDC;-)
+fn 778 Song (U0;;-)
+fn 779 $init:C:/Apps/Psalmody/Examples/night.HC#1 (I64;;-)
+sym f DrawIt 777 (U0;*$CTask,*$CDC;-)
+sym f Song 778 (U0;;-)
+init 779
 unit C:/Apps/Psalmody/Examples/night.HC#2
 registry file:C:/Apps/Psalmody/Examples/night.HC
 unit C:/Apps/Psalmody/Examples/prosper.HC#0
 registry file:C:/Apps/Psalmody/Examples/prosper.HC
-fn 775 $init:C:/Apps/Psalmody/Examples/prosper.HC#0 (I64;;-)
-init 775
+fn 780 $init:C:/Apps/Psalmody/Examples/prosper.HC#0 (I64;;-)
+init 780
 unit C:/Apps/Psalmody/Examples/prosper.HC#1
 registry file:C:/Apps/Psalmody/Examples/prosper.HC
 b 182db0 17e7fffffff0ffffff3900000029000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00ffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffff00000000000000000000000000ffffffffffffffffffffffff0000ffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffff000f0f0f0f0f0f0f0f0f0f0f0f0000ffffffffffffffffff000000ffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffff000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f00ffffffffffffff000f0f0f00ffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffff000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0000ffffff00000f0f0f0f000000ffffffffffffffffff00000000000000ffffffffffffffffffffffff00ffff000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f00ff000f0f0f0f0f0f0f0f0f0000ffffffffffffff00000000000000ffffffffffffffffffffff0000ff000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f000f0f0f0f0f0f0f0f0f0f0f0000ffffffffffff00000000000000ffffffffffffffffffff000f00000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0000ffffffffffffffff00000000000000ffffffffffffffffff000f0f00000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f00000000ffffffffffffffffffff00000000000000ffffffffffffffffffff000f00000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f00ffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffff00000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f00ffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffff000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f000000000f0f0f0f0f0f0f00ffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffff000f0f0f0f0f0f0f0f0f0f0f0f0f00000000ffff00ff000f0f0f0f0f00ffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffff000f0f0f0f0f000000000000000000ffffffffff0000000f0f0f0f0f00ffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffff000f0f0f000f0f00ffffffffffffffffffffffffff0000ff000f0f0f00ffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffff000f0f00000f0f00ffffffffffffffffffffffff000f00ff000f0f0f00ffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffff000f0f00000f0f00ffffffffffffffffffffffff000f00ffff000f0f00ffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffff000f0f00ff000f00ffffffffffffffffffffffff000f00ffff000f0f00ffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffff000f0f0f00ff000f00ffffffffffffffffffffff000f00ffffffff000f00ffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffff000f0f00ffff000f0f00ffffffffffffffffffff000f00ffffffff000f0f00ffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffff000f0f00ffffff000f00ffffffffffffffffffff000f00ffffffffff000f00ffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffff000f0f00ffffff000f00ffffffffffffffffffff000000ffffffffff000f0000ffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffff00000000ffffff000f00ffffffffffffffffffffffff00ffffffffffff00ffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffff000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000
@@ -554,11 +554,11 @@ s 1842b8 5468616e6b732c1f006d791f001f007368657000686572642e1f1f00596f751f0061726
 s 184300 354565474634714242354434416547477152
 s 1842b8 5468616e6b732c1f006d791f001f007368657000686572642e1f1f00596f751f006172651f00676f6f642e0a001f001f00
 s 184300 354565474634714242354434416547477152
-fn 776 DrawIt (U0;*$CTask,*$CDC;-)
-fn 777 Song (U0;;-)
-fn 778 $init:C:/Apps/Psalmody/Examples/prosper.HC#1 (I64;;-)
-sym f DrawIt 776 (U0;*$CTask,*$CDC;-)
-sym f Song 777 (U0;;-)
-init 778
+fn 781 DrawIt (U0;*$CTask,*$CDC;-)
+fn 782 Song (U0;;-)
+fn 783 $init:C:/Apps/Psalmody/Examples/prosper.HC#1 (I64;;-)
+sym f DrawIt 781 (U0;*$CTask,*$CDC;-)
+sym f Song 782 (U0;;-)
+init 783
 unit C:/Apps/Psalmody/Examples/prosper.HC#2
 registry file:C:/Apps/Psalmody/Examples/prosper.HC

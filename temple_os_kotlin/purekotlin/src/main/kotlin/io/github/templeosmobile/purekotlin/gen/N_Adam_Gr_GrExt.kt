@@ -17,7 +17,7 @@ class N_Adam_Gr_GrExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Adam/Gr/GrExt.HC#0 (GrExt.HC:1) */
-    fun f704_init_C__Adam_Gr_GrExt_HC_0(t: Task): Long {
+    fun f709_init_C__Adam_Gr_GrExt_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -29,7 +29,7 @@ class N_Adam_Gr_GrExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            704 -> f704_init_C__Adam_Gr_GrExt_HC_0(t)
+            709 -> f709_init_C__Adam_Gr_GrExt_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -41,7 +41,7 @@ class N_Adam_Gr_GrExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(704)
+        private val DEFINED = intArrayOf(709)
         private val NAMES = arrayOf("\$init:C:/Adam/Gr/GrExt.HC#0")
         private val FILES = arrayOf<String>()
     }

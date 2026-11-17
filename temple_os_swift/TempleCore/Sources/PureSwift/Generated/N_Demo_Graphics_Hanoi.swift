@@ -45,7 +45,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC OtherPole (Hanoi.HC:9)
-    @discardableResult public final func f703_OtherPole(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f708_OtherPole(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -61,7 +61,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC TopDisk (Hanoi.HC:14)
-    @discardableResult public final func f704_TopDisk(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f709_TopDisk(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -89,7 +89,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC PosInStk (Hanoi.HC:23)
-    @discardableResult public final func f705_PosInStk(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f710_PosInStk(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -120,7 +120,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC SetDisksRestXY (Hanoi.HC:32)
-    public final func f706_SetDisksRestXY(_ t: HTask) throws {
+    public final func f711_SetDisksRestXY(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -133,7 +133,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
                 ln = 38 // Hanoi.HC:38
                 let t1: Int64 = try (((ld8((ld8(P.g_Fs) &+ 248)) &- 20) &- divs(8, 2)) &- 1)
                 try tick(t)
-                let t0: Int64 = try f705_PosInStk(t, ld8((g_disks_pole &+ (l0_i &* 8))), l0_i)
+                let t0: Int64 = try f710_PosInStk(t, ld8((g_disks_pole &+ (l0_i &* 8))), l0_i)
                 try st8((g_disks_y &+ (l0_i &* 8)), (t1 &- (8 &* t0)))
                 ln = 35 // Hanoi.HC:35
                 l0_i = (l0_i &+ 1)
@@ -145,7 +145,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC DrawIt (Hanoi.HC:42)
-    public final func f707_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f712_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -205,7 +205,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC MySleep (Hanoi.HC:77)
-    public final func f708_MySleep(_ t: HTask) throws {
+    public final func f713_MySleep(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -224,7 +224,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC MoveDisks (Hanoi.HC:84)
-    public final func f709_MoveDisks(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f714_MoveDisks(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -238,19 +238,19 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
             if (p2_num > 1) {
                 ln = 88 // Hanoi.HC:88
                 try tick(t)
-                let t0: Int64 = try f703_OtherPole(t, p0_src_pole, p1_dst_pole)
+                let t0: Int64 = try f708_OtherPole(t, p0_src_pole, p1_dst_pole)
                 try tick(t)
-                try f709_MoveDisks(t, p0_src_pole, t0, (p2_num &- 1))
+                try f714_MoveDisks(t, p0_src_pole, t0, (p2_num &- 1))
             }
             ln = 89 // Hanoi.HC:89
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 90 // Hanoi.HC:90
             try tick(t)
-            let t1: Int64 = try f704_TopDisk(t, p0_src_pole)
+            let t1: Int64 = try f709_TopDisk(t, p0_src_pole)
             _ = try nat(t, n_Print, try push4(t, s0, t1, p0_src_pole, p1_dst_pole))
             ln = 92 // Hanoi.HC:92
             try tick(t)
-            let t2: Int64 = try f704_TopDisk(t, p0_src_pole)
+            let t2: Int64 = try f709_TopDisk(t, p0_src_pole)
             l24_top = t2
             ln = 93 // Hanoi.HC:93
             l40_y = try ld8((g_disks_y &+ (l24_top &* 8)))
@@ -259,7 +259,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
                 try st8((g_disks_y &+ (l24_top &* 8)), l40_y)
                 ln = 97 // Hanoi.HC:97
                 try tick(t)
-                try f708_MySleep(t)
+                try f713_MySleep(t)
                 ln = 95 // Hanoi.HC:95
                 l40_y = (l40_y &+ (-1))
                 try tick(t)
@@ -273,7 +273,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
                     try st8((g_disks_x &+ (l24_top &* 8)), l32_x)
                     ln = 102 // Hanoi.HC:102
                     try tick(t)
-                    try f708_MySleep(t)
+                    try f713_MySleep(t)
                     ln = 100 // Hanoi.HC:100
                     l32_x = (l32_x &+ 1)
                     try tick(t)
@@ -286,7 +286,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
                     try st8((g_disks_x &+ (l24_top &* 8)), l32_x)
                     ln = 107 // Hanoi.HC:107
                     try tick(t)
-                    try f708_MySleep(t)
+                    try f713_MySleep(t)
                     ln = 105 // Hanoi.HC:105
                     l32_x = (l32_x &+ (-1))
                     try tick(t)
@@ -300,27 +300,27 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
                 ln = 113 // Hanoi.HC:113
                 let t4: Int64 = try (((ld8((ld8(P.g_Fs) &+ 248)) &- 20) &- divs(8, 2)) &- 1)
                 try tick(t)
-                let t3: Int64 = try f705_PosInStk(t, p1_dst_pole, l24_top)
+                let t3: Int64 = try f710_PosInStk(t, p1_dst_pole, l24_top)
                 if !((l40_y < (t4 &- (8 &* t3)))) { break loop6 }
                 ln = 114 // Hanoi.HC:114
                 try st8((g_disks_y &+ (l24_top &* 8)), l40_y)
                 ln = 115 // Hanoi.HC:115
                 try tick(t)
-                try f708_MySleep(t)
+                try f713_MySleep(t)
                 ln = 113 // Hanoi.HC:113
                 l40_y = (l40_y &+ 1)
                 try tick(t)
             }
             ln = 117 // Hanoi.HC:117
             try tick(t)
-            try f706_SetDisksRestXY(t)
+            try f711_SetDisksRestXY(t)
             ln = 118 // Hanoi.HC:118
             if (p2_num > 1) {
                 ln = 119 // Hanoi.HC:119
                 try tick(t)
-                let t5: Int64 = try f703_OtherPole(t, p0_src_pole, p1_dst_pole)
+                let t5: Int64 = try f708_OtherPole(t, p0_src_pole, p1_dst_pole)
                 try tick(t)
-                try f709_MoveDisks(t, t5, p1_dst_pole, (p2_num &- 1))
+                try f714_MoveDisks(t, t5, p1_dst_pole, (p2_num &- 1))
             }
             t.depth -= 1
             return
@@ -328,7 +328,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC Init (Hanoi.HC:122)
-    public final func f710_Init(_ t: HTask) throws {
+    public final func f715_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -353,14 +353,14 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
             }
             ln = 131 // Hanoi.HC:131
             try tick(t)
-            try f706_SetDisksRestXY(t)
+            try f711_SetDisksRestXY(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Init", ln) }
     }
 
     /// HolyC Hanoi (Hanoi.HC:134)
-    public final func f711_Hanoi(_ t: HTask) throws {
+    public final func f716_Hanoi(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -369,11 +369,11 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 137 // Hanoi.HC:137
             try tick(t)
-            try f710_Init(t)
+            try f715_Init(t)
             ln = 138 // Hanoi.HC:138
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 139 // Hanoi.HC:139
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065859)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065864)
             ln = 141 // Hanoi.HC:141
             _ = try nat(t, n_Sleep, try push1(t, 1000))
             ln = 142 // Hanoi.HC:142
@@ -382,7 +382,7 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
             do {
                 ln = 143 // Hanoi.HC:143
                 try tick(t)
-                try f709_MoveDisks(t, 0, 2, 6)
+                try f714_MoveDisks(t, 0, 2, 6)
                 ln = 144 // Hanoi.HC:144
                 try tick(t)
                 try P.f250_Beep(t, 62, 0)
@@ -415,13 +415,13 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Hanoi.HC#0 (Hanoi.HC:154)
-    @discardableResult public final func f712_init_C__Demo_Graphics_Hanoi_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Demo_Graphics_Hanoi_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 154 // Hanoi.HC:154
             try tick(t)
-            try f711_Hanoi(t)
+            try f716_Hanoi(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Hanoi.HC#0", ln) }
@@ -430,22 +430,22 @@ public final class N_Demo_Graphics_Hanoi: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_OtherPole(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 704: return try f704_TopDisk(t, (n > 0 ? st[base + 0] : 0))
-        case 705: return try f705_PosInStk(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 706: try f706_SetDisksRestXY(t); return 0
-        case 707: try f707_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 708: try f708_MySleep(t); return 0
-        case 709: try f709_MoveDisks(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 710: try f710_Init(t); return 0
-        case 711: try f711_Hanoi(t); return 0
-        case 712: return try f712_init_C__Demo_Graphics_Hanoi_HC_0(t)
+        case 708: return try f708_OtherPole(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 709: return try f709_TopDisk(t, (n > 0 ? st[base + 0] : 0))
+        case 710: return try f710_PosInStk(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 711: try f711_SetDisksRestXY(t); return 0
+        case 712: try f712_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 713: try f713_MySleep(t); return 0
+        case 714: try f714_MoveDisks(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 715: try f715_Init(t); return 0
+        case 716: try f716_Hanoi(t); return 0
+        case 717: return try f717_init_C__Demo_Graphics_Hanoi_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712]
-    private static let NAMES: [Int: String] = [703: "OtherPole", 704: "TopDisk", 705: "PosInStk", 706: "SetDisksRestXY", 707: "DrawIt", 708: "MySleep", 709: "MoveDisks", 710: "Init", 711: "Hanoi", 712: "$init:C:/Demo/Graphics/Hanoi.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
+    private static let NAMES: [Int: String] = [708: "OtherPole", 709: "TopDisk", 710: "PosInStk", 711: "SetDisksRestXY", 712: "DrawIt", 713: "MySleep", 714: "MoveDisks", 715: "Init", 716: "Hanoi", 717: "$init:C:/Demo/Graphics/Hanoi.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Hanoi.HC"]
     public override var files: [String] { N_Demo_Graphics_Hanoi.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Hanoi.DEFINED.contains(index) }

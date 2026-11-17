@@ -28,6 +28,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     public let n_Sleep: Int
     public let n_Snd: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_tS: Int
     /** "F64 best_score=9999;." */ public var s0: Int64 = 0
     /** "TempleOS.Wenceslas" */ public var s1: Int64 = 0
@@ -105,6 +106,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
     }
@@ -175,7 +177,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Wenceslas.HC#0 (Wenceslas.HC:1)
-    @discardableResult public final func f703_init_C__Demo_Games_Wenceslas_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_Wenceslas_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -189,7 +191,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Wenceslas.HC#1 (Wenceslas.HC:2)
-    @discardableResult public final func f704_init_C__Demo_Games_Wenceslas_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_Wenceslas_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -203,7 +205,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -213,7 +215,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Wenceslas.HC#2 (Wenceslas.HC:86)
-    @discardableResult public final func f706_init_C__Demo_Games_Wenceslas_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_Wenceslas_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -228,7 +230,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Wenceslas.HC#3 (Wenceslas.HC:87)
-    @discardableResult public final func f707_init_C__Demo_Games_Wenceslas_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Games_Wenceslas_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -243,7 +245,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC DrawIt (Wenceslas.HC:121)
-    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f713_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -289,22 +291,19 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                         l184_img = b10
                     }
                     ln = 139 // Wenceslas.HC:139
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, ld2u((g_trees &+ (l144_i &* 12))), ld2u(((g_trees &+ (l144_i &* 12)) &+ 2)), 0, l184_img, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld2u((g_trees &+ (l144_i &* 12))), ld2u(((g_trees &+ (l144_i &* 12)) &+ 2)), 0, l184_img, 0))
                 }
                 ln = 130 // Wenceslas.HC:130
                 l144_i = (l144_i &+ 1)
                 try tick(t)
             }
             ln = 143 // Wenceslas.HC:143
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, divs(l152_w, 2), divs(l160_h, 2), 0, b11, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, divs(l152_w, 2), divs(l160_h, 2), 0, b11, 0))
             ln = 144 // Wenceslas.HC:144
             let t2: Double = d(try nat(t, n_tS, push0(t)))
             if try (t2 < (ldf(g_door_open_t0) + 1.0)) {
                 ln = 145 // Wenceslas.HC:145
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, divs(l152_w, 2), divs(l160_h, 2), 0, b12, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, divs(l152_w, 2), divs(l160_h, 2), 0, b12, 0))
             }
             ln = 147 // Wenceslas.HC:147
             l144_i = 0
@@ -329,8 +328,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                         l184_img = b15
                     }
                     ln = 156 // Wenceslas.HC:156
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, ld2u((g_trees &+ (l144_i &* 12))), ld2u(((g_trees &+ (l144_i &* 12)) &+ 2)), 0, l184_img, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld2u((g_trees &+ (l144_i &* 12))), ld2u(((g_trees &+ (l144_i &* 12)) &+ 2)), 0, l184_img, 0))
                 }
                 ln = 147 // Wenceslas.HC:147
                 l144_i = (l144_i &+ 1)
@@ -353,7 +351,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                 try st4((p1_dc &+ 228), 4)
                 ln = 167 // Wenceslas.HC:167
                 try tick(t)
-                _ = try P.f393_GrPlot3(t, p1_dc, ld2u((l200_tmpst &+ 16)), ld2u((l200_tmpst &+ 18)), 0)
+                _ = try P.f394_GrPlot3(t, p1_dc, ld2u((l200_tmpst &+ 16)), ld2u((l200_tmpst &+ 18)), 0)
                 ln = 168 // Wenceslas.HC:168
                 l200_tmpst = try ld8(l200_tmpst)
                 try tick(t)
@@ -383,19 +381,19 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                 if try (ld1u((l208_tmpp &+ 48)) != 0) {
                     ln = 180 // Wenceslas.HC:180
                     try tick(t)
-                    try P.f442_Sprite3Mat4x4B(t, p1_dc, f2i(ldf((l208_tmpp &+ 16))), f2i(ldf((l208_tmpp &+ 24))), divs(2147483647, 2), ld8(g_peasant_imgs), (fp &+ 16))
+                    try P.f447_Sprite3Mat4x4B(t, p1_dc, f2i(ldf((l208_tmpp &+ 16))), f2i(ldf((l208_tmpp &+ 24))), divs(2147483647, 2), ld8(g_peasant_imgs), (fp &+ 16))
                 } else {
                     ln = 182 // Wenceslas.HC:182
                     let t8: Int64 = try ld8((g_peasant_imgs &+ (((ld8(g_animate_phase) &+ 1) & 3) &* 8)))
                     let t9: Int64 = try ld8((g_peasant_imgs &+ ((ld8(g_animate_phase) & 3) &* 8)))
                     try tick(t)
-                    let t7: Double = try P.f480_Saw(t, (Double(ld8(g_animate_mS)) / 250.0), 1.0)
+                    let t7: Double = try P.f485_Saw(t, (Double(ld8(g_animate_mS)) / 250.0), 1.0)
                     try tick(t)
-                    let t10: Int64 = try P.f448_SpriteInterpolate(t, t7, t9, t8)
+                    let t10: Int64 = try P.f453_SpriteInterpolate(t, t7, t9, t8)
                     l192_tmps = t10
                     ln = 185 // Wenceslas.HC:185
                     try tick(t)
-                    try P.f442_Sprite3Mat4x4B(t, p1_dc, f2i(ldf((l208_tmpp &+ 16))), f2i(ldf((l208_tmpp &+ 24))), divs(2147483647, 2), l192_tmps, (fp &+ 16))
+                    try P.f447_Sprite3Mat4x4B(t, p1_dc, f2i(ldf((l208_tmpp &+ 16))), f2i(ldf((l208_tmpp &+ 24))), divs(2147483647, 2), l192_tmps, (fp &+ 16))
                     ln = 186 // Wenceslas.HC:186
                     _ = try nat(t, n_Free, try push1(t, l192_tmps))
                 }
@@ -419,19 +417,19 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             if try (t11 > ldf(g_king_timeout)) {
                 ln = 196 // Wenceslas.HC:196
                 try tick(t)
-                try P.f442_Sprite3Mat4x4B(t, p1_dc, ld8(g_king_x), ld8(g_king_y), divs(2147483647, 2), ld8(g_king_imgs), (fp &+ 16))
+                try P.f447_Sprite3Mat4x4B(t, p1_dc, ld8(g_king_x), ld8(g_king_y), divs(2147483647, 2), ld8(g_king_imgs), (fp &+ 16))
             } else {
                 ln = 198 // Wenceslas.HC:198
                 let t13: Int64 = try ld8((g_king_imgs &+ (((ld8(g_king_phase) &+ 1) & 3) &* 8)))
                 let t14: Int64 = try ld8((g_king_imgs &+ ((ld8(g_king_phase) & 3) &* 8)))
                 try tick(t)
-                let t12: Double = try P.f480_Saw(t, (Double(ld8(g_king_mS)) / 250.0), 1.0)
+                let t12: Double = try P.f485_Saw(t, (Double(ld8(g_king_mS)) / 250.0), 1.0)
                 try tick(t)
-                let t15: Int64 = try P.f448_SpriteInterpolate(t, t12, t14, t13)
+                let t15: Int64 = try P.f453_SpriteInterpolate(t, t12, t14, t13)
                 l192_tmps = t15
                 ln = 201 // Wenceslas.HC:201
                 try tick(t)
-                try P.f442_Sprite3Mat4x4B(t, p1_dc, ld8(g_king_x), ld8(g_king_y), divs(2147483647, 2), l192_tmps, (fp &+ 16))
+                try P.f447_Sprite3Mat4x4B(t, p1_dc, ld8(g_king_x), ld8(g_king_y), divs(2147483647, 2), l192_tmps, (fp &+ 16))
                 ln = 202 // Wenceslas.HC:202
                 _ = try nat(t, n_Free, try push1(t, l192_tmps))
             }
@@ -466,7 +464,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                     ln = 214 // Wenceslas.HC:214
                     try tick(t)
                     let vb0 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, (divs(l152_w, 2) &- divs(112, 2)), (divs(l160_h, 2) &+ 8), s2, vb0, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, (divs(l152_w, 2) &- divs(112, 2)), (divs(l160_h, 2) &+ 8), s2, vb0, 0)
                     t.sp = vb0
                 }
                 ln = 215 // Wenceslas.HC:215
@@ -481,7 +479,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             ln = 220 // Wenceslas.HC:220
             try tick(t)
             let vb1 = try push3(t, ld8(g_not_stopped_cnt), bits((l216_tt - ldf(g_t0))), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s3, vb1, 3)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s3, vb1, 3)
             t.sp = vb1
             t.msp = msp0
             t.depth -= 1
@@ -490,7 +488,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC StepNew (Wenceslas.HC:224)
-    public final func f709_StepNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double, _ a4: Int64, _ a5: Int64) throws {
+    public final func f714_StepNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double, _ a4: Int64, _ a5: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -598,7 +596,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC Init (Wenceslas.HC:261)
-    public final func f710_Init(_ t: HTask) throws {
+    public final func f715_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -622,7 +620,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             try st8(g_snow_tile, t0)
             ln = 271 // Wenceslas.HC:271
             try tick(t)
-            try P.f446_SpriteExtents(t, b16, (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32))
+            try P.f451_SpriteExtents(t, b16, (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32))
             ln = 272 // Wenceslas.HC:272
             l0_i = 0
             loop0: while (l0_i < 8) {
@@ -646,7 +644,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             try P.f152_QueInit(t, g_king_step_head)
             ln = 281 // Wenceslas.HC:281
             try tick(t)
-            try P.f446_SpriteExtents(t, b17, (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32))
+            try P.f451_SpriteExtents(t, b17, (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32))
             ln = 282 // Wenceslas.HC:282
             try tick(t)
             try P.f152_QueInit(t, g_peasant_head)
@@ -706,7 +704,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC CleanUp (Wenceslas.HC:305)
-    public final func f711_CleanUp(_ t: HTask) throws {
+    public final func f716_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -728,7 +726,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC Follow (Wenceslas.HC:313)
-    public final func f712_Follow(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f717_Follow(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -774,7 +772,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC AnimateTask (Wenceslas.HC:330)
-    public final func f713_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f718_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -891,7 +889,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                         if try (ld1u((l24_tmpp &+ 48)) == 0) {
                             ln = 379 // Wenceslas.HC:379
                             try tick(t)
-                            try f712_Follow(t, ld8((ld8(P.g_Fs) &+ 120)), l24_tmpp)
+                            try f717_Follow(t, ld8((ld8(P.g_Fs) &+ 120)), l24_tmpp)
                             ln = 380 // Wenceslas.HC:380
                             let t10: Int64 = (l24_tmpp &+ 16)
                             let t12: Double = try ldf(t10)
@@ -946,7 +944,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                             if try ((ld8(g_animate_mS) == 0) && ((ld8(g_animate_phase) & 1) != 0)) {
                                 ln = 389 // Wenceslas.HC:389
                                 try tick(t)
-                                try f709_StepNew(t, ld8((ld8(P.g_Fs) &+ 120)), f2i(ldf((l24_tmpp &+ 16))), f2i(ldf((l24_tmpp &+ 24))), ldf((l24_tmpp &+ 32)), (ld8(g_animate_phase) & 2), 0)
+                                try f714_StepNew(t, ld8((ld8(P.g_Fs) &+ 120)), f2i(ldf((l24_tmpp &+ 16))), f2i(ldf((l24_tmpp &+ 24))), ldf((l24_tmpp &+ 32)), (ld8(g_animate_phase) & 2), 0)
                             }
                             ln = 391 // Wenceslas.HC:391
                             let t32: Int64 = try ld8(g_not_stopped_cnt)
@@ -1037,7 +1035,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC BurnTrees (Wenceslas.HC:429)
-    public final func f714_BurnTrees(_ t: HTask) throws {
+    public final func f719_BurnTrees(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1064,16 +1062,16 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC SongTask (Wenceslas.HC:437)
-    public final func f715_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f720_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 439 // Wenceslas.HC:439
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 440 // Wenceslas.HC:440
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 441 // Wenceslas.HC:441
             try st8((P.g_music &+ 56), bits(2.48))
             ln = 442 // Wenceslas.HC:442
@@ -1082,13 +1080,13 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             loop0: while (1 != 0) {
                 ln = 444 // Wenceslas.HC:444
                 try tick(t)
-                try P.f494_Play(t, s4, 0)
+                try P.f499_Play(t, s4, 0)
                 ln = 445 // Wenceslas.HC:445
                 try tick(t)
-                try P.f494_Play(t, s4, 0)
+                try P.f499_Play(t, s4, 0)
                 ln = 446 // Wenceslas.HC:446
                 try tick(t)
-                try P.f494_Play(t, s5, 0)
+                try P.f499_Play(t, s5, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -1097,7 +1095,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC Wenceslas (Wenceslas.HC:450)
-    public final func f716_Wenceslas(_ t: HTask) throws {
+    public final func f721_Wenceslas(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1105,7 +1103,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             let fp = try frame(t, 24)
             ln = 454 // Wenceslas.HC:454
             try tick(t)
-            _ = try P.f507_MenuPush(t, s6)
+            _ = try P.f512_MenuPush(t, s6)
             ln = 469 // Wenceslas.HC:469
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -1123,7 +1121,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 475 // Wenceslas.HC:475
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065867, 0, s7, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065872, 0, s7, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 477 // Wenceslas.HC:477
             try tick(t)
@@ -1136,13 +1134,13 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             _ = try P.f201_PopUpOk(t, s10, 0)
             ln = 535 // Wenceslas.HC:535
             try tick(t)
-            try f710_Init(t)
+            try f715_Init(t)
             ln = 536 // Wenceslas.HC:536
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065865, 0, s11, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065870, 0, s11, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 537 // Wenceslas.HC:537
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065865)
             ln = 538 // Wenceslas.HC:538
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -1157,17 +1155,17 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                             case 10:
                                 ln = 542 // Wenceslas.HC:542
                                 try tick(t)
-                                try f711_CleanUp(t)
+                                try f716_CleanUp(t)
                                 ln = 543 // Wenceslas.HC:543
                                 try tick(t)
-                                try f710_Init(t)
+                                try f715_Init(t)
                             case 27, 28:
                                 ln = 547 // Wenceslas.HC:547
                                 break skip_0
                             case 32:
                                 ln = 549 // Wenceslas.HC:549
                                 try tick(t)
-                                try f714_BurnTrees(t)
+                                try f719_BurnTrees(t)
                             case 0:
                                 ln = 552 // Wenceslas.HC:552
                                 let t5: Int64 = try ld1u(fp)
@@ -1255,7 +1253,7 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
                                     try st8(g_king_phase, ((ld8(g_king_phase) &+ 2) & 2))
                                     ln = 577 // Wenceslas.HC:577
                                     try tick(t)
-                                    try f709_StepNew(t, ld8(P.g_Fs), ld8(g_king_x), ld8(g_king_y), ldf(g_king__), (ld8(g_king_phase) & 2), 1)
+                                    try f714_StepNew(t, ld8(P.g_Fs), ld8(g_king_x), ld8(g_king_y), ldf(g_king__), (ld8(g_king_phase) & 2), 1)
                                     ln = 578 // Wenceslas.HC:578
                                     let t6: Double = d(try nat(t, n_tS, push0(t)))
                                     try st8(g_king_timeout, bits((t6 + 0.5)))
@@ -1283,10 +1281,10 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 587 // Wenceslas.HC:587
             try tick(t)
-            try f711_CleanUp(t)
+            try f716_CleanUp(t)
             ln = 588 // Wenceslas.HC:588
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 589 // Wenceslas.HC:589
             _ = try nat(t, n_RegWrite, try push3(t, s1, s12, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1296,13 +1294,13 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Wenceslas.HC#4 (Wenceslas.HC:592)
-    @discardableResult public final func f717_init_C__Demo_Games_Wenceslas_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f722_init_C__Demo_Games_Wenceslas_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 592 // Wenceslas.HC:592
             try tick(t)
-            try f716_Wenceslas(t)
+            try f721_Wenceslas(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Wenceslas.HC#4", ln) }
@@ -1311,27 +1309,27 @@ public final class N_Demo_Games_Wenceslas: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_Wenceslas_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_Wenceslas_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: return try f706_init_C__Demo_Games_Wenceslas_HC_2(t)
-        case 707: return try f707_init_C__Demo_Games_Wenceslas_HC_3(t)
-        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 709: try f709_StepNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0)), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0)); return 0
-        case 710: try f710_Init(t); return 0
-        case 711: try f711_CleanUp(t); return 0
-        case 712: try f712_Follow(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 713: try f713_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 714: try f714_BurnTrees(t); return 0
-        case 715: try f715_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 716: try f716_Wenceslas(t); return 0
-        case 717: return try f717_init_C__Demo_Games_Wenceslas_HC_4(t)
+        case 708: return try f708_init_C__Demo_Games_Wenceslas_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_Wenceslas_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: return try f711_init_C__Demo_Games_Wenceslas_HC_2(t)
+        case 712: return try f712_init_C__Demo_Games_Wenceslas_HC_3(t)
+        case 713: try f713_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 714: try f714_StepNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0)), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0)); return 0
+        case 715: try f715_Init(t); return 0
+        case 716: try f716_CleanUp(t); return 0
+        case 717: try f717_Follow(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 718: try f718_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 719: try f719_BurnTrees(t); return 0
+        case 720: try f720_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 721: try f721_Wenceslas(t); return 0
+        case 722: return try f722_init_C__Demo_Games_Wenceslas_HC_4(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/Wenceslas.HC#0", 704: "$init:C:/Demo/Games/Wenceslas.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "$init:C:/Demo/Games/Wenceslas.HC#2", 707: "$init:C:/Demo/Games/Wenceslas.HC#3", 708: "DrawIt", 709: "StepNew", 710: "Init", 711: "CleanUp", 712: "Follow", 713: "AnimateTask", 714: "BurnTrees", 715: "SongTask", 716: "Wenceslas", 717: "$init:C:/Demo/Games/Wenceslas.HC#4"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/Wenceslas.HC#0", 709: "$init:C:/Demo/Games/Wenceslas.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "$init:C:/Demo/Games/Wenceslas.HC#2", 712: "$init:C:/Demo/Games/Wenceslas.HC#3", 713: "DrawIt", 714: "StepNew", 715: "Init", 716: "CleanUp", 717: "Follow", 718: "AnimateTask", 719: "BurnTrees", 720: "SongTask", 721: "Wenceslas", 722: "$init:C:/Demo/Games/Wenceslas.HC#4"]
     private static let FILES: [String] = ["C:/Demo/Games/Wenceslas.HC"]
     public override var files: [String] { N_Demo_Games_Wenceslas.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Wenceslas.DEFINED.contains(index) }

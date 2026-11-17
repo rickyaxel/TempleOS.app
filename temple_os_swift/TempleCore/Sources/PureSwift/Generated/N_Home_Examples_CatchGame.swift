@@ -51,7 +51,7 @@ public final class N_Home_Examples_CatchGame: NativeModule {
     }
 
     /// HolyC DrawIt (CatchGame.HC:7)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -65,16 +65,16 @@ public final class N_Home_Examples_CatchGame: NativeModule {
             try st4((p1_dc &+ 160), 14)
             ln = 12 // CatchGame.HC:12
             try tick(t)
-            _ = try P.f397_GrCircle(t, p1_dc, ld8(g_star_x), ld8(g_star_y), 6, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f398_GrCircle(t, p1_dc, ld8(g_star_x), ld8(g_star_y), 6, 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 13 // CatchGame.HC:13
             try tick(t)
-            _ = try P.f387_GrFloodFill(t, p1_dc, ld8(g_star_x), ld8(g_star_y), 0, 0, 0)
+            _ = try P.f388_GrFloodFill(t, p1_dc, ld8(g_star_x), ld8(g_star_y), 0, 0, 0)
             ln = 14 // CatchGame.HC:14
             try st4((p1_dc &+ 160), 0)
             ln = 15 // CatchGame.HC:15
             try tick(t)
             let vb0 = try push2(t, ld8(g_score), ld8(g_missed))
-            _ = try P.f369_GrPrint(t, p1_dc, 8, 8, s0, vb0, 2)
+            _ = try P.f370_GrPrint(t, p1_dc, 8, 8, s0, vb0, 2)
             t.sp = vb0
             t.depth -= 1
             return
@@ -82,7 +82,7 @@ public final class N_Home_Examples_CatchGame: NativeModule {
     }
 
     /// HolyC CatchGame (CatchGame.HC:18)
-    public final func f704_CatchGame(_ t: HTask) throws {
+    public final func f709_CatchGame(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -101,7 +101,7 @@ public final class N_Home_Examples_CatchGame: NativeModule {
             ln = 25 // CatchGame.HC:25
             try st8(g_star_y, 0)
             ln = 26 // CatchGame.HC:26
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 27 // CatchGame.HC:27
             loop0: while (1 != 0) {
                 ln = 28 // CatchGame.HC:28
@@ -174,13 +174,13 @@ public final class N_Home_Examples_CatchGame: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/CatchGame.HC#0 (CatchGame.HC:53)
-    @discardableResult public final func f705_init_C__Home_Examples_CatchGame_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Examples_CatchGame_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 53 // CatchGame.HC:53
             try tick(t)
-            try f704_CatchGame(t)
+            try f709_CatchGame(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Home/Examples/CatchGame.HC#0", ln) }
@@ -189,15 +189,15 @@ public final class N_Home_Examples_CatchGame: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_CatchGame(t); return 0
-        case 705: return try f705_init_C__Home_Examples_CatchGame_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_CatchGame(t); return 0
+        case 710: return try f710_init_C__Home_Examples_CatchGame_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "CatchGame", 705: "$init:C:/Home/Examples/CatchGame.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "CatchGame", 710: "$init:C:/Home/Examples/CatchGame.HC#0"]
     private static let FILES: [String] = ["C:/Home/Examples/CatchGame.HC"]
     public override var files: [String] { N_Home_Examples_CatchGame.FILES }
     public override func defines(_ index: Int) -> Bool { N_Home_Examples_CatchGame.DEFINED.contains(index) }

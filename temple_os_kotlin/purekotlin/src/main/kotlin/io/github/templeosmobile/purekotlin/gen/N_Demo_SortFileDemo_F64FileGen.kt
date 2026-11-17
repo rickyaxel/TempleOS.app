@@ -39,7 +39,7 @@ class N_Demo_SortFileDemo_F64FileGen(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileGen.HC#0 (F64FileGen.HC:3) */
-    fun f703_init_C__Demo_SortFileDemo_F64FileGen_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_SortFileDemo_F64FileGen_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -53,7 +53,7 @@ class N_Demo_SortFileDemo_F64FileGen(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC F64FileGenTXT (F64FileGen.HC:5) */
-    fun f704_F64FileGenTXT(t: Task, a0: Long, a1: Long) {
+    fun f709_F64FileGenTXT(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -63,7 +63,7 @@ class N_Demo_SortFileDemo_F64FileGen(rt: NativeRuntime, @JvmField val P: Prelude
             var l24_doc: Long = 0L
             ln = 8 // F64FileGen.HC:8
             tick(t)
-            val t0: Long = P.f601_DocNew(t, p0_filename, 0L)
+            val t0: Long = P.f606_DocNew(t, p0_filename, 0L)
             l24_doc = t0
             ln = 9 // F64FileGen.HC:9
             tick(t)
@@ -85,30 +85,30 @@ class N_Demo_SortFileDemo_F64FileGen(rt: NativeRuntime, @JvmField val P: Prelude
             }
             ln = 12 // F64FileGen.HC:12
             tick(t)
-            P.f618_DocWrite(t, l24_doc, 0L)
+            P.f623_DocWrite(t, l24_doc, 0L)
             ln = 13 // F64FileGen.HC:13
             tick(t)
-            P.f605_DocDel(t, l24_doc)
+            P.f610_DocDel(t, l24_doc)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "F64FileGenTXT", ln) }
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileGen.HC#1 (F64FileGen.HC:15) */
-    fun f705_init_C__Demo_SortFileDemo_F64FileGen_HC_1(t: Task): Long {
+    fun f710_init_C__Demo_SortFileDemo_F64FileGen_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 15 // F64FileGen.HC:15
             tick(t)
-            f704_F64FileGenTXT(t, s3, 10L)
+            f709_F64FileGenTXT(t, s3, 10L)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/SortFileDemo/F64FileGen.HC#1", ln) }
     }
 
     /** HolyC F64FileGenDAT (F64FileGen.HC:17) */
-    fun f706_F64FileGenDAT(t: Task, a0: Long, a1: Long) {
+    fun f711_F64FileGenDAT(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -139,13 +139,13 @@ class N_Demo_SortFileDemo_F64FileGen(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileGen.HC#2 (F64FileGen.HC:26) */
-    fun f707_init_C__Demo_SortFileDemo_F64FileGen_HC_2(t: Task): Long {
+    fun f712_init_C__Demo_SortFileDemo_F64FileGen_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 26 // F64FileGen.HC:26
             tick(t)
-            f706_F64FileGenDAT(t, s4, 10L)
+            f711_F64FileGenDAT(t, s4, 10L)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/SortFileDemo/F64FileGen.HC#2", ln) }
@@ -154,11 +154,11 @@ class N_Demo_SortFileDemo_F64FileGen(rt: NativeRuntime, @JvmField val P: Prelude
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_SortFileDemo_F64FileGen_HC_0(t)
-            704 -> { f704_F64FileGenTXT(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> f705_init_C__Demo_SortFileDemo_F64FileGen_HC_1(t)
-            706 -> { f706_F64FileGenDAT(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> f707_init_C__Demo_SortFileDemo_F64FileGen_HC_2(t)
+            708 -> f708_init_C__Demo_SortFileDemo_F64FileGen_HC_0(t)
+            709 -> { f709_F64FileGenTXT(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> f710_init_C__Demo_SortFileDemo_F64FileGen_HC_1(t)
+            711 -> { f711_F64FileGenDAT(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> f712_init_C__Demo_SortFileDemo_F64FileGen_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -170,7 +170,7 @@ class N_Demo_SortFileDemo_F64FileGen(rt: NativeRuntime, @JvmField val P: Prelude
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("\$init:C:/Demo/SortFileDemo/F64FileGen.HC#0", "F64FileGenTXT", "\$init:C:/Demo/SortFileDemo/F64FileGen.HC#1", "F64FileGenDAT", "\$init:C:/Demo/SortFileDemo/F64FileGen.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/SortFileDemo/F64FileGen.HC")
     }

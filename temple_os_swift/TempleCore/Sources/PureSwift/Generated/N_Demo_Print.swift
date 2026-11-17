@@ -53,7 +53,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#0 (Print.HC:7)
-    @discardableResult public final func f703_init_C__Demo_Print_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Print_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -67,7 +67,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#1 (Print.HC:8)
-    @discardableResult public final func f704_init_C__Demo_Print_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Print_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -81,7 +81,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#2 (Print.HC:10)
-    @discardableResult public final func f705_init_C__Demo_Print_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Print_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -95,7 +95,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#3 (Print.HC:11)
-    @discardableResult public final func f706_init_C__Demo_Print_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Print_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -109,7 +109,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#4 (Print.HC:13)
-    @discardableResult public final func f707_init_C__Demo_Print_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Print_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -123,7 +123,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#5 (Print.HC:14)
-    @discardableResult public final func f708_init_C__Demo_Print_HC_5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_Print_HC_5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -137,7 +137,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#6 (Print.HC:15)
-    @discardableResult public final func f709_init_C__Demo_Print_HC_6(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Demo_Print_HC_6(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -151,7 +151,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#7 (Print.HC:17)
-    @discardableResult public final func f710_init_C__Demo_Print_HC_7(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Demo_Print_HC_7(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -165,7 +165,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#8 (Print.HC:18)
-    @discardableResult public final func f711_init_C__Demo_Print_HC_8(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f716_init_C__Demo_Print_HC_8(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -179,7 +179,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#9 (Print.HC:19)
-    @discardableResult public final func f712_init_C__Demo_Print_HC_9(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Demo_Print_HC_9(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -193,7 +193,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#10 (Print.HC:21)
-    @discardableResult public final func f713_init_C__Demo_Print_HC_10(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Demo_Print_HC_10(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -207,7 +207,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#11 (Print.HC:22)
-    @discardableResult public final func f714_init_C__Demo_Print_HC_11(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f719_init_C__Demo_Print_HC_11(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -221,7 +221,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#12 (Print.HC:24)
-    @discardableResult public final func f715_init_C__Demo_Print_HC_12(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f720_init_C__Demo_Print_HC_12(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -233,7 +233,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#13 (Print.HC:26)
-    @discardableResult public final func f716_init_C__Demo_Print_HC_13(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f721_init_C__Demo_Print_HC_13(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -247,7 +247,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#14 (Print.HC:28)
-    @discardableResult public final func f717_init_C__Demo_Print_HC_14(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f722_init_C__Demo_Print_HC_14(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -261,7 +261,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#15 (Print.HC:30)
-    @discardableResult public final func f718_init_C__Demo_Print_HC_15(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f723_init_C__Demo_Print_HC_15(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -273,7 +273,7 @@ public final class N_Demo_Print: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Print.HC#16 (Print.HC:32)
-    @discardableResult public final func f719_init_C__Demo_Print_HC_16(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f724_init_C__Demo_Print_HC_16(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -287,29 +287,29 @@ public final class N_Demo_Print: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Print_HC_0(t)
-        case 704: return try f704_init_C__Demo_Print_HC_1(t)
-        case 705: return try f705_init_C__Demo_Print_HC_2(t)
-        case 706: return try f706_init_C__Demo_Print_HC_3(t)
-        case 707: return try f707_init_C__Demo_Print_HC_4(t)
-        case 708: return try f708_init_C__Demo_Print_HC_5(t)
-        case 709: return try f709_init_C__Demo_Print_HC_6(t)
-        case 710: return try f710_init_C__Demo_Print_HC_7(t)
-        case 711: return try f711_init_C__Demo_Print_HC_8(t)
-        case 712: return try f712_init_C__Demo_Print_HC_9(t)
-        case 713: return try f713_init_C__Demo_Print_HC_10(t)
-        case 714: return try f714_init_C__Demo_Print_HC_11(t)
-        case 715: return try f715_init_C__Demo_Print_HC_12(t)
-        case 716: return try f716_init_C__Demo_Print_HC_13(t)
-        case 717: return try f717_init_C__Demo_Print_HC_14(t)
-        case 718: return try f718_init_C__Demo_Print_HC_15(t)
-        case 719: return try f719_init_C__Demo_Print_HC_16(t)
+        case 708: return try f708_init_C__Demo_Print_HC_0(t)
+        case 709: return try f709_init_C__Demo_Print_HC_1(t)
+        case 710: return try f710_init_C__Demo_Print_HC_2(t)
+        case 711: return try f711_init_C__Demo_Print_HC_3(t)
+        case 712: return try f712_init_C__Demo_Print_HC_4(t)
+        case 713: return try f713_init_C__Demo_Print_HC_5(t)
+        case 714: return try f714_init_C__Demo_Print_HC_6(t)
+        case 715: return try f715_init_C__Demo_Print_HC_7(t)
+        case 716: return try f716_init_C__Demo_Print_HC_8(t)
+        case 717: return try f717_init_C__Demo_Print_HC_9(t)
+        case 718: return try f718_init_C__Demo_Print_HC_10(t)
+        case 719: return try f719_init_C__Demo_Print_HC_11(t)
+        case 720: return try f720_init_C__Demo_Print_HC_12(t)
+        case 721: return try f721_init_C__Demo_Print_HC_13(t)
+        case 722: return try f722_init_C__Demo_Print_HC_14(t)
+        case 723: return try f723_init_C__Demo_Print_HC_15(t)
+        case 724: return try f724_init_C__Demo_Print_HC_16(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Print.HC#0", 704: "$init:C:/Demo/Print.HC#1", 705: "$init:C:/Demo/Print.HC#2", 706: "$init:C:/Demo/Print.HC#3", 707: "$init:C:/Demo/Print.HC#4", 708: "$init:C:/Demo/Print.HC#5", 709: "$init:C:/Demo/Print.HC#6", 710: "$init:C:/Demo/Print.HC#7", 711: "$init:C:/Demo/Print.HC#8", 712: "$init:C:/Demo/Print.HC#9", 713: "$init:C:/Demo/Print.HC#10", 714: "$init:C:/Demo/Print.HC#11", 715: "$init:C:/Demo/Print.HC#12", 716: "$init:C:/Demo/Print.HC#13", 717: "$init:C:/Demo/Print.HC#14", 718: "$init:C:/Demo/Print.HC#15", 719: "$init:C:/Demo/Print.HC#16"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Print.HC#0", 709: "$init:C:/Demo/Print.HC#1", 710: "$init:C:/Demo/Print.HC#2", 711: "$init:C:/Demo/Print.HC#3", 712: "$init:C:/Demo/Print.HC#4", 713: "$init:C:/Demo/Print.HC#5", 714: "$init:C:/Demo/Print.HC#6", 715: "$init:C:/Demo/Print.HC#7", 716: "$init:C:/Demo/Print.HC#8", 717: "$init:C:/Demo/Print.HC#9", 718: "$init:C:/Demo/Print.HC#10", 719: "$init:C:/Demo/Print.HC#11", 720: "$init:C:/Demo/Print.HC#12", 721: "$init:C:/Demo/Print.HC#13", 722: "$init:C:/Demo/Print.HC#14", 723: "$init:C:/Demo/Print.HC#15", 724: "$init:C:/Demo/Print.HC#16"]
     private static let FILES: [String] = ["C:/Demo/Print.HC"]
     public override var files: [String] { N_Demo_Print.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Print.DEFINED.contains(index) }

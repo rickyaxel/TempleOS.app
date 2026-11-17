@@ -133,7 +133,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Games/FlatTops.HC#0 (FlatTops.HC:26) */
-    fun f703_init_C__Demo_Games_FlatTops_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_FlatTops_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -143,7 +143,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC SquadronIns (FlatTops.HC:70) */
-    fun f704_SquadronIns(t: Task, a0: Long, a1: Long) {
+    fun f709_SquadronIns(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -166,7 +166,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC SquadronRem (FlatTops.HC:79) */
-    fun f705_SquadronRem(t: Task, a0: Long) {
+    fun f710_SquadronRem(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -186,7 +186,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Games/FlatTops.HC#1 (FlatTops.HC:88) */
-    fun f706_init_C__Demo_Games_FlatTops_HC_1(t: Task): Long {
+    fun f711_init_C__Demo_Games_FlatTops_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -196,7 +196,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ObjFind (FlatTops.HC:95) */
-    fun f707_ObjFind(t: Task, a0: Double, a1: Double, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long): Long {
+    fun f712_ObjFind(t: Task, a0: Double, a1: Double, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -269,7 +269,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ObjDel (FlatTops.HC:116) */
-    fun f708_ObjDel(t: Task, a0: Long) {
+    fun f713_ObjDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -287,7 +287,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     if ((ld2s((p0_tmpo + 44L)) >= 0L)) {
                         ln = 123 // FlatTops.HC:123
                         tick(t)
-                        f705_SquadronRem(t, p0_tmpo)
+                        f710_SquadronRem(t, p0_tmpo)
                     }
                     ln = 124 // FlatTops.HC:124
                     tick(t)
@@ -312,7 +312,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Games/FlatTops.HC#2 (FlatTops.HC:157) */
-    fun f709_init_C__Demo_Games_FlatTops_HC_2(t: Task): Long {
+    fun f714_init_C__Demo_Games_FlatTops_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -329,7 +329,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC DrawIt (FlatTops.HC:159) */
-    fun f710_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f715_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -365,7 +365,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 if ((((ld2u((l56_tmpo + 42L)) and 2L) != 0L) && ((ld2u((l56_tmpo + 42L)) and 1L) != 0L))) {
                     ln = 176 // FlatTops.HC:176
                     tick(t)
-                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((l56_tmpo + 48L))), f2i(ldf((l56_tmpo + 56L))), 0L, ld8(((g_imgs + (ld1u((l56_tmpo + 40L)) * 24L)) + (ld1u((l56_tmpo + 41L)) * 8L))), (ldf((l56_tmpo + 64L)) + (f(4614256656552045848L) / 2.0)))
+                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((l56_tmpo + 48L))), f2i(ldf((l56_tmpo + 56L))), 0L, ld8(((g_imgs + (ld1u((l56_tmpo + 40L)) * 24L)) + (ld1u((l56_tmpo + 41L)) * 8L))), (ldf((l56_tmpo + 64L)) + (f(4614256656552045848L) / 2.0)))
                     ln = 179 // FlatTops.HC:179
                     l32_k = 0L
                     ln = 180 // FlatTops.HC:180
@@ -420,7 +420,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                         st4((p1_dc + 160L), 0L)
                         ln = 194 // FlatTops.HC:194
                         tick(t)
-                        P.f396_GrLine(t, p1_dc, f2i((ldf((l56_tmpo + 48L)) + 5.0)), f2i(ldf((l56_tmpo + 56L))), f2i(((ldf((l56_tmpo + 48L)) + 5.0) + 10.0)), f2i(ldf((l56_tmpo + 56L))), 1L, 0L)
+                        P.f397_GrLine(t, p1_dc, f2i((ldf((l56_tmpo + 48L)) + 5.0)), f2i(ldf((l56_tmpo + 56L))), f2i(((ldf((l56_tmpo + 48L)) + 5.0) + 10.0)), f2i(ldf((l56_tmpo + 56L))), 1L, 0L)
                         ln = 196 // FlatTops.HC:196
                         if ((ldf((l56_tmpo + 96L)) > 0.0)) {
                             ln = 197 // FlatTops.HC:197
@@ -439,13 +439,13 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                             }
                             ln = 203 // FlatTops.HC:203
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, f2i((ldf((l56_tmpo + 48L)) + 5.0)), f2i(ldf((l56_tmpo + 56L))), f2i(((ldf((l56_tmpo + 48L)) + 5.0) + ((10.0 * ldf((l56_tmpo + 96L))) / 100.0))), f2i(ldf((l56_tmpo + 56L))), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, f2i((ldf((l56_tmpo + 48L)) + 5.0)), f2i(ldf((l56_tmpo + 56L))), f2i(((ldf((l56_tmpo + 48L)) + 5.0) + ((10.0 * ldf((l56_tmpo + 96L))) / 100.0))), f2i(ldf((l56_tmpo + 56L))), 1L, 0L)
                         }
                         ln = 207 // FlatTops.HC:207
                         st4((p1_dc + 160L), 0L)
                         ln = 208 // FlatTops.HC:208
                         tick(t)
-                        P.f396_GrLine(t, p1_dc, f2i((ldf((l56_tmpo + 48L)) + 5.0)), f2i((ldf((l56_tmpo + 56L)) + 2.0)), f2i(((ldf((l56_tmpo + 48L)) + 5.0) + 10.0)), f2i((ldf((l56_tmpo + 56L)) + 2.0)), 1L, 0L)
+                        P.f397_GrLine(t, p1_dc, f2i((ldf((l56_tmpo + 48L)) + 5.0)), f2i((ldf((l56_tmpo + 56L)) + 2.0)), f2i(((ldf((l56_tmpo + 48L)) + 5.0) + 10.0)), f2i((ldf((l56_tmpo + 56L)) + 2.0)), 1L, 0L)
                         ln = 209 // FlatTops.HC:209
                         l40_d = ((ldf((l56_tmpo + 152L)) * 100.0) / ldf((l56_tmpo + 160L)))
                         ln = 210 // FlatTops.HC:210
@@ -466,7 +466,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                             }
                             ln = 217 // FlatTops.HC:217
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, f2i((ldf((l56_tmpo + 48L)) + 5.0)), f2i((ldf((l56_tmpo + 56L)) + 2.0)), f2i(((ldf((l56_tmpo + 48L)) + 5.0) + ((10.0 * l40_d) / 100.0))), f2i((ldf((l56_tmpo + 56L)) + 2.0)), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, f2i((ldf((l56_tmpo + 48L)) + 5.0)), f2i((ldf((l56_tmpo + 56L)) + 2.0)), f2i(((ldf((l56_tmpo + 48L)) + 5.0) + ((10.0 * l40_d) / 100.0))), f2i((ldf((l56_tmpo + 56L)) + 2.0)), 1L, 0L)
                         }
                     }
                 }
@@ -482,7 +482,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 if ((((ld2u((l56_tmpo + 42L)) and 2L) != 0L) && ((ld2u((l56_tmpo + 42L)) and 1L) == 0L))) {
                     ln = 227 // FlatTops.HC:227
                     tick(t)
-                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((l56_tmpo + 48L))), f2i(ldf((l56_tmpo + 56L))), 0L, ld8(((g_imgs + (ld1u((l56_tmpo + 40L)) * 24L)) + (ld1u((l56_tmpo + 41L)) * 8L))), (ldf((l56_tmpo + 64L)) + (f(4614256656552045848L) / 2.0)))
+                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((l56_tmpo + 48L))), f2i(ldf((l56_tmpo + 56L))), 0L, ld8(((g_imgs + (ld1u((l56_tmpo + 40L)) * 24L)) + (ld1u((l56_tmpo + 41L)) * 8L))), (ldf((l56_tmpo + 64L)) + (f(4614256656552045848L) / 2.0)))
                 }
                 ln = 229 // FlatTops.HC:229
                 if (((ld2u((l56_tmpo + 42L)) and 8L) != 0L)) {
@@ -490,7 +490,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     st4((p1_dc + 160L), 12L)
                     ln = 231 // FlatTops.HC:231
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i(ldf((l56_tmpo + 48L))), f2i(ldf((l56_tmpo + 56L))), f2i(ldf((l56_tmpo + 104L))), f2i(ldf((l56_tmpo + 112L))), 3L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i(ldf((l56_tmpo + 48L))), f2i(ldf((l56_tmpo + 56L))), f2i(ldf((l56_tmpo + 104L))), f2i(ldf((l56_tmpo + 112L))), 3L, 0L)
                 }
                 ln = 233 // FlatTops.HC:233
                 l56_tmpo = ld8(l56_tmpo)
@@ -505,7 +505,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 st4((p1_dc + 160L), 10L)
                 ln = 239 // FlatTops.HC:239
                 tick(t)
-                P.f426_GrArrow3(t, p1_dc, f2i(ldf(g_launch_unit_x1)), f2i(ldf(g_launch_unit_y1)), 0L, f2i(ldf(g_launch_unit_x2)), f2i(ldf(g_launch_unit_y2)), 0L, 2.75, 1L, 0L)
+                P.f429_GrArrow3(t, p1_dc, f2i(ldf(g_launch_unit_x1)), f2i(ldf(g_launch_unit_y1)), 0L, f2i(ldf(g_launch_unit_x2)), f2i(ldf(g_launch_unit_y2)), 0L, 2.75, 1L, 0L)
             }
             ln = 242 // FlatTops.HC:242
             if ((l48_cur_time < ldf(g_return_t))) {
@@ -513,7 +513,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 st4((p1_dc + 160L), 12L)
                 ln = 244 // FlatTops.HC:244
                 tick(t)
-                P.f426_GrArrow3(t, p1_dc, f2i(ldf(g_return_unit_x1)), f2i(ldf(g_return_unit_y1)), 0L, f2i(ldf(g_return_unit_x2)), f2i(ldf(g_return_unit_y2)), 0L, 2.75, 1L, 0L)
+                P.f429_GrArrow3(t, p1_dc, f2i(ldf(g_return_unit_x1)), f2i(ldf(g_return_unit_y1)), 0L, f2i(ldf(g_return_unit_x2)), f2i(ldf(g_return_unit_y2)), 0L, 2.75, 1L, 0L)
             }
             ln = 247 // FlatTops.HC:247
             if ((l48_cur_time < ldf(g_set___t))) {
@@ -521,28 +521,28 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 st4((p1_dc + 160L), 14L)
                 ln = 249 // FlatTops.HC:249
                 tick(t)
-                P.f426_GrArrow3(t, p1_dc, f2i(ldf(g_set___unit_x1)), f2i(ldf(g_set___unit_y1)), 0L, f2i(ldf(g_set___unit_x2)), f2i(ldf(g_set___unit_y2)), 0L, 2.75, 1L, 0L)
+                P.f429_GrArrow3(t, p1_dc, f2i(ldf(g_set___unit_x1)), f2i(ldf(g_set___unit_y1)), 0L, f2i(ldf(g_set___unit_x2)), f2i(ldf(g_set___unit_y2)), 0L, 2.75, 1L, 0L)
             }
             ln = 253 // FlatTops.HC:253
             st4((p1_dc + 160L), 14L)
             ln = 254 // FlatTops.HC:254
             tick(t)
             val vb0 = push1(t, bits(ldf(g_game_speed)))
-            P.f369_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), (-ld8((p0_task + 264L))), s0, vb0, 1)
+            P.f370_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), (-ld8((p0_task + 264L))), s0, vb0, 1)
             t.sp = vb0
             ln = 256 // FlatTops.HC:256
             st4((p1_dc + 160L), 11L)
             ln = 257 // FlatTops.HC:257
             tick(t)
             val vb1 = push1(t, ld8(g_num_alive))
-            P.f369_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), ((-ld8((p0_task + 264L))) + 8L), s1, vb1, 1)
+            P.f370_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), ((-ld8((p0_task + 264L))) + 8L), s1, vb1, 1)
             t.sp = vb1
             ln = 259 // FlatTops.HC:259
             st4((p1_dc + 160L), 13L)
             ln = 260 // FlatTops.HC:260
             tick(t)
             val vb2 = push1(t, ld8((g_num_alive + 8L)))
-            P.f369_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), ((-ld8((p0_task + 264L))) + 16L), s2, vb2, 1)
+            P.f370_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), ((-ld8((p0_task + 264L))) + 16L), s2, vb2, 1)
             t.sp = vb2
             ln = 263 // FlatTops.HC:263
             var r18: Boolean = ((ld8(g_num_alive) == 0L) || (ld8((g_num_alive + 8L)) == 0L))
@@ -559,7 +559,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     ln = 266 // FlatTops.HC:266
                     tick(t)
                     val vb3 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, (((ld8((p0_task + 224L)) shr 1) - divs(112L, 2L)) - ld8((p0_task + 256L))), (((ld8((p0_task + 248L)) shr 1) - divs(8L, 2L)) - ld8((p0_task + 264L))), s3, vb3, 0)
+                    P.f370_GrPrint(t, p1_dc, (((ld8((p0_task + 224L)) shr 1) - divs(112L, 2L)) - ld8((p0_task + 256L))), (((ld8((p0_task + 248L)) shr 1) - divs(8L, 2L)) - ld8((p0_task + 264L))), s3, vb3, 0)
                     t.sp = vb3
                 } else {
                     ln = 269 // FlatTops.HC:269
@@ -567,7 +567,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     ln = 270 // FlatTops.HC:270
                     tick(t)
                     val vb4 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, (((ld8((p0_task + 224L)) shr 1) - divs(72L, 2L)) - ld8((p0_task + 256L))), (((ld8((p0_task + 248L)) shr 1) - divs(8L, 2L)) - ld8((p0_task + 264L))), s4, vb4, 0)
+                    P.f370_GrPrint(t, p1_dc, (((ld8((p0_task + 224L)) shr 1) - divs(72L, 2L)) - ld8((p0_task + 256L))), (((ld8((p0_task + 248L)) shr 1) - divs(8L, 2L)) - ld8((p0_task + 264L))), s4, vb4, 0)
                     t.sp = vb4
                 }
             }
@@ -577,7 +577,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC Init (FlatTops.HC:276) */
-    fun f711_Init(t: Task) {
+    fun f716_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -835,7 +835,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     st8((l56_tmps + 336L), ((1L shl ld8((g_num_planes_per_squadron + (ld1u((l64_tmpo + 40L)) * 8L))).toInt()) - 1L))
                     ln = 369 // FlatTops.HC:369
                     tick(t)
-                    f704_SquadronIns(t, l64_tmpo, ld8((l56_tmps + 24L)))
+                    f709_SquadronIns(t, l64_tmpo, ld8((l56_tmps + 24L)))
                 }
                 ln = 371 // FlatTops.HC:371
                 l64_tmpo = ld8(l64_tmpo)
@@ -847,7 +847,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC CleanUp (FlatTops.HC:375) */
-    fun f712_CleanUp(t: Task) {
+    fun f717_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -865,7 +865,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ObjLaunch (FlatTops.HC:382) */
-    fun f713_ObjLaunch(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Double, a5: Double): Long {
+    fun f718_ObjLaunch(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Double, a5: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -884,7 +884,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             if ((p2_host == 0L)) {
                 ln = 388 // FlatTops.HC:388
                 tick(t)
-                val t1: Long = f707_ObjFind(t, p3_x, p4_y, 6L, 2L, 1L, (1L shl p0_player.toInt()), 0L)
+                val t1: Long = f712_ObjFind(t, p3_x, p4_y, 6L, 2L, 1L, (1L shl p0_player.toInt()), 0L)
                 p2_host = t1
             }
             ln = 389 // FlatTops.HC:389
@@ -923,7 +923,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                             if (r5) {
                                 ln = 405 // FlatTops.HC:405
                                 tick(t)
-                                val t6: Double = P.f542_Wrap(t, (p5__ - ldf((l48_tmpo + 64L))), (-f(4614256656552045848L)))
+                                val t6: Double = P.f547_Wrap(t, (p5__ - ldf((l48_tmpo + 64L))), (-f(4614256656552045848L)))
                                 st8((l48_tmpo + 72L), bits(t6))
                             } else {
                                 ln = 407 // FlatTops.HC:407
@@ -954,7 +954,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC SquadronLaunch (FlatTops.HC:420) */
-    fun f714_SquadronLaunch(t: Task, a0: Long, a1: Double, a2: Double): Long {
+    fun f719_SquadronLaunch(t: Task, a0: Long, a1: Double, a2: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -965,7 +965,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             var l32_tmpo: Long = 0L
             ln = 424 // FlatTops.HC:424
             tick(t)
-            val t0: Long = f713_ObjLaunch(t, p0_player, -1L, 0L, p1_x, p2_y, f(9218868437227405311L))
+            val t0: Long = f718_ObjLaunch(t, p0_player, -1L, 0L, p1_x, p2_y, f(9218868437227405311L))
             l32_tmpo = t0
             if ((t0 != 0L)) {
                 ln = 425 // FlatTops.HC:425
@@ -1007,7 +1007,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ObjReturn (FlatTops.HC:444) */
-    fun f715_ObjReturn(t: Task, a0: Long, a1: Double, a2: Double): Long {
+    fun f720_ObjReturn(t: Task, a0: Long, a1: Double, a2: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1017,7 +1017,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             var l24_tmpo: Long = 0L
             ln = 447 // FlatTops.HC:447
             tick(t)
-            val t0: Long = f707_ObjFind(t, p1_x, p2_y, 2L, 2L, 4L, (1L shl p0_player.toInt()), 0L)
+            val t0: Long = f712_ObjFind(t, p1_x, p2_y, 2L, 2L, 4L, (1L shl p0_player.toInt()), 0L)
             l24_tmpo = t0
             if ((t0 != 0L)) {
                 ln = 448 // FlatTops.HC:448
@@ -1033,7 +1033,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC SquadronReturn (FlatTops.HC:452) */
-    fun f716_SquadronReturn(t: Task, a0: Long, a1: Double, a2: Double): Long {
+    fun f721_SquadronReturn(t: Task, a0: Long, a1: Double, a2: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1044,7 +1044,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             var l32_tmpo: Long = 0L
             ln = 456 // FlatTops.HC:456
             tick(t)
-            val t0: Long = f715_ObjReturn(t, p0_player, p1_x, p2_y)
+            val t0: Long = f720_ObjReturn(t, p0_player, p1_x, p2_y)
             l32_tmpo = t0
             if ((t0 != 0L)) {
                 ln = 457 // FlatTops.HC:457
@@ -1087,7 +1087,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ObjSeté (FlatTops.HC:476) */
-    fun f717_ObjSet_(t: Task, a0: Long, a1: Double, a2: Double, a3: Double): Long {
+    fun f722_ObjSet_(t: Task, a0: Long, a1: Double, a2: Double, a3: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1098,7 +1098,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             var l32_tmpo: Long = 0L
             ln = 479 // FlatTops.HC:479
             tick(t)
-            val t0: Long = f707_ObjFind(t, p1_x, p2_y, 6L, 2L, -1L, (1L shl p0_player.toInt()), 0L)
+            val t0: Long = f712_ObjFind(t, p1_x, p2_y, 6L, 2L, -1L, (1L shl p0_player.toInt()), 0L)
             l32_tmpo = t0
             if ((((t0 != 0L) && ((ld2u((l32_tmpo + 42L)) and 2L) != 0L)) && ((ld2u((l32_tmpo + 42L)) and 4L) == 0L))) {
                 ln = 481 // FlatTops.HC:481
@@ -1111,7 +1111,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 val t2: Long = (l32_tmpo + 72L)
                 val t4: Double = ldf(t2)
                 tick(t)
-                val t3: Double = P.f542_Wrap(t, (p3__ - (ldf((l32_tmpo + 64L)) + ldf((l32_tmpo + 72L)))), (-f(4614256656552045848L)))
+                val t3: Double = P.f547_Wrap(t, (p3__ - (ldf((l32_tmpo + 64L)) + ldf((l32_tmpo + 72L)))), (-f(4614256656552045848L)))
                 st8(t2, bits((t4 + t3)))
                 ln = 484 // FlatTops.HC:484
                 t.depth--
@@ -1126,7 +1126,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC SquadronSeté (FlatTops.HC:489) */
-    fun f718_SquadronSet_(t: Task, a0: Long, a1: Double, a2: Double, a3: Double): Long {
+    fun f723_SquadronSet_(t: Task, a0: Long, a1: Double, a2: Double, a3: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1138,7 +1138,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             var l40_tmpo: Long = 0L
             ln = 493 // FlatTops.HC:493
             tick(t)
-            val t0: Long = f717_ObjSet_(t, p0_player, p1_x, p2_y, p3__)
+            val t0: Long = f722_ObjSet_(t, p0_player, p1_x, p2_y, p3__)
             l40_tmpo = t0
             if ((t0 != 0L)) {
                 ln = 494 // FlatTops.HC:494
@@ -1180,7 +1180,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC SquadronActions (FlatTops.HC:513) */
-    fun f719_SquadronActions(t: Task) {
+    fun f724_SquadronActions(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1202,7 +1202,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                         1L -> {
                             ln = 522 // FlatTops.HC:522
                             tick(t)
-                            f713_ObjLaunch(t, ld1u((l24_tmps + 40L)), l0_i, ld8((l24_tmps + 32L)), f(9218868437227405311L), f(9218868437227405311L), ldf((l24_tmps + 64L)))
+                            f718_ObjLaunch(t, ld1u((l24_tmps + 40L)), l0_i, ld8((l24_tmps + 32L)), f(9218868437227405311L), f(9218868437227405311L), ldf((l24_tmps + 64L)))
                             ln = 523 // FlatTops.HC:523
                             l16_tmpo = ld8((l24_tmps + 16L))
                             ln = 524 // FlatTops.HC:524
@@ -1247,7 +1247,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                                 val t1: Long = (l16_tmpo + 72L)
                                 val t3: Double = ldf(t1)
                                 tick(t)
-                                val t2: Double = P.f542_Wrap(t, (ldf((l24_tmps + 64L)) - (ldf((l16_tmpo + 64L)) + ldf((l16_tmpo + 72L)))), (-f(4614256656552045848L)))
+                                val t2: Double = P.f547_Wrap(t, (ldf((l24_tmps + 64L)) - (ldf((l16_tmpo + 64L)) + ldf((l16_tmpo + 72L)))), (-f(4614256656552045848L)))
                                 st8(t1, bits((t3 + t2)))
                                 ln = 544 // FlatTops.HC:544
                                 l16_tmpo = ld8((l16_tmpo + 16L))
@@ -1298,7 +1298,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC AI (FlatTops.HC:564) */
-    fun f720_AI(t: Task, a0: Long, a1: Double) {
+    fun f725_AI(t: Task, a0: Long, a1: Double) {
         var ln = 0
         try {
             enter(t)
@@ -1320,7 +1320,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     if (r1) {
                         ln = 571 // FlatTops.HC:571
                         tick(t)
-                        f714_SquadronLaunch(t, p0_player, ldf((l16_tmpo + 48L)), ldf((l16_tmpo + 56L)))
+                        f719_SquadronLaunch(t, p0_player, ldf((l16_tmpo + 48L)), ldf((l16_tmpo + 56L)))
                     }
                     ln = 573 // FlatTops.HC:573
                     var r3: Boolean = (((ld2u((l16_tmpo + 42L)) and 2L) != 0L) && ((ld2u((l16_tmpo + 42L)) and 4L) == 0L))
@@ -1334,7 +1334,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                         val t5: Double = ldf((l16_tmpo + 64L))
                         val t4: Double = f(nat(t, n_Rand, push0(t)))
                         tick(t)
-                        f718_SquadronSet_(t, p0_player, ldf((l16_tmpo + 48L)), ldf((l16_tmpo + 56L)), (t5 + ((f(4614256656552045848L) / 2.0) * (t4 - 0.5))))
+                        f723_SquadronSet_(t, p0_player, ldf((l16_tmpo + 48L)), ldf((l16_tmpo + 56L)), (t5 + ((f(4614256656552045848L) / 2.0) * (t4 - 0.5))))
                     }
                 }
                 ln = 576 // FlatTops.HC:576
@@ -1347,7 +1347,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ShipDamage (FlatTops.HC:580) */
-    fun f721_ShipDamage(t: Task, a0: Long, a1: Double) {
+    fun f726_ShipDamage(t: Task, a0: Long, a1: Double) {
         var ln = 0
         try {
             enter(t)
@@ -1414,7 +1414,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ShipFix (FlatTops.HC:603) */
-    fun f722_ShipFix(t: Task, a0: Long, a1: Double) {
+    fun f727_ShipFix(t: Task, a0: Long, a1: Double) {
         var ln = 0
         try {
             enter(t)
@@ -1453,7 +1453,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC Combat (FlatTops.HC:618) */
-    fun f723_Combat(t: Task, a0: Double) {
+    fun f728_Combat(t: Task, a0: Double) {
         var ln = 0
         try {
             enter(t)
@@ -1474,7 +1474,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 var r2: Boolean = ((ld2u((l16_tmpo + 42L)) and 2L) != 0L)
                 if (r2) {
                     tick(t)
-                    val t1: Long = f707_ObjFind(t, ldf((l16_tmpo + 48L)), ldf((l16_tmpo + 56L)), 2L, 2L, -1L, (1L shl (ld1u((l16_tmpo + 40L)) xor 1L).toInt()), (fp + 8))
+                    val t1: Long = f712_ObjFind(t, ldf((l16_tmpo + 48L)), ldf((l16_tmpo + 56L)), 2L, 2L, -1L, (1L shl (ld1u((l16_tmpo + 40L)) xor 1L).toInt()), (fp + 8))
                     l24_tmpo1 = t1
                     r2 = (t1 != 0L)
                 }
@@ -1523,7 +1523,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                             P.f153_QueIns(t, l32_tmpt, ld8((g_torpedo_head + 8L)))
                             ln = 643 // FlatTops.HC:643
                             tick(t)
-                            P.f500_Sweep(t, 2000L, 86.0, 53.0)
+                            P.f505_Sweep(t, 2000L, 86.0, 53.0)
                         } else {
                             ln = 644 // FlatTops.HC:644
                             if (((ldf((l16_tmpo + 120L)) > 0.0) && (ldf((fp + 8)) < ldf((l16_tmpo + 128L))))) {
@@ -1537,7 +1537,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                                     val t14: Double = ldf((l16_tmpo + 120L))
                                     val t13: Double = f(nat(t, n_Rand, push0(t)))
                                     tick(t)
-                                    f721_ShipDamage(t, l24_tmpo1, ((t14 * t13) * p0_period))
+                                    f726_ShipDamage(t, l24_tmpo1, ((t14 * t13) * p0_period))
                                     ln = 648 // FlatTops.HC:648
                                     val t15: Double = f(nat(t, n_Rand, push0(t)))
                                     if ((t15 < (10.0 * p0_period))) {
@@ -1553,7 +1553,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                                 if ((t19 > ldf(g_next_noise))) {
                                     ln = 652 // FlatTops.HC:652
                                     tick(t)
-                                    P.f499_Noise(t, 100L, 29.0, 46.0)
+                                    P.f504_Noise(t, 100L, 29.0, 46.0)
                                     ln = 653 // FlatTops.HC:653
                                     val t20: Double = f(nat(t, n_tS, push0(t)))
                                     st8(g_next_noise, bits((t20 + 0.1)))
@@ -1590,7 +1590,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                             if ((t31 > ldf(g_next_noise))) {
                                 ln = 665 // FlatTops.HC:665
                                 tick(t)
-                                P.f499_Noise(t, 25L, 62.0, 86.0)
+                                P.f504_Noise(t, 25L, 62.0, 86.0)
                                 ln = 666 // FlatTops.HC:666
                                 val t32: Double = f(nat(t, n_tS, push0(t)))
                                 st8(g_next_noise, bits((t32 + 0.025)))
@@ -1612,7 +1612,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 if (((ld1u((l16_tmpo + 41L)) == 2L) && (((ldf((l16_tmpo + 96L)) <= 0.0) || (((ld2u((l16_tmpo + 42L)) and 2L) != 0L) && (ldf((l16_tmpo + 152L)) <= 0.0))) || (((ld8((l16_tmpo + 32L)) != 0L) && ((ld2u((l16_tmpo + 42L)) and 2L) == 0L)) && (ldf((ld8((l16_tmpo + 32L)) + 96L)) <= 0.0))))) {
                     ln = 680 // FlatTops.HC:680
                     tick(t)
-                    f708_ObjDel(t, l16_tmpo)
+                    f713_ObjDel(t, l16_tmpo)
                 }
                 ln = 681 // FlatTops.HC:681
                 l16_tmpo = l24_tmpo1
@@ -1628,7 +1628,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 if ((ldf((l16_tmpo + 96L)) <= 0.0)) {
                     ln = 687 // FlatTops.HC:687
                     tick(t)
-                    f708_ObjDel(t, l16_tmpo)
+                    f713_ObjDel(t, l16_tmpo)
                 }
                 ln = 688 // FlatTops.HC:688
                 l16_tmpo = l24_tmpo1
@@ -1641,7 +1641,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC AnimateTask (FlatTops.HC:693) */
-    fun f724_AnimateTask(t: Task, a0: Long) {
+    fun f729_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1657,7 +1657,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 l40_period = ((0.1 * ldf(g_game_speed)) / 50.0)
                 ln = 701 // FlatTops.HC:701
                 tick(t)
-                f719_SquadronActions(t)
+                f724_SquadronActions(t)
                 ln = 703 // FlatTops.HC:703
                 l8_tmpo = ld8(g_obj_head)
                 ln = 704 // FlatTops.HC:704
@@ -1721,7 +1721,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                             val t13: Double = f(nat(t, n_Rand, push0(t)))
                             val t14: Double = f(nat(t, n_Rand, push0(t)))
                             tick(t)
-                            f721_ShipDamage(t, l8_tmpo, ((150.0 * t13) * t14))
+                            f726_ShipDamage(t, l8_tmpo, ((150.0 * t13) * t14))
                             ln = 727 // FlatTops.HC:727
                             val t15: Double = f(nat(t, n_Rand, push0(t)))
                             if ((t15 < 0.333333)) {
@@ -1828,7 +1828,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                                 val t37: Double = ldf(t34)
                                 val t35: Double = f(nat(t, n_Arg, push2(t, bits((ldf((ld8((l8_tmpo + 32L)) + 48L)) - ldf((l8_tmpo + 48L)))), bits((ldf((ld8((l8_tmpo + 32L)) + 56L)) - ldf((l8_tmpo + 56L)))))))
                                 tick(t)
-                                val t36: Double = P.f542_Wrap(t, (t35 - (ldf((l8_tmpo + 64L)) + ldf((l8_tmpo + 72L)))), (-f(4614256656552045848L)))
+                                val t36: Double = P.f547_Wrap(t, (t35 - (ldf((l8_tmpo + 64L)) + ldf((l8_tmpo + 72L)))), (-f(4614256656552045848L)))
                                 st8(t34, bits((t37 + t36)))
                             }
                         } else {
@@ -1836,7 +1836,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                             if ((ld1u((l8_tmpo + 41L)) == 0L)) {
                                 ln = 771 // FlatTops.HC:771
                                 tick(t)
-                                f722_ShipFix(t, l8_tmpo, (2.5 * l40_period))
+                                f727_ShipFix(t, l8_tmpo, (2.5 * l40_period))
                             }
                         }
                     }
@@ -1846,10 +1846,10 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 }
                 ln = 776 // FlatTops.HC:776
                 tick(t)
-                f720_AI(t, 1L, l40_period)
+                f725_AI(t, 1L, l40_period)
                 ln = 777 // FlatTops.HC:777
                 tick(t)
-                f723_Combat(t, l40_period)
+                f728_Combat(t, l40_period)
                 ln = 778 // FlatTops.HC:778
                 nat(t, n_Sleep, push1(t, divs(1000L, 50L)))
                 tick(t)
@@ -1860,7 +1860,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC FlatTops (FlatTops.HC:782) */
-    fun f725_FlatTops(t: Task) {
+    fun f730_FlatTops(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1888,18 +1888,18 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             P.f201_PopUpOk(t, s5, 0L)
             ln = 797 // FlatTops.HC:797
             tick(t)
-            P.f507_MenuPush(t, s6)
+            P.f512_MenuPush(t, s6)
             ln = 808 // FlatTops.HC:808
             val t0: Long = (ld8(P.g_Fs) + 12L)
             st4(t0, (ld4u(t0) or 40L))
             ln = 809 // FlatTops.HC:809
             tick(t)
-            f711_Init(t)
+            f716_Init(t)
             ln = 810 // FlatTops.HC:810
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065862L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065867L)
             ln = 811 // FlatTops.HC:811
             val t2: Long = (ld8(P.g_Fs) + 1088L)
-            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065876L, 0L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065881L, 0L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t2, t1)
             ln = 812 // FlatTops.HC:812
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
@@ -1920,10 +1920,10 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                                             10L -> {
                                                 ln = 819 // FlatTops.HC:819
                                                 tick(t)
-                                                f712_CleanUp(t)
+                                                f717_CleanUp(t)
                                                 ln = 820 // FlatTops.HC:820
                                                 tick(t)
-                                                f711_Init(t)
+                                                f716_Init(t)
                                             }
                                             27L, 28L -> {
                                                 ln = 824 // FlatTops.HC:824
@@ -1945,17 +1945,17 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                                 6L -> {
                                     ln = 834 // FlatTops.HC:834
                                     tick(t)
-                                    f718_SquadronSet_(t, 0L, ld8(fp).toDouble(), ld8((fp + 8)).toDouble(), f(9218868437227405311L))
+                                    f723_SquadronSet_(t, 0L, ld8(fp).toDouble(), ld8((fp + 8)).toDouble(), f(9218868437227405311L))
                                 }
                                 10L -> {
                                     ln = 837 // FlatTops.HC:837
                                     tick(t)
-                                    f714_SquadronLaunch(t, 0L, ld8(fp).toDouble(), ld8((fp + 8)).toDouble())
+                                    f719_SquadronLaunch(t, 0L, ld8(fp).toDouble(), ld8((fp + 8)).toDouble())
                                 }
                                 12L -> {
                                     ln = 840 // FlatTops.HC:840
                                     tick(t)
-                                    f716_SquadronReturn(t, 0L, ld8(fp).toDouble(), ld8((fp + 8)).toDouble())
+                                    f721_SquadronReturn(t, 0L, ld8(fp).toDouble(), ld8((fp + 8)).toDouble())
                                 }
                                 else -> {
                                 }
@@ -1980,10 +1980,10 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 848 // FlatTops.HC:848
             tick(t)
-            f712_CleanUp(t)
+            f717_CleanUp(t)
             ln = 849 // FlatTops.HC:849
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -1991,13 +1991,13 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Games/FlatTops.HC#3 (FlatTops.HC:852) */
-    fun f726_init_C__Demo_Games_FlatTops_HC_3(t: Task): Long {
+    fun f731_init_C__Demo_Games_FlatTops_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 852 // FlatTops.HC:852
             tick(t)
-            f725_FlatTops(t)
+            f730_FlatTops(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/FlatTops.HC#3", ln) }
@@ -2006,30 +2006,30 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_FlatTops_HC_0(t)
-            704 -> { f704_SquadronIns(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> { f705_SquadronRem(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            706 -> f706_init_C__Demo_Games_FlatTops_HC_1(t)
-            707 -> f707_ObjFind(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L))
-            708 -> { f708_ObjDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> f709_init_C__Demo_Games_FlatTops_HC_2(t)
-            710 -> { f710_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            711 -> { f711_Init(t); 0L }
-            712 -> { f712_CleanUp(t); 0L }
-            713 -> f713_ObjLaunch(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L)), f((if (n > 5) st[base + 5] else 0L)))
-            714 -> f714_SquadronLaunch(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
-            715 -> f715_ObjReturn(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
-            716 -> f716_SquadronReturn(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
-            717 -> f717_ObjSet_(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
-            718 -> f718_SquadronSet_(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
-            719 -> { f719_SquadronActions(t); 0L }
-            720 -> { f720_AI(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
-            721 -> { f721_ShipDamage(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
-            722 -> { f722_ShipFix(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
-            723 -> { f723_Combat(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
-            724 -> { f724_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            725 -> { f725_FlatTops(t); 0L }
-            726 -> f726_init_C__Demo_Games_FlatTops_HC_3(t)
+            708 -> f708_init_C__Demo_Games_FlatTops_HC_0(t)
+            709 -> { f709_SquadronIns(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> { f710_SquadronRem(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            711 -> f711_init_C__Demo_Games_FlatTops_HC_1(t)
+            712 -> f712_ObjFind(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L))
+            713 -> { f713_ObjDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> f714_init_C__Demo_Games_FlatTops_HC_2(t)
+            715 -> { f715_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            716 -> { f716_Init(t); 0L }
+            717 -> { f717_CleanUp(t); 0L }
+            718 -> f718_ObjLaunch(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L)), f((if (n > 5) st[base + 5] else 0L)))
+            719 -> f719_SquadronLaunch(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
+            720 -> f720_ObjReturn(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
+            721 -> f721_SquadronReturn(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
+            722 -> f722_ObjSet_(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
+            723 -> f723_SquadronSet_(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
+            724 -> { f724_SquadronActions(t); 0L }
+            725 -> { f725_AI(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
+            726 -> { f726_ShipDamage(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
+            727 -> { f727_ShipFix(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
+            728 -> { f728_Combat(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
+            729 -> { f729_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            730 -> { f730_FlatTops(t); 0L }
+            731 -> f731_init_C__Demo_Games_FlatTops_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -2041,7 +2041,7 @@ class N_Demo_Games_FlatTops(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/FlatTops.HC#0", "SquadronIns", "SquadronRem", "\$init:C:/Demo/Games/FlatTops.HC#1", "ObjFind", "ObjDel", "\$init:C:/Demo/Games/FlatTops.HC#2", "DrawIt", "Init", "CleanUp", "ObjLaunch", "SquadronLaunch", "ObjReturn", "SquadronReturn", "ObjSeté", "SquadronSeté", "SquadronActions", "AI", "ShipDamage", "ShipFix", "Combat", "AnimateTask", "FlatTops", "\$init:C:/Demo/Games/FlatTops.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/Games/FlatTops.HC")
     }

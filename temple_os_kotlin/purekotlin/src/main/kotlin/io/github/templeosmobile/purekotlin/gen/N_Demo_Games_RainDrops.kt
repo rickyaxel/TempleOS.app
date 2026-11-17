@@ -51,7 +51,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawFrame (RainDrops.HC:12) */
-    fun f703_DrawFrame(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawFrame(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -71,18 +71,18 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4((p1_dc + 160L), 12L)
             ln = 18 // RainDrops.HC:18
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l32_cx - 20L), (l40_cy - 50L), l32_cx, (l40_cy - 150L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l32_cx - 20L), (l40_cy - 50L), l32_cx, (l40_cy - 150L), 1L, 0L)
             ln = 19 // RainDrops.HC:19
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l32_cx + 20L), (l40_cy - 50L), l32_cx, (l40_cy - 150L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l32_cx + 20L), (l40_cy - 50L), l32_cx, (l40_cy - 150L), 1L, 0L)
             ln = 21 // RainDrops.HC:21
             st4((p1_dc + 160L), 12L)
             ln = 22 // RainDrops.HC:22
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l32_cx - 100L), (l40_cy - 100L), l32_cx, l40_cy, 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l32_cx - 100L), (l40_cy - 100L), l32_cx, l40_cy, 1L, 0L)
             ln = 23 // RainDrops.HC:23
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l32_cx + 100L), (l40_cy - 100L), l32_cx, l40_cy, 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l32_cx + 100L), (l40_cy - 100L), l32_cx, l40_cy, 1L, 0L)
             ln = 24 // RainDrops.HC:24
             val t0: Long = nat(t, n_Bt, push2(t, (P.g_kbd + 64L), ld8(g_sc_1)))
             if ((t0 != 0L)) {
@@ -96,7 +96,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 29 // RainDrops.HC:29
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p1_dc, (l32_cx + 10L), l40_cy, s0, vb0, 0)
+            P.f370_GrPrint(t, p1_dc, (l32_cx + 10L), l40_cy, s0, vb0, 0)
             t.sp = vb0
             ln = 31 // RainDrops.HC:31
             st4((p1_dc + 160L), 12L)
@@ -106,10 +106,10 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4((p1_dc + 160L), 12L)
             ln = 35 // RainDrops.HC:35
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l32_cx - 200L), l40_cy, l32_cx, (l40_cy + 100L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l32_cx - 200L), l40_cy, l32_cx, (l40_cy + 100L), 1L, 0L)
             ln = 36 // RainDrops.HC:36
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l32_cx + 200L), l40_cy, l32_cx, (l40_cy + 100L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l32_cx + 200L), l40_cy, l32_cx, (l40_cy + 100L), 1L, 0L)
             ln = 37 // RainDrops.HC:37
             val t1: Long = nat(t, n_Bt, push2(t, (P.g_kbd + 64L), ld8(g_sc_2)))
             if ((t1 != 0L)) {
@@ -123,20 +123,20 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 42 // RainDrops.HC:42
             tick(t)
             val vb1 = push0(t)
-            P.f369_GrPrint(t, p1_dc, (l32_cx + 10L), (l40_cy + 100L), s1, vb1, 0)
+            P.f370_GrPrint(t, p1_dc, (l32_cx + 10L), (l40_cy + 100L), s1, vb1, 0)
             t.sp = vb1
             ln = 44 // RainDrops.HC:44
             st4((p1_dc + 160L), 12L)
             ln = 45 // RainDrops.HC:45
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l32_cx + 400L), (l40_cy + 100L), (l32_cx - 250L), (l40_cy + 200L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l32_cx + 400L), (l40_cy + 100L), (l32_cx - 250L), (l40_cy + 200L), 1L, 0L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawFrame", ln) }
     }
 
     /** HolyC DrawDrops (RainDrops.HC:48) */
-    fun f704_DrawDrops(t: Task, a0: Long, a1: Long) {
+    fun f709_DrawDrops(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -168,7 +168,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC UpdateCurBase (RainDrops.HC:57) */
-    fun f705_UpdateCurBase(t: Task, a0: Long, a1: Long) {
+    fun f710_UpdateCurBase(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -190,7 +190,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawIt (RainDrops.HC:66) */
-    fun f706_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f711_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -198,20 +198,20 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var p1_dc: Long = a1
             ln = 68 // RainDrops.HC:68
             tick(t)
-            f703_DrawFrame(t, p0_task, p1_dc)
+            f708_DrawFrame(t, p0_task, p1_dc)
             ln = 69 // RainDrops.HC:69
             tick(t)
-            f704_DrawDrops(t, p0_task, p1_dc)
+            f709_DrawDrops(t, p0_task, p1_dc)
             ln = 70 // RainDrops.HC:70
             tick(t)
-            f705_UpdateCurBase(t, p0_task, p1_dc)
+            f710_UpdateCurBase(t, p0_task, p1_dc)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawIt", ln) }
     }
 
     /** HolyC AnimateTask (RainDrops.HC:73) */
-    fun f707_AnimateTask(t: Task, a0: Long) {
+    fun f712_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -379,7 +379,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Init (RainDrops.HC:140) */
-    fun f708_Init(t: Task) {
+    fun f713_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -401,7 +401,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC RainDrops (RainDrops.HC:148) */
-    fun f709_RainDrops(t: Task) {
+    fun f714_RainDrops(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -410,7 +410,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l0_ch: Long = 0L
             ln = 151 // RainDrops.HC:151
             tick(t)
-            P.f507_MenuPush(t, s2)
+            P.f512_MenuPush(t, s2)
             ln = 162 // RainDrops.HC:162
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -438,13 +438,13 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st8(g_sc_2, t2)
             ln = 171 // RainDrops.HC:171
             tick(t)
-            f708_Init(t)
+            f713_Init(t)
             ln = 172 // RainDrops.HC:172
             val t4: Long = (ld8(P.g_Fs) + 1088L)
-            val t3: Long = nat(t, n_Spawn, push(t, 9223090561878065859L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t3: Long = nat(t, n_Spawn, push(t, 9223090561878065864L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t4, t3)
             ln = 173 // RainDrops.HC:173
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065858L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065863L)
             ln = 174 // RainDrops.HC:174
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -459,7 +459,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             10L -> {
                                 ln = 178 // RainDrops.HC:178
                                 tick(t)
-                                f708_Init(t)
+                                f713_Init(t)
                             }
                             else -> {
                             }
@@ -482,7 +482,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 185 // RainDrops.HC:185
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 186 // RainDrops.HC:186
             tick(t)
             P.f293_DCDel(t, ld8(g_cur_dc))
@@ -493,13 +493,13 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/RainDrops.HC#0 (RainDrops.HC:189) */
-    fun f710_init_C__Demo_Games_RainDrops_HC_0(t: Task): Long {
+    fun f715_init_C__Demo_Games_RainDrops_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 189 // RainDrops.HC:189
             tick(t)
-            f709_RainDrops(t)
+            f714_RainDrops(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/RainDrops.HC#0", ln) }
@@ -508,14 +508,14 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawFrame(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_DrawDrops(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> { f705_UpdateCurBase(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> { f707_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_Init(t); 0L }
-            709 -> { f709_RainDrops(t); 0L }
-            710 -> f710_init_C__Demo_Games_RainDrops_HC_0(t)
+            708 -> { f708_DrawFrame(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_DrawDrops(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> { f710_UpdateCurBase(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> { f712_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_Init(t); 0L }
+            714 -> { f714_RainDrops(t); 0L }
+            715 -> f715_init_C__Demo_Games_RainDrops_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -527,7 +527,7 @@ class N_Demo_Games_RainDrops(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715)
         private val NAMES = arrayOf("DrawFrame", "DrawDrops", "UpdateCurBase", "DrawIt", "AnimateTask", "Init", "RainDrops", "\$init:C:/Demo/Games/RainDrops.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/RainDrops.HC")
     }

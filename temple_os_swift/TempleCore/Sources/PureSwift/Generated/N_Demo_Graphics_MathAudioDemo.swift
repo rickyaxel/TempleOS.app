@@ -53,7 +53,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
     }
 
     /// HolyC MySin (MathAudioDemo.HC:1)
-    @discardableResult public final func f703_MySin(_ t: HTask, _ a0: Double) throws -> Double {
+    @discardableResult public final func f708_MySin(_ t: HTask, _ a0: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -68,7 +68,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
     }
 
     /// HolyC MyCos (MathAudioDemo.HC:6)
-    @discardableResult public final func f704_MyCos(_ t: HTask, _ a0: Double) throws -> Double {
+    @discardableResult public final func f709_MyCos(_ t: HTask, _ a0: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -83,7 +83,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
     }
 
     /// HolyC FunDraw1 (MathAudioDemo.HC:11)
-    public final func f705_FunDraw1(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_FunDraw1(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -106,7 +106,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
                 ln = 16 // MathAudioDemo.HC:16
                 let t1: Double = d(try ptr(t, p1_f, try push1(t, bits((((Double(l16_i) / l40_scale) * 2.0) * d(4614256656552045848))))))
                 try tick(t)
-                _ = try P.f396_GrLine(t, p0_dc, (divs(l24_w, 2) &+ l16_i), f2i((Double(divs(l32_h, 2)) - (l40_scale * t1))), ((divs(l24_w, 2) &+ l16_i) &+ 1), f2i((Double(divs(l32_h, 2)) - (l40_scale * t0))), 1, 0)
+                _ = try P.f397_GrLine(t, p0_dc, (divs(l24_w, 2) &+ l16_i), f2i((Double(divs(l32_h, 2)) - (l40_scale * t1))), ((divs(l24_w, 2) &+ l16_i) &+ 1), f2i((Double(divs(l32_h, 2)) - (l40_scale * t0))), 1, 0)
                 ln = 15 // MathAudioDemo.HC:15
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -117,7 +117,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
     }
 
     /// HolyC FunDraw2 (MathAudioDemo.HC:20)
-    public final func f706_FunDraw2(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double) throws {
+    public final func f711_FunDraw2(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -140,7 +140,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
                 let t0: Double = d(try ptr(t, p1_f, try push2(t, bits((Double((l24_i &+ 1)) / l48_scale)), bits(p2_T))))
                 let t1: Double = d(try ptr(t, p1_f, try push2(t, bits((Double(l24_i) / l48_scale)), bits(p2_T))))
                 try tick(t)
-                _ = try P.f396_GrLine(t, p0_dc, (divs(l32_w, 2) &+ l24_i), f2i((Double(divs(l40_h, 2)) - (l48_scale * t1))), ((divs(l32_w, 2) &+ l24_i) &+ 1), f2i((Double(divs(l40_h, 2)) - (l48_scale * t0))), 1, 0)
+                _ = try P.f397_GrLine(t, p0_dc, (divs(l32_w, 2) &+ l24_i), f2i((Double(divs(l40_h, 2)) - (l48_scale * t1))), ((divs(l32_w, 2) &+ l24_i) &+ 1), f2i((Double(divs(l40_h, 2)) - (l48_scale * t0))), 1, 0)
                 ln = 24 // MathAudioDemo.HC:24
                 l24_i = (l24_i &+ 1)
                 try tick(t)
@@ -151,7 +151,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
     }
 
     /// HolyC Init (MathAudioDemo.HC:28)
-    public final func f707_Init(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_Init(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -174,10 +174,10 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             try st4((p0_dc &+ 160), 0)
             ln = 35 // MathAudioDemo.HC:35
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, 0, divs(l24_h, 2), (l16_w &- 1), divs(l24_h, 2), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, 0, divs(l24_h, 2), (l16_w &- 1), divs(l24_h, 2), 1, 0)
             ln = 36 // MathAudioDemo.HC:36
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, divs(l16_w, 2), 0, divs(l16_w, 2), (l24_h &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, divs(l16_w, 2), 0, divs(l16_w, 2), (l24_h &- 1), 1, 0)
             ln = 37 // MathAudioDemo.HC:37
             l8_i = (-2)
             loop0: while (l8_i <= 2) {
@@ -185,7 +185,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
                 try st4((p0_dc &+ 160), 0)
                 ln = 39 // MathAudioDemo.HC:39
                 try tick(t)
-                _ = try P.f396_GrLine(t, p0_dc, (divs(l16_w, 2) &- 3), f2i((Double(divs(l24_h, 2)) - (l32_scale * Double(l8_i)))), (divs(l16_w, 2) &+ 3), f2i((Double(divs(l24_h, 2)) - (l32_scale * Double(l8_i)))), 1, 0)
+                _ = try P.f397_GrLine(t, p0_dc, (divs(l16_w, 2) &- 3), f2i((Double(divs(l24_h, 2)) - (l32_scale * Double(l8_i)))), (divs(l16_w, 2) &+ 3), f2i((Double(divs(l24_h, 2)) - (l32_scale * Double(l8_i)))), 1, 0)
                 ln = 40 // MathAudioDemo.HC:40
                 if (l8_i != 0) {
                     ln = 41 // MathAudioDemo.HC:41
@@ -194,7 +194,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
                     let t0: Double = d(try nat(t, n_ToF64, try push1(t, l8_i)))
                     try tick(t)
                     let vb0 = try push1(t, bits(t0))
-                    _ = try P.f369_GrPrint(t, p0_dc, (divs(l16_w, 2) &+ 5), f2i(((Double(divs(l24_h, 2)) - (l32_scale * Double(l8_i))) - Double(divs(8, 2)))), s0, vb0, 1)
+                    _ = try P.f370_GrPrint(t, p0_dc, (divs(l16_w, 2) &+ 5), f2i(((Double(divs(l24_h, 2)) - (l32_scale * Double(l8_i))) - Double(divs(8, 2)))), s0, vb0, 1)
                     t.sp = vb0
                 }
                 ln = 37 // MathAudioDemo.HC:37
@@ -208,7 +208,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
                 try st4((p0_dc &+ 160), 0)
                 ln = 47 // MathAudioDemo.HC:47
                 try tick(t)
-                _ = try P.f396_GrLine(t, p0_dc, f2i((Double(divs(l16_w, 2)) + (l32_scale * Double(l8_i)))), (divs(l24_h, 2) &- 3), f2i((Double(divs(l16_w, 2)) + (l32_scale * Double(l8_i)))), (divs(l24_h, 2) &+ 3), 1, 0)
+                _ = try P.f397_GrLine(t, p0_dc, f2i((Double(divs(l16_w, 2)) + (l32_scale * Double(l8_i)))), (divs(l24_h, 2) &- 3), f2i((Double(divs(l16_w, 2)) + (l32_scale * Double(l8_i)))), (divs(l24_h, 2) &+ 3), 1, 0)
                 ln = 48 // MathAudioDemo.HC:48
                 if (l8_i != 0) {
                     ln = 49 // MathAudioDemo.HC:49
@@ -218,7 +218,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
                     ln = 50 // MathAudioDemo.HC:50
                     try tick(t)
                     let vb1 = try push1(t, bits(t1))
-                    _ = try P.f369_GrPrint(t, p0_dc, f2i(((Double(divs(l16_w, 2)) + (l32_scale * Double(l8_i))) - Double(divs(56, 2)))), ((divs(l24_h, 2) &+ 5) &+ 8), s1, vb1, 1)
+                    _ = try P.f370_GrPrint(t, p0_dc, f2i(((Double(divs(l16_w, 2)) + (l32_scale * Double(l8_i))) - Double(divs(56, 2)))), ((divs(l24_h, 2) &+ 5) &+ 8), s1, vb1, 1)
                     t.sp = vb1
                 }
                 ln = 45 // MathAudioDemo.HC:45
@@ -231,7 +231,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
     }
 
     /// HolyC SndMathDemo (MathAudioDemo.HC:56)
-    public final func f708_SndMathDemo(_ t: HTask) throws {
+    public final func f713_SndMathDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -242,12 +242,12 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             l0_dc = t0
             ln = 60 // MathAudioDemo.HC:60
             try tick(t)
-            try f707_Init(t, l0_dc)
+            try f712_Init(t, l0_dc)
             ln = 61 // MathAudioDemo.HC:61
             try st4((l0_dc &+ 160), 4)
             ln = 62 // MathAudioDemo.HC:62
             try tick(t)
-            try f705_FunDraw1(t, l0_dc, 9223090561878065855)
+            try f710_FunDraw1(t, l0_dc, 9223090561878065860)
             ln = 63 // MathAudioDemo.HC:63
             _ = try nat(t, n_Print, try push1(t, s2))
             ln = 64 // MathAudioDemo.HC:64
@@ -257,7 +257,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             try st4((l0_dc &+ 160), 1)
             ln = 66 // MathAudioDemo.HC:66
             try tick(t)
-            try f706_FunDraw2(t, l0_dc, 9223090561878065632, 1.0)
+            try f711_FunDraw2(t, l0_dc, 9223090561878065637, 1.0)
             ln = 67 // MathAudioDemo.HC:67
             _ = try nat(t, n_Print, try push1(t, s3))
             ln = 68 // MathAudioDemo.HC:68
@@ -267,7 +267,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             try st4((l0_dc &+ 160), 2)
             ln = 70 // MathAudioDemo.HC:70
             try tick(t)
-            try f706_FunDraw2(t, l0_dc, 9223090561878065633, 1.0)
+            try f711_FunDraw2(t, l0_dc, 9223090561878065638, 1.0)
             ln = 71 // MathAudioDemo.HC:71
             _ = try nat(t, n_Print, try push1(t, s4))
             ln = 72 // MathAudioDemo.HC:72
@@ -275,12 +275,12 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             _ = try P.f188_PressAKey(t)
             ln = 74 // MathAudioDemo.HC:74
             try tick(t)
-            try f707_Init(t, l0_dc)
+            try f712_Init(t, l0_dc)
             ln = 75 // MathAudioDemo.HC:75
             try st4((l0_dc &+ 160), 4)
             ln = 76 // MathAudioDemo.HC:76
             try tick(t)
-            try f705_FunDraw1(t, l0_dc, 9223090561878065856)
+            try f710_FunDraw1(t, l0_dc, 9223090561878065861)
             ln = 77 // MathAudioDemo.HC:77
             _ = try nat(t, n_Print, try push1(t, s5))
             ln = 78 // MathAudioDemo.HC:78
@@ -290,7 +290,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             try st4((l0_dc &+ 160), 1)
             ln = 80 // MathAudioDemo.HC:80
             try tick(t)
-            try f706_FunDraw2(t, l0_dc, 9223090561878065634, 1.0)
+            try f711_FunDraw2(t, l0_dc, 9223090561878065639, 1.0)
             ln = 81 // MathAudioDemo.HC:81
             _ = try nat(t, n_Print, try push1(t, s6))
             ln = 82 // MathAudioDemo.HC:82
@@ -300,7 +300,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             try st4((l0_dc &+ 160), 2)
             ln = 84 // MathAudioDemo.HC:84
             try tick(t)
-            try f706_FunDraw2(t, l0_dc, 9223090561878065635, 1.0)
+            try f711_FunDraw2(t, l0_dc, 9223090561878065640, 1.0)
             ln = 85 // MathAudioDemo.HC:85
             _ = try nat(t, n_Print, try push1(t, s7))
             ln = 86 // MathAudioDemo.HC:86
@@ -308,12 +308,12 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             _ = try P.f188_PressAKey(t)
             ln = 88 // MathAudioDemo.HC:88
             try tick(t)
-            try f707_Init(t, l0_dc)
+            try f712_Init(t, l0_dc)
             ln = 89 // MathAudioDemo.HC:89
             try st4((l0_dc &+ 160), 4)
             ln = 90 // MathAudioDemo.HC:90
             try tick(t)
-            try f705_FunDraw1(t, l0_dc, 9223090561878065855)
+            try f710_FunDraw1(t, l0_dc, 9223090561878065860)
             ln = 91 // MathAudioDemo.HC:91
             _ = try nat(t, n_Print, try push1(t, s2))
             ln = 92 // MathAudioDemo.HC:92
@@ -323,7 +323,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             try st4((l0_dc &+ 160), 1)
             ln = 94 // MathAudioDemo.HC:94
             try tick(t)
-            try f706_FunDraw2(t, l0_dc, 9223090561878065636, 1.0)
+            try f711_FunDraw2(t, l0_dc, 9223090561878065641, 1.0)
             ln = 95 // MathAudioDemo.HC:95
             _ = try nat(t, n_Print, try push1(t, s8))
             ln = 96 // MathAudioDemo.HC:96
@@ -333,7 +333,7 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
             try st4((l0_dc &+ 160), 2)
             ln = 98 // MathAudioDemo.HC:98
             try tick(t)
-            try f706_FunDraw2(t, l0_dc, 9223090561878065637, 1.0)
+            try f711_FunDraw2(t, l0_dc, 9223090561878065642, 1.0)
             ln = 99 // MathAudioDemo.HC:99
             _ = try nat(t, n_Print, try push1(t, s9))
             ln = 100 // MathAudioDemo.HC:100
@@ -351,13 +351,13 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/MathAudioDemo.HC#0 (MathAudioDemo.HC:106)
-    @discardableResult public final func f709_init_C__Demo_Graphics_MathAudioDemo_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Demo_Graphics_MathAudioDemo_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 106 // MathAudioDemo.HC:106
             try tick(t)
-            try f708_SndMathDemo(t)
+            try f713_SndMathDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/MathAudioDemo.HC#0", ln) }
@@ -366,19 +366,19 @@ public final class N_Demo_Graphics_MathAudioDemo: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return bits(try f703_MySin(t, d((n > 0 ? st[base + 0] : 0))))
-        case 704: return bits(try f704_MyCos(t, d((n > 0 ? st[base + 0] : 0))))
-        case 705: try f705_FunDraw1(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_FunDraw2(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0))); return 0
-        case 707: try f707_Init(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_SndMathDemo(t); return 0
-        case 709: return try f709_init_C__Demo_Graphics_MathAudioDemo_HC_0(t)
+        case 708: return bits(try f708_MySin(t, d((n > 0 ? st[base + 0] : 0))))
+        case 709: return bits(try f709_MyCos(t, d((n > 0 ? st[base + 0] : 0))))
+        case 710: try f710_FunDraw1(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_FunDraw2(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0))); return 0
+        case 712: try f712_Init(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_SndMathDemo(t); return 0
+        case 714: return try f714_init_C__Demo_Graphics_MathAudioDemo_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709]
-    private static let NAMES: [Int: String] = [703: "MySin", 704: "MyCos", 705: "FunDraw1", 706: "FunDraw2", 707: "Init", 708: "SndMathDemo", 709: "$init:C:/Demo/Graphics/MathAudioDemo.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714]
+    private static let NAMES: [Int: String] = [708: "MySin", 709: "MyCos", 710: "FunDraw1", 711: "FunDraw2", 712: "Init", 713: "SndMathDemo", 714: "$init:C:/Demo/Graphics/MathAudioDemo.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/MathAudioDemo.HC"]
     public override var files: [String] { N_Demo_Graphics_MathAudioDemo.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_MathAudioDemo.DEFINED.contains(index) }

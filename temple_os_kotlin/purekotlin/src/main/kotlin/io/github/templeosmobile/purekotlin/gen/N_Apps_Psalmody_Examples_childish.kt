@@ -30,15 +30,15 @@ class N_Apps_Psalmody_Examples_childish(rt: NativeRuntime, @JvmField val P: Prel
     }
 
     /** HolyC Song (childish.HC:2) */
-    fun f703_Song(t: Task) {
+    fun f708_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 4 // childish.HC:4
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 5 // childish.HC:5
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 6 // childish.HC:6
             st8((P.g_music + 56L), bits(2.48))
             ln = 7 // childish.HC:7
@@ -53,16 +53,16 @@ class N_Apps_Psalmody_Examples_childish(rt: NativeRuntime, @JvmField val P: Prel
                     if (!((t0 == 0L))) break@loop0
                     ln = 10 // childish.HC:10
                     tick(t)
-                    P.f494_Play(t, s1, s0)
+                    P.f499_Play(t, s1, s0)
                     ln = 13 // childish.HC:13
                     tick(t)
-                    P.f494_Play(t, s1, s2)
+                    P.f499_Play(t, s1, s2)
                     ln = 16 // childish.HC:16
                     tick(t)
-                    P.f494_Play(t, s3, 0L)
+                    P.f499_Play(t, s3, 0L)
                     ln = 17 // childish.HC:17
                     tick(t)
-                    P.f494_Play(t, s3, 0L)
+                    P.f499_Play(t, s3, 0L)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -82,13 +82,13 @@ class N_Apps_Psalmody_Examples_childish(rt: NativeRuntime, @JvmField val P: Prel
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/childish.HC#0 (childish.HC:24) */
-    fun f704_init_C__Apps_Psalmody_Examples_childish_HC_0(t: Task): Long {
+    fun f709_init_C__Apps_Psalmody_Examples_childish_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 24 // childish.HC:24
             tick(t)
-            f703_Song(t)
+            f708_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/childish.HC#0", ln) }
@@ -97,8 +97,8 @@ class N_Apps_Psalmody_Examples_childish(rt: NativeRuntime, @JvmField val P: Prel
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Song(t); 0L }
-            704 -> f704_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
+            708 -> { f708_Song(t); 0L }
+            709 -> f709_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -110,7 +110,7 @@ class N_Apps_Psalmody_Examples_childish(rt: NativeRuntime, @JvmField val P: Prel
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("Song", "\$init:C:/Apps/Psalmody/Examples/childish.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/Psalmody/Examples/childish.HC")
     }

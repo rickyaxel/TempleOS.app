@@ -30,7 +30,7 @@ class N_Demo_DolDoc_NumBible(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC NumBible (NumBible.HC:4) */
-    fun f703_NumBible(t: Task) {
+    fun f708_NumBible(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -39,11 +39,11 @@ class N_Demo_DolDoc_NumBible(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l8_doc_out: Long = 0L
             ln = 6 // NumBible.HC:6
             tick(t)
-            val t0: Long = P.f617_DocRead(t, s0, 2L)
+            val t0: Long = P.f622_DocRead(t, s0, 2L)
             l0_doc_in = t0
             ln = 7 // NumBible.HC:7
             tick(t)
-            val t1: Long = P.f601_DocNew(t, s1, 0L)
+            val t1: Long = P.f606_DocNew(t, s1, 0L)
             l8_doc_out = t1
             ln = 8 // NumBible.HC:8
             l16_doc_e = ld8(l0_doc_in)
@@ -90,26 +90,26 @@ class N_Demo_DolDoc_NumBible(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st8(t2, (ld8(t2) or 8L))
             ln = 24 // NumBible.HC:24
             tick(t)
-            P.f618_DocWrite(t, l8_doc_out, 0L)
+            P.f623_DocWrite(t, l8_doc_out, 0L)
             ln = 25 // NumBible.HC:25
             tick(t)
-            P.f605_DocDel(t, l8_doc_out)
+            P.f610_DocDel(t, l8_doc_out)
             ln = 26 // NumBible.HC:26
             tick(t)
-            P.f605_DocDel(t, l0_doc_in)
+            P.f610_DocDel(t, l0_doc_in)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "NumBible", ln) }
     }
 
     /** HolyC $init:C:/Demo/DolDoc/NumBible.HC#0 (NumBible.HC:29) */
-    fun f704_init_C__Demo_DolDoc_NumBible_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_DolDoc_NumBible_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 29 // NumBible.HC:29
             tick(t)
-            f703_NumBible(t)
+            f708_NumBible(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/NumBible.HC#0", ln) }
@@ -118,8 +118,8 @@ class N_Demo_DolDoc_NumBible(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_NumBible(t); 0L }
-            704 -> f704_init_C__Demo_DolDoc_NumBible_HC_0(t)
+            708 -> { f708_NumBible(t); 0L }
+            709 -> f709_init_C__Demo_DolDoc_NumBible_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -131,7 +131,7 @@ class N_Demo_DolDoc_NumBible(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("NumBible", "\$init:C:/Demo/DolDoc/NumBible.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/DolDoc/NumBible.HC")
     }

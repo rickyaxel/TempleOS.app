@@ -43,7 +43,7 @@ public final class N_Demo_SubSwitch: NativeModule {
     }
 
     /// HolyC SubSwitch (SubSwitch.HC:1)
-    public final func f703_SubSwitch(_ t: HTask) throws {
+    public final func f708_SubSwitch(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -141,13 +141,13 @@ public final class N_Demo_SubSwitch: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/SubSwitch.HC#0 (SubSwitch.HC:21)
-    @discardableResult public final func f704_init_C__Demo_SubSwitch_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_SubSwitch_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 21 // SubSwitch.HC:21
             try tick(t)
-            try f703_SubSwitch(t)
+            try f708_SubSwitch(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/SubSwitch.HC#0", ln) }
@@ -156,14 +156,14 @@ public final class N_Demo_SubSwitch: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SubSwitch(t); return 0
-        case 704: return try f704_init_C__Demo_SubSwitch_HC_0(t)
+        case 708: try f708_SubSwitch(t); return 0
+        case 709: return try f709_init_C__Demo_SubSwitch_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "SubSwitch", 704: "$init:C:/Demo/SubSwitch.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "SubSwitch", 709: "$init:C:/Demo/SubSwitch.HC#0"]
     private static let FILES: [String] = ["C:/Demo/SubSwitch.HC"]
     public override var files: [String] { N_Demo_SubSwitch.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_SubSwitch.DEFINED.contains(index) }

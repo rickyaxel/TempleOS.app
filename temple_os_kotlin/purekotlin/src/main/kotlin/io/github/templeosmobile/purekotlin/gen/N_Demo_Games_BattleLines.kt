@@ -14,6 +14,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_MsSet = rt.vm.natives.find("MsSet")!!.index
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
@@ -21,6 +22,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
@@ -75,7 +77,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/Games/BattleLines.HC#0 (BattleLines.HC:26) */
-    fun f703_init_C__Demo_Games_BattleLines_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_BattleLines_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -92,7 +94,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawTrooper (BattleLines.HC:54) */
-    fun f704_DrawTrooper(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f709_DrawTrooper(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -143,7 +145,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         st4(t3, (ld4s(t3) or 1536L))
                         ln = 77 // BattleLines.HC:77
                         tick(t)
-                        P.f314_DCSymmetrySet(t, p1_dc, l32_x, l40_y, l32_x, (l40_y + 1L))
+                        P.f315_DCSymmetrySet(t, p1_dc, l32_x, l40_y, l32_x, (l40_y + 1L))
                         ln = 78 // BattleLines.HC:78
                         l48_gx = (l48_gx - 13L)
                         ln = 79 // BattleLines.HC:79
@@ -160,8 +162,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     ln = 86 // BattleLines.HC:86
                     st4((p1_dc + 160L), 0L)
                     ln = 87 // BattleLines.HC:87
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, (l32_x + 1L), l40_y, 0L, b6, 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, (l32_x + 1L), l40_y, 0L, b6, 0L))
                     ln = 89 // BattleLines.HC:89
                     if ((ld8((p2_tmpt + 56L)) == 0L)) {
                         ln = 90 // BattleLines.HC:90
@@ -171,8 +172,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         st4((p1_dc + 160L), 13L)
                     }
                     ln = 93 // BattleLines.HC:93
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, l32_x, l40_y, 0L, b7, 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, l32_x, l40_y, 0L, b7, 0L))
                     ln = 95 // BattleLines.HC:95
                     val t5: Long = (p1_dc + 28L)
                     st4(t5, (ld4s(t5) and -1537L))
@@ -185,8 +185,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         st4((p1_dc + 160L), 9L)
                     }
                     ln = 100 // BattleLines.HC:100
-                    tick(t)
-                    P.f406_GrLine3(t, p1_dc, l48_gx, l56_gy, 0L, ld4s((ld8((p2_tmpt + 80L)) + 4L)), ld4s(((ld8((p2_tmpt + 80L)) + 8L) + 4L)), 0L, 1L, 0L)
+                    nat(t, n_GrLine3, push(t, p1_dc, l48_gx, l56_gy, 0L, ld4s((ld8((p2_tmpt + 80L)) + 4L)), ld4s(((ld8((p2_tmpt + 80L)) + 8L) + 4L)), 0L, 1L, 0L))
                 } else {
                     ln = 102 // BattleLines.HC:102
                     if ((ld8((p2_tmpt + 16L)) < 0L)) {
@@ -195,7 +194,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         st4(t6, (ld4s(t6) or 1536L))
                         ln = 104 // BattleLines.HC:104
                         tick(t)
-                        P.f314_DCSymmetrySet(t, p1_dc, l32_x, l40_y, l32_x, (l40_y + 1L))
+                        P.f315_DCSymmetrySet(t, p1_dc, l32_x, l40_y, l32_x, (l40_y + 1L))
                     } else {
                         ln = 106 // BattleLines.HC:106
                         val t7: Long = (p1_dc + 28L)
@@ -203,13 +202,12 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     }
                     ln = 107 // BattleLines.HC:107
                     tick(t)
-                    val t8: Long = P.f448_SpriteInterpolate(t, (l72_tt % 1.0), ld8((g_imgs + (f2i((l72_tt % 6.0)) * 8L))), ld8((g_imgs + (f2i(((l72_tt + 1.0) % 6.0)) * 8L))))
+                    val t8: Long = P.f453_SpriteInterpolate(t, (l72_tt % 1.0), ld8((g_imgs + (f2i((l72_tt % 6.0)) * 8L))), ld8((g_imgs + (f2i(((l72_tt + 1.0) % 6.0)) * 8L))))
                     l24_tmps = t8
                     ln = 109 // BattleLines.HC:109
                     st4((p1_dc + 160L), 0L)
                     ln = 110 // BattleLines.HC:110
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, (l32_x + 1L), l40_y, 0L, l24_tmps, 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, (l32_x + 1L), l40_y, 0L, l24_tmps, 0L))
                     ln = 112 // BattleLines.HC:112
                     if ((ld8((p2_tmpt + 56L)) == 0L)) {
                         ln = 113 // BattleLines.HC:113
@@ -219,8 +217,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         st4((p1_dc + 160L), 13L)
                     }
                     ln = 116 // BattleLines.HC:116
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, l32_x, l40_y, 0L, l24_tmps, 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, l32_x, l40_y, 0L, l24_tmps, 0L))
                     ln = 118 // BattleLines.HC:118
                     nat(t, n_Free, push1(t, l24_tmps))
                     ln = 119 // BattleLines.HC:119
@@ -234,7 +231,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawIt (BattleLines.HC:124) */
-    fun f705_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f710_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -271,7 +268,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     if ((ld8((l16_tmpt + 40L)) > 0L)) {
                         ln = 137 // BattleLines.HC:137
                         tick(t)
-                        f704_DrawTrooper(t, p0_task, p1_dc, l16_tmpt)
+                        f709_DrawTrooper(t, p0_task, p1_dc, l16_tmpt)
                         ln = 138 // BattleLines.HC:138
                         val t0: Long = ((fp + 40) + (l32_j * 8L))
                         val t1: Long = ld8(t0)
@@ -292,7 +289,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st4((p1_dc + 160L), 14L)
                 ln = 144 // BattleLines.HC:144
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, l56_x, l64_y, 50L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, l56_x, l64_y, 50L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             } else {
                 ln = 146 // BattleLines.HC:146
                 if ((l72_repulsive != 0L)) {
@@ -318,21 +315,21 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 tick(t)
                 val t2: Long = P.f105_AbsI64(t, ld8((P.g_ms + 16L)))
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, l56_x, l64_y, t2, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, l56_x, l64_y, t2, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             }
             ln = 159 // BattleLines.HC:159
             st4((p1_dc + 160L), 11L)
             ln = 160 // BattleLines.HC:160
             tick(t)
             val vb0 = push1(t, ld8((fp + 40)))
-            P.f369_GrPrint(t, p1_dc, ((ld8((p0_task + 80L)) - 8L) * 8L), 0L, s0, vb0, 1)
+            P.f370_GrPrint(t, p1_dc, ((ld8((p0_task + 80L)) - 8L) * 8L), 0L, s0, vb0, 1)
             t.sp = vb0
             ln = 161 // BattleLines.HC:161
             st4((p1_dc + 160L), 13L)
             ln = 162 // BattleLines.HC:162
             tick(t)
             val vb1 = push1(t, ld8(((fp + 40) + 8L)))
-            P.f369_GrPrint(t, p1_dc, ((ld8((p0_task + 80L)) - 4L) * 8L), 0L, s0, vb1, 1)
+            P.f370_GrPrint(t, p1_dc, ((ld8((p0_task + 80L)) - 4L) * 8L), 0L, s0, vb1, 1)
             t.sp = vb1
             t.msp = msp0
             t.depth--
@@ -341,7 +338,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DoAiTarget (BattleLines.HC:165) */
-    fun f706_DoAiTarget(t: Task) {
+    fun f711_DoAiTarget(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -377,7 +374,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UpdatePos (BattleLines.HC:179) */
-    fun f707_UpdatePos(t: Task) {
+    fun f712_UpdatePos(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -433,7 +430,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC ResolveFiring (BattleLines.HC:194) */
-    fun f708_ResolveFiring(t: Task) {
+    fun f713_ResolveFiring(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -539,7 +536,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UpdateHumanVelocities (BattleLines.HC:234) */
-    fun f709_UpdateHumanVelocities(t: Task) {
+    fun f714_UpdateHumanVelocities(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -646,7 +643,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC Init (BattleLines.HC:274) */
-    fun f710_Init(t: Task) {
+    fun f715_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -738,14 +735,14 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC BattleLines (BattleLines.HC:314) */
-    fun f711_BattleLines(t: Task) {
+    fun f716_BattleLines(t: Task) {
         var ln = 0
         try {
             enter(t)
             var l0_tmpse: Long = 0L
             ln = 318 // BattleLines.HC:318
             tick(t)
-            P.f507_MenuPush(t, s1)
+            P.f512_MenuPush(t, s1)
             ln = 330 // BattleLines.HC:330
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -765,9 +762,9 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             nat(t, n_DocClear, push1(t, 0L))
             ln = 337 // BattleLines.HC:337
             tick(t)
-            f710_Init(t)
+            f715_Init(t)
             ln = 338 // BattleLines.HC:338
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065857L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065862L)
             ln = 339 // BattleLines.HC:339
             tick(t)
             P.f201_PopUpOk(t, s2, 0L)
@@ -790,7 +787,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     st1(g_time_lapse, b2i((ld1u(g_time_lapse) == 0L)))
                                     ln = 351 // BattleLines.HC:351
                                     tick(t)
-                                    val t1: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s3)
+                                    val t1: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s3)
                                     l0_tmpse = t1
                                     ln = 352 // BattleLines.HC:352
                                     st1((l0_tmpse + 72L), ld1u(g_time_lapse))
@@ -800,7 +797,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     st1(g_tap_mode, b2i((ld1u(g_tap_mode) == 0L)))
                                     ln = 356 // BattleLines.HC:356
                                     tick(t)
-                                    val t2: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s4)
+                                    val t2: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s4)
                                     l0_tmpse = t2
                                     ln = 357 // BattleLines.HC:357
                                     st1((l0_tmpse + 72L), ld1u(g_tap_mode))
@@ -812,7 +809,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                 10L -> {
                                     ln = 363 // BattleLines.HC:363
                                     tick(t)
-                                    f710_Init(t)
+                                    f715_Init(t)
                                 }
                                 else -> {
                                 }
@@ -824,17 +821,17 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         if ((ld8(g_ai_mode) == 1L)) {
                             ln = 368 // BattleLines.HC:368
                             tick(t)
-                            f706_DoAiTarget(t)
+                            f711_DoAiTarget(t)
                         }
                         ln = 369 // BattleLines.HC:369
                         tick(t)
-                        f709_UpdateHumanVelocities(t)
+                        f714_UpdateHumanVelocities(t)
                         ln = 370 // BattleLines.HC:370
                         tick(t)
-                        f707_UpdatePos(t)
+                        f712_UpdatePos(t)
                         ln = 371 // BattleLines.HC:371
                         tick(t)
-                        f708_ResolveFiring(t)
+                        f713_ResolveFiring(t)
                         tick(t)
                     }
                 } while (false)
@@ -852,20 +849,20 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 377 // BattleLines.HC:377
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "BattleLines", ln) }
     }
 
     /** HolyC $init:C:/Demo/Games/BattleLines.HC#1 (BattleLines.HC:41) */
-    fun f712_init_C__Demo_Games_BattleLines_HC_1(t: Task): Long {
+    fun f717_init_C__Demo_Games_BattleLines_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 380 // BattleLines.HC:380
             tick(t)
-            f711_BattleLines(t)
+            f716_BattleLines(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/BattleLines.HC#1", ln) }
@@ -874,16 +871,16 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_BattleLines_HC_0(t)
-            704 -> { f704_DrawTrooper(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            705 -> { f705_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_DoAiTarget(t); 0L }
-            707 -> { f707_UpdatePos(t); 0L }
-            708 -> { f708_ResolveFiring(t); 0L }
-            709 -> { f709_UpdateHumanVelocities(t); 0L }
-            710 -> { f710_Init(t); 0L }
-            711 -> { f711_BattleLines(t); 0L }
-            712 -> f712_init_C__Demo_Games_BattleLines_HC_1(t)
+            708 -> f708_init_C__Demo_Games_BattleLines_HC_0(t)
+            709 -> { f709_DrawTrooper(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            710 -> { f710_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_DoAiTarget(t); 0L }
+            712 -> { f712_UpdatePos(t); 0L }
+            713 -> { f713_ResolveFiring(t); 0L }
+            714 -> { f714_UpdateHumanVelocities(t); 0L }
+            715 -> { f715_Init(t); 0L }
+            716 -> { f716_BattleLines(t); 0L }
+            717 -> f717_init_C__Demo_Games_BattleLines_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -895,7 +892,7 @@ class N_Demo_Games_BattleLines(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/BattleLines.HC#0", "DrawTrooper", "DrawIt", "DoAiTarget", "UpdatePos", "ResolveFiring", "UpdateHumanVelocities", "Init", "BattleLines", "\$init:C:/Demo/Games/BattleLines.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Games/BattleLines.HC")
     }

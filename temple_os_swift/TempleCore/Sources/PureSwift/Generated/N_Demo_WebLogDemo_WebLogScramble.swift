@@ -61,7 +61,7 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
     }
 
     /// HolyC InitKey (WebLogScramble.HC:3)
-    public final func f703_InitKey(_ t: HTask) throws {
+    public final func f708_InitKey(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -100,7 +100,7 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
     }
 
     /// HolyC LogScrambleFile (WebLogScramble.HC:14)
-    public final func f704_LogScrambleFile(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_LogScrambleFile(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -114,7 +114,7 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
             var l8_doc: Int64 = 0
             ln = 16 // WebLogScramble.HC:16
             try tick(t)
-            let t0: Int64 = try P.f617_DocRead(t, p0_name, 9)
+            let t0: Int64 = try P.f622_DocRead(t, p0_name, 9)
             l8_doc = t0
             ln = 17 // WebLogScramble.HC:17
             l16_doc_e = try ld8(l8_doc)
@@ -166,10 +166,10 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
             }
             ln = 43 // WebLogScramble.HC:43
             try tick(t)
-            _ = try P.f618_DocWrite(t, l8_doc, 0)
+            _ = try P.f623_DocWrite(t, l8_doc, 0)
             ln = 44 // WebLogScramble.HC:44
             try tick(t)
-            try P.f605_DocDel(t, l8_doc)
+            try P.f610_DocDel(t, l8_doc)
             t.msp = msp0
             t.depth -= 1
             return
@@ -177,7 +177,7 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
     }
 
     /// HolyC WebLogScramble (WebLogScramble.HC:46)
-    public final func f705_WebLogScramble(_ t: HTask, _ a0: Int64) throws {
+    public final func f710_WebLogScramble(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -191,12 +191,12 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
             l16_tmpde1 = l8_tmpde
             ln = 50 // WebLogScramble.HC:50
             try tick(t)
-            try f703_InitKey(t)
+            try f708_InitKey(t)
             ln = 51 // WebLogScramble.HC:51
             loop0: while (l8_tmpde != 0) {
                 ln = 52 // WebLogScramble.HC:52
                 try tick(t)
-                try f704_LogScrambleFile(t, ld8((l8_tmpde &+ 24)))
+                try f709_LogScrambleFile(t, ld8((l8_tmpde &+ 24)))
                 ln = 53 // WebLogScramble.HC:53
                 l8_tmpde = try ld8(l8_tmpde)
                 try tick(t)
@@ -209,7 +209,7 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
     }
 
     /// HolyC LogScrambleDemo (WebLogScramble.HC:58)
-    public final func f706_LogScrambleDemo(_ t: HTask) throws {
+    public final func f711_LogScrambleDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -229,7 +229,7 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
             if (t1 != 0) {
                 ln = 66 // WebLogScramble.HC:66
                 try tick(t)
-                try f705_WebLogScramble(t, s6)
+                try f710_WebLogScramble(t, s6)
             }
             t.depth -= 1
             return
@@ -237,13 +237,13 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/WebLogDemo/WebLogScramble.HC#0 (WebLogScramble.HC:69)
-    @discardableResult public final func f707_init_C__Demo_WebLogDemo_WebLogScramble_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_WebLogDemo_WebLogScramble_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 69 // WebLogScramble.HC:69
             try tick(t)
-            try f706_LogScrambleDemo(t)
+            try f711_LogScrambleDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/WebLogDemo/WebLogScramble.HC#0", ln) }
@@ -252,17 +252,17 @@ public final class N_Demo_WebLogDemo_WebLogScramble: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_InitKey(t); return 0
-        case 704: try f704_LogScrambleFile(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_WebLogScramble(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 706: try f706_LogScrambleDemo(t); return 0
-        case 707: return try f707_init_C__Demo_WebLogDemo_WebLogScramble_HC_0(t)
+        case 708: try f708_InitKey(t); return 0
+        case 709: try f709_LogScrambleFile(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_WebLogScramble(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 711: try f711_LogScrambleDemo(t); return 0
+        case 712: return try f712_init_C__Demo_WebLogDemo_WebLogScramble_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "InitKey", 704: "LogScrambleFile", 705: "WebLogScramble", 706: "LogScrambleDemo", 707: "$init:C:/Demo/WebLogDemo/WebLogScramble.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "InitKey", 709: "LogScrambleFile", 710: "WebLogScramble", 711: "LogScrambleDemo", 712: "$init:C:/Demo/WebLogDemo/WebLogScramble.HC#0"]
     private static let FILES: [String] = ["C:/Demo/WebLogDemo/WebLogScramble.HC"]
     public override var files: [String] { N_Demo_WebLogDemo_WebLogScramble.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_WebLogDemo_WebLogScramble.DEFINED.contains(index) }

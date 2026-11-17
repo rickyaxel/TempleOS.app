@@ -53,7 +53,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC PrimesNew (MagicPairs.HC:52) */
-    fun f703_PrimesNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f708_PrimesNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -158,7 +158,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC PowPrimesNew (MagicPairs.HC:88) */
-    fun f704_PowPrimesNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f709_PowPrimesNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -244,7 +244,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC SumFact (MagicPairs.HC:121) */
-    fun f705_SumFact(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f710_SumFact(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -304,7 +304,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC TestSumFact (MagicPairs.HC:144) */
-    fun f706_TestSumFact(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f711_TestSumFact(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -504,7 +504,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC PutFactors (MagicPairs.HC:236) */
-    fun f707_PutFactors(t: Task, a0: Long) {
+    fun f712_PutFactors(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -556,7 +556,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $eval0 (MagicPairs.HC:262) */
-    fun f708_eval0(t: Task): Long {
+    fun f713_eval0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -570,7 +570,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC TestCoreSubRange (MagicPairs.HC:264) */
-    fun f709_TestCoreSubRange(t: Task, a0: Long): Long {
+    fun f714_TestCoreSubRange(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -695,7 +695,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                     var r11: Boolean = (((t9 <= l40_n2) && (l40_n2 < ld8((p0_r + 24L)))) && (((ld8((l72_sumfacts + ((l40_n2 - ld8((p0_r + 16L))) * 8L))) - l40_n2) - 1L) == l32_n))
                     if (!r11) {
                         tick(t)
-                        val t10: Long = f706_TestSumFact(t, l40_n2, l48_sf, ld8((p0_r + 40L)), ld8((p0_r + 48L)), ld8((p0_r + 56L)))
+                        val t10: Long = f711_TestSumFact(t, l40_n2, l48_sf, ld8((p0_r + 40L)), ld8((p0_r + 48L)), ld8((p0_r + 56L)))
                         r11 = (t10 != 0L)
                     }
                     ln = 303 // MagicPairs.HC:303
@@ -728,7 +728,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC TestCoreRange (MagicPairs.HC:318) */
-    fun f710_TestCoreRange(t: Task, a0: Long): Long {
+    fun f715_TestCoreRange(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -756,7 +756,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 }
                 ln = 328 // MagicPairs.HC:328
                 tick(t)
-                val t0: Long = f709_TestCoreSubRange(t, (fp + 32))
+                val t0: Long = f714_TestCoreSubRange(t, (fp + 32))
                 l24_res = (l24_res + t0)
                 ln = 330 // MagicPairs.HC:330
                 l16_n = (ld8(((fp + 32) + 24L)) - ld8(((fp + 32) + 16L)))
@@ -779,7 +779,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC MagicPairs (MagicPairs.HC:338) */
-    fun f711_MagicPairs(t: Task, a0: Long): Long {
+    fun f716_MagicPairs(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -803,11 +803,11 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             l64_n = (divs((p0_N - 1L), t1) + 1L)
             ln = 344 // MagicPairs.HC:344
             tick(t)
-            val t2: Long = f703_PrimesNew(t, p0_N, (fp + 24), (fp + 32))
+            val t2: Long = f708_PrimesNew(t, p0_N, (fp + 24), (fp + 32))
             l72_primes = t2
             ln = 345 // MagicPairs.HC:345
             tick(t)
-            val t3: Long = f704_PowPrimesNew(t, p0_N, ld8((fp + 24)), l72_primes, (fp + 40))
+            val t3: Long = f709_PowPrimesNew(t, p0_N, ld8((fp + 24)), l72_primes, (fp + 40))
             l80_powprimes = t3
             ln = 347 // MagicPairs.HC:347
             nat(t, n_Print, push(t, s4, p0_N, ld8((fp + 24)), ld8((fp + 32)), ld8((fp + 40))))
@@ -826,7 +826,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 if (!((l48_i < t7))) break@loop0
                 ln = 354 // MagicPairs.HC:354
                 tick(t)
-                val t4: Long = P.f602_DocPut(t, 0L)
+                val t4: Long = P.f607_DocPut(t, 0L)
                 st8((g_rj + (l48_i * 72L)), t4)
                 ln = 355 // MagicPairs.HC:355
                 st8(((g_rj + (l48_i * 72L)) + 8L), l48_i)
@@ -850,7 +850,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 st8(((g_rj + (l48_i * 72L)) + 56L), l72_primes)
                 ln = 364 // MagicPairs.HC:364
                 val t5: Long = nat(t, n_mp_cnt, push0(t))
-                val t6: Long = nat(t, n_JobQue, push(t, 9223090561878065862L, (g_rj + (l48_i * 72L)), ((t5 - 1L) - l48_i), 0L, 0L, 0L, 0L, 0L))
+                val t6: Long = nat(t, n_JobQue, push(t, 9223090561878065867L, (g_rj + (l48_i * 72L)), ((t5 - 1L) - l48_i), 0L, 0L, 0L, 0L, 0L))
                 st8(((g_rj + (l48_i * 72L)) + 64L), t6)
                 ln = 353 // MagicPairs.HC:353
                 l48_i = (l48_i + 1L)
@@ -889,13 +889,13 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Demo/MagicPairs.HC#0 (MagicPairs.HC:375) */
-    fun f712_init_C__Demo_MagicPairs_HC_0(t: Task): Long {
+    fun f717_init_C__Demo_MagicPairs_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 375 // MagicPairs.HC:375
             tick(t)
-            val t0: Long = f711_MagicPairs(t, 1000000L)
+            val t0: Long = f716_MagicPairs(t, 1000000L)
             t.depth--
             return t0
             t.depth--
@@ -906,16 +906,16 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_PrimesNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            704 -> f704_PowPrimesNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            705 -> f705_SumFact(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            706 -> f706_TestSumFact(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            707 -> { f707_PutFactors(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> f708_eval0(t)
-            709 -> f709_TestCoreSubRange(t, (if (n > 0) st[base + 0] else 0L))
-            710 -> f710_TestCoreRange(t, (if (n > 0) st[base + 0] else 0L))
-            711 -> f711_MagicPairs(t, (if (n > 0) st[base + 0] else 0L))
-            712 -> f712_init_C__Demo_MagicPairs_HC_0(t)
+            708 -> f708_PrimesNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            709 -> f709_PowPrimesNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            710 -> f710_SumFact(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            711 -> f711_TestSumFact(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            712 -> { f712_PutFactors(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> f713_eval0(t)
+            714 -> f714_TestCoreSubRange(t, (if (n > 0) st[base + 0] else 0L))
+            715 -> f715_TestCoreRange(t, (if (n > 0) st[base + 0] else 0L))
+            716 -> f716_MagicPairs(t, (if (n > 0) st[base + 0] else 0L))
+            717 -> f717_init_C__Demo_MagicPairs_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -927,7 +927,7 @@ class N_Demo_MagicPairs(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
         private val NAMES = arrayOf("PrimesNew", "PowPrimesNew", "SumFact", "TestSumFact", "PutFactors", "\$eval0", "TestCoreSubRange", "TestCoreRange", "MagicPairs", "\$init:C:/Demo/MagicPairs.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/MagicPairs.HC")
     }

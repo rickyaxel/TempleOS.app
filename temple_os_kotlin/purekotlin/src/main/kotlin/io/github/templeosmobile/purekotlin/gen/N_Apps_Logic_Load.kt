@@ -25,6 +25,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_PutChars = rt.vm.natives.find("PutChars")!!.index
     @JvmField val n_Refresh = rt.vm.natives.find("Refresh")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_throw = rt.vm.natives.find("throw")!!.index
 
     /** "C:.Apps.Logic" */ @JvmField var s0: Long = 0L
@@ -138,7 +139,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Apps/Logic/Load.HC#0 (Load.HC:3) */
-    fun f703_init_C__Apps_Logic_Load_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Logic_Load_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -152,7 +153,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Apps/Logic/Load.HC#1 (Load.HC:5) */
-    fun f704_init_C__Apps_Logic_Load_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_Logic_Load_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -177,7 +178,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC GetGates (Logic.HC:79) */
-    fun f705_GetGates(t: Task) {
+    fun f710_GetGates(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -238,7 +239,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Init (Logic.HC:107) */
-    fun f706_Init(t: Task) {
+    fun f711_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -391,7 +392,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC DrawDesign (Logic.HC:181) */
-    fun f707_DrawDesign(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long) {
+    fun f712_DrawDesign(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long) {
         var ln = 0
         try {
             enter(t)
@@ -428,7 +429,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 ln = 1048766 // Logic.HC:190
                 tick(t)
                 val vb0 = push0(t)
-                P.f369_GrPrint(t, p0_dc, (l64_xx - 24L), (ld8((fp + 48)) - 4L), s20, vb0, 0)
+                P.f370_GrPrint(t, p0_dc, (l64_xx - 24L), (ld8((fp + 48)) - 4L), s20, vb0, 0)
                 t.sp = vb0
                 ln = 1048767 // Logic.HC:191
                 st8((fp + 48), (ld8((fp + 48)) + 10L))
@@ -443,7 +444,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                             ln = 1048772 // Logic.HC:196
                             tick(t)
                             val vb1 = push1(t, (65L + ld2u((ld8(g_input1_table) + (p2_output * 2L)))))
-                            P.f369_GrPrint(t, p0_dc, ((l64_xx - 8L) - 4L), (ld8((fp + 48)) - 4L), s21, vb1, 1)
+                            P.f370_GrPrint(t, p0_dc, ((l64_xx - 8L) - 4L), (ld8((fp + 48)) - 4L), s21, vb1, 1)
                             t.sp = vb1
                             ln = 1048773 // Logic.HC:197
                             st8((fp + 48), (ld8((fp + 48)) + 10L))
@@ -456,19 +457,18 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                 st8((fp + 48), (ld8((fp + 48)) + 16L))
                                 ln = 1048778 // Logic.HC:202
                                 tick(t)
-                                f707_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input1_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 80), (fp + 88))
+                                f712_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input1_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 80), (fp + 88))
                                 ln = 1048779 // Logic.HC:203
                                 l72_yy = ld8((fp + 88))
                                 ln = 1048781 // Logic.HC:205
                                 st4((p0_dc + 160L), 1L)
                                 ln = 1048782 // Logic.HC:206
-                                tick(t)
-                                P.f440_Sprite3(t, p0_dc, l64_xx, l72_yy, 0L, ld8((g_imgs + (l56_type * 8L))), 0L)
+                                nat(t, n_Sprite3, push(t, p0_dc, l64_xx, l72_yy, 0L, ld8((g_imgs + (l56_type * 8L))), 0L))
                                 ln = 1048784 // Logic.HC:208
                                 st4((p0_dc + 160L), 4L)
                                 ln = 1048785 // Logic.HC:209
                                 tick(t)
-                                P.f396_GrLine(t, p0_dc, (l64_xx - 37L), l72_yy, ld8((fp + 80)), ld8((fp + 88)), 1L, 0L)
+                                P.f397_GrLine(t, p0_dc, (l64_xx - 37L), l72_yy, ld8((fp + 80)), ld8((fp + 88)), 1L, 0L)
                                 ln = 1048786 // Logic.HC:210
                                 if ((p5__y_out != 0L)) {
                                     st8(p5__y_out, l72_yy)
@@ -483,25 +483,24 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                 st8((fp + 48), (ld8((fp + 48)) + 24L))
                                 ln = 1048796 // Logic.HC:220
                                 tick(t)
-                                f707_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input1_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 80), (fp + 88))
+                                f712_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input1_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 80), (fp + 88))
                                 ln = 1048797 // Logic.HC:221
                                 tick(t)
-                                f707_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input2_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 96), (fp + 104))
+                                f712_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input2_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 96), (fp + 104))
                                 ln = 1048798 // Logic.HC:222
                                 l72_yy = divs((ld8((fp + 88)) + ld8((fp + 104))), 2L)
                                 ln = 1048800 // Logic.HC:224
                                 st4((p0_dc + 160L), 1L)
                                 ln = 1048801 // Logic.HC:225
-                                tick(t)
-                                P.f440_Sprite3(t, p0_dc, l64_xx, l72_yy, 0L, ld8((g_imgs + (l56_type * 8L))), 0L)
+                                nat(t, n_Sprite3, push(t, p0_dc, l64_xx, l72_yy, 0L, ld8((g_imgs + (l56_type * 8L))), 0L))
                                 ln = 1048803 // Logic.HC:227
                                 st4((p0_dc + 160L), 4L)
                                 ln = 1048804 // Logic.HC:228
                                 tick(t)
-                                P.f396_GrLine(t, p0_dc, (l64_xx - 37L), (l72_yy - 4L), ld8((fp + 80)), ld8((fp + 88)), 1L, 0L)
+                                P.f397_GrLine(t, p0_dc, (l64_xx - 37L), (l72_yy - 4L), ld8((fp + 80)), ld8((fp + 88)), 1L, 0L)
                                 ln = 1048805 // Logic.HC:229
                                 tick(t)
-                                P.f396_GrLine(t, p0_dc, (l64_xx - 37L), (l72_yy + 4L), ld8((fp + 96)), ld8((fp + 104)), 1L, 0L)
+                                P.f397_GrLine(t, p0_dc, (l64_xx - 37L), (l72_yy + 4L), ld8((fp + 96)), ld8((fp + 104)), 1L, 0L)
                                 ln = 1048806 // Logic.HC:230
                                 if ((p5__y_out != 0L)) {
                                     st8(p5__y_out, l72_yy)
@@ -516,31 +515,30 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                 st8((fp + 48), (ld8((fp + 48)) + 32L))
                                 ln = 1048815 // Logic.HC:239
                                 tick(t)
-                                f707_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input1_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 80), (fp + 88))
+                                f712_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input1_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 80), (fp + 88))
                                 ln = 1048816 // Logic.HC:240
                                 tick(t)
-                                f707_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input2_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 96), (fp + 104))
+                                f712_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input2_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 96), (fp + 104))
                                 ln = 1048817 // Logic.HC:241
                                 tick(t)
-                                f707_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input3_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 112), (fp + 120))
+                                f712_DrawDesign(t, p0_dc, (fp + 48), ld2u((ld8(g_input3_table) + (p2_output * 2L))), (p3_depth + 1L), (fp + 112), (fp + 120))
                                 ln = 1048818 // Logic.HC:242
                                 l72_yy = divs(((ld8((fp + 88)) + ld8((fp + 104))) + ld8((fp + 120))), 3L)
                                 ln = 1048820 // Logic.HC:244
                                 st4((p0_dc + 160L), 1L)
                                 ln = 1048821 // Logic.HC:245
-                                tick(t)
-                                P.f440_Sprite3(t, p0_dc, l64_xx, l72_yy, 0L, ld8((g_imgs + (l56_type * 8L))), 0L)
+                                nat(t, n_Sprite3, push(t, p0_dc, l64_xx, l72_yy, 0L, ld8((g_imgs + (l56_type * 8L))), 0L))
                                 ln = 1048823 // Logic.HC:247
                                 st4((p0_dc + 160L), 4L)
                                 ln = 1048824 // Logic.HC:248
                                 tick(t)
-                                P.f396_GrLine(t, p0_dc, (l64_xx - 37L), (l72_yy - 8L), ld8((fp + 80)), ld8((fp + 88)), 1L, 0L)
+                                P.f397_GrLine(t, p0_dc, (l64_xx - 37L), (l72_yy - 8L), ld8((fp + 80)), ld8((fp + 88)), 1L, 0L)
                                 ln = 1048825 // Logic.HC:249
                                 tick(t)
-                                P.f396_GrLine(t, p0_dc, (l64_xx - 37L), l72_yy, ld8((fp + 96)), ld8((fp + 104)), 1L, 0L)
+                                P.f397_GrLine(t, p0_dc, (l64_xx - 37L), l72_yy, ld8((fp + 96)), ld8((fp + 104)), 1L, 0L)
                                 ln = 1048826 // Logic.HC:250
                                 tick(t)
-                                P.f396_GrLine(t, p0_dc, (l64_xx - 37L), (l72_yy + 8L), ld8((fp + 112)), ld8((fp + 120)), 1L, 0L)
+                                P.f397_GrLine(t, p0_dc, (l64_xx - 37L), (l72_yy + 8L), ld8((fp + 112)), ld8((fp + 120)), 1L, 0L)
                                 ln = 1048827 // Logic.HC:251
                                 if ((p5__y_out != 0L)) {
                                     st8(p5__y_out, l72_yy)
@@ -557,7 +555,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             ln = 1048832 // Logic.HC:256
             tick(t)
             val vb2 = push1(t, p2_output)
-            P.f369_GrPrint(t, p0_dc, l64_xx, (l72_yy + 3L), s22, vb2, 1)
+            P.f370_GrPrint(t, p0_dc, l64_xx, (l72_yy + 3L), s22, vb2, 1)
             t.sp = vb2
             ln = 1048833 // Logic.HC:257
             nat(t, n_Bts, push2(t, ld8(g_displayed_design), p2_output))
@@ -572,7 +570,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC DrawIt (Logic.HC:261) */
-    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f713_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -586,7 +584,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             nat(t, n_MemSet, push3(t, ld8(g_displayed_design), 0L, (divs((ld8(g_table_size) + 7L), 8L) * 1L)))
             ln = 1048841 // Logic.HC:265
             tick(t)
-            f707_DrawDesign(t, p1_dc, (fp + 16), ld8(g_output_found), 0L, 0L, 0L)
+            f712_DrawDesign(t, p1_dc, (fp + 16), ld8(g_output_found), 0L, 0L, 0L)
             t.msp = msp0
             t.depth--
             return
@@ -594,7 +592,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillNot (Logic.HC:268) */
-    fun f709_FillNot(t: Task, a0: Long, a1: Long) {
+    fun f714_FillNot(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -650,7 +648,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillAnd (Logic.HC:289) */
-    fun f710_FillAnd(t: Task, a0: Long, a1: Long) {
+    fun f715_FillAnd(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -724,7 +722,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillOr (Logic.HC:313) */
-    fun f711_FillOr(t: Task, a0: Long, a1: Long) {
+    fun f716_FillOr(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -798,7 +796,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillNAnd (Logic.HC:337) */
-    fun f712_FillNAnd(t: Task, a0: Long, a1: Long) {
+    fun f717_FillNAnd(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -872,7 +870,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillNOr (Logic.HC:361) */
-    fun f713_FillNOr(t: Task, a0: Long, a1: Long) {
+    fun f718_FillNOr(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -946,7 +944,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillXor (Logic.HC:385) */
-    fun f714_FillXor(t: Task, a0: Long, a1: Long) {
+    fun f719_FillXor(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1020,7 +1018,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillAnd3 (Logic.HC:409) */
-    fun f715_FillAnd3(t: Task, a0: Long, a1: Long) {
+    fun f720_FillAnd3(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1112,7 +1110,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillOr3 (Logic.HC:436) */
-    fun f716_FillOr3(t: Task, a0: Long, a1: Long) {
+    fun f721_FillOr3(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1204,7 +1202,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillNAnd3 (Logic.HC:463) */
-    fun f717_FillNAnd3(t: Task, a0: Long, a1: Long) {
+    fun f722_FillNAnd3(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1296,7 +1294,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillNOr3 (Logic.HC:490) */
-    fun f718_FillNOr3(t: Task, a0: Long, a1: Long) {
+    fun f723_FillNOr3(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1388,7 +1386,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC FillGateTable (Logic.HC:517) */
-    fun f719_FillGateTable(t: Task): Long {
+    fun f724_FillGateTable(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1405,7 +1403,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             st8(g_output_found, -1L)
             ln = 1049099 // Logic.HC:523
             tick(t)
-            P.f574_ProgressBarsRst(t, 0L)
+            P.f579_ProgressBarsRst(t, 0L)
             ln = 1049100 // Logic.HC:524
             st8(P.g_progress1_max, ld8(g_table_size))
             ln = 1049101 // Logic.HC:525
@@ -1430,52 +1428,52 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                             3L -> {
                                 ln = 1049109 // Logic.HC:533
                                 tick(t)
-                                f709_FillNot(t, (fp + 16), (fp + 8))
+                                f714_FillNot(t, (fp + 16), (fp + 8))
                             }
                             4L -> {
                                 ln = 1049110 // Logic.HC:534
                                 tick(t)
-                                f710_FillAnd(t, (fp + 16), (fp + 8))
+                                f715_FillAnd(t, (fp + 16), (fp + 8))
                             }
                             5L -> {
                                 ln = 1049111 // Logic.HC:535
                                 tick(t)
-                                f711_FillOr(t, (fp + 16), (fp + 8))
+                                f716_FillOr(t, (fp + 16), (fp + 8))
                             }
                             6L -> {
                                 ln = 1049112 // Logic.HC:536
                                 tick(t)
-                                f712_FillNAnd(t, (fp + 16), (fp + 8))
+                                f717_FillNAnd(t, (fp + 16), (fp + 8))
                             }
                             7L -> {
                                 ln = 1049113 // Logic.HC:537
                                 tick(t)
-                                f713_FillNOr(t, (fp + 16), (fp + 8))
+                                f718_FillNOr(t, (fp + 16), (fp + 8))
                             }
                             8L -> {
                                 ln = 1049114 // Logic.HC:538
                                 tick(t)
-                                f714_FillXor(t, (fp + 16), (fp + 8))
+                                f719_FillXor(t, (fp + 16), (fp + 8))
                             }
                             9L -> {
                                 ln = 1049115 // Logic.HC:539
                                 tick(t)
-                                f715_FillAnd3(t, (fp + 16), (fp + 8))
+                                f720_FillAnd3(t, (fp + 16), (fp + 8))
                             }
                             10L -> {
                                 ln = 1049116 // Logic.HC:540
                                 tick(t)
-                                f716_FillOr3(t, (fp + 16), (fp + 8))
+                                f721_FillOr3(t, (fp + 16), (fp + 8))
                             }
                             11L -> {
                                 ln = 1049117 // Logic.HC:541
                                 tick(t)
-                                f717_FillNAnd3(t, (fp + 16), (fp + 8))
+                                f722_FillNAnd3(t, (fp + 16), (fp + 8))
                             }
                             12L -> {
                                 ln = 1049118 // Logic.HC:542
                                 tick(t)
-                                f718_FillNOr3(t, (fp + 16), (fp + 8))
+                                f723_FillNOr3(t, (fp + 16), (fp + 8))
                             }
                             else -> {
                             }
@@ -1489,7 +1487,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             }
             ln = 1049122 // Logic.HC:546
             tick(t)
-            P.f574_ProgressBarsRst(t, 0L)
+            P.f579_ProgressBarsRst(t, 0L)
             ln = 1049123 // Logic.HC:547
             t.msp = msp0
             t.depth--
@@ -1501,7 +1499,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC CleanUp (Logic.HC:550) */
-    fun f720_CleanUp(t: Task) {
+    fun f725_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1523,7 +1521,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC DigitalLogic (Logic.HC:560) */
-    fun f721_DigitalLogic(t: Task) {
+    fun f726_DigitalLogic(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1554,24 +1552,24 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             nat(t, n_DocClear, push1(t, 0L))
             ln = 1049150 // Logic.HC:574
             tick(t)
-            f705_GetGates(t)
+            f710_GetGates(t)
             ln = 1049151 // Logic.HC:575
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
             try {
                 ln = 1049152 // Logic.HC:576
                 tick(t)
-                f706_Init(t)
+                f711_Init(t)
                 ln = 1049153 // Logic.HC:577
                 tick(t)
-                val t0: Long = f719_FillGateTable(t)
+                val t0: Long = f724_FillGateTable(t)
                 if ((t0 != 0L)) {
                     ln = 1049154 // Logic.HC:578
                     nat(t, n_DocCursor, push2(t, 0L, 0L))
                     ln = 1049155 // Logic.HC:579
                     nat(t, n_DocClear, push1(t, 0L))
                     ln = 1049156 // Logic.HC:580
-                    st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
+                    st8((ld8(P.g_Fs) + 448L), 9223090561878065865L)
                     ln = 1049157 // Logic.HC:581
                     nat(t, n_GetChar, push3(t, 0L, 1L, 0L))
                     ln = 1049158 // Logic.HC:582
@@ -1595,14 +1593,14 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 1049165 // Logic.HC:589
             tick(t)
-            f720_CleanUp(t)
+            f725_CleanUp(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DigitalLogic", ln) }
     }
 
     /** HolyC $init:C:/Apps/Logic/Load.HC#2 (Load.HC:1) */
-    fun f722_init_C__Apps_Logic_Load_HC_2(t: Task): Long {
+    fun f727_init_C__Apps_Logic_Load_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1614,26 +1612,26 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Logic_Load_HC_0(t)
-            704 -> f704_init_C__Apps_Logic_Load_HC_1(t)
-            705 -> { f705_GetGates(t); 0L }
-            706 -> { f706_Init(t); 0L }
-            707 -> { f707_DrawDesign(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L)); 0L }
-            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            709 -> { f709_FillNot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> { f710_FillAnd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            711 -> { f711_FillOr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            712 -> { f712_FillNAnd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            713 -> { f713_FillNOr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            714 -> { f714_FillXor(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            715 -> { f715_FillAnd3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            716 -> { f716_FillOr3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            717 -> { f717_FillNAnd3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            718 -> { f718_FillNOr3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            719 -> f719_FillGateTable(t)
-            720 -> { f720_CleanUp(t); 0L }
-            721 -> { f721_DigitalLogic(t); 0L }
-            722 -> f722_init_C__Apps_Logic_Load_HC_2(t)
+            708 -> f708_init_C__Apps_Logic_Load_HC_0(t)
+            709 -> f709_init_C__Apps_Logic_Load_HC_1(t)
+            710 -> { f710_GetGates(t); 0L }
+            711 -> { f711_Init(t); 0L }
+            712 -> { f712_DrawDesign(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L)); 0L }
+            713 -> { f713_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            714 -> { f714_FillNot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> { f715_FillAnd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            716 -> { f716_FillOr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            717 -> { f717_FillNAnd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            718 -> { f718_FillNOr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            719 -> { f719_FillXor(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            720 -> { f720_FillAnd3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            721 -> { f721_FillOr3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            722 -> { f722_FillNAnd3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            723 -> { f723_FillNOr3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            724 -> f724_FillGateTable(t)
+            725 -> { f725_CleanUp(t); 0L }
+            726 -> { f726_DigitalLogic(t); 0L }
+            727 -> f727_init_C__Apps_Logic_Load_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1645,7 +1643,7 @@ class N_Apps_Logic_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727)
         private val NAMES = arrayOf("\$init:C:/Apps/Logic/Load.HC#0", "\$init:C:/Apps/Logic/Load.HC#1", "GetGates", "Init", "DrawDesign", "DrawIt", "FillNot", "FillAnd", "FillOr", "FillNAnd", "FillNOr", "FillXor", "FillAnd3", "FillOr3", "FillNAnd3", "FillNOr3", "FillGateTable", "CleanUp", "DigitalLogic", "\$init:C:/Apps/Logic/Load.HC#2")
         private val FILES = arrayOf<String>("C:/Apps/Logic/Load.HC", "C:/Apps/Logic/Logic.HC")
     }

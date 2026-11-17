@@ -35,7 +35,7 @@ class N_Demo_Graphics_Cartesian(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Cartesian (Cartesian.HC:6) */
-    fun f703_Cartesian(t: Task) {
+    fun f708_Cartesian(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -72,10 +72,10 @@ class N_Demo_Graphics_Cartesian(rt: NativeRuntime, @JvmField val P: Prelude) : N
                         st4((l40_dc + 160L), 4L)
                         ln = 22 // Cartesian.HC:22
                         tick(t)
-                        P.f396_GrLine(t, l40_dc, l16_h, 0L, l16_h, ((2L * l24_v) + 1L), 1L, 0L)
+                        P.f397_GrLine(t, l40_dc, l16_h, 0L, l16_h, ((2L * l24_v) + 1L), 1L, 0L)
                         ln = 23 // Cartesian.HC:23
                         tick(t)
-                        P.f396_GrLine(t, l40_dc, 0L, l24_v, ((2L * l16_h) + 1L), l24_v, 1L, 0L)
+                        P.f397_GrLine(t, l40_dc, 0L, l24_v, ((2L * l16_h) + 1L), l24_v, 1L, 0L)
                         ln = 24 // Cartesian.HC:24
                         l32_first = 1L
                         ln = 25 // Cartesian.HC:25
@@ -90,7 +90,7 @@ class N_Demo_Graphics_Cartesian(rt: NativeRuntime, @JvmField val P: Prelude) : N
                             if ((l32_first == 0L)) {
                                 ln = 29 // Cartesian.HC:29
                                 tick(t)
-                                P.f396_GrLine(t, l40_dc, f2i(((ldf(g_x) - 1.0) + l16_h.toDouble())), f2i((ldf(g_y_last) + l24_v.toDouble())), f2i((ldf(g_x) + l16_h.toDouble())), f2i((ldf(g_y) + l24_v.toDouble())), 1L, 0L)
+                                P.f397_GrLine(t, l40_dc, f2i(((ldf(g_x) - 1.0) + l16_h.toDouble())), f2i((ldf(g_y_last) + l24_v.toDouble())), f2i((ldf(g_x) + l16_h.toDouble())), f2i((ldf(g_y) + l24_v.toDouble())), 1L, 0L)
                             }
                             ln = 30 // Cartesian.HC:30
                             st8(g_y_last, bits(ldf(g_y)))
@@ -129,13 +129,13 @@ class N_Demo_Graphics_Cartesian(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Graphics/Cartesian.HC#0 (Cartesian.HC:44) */
-    fun f704_init_C__Demo_Graphics_Cartesian_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_Cartesian_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 44 // Cartesian.HC:44
             tick(t)
-            f703_Cartesian(t)
+            f708_Cartesian(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Cartesian.HC#0", ln) }
@@ -144,8 +144,8 @@ class N_Demo_Graphics_Cartesian(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Cartesian(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_Cartesian_HC_0(t)
+            708 -> { f708_Cartesian(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_Cartesian_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -157,7 +157,7 @@ class N_Demo_Graphics_Cartesian(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("Cartesian", "\$init:C:/Demo/Graphics/Cartesian.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Cartesian.HC")
     }

@@ -1,8 +1,8 @@
 TOSIMG 1
 unit C:/Apps/GrModels/Load.HC#0
 s 17fd38 433a2f417070732f47724d6f64656c73
-fn 703 $init:C:/Apps/GrModels/Load.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/GrModels/Load.HC#0 (I64;;-)
+init 708
 unit C:/Apps/GrModels/Load.HC#1
 value TRIS_NUM 1024
 value T_BALL 1
@@ -73,34 +73,34 @@ s 17ff40 244c4d2c3424
 s 17ff58 0a0a2442542c224d616e222c4c453d545f4d414e240a0a
 s 17ff80 0a0a2442542c2242616c6c222c4c453d545f42414c4c240a0a
 s 17ffb0 244c4d2c3024
-fn 704 MDInit (U0;*$ManDefineStruct;-)
-fn 705 MDCorrect (U0;*$ManDefineStruct;-)
-fn 706 AddVertex (I64;*$ManDefineStruct,I64,I64,I64;-)
-fn 707 AddTri (I64;*$ManDefineStruct,I64,I64,I64,I64;-)
-fn 708 AddBox (U0;*$ManDefineStruct,I64,I64,I64,I64,F64,F64,F64,F64,F64,F64,F64,F64,*I64,*I64,*I64;-)
-fn 709 Man2CSprite (*U8;;-)
-fn 710 ManGen (*U8;;-)
-fn 711 BDInit (U0;*$BallDefineStruct;-)
-fn 712 BDCorrect (U0;*$BallDefineStruct;-)
-fn 713 AddVertex (I64;*$BallDefineStruct,I64,I64,I64;-)
-fn 714 AddTri (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
-fn 715 Ball2CSprite (*U8;;-)
-fn 716 BallGen (*U8;;-)
-fn 717 Models (U0;;-)
-fn 718 $init:C:/Apps/GrModels/Load.HC#1 (I64;;-)
-sym f AddBox 708 (U0;*$ManDefineStruct,I64,I64,I64,I64,F64,F64,F64,F64,F64,F64,F64,F64,*I64,*I64,*I64;-)
-sym f AddTri 714 (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
-sym f AddVertex 713 (I64;*$BallDefineStruct,I64,I64,I64;-)
-sym f BDCorrect 712 (U0;*$BallDefineStruct;-)
-sym f BDInit 711 (U0;*$BallDefineStruct;-)
-sym f Ball2CSprite 715 (*U8;;-)
-sym f BallGen 716 (*U8;;-)
-sym f MDCorrect 705 (U0;*$ManDefineStruct;-)
-sym f MDInit 704 (U0;*$ManDefineStruct;-)
-sym f Man2CSprite 709 (*U8;;-)
-sym f ManGen 710 (*U8;;-)
-sym f Models 717 (U0;;-)
+fn 709 MDInit (U0;*$ManDefineStruct;-)
+fn 710 MDCorrect (U0;*$ManDefineStruct;-)
+fn 711 AddVertex (I64;*$ManDefineStruct,I64,I64,I64;-)
+fn 712 AddTri (I64;*$ManDefineStruct,I64,I64,I64,I64;-)
+fn 713 AddBox (U0;*$ManDefineStruct,I64,I64,I64,I64,F64,F64,F64,F64,F64,F64,F64,F64,*I64,*I64,*I64;-)
+fn 714 Man2CSprite (*U8;;-)
+fn 715 ManGen (*U8;;-)
+fn 716 BDInit (U0;*$BallDefineStruct;-)
+fn 717 BDCorrect (U0;*$BallDefineStruct;-)
+fn 718 AddVertex (I64;*$BallDefineStruct,I64,I64,I64;-)
+fn 719 AddTri (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
+fn 720 Ball2CSprite (*U8;;-)
+fn 721 BallGen (*U8;;-)
+fn 722 Models (U0;;-)
+fn 723 $init:C:/Apps/GrModels/Load.HC#1 (I64;;-)
+sym f AddBox 713 (U0;*$ManDefineStruct,I64,I64,I64,I64,F64,F64,F64,F64,F64,F64,F64,F64,*I64,*I64,*I64;-)
+sym f AddTri 719 (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
+sym f AddVertex 718 (I64;*$BallDefineStruct,I64,I64,I64;-)
+sym f BDCorrect 717 (U0;*$BallDefineStruct;-)
+sym f BDInit 716 (U0;*$BallDefineStruct;-)
+sym f Ball2CSprite 720 (*U8;;-)
+sym f BallGen 721 (*U8;;-)
+sym f MDCorrect 710 (U0;*$ManDefineStruct;-)
+sym f MDInit 709 (U0;*$ManDefineStruct;-)
+sym f Man2CSprite 714 (*U8;;-)
+sym f ManGen 715 (*U8;;-)
+sym f Models 722 (U0;;-)
 sym g b 17fe98 *$Ball
 sym g m 17fd60 *$Man
-init 718
+init 723
 unit C:/Apps/GrModels/Load.HC#2

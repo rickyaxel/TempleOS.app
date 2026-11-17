@@ -40,7 +40,7 @@ public final class N_Adam_God_GodSong: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodSong.HC#0 (GodSong.HC:3)
-    @discardableResult public final func f703_init_C__Adam_God_GodSong_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Adam_God_GodSong_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -54,7 +54,7 @@ public final class N_Adam_God_GodSong: NativeModule {
     }
 
     /// HolyC InsNote (GodSong.HC:14)
-    public final func f704_InsNote(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_InsNote(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -119,7 +119,7 @@ public final class N_Adam_God_GodSong: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodSong.HC#1 (GodSong.HC:52)
-    @discardableResult public final func f705_init_C__Adam_God_GodSong_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Adam_God_GodSong_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -129,7 +129,7 @@ public final class N_Adam_God_GodSong: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodSong.HC#2 (GodSong.HC:53)
-    @discardableResult public final func f706_init_C__Adam_God_GodSong_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Adam_God_GodSong_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -139,7 +139,7 @@ public final class N_Adam_God_GodSong: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodSong.HC#3 (GodSong.HC:54)
-    @discardableResult public final func f707_init_C__Adam_God_GodSong_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Adam_God_GodSong_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -149,7 +149,7 @@ public final class N_Adam_God_GodSong: NativeModule {
     }
 
     /// HolyC GodSongStr (GodSong.HC:57)
-    @discardableResult public final func f708_GodSongStr(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_GodSongStr(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -176,7 +176,7 @@ public final class N_Adam_God_GodSong: NativeModule {
             try st8((fp &+ 10), ld8((P.g_music &+ 16)))
             ln = 68 // GodSong.HC:68
             try tick(t)
-            let t0: Int64 = try P.f600_PopUpForm(t, fp, s2)
+            let t0: Int64 = try P.f605_PopUpForm(t, fp, s2)
             if (t0 == 0) {
                 ln = 69 // GodSong.HC:69
                 t.msp = msp0
@@ -234,13 +234,13 @@ public final class N_Adam_God_GodSong: NativeModule {
             }
             ln = 89 // GodSong.HC:89
             try tick(t)
-            try P.f679_FifoU8Flush(t, ld8(P.g_god))
+            try P.f684_FifoU8Flush(t, ld8(P.g_god))
             ln = 90 // GodSong.HC:90
             l40_i = 0
             loop0: while (l40_i < l96_len) {
                 ln = 91 // GodSong.HC:91
                 try tick(t)
-                let t9: Int64 = try P.f687_GodBits(t, 8, 0)
+                let t9: Int64 = try P.f692_GodBits(t, 8, 0)
                 l64_n = t9
                 ln = 92 // GodSong.HC:92
                 if try (ld8(fp) == 2) {
@@ -270,14 +270,14 @@ public final class N_Adam_God_GodSong: NativeModule {
                         }
                         ln = 103 // GodSong.HC:103
                         try tick(t)
-                        let t12: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t12: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t12, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t12, (fp &+ 48))
                         ln = 104 // GodSong.HC:104
                         try tick(t)
-                        let t13: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t13: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t13, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t13, (fp &+ 48))
                     case 4:
                         ln = 107 // GodSong.HC:107
                         let t14: Int64 = try ld8((fp &+ 48))
@@ -289,18 +289,18 @@ public final class N_Adam_God_GodSong: NativeModule {
                         try st1((l32_buf &+ t15), 46)
                         ln = 109 // GodSong.HC:109
                         try tick(t)
-                        let t16: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t16: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t16, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t16, (fp &+ 48))
                         ln = 110 // GodSong.HC:110
                         let t17: Int64 = try ld8((fp &+ 48))
                         try st8((fp &+ 48), (t17 &+ 1))
                         try st1((l32_buf &+ t17), 115)
                         ln = 111 // GodSong.HC:111
                         try tick(t)
-                        let t18: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t18: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t18, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t18, (fp &+ 48))
                         ln = 112 // GodSong.HC:112
                         l80_duration = 3
                     case 2:
@@ -317,19 +317,19 @@ public final class N_Adam_God_GodSong: NativeModule {
                         }
                         ln = 119 // GodSong.HC:119
                         try tick(t)
-                        let t21: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t21: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t21, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t21, (fp &+ 48))
                         ln = 120 // GodSong.HC:120
                         try tick(t)
-                        let t22: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t22: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t22, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t22, (fp &+ 48))
                         ln = 121 // GodSong.HC:121
                         try tick(t)
-                        let t23: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t23: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t23, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t23, (fp &+ 48))
                     case 5:
                         ln = 124 // GodSong.HC:124
                         if (l88_last_duration != 1) {
@@ -340,23 +340,23 @@ public final class N_Adam_God_GodSong: NativeModule {
                         }
                         ln = 126 // GodSong.HC:126
                         try tick(t)
-                        let t25: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t25: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t25, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t25, (fp &+ 48))
                         ln = 127 // GodSong.HC:127
                         let t26: Int64 = try ld8((fp &+ 48))
                         try st8((fp &+ 48), (t26 &+ 1))
                         try st1((l32_buf &+ t26), 115)
                         ln = 128 // GodSong.HC:128
                         try tick(t)
-                        let t27: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t27: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t27, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t27, (fp &+ 48))
                         ln = 129 // GodSong.HC:129
                         try tick(t)
-                        let t28: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t28: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t28, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t28, (fp &+ 48))
                         ln = 130 // GodSong.HC:130
                         l80_duration = 3
                     case 6:
@@ -369,23 +369,23 @@ public final class N_Adam_God_GodSong: NativeModule {
                         }
                         ln = 135 // GodSong.HC:135
                         try tick(t)
-                        let t30: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t30: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t30, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t30, (fp &+ 48))
                         ln = 136 // GodSong.HC:136
                         try tick(t)
-                        let t31: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t31: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t31, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t31, (fp &+ 48))
                         ln = 137 // GodSong.HC:137
                         let t32: Int64 = try ld8((fp &+ 48))
                         try st8((fp &+ 48), (t32 &+ 1))
                         try st1((l32_buf &+ t32), 101)
                         ln = 138 // GodSong.HC:138
                         try tick(t)
-                        let t33: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t33: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t33, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t33, (fp &+ 48))
                         ln = 139 // GodSong.HC:139
                         l80_duration = 1
                     case 3:
@@ -398,24 +398,24 @@ public final class N_Adam_God_GodSong: NativeModule {
                         }
                         ln = 144 // GodSong.HC:144
                         try tick(t)
-                        let t35: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t35: Int64 = try P.f692_GodBits(t, 4, 0)
                         l56_k = t35
                         ln = 145 // GodSong.HC:145
                         try tick(t)
-                        let t36: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t36: Int64 = try P.f692_GodBits(t, 4, 0)
                         l72_k2 = t36
                         ln = 146 // GodSong.HC:146
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, l56_k, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, l56_k, (fp &+ 48))
                         ln = 147 // GodSong.HC:147
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, l72_k2, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, l72_k2, (fp &+ 48))
                         ln = 148 // GodSong.HC:148
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, l56_k, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, l56_k, (fp &+ 48))
                         ln = 149 // GodSong.HC:149
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, l72_k2, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, l72_k2, (fp &+ 48))
                     default:
                         ln = 152 // GodSong.HC:152
                         if (l88_last_duration != 0) {
@@ -426,9 +426,9 @@ public final class N_Adam_God_GodSong: NativeModule {
                         }
                         ln = 154 // GodSong.HC:154
                         try tick(t)
-                        let t38: Int64 = try P.f687_GodBits(t, 4, 0)
+                        let t38: Int64 = try P.f692_GodBits(t, 4, 0)
                         try tick(t)
-                        try f704_InsNote(t, fp, l32_buf, t38, (fp &+ 48))
+                        try f709_InsNote(t, fp, l32_buf, t38, (fp &+ 48))
                     }
                 }
                 ln = 156 // GodSong.HC:156
@@ -458,7 +458,7 @@ public final class N_Adam_God_GodSong: NativeModule {
     }
 
     /// HolyC GodSong (GodSong.HC:164)
-    public final func f709_GodSong(_ t: HTask) throws {
+    public final func f714_GodSong(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -466,16 +466,16 @@ public final class N_Adam_God_GodSong: NativeModule {
             var l8_st2: Int64 = 0
             ln = 166 // GodSong.HC:166
             try tick(t)
-            let t0: Int64 = try f708_GodSongStr(t)
+            let t0: Int64 = try f713_GodSongStr(t)
             l0_st1 = t0
             try tick(t)
-            let t1: Int64 = try f708_GodSongStr(t)
+            let t1: Int64 = try f713_GodSongStr(t)
             l8_st2 = t1
             ln = 167 // GodSong.HC:167
             if ((l0_st1 != 0) && (l8_st2 != 0)) {
                 ln = 168 // GodSong.HC:168
                 try tick(t)
-                let t2: Int64 = try P.f602_DocPut(t, 0)
+                let t2: Int64 = try P.f607_DocPut(t, 0)
                 try tick(t)
                 let vb0 = try push4(t, l0_st1, l0_st1, l8_st2, l8_st2)
                 _ = try P.f29_DocPrint(t, t2, s3, vb0, 4)
@@ -491,7 +491,7 @@ public final class N_Adam_God_GodSong: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodSong.HC#4 (GodSong.HC:1)
-    @discardableResult public final func f710_init_C__Adam_God_GodSong_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Adam_God_GodSong_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -503,20 +503,20 @@ public final class N_Adam_God_GodSong: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Adam_God_GodSong_HC_0(t)
-        case 704: try f704_InsNote(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: return try f705_init_C__Adam_God_GodSong_HC_1(t)
-        case 706: return try f706_init_C__Adam_God_GodSong_HC_2(t)
-        case 707: return try f707_init_C__Adam_God_GodSong_HC_3(t)
-        case 708: return try f708_GodSongStr(t)
-        case 709: try f709_GodSong(t); return 0
-        case 710: return try f710_init_C__Adam_God_GodSong_HC_4(t)
+        case 708: return try f708_init_C__Adam_God_GodSong_HC_0(t)
+        case 709: try f709_InsNote(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: return try f710_init_C__Adam_God_GodSong_HC_1(t)
+        case 711: return try f711_init_C__Adam_God_GodSong_HC_2(t)
+        case 712: return try f712_init_C__Adam_God_GodSong_HC_3(t)
+        case 713: return try f713_GodSongStr(t)
+        case 714: try f714_GodSong(t); return 0
+        case 715: return try f715_init_C__Adam_God_GodSong_HC_4(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Adam/God/GodSong.HC#0", 704: "InsNote", 705: "$init:C:/Adam/God/GodSong.HC#1", 706: "$init:C:/Adam/God/GodSong.HC#2", 707: "$init:C:/Adam/God/GodSong.HC#3", 708: "GodSongStr", 709: "GodSong", 710: "$init:C:/Adam/God/GodSong.HC#4"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Adam/God/GodSong.HC#0", 709: "InsNote", 710: "$init:C:/Adam/God/GodSong.HC#1", 711: "$init:C:/Adam/God/GodSong.HC#2", 712: "$init:C:/Adam/God/GodSong.HC#3", 713: "GodSongStr", 714: "GodSong", 715: "$init:C:/Adam/God/GodSong.HC#4"]
     private static let FILES: [String] = ["C:/Adam/God/GodSong.HC"]
     public override var files: [String] { N_Adam_God_GodSong.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_God_GodSong.DEFINED.contains(index) }

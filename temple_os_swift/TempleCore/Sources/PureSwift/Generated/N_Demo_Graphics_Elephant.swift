@@ -14,6 +14,7 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
     public let n_Free: Int
     public let n_Print: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_tS: Int
     /** binary literal, 246 bytes */ public var b0: Int64 = 0
     /** binary literal, 282 bytes */ public var b1: Int64 = 0
@@ -35,6 +36,7 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
         n_Free = rt.vm.natives.find("Free")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
     }
@@ -59,7 +61,7 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
     }
 
     /// HolyC DrawIt (Elephant.HC:163)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -67,27 +69,22 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
             var p1_dc: Int64 = a1
             var l16_tmps: Int64 = 0
             ln = 166 // Elephant.HC:166
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 100, (ld8((p0_task &+ 248)) &- 60), 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 100, (ld8((p0_task &+ 248)) &- 60), 0, b0, 0))
             ln = 167 // Elephant.HC:167
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 194, (ld8((p0_task &+ 248)) &- 140), 0, b1, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 194, (ld8((p0_task &+ 248)) &- 140), 0, b1, 0))
             ln = 168 // Elephant.HC:168
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 400, (ld8((p0_task &+ 248)) &- 10), 0, b2, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 400, (ld8((p0_task &+ 248)) &- 10), 0, b2, 0))
             ln = 169 // Elephant.HC:169
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 50, (ld8((p0_task &+ 248)) &- 160), 0, b3, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 50, (ld8((p0_task &+ 248)) &- 160), 0, b3, 0))
             ln = 170 // Elephant.HC:170
             let t0: Double = d(try nat(t, n_tS, push0(t)))
             try tick(t)
-            let t1: Double = try P.f484_Tri(t, t0, 2.0)
+            let t1: Double = try P.f489_Tri(t, t0, 2.0)
             try tick(t)
-            let t2: Int64 = try P.f448_SpriteInterpolate(t, t1, b5, b4)
+            let t2: Int64 = try P.f453_SpriteInterpolate(t, t1, b5, b4)
             l16_tmps = t2
             ln = 171 // Elephant.HC:171
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 0, ld8((p0_task &+ 248)), 0, l16_tmps, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 0, ld8((p0_task &+ 248)), 0, l16_tmps, 0))
             ln = 172 // Elephant.HC:172
             _ = try nat(t, n_Free, try push1(t, l16_tmps))
             t.depth -= 1
@@ -96,30 +93,30 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
     }
 
     /// HolyC SongTask (Elephant.HC:175)
-    public final func f704_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 177 // Elephant.HC:177
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 178 // Elephant.HC:178
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 179 // Elephant.HC:179
             loop0: while (1 != 0) {
                 ln = 180 // Elephant.HC:180
                 try tick(t)
-                try P.f494_Play(t, s0, 0)
+                try P.f499_Play(t, s0, 0)
                 ln = 181 // Elephant.HC:181
                 try tick(t)
-                try P.f494_Play(t, s1, 0)
+                try P.f499_Play(t, s1, 0)
                 ln = 182 // Elephant.HC:182
                 try tick(t)
-                try P.f494_Play(t, s2, 0)
+                try P.f499_Play(t, s2, 0)
                 ln = 183 // Elephant.HC:183
                 try tick(t)
-                try P.f494_Play(t, s3, 0)
+                try P.f499_Play(t, s3, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -128,7 +125,7 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
     }
 
     /// HolyC Main (Elephant.HC:187)
-    public final func f705_Main(_ t: HTask) throws {
+    public final func f710_Main(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -136,10 +133,10 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 190 // Elephant.HC:190
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 191 // Elephant.HC:191
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065856, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 192 // Elephant.HC:192
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
@@ -157,7 +154,7 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
             _ = try nat(t, n_Print, try push2(t, s5, 10))
             ln = 198 // Elephant.HC:198
             try tick(t)
-            _ = try P.f625_View(t)
+            _ = try P.f630_View(t)
             ln = 199 // Elephant.HC:199
             try tick(t)
             try P.f228_SettingsPop(t, 0, 0)
@@ -167,13 +164,13 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Elephant.HC#0 (Elephant.HC:202)
-    @discardableResult public final func f706_init_C__Demo_Graphics_Elephant_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Graphics_Elephant_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 202 // Elephant.HC:202
             try tick(t)
-            try f705_Main(t)
+            try f710_Main(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Elephant.HC#0", ln) }
@@ -182,16 +179,16 @@ public final class N_Demo_Graphics_Elephant: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_Main(t); return 0
-        case 706: return try f706_init_C__Demo_Graphics_Elephant_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_Main(t); return 0
+        case 711: return try f711_init_C__Demo_Graphics_Elephant_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "SongTask", 705: "Main", 706: "$init:C:/Demo/Graphics/Elephant.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "SongTask", 710: "Main", 711: "$init:C:/Demo/Graphics/Elephant.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Elephant.HC"]
     public override var files: [String] { N_Demo_Graphics_Elephant.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Elephant.DEFINED.contains(index) }

@@ -34,7 +34,7 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Prompt (Exceptions.HC:6) */
-    fun f703_Prompt(t: Task, a0: Long): Long {
+    fun f708_Prompt(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -52,7 +52,7 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC D1 (Exceptions.HC:12) */
-    fun f704_D1(t: Task) {
+    fun f709_D1(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -60,13 +60,13 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             nat(t, n_Print, push1(t, s1))
             ln = 15 // Exceptions.HC:15
             tick(t)
-            val t0: Long = f703_Prompt(t, 1L)
+            val t0: Long = f708_Prompt(t, 1L)
             if ((t0 != 0L)) {
                 nat(t, n_throw, push2(t, 54376138370896L, 0L))
             }
             ln = 16 // Exceptions.HC:16
             tick(t)
-            val t1: Long = f703_Prompt(t, 2L)
+            val t1: Long = f708_Prompt(t, 2L)
             if ((t1 != 0L)) {
                 nat(t, n_throw, push2(t, 55475649998672L, 0L))
             }
@@ -76,7 +76,7 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC D2 (Exceptions.HC:19) */
-    fun f705_D2(t: Task) {
+    fun f710_D2(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -88,10 +88,10 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             try {
                 ln = 23 // Exceptions.HC:23
                 tick(t)
-                f704_D1(t)
+                f709_D1(t)
                 ln = 24 // Exceptions.HC:24
                 tick(t)
-                val t0: Long = f703_Prompt(t, 4L)
+                val t0: Long = f708_Prompt(t, 4L)
                 if ((t0 != 0L)) {
                     nat(t, n_throw, push2(t, 57674673254224L, 0L))
                 }
@@ -116,7 +116,7 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Demo (Exceptions.HC:35) */
-    fun f706_Demo(t: Task) {
+    fun f711_Demo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -126,10 +126,10 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             try {
                 ln = 38 // Exceptions.HC:38
                 tick(t)
-                f705_D2(t)
+                f710_D2(t)
                 ln = 39 // Exceptions.HC:39
                 tick(t)
-                val t0: Long = f703_Prompt(t, 3L)
+                val t0: Long = f708_Prompt(t, 3L)
                 if ((t0 != 0L)) {
                     nat(t, n_throw, push2(t, 56575161626448L, 0L))
                 }
@@ -149,13 +149,13 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Demo/Exceptions.HC#0 (Exceptions.HC:47) */
-    fun f707_init_C__Demo_Exceptions_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_Exceptions_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 47 // Exceptions.HC:47
             tick(t)
-            f706_Demo(t)
+            f711_Demo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Exceptions.HC#0", ln) }
@@ -164,11 +164,11 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_Prompt(t, (if (n > 0) st[base + 0] else 0L))
-            704 -> { f704_D1(t); 0L }
-            705 -> { f705_D2(t); 0L }
-            706 -> { f706_Demo(t); 0L }
-            707 -> f707_init_C__Demo_Exceptions_HC_0(t)
+            708 -> f708_Prompt(t, (if (n > 0) st[base + 0] else 0L))
+            709 -> { f709_D1(t); 0L }
+            710 -> { f710_D2(t); 0L }
+            711 -> { f711_Demo(t); 0L }
+            712 -> f712_init_C__Demo_Exceptions_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -180,7 +180,7 @@ class N_Demo_Exceptions(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("Prompt", "D1", "D2", "Demo", "\$init:C:/Demo/Exceptions.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Exceptions.HC")
     }

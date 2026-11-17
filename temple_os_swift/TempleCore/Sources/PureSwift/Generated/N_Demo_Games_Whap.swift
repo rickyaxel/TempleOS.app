@@ -51,7 +51,7 @@ public final class N_Demo_Games_Whap: NativeModule {
     }
 
     /// HolyC DrawIt (Whap.HC:13)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -72,7 +72,7 @@ public final class N_Demo_Games_Whap: NativeModule {
             ln = 20 // Whap.HC:20
             try tick(t)
             let vb0 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s0, vb0, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s0, vb0, 0)
             t.sp = vb0
             ln = 21 // Whap.HC:21
             _ = try nat(t, n_GrRect, try push(t, p1_dc, (l24_cx &- 10), (l32_cy &- 10), 20, 20))
@@ -84,13 +84,13 @@ public final class N_Demo_Games_Whap: NativeModule {
             try st4((p1_dc &+ 160), 14)
             ln = 25 // Whap.HC:25
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, f2i(ldf((g_balls &+ 56))), f2i(ldf((g_balls &+ 64))), ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((p0_task &+ 232))) &- ld8((p0_task &+ 264))), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, f2i(ldf((g_balls &+ 56))), f2i(ldf((g_balls &+ 64))), ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((p0_task &+ 232))) &- ld8((p0_task &+ 264))), 1, 0)
             ln = 28 // Whap.HC:28
             l16_i = 0
             loop0: while (l16_i < 3) {
                 ln = 29 // Whap.HC:29
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, f2i(ldf((ld8(((g_springs &+ (l16_i &* 80)) &+ 16)) &+ 56))), f2i(ldf((ld8(((g_springs &+ (l16_i &* 80)) &+ 16)) &+ 64))), f2i(ldf((ld8(((g_springs &+ (l16_i &* 80)) &+ 24)) &+ 56))), f2i(ldf((ld8(((g_springs &+ (l16_i &* 80)) &+ 24)) &+ 64))), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, f2i(ldf((ld8(((g_springs &+ (l16_i &* 80)) &+ 16)) &+ 56))), f2i(ldf((ld8(((g_springs &+ (l16_i &* 80)) &+ 16)) &+ 64))), f2i(ldf((ld8(((g_springs &+ (l16_i &* 80)) &+ 24)) &+ 56))), f2i(ldf((ld8(((g_springs &+ (l16_i &* 80)) &+ 24)) &+ 64))), 1, 0)
                 ln = 28 // Whap.HC:28
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -99,15 +99,15 @@ public final class N_Demo_Games_Whap: NativeModule {
             try st4((p1_dc &+ 160), 11)
             ln = 33 // Whap.HC:33
             try tick(t)
-            _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf((g_balls &+ 56))), f2i(ldf((g_balls &+ 64))), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf((g_balls &+ 56))), f2i(ldf((g_balls &+ 64))), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 34 // Whap.HC:34
             try tick(t)
-            _ = try P.f387_GrFloodFill(t, p1_dc, f2i(ldf((g_balls &+ 56))), f2i(ldf((g_balls &+ 64))), 1, 0, 0)
+            _ = try P.f388_GrFloodFill(t, p1_dc, f2i(ldf((g_balls &+ 56))), f2i(ldf((g_balls &+ 64))), 1, 0, 0)
             ln = 35 // Whap.HC:35
             try st4((p1_dc &+ 160), 0)
             ln = 36 // Whap.HC:36
             try tick(t)
-            _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf((g_balls &+ 56))), f2i(ldf((g_balls &+ 64))), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf((g_balls &+ 56))), f2i(ldf((g_balls &+ 64))), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 38 // Whap.HC:38
             l16_i = 1
             loop2: while (l16_i < 7) {
@@ -115,10 +115,10 @@ public final class N_Demo_Games_Whap: NativeModule {
                 try st4((p1_dc &+ 160), 13)
                 ln = 40 // Whap.HC:40
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 56))), f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 64))), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 56))), f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 64))), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 41 // Whap.HC:41
                 try tick(t)
-                _ = try P.f387_GrFloodFill(t, p1_dc, f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 56))), f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 64))), 1, 0, 0)
+                _ = try P.f388_GrFloodFill(t, p1_dc, f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 56))), f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 64))), 1, 0, 0)
                 ln = 42 // Whap.HC:42
                 var r0: Bool = false
                 let t1: Double = Double(((l24_cx &- 10) &- 5))
@@ -152,7 +152,7 @@ public final class N_Demo_Games_Whap: NativeModule {
                 try st4((p1_dc &+ 160), 0)
                 ln = 46 // Whap.HC:46
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 56))), f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 64))), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 56))), f2i(ldf(((g_balls &+ (l16_i &* 104)) &+ 64))), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 38 // Whap.HC:38
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -171,7 +171,7 @@ public final class N_Demo_Games_Whap: NativeModule {
     }
 
     /// HolyC MyDerivative (Whap.HC:54)
-    public final func f704_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -243,7 +243,7 @@ public final class N_Demo_Games_Whap: NativeModule {
                         if try ((p1_t - ldf(g_collision_t)) > 0.05) {
                             ln = 83 // Whap.HC:83
                             try tick(t)
-                            _ = try P.f499_Noise(t, 50, 102.0, 105.0)
+                            _ = try P.f504_Noise(t, 50, 102.0, 105.0)
                             ln = 84 // Whap.HC:84
                             try st8(g_collision_t, bits(p1_t))
                         }
@@ -337,7 +337,7 @@ public final class N_Demo_Games_Whap: NativeModule {
     }
 
     /// HolyC Whap (Whap.HC:107)
-    public final func f705_Whap(_ t: HTask) throws {
+    public final func f710_Whap(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -345,7 +345,7 @@ public final class N_Demo_Games_Whap: NativeModule {
             var l8_ode: Int64 = 0
             ln = 110 // Whap.HC:110
             try tick(t)
-            let t0: Int64 = try P.f453_ODENew(t, 0, 0.01, 1)
+            let t0: Int64 = try P.f458_ODENew(t, 0, 0.01, 1)
             l8_ode = t0
             ln = 112 // Whap.HC:112
             try tick(t)
@@ -360,9 +360,9 @@ public final class N_Demo_Games_Whap: NativeModule {
             try P.f220_WinMax(t, 0)
             ln = 117 // Whap.HC:117
             try tick(t)
-            _ = try P.f507_MenuPush(t, s1)
+            _ = try P.f512_MenuPush(t, s1)
             ln = 123 // Whap.HC:123
-            try st8((l8_ode &+ 304), 9223090561878065856)
+            try st8((l8_ode &+ 304), 9223090561878065861)
             ln = 124 // Whap.HC:124
             try st8((l8_ode &+ 80), bits(0.002))
             ln = 125 // Whap.HC:125
@@ -459,7 +459,7 @@ public final class N_Demo_Games_Whap: NativeModule {
             ln = 164 // Whap.HC:164
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 165 // Whap.HC:165
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 166 // Whap.HC:166
             _ = try nat(t, n_GetChar, try push3(t, 0, 1, 0))
             ln = 167 // Whap.HC:167
@@ -470,23 +470,23 @@ public final class N_Demo_Games_Whap: NativeModule {
             try P.f155_QueRem(t, l8_ode)
             ln = 169 // Whap.HC:169
             try tick(t)
-            try P.f455_ODEDel(t, l8_ode)
+            try P.f460_ODEDel(t, l8_ode)
             ln = 170 // Whap.HC:170
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Whap", ln) }
     }
 
     /// HolyC $init:C:/Demo/Games/Whap.HC#0 (Whap.HC:173)
-    @discardableResult public final func f706_init_C__Demo_Games_Whap_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_Whap_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 173 // Whap.HC:173
             try tick(t)
-            try f705_Whap(t)
+            try f710_Whap(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Whap.HC#0", ln) }
@@ -495,16 +495,16 @@ public final class N_Demo_Games_Whap: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: try f705_Whap(t); return 0
-        case 706: return try f706_init_C__Demo_Games_Whap_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: try f710_Whap(t); return 0
+        case 711: return try f711_init_C__Demo_Games_Whap_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "MyDerivative", 705: "Whap", 706: "$init:C:/Demo/Games/Whap.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "MyDerivative", 710: "Whap", 711: "$init:C:/Demo/Games/Whap.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/Whap.HC"]
     public override var files: [String] { N_Demo_Games_Whap.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Whap.DEFINED.contains(index) }

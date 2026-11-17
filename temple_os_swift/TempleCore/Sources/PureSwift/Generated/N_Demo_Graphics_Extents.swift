@@ -11,6 +11,7 @@ public final class N_Demo_Graphics_Extents: NativeModule {
     public let P: Prelude
     public let n_DocClear: Int
     public let n_Print: Int
+    public let n_Sprite3: Int
     /** binary literal, 156 bytes */ public var b0: Int64 = 0
     /** binary literal, 156 bytes */ public var b1: Int64 = 0
     /** "X: %d to %d." */ public var s0: Int64 = 0
@@ -20,6 +21,7 @@ public final class N_Demo_Graphics_Extents: NativeModule {
         self.P = P
         n_DocClear = rt.vm.natives.find("DocClear")!.index
         n_Print = rt.vm.natives.find("Print")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -35,7 +37,7 @@ public final class N_Demo_Graphics_Extents: NativeModule {
     }
 
     /// HolyC Extents (Extents.HC:7)
-    public final func f703_Extents(_ t: HTask) throws {
+    public final func f708_Extents(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -62,24 +64,23 @@ public final class N_Demo_Graphics_Extents: NativeModule {
             ln = 24 // Extents.HC:24
             try st4((l0_dc &+ 228), 3)
             ln = 25 // Extents.HC:25
-            try tick(t)
-            try P.f440_Sprite3(t, l0_dc, 40, 240, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, l0_dc, 40, 240, 0, b0, 0))
             ln = 27 // Extents.HC:27
             try st4((l0_dc &+ 160), 12)
             ln = 28 // Extents.HC:28
             try st4((l0_dc &+ 228), 1)
             ln = 31 // Extents.HC:31
             try tick(t)
-            _ = try P.f396_GrLine(t, l0_dc, (ld8((l0_dc &+ 320)) &- l40_h), (ld8((l0_dc &+ 336)) &- l48_v), (ld8((l0_dc &+ 328)) &- l40_h), (ld8((l0_dc &+ 336)) &- l48_v), 1, 0)
+            _ = try P.f397_GrLine(t, l0_dc, (ld8((l0_dc &+ 320)) &- l40_h), (ld8((l0_dc &+ 336)) &- l48_v), (ld8((l0_dc &+ 328)) &- l40_h), (ld8((l0_dc &+ 336)) &- l48_v), 1, 0)
             ln = 32 // Extents.HC:32
             try tick(t)
-            _ = try P.f396_GrLine(t, l0_dc, (ld8((l0_dc &+ 320)) &- l40_h), (ld8((l0_dc &+ 336)) &- l48_v), (ld8((l0_dc &+ 320)) &- l40_h), (ld8((l0_dc &+ 344)) &- l48_v), 1, 0)
+            _ = try P.f397_GrLine(t, l0_dc, (ld8((l0_dc &+ 320)) &- l40_h), (ld8((l0_dc &+ 336)) &- l48_v), (ld8((l0_dc &+ 320)) &- l40_h), (ld8((l0_dc &+ 344)) &- l48_v), 1, 0)
             ln = 33 // Extents.HC:33
             try tick(t)
-            _ = try P.f396_GrLine(t, l0_dc, (ld8((l0_dc &+ 328)) &- l40_h), (ld8((l0_dc &+ 344)) &- l48_v), (ld8((l0_dc &+ 328)) &- l40_h), (ld8((l0_dc &+ 336)) &- l48_v), 1, 0)
+            _ = try P.f397_GrLine(t, l0_dc, (ld8((l0_dc &+ 328)) &- l40_h), (ld8((l0_dc &+ 344)) &- l48_v), (ld8((l0_dc &+ 328)) &- l40_h), (ld8((l0_dc &+ 336)) &- l48_v), 1, 0)
             ln = 34 // Extents.HC:34
             try tick(t)
-            _ = try P.f396_GrLine(t, l0_dc, (ld8((l0_dc &+ 328)) &- l40_h), (ld8((l0_dc &+ 344)) &- l48_v), (ld8((l0_dc &+ 320)) &- l40_h), (ld8((l0_dc &+ 344)) &- l48_v), 1, 0)
+            _ = try P.f397_GrLine(t, l0_dc, (ld8((l0_dc &+ 328)) &- l40_h), (ld8((l0_dc &+ 344)) &- l48_v), (ld8((l0_dc &+ 320)) &- l40_h), (ld8((l0_dc &+ 344)) &- l48_v), 1, 0)
             ln = 36 // Extents.HC:36
             try tick(t)
             try P.f293_DCDel(t, l0_dc)
@@ -91,7 +92,7 @@ public final class N_Demo_Graphics_Extents: NativeModule {
             try P.f286_DCFill(t, 0, 255)
             ln = 40 // Extents.HC:40
             try tick(t)
-            try P.f446_SpriteExtents(t, b1, (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32))
+            try P.f451_SpriteExtents(t, b1, (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32))
             ln = 41 // Extents.HC:41
             _ = try nat(t, n_Print, try push3(t, s0, ld8((fp &+ 8)), ld8((fp &+ 16))))
             ln = 42 // Extents.HC:42
@@ -103,13 +104,13 @@ public final class N_Demo_Graphics_Extents: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Extents.HC#0 (Extents.HC:45)
-    @discardableResult public final func f704_init_C__Demo_Graphics_Extents_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_Extents_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 45 // Extents.HC:45
             try tick(t)
-            try f703_Extents(t)
+            try f708_Extents(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Extents.HC#0", ln) }
@@ -118,14 +119,14 @@ public final class N_Demo_Graphics_Extents: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Extents(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_Extents_HC_0(t)
+        case 708: try f708_Extents(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_Extents_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "Extents", 704: "$init:C:/Demo/Graphics/Extents.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "Extents", 709: "$init:C:/Demo/Graphics/Extents.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Extents.HC"]
     public override var files: [String] { N_Demo_Graphics_Extents.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Extents.DEFINED.contains(index) }

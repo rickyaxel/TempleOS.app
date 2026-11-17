@@ -22,6 +22,7 @@ public final class N_Apps_Span_Run: NativeModule {
     public let n_FileWrite: Int
     public let n_Free: Int
     public let n_GetMsg: Int
+    public let n_GrLine3: Int
     public let n_MAlloc: Int
     public let n_MemCpy: Int
     public let n_Print: Int
@@ -72,6 +73,7 @@ public final class N_Apps_Span_Run: NativeModule {
         n_FileWrite = rt.vm.natives.find("FileWrite")!.index
         n_Free = rt.vm.natives.find("Free")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_MAlloc = rt.vm.natives.find("MAlloc")!.index
         n_MemCpy = rt.vm.natives.find("MemCpy")!.index
         n_Print = rt.vm.natives.find("Print")!.index
@@ -121,7 +123,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Span/Run.HC#0 (Run.HC:1)
-    @discardableResult public final func f703_init_C__Apps_Span_Run_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Span_Run_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -135,7 +137,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Span/Run.HC#1 (Run.HC:3)
-    @discardableResult public final func f704_init_C__Apps_Span_Run_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_Span_Run_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -149,7 +151,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Span/Run.HC#2 (Run.HC:25)
-    @discardableResult public final func f705_init_C__Apps_Span_Run_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Apps_Span_Run_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -159,7 +161,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Span/Run.HC#3 (Run.HC:38)
-    @discardableResult public final func f706_init_C__Apps_Span_Run_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Apps_Span_Run_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -169,7 +171,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Span/Run.HC#4 (Run.HC:40)
-    @discardableResult public final func f707_init_C__Apps_Span_Run_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Apps_Span_Run_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -183,7 +185,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC PlaceMass (SpanMain.HC:71)
-    @discardableResult public final func f708_PlaceMass(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f713_PlaceMass(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -219,7 +221,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SpanTime (SpanMain.HC:1)
-    @discardableResult public final func f709_SpanTime(_ t: HTask) throws -> Double {
+    @discardableResult public final func f714_SpanTime(_ t: HTask) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -243,7 +245,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC MyDerivative (SpanDerive.HC:1)
-    public final func f710_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f715_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -351,7 +353,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SpanBridge1Init (SpanBridge.HC:20)
-    public final func f711_SpanBridge1Init(_ t: HTask, _ a0: Int64) throws {
+    public final func f716_SpanBridge1Init(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -360,49 +362,49 @@ public final class N_Apps_Span_Run: NativeModule {
             var l8_i: Int64 = 0
             ln = 5242905 // SpanBridge.HC:25
             try tick(t)
-            let t0: Int64 = try f708_PlaceMass(t, 608, 328)
+            let t0: Int64 = try f713_PlaceMass(t, 608, 328)
             l16_tmpm = t0
             ln = 5242906 // SpanBridge.HC:26
             let t1: Int64 = (l16_tmpm &+ 32)
             try st4(t1, (ld4u(t1) | 2))
             ln = 5242907 // SpanBridge.HC:27
             try tick(t)
-            let t2: Int64 = try f708_PlaceMass(t, 632, 328)
+            let t2: Int64 = try f713_PlaceMass(t, 632, 328)
             l16_tmpm = t2
             ln = 5242908 // SpanBridge.HC:28
             let t3: Int64 = (l16_tmpm &+ 32)
             try st4(t3, (ld4u(t3) | 2))
             ln = 5242909 // SpanBridge.HC:29
             try tick(t)
-            let t4: Int64 = try f708_PlaceMass(t, 608, 360)
+            let t4: Int64 = try f713_PlaceMass(t, 608, 360)
             l16_tmpm = t4
             ln = 5242910 // SpanBridge.HC:30
             let t5: Int64 = (l16_tmpm &+ 32)
             try st4(t5, (ld4u(t5) | 2))
             ln = 5242911 // SpanBridge.HC:31
             try tick(t)
-            let t6: Int64 = try f708_PlaceMass(t, 32, 328)
+            let t6: Int64 = try f713_PlaceMass(t, 32, 328)
             l16_tmpm = t6
             ln = 5242912 // SpanBridge.HC:32
             let t7: Int64 = (l16_tmpm &+ 32)
             try st4(t7, (ld4u(t7) | 2))
             ln = 5242913 // SpanBridge.HC:33
             try tick(t)
-            let t8: Int64 = try f708_PlaceMass(t, 8, 328)
+            let t8: Int64 = try f713_PlaceMass(t, 8, 328)
             l16_tmpm = t8
             ln = 5242914 // SpanBridge.HC:34
             let t9: Int64 = (l16_tmpm &+ 32)
             try st4(t9, (ld4u(t9) | 2))
             ln = 5242915 // SpanBridge.HC:35
             try tick(t)
-            let t10: Int64 = try f708_PlaceMass(t, 32, 360)
+            let t10: Int64 = try f713_PlaceMass(t, 32, 360)
             l16_tmpm = t10
             ln = 5242916 // SpanBridge.HC:36
             let t11: Int64 = (l16_tmpm &+ 32)
             try st4(t11, (ld4u(t11) | 2))
             ln = 5242917 // SpanBridge.HC:37
             try tick(t)
-            let t12: Int64 = try f708_PlaceMass(t, 320, 416)
+            let t12: Int64 = try f713_PlaceMass(t, 320, 416)
             l16_tmpm = t12
             ln = 5242918 // SpanBridge.HC:38
             let t13: Int64 = (l16_tmpm &+ 32)
@@ -412,7 +414,7 @@ public final class N_Apps_Span_Run: NativeModule {
             loop0: while (l8_i < 8) {
                 ln = 5242921 // SpanBridge.HC:41
                 try tick(t)
-                let t14: Int64 = try f708_PlaceMass(t, (32 &+ divs(((l8_i &+ 1) &* 576), 9)), 328)
+                let t14: Int64 = try f713_PlaceMass(t, (32 &+ divs(((l8_i &+ 1) &* 576), 9)), 328)
                 l16_tmpm = t14
                 ln = 5242923 // SpanBridge.HC:43
                 try st8((l16_tmpm &+ 120), bits(((Double(l8_i) + 1.0) / 8.0)))
@@ -462,7 +464,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC AdjustLoads (SpanBridge.HC:63)
-    public final func f712_AdjustLoads(_ t: HTask, _ a0: Int64) throws {
+    public final func f717_AdjustLoads(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -474,7 +476,7 @@ public final class N_Apps_Span_Run: NativeModule {
             l8_tmpm = try ld8((p0_ode &+ 40))
             ln = 5242946 // SpanBridge.HC:66
             try tick(t)
-            let t0: Double = try f709_SpanTime(t)
+            let t0: Double = try f714_SpanTime(t)
             l24_tt = (t0 / 10.0)
             ln = 5242947 // SpanBridge.HC:67
             loop0: while (l8_tmpm != (p0_ode &+ 40)) {
@@ -511,17 +513,17 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SpanNew (SpanNew.HC:1)
-    @discardableResult public final func f713_SpanNew(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_SpanNew(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             var l0_ode: Int64 = 0
             ln = 6291459 // SpanNew.HC:3
             try tick(t)
-            let t0: Int64 = try P.f453_ODENew(t, 0, 1.0E-4, 3)
+            let t0: Int64 = try P.f458_ODENew(t, 0, 1.0E-4, 3)
             l0_ode = t0
             ln = 6291460 // SpanNew.HC:4
-            try st8((l0_ode &+ 304), 9223090561878065862)
+            try st8((l0_ode &+ 304), 9223090561878065867)
             ln = 6291461 // SpanNew.HC:5
             try st8((l0_ode &+ 80), bits(0.002))
             ln = 6291462 // SpanNew.HC:6
@@ -540,7 +542,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SpanDel (SpanNew.HC:12)
-    public final func f714_SpanDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f719_SpanDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -558,7 +560,7 @@ public final class N_Apps_Span_Run: NativeModule {
                 try P.f156_QueDel(t, (p0_ode &+ 56), 1)
                 ln = 6291474 // SpanNew.HC:18
                 try tick(t)
-                try P.f455_ODEDel(t, p0_ode)
+                try P.f460_ODEDel(t, p0_ode)
             }
             t.depth -= 1
             return
@@ -566,7 +568,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SpanSave (SpanNew.HC:25)
-    @discardableResult public final func f715_SpanSave(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f720_SpanSave(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -581,7 +583,7 @@ public final class N_Apps_Span_Run: NativeModule {
             var l48_tmps: Int64 = 0
             ln = 6291489 // SpanNew.HC:33
             try tick(t)
-            try P.f460_ODERenum(t, p0_ode)
+            try P.f465_ODERenum(t, p0_ode)
             ln = 6291490 // SpanNew.HC:34
             try st8((fp &+ 56), bits(1.0))
             ln = 6291491 // SpanNew.HC:35
@@ -649,7 +651,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SpanWrite (SpanNew.HC:67)
-    @discardableResult public final func f716_SpanWrite(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f721_SpanWrite(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -675,7 +677,7 @@ public final class N_Apps_Span_Run: NativeModule {
             if (t1 != 0) {
                 ln = 6291531 // SpanNew.HC:75
                 try tick(t)
-                let t2: Int64 = try f715_SpanSave(t, p0_ode, (fp &+ 24))
+                let t2: Int64 = try f720_SpanSave(t, p0_ode, (fp &+ 24))
                 l16_buf = t2
                 if (t2 != 0) {
                     ln = 6291532 // SpanNew.HC:76
@@ -700,7 +702,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SpanLoad (SpanNew.HC:85)
-    public final func f717_SpanLoad(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f722_SpanLoad(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -753,11 +755,11 @@ public final class N_Apps_Span_Run: NativeModule {
                 _ = try P.f153_QueIns(t, l32_tmps, ld8((p0_ode &+ 64)))
                 ln = 6291565 // SpanNew.HC:109
                 try tick(t)
-                let t2: Int64 = try P.f464_MassFindNum(t, p0_ode, ld4u((l32_tmps &+ 56)))
+                let t2: Int64 = try P.f469_MassFindNum(t, p0_ode, ld4u((l32_tmps &+ 56)))
                 try st8((l32_tmps &+ 16), t2)
                 ln = 6291566 // SpanNew.HC:110
                 try tick(t)
-                let t3: Int64 = try P.f464_MassFindNum(t, p0_ode, ld4u((l32_tmps &+ 60)))
+                let t3: Int64 = try P.f469_MassFindNum(t, p0_ode, ld4u((l32_tmps &+ 60)))
                 try st8((l32_tmps &+ 24), t3)
                 ln = 6291560 // SpanNew.HC:104
                 l16_i = (l16_i &+ 1)
@@ -770,7 +772,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SpanRead (SpanNew.HC:114)
-    @discardableResult public final func f718_SpanRead(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f723_SpanRead(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -806,7 +808,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC Cost (SpanMain.HC:9)
-    @discardableResult public final func f719_Cost(_ t: HTask, _ a0: Int64) throws -> Double {
+    @discardableResult public final func f724_Cost(_ t: HTask, _ a0: Int64) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -845,7 +847,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC DrawIt (SpanMain.HC:27)
-    public final func f720_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f725_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -864,8 +866,7 @@ public final class N_Apps_Span_Run: NativeModule {
                     ln = 3145764 // SpanMain.HC:36
                     try st4((p1_dc &+ 228), ld4s((l24_tmps &+ 140)))
                     ln = 3145765 // SpanMain.HC:37
-                    try tick(t)
-                    _ = try P.f406_GrLine3(t, p1_dc, f2i(ldf((ld8((l24_tmps &+ 16)) &+ 56))), f2i(ldf((ld8((l24_tmps &+ 16)) &+ 64))), 0, f2i(ldf((ld8((l24_tmps &+ 24)) &+ 56))), f2i(ldf((ld8((l24_tmps &+ 24)) &+ 64))), 0, 1, 0)
+                    _ = try nat(t, n_GrLine3, try push(t, p1_dc, f2i(ldf((ld8((l24_tmps &+ 16)) &+ 56))), f2i(ldf((ld8((l24_tmps &+ 16)) &+ 64))), 0, f2i(ldf((ld8((l24_tmps &+ 24)) &+ 56))), f2i(ldf((ld8((l24_tmps &+ 24)) &+ 64))), 0, 1, 0))
                 }
                 ln = 3145768 // SpanMain.HC:40
                 l24_tmps = try ld8(l24_tmps)
@@ -878,8 +879,7 @@ public final class N_Apps_Span_Run: NativeModule {
                 ln = 3145773 // SpanMain.HC:45
                 try st4((p1_dc &+ 228), 2)
                 ln = 3145774 // SpanMain.HC:46
-                try tick(t)
-                _ = try P.f406_GrLine3(t, p1_dc, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((p0_task &+ 232))) &- ld8((p0_task &+ 264))), 0, f2i(ldf((ld8(g_cursor_mass) &+ 56))), f2i(ldf((ld8(g_cursor_mass) &+ 64))), 0, 1, 0)
+                _ = try nat(t, n_GrLine3, try push(t, p1_dc, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), ((ld8((P.g_ms &+ 8)) &- ld8((p0_task &+ 232))) &- ld8((p0_task &+ 264))), 0, f2i(ldf((ld8(g_cursor_mass) &+ 56))), f2i(ldf((ld8(g_cursor_mass) &+ 64))), 0, 1, 0))
             }
             ln = 3145779 // SpanMain.HC:51
             l16_tmpm = try ld8((ld8(g_ode) &+ 40))
@@ -891,23 +891,23 @@ public final class N_Apps_Span_Run: NativeModule {
                     try st4((p1_dc &+ 160), 0)
                     ln = 3145783 // SpanMain.HC:55
                     try tick(t)
-                    _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), f2i(ldf((l16_tmpm &+ 104))), 1, 0.0, (2.0 * d(4614256656552045848)))
+                    _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), f2i(ldf((l16_tmpm &+ 104))), 1, 0.0, (2.0 * d(4614256656552045848)))
                     ln = 3145784 // SpanMain.HC:56
                     try tick(t)
-                    _ = try P.f387_GrFloodFill(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), 1, 0, 0)
+                    _ = try P.f388_GrFloodFill(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), 1, 0, 0)
                     ln = 3145785 // SpanMain.HC:57
                     try st4((p1_dc &+ 160), ld4u((l16_tmpm &+ 128)))
                     ln = 3145786 // SpanMain.HC:58
                     try tick(t)
-                    _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), f2i(ldf((l16_tmpm &+ 104))), 1, 0.0, (2.0 * d(4614256656552045848)))
+                    _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), f2i(ldf((l16_tmpm &+ 104))), 1, 0.0, (2.0 * d(4614256656552045848)))
                     ln = 3145787 // SpanMain.HC:59
                     try tick(t)
-                    _ = try P.f387_GrFloodFill(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), 1, 0, 0)
+                    _ = try P.f388_GrFloodFill(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), 1, 0, 0)
                     ln = 3145788 // SpanMain.HC:60
                     try st4((p1_dc &+ 160), 0)
                     ln = 3145789 // SpanMain.HC:61
                     try tick(t)
-                    _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), f2i(ldf((l16_tmpm &+ 104))), 1, 0.0, (2.0 * d(4614256656552045848)))
+                    _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), f2i(ldf((l16_tmpm &+ 104))), 1, 0.0, (2.0 * d(4614256656552045848)))
                 }
                 ln = 3145791 // SpanMain.HC:63
                 l16_tmpm = try ld8(l16_tmpm)
@@ -917,17 +917,17 @@ public final class N_Apps_Span_Run: NativeModule {
             try st4((p1_dc &+ 160), 0)
             ln = 3145795 // SpanMain.HC:67
             try tick(t)
-            let t0: Double = try f719_Cost(t, ld8(g_ode))
+            let t0: Double = try f724_Cost(t, ld8(g_ode))
             try tick(t)
             let vb3 = try push1(t, bits(t0))
-            _ = try P.f369_GrPrint(t, p1_dc, 90, 0, s9, vb3, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 90, 0, s9, vb3, 1)
             t.sp = vb3
             ln = 3145796 // SpanMain.HC:68
             try tick(t)
-            let t1: Double = try f709_SpanTime(t)
+            let t1: Double = try f714_SpanTime(t)
             try tick(t)
             let vb4 = try push1(t, bits(t1))
-            _ = try P.f369_GrPrint(t, p1_dc, 90, 8, s10, vb4, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 90, 8, s10, vb4, 1)
             t.sp = vb4
             t.depth -= 1
             return
@@ -935,7 +935,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC NullSpring (SpanMain.HC:85)
-    public final func f721_NullSpring(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
+    public final func f726_NullSpring(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -962,7 +962,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC MoveMass (SpanMain.HC:96)
-    public final func f722_MoveMass(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f727_MoveMass(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -988,11 +988,11 @@ public final class N_Apps_Span_Run: NativeModule {
                     if try ((ld4u((l24_tmps &+ 48)) & 2) != 0) {
                         ln = 3145835 // SpanMain.HC:107
                         try tick(t)
-                        try f721_NullSpring(t, l24_tmps, 0.99)
+                        try f726_NullSpring(t, l24_tmps, 0.99)
                     } else {
                         ln = 3145837 // SpanMain.HC:109
                         try tick(t)
-                        try f721_NullSpring(t, l24_tmps, 1.0)
+                        try f726_NullSpring(t, l24_tmps, 1.0)
                     }
                 }
                 ln = 3145839 // SpanMain.HC:111
@@ -1005,7 +1005,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC DelSpring (SpanMain.HC:115)
-    public final func f723_DelSpring(_ t: HTask, _ a0: Int64) throws {
+    public final func f728_DelSpring(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1021,7 +1021,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC DelMass (SpanMain.HC:121)
-    public final func f724_DelMass(_ t: HTask, _ a0: Int64) throws {
+    public final func f729_DelMass(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1038,7 +1038,7 @@ public final class N_Apps_Span_Run: NativeModule {
                 if try ((ld8((l8_tmps &+ 16)) == p0_tmpm) || (ld8((l8_tmps &+ 24)) == p0_tmpm)) {
                     ln = 3145856 // SpanMain.HC:128
                     try tick(t)
-                    try f723_DelSpring(t, l8_tmps)
+                    try f728_DelSpring(t, l8_tmps)
                 }
                 ln = 3145857 // SpanMain.HC:129
                 l8_tmps = l16_tmps1
@@ -1055,7 +1055,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC DrawSpring (SpanMain.HC:135)
-    public final func f725_DrawSpring(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f730_DrawSpring(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1087,15 +1087,14 @@ public final class N_Apps_Span_Run: NativeModule {
                 }
             }
             ln = 3145879 // SpanMain.HC:151
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, f2i(ldf((p1_tmpm &+ 56))), f2i(ldf((p1_tmpm &+ 64))), 0, p2_x, p3_y, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, f2i(ldf((p1_tmpm &+ 56))), f2i(ldf((p1_tmpm &+ 64))), 0, p2_x, p3_y, 0, 1, 0))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawSpring", ln) }
     }
 
     /// HolyC PlaceSpring (SpanMain.HC:154)
-    public final func f726_PlaceSpring(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f731_PlaceSpring(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1124,7 +1123,7 @@ public final class N_Apps_Span_Run: NativeModule {
                     try st8((l16_tmps &+ 128), bits((0.3 * 375.0)))
                     ln = 3145893 // SpanMain.HC:165
                     try tick(t)
-                    try f721_NullSpring(t, l16_tmps, 1.0)
+                    try f726_NullSpring(t, l16_tmps, 1.0)
                     ln = 3145894 // SpanMain.HC:166
                     try st4((l16_tmps &+ 136), 7)
                     ln = 3145895 // SpanMain.HC:167
@@ -1140,7 +1139,7 @@ public final class N_Apps_Span_Run: NativeModule {
                     try st8((l16_tmps &+ 128), bits((1.0 * 375.0)))
                     ln = 3145902 // SpanMain.HC:174
                     try tick(t)
-                    try f721_NullSpring(t, l16_tmps, 1.0)
+                    try f726_NullSpring(t, l16_tmps, 1.0)
                     ln = 3145903 // SpanMain.HC:175
                     try st4((l16_tmps &+ 136), 8)
                     ln = 3145904 // SpanMain.HC:176
@@ -1156,7 +1155,7 @@ public final class N_Apps_Span_Run: NativeModule {
                     try st8((l16_tmps &+ 128), bits((0.1 * 375.0)))
                     ln = 3145911 // SpanMain.HC:183
                     try tick(t)
-                    try f721_NullSpring(t, l16_tmps, 0.99)
+                    try f726_NullSpring(t, l16_tmps, 0.99)
                     ln = 3145912 // SpanMain.HC:184
                     try st4((l16_tmps &+ 136), 4)
                     ln = 3145913 // SpanMain.HC:185
@@ -1177,7 +1176,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC AnimateTask (SpanMain.HC:192)
-    public final func f727_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f732_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1210,7 +1209,7 @@ public final class N_Apps_Span_Run: NativeModule {
                 }
                 ln = 3145937 // SpanMain.HC:209
                 try tick(t)
-                try f712_AdjustLoads(t, ld8(g_ode))
+                try f717_AdjustLoads(t, ld8(g_ode))
                 ln = 3145938 // SpanMain.HC:210
                 _ = try nat(t, n_Refresh, try push2(t, 1, 0))
                 ln = 3145939 // SpanMain.HC:211
@@ -1223,7 +1222,7 @@ public final class N_Apps_Span_Run: NativeModule {
                             _ = try nat(t, n_Free, try push1(t, ld8(p0_a)))
                             ln = 3145943 // SpanMain.HC:215
                             try tick(t)
-                            let t1: Int64 = try f715_SpanSave(t, ld8(g_ode), 0)
+                            let t1: Int64 = try f720_SpanSave(t, ld8(g_ode), 0)
                             try st8(p0_a, t1)
                         }
                         ln = 3145945 // SpanMain.HC:217
@@ -1231,11 +1230,11 @@ public final class N_Apps_Span_Run: NativeModule {
                         try st8((p0_a &+ 16), bits(t2))
                         ln = 3145946 // SpanMain.HC:218
                         try tick(t)
-                        _ = try P.f454_ODEPause(t, ld8(g_ode), 0)
+                        _ = try P.f459_ODEPause(t, ld8(g_ode), 0)
                     } else {
                         ln = 3145948 // SpanMain.HC:220
                         try tick(t)
-                        _ = try P.f454_ODEPause(t, ld8(g_ode), 1)
+                        _ = try P.f459_ODEPause(t, ld8(g_ode), 1)
                         ln = 3145949 // SpanMain.HC:221
                         let t3: Int64 = (p0_a &+ 8)
                         let t5: Double = try ldf(t3)
@@ -1253,17 +1252,17 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC Init (SpanMain.HC:228)
-    public final func f728_Init(_ t: HTask, _ a0: Int64) throws {
+    public final func f733_Init(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_a: Int64 = a0
             ln = 3145958 // SpanMain.HC:230
             try tick(t)
-            try f714_SpanDel(t, ld8(g_ode))
+            try f719_SpanDel(t, ld8(g_ode))
             ln = 3145959 // SpanMain.HC:231
             try tick(t)
-            let t0: Int64 = try f713_SpanNew(t)
+            let t0: Int64 = try f718_SpanNew(t)
             try st8(g_ode, t0)
             ln = 3145961 // SpanMain.HC:233
             try st8(g_run_bttn, 0)
@@ -1273,11 +1272,11 @@ public final class N_Apps_Span_Run: NativeModule {
             if try (ld8(p0_a) != 0) {
                 ln = 3145965 // SpanMain.HC:237
                 try tick(t)
-                try f717_SpanLoad(t, ld8(g_ode), ld8(p0_a))
+                try f722_SpanLoad(t, ld8(g_ode), ld8(p0_a))
             } else {
                 ln = 3145967 // SpanMain.HC:239
                 try tick(t)
-                try f711_SpanBridge1Init(t, ld8(g_ode))
+                try f716_SpanBridge1Init(t, ld8(g_ode))
             }
             ln = 3145968 // SpanMain.HC:240
             try st8((p0_a &+ 8), bits(0.0))
@@ -1289,16 +1288,16 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC SongTask (SpanMain.HC:244)
-    public final func f729_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f734_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 3145974 // SpanMain.HC:246
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 3145975 // SpanMain.HC:247
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 3145976 // SpanMain.HC:248
             try st8((P.g_music &+ 56), bits(3.636))
             ln = 3145977 // SpanMain.HC:249
@@ -1307,16 +1306,16 @@ public final class N_Apps_Span_Run: NativeModule {
             loop0: while (1 != 0) {
                 ln = 3145979 // SpanMain.HC:251
                 try tick(t)
-                try P.f494_Play(t, s11, 0)
+                try P.f499_Play(t, s11, 0)
                 ln = 3145980 // SpanMain.HC:252
                 try tick(t)
-                try P.f494_Play(t, s11, 0)
+                try P.f499_Play(t, s11, 0)
                 ln = 3145981 // SpanMain.HC:253
                 try tick(t)
-                try P.f494_Play(t, s12, 0)
+                try P.f499_Play(t, s12, 0)
                 ln = 3145982 // SpanMain.HC:254
                 try tick(t)
-                try P.f494_Play(t, s12, 0)
+                try P.f499_Play(t, s12, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -1325,7 +1324,7 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC Span (SpanMain.HC:258)
-    public final func f730_Span(_ t: HTask) throws {
+    public final func f735_Span(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1361,17 +1360,17 @@ public final class N_Apps_Span_Run: NativeModule {
             _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
             ln = 3146001 // SpanMain.HC:273
             let t2: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065881, 0, s13, (-1), ld8(P.g_Fs), 0, 0))
+            let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065886, 0, s13, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t2, t1)
             ln = 3146003 // SpanMain.HC:275
             try tick(t)
-            let t3: Int64 = try P.f528_CtrlBttnNew(t, 0, 0, 80, (-1), 2, s14, g_run_colors, g_run_bttn)
+            let t3: Int64 = try P.f533_CtrlBttnNew(t, 0, 0, 80, (-1), 2, s14, g_run_colors, g_run_bttn)
             l48_bt_run = t3
             ln = 3146006 // SpanMain.HC:278
             let t4: Int64 = try nat(t, n_Define, try push1(t, s2))
             ln = 3146005 // SpanMain.HC:277
             try tick(t)
-            let t5: Int64 = try P.f528_CtrlBttnNew(t, 0, f2i((3.0 * 8.0)), 80, (-1), 6, t4, g_mode_colors, g_mode_bttn)
+            let t5: Int64 = try P.f533_CtrlBttnNew(t, 0, f2i((3.0 * 8.0)), 80, (-1), 6, t4, g_mode_colors, g_mode_bttn)
             l56_bt_mode = t5
             ln = 3146007 // SpanMain.HC:279
             try st8(g_a, 0)
@@ -1380,18 +1379,18 @@ public final class N_Apps_Span_Run: NativeModule {
             try st4(t6, (ld4u(t6) | 5242880))
             ln = 3146011 // SpanMain.HC:283
             try tick(t)
-            _ = try P.f507_MenuPush(t, s15)
+            _ = try P.f512_MenuPush(t, s15)
             ln = 3146031 // SpanMain.HC:303
             try st8(g_ode, 0)
             ln = 3146032 // SpanMain.HC:304
             try tick(t)
-            try f728_Init(t, g_a)
+            try f733_Init(t, g_a)
             ln = 3146033 // SpanMain.HC:305
             let t8: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t7: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065879, g_a, s16, (-1), ld8(P.g_Fs), 0, 0))
+            let t7: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065884, g_a, s16, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t8, t7)
             ln = 3146034 // SpanMain.HC:306
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065872)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065877)
             ln = 3146036 // SpanMain.HC:308
             try tick(t)
             _ = try P.f201_PopUpOk(t, s17, 0)
@@ -1424,45 +1423,45 @@ public final class N_Apps_Span_Run: NativeModule {
                                     case 0:
                                         ln = 3146062 // SpanMain.HC:334
                                         try tick(t)
-                                        _ = try f708_PlaceMass(t, ld8((fp &+ 8)), ld8((fp &+ 16)))
+                                        _ = try f713_PlaceMass(t, ld8((fp &+ 8)), ld8((fp &+ 16)))
                                     case 1, 2, 3:
                                         ln = 3146067 // SpanMain.HC:339
                                         try tick(t)
-                                        let t12: Int64 = try P.f461_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
+                                        let t12: Int64 = try P.f466_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
                                         try st8((fp &+ 24), t12)
                                     case 4:
                                         ln = 3146070 // SpanMain.HC:342
                                         if try (ld8(g_run_bttn) != 0) {
                                             ln = 3146071 // SpanMain.HC:343
                                             try tick(t)
-                                            let t13: Int64 = try P.f461_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
+                                            let t13: Int64 = try P.f466_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
                                             try st8(g_cursor_mass, t13)
                                         } else {
                                             ln = 3146073 // SpanMain.HC:345
                                             try tick(t)
-                                            let t14: Int64 = try P.f461_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
+                                            let t14: Int64 = try P.f466_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
                                             try st8((fp &+ 24), t14)
                                             if (t14 != 0) {
                                                 ln = 3146074 // SpanMain.HC:346
                                                 try tick(t)
-                                                try f722_MoveMass(t, ld8((fp &+ 24)), ld8((fp &+ 8)), ld8((fp &+ 16)))
+                                                try f727_MoveMass(t, ld8((fp &+ 24)), ld8((fp &+ 8)), ld8((fp &+ 16)))
                                             }
                                         }
                                     case 5:
                                         ln = 3146077 // SpanMain.HC:349
                                         try tick(t)
-                                        try P.f463_MassOrSpringFind(t, ld8(g_ode), (fp &+ 24), (fp &+ 40), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
+                                        try P.f468_MassOrSpringFind(t, ld8(g_ode), (fp &+ 24), (fp &+ 40), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
                                         ln = 3146078 // SpanMain.HC:350
                                         if try (ld8((fp &+ 24)) != 0) {
                                             ln = 3146079 // SpanMain.HC:351
                                             try tick(t)
-                                            try f724_DelMass(t, ld8((fp &+ 24)))
+                                            try f729_DelMass(t, ld8((fp &+ 24)))
                                         }
                                         ln = 3146080 // SpanMain.HC:352
                                         if try (ld8((fp &+ 40)) != 0) {
                                             ln = 3146081 // SpanMain.HC:353
                                             try tick(t)
-                                            try f723_DelSpring(t, ld8((fp &+ 40)))
+                                            try f728_DelSpring(t, ld8((fp &+ 40)))
                                         }
                                     default:
                                         break
@@ -1478,21 +1477,21 @@ public final class N_Apps_Span_Run: NativeModule {
                                         var r17: Bool = try (ld8((fp &+ 24)) != 0)
                                         if r17 {
                                             try tick(t)
-                                            let t16: Int64 = try P.f461_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
+                                            let t16: Int64 = try P.f466_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
                                             l32_tmpm2 = t16
                                             r17 = (t16 != 0)
                                         }
                                         if try (r17 && (ld8((fp &+ 24)) != l32_tmpm2)) {
                                             ln = 3146091 // SpanMain.HC:363
                                             try tick(t)
-                                            try f726_PlaceSpring(t, ld8((fp &+ 24)), l32_tmpm2)
+                                            try f731_PlaceSpring(t, ld8((fp &+ 24)), l32_tmpm2)
                                         }
                                     case 4:
                                         ln = 3146094 // SpanMain.HC:366
                                         if try ((ld8(g_run_bttn) == 0) && (ld8((fp &+ 24)) != 0)) {
                                             ln = 3146095 // SpanMain.HC:367
                                             try tick(t)
-                                            try f722_MoveMass(t, ld8((fp &+ 24)), ld8((fp &+ 8)), ld8((fp &+ 16)))
+                                            try f727_MoveMass(t, ld8((fp &+ 24)), ld8((fp &+ 8)), ld8((fp &+ 16)))
                                         }
                                     default:
                                         break
@@ -1512,14 +1511,14 @@ public final class N_Apps_Span_Run: NativeModule {
                                         if try ((ld8(g_run_bttn) == 0) && (ld8((fp &+ 24)) != 0)) {
                                             ln = 3146104 // SpanMain.HC:376
                                             try tick(t)
-                                            try f722_MoveMass(t, ld8((fp &+ 24)), ld8((fp &+ 8)), ld8((fp &+ 16)))
+                                            try f727_MoveMass(t, ld8((fp &+ 24)), ld8((fp &+ 8)), ld8((fp &+ 16)))
                                         }
                                     case 1, 2, 3:
                                         ln = 3146109 // SpanMain.HC:381
                                         if try (ld8((fp &+ 24)) != 0) {
                                             ln = 3146110 // SpanMain.HC:382
                                             try tick(t)
-                                            try f725_DrawSpring(t, l72_dc, ld8((fp &+ 24)), ld8((fp &+ 8)), ld8((fp &+ 16)))
+                                            try f730_DrawSpring(t, l72_dc, ld8((fp &+ 24)), ld8((fp &+ 8)), ld8((fp &+ 16)))
                                         }
                                     default:
                                         break
@@ -1601,18 +1600,18 @@ public final class N_Apps_Span_Run: NativeModule {
                                                                                     }
                                                                                     ln = 3146124 // SpanMain.HC:396
                                                                                     try tick(t)
-                                                                                    let t21: Double = try f709_SpanTime(t)
+                                                                                    let t21: Double = try f714_SpanTime(t)
                                                                                     if try ((t21 == 0.0) || (ld8(g_a) == 0)) {
                                                                                         ln = 3146125 // SpanMain.HC:397
                                                                                         _ = try nat(t, n_Free, try push1(t, ld8(g_a)))
                                                                                         ln = 3146126 // SpanMain.HC:398
                                                                                         try tick(t)
-                                                                                        let t22: Int64 = try f715_SpanSave(t, ld8(g_ode), 0)
+                                                                                        let t22: Int64 = try f720_SpanSave(t, ld8(g_ode), 0)
                                                                                         try st8(g_a, t22)
                                                                                     }
                                                                                     ln = 3146128 // SpanMain.HC:400
                                                                                     try tick(t)
-                                                                                    try f728_Init(t, g_a)
+                                                                                    try f733_Init(t, g_a)
                                                                                     ln = 3146129 // SpanMain.HC:401
                                                                                     break switch7_44
                                                                                 }
@@ -1622,13 +1621,13 @@ public final class N_Apps_Span_Run: NativeModule {
                                                                                 try st8(g_a, 0)
                                                                                 ln = 3146133 // SpanMain.HC:405
                                                                                 try tick(t)
-                                                                                try f728_Init(t, g_a)
+                                                                                try f733_Init(t, g_a)
                                                                                 ln = 3146134 // SpanMain.HC:406
                                                                                 break switch7_44
                                                                             }
                                                                             ln = 3146136 // SpanMain.HC:408
                                                                             try tick(t)
-                                                                            let t23: Int64 = try f718_SpanRead(t)
+                                                                            let t23: Int64 = try f723_SpanRead(t)
                                                                             l64_src = t23
                                                                             if (t23 != 0) {
                                                                                 ln = 3146137 // SpanMain.HC:409
@@ -1637,28 +1636,28 @@ public final class N_Apps_Span_Run: NativeModule {
                                                                                 try st8(g_a, l64_src)
                                                                                 ln = 3146139 // SpanMain.HC:411
                                                                                 try tick(t)
-                                                                                try f728_Init(t, g_a)
+                                                                                try f733_Init(t, g_a)
                                                                             }
                                                                             ln = 3146141 // SpanMain.HC:413
                                                                             break switch7_44
                                                                         }
                                                                         ln = 3146143 // SpanMain.HC:415
                                                                         try tick(t)
-                                                                        let t24: Double = try f709_SpanTime(t)
+                                                                        let t24: Double = try f714_SpanTime(t)
                                                                         if try ((t24 == 0.0) || (ld8(g_a) == 0)) {
                                                                             ln = 3146144 // SpanMain.HC:416
                                                                             _ = try nat(t, n_Free, try push1(t, ld8(g_a)))
                                                                             ln = 3146145 // SpanMain.HC:417
                                                                             try tick(t)
-                                                                            let t25: Int64 = try f715_SpanSave(t, ld8(g_ode), 0)
+                                                                            let t25: Int64 = try f720_SpanSave(t, ld8(g_ode), 0)
                                                                             try st8(g_a, t25)
                                                                         }
                                                                         ln = 3146147 // SpanMain.HC:419
                                                                         try tick(t)
-                                                                        try f728_Init(t, g_a)
+                                                                        try f733_Init(t, g_a)
                                                                         ln = 3146148 // SpanMain.HC:420
                                                                         try tick(t)
-                                                                        _ = try f716_SpanWrite(t, ld8(g_ode))
+                                                                        _ = try f721_SpanWrite(t, ld8(g_ode))
                                                                         ln = 3146149 // SpanMain.HC:421
                                                                         break switch7_44
                                                                     }
@@ -1699,21 +1698,21 @@ public final class N_Apps_Span_Run: NativeModule {
                                         }
                                         ln = 3146172 // SpanMain.HC:444
                                         try tick(t)
-                                        let t26: Double = try f709_SpanTime(t)
+                                        let t26: Double = try f714_SpanTime(t)
                                         if try ((t26 == 0.0) || (ld8(g_a) == 0)) {
                                             ln = 3146173 // SpanMain.HC:445
                                             _ = try nat(t, n_Free, try push1(t, ld8(g_a)))
                                             ln = 3146174 // SpanMain.HC:446
                                             try tick(t)
-                                            let t27: Int64 = try f715_SpanSave(t, ld8(g_ode), 0)
+                                            let t27: Int64 = try f720_SpanSave(t, ld8(g_ode), 0)
                                             try st8(g_a, t27)
                                         }
                                         ln = 3146176 // SpanMain.HC:448
                                         try tick(t)
-                                        try f728_Init(t, g_a)
+                                        try f733_Init(t, g_a)
                                         ln = 3146177 // SpanMain.HC:449
                                         try tick(t)
-                                        _ = try f716_SpanWrite(t, ld8(g_ode))
+                                        _ = try f721_SpanWrite(t, ld8(g_ode))
                                     }
                                     ln = 3146179 // SpanMain.HC:451
                                     break skip_0
@@ -1743,13 +1742,13 @@ public final class N_Apps_Span_Run: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 3146190 // SpanMain.HC:462
             try tick(t)
-            try P.f529_CtrlBttnDel(t, l48_bt_run)
+            try P.f534_CtrlBttnDel(t, l48_bt_run)
             ln = 3146191 // SpanMain.HC:463
             try tick(t)
-            try P.f529_CtrlBttnDel(t, l56_bt_mode)
+            try P.f534_CtrlBttnDel(t, l56_bt_mode)
             ln = 3146192 // SpanMain.HC:464
             try tick(t)
-            try f714_SpanDel(t, ld8(g_ode))
+            try f719_SpanDel(t, ld8(g_ode))
             ln = 3146193 // SpanMain.HC:465
             try tick(t)
             try P.f286_DCFill(t, l72_dc, 255)
@@ -1758,7 +1757,7 @@ public final class N_Apps_Span_Run: NativeModule {
             try P.f293_DCDel(t, l72_dc)
             ln = 3146195 // SpanMain.HC:467
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -1766,13 +1765,13 @@ public final class N_Apps_Span_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Span/Run.HC#5 (Run.HC:3)
-    @discardableResult public final func f731_init_C__Apps_Span_Run_HC_5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f736_init_C__Apps_Span_Run_HC_5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 3 // Run.HC:3
             try tick(t)
-            try f730_Span(t)
+            try f735_Span(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Span/Run.HC#5", ln) }
@@ -1781,41 +1780,41 @@ public final class N_Apps_Span_Run: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Span_Run_HC_0(t)
-        case 704: return try f704_init_C__Apps_Span_Run_HC_1(t)
-        case 705: return try f705_init_C__Apps_Span_Run_HC_2(t)
-        case 706: return try f706_init_C__Apps_Span_Run_HC_3(t)
-        case 707: return try f707_init_C__Apps_Span_Run_HC_4(t)
-        case 708: return try f708_PlaceMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 709: return bits(try f709_SpanTime(t))
-        case 710: try f710_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 711: try f711_SpanBridge1Init(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 712: try f712_AdjustLoads(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 713: return try f713_SpanNew(t)
-        case 714: try f714_SpanDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 715: return try f715_SpanSave(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 716: return try f716_SpanWrite(t, (n > 0 ? st[base + 0] : 0))
-        case 717: try f717_SpanLoad(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 718: return try f718_SpanRead(t)
-        case 719: return bits(try f719_Cost(t, (n > 0 ? st[base + 0] : 0)))
-        case 720: try f720_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 721: try f721_NullSpring(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
-        case 722: try f722_MoveMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 723: try f723_DelSpring(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 724: try f724_DelMass(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 725: try f725_DrawSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 726: try f726_PlaceSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 727: try f727_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 728: try f728_Init(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 729: try f729_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 730: try f730_Span(t); return 0
-        case 731: return try f731_init_C__Apps_Span_Run_HC_5(t)
+        case 708: return try f708_init_C__Apps_Span_Run_HC_0(t)
+        case 709: return try f709_init_C__Apps_Span_Run_HC_1(t)
+        case 710: return try f710_init_C__Apps_Span_Run_HC_2(t)
+        case 711: return try f711_init_C__Apps_Span_Run_HC_3(t)
+        case 712: return try f712_init_C__Apps_Span_Run_HC_4(t)
+        case 713: return try f713_PlaceMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 714: return bits(try f714_SpanTime(t))
+        case 715: try f715_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 716: try f716_SpanBridge1Init(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 717: try f717_AdjustLoads(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 718: return try f718_SpanNew(t)
+        case 719: try f719_SpanDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 720: return try f720_SpanSave(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 721: return try f721_SpanWrite(t, (n > 0 ? st[base + 0] : 0))
+        case 722: try f722_SpanLoad(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 723: return try f723_SpanRead(t)
+        case 724: return bits(try f724_Cost(t, (n > 0 ? st[base + 0] : 0)))
+        case 725: try f725_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 726: try f726_NullSpring(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
+        case 727: try f727_MoveMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 728: try f728_DelSpring(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 729: try f729_DelMass(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 730: try f730_DrawSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 731: try f731_PlaceSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 732: try f732_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 733: try f733_Init(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 734: try f734_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 735: try f735_Span(t); return 0
+        case 736: return try f736_init_C__Apps_Span_Run_HC_5(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Span/Run.HC#0", 704: "$init:C:/Apps/Span/Run.HC#1", 705: "$init:C:/Apps/Span/Run.HC#2", 706: "$init:C:/Apps/Span/Run.HC#3", 707: "$init:C:/Apps/Span/Run.HC#4", 708: "PlaceMass", 709: "SpanTime", 710: "MyDerivative", 711: "SpanBridge1Init", 712: "AdjustLoads", 713: "SpanNew", 714: "SpanDel", 715: "SpanSave", 716: "SpanWrite", 717: "SpanLoad", 718: "SpanRead", 719: "Cost", 720: "DrawIt", 721: "NullSpring", 722: "MoveMass", 723: "DelSpring", 724: "DelMass", 725: "DrawSpring", 726: "PlaceSpring", 727: "AnimateTask", 728: "Init", 729: "SongTask", 730: "Span", 731: "$init:C:/Apps/Span/Run.HC#5"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Span/Run.HC#0", 709: "$init:C:/Apps/Span/Run.HC#1", 710: "$init:C:/Apps/Span/Run.HC#2", 711: "$init:C:/Apps/Span/Run.HC#3", 712: "$init:C:/Apps/Span/Run.HC#4", 713: "PlaceMass", 714: "SpanTime", 715: "MyDerivative", 716: "SpanBridge1Init", 717: "AdjustLoads", 718: "SpanNew", 719: "SpanDel", 720: "SpanSave", 721: "SpanWrite", 722: "SpanLoad", 723: "SpanRead", 724: "Cost", 725: "DrawIt", 726: "NullSpring", 727: "MoveMass", 728: "DelSpring", 729: "DelMass", 730: "DrawSpring", 731: "PlaceSpring", 732: "AnimateTask", 733: "Init", 734: "SongTask", 735: "Span", 736: "$init:C:/Apps/Span/Run.HC#5"]
     private static let FILES: [String] = ["C:/Apps/Span/Run.HC", "C:/Apps/Span/Load.HC", "C:/Apps/Span/Span.HH", "C:/Apps/Span/SpanMain.HC", "C:/Apps/Span/SpanDerive.HC", "C:/Apps/Span/SpanBridge.HC", "C:/Apps/Span/SpanNew.HC"]
     public override var files: [String] { N_Apps_Span_Run.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Span_Run.DEFINED.contains(index) }

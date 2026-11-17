@@ -57,7 +57,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC LowPass1 (AMathODE.HC:6)
-    @discardableResult public final func f703_LowPass1(_ t: HTask, _ a0: Double, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Double {
+    @discardableResult public final func f708_LowPass1(_ t: HTask, _ a0: Double, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -78,7 +78,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODERstPtrs (AMathODE.HC:12)
-    public final func f704_ODERstPtrs(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_ODERstPtrs(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -130,7 +130,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODENew (AMathODE.HC:30)
-    @discardableResult public final func f705_ODENew(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f710_ODENew(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -181,7 +181,7 @@ public final class N_Adam_AMathODE: NativeModule {
             try st8((l32_ode &+ 176), t5)
             ln = 50 // AMathODE.HC:50
             try tick(t)
-            try f704_ODERstPtrs(t, l32_ode)
+            try f709_ODERstPtrs(t, l32_ode)
             ln = 51 // AMathODE.HC:51
             t.depth -= 1
             return l32_ode
@@ -191,7 +191,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEPause (AMathODE.HC:55)
-    @discardableResult public final func f706_ODEPause(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f711_ODEPause(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -231,7 +231,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEDel (AMathODE.HC:66)
-    public final func f707_ODEDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_ODEDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -244,7 +244,7 @@ public final class N_Adam_AMathODE: NativeModule {
             }
             ln = 70 // AMathODE.HC:70
             try tick(t)
-            _ = try f706_ODEPause(t, p0_ode, 1)
+            _ = try f711_ODEPause(t, p0_ode, 1)
             ln = 71 // AMathODE.HC:71
             _ = try nat(t, n_Free, try push1(t, ld8((p0_ode &+ 184))))
             ln = 72 // AMathODE.HC:72
@@ -273,7 +273,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODESize (AMathODE.HC:81)
-    @discardableResult public final func f708_ODESize(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f713_ODESize(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -298,7 +298,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODESetMassesPtrs (AMathODE.HC:89)
-    public final func f709_ODESetMassesPtrs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f714_ODESetMassesPtrs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -334,7 +334,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEState2Internal (AMathODE.HC:101)
-    public final func f710_ODEState2Internal(_ t: HTask, _ a0: Int64) throws {
+    public final func f715_ODEState2Internal(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -367,10 +367,10 @@ public final class N_Adam_AMathODE: NativeModule {
                 _ = try nat(t, n_Free, try push1(t, l16_old_array_base))
                 ln = 118 // AMathODE.HC:118
                 try tick(t)
-                try f704_ODERstPtrs(t, p0_ode)
+                try f709_ODERstPtrs(t, p0_ode)
                 ln = 120 // AMathODE.HC:120
                 try tick(t)
-                try f709_ODESetMassesPtrs(t, p0_ode, ld8((p0_ode &+ 192)), ld8((p0_ode &+ 192)))
+                try f714_ODESetMassesPtrs(t, p0_ode, ld8((p0_ode &+ 192)), ld8((p0_ode &+ 192)))
                 ln = 121 // AMathODE.HC:121
                 l8_tmpm = try ld8((p0_ode &+ 40))
                 ln = 122 // AMathODE.HC:122
@@ -390,7 +390,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEInternal2State (AMathODE.HC:130)
-    public final func f711_ODEInternal2State(_ t: HTask, _ a0: Int64) throws {
+    public final func f716_ODEInternal2State(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -402,7 +402,7 @@ public final class N_Adam_AMathODE: NativeModule {
             if try ((ld8((p0_ode &+ 16)) & 1) != 0) {
                 ln = 135 // AMathODE.HC:135
                 try tick(t)
-                try f709_ODESetMassesPtrs(t, p0_ode, ld8((p0_ode &+ 192)), ld8((p0_ode &+ 192)))
+                try f714_ODESetMassesPtrs(t, p0_ode, ld8((p0_ode &+ 192)), ld8((p0_ode &+ 192)))
                 ln = 136 // AMathODE.HC:136
                 l8_tmpm = try ld8((p0_ode &+ 40))
                 ln = 137 // AMathODE.HC:137
@@ -420,7 +420,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODERenum (AMathODE.HC:144)
-    public final func f712_ODERenum(_ t: HTask, _ a0: Int64) throws {
+    public final func f717_ODERenum(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -466,7 +466,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC MassFind (AMathODE.HC:167)
-    @discardableResult public final func f713_MassFind(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Int64 {
+    @discardableResult public final func f718_MassFind(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -514,7 +514,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC SpringFind (AMathODE.HC:184)
-    @discardableResult public final func f714_SpringFind(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Int64 {
+    @discardableResult public final func f719_SpringFind(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -564,7 +564,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC MassOrSpringFind (AMathODE.HC:203)
-    public final func f715_MassOrSpringFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double, _ a4: Double, _ a5: Double) throws {
+    public final func f720_MassOrSpringFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double, _ a4: Double, _ a5: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -650,7 +650,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC MassFindNum (AMathODE.HC:237)
-    @discardableResult public final func f716_MassFindNum(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f721_MassFindNum(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -680,7 +680,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODERstInactive (AMathODE.HC:248)
-    public final func f717_ODERstInactive(_ t: HTask, _ a0: Int64) throws {
+    public final func f722_ODERstInactive(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -715,7 +715,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODECalcSprings (AMathODE.HC:264)
-    public final func f718_ODECalcSprings(_ t: HTask, _ a0: Int64) throws {
+    public final func f723_ODECalcSprings(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -786,7 +786,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODECalcDrag (AMathODE.HC:294)
-    public final func f719_ODECalcDrag(_ t: HTask, _ a0: Int64) throws {
+    public final func f724_ODECalcDrag(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -845,7 +845,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEApplyAccelerationLimit (AMathODE.HC:318)
-    public final func f720_ODEApplyAccelerationLimit(_ t: HTask, _ a0: Int64) throws {
+    public final func f725_ODEApplyAccelerationLimit(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -883,7 +883,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEMPTask (AMathODE.HC:333)
-    public final func f721_ODEMPTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f726_ODEMPTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -914,7 +914,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEMPWake (AMathODE.HC:345)
-    public final func f722_ODEMPWake(_ t: HTask, _ a0: Int64) throws {
+    public final func f727_ODEMPWake(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -933,7 +933,7 @@ public final class N_Adam_AMathODE: NativeModule {
                     if !((l8_i < t4)) { break loop0 }
                     ln = 351 // AMathODE.HC:351
                     let t3: Int64 = try (ld8((p0_ode &+ 320)) &+ (l8_i &* 8))
-                    let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065873, p0_ode, s0, l8_i, 0, 0, 0))
+                    let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065878, p0_ode, s0, l8_i, 0, 0, 0))
                     try st8(t3, t2)
                     ln = 350 // AMathODE.HC:350
                     l8_i = (l8_i &+ 1)
@@ -959,7 +959,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEMPSleep (AMathODE.HC:359)
-    public final func f723_ODEMPSleep(_ t: HTask, _ a0: Int64) throws {
+    public final func f728_ODEMPSleep(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -991,7 +991,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODECallMPDerivative (AMathODE.HC:370)
-    public final func f724_ODECallMPDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f729_ODECallMPDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1020,7 +1020,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODECallDerivative (AMathODE.HC:380)
-    public final func f725_ODECallDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f730_ODECallDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1033,7 +1033,7 @@ public final class N_Adam_AMathODE: NativeModule {
             if try ((ld8((p0_ode &+ 16)) & 1) != 0) {
                 ln = 384 // AMathODE.HC:384
                 try tick(t)
-                try f709_ODESetMassesPtrs(t, p0_ode, p2_state, p3_DstateDt)
+                try f714_ODESetMassesPtrs(t, p0_ode, p2_state, p3_DstateDt)
                 ln = 385 // AMathODE.HC:385
                 l32_tmpm = try ld8((p0_ode &+ 40))
                 ln = 386 // AMathODE.HC:386
@@ -1053,15 +1053,15 @@ public final class N_Adam_AMathODE: NativeModule {
                 }
                 ln = 393 // AMathODE.HC:393
                 try tick(t)
-                try f718_ODECalcSprings(t, p0_ode)
+                try f723_ODECalcSprings(t, p0_ode)
                 ln = 394 // AMathODE.HC:394
                 try tick(t)
-                try f719_ODECalcDrag(t, p0_ode)
+                try f724_ODECalcDrag(t, p0_ode)
                 ln = 395 // AMathODE.HC:395
                 if try (ld8((p0_ode &+ 312)) != 0) {
                     ln = 396 // AMathODE.HC:396
                     try tick(t)
-                    try f724_ODECallMPDerivative(t, p0_ode, p1_t, p2_state, p3_DstateDt)
+                    try f729_ODECallMPDerivative(t, p0_ode, p1_t, p2_state, p3_DstateDt)
                 }
                 ln = 397 // AMathODE.HC:397
                 if try (ld8((p0_ode &+ 304)) != 0) {
@@ -1097,13 +1097,13 @@ public final class N_Adam_AMathODE: NativeModule {
                 }
                 ln = 410 // AMathODE.HC:410
                 try tick(t)
-                try f720_ODEApplyAccelerationLimit(t, p0_ode)
+                try f725_ODEApplyAccelerationLimit(t, p0_ode)
             } else {
                 ln = 412 // AMathODE.HC:412
                 if try (ld8((p0_ode &+ 312)) != 0) {
                     ln = 413 // AMathODE.HC:413
                     try tick(t)
-                    try f724_ODECallMPDerivative(t, p0_ode, p1_t, p2_state, p3_DstateDt)
+                    try f729_ODECallMPDerivative(t, p0_ode, p1_t, p2_state, p3_DstateDt)
                 }
                 ln = 414 // AMathODE.HC:414
                 if try (ld8((p0_ode &+ 304)) != 0) {
@@ -1117,7 +1117,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEOneStep (AMathODE.HC:419)
-    public final func f726_ODEOneStep(_ t: HTask, _ a0: Int64) throws {
+    public final func f731_ODEOneStep(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1125,7 +1125,7 @@ public final class N_Adam_AMathODE: NativeModule {
             var l8_i: Int64 = 0
             ln = 422 // AMathODE.HC:422
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, ldf((p0_ode &+ 112)), ld8((p0_ode &+ 192)), ld8((p0_ode &+ 200)))
+            try f730_ODECallDerivative(t, p0_ode, ldf((p0_ode &+ 112)), ld8((p0_ode &+ 192)), ld8((p0_ode &+ 200)))
             ln = 423 // AMathODE.HC:423
             l8_i = 0
             loop0: while try (l8_i < ld8((p0_ode &+ 32))) {
@@ -1145,7 +1145,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODERK4OneStep (AMathODE.HC:428)
-    public final func f727_ODERK4OneStep(_ t: HTask, _ a0: Int64) throws {
+    public final func f732_ODERK4OneStep(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1177,7 +1177,7 @@ public final class N_Adam_AMathODE: NativeModule {
             l24_xh = try (ldf((p0_ode &+ 112)) + l32_hh)
             ln = 441 // AMathODE.HC:441
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, ldf((p0_ode &+ 112)), ld8((p0_ode &+ 192)), ld8((p0_ode &+ 200)))
+            try f730_ODECallDerivative(t, p0_ode, ldf((p0_ode &+ 112)), ld8((p0_ode &+ 192)), ld8((p0_ode &+ 200)))
             ln = 442 // AMathODE.HC:442
             l8_i = 0
             loop0: while (l8_i < l16_n) {
@@ -1189,7 +1189,7 @@ public final class N_Adam_AMathODE: NativeModule {
             }
             ln = 444 // AMathODE.HC:444
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, l24_xh, l64_yt, l56_dyt)
+            try f730_ODECallDerivative(t, p0_ode, l24_xh, l64_yt, l56_dyt)
             ln = 445 // AMathODE.HC:445
             l8_i = 0
             loop2: while (l8_i < l16_n) {
@@ -1201,7 +1201,7 @@ public final class N_Adam_AMathODE: NativeModule {
             }
             ln = 447 // AMathODE.HC:447
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, l24_xh, l64_yt, l48_dym)
+            try f730_ODECallDerivative(t, p0_ode, l24_xh, l64_yt, l48_dym)
             ln = 448 // AMathODE.HC:448
             l8_i = 0
             loop4: while (l8_i < l16_n) {
@@ -1219,7 +1219,7 @@ public final class N_Adam_AMathODE: NativeModule {
             try st8(t1, bits((ldf(t1) + ldf((p0_ode &+ 128)))))
             ln = 453 // AMathODE.HC:453
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, ldf((p0_ode &+ 112)), l64_yt, l56_dyt)
+            try f730_ODECallDerivative(t, p0_ode, ldf((p0_ode &+ 112)), l64_yt, l56_dyt)
             ln = 454 // AMathODE.HC:454
             l8_i = 0
             loop6: while (l8_i < l16_n) {
@@ -1236,7 +1236,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODECashKarp (AMathODE.HC:488)
-    public final func f728_ODECashKarp(_ t: HTask, _ a0: Int64) throws {
+    public final func f733_ODECashKarp(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1288,7 +1288,7 @@ public final class N_Adam_AMathODE: NativeModule {
             }
             ln = 506 // AMathODE.HC:506
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (0.2 * l24_h)), l88_tmpstate, l48_ak2)
+            try f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (0.2 * l24_h)), l88_tmpstate, l48_ak2)
             ln = 507 // AMathODE.HC:507
             l8_i = 0
             loop2: while (l8_i < l16_n) {
@@ -1300,7 +1300,7 @@ public final class N_Adam_AMathODE: NativeModule {
             }
             ln = 509 // AMathODE.HC:509
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (0.3 * l24_h)), l88_tmpstate, l56_ak3)
+            try f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (0.3 * l24_h)), l88_tmpstate, l56_ak3)
             ln = 510 // AMathODE.HC:510
             l8_i = 0
             loop4: while (l8_i < l16_n) {
@@ -1312,7 +1312,7 @@ public final class N_Adam_AMathODE: NativeModule {
             }
             ln = 512 // AMathODE.HC:512
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (0.6 * l24_h)), l88_tmpstate, l64_ak4)
+            try f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (0.6 * l24_h)), l88_tmpstate, l64_ak4)
             ln = 513 // AMathODE.HC:513
             l8_i = 0
             loop6: while (l8_i < l16_n) {
@@ -1324,7 +1324,7 @@ public final class N_Adam_AMathODE: NativeModule {
             }
             ln = 516 // AMathODE.HC:516
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (1.0 * l24_h)), l88_tmpstate, l72_ak5)
+            try f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (1.0 * l24_h)), l88_tmpstate, l72_ak5)
             ln = 517 // AMathODE.HC:517
             l8_i = 0
             loop8: while (l8_i < l16_n) {
@@ -1336,7 +1336,7 @@ public final class N_Adam_AMathODE: NativeModule {
             }
             ln = 520 // AMathODE.HC:520
             try tick(t)
-            try f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (0.875 * l24_h)), l88_tmpstate, l80_ak6)
+            try f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode &+ 112)) + (0.875 * l24_h)), l88_tmpstate, l80_ak6)
             ln = 522 // AMathODE.HC:522
             l8_i = 0
             loop10: while (l8_i < l16_n) {
@@ -1361,7 +1361,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODERK5OneStep (AMathODE.HC:535)
-    public final func f729_ODERK5OneStep(_ t: HTask, _ a0: Int64) throws {
+    public final func f734_ODERK5OneStep(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1382,7 +1382,7 @@ public final class N_Adam_AMathODE: NativeModule {
                 try st8((p0_ode &+ 128), bits(t0))
                 ln = 541 // AMathODE.HC:541
                 try tick(t)
-                try f728_ODECashKarp(t, p0_ode)
+                try f733_ODECashKarp(t, p0_ode)
                 ln = 542 // AMathODE.HC:542
                 l16_errmax = 0.0
                 ln = 543 // AMathODE.HC:543
@@ -1444,7 +1444,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC ODEsUpdate (AMathODE.HC:567)
-    public final func f730_ODEsUpdate(_ t: HTask, _ a0: Int64) throws {
+    public final func f735_ODEsUpdate(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1514,11 +1514,11 @@ public final class N_Adam_AMathODE: NativeModule {
                                     if try (ld8((l64_ode &+ 312)) != 0) {
                                         ln = 613 // AMathODE.HC:613
                                         try tick(t)
-                                        try f722_ODEMPWake(t, l64_ode)
+                                        try f727_ODEMPWake(t, l64_ode)
                                     }
                                     ln = 614 // AMathODE.HC:614
                                     try tick(t)
-                                    try f710_ODEState2Internal(t, l64_ode)
+                                    try f715_ODEState2Internal(t, l64_ode)
                                     ln = 615 // AMathODE.HC:615
                                     _ = try nat(t, n_MemCpy, try push3(t, ld8((l64_ode &+ 216)), ld8((l64_ode &+ 192)), (ld8((l64_ode &+ 32)) &* 8)))
                                     ln = 632 // AMathODE.HC:632
@@ -1529,7 +1529,7 @@ public final class N_Adam_AMathODE: NativeModule {
                                             try st8((l64_ode &+ 144), bits((l40_t_desired - ldf((l64_ode &+ 112)))))
                                             ln = 619 // AMathODE.HC:619
                                             try tick(t)
-                                            try f725_ODECallDerivative(t, l64_ode, ldf((l64_ode &+ 112)), ld8((l64_ode &+ 192)), ld8((l64_ode &+ 200)))
+                                            try f730_ODECallDerivative(t, l64_ode, ldf((l64_ode &+ 112)), ld8((l64_ode &+ 192)), ld8((l64_ode &+ 200)))
                                             ln = 620 // AMathODE.HC:620
                                             l8_i = 0
                                             loop5: while try (l8_i < ld8((l64_ode &+ 32))) {
@@ -1546,7 +1546,7 @@ public final class N_Adam_AMathODE: NativeModule {
                                             }
                                             ln = 623 // AMathODE.HC:623
                                             try tick(t)
-                                            try f729_ODERK5OneStep(t, l64_ode)
+                                            try f734_ODERK5OneStep(t, l64_ode)
                                             ln = 624 // AMathODE.HC:624
                                             let t10: Double = d(try nat(t, n_tS, push0(t)))
                                             if (t10 > l32_timeout_time) {
@@ -1585,15 +1585,15 @@ public final class N_Adam_AMathODE: NativeModule {
                                     }
                                     ln = 644 // AMathODE.HC:644
                                     try tick(t)
-                                    try f711_ODEInternal2State(t, l64_ode)
+                                    try f716_ODEInternal2State(t, l64_ode)
                                     ln = 647 // AMathODE.HC:647
                                     try tick(t)
-                                    try f725_ODECallDerivative(t, l64_ode, ldf((l64_ode &+ 112)), ld8((l64_ode &+ 192)), ld8((l64_ode &+ 200)))
+                                    try f730_ODECallDerivative(t, l64_ode, ldf((l64_ode &+ 112)), ld8((l64_ode &+ 192)), ld8((l64_ode &+ 200)))
                                     ln = 649 // AMathODE.HC:649
                                     if try (ld8((l64_ode &+ 312)) != 0) {
                                         ln = 650 // AMathODE.HC:650
                                         try tick(t)
-                                        try f723_ODEMPSleep(t, l64_ode)
+                                        try f728_ODEMPSleep(t, l64_ode)
                                     }
                                 }
                             }
@@ -1654,7 +1654,7 @@ public final class N_Adam_AMathODE: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/AMathODE.HC#0 (AMathODE.HC:565)
-    @discardableResult public final func f731_init_C__Adam_AMathODE_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f736_init_C__Adam_AMathODE_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1666,41 +1666,41 @@ public final class N_Adam_AMathODE: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return bits(try f703_LowPass1(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))))
-        case 704: try f704_ODERstPtrs(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: return try f705_ODENew(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0))
-        case 706: return try f706_ODEPause(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 707: try f707_ODEDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: return try f708_ODESize(t, (n > 0 ? st[base + 0] : 0))
-        case 709: try f709_ODESetMassesPtrs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 710: try f710_ODEState2Internal(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 711: try f711_ODEInternal2State(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 712: try f712_ODERenum(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 713: return try f713_MassFind(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
-        case 714: return try f714_SpringFind(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
-        case 715: try f715_MassOrSpringFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0)), d((n > 4 ? st[base + 4] : 0)), d((n > 5 ? st[base + 5] : 0))); return 0
-        case 716: return try f716_MassFindNum(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 717: try f717_ODERstInactive(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 718: try f718_ODECalcSprings(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 719: try f719_ODECalcDrag(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 720: try f720_ODEApplyAccelerationLimit(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 721: try f721_ODEMPTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 722: try f722_ODEMPWake(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 723: try f723_ODEMPSleep(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 724: try f724_ODECallMPDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 725: try f725_ODECallDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 726: try f726_ODEOneStep(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 727: try f727_ODERK4OneStep(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 728: try f728_ODECashKarp(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 729: try f729_ODERK5OneStep(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 730: try f730_ODEsUpdate(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 731: return try f731_init_C__Adam_AMathODE_HC_0(t)
+        case 708: return bits(try f708_LowPass1(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))))
+        case 709: try f709_ODERstPtrs(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: return try f710_ODENew(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0))
+        case 711: return try f711_ODEPause(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 712: try f712_ODEDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: return try f713_ODESize(t, (n > 0 ? st[base + 0] : 0))
+        case 714: try f714_ODESetMassesPtrs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 715: try f715_ODEState2Internal(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 716: try f716_ODEInternal2State(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 717: try f717_ODERenum(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 718: return try f718_MassFind(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
+        case 719: return try f719_SpringFind(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
+        case 720: try f720_MassOrSpringFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0)), d((n > 4 ? st[base + 4] : 0)), d((n > 5 ? st[base + 5] : 0))); return 0
+        case 721: return try f721_MassFindNum(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 722: try f722_ODERstInactive(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 723: try f723_ODECalcSprings(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 724: try f724_ODECalcDrag(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 725: try f725_ODEApplyAccelerationLimit(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 726: try f726_ODEMPTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 727: try f727_ODEMPWake(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 728: try f728_ODEMPSleep(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 729: try f729_ODECallMPDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 730: try f730_ODECallDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 731: try f731_ODEOneStep(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 732: try f732_ODERK4OneStep(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 733: try f733_ODECashKarp(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 734: try f734_ODERK5OneStep(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 735: try f735_ODEsUpdate(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 736: return try f736_init_C__Adam_AMathODE_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731]
-    private static let NAMES: [Int: String] = [703: "LowPass1", 704: "ODERstPtrs", 705: "ODENew", 706: "ODEPause", 707: "ODEDel", 708: "ODESize", 709: "ODESetMassesPtrs", 710: "ODEState2Internal", 711: "ODEInternal2State", 712: "ODERenum", 713: "MassFind", 714: "SpringFind", 715: "MassOrSpringFind", 716: "MassFindNum", 717: "ODERstInactive", 718: "ODECalcSprings", 719: "ODECalcDrag", 720: "ODEApplyAccelerationLimit", 721: "ODEMPTask", 722: "ODEMPWake", 723: "ODEMPSleep", 724: "ODECallMPDerivative", 725: "ODECallDerivative", 726: "ODEOneStep", 727: "ODERK4OneStep", 728: "ODECashKarp", 729: "ODERK5OneStep", 730: "ODEsUpdate", 731: "$init:C:/Adam/AMathODE.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736]
+    private static let NAMES: [Int: String] = [708: "LowPass1", 709: "ODERstPtrs", 710: "ODENew", 711: "ODEPause", 712: "ODEDel", 713: "ODESize", 714: "ODESetMassesPtrs", 715: "ODEState2Internal", 716: "ODEInternal2State", 717: "ODERenum", 718: "MassFind", 719: "SpringFind", 720: "MassOrSpringFind", 721: "MassFindNum", 722: "ODERstInactive", 723: "ODECalcSprings", 724: "ODECalcDrag", 725: "ODEApplyAccelerationLimit", 726: "ODEMPTask", 727: "ODEMPWake", 728: "ODEMPSleep", 729: "ODECallMPDerivative", 730: "ODECallDerivative", 731: "ODEOneStep", 732: "ODERK4OneStep", 733: "ODECashKarp", 734: "ODERK5OneStep", 735: "ODEsUpdate", 736: "$init:C:/Adam/AMathODE.HC#0"]
     private static let FILES: [String] = ["C:/Adam/AMathODE.HC"]
     public override var files: [String] { N_Adam_AMathODE.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_AMathODE.DEFINED.contains(index) }

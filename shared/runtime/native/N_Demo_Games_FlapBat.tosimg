@@ -2,19 +2,19 @@ TOSIMG 1
 unit C:/Demo/Games/FlapBat.HC#0
 s 17fd38 46363420626573745f73636f72653d393939393b0a
 s 17fd60 54656d706c654f532f466c6170426174
-fn 703 $init:C:/Demo/Games/FlapBat.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Demo/Games/FlapBat.HC#0 (I64;;-)
+init 708
 unit C:/Demo/Games/FlapBat.HC#1
 s 17fd60 54656d706c654f532f466c6170426174
-fn 704 $init:C:/Demo/Games/FlapBat.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Demo/Games/FlapBat.HC#1 (I64;;-)
+init 709
 unit C:/Home/Registry.HC#0
 registry TempleOS/FlapBat
 g 17fd88 8
 c 17fd88 8 40c3878000000000
-fn 705 $init:C:/Home/Registry.HC#0 (I64;;-)
+fn 710 $init:C:/Home/Registry.HC#0 (I64;;-)
 sym g best_score 17fd88 F64
-init 705
+init 710
 unit C:/Home/Registry.HC#1
 unit C:/Demo/Games/FlapBat.HC#2
 value BAT_BOX 10
@@ -53,21 +53,21 @@ s 180b08 536f6e67
 s 180b20 416e696d617465
 s 180b38 46363420626573745f73636f72653d25352e34663b0a
 s 17fd60 54656d706c654f532f466c6170426174
-fn 706 DrawIt (U0;*$CTask,*$CDC;-)
-fn 707 CheckBugs (U0;*$CTask;-)
-fn 708 Init (U0;;-)
-fn 709 SongTask (U0;I64;-)
-fn 710 AnimateTask (U0;I64;-)
-fn 711 CleanUp (U0;;-)
-fn 712 FlapBat (U0;;-)
-fn 713 $init:C:/Demo/Games/FlapBat.HC#2 (I64;;-)
-sym f AnimateTask 710 (U0;I64;-)
-sym f CheckBugs 707 (U0;*$CTask;-)
-sym f CleanUp 711 (U0;;-)
-sym f DrawIt 706 (U0;*$CTask,*$CDC;-)
-sym f FlapBat 712 (U0;;-)
-sym f Init 708 (U0;;-)
-sym f SongTask 709 (U0;I64;-)
+fn 711 DrawIt (U0;*$CTask,*$CDC;-)
+fn 712 CheckBugs (U0;*$CTask;-)
+fn 713 Init (U0;;-)
+fn 714 SongTask (U0;I64;-)
+fn 715 AnimateTask (U0;I64;-)
+fn 716 CleanUp (U0;;-)
+fn 717 FlapBat (U0;;-)
+fn 718 $init:C:/Demo/Games/FlapBat.HC#2 (I64;;-)
+sym f AnimateTask 715 (U0;I64;-)
+sym f CheckBugs 712 (U0;*$CTask;-)
+sym f CleanUp 716 (U0;;-)
+sym f DrawIt 711 (U0;*$CTask,*$CDC;-)
+sym f FlapBat 717 (U0;;-)
+sym f Init 713 (U0;;-)
+sym f SongTask 714 (U0;I64;-)
 sym g bat_x 17fe18 F64
 sym g bat_y 17fe00 F64
 sym g bug_cnt 17fea8 I32
@@ -85,5 +85,5 @@ sym g frame_x 17fe60 F64
 sym g game_t0 17fe78 F64
 sym g game_tf 17fe90 F64
 sym g limit_flood_fill_dc 180120 *$CDC
-init 713
+init 718
 unit C:/Demo/Games/FlapBat.HC#3

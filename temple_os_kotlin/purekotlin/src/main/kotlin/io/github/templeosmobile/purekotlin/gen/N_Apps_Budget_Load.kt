@@ -104,7 +104,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Apps/Budget/Load.HC#0 (Load.HC:3) */
-    fun f703_init_C__Apps_Budget_Load_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Budget_Load_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -118,7 +118,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC StrFileRead (BgtStrs.HC:3) */
-    fun f704_StrFileRead(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f709_StrFileRead(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -138,7 +138,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             p3_no_nums = (p3_no_nums and 0xFFL)
             ln = 1048582 // BgtStrs.HC:6
             tick(t)
-            val t0: Long = P.f617_DocRead(t, p0_name, 40L)
+            val t0: Long = P.f622_DocRead(t, p0_name, 40L)
             l32_doc = t0
             ln = 1048583 // BgtStrs.HC:7
             l40_doc_e = ld8(l32_doc)
@@ -220,7 +220,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 1048616 // BgtStrs.HC:40
             tick(t)
-            P.f605_DocDel(t, l32_doc)
+            P.f610_DocDel(t, l32_doc)
             ln = 1048617 // BgtStrs.HC:41
             if ((p1__max_num != 0L)) {
                 st8(p1__max_num, l56_max_num)
@@ -244,7 +244,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC StrFileArrDel (BgtStrs.HC:49) */
-    fun f705_StrFileArrDel(t: Task, a0: Long, a1: Long) {
+    fun f710_StrFileArrDel(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -268,7 +268,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC StrFileAdd (BgtStrs.HC:57) */
-    fun f706_StrFileAdd(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f711_StrFileAdd(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -284,7 +284,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 1048638 // BgtStrs.HC:62
             tick(t)
-            val t0: Long = P.f586_HashFind(t, p0_st, p2_table, 1L, 1L)
+            val t0: Long = P.f591_HashFind(t, p0_st, p2_table, 1L, 1L)
             l32_tmph = t0
             if ((t0 == 0L)) {
                 ln = 1048639 // BgtStrs.HC:63
@@ -303,7 +303,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 st8((l32_tmph + 24L), t4)
                 ln = 1048643 // BgtStrs.HC:67
                 tick(t)
-                P.f587_HashAdd(t, l32_tmph, p2_table)
+                P.f592_HashAdd(t, l32_tmph, p2_table)
             }
             ln = 1048645 // BgtStrs.HC:69
             if ((p3_color != 16L)) {
@@ -319,7 +319,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC StrEntriesCompare (BgtStrs.HC:74) */
-    fun f707_StrEntriesCompare(t: Task, a0: Long, a1: Long): Long {
+    fun f712_StrEntriesCompare(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -334,7 +334,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC StrFileWrite (BgtStrs.HC:79) */
-    fun f708_StrFileWrite(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f713_StrFileWrite(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -354,7 +354,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             l48_color = 0L
             ln = 1048658 // BgtStrs.HC:82
             tick(t)
-            val t0: Long = P.f601_DocNew(t, p0_name, 0L)
+            val t0: Long = P.f606_DocNew(t, p0_name, 0L)
             l56_doc = t0
             ln = 1048660 // BgtStrs.HC:84
             if ((p1_table != 0L)) {
@@ -365,7 +365,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 loop0@ while ((l24_i <= ld8((p1_table + 8L)))) {
                     ln = 1048663 // BgtStrs.HC:87
                     tick(t)
-                    val t1: Long = P.f588_LinkedLstCnt(t, ld8((ld8((p1_table + 24L)) + (l24_i * 8L))))
+                    val t1: Long = P.f593_LinkedLstCnt(t, ld8((ld8((p1_table + 24L)) + (l24_i * 8L))))
                     l40_cnt = (l40_cnt + t1)
                     ln = 1048662 // BgtStrs.HC:86
                     l24_i = (l24_i + 1L)
@@ -396,7 +396,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     tick(t)
                 }
                 ln = 1048673 // BgtStrs.HC:97
-                nat(t, n_QSortI64, push3(t, l72_a, l40_cnt, 9223090561878065859L))
+                nat(t, n_QSortI64, push3(t, l72_a, l40_cnt, 9223090561878065864L))
                 ln = 1048674 // BgtStrs.HC:98
                 l24_i = 0L
                 loop6@ while ((l24_i < l40_cnt)) {
@@ -438,17 +438,17 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             st8(t4, (ld8(t4) or 8L))
             ln = 1048688 // BgtStrs.HC:112
             tick(t)
-            P.f618_DocWrite(t, l56_doc, 0L)
+            P.f623_DocWrite(t, l56_doc, 0L)
             ln = 1048689 // BgtStrs.HC:113
             tick(t)
-            P.f605_DocDel(t, l56_doc)
+            P.f610_DocDel(t, l56_doc)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "StrFileWrite", ln) }
     }
 
     /** HolyC StrFileDel (BgtStrs.HC:116) */
-    fun f709_StrFileDel(t: Task, a0: Long) {
+    fun f714_StrFileDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -492,7 +492,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Apps/Budget/Load.HC#1 (Load.HC:37) */
-    fun f710_init_C__Apps_Budget_Load_HC_1(t: Task): Long {
+    fun f715_init_C__Apps_Budget_Load_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -506,7 +506,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC MyStr2Date (Budget.HC:60) */
-    fun f711_MyStr2Date(t: Task, a0: Long): Long {
+    fun f716_MyStr2Date(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -532,7 +532,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     } else {
                         ln = 2097222 // Budget.HC:70
                         tick(t)
-                        val t2: Long = P.f583_Str2Date(t, p0_st)
+                        val t2: Long = P.f588_Str2Date(t, p0_st)
                         l24_res = t2
                     }
                 }
@@ -552,7 +552,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 2097228 // Budget.HC:76
             tick(t)
-            val t5: Long = P.f578_Struct2Date(t, (fp + 8))
+            val t5: Long = P.f583_Struct2Date(t, (fp + 8))
             t.msp = msp0
             t.depth--
             return t5
@@ -563,7 +563,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtAcctsUpdate (BgtAccts.HC:1) */
-    fun f712_BgtAcctsUpdate(t: Task) {
+    fun f717_BgtAcctsUpdate(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -577,11 +577,11 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 if ((ld2u((l0_tmpb + 24L)) != 4L)) {
                     ln = 3145736 // BgtAccts.HC:8
                     tick(t)
-                    val t0: Long = f706_StrFileAdd(t, ld8((l0_tmpb + 48L)), g_accts_table_strs, ld8(g_accts_table), 16L)
+                    val t0: Long = f711_StrFileAdd(t, ld8((l0_tmpb + 48L)), g_accts_table_strs, ld8(g_accts_table), 16L)
                     st4((l0_tmpb + 28L), t0)
                     ln = 3145738 // BgtAccts.HC:10
                     tick(t)
-                    val t1: Long = f706_StrFileAdd(t, ld8((l0_tmpb + 56L)), g_accts_table_strs, ld8(g_accts_table), 16L)
+                    val t1: Long = f711_StrFileAdd(t, ld8((l0_tmpb + 56L)), g_accts_table_strs, ld8(g_accts_table), 16L)
                     st4((l0_tmpb + 32L), t1)
                 }
                 ln = 3145741 // BgtAccts.HC:13
@@ -594,11 +594,11 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             loop2@ while ((l8_tmpt != g_t_head)) {
                 ln = 3145745 // BgtAccts.HC:17
                 tick(t)
-                val t2: Long = f706_StrFileAdd(t, ld8(((l8_tmpt + 60L) + 48L)), g_accts_table_strs, ld8(g_accts_table), 16L)
+                val t2: Long = f711_StrFileAdd(t, ld8(((l8_tmpt + 60L) + 48L)), g_accts_table_strs, ld8(g_accts_table), 16L)
                 st4(((l8_tmpt + 60L) + 28L), t2)
                 ln = 3145747 // BgtAccts.HC:19
                 tick(t)
-                val t3: Long = f706_StrFileAdd(t, ld8(((l8_tmpt + 60L) + 56L)), g_accts_table_strs, ld8(g_accts_table), 16L)
+                val t3: Long = f711_StrFileAdd(t, ld8(((l8_tmpt + 60L) + 56L)), g_accts_table_strs, ld8(g_accts_table), 16L)
                 st4(((l8_tmpt + 60L) + 32L), t3)
                 ln = 3145749 // BgtAccts.HC:21
                 l8_tmpt = ld8(l8_tmpt)
@@ -610,23 +610,23 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtAcctsWrite (BgtAccts.HC:25) */
-    fun f713_BgtAcctsWrite(t: Task) {
+    fun f718_BgtAcctsWrite(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 3145755 // BgtAccts.HC:27
             tick(t)
-            f712_BgtAcctsUpdate(t)
+            f717_BgtAcctsUpdate(t)
             ln = 3145756 // BgtAccts.HC:28
             tick(t)
-            f708_StrFileWrite(t, ld8(g_bgt_accts_file), ld8(g_accts_table), 1L)
+            f713_StrFileWrite(t, ld8(g_bgt_accts_file), ld8(g_accts_table), 1L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "BgtAcctsWrite", ln) }
     }
 
     /** HolyC BgtAcctsRead (BgtAccts.HC:31) */
-    fun f714_BgtAcctsRead(t: Task) {
+    fun f719_BgtAcctsRead(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -636,14 +636,14 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             var l24_s: Long = 0L
             ln = 3145762 // BgtAccts.HC:34
             tick(t)
-            val t0: Long = f704_StrFileRead(t, ld8(g_bgt_accts_file), (fp + 8), (fp + 16), 1L)
+            val t0: Long = f709_StrFileRead(t, ld8(g_bgt_accts_file), (fp + 8), (fp + 16), 1L)
             l24_s = t0
             ln = 3145763 // BgtAccts.HC:35
             tick(t)
-            f709_StrFileDel(t, ld8(g_accts_table))
+            f714_StrFileDel(t, ld8(g_accts_table))
             ln = 3145764 // BgtAccts.HC:36
             tick(t)
-            val t1: Long = P.f585_HashTableNew(t, 512L, 0L)
+            val t1: Long = P.f590_HashTableNew(t, 512L, 0L)
             st8(g_accts_table, t1)
             ln = 3145765 // BgtAccts.HC:37
             st8(g_accts_table_strs, 0L)
@@ -654,7 +654,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 if ((ld8((l24_s + (l0_i * 8L))) != 0L)) {
                     ln = 3145768 // BgtAccts.HC:40
                     tick(t)
-                    f706_StrFileAdd(t, ld8((l24_s + (l0_i * 8L))), g_accts_table_strs, ld8(g_accts_table), ld1u((ld8((fp + 16)) + l0_i)))
+                    f711_StrFileAdd(t, ld8((l24_s + (l0_i * 8L))), g_accts_table_strs, ld8(g_accts_table), ld1u((ld8((fp + 16)) + l0_i)))
                 }
                 ln = 3145766 // BgtAccts.HC:38
                 l0_i = (l0_i + 1L)
@@ -662,7 +662,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 3145769 // BgtAccts.HC:41
             tick(t)
-            f705_StrFileArrDel(t, l24_s, ld8((fp + 8)))
+            f710_StrFileArrDel(t, l24_s, ld8((fp + 8)))
             ln = 3145770 // BgtAccts.HC:42
             nat(t, n_Free, push1(t, ld8((fp + 16))))
             t.msp = msp0
@@ -672,7 +672,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtAcctColor (BgtAccts.HC:45) */
-    fun f715_BgtAcctColor(t: Task, a0: Long): Long {
+    fun f720_BgtAcctColor(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -680,7 +680,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             var l8_tmph: Long = 0L
             ln = 3145776 // BgtAccts.HC:48
             tick(t)
-            val t0: Long = P.f586_HashFind(t, p0_st, ld8(g_accts_table), 1L, 1L)
+            val t0: Long = P.f591_HashFind(t, p0_st, ld8(g_accts_table), 1L, 1L)
             l8_tmph = t0
             if ((t0 != 0L)) {
                 ln = 3145777 // BgtAccts.HC:49
@@ -697,7 +697,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtPopUpAcct (BgtAccts.HC:54) */
-    fun f716_BgtPopUpAcct(t: Task, a0: Long, a1: Long): Long {
+    fun f721_BgtPopUpAcct(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -711,7 +711,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             var l56_tmph: Long = 0L
             ln = 3145786 // BgtAccts.HC:58
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l32_doc = t0
             ln = 3145787 // BgtAccts.HC:59
             l48_doc_dft = 0L
@@ -763,11 +763,11 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 3145808 // BgtAccts.HC:80
             tick(t)
-            val t4: Long = P.f621_PopUpMenu(t, l32_doc, 4L)
+            val t4: Long = P.f626_PopUpMenu(t, l32_doc, 4L)
             l24_res = t4
             ln = 3145809 // BgtAccts.HC:81
             tick(t)
-            P.f605_DocDel(t, l32_doc)
+            P.f610_DocDel(t, l32_doc)
             ln = 3145810 // BgtAccts.HC:82
             t.depth--
             return l24_res
@@ -777,7 +777,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtEntryDel2 (BgtEntry.HC:1) */
-    fun f717_BgtEntryDel2(t: Task, a0: Long) {
+    fun f722_BgtEntryDel2(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -797,7 +797,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtEntryCopy (BgtEntry.HC:10) */
-    fun f718_BgtEntryCopy(t: Task, a0: Long, a1: Long): Long {
+    fun f723_BgtEntryCopy(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -835,14 +835,14 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtEntryDel (BgtEntry.HC:22) */
-    fun f719_BgtEntryDel(t: Task, a0: Long) {
+    fun f724_BgtEntryDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_tmpb: Long = a0
             ln = 4194328 // BgtEntry.HC:24
             tick(t)
-            f717_BgtEntryDel2(t, p0_tmpb)
+            f722_BgtEntryDel2(t, p0_tmpb)
             ln = 4194329 // BgtEntry.HC:25
             nat(t, n_Free, push1(t, p0_tmpb))
             t.depth--
@@ -851,7 +851,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtIns (BgtEntry.HC:28) */
-    fun f720_BgtIns(t: Task, a0: Long) {
+    fun f725_BgtIns(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -874,7 +874,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtEntryPmt (BgtEntry.HC:45) */
-    fun f721_BgtEntryPmt(t: Task, a0: Long): Long {
+    fun f726_BgtEntryPmt(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -908,13 +908,13 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             loop0@ while ((1L != 0L)) {
                 ln = 4194364 // BgtEntry.HC:60
                 tick(t)
-                val t0: Long = P.f600_PopUpForm(t, (fp + 8), s10)
+                val t0: Long = P.f605_PopUpForm(t, (fp + 8), s10)
                 if ((t0 != 0L)) {
                     ln = 4194365 // BgtEntry.HC:61
                     if ((ld1u(((fp + 8) + 520L)) == 0L)) {
                         ln = 4194366 // BgtEntry.HC:62
                         tick(t)
-                        val t1: Long = f716_BgtPopUpAcct(t, s11, 0L)
+                        val t1: Long = f721_BgtPopUpAcct(t, s11, 0L)
                         l2072_st = t1
                         ln = 4194367 // BgtEntry.HC:63
                         if ((l2072_st != -1L)) {
@@ -927,7 +927,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         if ((ld1u(((fp + 8) + 1032L)) == 0L)) {
                             ln = 4194370 // BgtEntry.HC:66
                             tick(t)
-                            val t2: Long = f716_BgtPopUpAcct(t, s12, 0L)
+                            val t2: Long = f721_BgtPopUpAcct(t, s12, 0L)
                             l2072_st = t2
                             ln = 4194371 // BgtEntry.HC:67
                             if ((l2072_st != -1L)) {
@@ -941,7 +941,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             l2064_tmpb = t3
                             ln = 4194375 // BgtEntry.HC:71
                             tick(t)
-                            val t4: Long = P.f583_Str2Date(t, (fp + 8))
+                            val t4: Long = P.f588_Str2Date(t, (fp + 8))
                             st8((l2064_tmpb + 16L), t4)
                             ln = 4194376 // BgtEntry.HC:72
                             st8((l2064_tmpb + 40L), bits(ldf(((fp + 8) + 512L))))
@@ -961,10 +961,10 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             st2((l2064_tmpb + 24L), 0L)
                             ln = 4194381 // BgtEntry.HC:77
                             tick(t)
-                            f706_StrFileAdd(t, ld8((l2064_tmpb + 48L)), g_accts_table_strs, ld8(g_accts_table), 16L)
+                            f711_StrFileAdd(t, ld8((l2064_tmpb + 48L)), g_accts_table_strs, ld8(g_accts_table), 16L)
                             ln = 4194382 // BgtEntry.HC:78
                             tick(t)
-                            f706_StrFileAdd(t, ld8((l2064_tmpb + 56L)), g_accts_table_strs, ld8(g_accts_table), 16L)
+                            f711_StrFileAdd(t, ld8((l2064_tmpb + 56L)), g_accts_table_strs, ld8(g_accts_table), 16L)
                             ln = 4194383 // BgtEntry.HC:79
                             t.msp = msp0
                             t.depth--
@@ -986,7 +986,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtTemplatePurge (BgtTemplate.HC:1) */
-    fun f722_BgtTemplatePurge(t: Task, a0: Long) {
+    fun f727_BgtTemplatePurge(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1006,7 +1006,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     P.f155_QueRem(t, l8_tmpb)
                     ln = 5242889 // BgtTemplate.HC:9
                     tick(t)
-                    f717_BgtEntryDel2(t, l8_tmpb)
+                    f722_BgtEntryDel2(t, l8_tmpb)
                     ln = 5242890 // BgtTemplate.HC:10
                     nat(t, n_Free, push1(t, l8_tmpb))
                 }
@@ -1020,17 +1020,17 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtTemplateDel (BgtTemplate.HC:16) */
-    fun f723_BgtTemplateDel(t: Task, a0: Long) {
+    fun f728_BgtTemplateDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_tmpt: Long = a0
             ln = 5242898 // BgtTemplate.HC:18
             tick(t)
-            f722_BgtTemplatePurge(t, p0_tmpt)
+            f727_BgtTemplatePurge(t, p0_tmpt)
             ln = 5242899 // BgtTemplate.HC:19
             tick(t)
-            f717_BgtEntryDel2(t, (p0_tmpt + 60L))
+            f722_BgtEntryDel2(t, (p0_tmpt + 60L))
             ln = 5242900 // BgtTemplate.HC:20
             nat(t, n_Free, push1(t, p0_tmpt))
             t.depth--
@@ -1039,7 +1039,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtTemplateExpand (BgtTemplate.HC:23) */
-    fun f724_BgtTemplateExpand(t: Task, a0: Long, a1: Long) {
+    fun f729_BgtTemplateExpand(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1058,11 +1058,11 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             l64_first = 1L
             ln = 5242910 // BgtTemplate.HC:30
             tick(t)
-            val t0: Long = f711_MyStr2Date(t, (p0_tmpt + 20L))
+            val t0: Long = f716_MyStr2Date(t, (p0_tmpt + 20L))
             l24_start = t0
             ln = 5242911 // BgtTemplate.HC:31
             tick(t)
-            val t1: Long = f711_MyStr2Date(t, (p0_tmpt + 36L))
+            val t1: Long = f716_MyStr2Date(t, (p0_tmpt + 36L))
             l32_end = t1
             ln = 5242912 // BgtTemplate.HC:32
             st8(((p0_tmpt + 60L) + 72L), p0_tmpt)
@@ -1079,7 +1079,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             if (((l64_first == 0L) || (p1_periodic_copy == 0L))) {
                                 ln = 5242918 // BgtTemplate.HC:38
                                 tick(t)
-                                val t3: Long = f718_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
+                                val t3: Long = f723_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
                                 l56_tmpb = t3
                                 ln = 5242919 // BgtTemplate.HC:39
                                 st8((l56_tmpb + 16L), l16_d)
@@ -1093,7 +1093,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                 }
                                 ln = 5242924 // BgtTemplate.HC:44
                                 tick(t)
-                                f720_BgtIns(t, l56_tmpb)
+                                f725_BgtIns(t, l56_tmpb)
                             }
                             ln = 5242926 // BgtTemplate.HC:46
                             l16_d = f2i((l16_d.toDouble() + (ldf((p0_tmpt + 52L)) * 4.294967296E9)))
@@ -1110,7 +1110,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         loop3@ while ((1L != 0L)) {
                             ln = 5242933 // BgtTemplate.HC:53
                             tick(t)
-                            val t4: Long = P.f578_Struct2Date(t, (fp + 40))
+                            val t4: Long = P.f583_Struct2Date(t, (fp + 40))
                             l16_d = t4
                             ln = 5242934 // BgtTemplate.HC:54
                             if ((l16_d <= l32_end)) {
@@ -1118,7 +1118,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                 if (((l64_first == 0L) || (p1_periodic_copy == 0L))) {
                                     ln = 5242936 // BgtTemplate.HC:56
                                     tick(t)
-                                    val t5: Long = f718_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
+                                    val t5: Long = f723_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
                                     l56_tmpb = t5
                                     ln = 5242937 // BgtTemplate.HC:57
                                     st8((l56_tmpb + 16L), l16_d)
@@ -1132,7 +1132,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                     }
                                     ln = 5242942 // BgtTemplate.HC:62
                                     tick(t)
-                                    f720_BgtIns(t, l56_tmpb)
+                                    f725_BgtIns(t, l56_tmpb)
                                 }
                             } else {
                                 ln = 5242945 // BgtTemplate.HC:65
@@ -1164,7 +1164,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         loop5@ while ((1L != 0L)) {
                             ln = 5242956 // BgtTemplate.HC:76
                             tick(t)
-                            val t11: Long = P.f578_Struct2Date(t, (fp + 40))
+                            val t11: Long = P.f583_Struct2Date(t, (fp + 40))
                             l16_d = t11
                             ln = 5242957 // BgtTemplate.HC:77
                             if ((l16_d <= l32_end)) {
@@ -1172,7 +1172,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                 if (((l64_first == 0L) || (p1_periodic_copy == 0L))) {
                                     ln = 5242959 // BgtTemplate.HC:79
                                     tick(t)
-                                    val t12: Long = f718_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
+                                    val t12: Long = f723_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
                                     l56_tmpb = t12
                                     ln = 5242960 // BgtTemplate.HC:80
                                     st8((l56_tmpb + 16L), l16_d)
@@ -1186,7 +1186,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                     }
                                     ln = 5242965 // BgtTemplate.HC:85
                                     tick(t)
-                                    f720_BgtIns(t, l56_tmpb)
+                                    f725_BgtIns(t, l56_tmpb)
                                 }
                             } else {
                                 ln = 5242968 // BgtTemplate.HC:88
@@ -1218,7 +1218,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         loop7@ while ((1L != 0L)) {
                             ln = 5242980 // BgtTemplate.HC:100
                             tick(t)
-                            val t17: Long = P.f578_Struct2Date(t, (fp + 40))
+                            val t17: Long = P.f583_Struct2Date(t, (fp + 40))
                             l16_d = t17
                             ln = 5242981 // BgtTemplate.HC:101
                             if ((l16_d <= l32_end)) {
@@ -1226,7 +1226,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                 if (((l64_first == 0L) || (p1_periodic_copy == 0L))) {
                                     ln = 5242983 // BgtTemplate.HC:103
                                     tick(t)
-                                    val t18: Long = f718_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
+                                    val t18: Long = f723_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
                                     l56_tmpb = t18
                                     ln = 5242984 // BgtTemplate.HC:104
                                     st8((l56_tmpb + 16L), l16_d)
@@ -1240,7 +1240,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                     }
                                     ln = 5242989 // BgtTemplate.HC:109
                                     tick(t)
-                                    f720_BgtIns(t, l56_tmpb)
+                                    f725_BgtIns(t, l56_tmpb)
                                 }
                             } else {
                                 ln = 5242992 // BgtTemplate.HC:112
@@ -1272,7 +1272,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         loop9@ while ((1L != 0L)) {
                             ln = 5243004 // BgtTemplate.HC:124
                             tick(t)
-                            val t23: Long = P.f578_Struct2Date(t, (fp + 40))
+                            val t23: Long = P.f583_Struct2Date(t, (fp + 40))
                             l16_d = t23
                             ln = 5243005 // BgtTemplate.HC:125
                             if ((l16_d <= l32_end)) {
@@ -1280,7 +1280,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                 if (((l64_first == 0L) || (p1_periodic_copy == 0L))) {
                                     ln = 5243007 // BgtTemplate.HC:127
                                     tick(t)
-                                    val t24: Long = f718_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
+                                    val t24: Long = f723_BgtEntryCopy(t, (p0_tmpt + 60L), p1_periodic_copy)
                                     l56_tmpb = t24
                                     ln = 5243008 // BgtTemplate.HC:128
                                     st8((l56_tmpb + 16L), l16_d)
@@ -1294,7 +1294,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                     }
                                     ln = 5243013 // BgtTemplate.HC:133
                                     tick(t)
-                                    f720_BgtIns(t, l56_tmpb)
+                                    f725_BgtIns(t, l56_tmpb)
                                 }
                             } else {
                                 ln = 5243016 // BgtTemplate.HC:136
@@ -1320,7 +1320,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC CBgtTemplatesExpand (BgtTemplate.HC:144) */
-    fun f725_CBgtTemplatesExpand(t: Task) {
+    fun f730_CBgtTemplatesExpand(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1331,7 +1331,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             loop0@ while ((l0_tmpt != g_t_head)) {
                 ln = 5243028 // BgtTemplate.HC:148
                 tick(t)
-                f724_BgtTemplateExpand(t, l0_tmpt, 0L)
+                f729_BgtTemplateExpand(t, l0_tmpt, 0L)
                 ln = 5243029 // BgtTemplate.HC:149
                 l0_tmpt = ld8(l0_tmpt)
                 tick(t)
@@ -1342,7 +1342,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtTemplatePmt (BgtTemplate.HC:153) */
-    fun f726_BgtTemplatePmt(t: Task, a0: Long, a1: Long): Long {
+    fun f731_BgtTemplatePmt(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1380,11 +1380,11 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             loop0@ while ((1L != 0L)) {
                 ln = 5243050 // BgtTemplate.HC:170
                 tick(t)
-                val t0: Long = P.f600_PopUpForm(t, (fp + 16), s15)
+                val t0: Long = P.f605_PopUpForm(t, (fp + 16), s15)
                 if (((t0 != 0L) && (((ld2u(((fp + 16) + 16L)) == 1L) && (ldf(((fp + 16) + 52L)) > 0.0)) || gtu(ld2u(((fp + 16) + 16L)), 1L)))) {
                     ln = 5243052 // BgtTemplate.HC:172
                     tick(t)
-                    val t1: Long = f721_BgtEntryPmt(t, p1_dft_b)
+                    val t1: Long = f726_BgtEntryPmt(t, p1_dft_b)
                     l176_tmpb = t1
                     if ((t1 != 0L)) {
                         ln = 5243053 // BgtTemplate.HC:173
@@ -1418,7 +1418,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtDataRead (BgtFile.HC:1) */
-    fun f727_BgtDataRead(t: Task) {
+    fun f732_BgtDataRead(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1433,7 +1433,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             var l8_tmpt: Long = 0L
             ln = 6291464 // BgtFile.HC:8
             tick(t)
-            val t0: Long = f704_StrFileRead(t, ld8(g_bgt_string_file), (fp + 56), 0L, 0L)
+            val t0: Long = f709_StrFileRead(t, ld8(g_bgt_string_file), (fp + 56), 0L, 0L)
             l64_s = t0
             ln = 6291466 // BgtFile.HC:10
             nat(t, n_MemSet, push3(t, g_b_head, 0L, 88L))
@@ -1529,12 +1529,12 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 6291499 // BgtFile.HC:43
             tick(t)
-            f705_StrFileArrDel(t, l64_s, ld8((fp + 56)))
+            f710_StrFileArrDel(t, l64_s, ld8((fp + 56)))
             ln = 6291500 // BgtFile.HC:44
             nat(t, n_Free, push1(t, l40_b))
             ln = 6291502 // BgtFile.HC:46
             tick(t)
-            f712_BgtAcctsUpdate(t)
+            f717_BgtAcctsUpdate(t)
             t.msp = msp0
             t.depth--
             return
@@ -1542,7 +1542,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtDataWrite (BgtFile.HC:49) */
-    fun f728_BgtDataWrite(t: Task) {
+    fun f733_BgtDataWrite(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1560,7 +1560,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             st8((fp + 8), 0L)
             ln = 6291508 // BgtFile.HC:52
             tick(t)
-            val t0: Long = P.f585_HashTableNew(t, 1024L, 0L)
+            val t0: Long = P.f590_HashTableNew(t, 1024L, 0L)
             l40_table = t0
             ln = 6291514 // BgtFile.HC:58
             l0_i = 0L
@@ -1571,7 +1571,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 loop2@ while ((l64_tmph != 0L)) {
                     ln = 6291517 // BgtFile.HC:61
                     tick(t)
-                    f706_StrFileAdd(t, ld8((l64_tmph + 8L)), (fp + 8), l40_table, 16L)
+                    f711_StrFileAdd(t, ld8((l64_tmph + 8L)), (fp + 8), l40_table, 16L)
                     ln = 6291518 // BgtFile.HC:62
                     l64_tmph = ld8(l64_tmph)
                     tick(t)
@@ -1590,15 +1590,15 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 if ((ld2u((l48_tmpb + 24L)) != 4L)) {
                     ln = 6291526 // BgtFile.HC:70
                     tick(t)
-                    val t1: Long = f706_StrFileAdd(t, ld8((l48_tmpb + 48L)), (fp + 8), l40_table, 16L)
+                    val t1: Long = f711_StrFileAdd(t, ld8((l48_tmpb + 48L)), (fp + 8), l40_table, 16L)
                     st4((l48_tmpb + 28L), t1)
                     ln = 6291527 // BgtFile.HC:71
                     tick(t)
-                    val t2: Long = f706_StrFileAdd(t, ld8((l48_tmpb + 56L)), (fp + 8), l40_table, 16L)
+                    val t2: Long = f711_StrFileAdd(t, ld8((l48_tmpb + 56L)), (fp + 8), l40_table, 16L)
                     st4((l48_tmpb + 32L), t2)
                     ln = 6291528 // BgtFile.HC:72
                     tick(t)
-                    val t3: Long = f706_StrFileAdd(t, ld8((l48_tmpb + 64L)), (fp + 8), l40_table, 16L)
+                    val t3: Long = f711_StrFileAdd(t, ld8((l48_tmpb + 64L)), (fp + 8), l40_table, 16L)
                     st4((l48_tmpb + 36L), t3)
                     ln = 6291529 // BgtFile.HC:73
                     val t4: Long = ld8((fp + 24))
@@ -1616,15 +1616,15 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             loop6@ while ((l56_tmpt != g_t_head)) {
                 ln = 6291537 // BgtFile.HC:81
                 tick(t)
-                val t5: Long = f706_StrFileAdd(t, ld8(((l56_tmpt + 60L) + 48L)), (fp + 8), l40_table, 16L)
+                val t5: Long = f711_StrFileAdd(t, ld8(((l56_tmpt + 60L) + 48L)), (fp + 8), l40_table, 16L)
                 st4(((l56_tmpt + 60L) + 28L), t5)
                 ln = 6291538 // BgtFile.HC:82
                 tick(t)
-                val t6: Long = f706_StrFileAdd(t, ld8(((l56_tmpt + 60L) + 56L)), (fp + 8), l40_table, 16L)
+                val t6: Long = f711_StrFileAdd(t, ld8(((l56_tmpt + 60L) + 56L)), (fp + 8), l40_table, 16L)
                 st4(((l56_tmpt + 60L) + 32L), t6)
                 ln = 6291539 // BgtFile.HC:83
                 tick(t)
-                val t7: Long = f706_StrFileAdd(t, ld8(((l56_tmpt + 60L) + 64L)), (fp + 8), l40_table, 16L)
+                val t7: Long = f711_StrFileAdd(t, ld8(((l56_tmpt + 60L) + 64L)), (fp + 8), l40_table, 16L)
                 st4(((l56_tmpt + 60L) + 36L), t7)
                 ln = 6291540 // BgtFile.HC:84
                 val t8: Long = ld8((fp + 32))
@@ -1635,10 +1635,10 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 6291543 // BgtFile.HC:87
             tick(t)
-            f708_StrFileWrite(t, ld8(g_bgt_string_file), l40_table, 0L)
+            f713_StrFileWrite(t, ld8(g_bgt_string_file), l40_table, 0L)
             ln = 6291544 // BgtFile.HC:88
             tick(t)
-            f709_StrFileDel(t, l40_table)
+            f714_StrFileDel(t, l40_table)
             ln = 6291546 // BgtFile.HC:90
             l16_size = ((16L + (ld8((fp + 24)) * 32L)) + (ld8((fp + 32)) * 76L))
             ln = 6291547 // BgtFile.HC:91
@@ -1695,7 +1695,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtDel (BgtFile.HC:119) */
-    fun f729_BgtDel(t: Task) {
+    fun f734_BgtDel(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1711,7 +1711,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 l8_tmpb1 = ld8(l0_tmpb)
                 ln = 6291582 // BgtFile.HC:126
                 tick(t)
-                f717_BgtEntryDel2(t, l0_tmpb)
+                f722_BgtEntryDel2(t, l0_tmpb)
                 ln = 6291583 // BgtFile.HC:127
                 nat(t, n_Free, push1(t, l0_tmpb))
                 ln = 6291584 // BgtFile.HC:128
@@ -1726,7 +1726,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 l24_tmpt1 = ld8(l16_tmpt)
                 ln = 6291589 // BgtFile.HC:133
                 tick(t)
-                f717_BgtEntryDel2(t, (l16_tmpt + 60L))
+                f722_BgtEntryDel2(t, (l16_tmpt + 60L))
                 ln = 6291590 // BgtFile.HC:134
                 nat(t, n_Free, push1(t, l16_tmpt))
                 ln = 6291591 // BgtFile.HC:135
@@ -1735,7 +1735,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 6291593 // BgtFile.HC:137
             tick(t)
-            f709_StrFileDel(t, ld8(g_accts_table))
+            f714_StrFileDel(t, ld8(g_accts_table))
             ln = 6291594 // BgtFile.HC:138
             st8(g_accts_table, 0L)
             ln = 6291595 // BgtFile.HC:139
@@ -1746,7 +1746,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC BgtRegen (BgtMain.HC:103) */
-    fun f730_BgtRegen(t: Task) {
+    fun f735_BgtRegen(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1768,7 +1768,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             l64_tmpb = ld8(g_b_head)
             ln = 7340142 // BgtMain.HC:110
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l32_doc = t0
             ln = 7340143 // BgtMain.HC:111
             val t1: Long = (l32_doc + 88L)
@@ -1789,7 +1789,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 }
                 ln = 7340149 // BgtMain.HC:117
                 tick(t)
-                val t4: Long = f715_BgtAcctColor(t, ld8((l64_tmpb + 48L)))
+                val t4: Long = f720_BgtAcctColor(t, ld8((l64_tmpb + 48L)))
                 l8_c = t4
                 ln = 7340150 // BgtMain.HC:118
                 if ((l8_c != l16_color)) {
@@ -1813,7 +1813,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             }
             ln = 7340160 // BgtMain.HC:128
             tick(t)
-            P.f614_DocRecalc(t, l32_doc)
+            P.f619_DocRecalc(t, l32_doc)
             ln = 7340162 // BgtMain.HC:130
             skip_2@ do {
                 val t6: Long = ld8((ld8(P.g_Fs) + 48L))
@@ -1821,7 +1821,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 if ((t6 != 0L)) {
                     ln = 7340163 // BgtMain.HC:131
                     tick(t)
-                    P.f610_DocLock(t, l40_pdoc)
+                    P.f615_DocLock(t, l40_pdoc)
                     ln = 7340171 // BgtMain.HC:139
                     l56_doc_ce = ld8((l40_pdoc + 104L))
                     ln = 7340172 // BgtMain.HC:140
@@ -1857,7 +1857,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                 st4((l32_doc + 120L), 0L)
                                 ln = 7340183 // BgtMain.HC:151
                                 tick(t)
-                                P.f613_DocCenter(t, l32_doc)
+                                P.f618_DocCenter(t, l32_doc)
                                 ln = 7340184 // BgtMain.HC:152
                                 break@skip_2
                             }
@@ -1879,22 +1879,22 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             st8((ld8(P.g_Fs) + 56L), l32_doc)
             ln = 7340196 // BgtMain.HC:164
             tick(t)
-            P.f605_DocDel(t, l40_pdoc)
+            P.f610_DocDel(t, l40_pdoc)
             ln = 7340197 // BgtMain.HC:165
             if ((l40_pdoc != l48_ddoc)) {
                 ln = 7340198 // BgtMain.HC:166
                 tick(t)
-                P.f605_DocDel(t, l48_ddoc)
+                P.f610_DocDel(t, l48_ddoc)
             }
             ln = 7340199 // BgtMain.HC:167
-            st8((l32_doc + 600L), 9223090561878065883L)
+            st8((l32_doc + 600L), 9223090561878065888L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "BgtRegen", ln) }
     }
 
     /** HolyC BgtPutKey (BgtMain.HC:3) */
-    fun f731_BgtPutKey(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f736_BgtPutKey(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1925,7 +1925,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             if ((t2 != 0L)) {
                                 ln = 7340048 // BgtMain.HC:16
                                 tick(t)
-                                val t3: Long = f726_BgtTemplatePmt(t, l48_tmpt, 0L)
+                                val t3: Long = f731_BgtTemplatePmt(t, l48_tmpt, 0L)
                                 l56_tmpt1 = t3
                                 if ((t3 != 0L)) {
                                     ln = 7340049 // BgtMain.HC:17
@@ -1933,10 +1933,10 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                     P.f155_QueRem(t, l48_tmpt)
                                     ln = 7340050 // BgtMain.HC:18
                                     tick(t)
-                                    f722_BgtTemplatePurge(t, l48_tmpt)
+                                    f727_BgtTemplatePurge(t, l48_tmpt)
                                     ln = 7340051 // BgtMain.HC:19
                                     tick(t)
-                                    f717_BgtEntryDel2(t, (l48_tmpt + 60L))
+                                    f722_BgtEntryDel2(t, (l48_tmpt + 60L))
                                     ln = 7340052 // BgtMain.HC:20
                                     nat(t, n_Free, push1(t, l48_tmpt))
                                     ln = 7340053 // BgtMain.HC:21
@@ -1944,15 +1944,15 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                     P.f153_QueIns(t, l56_tmpt1, ld8((g_t_head + 8L)))
                                     ln = 7340054 // BgtMain.HC:22
                                     tick(t)
-                                    f724_BgtTemplateExpand(t, l56_tmpt1, 0L)
+                                    f729_BgtTemplateExpand(t, l56_tmpt1, 0L)
                                     ln = 7340055 // BgtMain.HC:23
                                     tick(t)
-                                    f730_BgtRegen(t)
+                                    f735_BgtRegen(t)
                                 }
                             } else {
                                 ln = 7340058 // BgtMain.HC:26
                                 tick(t)
-                                val t4: Long = f721_BgtEntryPmt(t, l32_tmpb)
+                                val t4: Long = f726_BgtEntryPmt(t, l32_tmpb)
                                 l40_tmpb1 = t4
                                 if ((t4 != 0L)) {
                                     ln = 7340059 // BgtMain.HC:27
@@ -1960,13 +1960,13 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                     P.f155_QueRem(t, l32_tmpb)
                                     ln = 7340060 // BgtMain.HC:28
                                     tick(t)
-                                    f719_BgtEntryDel(t, l32_tmpb)
+                                    f724_BgtEntryDel(t, l32_tmpb)
                                     ln = 7340061 // BgtMain.HC:29
                                     tick(t)
-                                    f720_BgtIns(t, l40_tmpb1)
+                                    f725_BgtIns(t, l40_tmpb1)
                                     ln = 7340062 // BgtMain.HC:30
                                     tick(t)
-                                    f730_BgtRegen(t)
+                                    f735_BgtRegen(t)
                                 }
                             }
                         }
@@ -1990,18 +1990,18 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                 P.f155_QueRem(t, l48_tmpt)
                                 ln = 7340073 // BgtMain.HC:41
                                 tick(t)
-                                f723_BgtTemplateDel(t, l48_tmpt)
+                                f728_BgtTemplateDel(t, l48_tmpt)
                             } else {
                                 ln = 7340075 // BgtMain.HC:43
                                 tick(t)
                                 P.f155_QueRem(t, l32_tmpb)
                                 ln = 7340076 // BgtMain.HC:44
                                 tick(t)
-                                f719_BgtEntryDel(t, l32_tmpb)
+                                f724_BgtEntryDel(t, l32_tmpb)
                             }
                             ln = 7340078 // BgtMain.HC:46
                             tick(t)
-                            f730_BgtRegen(t)
+                            f735_BgtRegen(t)
                         }
                         ln = 7340080 // BgtMain.HC:48
                         t.depth--
@@ -2013,14 +2013,14 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         P.f201_PopUpOk(t, s17, 0L)
                         ln = 7340085 // BgtMain.HC:53
                         tick(t)
-                        val t7: Long = P.f627_PopUpEd(t, ld8(g_bgt_accts_file), ld8(P.g_Fs), 0L)
+                        val t7: Long = P.f632_PopUpEd(t, ld8(g_bgt_accts_file), ld8(P.g_Fs), 0L)
                         if ((t7 != 0L)) {
                             ln = 7340086 // BgtMain.HC:54
                             tick(t)
-                            f714_BgtAcctsRead(t)
+                            f719_BgtAcctsRead(t)
                             ln = 7340087 // BgtMain.HC:55
                             tick(t)
-                            f730_BgtRegen(t)
+                            f735_BgtRegen(t)
                         }
                         ln = 7340089 // BgtMain.HC:57
                         t.depth--
@@ -2029,7 +2029,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     118L -> {
                         ln = 7340091 // BgtMain.HC:59
                         tick(t)
-                        val t8: Long = f716_BgtPopUpAcct(t, s18, g_view_acct)
+                        val t8: Long = f721_BgtPopUpAcct(t, s18, g_view_acct)
                         l72_st = t8
                         if (geu(t8, 0L)) {
                             ln = 7340092 // BgtMain.HC:60
@@ -2037,7 +2037,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             P.f33_StrCpy(t, g_view_acct, l72_st)
                             ln = 7340093 // BgtMain.HC:61
                             tick(t)
-                            f730_BgtRegen(t)
+                            f735_BgtRegen(t)
                         }
                         ln = 7340095 // BgtMain.HC:63
                         t.depth--
@@ -2046,15 +2046,15 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     110L -> {
                         ln = 7340097 // BgtMain.HC:65
                         tick(t)
-                        val t9: Long = f721_BgtEntryPmt(t, 0L)
+                        val t9: Long = f726_BgtEntryPmt(t, 0L)
                         l40_tmpb1 = t9
                         if ((t9 != 0L)) {
                             ln = 7340098 // BgtMain.HC:66
                             tick(t)
-                            f720_BgtIns(t, l40_tmpb1)
+                            f725_BgtIns(t, l40_tmpb1)
                             ln = 7340099 // BgtMain.HC:67
                             tick(t)
-                            f730_BgtRegen(t)
+                            f735_BgtRegen(t)
                         }
                         ln = 7340101 // BgtMain.HC:69
                         t.depth--
@@ -2063,7 +2063,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     116L -> {
                         ln = 7340103 // BgtMain.HC:71
                         tick(t)
-                        val t10: Long = f726_BgtTemplatePmt(t, 0L, 0L)
+                        val t10: Long = f731_BgtTemplatePmt(t, 0L, 0L)
                         l56_tmpt1 = t10
                         if ((t10 != 0L)) {
                             ln = 7340104 // BgtMain.HC:72
@@ -2071,10 +2071,10 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             P.f153_QueIns(t, l56_tmpt1, ld8((g_t_head + 8L)))
                             ln = 7340105 // BgtMain.HC:73
                             tick(t)
-                            f724_BgtTemplateExpand(t, l56_tmpt1, 0L)
+                            f729_BgtTemplateExpand(t, l56_tmpt1, 0L)
                             ln = 7340106 // BgtMain.HC:74
                             tick(t)
-                            f730_BgtRegen(t)
+                            f735_BgtRegen(t)
                         }
                         ln = 7340108 // BgtMain.HC:76
                         t.depth--
@@ -2093,15 +2093,15 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         }
                         ln = 7340115 // BgtMain.HC:83
                         tick(t)
-                        val t12: Long = f721_BgtEntryPmt(t, l32_tmpb)
+                        val t12: Long = f726_BgtEntryPmt(t, l32_tmpb)
                         l40_tmpb1 = t12
                         if ((t12 != 0L)) {
                             ln = 7340116 // BgtMain.HC:84
                             tick(t)
-                            f720_BgtIns(t, l40_tmpb1)
+                            f725_BgtIns(t, l40_tmpb1)
                             ln = 7340117 // BgtMain.HC:85
                             tick(t)
-                            f730_BgtRegen(t)
+                            f735_BgtRegen(t)
                         }
                         ln = 7340119 // BgtMain.HC:87
                         t.depth--
@@ -2116,18 +2116,18 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             l32_tmpb = ld8((l64_doc_ce + 80L))
                             ln = 7340124 // BgtMain.HC:92
                             tick(t)
-                            val t14: Long = f726_BgtTemplatePmt(t, 0L, l32_tmpb)
+                            val t14: Long = f731_BgtTemplatePmt(t, 0L, l32_tmpb)
                             l56_tmpt1 = t14
                             if ((t14 != 0L)) {
                                 ln = 7340125 // BgtMain.HC:93
                                 tick(t)
-                                f724_BgtTemplateExpand(t, l56_tmpt1, 1L)
+                                f729_BgtTemplateExpand(t, l56_tmpt1, 1L)
                                 ln = 7340126 // BgtMain.HC:94
                                 tick(t)
-                                f723_BgtTemplateDel(t, l56_tmpt1)
+                                f728_BgtTemplateDel(t, l56_tmpt1)
                                 ln = 7340127 // BgtMain.HC:95
                                 tick(t)
-                                f730_BgtRegen(t)
+                                f735_BgtRegen(t)
                             }
                         }
                         ln = 7340130 // BgtMain.HC:98
@@ -2147,7 +2147,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC Budget (BgtMain.HC:170) */
-    fun f732_Budget(t: Task, a0: Long) {
+    fun f737_Budget(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2169,13 +2169,13 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             st8(g_bgt_data_file, t2)
             ln = 7340211 // BgtMain.HC:179
             tick(t)
-            f714_BgtAcctsRead(t)
+            f719_BgtAcctsRead(t)
             ln = 7340212 // BgtMain.HC:180
             tick(t)
-            f727_BgtDataRead(t)
+            f732_BgtDataRead(t)
             ln = 7340213 // BgtMain.HC:181
             tick(t)
-            f725_CBgtTemplatesExpand(t)
+            f730_CBgtTemplatesExpand(t)
             ln = 7340214 // BgtMain.HC:182
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -2189,13 +2189,13 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             P.f220_WinMax(t, 0L)
             ln = 7340218 // BgtMain.HC:186
             tick(t)
-            P.f507_MenuPush(t, s22)
+            P.f512_MenuPush(t, s22)
             ln = 7340236 // BgtMain.HC:204
             tick(t)
             P.f33_StrCpy(t, g_view_acct, s23)
             ln = 7340237 // BgtMain.HC:205
             tick(t)
-            P.f612_DocMax(t, 0L)
+            P.f617_DocMax(t, 0L)
             ln = 7340238 // BgtMain.HC:206
             l24_old_put = ld8((ld8(P.g_Fs) + 48L))
             ln = 7340239 // BgtMain.HC:207
@@ -2206,21 +2206,21 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             st8((ld8(P.g_Fs) + 56L), 0L)
             ln = 7340242 // BgtMain.HC:210
             tick(t)
-            f730_BgtRegen(t)
+            f735_BgtRegen(t)
             ln = 7340243 // BgtMain.HC:211
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
             try {
                 ln = 7340244 // BgtMain.HC:212
                 tick(t)
-                val t3: Long = P.f625_View(t)
+                val t3: Long = P.f630_View(t)
                 if ((t3 != 0L)) {
                     ln = 7340245 // BgtMain.HC:213
                     tick(t)
-                    f728_BgtDataWrite(t)
+                    f733_BgtDataWrite(t)
                     ln = 7340246 // BgtMain.HC:214
                     tick(t)
-                    f713_BgtAcctsWrite(t)
+                    f718_BgtAcctsWrite(t)
                 }
                 t.hCount = h0c
             } catch (e0: RuntimeException) {
@@ -2241,29 +2241,29 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             st8((ld8(P.g_Fs) + 56L), l32_old_display)
             ln = 7340255 // BgtMain.HC:223
             tick(t)
-            P.f605_DocDel(t, l8_pdoc)
+            P.f610_DocDel(t, l8_pdoc)
             ln = 7340256 // BgtMain.HC:224
             if ((l8_pdoc != l16_ddoc)) {
                 ln = 7340257 // BgtMain.HC:225
                 tick(t)
-                P.f605_DocDel(t, l16_ddoc)
+                P.f610_DocDel(t, l16_ddoc)
             }
             ln = 7340259 // BgtMain.HC:227
             tick(t)
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 7340260 // BgtMain.HC:228
             tick(t)
-            f729_BgtDel(t)
+            f734_BgtDel(t)
             ln = 7340261 // BgtMain.HC:229
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Budget", ln) }
     }
 
     /** HolyC $init:C:/Apps/Budget/Load.HC#2 (Load.HC:57) */
-    fun f733_init_C__Apps_Budget_Load_HC_2(t: Task): Long {
+    fun f738_init_C__Apps_Budget_Load_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2275,37 +2275,37 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Budget_Load_HC_0(t)
-            704 -> f704_StrFileRead(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            705 -> { f705_StrFileArrDel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> f706_StrFileAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            707 -> f707_StrEntriesCompare(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            708 -> { f708_StrFileWrite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            709 -> { f709_StrFileDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            710 -> f710_init_C__Apps_Budget_Load_HC_1(t)
-            711 -> f711_MyStr2Date(t, (if (n > 0) st[base + 0] else 0L))
-            712 -> { f712_BgtAcctsUpdate(t); 0L }
-            713 -> { f713_BgtAcctsWrite(t); 0L }
-            714 -> { f714_BgtAcctsRead(t); 0L }
-            715 -> f715_BgtAcctColor(t, (if (n > 0) st[base + 0] else 0L))
-            716 -> f716_BgtPopUpAcct(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            717 -> { f717_BgtEntryDel2(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            718 -> f718_BgtEntryCopy(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            719 -> { f719_BgtEntryDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            720 -> { f720_BgtIns(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            721 -> f721_BgtEntryPmt(t, (if (n > 0) st[base + 0] else 0L))
-            722 -> { f722_BgtTemplatePurge(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            723 -> { f723_BgtTemplateDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            724 -> { f724_BgtTemplateExpand(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            725 -> { f725_CBgtTemplatesExpand(t); 0L }
-            726 -> f726_BgtTemplatePmt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            727 -> { f727_BgtDataRead(t); 0L }
-            728 -> { f728_BgtDataWrite(t); 0L }
-            729 -> { f729_BgtDel(t); 0L }
-            730 -> { f730_BgtRegen(t); 0L }
-            731 -> f731_BgtPutKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            732 -> { f732_Budget(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            733 -> f733_init_C__Apps_Budget_Load_HC_2(t)
+            708 -> f708_init_C__Apps_Budget_Load_HC_0(t)
+            709 -> f709_StrFileRead(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            710 -> { f710_StrFileArrDel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> f711_StrFileAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            712 -> f712_StrEntriesCompare(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            713 -> { f713_StrFileWrite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            714 -> { f714_StrFileDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            715 -> f715_init_C__Apps_Budget_Load_HC_1(t)
+            716 -> f716_MyStr2Date(t, (if (n > 0) st[base + 0] else 0L))
+            717 -> { f717_BgtAcctsUpdate(t); 0L }
+            718 -> { f718_BgtAcctsWrite(t); 0L }
+            719 -> { f719_BgtAcctsRead(t); 0L }
+            720 -> f720_BgtAcctColor(t, (if (n > 0) st[base + 0] else 0L))
+            721 -> f721_BgtPopUpAcct(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            722 -> { f722_BgtEntryDel2(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            723 -> f723_BgtEntryCopy(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            724 -> { f724_BgtEntryDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            725 -> { f725_BgtIns(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            726 -> f726_BgtEntryPmt(t, (if (n > 0) st[base + 0] else 0L))
+            727 -> { f727_BgtTemplatePurge(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            728 -> { f728_BgtTemplateDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            729 -> { f729_BgtTemplateExpand(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            730 -> { f730_CBgtTemplatesExpand(t); 0L }
+            731 -> f731_BgtTemplatePmt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            732 -> { f732_BgtDataRead(t); 0L }
+            733 -> { f733_BgtDataWrite(t); 0L }
+            734 -> { f734_BgtDel(t); 0L }
+            735 -> { f735_BgtRegen(t); 0L }
+            736 -> f736_BgtPutKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            737 -> { f737_Budget(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            738 -> f738_init_C__Apps_Budget_Load_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -2317,7 +2317,7 @@ class N_Apps_Budget_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738)
         private val NAMES = arrayOf("\$init:C:/Apps/Budget/Load.HC#0", "StrFileRead", "StrFileArrDel", "StrFileAdd", "StrEntriesCompare", "StrFileWrite", "StrFileDel", "\$init:C:/Apps/Budget/Load.HC#1", "MyStr2Date", "BgtAcctsUpdate", "BgtAcctsWrite", "BgtAcctsRead", "BgtAcctColor", "BgtPopUpAcct", "BgtEntryDel2", "BgtEntryCopy", "BgtEntryDel", "BgtIns", "BgtEntryPmt", "BgtTemplatePurge", "BgtTemplateDel", "BgtTemplateExpand", "CBgtTemplatesExpand", "BgtTemplatePmt", "BgtDataRead", "BgtDataWrite", "BgtDel", "BgtRegen", "BgtPutKey", "Budget", "\$init:C:/Apps/Budget/Load.HC#2")
         private val FILES = arrayOf<String>("C:/Apps/Budget/Load.HC", "C:/Apps/Budget/BgtStrs.HC", "C:/Apps/Budget/Budget.HC", "C:/Apps/Budget/BgtAccts.HC", "C:/Apps/Budget/BgtEntry.HC", "C:/Apps/Budget/BgtTemplate.HC", "C:/Apps/Budget/BgtFile.HC", "C:/Apps/Budget/BgtMain.HC")
     }

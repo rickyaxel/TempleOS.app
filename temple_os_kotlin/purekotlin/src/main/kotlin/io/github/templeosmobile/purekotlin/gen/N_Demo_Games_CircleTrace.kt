@@ -67,7 +67,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/Games/CircleTrace.HC#0 (CircleTrace.HC:5) */
-    fun f703_init_C__Demo_Games_CircleTrace_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_CircleTrace_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -81,7 +81,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/Games/CircleTrace.HC#1 (CircleTrace.HC:6) */
-    fun f704_init_C__Demo_Games_CircleTrace_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_CircleTrace_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -95,7 +95,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -105,21 +105,21 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC SongTask (CircleTrace.HC:11) */
-    fun f706_SongTask(t: Task, a0: Long) {
+    fun f711_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 13 // CircleTrace.HC:13
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 14 // CircleTrace.HC:14
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 15 // CircleTrace.HC:15
             loop0@ while ((1L != 0L)) {
                 ln = 16 // CircleTrace.HC:16
                 tick(t)
-                P.f494_Play(t, s2, 0L)
+                P.f499_Play(t, s2, 0L)
                 tick(t)
             }
             t.depth--
@@ -128,7 +128,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawIt (CircleTrace.HC:19) */
-    fun f707_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f712_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -137,7 +137,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 21 // CircleTrace.HC:21
             tick(t)
             val vb0 = push4(t, bits(ldf(g_avg_error)), bits(ldf(g_elapsed_time)), bits(ldf(g_score)), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s3, vb0, 4)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s3, vb0, 4)
             t.sp = vb0
             t.depth--
             return
@@ -145,7 +145,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CTPlot (CircleTrace.HC:28) */
-    fun f708_CTPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f713_CTPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -176,7 +176,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CircleTrace (CircleTrace.HC:36) */
-    fun f709_CircleTrace(t: Task) {
+    fun f714_CircleTrace(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -198,7 +198,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 43 // CircleTrace.HC:43
             val t2: Long = (ld8(P.g_Fs) + 1080L)
-            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065858L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065863L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t2, t1)
             ln = 44 // CircleTrace.HC:44
             nat(t, n_AutoComplete, push1(t, 0L))
@@ -219,7 +219,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 53 // CircleTrace.HC:53
             st4((ld8(P.g_Fs) + 12L), 5436158L)
             ln = 54 // CircleTrace.HC:54
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065859L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065864L)
             ln = 56 // CircleTrace.HC:56
             tick(t)
             P.f286_DCFill(t, 0L, 255L)
@@ -227,7 +227,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st4((l64_dc + 160L), 511L)
             ln = 58 // CircleTrace.HC:58
             tick(t)
-            P.f397_GrCircle(t, l64_dc, ld8(g_cx), ld8(g_cy), 100L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, l64_dc, ld8(g_cx), ld8(g_cy), 100L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 59 // CircleTrace.HC:59
             loop0@ while (true) {
                 ln = 60 // CircleTrace.HC:60
@@ -247,7 +247,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             st4((l64_dc + 160L), 511L)
                             ln = 68 // CircleTrace.HC:68
                             tick(t)
-                            P.f397_GrCircle(t, l64_dc, ld8(g_cx), ld8(g_cy), 100L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                            P.f398_GrCircle(t, l64_dc, ld8(g_cx), ld8(g_cy), 100L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                             ln = 69 // CircleTrace.HC:69
                             st4((l64_dc + 160L), 507L)
                             ln = 70 // CircleTrace.HC:70
@@ -282,7 +282,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                                 val t10: Double = f(nat(t, n_Sqrt, push1(t, bits((t8 + t9)))))
                                                 l56_total_distance = (l56_total_distance + t10)
                                                 ln = 83 // CircleTrace.HC:83
-                                                nat(t, n_Line, push(t, l64_dc, l24_x1, l32_y1, 0L, ld8((fp + 8)), ld8((fp + 16)), 0L, 9223090561878065860L, 1L, 0L))
+                                                nat(t, n_Line, push(t, l64_dc, l24_x1, l32_y1, 0L, ld8((fp + 8)), ld8((fp + 16)), 0L, 9223090561878065865L, 1L, 0L))
                                                 ln = 84 // CircleTrace.HC:84
                                                 l24_x1 = ld8((fp + 8))
                                                 l32_y1 = ld8((fp + 16))
@@ -381,13 +381,13 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/Games/CircleTrace.HC#2 (CircleTrace.HC:9) */
-    fun f710_init_C__Demo_Games_CircleTrace_HC_2(t: Task): Long {
+    fun f715_init_C__Demo_Games_CircleTrace_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 128 // CircleTrace.HC:128
             tick(t)
-            f709_CircleTrace(t)
+            f714_CircleTrace(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/CircleTrace.HC#2", ln) }
@@ -396,14 +396,14 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_CircleTrace_HC_0(t)
-            704 -> f704_init_C__Demo_Games_CircleTrace_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> { f706_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            707 -> { f707_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            708 -> f708_CTPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            709 -> { f709_CircleTrace(t); 0L }
-            710 -> f710_init_C__Demo_Games_CircleTrace_HC_2(t)
+            708 -> f708_init_C__Demo_Games_CircleTrace_HC_0(t)
+            709 -> f709_init_C__Demo_Games_CircleTrace_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> { f711_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            712 -> { f712_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            713 -> f713_CTPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            714 -> { f714_CircleTrace(t); 0L }
+            715 -> f715_init_C__Demo_Games_CircleTrace_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -415,7 +415,7 @@ class N_Demo_Games_CircleTrace(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/CircleTrace.HC#0", "\$init:C:/Demo/Games/CircleTrace.HC#1", "\$init:C:/Home/Registry.HC#0", "SongTask", "DrawIt", "CTPlot", "CircleTrace", "\$init:C:/Demo/Games/CircleTrace.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Games/CircleTrace.HC")
     }

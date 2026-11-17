@@ -30,7 +30,7 @@ class N_Home_Examples_Graphics(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC GraphicsDemo (Graphics.HC:4) */
-    fun f703_GraphicsDemo(t: Task) {
+    fun f708_GraphicsDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -53,7 +53,7 @@ class N_Home_Examples_Graphics(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 val t1: Double = f(nat(t, n_Sin, push1(t, bits(((l0_i.toDouble() * f(4614256656552045848L)) / 8.0)))))
                 val t2: Double = f(nat(t, n_Cos, push1(t, bits(((l0_i.toDouble() * f(4614256656552045848L)) / 8.0)))))
                 tick(t)
-                P.f396_GrLine(t, l8_dc, 320L, 240L, f2i((320.0 + (200.0 * t2))), f2i((240.0 + (200.0 * t1))), 1L, 0L)
+                P.f397_GrLine(t, l8_dc, 320L, 240L, f2i((320.0 + (200.0 * t2))), f2i((240.0 + (200.0 * t1))), 1L, 0L)
                 ln = 10 // Graphics.HC:10
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -64,7 +64,7 @@ class N_Home_Examples_Graphics(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st4((l8_dc + 228L), 3L)
             ln = 16 // Graphics.HC:16
             tick(t)
-            P.f411_GrCircle3(t, l8_dc, 320L, 240L, 0L, 100L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f413_GrCircle3(t, l8_dc, 320L, 240L, 0L, 100L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 17 // Graphics.HC:17
             st4((l8_dc + 160L), 12L)
             ln = 18 // Graphics.HC:18
@@ -74,7 +74,7 @@ class N_Home_Examples_Graphics(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 20 // Graphics.HC:20
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, l8_dc, 32L, 416L, s1, vb0, 0)
+            P.f370_GrPrint(t, l8_dc, 32L, 416L, s1, vb0, 0)
             t.sp = vb0
             ln = 21 // Graphics.HC:21
             nat(t, n_GetChar, push3(t, 0L, 0L, 0L))
@@ -90,13 +90,13 @@ class N_Home_Examples_Graphics(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Home/Examples/Graphics.HC#0 (Graphics.HC:26) */
-    fun f704_init_C__Home_Examples_Graphics_HC_0(t: Task): Long {
+    fun f709_init_C__Home_Examples_Graphics_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 26 // Graphics.HC:26
             tick(t)
-            f703_GraphicsDemo(t)
+            f708_GraphicsDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Home/Examples/Graphics.HC#0", ln) }
@@ -105,8 +105,8 @@ class N_Home_Examples_Graphics(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_GraphicsDemo(t); 0L }
-            704 -> f704_init_C__Home_Examples_Graphics_HC_0(t)
+            708 -> { f708_GraphicsDemo(t); 0L }
+            709 -> f709_init_C__Home_Examples_Graphics_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -118,7 +118,7 @@ class N_Home_Examples_Graphics(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("GraphicsDemo", "\$init:C:/Home/Examples/Graphics.HC#0")
         private val FILES = arrayOf<String>("C:/Home/Examples/Graphics.HC")
     }

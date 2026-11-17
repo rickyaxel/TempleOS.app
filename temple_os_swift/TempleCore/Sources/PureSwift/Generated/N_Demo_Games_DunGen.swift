@@ -15,6 +15,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     public let n_DocCursor: Int
     public let n_Free: Int
     public let n_GetMsg: Int
+    public let n_GrFillPoly3: Int
     public let n_GrPeek: Int
     public let n_Line: Int
     public let n_MAlloc: Int
@@ -25,6 +26,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     public let n_RegWrite: Int
     public let n_Sleep: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_tS: Int
     /** "F64 best_score=9999;." */ public var s0: Int64 = 0
     /** "TempleOS.DunGen" */ public var s1: Int64 = 0
@@ -72,6 +74,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
         n_DocCursor = rt.vm.natives.find("DocCursor")!.index
         n_Free = rt.vm.natives.find("Free")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
+        n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!.index
         n_GrPeek = rt.vm.natives.find("GrPeek")!.index
         n_Line = rt.vm.natives.find("Line")!.index
         n_MAlloc = rt.vm.natives.find("MAlloc")!.index
@@ -82,6 +85,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
         n_RegWrite = rt.vm.natives.find("RegWrite")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
     }
@@ -135,7 +139,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/DunGen.HC#0 (DunGen.HC:1)
-    @discardableResult public final func f703_init_C__Demo_Games_DunGen_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_DunGen_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -149,7 +153,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/DunGen.HC#1 (DunGen.HC:2)
-    @discardableResult public final func f704_init_C__Demo_Games_DunGen_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_DunGen_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -163,7 +167,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -173,7 +177,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/DunGen.HC#2 (DunGen.HC:46)
-    @discardableResult public final func f706_init_C__Demo_Games_DunGen_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_DunGen_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -201,7 +205,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/DunGen.HC#3 (DunGen.HC:49)
-    @discardableResult public final func f707_init_C__Demo_Games_DunGen_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Games_DunGen_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -229,7 +233,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC LOSPlot (DunGen.HC:77)
-    @discardableResult public final func f708_LOSPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f713_LOSPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -255,7 +259,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC LOS (DunGen.HC:85)
-    @discardableResult public final func f709_LOS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f714_LOS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -264,7 +268,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
             var p2_x2: Int64 = a2
             var p3_y2: Int64 = a3
             ln = 87 // DunGen.HC:87
-            let t0: Int64 = try nat(t, n_Line, try push(t, 0, ((p0_x1 &* 4) &+ divs(4, 2)), ((p1_y1 &* 4) &+ divs(4, 2)), 0, ((p2_x2 &* 4) &+ divs(4, 2)), ((p3_y2 &* 4) &+ divs(4, 2)), 0, 9223090561878065860, 1, 0))
+            let t0: Int64 = try nat(t, n_Line, try push(t, 0, ((p0_x1 &* 4) &+ divs(4, 2)), ((p1_y1 &* 4) &+ divs(4, 2)), 0, ((p2_x2 &* 4) &+ divs(4, 2)), ((p3_y2 &* 4) &+ divs(4, 2)), 0, 9223090561878065865, 1, 0))
             let rv2: Int64 = (t0 & 0xFF)
             t.depth -= 1
             return rv2
@@ -274,7 +278,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC DrawIt (DunGen.HC:91)
-    public final func f710_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f715_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -349,7 +353,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                             var r5: Bool = (t3 != 0)
                             if r5 {
                                 try tick(t)
-                                let t4: Int64 = try f709_LOS(t, l48_xx, l56_yy, ld8(g_man_x), ld8(g_man_y))
+                                let t4: Int64 = try f714_LOS(t, l48_xx, l56_yy, ld8(g_man_x), ld8(g_man_y))
                                 r5 = (t4 != 0)
                             }
                             ln = 124 // DunGen.HC:124
@@ -365,8 +369,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                     ln = 130 // DunGen.HC:130
                                     _ = try nat(t, n_DCTransform, try push4(t, l16_dc_t, (fp &+ 64), (fp &+ 72), (fp &+ 80)))
                                     ln = 131 // DunGen.HC:131
-                                    try tick(t)
-                                    try P.f440_Sprite3(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), ld8((l160__tiles &+ (l88_color &* 8))), 0)
+                                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), ld8((l160__tiles &+ (l88_color &* 8))), 0))
                                 } else {
                                     ln = 133 // DunGen.HC:133
                                     try st4((fp &+ 112), (l32_x &* 24))
@@ -395,8 +398,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                     ln = 145 // DunGen.HC:145
                                     try st4((l16_dc_t &+ 160), l88_color)
                                     ln = 146 // DunGen.HC:146
-                                    try tick(t)
-                                    _ = try P.f422_GrFillPoly3(t, l16_dc_t, 4, (fp &+ 112))
+                                    _ = try nat(t, n_GrFillPoly3, try push3(t, l16_dc_t, 4, (fp &+ 112)))
                                 }
                             }
                         }
@@ -429,7 +431,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                 var r7: Bool = try ((l56_yy &+ 1) < ld8(g_map_height))
                                 if r7 {
                                     try tick(t)
-                                    let t6: Int64 = try f709_LOS(t, l48_xx, (l56_yy &+ 1), ld8(g_man_x), ld8(g_man_y))
+                                    let t6: Int64 = try f714_LOS(t, l48_xx, (l56_yy &+ 1), ld8(g_man_x), ld8(g_man_y))
                                     r7 = (t6 != 0)
                                 }
                                 if r7 {
@@ -442,14 +444,13 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                     ln = 164 // DunGen.HC:164
                                     _ = try nat(t, n_DCTransform, try push4(t, l16_dc_t, (fp &+ 64), (fp &+ 72), (fp &+ 80)))
                                     ln = 165 // DunGen.HC:165
-                                    try tick(t)
-                                    try P.f440_Sprite3(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b6, 0)
+                                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b6, 0))
                                 }
                                 ln = 167 // DunGen.HC:167
                                 var r9: Bool = try ((l48_xx &+ 1) < ld8(g_map_width))
                                 if r9 {
                                     try tick(t)
-                                    let t8: Int64 = try f709_LOS(t, (l48_xx &+ 1), l56_yy, ld8(g_man_x), ld8(g_man_y))
+                                    let t8: Int64 = try f714_LOS(t, (l48_xx &+ 1), l56_yy, ld8(g_man_x), ld8(g_man_y))
                                     r9 = (t8 != 0)
                                 }
                                 if r9 {
@@ -462,8 +463,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                     ln = 171 // DunGen.HC:171
                                     _ = try nat(t, n_DCTransform, try push4(t, l16_dc_t, (fp &+ 64), (fp &+ 72), (fp &+ 80)))
                                     ln = 172 // DunGen.HC:172
-                                    try tick(t)
-                                    try P.f440_Sprite3(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b7, 0)
+                                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b7, 0))
                                 }
                             }
                         }
@@ -484,7 +484,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                 var r11: Bool = try (ld1u((l176_tmpm &+ 32)) == 0)
                 if r11 {
                     try tick(t)
-                    let t10: Int64 = try f709_LOS(t, ld8(l176_tmpm), ld8((l176_tmpm &+ 8)), ld8(g_man_x), ld8(g_man_y))
+                    let t10: Int64 = try f714_LOS(t, ld8(l176_tmpm), ld8((l176_tmpm &+ 8)), ld8(g_man_x), ld8(g_man_y))
                     r11 = (t10 != 0)
                 }
                 if r11 {
@@ -503,15 +503,14 @@ public final class N_Demo_Games_DunGen: NativeModule {
                         try st4(t12, (ld4s(t12) | 1536))
                         ln = 187 // DunGen.HC:187
                         try tick(t)
-                        _ = try P.f314_DCSymmetrySet(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 64)), (ld8((fp &+ 72)) &+ 1))
+                        _ = try P.f315_DCSymmetrySet(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 64)), (ld8((fp &+ 72)) &+ 1))
                     } else {
                         ln = 189 // DunGen.HC:189
                         let t13: Int64 = (p1_dc &+ 28)
                         try st4(t13, (ld4s(t13) & (-1537)))
                     }
                     ln = 190 // DunGen.HC:190
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b8, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b8, 0))
                 }
                 ln = 179 // DunGen.HC:179
                 l24_i = (l24_i &+ 1)
@@ -531,13 +530,13 @@ public final class N_Demo_Games_DunGen: NativeModule {
                 let t17: Int64 = try ld8((fp &+ 64))
                 let t15: Double = d(try nat(t, n_tS, push0(t)))
                 try tick(t)
-                let t16: Double = try P.f484_Tri(t, (t15 - ldf(g_man_attack_t0)), 0.2)
+                let t16: Double = try P.f489_Tri(t, (t15 - ldf(g_man_attack_t0)), 0.2)
                 try st8((fp &+ 64), f2i((Double(t17) + ((t16 * 24.0) * Double(ld8(g_man_dx))))))
                 ln = 198 // DunGen.HC:198
                 let t20: Int64 = try ld8((fp &+ 72))
                 let t18: Double = d(try nat(t, n_tS, push0(t)))
                 try tick(t)
-                let t19: Double = try P.f484_Tri(t, (t18 - ldf(g_man_attack_t0)), 0.2)
+                let t19: Double = try P.f489_Tri(t, (t18 - ldf(g_man_attack_t0)), 0.2)
                 try st8((fp &+ 72), f2i((Double(t20) + ((t19 * 24.0) * Double(ld8(g_man_dy))))))
                 ln = 199 // DunGen.HC:199
                 if try (ld8(g_man_dy) != 1) {
@@ -545,7 +544,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                     let t23: Int64 = try ld8((fp &+ 72))
                     let t21: Double = d(try nat(t, n_tS, push0(t)))
                     try tick(t)
-                    let t22: Double = try P.f480_Saw(t, (t21 - ldf(g_man_attack_t0)), 0.2)
+                    let t22: Double = try P.f485_Saw(t, (t21 - ldf(g_man_attack_t0)), 0.2)
                     try st8((fp &+ 72), f2i((Double(t23) - (t22 * 24.0))))
                 }
             }
@@ -558,7 +557,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                 try st4(t24, (ld4s(t24) | 1536))
                 ln = 205 // DunGen.HC:205
                 try tick(t)
-                _ = try P.f314_DCSymmetrySet(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 64)), (ld8((fp &+ 72)) &+ 1))
+                _ = try P.f315_DCSymmetrySet(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 64)), (ld8((fp &+ 72)) &+ 1))
             } else {
                 ln = 207 // DunGen.HC:207
                 let t25: Int64 = (p1_dc &+ 28)
@@ -568,12 +567,10 @@ public final class N_Demo_Games_DunGen: NativeModule {
             let t26: Double = d(try nat(t, n_tS, push0(t)))
             if try ((t26 - ldf(g_man_attack_t0)) < 0.2) {
                 ln = 210 // DunGen.HC:210
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b9, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b9, 0))
             } else {
                 ln = 212 // DunGen.HC:212
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b10, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)), b10, 0))
             }
             ln = 214 // DunGen.HC:214
             try tick(t)
@@ -589,7 +586,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                     ln = 219 // DunGen.HC:219
                     try tick(t)
                     let vb3 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, (l96_cx &- divs(112, 2)), (l104_cy &- divs(8, 2)), s2, vb3, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, (l96_cx &- divs(112, 2)), (l104_cy &- divs(8, 2)), s2, vb3, 0)
                     t.sp = vb3
                 }
                 ln = 220 // DunGen.HC:220
@@ -604,7 +601,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
             ln = 225 // DunGen.HC:225
             try tick(t)
             let vb4 = try push3(t, ld8(g_monsters_left), bits((l168_tt - ldf(g_t0))), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s3, vb4, 3)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s3, vb4, 3)
             t.sp = vb4
             t.msp = msp0
             t.depth -= 1
@@ -613,7 +610,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC Attack (DunGen.HC:229)
-    public final func f711_Attack(_ t: HTask) throws {
+    public final func f716_Attack(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -624,7 +621,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
             try st8(g_man_attack_t0, bits(t0))
             ln = 235 // DunGen.HC:235
             try tick(t)
-            _ = try P.f499_Noise(t, 100, 53.0, 74.0)
+            _ = try P.f504_Noise(t, 100, 53.0, 74.0)
             ln = 236 // DunGen.HC:236
             l0_i = 0
             l8_tmpm = g_monsters
@@ -659,7 +656,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC Init (DunGen.HC:249)
-    public final func f712_Init(_ t: HTask) throws {
+    public final func f717_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -670,7 +667,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
             var l8_x: Int64 = 0
             ln = 255 // DunGen.HC:255
             try tick(t)
-            let t0: Int64 = try P.f447_Sprite2DC(t, b11)
+            let t0: Int64 = try P.f452_Sprite2DC(t, b11)
             l24_dc = t0
             ln = 256 // DunGen.HC:256
             try st8(g_map_width, divs(ld4s((l24_dc &+ 16)), 4))
@@ -757,7 +754,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC CleanUp (DunGen.HC:287)
-    public final func f713_CleanUp(_ t: HTask) throws {
+    public final func f718_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -771,7 +768,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC AnimateTask (DunGen.HC:293)
-    public final func f714_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f719_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -827,7 +824,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC DunGen (DunGen.HC:316)
-    public final func f715_DunGen(_ t: HTask) throws {
+    public final func f720_DunGen(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -835,7 +832,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
             let fp = try frame(t, 40)
             ln = 320 // DunGen.HC:320
             try tick(t)
-            _ = try P.f507_MenuPush(t, s4)
+            _ = try P.f512_MenuPush(t, s4)
             ln = 335 // DunGen.HC:335
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -855,13 +852,13 @@ public final class N_Demo_Games_DunGen: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 342 // DunGen.HC:342
             try tick(t)
-            try f712_Init(t)
+            try f717_Init(t)
             ln = 343 // DunGen.HC:343
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065866, 0, s5, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065871, 0, s5, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 344 // DunGen.HC:344
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065862)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065867)
             ln = 346 // DunGen.HC:346
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -881,7 +878,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                     case 10:
                                         ln = 352 // DunGen.HC:352
                                         try tick(t)
-                                        try f712_Init(t)
+                                        try f717_Init(t)
                                     case 32:
                                         ln = 355 // DunGen.HC:355
                                         try st1(g_man_attack, 1)
@@ -902,7 +899,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                                     try st8(g_man_dy, 0)
                                                     ln = 366 // DunGen.HC:366
                                                     try tick(t)
-                                                    try f711_Attack(t)
+                                                    try f716_Attack(t)
                                                 } else {
                                                     ln = 368 // DunGen.HC:368
                                                     if try (((ld8(g_man_x) &+ 1) < ld8(g_map_width)) && (ld1u((ld8(g_map) &+ ((ld8(g_man_y) &* ld8(g_map_width)) &+ (ld8(g_man_x) &+ 1)))) == 8)) {
@@ -930,7 +927,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                                     try st8(g_man_dy, 0)
                                                     ln = 382 // DunGen.HC:382
                                                     try tick(t)
-                                                    try f711_Attack(t)
+                                                    try f716_Attack(t)
                                                 } else {
                                                     ln = 384 // DunGen.HC:384
                                                     if try (((ld8(g_man_x) &- 1) >= 0) && (ld1u((ld8(g_map) &+ ((ld8(g_man_y) &* ld8(g_map_width)) &+ (ld8(g_man_x) &- 1)))) == 8)) {
@@ -958,7 +955,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                                     try st8(g_man_dy, (-1))
                                                     ln = 398 // DunGen.HC:398
                                                     try tick(t)
-                                                    try f711_Attack(t)
+                                                    try f716_Attack(t)
                                                 } else {
                                                     ln = 400 // DunGen.HC:400
                                                     if try (((ld8(g_man_y) &- 1) >= 0) && (ld1u((ld8(g_map) &+ (((ld8(g_man_y) &- 1) &* ld8(g_map_width)) &+ ld8(g_man_x)))) == 8)) {
@@ -986,7 +983,7 @@ public final class N_Demo_Games_DunGen: NativeModule {
                                                     try st8(g_man_dy, 1)
                                                     ln = 414 // DunGen.HC:414
                                                     try tick(t)
-                                                    try f711_Attack(t)
+                                                    try f716_Attack(t)
                                                 } else {
                                                     ln = 416 // DunGen.HC:416
                                                     if try (((ld8(g_man_y) &+ 1) < ld8(g_map_height)) && (ld1u((ld8(g_map) &+ (((ld8(g_man_y) &+ 1) &* ld8(g_map_width)) &+ ld8(g_man_x)))) == 8)) {
@@ -1042,10 +1039,10 @@ public final class N_Demo_Games_DunGen: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 440 // DunGen.HC:440
             try tick(t)
-            try f713_CleanUp(t)
+            try f718_CleanUp(t)
             ln = 441 // DunGen.HC:441
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 442 // DunGen.HC:442
             _ = try nat(t, n_RegWrite, try push3(t, s1, s6, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1055,13 +1052,13 @@ public final class N_Demo_Games_DunGen: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/DunGen.HC#4 (DunGen.HC:59)
-    @discardableResult public final func f716_init_C__Demo_Games_DunGen_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f721_init_C__Demo_Games_DunGen_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 445 // DunGen.HC:445
             try tick(t)
-            try f715_DunGen(t)
+            try f720_DunGen(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/DunGen.HC#4", ln) }
@@ -1070,26 +1067,26 @@ public final class N_Demo_Games_DunGen: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_DunGen_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_DunGen_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: return try f706_init_C__Demo_Games_DunGen_HC_2(t)
-        case 707: return try f707_init_C__Demo_Games_DunGen_HC_3(t)
-        case 708: return try f708_LOSPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 709: return try f709_LOS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 710: try f710_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 711: try f711_Attack(t); return 0
-        case 712: try f712_Init(t); return 0
-        case 713: try f713_CleanUp(t); return 0
-        case 714: try f714_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 715: try f715_DunGen(t); return 0
-        case 716: return try f716_init_C__Demo_Games_DunGen_HC_4(t)
+        case 708: return try f708_init_C__Demo_Games_DunGen_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_DunGen_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: return try f711_init_C__Demo_Games_DunGen_HC_2(t)
+        case 712: return try f712_init_C__Demo_Games_DunGen_HC_3(t)
+        case 713: return try f713_LOSPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 714: return try f714_LOS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 715: try f715_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 716: try f716_Attack(t); return 0
+        case 717: try f717_Init(t); return 0
+        case 718: try f718_CleanUp(t); return 0
+        case 719: try f719_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 720: try f720_DunGen(t); return 0
+        case 721: return try f721_init_C__Demo_Games_DunGen_HC_4(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/DunGen.HC#0", 704: "$init:C:/Demo/Games/DunGen.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "$init:C:/Demo/Games/DunGen.HC#2", 707: "$init:C:/Demo/Games/DunGen.HC#3", 708: "LOSPlot", 709: "LOS", 710: "DrawIt", 711: "Attack", 712: "Init", 713: "CleanUp", 714: "AnimateTask", 715: "DunGen", 716: "$init:C:/Demo/Games/DunGen.HC#4"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/DunGen.HC#0", 709: "$init:C:/Demo/Games/DunGen.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "$init:C:/Demo/Games/DunGen.HC#2", 712: "$init:C:/Demo/Games/DunGen.HC#3", 713: "LOSPlot", 714: "LOS", 715: "DrawIt", 716: "Attack", 717: "Init", 718: "CleanUp", 719: "AnimateTask", 720: "DunGen", 721: "$init:C:/Demo/Games/DunGen.HC#4"]
     private static let FILES: [String] = ["C:/Demo/Games/DunGen.HC"]
     public override var files: [String] { N_Demo_Games_DunGen.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_DunGen.DEFINED.contains(index) }

@@ -32,14 +32,14 @@ class N_Demo_DolDoc_MenuSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC MenuSprite (MenuSprite.HC:5) */
-    fun f703_MenuSprite(t: Task) {
+    fun f708_MenuSprite(t: Task) {
         var ln = 0
         try {
             enter(t)
             var l0_i: Long = 0L
             ln = 8 // MenuSprite.HC:8
             tick(t)
-            val t0: Long = P.f602_DocPut(t, 0L)
+            val t0: Long = P.f607_DocPut(t, 0L)
             val t1: Long = (t0 + 88L)
             st8(t1, (ld8(t1) or 512L))
             ln = 9 // MenuSprite.HC:9
@@ -54,9 +54,9 @@ class N_Demo_DolDoc_MenuSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 nat(t, n_Print, push1(t, s1))
                 ln = 21 // MenuSprite.HC:21
                 tick(t)
-                val t2: Long = P.f602_DocPut(t, 0L)
+                val t2: Long = P.f607_DocPut(t, 0L)
                 tick(t)
-                val t3: Long = P.f622_DocMenu(t, t2, 0L)
+                val t3: Long = P.f627_DocMenu(t, t2, 0L)
                 l0_i = t3
                 ln = 22 // MenuSprite.HC:22
                 if ((l0_i > 0L)) {
@@ -77,7 +77,7 @@ class N_Demo_DolDoc_MenuSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             nat(t, n_PutChars, push1(t, 10L))
             ln = 30 // MenuSprite.HC:30
             tick(t)
-            val t5: Long = P.f602_DocPut(t, 0L)
+            val t5: Long = P.f607_DocPut(t, 0L)
             val t6: Long = (t5 + 88L)
             st8(t6, (ld8(t6) and -513L))
             t.depth--
@@ -86,13 +86,13 @@ class N_Demo_DolDoc_MenuSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/DolDoc/MenuSprite.HC#0 (MenuSprite.HC:33) */
-    fun f704_init_C__Demo_DolDoc_MenuSprite_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_DolDoc_MenuSprite_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 33 // MenuSprite.HC:33
             tick(t)
-            f703_MenuSprite(t)
+            f708_MenuSprite(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/MenuSprite.HC#0", ln) }
@@ -101,8 +101,8 @@ class N_Demo_DolDoc_MenuSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MenuSprite(t); 0L }
-            704 -> f704_init_C__Demo_DolDoc_MenuSprite_HC_0(t)
+            708 -> { f708_MenuSprite(t); 0L }
+            709 -> f709_init_C__Demo_DolDoc_MenuSprite_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -114,7 +114,7 @@ class N_Demo_DolDoc_MenuSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("MenuSprite", "\$init:C:/Demo/DolDoc/MenuSprite.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/DolDoc/MenuSprite.HC")
     }

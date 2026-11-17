@@ -22,7 +22,7 @@ class N_Demo_Templates_ODE1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC MyDerivative (ODE1.HC:12) */
-    fun f703_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f708_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -54,16 +54,16 @@ class N_Demo_Templates_ODE1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC Init (ODE1.HC:26) */
-    fun f704_Init(t: Task) {
+    fun f709_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 28 // ODE1.HC:28
             tick(t)
-            val t0: Long = P.f453_ODENew(t, 0L, 1.0E-4, 1L)
+            val t0: Long = P.f458_ODENew(t, 0L, 1.0E-4, 1L)
             st8(g_ode, t0)
             ln = 29 // ODE1.HC:29
-            st8((ld8(g_ode) + 304L), 9223090561878065855L)
+            st8((ld8(g_ode) + 304L), 9223090561878065860L)
             ln = 30 // ODE1.HC:30
             st8((ld8(g_ode) + 80L), bits(0.002))
             ln = 31 // ODE1.HC:31
@@ -79,7 +79,7 @@ class N_Demo_Templates_ODE1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC CleanUp (ODE1.HC:37) */
-    fun f705_CleanUp(t: Task) {
+    fun f710_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -94,14 +94,14 @@ class N_Demo_Templates_ODE1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             P.f156_QueDel(t, (ld8(g_ode) + 56L), 1L)
             ln = 42 // ODE1.HC:42
             tick(t)
-            P.f455_ODEDel(t, ld8(g_ode))
+            P.f460_ODEDel(t, ld8(g_ode))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "CleanUp", ln) }
     }
 
     /** HolyC $init:C:/Demo/Templates/ODE1.HC#0 (ODE1.HC:10) */
-    fun f706_init_C__Demo_Templates_ODE1_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Templates_ODE1_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -113,10 +113,10 @@ class N_Demo_Templates_ODE1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            704 -> { f704_Init(t); 0L }
-            705 -> { f705_CleanUp(t); 0L }
-            706 -> f706_init_C__Demo_Templates_ODE1_HC_0(t)
+            708 -> { f708_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            709 -> { f709_Init(t); 0L }
+            710 -> { f710_CleanUp(t); 0L }
+            711 -> f711_init_C__Demo_Templates_ODE1_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -128,7 +128,7 @@ class N_Demo_Templates_ODE1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("MyDerivative", "Init", "CleanUp", "\$init:C:/Demo/Templates/ODE1.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Templates/ODE1.HC")
     }

@@ -28,6 +28,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
     /** "I64 best_score=9999;." */ @JvmField var s0: Long = 0L
@@ -105,7 +106,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Games/BlackDiamond.HC#0 (BlackDiamond.HC:141) */
-    fun f703_init_C__Demo_Games_BlackDiamond_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_BlackDiamond_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -119,7 +120,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Games/BlackDiamond.HC#1 (BlackDiamond.HC:142) */
-    fun f704_init_C__Demo_Games_BlackDiamond_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_BlackDiamond_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -133,7 +134,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -143,7 +144,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Games/BlackDiamond.HC#2 (BlackDiamond.HC:157) */
-    fun f706_init_C__Demo_Games_BlackDiamond_HC_2(t: Task): Long {
+    fun f711_init_C__Demo_Games_BlackDiamond_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -159,7 +160,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawRunningWolf (BlackDiamond.HC:161) */
-    fun f707_DrawRunningWolf(t: Task, a0: Long, a1: Long) {
+    fun f712_DrawRunningWolf(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -181,7 +182,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 st4(t1, (ld4s(t1) or 1792L))
                 ln = 169 // BlackDiamond.HC:169
                 tick(t)
-                P.f314_DCSymmetrySet(t, l24_dc_wolf, divs(48L, 2L), 0L, divs(48L, 2L), 1L)
+                P.f315_DCSymmetrySet(t, l24_dc_wolf, divs(48L, 2L), 0L, divs(48L, 2L), 1L)
             }
             ln = 171 // BlackDiamond.HC:171
             val t2: Double = f(nat(t, n_tS, push0(t)))
@@ -197,7 +198,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
             val t4: Double = f(nat(t, n_Sin, push1(t, bits((7.0 * t3)))))
             ln = 175 // BlackDiamond.HC:175
             tick(t)
-            P.f445_Sprite3ZB(t, l24_dc_wolf, divs(48L, 2L), f2i((0.85 * 38.0)), 0L, l16_tmps, (0.4 * t4))
+            P.f450_Sprite3ZB(t, l24_dc_wolf, divs(48L, 2L), f2i((0.85 * 38.0)), 0L, l16_tmps, (0.4 * t4))
             ln = 177 // BlackDiamond.HC:177
             nat(t, n_GrBlot, push4(t, p0_dc, (ld8((g_obj_x + (p1_i * 8L))) - divs(48L, 2L)), f2i(((ld8((g_obj_y + (p1_i * 8L))) - ld8(g_scrn_top_y)).toDouble() - (0.85 * 38.0))), l24_dc_wolf))
             ln = 179 // BlackDiamond.HC:179
@@ -225,7 +226,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawMan (BlackDiamond.HC:184) */
-    fun f708_DrawMan(t: Task, a0: Long) {
+    fun f713_DrawMan(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -233,12 +234,10 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 186 // BlackDiamond.HC:186
             if ((ld8((p0_dc + 304L)) != 0L)) {
                 ln = 187 // BlackDiamond.HC:187
-                tick(t)
-                P.f440_Sprite3(t, p0_dc, ld8(g_x), (ld8(g_y) - ld8(g_scrn_top_y)), 0L, b7, 0L)
+                nat(t, n_Sprite3, push(t, p0_dc, ld8(g_x), (ld8(g_y) - ld8(g_scrn_top_y)), 0L, b7, 0L))
             } else {
                 ln = 189 // BlackDiamond.HC:189
-                tick(t)
-                P.f440_Sprite3(t, p0_dc, ld8(g_x), (ld8(g_y) - ld8(g_scrn_top_y)), 0L, b8, 0L)
+                nat(t, n_Sprite3, push(t, p0_dc, ld8(g_x), (ld8(g_y) - ld8(g_scrn_top_y)), 0L, b8, 0L))
             }
             t.depth--
             return
@@ -246,7 +245,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawUpperChairLift (BlackDiamond.HC:196) */
-    fun f709_DrawUpperChairLift(t: Task, a0: Long) {
+    fun f714_DrawUpperChairLift(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -260,8 +259,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
             l8_i = ld8(g_chair_lift_num)
             l32_y = ((ld8((g_obj_y + (l8_i * 8L))) - ld8(g_scrn_top_y)) - 595L)
             ln = 199 // BlackDiamond.HC:199
-            tick(t)
-            P.f440_Sprite3(t, p0_dc, ld8((g_obj_x + (l8_i * 8L))), (l32_y + 13L), 0L, b9, 0L)
+            nat(t, n_Sprite3, push(t, p0_dc, ld8((g_obj_x + (l8_i * 8L))), (l32_y + 13L), 0L, b9, 0L))
             ln = 200 // BlackDiamond.HC:200
             st4((p0_dc + 228L), 2L)
             ln = 201 // BlackDiamond.HC:201
@@ -273,16 +271,16 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 val t0: Double = f(nat(t, n_Ln, push1(t, bits(800.0))))
                 val t1: Double = f(nat(t, n_Abs, push1(t, bits(l24_x1.toDouble()))))
                 tick(t)
-                val t2: Double = P.f546_Cosh(t, (t0 + ((t1 - 13.0) / 10000.0)))
+                val t2: Double = P.f551_Cosh(t, (t0 + ((t1 - 13.0) / 10000.0)))
                 l40_y1 = f2i((((l32_y - divs(800L, 2L)).toDouble() + t2) + (0.1 * l24_x1.toDouble())))
                 ln = 204 // BlackDiamond.HC:204
                 if ((b2i(((-13L < l24_x1) && (l24_x1 < 13L))) == 0L)) {
                     ln = 205 // BlackDiamond.HC:205
                     tick(t)
-                    P.f393_GrPlot3(t, p0_dc, (l16_x - divs(121L, 2L)), l40_y1, 0L)
+                    P.f394_GrPlot3(t, p0_dc, (l16_x - divs(121L, 2L)), l40_y1, 0L)
                     ln = 206 // BlackDiamond.HC:206
                     tick(t)
-                    P.f393_GrPlot3(t, p0_dc, (l16_x + divs(121L, 2L)), l40_y1, 0L)
+                    P.f394_GrPlot3(t, p0_dc, (l16_x + divs(121L, 2L)), l40_y1, 0L)
                 }
                 ln = 201 // BlackDiamond.HC:201
                 l16_x = (l16_x + 2L)
@@ -296,7 +294,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawIt (BlackDiamond.HC:212) */
-    fun f710_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f715_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -330,11 +328,10 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
                     if (r5) {
                         ln = 220 // BlackDiamond.HC:220
                         tick(t)
-                        f707_DrawRunningWolf(t, p1_dc, l16_i)
+                        f712_DrawRunningWolf(t, p1_dc, l16_i)
                     } else {
                         ln = 222 // BlackDiamond.HC:222
-                        tick(t)
-                        P.f440_Sprite3(t, p1_dc, ld8((g_obj_x + (l16_i * 8L))), (ld8((g_obj_y + (l16_i * 8L))) - ld8(g_scrn_top_y)), 0L, ld8((g_imgs + (ld8((g_obj_types + (l16_i * 8L))) * 8L))), 0L)
+                        nat(t, n_Sprite3, push(t, p1_dc, ld8((g_obj_x + (l16_i * 8L))), (ld8((g_obj_y + (l16_i * 8L))) - ld8(g_scrn_top_y)), 0L, ld8((g_imgs + (ld8((g_obj_types + (l16_i * 8L))) * 8L))), 0L))
                     }
                 }
                 ln = 217 // BlackDiamond.HC:217
@@ -348,8 +345,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 227 // BlackDiamond.HC:227
             st4((p1_dc + 164L), 15L)
             ln = 228 // BlackDiamond.HC:228
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, ld8(g_x), (ld8(g_y) - ld8(g_scrn_top_y)), 0L, b10, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, ld8(g_x), (ld8(g_y) - ld8(g_scrn_top_y)), 0L, b10, 0L))
             ln = 229 // BlackDiamond.HC:229
             if ((ld1u(g_game_over) == 0L)) {
                 ln = 230 // BlackDiamond.HC:230
@@ -373,7 +369,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 if (((l24_man_drawn == 0L) && (ld8((g_obj_y + (l16_i * 8L))) >= ld8(g_y)))) {
                     ln = 240 // BlackDiamond.HC:240
                     tick(t)
-                    f708_DrawMan(t, p1_dc)
+                    f713_DrawMan(t, p1_dc)
                     ln = 241 // BlackDiamond.HC:241
                     l24_man_drawn = 1L
                 }
@@ -387,11 +383,10 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 if (r8) {
                     ln = 244 // BlackDiamond.HC:244
                     tick(t)
-                    f707_DrawRunningWolf(t, p1_dc, l16_i)
+                    f712_DrawRunningWolf(t, p1_dc, l16_i)
                 } else {
                     ln = 246 // BlackDiamond.HC:246
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, ld8((g_obj_x + (l16_i * 8L))), (ld8((g_obj_y + (l16_i * 8L))) - ld8(g_scrn_top_y)), 0L, ld8((g_imgs + (ld8((g_obj_types + (l16_i * 8L))) * 8L))), 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, ld8((g_obj_x + (l16_i * 8L))), (ld8((g_obj_y + (l16_i * 8L))) - ld8(g_scrn_top_y)), 0L, ld8((g_imgs + (ld8((g_obj_types + (l16_i * 8L))) * 8L))), 0L))
                 }
                 ln = 238 // BlackDiamond.HC:238
                 l16_i = (l16_i + 1L)
@@ -401,17 +396,17 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
             if ((l24_man_drawn == 0L)) {
                 ln = 249 // BlackDiamond.HC:249
                 tick(t)
-                f708_DrawMan(t, p1_dc)
+                f713_DrawMan(t, p1_dc)
             }
             ln = 250 // BlackDiamond.HC:250
             tick(t)
-            f709_DrawUpperChairLift(t, p1_dc)
+            f714_DrawUpperChairLift(t, p1_dc)
             ln = 252 // BlackDiamond.HC:252
             st4((p1_dc + 160L), 0L)
             ln = 253 // BlackDiamond.HC:253
             tick(t)
             val vb0 = push2(t, ld8(g_penalty), ld8(g_best_score))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s2, vb0, 2)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s2, vb0, 2)
             t.sp = vb0
             ln = 254 // BlackDiamond.HC:254
             var r10: Boolean = (ld1u(g_game_over) != 0L)
@@ -426,7 +421,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 ln = 256 // BlackDiamond.HC:256
                 tick(t)
                 val vb1 = push0(t)
-                P.f369_GrPrint(t, p1_dc, divs((ld8((ld8(P.g_Fs) + 224L)) - 72L), 2L), divs((ld8((ld8(P.g_Fs) + 248L)) - 8L), 2L), s3, vb1, 0)
+                P.f370_GrPrint(t, p1_dc, divs((ld8((ld8(P.g_Fs) + 224L)) - 72L), 2L), divs((ld8((ld8(P.g_Fs) + 248L)) - 8L), 2L), s3, vb1, 0)
                 t.sp = vb1
             }
             t.depth--
@@ -435,7 +430,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Compare (BlackDiamond.HC:261) */
-    fun f711_Compare(t: Task, a0: Long, a1: Long): Long {
+    fun f716_Compare(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -450,7 +445,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Init (BlackDiamond.HC:266) */
-    fun f712_Init(t: Task) {
+    fun f717_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -493,7 +488,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 tick(t)
             }
             ln = 282 // BlackDiamond.HC:282
-            nat(t, n_QSortI64, push3(t, g_obj_saved_y, 128L, 9223090561878065863L))
+            nat(t, n_QSortI64, push3(t, g_obj_saved_y, 128L, 9223090561878065868L))
             ln = 284 // BlackDiamond.HC:284
             val t3: Long = nat(t, n_RandU16, push0(t))
             st8(g_chair_lift_num, mods(t3, 128L))
@@ -505,7 +500,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC BlackDiamond (BlackDiamond.HC:288) */
-    fun f713_BlackDiamond(t: Task) {
+    fun f718_BlackDiamond(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -513,7 +508,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
             val fp = frame(t, 32)
             ln = 292 // BlackDiamond.HC:292
             tick(t)
-            P.f507_MenuPush(t, s4)
+            P.f512_MenuPush(t, s4)
             ln = 306 // BlackDiamond.HC:306
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -530,10 +525,10 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 311 // BlackDiamond.HC:311
             nat(t, n_DocClear, push1(t, 0L))
             ln = 312 // BlackDiamond.HC:312
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065862L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065867L)
             ln = 314 // BlackDiamond.HC:314
             tick(t)
-            f712_Init(t)
+            f717_Init(t)
             ln = 315 // BlackDiamond.HC:315
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -609,7 +604,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
                                             10L -> {
                                                 ln = 353 // BlackDiamond.HC:353
                                                 tick(t)
-                                                f712_Init(t)
+                                                f717_Init(t)
                                                 ln = 354 // BlackDiamond.HC:354
                                                 tick(t)
                                                 continue@retry_3
@@ -707,7 +702,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 395 // BlackDiamond.HC:395
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 396 // BlackDiamond.HC:396
             nat(t, n_RegWrite, push3(t, s1, s5, ld8(g_best_score)))
             t.msp = msp0
@@ -717,13 +712,13 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Games/BlackDiamond.HC#3 (BlackDiamond.HC:399) */
-    fun f714_init_C__Demo_Games_BlackDiamond_HC_3(t: Task): Long {
+    fun f719_init_C__Demo_Games_BlackDiamond_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 399 // BlackDiamond.HC:399
             tick(t)
-            f713_BlackDiamond(t)
+            f718_BlackDiamond(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/BlackDiamond.HC#3", ln) }
@@ -732,18 +727,18 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_BlackDiamond_HC_0(t)
-            704 -> f704_init_C__Demo_Games_BlackDiamond_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> f706_init_C__Demo_Games_BlackDiamond_HC_2(t)
-            707 -> { f707_DrawRunningWolf(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            708 -> { f708_DrawMan(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> { f709_DrawUpperChairLift(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            710 -> { f710_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            711 -> f711_Compare(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            712 -> { f712_Init(t); 0L }
-            713 -> { f713_BlackDiamond(t); 0L }
-            714 -> f714_init_C__Demo_Games_BlackDiamond_HC_3(t)
+            708 -> f708_init_C__Demo_Games_BlackDiamond_HC_0(t)
+            709 -> f709_init_C__Demo_Games_BlackDiamond_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> f711_init_C__Demo_Games_BlackDiamond_HC_2(t)
+            712 -> { f712_DrawRunningWolf(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            713 -> { f713_DrawMan(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> { f714_DrawUpperChairLift(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            715 -> { f715_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            716 -> f716_Compare(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            717 -> { f717_Init(t); 0L }
+            718 -> { f718_BlackDiamond(t); 0L }
+            719 -> f719_init_C__Demo_Games_BlackDiamond_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -755,7 +750,7 @@ class N_Demo_Games_BlackDiamond(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/BlackDiamond.HC#0", "\$init:C:/Demo/Games/BlackDiamond.HC#1", "\$init:C:/Home/Registry.HC#0", "\$init:C:/Demo/Games/BlackDiamond.HC#2", "DrawRunningWolf", "DrawMan", "DrawUpperChairLift", "DrawIt", "Compare", "Init", "BlackDiamond", "\$init:C:/Demo/Games/BlackDiamond.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/Games/BlackDiamond.HC")
     }

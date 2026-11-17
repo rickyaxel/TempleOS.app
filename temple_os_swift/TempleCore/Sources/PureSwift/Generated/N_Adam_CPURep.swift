@@ -63,7 +63,7 @@ public final class N_Adam_CPURep: NativeModule {
     }
 
     /// HolyC MPCPURep (CPURep.HC:10)
-    public final func f703_MPCPURep(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_MPCPURep(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -106,7 +106,7 @@ public final class N_Adam_CPURep: NativeModule {
     }
 
     /// HolyC CPURep (CPURep.HC:26)
-    public final func f704_CPURep(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_CPURep(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -147,7 +147,7 @@ public final class N_Adam_CPURep: NativeModule {
                     let t7: Int64 = try nat(t, n_mp_cnt, push0(t))
                     if !((l8_i < t7)) { break loop0 }
                     ln = 40 // CPURep.HC:40
-                    _ = try nat(t, n_Spawn, try push(t, 9223090561878065855, (fp &+ 48), 0, l8_i, 0, 0, 0))
+                    _ = try nat(t, n_Spawn, try push(t, 9223090561878065860, (fp &+ 48), 0, l8_i, 0, 0, 0))
                     ln = 39 // CPURep.HC:39
                     l8_i = (l8_i &+ 1)
                     try tick(t)
@@ -227,7 +227,7 @@ public final class N_Adam_CPURep: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/CPURep.HC#0 (CPURep.HC:1)
-    @discardableResult public final func f705_init_C__Adam_CPURep_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Adam_CPURep_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -239,15 +239,15 @@ public final class N_Adam_CPURep: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_MPCPURep(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_CPURep(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: return try f705_init_C__Adam_CPURep_HC_0(t)
+        case 708: try f708_MPCPURep(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_CPURep(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: return try f710_init_C__Adam_CPURep_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "MPCPURep", 704: "CPURep", 705: "$init:C:/Adam/CPURep.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "MPCPURep", 709: "CPURep", 710: "$init:C:/Adam/CPURep.HC#0"]
     private static let FILES: [String] = ["C:/Adam/CPURep.HC"]
     public override var files: [String] { N_Adam_CPURep.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_CPURep.DEFINED.contains(index) }

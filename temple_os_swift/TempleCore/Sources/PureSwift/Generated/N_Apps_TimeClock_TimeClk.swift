@@ -57,7 +57,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
     }
 
     /// HolyC TimeFileRead (TimeClk.HC:15)
-    public final func f703_TimeFileRead(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_TimeFileRead(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -116,7 +116,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
     }
 
     /// HolyC TimeFileWrite (TimeClk.HC:36)
-    public final func f704_TimeFileWrite(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_TimeFileWrite(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -177,7 +177,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
     }
 
     /// HolyC TimeEntriesDel (TimeClk.HC:63)
-    public final func f705_TimeEntriesDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f710_TimeEntriesDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -206,7 +206,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
     }
 
     /// HolyC TimeRep (TimeClk.HC:75)
-    @discardableResult public final func f706_TimeRep(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f711_TimeRep(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -232,7 +232,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
             }
             ln = 81 // TimeClk.HC:81
             try tick(t)
-            try f703_TimeFileRead(t, l56_header)
+            try f708_TimeFileRead(t, l56_header)
             ln = 82 // TimeClk.HC:82
             l48_tmpt = try ld8(l56_header)
             ln = 83 // TimeClk.HC:83
@@ -300,7 +300,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
             if (p0__header == 0) {
                 ln = 113 // TimeClk.HC:113
                 try tick(t)
-                try f705_TimeEntriesDel(t, l56_header)
+                try f710_TimeEntriesDel(t, l56_header)
             }
             ln = 114 // TimeClk.HC:114
             let rv0: Int64 = (l8_is_in & 0xFF)
@@ -312,7 +312,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
     }
 
     /// HolyC PunchOut (TimeClk.HC:117)
-    public final func f707_PunchOut(_ t: HTask) throws {
+    public final func f712_PunchOut(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -321,7 +321,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
             var l0_tmpt: Int64 = 0
             ln = 120 // TimeClk.HC:120
             try tick(t)
-            let t0: Int64 = try f706_TimeRep(t, (fp &+ 8))
+            let t0: Int64 = try f711_TimeRep(t, (fp &+ 8))
             if (t0 == 0) {
                 ln = 121 // TimeClk.HC:121
                 _ = try nat(t, n_Print, try push1(t, s6))
@@ -350,11 +350,11 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
                 _ = try P.f153_QueIns(t, l0_tmpt, ld8((ld8((fp &+ 8)) &+ 8)))
                 ln = 130 // TimeClk.HC:130
                 try tick(t)
-                try f704_TimeFileWrite(t, ld8((fp &+ 8)))
+                try f709_TimeFileWrite(t, ld8((fp &+ 8)))
             }
             ln = 132 // TimeClk.HC:132
             try tick(t)
-            try f705_TimeEntriesDel(t, ld8((fp &+ 8)))
+            try f710_TimeEntriesDel(t, ld8((fp &+ 8)))
             t.msp = msp0
             t.depth -= 1
             return
@@ -362,7 +362,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
     }
 
     /// HolyC PunchIn (TimeClk.HC:135)
-    public final func f708_PunchIn(_ t: HTask) throws {
+    public final func f713_PunchIn(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -371,7 +371,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
             var l0_tmpt: Int64 = 0
             ln = 138 // TimeClk.HC:138
             try tick(t)
-            let t0: Int64 = try f706_TimeRep(t, (fp &+ 8))
+            let t0: Int64 = try f711_TimeRep(t, (fp &+ 8))
             if (t0 != 0) {
                 ln = 139 // TimeClk.HC:139
                 _ = try nat(t, n_Print, try push1(t, s8))
@@ -400,11 +400,11 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
                 _ = try P.f153_QueIns(t, l0_tmpt, ld8((ld8((fp &+ 8)) &+ 8)))
                 ln = 148 // TimeClk.HC:148
                 try tick(t)
-                try f704_TimeFileWrite(t, ld8((fp &+ 8)))
+                try f709_TimeFileWrite(t, ld8((fp &+ 8)))
             }
             ln = 150 // TimeClk.HC:150
             try tick(t)
-            try f705_TimeEntriesDel(t, ld8((fp &+ 8)))
+            try f710_TimeEntriesDel(t, ld8((fp &+ 8)))
             t.msp = msp0
             t.depth -= 1
             return
@@ -412,7 +412,7 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/TimeClock/TimeClk.HC#0 (TimeClk.HC:1)
-    @discardableResult public final func f709_init_C__Apps_TimeClock_TimeClk_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Apps_TimeClock_TimeClk_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -424,19 +424,19 @@ public final class N_Apps_TimeClock_TimeClk: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_TimeFileRead(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_TimeFileWrite(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_TimeEntriesDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 706: return try f706_TimeRep(t, (n > 0 ? st[base + 0] : 0))
-        case 707: try f707_PunchOut(t); return 0
-        case 708: try f708_PunchIn(t); return 0
-        case 709: return try f709_init_C__Apps_TimeClock_TimeClk_HC_0(t)
+        case 708: try f708_TimeFileRead(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_TimeFileWrite(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_TimeEntriesDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 711: return try f711_TimeRep(t, (n > 0 ? st[base + 0] : 0))
+        case 712: try f712_PunchOut(t); return 0
+        case 713: try f713_PunchIn(t); return 0
+        case 714: return try f714_init_C__Apps_TimeClock_TimeClk_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709]
-    private static let NAMES: [Int: String] = [703: "TimeFileRead", 704: "TimeFileWrite", 705: "TimeEntriesDel", 706: "TimeRep", 707: "PunchOut", 708: "PunchIn", 709: "$init:C:/Apps/TimeClock/TimeClk.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714]
+    private static let NAMES: [Int: String] = [708: "TimeFileRead", 709: "TimeFileWrite", 710: "TimeEntriesDel", 711: "TimeRep", 712: "PunchOut", 713: "PunchIn", 714: "$init:C:/Apps/TimeClock/TimeClk.HC#0"]
     private static let FILES: [String] = ["C:/Apps/TimeClock/TimeClk.HC"]
     public override var files: [String] { N_Apps_TimeClock_TimeClk.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_TimeClock_TimeClk.DEFINED.contains(index) }

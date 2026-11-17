@@ -32,6 +32,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_ToI64 = rt.vm.natives.find("ToI64")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
@@ -167,7 +168,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/KeepAway/Run.HC#0 (Run.HC:1) */
-    fun f703_init_C__Apps_KeepAway_Run_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_KeepAway_Run_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -181,7 +182,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/KeepAway/Run.HC#1 (Run.HC:3) */
-    fun f704_init_C__Apps_KeepAway_Run_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_KeepAway_Run_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -195,7 +196,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/KeepAway/Run.HC#2 (Run.HC:206) */
-    fun f705_init_C__Apps_KeepAway_Run_HC_2(t: Task): Long {
+    fun f710_init_C__Apps_KeepAway_Run_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -262,7 +263,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/KeepAway/Run.HC#3 (Run.HC:221) */
-    fun f706_init_C__Apps_KeepAway_Run_HC_3(t: Task): Long {
+    fun f711_init_C__Apps_KeepAway_Run_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -276,7 +277,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/KeepAway/Run.HC#4 (Run.HC:222) */
-    fun f707_init_C__Apps_KeepAway_Run_HC_4(t: Task): Long {
+    fun f712_init_C__Apps_KeepAway_Run_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -290,7 +291,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f708_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f713_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -300,7 +301,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawObj (KeepAway.HC:254) */
-    fun f709_DrawObj(t: Task, a0: Long, a1: Long, a2: Double) {
+    fun f714_DrawObj(t: Task, a0: Long, a1: Long, a2: Double) {
         var ln = 0
         try {
             enter(t)
@@ -327,23 +328,22 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 2097415 // KeepAway.HC:263
             tick(t)
-            P.f398_GrEllipse(t, p0_dc, f2i(ldf((p1_o + 8L))), f2i((ldf((p1_o + 16L)) / 2.0)), f2i(l32_r1), f2i(l40_r2), 0.0, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f399_GrEllipse(t, p0_dc, f2i(ldf((p1_o + 8L))), f2i((ldf((p1_o + 16L)) / 2.0)), f2i(l32_r1), f2i(l40_r2), 0.0, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 2097416 // KeepAway.HC:264
             tick(t)
-            P.f387_GrFloodFill(t, p0_dc, f2i(ldf((p1_o + 8L))), f2i((ldf((p1_o + 16L)) / 2.0)), 0L, 0L, 0L)
+            P.f388_GrFloodFill(t, p0_dc, f2i(ldf((p1_o + 8L))), f2i((ldf((p1_o + 16L)) / 2.0)), 0L, 0L, 0L)
             ln = 2097418 // KeepAway.HC:266
             if ((p1_o == ld8(g_ball))) {
                 ln = 2097419 // KeepAway.HC:267
-                tick(t)
-                P.f440_Sprite3(t, p0_dc, f2i(ldf((p1_o + 8L))), f2i(((ldf((p1_o + 16L)) - ldf((p1_o + 24L))) / 2.0)), f2i((divs(2147483647L, 2L).toDouble() - ldf((p1_o + 16L)))), b30, 0L)
+                nat(t, n_Sprite3, push(t, p0_dc, f2i(ldf((p1_o + 8L))), f2i(((ldf((p1_o + 16L)) - ldf((p1_o + 24L))) / 2.0)), f2i((divs(2147483647L, 2L).toDouble() - ldf((p1_o + 16L)))), b30, 0L))
             } else {
                 ln = 2097421 // KeepAway.HC:269
                 tick(t)
-                val t2: Long = P.f448_SpriteInterpolate(t, ((p2_tt - ldf((p1_o + 104L))) / (ldf((p1_o + 112L)) - ldf((p1_o + 104L)))), ld8(((g_imgs + (ld8((p1_o + 128L)) * 24L)) + (ld8(p1_o) * 8L))), ld8(((g_imgs + (ld8((p1_o + 136L)) * 24L)) + (ld8(p1_o) * 8L))))
+                val t2: Long = P.f453_SpriteInterpolate(t, ((p2_tt - ldf((p1_o + 104L))) / (ldf((p1_o + 112L)) - ldf((p1_o + 104L)))), ld8(((g_imgs + (ld8((p1_o + 128L)) * 24L)) + (ld8(p1_o) * 8L))), ld8(((g_imgs + (ld8((p1_o + 136L)) * 24L)) + (ld8(p1_o) * 8L))))
                 l24_tmps = t2
                 ln = 2097424 // KeepAway.HC:272
                 tick(t)
-                P.f444_Sprite3YB(t, p0_dc, f2i(ldf((p1_o + 8L))), f2i(((ldf((p1_o + 16L)) - ldf((p1_o + 24L))) / 2.0)), f2i((divs(2147483647L, 2L).toDouble() - ldf((p1_o + 16L)))), l24_tmps, ldf((p1_o + 56L)))
+                P.f449_Sprite3YB(t, p0_dc, f2i(ldf((p1_o + 8L))), f2i(((ldf((p1_o + 16L)) - ldf((p1_o + 24L))) / 2.0)), f2i((divs(2147483647L, 2L).toDouble() - ldf((p1_o + 16L)))), l24_tmps, ldf((p1_o + 56L)))
                 ln = 2097425 // KeepAway.HC:273
                 nat(t, n_Free, push1(t, l24_tmps))
             }
@@ -353,7 +353,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC ObjCompare (KeepAway.HC:277) */
-    fun f710_ObjCompare(t: Task, a0: Long, a1: Long): Long {
+    fun f715_ObjCompare(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -368,7 +368,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (KeepAway.HC:282) */
-    fun f711_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f716_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -396,7 +396,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4(((p1_dc + 172L) + 8L), 10000L)
             ln = 2097444 // KeepAway.HC:292
             tick(t)
-            val t1: Double = P.f355_D3I32Norm(t, (p1_dc + 172L))
+            val t1: Double = P.f356_D3I32Norm(t, (p1_dc + 172L))
             l24_d = (65535.0 / t1)
             ln = 2097445 // KeepAway.HC:293
             val t2: Long = (p1_dc + 172L)
@@ -413,7 +413,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((p1_dc + 160L), 4L)
             ln = 2097451 // KeepAway.HC:299
             tick(t)
-            P.f425_GrBorder(t, p1_dc, 10L, 10L, ((ld8((p0_task + 224L)) - 1L) - 10L), ((ld8((p0_task + 248L)) - 1L) - 10L), 1L, 0L)
+            P.f428_GrBorder(t, p1_dc, 10L, 10L, ((ld8((p0_task + 224L)) - 1L) - 10L), ((ld8((p0_task + 248L)) - 1L) - 10L), 1L, 0L)
             ln = 2097454 // KeepAway.HC:302
             l48_i = 0L
             loop0@ while ((l48_i < 7L)) {
@@ -644,13 +644,13 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 tick(t)
             }
             ln = 2097526 // KeepAway.HC:374
-            nat(t, n_QSortI64, push3(t, (fp + 56), 7L, 9223090561878065862L))
+            nat(t, n_QSortI64, push3(t, (fp + 56), 7L, 9223090561878065867L))
             ln = 2097527 // KeepAway.HC:375
             l48_i = 0L
             loop2@ while ((l48_i < 7L)) {
                 ln = 2097528 // KeepAway.HC:376
                 tick(t)
-                f709_DrawObj(t, p1_dc, ld8(((fp + 56) + (l48_i * 8L))), l16_tt)
+                f714_DrawObj(t, p1_dc, ld8(((fp + 56) + (l48_i * 8L))), l16_tt)
                 ln = 2097527 // KeepAway.HC:375
                 l48_i = (l48_i + 1L)
                 tick(t)
@@ -672,7 +672,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     ln = 2097534 // KeepAway.HC:382
                     tick(t)
                     val vb0 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, ((ld8((p0_task + 224L)) - 72L) shr 1), ((ld8((p0_task + 248L)) - 8L) shr 1), s3, vb0, 0)
+                    P.f370_GrPrint(t, p1_dc, ((ld8((p0_task + 224L)) - 72L) shr 1), ((ld8((p0_task + 248L)) - 8L) shr 1), s3, vb0, 0)
                     t.sp = vb0
                 }
             } else {
@@ -688,7 +688,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         ln = 2097540 // KeepAway.HC:388
                         tick(t)
                         val vb1 = push0(t)
-                        P.f369_GrPrint(t, p1_dc, ((ld8((p0_task + 224L)) - 32L) shr 1), ((ld8((p0_task + 248L)) - 8L) shr 1), s4, vb1, 0)
+                        P.f370_GrPrint(t, p1_dc, ((ld8((p0_task + 224L)) - 32L) shr 1), ((ld8((p0_task + 248L)) - 8L) shr 1), s4, vb1, 0)
                         t.sp = vb1
                     }
                 }
@@ -700,40 +700,40 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val t63: Long = nat(t, n_ToI64, push1(t, bits(l16_tt)))
             tick(t)
             val vb2 = push2(t, t63, bits(((l16_tt - t62.toDouble()) * 60.0)))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s5, vb2, 2)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s5, vb2, 2)
             t.sp = vb2
             ln = 2097546 // KeepAway.HC:394
             tick(t)
             val vb3 = push0(t)
-            P.f369_GrPrint(t, p1_dc, 216L, 0L, s6, vb3, 0)
+            P.f370_GrPrint(t, p1_dc, 216L, 0L, s6, vb3, 0)
             t.sp = vb3
             ln = 2097548 // KeepAway.HC:396
             st4((p1_dc + 160L), 11L)
             ln = 2097549 // KeepAway.HC:397
             tick(t)
             val vb4 = push1(t, ld8(g_score0))
-            P.f369_GrPrint(t, p1_dc, 160L, 0L, s7, vb4, 1)
+            P.f370_GrPrint(t, p1_dc, 160L, 0L, s7, vb4, 1)
             t.sp = vb4
             ln = 2097550 // KeepAway.HC:398
             st4((p1_dc + 160L), 13L)
             ln = 2097551 // KeepAway.HC:399
             tick(t)
             val vb5 = push1(t, ld8(g_score1))
-            P.f369_GrPrint(t, p1_dc, 184L, 0L, s7, vb5, 1)
+            P.f370_GrPrint(t, p1_dc, 184L, 0L, s7, vb5, 1)
             t.sp = vb5
             ln = 2097553 // KeepAway.HC:401
             st4((p1_dc + 160L), 11L)
             ln = 2097554 // KeepAway.HC:402
             tick(t)
             val vb6 = push1(t, ld8(g_best_score0))
-            P.f369_GrPrint(t, p1_dc, 312L, 0L, s7, vb6, 1)
+            P.f370_GrPrint(t, p1_dc, 312L, 0L, s7, vb6, 1)
             t.sp = vb6
             ln = 2097555 // KeepAway.HC:403
             st4((p1_dc + 160L), 13L)
             ln = 2097556 // KeepAway.HC:404
             tick(t)
             val vb7 = push1(t, ld8(g_best_score1))
-            P.f369_GrPrint(t, p1_dc, 336L, 0L, s7, vb7, 1)
+            P.f370_GrPrint(t, p1_dc, 336L, 0L, s7, vb7, 1)
             t.sp = vb7
             t.msp = msp0
             t.depth--
@@ -742,7 +742,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Shoot (KeepAway.HC:407) */
-    fun f712_Shoot(t: Task, a0: Long) {
+    fun f717_Shoot(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -762,7 +762,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC AnimateTask (KeepAway.HC:415) */
-    fun f713_AnimateTask(t: Task, a0: Long) {
+    fun f718_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -939,7 +939,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                     }
                                                     ln = 2097639 // KeepAway.HC:487
                                                     tick(t)
-                                                    P.f499_Noise(t, 250L, 74.0, 74.0)
+                                                    P.f504_Noise(t, 250L, 74.0, 74.0)
                                                 } else {
                                                     ln = 2097641 // KeepAway.HC:489
                                                     if ((l56_t0 < (ldf(g_shot_land_t) + 0.1))) {
@@ -951,7 +951,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                     }
                                                     ln = 2097645 // KeepAway.HC:493
                                                     tick(t)
-                                                    P.f499_Noise(t, 250L, 86.0, 86.0)
+                                                    P.f504_Noise(t, 250L, 86.0, 86.0)
                                                 }
                                                 ln = 2097647 // KeepAway.HC:495
                                                 st8(g_last_owner, l88_o)
@@ -969,7 +969,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 if (r12) {
                                     ln = 2097653 // KeepAway.HC:501
                                     tick(t)
-                                    f712_Shoot(t, l88_o)
+                                    f717_Shoot(t, l88_o)
                                 }
                             }
                             ln = 2097654 // KeepAway.HC:502
@@ -1062,7 +1062,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                     if ((((((l88_o == ld8(g_human)) && (l56_t0 > (ldf((l88_o + 120L)) + 1.0))) && (l32_dt != 0.0)) && ((l8_d / l32_dt) > 50.0)) && (ld8((g_objs + (l72_j * 152L))) != 0L))) {
                                                         ln = 2097692 // KeepAway.HC:540
                                                         tick(t)
-                                                        P.f499_Noise(t, 250L, 62.0, 62.0)
+                                                        P.f504_Noise(t, 250L, 62.0, 62.0)
                                                         ln = 2097693 // KeepAway.HC:541
                                                         st8(g_score1, (ld8(g_score1) + 1L))
                                                         ln = 2097694 // KeepAway.HC:542
@@ -1114,7 +1114,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             if ((l88_o == ld8(g_ball))) {
                                 ln = 2097718 // KeepAway.HC:566
                                 tick(t)
-                                P.f499_Noise(t, 10L, 74.0, 86.0)
+                                P.f504_Noise(t, 10L, 74.0, 86.0)
                             }
                         }
                         ln = 2097720 // KeepAway.HC:568
@@ -1127,7 +1127,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             if ((l88_o == ld8(g_ball))) {
                                 ln = 2097724 // KeepAway.HC:572
                                 tick(t)
-                                P.f499_Noise(t, 10L, 74.0, 86.0)
+                                P.f504_Noise(t, 10L, 74.0, 86.0)
                             }
                         }
                         ln = 2097727 // KeepAway.HC:575
@@ -1140,7 +1140,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             if ((l88_o == ld8(g_ball))) {
                                 ln = 2097731 // KeepAway.HC:579
                                 tick(t)
-                                P.f499_Noise(t, 10L, 74.0, 86.0)
+                                P.f504_Noise(t, 10L, 74.0, 86.0)
                             }
                         }
                         ln = 2097733 // KeepAway.HC:581
@@ -1153,7 +1153,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             if ((l88_o == ld8(g_ball))) {
                                 ln = 2097737 // KeepAway.HC:585
                                 tick(t)
-                                P.f499_Noise(t, 10L, 74.0, 86.0)
+                                P.f504_Noise(t, 10L, 74.0, 86.0)
                             }
                         }
                         ln = 2097740 // KeepAway.HC:588
@@ -1166,7 +1166,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             if ((ldf((l88_o + 48L)) > 100.0)) {
                                 ln = 2097744 // KeepAway.HC:592
                                 tick(t)
-                                P.f499_Noise(t, 10L, 74.0, 86.0)
+                                P.f504_Noise(t, 10L, 74.0, 86.0)
                             }
                             ln = 2097745 // KeepAway.HC:593
                             if ((l88_o != ld8(g_ball))) {
@@ -1212,7 +1212,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Init (KeepAway.HC:609) */
-    fun f714_Init(t: Task) {
+    fun f719_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1269,7 +1269,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC KeepAway (KeepAway.HC:634) */
-    fun f715_KeepAway(t: Task) {
+    fun f720_KeepAway(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1308,15 +1308,15 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             nat(t, n_DocClear, push1(t, 0L))
                             ln = 2097806 // KeepAway.HC:654
                             tick(t)
-                            P.f507_MenuPush(t, s9)
+                            P.f512_MenuPush(t, s9)
                             ln = 2097818 // KeepAway.HC:666
                             tick(t)
-                            f714_Init(t)
+                            f719_Init(t)
                             ln = 2097819 // KeepAway.HC:667
-                            st8((ld8(P.g_Fs) + 448L), 9223090561878065863L)
+                            st8((ld8(P.g_Fs) + 448L), 9223090561878065868L)
                             ln = 2097820 // KeepAway.HC:668
                             val t2: Long = (ld8(P.g_Fs) + 1088L)
-                            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065865L, ld8(P.g_Fs), s10, -1L, ld8(P.g_Fs), 0L, 0L))
+                            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065870L, ld8(P.g_Fs), s10, -1L, ld8(P.g_Fs), 0L, 0L))
                             st8(t2, t1)
                             ln = 2097822 // KeepAway.HC:670
                             rg0sp = t.sp; rg0msp = t.msp; rg0d = t.depth; rg0c = t.hCount; t.hCount = rg0c + 1
@@ -1398,7 +1398,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     10L -> {
                                         ln = 2097838 // KeepAway.HC:686
                                         tick(t)
-                                        f714_Init(t)
+                                        f719_Init(t)
                                     }
                                     106L -> {
                                         ln = 2097841 // KeepAway.HC:689
@@ -1439,7 +1439,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         12 -> {
                             ln = 2097829 // KeepAway.HC:677
                             tick(t)
-                            f712_Shoot(t, ld8(g_human))
+                            f717_Shoot(t, ld8(g_human))
                             ln = 2097830 // KeepAway.HC:678
                             state = 10
                             continue@machine0
@@ -1468,7 +1468,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             P.f228_SettingsPop(t, 0L, 0L)
                             ln = 2097856 // KeepAway.HC:704
                             tick(t)
-                            P.f509_MenuPop(t)
+                            P.f514_MenuPop(t)
                             ln = 2097857 // KeepAway.HC:705
                             nat(t, n_RegWrite, push4(t, s2, s11, ld8(g_best_score0), ld8(g_best_score1)))
                             t.msp = msp0
@@ -1495,13 +1495,13 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/KeepAway/Run.HC#5 (Run.HC:3) */
-    fun f716_init_C__Apps_KeepAway_Run_HC_5(t: Task): Long {
+    fun f721_init_C__Apps_KeepAway_Run_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 3 // Run.HC:3
             tick(t)
-            f715_KeepAway(t)
+            f720_KeepAway(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/KeepAway/Run.HC#5", ln) }
@@ -1510,20 +1510,20 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_KeepAway_Run_HC_0(t)
-            704 -> f704_init_C__Apps_KeepAway_Run_HC_1(t)
-            705 -> f705_init_C__Apps_KeepAway_Run_HC_2(t)
-            706 -> f706_init_C__Apps_KeepAway_Run_HC_3(t)
-            707 -> f707_init_C__Apps_KeepAway_Run_HC_4(t)
-            708 -> f708_init_C__Home_Registry_HC_0(t)
-            709 -> { f709_DrawObj(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))); 0L }
-            710 -> f710_ObjCompare(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            711 -> { f711_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            712 -> { f712_Shoot(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            713 -> { f713_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            714 -> { f714_Init(t); 0L }
-            715 -> { f715_KeepAway(t); 0L }
-            716 -> f716_init_C__Apps_KeepAway_Run_HC_5(t)
+            708 -> f708_init_C__Apps_KeepAway_Run_HC_0(t)
+            709 -> f709_init_C__Apps_KeepAway_Run_HC_1(t)
+            710 -> f710_init_C__Apps_KeepAway_Run_HC_2(t)
+            711 -> f711_init_C__Apps_KeepAway_Run_HC_3(t)
+            712 -> f712_init_C__Apps_KeepAway_Run_HC_4(t)
+            713 -> f713_init_C__Home_Registry_HC_0(t)
+            714 -> { f714_DrawObj(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))); 0L }
+            715 -> f715_ObjCompare(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            716 -> { f716_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            717 -> { f717_Shoot(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            718 -> { f718_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            719 -> { f719_Init(t); 0L }
+            720 -> { f720_KeepAway(t); 0L }
+            721 -> f721_init_C__Apps_KeepAway_Run_HC_5(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1535,7 +1535,7 @@ class N_Apps_KeepAway_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721)
         private val NAMES = arrayOf("\$init:C:/Apps/KeepAway/Run.HC#0", "\$init:C:/Apps/KeepAway/Run.HC#1", "\$init:C:/Apps/KeepAway/Run.HC#2", "\$init:C:/Apps/KeepAway/Run.HC#3", "\$init:C:/Apps/KeepAway/Run.HC#4", "\$init:C:/Home/Registry.HC#0", "DrawObj", "ObjCompare", "DrawIt", "Shoot", "AnimateTask", "Init", "KeepAway", "\$init:C:/Apps/KeepAway/Run.HC#5")
         private val FILES = arrayOf<String>("C:/Apps/KeepAway/Run.HC", "C:/Apps/KeepAway/Load.HC", "C:/Apps/KeepAway/KeepAway.HC")
     }

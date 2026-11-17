@@ -61,12 +61,12 @@ c 17fd70 1 0
 c 17fd71 1 0
 c 17fd72 1 1c
 c 17fd73 1 0
-fn 703 $init:C:/Demo/Graphics/Balloon.HC#0 (I64;;-)
+fn 708 $init:C:/Demo/Graphics/Balloon.HC#0 (I64;;-)
 sym g a 17fd38 [60]U8
-init 703
+init 708
 unit C:/Demo/Graphics/Balloon.HC#1
-fn 704 Balloon (U0;;-)
-fn 705 $init:C:/Demo/Graphics/Balloon.HC#1 (I64;;-)
-sym f Balloon 704 (U0;;-)
-init 705
+fn 709 Balloon (U0;;-)
+fn 710 $init:C:/Demo/Graphics/Balloon.HC#1 (I64;;-)
+sym f Balloon 709 (U0;;-)
+init 710
 unit C:/Demo/Graphics/Balloon.HC#2

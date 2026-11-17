@@ -57,7 +57,7 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MorseTable (MorseCode.HC:59) */
-    fun f703_MorseTable(t: Task) {
+    fun f708_MorseTable(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -114,7 +114,7 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MorseTimes (MorseCode.HC:80) */
-    fun f704_MorseTimes(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f709_MorseTimes(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -136,7 +136,7 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MorseWaitKey (MorseCode.HC:87) */
-    fun f705_MorseWaitKey(t: Task): Long {
+    fun f710_MorseWaitKey(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -235,7 +235,7 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Morse (MorseCode.HC:131) */
-    fun f706_Morse(t: Task) {
+    fun f711_Morse(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -247,7 +247,7 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             var l8_ch: Long = 0L
             ln = 137 // MorseCode.HC:137
             tick(t)
-            f703_MorseTable(t)
+            f708_MorseTable(t)
             ln = 138 // MorseCode.HC:138
             st8(g_m_start, bits(0.0))
             ln = 139 // MorseCode.HC:139
@@ -263,14 +263,14 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_Print, push1(t, s2))
             ln = 146 // MorseCode.HC:146
             tick(t)
-            val t1: Long = P.f602_DocPut(t, 0L)
+            val t1: Long = P.f607_DocPut(t, 0L)
             tick(t)
             val vb0 = push0(t)
             val t2: Long = P.f29_DocPrint(t, t1, s3, vb0, 0)
             t.sp = vb0
             l0_doc_e = t2
             ln = 147 // MorseCode.HC:147
-            st8((l0_doc_e + 120L), 9223090561878065856L)
+            st8((l0_doc_e + 120L), 9223090561878065861L)
             ln = 149 // MorseCode.HC:149
             nat(t, n_Print, push1(t, s4))
             ln = 151 // MorseCode.HC:151
@@ -279,7 +279,7 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             loop0@ while ((1L != 0L)) {
                 ln = 153 // MorseCode.HC:153
                 tick(t)
-                val t3: Long = f705_MorseWaitKey(t)
+                val t3: Long = f710_MorseWaitKey(t)
                 l8_ch = t3
                 ln = 154 // MorseCode.HC:154
                 if ((l8_ch == 32L)) {
@@ -329,13 +329,13 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Snd/MorseCode.HC#0 (MorseCode.HC:4) */
-    fun f707_init_C__Demo_Snd_MorseCode_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_Snd_MorseCode_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 176 // MorseCode.HC:176
             tick(t)
-            f706_Morse(t)
+            f711_Morse(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Snd/MorseCode.HC#0", ln) }
@@ -344,11 +344,11 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MorseTable(t); 0L }
-            704 -> f704_MorseTimes(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            705 -> f705_MorseWaitKey(t)
-            706 -> { f706_Morse(t); 0L }
-            707 -> f707_init_C__Demo_Snd_MorseCode_HC_0(t)
+            708 -> { f708_MorseTable(t); 0L }
+            709 -> f709_MorseTimes(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            710 -> f710_MorseWaitKey(t)
+            711 -> { f711_Morse(t); 0L }
+            712 -> f712_init_C__Demo_Snd_MorseCode_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -360,7 +360,7 @@ class N_Demo_Snd_MorseCode(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("MorseTable", "MorseTimes", "MorseWaitKey", "Morse", "\$init:C:/Demo/Snd/MorseCode.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Snd/MorseCode.HC")
     }

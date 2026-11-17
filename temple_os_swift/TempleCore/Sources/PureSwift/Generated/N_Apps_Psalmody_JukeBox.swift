@@ -18,6 +18,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     public let n_GrPlot: Int
     public let n_Kill: Int
     public let n_MStrPrint: Int
+    public let n_Mat4x4Scale: Int
     public let n_Print: Int
     public let n_Rand: Int
     public let n_RandI16: Int
@@ -26,6 +27,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     public let n_Sin: Int
     public let n_Snd: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_StrLen: Int
     public let n_StrMatch: Int
@@ -93,6 +95,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
         n_GrPlot = rt.vm.natives.find("GrPlot")!.index
         n_Kill = rt.vm.natives.find("Kill")!.index
         n_MStrPrint = rt.vm.natives.find("MStrPrint")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Rand = rt.vm.natives.find("Rand")!.index
         n_RandI16 = rt.vm.natives.find("RandI16")!.index
@@ -101,6 +104,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
         n_Sin = rt.vm.natives.find("Sin")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_StrLen = rt.vm.natives.find("StrLen")!.index
         n_StrMatch = rt.vm.natives.find("StrMatch")!.index
@@ -171,7 +175,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC JukeReward (JukeBox.HC:1)
-    @discardableResult public final func f703_JukeReward(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f708_JukeReward(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -180,7 +184,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             var l24_res: Int64 = 0
             var l8_buf: Int64 = 0
             ln = 5 // JukeBox.HC:5
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065810, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065815, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
             l24_res = t0
             ln = 6 // JukeBox.HC:6
             try tick(t)
@@ -189,7 +193,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             try st1((l24_res &+ 776), 1)
             ln = 9 // JukeBox.HC:9
             try tick(t)
-            let t1: Int64 = try P.f601_DocNew(t, 0, l24_res)
+            let t1: Int64 = try P.f606_DocNew(t, 0, l24_res)
             l16_doc = t1
             ln = 10 // JukeBox.HC:10
             try tick(t)
@@ -201,17 +205,17 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             l8_buf = t2
             ln = 13 // JukeBox.HC:13
             try tick(t)
-            _ = try P.f659_TaskExe(t, l24_res, 0, l8_buf, 132)
+            _ = try P.f664_TaskExe(t, l24_res, 0, l8_buf, 132)
             ln = 14 // JukeBox.HC:14
             _ = try nat(t, n_Free, try push1(t, l8_buf))
             ln = 15 // JukeBox.HC:15
             try tick(t)
-            try P.f660_TaskWait(t, l24_res, 0)
+            try P.f665_TaskWait(t, l24_res, 0)
             ln = 17 // JukeBox.HC:17
             try st1((l24_res &+ 777), 0)
             ln = 18 // JukeBox.HC:18
             try tick(t)
-            let t3: Int64 = try P.f663_DrvTextAttrGet(t, 58)
+            let t3: Int64 = try P.f668_DrvTextAttrGet(t, 58)
             try st1((l24_res &+ 779), (112 &+ (t3 & 15)))
             ln = 19 // JukeBox.HC:19
             try st1((l24_res &+ 778), 113)
@@ -234,7 +238,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC SingleSong (JukeBox.HC:28)
-    @discardableResult public final func f704_SingleSong(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f709_SingleSong(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -242,7 +246,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             var p1_name: Int64 = a1
             var l16_task: Int64 = 0
             ln = 30 // JukeBox.HC:30
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065810, 0, p1_name, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065815, 0, p1_name, (-1), ld8(P.g_Fs), 0, 0))
             l16_task = t0
             ln = 31 // JukeBox.HC:31
             try tick(t)
@@ -251,7 +255,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             try st1((l16_task &+ 776), 1)
             ln = 33 // JukeBox.HC:33
             try tick(t)
-            _ = try P.f659_TaskExe(t, l16_task, ld8(P.g_Fs), s3, 129)
+            _ = try P.f664_TaskExe(t, l16_task, ld8(P.g_Fs), s3, 129)
             ln = 34 // JukeBox.HC:34
             try tick(t)
             _ = try P.f222_WinHorz(t, ld8((l16_task &+ 72)), (ld8((l16_task &+ 72)) &+ 50), l16_task)
@@ -262,10 +266,10 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             try st4((l16_task &+ 12), 193239)
             ln = 37 // JukeBox.HC:37
             try tick(t)
-            _ = try P.f659_TaskExe(t, l16_task, 0, p0_msg, 132)
+            _ = try P.f664_TaskExe(t, l16_task, 0, p0_msg, 132)
             ln = 38 // JukeBox.HC:38
             try tick(t)
-            let t1: Int64 = try P.f602_DocPut(t, l16_task)
+            let t1: Int64 = try P.f607_DocPut(t, l16_task)
             try st8((t1 &+ 280), 100)
             ln = 39 // JukeBox.HC:39
             t.depth -= 1
@@ -276,7 +280,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC JBPutKey (JukeBox.HC:46)
-    @discardableResult public final func f705_JBPutKey(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f710_JBPutKey(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -321,11 +325,11 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                         }
                         ln = 64 // JukeBox.HC:64
                         try tick(t)
-                        let t1: Int64 = try P.f617_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
+                        let t1: Int64 = try P.f622_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
                         l72_doc2 = t1
                         ln = 65 // JukeBox.HC:65
                         try tick(t)
-                        try P.f619_DocGoToLine(t, l72_doc2, 1)
+                        try P.f624_DocGoToLine(t, l72_doc2, 1)
                         ln = 66 // JukeBox.HC:66
                         l40_doc_e = try ld8((l72_doc2 &+ 104))
                         ln = 67 // JukeBox.HC:67
@@ -339,11 +343,11 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                             try st1((ld8((l40_doc_e &+ 16)) &+ 2), p2_ch)
                             ln = 69 // JukeBox.HC:69
                             try tick(t)
-                            _ = try P.f618_DocWrite(t, l72_doc2, 0)
+                            _ = try P.f623_DocWrite(t, l72_doc2, 0)
                         }
                         ln = 71 // JukeBox.HC:71
                         try tick(t)
-                        try P.f605_DocDel(t, l72_doc2)
+                        try P.f610_DocDel(t, l72_doc2)
                         ln = 72 // JukeBox.HC:72
                         let rv1: Int64 = 1
                         t.msp = msp0
@@ -354,15 +358,15 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                         if (p2_ch == 114) {
                             ln = 74 // JukeBox.HC:74
                             try tick(t)
-                            let t4: Int64 = try P.f672_DocTreeFFind(t, ld8((l48_tmpde &+ 24)), s4)
+                            let t4: Int64 = try P.f677_DocTreeFFind(t, ld8((l48_tmpde &+ 24)), s4)
                             if (t4 == 0) {
                                 ln = 75 // JukeBox.HC:75
                                 try tick(t)
-                                let t5: Int64 = try P.f617_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
+                                let t5: Int64 = try P.f622_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
                                 l72_doc2 = t5
                                 ln = 76 // JukeBox.HC:76
                                 try tick(t)
-                                try P.f619_DocGoToLine(t, l72_doc2, 2)
+                                try P.f624_DocGoToLine(t, l72_doc2, 2)
                                 ln = 77 // JukeBox.HC:77
                                 try tick(t)
                                 let vb2 = push0(t)
@@ -370,34 +374,34 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                                 t.sp = vb2
                                 ln = 85 // JukeBox.HC:85
                                 try tick(t)
-                                _ = try P.f618_DocWrite(t, l72_doc2, 0)
+                                _ = try P.f623_DocWrite(t, l72_doc2, 0)
                                 ln = 86 // JukeBox.HC:86
                                 try tick(t)
-                                try P.f605_DocDel(t, l72_doc2)
+                                try P.f610_DocDel(t, l72_doc2)
                             }
                             ln = 88 // JukeBox.HC:88
                             try tick(t)
-                            let t6: Int64 = try P.f672_DocTreeFFind(t, ld8((l48_tmpde &+ 24)), s6)
+                            let t6: Int64 = try P.f677_DocTreeFFind(t, ld8((l48_tmpde &+ 24)), s6)
                             if (t6 != 0) {
                                 ln = 89 // JukeBox.HC:89
                                 l56_i = 0
                                 loop0: while (l56_i < 5) {
                                     ln = 91 // JukeBox.HC:91
                                     try tick(t)
-                                    let t7: Int64 = try P.f688_GodWordStr(t, 17)
+                                    let t7: Int64 = try P.f693_GodWordStr(t, 17)
                                     try tick(t)
-                                    let t8: Int64 = try P.f688_GodWordStr(t, 17)
+                                    let t8: Int64 = try P.f693_GodWordStr(t, 17)
                                     try tick(t)
-                                    let t9: Int64 = try P.f688_GodWordStr(t, 17)
+                                    let t9: Int64 = try P.f693_GodWordStr(t, 17)
                                     try tick(t)
-                                    let t10: Int64 = try P.f688_GodWordStr(t, 17)
+                                    let t10: Int64 = try P.f693_GodWordStr(t, 17)
                                     ln = 90 // JukeBox.HC:90
                                     let t11: Int64 = try nat(t, n_MStrPrint, try push(t, s7, t10, t9, t8, t7))
                                     l64_st = t11
                                     ln = 92 // JukeBox.HC:92
                                     try tick(t)
                                     let vb3 = try push1(t, l64_st)
-                                    _ = try P.f675_DocTreeFAppend(t, ld8((l48_tmpde &+ 24)), s6, s8, vb3, 1)
+                                    _ = try P.f680_DocTreeFAppend(t, ld8((l48_tmpde &+ 24)), s6, s8, vb3, 1)
                                     t.sp = vb3
                                     ln = 94 // JukeBox.HC:94
                                     _ = try nat(t, n_Free, try push1(t, l64_st))
@@ -407,7 +411,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                                 }
                                 ln = 96 // JukeBox.HC:96
                                 try tick(t)
-                                try P.f668_In(t, s9)
+                                try P.f673_In(t, s9)
                             }
                             ln = 98 // JukeBox.HC:98
                             let rv4: Int64 = 1
@@ -438,7 +442,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC JukeBox (JukeBox.HC:107)
-    public final func f706_JukeBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f711_JukeBox(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -458,7 +462,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             l16_i = 0
             ln = 112 // JukeBox.HC:112
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l64_doc = t0
             ln = 114 // JukeBox.HC:114
             l88_task = 0
@@ -492,7 +496,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                 ln = 124 // JukeBox.HC:124
                 _ = try nat(t, n_Free, try push1(t, p0_dirname))
                 ln = 125 // JukeBox.HC:125
-                try st8((l64_doc &+ 600), 9223090561878065857)
+                try st8((l64_doc &+ 600), 9223090561878065862)
                 ln = 126 // JukeBox.HC:126
                 try tick(t)
                 let vb6 = push0(t)
@@ -519,10 +523,10 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                         l32_st = t6
                         ln = 137 // JukeBox.HC:137
                         try tick(t)
-                        try P.f666_FileExtRem(t, l32_st)
+                        try P.f671_FileExtRem(t, l32_st)
                         ln = 138 // JukeBox.HC:138
                         try tick(t)
-                        let t7: Int64 = try P.f617_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
+                        let t7: Int64 = try P.f622_DocRead(t, ld8((l48_tmpde &+ 24)), 0)
                         l72_s = t7
                         ln = 139 // JukeBox.HC:139
                         l80_doc_e = try ld8(l72_s)
@@ -601,7 +605,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                                                     try st4((l72_s &+ 120), 0)
                                                     ln = 159 // JukeBox.HC:159
                                                     try tick(t)
-                                                    try P.f603_DocEntryDel(t, l72_s, l80_doc_e)
+                                                    try P.f608_DocEntryDel(t, l72_s, l80_doc_e)
                                                     ln = 160 // JukeBox.HC:160
                                                     try tick(t)
                                                     let vb13 = push0(t)
@@ -609,7 +613,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                                                     t.sp = vb13
                                                     ln = 161 // JukeBox.HC:161
                                                     try tick(t)
-                                                    _ = try P.f618_DocWrite(t, l72_s, 0)
+                                                    _ = try P.f623_DocWrite(t, l72_s, 0)
                                                 }
                                             }
                                         }
@@ -626,7 +630,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                         }
                         ln = 167 // JukeBox.HC:167
                         try tick(t)
-                        try P.f605_DocDel(t, l72_s)
+                        try P.f610_DocDel(t, l72_s)
                         ln = 168 // JukeBox.HC:168
                         _ = try nat(t, n_Free, try push1(t, l32_st))
                     }
@@ -645,12 +649,12 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                     if (p1__filename != 0) {
                         ln = 175 // JukeBox.HC:175
                         try tick(t)
-                        let t16: Int64 = try P.f621_PopUpMenu(t, l64_doc, 2)
+                        let t16: Int64 = try P.f626_PopUpMenu(t, l64_doc, 2)
                         l48_tmpde = t16
                     } else {
                         ln = 177 // JukeBox.HC:177
                         try tick(t)
-                        let t17: Int64 = try P.f621_PopUpMenu(t, l64_doc, 0)
+                        let t17: Int64 = try P.f626_PopUpMenu(t, l64_doc, 0)
                         l48_tmpde = t17
                     }
                     ln = 178 // JukeBox.HC:178
@@ -683,16 +687,16 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                     try st8((l48_tmpde &+ 32), 0)
                     ln = 188 // JukeBox.HC:188
                     try tick(t)
-                    try P.f666_FileExtRem(t, l40_st2)
+                    try P.f671_FileExtRem(t, l40_st2)
                     ln = 189 // JukeBox.HC:189
                     let t20: Int64 = try nat(t, n_MStrPrint, try push2(t, s29, ld8((l48_tmpde &+ 24))))
                     l32_st = t20
                     ln = 190 // JukeBox.HC:190
                     try tick(t)
-                    try P.f495_MusicSettingsRst(t)
+                    try P.f500_MusicSettingsRst(t)
                     ln = 191 // JukeBox.HC:191
                     try tick(t)
-                    let t21: Int64 = try f704_SingleSong(t, l32_st, l40_st2)
+                    let t21: Int64 = try f709_SingleSong(t, l32_st, l40_st2)
                     l88_task = t21
                     ln = 192 // JukeBox.HC:192
                     _ = try nat(t, n_Free, try push1(t, l40_st2))
@@ -702,7 +706,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                 }
                 ln = 195 // JukeBox.HC:195
                 try tick(t)
-                try P.f605_DocDel(t, l64_doc)
+                try P.f610_DocDel(t, l64_doc)
                 ln = 196 // JukeBox.HC:196
                 _ = try nat(t, n_DirTreeDel, try push1(t, l56_tmpde1))
                 t.hCount = h0c
@@ -723,7 +727,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/JukeBox.HC#0 (JukeBox.HC:1)
-    @discardableResult public final func f707_init_C__Apps_Psalmody_JukeBox_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Apps_Psalmody_JukeBox_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -733,15 +737,15 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC Song (childish.HC:2)
-    public final func f708_Song(_ t: HTask) throws {
+    public final func f713_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 1048580 // childish.HC:4
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 1048581 // childish.HC:5
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 1048582 // childish.HC:6
             try st8((P.g_music &+ 56), bits(2.48))
             ln = 1048583 // childish.HC:7
@@ -756,16 +760,16 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                     if !((t0 == 0)) { break loop0 }
                     ln = 1048586 // childish.HC:10
                     try tick(t)
-                    try P.f494_Play(t, s31, s30)
+                    try P.f499_Play(t, s31, s30)
                     ln = 1048589 // childish.HC:13
                     try tick(t)
-                    try P.f494_Play(t, s31, s32)
+                    try P.f499_Play(t, s31, s32)
                     ln = 1048592 // childish.HC:16
                     try tick(t)
-                    try P.f494_Play(t, s33, 0)
+                    try P.f499_Play(t, s33, 0)
                     ln = 1048593 // childish.HC:17
                     try tick(t)
-                    try P.f494_Play(t, s33, 0)
+                    try P.f499_Play(t, s33, 0)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -785,26 +789,26 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/childish.HC#0 (childish.HC:24)
-    @discardableResult public final func f709_init_C__Apps_Psalmody_Examples_childish_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Apps_Psalmody_Examples_childish_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 1048600 // childish.HC:24
             try tick(t)
-            try f708_Song(t)
+            try f713_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/childish.HC#0", ln) }
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/night.HC#0 (night.HC:14)
-    @discardableResult public final func f710_init_C__Apps_Psalmody_Examples_night_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Apps_Psalmody_Examples_night_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 2097166 // night.HC:14
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             try st8(g_t0, bits(t0))
             t.depth -= 1
             return 0
@@ -812,7 +816,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC DrawIt (night.HC:16)
-    public final func f711_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f716_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -824,14 +828,13 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             var l40_dt: Double = 0.0
             ln = 2097171 // night.HC:19
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             l40_dt = try (t0 - ldf(g_t0))
             ln = 2097172 // night.HC:20
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 330, 35, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 330, 35, 0, b0, 0))
             ln = 2097173 // night.HC:21
             try tick(t)
-            let t1: Double = try P.f487_Beat(t)
+            let t1: Double = try P.f492_Beat(t)
             if try ((t1 - ldf(g_t0)) < 24.0) {
                 ln = 2097174 // night.HC:22
                 let t2: Double = d(try nat(t, n_Rand, push0(t)))
@@ -911,7 +914,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC Song (night.HC:54)
-    public final func f712_Song(_ t: HTask) throws {
+    public final func f717_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -921,12 +924,12 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             ln = 2097209 // night.HC:57
             try st1((ld8(P.g_Fs) &+ 778), 7)
             ln = 2097210 // night.HC:58
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065863)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065868)
             ln = 2097211 // night.HC:59
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 2097212 // night.HC:60
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 2097213 // night.HC:61
             try st8((P.g_music &+ 56), bits(2.0))
             ln = 2097214 // night.HC:62
@@ -939,22 +942,22 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                 loop0: while (1 != 0) {
                     ln = 2097217 // night.HC:65
                     try tick(t)
-                    let t0: Double = try P.f487_Beat(t)
+                    let t0: Double = try P.f492_Beat(t)
                     try st8(g_t0, bits(t0))
                     ln = 2097218 // night.HC:66
                     _ = try nat(t, n_Print, try push1(t, s35))
                     ln = 2097219 // night.HC:67
                     try tick(t)
-                    try P.f494_Play(t, s37, s36)
+                    try P.f499_Play(t, s37, s36)
                     ln = 2097221 // night.HC:69
                     try tick(t)
-                    try P.f494_Play(t, s37, s36)
+                    try P.f499_Play(t, s37, s36)
                     ln = 2097223 // night.HC:71
                     try tick(t)
-                    try P.f494_Play(t, s39, s38)
+                    try P.f499_Play(t, s39, s38)
                     ln = 2097225 // night.HC:73
                     try tick(t)
-                    try P.f494_Play(t, s39, s38)
+                    try P.f499_Play(t, s39, s38)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -975,26 +978,26 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/night.HC#1 (night.HC:81)
-    @discardableResult public final func f713_init_C__Apps_Psalmody_Examples_night_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Apps_Psalmody_Examples_night_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 2097233 // night.HC:81
             try tick(t)
-            try f712_Song(t)
+            try f717_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/night.HC#1", ln) }
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#0 (prosper.HC:14)
-    @discardableResult public final func f714_init_C__Apps_Psalmody_Examples_prosper_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f719_init_C__Apps_Psalmody_Examples_prosper_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 3145742 // prosper.HC:14
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             try st8(g_t0, bits(t0))
             t.depth -= 1
             return 0
@@ -1002,7 +1005,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC DrawIt (prosper.HC:16)
-    public final func f715_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f720_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1011,7 +1014,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             var l16_dt: Double = 0.0
             ln = 3145746 // prosper.HC:18
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             l16_dt = try (t0 - ldf(g_t0))
             ln = 3145747 // prosper.HC:19
             let t1: Int64 = (p1_dc &+ 28)
@@ -1022,8 +1025,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             _ = try P.f307_Mat4x4RotZ(t, ld8((p1_dc &+ 200)), (0.25 * t2))
             ln = 3145749 // prosper.HC:21
             let t3: Double = d(try nat(t, n_Sin, try push1(t, bits((l16_dt / 3.0)))))
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, ld8((p1_dc &+ 200)), (1.5 + (0.5 * t3)))
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((p1_dc &+ 200)), bits((1.5 + (0.5 * t3)))))
             ln = 3145750 // prosper.HC:22
             try tick(t)
             try P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc &+ 200)))
@@ -1032,11 +1034,11 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             if ((t4 & 1) != 0) {
                 ln = 3145752 // prosper.HC:24
                 try tick(t)
-                try P.f441_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b1)
+                try P.f446_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b1)
             } else {
                 ln = 3145754 // prosper.HC:26
                 try tick(t)
-                try P.f441_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b2)
+                try P.f446_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b2)
             }
             t.depth -= 1
             return
@@ -1044,7 +1046,7 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC Song (prosper.HC:29)
-    public final func f716_Song(_ t: HTask) throws {
+    public final func f721_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1054,12 +1056,12 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
             ln = 3145760 // prosper.HC:32
             try st1((ld8(P.g_Fs) &+ 778), 46)
             ln = 3145761 // prosper.HC:33
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065867)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065872)
             ln = 3145762 // prosper.HC:34
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 3145764 // prosper.HC:36
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 3145765 // prosper.HC:37
             try st8((P.g_music &+ 56), bits(3.5))
             ln = 3145766 // prosper.HC:38
@@ -1072,20 +1074,20 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
                     if !((t1 == 0)) { break loop0 }
                     ln = 3145768 // prosper.HC:40
                     try tick(t)
-                    let t0: Double = try P.f487_Beat(t)
+                    let t0: Double = try P.f492_Beat(t)
                     try st8(g_t0, bits(t0))
                     ln = 3145769 // prosper.HC:41
                     try tick(t)
-                    try P.f494_Play(t, s41, s40)
+                    try P.f499_Play(t, s41, s40)
                     ln = 3145772 // prosper.HC:44
                     try tick(t)
-                    try P.f494_Play(t, s43, s42)
+                    try P.f499_Play(t, s43, s42)
                     ln = 3145774 // prosper.HC:46
                     try tick(t)
-                    try P.f494_Play(t, s45, s44)
+                    try P.f499_Play(t, s45, s44)
                     ln = 3145776 // prosper.HC:48
                     try tick(t)
-                    try P.f494_Play(t, s45, s44)
+                    try P.f499_Play(t, s45, s44)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -1106,13 +1108,13 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#1 (prosper.HC:56)
-    @discardableResult public final func f717_init_C__Apps_Psalmody_Examples_prosper_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f722_init_C__Apps_Psalmody_Examples_prosper_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 3145784 // prosper.HC:56
             try tick(t)
-            try f716_Song(t)
+            try f721_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/prosper.HC#1", ln) }
@@ -1121,27 +1123,27 @@ public final class N_Apps_Psalmody_JukeBox: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_JukeReward(t, (n > 0 ? st[base + 0] : 0))
-        case 704: return try f704_SingleSong(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 705: return try f705_JBPutKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 706: try f706_JukeBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 707: return try f707_init_C__Apps_Psalmody_JukeBox_HC_0(t)
-        case 708: try f708_Song(t); return 0
-        case 709: return try f709_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
-        case 710: return try f710_init_C__Apps_Psalmody_Examples_night_HC_0(t)
-        case 711: try f711_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 712: try f712_Song(t); return 0
-        case 713: return try f713_init_C__Apps_Psalmody_Examples_night_HC_1(t)
-        case 714: return try f714_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
-        case 715: try f715_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 716: try f716_Song(t); return 0
-        case 717: return try f717_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
+        case 708: return try f708_JukeReward(t, (n > 0 ? st[base + 0] : 0))
+        case 709: return try f709_SingleSong(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 710: return try f710_JBPutKey(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 711: try f711_JukeBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 712: return try f712_init_C__Apps_Psalmody_JukeBox_HC_0(t)
+        case 713: try f713_Song(t); return 0
+        case 714: return try f714_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
+        case 715: return try f715_init_C__Apps_Psalmody_Examples_night_HC_0(t)
+        case 716: try f716_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 717: try f717_Song(t); return 0
+        case 718: return try f718_init_C__Apps_Psalmody_Examples_night_HC_1(t)
+        case 719: return try f719_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
+        case 720: try f720_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 721: try f721_Song(t); return 0
+        case 722: return try f722_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
-    private static let NAMES: [Int: String] = [703: "JukeReward", 704: "SingleSong", 705: "JBPutKey", 706: "JukeBox", 707: "$init:C:/Apps/Psalmody/JukeBox.HC#0", 708: "Song", 709: "$init:C:/Apps/Psalmody/Examples/childish.HC#0", 710: "$init:C:/Apps/Psalmody/Examples/night.HC#0", 711: "DrawIt", 712: "Song", 713: "$init:C:/Apps/Psalmody/Examples/night.HC#1", 714: "$init:C:/Apps/Psalmody/Examples/prosper.HC#0", 715: "DrawIt", 716: "Song", 717: "$init:C:/Apps/Psalmody/Examples/prosper.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722]
+    private static let NAMES: [Int: String] = [708: "JukeReward", 709: "SingleSong", 710: "JBPutKey", 711: "JukeBox", 712: "$init:C:/Apps/Psalmody/JukeBox.HC#0", 713: "Song", 714: "$init:C:/Apps/Psalmody/Examples/childish.HC#0", 715: "$init:C:/Apps/Psalmody/Examples/night.HC#0", 716: "DrawIt", 717: "Song", 718: "$init:C:/Apps/Psalmody/Examples/night.HC#1", 719: "$init:C:/Apps/Psalmody/Examples/prosper.HC#0", 720: "DrawIt", 721: "Song", 722: "$init:C:/Apps/Psalmody/Examples/prosper.HC#1"]
     private static let FILES: [String] = ["C:/Apps/Psalmody/JukeBox.HC", "C:/Apps/Psalmody/Examples/childish.HC", "C:/Apps/Psalmody/Examples/night.HC", "C:/Apps/Psalmody/Examples/prosper.HC"]
     public override var files: [String] { N_Apps_Psalmody_JukeBox.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Psalmody_JukeBox.DEFINED.contains(index) }

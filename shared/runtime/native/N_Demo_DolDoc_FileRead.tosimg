@@ -10,12 +10,12 @@ s 17fff0 24475245454e240a2724505552504c4524646f635f652d3e64655f666c6167732447524
 s 1800b0 53545f444f435f464c414753
 s 17fed8 25345a3a25640a
 s 1800d0 3a3a2f446f632f57656c636f6d652e4444
-fn 703 DocProfile (U0;*U8,I64;-)
-fn 704 $init:C:/Demo/DolDoc/FileRead.HC#0 (I64;;-)
-sym f DocProfile 703 (U0;*U8,I64;-)
-init 704
+fn 708 DocProfile (U0;*U8,I64;-)
+fn 709 $init:C:/Demo/DolDoc/FileRead.HC#0 (I64;;-)
+sym f DocProfile 708 (U0;*U8,I64;-)
+init 709
 unit C:/Demo/DolDoc/FileRead.HC#1
 s 1800d0 3a3a2f446f632f57656c636f6d652e4444
-fn 705 $init:C:/Demo/DolDoc/FileRead.HC#1 (I64;;-)
-init 705
+fn 710 $init:C:/Demo/DolDoc/FileRead.HC#1 (I64;;-)
+init 710
 unit C:/Demo/DolDoc/FileRead.HC#2

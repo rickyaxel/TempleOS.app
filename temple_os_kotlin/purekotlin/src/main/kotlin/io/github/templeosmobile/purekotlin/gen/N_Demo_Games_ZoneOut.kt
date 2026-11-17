@@ -27,6 +27,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
@@ -93,7 +94,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/ZoneOut.HC#0 (ZoneOut.HC:1) */
-    fun f703_init_C__Demo_Games_ZoneOut_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_ZoneOut_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -107,7 +108,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/ZoneOut.HC#1 (ZoneOut.HC:2) */
-    fun f704_init_C__Demo_Games_ZoneOut_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_ZoneOut_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -121,7 +122,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -131,7 +132,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ZOTransform (ZoneOut.HC:80) */
-    fun f706_ZOTransform(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f711_ZOTransform(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -167,7 +168,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (ZoneOut.HC:93) */
-    fun f707_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f712_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -191,29 +192,26 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             l72_cy = (l56_h shr 1)
             ln = 100 // ZoneOut.HC:100
             tick(t)
-            val t0: Double = P.f542_Wrap(t, (2.0 * ldf((g_us + 24L))), (-f(4614256656552045848L)))
+            val t0: Double = P.f547_Wrap(t, (2.0 * ldf((g_us + 24L))), (-f(4614256656552045848L)))
             l96__ = ((640.0 * t0) / f(4614256656552045848L))
             ln = 101 // ZoneOut.HC:101
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, f2i((l96__ - 1280.0)), 90L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, f2i((l96__ - 1280.0)), 90L, 0L, b0, 0L))
             ln = 102 // ZoneOut.HC:102
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, f2i(l96__), 90L, 0L, b1, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, f2i(l96__), 90L, 0L, b1, 0L))
             ln = 103 // ZoneOut.HC:103
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, f2i((l96__ + 1280.0)), 90L, 0L, b2, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, f2i((l96__ + 1280.0)), 90L, 0L, b2, 0L))
             ln = 105 // ZoneOut.HC:105
             tick(t)
             P.f296_DCDepthBufAlloc(t, p1_dc)
             ln = 106 // ZoneOut.HC:106
-            st8((p1_dc + 232L), 9223090561878065858L)
+            st8((p1_dc + 232L), 9223090561878065863L)
             ln = 107 // ZoneOut.HC:107
             st4((p1_dc + 216L), l64_cx)
             ln = 108 // ZoneOut.HC:108
             st4((p1_dc + 220L), l72_cy)
             ln = 109 // ZoneOut.HC:109
             tick(t)
-            P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), (-ld8((g_us + 32L))), (-ld8((g_us + 40L))), (-ld8((g_us + 48L))))
+            P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), (-ld8((g_us + 32L))), (-ld8((g_us + 40L))), (-ld8((g_us + 48L))))
             ln = 110 // ZoneOut.HC:110
             tick(t)
             P.f306_Mat4x4RotY(t, ld8((p1_dc + 200L)), (ldf((g_us + 24L)) - (f(4614256656552045848L) / 2.0)))
@@ -277,7 +275,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 }
                 ln = 136 // ZoneOut.HC:136
                 tick(t)
-                P.f444_Sprite3YB(t, p1_dc, ld8(((g_them + (l24_i * 64L)) + 32L)), l40_y, ld8(((g_them + (l24_i * 64L)) + 48L)), l80_img, (-ldf(((g_them + (l24_i * 64L)) + 24L))))
+                P.f449_Sprite3YB(t, p1_dc, ld8(((g_them + (l24_i * 64L)) + 32L)), l40_y, ld8(((g_them + (l24_i * 64L)) + 48L)), l80_img, (-ldf(((g_them + (l24_i * 64L)) + 24L))))
                 ln = 114 // ZoneOut.HC:114
                 l24_i = (l24_i + 1L)
                 tick(t)
@@ -288,7 +286,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             loop4@ while ((l16_tmpo != g_shots)) {
                 ln = 140 // ZoneOut.HC:140
                 tick(t)
-                P.f444_Sprite3YB(t, p1_dc, ld8((l16_tmpo + 32L)), ld8((l16_tmpo + 40L)), ld8((l16_tmpo + 48L)), b5, (-ldf((l16_tmpo + 24L))))
+                P.f449_Sprite3YB(t, p1_dc, ld8((l16_tmpo + 32L)), ld8((l16_tmpo + 40L)), ld8((l16_tmpo + 48L)), b5, (-ldf((l16_tmpo + 24L))))
                 ln = 141 // ZoneOut.HC:141
                 l16_tmpo = ld8(l16_tmpo)
                 tick(t)
@@ -300,10 +298,10 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st4((p1_dc + 160L), 10L)
             ln = 145 // ZoneOut.HC:145
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l64_cx - 5L), l72_cy, (l64_cx + 5L), l72_cy, 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l64_cx - 5L), l72_cy, (l64_cx + 5L), l72_cy, 1L, 0L)
             ln = 146 // ZoneOut.HC:146
             tick(t)
-            P.f396_GrLine(t, p1_dc, l64_cx, (l72_cy - 5L), l64_cx, (l72_cy + 5L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, l64_cx, (l72_cy - 5L), l64_cx, (l72_cy + 5L), 1L, 0L)
             ln = 147 // ZoneOut.HC:147
             if ((ldf(g_tf) != 0.0)) {
                 ln = 148 // ZoneOut.HC:148
@@ -315,7 +313,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     ln = 150 // ZoneOut.HC:150
                     tick(t)
                     val vb0 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, (l64_cx - divs(112L, 2L)), (l72_cy - divs(8L, 2L)), s2, vb0, 0)
+                    P.f370_GrPrint(t, p1_dc, (l64_cx - divs(112L, 2L)), (l72_cy - divs(8L, 2L)), s2, vb0, 0)
                     t.sp = vb0
                 }
                 ln = 151 // ZoneOut.HC:151
@@ -325,10 +323,10 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st4((p1_dc + 160L), 0L)
                 ln = 154 // ZoneOut.HC:154
                 tick(t)
-                P.f396_GrLine(t, p1_dc, (l64_cx - 5L), l72_cy, (l64_cx + 5L), l72_cy, 1L, 0L)
+                P.f397_GrLine(t, p1_dc, (l64_cx - 5L), l72_cy, (l64_cx + 5L), l72_cy, 1L, 0L)
                 ln = 155 // ZoneOut.HC:155
                 tick(t)
-                P.f396_GrLine(t, p1_dc, l64_cx, (l72_cy - 5L), l64_cx, (l72_cy + 5L), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, l64_cx, (l72_cy - 5L), l64_cx, (l72_cy + 5L), 1L, 0L)
                 ln = 156 // ZoneOut.HC:156
                 val t10: Double = f(nat(t, n_tS, push0(t)))
                 l88_tt = t10
@@ -338,7 +336,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 159 // ZoneOut.HC:159
             tick(t)
             val vb1 = push3(t, ld8(g_num_them), bits((l88_tt - ldf(g_t0))), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
             t.sp = vb1
             t.depth--
             return
@@ -346,7 +344,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Fire (ZoneOut.HC:162) */
-    fun f708_Fire(t: Task) {
+    fun f713_Fire(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -374,7 +372,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MoveUs (ZoneOut.HC:173) */
-    fun f709_MoveUs(t: Task, a0: Double) {
+    fun f714_MoveUs(t: Task, a0: Double) {
         var ln = 0
         try {
             enter(t)
@@ -395,7 +393,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC AnimateTask (ZoneOut.HC:179) */
-    fun f710_AnimateTask(t: Task, a0: Long) {
+    fun f715_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -467,7 +465,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Init (ZoneOut.HC:205) */
-    fun f711_Init(t: Task) {
+    fun f716_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -514,7 +512,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CleanUp (ZoneOut.HC:224) */
-    fun f712_CleanUp(t: Task) {
+    fun f717_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -527,30 +525,30 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC SongTask (ZoneOut.HC:229) */
-    fun f713_SongTask(t: Task, a0: Long) {
+    fun f718_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 231 // ZoneOut.HC:231
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 232 // ZoneOut.HC:232
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 233 // ZoneOut.HC:233
             loop0@ while ((1L != 0L)) {
                 ln = 234 // ZoneOut.HC:234
                 tick(t)
-                P.f494_Play(t, s5, 0L)
+                P.f499_Play(t, s5, 0L)
                 ln = 235 // ZoneOut.HC:235
                 tick(t)
-                P.f494_Play(t, s5, 0L)
+                P.f499_Play(t, s5, 0L)
                 ln = 236 // ZoneOut.HC:236
                 tick(t)
-                P.f494_Play(t, s6, 0L)
+                P.f499_Play(t, s6, 0L)
                 ln = 237 // ZoneOut.HC:237
                 tick(t)
-                P.f494_Play(t, s6, 0L)
+                P.f499_Play(t, s6, 0L)
                 tick(t)
             }
             t.depth--
@@ -559,7 +557,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ZoneOut (ZoneOut.HC:241) */
-    fun f714_ZoneOut(t: Task) {
+    fun f719_ZoneOut(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -570,7 +568,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f201_PopUpOk(t, s7, 0L)
             ln = 252 // ZoneOut.HC:252
             tick(t)
-            P.f507_MenuPush(t, s8)
+            P.f512_MenuPush(t, s8)
             ln = 267 // ZoneOut.HC:267
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -588,17 +586,17 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_DocCursor, push2(t, 0L, 0L))
             ln = 273 // ZoneOut.HC:273
             tick(t)
-            f711_Init(t)
+            f716_Init(t)
             ln = 274 // ZoneOut.HC:274
             val t1: Long = (ld8(P.g_Fs) + 1088L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065862L, 0L, s9, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065867L, 0L, s9, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 275 // ZoneOut.HC:275
             val t3: Long = (ld8(P.g_Fs) + 1080L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065865L, 0L, s10, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065870L, 0L, s10, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 276 // ZoneOut.HC:276
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065859L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065864L)
             ln = 277 // ZoneOut.HC:277
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -613,15 +611,15 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 32L -> {
                                     ln = 281 // ZoneOut.HC:281
                                     tick(t)
-                                    f708_Fire(t)
+                                    f713_Fire(t)
                                 }
                                 10L -> {
                                     ln = 284 // ZoneOut.HC:284
                                     tick(t)
-                                    f712_CleanUp(t)
+                                    f717_CleanUp(t)
                                     ln = 285 // ZoneOut.HC:285
                                     tick(t)
-                                    f711_Init(t)
+                                    f716_Init(t)
                                 }
                                 27L, 28L -> {
                                     ln = 289 // ZoneOut.HC:289
@@ -645,12 +643,12 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                             72L -> {
                                                 ln = 299 // ZoneOut.HC:299
                                                 tick(t)
-                                                f709_MoveUs(t, ldf((g_us + 24L)))
+                                                f714_MoveUs(t, ldf((g_us + 24L)))
                                             }
                                             80L -> {
                                                 ln = 302 // ZoneOut.HC:302
                                                 tick(t)
-                                                f709_MoveUs(t, (ldf((g_us + 24L)) + f(4614256656552045848L)))
+                                                f714_MoveUs(t, (ldf((g_us + 24L)) + f(4614256656552045848L)))
                                             }
                                             else -> {
                                             }
@@ -675,7 +673,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             }
             ln = 311 // ZoneOut.HC:311
             tick(t)
-            f712_CleanUp(t)
+            f717_CleanUp(t)
             ln = 312 // ZoneOut.HC:312
             nat(t, n_DocClear, push1(t, 0L))
             ln = 313 // ZoneOut.HC:313
@@ -683,7 +681,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 314 // ZoneOut.HC:314
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 315 // ZoneOut.HC:315
             nat(t, n_RegWrite, push3(t, s1, s11, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -693,13 +691,13 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/ZoneOut.HC#2 (ZoneOut.HC:318) */
-    fun f715_init_C__Demo_Games_ZoneOut_HC_2(t: Task): Long {
+    fun f720_init_C__Demo_Games_ZoneOut_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 318 // ZoneOut.HC:318
             tick(t)
-            f714_ZoneOut(t)
+            f719_ZoneOut(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/ZoneOut.HC#2", ln) }
@@ -708,19 +706,19 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_ZoneOut_HC_0(t)
-            704 -> f704_init_C__Demo_Games_ZoneOut_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> { f706_ZOTransform(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            707 -> { f707_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            708 -> { f708_Fire(t); 0L }
-            709 -> { f709_MoveUs(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
-            710 -> { f710_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            711 -> { f711_Init(t); 0L }
-            712 -> { f712_CleanUp(t); 0L }
-            713 -> { f713_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            714 -> { f714_ZoneOut(t); 0L }
-            715 -> f715_init_C__Demo_Games_ZoneOut_HC_2(t)
+            708 -> f708_init_C__Demo_Games_ZoneOut_HC_0(t)
+            709 -> f709_init_C__Demo_Games_ZoneOut_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> { f711_ZOTransform(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            712 -> { f712_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            713 -> { f713_Fire(t); 0L }
+            714 -> { f714_MoveUs(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
+            715 -> { f715_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            716 -> { f716_Init(t); 0L }
+            717 -> { f717_CleanUp(t); 0L }
+            718 -> { f718_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            719 -> { f719_ZoneOut(t); 0L }
+            720 -> f720_init_C__Demo_Games_ZoneOut_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -732,7 +730,7 @@ class N_Demo_Games_ZoneOut(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/ZoneOut.HC#0", "\$init:C:/Demo/Games/ZoneOut.HC#1", "\$init:C:/Home/Registry.HC#0", "ZOTransform", "DrawIt", "Fire", "MoveUs", "AnimateTask", "Init", "CleanUp", "SongTask", "ZoneOut", "\$init:C:/Demo/Games/ZoneOut.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Games/ZoneOut.HC")
     }

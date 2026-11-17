@@ -63,7 +63,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrClamp (GrPrimatives.HC:3)
-    @discardableResult public final func f703_GrClamp(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws -> Int64 {
+    @discardableResult public final func f708_GrClamp(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -140,7 +140,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC DCClipLine (GrPrimatives.HC:33)
-    @discardableResult public final func f704_DCClipLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws -> Int64 {
+    @discardableResult public final func f709_DCClipLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -156,7 +156,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             var l88_win_task: Int64 = 0
             ln = 38 // GrPrimatives.HC:38
             try tick(t)
-            let t0: Int64 = try f703_GrClamp(t, p0_dc, (fp &+ 56), (fp &+ 64), (fp &+ 72), (fp &+ 80), p5_width, p6_height)
+            let t0: Int64 = try f708_GrClamp(t, p0_dc, (fp &+ 56), (fp &+ 64), (fp &+ 72), (fp &+ 80), p5_width, p6_height)
             if (t0 != 0) {
                 ln = 39 // GrPrimatives.HC:39
                 if try ((ld4s((p0_dc &+ 28)) & 16384) != 0) {
@@ -177,7 +177,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 }
                 ln = 46 // GrPrimatives.HC:46
                 try tick(t)
-                let t5: Int64 = try P.f360_ClipLine(t, p1_x1, p2_y1, p3_x2, p4_y2, ld8((fp &+ 56)), ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)))
+                let t5: Int64 = try P.f361_ClipLine(t, p1_x1, p2_y1, p3_x2, p4_y2, ld8((fp &+ 56)), ld8((fp &+ 64)), ld8((fp &+ 72)), ld8((fp &+ 80)))
                 let rv1: Int64 = (t5 & 0xFF)
                 t.msp = msp0
                 t.depth -= 1
@@ -196,7 +196,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrPlot (GrPrimatives.HC:51)
-    @discardableResult public final func f705_GrPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f710_GrPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -275,7 +275,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrPlot1 (GrPrimatives.HC:81)
-    @discardableResult public final func f706_GrPlot1(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f711_GrPlot1(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -353,7 +353,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrPeek (GrPrimatives.HC:111)
-    @discardableResult public final func f707_GrPeek(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f712_GrPeek(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -411,7 +411,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrFloodFillRay (GrPrimatives.HC:171)
-    @discardableResult public final func f708_GrFloodFillRay(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f713_GrFloodFillRay(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -448,7 +448,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                         try st8(t2, (t3 &+ 1))
                         ln = 185 // GrPrimatives.HC:185
                         try tick(t)
-                        let t4: Int64 = try P.f374_GrRayLen(t, p0_dc, (l56_f &+ 8), ld8((l56_f &+ 16)), p3_z, p4_db)
+                        let t4: Int64 = try P.f375_GrRayLen(t, p0_dc, (l56_f &+ 8), ld8((l56_f &+ 16)), p3_z, p4_db)
                         try st8((l56_f &+ 40), t4)
                         l40_res = (l40_res &+ t4)
                         ln = 186 // GrPrimatives.HC:186
@@ -468,7 +468,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                             try st8(t7, (t8 &+ 1))
                             ln = 193 // GrPrimatives.HC:193
                             try tick(t)
-                            let t9: Int64 = try P.f373_GrRayLenMinus(t, p0_dc, ld8((l56_f &+ 32)), ld8((l56_f &+ 16)))
+                            let t9: Int64 = try P.f374_GrRayLenMinus(t, p0_dc, ld8((l56_f &+ 32)), ld8((l56_f &+ 16)))
                             try st8((l56_f &+ 48), t9)
                             if (t9 != 0) {
                                 ln = 194 // GrPrimatives.HC:194
@@ -517,7 +517,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                             try st8(t18, (t19 &+ 1))
                             ln = 216 // GrPrimatives.HC:216
                             try tick(t)
-                            let t20: Int64 = try P.f373_GrRayLenMinus(t, p0_dc, ld8((l56_f &+ 32)), ld8((l56_f &+ 16)))
+                            let t20: Int64 = try P.f374_GrRayLenMinus(t, p0_dc, ld8((l56_f &+ 32)), ld8((l56_f &+ 16)))
                             try st8((l56_f &+ 48), t20)
                             if (t20 != 0) {
                                 ln = 217 // GrPrimatives.HC:217
@@ -566,7 +566,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrFloodFill (GrPrimatives.HC:239)
-    @discardableResult public final func f709_GrFloodFill(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
+    @discardableResult public final func f714_GrFloodFill(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -601,7 +601,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             ln = 252 // GrPrimatives.HC:252
             skip_0: do {
                 try tick(t)
-                let t0: Int64 = try f707_GrPeek(t, p0_dc, p1_x, p2_y)
+                let t0: Int64 = try f712_GrPeek(t, p0_dc, p1_x, p2_y)
                 l56_j = t0
                 if (t0 >= 0) {
                     ln = 253 // GrPrimatives.HC:253
@@ -636,7 +636,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     if try (((p3_not_color != 0) && (l56_j != ld4u((p0_dc &+ 168)))) || (p3_not_color == 0)) {
                         ln = 268 // GrPrimatives.HC:268
                         try tick(t)
-                        let t3: Int64 = try f708_GrFloodFillRay(t, p0_dc, p1_x, p2_y, p4_z, p5_db)
+                        let t3: Int64 = try f713_GrFloodFillRay(t, p0_dc, p1_x, p2_y, p4_z, p5_db)
                         l48_res = t3
                     }
                 }
@@ -656,7 +656,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrFillSemiCircle (GrPrimatives.HC:277)
-    @discardableResult public final func f710_GrFillSemiCircle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
+    @discardableResult public final func f715_GrFillSemiCircle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -998,7 +998,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrFillCircle (GrPrimatives.HC:390)
-    @discardableResult public final func f711_GrFillCircle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f716_GrFillCircle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1080,7 +1080,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrPlot3B (GrPrimatives.HC:412)
-    @discardableResult public final func f712_GrPlot3B(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f717_GrPlot3B(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1125,7 +1125,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     try st8((p0_dc &+ 400), ld8((fp &+ 48)))
                     ln = 426 // GrPrimatives.HC:426
                     try tick(t)
-                    _ = try f706_GrPlot1(t, p0_dc, ld8((fp &+ 32)), ld8((fp &+ 40)))
+                    _ = try f711_GrPlot1(t, p0_dc, ld8((fp &+ 32)), ld8((fp &+ 40)))
                     ln = 427 // GrPrimatives.HC:427
                     l64_was_symmetry = 1
                     ln = 428 // GrPrimatives.HC:428
@@ -1138,7 +1138,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 try st8((p0_dc &+ 400), ld8((fp &+ 24)))
                 ln = 432 // GrPrimatives.HC:432
                 try tick(t)
-                _ = try f706_GrPlot1(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)))
+                _ = try f711_GrPlot1(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)))
             }
             ln = 434 // GrPrimatives.HC:434
             if (l56_was_transform != 0) {
@@ -1164,7 +1164,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrPlot3 (GrPrimatives.HC:441)
-    @discardableResult public final func f713_GrPlot3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f718_GrPlot3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1214,7 +1214,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     try st4(t1, (ld4s(t1) & (-513)))
                     ln = 456 // GrPrimatives.HC:456
                     try tick(t)
-                    _ = try f713_GrPlot3(t, p0_dc, ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)))
+                    _ = try f718_GrPlot3(t, p0_dc, ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)))
                     ln = 457 // GrPrimatives.HC:457
                     l96_was_symmetry = 1
                     ln = 458 // GrPrimatives.HC:458
@@ -1231,7 +1231,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 if try ((ld8((p0_dc &+ 192)) != 0) || (l56_w <= 0)) {
                     ln = 464 // GrPrimatives.HC:464
                     try tick(t)
-                    _ = try f706_GrPlot1(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)))
+                    _ = try f711_GrPlot1(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)))
                 } else {
                     ln = 465 // GrPrimatives.HC:465
                     if try (ld4s((p0_dc &+ 228)) < 64) {
@@ -1343,7 +1343,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                             if try ((ld4s((p0_dc &+ 28)) & 2048) != 0) {
                                 ln = 521 // GrPrimatives.HC:521
                                 try tick(t)
-                                let t14: Int64 = try P.f338_DistSqrI64(t, ld8((fp &+ 8)), ld8((fp &+ 16)), ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
+                                let t14: Int64 = try P.f339_DistSqrI64(t, ld8((fp &+ 8)), ld8((fp &+ 16)), ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
                                 l64_dist = t14
                                 ln = 522 // GrPrimatives.HC:522
                                 if try (l64_dist <= ld8((p0_dc &+ 312))) {
@@ -1386,7 +1386,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     } else {
                         ln = 538 // GrPrimatives.HC:538
                         try tick(t)
-                        _ = try f711_GrFillCircle(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((p0_dc &+ 400)), ld4s((p0_dc &+ 228)))
+                        _ = try f716_GrFillCircle(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((p0_dc &+ 400)), ld4s((p0_dc &+ 228)))
                     }
                 }
             }
@@ -1416,7 +1416,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrLinePlot0 (GrPrimatives.HC:548)
-    @discardableResult public final func f714_GrLinePlot0(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f719_GrLinePlot0(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1450,7 +1450,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrLinePlot (GrPrimatives.HC:561)
-    @discardableResult public final func f715_GrLinePlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f720_GrLinePlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1462,7 +1462,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             try st8((p0_dc &+ 400), p3_z)
             ln = 564 // GrPrimatives.HC:564
             try tick(t)
-            _ = try f706_GrPlot1(t, p0_dc, p1_x, p2_y)
+            _ = try f711_GrPlot1(t, p0_dc, p1_x, p2_y)
             ln = 565 // GrPrimatives.HC:565
             let rv8: Int64 = 1
             t.depth -= 1
@@ -1473,7 +1473,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrLine (GrPrimatives.HC:568)
-    @discardableResult public final func f716_GrLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws -> Int64 {
+    @discardableResult public final func f721_GrLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1502,15 +1502,15 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             if try ((((p5_step == 1) && (p6_start == 0)) && (ld8((p0_dc &+ 192)) == 0)) && (ld8((p0_dc &+ 392)) == 0)) {
                 ln = 575 // GrPrimatives.HC:575
                 try tick(t)
-                let t0: Int64 = try f704_DCClipLine(t, p0_dc, (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32), 0, 0)
+                let t0: Int64 = try f709_DCClipLine(t, p0_dc, (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32), 0, 0)
                 if (t0 != 0) {
                     ln = 576 // GrPrimatives.HC:576
-                    let t1: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), 0, ld8((fp &+ 24)), ld8((fp &+ 32)), 0, 9223090561878065866, p5_step, p6_start))
+                    let t1: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), 0, ld8((fp &+ 24)), ld8((fp &+ 32)), 0, 9223090561878065871, p5_step, p6_start))
                     l56_res = (t1 & 0xFF)
                 }
             } else {
                 ln = 578 // GrPrimatives.HC:578
-                let t2: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), 0, ld8((fp &+ 24)), ld8((fp &+ 32)), 0, 9223090561878065867, p5_step, p6_start))
+                let t2: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), 0, ld8((fp &+ 24)), ld8((fp &+ 32)), 0, 9223090561878065872, p5_step, p6_start))
                 l56_res = (t2 & 0xFF)
             }
             ln = 579 // GrPrimatives.HC:579
@@ -1527,7 +1527,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrCircle (GrPrimatives.HC:583)
-    @discardableResult public final func f717_GrCircle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double, _ a6: Double) throws -> Int64 {
+    @discardableResult public final func f722_GrCircle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double, _ a6: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1545,7 +1545,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             ln = 588 // GrPrimatives.HC:588
             try st8((p0_dc &+ 392), 0)
             ln = 589 // GrPrimatives.HC:589
-            let t0: Int64 = try nat(t, n_Circle, try push(t, p0_dc, p1_cx, p2_cy, 0, p3_radius, 9223090561878065867, p4_step, bits(p5_start_radians), bits(p6_len_radians)))
+            let t0: Int64 = try nat(t, n_Circle, try push(t, p0_dc, p1_cx, p2_cy, 0, p3_radius, 9223090561878065872, p4_step, bits(p5_start_radians), bits(p6_len_radians)))
             l56_res = (t0 & 0xFF)
             ln = 590 // GrPrimatives.HC:590
             try st8((p0_dc &+ 392), l64_db)
@@ -1559,7 +1559,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrEllipse (GrPrimatives.HC:594)
-    @discardableResult public final func f718_GrEllipse(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double, _ a6: Int64, _ a7: Double, _ a8: Double) throws -> Int64 {
+    @discardableResult public final func f723_GrEllipse(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double, _ a6: Int64, _ a7: Double, _ a8: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1580,7 +1580,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             try st8((p0_dc &+ 392), 0)
             ln = 605 // GrPrimatives.HC:605
             try tick(t)
-            let t0: Int64 = try P.f353_Ellipse(t, p0_dc, p1_cx, p2_cy, 0, p3_x_radius, p4_y_radius, 9223090561878065867, p5_rot_angle, p6_step, p7_start_radians, p8_len_radians)
+            let t0: Int64 = try P.f354_Ellipse(t, p0_dc, p1_cx, p2_cy, 0, p3_x_radius, p4_y_radius, 9223090561878065872, p5_rot_angle, p6_step, p7_start_radians, p8_len_radians)
             l72_res = (t0 & 0xFF)
             ln = 607 // GrPrimatives.HC:607
             try st8((p0_dc &+ 392), l80_db)
@@ -1594,7 +1594,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrRegPoly (GrPrimatives.HC:611)
-    @discardableResult public final func f719_GrRegPoly(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Double, _ a7: Int64, _ a8: Double, _ a9: Double) throws -> Int64 {
+    @discardableResult public final func f724_GrRegPoly(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Double, _ a7: Int64, _ a8: Double, _ a9: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1616,7 +1616,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             try st8((p0_dc &+ 392), 0)
             ln = 622 // GrPrimatives.HC:622
             try tick(t)
-            let t0: Int64 = try P.f354_RegPoly(t, p0_dc, p1_cx, p2_cy, 0, p3_x_radius, p4_y_radius, p5_sides, 9223090561878065867, p6_rot_angle, p7_step, p8_start_radians, p9_len_radians)
+            let t0: Int64 = try P.f355_RegPoly(t, p0_dc, p1_cx, p2_cy, 0, p3_x_radius, p4_y_radius, p5_sides, 9223090561878065872, p6_rot_angle, p7_step, p8_start_radians, p9_len_radians)
             l80_res = (t0 & 0xFF)
             ln = 624 // GrPrimatives.HC:624
             try st8((p0_dc &+ 392), l88_db)
@@ -1630,7 +1630,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC Gr2Bezier (GrPrimatives.HC:628)
-    @discardableResult public final func f720_Gr2Bezier(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f725_Gr2Bezier(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1638,7 +1638,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             var p1_ctrl: Int64 = a1
             ln = 630 // GrPrimatives.HC:630
             try tick(t)
-            let t0: Int64 = try P.f356_Bezier2(t, p0_dc, p1_ctrl, 9223090561878065867, 1)
+            let t0: Int64 = try P.f357_Bezier2(t, p0_dc, p1_ctrl, 9223090561878065872, 1)
             let rv13: Int64 = (t0 & 0xFF)
             t.depth -= 1
             return rv13
@@ -1648,7 +1648,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC Gr3Bezier (GrPrimatives.HC:633)
-    @discardableResult public final func f721_Gr3Bezier(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f726_Gr3Bezier(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1656,7 +1656,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             var p1_ctrl: Int64 = a1
             ln = 635 // GrPrimatives.HC:635
             try tick(t)
-            let t0: Int64 = try P.f357_Bezier3(t, p0_dc, p1_ctrl, 9223090561878065867, 1)
+            let t0: Int64 = try P.f358_Bezier3(t, p0_dc, p1_ctrl, 9223090561878065872, 1)
             let rv14: Int64 = (t0 & 0xFF)
             t.depth -= 1
             return rv14
@@ -1666,7 +1666,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC Gr2BSpline (GrPrimatives.HC:638)
-    @discardableResult public final func f722_Gr2BSpline(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f727_Gr2BSpline(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1678,7 +1678,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             p3_closed = (p3_closed & 0xFF)
             ln = 640 // GrPrimatives.HC:640
             try tick(t)
-            let t0: Int64 = try P.f358_BSpline2(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065867, p3_closed)
+            let t0: Int64 = try P.f359_BSpline2(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065872, p3_closed)
             let rv15: Int64 = (t0 & 0xFF)
             t.depth -= 1
             return rv15
@@ -1688,7 +1688,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC Gr3BSpline (GrPrimatives.HC:643)
-    @discardableResult public final func f723_Gr3BSpline(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f728_Gr3BSpline(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1700,7 +1700,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             p3_closed = (p3_closed & 0xFF)
             ln = 645 // GrPrimatives.HC:645
             try tick(t)
-            let t0: Int64 = try P.f359_BSpline3(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065867, p3_closed)
+            let t0: Int64 = try P.f360_BSpline3(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065872, p3_closed)
             let rv16: Int64 = (t0 & 0xFF)
             t.depth -= 1
             return rv16
@@ -1710,7 +1710,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrLineFat3 (GrPrimatives.HC:648)
-    @discardableResult public final func f724_GrLineFat3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Int64) throws -> Int64 {
+    @discardableResult public final func f729_GrLineFat3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1819,7 +1819,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     if (p8_start >= l96_d) {
                         ln = 680 // GrPrimatives.HC:680
                         try tick(t)
-                        let t5: Int64 = try f711_GrFillCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width)
+                        let t5: Int64 = try f716_GrFillCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width)
                         l72_res = (l72_res &+ t5)
                     } else {
                         ln = 682 // GrPrimatives.HC:682
@@ -1831,7 +1831,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                                 try st8((p0_dc &+ 400), ld4s(((fp &+ 24) &+ 4)))
                                 ln = 685 // GrPrimatives.HC:685
                                 try tick(t)
-                                let t6: Int64 = try f706_GrPlot1(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)))
+                                let t6: Int64 = try f711_GrPlot1(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)))
                                 l72_res = (l72_res &+ t6)
                                 ln = 686 // GrPrimatives.HC:686
                                 l128__x = try ld4s(((fp &+ 8) &+ 4))
@@ -1860,12 +1860,12 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                             if (l104_dx >= 0) {
                                 ln = 694 // GrPrimatives.HC:694
                                 try tick(t)
-                                let t10: Int64 = try f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 2)
+                                let t10: Int64 = try f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 2)
                                 l72_res = (l72_res &+ t10)
                             } else {
                                 ln = 696 // GrPrimatives.HC:696
                                 try tick(t)
-                                let t11: Int64 = try f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 7)
+                                let t11: Int64 = try f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 7)
                                 l72_res = (l72_res &+ t11)
                             }
                             ln = 697 // GrPrimatives.HC:697
@@ -1894,12 +1894,12 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                             if (l104_dx >= 0) {
                                 ln = 705 // GrPrimatives.HC:705
                                 try tick(t)
-                                let t13: Int64 = try f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 3)
+                                let t13: Int64 = try f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 3)
                                 l72_res = (l72_res &+ t13)
                             } else {
                                 ln = 707 // GrPrimatives.HC:707
                                 try tick(t)
-                                let t14: Int64 = try f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 6)
+                                let t14: Int64 = try f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 6)
                                 l72_res = (l72_res &+ t14)
                             }
                         }
@@ -1962,7 +1962,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     if (p8_start >= l96_d) {
                         ln = 735 // GrPrimatives.HC:735
                         try tick(t)
-                        let t17: Int64 = try f711_GrFillCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width)
+                        let t17: Int64 = try f716_GrFillCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width)
                         l72_res = (l72_res &+ t17)
                     } else {
                         ln = 737 // GrPrimatives.HC:737
@@ -1974,7 +1974,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                                 try st8((p0_dc &+ 400), ld4s(((fp &+ 24) &+ 4)))
                                 ln = 740 // GrPrimatives.HC:740
                                 try tick(t)
-                                let t18: Int64 = try f706_GrPlot1(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)))
+                                let t18: Int64 = try f711_GrPlot1(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)))
                                 l72_res = (l72_res &+ t18)
                                 ln = 741 // GrPrimatives.HC:741
                                 l128__x = try ld4s(((fp &+ 8) &+ 4))
@@ -2003,12 +2003,12 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                             if (l112_dy >= 0) {
                                 ln = 749 // GrPrimatives.HC:749
                                 try tick(t)
-                                let t22: Int64 = try f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 0)
+                                let t22: Int64 = try f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 0)
                                 l72_res = (l72_res &+ t22)
                             } else {
                                 ln = 751 // GrPrimatives.HC:751
                                 try tick(t)
-                                let t23: Int64 = try f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 5)
+                                let t23: Int64 = try f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 5)
                                 l72_res = (l72_res &+ t23)
                             }
                             ln = 752 // GrPrimatives.HC:752
@@ -2037,12 +2037,12 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                             if (l112_dy >= 0) {
                                 ln = 760 // GrPrimatives.HC:760
                                 try tick(t)
-                                let t25: Int64 = try f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 1)
+                                let t25: Int64 = try f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 1)
                                 l72_res = (l72_res &+ t25)
                             } else {
                                 ln = 762 // GrPrimatives.HC:762
                                 try tick(t)
-                                let t26: Int64 = try f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 4)
+                                let t26: Int64 = try f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp &+ 8) &+ 4)), ld4s(((fp &+ 16) &+ 4)), ld4s(((fp &+ 24) &+ 4)), p7_width, 4)
                                 l72_res = (l72_res &+ t26)
                             }
                         }
@@ -2060,7 +2060,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrLine3 (GrPrimatives.HC:770)
-    @discardableResult public final func f725_GrLine3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Int64) throws -> Int64 {
+    @discardableResult public final func f730_GrLine3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64, _ a8: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2125,16 +2125,16 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                         if try (((p8_start == 0) && (ld4s((p0_dc &+ 228)) < 2)) && (ld8((p0_dc &+ 392)) == 0)) {
                             ln = 789 // GrPrimatives.HC:789
                             try tick(t)
-                            let t2: Int64 = try f704_DCClipLine(t, p0_dc, (fp &+ 72), (fp &+ 80), (fp &+ 96), (fp &+ 104), 0, 0)
+                            let t2: Int64 = try f709_DCClipLine(t, p0_dc, (fp &+ 72), (fp &+ 80), (fp &+ 96), (fp &+ 104), 0, 0)
                             if (t2 != 0) {
                                 ln = 790 // GrPrimatives.HC:790
-                                let t3: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 72)), ld8((fp &+ 80)), 0, ld8((fp &+ 96)), ld8((fp &+ 104)), 0, 9223090561878065866, p7_step, p8_start))
+                                let t3: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 72)), ld8((fp &+ 80)), 0, ld8((fp &+ 96)), ld8((fp &+ 104)), 0, 9223090561878065871, p7_step, p8_start))
                                 l120_res = (t3 & 0xFF)
                             }
                         } else {
                             ln = 792 // GrPrimatives.HC:792
                             try tick(t)
-                            let t4: Int64 = try f724_GrLineFat3(t, p0_dc, ld8((fp &+ 72)), ld8((fp &+ 80)), ld8((fp &+ 88)), ld8((fp &+ 96)), ld8((fp &+ 104)), ld8((fp &+ 112)), ld4s((p0_dc &+ 228)), p8_start)
+                            let t4: Int64 = try f729_GrLineFat3(t, p0_dc, ld8((fp &+ 72)), ld8((fp &+ 80)), ld8((fp &+ 88)), ld8((fp &+ 96)), ld8((fp &+ 104)), ld8((fp &+ 112)), ld4s((p0_dc &+ 228)), p8_start)
                             if (t4 != 0) {
                                 ln = 793 // GrPrimatives.HC:793
                                 l120_res = 1
@@ -2142,7 +2142,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                         }
                     } else {
                         ln = 796 // GrPrimatives.HC:796
-                        let t5: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 72)), ld8((fp &+ 80)), ld8((fp &+ 88)), ld8((fp &+ 96)), ld8((fp &+ 104)), ld8((fp &+ 112)), 9223090561878065865, p7_step, p8_start))
+                        let t5: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 72)), ld8((fp &+ 80)), ld8((fp &+ 88)), ld8((fp &+ 96)), ld8((fp &+ 104)), ld8((fp &+ 112)), 9223090561878065870, p7_step, p8_start))
                         l120_res = (t5 & 0xFF)
                     }
                     ln = 797 // GrPrimatives.HC:797
@@ -2159,16 +2159,16 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     if try (((p8_start == 0) && (ld4s((p0_dc &+ 228)) < 2)) && (ld8((p0_dc &+ 392)) == 0)) {
                         ln = 803 // GrPrimatives.HC:803
                         try tick(t)
-                        let t6: Int64 = try f704_DCClipLine(t, p0_dc, (fp &+ 8), (fp &+ 16), (fp &+ 32), (fp &+ 40), 0, 0)
+                        let t6: Int64 = try f709_DCClipLine(t, p0_dc, (fp &+ 8), (fp &+ 16), (fp &+ 32), (fp &+ 40), 0, 0)
                         if (t6 != 0) {
                             ln = 804 // GrPrimatives.HC:804
-                            let t7: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), 0, ld8((fp &+ 32)), ld8((fp &+ 40)), 0, 9223090561878065866, p7_step, p8_start))
+                            let t7: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), 0, ld8((fp &+ 32)), ld8((fp &+ 40)), 0, 9223090561878065871, p7_step, p8_start))
                             l120_res = ((l120_res | t7) & 0xFF)
                         }
                     } else {
                         ln = 806 // GrPrimatives.HC:806
                         try tick(t)
-                        let t8: Int64 = try f724_GrLineFat3(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), ld4s((p0_dc &+ 228)), p8_start)
+                        let t8: Int64 = try f729_GrLineFat3(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), ld4s((p0_dc &+ 228)), p8_start)
                         if (t8 != 0) {
                             ln = 807 // GrPrimatives.HC:807
                             l120_res = 1
@@ -2176,7 +2176,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     }
                 } else {
                     ln = 810 // GrPrimatives.HC:810
-                    let t9: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), 9223090561878065865, p7_step, p8_start))
+                    let t9: Int64 = try nat(t, n_Line, try push(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), ld8((fp &+ 32)), ld8((fp &+ 40)), ld8((fp &+ 48)), 9223090561878065870, p7_step, p8_start))
                     l120_res = ((l120_res | t9) & 0xFF)
                 }
             }
@@ -2204,7 +2204,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrPutChar3 (GrPrimatives.HC:821)
-    @discardableResult public final func f726_GrPutChar3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f731_GrPutChar3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2238,7 +2238,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrPrint3 (GrPrimatives.HC:828)
-    @discardableResult public final func f727_GrPrint3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ vaBase: Int, _ vaN: Int) throws -> Int64 {
+    @discardableResult public final func f732_GrPrint3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ vaBase: Int, _ vaN: Int) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2268,7 +2268,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             ln = 834 // GrPrimatives.HC:834
             try tick(t)
             let vb19 = try push1(t, l56_buf)
-            let t1: Int64 = try P.f369_GrPrint(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), s0, vb19, 1)
+            let t1: Int64 = try P.f370_GrPrint(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), s0, vb19, 1)
             t.sp = vb19
             l64_res = t1
             ln = 835 // GrPrimatives.HC:835
@@ -2284,7 +2284,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrVPrint3 (GrPrimatives.HC:839)
-    @discardableResult public final func f728_GrVPrint3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ vaBase: Int, _ vaN: Int) throws -> Int64 {
+    @discardableResult public final func f733_GrVPrint3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ vaBase: Int, _ vaN: Int) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2314,7 +2314,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             ln = 845 // GrPrimatives.HC:845
             try tick(t)
             let vb20 = try push1(t, l56_buf)
-            let t1: Int64 = try P.f370_GrVPrint(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), s0, vb20, 1)
+            let t1: Int64 = try P.f371_GrVPrint(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), s0, vb20, 1)
             t.sp = vb20
             l64_res = t1
             ln = 846 // GrPrimatives.HC:846
@@ -2330,7 +2330,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrEllipse3 (GrPrimatives.HC:852)
-    @discardableResult public final func f729_GrEllipse3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Double, _ a7: Int64, _ a8: Double, _ a9: Double) throws -> Int64 {
+    @discardableResult public final func f734_GrEllipse3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Double, _ a7: Int64, _ a8: Double, _ a9: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2393,7 +2393,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 try st8((fp &+ 104), (ld8((fp &+ 104)) &- ld8((fp &+ 128))))
                 ln = 885 // GrPrimatives.HC:885
                 try tick(t)
-                try P.f336_R2P(t, (fp &+ 136), (fp &+ 144), Double(ld8((fp &+ 88))), Double(ld8((fp &+ 96))))
+                try P.f337_R2P(t, (fp &+ 136), (fp &+ 144), Double(ld8((fp &+ 88))), Double(ld8((fp &+ 96))))
                 ln = 887 // GrPrimatives.HC:887
                 try st8((fp &+ 88), f2i((Double((0 &- p5_y_radius)) * l168_s)))
                 ln = 888 // GrPrimatives.HC:888
@@ -2410,7 +2410,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 try st8((fp &+ 104), (ld8((fp &+ 104)) &- ld8((fp &+ 128))))
                 ln = 894 // GrPrimatives.HC:894
                 try tick(t)
-                try P.f336_R2P(t, (fp &+ 152), (fp &+ 160), Double(ld8((fp &+ 88))), Double(ld8((fp &+ 96))))
+                try P.f337_R2P(t, (fp &+ 152), (fp &+ 160), Double(ld8((fp &+ 88))), Double(ld8((fp &+ 96))))
                 ln = 895 // GrPrimatives.HC:895
                 let t5: Double = try ldf((fp &+ 152))
                 let t3: Double = d(try nat(t, n_Sin, try push1(t, bits((ldf((fp &+ 160)) - ldf((fp &+ 144)))))))
@@ -2418,7 +2418,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 try st8((fp &+ 152), bits((t5 * t4)))
                 ln = 897 // GrPrimatives.HC:897
                 try tick(t)
-                let t6: Int64 = try P.f353_Ellipse(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), f2i((ldf((fp &+ 136)) / 65536.0)), f2i((ldf((fp &+ 152)) / 65536.0)), 9223090561878065865, (-ldf((fp &+ 144))), p7_step, p8_start_radians, p9_len_radians)
+                let t6: Int64 = try P.f354_Ellipse(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), f2i((ldf((fp &+ 136)) / 65536.0)), f2i((ldf((fp &+ 152)) / 65536.0)), 9223090561878065870, (-ldf((fp &+ 144))), p7_step, p8_start_radians, p9_len_radians)
                 l80_res = (t6 & 0xFF)
                 ln = 899 // GrPrimatives.HC:899
                 let t7: Int64 = (p0_dc &+ 28)
@@ -2426,7 +2426,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             } else {
                 ln = 901 // GrPrimatives.HC:901
                 try tick(t)
-                let t8: Int64 = try P.f353_Ellipse(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), p4_x_radius, p5_y_radius, 9223090561878065865, p6_rot_angle, p7_step, p8_start_radians, p9_len_radians)
+                let t8: Int64 = try P.f354_Ellipse(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), p4_x_radius, p5_y_radius, 9223090561878065870, p6_rot_angle, p7_step, p8_start_radians, p9_len_radians)
                 l80_res = (t8 & 0xFF)
             }
             ln = 903 // GrPrimatives.HC:903
@@ -2441,7 +2441,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrCircle3 (GrPrimatives.HC:906)
-    @discardableResult public final func f730_GrCircle3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Double, _ a7: Double) throws -> Int64 {
+    @discardableResult public final func f735_GrCircle3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Double, _ a7: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2457,13 +2457,13 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             if try ((ld4s((p0_dc &+ 28)) & 256) != 0) {
                 ln = 910 // GrPrimatives.HC:910
                 try tick(t)
-                let t0: Int64 = try f729_GrEllipse3(t, p0_dc, p1_cx, p2_cy, p3_cz, p4_radius, p4_radius, 0.0, p5_step, p6_start_radians, p7_len_radians)
+                let t0: Int64 = try f734_GrEllipse3(t, p0_dc, p1_cx, p2_cy, p3_cz, p4_radius, p4_radius, 0.0, p5_step, p6_start_radians, p7_len_radians)
                 let rv22: Int64 = (t0 & 0xFF)
                 t.depth -= 1
                 return rv22
             } else {
                 ln = 913 // GrPrimatives.HC:913
-                let t1: Int64 = try nat(t, n_Circle, try push(t, p0_dc, p1_cx, p2_cy, p3_cz, p4_radius, 9223090561878065865, p5_step, bits(p6_start_radians), bits(p7_len_radians)))
+                let t1: Int64 = try nat(t, n_Circle, try push(t, p0_dc, p1_cx, p2_cy, p3_cz, p4_radius, 9223090561878065870, p5_step, bits(p6_start_radians), bits(p7_len_radians)))
                 let rv23: Int64 = (t1 & 0xFF)
                 t.depth -= 1
                 return rv23
@@ -2474,7 +2474,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrRegPoly3 (GrPrimatives.HC:917)
-    @discardableResult public final func f731_GrRegPoly3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Double, _ a8: Int64, _ a9: Double, _ a10: Double) throws -> Int64 {
+    @discardableResult public final func f736_GrRegPoly3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Double, _ a8: Int64, _ a9: Double, _ a10: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2538,7 +2538,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 try st8((fp &+ 112), (ld8((fp &+ 112)) &- ld8((fp &+ 136))))
                 ln = 950 // GrPrimatives.HC:950
                 try tick(t)
-                try P.f336_R2P(t, (fp &+ 144), (fp &+ 152), Double(ld8((fp &+ 96))), Double(ld8((fp &+ 104))))
+                try P.f337_R2P(t, (fp &+ 144), (fp &+ 152), Double(ld8((fp &+ 96))), Double(ld8((fp &+ 104))))
                 ln = 952 // GrPrimatives.HC:952
                 try st8((fp &+ 96), f2i((Double((0 &- p5_y_radius)) * l176_s)))
                 ln = 953 // GrPrimatives.HC:953
@@ -2555,7 +2555,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 try st8((fp &+ 112), (ld8((fp &+ 112)) &- ld8((fp &+ 136))))
                 ln = 959 // GrPrimatives.HC:959
                 try tick(t)
-                try P.f336_R2P(t, (fp &+ 160), (fp &+ 168), Double(ld8((fp &+ 96))), Double(ld8((fp &+ 104))))
+                try P.f337_R2P(t, (fp &+ 160), (fp &+ 168), Double(ld8((fp &+ 96))), Double(ld8((fp &+ 104))))
                 ln = 960 // GrPrimatives.HC:960
                 let t5: Double = try ldf((fp &+ 160))
                 let t3: Double = d(try nat(t, n_Sin, try push1(t, bits((ldf((fp &+ 168)) - ldf((fp &+ 152)))))))
@@ -2563,7 +2563,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 try st8((fp &+ 160), bits((t5 * t4)))
                 ln = 962 // GrPrimatives.HC:962
                 try tick(t)
-                let t6: Int64 = try P.f354_RegPoly(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), f2i((ldf((fp &+ 144)) / 65536.0)), f2i((ldf((fp &+ 160)) / 65536.0)), p6_sides, 9223090561878065865, (-ldf((fp &+ 152))), p8_step, p9_start_radians, p10_len_radians)
+                let t6: Int64 = try P.f355_RegPoly(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), f2i((ldf((fp &+ 144)) / 65536.0)), f2i((ldf((fp &+ 160)) / 65536.0)), p6_sides, 9223090561878065870, (-ldf((fp &+ 152))), p8_step, p9_start_radians, p10_len_radians)
                 l88_res = (t6 & 0xFF)
                 ln = 965 // GrPrimatives.HC:965
                 let t7: Int64 = (p0_dc &+ 28)
@@ -2571,7 +2571,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
             } else {
                 ln = 967 // GrPrimatives.HC:967
                 try tick(t)
-                let t8: Int64 = try P.f354_RegPoly(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), p4_x_radius, p5_y_radius, p6_sides, 9223090561878065865, p7_rot_angle, p8_step, p9_start_radians, p10_len_radians)
+                let t8: Int64 = try P.f355_RegPoly(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), p4_x_radius, p5_y_radius, p6_sides, 9223090561878065870, p7_rot_angle, p8_step, p9_start_radians, p10_len_radians)
                 l88_res = (t8 & 0xFF)
             }
             ln = 969 // GrPrimatives.HC:969
@@ -2586,7 +2586,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrFloodFill3 (GrPrimatives.HC:972)
-    @discardableResult public final func f732_GrFloodFill3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f737_GrFloodFill3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2629,7 +2629,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     try st4(t1, (ld4s(t1) & (-513)))
                     ln = 987 // GrPrimatives.HC:987
                     try tick(t)
-                    let t2: Int64 = try f709_GrFloodFill(t, p0_dc, ld8((fp &+ 56)), ld8((fp &+ 64)), p4_not_color, ld8((fp &+ 72)), ld8((p0_dc &+ 392)))
+                    let t2: Int64 = try f714_GrFloodFill(t, p0_dc, ld8((fp &+ 56)), ld8((fp &+ 64)), p4_not_color, ld8((fp &+ 72)), ld8((p0_dc &+ 392)))
                     l40_res = t2
                     ln = 988 // GrPrimatives.HC:988
                     if try ((ld4s((p0_dc &+ 28)) & 1024) != 0) {
@@ -2639,7 +2639,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 }
                 ln = 991 // GrPrimatives.HC:991
                 try tick(t)
-                let t3: Int64 = try f709_GrFloodFill(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), p4_not_color, ld8((fp &+ 24)), ld8((p0_dc &+ 392)))
+                let t3: Int64 = try f714_GrFloodFill(t, p0_dc, ld8((fp &+ 8)), ld8((fp &+ 16)), p4_not_color, ld8((fp &+ 24)), ld8((p0_dc &+ 392)))
                 l40_res = t3
             }
             ln = 993 // GrPrimatives.HC:993
@@ -2655,7 +2655,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrPrimatives.HC#0 (GrPrimatives.HC:999)
-    @discardableResult public final func f733_init_C__Adam_Gr_GrPrimatives_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f738_init_C__Adam_Gr_GrPrimatives_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2667,7 +2667,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrBlot3 (GrPrimatives.HC:1000)
-    @discardableResult public final func f734_GrBlot3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f739_GrBlot3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2897,7 +2897,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                                     if try (((ld4s(((fp &+ 304) &+ 4)) != l352_last_x) || (ld4s(((fp &+ 312) &+ 4)) != l360_last_y)) || (l376_first != 0)) {
                                         ln = 1085 // GrPrimatives.HC:1085
                                         try tick(t)
-                                        let t9: Int64 = try f707_GrPeek(t, p4_img, ld4s(((fp &+ 264) &+ 4)), ld4s(((fp &+ 272) &+ 4)))
+                                        let t9: Int64 = try f712_GrPeek(t, p4_img, ld4s(((fp &+ 264) &+ 4)), ld4s(((fp &+ 272) &+ 4)))
                                         l48_color = t9
                                         if (t9 >= 0) {
                                             ln = 1086 // GrPrimatives.HC:1086
@@ -2912,11 +2912,11 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                                                         try st8((p0_dc &+ 400), ld4s(((fp &+ 320) &+ 4)))
                                                         ln = 1091 // GrPrimatives.HC:1091
                                                         try tick(t)
-                                                        _ = try f706_GrPlot1(t, p0_dc, ld4s(((fp &+ 304) &+ 4)), ld4s(((fp &+ 312) &+ 4)))
+                                                        _ = try f711_GrPlot1(t, p0_dc, ld4s(((fp &+ 304) &+ 4)), ld4s(((fp &+ 312) &+ 4)))
                                                     } else {
                                                         ln = 1093 // GrPrimatives.HC:1093
                                                         try tick(t)
-                                                        _ = try f705_GrPlot(t, p0_dc, ld4s(((fp &+ 304) &+ 4)), ld4s(((fp &+ 312) &+ 4)))
+                                                        _ = try f710_GrPlot(t, p0_dc, ld4s(((fp &+ 304) &+ 4)), ld4s(((fp &+ 312) &+ 4)))
                                                     }
                                                 }
                                             } else {
@@ -2930,11 +2930,11 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                                                         try st8((p0_dc &+ 400), ld4s(((fp &+ 320) &+ 4)))
                                                         ln = 1100 // GrPrimatives.HC:1100
                                                         try tick(t)
-                                                        _ = try f706_GrPlot1(t, p0_dc, ld4s(((fp &+ 304) &+ 4)), ld4s(((fp &+ 312) &+ 4)))
+                                                        _ = try f711_GrPlot1(t, p0_dc, ld4s(((fp &+ 304) &+ 4)), ld4s(((fp &+ 312) &+ 4)))
                                                     } else {
                                                         ln = 1102 // GrPrimatives.HC:1102
                                                         try tick(t)
-                                                        _ = try f705_GrPlot(t, p0_dc, ld4s(((fp &+ 304) &+ 4)), ld4s(((fp &+ 312) &+ 4)))
+                                                        _ = try f710_GrPlot(t, p0_dc, ld4s(((fp &+ 304) &+ 4)), ld4s(((fp &+ 312) &+ 4)))
                                                     }
                                                 }
                                             }
@@ -3112,7 +3112,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                             if try (((ld4s(((fp &+ 200) &+ 4)) != l352_last_x) || (ld4s(((fp &+ 208) &+ 4)) != l360_last_y)) || (l376_first != 0)) {
                                 ln = 1175 // GrPrimatives.HC:1175
                                 try tick(t)
-                                let t19: Int64 = try f707_GrPeek(t, p4_img, ld4s(((fp &+ 264) &+ 4)), ld4s(((fp &+ 272) &+ 4)))
+                                let t19: Int64 = try f712_GrPeek(t, p4_img, ld4s(((fp &+ 264) &+ 4)), ld4s(((fp &+ 272) &+ 4)))
                                 l48_color = t19
                                 if (t19 >= 0) {
                                     ln = 1176 // GrPrimatives.HC:1176
@@ -3127,11 +3127,11 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                                                 try st8((p0_dc &+ 400), ld4s(((fp &+ 216) &+ 4)))
                                                 ln = 1181 // GrPrimatives.HC:1181
                                                 try tick(t)
-                                                _ = try f706_GrPlot1(t, p0_dc, ld4s(((fp &+ 200) &+ 4)), ld4s(((fp &+ 208) &+ 4)))
+                                                _ = try f711_GrPlot1(t, p0_dc, ld4s(((fp &+ 200) &+ 4)), ld4s(((fp &+ 208) &+ 4)))
                                             } else {
                                                 ln = 1183 // GrPrimatives.HC:1183
                                                 try tick(t)
-                                                _ = try f705_GrPlot(t, p0_dc, ld4s(((fp &+ 200) &+ 4)), ld4s(((fp &+ 208) &+ 4)))
+                                                _ = try f710_GrPlot(t, p0_dc, ld4s(((fp &+ 200) &+ 4)), ld4s(((fp &+ 208) &+ 4)))
                                             }
                                         }
                                     } else {
@@ -3145,11 +3145,11 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                                                 try st8((p0_dc &+ 400), ld4s(((fp &+ 216) &+ 4)))
                                                 ln = 1190 // GrPrimatives.HC:1190
                                                 try tick(t)
-                                                _ = try f706_GrPlot1(t, p0_dc, ld4s(((fp &+ 200) &+ 4)), ld4s(((fp &+ 208) &+ 4)))
+                                                _ = try f711_GrPlot1(t, p0_dc, ld4s(((fp &+ 200) &+ 4)), ld4s(((fp &+ 208) &+ 4)))
                                             } else {
                                                 ln = 1192 // GrPrimatives.HC:1192
                                                 try tick(t)
-                                                _ = try f705_GrPlot(t, p0_dc, ld4s(((fp &+ 200) &+ 4)), ld4s(((fp &+ 208) &+ 4)))
+                                                _ = try f710_GrPlot(t, p0_dc, ld4s(((fp &+ 200) &+ 4)), ld4s(((fp &+ 208) &+ 4)))
                                             }
                                         }
                                     }
@@ -3203,7 +3203,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrPrimatives.HC#1 (GrPrimatives.HC:1213)
-    @discardableResult public final func f735_init_C__Adam_Gr_GrPrimatives_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f740_init_C__Adam_Gr_GrPrimatives_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3215,7 +3215,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC Gr2Bezier3 (GrPrimatives.HC:1217)
-    @discardableResult public final func f736_Gr2Bezier3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f741_Gr2Bezier3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3300,7 +3300,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     try st4(t3, (ld4s(t3) & (-513)))
                     ln = 1249 // GrPrimatives.HC:1249
                     try tick(t)
-                    let t4: Int64 = try P.f356_Bezier2(t, p0_dc, l72_ctrl3, 9223090561878065865, 1)
+                    let t4: Int64 = try P.f357_Bezier2(t, p0_dc, l72_ctrl3, 9223090561878065870, 1)
                     l16_res = (t4 & 0xFF)
                     ln = 1250 // GrPrimatives.HC:1250
                     if try ((ld4s((p0_dc &+ 28)) & 1024) != 0) {
@@ -3310,7 +3310,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 }
                 ln = 1254 // GrPrimatives.HC:1254
                 try tick(t)
-                let t5: Int64 = try P.f356_Bezier2(t, p0_dc, p1_ctrl, 9223090561878065865, 1)
+                let t5: Int64 = try P.f357_Bezier2(t, p0_dc, p1_ctrl, 9223090561878065870, 1)
                 l16_res = ((l16_res | t5) & 0xFF)
             }
             ln = 1256 // GrPrimatives.HC:1256
@@ -3331,7 +3331,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC Gr3Bezier3 (GrPrimatives.HC:1262)
-    @discardableResult public final func f737_Gr3Bezier3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f742_Gr3Bezier3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3416,7 +3416,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     try st4(t3, (ld4s(t3) & (-513)))
                     ln = 1294 // GrPrimatives.HC:1294
                     try tick(t)
-                    let t4: Int64 = try P.f357_Bezier3(t, p0_dc, l72_ctrl3, 9223090561878065865, 1)
+                    let t4: Int64 = try P.f358_Bezier3(t, p0_dc, l72_ctrl3, 9223090561878065870, 1)
                     l16_res = (t4 & 0xFF)
                     ln = 1295 // GrPrimatives.HC:1295
                     if try ((ld4s((p0_dc &+ 28)) & 1024) != 0) {
@@ -3426,7 +3426,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 }
                 ln = 1299 // GrPrimatives.HC:1299
                 try tick(t)
-                let t5: Int64 = try P.f357_Bezier3(t, p0_dc, p1_ctrl, 9223090561878065865, 1)
+                let t5: Int64 = try P.f358_Bezier3(t, p0_dc, p1_ctrl, 9223090561878065870, 1)
                 l16_res = ((l16_res | t5) & 0xFF)
             }
             ln = 1301 // GrPrimatives.HC:1301
@@ -3447,7 +3447,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC Gr2BSpline3 (GrPrimatives.HC:1307)
-    @discardableResult public final func f738_Gr2BSpline3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f743_Gr2BSpline3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3536,7 +3536,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     try st4(t3, (ld4s(t3) & (-513)))
                     ln = 1339 // GrPrimatives.HC:1339
                     try tick(t)
-                    let t4: Int64 = try P.f358_BSpline2(t, p0_dc, l88_ctrl3, p2_cnt, 9223090561878065865, p3_closed)
+                    let t4: Int64 = try P.f359_BSpline2(t, p0_dc, l88_ctrl3, p2_cnt, 9223090561878065870, p3_closed)
                     l32_res = (t4 & 0xFF)
                     ln = 1340 // GrPrimatives.HC:1340
                     if try ((ld4s((p0_dc &+ 28)) & 1024) != 0) {
@@ -3546,7 +3546,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 }
                 ln = 1344 // GrPrimatives.HC:1344
                 try tick(t)
-                let t5: Int64 = try P.f358_BSpline2(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065865, p3_closed)
+                let t5: Int64 = try P.f359_BSpline2(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065870, p3_closed)
                 l32_res = ((l32_res | t5) & 0xFF)
             }
             ln = 1346 // GrPrimatives.HC:1346
@@ -3566,7 +3566,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC Gr3BSpline3 (GrPrimatives.HC:1352)
-    @discardableResult public final func f739_Gr3BSpline3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f744_Gr3BSpline3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3655,7 +3655,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                     try st4(t3, (ld4s(t3) & (-513)))
                     ln = 1384 // GrPrimatives.HC:1384
                     try tick(t)
-                    let t4: Int64 = try P.f359_BSpline3(t, p0_dc, l88_ctrl3, p2_cnt, 9223090561878065865, p3_closed)
+                    let t4: Int64 = try P.f360_BSpline3(t, p0_dc, l88_ctrl3, p2_cnt, 9223090561878065870, p3_closed)
                     l32_res = (t4 & 0xFF)
                     ln = 1385 // GrPrimatives.HC:1385
                     if try ((ld4s((p0_dc &+ 28)) & 1024) != 0) {
@@ -3665,7 +3665,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
                 }
                 ln = 1389 // GrPrimatives.HC:1389
                 try tick(t)
-                let t5: Int64 = try P.f359_BSpline3(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065865, p3_closed)
+                let t5: Int64 = try P.f360_BSpline3(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065870, p3_closed)
                 l32_res = ((l32_res | t5) & 0xFF)
             }
             ln = 1391 // GrPrimatives.HC:1391
@@ -3686,7 +3686,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC GrFillTri0 (GrPrimatives.HC:1397)
-    @discardableResult public final func f740_GrFillTri0(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f745_GrFillTri0(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -4693,7 +4693,7 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrPrimatives.HC#2 (GrPrimatives.HC:1)
-    @discardableResult public final func f741_init_C__Adam_Gr_GrPrimatives_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f746_init_C__Adam_Gr_GrPrimatives_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -4705,51 +4705,51 @@ public final class N_Adam_Gr_GrPrimatives: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_GrClamp(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0))
-        case 704: return try f704_DCClipLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0))
-        case 705: return try f705_GrPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 706: return try f706_GrPlot1(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 707: return try f707_GrPeek(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 708: return try f708_GrFloodFillRay(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 709: return try f709_GrFloodFill(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
-        case 710: return try f710_GrFillSemiCircle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
-        case 711: return try f711_GrFillCircle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 712: return try f712_GrPlot3B(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 713: return try f713_GrPlot3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 714: return try f714_GrLinePlot0(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 715: return try f715_GrLinePlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 716: return try f716_GrLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0))
-        case 717: return try f717_GrCircle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0)), d((n > 6 ? st[base + 6] : 0)))
-        case 718: return try f718_GrEllipse(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0)), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), d((n > 8 ? st[base + 8] : 0)))
-        case 719: return try f719_GrRegPoly(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), d((n > 6 ? st[base + 6] : 0)), (n > 7 ? st[base + 7] : 0), d((n > 8 ? st[base + 8] : 0)), d((n > 9 ? st[base + 9] : 0)))
-        case 720: return try f720_Gr2Bezier(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 721: return try f721_Gr3Bezier(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 722: return try f722_Gr2BSpline(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 723: return try f723_Gr3BSpline(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 724: return try f724_GrLineFat3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), (n > 8 ? st[base + 8] : 0))
-        case 725: return try f725_GrLine3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), (n > 8 ? st[base + 8] : 0))
-        case 726: return try f726_GrPutChar3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 727: return try f727_GrPrint3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), base + 5, max(n - 5, 0))
-        case 728: return try f728_GrVPrint3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), base + 5, max(n - 5, 0))
-        case 729: return try f729_GrEllipse3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), d((n > 6 ? st[base + 6] : 0)), (n > 7 ? st[base + 7] : 0), d((n > 8 ? st[base + 8] : 0)), d((n > 9 ? st[base + 9] : 0)))
-        case 730: return try f730_GrCircle3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), d((n > 6 ? st[base + 6] : 0)), d((n > 7 ? st[base + 7] : 0)))
-        case 731: return try f731_GrRegPoly3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), (n > 8 ? st[base + 8] : 0), d((n > 9 ? st[base + 9] : 0)), d((n > 10 ? st[base + 10] : 0)))
-        case 732: return try f732_GrFloodFill3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 733: return try f733_init_C__Adam_Gr_GrPrimatives_HC_0(t)
-        case 734: return try f734_GrBlot3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 735: return try f735_init_C__Adam_Gr_GrPrimatives_HC_1(t)
-        case 736: return try f736_Gr2Bezier3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 737: return try f737_Gr3Bezier3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 738: return try f738_Gr2BSpline3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 739: return try f739_Gr3BSpline3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 740: return try f740_GrFillTri0(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 741: return try f741_init_C__Adam_Gr_GrPrimatives_HC_2(t)
+        case 708: return try f708_GrClamp(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0))
+        case 709: return try f709_DCClipLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0))
+        case 710: return try f710_GrPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 711: return try f711_GrPlot1(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 712: return try f712_GrPeek(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 713: return try f713_GrFloodFillRay(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 714: return try f714_GrFloodFill(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
+        case 715: return try f715_GrFillSemiCircle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
+        case 716: return try f716_GrFillCircle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 717: return try f717_GrPlot3B(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 718: return try f718_GrPlot3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 719: return try f719_GrLinePlot0(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 720: return try f720_GrLinePlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 721: return try f721_GrLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0))
+        case 722: return try f722_GrCircle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0)), d((n > 6 ? st[base + 6] : 0)))
+        case 723: return try f723_GrEllipse(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0)), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), d((n > 8 ? st[base + 8] : 0)))
+        case 724: return try f724_GrRegPoly(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), d((n > 6 ? st[base + 6] : 0)), (n > 7 ? st[base + 7] : 0), d((n > 8 ? st[base + 8] : 0)), d((n > 9 ? st[base + 9] : 0)))
+        case 725: return try f725_Gr2Bezier(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 726: return try f726_Gr3Bezier(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 727: return try f727_Gr2BSpline(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 728: return try f728_Gr3BSpline(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 729: return try f729_GrLineFat3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), (n > 8 ? st[base + 8] : 0))
+        case 730: return try f730_GrLine3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0), (n > 8 ? st[base + 8] : 0))
+        case 731: return try f731_GrPutChar3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 732: return try f732_GrPrint3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), base + 5, max(n - 5, 0))
+        case 733: return try f733_GrVPrint3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), base + 5, max(n - 5, 0))
+        case 734: return try f734_GrEllipse3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), d((n > 6 ? st[base + 6] : 0)), (n > 7 ? st[base + 7] : 0), d((n > 8 ? st[base + 8] : 0)), d((n > 9 ? st[base + 9] : 0)))
+        case 735: return try f735_GrCircle3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), d((n > 6 ? st[base + 6] : 0)), d((n > 7 ? st[base + 7] : 0)))
+        case 736: return try f736_GrRegPoly3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), d((n > 7 ? st[base + 7] : 0)), (n > 8 ? st[base + 8] : 0), d((n > 9 ? st[base + 9] : 0)), d((n > 10 ? st[base + 10] : 0)))
+        case 737: return try f737_GrFloodFill3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 738: return try f738_init_C__Adam_Gr_GrPrimatives_HC_0(t)
+        case 739: return try f739_GrBlot3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 740: return try f740_init_C__Adam_Gr_GrPrimatives_HC_1(t)
+        case 741: return try f741_Gr2Bezier3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 742: return try f742_Gr3Bezier3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 743: return try f743_Gr2BSpline3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 744: return try f744_Gr3BSpline3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 745: return try f745_GrFillTri0(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 746: return try f746_init_C__Adam_Gr_GrPrimatives_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741]
-    private static let NAMES: [Int: String] = [703: "GrClamp", 704: "DCClipLine", 705: "GrPlot", 706: "GrPlot1", 707: "GrPeek", 708: "GrFloodFillRay", 709: "GrFloodFill", 710: "GrFillSemiCircle", 711: "GrFillCircle", 712: "GrPlot3B", 713: "GrPlot3", 714: "GrLinePlot0", 715: "GrLinePlot", 716: "GrLine", 717: "GrCircle", 718: "GrEllipse", 719: "GrRegPoly", 720: "Gr2Bezier", 721: "Gr3Bezier", 722: "Gr2BSpline", 723: "Gr3BSpline", 724: "GrLineFat3", 725: "GrLine3", 726: "GrPutChar3", 727: "GrPrint3", 728: "GrVPrint3", 729: "GrEllipse3", 730: "GrCircle3", 731: "GrRegPoly3", 732: "GrFloodFill3", 733: "$init:C:/Adam/Gr/GrPrimatives.HC#0", 734: "GrBlot3", 735: "$init:C:/Adam/Gr/GrPrimatives.HC#1", 736: "Gr2Bezier3", 737: "Gr3Bezier3", 738: "Gr2BSpline3", 739: "Gr3BSpline3", 740: "GrFillTri0", 741: "$init:C:/Adam/Gr/GrPrimatives.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746]
+    private static let NAMES: [Int: String] = [708: "GrClamp", 709: "DCClipLine", 710: "GrPlot", 711: "GrPlot1", 712: "GrPeek", 713: "GrFloodFillRay", 714: "GrFloodFill", 715: "GrFillSemiCircle", 716: "GrFillCircle", 717: "GrPlot3B", 718: "GrPlot3", 719: "GrLinePlot0", 720: "GrLinePlot", 721: "GrLine", 722: "GrCircle", 723: "GrEllipse", 724: "GrRegPoly", 725: "Gr2Bezier", 726: "Gr3Bezier", 727: "Gr2BSpline", 728: "Gr3BSpline", 729: "GrLineFat3", 730: "GrLine3", 731: "GrPutChar3", 732: "GrPrint3", 733: "GrVPrint3", 734: "GrEllipse3", 735: "GrCircle3", 736: "GrRegPoly3", 737: "GrFloodFill3", 738: "$init:C:/Adam/Gr/GrPrimatives.HC#0", 739: "GrBlot3", 740: "$init:C:/Adam/Gr/GrPrimatives.HC#1", 741: "Gr2Bezier3", 742: "Gr3Bezier3", 743: "Gr2BSpline3", 744: "Gr3BSpline3", 745: "GrFillTri0", 746: "$init:C:/Adam/Gr/GrPrimatives.HC#2"]
     private static let FILES: [String] = ["C:/Adam/Gr/GrPrimatives.HC"]
     public override var files: [String] { N_Adam_Gr_GrPrimatives.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_GrPrimatives.DEFINED.contains(index) }

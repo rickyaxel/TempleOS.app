@@ -19,6 +19,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     @JvmField val n_GrPlot = rt.vm.natives.find("GrPlot")!!.index
     @JvmField val n_Kill = rt.vm.natives.find("Kill")!!.index
     @JvmField val n_MStrPrint = rt.vm.natives.find("MStrPrint")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
     @JvmField val n_RandI16 = rt.vm.natives.find("RandI16")!!.index
@@ -27,6 +28,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_StrLen = rt.vm.natives.find("StrLen")!!.index
     @JvmField val n_StrMatch = rt.vm.natives.find("StrMatch")!!.index
@@ -150,7 +152,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC JukeReward (JukeBox.HC:1) */
-    fun f703_JukeReward(t: Task, a0: Long): Long {
+    fun f708_JukeReward(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -159,7 +161,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             var l24_res: Long = 0L
             var l8_buf: Long = 0L
             ln = 5 // JukeBox.HC:5
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065810L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065815L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
             l24_res = t0
             ln = 6 // JukeBox.HC:6
             tick(t)
@@ -168,7 +170,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st1((l24_res + 776L), 1L)
             ln = 9 // JukeBox.HC:9
             tick(t)
-            val t1: Long = P.f601_DocNew(t, 0L, l24_res)
+            val t1: Long = P.f606_DocNew(t, 0L, l24_res)
             l16_doc = t1
             ln = 10 // JukeBox.HC:10
             tick(t)
@@ -180,17 +182,17 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             l8_buf = t2
             ln = 13 // JukeBox.HC:13
             tick(t)
-            P.f659_TaskExe(t, l24_res, 0L, l8_buf, 132L)
+            P.f664_TaskExe(t, l24_res, 0L, l8_buf, 132L)
             ln = 14 // JukeBox.HC:14
             nat(t, n_Free, push1(t, l8_buf))
             ln = 15 // JukeBox.HC:15
             tick(t)
-            P.f660_TaskWait(t, l24_res, 0L)
+            P.f665_TaskWait(t, l24_res, 0L)
             ln = 17 // JukeBox.HC:17
             st1((l24_res + 777L), 0L)
             ln = 18 // JukeBox.HC:18
             tick(t)
-            val t3: Long = P.f663_DrvTextAttrGet(t, 58L)
+            val t3: Long = P.f668_DrvTextAttrGet(t, 58L)
             st1((l24_res + 779L), (112L + (t3 and 15L)))
             ln = 19 // JukeBox.HC:19
             st1((l24_res + 778L), 113L)
@@ -213,7 +215,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC SingleSong (JukeBox.HC:28) */
-    fun f704_SingleSong(t: Task, a0: Long, a1: Long): Long {
+    fun f709_SingleSong(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -221,7 +223,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             var p1_name: Long = a1
             var l16_task: Long = 0L
             ln = 30 // JukeBox.HC:30
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065810L, 0L, p1_name, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065815L, 0L, p1_name, -1L, ld8(P.g_Fs), 0L, 0L))
             l16_task = t0
             ln = 31 // JukeBox.HC:31
             tick(t)
@@ -230,7 +232,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st1((l16_task + 776L), 1L)
             ln = 33 // JukeBox.HC:33
             tick(t)
-            P.f659_TaskExe(t, l16_task, ld8(P.g_Fs), s3, 129L)
+            P.f664_TaskExe(t, l16_task, ld8(P.g_Fs), s3, 129L)
             ln = 34 // JukeBox.HC:34
             tick(t)
             P.f222_WinHorz(t, ld8((l16_task + 72L)), (ld8((l16_task + 72L)) + 50L), l16_task)
@@ -241,10 +243,10 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st4((l16_task + 12L), 193239L)
             ln = 37 // JukeBox.HC:37
             tick(t)
-            P.f659_TaskExe(t, l16_task, 0L, p0_msg, 132L)
+            P.f664_TaskExe(t, l16_task, 0L, p0_msg, 132L)
             ln = 38 // JukeBox.HC:38
             tick(t)
-            val t1: Long = P.f602_DocPut(t, l16_task)
+            val t1: Long = P.f607_DocPut(t, l16_task)
             st8((t1 + 280L), 100L)
             ln = 39 // JukeBox.HC:39
             t.depth--
@@ -255,7 +257,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC JBPutKey (JukeBox.HC:46) */
-    fun f705_JBPutKey(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f710_JBPutKey(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -300,11 +302,11 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         }
                         ln = 64 // JukeBox.HC:64
                         tick(t)
-                        val t1: Long = P.f617_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
+                        val t1: Long = P.f622_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
                         l72_doc2 = t1
                         ln = 65 // JukeBox.HC:65
                         tick(t)
-                        P.f619_DocGoToLine(t, l72_doc2, 1L)
+                        P.f624_DocGoToLine(t, l72_doc2, 1L)
                         ln = 66 // JukeBox.HC:66
                         l40_doc_e = ld8((l72_doc2 + 104L))
                         ln = 67 // JukeBox.HC:67
@@ -318,11 +320,11 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                             st1((ld8((l40_doc_e + 16L)) + 2L), p2_ch)
                             ln = 69 // JukeBox.HC:69
                             tick(t)
-                            P.f618_DocWrite(t, l72_doc2, 0L)
+                            P.f623_DocWrite(t, l72_doc2, 0L)
                         }
                         ln = 71 // JukeBox.HC:71
                         tick(t)
-                        P.f605_DocDel(t, l72_doc2)
+                        P.f610_DocDel(t, l72_doc2)
                         ln = 72 // JukeBox.HC:72
                         t.msp = msp0
                         t.depth--
@@ -332,15 +334,15 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         if ((p2_ch == 114L)) {
                             ln = 74 // JukeBox.HC:74
                             tick(t)
-                            val t4: Long = P.f672_DocTreeFFind(t, ld8((l48_tmpde + 24L)), s4)
+                            val t4: Long = P.f677_DocTreeFFind(t, ld8((l48_tmpde + 24L)), s4)
                             if ((t4 == 0L)) {
                                 ln = 75 // JukeBox.HC:75
                                 tick(t)
-                                val t5: Long = P.f617_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
+                                val t5: Long = P.f622_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
                                 l72_doc2 = t5
                                 ln = 76 // JukeBox.HC:76
                                 tick(t)
-                                P.f619_DocGoToLine(t, l72_doc2, 2L)
+                                P.f624_DocGoToLine(t, l72_doc2, 2L)
                                 ln = 77 // JukeBox.HC:77
                                 tick(t)
                                 val vb1 = push0(t)
@@ -348,34 +350,34 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                 t.sp = vb1
                                 ln = 85 // JukeBox.HC:85
                                 tick(t)
-                                P.f618_DocWrite(t, l72_doc2, 0L)
+                                P.f623_DocWrite(t, l72_doc2, 0L)
                                 ln = 86 // JukeBox.HC:86
                                 tick(t)
-                                P.f605_DocDel(t, l72_doc2)
+                                P.f610_DocDel(t, l72_doc2)
                             }
                             ln = 88 // JukeBox.HC:88
                             tick(t)
-                            val t6: Long = P.f672_DocTreeFFind(t, ld8((l48_tmpde + 24L)), s6)
+                            val t6: Long = P.f677_DocTreeFFind(t, ld8((l48_tmpde + 24L)), s6)
                             if ((t6 != 0L)) {
                                 ln = 89 // JukeBox.HC:89
                                 l56_i = 0L
                                 loop0@ while ((l56_i < 5L)) {
                                     ln = 91 // JukeBox.HC:91
                                     tick(t)
-                                    val t7: Long = P.f688_GodWordStr(t, 17L)
+                                    val t7: Long = P.f693_GodWordStr(t, 17L)
                                     tick(t)
-                                    val t8: Long = P.f688_GodWordStr(t, 17L)
+                                    val t8: Long = P.f693_GodWordStr(t, 17L)
                                     tick(t)
-                                    val t9: Long = P.f688_GodWordStr(t, 17L)
+                                    val t9: Long = P.f693_GodWordStr(t, 17L)
                                     tick(t)
-                                    val t10: Long = P.f688_GodWordStr(t, 17L)
+                                    val t10: Long = P.f693_GodWordStr(t, 17L)
                                     ln = 90 // JukeBox.HC:90
                                     val t11: Long = nat(t, n_MStrPrint, push(t, s7, t10, t9, t8, t7))
                                     l64_st = t11
                                     ln = 92 // JukeBox.HC:92
                                     tick(t)
                                     val vb2 = push1(t, l64_st)
-                                    P.f675_DocTreeFAppend(t, ld8((l48_tmpde + 24L)), s6, s8, vb2, 1)
+                                    P.f680_DocTreeFAppend(t, ld8((l48_tmpde + 24L)), s6, s8, vb2, 1)
                                     t.sp = vb2
                                     ln = 94 // JukeBox.HC:94
                                     nat(t, n_Free, push1(t, l64_st))
@@ -385,7 +387,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                 }
                                 ln = 96 // JukeBox.HC:96
                                 tick(t)
-                                P.f668_In(t, s9)
+                                P.f673_In(t, s9)
                             }
                             ln = 98 // JukeBox.HC:98
                             t.msp = msp0
@@ -414,7 +416,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC JukeBox (JukeBox.HC:107) */
-    fun f706_JukeBox(t: Task, a0: Long, a1: Long) {
+    fun f711_JukeBox(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -434,7 +436,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             l16_i = 0L
             ln = 112 // JukeBox.HC:112
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l64_doc = t0
             ln = 114 // JukeBox.HC:114
             l88_task = 0L
@@ -468,7 +470,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 ln = 124 // JukeBox.HC:124
                 nat(t, n_Free, push1(t, p0_dirname))
                 ln = 125 // JukeBox.HC:125
-                st8((l64_doc + 600L), 9223090561878065857L)
+                st8((l64_doc + 600L), 9223090561878065862L)
                 ln = 126 // JukeBox.HC:126
                 tick(t)
                 val vb3 = push0(t)
@@ -495,10 +497,10 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         l32_st = t6
                         ln = 137 // JukeBox.HC:137
                         tick(t)
-                        P.f666_FileExtRem(t, l32_st)
+                        P.f671_FileExtRem(t, l32_st)
                         ln = 138 // JukeBox.HC:138
                         tick(t)
-                        val t7: Long = P.f617_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
+                        val t7: Long = P.f622_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
                         l72_s = t7
                         ln = 139 // JukeBox.HC:139
                         l80_doc_e = ld8(l72_s)
@@ -577,7 +579,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                                     st4((l72_s + 120L), 0L)
                                                     ln = 159 // JukeBox.HC:159
                                                     tick(t)
-                                                    P.f603_DocEntryDel(t, l72_s, l80_doc_e)
+                                                    P.f608_DocEntryDel(t, l72_s, l80_doc_e)
                                                     ln = 160 // JukeBox.HC:160
                                                     tick(t)
                                                     val vb10 = push0(t)
@@ -585,7 +587,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                                     t.sp = vb10
                                                     ln = 161 // JukeBox.HC:161
                                                     tick(t)
-                                                    P.f618_DocWrite(t, l72_s, 0L)
+                                                    P.f623_DocWrite(t, l72_s, 0L)
                                                 }
                                             }
                                         }
@@ -602,7 +604,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         }
                         ln = 167 // JukeBox.HC:167
                         tick(t)
-                        P.f605_DocDel(t, l72_s)
+                        P.f610_DocDel(t, l72_s)
                         ln = 168 // JukeBox.HC:168
                         nat(t, n_Free, push1(t, l32_st))
                     }
@@ -621,12 +623,12 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     if ((p1__filename != 0L)) {
                         ln = 175 // JukeBox.HC:175
                         tick(t)
-                        val t16: Long = P.f621_PopUpMenu(t, l64_doc, 2L)
+                        val t16: Long = P.f626_PopUpMenu(t, l64_doc, 2L)
                         l48_tmpde = t16
                     } else {
                         ln = 177 // JukeBox.HC:177
                         tick(t)
-                        val t17: Long = P.f621_PopUpMenu(t, l64_doc, 0L)
+                        val t17: Long = P.f626_PopUpMenu(t, l64_doc, 0L)
                         l48_tmpde = t17
                     }
                     ln = 178 // JukeBox.HC:178
@@ -659,16 +661,16 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     st8((l48_tmpde + 32L), 0L)
                     ln = 188 // JukeBox.HC:188
                     tick(t)
-                    P.f666_FileExtRem(t, l40_st2)
+                    P.f671_FileExtRem(t, l40_st2)
                     ln = 189 // JukeBox.HC:189
                     val t20: Long = nat(t, n_MStrPrint, push2(t, s29, ld8((l48_tmpde + 24L))))
                     l32_st = t20
                     ln = 190 // JukeBox.HC:190
                     tick(t)
-                    P.f495_MusicSettingsRst(t)
+                    P.f500_MusicSettingsRst(t)
                     ln = 191 // JukeBox.HC:191
                     tick(t)
-                    val t21: Long = f704_SingleSong(t, l32_st, l40_st2)
+                    val t21: Long = f709_SingleSong(t, l32_st, l40_st2)
                     l88_task = t21
                     ln = 192 // JukeBox.HC:192
                     nat(t, n_Free, push1(t, l40_st2))
@@ -678,7 +680,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 }
                 ln = 195 // JukeBox.HC:195
                 tick(t)
-                P.f605_DocDel(t, l64_doc)
+                P.f610_DocDel(t, l64_doc)
                 ln = 196 // JukeBox.HC:196
                 nat(t, n_DirTreeDel, push1(t, l56_tmpde1))
                 t.hCount = h0c
@@ -699,7 +701,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Apps/Psalmody/JukeBox.HC#0 (JukeBox.HC:1) */
-    fun f707_init_C__Apps_Psalmody_JukeBox_HC_0(t: Task): Long {
+    fun f712_init_C__Apps_Psalmody_JukeBox_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -709,15 +711,15 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Song (childish.HC:2) */
-    fun f708_Song(t: Task) {
+    fun f713_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 1048580 // childish.HC:4
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 1048581 // childish.HC:5
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 1048582 // childish.HC:6
             st8((P.g_music + 56L), bits(2.48))
             ln = 1048583 // childish.HC:7
@@ -732,16 +734,16 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     if (!((t0 == 0L))) break@loop0
                     ln = 1048586 // childish.HC:10
                     tick(t)
-                    P.f494_Play(t, s31, s30)
+                    P.f499_Play(t, s31, s30)
                     ln = 1048589 // childish.HC:13
                     tick(t)
-                    P.f494_Play(t, s31, s32)
+                    P.f499_Play(t, s31, s32)
                     ln = 1048592 // childish.HC:16
                     tick(t)
-                    P.f494_Play(t, s33, 0L)
+                    P.f499_Play(t, s33, 0L)
                     ln = 1048593 // childish.HC:17
                     tick(t)
-                    P.f494_Play(t, s33, 0L)
+                    P.f499_Play(t, s33, 0L)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -761,26 +763,26 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/childish.HC#0 (childish.HC:24) */
-    fun f709_init_C__Apps_Psalmody_Examples_childish_HC_0(t: Task): Long {
+    fun f714_init_C__Apps_Psalmody_Examples_childish_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 1048600 // childish.HC:24
             tick(t)
-            f708_Song(t)
+            f713_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/childish.HC#0", ln) }
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/night.HC#0 (night.HC:14) */
-    fun f710_init_C__Apps_Psalmody_Examples_night_HC_0(t: Task): Long {
+    fun f715_init_C__Apps_Psalmody_Examples_night_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 2097166 // night.HC:14
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             st8(g_t0, bits(t0))
             t.depth--
             return 0L
@@ -788,7 +790,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC DrawIt (night.HC:16) */
-    fun f711_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f716_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -800,14 +802,13 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             var l40_dt: Double = 0.0
             ln = 2097171 // night.HC:19
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             l40_dt = (t0 - ldf(g_t0))
             ln = 2097172 // night.HC:20
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 330L, 35L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 330L, 35L, 0L, b0, 0L))
             ln = 2097173 // night.HC:21
             tick(t)
-            val t1: Double = P.f487_Beat(t)
+            val t1: Double = P.f492_Beat(t)
             if (((t1 - ldf(g_t0)) < 24.0)) {
                 ln = 2097174 // night.HC:22
                 val t2: Double = f(nat(t, n_Rand, push0(t)))
@@ -887,7 +888,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Song (night.HC:54) */
-    fun f712_Song(t: Task) {
+    fun f717_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -897,12 +898,12 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             ln = 2097209 // night.HC:57
             st1((ld8(P.g_Fs) + 778L), 7L)
             ln = 2097210 // night.HC:58
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065863L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065868L)
             ln = 2097211 // night.HC:59
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 2097212 // night.HC:60
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 2097213 // night.HC:61
             st8((P.g_music + 56L), bits(2.0))
             ln = 2097214 // night.HC:62
@@ -915,22 +916,22 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 loop0@ while ((1L != 0L)) {
                     ln = 2097217 // night.HC:65
                     tick(t)
-                    val t0: Double = P.f487_Beat(t)
+                    val t0: Double = P.f492_Beat(t)
                     st8(g_t0, bits(t0))
                     ln = 2097218 // night.HC:66
                     nat(t, n_Print, push1(t, s35))
                     ln = 2097219 // night.HC:67
                     tick(t)
-                    P.f494_Play(t, s37, s36)
+                    P.f499_Play(t, s37, s36)
                     ln = 2097221 // night.HC:69
                     tick(t)
-                    P.f494_Play(t, s37, s36)
+                    P.f499_Play(t, s37, s36)
                     ln = 2097223 // night.HC:71
                     tick(t)
-                    P.f494_Play(t, s39, s38)
+                    P.f499_Play(t, s39, s38)
                     ln = 2097225 // night.HC:73
                     tick(t)
-                    P.f494_Play(t, s39, s38)
+                    P.f499_Play(t, s39, s38)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -951,26 +952,26 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/night.HC#1 (night.HC:81) */
-    fun f713_init_C__Apps_Psalmody_Examples_night_HC_1(t: Task): Long {
+    fun f718_init_C__Apps_Psalmody_Examples_night_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 2097233 // night.HC:81
             tick(t)
-            f712_Song(t)
+            f717_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/night.HC#1", ln) }
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#0 (prosper.HC:14) */
-    fun f714_init_C__Apps_Psalmody_Examples_prosper_HC_0(t: Task): Long {
+    fun f719_init_C__Apps_Psalmody_Examples_prosper_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 3145742 // prosper.HC:14
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             st8(g_t0, bits(t0))
             t.depth--
             return 0L
@@ -978,7 +979,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC DrawIt (prosper.HC:16) */
-    fun f715_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f720_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -987,7 +988,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             var l16_dt: Double = 0.0
             ln = 3145746 // prosper.HC:18
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             l16_dt = (t0 - ldf(g_t0))
             ln = 3145747 // prosper.HC:19
             val t1: Long = (p1_dc + 28L)
@@ -998,8 +999,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f307_Mat4x4RotZ(t, ld8((p1_dc + 200L)), (0.25 * t2))
             ln = 3145749 // prosper.HC:21
             val t3: Double = f(nat(t, n_Sin, push1(t, bits((l16_dt / 3.0)))))
-            tick(t)
-            P.f308_Mat4x4Scale(t, ld8((p1_dc + 200L)), (1.5 + (0.5 * t3)))
+            nat(t, n_Mat4x4Scale, push2(t, ld8((p1_dc + 200L)), bits((1.5 + (0.5 * t3)))))
             ln = 3145750 // prosper.HC:22
             tick(t)
             P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc + 200L)))
@@ -1008,11 +1008,11 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             if (((t4 and 1L) != 0L)) {
                 ln = 3145752 // prosper.HC:24
                 tick(t)
-                P.f441_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b1)
+                P.f446_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b1)
             } else {
                 ln = 3145754 // prosper.HC:26
                 tick(t)
-                P.f441_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b2)
+                P.f446_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b2)
             }
             t.depth--
             return
@@ -1020,7 +1020,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Song (prosper.HC:29) */
-    fun f716_Song(t: Task) {
+    fun f721_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1030,12 +1030,12 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             ln = 3145760 // prosper.HC:32
             st1((ld8(P.g_Fs) + 778L), 46L)
             ln = 3145761 // prosper.HC:33
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065867L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065872L)
             ln = 3145762 // prosper.HC:34
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 3145764 // prosper.HC:36
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 3145765 // prosper.HC:37
             st8((P.g_music + 56L), bits(3.5))
             ln = 3145766 // prosper.HC:38
@@ -1048,20 +1048,20 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     if (!((t1 == 0L))) break@loop0
                     ln = 3145768 // prosper.HC:40
                     tick(t)
-                    val t0: Double = P.f487_Beat(t)
+                    val t0: Double = P.f492_Beat(t)
                     st8(g_t0, bits(t0))
                     ln = 3145769 // prosper.HC:41
                     tick(t)
-                    P.f494_Play(t, s41, s40)
+                    P.f499_Play(t, s41, s40)
                     ln = 3145772 // prosper.HC:44
                     tick(t)
-                    P.f494_Play(t, s43, s42)
+                    P.f499_Play(t, s43, s42)
                     ln = 3145774 // prosper.HC:46
                     tick(t)
-                    P.f494_Play(t, s45, s44)
+                    P.f499_Play(t, s45, s44)
                     ln = 3145776 // prosper.HC:48
                     tick(t)
-                    P.f494_Play(t, s45, s44)
+                    P.f499_Play(t, s45, s44)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -1082,13 +1082,13 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#1 (prosper.HC:56) */
-    fun f717_init_C__Apps_Psalmody_Examples_prosper_HC_1(t: Task): Long {
+    fun f722_init_C__Apps_Psalmody_Examples_prosper_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 3145784 // prosper.HC:56
             tick(t)
-            f716_Song(t)
+            f721_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/prosper.HC#1", ln) }
@@ -1097,21 +1097,21 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_JukeReward(t, (if (n > 0) st[base + 0] else 0L))
-            704 -> f704_SingleSong(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            705 -> f705_JBPutKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            706 -> { f706_JukeBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> f707_init_C__Apps_Psalmody_JukeBox_HC_0(t)
-            708 -> { f708_Song(t); 0L }
-            709 -> f709_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
-            710 -> f710_init_C__Apps_Psalmody_Examples_night_HC_0(t)
-            711 -> { f711_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            712 -> { f712_Song(t); 0L }
-            713 -> f713_init_C__Apps_Psalmody_Examples_night_HC_1(t)
-            714 -> f714_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
-            715 -> { f715_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            716 -> { f716_Song(t); 0L }
-            717 -> f717_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
+            708 -> f708_JukeReward(t, (if (n > 0) st[base + 0] else 0L))
+            709 -> f709_SingleSong(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            710 -> f710_JBPutKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            711 -> { f711_JukeBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> f712_init_C__Apps_Psalmody_JukeBox_HC_0(t)
+            713 -> { f713_Song(t); 0L }
+            714 -> f714_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
+            715 -> f715_init_C__Apps_Psalmody_Examples_night_HC_0(t)
+            716 -> { f716_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            717 -> { f717_Song(t); 0L }
+            718 -> f718_init_C__Apps_Psalmody_Examples_night_HC_1(t)
+            719 -> f719_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
+            720 -> { f720_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            721 -> { f721_Song(t); 0L }
+            722 -> f722_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1123,7 +1123,7 @@ class N_Apps_Psalmody_JukeBox(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722)
         private val NAMES = arrayOf("JukeReward", "SingleSong", "JBPutKey", "JukeBox", "\$init:C:/Apps/Psalmody/JukeBox.HC#0", "Song", "\$init:C:/Apps/Psalmody/Examples/childish.HC#0", "\$init:C:/Apps/Psalmody/Examples/night.HC#0", "DrawIt", "Song", "\$init:C:/Apps/Psalmody/Examples/night.HC#1", "\$init:C:/Apps/Psalmody/Examples/prosper.HC#0", "DrawIt", "Song", "\$init:C:/Apps/Psalmody/Examples/prosper.HC#1")
         private val FILES = arrayOf<String>("C:/Apps/Psalmody/JukeBox.HC", "C:/Apps/Psalmody/Examples/childish.HC", "C:/Apps/Psalmody/Examples/night.HC", "C:/Apps/Psalmody/Examples/prosper.HC")
     }

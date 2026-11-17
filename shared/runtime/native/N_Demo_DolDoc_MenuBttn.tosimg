@@ -10,10 +10,10 @@ s 17fe10 244c4d2c3824
 s 17fe28 0a2442542c22536e64204f6e222c4c453d4d555f534e445f4f4e240a0a0a
 s 17fe58 0a2442542c22536e64204f6666222c4c453d4d555f534e445f4f4646240a0a0a
 s 17fe90 0a2442542c225365742046726571222c4c453d4d555f5345545f46524551240a0a0a0a2442542c224e6f7468696e67222c4c453d4d555f4e4f5448494e47240a0a0a0a2442542c22446f6e65222c4c453d444f434d5f43414e43454c240a0a0a
-fn 703 PopUpFreq (I64;;-)
-fn 704 MenuBttn (U0;;-)
-fn 705 $init:C:/Demo/DolDoc/MenuBttn.HC#0 (I64;;-)
-sym f MenuBttn 704 (U0;;-)
-sym f PopUpFreq 703 (I64;;-)
-init 705
+fn 708 PopUpFreq (I64;;-)
+fn 709 MenuBttn (U0;;-)
+fn 710 $init:C:/Demo/DolDoc/MenuBttn.HC#0 (I64;;-)
+sym f MenuBttn 709 (U0;;-)
+sym f PopUpFreq 708 (I64;;-)
+init 710
 unit C:/Demo/DolDoc/MenuBttn.HC#1

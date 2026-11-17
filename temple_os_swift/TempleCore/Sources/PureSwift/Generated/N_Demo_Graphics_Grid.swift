@@ -30,7 +30,7 @@ public final class N_Demo_Graphics_Grid: NativeModule {
     }
 
     /// HolyC DrawMyMs (Grid.HC:3)
-    public final func f703_DrawMyMs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f708_DrawMyMs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -50,7 +50,7 @@ public final class N_Demo_Graphics_Grid: NativeModule {
     }
 
     /// HolyC GridDemo (Grid.HC:10)
-    public final func f704_GridDemo(_ t: HTask) throws {
+    public final func f709_GridDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -61,7 +61,7 @@ public final class N_Demo_Graphics_Grid: NativeModule {
             _ = try nat(t, n_MemCpy, try push3(t, fp, P.g_ms_grid, 80))
             ln = 15 // Grid.HC:15
             try tick(t)
-            try P.f696_GridInit(t)
+            try P.f701_GridInit(t)
             ln = 16 // Grid.HC:16
             try st1(P.g_ms_grid, 1)
             ln = 17 // Grid.HC:17
@@ -71,7 +71,7 @@ public final class N_Demo_Graphics_Grid: NativeModule {
             ln = 19 // Grid.HC:19
             l80_old_draw_ms = try ld8((P.g_gr &+ 144))
             ln = 20 // Grid.HC:20
-            try st8((P.g_gr &+ 144), 9223090561878065855)
+            try st8((P.g_gr &+ 144), 9223090561878065860)
             ln = 21 // Grid.HC:21
             loop0: while try (ld1u((P.g_ms &+ 160)) == 0) {
                 ln = 22 // Grid.HC:22
@@ -94,13 +94,13 @@ public final class N_Demo_Graphics_Grid: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Grid.HC#0 (Grid.HC:30)
-    @discardableResult public final func f705_init_C__Demo_Graphics_Grid_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_Grid_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 30 // Grid.HC:30
             try tick(t)
-            try f704_GridDemo(t)
+            try f709_GridDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Grid.HC#0", ln) }
@@ -109,15 +109,15 @@ public final class N_Demo_Graphics_Grid: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawMyMs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 704: try f704_GridDemo(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_Grid_HC_0(t)
+        case 708: try f708_DrawMyMs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 709: try f709_GridDemo(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_Grid_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawMyMs", 704: "GridDemo", 705: "$init:C:/Demo/Graphics/Grid.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawMyMs", 709: "GridDemo", 710: "$init:C:/Demo/Graphics/Grid.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Grid.HC"]
     public override var files: [String] { N_Demo_Graphics_Grid.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Grid.DEFINED.contains(index) }

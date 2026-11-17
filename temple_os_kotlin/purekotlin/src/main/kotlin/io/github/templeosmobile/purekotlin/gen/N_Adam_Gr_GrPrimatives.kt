@@ -41,7 +41,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrClamp (GrPrimatives.HC:3) */
-    fun f703_GrClamp(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long): Long {
+    fun f708_GrClamp(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -117,7 +117,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DCClipLine (GrPrimatives.HC:33) */
-    fun f704_DCClipLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long): Long {
+    fun f709_DCClipLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -133,7 +133,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l88_win_task: Long = 0L
             ln = 38 // GrPrimatives.HC:38
             tick(t)
-            val t0: Long = f703_GrClamp(t, p0_dc, (fp + 56), (fp + 64), (fp + 72), (fp + 80), p5_width, p6_height)
+            val t0: Long = f708_GrClamp(t, p0_dc, (fp + 56), (fp + 64), (fp + 72), (fp + 80), p5_width, p6_height)
             if ((t0 != 0L)) {
                 ln = 39 // GrPrimatives.HC:39
                 if (((ld4s((p0_dc + 28L)) and 16384L) != 0L)) {
@@ -154,7 +154,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 46 // GrPrimatives.HC:46
                 tick(t)
-                val t5: Long = P.f360_ClipLine(t, p1_x1, p2_y1, p3_x2, p4_y2, ld8((fp + 56)), ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)))
+                val t5: Long = P.f361_ClipLine(t, p1_x1, p2_y1, p3_x2, p4_y2, ld8((fp + 56)), ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)))
                 t.msp = msp0
                 t.depth--
                 return (t5 and 0xFFL)
@@ -171,7 +171,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrPlot (GrPrimatives.HC:51) */
-    fun f705_GrPlot(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f710_GrPlot(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -249,7 +249,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrPlot1 (GrPrimatives.HC:81) */
-    fun f706_GrPlot1(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f711_GrPlot1(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -326,7 +326,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrPeek (GrPrimatives.HC:111) */
-    fun f707_GrPeek(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f712_GrPeek(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -384,7 +384,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrFloodFillRay (GrPrimatives.HC:171) */
-    fun f708_GrFloodFillRay(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f713_GrFloodFillRay(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -421,7 +421,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             st8(t2, (t3 + 1L))
                             ln = 185 // GrPrimatives.HC:185
                             tick(t)
-                            val t4: Long = P.f374_GrRayLen(t, p0_dc, (l56_f + 8L), ld8((l56_f + 16L)), p3_z, p4_db)
+                            val t4: Long = P.f375_GrRayLen(t, p0_dc, (l56_f + 8L), ld8((l56_f + 16L)), p3_z, p4_db)
                             st8((l56_f + 40L), t4)
                             l40_res = (l40_res + t4)
                             ln = 186 // GrPrimatives.HC:186
@@ -442,7 +442,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                 st8(t7, (t8 + 1L))
                                 ln = 193 // GrPrimatives.HC:193
                                 tick(t)
-                                val t9: Long = P.f373_GrRayLenMinus(t, p0_dc, ld8((l56_f + 32L)), ld8((l56_f + 16L)))
+                                val t9: Long = P.f374_GrRayLenMinus(t, p0_dc, ld8((l56_f + 32L)), ld8((l56_f + 16L)))
                                 st8((l56_f + 48L), t9)
                                 if ((t9 != 0L)) {
                                     ln = 194 // GrPrimatives.HC:194
@@ -494,7 +494,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                 st8(t18, (t19 + 1L))
                                 ln = 216 // GrPrimatives.HC:216
                                 tick(t)
-                                val t20: Long = P.f373_GrRayLenMinus(t, p0_dc, ld8((l56_f + 32L)), ld8((l56_f + 16L)))
+                                val t20: Long = P.f374_GrRayLenMinus(t, p0_dc, ld8((l56_f + 32L)), ld8((l56_f + 16L)))
                                 st8((l56_f + 48L), t20)
                                 if ((t20 != 0L)) {
                                     ln = 217 // GrPrimatives.HC:217
@@ -546,7 +546,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrFloodFill (GrPrimatives.HC:239) */
-    fun f709_GrFloodFill(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
+    fun f714_GrFloodFill(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -581,7 +581,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 252 // GrPrimatives.HC:252
             skip_0@ do {
                 tick(t)
-                val t0: Long = f707_GrPeek(t, p0_dc, p1_x, p2_y)
+                val t0: Long = f712_GrPeek(t, p0_dc, p1_x, p2_y)
                 l56_j = t0
                 if ((t0 >= 0L)) {
                     ln = 253 // GrPrimatives.HC:253
@@ -616,7 +616,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     if ((((p3_not_color != 0L) && (l56_j != ld4u((p0_dc + 168L)))) || (p3_not_color == 0L))) {
                         ln = 268 // GrPrimatives.HC:268
                         tick(t)
-                        val t3: Long = f708_GrFloodFillRay(t, p0_dc, p1_x, p2_y, p4_z, p5_db)
+                        val t3: Long = f713_GrFloodFillRay(t, p0_dc, p1_x, p2_y, p4_z, p5_db)
                         l48_res = t3
                     }
                 }
@@ -636,7 +636,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrFillSemiCircle (GrPrimatives.HC:277) */
-    fun f710_GrFillSemiCircle(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
+    fun f715_GrFillSemiCircle(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -986,7 +986,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrFillCircle (GrPrimatives.HC:390) */
-    fun f711_GrFillCircle(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f716_GrFillCircle(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1068,7 +1068,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrPlot3B (GrPrimatives.HC:412) */
-    fun f712_GrPlot3B(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f717_GrPlot3B(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1113,7 +1113,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     st8((p0_dc + 400L), ld8((fp + 48)))
                     ln = 426 // GrPrimatives.HC:426
                     tick(t)
-                    f706_GrPlot1(t, p0_dc, ld8((fp + 32)), ld8((fp + 40)))
+                    f711_GrPlot1(t, p0_dc, ld8((fp + 32)), ld8((fp + 40)))
                     ln = 427 // GrPrimatives.HC:427
                     l64_was_symmetry = 1L
                     ln = 428 // GrPrimatives.HC:428
@@ -1126,7 +1126,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st8((p0_dc + 400L), ld8((fp + 24)))
                 ln = 432 // GrPrimatives.HC:432
                 tick(t)
-                f706_GrPlot1(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)))
+                f711_GrPlot1(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)))
             } while (false)
             ln = 434 // GrPrimatives.HC:434
             if ((l56_was_transform != 0L)) {
@@ -1151,7 +1151,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrPlot3 (GrPrimatives.HC:441) */
-    fun f713_GrPlot3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f718_GrPlot3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1201,7 +1201,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     st4(t1, (ld4s(t1) and -513L))
                     ln = 456 // GrPrimatives.HC:456
                     tick(t)
-                    f713_GrPlot3(t, p0_dc, ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)))
+                    f718_GrPlot3(t, p0_dc, ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)))
                     ln = 457 // GrPrimatives.HC:457
                     l96_was_symmetry = 1L
                     ln = 458 // GrPrimatives.HC:458
@@ -1218,7 +1218,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 if (((ld8((p0_dc + 192L)) != 0L) || (l56_w <= 0L))) {
                     ln = 464 // GrPrimatives.HC:464
                     tick(t)
-                    f706_GrPlot1(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)))
+                    f711_GrPlot1(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)))
                 } else {
                     ln = 465 // GrPrimatives.HC:465
                     if ((ld4s((p0_dc + 228L)) < 64L)) {
@@ -1330,7 +1330,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             if (((ld4s((p0_dc + 28L)) and 2048L) != 0L)) {
                                 ln = 521 // GrPrimatives.HC:521
                                 tick(t)
-                                val t14: Long = P.f338_DistSqrI64(t, ld8((fp + 8)), ld8((fp + 16)), ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
+                                val t14: Long = P.f339_DistSqrI64(t, ld8((fp + 8)), ld8((fp + 16)), ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
                                 l64_dist = t14
                                 ln = 522 // GrPrimatives.HC:522
                                 if ((l64_dist <= ld8((p0_dc + 312L)))) {
@@ -1373,7 +1373,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     } else {
                         ln = 538 // GrPrimatives.HC:538
                         tick(t)
-                        f711_GrFillCircle(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((p0_dc + 400L)), ld4s((p0_dc + 228L)))
+                        f716_GrFillCircle(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((p0_dc + 400L)), ld4s((p0_dc + 228L)))
                     }
                 }
             } while (false)
@@ -1402,7 +1402,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrLinePlot0 (GrPrimatives.HC:548) */
-    fun f714_GrLinePlot0(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f719_GrLinePlot0(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1435,7 +1435,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrLinePlot (GrPrimatives.HC:561) */
-    fun f715_GrLinePlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f720_GrLinePlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1447,7 +1447,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st8((p0_dc + 400L), p3_z)
             ln = 564 // GrPrimatives.HC:564
             tick(t)
-            f706_GrPlot1(t, p0_dc, p1_x, p2_y)
+            f711_GrPlot1(t, p0_dc, p1_x, p2_y)
             ln = 565 // GrPrimatives.HC:565
             t.depth--
             return 1L
@@ -1457,7 +1457,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrLine (GrPrimatives.HC:568) */
-    fun f716_GrLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long): Long {
+    fun f721_GrLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1486,15 +1486,15 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             if (((((p5_step == 1L) && (p6_start == 0L)) && (ld8((p0_dc + 192L)) == 0L)) && (ld8((p0_dc + 392L)) == 0L))) {
                 ln = 575 // GrPrimatives.HC:575
                 tick(t)
-                val t0: Long = f704_DCClipLine(t, p0_dc, (fp + 8), (fp + 16), (fp + 24), (fp + 32), 0L, 0L)
+                val t0: Long = f709_DCClipLine(t, p0_dc, (fp + 8), (fp + 16), (fp + 24), (fp + 32), 0L, 0L)
                 if ((t0 != 0L)) {
                     ln = 576 // GrPrimatives.HC:576
-                    val t1: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), 0L, ld8((fp + 24)), ld8((fp + 32)), 0L, 9223090561878065866L, p5_step, p6_start))
+                    val t1: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), 0L, ld8((fp + 24)), ld8((fp + 32)), 0L, 9223090561878065871L, p5_step, p6_start))
                     l56_res = (t1 and 0xFFL)
                 }
             } else {
                 ln = 578 // GrPrimatives.HC:578
-                val t2: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), 0L, ld8((fp + 24)), ld8((fp + 32)), 0L, 9223090561878065867L, p5_step, p6_start))
+                val t2: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), 0L, ld8((fp + 24)), ld8((fp + 32)), 0L, 9223090561878065872L, p5_step, p6_start))
                 l56_res = (t2 and 0xFFL)
             }
             ln = 579 // GrPrimatives.HC:579
@@ -1510,7 +1510,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrCircle (GrPrimatives.HC:583) */
-    fun f717_GrCircle(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double, a6: Double): Long {
+    fun f722_GrCircle(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double, a6: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1528,7 +1528,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 588 // GrPrimatives.HC:588
             st8((p0_dc + 392L), 0L)
             ln = 589 // GrPrimatives.HC:589
-            val t0: Long = nat(t, n_Circle, push(t, p0_dc, p1_cx, p2_cy, 0L, p3_radius, 9223090561878065867L, p4_step, bits(p5_start_radians), bits(p6_len_radians)))
+            val t0: Long = nat(t, n_Circle, push(t, p0_dc, p1_cx, p2_cy, 0L, p3_radius, 9223090561878065872L, p4_step, bits(p5_start_radians), bits(p6_len_radians)))
             l56_res = (t0 and 0xFFL)
             ln = 590 // GrPrimatives.HC:590
             st8((p0_dc + 392L), l64_db)
@@ -1541,7 +1541,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrEllipse (GrPrimatives.HC:594) */
-    fun f718_GrEllipse(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double, a6: Long, a7: Double, a8: Double): Long {
+    fun f723_GrEllipse(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double, a6: Long, a7: Double, a8: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1562,7 +1562,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st8((p0_dc + 392L), 0L)
             ln = 605 // GrPrimatives.HC:605
             tick(t)
-            val t0: Long = P.f353_Ellipse(t, p0_dc, p1_cx, p2_cy, 0L, p3_x_radius, p4_y_radius, 9223090561878065867L, p5_rot_angle, p6_step, p7_start_radians, p8_len_radians)
+            val t0: Long = P.f354_Ellipse(t, p0_dc, p1_cx, p2_cy, 0L, p3_x_radius, p4_y_radius, 9223090561878065872L, p5_rot_angle, p6_step, p7_start_radians, p8_len_radians)
             l72_res = (t0 and 0xFFL)
             ln = 607 // GrPrimatives.HC:607
             st8((p0_dc + 392L), l80_db)
@@ -1575,7 +1575,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrRegPoly (GrPrimatives.HC:611) */
-    fun f719_GrRegPoly(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Double, a7: Long, a8: Double, a9: Double): Long {
+    fun f724_GrRegPoly(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Double, a7: Long, a8: Double, a9: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1597,7 +1597,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st8((p0_dc + 392L), 0L)
             ln = 622 // GrPrimatives.HC:622
             tick(t)
-            val t0: Long = P.f354_RegPoly(t, p0_dc, p1_cx, p2_cy, 0L, p3_x_radius, p4_y_radius, p5_sides, 9223090561878065867L, p6_rot_angle, p7_step, p8_start_radians, p9_len_radians)
+            val t0: Long = P.f355_RegPoly(t, p0_dc, p1_cx, p2_cy, 0L, p3_x_radius, p4_y_radius, p5_sides, 9223090561878065872L, p6_rot_angle, p7_step, p8_start_radians, p9_len_radians)
             l80_res = (t0 and 0xFFL)
             ln = 624 // GrPrimatives.HC:624
             st8((p0_dc + 392L), l88_db)
@@ -1610,7 +1610,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr2Bezier (GrPrimatives.HC:628) */
-    fun f720_Gr2Bezier(t: Task, a0: Long, a1: Long): Long {
+    fun f725_Gr2Bezier(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1618,7 +1618,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var p1_ctrl: Long = a1
             ln = 630 // GrPrimatives.HC:630
             tick(t)
-            val t0: Long = P.f356_Bezier2(t, p0_dc, p1_ctrl, 9223090561878065867L, 1L)
+            val t0: Long = P.f357_Bezier2(t, p0_dc, p1_ctrl, 9223090561878065872L, 1L)
             t.depth--
             return (t0 and 0xFFL)
             t.depth--
@@ -1627,7 +1627,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr3Bezier (GrPrimatives.HC:633) */
-    fun f721_Gr3Bezier(t: Task, a0: Long, a1: Long): Long {
+    fun f726_Gr3Bezier(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1635,7 +1635,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var p1_ctrl: Long = a1
             ln = 635 // GrPrimatives.HC:635
             tick(t)
-            val t0: Long = P.f357_Bezier3(t, p0_dc, p1_ctrl, 9223090561878065867L, 1L)
+            val t0: Long = P.f358_Bezier3(t, p0_dc, p1_ctrl, 9223090561878065872L, 1L)
             t.depth--
             return (t0 and 0xFFL)
             t.depth--
@@ -1644,7 +1644,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr2BSpline (GrPrimatives.HC:638) */
-    fun f722_Gr2BSpline(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f727_Gr2BSpline(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1656,7 +1656,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             p3_closed = (p3_closed and 0xFFL)
             ln = 640 // GrPrimatives.HC:640
             tick(t)
-            val t0: Long = P.f358_BSpline2(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065867L, p3_closed)
+            val t0: Long = P.f359_BSpline2(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065872L, p3_closed)
             t.depth--
             return (t0 and 0xFFL)
             t.depth--
@@ -1665,7 +1665,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr3BSpline (GrPrimatives.HC:643) */
-    fun f723_Gr3BSpline(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f728_Gr3BSpline(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1677,7 +1677,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             p3_closed = (p3_closed and 0xFFL)
             ln = 645 // GrPrimatives.HC:645
             tick(t)
-            val t0: Long = P.f359_BSpline3(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065867L, p3_closed)
+            val t0: Long = P.f360_BSpline3(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065872L, p3_closed)
             t.depth--
             return (t0 and 0xFFL)
             t.depth--
@@ -1686,7 +1686,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrLineFat3 (GrPrimatives.HC:648) */
-    fun f724_GrLineFat3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Long): Long {
+    fun f729_GrLineFat3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1795,7 +1795,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     if ((p8_start >= l96_d)) {
                         ln = 680 // GrPrimatives.HC:680
                         tick(t)
-                        val t5: Long = f711_GrFillCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width)
+                        val t5: Long = f716_GrFillCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width)
                         l72_res = (l72_res + t5)
                     } else {
                         ln = 682 // GrPrimatives.HC:682
@@ -1807,7 +1807,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                 st8((p0_dc + 400L), ld4s(((fp + 24) + 4L)))
                                 ln = 685 // GrPrimatives.HC:685
                                 tick(t)
-                                val t6: Long = f706_GrPlot1(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)))
+                                val t6: Long = f711_GrPlot1(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)))
                                 l72_res = (l72_res + t6)
                                 ln = 686 // GrPrimatives.HC:686
                                 l128__x = ld4s(((fp + 8) + 4L))
@@ -1836,12 +1836,12 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             if ((l104_dx >= 0L)) {
                                 ln = 694 // GrPrimatives.HC:694
                                 tick(t)
-                                val t10: Long = f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 2L)
+                                val t10: Long = f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 2L)
                                 l72_res = (l72_res + t10)
                             } else {
                                 ln = 696 // GrPrimatives.HC:696
                                 tick(t)
-                                val t11: Long = f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 7L)
+                                val t11: Long = f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 7L)
                                 l72_res = (l72_res + t11)
                             }
                             ln = 697 // GrPrimatives.HC:697
@@ -1870,12 +1870,12 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             if ((l104_dx >= 0L)) {
                                 ln = 705 // GrPrimatives.HC:705
                                 tick(t)
-                                val t13: Long = f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 3L)
+                                val t13: Long = f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 3L)
                                 l72_res = (l72_res + t13)
                             } else {
                                 ln = 707 // GrPrimatives.HC:707
                                 tick(t)
-                                val t14: Long = f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 6L)
+                                val t14: Long = f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 6L)
                                 l72_res = (l72_res + t14)
                             }
                         }
@@ -1938,7 +1938,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     if ((p8_start >= l96_d)) {
                         ln = 735 // GrPrimatives.HC:735
                         tick(t)
-                        val t17: Long = f711_GrFillCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width)
+                        val t17: Long = f716_GrFillCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width)
                         l72_res = (l72_res + t17)
                     } else {
                         ln = 737 // GrPrimatives.HC:737
@@ -1950,7 +1950,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                 st8((p0_dc + 400L), ld4s(((fp + 24) + 4L)))
                                 ln = 740 // GrPrimatives.HC:740
                                 tick(t)
-                                val t18: Long = f706_GrPlot1(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)))
+                                val t18: Long = f711_GrPlot1(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)))
                                 l72_res = (l72_res + t18)
                                 ln = 741 // GrPrimatives.HC:741
                                 l128__x = ld4s(((fp + 8) + 4L))
@@ -1979,12 +1979,12 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             if ((l112_dy >= 0L)) {
                                 ln = 749 // GrPrimatives.HC:749
                                 tick(t)
-                                val t22: Long = f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 0L)
+                                val t22: Long = f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 0L)
                                 l72_res = (l72_res + t22)
                             } else {
                                 ln = 751 // GrPrimatives.HC:751
                                 tick(t)
-                                val t23: Long = f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 5L)
+                                val t23: Long = f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 5L)
                                 l72_res = (l72_res + t23)
                             }
                             ln = 752 // GrPrimatives.HC:752
@@ -2013,12 +2013,12 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             if ((l112_dy >= 0L)) {
                                 ln = 760 // GrPrimatives.HC:760
                                 tick(t)
-                                val t25: Long = f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 1L)
+                                val t25: Long = f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 1L)
                                 l72_res = (l72_res + t25)
                             } else {
                                 ln = 762 // GrPrimatives.HC:762
                                 tick(t)
-                                val t26: Long = f710_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 4L)
+                                val t26: Long = f715_GrFillSemiCircle(t, p0_dc, ld4s(((fp + 8) + 4L)), ld4s(((fp + 16) + 4L)), ld4s(((fp + 24) + 4L)), p7_width, 4L)
                                 l72_res = (l72_res + t26)
                             }
                         }
@@ -2036,7 +2036,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrLine3 (GrPrimatives.HC:770) */
-    fun f725_GrLine3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Long): Long {
+    fun f730_GrLine3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2101,16 +2101,16 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         if ((((p8_start == 0L) && (ld4s((p0_dc + 228L)) < 2L)) && (ld8((p0_dc + 392L)) == 0L))) {
                             ln = 789 // GrPrimatives.HC:789
                             tick(t)
-                            val t2: Long = f704_DCClipLine(t, p0_dc, (fp + 72), (fp + 80), (fp + 96), (fp + 104), 0L, 0L)
+                            val t2: Long = f709_DCClipLine(t, p0_dc, (fp + 72), (fp + 80), (fp + 96), (fp + 104), 0L, 0L)
                             if ((t2 != 0L)) {
                                 ln = 790 // GrPrimatives.HC:790
-                                val t3: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 72)), ld8((fp + 80)), 0L, ld8((fp + 96)), ld8((fp + 104)), 0L, 9223090561878065866L, p7_step, p8_start))
+                                val t3: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 72)), ld8((fp + 80)), 0L, ld8((fp + 96)), ld8((fp + 104)), 0L, 9223090561878065871L, p7_step, p8_start))
                                 l120_res = (t3 and 0xFFL)
                             }
                         } else {
                             ln = 792 // GrPrimatives.HC:792
                             tick(t)
-                            val t4: Long = f724_GrLineFat3(t, p0_dc, ld8((fp + 72)), ld8((fp + 80)), ld8((fp + 88)), ld8((fp + 96)), ld8((fp + 104)), ld8((fp + 112)), ld4s((p0_dc + 228L)), p8_start)
+                            val t4: Long = f729_GrLineFat3(t, p0_dc, ld8((fp + 72)), ld8((fp + 80)), ld8((fp + 88)), ld8((fp + 96)), ld8((fp + 104)), ld8((fp + 112)), ld4s((p0_dc + 228L)), p8_start)
                             if ((t4 != 0L)) {
                                 ln = 793 // GrPrimatives.HC:793
                                 l120_res = 1L
@@ -2118,7 +2118,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         }
                     } else {
                         ln = 796 // GrPrimatives.HC:796
-                        val t5: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 72)), ld8((fp + 80)), ld8((fp + 88)), ld8((fp + 96)), ld8((fp + 104)), ld8((fp + 112)), 9223090561878065865L, p7_step, p8_start))
+                        val t5: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 72)), ld8((fp + 80)), ld8((fp + 88)), ld8((fp + 96)), ld8((fp + 104)), ld8((fp + 112)), 9223090561878065870L, p7_step, p8_start))
                         l120_res = (t5 and 0xFFL)
                     }
                     ln = 797 // GrPrimatives.HC:797
@@ -2135,16 +2135,16 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     if ((((p8_start == 0L) && (ld4s((p0_dc + 228L)) < 2L)) && (ld8((p0_dc + 392L)) == 0L))) {
                         ln = 803 // GrPrimatives.HC:803
                         tick(t)
-                        val t6: Long = f704_DCClipLine(t, p0_dc, (fp + 8), (fp + 16), (fp + 32), (fp + 40), 0L, 0L)
+                        val t6: Long = f709_DCClipLine(t, p0_dc, (fp + 8), (fp + 16), (fp + 32), (fp + 40), 0L, 0L)
                         if ((t6 != 0L)) {
                             ln = 804 // GrPrimatives.HC:804
-                            val t7: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), 0L, ld8((fp + 32)), ld8((fp + 40)), 0L, 9223090561878065866L, p7_step, p8_start))
+                            val t7: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), 0L, ld8((fp + 32)), ld8((fp + 40)), 0L, 9223090561878065871L, p7_step, p8_start))
                             l120_res = ((l120_res or t7) and 0xFFL)
                         }
                     } else {
                         ln = 806 // GrPrimatives.HC:806
                         tick(t)
-                        val t8: Long = f724_GrLineFat3(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), ld4s((p0_dc + 228L)), p8_start)
+                        val t8: Long = f729_GrLineFat3(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), ld4s((p0_dc + 228L)), p8_start)
                         if ((t8 != 0L)) {
                             ln = 807 // GrPrimatives.HC:807
                             l120_res = 1L
@@ -2152,7 +2152,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     }
                 } else {
                     ln = 810 // GrPrimatives.HC:810
-                    val t9: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), 9223090561878065865L, p7_step, p8_start))
+                    val t9: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), 9223090561878065870L, p7_step, p8_start))
                     l120_res = ((l120_res or t9) and 0xFFL)
                 }
             } while (false)
@@ -2179,7 +2179,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrPutChar3 (GrPrimatives.HC:821) */
-    fun f726_GrPutChar3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f731_GrPutChar3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2212,7 +2212,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrPrint3 (GrPrimatives.HC:828) */
-    fun f727_GrPrint3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, vaBase: Int, vaN: Int): Long {
+    fun f732_GrPrint3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, vaBase: Int, vaN: Int): Long {
         var ln = 0
         try {
             enter(t)
@@ -2242,7 +2242,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 834 // GrPrimatives.HC:834
             tick(t)
             val vb0 = push1(t, l56_buf)
-            val t1: Long = P.f369_GrPrint(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), s0, vb0, 1)
+            val t1: Long = P.f370_GrPrint(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), s0, vb0, 1)
             t.sp = vb0
             l64_res = t1
             ln = 835 // GrPrimatives.HC:835
@@ -2258,7 +2258,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrVPrint3 (GrPrimatives.HC:839) */
-    fun f728_GrVPrint3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, vaBase: Int, vaN: Int): Long {
+    fun f733_GrVPrint3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, vaBase: Int, vaN: Int): Long {
         var ln = 0
         try {
             enter(t)
@@ -2288,7 +2288,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 845 // GrPrimatives.HC:845
             tick(t)
             val vb1 = push1(t, l56_buf)
-            val t1: Long = P.f370_GrVPrint(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), s0, vb1, 1)
+            val t1: Long = P.f371_GrVPrint(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), s0, vb1, 1)
             t.sp = vb1
             l64_res = t1
             ln = 846 // GrPrimatives.HC:846
@@ -2304,7 +2304,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrEllipse3 (GrPrimatives.HC:852) */
-    fun f729_GrEllipse3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Double, a7: Long, a8: Double, a9: Double): Long {
+    fun f734_GrEllipse3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Double, a7: Long, a8: Double, a9: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -2367,7 +2367,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st8((fp + 104), (ld8((fp + 104)) - ld8((fp + 128))))
                 ln = 885 // GrPrimatives.HC:885
                 tick(t)
-                P.f336_R2P(t, (fp + 136), (fp + 144), ld8((fp + 88)).toDouble(), ld8((fp + 96)).toDouble())
+                P.f337_R2P(t, (fp + 136), (fp + 144), ld8((fp + 88)).toDouble(), ld8((fp + 96)).toDouble())
                 ln = 887 // GrPrimatives.HC:887
                 st8((fp + 88), f2i(((-p5_y_radius).toDouble() * l168_s)))
                 ln = 888 // GrPrimatives.HC:888
@@ -2384,7 +2384,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st8((fp + 104), (ld8((fp + 104)) - ld8((fp + 128))))
                 ln = 894 // GrPrimatives.HC:894
                 tick(t)
-                P.f336_R2P(t, (fp + 152), (fp + 160), ld8((fp + 88)).toDouble(), ld8((fp + 96)).toDouble())
+                P.f337_R2P(t, (fp + 152), (fp + 160), ld8((fp + 88)).toDouble(), ld8((fp + 96)).toDouble())
                 ln = 895 // GrPrimatives.HC:895
                 val t5: Double = ldf((fp + 152))
                 val t3: Double = f(nat(t, n_Sin, push1(t, bits((ldf((fp + 160)) - ldf((fp + 144)))))))
@@ -2392,7 +2392,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st8((fp + 152), bits((t5 * t4)))
                 ln = 897 // GrPrimatives.HC:897
                 tick(t)
-                val t6: Long = P.f353_Ellipse(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), f2i((ldf((fp + 136)) / 65536.0)), f2i((ldf((fp + 152)) / 65536.0)), 9223090561878065865L, (-ldf((fp + 144))), p7_step, p8_start_radians, p9_len_radians)
+                val t6: Long = P.f354_Ellipse(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), f2i((ldf((fp + 136)) / 65536.0)), f2i((ldf((fp + 152)) / 65536.0)), 9223090561878065870L, (-ldf((fp + 144))), p7_step, p8_start_radians, p9_len_radians)
                 l80_res = (t6 and 0xFFL)
                 ln = 899 // GrPrimatives.HC:899
                 val t7: Long = (p0_dc + 28L)
@@ -2400,7 +2400,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             } else {
                 ln = 901 // GrPrimatives.HC:901
                 tick(t)
-                val t8: Long = P.f353_Ellipse(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), p4_x_radius, p5_y_radius, 9223090561878065865L, p6_rot_angle, p7_step, p8_start_radians, p9_len_radians)
+                val t8: Long = P.f354_Ellipse(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), p4_x_radius, p5_y_radius, 9223090561878065870L, p6_rot_angle, p7_step, p8_start_radians, p9_len_radians)
                 l80_res = (t8 and 0xFFL)
             }
             ln = 903 // GrPrimatives.HC:903
@@ -2414,7 +2414,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrCircle3 (GrPrimatives.HC:906) */
-    fun f730_GrCircle3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Double, a7: Double): Long {
+    fun f735_GrCircle3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Double, a7: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -2430,12 +2430,12 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             if (((ld4s((p0_dc + 28L)) and 256L) != 0L)) {
                 ln = 910 // GrPrimatives.HC:910
                 tick(t)
-                val t0: Long = f729_GrEllipse3(t, p0_dc, p1_cx, p2_cy, p3_cz, p4_radius, p4_radius, 0.0, p5_step, p6_start_radians, p7_len_radians)
+                val t0: Long = f734_GrEllipse3(t, p0_dc, p1_cx, p2_cy, p3_cz, p4_radius, p4_radius, 0.0, p5_step, p6_start_radians, p7_len_radians)
                 t.depth--
                 return (t0 and 0xFFL)
             } else {
                 ln = 913 // GrPrimatives.HC:913
-                val t1: Long = nat(t, n_Circle, push(t, p0_dc, p1_cx, p2_cy, p3_cz, p4_radius, 9223090561878065865L, p5_step, bits(p6_start_radians), bits(p7_len_radians)))
+                val t1: Long = nat(t, n_Circle, push(t, p0_dc, p1_cx, p2_cy, p3_cz, p4_radius, 9223090561878065870L, p5_step, bits(p6_start_radians), bits(p7_len_radians)))
                 t.depth--
                 return (t1 and 0xFFL)
             }
@@ -2445,7 +2445,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrRegPoly3 (GrPrimatives.HC:917) */
-    fun f731_GrRegPoly3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Double, a8: Long, a9: Double, a10: Double): Long {
+    fun f736_GrRegPoly3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Double, a8: Long, a9: Double, a10: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -2509,7 +2509,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st8((fp + 112), (ld8((fp + 112)) - ld8((fp + 136))))
                 ln = 950 // GrPrimatives.HC:950
                 tick(t)
-                P.f336_R2P(t, (fp + 144), (fp + 152), ld8((fp + 96)).toDouble(), ld8((fp + 104)).toDouble())
+                P.f337_R2P(t, (fp + 144), (fp + 152), ld8((fp + 96)).toDouble(), ld8((fp + 104)).toDouble())
                 ln = 952 // GrPrimatives.HC:952
                 st8((fp + 96), f2i(((-p5_y_radius).toDouble() * l176_s)))
                 ln = 953 // GrPrimatives.HC:953
@@ -2526,7 +2526,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st8((fp + 112), (ld8((fp + 112)) - ld8((fp + 136))))
                 ln = 959 // GrPrimatives.HC:959
                 tick(t)
-                P.f336_R2P(t, (fp + 160), (fp + 168), ld8((fp + 96)).toDouble(), ld8((fp + 104)).toDouble())
+                P.f337_R2P(t, (fp + 160), (fp + 168), ld8((fp + 96)).toDouble(), ld8((fp + 104)).toDouble())
                 ln = 960 // GrPrimatives.HC:960
                 val t5: Double = ldf((fp + 160))
                 val t3: Double = f(nat(t, n_Sin, push1(t, bits((ldf((fp + 168)) - ldf((fp + 152)))))))
@@ -2534,7 +2534,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st8((fp + 160), bits((t5 * t4)))
                 ln = 962 // GrPrimatives.HC:962
                 tick(t)
-                val t6: Long = P.f354_RegPoly(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), f2i((ldf((fp + 144)) / 65536.0)), f2i((ldf((fp + 160)) / 65536.0)), p6_sides, 9223090561878065865L, (-ldf((fp + 152))), p8_step, p9_start_radians, p10_len_radians)
+                val t6: Long = P.f355_RegPoly(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), f2i((ldf((fp + 144)) / 65536.0)), f2i((ldf((fp + 160)) / 65536.0)), p6_sides, 9223090561878065870L, (-ldf((fp + 152))), p8_step, p9_start_radians, p10_len_radians)
                 l88_res = (t6 and 0xFFL)
                 ln = 965 // GrPrimatives.HC:965
                 val t7: Long = (p0_dc + 28L)
@@ -2542,7 +2542,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             } else {
                 ln = 967 // GrPrimatives.HC:967
                 tick(t)
-                val t8: Long = P.f354_RegPoly(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), p4_x_radius, p5_y_radius, p6_sides, 9223090561878065865L, p7_rot_angle, p8_step, p9_start_radians, p10_len_radians)
+                val t8: Long = P.f355_RegPoly(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), p4_x_radius, p5_y_radius, p6_sides, 9223090561878065870L, p7_rot_angle, p8_step, p9_start_radians, p10_len_radians)
                 l88_res = (t8 and 0xFFL)
             }
             ln = 969 // GrPrimatives.HC:969
@@ -2556,7 +2556,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrFloodFill3 (GrPrimatives.HC:972) */
-    fun f732_GrFloodFill3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f737_GrFloodFill3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2599,7 +2599,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     st4(t1, (ld4s(t1) and -513L))
                     ln = 987 // GrPrimatives.HC:987
                     tick(t)
-                    val t2: Long = f709_GrFloodFill(t, p0_dc, ld8((fp + 56)), ld8((fp + 64)), p4_not_color, ld8((fp + 72)), ld8((p0_dc + 392L)))
+                    val t2: Long = f714_GrFloodFill(t, p0_dc, ld8((fp + 56)), ld8((fp + 64)), p4_not_color, ld8((fp + 72)), ld8((p0_dc + 392L)))
                     l40_res = t2
                     ln = 988 // GrPrimatives.HC:988
                     if (((ld4s((p0_dc + 28L)) and 1024L) != 0L)) {
@@ -2609,7 +2609,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 991 // GrPrimatives.HC:991
                 tick(t)
-                val t3: Long = f709_GrFloodFill(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), p4_not_color, ld8((fp + 24)), ld8((p0_dc + 392L)))
+                val t3: Long = f714_GrFloodFill(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), p4_not_color, ld8((fp + 24)), ld8((p0_dc + 392L)))
                 l40_res = t3
             } while (false)
             ln = 993 // GrPrimatives.HC:993
@@ -2625,7 +2625,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Adam/Gr/GrPrimatives.HC#0 (GrPrimatives.HC:999) */
-    fun f733_init_C__Adam_Gr_GrPrimatives_HC_0(t: Task): Long {
+    fun f738_init_C__Adam_Gr_GrPrimatives_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2637,7 +2637,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrBlot3 (GrPrimatives.HC:1000) */
-    fun f734_GrBlot3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f739_GrBlot3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2867,7 +2867,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                     if ((((ld4s(((fp + 304) + 4L)) != l352_last_x) || (ld4s(((fp + 312) + 4L)) != l360_last_y)) || (l376_first != 0L))) {
                                         ln = 1085 // GrPrimatives.HC:1085
                                         tick(t)
-                                        val t9: Long = f707_GrPeek(t, p4_img, ld4s(((fp + 264) + 4L)), ld4s(((fp + 272) + 4L)))
+                                        val t9: Long = f712_GrPeek(t, p4_img, ld4s(((fp + 264) + 4L)), ld4s(((fp + 272) + 4L)))
                                         l48_color = t9
                                         if ((t9 >= 0L)) {
                                             ln = 1086 // GrPrimatives.HC:1086
@@ -2882,11 +2882,11 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                         st8((p0_dc + 400L), ld4s(((fp + 320) + 4L)))
                                                         ln = 1091 // GrPrimatives.HC:1091
                                                         tick(t)
-                                                        f706_GrPlot1(t, p0_dc, ld4s(((fp + 304) + 4L)), ld4s(((fp + 312) + 4L)))
+                                                        f711_GrPlot1(t, p0_dc, ld4s(((fp + 304) + 4L)), ld4s(((fp + 312) + 4L)))
                                                     } else {
                                                         ln = 1093 // GrPrimatives.HC:1093
                                                         tick(t)
-                                                        f705_GrPlot(t, p0_dc, ld4s(((fp + 304) + 4L)), ld4s(((fp + 312) + 4L)))
+                                                        f710_GrPlot(t, p0_dc, ld4s(((fp + 304) + 4L)), ld4s(((fp + 312) + 4L)))
                                                     }
                                                 }
                                             } else {
@@ -2900,11 +2900,11 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                         st8((p0_dc + 400L), ld4s(((fp + 320) + 4L)))
                                                         ln = 1100 // GrPrimatives.HC:1100
                                                         tick(t)
-                                                        f706_GrPlot1(t, p0_dc, ld4s(((fp + 304) + 4L)), ld4s(((fp + 312) + 4L)))
+                                                        f711_GrPlot1(t, p0_dc, ld4s(((fp + 304) + 4L)), ld4s(((fp + 312) + 4L)))
                                                     } else {
                                                         ln = 1102 // GrPrimatives.HC:1102
                                                         tick(t)
-                                                        f705_GrPlot(t, p0_dc, ld4s(((fp + 304) + 4L)), ld4s(((fp + 312) + 4L)))
+                                                        f710_GrPlot(t, p0_dc, ld4s(((fp + 304) + 4L)), ld4s(((fp + 312) + 4L)))
                                                     }
                                                 }
                                             }
@@ -3082,7 +3082,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             if ((((ld4s(((fp + 200) + 4L)) != l352_last_x) || (ld4s(((fp + 208) + 4L)) != l360_last_y)) || (l376_first != 0L))) {
                                 ln = 1175 // GrPrimatives.HC:1175
                                 tick(t)
-                                val t19: Long = f707_GrPeek(t, p4_img, ld4s(((fp + 264) + 4L)), ld4s(((fp + 272) + 4L)))
+                                val t19: Long = f712_GrPeek(t, p4_img, ld4s(((fp + 264) + 4L)), ld4s(((fp + 272) + 4L)))
                                 l48_color = t19
                                 if ((t19 >= 0L)) {
                                     ln = 1176 // GrPrimatives.HC:1176
@@ -3097,11 +3097,11 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                 st8((p0_dc + 400L), ld4s(((fp + 216) + 4L)))
                                                 ln = 1181 // GrPrimatives.HC:1181
                                                 tick(t)
-                                                f706_GrPlot1(t, p0_dc, ld4s(((fp + 200) + 4L)), ld4s(((fp + 208) + 4L)))
+                                                f711_GrPlot1(t, p0_dc, ld4s(((fp + 200) + 4L)), ld4s(((fp + 208) + 4L)))
                                             } else {
                                                 ln = 1183 // GrPrimatives.HC:1183
                                                 tick(t)
-                                                f705_GrPlot(t, p0_dc, ld4s(((fp + 200) + 4L)), ld4s(((fp + 208) + 4L)))
+                                                f710_GrPlot(t, p0_dc, ld4s(((fp + 200) + 4L)), ld4s(((fp + 208) + 4L)))
                                             }
                                         }
                                     } else {
@@ -3115,11 +3115,11 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                 st8((p0_dc + 400L), ld4s(((fp + 216) + 4L)))
                                                 ln = 1190 // GrPrimatives.HC:1190
                                                 tick(t)
-                                                f706_GrPlot1(t, p0_dc, ld4s(((fp + 200) + 4L)), ld4s(((fp + 208) + 4L)))
+                                                f711_GrPlot1(t, p0_dc, ld4s(((fp + 200) + 4L)), ld4s(((fp + 208) + 4L)))
                                             } else {
                                                 ln = 1192 // GrPrimatives.HC:1192
                                                 tick(t)
-                                                f705_GrPlot(t, p0_dc, ld4s(((fp + 200) + 4L)), ld4s(((fp + 208) + 4L)))
+                                                f710_GrPlot(t, p0_dc, ld4s(((fp + 200) + 4L)), ld4s(((fp + 208) + 4L)))
                                             }
                                         }
                                     }
@@ -3173,7 +3173,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Adam/Gr/GrPrimatives.HC#1 (GrPrimatives.HC:1213) */
-    fun f735_init_C__Adam_Gr_GrPrimatives_HC_1(t: Task): Long {
+    fun f740_init_C__Adam_Gr_GrPrimatives_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -3185,7 +3185,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr2Bezier3 (GrPrimatives.HC:1217) */
-    fun f736_Gr2Bezier3(t: Task, a0: Long, a1: Long): Long {
+    fun f741_Gr2Bezier3(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3270,7 +3270,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     st4(t3, (ld4s(t3) and -513L))
                     ln = 1249 // GrPrimatives.HC:1249
                     tick(t)
-                    val t4: Long = P.f356_Bezier2(t, p0_dc, l72_ctrl3, 9223090561878065865L, 1L)
+                    val t4: Long = P.f357_Bezier2(t, p0_dc, l72_ctrl3, 9223090561878065870L, 1L)
                     l16_res = (t4 and 0xFFL)
                     ln = 1250 // GrPrimatives.HC:1250
                     if (((ld4s((p0_dc + 28L)) and 1024L) != 0L)) {
@@ -3280,7 +3280,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 1254 // GrPrimatives.HC:1254
                 tick(t)
-                val t5: Long = P.f356_Bezier2(t, p0_dc, p1_ctrl, 9223090561878065865L, 1L)
+                val t5: Long = P.f357_Bezier2(t, p0_dc, p1_ctrl, 9223090561878065870L, 1L)
                 l16_res = ((l16_res or t5) and 0xFFL)
             } while (false)
             ln = 1256 // GrPrimatives.HC:1256
@@ -3300,7 +3300,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr3Bezier3 (GrPrimatives.HC:1262) */
-    fun f737_Gr3Bezier3(t: Task, a0: Long, a1: Long): Long {
+    fun f742_Gr3Bezier3(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3385,7 +3385,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     st4(t3, (ld4s(t3) and -513L))
                     ln = 1294 // GrPrimatives.HC:1294
                     tick(t)
-                    val t4: Long = P.f357_Bezier3(t, p0_dc, l72_ctrl3, 9223090561878065865L, 1L)
+                    val t4: Long = P.f358_Bezier3(t, p0_dc, l72_ctrl3, 9223090561878065870L, 1L)
                     l16_res = (t4 and 0xFFL)
                     ln = 1295 // GrPrimatives.HC:1295
                     if (((ld4s((p0_dc + 28L)) and 1024L) != 0L)) {
@@ -3395,7 +3395,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 1299 // GrPrimatives.HC:1299
                 tick(t)
-                val t5: Long = P.f357_Bezier3(t, p0_dc, p1_ctrl, 9223090561878065865L, 1L)
+                val t5: Long = P.f358_Bezier3(t, p0_dc, p1_ctrl, 9223090561878065870L, 1L)
                 l16_res = ((l16_res or t5) and 0xFFL)
             } while (false)
             ln = 1301 // GrPrimatives.HC:1301
@@ -3415,7 +3415,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr2BSpline3 (GrPrimatives.HC:1307) */
-    fun f738_Gr2BSpline3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f743_Gr2BSpline3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3504,7 +3504,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     st4(t3, (ld4s(t3) and -513L))
                     ln = 1339 // GrPrimatives.HC:1339
                     tick(t)
-                    val t4: Long = P.f358_BSpline2(t, p0_dc, l88_ctrl3, p2_cnt, 9223090561878065865L, p3_closed)
+                    val t4: Long = P.f359_BSpline2(t, p0_dc, l88_ctrl3, p2_cnt, 9223090561878065870L, p3_closed)
                     l32_res = (t4 and 0xFFL)
                     ln = 1340 // GrPrimatives.HC:1340
                     if (((ld4s((p0_dc + 28L)) and 1024L) != 0L)) {
@@ -3514,7 +3514,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 1344 // GrPrimatives.HC:1344
                 tick(t)
-                val t5: Long = P.f358_BSpline2(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065865L, p3_closed)
+                val t5: Long = P.f359_BSpline2(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065870L, p3_closed)
                 l32_res = ((l32_res or t5) and 0xFFL)
             } while (false)
             ln = 1346 // GrPrimatives.HC:1346
@@ -3534,7 +3534,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr3BSpline3 (GrPrimatives.HC:1352) */
-    fun f739_Gr3BSpline3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f744_Gr3BSpline3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3623,7 +3623,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     st4(t3, (ld4s(t3) and -513L))
                     ln = 1384 // GrPrimatives.HC:1384
                     tick(t)
-                    val t4: Long = P.f359_BSpline3(t, p0_dc, l88_ctrl3, p2_cnt, 9223090561878065865L, p3_closed)
+                    val t4: Long = P.f360_BSpline3(t, p0_dc, l88_ctrl3, p2_cnt, 9223090561878065870L, p3_closed)
                     l32_res = (t4 and 0xFFL)
                     ln = 1385 // GrPrimatives.HC:1385
                     if (((ld4s((p0_dc + 28L)) and 1024L) != 0L)) {
@@ -3633,7 +3633,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 1389 // GrPrimatives.HC:1389
                 tick(t)
-                val t5: Long = P.f359_BSpline3(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065865L, p3_closed)
+                val t5: Long = P.f360_BSpline3(t, p0_dc, p1_ctrl, p2_cnt, 9223090561878065870L, p3_closed)
                 l32_res = ((l32_res or t5) and 0xFFL)
             } while (false)
             ln = 1391 // GrPrimatives.HC:1391
@@ -3653,7 +3653,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrFillTri0 (GrPrimatives.HC:1397) */
-    fun f740_GrFillTri0(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f745_GrFillTri0(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -4660,7 +4660,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Adam/Gr/GrPrimatives.HC#2 (GrPrimatives.HC:1) */
-    fun f741_init_C__Adam_Gr_GrPrimatives_HC_2(t: Task): Long {
+    fun f746_init_C__Adam_Gr_GrPrimatives_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -4672,45 +4672,45 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_GrClamp(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L))
-            704 -> f704_DCClipLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L))
-            705 -> f705_GrPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            706 -> f706_GrPlot1(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            707 -> f707_GrPeek(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            708 -> f708_GrFloodFillRay(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            709 -> f709_GrFloodFill(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
-            710 -> f710_GrFillSemiCircle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
-            711 -> f711_GrFillCircle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            712 -> f712_GrPlot3B(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            713 -> f713_GrPlot3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            714 -> f714_GrLinePlot0(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            715 -> f715_GrLinePlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            716 -> f716_GrLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L))
-            717 -> f717_GrCircle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L)), f((if (n > 6) st[base + 6] else 0L)))
-            718 -> f718_GrEllipse(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L)), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), f((if (n > 8) st[base + 8] else 0L)))
-            719 -> f719_GrRegPoly(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), f((if (n > 6) st[base + 6] else 0L)), (if (n > 7) st[base + 7] else 0L), f((if (n > 8) st[base + 8] else 0L)), f((if (n > 9) st[base + 9] else 0L)))
-            720 -> f720_Gr2Bezier(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            721 -> f721_Gr3Bezier(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            722 -> f722_Gr2BSpline(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            723 -> f723_Gr3BSpline(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            724 -> f724_GrLineFat3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), (if (n > 8) st[base + 8] else 0L))
-            725 -> f725_GrLine3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), (if (n > 8) st[base + 8] else 0L))
-            726 -> f726_GrPutChar3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            727 -> f727_GrPrint3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), base + 5, maxOf(n - 5, 0))
-            728 -> f728_GrVPrint3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), base + 5, maxOf(n - 5, 0))
-            729 -> f729_GrEllipse3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), f((if (n > 6) st[base + 6] else 0L)), (if (n > 7) st[base + 7] else 0L), f((if (n > 8) st[base + 8] else 0L)), f((if (n > 9) st[base + 9] else 0L)))
-            730 -> f730_GrCircle3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), f((if (n > 6) st[base + 6] else 0L)), f((if (n > 7) st[base + 7] else 0L)))
-            731 -> f731_GrRegPoly3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), (if (n > 8) st[base + 8] else 0L), f((if (n > 9) st[base + 9] else 0L)), f((if (n > 10) st[base + 10] else 0L)))
-            732 -> f732_GrFloodFill3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            733 -> f733_init_C__Adam_Gr_GrPrimatives_HC_0(t)
-            734 -> f734_GrBlot3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            735 -> f735_init_C__Adam_Gr_GrPrimatives_HC_1(t)
-            736 -> f736_Gr2Bezier3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            737 -> f737_Gr3Bezier3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            738 -> f738_Gr2BSpline3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            739 -> f739_Gr3BSpline3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            740 -> f740_GrFillTri0(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            741 -> f741_init_C__Adam_Gr_GrPrimatives_HC_2(t)
+            708 -> f708_GrClamp(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L))
+            709 -> f709_DCClipLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L))
+            710 -> f710_GrPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            711 -> f711_GrPlot1(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            712 -> f712_GrPeek(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            713 -> f713_GrFloodFillRay(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            714 -> f714_GrFloodFill(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
+            715 -> f715_GrFillSemiCircle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
+            716 -> f716_GrFillCircle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            717 -> f717_GrPlot3B(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            718 -> f718_GrPlot3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            719 -> f719_GrLinePlot0(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            720 -> f720_GrLinePlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            721 -> f721_GrLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L))
+            722 -> f722_GrCircle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L)), f((if (n > 6) st[base + 6] else 0L)))
+            723 -> f723_GrEllipse(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L)), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), f((if (n > 8) st[base + 8] else 0L)))
+            724 -> f724_GrRegPoly(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), f((if (n > 6) st[base + 6] else 0L)), (if (n > 7) st[base + 7] else 0L), f((if (n > 8) st[base + 8] else 0L)), f((if (n > 9) st[base + 9] else 0L)))
+            725 -> f725_Gr2Bezier(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            726 -> f726_Gr3Bezier(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            727 -> f727_Gr2BSpline(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            728 -> f728_Gr3BSpline(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            729 -> f729_GrLineFat3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), (if (n > 8) st[base + 8] else 0L))
+            730 -> f730_GrLine3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), (if (n > 8) st[base + 8] else 0L))
+            731 -> f731_GrPutChar3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            732 -> f732_GrPrint3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), base + 5, maxOf(n - 5, 0))
+            733 -> f733_GrVPrint3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), base + 5, maxOf(n - 5, 0))
+            734 -> f734_GrEllipse3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), f((if (n > 6) st[base + 6] else 0L)), (if (n > 7) st[base + 7] else 0L), f((if (n > 8) st[base + 8] else 0L)), f((if (n > 9) st[base + 9] else 0L)))
+            735 -> f735_GrCircle3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), f((if (n > 6) st[base + 6] else 0L)), f((if (n > 7) st[base + 7] else 0L)))
+            736 -> f736_GrRegPoly3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), (if (n > 8) st[base + 8] else 0L), f((if (n > 9) st[base + 9] else 0L)), f((if (n > 10) st[base + 10] else 0L)))
+            737 -> f737_GrFloodFill3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            738 -> f738_init_C__Adam_Gr_GrPrimatives_HC_0(t)
+            739 -> f739_GrBlot3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            740 -> f740_init_C__Adam_Gr_GrPrimatives_HC_1(t)
+            741 -> f741_Gr2Bezier3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            742 -> f742_Gr3Bezier3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            743 -> f743_Gr2BSpline3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            744 -> f744_Gr3BSpline3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            745 -> f745_GrFillTri0(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            746 -> f746_init_C__Adam_Gr_GrPrimatives_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -4722,7 +4722,7 @@ class N_Adam_Gr_GrPrimatives(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746)
         private val NAMES = arrayOf("GrClamp", "DCClipLine", "GrPlot", "GrPlot1", "GrPeek", "GrFloodFillRay", "GrFloodFill", "GrFillSemiCircle", "GrFillCircle", "GrPlot3B", "GrPlot3", "GrLinePlot0", "GrLinePlot", "GrLine", "GrCircle", "GrEllipse", "GrRegPoly", "Gr2Bezier", "Gr3Bezier", "Gr2BSpline", "Gr3BSpline", "GrLineFat3", "GrLine3", "GrPutChar3", "GrPrint3", "GrVPrint3", "GrEllipse3", "GrCircle3", "GrRegPoly3", "GrFloodFill3", "\$init:C:/Adam/Gr/GrPrimatives.HC#0", "GrBlot3", "\$init:C:/Adam/Gr/GrPrimatives.HC#1", "Gr2Bezier3", "Gr3Bezier3", "Gr2BSpline3", "Gr3BSpline3", "GrFillTri0", "\$init:C:/Adam/Gr/GrPrimatives.HC#2")
         private val FILES = arrayOf<String>("C:/Adam/Gr/GrPrimatives.HC")
     }

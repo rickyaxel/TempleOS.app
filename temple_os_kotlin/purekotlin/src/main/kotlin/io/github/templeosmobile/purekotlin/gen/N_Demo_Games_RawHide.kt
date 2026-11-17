@@ -34,6 +34,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_Yield = rt.vm.natives.find("Yield")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
@@ -151,7 +152,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/RawHide.HC#0 (RawHide.HC:3) */
-    fun f703_init_C__Demo_Games_RawHide_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_RawHide_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -165,7 +166,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/RawHide.HC#1 (RawHide.HC:4) */
-    fun f704_init_C__Demo_Games_RawHide_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_RawHide_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -179,7 +180,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -189,7 +190,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/RawHide.HC#2 (RawHide.HC:44) */
-    fun f706_init_C__Demo_Games_RawHide_HC_2(t: Task): Long {
+    fun f711_init_C__Demo_Games_RawHide_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -214,7 +215,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC RiverNew (RawHide.HC:67) */
-    fun f707_RiverNew(t: Task) {
+    fun f712_RiverNew(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -239,7 +240,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC RiverMake (RawHide.HC:76) */
-    fun f708_RiverMake(t: Task) {
+    fun f713_RiverMake(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -306,7 +307,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             }
             ln = 98 // RawHide.HC:98
             tick(t)
-            P.f441_Sprite3B(t, ld8(g_map_dc), ld8(g_waterfall_x), ld8(g_waterfall_y), 0L, b12)
+            P.f446_Sprite3B(t, ld8(g_map_dc), ld8(g_waterfall_x), ld8(g_waterfall_y), 0L, b12)
             ln = 101 // RawHide.HC:101
             st8((fp + 8), 0L)
             ln = 102 // RawHide.HC:102
@@ -321,7 +322,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     st4((ld8(g_map_dc) + 228L), (ld4s((ld8(g_r_width) + (l16_y * 4L))) + 10L))
                     ln = 106 // RawHide.HC:106
                     tick(t)
-                    P.f393_GrPlot3(t, ld8(g_map_dc), (ld4s((ld8(g_r_x) + (l16_y * 4L))) + ld4s(((fp + 8) + 4L))), l16_y, 0L)
+                    P.f394_GrPlot3(t, ld8(g_map_dc), (ld4s((ld8(g_r_x) + (l16_y * 4L))) + ld4s(((fp + 8) + 4L))), l16_y, 0L)
                 }
                 ln = 108 // RawHide.HC:108
                 val t14: Long = ld8((fp + 8))
@@ -342,7 +343,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st4((ld8(g_map_dc) + 228L), ld4s((ld8(g_r_width) + (l16_y * 4L))))
                 ln = 115 // RawHide.HC:115
                 tick(t)
-                P.f393_GrPlot3(t, ld8(g_map_dc), ld4s((ld8(g_r_x) + (l16_y * 4L))), l16_y, 0L)
+                P.f394_GrPlot3(t, ld8(g_map_dc), ld4s((ld8(g_r_x) + (l16_y * 4L))), l16_y, 0L)
                 ln = 112 // RawHide.HC:112
                 l16_y = (l16_y + 1L)
                 tick(t)
@@ -354,7 +355,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC RiverDel (RawHide.HC:119) */
-    fun f709_RiverDel(t: Task) {
+    fun f714_RiverDel(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -372,7 +373,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC RiverDropsDel (RawHide.HC:135) */
-    fun f710_RiverDropsDel(t: Task) {
+    fun f715_RiverDropsDel(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -400,7 +401,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC RiverDropsNext (RawHide.HC:144) */
-    fun f711_RiverDropsNext(t: Task, a0: Long) {
+    fun f716_RiverDropsNext(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -504,7 +505,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC RiverDropsDraw (RawHide.HC:178) */
-    fun f712_RiverDropsDraw(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f717_RiverDropsDraw(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -550,7 +551,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 val t5: Long = ld8(g_waterfall_y)
                 val t3: Double = ldf(g_waterfall_tf)
                 tick(t)
-                val t2: Double = P.f480_Saw(t, (l32_t - ldf((ld8(g_wfd_t0) + (l24_i * 8L)))), ldf(g_waterfall_tf))
+                val t2: Double = P.f485_Saw(t, (l32_t - ldf((ld8(g_wfd_t0) + (l24_i * 8L)))), ldf(g_waterfall_tf))
                 tick(t)
                 val t4: Double = P.f102_Sqr(t, (t3 * t2))
                 ln = 195 // RawHide.HC:195
@@ -565,7 +566,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (RawHide.HC:200) */
-    fun f713_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f718_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -610,7 +611,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_GrBlot, push4(t, p1_dc, (-l40_cx), (-l48_cy), ld8(g_map_dc)))
             ln = 220 // RawHide.HC:220
             tick(t)
-            f712_RiverDropsDraw(t, p1_dc, l40_cx, l48_cy)
+            f717_RiverDropsDraw(t, p1_dc, l40_cx, l48_cy)
             ln = 222 // RawHide.HC:222
             l24_i = 0L
             loop0@ while ((l24_i < 100L)) {
@@ -623,11 +624,10 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         st4(t2, (ld4s(t2) or 1536L))
                         ln = 226 // RawHide.HC:226
                         tick(t)
-                        P.f314_DCSymmetrySet(t, p1_dc, (ld4s((((ld8(g_a) + (l24_i * 56L)) + 8L) + 4L)) - l40_cx), 0L, (ld4s((((ld8(g_a) + (l24_i * 56L)) + 8L) + 4L)) - l40_cx), 1L)
+                        P.f315_DCSymmetrySet(t, p1_dc, (ld4s((((ld8(g_a) + (l24_i * 56L)) + 8L) + 4L)) - l40_cx), 0L, (ld4s((((ld8(g_a) + (l24_i * 56L)) + 8L) + 4L)) - l40_cx), 1L)
                     }
                     ln = 228 // RawHide.HC:228
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, (ld4s((((ld8(g_a) + (l24_i * 56L)) + 8L) + 4L)) - l40_cx), (ld4s((((ld8(g_a) + (l24_i * 56L)) + 16L) + 4L)) - l48_cy), 0L, ld8((ld8(((ld8(g_a) + (l24_i * 56L)) + 40L)) + (((l32_frame + ld1u(((ld8(g_a) + (l24_i * 56L)) + 53L))) and 3L) * 8L))), 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, (ld4s((((ld8(g_a) + (l24_i * 56L)) + 8L) + 4L)) - l40_cx), (ld4s((((ld8(g_a) + (l24_i * 56L)) + 16L) + 4L)) - l48_cy), 0L, ld8((ld8(((ld8(g_a) + (l24_i * 56L)) + 40L)) + (((l32_frame + ld1u(((ld8(g_a) + (l24_i * 56L)) + 53L))) and 3L) * 8L))), 0L))
                     ln = 230 // RawHide.HC:230
                     val t3: Long = (p1_dc + 28L)
                     st4(t3, (ld4s(t3) and -1537L))
@@ -654,11 +654,10 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st4(t4, (ld4s(t4) or 1536L))
                 ln = 239 // RawHide.HC:239
                 tick(t)
-                P.f314_DCSymmetrySet(t, p1_dc, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), 0L, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), 1L)
+                P.f315_DCSymmetrySet(t, p1_dc, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), 0L, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), 1L)
             }
             ln = 242 // RawHide.HC:242
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), ((ld8((P.g_ms + 8L)) - ld8((p0_task + 232L))) - ld8((p0_task + 264L))), 0L, ld8((g_horse_imgs + ((l32_frame and 3L) * 8L))), 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), ((ld8((P.g_ms + 8L)) - ld8((p0_task + 232L))) - ld8((p0_task + 264L))), 0L, ld8((g_horse_imgs + ((l32_frame and 3L) * 8L))), 0L))
             ln = 244 // RawHide.HC:244
             val t5: Long = (p1_dc + 28L)
             st4(t5, (ld4s(t5) and -1537L))
@@ -677,7 +676,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     ln = 251 // RawHide.HC:251
                     tick(t)
                     val vb0 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, (((ld8((p0_task + 224L)) - 112L) shr 1) - ld8((p0_task + 256L))), (((ld8((p0_task + 248L)) - 8L) shr 1) - ld8((p0_task + 264L))), s2, vb0, 0)
+                    P.f370_GrPrint(t, p1_dc, (((ld8((p0_task + 224L)) - 112L) shr 1) - ld8((p0_task + 256L))), (((ld8((p0_task + 248L)) - 8L) shr 1) - ld8((p0_task + 264L))), s2, vb0, 0)
                     t.sp = vb0
                 }
             } else {
@@ -690,7 +689,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 258 // RawHide.HC:258
             tick(t)
             val vb1 = push3(t, ld8(g_outside_cnt), bits(l16_t), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), (-ld8((p0_task + 264L))), s3, vb1, 3)
+            P.f370_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), (-ld8((p0_task + 264L))), s3, vb1, 3)
             t.sp = vb1
             t.depth--
             return
@@ -698,7 +697,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC BuddySel (RawHide.HC:263) */
-    fun f714_BuddySel(t: Task, a0: Long) {
+    fun f719_BuddySel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -744,7 +743,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC RedrawGate (RawHide.HC:281) */
-    fun f715_RedrawGate(t: Task) {
+    fun f720_RedrawGate(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -787,47 +786,47 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st4((ld8(g_map_dc) + 160L), 0L)
             ln = 299 // RawHide.HC:299
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, (l8_x1 + l24_dx), (l16_y1 + l32_dy), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, (l8_x1 + l24_dx), (l16_y1 + l32_dy), 1L, 0L)
             ln = 300 // RawHide.HC:300
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, l8_x1, (l16_y1 - 7L), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, l8_x1, (l16_y1 - 7L), 1L, 0L)
             ln = 301 // RawHide.HC:301
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 + l24_dx), (l16_y1 + l32_dy), (l8_x1 + l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 + l24_dx), (l16_y1 + l32_dy), (l8_x1 + l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
             ln = 302 // RawHide.HC:302
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), l8_x1, (l16_y1 - 7L), (l8_x1 + l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), l8_x1, (l16_y1 - 7L), (l8_x1 + l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
             ln = 303 // RawHide.HC:303
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, (l8_x1 + l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), l8_x1, l16_y1, (l8_x1 + l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
             ln = 304 // RawHide.HC:304
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), l8_x1, (l16_y1 - 7L), (l8_x1 + l24_dx), (l16_y1 + l32_dy), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), l8_x1, (l16_y1 - 7L), (l8_x1 + l24_dx), (l16_y1 + l32_dy), 1L, 0L)
             ln = 306 // RawHide.HC:306
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), l16_y1, ((l8_x1 + 45L) - l24_dx), (l16_y1 + l32_dy), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), l16_y1, ((l8_x1 + 45L) - l24_dx), (l16_y1 + l32_dy), 1L, 0L)
             ln = 307 // RawHide.HC:307
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), l16_y1, (l8_x1 + 45L), (l16_y1 - 7L), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), l16_y1, (l8_x1 + 45L), (l16_y1 - 7L), 1L, 0L)
             ln = 308 // RawHide.HC:308
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), ((l8_x1 + 45L) - l24_dx), (l16_y1 + l32_dy), ((l8_x1 + 45L) - l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), ((l8_x1 + 45L) - l24_dx), (l16_y1 + l32_dy), ((l8_x1 + 45L) - l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
             ln = 309 // RawHide.HC:309
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), (l16_y1 - 7L), ((l8_x1 + 45L) - l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), (l16_y1 - 7L), ((l8_x1 + 45L) - l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
             ln = 310 // RawHide.HC:310
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), l16_y1, ((l8_x1 + 45L) - l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), l16_y1, ((l8_x1 + 45L) - l24_dx), ((l16_y1 + l32_dy) - 7L), 1L, 0L)
             ln = 311 // RawHide.HC:311
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), (l16_y1 - 7L), ((l8_x1 + 45L) - l24_dx), (l16_y1 + l32_dy), 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), (l8_x1 + 45L), (l16_y1 - 7L), ((l8_x1 + 45L) - l24_dx), (l16_y1 + l32_dy), 1L, 0L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "RedrawGate", ln) }
     }
 
     /** HolyC CheckMap (RawHide.HC:314) */
-    fun f716_CheckMap(t: Task, a0: Long, a1: Long): Long {
+    fun f721_CheckMap(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -880,7 +879,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC AnimateTask (RawHide.HC:329) */
-    fun f717_AnimateTask(t: Task, a0: Long) {
+    fun f722_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -935,7 +934,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 }
                 ln = 345 // RawHide.HC:345
                 tick(t)
-                f715_RedrawGate(t)
+                f720_RedrawGate(t)
                 ln = 346 // RawHide.HC:346
                 l8_i = 0L
                 loop2@ while ((l8_i < 100L)) {
@@ -976,7 +975,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         if (((ld1u((l160_tmpa1 + 54L)) != 0L) || (l8_i == mods(l88_updates, 100L)))) {
                             ln = 364 // RawHide.HC:364
                             tick(t)
-                            f714_BuddySel(t, l8_i)
+                            f719_BuddySel(t, l8_i)
                             ln = 365 // RawHide.HC:365
                             l160_tmpa1 = (ld8(g_a) + (ld4u((l152_tmpa + 48L)) * 56L))
                         }
@@ -1042,7 +1041,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         }
                         ln = 396 // RawHide.HC:396
                         tick(t)
-                        val t24: Long = f716_CheckMap(t, ((ld8((l152_tmpa + 8L)) + ld8((l152_tmpa + 24L))) shr 32), ((ld8((l152_tmpa + 16L)) + ld8((l152_tmpa + 32L))) shr 32))
+                        val t24: Long = f721_CheckMap(t, ((ld8((l152_tmpa + 8L)) + ld8((l152_tmpa + 24L))) shr 32), ((ld8((l152_tmpa + 16L)) + ld8((l152_tmpa + 32L))) shr 32))
                         if ((t24 != 0L)) {
                             ln = 397 // RawHide.HC:397
                             val t25: Long = (l152_tmpa + 8L)
@@ -1105,7 +1104,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 if (((l88_updates and 15L) == 0L)) {
                     ln = 420 // RawHide.HC:420
                     tick(t)
-                    f711_RiverDropsNext(t, p0_parent)
+                    f716_RiverDropsNext(t, p0_parent)
                 }
                 ln = 422 // RawHide.HC:422
                 if (((ldf(g_tf) == 0.0) && (ld8(g_outside_cnt) == 0L))) {
@@ -1162,30 +1161,30 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC SongTask (RawHide.HC:449) */
-    fun f718_SongTask(t: Task, a0: Long) {
+    fun f723_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 451 // RawHide.HC:451
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 452 // RawHide.HC:452
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 453 // RawHide.HC:453
             loop0@ while ((1L != 0L)) {
                 ln = 454 // RawHide.HC:454
                 tick(t)
-                P.f494_Play(t, s4, 0L)
+                P.f499_Play(t, s4, 0L)
                 ln = 455 // RawHide.HC:455
                 tick(t)
-                P.f494_Play(t, s5, 0L)
+                P.f499_Play(t, s5, 0L)
                 ln = 456 // RawHide.HC:456
                 tick(t)
-                P.f494_Play(t, s6, 0L)
+                P.f499_Play(t, s6, 0L)
                 ln = 457 // RawHide.HC:457
                 tick(t)
-                P.f494_Play(t, s6, 0L)
+                P.f499_Play(t, s6, 0L)
                 tick(t)
             }
             t.depth--
@@ -1194,27 +1193,26 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ReInit (RawHide.HC:461) */
-    fun f719_ReInit(t: Task) {
+    fun f724_ReInit(t: Task) {
         var ln = 0
         try {
             enter(t)
             var l0_i: Long = 0L
             ln = 465 // RawHide.HC:465
             tick(t)
-            f710_RiverDropsDel(t)
+            f715_RiverDropsDel(t)
             ln = 466 // RawHide.HC:466
             st4((ld8(g_map_dc) + 160L), 10L)
             ln = 467 // RawHide.HC:467
             nat(t, n_GrRect, push(t, ld8(g_map_dc), 2L, 2L, 996L, 996L))
             ln = 469 // RawHide.HC:469
             tick(t)
-            f708_RiverMake(t)
+            f713_RiverMake(t)
             ln = 472 // RawHide.HC:472
             l0_i = 320L
             loop0@ while ((l0_i > 0L)) {
                 ln = 473 // RawHide.HC:473
-                tick(t)
-                P.f440_Sprite3(t, ld8(g_map_dc), l0_i, 200L, 0L, b13, 0L)
+                nat(t, n_Sprite3, push(t, ld8(g_map_dc), l0_i, 200L, 0L, b13, 0L))
                 ln = 472 // RawHide.HC:472
                 l0_i = (l0_i - 16L)
                 tick(t)
@@ -1228,7 +1226,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             loop2@ while ((l0_i < 184L)) {
                 ln = 477 // RawHide.HC:477
                 tick(t)
-                P.f396_GrLine(t, ld8(g_map_dc), 319L, l0_i, 319L, (l0_i + 7L), 1L, 0L)
+                P.f397_GrLine(t, ld8(g_map_dc), 319L, l0_i, 319L, (l0_i + 7L), 1L, 0L)
                 ln = 476 // RawHide.HC:476
                 l0_i = (l0_i + 16L)
                 tick(t)
@@ -1237,23 +1235,23 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st4((ld8(g_map_dc) + 160L), 7L)
             ln = 479 // RawHide.HC:479
             tick(t)
-            P.f396_GrLine(t, ld8(g_map_dc), 320L, 0L, 320L, 194L, 1L, 0L)
+            P.f397_GrLine(t, ld8(g_map_dc), 320L, 0L, 320L, 194L, 1L, 0L)
             ln = 480 // RawHide.HC:480
             tick(t)
-            f715_RedrawGate(t)
+            f720_RedrawGate(t)
             ln = 482 // RawHide.HC:482
             st4((ld8(g_map_dc) + 228L), 3L)
             ln = 483 // RawHide.HC:483
             st4((ld8(g_map_dc) + 160L), 4L)
             ln = 484 // RawHide.HC:484
             tick(t)
-            P.f425_GrBorder(t, ld8(g_map_dc), divs(3L, 2L), divs(3L, 2L), (1000L - divs(4L, 2L)), (1000L - divs(4L, 2L)), 1L, 0L)
+            P.f428_GrBorder(t, ld8(g_map_dc), divs(3L, 2L), divs(3L, 2L), (1000L - divs(4L, 2L)), (1000L - divs(4L, 2L)), 1L, 0L)
             ln = 487 // RawHide.HC:487
             l0_i = 3L
             loop4@ while ((l0_i <= 997L)) {
                 ln = 488 // RawHide.HC:488
                 tick(t)
-                f711_RiverDropsNext(t, ld8(P.g_Fs))
+                f716_RiverDropsNext(t, ld8(P.g_Fs))
                 ln = 487 // RawHide.HC:487
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -1277,7 +1275,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     st8(t3, ((64L + mods(t2, 872L)) shl 32))
                     ln = 496 // RawHide.HC:496
                     tick(t)
-                    val t4: Long = f716_CheckMap(t, (ld8(((ld8(g_a) + (l0_i * 56L)) + 8L)) shr 32), (ld8(((ld8(g_a) + (l0_i * 56L)) + 16L)) shr 32))
+                    val t4: Long = f721_CheckMap(t, (ld8(((ld8(g_a) + (l0_i * 56L)) + 8L)) shr 32), (ld8(((ld8(g_a) + (l0_i * 56L)) + 16L)) shr 32))
                     if (!((t4 == 0L))) break@loop8
                     tick(t)
                 }
@@ -1295,7 +1293,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st1(t6, (t5 and 3L))
                 ln = 502 // RawHide.HC:502
                 tick(t)
-                f714_BuddySel(t, l0_i)
+                f719_BuddySel(t, l0_i)
                 ln = 491 // RawHide.HC:491
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -1317,13 +1315,13 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Init (RawHide.HC:511) */
-    fun f720_Init(t: Task) {
+    fun f725_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 513 // RawHide.HC:513
             tick(t)
-            f707_RiverNew(t)
+            f712_RiverNew(t)
             ln = 514 // RawHide.HC:514
             st1(g_rd_lock, 0L)
             ln = 515 // RawHide.HC:515
@@ -1338,14 +1336,14 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st8(g_a, t1)
             ln = 518 // RawHide.HC:518
             tick(t)
-            f719_ReInit(t)
+            f724_ReInit(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Init", ln) }
     }
 
     /** HolyC CleanUp (RawHide.HC:521) */
-    fun f721_CleanUp(t: Task) {
+    fun f726_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1356,17 +1354,17 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_Free, push1(t, ld8(g_a)))
             ln = 525 // RawHide.HC:525
             tick(t)
-            f710_RiverDropsDel(t)
+            f715_RiverDropsDel(t)
             ln = 526 // RawHide.HC:526
             tick(t)
-            f709_RiverDel(t)
+            f714_RiverDel(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "CleanUp", ln) }
     }
 
     /** HolyC RawHide (RawHide.HC:529) */
-    fun f722_RawHide(t: Task) {
+    fun f727_RawHide(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1378,10 +1376,10 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 533 // RawHide.HC:533
             tick(t)
-            P.f507_MenuPush(t, s7)
+            P.f512_MenuPush(t, s7)
             ln = 542 // RawHide.HC:542
             val t1: Long = (ld8(P.g_Fs) + 1080L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065870L, 0L, s8, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065875L, 0L, s8, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 544 // RawHide.HC:544
             tick(t)
@@ -1402,13 +1400,13 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_DocClear, push1(t, 0L))
             ln = 557 // RawHide.HC:557
             tick(t)
-            f720_Init(t)
+            f725_Init(t)
             ln = 558 // RawHide.HC:558
             val t3: Long = (ld8(P.g_Fs) + 1088L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065869L, ld8(P.g_Fs), s10, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065874L, ld8(P.g_Fs), s10, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 559 // RawHide.HC:559
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065865L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065870L)
             ln = 560 // RawHide.HC:560
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -1435,7 +1433,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                             10L -> {
                                                 ln = 572 // RawHide.HC:572
                                                 tick(t)
-                                                f719_ReInit(t)
+                                                f724_ReInit(t)
                                             }
                                             27L, 28L -> {
                                                 ln = 576 // RawHide.HC:576
@@ -1469,10 +1467,10 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 586 // RawHide.HC:586
             tick(t)
-            f721_CleanUp(t)
+            f726_CleanUp(t)
             ln = 587 // RawHide.HC:587
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 588 // RawHide.HC:588
             nat(t, n_RegWrite, push3(t, s1, s11, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1482,13 +1480,13 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/RawHide.HC#3 (RawHide.HC:591) */
-    fun f723_init_C__Demo_Games_RawHide_HC_3(t: Task): Long {
+    fun f728_init_C__Demo_Games_RawHide_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 591 // RawHide.HC:591
             tick(t)
-            f722_RawHide(t)
+            f727_RawHide(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/RawHide.HC#3", ln) }
@@ -1497,27 +1495,27 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_RawHide_HC_0(t)
-            704 -> f704_init_C__Demo_Games_RawHide_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> f706_init_C__Demo_Games_RawHide_HC_2(t)
-            707 -> { f707_RiverNew(t); 0L }
-            708 -> { f708_RiverMake(t); 0L }
-            709 -> { f709_RiverDel(t); 0L }
-            710 -> { f710_RiverDropsDel(t); 0L }
-            711 -> { f711_RiverDropsNext(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            712 -> { f712_RiverDropsDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            713 -> { f713_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            714 -> { f714_BuddySel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            715 -> { f715_RedrawGate(t); 0L }
-            716 -> f716_CheckMap(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            717 -> { f717_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            718 -> { f718_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            719 -> { f719_ReInit(t); 0L }
-            720 -> { f720_Init(t); 0L }
-            721 -> { f721_CleanUp(t); 0L }
-            722 -> { f722_RawHide(t); 0L }
-            723 -> f723_init_C__Demo_Games_RawHide_HC_3(t)
+            708 -> f708_init_C__Demo_Games_RawHide_HC_0(t)
+            709 -> f709_init_C__Demo_Games_RawHide_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> f711_init_C__Demo_Games_RawHide_HC_2(t)
+            712 -> { f712_RiverNew(t); 0L }
+            713 -> { f713_RiverMake(t); 0L }
+            714 -> { f714_RiverDel(t); 0L }
+            715 -> { f715_RiverDropsDel(t); 0L }
+            716 -> { f716_RiverDropsNext(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            717 -> { f717_RiverDropsDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            718 -> { f718_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            719 -> { f719_BuddySel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            720 -> { f720_RedrawGate(t); 0L }
+            721 -> f721_CheckMap(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            722 -> { f722_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            723 -> { f723_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            724 -> { f724_ReInit(t); 0L }
+            725 -> { f725_Init(t); 0L }
+            726 -> { f726_CleanUp(t); 0L }
+            727 -> { f727_RawHide(t); 0L }
+            728 -> f728_init_C__Demo_Games_RawHide_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1529,7 +1527,7 @@ class N_Demo_Games_RawHide(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/RawHide.HC#0", "\$init:C:/Demo/Games/RawHide.HC#1", "\$init:C:/Home/Registry.HC#0", "\$init:C:/Demo/Games/RawHide.HC#2", "RiverNew", "RiverMake", "RiverDel", "RiverDropsDel", "RiverDropsNext", "RiverDropsDraw", "DrawIt", "BuddySel", "RedrawGate", "CheckMap", "AnimateTask", "SongTask", "ReInit", "Init", "CleanUp", "RawHide", "\$init:C:/Demo/Games/RawHide.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/Games/RawHide.HC")
     }

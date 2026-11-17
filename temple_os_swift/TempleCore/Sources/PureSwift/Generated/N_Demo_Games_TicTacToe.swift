@@ -10,6 +10,7 @@ import TempleCore
 public final class N_Demo_Games_TicTacToe: NativeModule {
     public let P: Prelude
     public let n_DocClear: Int
+    public let n_GrLine3: Int
     public let n_MemSet: Int
     public let n_Print: Int
     public let n_Refresh: Int
@@ -21,6 +22,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
         n_DocClear = rt.vm.natives.find("DocClear")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Refresh = rt.vm.natives.find("Refresh")!.index
@@ -41,7 +43,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/TicTacToe.HC#0 (TicTacToe.HC:2)
-    @discardableResult public final func f703_init_C__Demo_Games_TicTacToe_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_TicTacToe_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -51,7 +53,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/TicTacToe.HC#1 (TicTacToe.HC:3)
-    @discardableResult public final func f704_init_C__Demo_Games_TicTacToe_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_TicTacToe_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -61,7 +63,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     }
 
     /// HolyC DrawX (TicTacToe.HC:5)
-    public final func f705_DrawX(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f710_DrawX(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -71,18 +73,16 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
             ln = 7 // TicTacToe.HC:7
             try st4((p0_dc &+ 228), 5)
             ln = 8 // TicTacToe.HC:8
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, (p1_x &- 20), (p2_y &- 20), 0, (p1_x &+ 20), (p2_y &+ 20), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, (p1_x &- 20), (p2_y &- 20), 0, (p1_x &+ 20), (p2_y &+ 20), 0, 1, 0))
             ln = 9 // TicTacToe.HC:9
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, (p1_x &+ 20), (p2_y &- 20), 0, (p1_x &- 20), (p2_y &+ 20), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, (p1_x &+ 20), (p2_y &- 20), 0, (p1_x &- 20), (p2_y &+ 20), 0, 1, 0))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawX", ln) }
     }
 
     /// HolyC DrawO (TicTacToe.HC:12)
-    public final func f706_DrawO(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f711_DrawO(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -93,14 +93,14 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
             try st4((p0_dc &+ 228), 5)
             ln = 15 // TicTacToe.HC:15
             try tick(t)
-            _ = try P.f411_GrCircle3(t, p0_dc, p1_x, p2_y, 0, 25, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f413_GrCircle3(t, p0_dc, p1_x, p2_y, 0, 25, 1, 0.0, (2.0 * d(4614256656552045848)))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawO", ln) }
     }
 
     /// HolyC DrawBoard (TicTacToe.HC:18)
-    public final func f707_DrawBoard(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_DrawBoard(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -117,17 +117,13 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
             ln = 23 // TicTacToe.HC:23
             try st4((l16_dc &+ 228), 5)
             ln = 24 // TicTacToe.HC:24
-            try tick(t)
-            _ = try P.f406_GrLine3(t, l16_dc, 200, 100, 0, 200, 400, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, l16_dc, 200, 100, 0, 200, 400, 0, 1, 0))
             ln = 25 // TicTacToe.HC:25
-            try tick(t)
-            _ = try P.f406_GrLine3(t, l16_dc, 300, 100, 0, 300, 400, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, l16_dc, 300, 100, 0, 300, 400, 0, 1, 0))
             ln = 26 // TicTacToe.HC:26
-            try tick(t)
-            _ = try P.f406_GrLine3(t, l16_dc, 100, 200, 0, 400, 200, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, l16_dc, 100, 200, 0, 400, 200, 0, 1, 0))
             ln = 27 // TicTacToe.HC:27
-            try tick(t)
-            _ = try P.f406_GrLine3(t, l16_dc, 100, 300, 0, 400, 300, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, l16_dc, 100, 300, 0, 400, 300, 0, 1, 0))
             ln = 28 // TicTacToe.HC:28
             l8_i = 0
             loop0: while (l8_i < 9) {
@@ -138,11 +134,11 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
                     case 1:
                         ln = 31 // TicTacToe.HC:31
                         try tick(t)
-                        try f705_DrawX(t, l16_dc, ld8((g_board_x &+ (l8_i &* 8))), ld8((g_board_y &+ (l8_i &* 8))))
+                        try f710_DrawX(t, l16_dc, ld8((g_board_x &+ (l8_i &* 8))), ld8((g_board_y &+ (l8_i &* 8))))
                     case 2:
                         ln = 34 // TicTacToe.HC:34
                         try tick(t)
-                        try f706_DrawO(t, l16_dc, ld8((g_board_x &+ (l8_i &* 8))), ld8((g_board_y &+ (l8_i &* 8))))
+                        try f711_DrawO(t, l16_dc, ld8((g_board_x &+ (l8_i &* 8))), ld8((g_board_y &+ (l8_i &* 8))))
                     default:
                         break
                     }
@@ -155,11 +151,11 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
             if (p0_player == 1) {
                 ln = 41 // TicTacToe.HC:41
                 try tick(t)
-                try f705_DrawX(t, l16_dc, (ld8(P.g_ms) &- ld8((ld8(P.g_Fs) &+ 208))), (ld8((P.g_ms &+ 8)) &- ld8((ld8(P.g_Fs) &+ 232))))
+                try f710_DrawX(t, l16_dc, (ld8(P.g_ms) &- ld8((ld8(P.g_Fs) &+ 208))), (ld8((P.g_ms &+ 8)) &- ld8((ld8(P.g_Fs) &+ 232))))
             } else {
                 ln = 43 // TicTacToe.HC:43
                 try tick(t)
-                try f706_DrawO(t, l16_dc, (ld8(P.g_ms) &- ld8((ld8(P.g_Fs) &+ 208))), (ld8((P.g_ms &+ 8)) &- ld8((ld8(P.g_Fs) &+ 232))))
+                try f711_DrawO(t, l16_dc, (ld8(P.g_ms) &- ld8((ld8(P.g_Fs) &+ 208))), (ld8((P.g_ms &+ 8)) &- ld8((ld8(P.g_Fs) &+ 232))))
             }
             ln = 44 // TicTacToe.HC:44
             try tick(t)
@@ -170,7 +166,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     }
 
     /// HolyC TakeTurn (TicTacToe.HC:47)
-    public final func f708_TakeTurn(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_TakeTurn(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -197,7 +193,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
                 loop2: while try (ld1u((P.g_ms &+ 160)) == 0) {
                     ln = 56 // TicTacToe.HC:56
                     try tick(t)
-                    try f707_DrawBoard(t, p0_player)
+                    try f712_DrawBoard(t, p0_player)
                     ln = 57 // TicTacToe.HC:57
                     _ = try nat(t, n_Refresh, try push2(t, 1, 0))
                     try tick(t)
@@ -206,7 +202,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
                 loop4: while try (ld1u((P.g_ms &+ 160)) != 0) {
                     ln = 60 // TicTacToe.HC:60
                     try tick(t)
-                    try f707_DrawBoard(t, p0_player)
+                    try f712_DrawBoard(t, p0_player)
                     ln = 61 // TicTacToe.HC:61
                     _ = try nat(t, n_Refresh, try push2(t, 1, 0))
                     try tick(t)
@@ -227,7 +223,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     }
 
     /// HolyC CheckWinner (TicTacToe.HC:70)
-    @discardableResult public final func f709_CheckWinner(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f714_CheckWinner(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -382,7 +378,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     }
 
     /// HolyC DoGame (TicTacToe.HC:87)
-    public final func f710_DoGame(_ t: HTask) throws {
+    public final func f715_DoGame(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -395,10 +391,10 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
             loop0: while (1 != 0) {
                 ln = 92 // TicTacToe.HC:92
                 try tick(t)
-                try f708_TakeTurn(t, 1)
+                try f713_TakeTurn(t, 1)
                 ln = 93 // TicTacToe.HC:93
                 try tick(t)
-                let t0: Int64 = try f709_CheckWinner(t, 1)
+                let t0: Int64 = try f714_CheckWinner(t, 1)
                 if (t0 != 0) {
                     ln = 94 // TicTacToe.HC:94
                     try tick(t)
@@ -420,10 +416,10 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
                 }
                 ln = 101 // TicTacToe.HC:101
                 try tick(t)
-                try f708_TakeTurn(t, 2)
+                try f713_TakeTurn(t, 2)
                 ln = 102 // TicTacToe.HC:102
                 try tick(t)
-                let t2: Int64 = try f709_CheckWinner(t, 2)
+                let t2: Int64 = try f714_CheckWinner(t, 2)
                 if (t2 != 0) {
                     ln = 103 // TicTacToe.HC:103
                     try tick(t)
@@ -451,7 +447,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     }
 
     /// HolyC TicTacToe (TicTacToe.HC:112)
-    public final func f711_TicTacToe(_ t: HTask) throws {
+    public final func f716_TicTacToe(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -470,7 +466,7 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
                 loop0: while (1 != 0) {
                     ln = 119 // TicTacToe.HC:119
                     try tick(t)
-                    try f710_DoGame(t)
+                    try f715_DoGame(t)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -491,13 +487,13 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/TicTacToe.HC#2 (TicTacToe.HC:125)
-    @discardableResult public final func f712_init_C__Demo_Games_TicTacToe_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Demo_Games_TicTacToe_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 125 // TicTacToe.HC:125
             try tick(t)
-            try f711_TicTacToe(t)
+            try f716_TicTacToe(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/TicTacToe.HC#2", ln) }
@@ -506,22 +502,22 @@ public final class N_Demo_Games_TicTacToe: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_TicTacToe_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_TicTacToe_HC_1(t)
-        case 705: try f705_DrawX(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 706: try f706_DrawO(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 707: try f707_DrawBoard(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_TakeTurn(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: return try f709_CheckWinner(t, (n > 0 ? st[base + 0] : 0))
-        case 710: try f710_DoGame(t); return 0
-        case 711: try f711_TicTacToe(t); return 0
-        case 712: return try f712_init_C__Demo_Games_TicTacToe_HC_2(t)
+        case 708: return try f708_init_C__Demo_Games_TicTacToe_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_TicTacToe_HC_1(t)
+        case 710: try f710_DrawX(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 711: try f711_DrawO(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 712: try f712_DrawBoard(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_TakeTurn(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: return try f714_CheckWinner(t, (n > 0 ? st[base + 0] : 0))
+        case 715: try f715_DoGame(t); return 0
+        case 716: try f716_TicTacToe(t); return 0
+        case 717: return try f717_init_C__Demo_Games_TicTacToe_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/TicTacToe.HC#0", 704: "$init:C:/Demo/Games/TicTacToe.HC#1", 705: "DrawX", 706: "DrawO", 707: "DrawBoard", 708: "TakeTurn", 709: "CheckWinner", 710: "DoGame", 711: "TicTacToe", 712: "$init:C:/Demo/Games/TicTacToe.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/TicTacToe.HC#0", 709: "$init:C:/Demo/Games/TicTacToe.HC#1", 710: "DrawX", 711: "DrawO", 712: "DrawBoard", 713: "TakeTurn", 714: "CheckWinner", 715: "DoGame", 716: "TicTacToe", 717: "$init:C:/Demo/Games/TicTacToe.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Games/TicTacToe.HC"]
     public override var files: [String] { N_Demo_Games_TicTacToe.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_TicTacToe.DEFINED.contains(index) }

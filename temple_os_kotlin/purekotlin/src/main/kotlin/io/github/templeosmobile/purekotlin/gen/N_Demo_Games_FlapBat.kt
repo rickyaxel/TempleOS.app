@@ -25,6 +25,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Suspend = rt.vm.natives.find("Suspend")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
@@ -111,7 +112,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/FlapBat.HC#0 (FlapBat.HC:1) */
-    fun f703_init_C__Demo_Games_FlapBat_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_FlapBat_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -125,7 +126,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/FlapBat.HC#1 (FlapBat.HC:2) */
-    fun f704_init_C__Demo_Games_FlapBat_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_FlapBat_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -139,7 +140,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -149,7 +150,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (FlapBat.HC:47) */
-    fun f706_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f711_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -180,24 +181,23 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 55 // FlapBat.HC:55
             st8(g_bat_x, bits((ld8((p0_task + 224L)) shr 3).toDouble()))
             ln = 56 // FlapBat.HC:56
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, ((7L * ld8((p0_task + 224L))) shr 3), 20L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, ((7L * ld8((p0_task + 224L))) shr 3), 20L, 0L, b0, 0L))
             ln = 58 // FlapBat.HC:58
             st4((p1_dc + 160L), 8L)
             ln = 59 // FlapBat.HC:59
             val t3: Double = f(nat(t, n_tS, push0(t)))
             tick(t)
-            val t4: Double = P.f480_Saw(t, (15.0 * t3), 2.0)
+            val t4: Double = P.f485_Saw(t, (15.0 * t3), 2.0)
             val t8: Long = f2i(ldf(g_bat_y))
             val t7: Double = (ldf(g_bat_x) + 5.0)
             val t5: Double = f(nat(t, n_tS, push0(t)))
             tick(t)
-            val t6: Double = P.f480_Saw(t, (15.0 * t5), 2.0)
+            val t6: Double = P.f485_Saw(t, (15.0 * t5), 2.0)
             tick(t)
-            P.f397_GrCircle(t, p1_dc, f2i((t7 + (20.0 * t6))), t8, f2i((10.0 + (20.0 * t4))), 5L, ((-f(4614256656552045848L)) / 4.0), (f(4614256656552045848L) / 2.0))
+            P.f398_GrCircle(t, p1_dc, f2i((t7 + (20.0 * t6))), t8, f2i((10.0 + (20.0 * t4))), 5L, ((-f(4614256656552045848L)) / 4.0), (f(4614256656552045848L) / 2.0))
             ln = 61 // FlapBat.HC:61
             tick(t)
-            val t9: Long = P.f448_SpriteInterpolate(t, l80_tt, b2, b1)
+            val t9: Long = P.f453_SpriteInterpolate(t, l80_tt, b2, b1)
             l56_tmps = t9
             ln = 62 // FlapBat.HC:62
             var r11: Boolean = (ldf(g_eat_timeout) != 0.0)
@@ -208,13 +208,13 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             if (r11) {
                 ln = 63 // FlapBat.HC:63
                 tick(t)
-                val t12: Long = P.f448_SpriteInterpolate(t, l80_tt, b4, b3)
+                val t12: Long = P.f453_SpriteInterpolate(t, l80_tt, b4, b3)
                 l64_tmps2 = t12
                 ln = 64 // FlapBat.HC:64
                 val t14: Double = ldf(g_eat_timeout)
                 val t13: Double = f(nat(t, n_tS, push0(t)))
                 tick(t)
-                val t15: Long = P.f448_SpriteInterpolate(t, (1.0 - ((t14 - t13) / 0.5)), l64_tmps2, l56_tmps)
+                val t15: Long = P.f453_SpriteInterpolate(t, (1.0 - ((t14 - t13) / 0.5)), l64_tmps2, l56_tmps)
                 l72_tmps3 = t15
                 ln = 65 // FlapBat.HC:65
                 nat(t, n_Free, push1(t, l56_tmps))
@@ -227,8 +227,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             tick(t)
             P.f286_DCFill(t, ld8(g_limit_flood_fill_dc), 255L)
             ln = 71 // FlapBat.HC:71
-            tick(t)
-            P.f440_Sprite3(t, ld8(g_limit_flood_fill_dc), 16L, 32L, 0L, l56_tmps, 0L)
+            nat(t, n_Sprite3, push(t, ld8(g_limit_flood_fill_dc), 16L, 32L, 0L, l56_tmps, 0L))
             ln = 72 // FlapBat.HC:72
             val t16: Long = nat(t, n_GrPeek, push3(t, ld8(g_limit_flood_fill_dc), 0L, 0L))
             if ((t16 != 255L)) {
@@ -236,7 +235,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st4((ld8(g_limit_flood_fill_dc) + 160L), 255L)
                 ln = 74 // FlapBat.HC:74
                 tick(t)
-                P.f387_GrFloodFill(t, ld8(g_limit_flood_fill_dc), 0L, 0L, 0L, 0L, 0L)
+                P.f388_GrFloodFill(t, ld8(g_limit_flood_fill_dc), 0L, 0L, 0L, 0L, 0L)
             }
             ln = 76 // FlapBat.HC:76
             nat(t, n_GrBlot, push4(t, p1_dc, f2i((ldf(g_bat_x) - 16.0)), f2i((ldf(g_bat_y) - 32.0)), ld8(g_limit_flood_fill_dc)))
@@ -253,7 +252,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     l24_y = (mods(ld4s((g_bugs_y + (l16_i * 4L))), l48_v) + 6L)
                     ln = 83 // FlapBat.HC:83
                     tick(t)
-                    val t17: Double = P.f480_Saw(t, (l88_ts + ldf((g_bugs_glow_phase + (l16_i * 8L)))), 3.0)
+                    val t17: Double = P.f485_Saw(t, (l88_ts + ldf((g_bugs_glow_phase + (l16_i * 8L)))), 3.0)
                     if ((t17 < 0.2)) {
                         ln = 84 // FlapBat.HC:84
                         if (((l16_i and 1L) != 0L)) {
@@ -287,7 +286,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 ln = 97 // FlapBat.HC:97
                 tick(t)
                 val vb0 = push0(t)
-                P.f369_GrPrint(t, p1_dc, divs((ld8((p0_task + 224L)) - 112L), 2L), divs((ld8((p0_task + 248L)) - 8L), 2L), s2, vb0, 0)
+                P.f370_GrPrint(t, p1_dc, divs((ld8((p0_task + 224L)) - 112L), 2L), divs((ld8((p0_task + 248L)) - 8L), 2L), s2, vb0, 0)
                 t.sp = vb0
                 ln = 99 // FlapBat.HC:99
                 l80_tt = ldf(g_game_tf)
@@ -301,7 +300,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 104 // FlapBat.HC:104
             tick(t)
             val vb1 = push3(t, bits(((100.0 * (32L - ld4s(g_bug_cnt)).toDouble()) / 32.0)), bits((l80_tt - ldf(g_game_t0))), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
             t.sp = vb1
             t.depth--
             return
@@ -309,7 +308,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CheckBugs (FlapBat.HC:108) */
-    fun f707_CheckBugs(t: Task, a0: Long) {
+    fun f712_CheckBugs(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -409,7 +408,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Init (FlapBat.HC:142) */
-    fun f708_Init(t: Task) {
+    fun f713_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -466,27 +465,27 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC SongTask (FlapBat.HC:164) */
-    fun f709_SongTask(t: Task, a0: Long) {
+    fun f714_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 166 // FlapBat.HC:166
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 167 // FlapBat.HC:167
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 168 // FlapBat.HC:168
             loop0@ while ((1L != 0L)) {
                 ln = 169 // FlapBat.HC:169
                 tick(t)
-                P.f494_Play(t, s4, 0L)
+                P.f499_Play(t, s4, 0L)
                 ln = 170 // FlapBat.HC:170
                 tick(t)
-                P.f494_Play(t, s5, 0L)
+                P.f499_Play(t, s5, 0L)
                 ln = 171 // FlapBat.HC:171
                 tick(t)
-                P.f494_Play(t, s6, 0L)
+                P.f499_Play(t, s6, 0L)
                 tick(t)
             }
             t.depth--
@@ -495,7 +494,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC AnimateTask (FlapBat.HC:175) */
-    fun f710_AnimateTask(t: Task, a0: Long) {
+    fun f715_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -543,7 +542,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st8(g_flap_phase, bits(t4))
                 ln = 193 // FlapBat.HC:193
                 tick(t)
-                f707_CheckBugs(t, ld8((ld8(P.g_Fs) + 120L)))
+                f712_CheckBugs(t, ld8((ld8(P.g_Fs) + 120L)))
                 ln = 194 // FlapBat.HC:194
                 nat(t, n_Sleep, push1(t, 1L))
                 tick(t)
@@ -554,7 +553,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CleanUp (FlapBat.HC:198) */
-    fun f711_CleanUp(t: Task) {
+    fun f716_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -567,7 +566,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC FlapBat (FlapBat.HC:203) */
-    fun f712_FlapBat(t: Task) {
+    fun f717_FlapBat(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -578,7 +577,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             l0_rst_space = 1L
             ln = 208 // FlapBat.HC:208
             tick(t)
-            P.f507_MenuPush(t, s7)
+            P.f512_MenuPush(t, s7)
             ln = 219 // FlapBat.HC:219
             tick(t)
             P.f201_PopUpOk(t, s8, 0L)
@@ -602,17 +601,17 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_DocClear, push1(t, 0L))
             ln = 228 // FlapBat.HC:228
             val t1: Long = (ld8(P.g_Fs) + 1080L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s9, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065866L, 0L, s9, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 229 // FlapBat.HC:229
             tick(t)
-            f708_Init(t)
+            f713_Init(t)
             ln = 230 // FlapBat.HC:230
             val t3: Long = (ld8(P.g_Fs) + 1088L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065862L, 0L, s10, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065867L, 0L, s10, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 231 // FlapBat.HC:231
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065858L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065863L)
             ln = 232 // FlapBat.HC:232
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -641,10 +640,10 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                             10L -> {
                                                 ln = 244 // FlapBat.HC:244
                                                 tick(t)
-                                                f711_CleanUp(t)
+                                                f716_CleanUp(t)
                                                 ln = 245 // FlapBat.HC:245
                                                 tick(t)
-                                                f708_Init(t)
+                                                f713_Init(t)
                                             }
                                             27L, 28L -> {
                                                 ln = 249 // FlapBat.HC:249
@@ -694,10 +693,10 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 267 // FlapBat.HC:267
             tick(t)
-            f711_CleanUp(t)
+            f716_CleanUp(t)
             ln = 268 // FlapBat.HC:268
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 269 // FlapBat.HC:269
             nat(t, n_RegWrite, push3(t, s1, s11, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -707,13 +706,13 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/FlapBat.HC#2 (FlapBat.HC:272) */
-    fun f713_init_C__Demo_Games_FlapBat_HC_2(t: Task): Long {
+    fun f718_init_C__Demo_Games_FlapBat_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 272 // FlapBat.HC:272
             tick(t)
-            f712_FlapBat(t)
+            f717_FlapBat(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/FlapBat.HC#2", ln) }
@@ -722,17 +721,17 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_FlapBat_HC_0(t)
-            704 -> f704_init_C__Demo_Games_FlapBat_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> { f706_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> { f707_CheckBugs(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_Init(t); 0L }
-            709 -> { f709_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            710 -> { f710_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            711 -> { f711_CleanUp(t); 0L }
-            712 -> { f712_FlapBat(t); 0L }
-            713 -> f713_init_C__Demo_Games_FlapBat_HC_2(t)
+            708 -> f708_init_C__Demo_Games_FlapBat_HC_0(t)
+            709 -> f709_init_C__Demo_Games_FlapBat_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> { f711_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> { f712_CheckBugs(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_Init(t); 0L }
+            714 -> { f714_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            715 -> { f715_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            716 -> { f716_CleanUp(t); 0L }
+            717 -> { f717_FlapBat(t); 0L }
+            718 -> f718_init_C__Demo_Games_FlapBat_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -744,7 +743,7 @@ class N_Demo_Games_FlapBat(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/FlapBat.HC#0", "\$init:C:/Demo/Games/FlapBat.HC#1", "\$init:C:/Home/Registry.HC#0", "DrawIt", "CheckBugs", "Init", "SongTask", "AnimateTask", "CleanUp", "FlapBat", "\$init:C:/Demo/Games/FlapBat.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Games/FlapBat.HC")
     }

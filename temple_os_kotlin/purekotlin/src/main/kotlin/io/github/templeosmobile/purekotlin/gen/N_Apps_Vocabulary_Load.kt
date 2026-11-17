@@ -51,7 +51,7 @@ class N_Apps_Vocabulary_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Apps/Vocabulary/Load.HC#0 (Load.HC:3) */
-    fun f703_init_C__Apps_Vocabulary_Load_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Vocabulary_Load_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -65,7 +65,7 @@ class N_Apps_Vocabulary_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC RandVocabWord (VocabQuiz.HC:1) */
-    fun f704_RandVocabWord(t: Task): Long {
+    fun f709_RandVocabWord(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -110,7 +110,7 @@ class N_Apps_Vocabulary_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC VocabQuiz (VocabQuiz.HC:17) */
-    fun f705_VocabQuiz(t: Task) {
+    fun f710_VocabQuiz(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -134,14 +134,14 @@ class N_Apps_Vocabulary_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             loop0@ while (true) {
                 ln = 1048602 // VocabQuiz.HC:26
                 tick(t)
-                val t1: Long = f704_RandVocabWord(t)
+                val t1: Long = f709_RandVocabWord(t)
                 l24_right_word = t1
                 ln = 1048603 // VocabQuiz.HC:27
                 l8_i = 0L
                 loop2@ while ((l8_i < 4L)) {
                     ln = 1048604 // VocabQuiz.HC:28
                     tick(t)
-                    val t2: Long = f704_RandVocabWord(t)
+                    val t2: Long = f709_RandVocabWord(t)
                     st8(((fp + 32) + (l8_i * 8L)), t2)
                     ln = 1048603 // VocabQuiz.HC:27
                     l8_i = (l8_i + 1L)
@@ -196,7 +196,7 @@ class N_Apps_Vocabulary_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         nat(t, n_Snd, push1(t, 0L))
                         ln = 1048627 // VocabQuiz.HC:51
                         tick(t)
-                        P.f636_ACDPopUpDef(t, l24_right_word, -1L, 0L)
+                        P.f641_ACDPopUpDef(t, l24_right_word, -1L, 0L)
                         ln = 1048628 // VocabQuiz.HC:52
                         break@loop6
                     }
@@ -215,7 +215,7 @@ class N_Apps_Vocabulary_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Apps/Vocabulary/Load.HC#1 (Load.HC:1) */
-    fun f706_init_C__Apps_Vocabulary_Load_HC_1(t: Task): Long {
+    fun f711_init_C__Apps_Vocabulary_Load_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -227,10 +227,10 @@ class N_Apps_Vocabulary_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Vocabulary_Load_HC_0(t)
-            704 -> f704_RandVocabWord(t)
-            705 -> { f705_VocabQuiz(t); 0L }
-            706 -> f706_init_C__Apps_Vocabulary_Load_HC_1(t)
+            708 -> f708_init_C__Apps_Vocabulary_Load_HC_0(t)
+            709 -> f709_RandVocabWord(t)
+            710 -> { f710_VocabQuiz(t); 0L }
+            711 -> f711_init_C__Apps_Vocabulary_Load_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -242,7 +242,7 @@ class N_Apps_Vocabulary_Load(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("\$init:C:/Apps/Vocabulary/Load.HC#0", "RandVocabWord", "VocabQuiz", "\$init:C:/Apps/Vocabulary/Load.HC#1")
         private val FILES = arrayOf<String>("C:/Apps/Vocabulary/Load.HC", "C:/Apps/Vocabulary/VocabQuiz.HC")
     }

@@ -27,7 +27,7 @@ class N_Demo_DolDoc_TextDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/DolDoc/TextDemo.HC#0 (TextDemo.HC:1) */
-    fun f703_init_C__Demo_DolDoc_TextDemo_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_DolDoc_TextDemo_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -41,7 +41,7 @@ class N_Demo_DolDoc_TextDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/DolDoc/TextDemo.HC#1 (TextDemo.HC:12) */
-    fun f704_init_C__Demo_DolDoc_TextDemo_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_DolDoc_TextDemo_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -57,8 +57,8 @@ class N_Demo_DolDoc_TextDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_DolDoc_TextDemo_HC_0(t)
-            704 -> f704_init_C__Demo_DolDoc_TextDemo_HC_1(t)
+            708 -> f708_init_C__Demo_DolDoc_TextDemo_HC_0(t)
+            709 -> f709_init_C__Demo_DolDoc_TextDemo_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -70,7 +70,7 @@ class N_Demo_DolDoc_TextDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("\$init:C:/Demo/DolDoc/TextDemo.HC#0", "\$init:C:/Demo/DolDoc/TextDemo.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/DolDoc/TextDemo.HC")
     }

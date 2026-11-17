@@ -1,14 +1,14 @@
 TOSIMG 1
 unit C:/Adam/DolDoc/DocExt.HC#0
-fn 712 $init:C:/Adam/DolDoc/DocExt.HC#0 (I64;;-)
-sym f DocEntryRun 703 (I64;*$CDoc,*$CDocEntry,Bool,*I64;-)
-sym f DocFormBwd 704 (U0;*$CDoc,Bool;-)
-sym f DocLoad 705 (U0;*$CDoc,*U8,I64;-)
-sym f DocPrintAtomic 706 (U0;*$CDoc,*U8;v)
-sym f DocPrintPartial 707 (U0;*$CDoc,*U8;v)
-sym f DocPutS 708 (*$CDocEntry;*$CDoc,*U8;-)
-sym f DocSave 709 (*U8;*$CDoc,*I64;-)
-sym f EdLeftClickLink 710 (I64;*$CDoc,*$CDocEntry;-)
-sym f TermRightClickLink 711 (I64;*$CDoc,*$CDocEntry;-)
-init 712
+fn 717 $init:C:/Adam/DolDoc/DocExt.HC#0 (I64;;-)
+sym f DocEntryRun 708 (I64;*$CDoc,*$CDocEntry,Bool,*I64;-)
+sym f DocFormBwd 709 (U0;*$CDoc,Bool;-)
+sym f DocLoad 710 (U0;*$CDoc,*U8,I64;-)
+sym f DocPrintAtomic 711 (U0;*$CDoc,*U8;v)
+sym f DocPrintPartial 712 (U0;*$CDoc,*U8;v)
+sym f DocPutS 713 (*$CDocEntry;*$CDoc,*U8;-)
+sym f DocSave 714 (*U8;*$CDoc,*I64;-)
+sym f EdLeftClickLink 715 (I64;*$CDoc,*$CDocEntry;-)
+sym f TermRightClickLink 716 (I64;*$CDoc,*$CDocEntry;-)
+init 717
 unit C:/Adam/DolDoc/DocExt.HC#1

@@ -21,7 +21,7 @@ class N_Demo_Graphics_Grid(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawMyMs (Grid.HC:3) */
-    fun f703_DrawMyMs(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f708_DrawMyMs(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -41,7 +41,7 @@ class N_Demo_Graphics_Grid(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC GridDemo (Grid.HC:10) */
-    fun f704_GridDemo(t: Task) {
+    fun f709_GridDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -52,7 +52,7 @@ class N_Demo_Graphics_Grid(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_MemCpy, push3(t, fp, P.g_ms_grid, 80L))
             ln = 15 // Grid.HC:15
             tick(t)
-            P.f696_GridInit(t)
+            P.f701_GridInit(t)
             ln = 16 // Grid.HC:16
             st1(P.g_ms_grid, 1L)
             ln = 17 // Grid.HC:17
@@ -62,7 +62,7 @@ class N_Demo_Graphics_Grid(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 19 // Grid.HC:19
             l80_old_draw_ms = ld8((P.g_gr + 144L))
             ln = 20 // Grid.HC:20
-            st8((P.g_gr + 144L), 9223090561878065855L)
+            st8((P.g_gr + 144L), 9223090561878065860L)
             ln = 21 // Grid.HC:21
             loop0@ while ((ld1u((P.g_ms + 160L)) == 0L)) {
                 ln = 22 // Grid.HC:22
@@ -85,13 +85,13 @@ class N_Demo_Graphics_Grid(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Grid.HC#0 (Grid.HC:30) */
-    fun f705_init_C__Demo_Graphics_Grid_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_Grid_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 30 // Grid.HC:30
             tick(t)
-            f704_GridDemo(t)
+            f709_GridDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Grid.HC#0", ln) }
@@ -100,9 +100,9 @@ class N_Demo_Graphics_Grid(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawMyMs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            704 -> { f704_GridDemo(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_Grid_HC_0(t)
+            708 -> { f708_DrawMyMs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            709 -> { f709_GridDemo(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_Grid_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -114,7 +114,7 @@ class N_Demo_Graphics_Grid(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawMyMs", "GridDemo", "\$init:C:/Demo/Graphics/Grid.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Grid.HC")
     }

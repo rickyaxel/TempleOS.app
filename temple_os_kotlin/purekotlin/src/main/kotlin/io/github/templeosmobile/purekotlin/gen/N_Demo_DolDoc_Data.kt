@@ -37,7 +37,7 @@ class N_Demo_DolDoc_Data(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC UpdateGlblTask (Data.HC:20) */
-    fun f703_UpdateGlblTask(t: Task, a0: Long) {
+    fun f708_UpdateGlblTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -57,7 +57,7 @@ class N_Demo_DolDoc_Data(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC DataDemo (Data.HC:28) */
-    fun f704_DataDemo(t: Task) {
+    fun f709_DataDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -66,14 +66,14 @@ class N_Demo_DolDoc_Data(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             var l8_doc: Long = 0L
             ln = 33 // Data.HC:33
             tick(t)
-            val t0: Long = P.f602_DocPut(t, 0L)
+            val t0: Long = P.f607_DocPut(t, 0L)
             l8_doc = t0
             ln = 37 // Data.HC:37
             tick(t)
-            val t1: Long = P.f610_DocLock(t, l8_doc)
+            val t1: Long = P.f615_DocLock(t, l8_doc)
             l16_unlock = (t1 and 0xFFL)
             ln = 43 // Data.HC:43
-            nat(t, n_Spawn, push(t, 9223090561878065855L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
+            nat(t, n_Spawn, push(t, 9223090561878065860L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
             ln = 45 // Data.HC:45
             nat(t, n_Print, push1(t, s1))
             ln = 50 // Data.HC:50
@@ -99,7 +99,7 @@ class N_Demo_DolDoc_Data(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             if ((l16_unlock != 0L)) {
                 ln = 58 // Data.HC:58
                 tick(t)
-                P.f611_DocUnlock(t, l8_doc)
+                P.f616_DocUnlock(t, l8_doc)
             }
             t.depth--
             return
@@ -107,13 +107,13 @@ class N_Demo_DolDoc_Data(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Demo/DolDoc/Data.HC#0 (Data.HC:17) */
-    fun f705_init_C__Demo_DolDoc_Data_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_DolDoc_Data_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 61 // Data.HC:61
             tick(t)
-            f704_DataDemo(t)
+            f709_DataDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/Data.HC#0", ln) }
@@ -122,9 +122,9 @@ class N_Demo_DolDoc_Data(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_UpdateGlblTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_DataDemo(t); 0L }
-            705 -> f705_init_C__Demo_DolDoc_Data_HC_0(t)
+            708 -> { f708_UpdateGlblTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_DataDemo(t); 0L }
+            710 -> f710_init_C__Demo_DolDoc_Data_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -136,7 +136,7 @@ class N_Demo_DolDoc_Data(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("UpdateGlblTask", "DataDemo", "\$init:C:/Demo/DolDoc/Data.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/DolDoc/Data.HC")
     }

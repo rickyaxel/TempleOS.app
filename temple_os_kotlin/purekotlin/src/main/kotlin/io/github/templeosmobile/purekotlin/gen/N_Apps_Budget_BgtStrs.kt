@@ -31,7 +31,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC StrFileRead (BgtStrs.HC:3) */
-    fun f703_StrFileRead(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f708_StrFileRead(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -51,7 +51,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             p3_no_nums = (p3_no_nums and 0xFFL)
             ln = 6 // BgtStrs.HC:6
             tick(t)
-            val t0: Long = P.f617_DocRead(t, p0_name, 40L)
+            val t0: Long = P.f622_DocRead(t, p0_name, 40L)
             l32_doc = t0
             ln = 7 // BgtStrs.HC:7
             l40_doc_e = ld8(l32_doc)
@@ -133,7 +133,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             }
             ln = 40 // BgtStrs.HC:40
             tick(t)
-            P.f605_DocDel(t, l32_doc)
+            P.f610_DocDel(t, l32_doc)
             ln = 41 // BgtStrs.HC:41
             if ((p1__max_num != 0L)) {
                 st8(p1__max_num, l56_max_num)
@@ -157,7 +157,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC StrFileArrDel (BgtStrs.HC:49) */
-    fun f704_StrFileArrDel(t: Task, a0: Long, a1: Long) {
+    fun f709_StrFileArrDel(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -181,7 +181,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC StrFileAdd (BgtStrs.HC:57) */
-    fun f705_StrFileAdd(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f710_StrFileAdd(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -197,7 +197,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             }
             ln = 62 // BgtStrs.HC:62
             tick(t)
-            val t0: Long = P.f586_HashFind(t, p0_st, p2_table, 1L, 1L)
+            val t0: Long = P.f591_HashFind(t, p0_st, p2_table, 1L, 1L)
             l32_tmph = t0
             if ((t0 == 0L)) {
                 ln = 63 // BgtStrs.HC:63
@@ -216,7 +216,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 st8((l32_tmph + 24L), t4)
                 ln = 67 // BgtStrs.HC:67
                 tick(t)
-                P.f587_HashAdd(t, l32_tmph, p2_table)
+                P.f592_HashAdd(t, l32_tmph, p2_table)
             }
             ln = 69 // BgtStrs.HC:69
             if ((p3_color != 16L)) {
@@ -232,7 +232,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC StrEntriesCompare (BgtStrs.HC:74) */
-    fun f706_StrEntriesCompare(t: Task, a0: Long, a1: Long): Long {
+    fun f711_StrEntriesCompare(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -247,7 +247,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC StrFileWrite (BgtStrs.HC:79) */
-    fun f707_StrFileWrite(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f712_StrFileWrite(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -267,7 +267,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             l48_color = 0L
             ln = 82 // BgtStrs.HC:82
             tick(t)
-            val t0: Long = P.f601_DocNew(t, p0_name, 0L)
+            val t0: Long = P.f606_DocNew(t, p0_name, 0L)
             l56_doc = t0
             ln = 84 // BgtStrs.HC:84
             if ((p1_table != 0L)) {
@@ -278,7 +278,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 loop0@ while ((l24_i <= ld8((p1_table + 8L)))) {
                     ln = 87 // BgtStrs.HC:87
                     tick(t)
-                    val t1: Long = P.f588_LinkedLstCnt(t, ld8((ld8((p1_table + 24L)) + (l24_i * 8L))))
+                    val t1: Long = P.f593_LinkedLstCnt(t, ld8((ld8((p1_table + 24L)) + (l24_i * 8L))))
                     l40_cnt = (l40_cnt + t1)
                     ln = 86 // BgtStrs.HC:86
                     l24_i = (l24_i + 1L)
@@ -309,7 +309,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     tick(t)
                 }
                 ln = 97 // BgtStrs.HC:97
-                nat(t, n_QSortI64, push3(t, l72_a, l40_cnt, 9223090561878065858L))
+                nat(t, n_QSortI64, push3(t, l72_a, l40_cnt, 9223090561878065863L))
                 ln = 98 // BgtStrs.HC:98
                 l24_i = 0L
                 loop6@ while ((l24_i < l40_cnt)) {
@@ -351,17 +351,17 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             st8(t4, (ld8(t4) or 8L))
             ln = 112 // BgtStrs.HC:112
             tick(t)
-            P.f618_DocWrite(t, l56_doc, 0L)
+            P.f623_DocWrite(t, l56_doc, 0L)
             ln = 113 // BgtStrs.HC:113
             tick(t)
-            P.f605_DocDel(t, l56_doc)
+            P.f610_DocDel(t, l56_doc)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "StrFileWrite", ln) }
     }
 
     /** HolyC StrFileDel (BgtStrs.HC:116) */
-    fun f708_StrFileDel(t: Task, a0: Long) {
+    fun f713_StrFileDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -405,7 +405,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Apps/Budget/BgtStrs.HC#0 (BgtStrs.HC:1) */
-    fun f709_init_C__Apps_Budget_BgtStrs_HC_0(t: Task): Long {
+    fun f714_init_C__Apps_Budget_BgtStrs_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -417,13 +417,13 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_StrFileRead(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            704 -> { f704_StrFileArrDel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> f705_StrFileAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            706 -> f706_StrEntriesCompare(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            707 -> { f707_StrFileWrite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            708 -> { f708_StrFileDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> f709_init_C__Apps_Budget_BgtStrs_HC_0(t)
+            708 -> f708_StrFileRead(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            709 -> { f709_StrFileArrDel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> f710_StrFileAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            711 -> f711_StrEntriesCompare(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            712 -> { f712_StrFileWrite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            713 -> { f713_StrFileDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> f714_init_C__Apps_Budget_BgtStrs_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -435,7 +435,7 @@ class N_Apps_Budget_BgtStrs(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714)
         private val NAMES = arrayOf("StrFileRead", "StrFileArrDel", "StrFileAdd", "StrEntriesCompare", "StrFileWrite", "StrFileDel", "\$init:C:/Apps/Budget/BgtStrs.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/Budget/BgtStrs.HC")
     }

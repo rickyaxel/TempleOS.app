@@ -23,7 +23,7 @@ class N_Adam_God_GodExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Adam/God/GodExt.HC#0 (GodExt.HC:18) */
-    fun f703_init_C__Adam_God_GodExt_HC_0(t: Task): Long {
+    fun f708_init_C__Adam_God_GodExt_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -37,13 +37,13 @@ class N_Adam_God_GodExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Adam/God/GodExt.HC#1 (GodExt.HC:19) */
-    fun f704_init_C__Adam_God_GodExt_HC_1(t: Task): Long {
+    fun f709_init_C__Adam_God_GodExt_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 19 // GodExt.HC:19
             tick(t)
-            val t0: Long = P.f678_FifoU8New(t, 16384L)
+            val t0: Long = P.f683_FifoU8New(t, 16384L)
             st8((g_god + 56L), t0)
             t.depth--
             return t0
@@ -53,13 +53,13 @@ class N_Adam_God_GodExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Adam/God/GodExt.HC#2 (GodExt.HC:20) */
-    fun f705_init_C__Adam_God_GodExt_HC_2(t: Task): Long {
+    fun f710_init_C__Adam_God_GodExt_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 20 // GodExt.HC:20
             tick(t)
-            val t0: Long = P.f678_FifoU8New(t, 16384L)
+            val t0: Long = P.f683_FifoU8New(t, 16384L)
             st8((g_god + 32L), t0)
             t.depth--
             return t0
@@ -69,7 +69,7 @@ class N_Adam_God_GodExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Adam/God/GodExt.HC#3 (GodExt.HC:1) */
-    fun f709_init_C__Adam_God_GodExt_HC_3(t: Task): Long {
+    fun f714_init_C__Adam_God_GodExt_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -81,10 +81,10 @@ class N_Adam_God_GodExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Adam_God_GodExt_HC_0(t)
-            704 -> f704_init_C__Adam_God_GodExt_HC_1(t)
-            705 -> f705_init_C__Adam_God_GodExt_HC_2(t)
-            709 -> f709_init_C__Adam_God_GodExt_HC_3(t)
+            708 -> f708_init_C__Adam_God_GodExt_HC_0(t)
+            709 -> f709_init_C__Adam_God_GodExt_HC_1(t)
+            710 -> f710_init_C__Adam_God_GodExt_HC_2(t)
+            714 -> f714_init_C__Adam_God_GodExt_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -96,7 +96,7 @@ class N_Adam_God_GodExt(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 714)
         private val NAMES = arrayOf("\$init:C:/Adam/God/GodExt.HC#0", "\$init:C:/Adam/God/GodExt.HC#1", "\$init:C:/Adam/God/GodExt.HC#2", "\$init:C:/Adam/God/GodExt.HC#3")
         private val FILES = arrayOf<String>("C:/Adam/God/GodExt.HC")
     }

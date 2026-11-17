@@ -36,7 +36,7 @@ class N_Demo_Templates_Registry1(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Templates/Registry1.HC#0 (Registry1.HC:1) */
-    fun f703_init_C__Demo_Templates_Registry1_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Templates_Registry1_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -50,7 +50,7 @@ class N_Demo_Templates_Registry1(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Templates/Registry1.HC#1 (Registry1.HC:2) */
-    fun f704_init_C__Demo_Templates_Registry1_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Templates_Registry1_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -64,7 +64,7 @@ class N_Demo_Templates_Registry1(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -74,7 +74,7 @@ class N_Demo_Templates_Registry1(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC Main (Registry1.HC:4) */
-    fun f706_Main(t: Task) {
+    fun f711_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -88,13 +88,13 @@ class N_Demo_Templates_Registry1(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Templates/Registry1.HC#2 (Registry1.HC:10) */
-    fun f707_init_C__Demo_Templates_Registry1_HC_2(t: Task): Long {
+    fun f712_init_C__Demo_Templates_Registry1_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 10 // Registry1.HC:10
             tick(t)
-            f706_Main(t)
+            f711_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Templates/Registry1.HC#2", ln) }
@@ -103,11 +103,11 @@ class N_Demo_Templates_Registry1(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Templates_Registry1_HC_0(t)
-            704 -> f704_init_C__Demo_Templates_Registry1_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> { f706_Main(t); 0L }
-            707 -> f707_init_C__Demo_Templates_Registry1_HC_2(t)
+            708 -> f708_init_C__Demo_Templates_Registry1_HC_0(t)
+            709 -> f709_init_C__Demo_Templates_Registry1_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> { f711_Main(t); 0L }
+            712 -> f712_init_C__Demo_Templates_Registry1_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -119,7 +119,7 @@ class N_Demo_Templates_Registry1(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("\$init:C:/Demo/Templates/Registry1.HC#0", "\$init:C:/Demo/Templates/Registry1.HC#1", "\$init:C:/Home/Registry.HC#0", "Main", "\$init:C:/Demo/Templates/Registry1.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Templates/Registry1.HC")
     }

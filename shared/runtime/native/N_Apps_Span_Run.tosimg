@@ -1,12 +1,12 @@
 TOSIMG 1
 unit C:/Apps/Span/Run.HC#0
 s 17fd38 433a2f417070732f5370616e
-fn 703 $init:C:/Apps/Span/Run.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/Span/Run.HC#0 (I64;;-)
+init 708
 unit C:/Apps/Span/Run.HC#1
 s 17fd38 433a2f417070732f5370616e
-fn 704 $init:C:/Apps/Span/Run.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Apps/Span/Run.HC#1 (I64;;-)
+init 709
 unit C:/Apps/Span/Run.HC#2
 class MyMass 132 0 - CMass
 m next 0 *$CMass
@@ -66,13 +66,13 @@ g 17fdf8 8
 c 17fd70 8 0
 c 17fdf8 4 4
 c 17fdfc 4 2
-fn 705 $init:C:/Apps/Span/Run.HC#2 (I64;;-)
+fn 710 $init:C:/Apps/Span/Run.HC#2 (I64;;-)
 sym g cursor_mass 17fd58 *$MyMass
 sym g mode_bttn 17fdc0 $CCtrlBttnState
 sym g ode 17fd70 *$CMathODE
 sym g run_bttn 17fd88 $CCtrlBttnState
 sym g run_colors 17fdf8 [2]$CColorROPU32
-init 705
+init 710
 unit C:/Apps/Span/Run.HC#3
 value MD_CONCRETE 1
 value MD_DELETE 5
@@ -88,14 +88,14 @@ c 17fe18 4 8
 c 17fe1c 4 4
 c 17fe20 4 5
 c 17fe24 4 4
-fn 706 $init:C:/Apps/Span/Run.HC#3 (I64;;-)
+fn 711 $init:C:/Apps/Span/Run.HC#3 (I64;;-)
 sym g mode_colors 17fe10 [6]$CColorROPU32
-init 706
+init 711
 unit C:/Apps/Span/Run.HC#4
 s 17fe38 4d61737300436f6e637265746500537465656c0057697265004d6f76650044656c65746500
 s 17fe70 53545f5350414e5f4d4f444553
-fn 707 $init:C:/Apps/Span/Run.HC#4 (I64;;-)
-init 707
+fn 712 $init:C:/Apps/Span/Run.HC#4 (I64;;-)
+init 712
 unit C:/Apps/Span/Run.HC#5
 value LOAD_WEIGHTS 8
 value RIVER_BANK_COLS 5
@@ -130,53 +130,53 @@ s 17fe70 53545f5350414e5f4d4f444553
 s 180040 46696c65207b20204e6577282c43485f4354524c4e293b20204f70656e282c43485f4354524c4f293b2020536176654173282c43485f4354524c41293b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b202052756e53746f70282c43485f5350414345293b20204d617373282c276d27293b2020436f6e6372657465282c276327293b2020537465656c282c277327293b202057697265282c277727293b20204d6f7665282c277627293b202044656c657465282c276427293b7d
 s 180138 416e696d617465
 s 180150 4275696c6420612062726964676520746f20686f6c642d7570207468650a726564206d61737365732e1f1f5465737420796f75722064657369676e0a6279207072657373696e672072756e2f73746f702e0a0a546865206c6f7765737420636f73742062726964676520746861740a7374617973207374616e64696e672077696e732e0a0a466f72206120766172696174696f6e2c2074727920776974686f75740a7573696e67207468652063656e746572206261736520706f696e742e0a0a5573650a0924475245454e24276d27244647246173730a0924475245454e24276327244647246f6e63726574650a0924475245454e24277327244647247465656c0a0924475245454e24277727244647246972650a0a746f2073656c206d6174657269616c732e0a
-fn 710 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-fn 711 SpanBridge1Init (U0;*$CMathODE;-)
-fn 712 AdjustLoads (U0;*$CMathODE;-)
-fn 713 SpanNew (*$CMathODE;;-)
-fn 714 SpanDel (U0;*$CMathODE;-)
-fn 715 SpanSave (*U8;*$CMathODE,*I64;-)
-fn 716 SpanWrite (Bool;*$CMathODE;-)
-fn 717 SpanLoad (U0;*$CMathODE,*U8;-)
-fn 718 SpanRead (*U8;;-)
-fn 709 SpanTime (F64;;-)
-fn 719 Cost (F64;*$CMathODE;-)
-fn 720 DrawIt (U0;*$CTask,*$CDC;-)
-fn 708 PlaceMass (*$MyMass;I64,I64;-)
-fn 721 NullSpring (U0;*$MySpring,F64;-)
-fn 722 MoveMass (U0;*$MyMass,I64,I64;-)
-fn 723 DelSpring (U0;*$MySpring;-)
-fn 724 DelMass (U0;*$MyMass;-)
-fn 725 DrawSpring (U0;*$CDC,*$MyMass,I64,I64;-)
-fn 726 PlaceSpring (U0;*$MyMass,*$MyMass;-)
-fn 727 AnimateTask (U0;*$SpanAnimateStruct;-)
-fn 728 Init (U0;*$SpanAnimateStruct;-)
-fn 729 SongTask (U0;I64;-)
-fn 730 Span (U0;;-)
-fn 731 $init:C:/Apps/Span/Run.HC#5 (I64;;-)
-sym f AdjustLoads 712 (U0;*$CMathODE;-)
-sym f AnimateTask 727 (U0;*$SpanAnimateStruct;-)
-sym f Cost 719 (F64;*$CMathODE;-)
-sym f DelMass 724 (U0;*$MyMass;-)
-sym f DelSpring 723 (U0;*$MySpring;-)
-sym f DrawIt 720 (U0;*$CTask,*$CDC;-)
-sym f DrawSpring 725 (U0;*$CDC,*$MyMass,I64,I64;-)
-sym f Init 728 (U0;*$SpanAnimateStruct;-)
-sym f MoveMass 722 (U0;*$MyMass,I64,I64;-)
-sym f MyDerivative 710 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-sym f NullSpring 721 (U0;*$MySpring,F64;-)
-sym f PlaceMass 708 (*$MyMass;I64,I64;-)
-sym f PlaceSpring 726 (U0;*$MyMass,*$MyMass;-)
-sym f SongTask 729 (U0;I64;-)
-sym f Span 730 (U0;;-)
-sym f SpanBridge1Init 711 (U0;*$CMathODE;-)
-sym f SpanDel 714 (U0;*$CMathODE;-)
-sym f SpanLoad 717 (U0;*$CMathODE,*U8;-)
-sym f SpanNew 713 (*$CMathODE;;-)
-sym f SpanRead 718 (*U8;;-)
-sym f SpanSave 715 (*U8;*$CMathODE,*I64;-)
-sym f SpanTime 709 (F64;;-)
-sym f SpanWrite 716 (Bool;*$CMathODE;-)
+fn 715 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 716 SpanBridge1Init (U0;*$CMathODE;-)
+fn 717 AdjustLoads (U0;*$CMathODE;-)
+fn 718 SpanNew (*$CMathODE;;-)
+fn 719 SpanDel (U0;*$CMathODE;-)
+fn 720 SpanSave (*U8;*$CMathODE,*I64;-)
+fn 721 SpanWrite (Bool;*$CMathODE;-)
+fn 722 SpanLoad (U0;*$CMathODE,*U8;-)
+fn 723 SpanRead (*U8;;-)
+fn 714 SpanTime (F64;;-)
+fn 724 Cost (F64;*$CMathODE;-)
+fn 725 DrawIt (U0;*$CTask,*$CDC;-)
+fn 713 PlaceMass (*$MyMass;I64,I64;-)
+fn 726 NullSpring (U0;*$MySpring,F64;-)
+fn 727 MoveMass (U0;*$MyMass,I64,I64;-)
+fn 728 DelSpring (U0;*$MySpring;-)
+fn 729 DelMass (U0;*$MyMass;-)
+fn 730 DrawSpring (U0;*$CDC,*$MyMass,I64,I64;-)
+fn 731 PlaceSpring (U0;*$MyMass,*$MyMass;-)
+fn 732 AnimateTask (U0;*$SpanAnimateStruct;-)
+fn 733 Init (U0;*$SpanAnimateStruct;-)
+fn 734 SongTask (U0;I64;-)
+fn 735 Span (U0;;-)
+fn 736 $init:C:/Apps/Span/Run.HC#5 (I64;;-)
+sym f AdjustLoads 717 (U0;*$CMathODE;-)
+sym f AnimateTask 732 (U0;*$SpanAnimateStruct;-)
+sym f Cost 724 (F64;*$CMathODE;-)
+sym f DelMass 729 (U0;*$MyMass;-)
+sym f DelSpring 728 (U0;*$MySpring;-)
+sym f DrawIt 725 (U0;*$CTask,*$CDC;-)
+sym f DrawSpring 730 (U0;*$CDC,*$MyMass,I64,I64;-)
+sym f Init 733 (U0;*$SpanAnimateStruct;-)
+sym f MoveMass 727 (U0;*$MyMass,I64,I64;-)
+sym f MyDerivative 715 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym f NullSpring 726 (U0;*$MySpring,F64;-)
+sym f PlaceMass 713 (*$MyMass;I64,I64;-)
+sym f PlaceSpring 731 (U0;*$MyMass,*$MyMass;-)
+sym f SongTask 734 (U0;I64;-)
+sym f Span 735 (U0;;-)
+sym f SpanBridge1Init 716 (U0;*$CMathODE;-)
+sym f SpanDel 719 (U0;*$CMathODE;-)
+sym f SpanLoad 722 (U0;*$CMathODE,*U8;-)
+sym f SpanNew 718 (*$CMathODE;;-)
+sym f SpanRead 723 (*U8;;-)
+sym f SpanSave 720 (*U8;*$CMathODE,*I64;-)
+sym f SpanTime 714 (F64;;-)
+sym f SpanWrite 721 (Bool;*$CMathODE;-)
 sym g a 17fe90 $SpanAnimateStruct
-init 731
+init 736
 unit C:/Apps/Span/Run.HC#6

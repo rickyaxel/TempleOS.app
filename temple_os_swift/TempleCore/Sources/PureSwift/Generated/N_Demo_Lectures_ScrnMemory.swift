@@ -26,7 +26,7 @@ public final class N_Demo_Lectures_ScrnMemory: NativeModule {
     }
 
     /// HolyC PlotXY (ScrnMemory.HC:4)
-    public final func f703_PlotXY(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_PlotXY(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -41,63 +41,63 @@ public final class N_Demo_Lectures_ScrnMemory: NativeModule {
     }
 
     /// HolyC Main (ScrnMemory.HC:10)
-    public final func f704_Main(_ t: HTask) throws {
+    public final func f709_Main(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             var l0_i: Int64 = 0
             ln = 14 // ScrnMemory.HC:14
             try tick(t)
-            try P.f570_OutU8(t, 964, 2)
+            try P.f575_OutU8(t, 964, 2)
             ln = 15 // ScrnMemory.HC:15
             try tick(t)
-            try P.f570_OutU8(t, 965, 15)
+            try P.f575_OutU8(t, 965, 15)
             ln = 16 // ScrnMemory.HC:16
             _ = try nat(t, n_MemSet, try push3(t, ld8((P.g_text &+ 56)), 0, divs(307200, 8)))
             ln = 18 // ScrnMemory.HC:18
             try tick(t)
-            try P.f570_OutU8(t, 964, 2)
+            try P.f575_OutU8(t, 964, 2)
             ln = 19 // ScrnMemory.HC:19
             try tick(t)
-            try P.f570_OutU8(t, 965, 4)
+            try P.f575_OutU8(t, 965, 4)
             ln = 20 // ScrnMemory.HC:20
             l0_i = 0
             loop0: while (l0_i < 200) {
                 ln = 21 // ScrnMemory.HC:21
                 try tick(t)
-                try f703_PlotXY(t, l0_i, l0_i)
+                try f708_PlotXY(t, l0_i, l0_i)
                 ln = 20 // ScrnMemory.HC:20
                 l0_i = (l0_i &+ 1)
                 try tick(t)
             }
             ln = 23 // ScrnMemory.HC:23
             try tick(t)
-            try P.f570_OutU8(t, 964, 2)
+            try P.f575_OutU8(t, 964, 2)
             ln = 24 // ScrnMemory.HC:24
             try tick(t)
-            try P.f570_OutU8(t, 965, 2)
+            try P.f575_OutU8(t, 965, 2)
             ln = 25 // ScrnMemory.HC:25
             l0_i = 0
             loop2: while (l0_i < 200) {
                 ln = 26 // ScrnMemory.HC:26
                 try tick(t)
-                try f703_PlotXY(t, 100, l0_i)
+                try f708_PlotXY(t, 100, l0_i)
                 ln = 25 // ScrnMemory.HC:25
                 l0_i = (l0_i &+ 1)
                 try tick(t)
             }
             ln = 28 // ScrnMemory.HC:28
             try tick(t)
-            try P.f570_OutU8(t, 964, 2)
+            try P.f575_OutU8(t, 964, 2)
             ln = 29 // ScrnMemory.HC:29
             try tick(t)
-            try P.f570_OutU8(t, 965, 1)
+            try P.f575_OutU8(t, 965, 1)
             ln = 30 // ScrnMemory.HC:30
             l0_i = 0
             loop4: while (l0_i < 200) {
                 ln = 31 // ScrnMemory.HC:31
                 try tick(t)
-                try f703_PlotXY(t, (200 &- l0_i), l0_i)
+                try f708_PlotXY(t, (200 &- l0_i), l0_i)
                 ln = 30 // ScrnMemory.HC:30
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -106,20 +106,20 @@ public final class N_Demo_Lectures_ScrnMemory: NativeModule {
             _ = try nat(t, n_Busy, try push1(t, 4000000))
             ln = 43 // ScrnMemory.HC:43
             try tick(t)
-            try P.f575_VGAFlush(t)
+            try P.f580_VGAFlush(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Main", ln) }
     }
 
     /// HolyC $init:C:/Demo/Lectures/ScrnMemory.HC#0 (ScrnMemory.HC:46)
-    @discardableResult public final func f705_init_C__Demo_Lectures_ScrnMemory_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Lectures_ScrnMemory_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 46 // ScrnMemory.HC:46
             try tick(t)
-            try f704_Main(t)
+            try f709_Main(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Lectures/ScrnMemory.HC#0", ln) }
@@ -128,15 +128,15 @@ public final class N_Demo_Lectures_ScrnMemory: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_PlotXY(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_Main(t); return 0
-        case 705: return try f705_init_C__Demo_Lectures_ScrnMemory_HC_0(t)
+        case 708: try f708_PlotXY(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_Main(t); return 0
+        case 710: return try f710_init_C__Demo_Lectures_ScrnMemory_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "PlotXY", 704: "Main", 705: "$init:C:/Demo/Lectures/ScrnMemory.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "PlotXY", 709: "Main", 710: "$init:C:/Demo/Lectures/ScrnMemory.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Lectures/ScrnMemory.HC"]
     public override var files: [String] { N_Demo_Lectures_ScrnMemory.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Lectures_ScrnMemory.DEFINED.contains(index) }

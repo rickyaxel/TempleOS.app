@@ -23,7 +23,9 @@ public final class N_Apps_Strut_Run: NativeModule {
     public let n_Exp: Int
     public let n_Free: Int
     public let n_GetMsg: Int
+    public let n_GrLine3: Int
     public let n_Ln: Int
+    public let n_Mat4x4Scale: Int
     public let n_Print: Int
     public let n_Rand: Int
     public let n_RandU32: Int
@@ -32,6 +34,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     public let n_Sin: Int
     public let n_Sleep: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_tS: Int
     public let n_throw: Int
@@ -74,7 +77,9 @@ public final class N_Apps_Strut_Run: NativeModule {
         n_Exp = rt.vm.natives.find("Exp")!.index
         n_Free = rt.vm.natives.find("Free")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_Ln = rt.vm.natives.find("Ln")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Rand = rt.vm.natives.find("Rand")!.index
         n_RandU32 = rt.vm.natives.find("RandU32")!.index
@@ -83,6 +88,7 @@ public final class N_Apps_Strut_Run: NativeModule {
         n_Sin = rt.vm.natives.find("Sin")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         n_throw = rt.vm.natives.find("throw")!.index
@@ -124,7 +130,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Strut/Run.HC#0 (Run.HC:1)
-    @discardableResult public final func f703_init_C__Apps_Strut_Run_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Strut_Run_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -138,7 +144,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Strut/Run.HC#1 (Run.HC:3)
-    @discardableResult public final func f704_init_C__Apps_Strut_Run_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_Strut_Run_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -152,7 +158,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Strut/Run.HC#2 (Run.HC:29)
-    @discardableResult public final func f705_init_C__Apps_Strut_Run_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Apps_Strut_Run_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -162,7 +168,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Strut/Run.HC#3 (Run.HC:30)
-    @discardableResult public final func f706_init_C__Apps_Strut_Run_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Apps_Strut_Run_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -176,7 +182,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Strut/Run.HC#4 (Run.HC:40)
-    @discardableResult public final func f707_init_C__Apps_Strut_Run_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Apps_Strut_Run_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -186,7 +192,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Strut/Run.HC#5 (Run.HC:41)
-    @discardableResult public final func f708_init_C__Apps_Strut_Run_HC_5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Apps_Strut_Run_HC_5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -200,7 +206,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC S2W (Strut.HC:49)
-    public final func f709_S2W(_ t: HTask, _ a0: Double, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f714_S2W(_ t: HTask, _ a0: Double, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -222,7 +228,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC W2S (Strut.HC:57)
-    public final func f710_W2S(_ t: HTask, _ a0: Double, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f715_W2S(_ t: HTask, _ a0: Double, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -239,7 +245,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC Zoom (Strut.HC:64)
-    public final func f711_Zoom(_ t: HTask, _ a0: Double) throws {
+    public final func f716_Zoom(_ t: HTask, _ a0: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -261,14 +267,14 @@ public final class N_Apps_Strut_Run: NativeModule {
             loop0: while (l40_i < 20) {
                 ln = 2097222 // Strut.HC:70
                 try tick(t)
-                try f709_S2W(t, Double(l48_x), Double(l56_y), (fp &+ 24), (fp &+ 32))
+                try f714_S2W(t, Double(l48_x), Double(l56_y), (fp &+ 24), (fp &+ 32))
                 ln = 2097223 // Strut.HC:71
                 try tick(t)
                 let t2: Double = try P.f116_Clamp(t, (ldf(g_zoom) * p0_d), 0.02, 50.0)
                 try st8(g_zoom, bits(t2))
                 ln = 2097224 // Strut.HC:72
                 try tick(t)
-                try f710_W2S(t, ldf((fp &+ 24)), ldf((fp &+ 32)), (fp &+ 8), (fp &+ 16))
+                try f715_W2S(t, ldf((fp &+ 24)), ldf((fp &+ 32)), (fp &+ 8), (fp &+ 16))
                 ln = 2097225 // Strut.HC:73
                 try st8((ld8(g_task) &+ 256), f2i(((Double(ld8(P.g_ms)) - ldf((fp &+ 8))) - Double(ld8((ld8(g_task) &+ 208))))))
                 ln = 2097226 // Strut.HC:74
@@ -286,7 +292,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC DrawIt (Strut.HC:79)
-    public final func f712_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f717_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -314,8 +320,7 @@ public final class N_Apps_Strut_Run: NativeModule {
             let t0: Int64 = (p1_dc &+ 28)
             try st4(t0, (ld4s(t0) | 256))
             ln = 2097245 // Strut.HC:93
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, ld8((p1_dc &+ 200)), ldf(g_zoom))
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((p1_dc &+ 200)), bits(ldf(g_zoom))))
             ln = 2097247 // Strut.HC:95
             let t1: Int64 = try ld8(g_main_mode_bttn)
             switch0: do {
@@ -335,7 +340,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                     loop1: while (l16_i < 8192) {
                         ln = 2097256 // Strut.HC:104
                         try tick(t)
-                        _ = try P.f393_GrPlot3(t, p1_dc, ld8((g_stars_x &+ (l16_i &* 8))), ld8((g_stars_y &+ (l16_i &* 8))), 0)
+                        _ = try P.f394_GrPlot3(t, p1_dc, ld8((g_stars_x &+ (l16_i &* 8))), ld8((g_stars_y &+ (l16_i &* 8))), 0)
                         ln = 2097255 // Strut.HC:103
                         l16_i = (l16_i &+ 1)
                         try tick(t)
@@ -352,10 +357,10 @@ public final class N_Apps_Strut_Run: NativeModule {
                     try st4((p1_dc &+ 160), 3)
                     ln = 2097263 // Strut.HC:111
                     try tick(t)
-                    try f709_S2W(t, 88.0, 56.0, (fp &+ 40), (fp &+ 48))
+                    try f714_S2W(t, 88.0, 56.0, (fp &+ 40), (fp &+ 48))
                     ln = 2097264 // Strut.HC:112
                     try tick(t)
-                    _ = try P.f407_GrPutChar3(t, p1_dc, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, ld8(g_next_action_key))
+                    _ = try P.f409_GrPutChar3(t, p1_dc, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, ld8(g_next_action_key))
                 } else {
                     ln = 2097265 // Strut.HC:113
                     if try (ld8(g_edit_mode_bttn) == 3) {
@@ -363,10 +368,10 @@ public final class N_Apps_Strut_Run: NativeModule {
                         try st4((p1_dc &+ 160), 14)
                         ln = 2097267 // Strut.HC:115
                         try tick(t)
-                        try f709_S2W(t, 88.0, 56.0, (fp &+ 40), (fp &+ 48))
+                        try f714_S2W(t, 88.0, 56.0, (fp &+ 40), (fp &+ 48))
                         ln = 2097268 // Strut.HC:116
                         try tick(t)
-                        _ = try P.f407_GrPutChar3(t, p1_dc, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, ld8(g_next_action_key))
+                        _ = try P.f409_GrPutChar3(t, p1_dc, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, ld8(g_next_action_key))
                     }
                 }
             }
@@ -379,16 +384,14 @@ public final class N_Apps_Strut_Run: NativeModule {
                     ln = 2097275 // Strut.HC:123
                     try st4((p1_dc &+ 160), 11)
                     ln = 2097276 // Strut.HC:124
-                    try tick(t)
-                    _ = try P.f406_GrLine3(t, p1_dc, f2i(ldf((ld8((l80_tmps &+ 16)) &+ 56))), f2i(ldf((ld8((l80_tmps &+ 16)) &+ 64))), 0, f2i(ldf((ld8((l80_tmps &+ 24)) &+ 56))), f2i(ldf((ld8((l80_tmps &+ 24)) &+ 64))), 0, 1, 0)
+                    _ = try nat(t, n_GrLine3, try push(t, p1_dc, f2i(ldf((ld8((l80_tmps &+ 16)) &+ 56))), f2i(ldf((ld8((l80_tmps &+ 16)) &+ 64))), 0, f2i(ldf((ld8((l80_tmps &+ 24)) &+ 56))), f2i(ldf((ld8((l80_tmps &+ 24)) &+ 64))), 0, 1, 0))
                 } else {
                     ln = 2097278 // Strut.HC:126
                     if try (ld8((l80_tmps &+ 80)) == 2) {
                         ln = 2097279 // Strut.HC:127
                         try st4((p1_dc &+ 160), 3)
                         ln = 2097280 // Strut.HC:128
-                        try tick(t)
-                        _ = try P.f406_GrLine3(t, p1_dc, f2i(ldf((ld8((l80_tmps &+ 16)) &+ 56))), f2i(ldf((ld8((l80_tmps &+ 16)) &+ 64))), 0, f2i(ldf((ld8((l80_tmps &+ 24)) &+ 56))), f2i(ldf((ld8((l80_tmps &+ 24)) &+ 64))), 0, 1, 0)
+                        _ = try nat(t, n_GrLine3, try push(t, p1_dc, f2i(ldf((ld8((l80_tmps &+ 16)) &+ 56))), f2i(ldf((ld8((l80_tmps &+ 16)) &+ 64))), 0, f2i(ldf((ld8((l80_tmps &+ 24)) &+ 56))), f2i(ldf((ld8((l80_tmps &+ 24)) &+ 64))), 0, 1, 0))
                     }
                 }
                 ln = 2097283 // Strut.HC:131
@@ -402,8 +405,7 @@ public final class N_Apps_Strut_Run: NativeModule {
             ln = 2097288 // Strut.HC:136
             loop5: while try (l72_tmpm != (ld8(g_ode) &+ 40)) {
                 ln = 2097289 // Strut.HC:137
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, f2i(ldf((l72_tmpm &+ 56))), f2i(ldf((l72_tmpm &+ 64))), 0, ld8((l72_tmpm &+ 104)), 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i(ldf((l72_tmpm &+ 56))), f2i(ldf((l72_tmpm &+ 64))), 0, ld8((l72_tmpm &+ 104)), 0))
                 ln = 2097290 // Strut.HC:138
                 l72_tmpm = try ld8(l72_tmpm)
                 try tick(t)
@@ -435,7 +437,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                         let t8: Double = try ldf((fp &+ 40))
                         let t7: Double = d(try nat(t, n_Cos, try push1(t, bits(l24__))))
                         try tick(t)
-                        _ = try P.f315_DCSymmetry3Set(t, p1_dc, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 256, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, f2i((t8 - (256.0 * t7))), f2i((t6 - (256.0 * t5))), 0)
+                        _ = try P.f316_DCSymmetry3Set(t, p1_dc, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 256, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, f2i((t8 - (256.0 * t7))), f2i((t6 - (256.0 * t5))), 0)
                         ln = 2097302 // Strut.HC:150
                         l16_i = 0
                         loop9: while (l16_i < 8) {
@@ -469,8 +471,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                             let t16: Double = d(try nat(t, n_Sin, try push1(t, bits(l24__))))
                             let t19: Double = try ldf((fp &+ 40))
                             let t18: Double = d(try nat(t, n_Cos, try push1(t, bits(l24__))))
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, p1_dc, f2i((t19 - (3.0 * t18))), f2i((t17 - (3.0 * t16))), 0, f2i(((t14 - (l32_d * t13)) + ((0.5 * l32_d) * t15))), f2i(((t11 - (l32_d * t10)) - ((0.5 * l32_d) * t12))), 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, p1_dc, f2i((t19 - (3.0 * t18))), f2i((t17 - (3.0 * t16))), 0, f2i(((t14 - (l32_d * t13)) + ((0.5 * l32_d) * t15))), f2i(((t11 - (l32_d * t10)) - ((0.5 * l32_d) * t12))), 0, 1, 0))
                             ln = 2097315 // Strut.HC:163
                             let t21: Double = try ldf((fp &+ 48))
                             let t20: Double = d(try nat(t, n_Sin, try push1(t, bits(l24__))))
@@ -484,8 +485,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                             let t26: Double = d(try nat(t, n_Sin, try push1(t, bits(l24__))))
                             let t29: Double = try ldf((fp &+ 40))
                             let t28: Double = d(try nat(t, n_Cos, try push1(t, bits(l24__))))
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, p1_dc, f2i((t29 - ((2.0 * l32_d) * t28))), f2i((t27 - ((2.0 * l32_d) * t26))), 0, f2i(((t24 - (l32_d * t23)) + ((0.5 * l32_d) * t25))), f2i(((t21 - (l32_d * t20)) - ((0.5 * l32_d) * t22))), 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, p1_dc, f2i((t29 - ((2.0 * l32_d) * t28))), f2i((t27 - ((2.0 * l32_d) * t26))), 0, f2i(((t24 - (l32_d * t23)) + ((0.5 * l32_d) * t25))), f2i(((t21 - (l32_d * t20)) - ((0.5 * l32_d) * t22))), 0, 1, 0))
                             ln = 2097302 // Strut.HC:150
                             l16_i = (l16_i &+ 1)
                             try tick(t)
@@ -496,14 +496,14 @@ public final class N_Apps_Strut_Run: NativeModule {
                     }
                     ln = 2097319 // Strut.HC:167
                     try tick(t)
-                    try P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, b0, l24__)
+                    try P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, b0, l24__)
                     ln = 2097320 // Strut.HC:168
                     if try (ldf(g_zoom) > 0.5) {
                         ln = 2097321 // Strut.HC:169
                         try st4((p1_dc &+ 160), 14)
                         ln = 2097322 // Strut.HC:170
                         try tick(t)
-                        _ = try P.f407_GrPutChar3(t, p1_dc, f2i((((ldf((fp &+ 40)) * 7.0) + l56_x2) / 8.0)), f2i((((ldf((fp &+ 48)) * 7.0) + l64_y2) / 8.0)), 0, ld8((l80_tmps &+ 88)))
+                        _ = try P.f409_GrPutChar3(t, p1_dc, f2i((((ldf((fp &+ 40)) * 7.0) + l56_x2) / 8.0)), f2i((((ldf((fp &+ 48)) * 7.0) + l64_y2) / 8.0)), 0, ld8((l80_tmps &+ 88)))
                     }
                 } else {
                     ln = 2097324 // Strut.HC:172
@@ -514,7 +514,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                             try st4((p1_dc &+ 160), 3)
                             ln = 2097327 // Strut.HC:175
                             try tick(t)
-                            _ = try P.f407_GrPutChar3(t, p1_dc, f2i((((ldf((fp &+ 40)) * 7.0) + l56_x2) / 8.0)), f2i((((ldf((fp &+ 48)) * 7.0) + l64_y2) / 8.0)), 0, ld8((l80_tmps &+ 88)))
+                            _ = try P.f409_GrPutChar3(t, p1_dc, f2i((((ldf((fp &+ 40)) * 7.0) + l56_x2) / 8.0)), f2i((((ldf((fp &+ 48)) * 7.0) + l64_y2) / 8.0)), 0, ld8((l80_tmps &+ 88)))
                         }
                     }
                 }
@@ -529,7 +529,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC MyDerivative (Strut.HC:182)
-    public final func f713_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f718_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -628,7 +628,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC PlaceMass (Strut.HC:224)
-    @discardableResult public final func f714_PlaceMass(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f719_PlaceMass(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -658,7 +658,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC PlaceSpring (Strut.HC:235)
-    @discardableResult public final func f715_PlaceSpring(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f720_PlaceSpring(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -706,7 +706,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC CenterMasses (Strut.HC:252)
-    public final func f716_CenterMasses(_ t: HTask) throws {
+    public final func f721_CenterMasses(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -740,7 +740,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC NullSprings (Strut.HC:267)
-    public final func f717_NullSprings(_ t: HTask) throws {
+    public final func f722_NullSprings(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -763,7 +763,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC BreakConnectors (Strut.HC:276)
-    public final func f718_BreakConnectors(_ t: HTask) throws {
+    public final func f723_BreakConnectors(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -799,7 +799,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC Init (Strut.HC:290)
-    public final func f719_Init(_ t: HTask) throws {
+    public final func f724_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -835,10 +835,10 @@ public final class N_Apps_Strut_Run: NativeModule {
             try st8(g_zoom, bits(1.0))
             ln = 2097454 // Strut.HC:302
             try tick(t)
-            let t3: Int64 = try P.f453_ODENew(t, 0, 1.0E-4, 1)
+            let t3: Int64 = try P.f458_ODENew(t, 0, 1.0E-4, 1)
             try st8(g_ode, t3)
             ln = 2097455 // Strut.HC:303
-            try st8((ld8(g_ode) &+ 304), 9223090561878065865)
+            try st8((ld8(g_ode) &+ 304), 9223090561878065870)
             ln = 2097456 // Strut.HC:304
             try st8((ld8(g_ode) &+ 96), bits(5000.0))
             ln = 2097457 // Strut.HC:305
@@ -854,7 +854,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC CleanUp (Strut.HC:310)
-    public final func f720_CleanUp(_ t: HTask) throws {
+    public final func f725_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -871,7 +871,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                 try P.f156_QueDel(t, (ld8(g_ode) &+ 56), 1)
                 ln = 2097468 // Strut.HC:316
                 try tick(t)
-                try P.f455_ODEDel(t, ld8(g_ode))
+                try P.f460_ODEDel(t, ld8(g_ode))
                 ln = 2097469 // Strut.HC:317
                 try st8(g_ode, 0)
             }
@@ -881,7 +881,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC PlayShip (Strut.HC:321)
-    public final func f721_PlayShip(_ t: HTask) throws {
+    public final func f726_PlayShip(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -893,10 +893,10 @@ public final class N_Apps_Strut_Run: NativeModule {
             l16_last_noise = 0.0
             ln = 2097478 // Strut.HC:326
             try tick(t)
-            _ = try P.f454_ODEPause(t, ld8(g_ode), 0)
+            _ = try P.f459_ODEPause(t, ld8(g_ode), 0)
             ln = 2097479 // Strut.HC:327
             try tick(t)
-            _ = try P.f507_MenuPush(t, s5)
+            _ = try P.f512_MenuPush(t, s5)
             ln = 2097506 // Strut.HC:354
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 2097507 // Strut.HC:355
@@ -908,7 +908,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                     loop1: while try (ld8(g_main_mode_bttn) == 1) {
                         ln = 2097509 // Strut.HC:357
                         try tick(t)
-                        try f718_BreakConnectors(t)
+                        try f723_BreakConnectors(t)
                         ln = 2097510 // Strut.HC:358
                         let t0: Int64 = try nat(t, n_ScanMsg, try push4(t, fp, (fp &+ 8), 12, 0))
                         switch3: do {
@@ -924,21 +924,21 @@ public final class N_Apps_Strut_Run: NativeModule {
                                         if (t2 > (l16_last_noise + 0.25)) {
                                             ln = 2097515 // Strut.HC:363
                                             try tick(t)
-                                            _ = try P.f499_Noise(t, 250, 18.0, 46.0)
+                                            _ = try P.f504_Noise(t, 250, 18.0, 46.0)
                                             ln = 2097516 // Strut.HC:364
                                             let t3: Double = d(try nat(t, n_tS, push0(t)))
                                             l16_last_noise = t3
                                         }
                                     case 122:
                                         ln = 2097520 // Strut.HC:368
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065863, bits(2.0), 0, (-1), 0, 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065868, bits(2.0), 0, (-1), 0, 0, 0))
                                     case 90:
                                         ln = 2097523 // Strut.HC:371
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065863, bits(0.5), 0, (-1), 0, 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065868, bits(0.5), 0, (-1), 0, 0, 0))
                                     case 99:
                                         ln = 2097526 // Strut.HC:374
                                         try tick(t)
-                                        try f716_CenterMasses(t)
+                                        try f721_CenterMasses(t)
                                     case 100:
                                         ln = 2097529 // Strut.HC:377
                                         try st8((ld8(g_ode) &+ 80), bits(0.002))
@@ -1001,7 +1001,7 @@ public final class N_Apps_Strut_Run: NativeModule {
             }
             ln = 2097559 // Strut.HC:407
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 2097560 // Strut.HC:408
             if (l24_okay == 0) {
                 ln = 2097561 // Strut.HC:409
@@ -1014,7 +1014,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC EditShip (Strut.HC:412)
-    public final func f722_EditShip(_ t: HTask) throws {
+    public final func f727_EditShip(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1031,14 +1031,14 @@ public final class N_Apps_Strut_Run: NativeModule {
             let t0: Int64 = try nat(t, n_Define, try push1(t, s4))
             ln = 2097570 // Strut.HC:418
             try tick(t)
-            let t1: Int64 = try P.f528_CtrlBttnNew(t, 0, 44, 80, (-1), 5, t0, g_edit_mode_colors, g_edit_mode_bttn)
+            let t1: Int64 = try P.f533_CtrlBttnNew(t, 0, 44, 80, (-1), 5, t0, g_edit_mode_colors, g_edit_mode_bttn)
             l56_bt_edit_mode = t1
             ln = 2097572 // Strut.HC:420
             try tick(t)
-            _ = try P.f454_ODEPause(t, ld8(g_ode), 1)
+            _ = try P.f459_ODEPause(t, ld8(g_ode), 1)
             ln = 2097573 // Strut.HC:421
             try tick(t)
-            _ = try P.f507_MenuPush(t, s6)
+            _ = try P.f512_MenuPush(t, s6)
             ln = 2097606 // Strut.HC:454
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 2097607 // Strut.HC:455
@@ -1060,10 +1060,10 @@ public final class N_Apps_Strut_Run: NativeModule {
                                     case 0:
                                         ln = 2097615 // Strut.HC:463
                                         try tick(t)
-                                        try f709_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
+                                        try f714_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
                                         ln = 2097616 // Strut.HC:464
                                         try tick(t)
-                                        let t4: Int64 = try f714_PlaceMass(t, f2i(ldf((fp &+ 16))), f2i(ldf((fp &+ 24))))
+                                        let t4: Int64 = try f719_PlaceMass(t, f2i(ldf((fp &+ 16))), f2i(ldf((fp &+ 24))))
                                         l40_tmpm1 = t4
                                         ln = 2097617 // Strut.HC:465
                                         if try (ld8((ld8(g_ode) &+ 40)) == l40_tmpm1) {
@@ -1078,10 +1078,10 @@ public final class N_Apps_Strut_Run: NativeModule {
                                     case 1, 2, 3, 4:
                                         ln = 2097627 // Strut.HC:475
                                         try tick(t)
-                                        try f709_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
+                                        try f714_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
                                         ln = 2097628 // Strut.HC:476
                                         try tick(t)
-                                        let t5: Int64 = try P.f461_MassFind(t, ld8(g_ode), ldf((fp &+ 16)), ldf((fp &+ 24)), 0.0)
+                                        let t5: Int64 = try P.f466_MassFind(t, ld8(g_ode), ldf((fp &+ 16)), ldf((fp &+ 24)), 0.0)
                                         l40_tmpm1 = t5
                                         ln = 2097629 // Strut.HC:477
                                         l48_tmpm2 = 0
@@ -1099,19 +1099,19 @@ public final class N_Apps_Strut_Run: NativeModule {
                                     case 1, 2, 3:
                                         ln = 2097640 // Strut.HC:488
                                         try tick(t)
-                                        try f709_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
+                                        try f714_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
                                         ln = 2097641 // Strut.HC:489
                                         var r8: Bool = (l40_tmpm1 != 0)
                                         if r8 {
                                             try tick(t)
-                                            let t7: Int64 = try P.f461_MassFind(t, ld8(g_ode), ldf((fp &+ 16)), ldf((fp &+ 24)), 0.0)
+                                            let t7: Int64 = try P.f466_MassFind(t, ld8(g_ode), ldf((fp &+ 16)), ldf((fp &+ 24)), 0.0)
                                             l48_tmpm2 = t7
                                             r8 = (t7 != 0)
                                         }
                                         if (r8 && (l40_tmpm1 != l48_tmpm2)) {
                                             ln = 2097642 // Strut.HC:490
                                             try tick(t)
-                                            _ = try f715_PlaceSpring(t, l40_tmpm1, l48_tmpm2, ld8(g_edit_mode_bttn))
+                                            _ = try f720_PlaceSpring(t, l40_tmpm1, l48_tmpm2, ld8(g_edit_mode_bttn))
                                         }
                                         ln = 2097643 // Strut.HC:491
                                         l48_tmpm2 = 0
@@ -1119,7 +1119,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                                     case 4:
                                         ln = 2097646 // Strut.HC:494
                                         try tick(t)
-                                        try f709_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
+                                        try f714_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
                                         ln = 2097647 // Strut.HC:495
                                         if (l40_tmpm1 != 0) {
                                             ln = 2097648 // Strut.HC:496
@@ -1130,7 +1130,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                                             try st8((l40_tmpm1 &+ 72), bits(0.0))
                                             ln = 2097651 // Strut.HC:499
                                             try tick(t)
-                                            try f717_NullSprings(t)
+                                            try f722_NullSprings(t)
                                         }
                                         ln = 2097653 // Strut.HC:501
                                         l48_tmpm2 = 0
@@ -1147,7 +1147,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                                     case 4:
                                         ln = 2097660 // Strut.HC:508
                                         try tick(t)
-                                        try f709_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
+                                        try f714_S2W(t, Double(ld8(P.g_ms)), Double(ld8((P.g_ms &+ 8))), (fp &+ 16), (fp &+ 24))
                                         ln = 2097661 // Strut.HC:509
                                         if (l40_tmpm1 != 0) {
                                             ln = 2097662 // Strut.HC:510
@@ -1158,7 +1158,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                                             try st8((l40_tmpm1 &+ 72), bits(0.0))
                                             ln = 2097665 // Strut.HC:513
                                             try tick(t)
-                                            try f717_NullSprings(t)
+                                            try f722_NullSprings(t)
                                         }
                                     default:
                                         break
@@ -1183,21 +1183,21 @@ public final class N_Apps_Strut_Run: NativeModule {
                                     case 10:
                                         ln = 2097679 // Strut.HC:527
                                         try tick(t)
-                                        try f720_CleanUp(t)
+                                        try f725_CleanUp(t)
                                         ln = 2097680 // Strut.HC:528
                                         try tick(t)
-                                        try f719_Init(t)
+                                        try f724_Init(t)
                                     case 48...57:
                                         ln = 2097683 // Strut.HC:531
                                         try st8(g_next_action_key, ld8(fp))
                                     case 99:
                                         ln = 2097686 // Strut.HC:534
                                         try tick(t)
-                                        try f716_CenterMasses(t)
+                                        try f721_CenterMasses(t)
                                     case 100:
                                         ln = 2097689 // Strut.HC:537
                                         try tick(t)
-                                        _ = try P.f454_ODEPause(t, ld8(g_ode), 0)
+                                        _ = try P.f459_ODEPause(t, ld8(g_ode), 0)
                                         ln = 2097690 // Strut.HC:538
                                         try st8((ld8(g_ode) &+ 80), bits(0.002))
                                         ln = 2097691 // Strut.HC:539
@@ -1219,10 +1219,10 @@ public final class N_Apps_Strut_Run: NativeModule {
                                         try st8(g_edit_mode_bttn, 3)
                                     case 122:
                                         ln = 2097709 // Strut.HC:557
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065863, bits(2.0), 0, (-1), 0, 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065868, bits(2.0), 0, (-1), 0, 0, 0))
                                     case 90:
                                         ln = 2097712 // Strut.HC:560
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065863, bits(0.5), 0, (-1), 0, 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065868, bits(0.5), 0, (-1), 0, 0, 0))
                                     case 32:
                                         ln = 2097715 // Strut.HC:563
                                         let t13: Int64 = try ld8(g_main_mode_bttn)
@@ -1251,7 +1251,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                                     case 100:
                                         ln = 2097727 // Strut.HC:575
                                         try tick(t)
-                                        _ = try P.f454_ODEPause(t, ld8(g_ode), 1)
+                                        _ = try P.f459_ODEPause(t, ld8(g_ode), 1)
                                         ln = 2097728 // Strut.HC:576
                                         try st8((ld8(g_ode) &+ 80), bits(2.0E-6))
                                         ln = 2097729 // Strut.HC:577
@@ -1283,10 +1283,10 @@ public final class N_Apps_Strut_Run: NativeModule {
             }
             ln = 2097742 // Strut.HC:590
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 2097743 // Strut.HC:591
             try tick(t)
-            try P.f529_CtrlBttnDel(t, l56_bt_edit_mode)
+            try P.f534_CtrlBttnDel(t, l56_bt_edit_mode)
             ln = 2097744 // Strut.HC:592
             if (l32_okay == 0) {
                 ln = 2097745 // Strut.HC:593
@@ -1299,7 +1299,7 @@ public final class N_Apps_Strut_Run: NativeModule {
     }
 
     /// HolyC Strut (Strut.HC:596)
-    public final func f723_Strut(_ t: HTask) throws {
+    public final func f728_Strut(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1331,15 +1331,15 @@ public final class N_Apps_Strut_Run: NativeModule {
             let t1: Int64 = try nat(t, n_Define, try push1(t, s2))
             ln = 2097769 // Strut.HC:617
             try tick(t)
-            let t2: Int64 = try P.f528_CtrlBttnNew(t, 296, 12, 80, (-1), 2, t1, g_main_mode_colors, g_main_mode_bttn)
+            let t2: Int64 = try P.f533_CtrlBttnNew(t, 296, 12, 80, (-1), 2, t1, g_main_mode_colors, g_main_mode_bttn)
             l0_bt_main_mode = t2
             ln = 2097772 // Strut.HC:620
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 2097773 // Strut.HC:621
             try tick(t)
-            try f719_Init(t)
+            try f724_Init(t)
             ln = 2097774 // Strut.HC:622
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065864)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065869)
             ln = 2097775 // Strut.HC:623
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -1348,10 +1348,10 @@ public final class N_Apps_Strut_Run: NativeModule {
                 loop0: while (1 != 0) {
                     ln = 2097777 // Strut.HC:625
                     try tick(t)
-                    try f722_EditShip(t)
+                    try f727_EditShip(t)
                     ln = 2097778 // Strut.HC:626
                     try tick(t)
-                    try f721_PlayShip(t)
+                    try f726_PlayShip(t)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -1360,7 +1360,7 @@ public final class N_Apps_Strut_Run: NativeModule {
                 t.sp = h0sp; t.msp = h0msp; t.depth = h0d; t.hCount = h0c
                 ln = 2097781 // Strut.HC:629
                 try tick(t)
-                try f720_CleanUp(t)
+                try f725_CleanUp(t)
                 ln = 2097782 // Strut.HC:630
                 try st1((ld8(P.g_Fs) &+ 888), 1)
                 try endCatch(t)
@@ -1370,20 +1370,20 @@ public final class N_Apps_Strut_Run: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 2097785 // Strut.HC:633
             try tick(t)
-            try P.f529_CtrlBttnDel(t, l0_bt_main_mode)
+            try P.f534_CtrlBttnDel(t, l0_bt_main_mode)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Strut", ln) }
     }
 
     /// HolyC $init:C:/Apps/Strut/Run.HC#6 (Run.HC:47)
-    @discardableResult public final func f724_init_C__Apps_Strut_Run_HC_6(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f729_init_C__Apps_Strut_Run_HC_6(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 3 // Run.HC:3
             try tick(t)
-            try f723_Strut(t)
+            try f728_Strut(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Strut/Run.HC#6", ln) }
@@ -1392,34 +1392,34 @@ public final class N_Apps_Strut_Run: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Strut_Run_HC_0(t)
-        case 704: return try f704_init_C__Apps_Strut_Run_HC_1(t)
-        case 705: return try f705_init_C__Apps_Strut_Run_HC_2(t)
-        case 706: return try f706_init_C__Apps_Strut_Run_HC_3(t)
-        case 707: return try f707_init_C__Apps_Strut_Run_HC_4(t)
-        case 708: return try f708_init_C__Apps_Strut_Run_HC_5(t)
-        case 709: try f709_S2W(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 710: try f710_W2S(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 711: try f711_Zoom(t, d((n > 0 ? st[base + 0] : 0))); return 0
-        case 712: try f712_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 713: try f713_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 714: return try f714_PlaceMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 715: return try f715_PlaceSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 716: try f716_CenterMasses(t); return 0
-        case 717: try f717_NullSprings(t); return 0
-        case 718: try f718_BreakConnectors(t); return 0
-        case 719: try f719_Init(t); return 0
-        case 720: try f720_CleanUp(t); return 0
-        case 721: try f721_PlayShip(t); return 0
-        case 722: try f722_EditShip(t); return 0
-        case 723: try f723_Strut(t); return 0
-        case 724: return try f724_init_C__Apps_Strut_Run_HC_6(t)
+        case 708: return try f708_init_C__Apps_Strut_Run_HC_0(t)
+        case 709: return try f709_init_C__Apps_Strut_Run_HC_1(t)
+        case 710: return try f710_init_C__Apps_Strut_Run_HC_2(t)
+        case 711: return try f711_init_C__Apps_Strut_Run_HC_3(t)
+        case 712: return try f712_init_C__Apps_Strut_Run_HC_4(t)
+        case 713: return try f713_init_C__Apps_Strut_Run_HC_5(t)
+        case 714: try f714_S2W(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 715: try f715_W2S(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 716: try f716_Zoom(t, d((n > 0 ? st[base + 0] : 0))); return 0
+        case 717: try f717_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 718: try f718_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 719: return try f719_PlaceMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 720: return try f720_PlaceSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 721: try f721_CenterMasses(t); return 0
+        case 722: try f722_NullSprings(t); return 0
+        case 723: try f723_BreakConnectors(t); return 0
+        case 724: try f724_Init(t); return 0
+        case 725: try f725_CleanUp(t); return 0
+        case 726: try f726_PlayShip(t); return 0
+        case 727: try f727_EditShip(t); return 0
+        case 728: try f728_Strut(t); return 0
+        case 729: return try f729_init_C__Apps_Strut_Run_HC_6(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Strut/Run.HC#0", 704: "$init:C:/Apps/Strut/Run.HC#1", 705: "$init:C:/Apps/Strut/Run.HC#2", 706: "$init:C:/Apps/Strut/Run.HC#3", 707: "$init:C:/Apps/Strut/Run.HC#4", 708: "$init:C:/Apps/Strut/Run.HC#5", 709: "S2W", 710: "W2S", 711: "Zoom", 712: "DrawIt", 713: "MyDerivative", 714: "PlaceMass", 715: "PlaceSpring", 716: "CenterMasses", 717: "NullSprings", 718: "BreakConnectors", 719: "Init", 720: "CleanUp", 721: "PlayShip", 722: "EditShip", 723: "Strut", 724: "$init:C:/Apps/Strut/Run.HC#6"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Strut/Run.HC#0", 709: "$init:C:/Apps/Strut/Run.HC#1", 710: "$init:C:/Apps/Strut/Run.HC#2", 711: "$init:C:/Apps/Strut/Run.HC#3", 712: "$init:C:/Apps/Strut/Run.HC#4", 713: "$init:C:/Apps/Strut/Run.HC#5", 714: "S2W", 715: "W2S", 716: "Zoom", 717: "DrawIt", 718: "MyDerivative", 719: "PlaceMass", 720: "PlaceSpring", 721: "CenterMasses", 722: "NullSprings", 723: "BreakConnectors", 724: "Init", 725: "CleanUp", 726: "PlayShip", 727: "EditShip", 728: "Strut", 729: "$init:C:/Apps/Strut/Run.HC#6"]
     private static let FILES: [String] = ["C:/Apps/Strut/Run.HC", "C:/Apps/Strut/Load.HC", "C:/Apps/Strut/Strut.HC"]
     public override var files: [String] { N_Apps_Strut_Run.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Strut_Run.DEFINED.contains(index) }

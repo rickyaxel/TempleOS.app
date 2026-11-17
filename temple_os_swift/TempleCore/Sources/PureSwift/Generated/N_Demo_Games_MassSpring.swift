@@ -43,7 +43,7 @@ public final class N_Demo_Games_MassSpring: NativeModule {
     }
 
     /// HolyC DrawIt (MassSpring.HC:12)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -59,7 +59,7 @@ public final class N_Demo_Games_MassSpring: NativeModule {
             loop0: while try (l24_tmps != (ld8(g_ode) &+ 56)) {
                 ln = 20 // MassSpring.HC:20
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, f2i(ldf((ld8((l24_tmps &+ 16)) &+ 56))), f2i(ldf((ld8((l24_tmps &+ 16)) &+ 64))), f2i(ldf((ld8((l24_tmps &+ 24)) &+ 56))), f2i(ldf((ld8((l24_tmps &+ 24)) &+ 64))), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, f2i(ldf((ld8((l24_tmps &+ 16)) &+ 56))), f2i(ldf((ld8((l24_tmps &+ 16)) &+ 64))), f2i(ldf((ld8((l24_tmps &+ 24)) &+ 56))), f2i(ldf((ld8((l24_tmps &+ 24)) &+ 64))), 1, 0)
                 ln = 21 // MassSpring.HC:21
                 l24_tmps = try ld8(l24_tmps)
                 try tick(t)
@@ -72,7 +72,7 @@ public final class N_Demo_Games_MassSpring: NativeModule {
             loop2: while try (l16_tmpm != (ld8(g_ode) &+ 40)) {
                 ln = 27 // MassSpring.HC:27
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), f2i(ldf((l16_tmpm &+ 104))), 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, f2i(ldf((l16_tmpm &+ 56))), f2i(ldf((l16_tmpm &+ 64))), f2i(ldf((l16_tmpm &+ 104))), 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 28 // MassSpring.HC:28
                 l16_tmpm = try ld8(l16_tmpm)
                 try tick(t)
@@ -83,7 +83,7 @@ public final class N_Demo_Games_MassSpring: NativeModule {
     }
 
     /// HolyC MyDerivative (MassSpring.HC:32)
-    public final func f704_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -152,7 +152,7 @@ public final class N_Demo_Games_MassSpring: NativeModule {
     }
 
     /// HolyC PlaceMass (MassSpring.HC:59)
-    public final func f705_PlaceMass(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_PlaceMass(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -182,7 +182,7 @@ public final class N_Demo_Games_MassSpring: NativeModule {
     }
 
     /// HolyC PlaceSpring (MassSpring.HC:70)
-    public final func f706_PlaceSpring(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f711_PlaceSpring(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -209,16 +209,16 @@ public final class N_Demo_Games_MassSpring: NativeModule {
     }
 
     /// HolyC Init (MassSpring.HC:80)
-    public final func f707_Init(_ t: HTask) throws {
+    public final func f712_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 82 // MassSpring.HC:82
             try tick(t)
-            let t0: Int64 = try P.f453_ODENew(t, 0, 1.0E-4, 1)
+            let t0: Int64 = try P.f458_ODENew(t, 0, 1.0E-4, 1)
             try st8(g_ode, t0)
             ln = 83 // MassSpring.HC:83
-            try st8((ld8(g_ode) &+ 304), 9223090561878065856)
+            try st8((ld8(g_ode) &+ 304), 9223090561878065861)
             ln = 84 // MassSpring.HC:84
             try st8((ld8(g_ode) &+ 80), bits(0.002))
             ln = 85 // MassSpring.HC:85
@@ -234,7 +234,7 @@ public final class N_Demo_Games_MassSpring: NativeModule {
     }
 
     /// HolyC CleanUp (MassSpring.HC:91)
-    public final func f708_CleanUp(_ t: HTask) throws {
+    public final func f713_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -249,14 +249,14 @@ public final class N_Demo_Games_MassSpring: NativeModule {
             try P.f156_QueDel(t, (ld8(g_ode) &+ 56), 1)
             ln = 96 // MassSpring.HC:96
             try tick(t)
-            try P.f455_ODEDel(t, ld8(g_ode))
+            try P.f460_ODEDel(t, ld8(g_ode))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "CleanUp", ln) }
     }
 
     /// HolyC MassSpringDemo (MassSpring.HC:99)
-    public final func f709_MassSpringDemo(_ t: HTask) throws {
+    public final func f714_MassSpringDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -291,12 +291,12 @@ public final class N_Demo_Games_MassSpring: NativeModule {
             try st4(t0, (ld4u(t0) | 5242880))
             ln = 117 // MassSpring.HC:117
             try tick(t)
-            _ = try P.f507_MenuPush(t, s1)
+            _ = try P.f512_MenuPush(t, s1)
             ln = 127 // MassSpring.HC:127
             try tick(t)
-            try f707_Init(t)
+            try f712_Init(t)
             ln = 128 // MassSpring.HC:128
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 130 // MassSpring.HC:130
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -314,11 +314,11 @@ public final class N_Demo_Games_MassSpring: NativeModule {
                             case 5:
                                 ln = 136 // MassSpring.HC:136
                                 try tick(t)
-                                try f705_PlaceMass(t, ld8((fp &+ 8)), ld8((fp &+ 16)))
+                                try f710_PlaceMass(t, ld8((fp &+ 8)), ld8((fp &+ 16)))
                             case 9:
                                 ln = 139 // MassSpring.HC:139
                                 try tick(t)
-                                let t3: Int64 = try P.f461_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
+                                let t3: Int64 = try P.f466_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
                                 l24_tmpm1 = t3
                                 ln = 140 // MassSpring.HC:140
                                 l32_tmpm2 = 0
@@ -327,14 +327,14 @@ public final class N_Demo_Games_MassSpring: NativeModule {
                                 var r5: Bool = (l24_tmpm1 != 0)
                                 if r5 {
                                     try tick(t)
-                                    let t4: Int64 = try P.f461_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
+                                    let t4: Int64 = try P.f466_MassFind(t, ld8(g_ode), Double(ld8((fp &+ 8))), Double(ld8((fp &+ 16))), 0.0)
                                     l32_tmpm2 = t4
                                     r5 = (t4 != 0)
                                 }
                                 if (r5 && (l24_tmpm1 != l32_tmpm2)) {
                                     ln = 144 // MassSpring.HC:144
                                     try tick(t)
-                                    try f706_PlaceSpring(t, l24_tmpm1, l32_tmpm2)
+                                    try f711_PlaceSpring(t, l24_tmpm1, l32_tmpm2)
                                 }
                                 ln = 145 // MassSpring.HC:145
                                 l32_tmpm2 = 0
@@ -347,10 +347,10 @@ public final class N_Demo_Games_MassSpring: NativeModule {
                                     case 10:
                                         ln = 150 // MassSpring.HC:150
                                         try tick(t)
-                                        try f708_CleanUp(t)
+                                        try f713_CleanUp(t)
                                         ln = 151 // MassSpring.HC:151
                                         try tick(t)
-                                        try f707_Init(t)
+                                        try f712_Init(t)
                                     case 27, 28:
                                         ln = 155 // MassSpring.HC:155
                                         break skip_0
@@ -381,10 +381,10 @@ public final class N_Demo_Games_MassSpring: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 165 // MassSpring.HC:165
             try tick(t)
-            try f708_CleanUp(t)
+            try f713_CleanUp(t)
             ln = 166 // MassSpring.HC:166
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -392,13 +392,13 @@ public final class N_Demo_Games_MassSpring: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/MassSpring.HC#0 (MassSpring.HC:10)
-    @discardableResult public final func f710_init_C__Demo_Games_MassSpring_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Demo_Games_MassSpring_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 169 // MassSpring.HC:169
             try tick(t)
-            try f709_MassSpringDemo(t)
+            try f714_MassSpringDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/MassSpring.HC#0", ln) }
@@ -407,20 +407,20 @@ public final class N_Demo_Games_MassSpring: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: try f705_PlaceMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_PlaceSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 707: try f707_Init(t); return 0
-        case 708: try f708_CleanUp(t); return 0
-        case 709: try f709_MassSpringDemo(t); return 0
-        case 710: return try f710_init_C__Demo_Games_MassSpring_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: try f710_PlaceMass(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_PlaceSpring(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 712: try f712_Init(t); return 0
+        case 713: try f713_CleanUp(t); return 0
+        case 714: try f714_MassSpringDemo(t); return 0
+        case 715: return try f715_init_C__Demo_Games_MassSpring_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "MyDerivative", 705: "PlaceMass", 706: "PlaceSpring", 707: "Init", 708: "CleanUp", 709: "MassSpringDemo", 710: "$init:C:/Demo/Games/MassSpring.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "MyDerivative", 710: "PlaceMass", 711: "PlaceSpring", 712: "Init", 713: "CleanUp", 714: "MassSpringDemo", 715: "$init:C:/Demo/Games/MassSpring.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/MassSpring.HC"]
     public override var files: [String] { N_Demo_Games_MassSpring.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_MassSpring.DEFINED.contains(index) }

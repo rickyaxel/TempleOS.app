@@ -15,6 +15,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     public let n_DocClear: Int
     public let n_DocCursor: Int
     public let n_GetMsg: Int
+    public let n_GrLine3: Int
     public let n_MemCpy: Int
     public let n_MemSet: Int
     public let n_Sin: Int
@@ -37,6 +38,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
         n_DocClear = rt.vm.natives.find("DocClear")!.index
         n_DocCursor = rt.vm.natives.find("DocCursor")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_MemCpy = rt.vm.natives.find("MemCpy")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_Sin = rt.vm.natives.find("Sin")!.index
@@ -62,7 +64,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Lattice.HC#0 (Lattice.HC:5)
-    @discardableResult public final func f703_init_C__Demo_Graphics_Lattice_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Graphics_Lattice_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -116,7 +118,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC TurtlePlot (Lattice.HC:25)
-    public final func f704_TurtlePlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_TurtlePlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -148,8 +150,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             let t5: Double = d(try nat(t, n_Sin, try push1(t, bits((ldf((p1_t &+ 32)) + (d(4614256656552045848) / 2.0))))))
             let t9: Double = try ldf(p1_t)
             let t8: Double = d(try nat(t, n_Cos, try push1(t, bits((ldf((p1_t &+ 32)) + (d(4614256656552045848) / 2.0))))))
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p0_dc, f2i((t9 + (l32_w * t8))), f2i((t6 + (l32_w * t5))), t7, f2i((t4 + (l32_w * t3))), f2i((t1 + (l32_w * t0))), t2, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p0_dc, f2i((t9 + (l32_w * t8))), f2i((t6 + (l32_w * t5))), t7, f2i((t4 + (l32_w * t3))), f2i((t1 + (l32_w * t0))), t2, 1, 0))
             ln = 32 // Lattice.HC:32
             l32_w = try (ldf((p1_t &+ 40)) / 2.0)
             ln = 33 // Lattice.HC:33
@@ -161,7 +162,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             let t14: Double = try ldf(p1_t)
             let t13: Double = d(try nat(t, n_Cos, try push1(t, bits((ldf((p1_t &+ 32)) + (d(4614256656552045848) / 2.0))))))
             try tick(t)
-            _ = try P.f393_GrPlot3(t, p0_dc, f2i((t14 + (l32_w * t13))), f2i((t11 + (l32_w * t10))), t12)
+            _ = try P.f394_GrPlot3(t, p0_dc, f2i((t14 + (l32_w * t13))), f2i((t11 + (l32_w * t10))), t12)
             ln = 35 // Lattice.HC:35
             let t17: Int64 = try f2i(ldf((p1_t &+ 16)))
             let t16: Double = try ldf((p1_t &+ 8))
@@ -169,14 +170,14 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             let t19: Double = try ldf(p1_t)
             let t18: Double = d(try nat(t, n_Cos, try push1(t, bits((ldf((p1_t &+ 32)) - (d(4614256656552045848) / 2.0))))))
             try tick(t)
-            _ = try P.f393_GrPlot3(t, p0_dc, f2i((t19 + (l32_w * t18))), f2i((t16 + (l32_w * t15))), t17)
+            _ = try P.f394_GrPlot3(t, p0_dc, f2i((t19 + (l32_w * t18))), f2i((t16 + (l32_w * t15))), t17)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "TurtlePlot", ln) }
     }
 
     /// HolyC TurtleMicroMove (Lattice.HC:38)
-    public final func f705_TurtleMicroMove(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
+    public final func f710_TurtleMicroMove(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -196,7 +197,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             try st8(t4, bits((t7 + (t6 * t5))))
             ln = 42 // Lattice.HC:42
             try tick(t)
-            let t8: Double = try P.f542_Wrap(t, (ldf((p0_t &+ 32)) + (p1_dt * ldf((g_angles &+ (ld8((p0_t &+ 48)) &* 8))))), (-d(4614256656552045848)))
+            let t8: Double = try P.f547_Wrap(t, (ldf((p0_t &+ 32)) + (p1_dt * ldf((g_angles &+ (ld8((p0_t &+ 48)) &* 8))))), (-d(4614256656552045848)))
             try st8((p0_t &+ 32), bits(t8))
             t.depth -= 1
             return
@@ -204,7 +205,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC TurtleEnd (Lattice.HC:45)
-    public final func f706_TurtleEnd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Double) throws {
+    public final func f711_TurtleEnd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -252,7 +253,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
                         try st8((p1_t &+ 40), bits(t7))
                         ln = 59 // Lattice.HC:59
                         try tick(t)
-                        try f704_TurtlePlot(t, p0_dc, p1_t, p2_edge, p3_middle)
+                        try f709_TurtlePlot(t, p0_dc, p1_t, p2_edge, p3_middle)
                     } else {
                         ln = 61 // Lattice.HC:61
                         break loop0
@@ -269,7 +270,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC TurtleMove (Lattice.HC:67)
-    public final func f707_TurtleMove(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f712_TurtleMove(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -292,7 +293,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             if try ((ld1u((p1_t &+ 60)) != 0) && (ld1u((p1_t &+ 61)) != 0)) {
                 ln = 72 // Lattice.HC:72
                 try tick(t)
-                try f706_TurtleEnd(t, p0_dc, p1_t, p2_edge, p3_middle, (ldf((p1_t &+ 32)) + d(4614256656552045848)))
+                try f711_TurtleEnd(t, p0_dc, p1_t, p2_edge, p3_middle, (ldf((p1_t &+ 32)) + d(4614256656552045848)))
             }
             ln = 73 // Lattice.HC:73
             try st1((p1_t &+ 61), 0)
@@ -301,10 +302,10 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             loop0: while (l32_i < l40_l) {
                 ln = 76 // Lattice.HC:76
                 try tick(t)
-                try f705_TurtleMicroMove(t, p1_t, (1.0 / Double(l40_l)))
+                try f710_TurtleMicroMove(t, p1_t, (1.0 / Double(l40_l)))
                 ln = 77 // Lattice.HC:77
                 try tick(t)
-                try f704_TurtlePlot(t, p0_dc, p1_t, p2_edge, p3_middle)
+                try f709_TurtlePlot(t, p0_dc, p1_t, p2_edge, p3_middle)
                 ln = 75 // Lattice.HC:75
                 l32_i = (l32_i &+ 1)
                 try tick(t)
@@ -313,7 +314,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             if try (ld1u((p1_t &+ 60)) != 0) {
                 ln = 80 // Lattice.HC:80
                 try tick(t)
-                try f706_TurtleEnd(t, p0_dc, p1_t, p2_edge, p3_middle, ldf((p1_t &+ 32)))
+                try f711_TurtleEnd(t, p0_dc, p1_t, p2_edge, p3_middle, ldf((p1_t &+ 32)))
             }
             t.depth -= 1
             return
@@ -321,7 +322,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC TurtleInit (Lattice.HC:83)
-    public final func f708_TurtleInit(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_TurtleInit(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -350,7 +351,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC DrawIt (Lattice.HC:96)
-    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -363,11 +364,11 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             ln = 100 // Lattice.HC:100
             try tick(t)
             let vb0 = try push(t, bits(ldf((g_tt &+ 16))), bits(ldf((g_tt &+ 24))), bits(((ldf((g_tt &+ 32)) * 180.0) / d(4614256656552045848))), bits(((ldf((g_angles &+ (ld8((g_tt &+ 48)) &* 8))) * 180.0) / d(4614256656552045848))), bits(ldf((g_tt &+ 40))))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s0, vb0, 5)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s0, vb0, 5)
             t.sp = vb0
             ln = 103 // Lattice.HC:103
             try tick(t)
-            try f707_TurtleMove(t, p1_dc, (fp &+ 16), 4, 12)
+            try f712_TurtleMove(t, p1_dc, (fp &+ 16), 4, 12)
             ln = 104 // Lattice.HC:104
             try st4((p1_dc &+ 160), 12)
             ln = 106 // Lattice.HC:106
@@ -381,7 +382,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             let t7: Double = try ldf((fp &+ 16))
             let t6: Double = d(try nat(t, n_Cos, try push1(t, bits((ldf(((fp &+ 16) &+ 32)) + (d(4614256656552045848) / 2.0))))))
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, f2i((t7 + (4.0 * t6))), f2i((t5 + (4.0 * t4))), f2i((t3 + (4.0 * t2))), f2i((t1 + (4.0 * t0))), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, f2i((t7 + (4.0 * t6))), f2i((t5 + (4.0 * t4))), f2i((t3 + (4.0 * t2))), f2i((t1 + (4.0 * t0))), 1, 0)
             ln = 108 // Lattice.HC:108
             let t9: Double = try ldf(((fp &+ 16) &+ 8))
             let t8: Double = d(try nat(t, n_Sin, try push1(t, bits(ldf(((fp &+ 16) &+ 32))))))
@@ -393,7 +394,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             let t15: Double = try ldf((fp &+ 16))
             let t14: Double = d(try nat(t, n_Cos, try push1(t, bits((ldf(((fp &+ 16) &+ 32)) + (d(4614256656552045848) / 2.0))))))
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, f2i((t15 + (4.0 * t14))), f2i((t13 + (4.0 * t12))), f2i((t11 + (4.0 * t10))), f2i((t9 + (4.0 * t8))), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, f2i((t15 + (4.0 * t14))), f2i((t13 + (4.0 * t12))), f2i((t11 + (4.0 * t10))), f2i((t9 + (4.0 * t8))), 1, 0)
             ln = 110 // Lattice.HC:110
             let t17: Double = try ldf(((fp &+ 16) &+ 8))
             let t16: Double = d(try nat(t, n_Sin, try push1(t, bits(ldf(((fp &+ 16) &+ 32))))))
@@ -405,7 +406,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             let t23: Double = try ldf((fp &+ 16))
             let t22: Double = d(try nat(t, n_Cos, try push1(t, bits((ldf(((fp &+ 16) &+ 32)) - (d(4614256656552045848) / 2.0))))))
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, f2i((t23 + (4.0 * t22))), f2i((t21 + (4.0 * t20))), f2i((t19 + (4.0 * t18))), f2i((t17 + (4.0 * t16))), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, f2i((t23 + (4.0 * t22))), f2i((t21 + (4.0 * t20))), f2i((t19 + (4.0 * t18))), f2i((t17 + (4.0 * t16))), 1, 0)
             t.msp = msp0
             t.depth -= 1
             return
@@ -413,7 +414,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC SetMenu (Lattice.HC:113)
-    public final func f710_SetMenu(_ t: HTask) throws {
+    public final func f715_SetMenu(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -428,7 +429,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
                 _ = try nat(t, n_StrPrint, try push3(t, (fp &+ 8), s1, l0_i))
                 ln = 120 // Lattice.HC:120
                 try tick(t)
-                let t0: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), (fp &+ 8))
+                let t0: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), (fp &+ 8))
                 l152_tmpse = t0
                 if (t0 != 0) {
                     ln = 121 // Lattice.HC:121
@@ -446,7 +447,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             }
             ln = 127 // Lattice.HC:127
             try tick(t)
-            let t1: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s2)
+            let t1: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s2)
             l152_tmpse = t1
             if (t1 != 0) {
                 ln = 128 // Lattice.HC:128
@@ -465,7 +466,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC Lattice (Lattice.HC:135)
-    public final func f711_Lattice(_ t: HTask) throws {
+    public final func f716_Lattice(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -484,7 +485,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             _ = try P.f296_DCDepthBufAlloc(t, l24_dc)
             ln = 141 // Lattice.HC:141
             try tick(t)
-            _ = try P.f507_MenuPush(t, s3)
+            _ = try P.f512_MenuPush(t, s3)
             ln = 171 // Lattice.HC:171
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -502,14 +503,14 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 177 // Lattice.HC:177
             try tick(t)
-            try f708_TurtleInit(t, g_tt)
+            try f713_TurtleInit(t, g_tt)
             ln = 178 // Lattice.HC:178
             try tick(t)
-            try f710_SetMenu(t)
+            try f715_SetMenu(t)
             ln = 180 // Lattice.HC:180
             try st4((ld8(P.g_Fs) &+ 12), 5304830)
             ln = 181 // Lattice.HC:181
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065866)
             ln = 182 // Lattice.HC:182
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -593,7 +594,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
                                         try st8((g_tt &+ 16), bits(Double((ld8((fp &+ 8)) &- 48))))
                                         ln = 226 // Lattice.HC:226
                                         try tick(t)
-                                        try f710_SetMenu(t)
+                                        try f715_SetMenu(t)
                                     case 99:
                                         ln = 229 // Lattice.HC:229
                                         try tick(t)
@@ -625,17 +626,17 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
                                         try P.f286_DCFill(t, l24_dc, 255)
                                         ln = 244 // Lattice.HC:244
                                         try tick(t)
-                                        try f708_TurtleInit(t, g_tt)
+                                        try f713_TurtleInit(t, g_tt)
                                         ln = 245 // Lattice.HC:245
                                         try tick(t)
-                                        try f710_SetMenu(t)
+                                        try f715_SetMenu(t)
                                     case 27, 28:
                                         ln = 249 // Lattice.HC:249
                                         break skip_0
                                     case 32:
                                         ln = 251 // Lattice.HC:251
                                         try tick(t)
-                                        try f707_TurtleMove(t, l24_dc, g_tt, ld2u((g_tt &+ 56)), ld2u((g_tt &+ 58)))
+                                        try f712_TurtleMove(t, l24_dc, g_tt, ld2u((g_tt &+ 56)), ld2u((g_tt &+ 58)))
                                     default:
                                         break
                                     }
@@ -669,7 +670,7 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
             try P.f293_DCDel(t, l24_dc)
             ln = 263 // Lattice.HC:263
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -677,13 +678,13 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Lattice.HC#1 (Lattice.HC:266)
-    @discardableResult public final func f712_init_C__Demo_Graphics_Lattice_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Demo_Graphics_Lattice_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 266 // Lattice.HC:266
             try tick(t)
-            try f711_Lattice(t)
+            try f716_Lattice(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Lattice.HC#1", ln) }
@@ -692,22 +693,22 @@ public final class N_Demo_Graphics_Lattice: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Graphics_Lattice_HC_0(t)
-        case 704: try f704_TurtlePlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: try f705_TurtleMicroMove(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
-        case 706: try f706_TurtleEnd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), d((n > 4 ? st[base + 4] : 0))); return 0
-        case 707: try f707_TurtleMove(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 708: try f708_TurtleInit(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: try f710_SetMenu(t); return 0
-        case 711: try f711_Lattice(t); return 0
-        case 712: return try f712_init_C__Demo_Graphics_Lattice_HC_1(t)
+        case 708: return try f708_init_C__Demo_Graphics_Lattice_HC_0(t)
+        case 709: try f709_TurtlePlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: try f710_TurtleMicroMove(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
+        case 711: try f711_TurtleEnd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), d((n > 4 ? st[base + 4] : 0))); return 0
+        case 712: try f712_TurtleMove(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 713: try f713_TurtleInit(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: try f714_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: try f715_SetMenu(t); return 0
+        case 716: try f716_Lattice(t); return 0
+        case 717: return try f717_init_C__Demo_Graphics_Lattice_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Graphics/Lattice.HC#0", 704: "TurtlePlot", 705: "TurtleMicroMove", 706: "TurtleEnd", 707: "TurtleMove", 708: "TurtleInit", 709: "DrawIt", 710: "SetMenu", 711: "Lattice", 712: "$init:C:/Demo/Graphics/Lattice.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Graphics/Lattice.HC#0", 709: "TurtlePlot", 710: "TurtleMicroMove", 711: "TurtleEnd", 712: "TurtleMove", 713: "TurtleInit", 714: "DrawIt", 715: "SetMenu", 716: "Lattice", 717: "$init:C:/Demo/Graphics/Lattice.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Lattice.HC"]
     public override var files: [String] { N_Demo_Graphics_Lattice.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Lattice.DEFINED.contains(index) }

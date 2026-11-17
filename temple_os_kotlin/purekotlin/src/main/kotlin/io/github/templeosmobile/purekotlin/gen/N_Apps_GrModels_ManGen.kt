@@ -46,7 +46,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC MDInit (ManGen.HC:80) */
-    fun f703_MDInit(t: Task, a0: Long) {
+    fun f708_MDInit(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -115,7 +115,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC MDCorrect (ManGen.HC:119) */
-    fun f704_MDCorrect(t: Task, a0: Long) {
+    fun f709_MDCorrect(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -171,7 +171,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC AddVertex (ManGen.HC:143) */
-    fun f705_AddVertex(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f710_AddVertex(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -200,7 +200,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC AddTri (ManGen.HC:152) */
-    fun f706_AddTri(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f711_AddTri(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -232,7 +232,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC AddBox (ManGen.HC:162) */
-    fun f707_AddBox(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double, a6: Double, a7: Double, a8: Double, a9: Double, a10: Double, a11: Double, a12: Double, a13: Long, a14: Long, a15: Long) {
+    fun f712_AddBox(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double, a6: Double, a7: Double, a8: Double, a9: Double, a10: Double, a11: Double, a12: Double, a13: Long, a14: Long, a15: Long) {
         var ln = 0
         try {
             enter(t)
@@ -305,72 +305,72 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             nat(t, n_Mat4x4MulXYZ, push4(t, l128_r, (fp + 296), (fp + 304), (fp + 312)))
             ln = 182 // ManGen.HC:182
             tick(t)
-            val t1: Long = f705_AddVertex(t, p0_md, (((p2_x1 + ld8((fp + 296))) - ld8((fp + 200))) + ld8((fp + 248))), (((p3_y1 + ld8((fp + 304))) - ld8((fp + 208))) + ld8((fp + 256))), (((p4_z1 + ld8((fp + 312))) - ld8((fp + 216))) + ld8((fp + 264))))
+            val t1: Long = f710_AddVertex(t, p0_md, (((p2_x1 + ld8((fp + 296))) - ld8((fp + 200))) + ld8((fp + 248))), (((p3_y1 + ld8((fp + 304))) - ld8((fp + 208))) + ld8((fp + 256))), (((p4_z1 + ld8((fp + 312))) - ld8((fp + 216))) + ld8((fp + 264))))
             l136_p1a = t1
             ln = 183 // ManGen.HC:183
             tick(t)
-            val t2: Long = f705_AddVertex(t, p0_md, (((p2_x1 + ld8((fp + 296))) + ld8((fp + 200))) + ld8((fp + 248))), (((p3_y1 + ld8((fp + 304))) + ld8((fp + 208))) + ld8((fp + 256))), (((p4_z1 + ld8((fp + 312))) + ld8((fp + 216))) + ld8((fp + 264))))
+            val t2: Long = f710_AddVertex(t, p0_md, (((p2_x1 + ld8((fp + 296))) + ld8((fp + 200))) + ld8((fp + 248))), (((p3_y1 + ld8((fp + 304))) + ld8((fp + 208))) + ld8((fp + 256))), (((p4_z1 + ld8((fp + 312))) + ld8((fp + 216))) + ld8((fp + 264))))
             l144_p2a = t2
             ln = 184 // ManGen.HC:184
             tick(t)
-            val t3: Long = f705_AddVertex(t, p0_md, (((p2_x1 + ld8((fp + 296))) + ld8((fp + 224))) - ld8((fp + 200))), (((p3_y1 + ld8((fp + 304))) + ld8((fp + 232))) - ld8((fp + 208))), (((p4_z1 + ld8((fp + 312))) + ld8((fp + 240))) - ld8((fp + 216))))
+            val t3: Long = f710_AddVertex(t, p0_md, (((p2_x1 + ld8((fp + 296))) + ld8((fp + 224))) - ld8((fp + 200))), (((p3_y1 + ld8((fp + 304))) + ld8((fp + 232))) - ld8((fp + 208))), (((p4_z1 + ld8((fp + 312))) + ld8((fp + 240))) - ld8((fp + 216))))
             l152_p3a = t3
             ln = 185 // ManGen.HC:185
             tick(t)
-            val t4: Long = f705_AddVertex(t, p0_md, (((p2_x1 + ld8((fp + 296))) + ld8((fp + 224))) + ld8((fp + 200))), (((p3_y1 + ld8((fp + 304))) + ld8((fp + 232))) + ld8((fp + 208))), (((p4_z1 + ld8((fp + 312))) + ld8((fp + 240))) + ld8((fp + 216))))
+            val t4: Long = f710_AddVertex(t, p0_md, (((p2_x1 + ld8((fp + 296))) + ld8((fp + 224))) + ld8((fp + 200))), (((p3_y1 + ld8((fp + 304))) + ld8((fp + 232))) + ld8((fp + 208))), (((p4_z1 + ld8((fp + 312))) + ld8((fp + 240))) + ld8((fp + 216))))
             l160_p4a = t4
             ln = 186 // ManGen.HC:186
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l136_p1a, l144_p2a, l152_p3a)
+            f711_AddTri(t, p0_md, p1_c, l136_p1a, l144_p2a, l152_p3a)
             ln = 187 // ManGen.HC:187
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l160_p4a, l152_p3a, l144_p2a)
+            f711_AddTri(t, p0_md, p1_c, l160_p4a, l152_p3a, l144_p2a)
             ln = 189 // ManGen.HC:189
             tick(t)
-            val t5: Long = f705_AddVertex(t, p0_md, (((p2_x1 - ld8((fp + 296))) - ld8((fp + 200))) + ld8((fp + 248))), (((p3_y1 - ld8((fp + 304))) - ld8((fp + 208))) + ld8((fp + 256))), (((p4_z1 - ld8((fp + 312))) - ld8((fp + 216))) + ld8((fp + 264))))
+            val t5: Long = f710_AddVertex(t, p0_md, (((p2_x1 - ld8((fp + 296))) - ld8((fp + 200))) + ld8((fp + 248))), (((p3_y1 - ld8((fp + 304))) - ld8((fp + 208))) + ld8((fp + 256))), (((p4_z1 - ld8((fp + 312))) - ld8((fp + 216))) + ld8((fp + 264))))
             l168_p1b = t5
             ln = 190 // ManGen.HC:190
             tick(t)
-            val t6: Long = f705_AddVertex(t, p0_md, (((p2_x1 - ld8((fp + 296))) + ld8((fp + 200))) + ld8((fp + 248))), (((p3_y1 - ld8((fp + 304))) + ld8((fp + 208))) + ld8((fp + 256))), (((p4_z1 - ld8((fp + 312))) + ld8((fp + 216))) + ld8((fp + 264))))
+            val t6: Long = f710_AddVertex(t, p0_md, (((p2_x1 - ld8((fp + 296))) + ld8((fp + 200))) + ld8((fp + 248))), (((p3_y1 - ld8((fp + 304))) + ld8((fp + 208))) + ld8((fp + 256))), (((p4_z1 - ld8((fp + 312))) + ld8((fp + 216))) + ld8((fp + 264))))
             l176_p2b = t6
             ln = 191 // ManGen.HC:191
             tick(t)
-            val t7: Long = f705_AddVertex(t, p0_md, (((p2_x1 - ld8((fp + 296))) + ld8((fp + 224))) - ld8((fp + 200))), (((p3_y1 - ld8((fp + 304))) + ld8((fp + 232))) - ld8((fp + 208))), (((p4_z1 - ld8((fp + 312))) + ld8((fp + 240))) - ld8((fp + 216))))
+            val t7: Long = f710_AddVertex(t, p0_md, (((p2_x1 - ld8((fp + 296))) + ld8((fp + 224))) - ld8((fp + 200))), (((p3_y1 - ld8((fp + 304))) + ld8((fp + 232))) - ld8((fp + 208))), (((p4_z1 - ld8((fp + 312))) + ld8((fp + 240))) - ld8((fp + 216))))
             l184_p3b = t7
             ln = 192 // ManGen.HC:192
             tick(t)
-            val t8: Long = f705_AddVertex(t, p0_md, (((p2_x1 - ld8((fp + 296))) + ld8((fp + 224))) + ld8((fp + 200))), (((p3_y1 - ld8((fp + 304))) + ld8((fp + 232))) + ld8((fp + 208))), (((p4_z1 - ld8((fp + 312))) + ld8((fp + 240))) + ld8((fp + 216))))
+            val t8: Long = f710_AddVertex(t, p0_md, (((p2_x1 - ld8((fp + 296))) + ld8((fp + 224))) + ld8((fp + 200))), (((p3_y1 - ld8((fp + 304))) + ld8((fp + 232))) + ld8((fp + 208))), (((p4_z1 - ld8((fp + 312))) + ld8((fp + 240))) + ld8((fp + 216))))
             l192_p4b = t8
             ln = 193 // ManGen.HC:193
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l168_p1b, l176_p2b, l184_p3b)
+            f711_AddTri(t, p0_md, p1_c, l168_p1b, l176_p2b, l184_p3b)
             ln = 194 // ManGen.HC:194
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l192_p4b, l184_p3b, l176_p2b)
+            f711_AddTri(t, p0_md, p1_c, l192_p4b, l184_p3b, l176_p2b)
             ln = 196 // ManGen.HC:196
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l136_p1a, l144_p2a, l168_p1b)
+            f711_AddTri(t, p0_md, p1_c, l136_p1a, l144_p2a, l168_p1b)
             ln = 197 // ManGen.HC:197
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l176_p2b, l168_p1b, l144_p2a)
+            f711_AddTri(t, p0_md, p1_c, l176_p2b, l168_p1b, l144_p2a)
             ln = 198 // ManGen.HC:198
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l152_p3a, l160_p4a, l184_p3b)
+            f711_AddTri(t, p0_md, p1_c, l152_p3a, l160_p4a, l184_p3b)
             ln = 199 // ManGen.HC:199
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l192_p4b, l184_p3b, l160_p4a)
+            f711_AddTri(t, p0_md, p1_c, l192_p4b, l184_p3b, l160_p4a)
             ln = 200 // ManGen.HC:200
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l136_p1a, l152_p3a, l168_p1b)
+            f711_AddTri(t, p0_md, p1_c, l136_p1a, l152_p3a, l168_p1b)
             ln = 201 // ManGen.HC:201
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l184_p3b, l168_p1b, l152_p3a)
+            f711_AddTri(t, p0_md, p1_c, l184_p3b, l168_p1b, l152_p3a)
             ln = 202 // ManGen.HC:202
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l144_p2a, l160_p4a, l176_p2b)
+            f711_AddTri(t, p0_md, p1_c, l144_p2a, l160_p4a, l176_p2b)
             ln = 203 // ManGen.HC:203
             tick(t)
-            f706_AddTri(t, p0_md, p1_c, l192_p4b, l176_p2b, l160_p4a)
+            f711_AddTri(t, p0_md, p1_c, l192_p4b, l176_p2b, l160_p4a)
             ln = 205 // ManGen.HC:205
             st8(p13_ox, ((p2_x1 + ld8((fp + 224))) - ld8((fp + 272))))
             ln = 206 // ManGen.HC:206
@@ -386,7 +386,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Man2CSprite (ManGen.HC:212) */
-    fun f708_Man2CSprite(t: Task): Long {
+    fun f713_Man2CSprite(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -430,7 +430,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC ManGen (ManGen.HC:230) */
-    fun f709_ManGen(t: Task): Long {
+    fun f714_ManGen(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -443,12 +443,12 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l56_c4: Long = 0L
             ln = 235 // ManGen.HC:235
             tick(t)
-            f703_MDInit(t, (fp + 64))
+            f708_MDInit(t, (fp + 64))
             ln = 237 // ManGen.HC:237
             loop0@ while ((1L != 0L)) {
                 ln = 238 // ManGen.HC:238
                 tick(t)
-                val t0: Long = P.f628_DocForm(t, (fp + 64), s0)
+                val t0: Long = P.f633_DocForm(t, (fp + 64), s0)
                 if ((t0 == 0L)) {
                     ln = 239 // ManGen.HC:239
                     t.msp = msp0
@@ -459,10 +459,10 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 nat(t, n_MemCpy, push3(t, (fp + 288), (fp + 64), 224L))
                 ln = 241 // ManGen.HC:241
                 tick(t)
-                f704_MDCorrect(t, (fp + 288))
+                f709_MDCorrect(t, (fp + 288))
                 ln = 243 // ManGen.HC:243
                 tick(t)
-                val t1: Long = P.f589_PopUpColorLighting(t, s1)
+                val t1: Long = P.f594_PopUpColorLighting(t, s1)
                 l32_c1 = t1
                 ln = 244 // ManGen.HC:244
                 if ((l32_c1 < 0L)) {
@@ -472,7 +472,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 245 // ManGen.HC:245
                 tick(t)
-                val t2: Long = P.f589_PopUpColorLighting(t, s2)
+                val t2: Long = P.f594_PopUpColorLighting(t, s2)
                 l40_c2 = t2
                 ln = 246 // ManGen.HC:246
                 if ((l40_c2 < 0L)) {
@@ -482,7 +482,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 247 // ManGen.HC:247
                 tick(t)
-                val t3: Long = P.f589_PopUpColorLighting(t, s3)
+                val t3: Long = P.f594_PopUpColorLighting(t, s3)
                 l48_c3 = t3
                 ln = 248 // ManGen.HC:248
                 if ((l48_c3 < 0L)) {
@@ -492,7 +492,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 249 // ManGen.HC:249
                 tick(t)
-                val t4: Long = P.f589_PopUpColorLighting(t, s4)
+                val t4: Long = P.f594_PopUpColorLighting(t, s4)
                 l56_c4 = t4
                 ln = 250 // ManGen.HC:250
                 if ((l56_c4 < 0L)) {
@@ -505,49 +505,49 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st8(g_m, t5)
                 ln = 255 // ManGen.HC:255
                 tick(t)
-                f707_AddBox(t, (fp + 288), l48_c3, 0L, f2i((ldf(((fp + 288) + 8L)) + (ldf((fp + 288)) * 2.0))), 0L, (ldf((fp + 288)) * 2.0), ((-ldf((fp + 288))) * 2.0), (ldf((fp + 288)) * 2.0), 0.0, 0.0, 0.0, 0.0, 0.0, (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l48_c3, 0L, f2i((ldf(((fp + 288) + 8L)) + (ldf((fp + 288)) * 2.0))), 0L, (ldf((fp + 288)) * 2.0), ((-ldf((fp + 288))) * 2.0), (ldf((fp + 288)) * 2.0), 0.0, 0.0, 0.0, 0.0, 0.0, (fp + 8), (fp + 16), (fp + 24))
                 ln = 260 // ManGen.HC:260
                 tick(t)
-                f707_AddBox(t, (fp + 288), l32_c1, 0L, f2i(ldf(((fp + 288) + 8L))), 0L, ldf(((fp + 288) + 48L)), (-ldf(((fp + 288) + 8L))), ldf(((fp + 288) + 56L)), 0.0, 0.0, 0.0, 0.0, 0.0, (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l32_c1, 0L, f2i(ldf(((fp + 288) + 8L))), 0L, ldf(((fp + 288) + 48L)), (-ldf(((fp + 288) + 8L))), ldf(((fp + 288) + 56L)), 0.0, 0.0, 0.0, 0.0, 0.0, (fp + 8), (fp + 16), (fp + 24))
                 ln = 265 // ManGen.HC:265
                 tick(t)
-                f707_AddBox(t, (fp + 288), l32_c1, f2i((((-ldf(((fp + 288) + 48L))) / 2.0) - ldf(((fp + 288) + 64L)))), f2i((ldf(((fp + 288) + 8L)) - ldf(((fp + 288) + 64L)))), 0L, (ldf(((fp + 288) + 64L)) * 2.0), ((-ldf(((fp + 288) + 16L))) / 2.0), (ldf(((fp + 288) + 64L)) * 2.0), ldf(((fp + 288) + 64L)), 0.0, ldf(((fp + 288) + 128L)), 0.0, ldf(((fp + 288) + 96L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l32_c1, f2i((((-ldf(((fp + 288) + 48L))) / 2.0) - ldf(((fp + 288) + 64L)))), f2i((ldf(((fp + 288) + 8L)) - ldf(((fp + 288) + 64L)))), 0L, (ldf(((fp + 288) + 64L)) * 2.0), ((-ldf(((fp + 288) + 16L))) / 2.0), (ldf(((fp + 288) + 64L)) * 2.0), ldf(((fp + 288) + 64L)), 0.0, ldf(((fp + 288) + 128L)), 0.0, ldf(((fp + 288) + 96L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 268 // ManGen.HC:268
                 tick(t)
-                f707_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 64L)) * 2.0), ((-ldf(((fp + 288) + 16L))) / 2.0), (ldf(((fp + 288) + 64L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 128L)), 0.0, ldf(((fp + 288) + 160L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 64L)) * 2.0), ((-ldf(((fp + 288) + 16L))) / 2.0), (ldf(((fp + 288) + 64L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 128L)), 0.0, ldf(((fp + 288) + 160L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 271 // ManGen.HC:271
                 tick(t)
-                f707_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 64L)) * 2.0), (-ldf(((fp + 288) + 24L))), (ldf(((fp + 288) + 72L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 128L)), 0.0, ldf(((fp + 288) + 192L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 64L)) * 2.0), (-ldf(((fp + 288) + 24L))), (ldf(((fp + 288) + 72L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 128L)), 0.0, ldf(((fp + 288) + 192L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 276 // ManGen.HC:276
                 tick(t)
-                f707_AddBox(t, (fp + 288), l32_c1, f2i(((ldf(((fp + 288) + 48L)) / 2.0) + ldf(((fp + 288) + 64L)))), f2i((ldf(((fp + 288) + 8L)) - ldf(((fp + 288) + 64L)))), 0L, (ldf(((fp + 288) + 64L)) * 2.0), ((-ldf(((fp + 288) + 16L))) / 2.0), (ldf(((fp + 288) + 64L)) * 2.0), ldf(((fp + 288) + 64L)), 0.0, ldf(((fp + 288) + 136L)), 0.0, ldf(((fp + 288) + 104L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l32_c1, f2i(((ldf(((fp + 288) + 48L)) / 2.0) + ldf(((fp + 288) + 64L)))), f2i((ldf(((fp + 288) + 8L)) - ldf(((fp + 288) + 64L)))), 0L, (ldf(((fp + 288) + 64L)) * 2.0), ((-ldf(((fp + 288) + 16L))) / 2.0), (ldf(((fp + 288) + 64L)) * 2.0), ldf(((fp + 288) + 64L)), 0.0, ldf(((fp + 288) + 136L)), 0.0, ldf(((fp + 288) + 104L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 279 // ManGen.HC:279
                 tick(t)
-                f707_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 64L)) * 2.0), ((-ldf(((fp + 288) + 16L))) / 2.0), (ldf(((fp + 288) + 64L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 136L)), 0.0, ldf(((fp + 288) + 168L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 64L)) * 2.0), ((-ldf(((fp + 288) + 16L))) / 2.0), (ldf(((fp + 288) + 64L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 136L)), 0.0, ldf(((fp + 288) + 168L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 282 // ManGen.HC:282
                 tick(t)
-                f707_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 64L)) * 2.0), (-ldf(((fp + 288) + 24L))), (ldf(((fp + 288) + 72L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 136L)), 0.0, ldf(((fp + 288) + 200L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 64L)) * 2.0), (-ldf(((fp + 288) + 24L))), (ldf(((fp + 288) + 72L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 136L)), 0.0, ldf(((fp + 288) + 200L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 287 // ManGen.HC:287
                 tick(t)
-                f707_AddBox(t, (fp + 288), l40_c2, f2i((((-ldf(((fp + 288) + 48L))) / 2.0) + ldf(((fp + 288) + 80L)))), 0L, 0L, (ldf(((fp + 288) + 80L)) * 2.0), ((-ldf(((fp + 288) + 32L))) / 2.0), (ldf(((fp + 288) + 80L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 144L)), 0.0, ldf(((fp + 288) + 112L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l40_c2, f2i((((-ldf(((fp + 288) + 48L))) / 2.0) + ldf(((fp + 288) + 80L)))), 0L, 0L, (ldf(((fp + 288) + 80L)) * 2.0), ((-ldf(((fp + 288) + 32L))) / 2.0), (ldf(((fp + 288) + 80L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 144L)), 0.0, ldf(((fp + 288) + 112L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 290 // ManGen.HC:290
                 tick(t)
-                f707_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 80L)) * 2.0), ((-ldf(((fp + 288) + 32L))) / 2.0), (ldf(((fp + 288) + 80L)) * 2.0), 0.0, ldf(((fp + 288) + 88L)), ldf(((fp + 288) + 144L)), 0.0, ldf(((fp + 288) + 176L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 80L)) * 2.0), ((-ldf(((fp + 288) + 32L))) / 2.0), (ldf(((fp + 288) + 80L)) * 2.0), 0.0, ldf(((fp + 288) + 88L)), ldf(((fp + 288) + 144L)), 0.0, ldf(((fp + 288) + 176L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 293 // ManGen.HC:293
                 tick(t)
-                f707_AddBox(t, (fp + 288), l56_c4, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 80L)) * 2.0), (-ldf(((fp + 288) + 40L))), (ldf(((fp + 288) + 88L)) * 2.0), ldf(((fp + 288) + 80L)), 0.0, ldf(((fp + 288) + 144L)), 0.0, ldf(((fp + 288) + 208L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l56_c4, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 80L)) * 2.0), (-ldf(((fp + 288) + 40L))), (ldf(((fp + 288) + 88L)) * 2.0), ldf(((fp + 288) + 80L)), 0.0, ldf(((fp + 288) + 144L)), 0.0, ldf(((fp + 288) + 208L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 298 // ManGen.HC:298
                 tick(t)
-                f707_AddBox(t, (fp + 288), l40_c2, f2i(((ldf(((fp + 288) + 48L)) / 2.0) - ldf(((fp + 288) + 80L)))), 0L, 0L, (ldf(((fp + 288) + 80L)) * 2.0), ((-ldf(((fp + 288) + 32L))) / 2.0), (ldf(((fp + 288) + 80L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 152L)), 0.0, ldf(((fp + 288) + 120L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l40_c2, f2i(((ldf(((fp + 288) + 48L)) / 2.0) - ldf(((fp + 288) + 80L)))), 0L, 0L, (ldf(((fp + 288) + 80L)) * 2.0), ((-ldf(((fp + 288) + 32L))) / 2.0), (ldf(((fp + 288) + 80L)) * 2.0), 0.0, 0.0, ldf(((fp + 288) + 152L)), 0.0, ldf(((fp + 288) + 120L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 301 // ManGen.HC:301
                 tick(t)
-                f707_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 80L)) * 2.0), ((-ldf(((fp + 288) + 32L))) / 2.0), (ldf(((fp + 288) + 80L)) * 2.0), 0.0, ldf(((fp + 288) + 88L)), ldf(((fp + 288) + 152L)), 0.0, ldf(((fp + 288) + 184L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l48_c3, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 80L)) * 2.0), ((-ldf(((fp + 288) + 32L))) / 2.0), (ldf(((fp + 288) + 80L)) * 2.0), 0.0, ldf(((fp + 288) + 88L)), ldf(((fp + 288) + 152L)), 0.0, ldf(((fp + 288) + 184L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 304 // ManGen.HC:304
                 tick(t)
-                f707_AddBox(t, (fp + 288), l56_c4, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 80L)) * 2.0), (-ldf(((fp + 288) + 40L))), (ldf(((fp + 288) + 88L)) * 2.0), ldf(((fp + 288) + 80L)), 0.0, ldf(((fp + 288) + 152L)), 0.0, ldf(((fp + 288) + 216L)), (fp + 8), (fp + 16), (fp + 24))
+                f712_AddBox(t, (fp + 288), l56_c4, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), (ldf(((fp + 288) + 80L)) * 2.0), (-ldf(((fp + 288) + 40L))), (ldf(((fp + 288) + 88L)) * 2.0), ldf(((fp + 288) + 80L)), 0.0, ldf(((fp + 288) + 152L)), 0.0, ldf(((fp + 288) + 216L)), (fp + 8), (fp + 16), (fp + 24))
                 ln = 308 // ManGen.HC:308
                 tick(t)
-                val t6: Long = f708_Man2CSprite(t)
+                val t6: Long = f713_Man2CSprite(t)
                 l0_res = t6
                 ln = 309 // ManGen.HC:309
                 nat(t, n_Print, push2(t, s5, 10L))
@@ -582,7 +582,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Apps/GrModels/ManGen.HC#0 (ManGen.HC:1) */
-    fun f710_init_C__Apps_GrModels_ManGen_HC_0(t: Task): Long {
+    fun f715_init_C__Apps_GrModels_ManGen_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -594,14 +594,14 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MDInit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_MDCorrect(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> f705_AddVertex(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            706 -> f706_AddTri(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            707 -> { f707_AddBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L)), f((if (n > 6) st[base + 6] else 0L)), f((if (n > 7) st[base + 7] else 0L)), f((if (n > 8) st[base + 8] else 0L)), f((if (n > 9) st[base + 9] else 0L)), f((if (n > 10) st[base + 10] else 0L)), f((if (n > 11) st[base + 11] else 0L)), f((if (n > 12) st[base + 12] else 0L)), (if (n > 13) st[base + 13] else 0L), (if (n > 14) st[base + 14] else 0L), (if (n > 15) st[base + 15] else 0L)); 0L }
-            708 -> f708_Man2CSprite(t)
-            709 -> f709_ManGen(t)
-            710 -> f710_init_C__Apps_GrModels_ManGen_HC_0(t)
+            708 -> { f708_MDInit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_MDCorrect(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> f710_AddVertex(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            711 -> f711_AddTri(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            712 -> { f712_AddBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L)), f((if (n > 6) st[base + 6] else 0L)), f((if (n > 7) st[base + 7] else 0L)), f((if (n > 8) st[base + 8] else 0L)), f((if (n > 9) st[base + 9] else 0L)), f((if (n > 10) st[base + 10] else 0L)), f((if (n > 11) st[base + 11] else 0L)), f((if (n > 12) st[base + 12] else 0L)), (if (n > 13) st[base + 13] else 0L), (if (n > 14) st[base + 14] else 0L), (if (n > 15) st[base + 15] else 0L)); 0L }
+            713 -> f713_Man2CSprite(t)
+            714 -> f714_ManGen(t)
+            715 -> f715_init_C__Apps_GrModels_ManGen_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -613,7 +613,7 @@ class N_Apps_GrModels_ManGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715)
         private val NAMES = arrayOf("MDInit", "MDCorrect", "AddVertex", "AddTri", "AddBox", "Man2CSprite", "ManGen", "\$init:C:/Apps/GrModels/ManGen.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/GrModels/ManGen.HC")
     }

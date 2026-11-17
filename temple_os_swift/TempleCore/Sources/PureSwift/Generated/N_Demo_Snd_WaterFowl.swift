@@ -53,7 +53,7 @@ public final class N_Demo_Snd_WaterFowl: NativeModule {
     }
 
     /// HolyC DrawIt (WaterFowl.HC:111)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -71,7 +71,7 @@ public final class N_Demo_Snd_WaterFowl: NativeModule {
             ln = 114 // WaterFowl.HC:114
             let t0: Double = d(try nat(t, n_tS, push0(t)))
             try tick(t)
-            let t1: Double = try P.f482_Caw(t, (t0 - ldf(g_t0)), 20.0)
+            let t1: Double = try P.f487_Caw(t, (t0 - ldf(g_t0)), 20.0)
             l32_t = (1.04 - fpow((0.35 + (0.65 * t1)), 3.0))
             l40_s = (1.0 - (0.5 * l32_t))
             ln = 115 // WaterFowl.HC:115
@@ -83,53 +83,53 @@ public final class N_Demo_Snd_WaterFowl: NativeModule {
             let t4: Int64 = try ld8(g_poem)
             let t2: Double = d(try nat(t, n_tS, push0(t)))
             try tick(t)
-            let t3: Double = try P.f482_Caw(t, (t2 - ldf(g_t0)), 65.0)
+            let t3: Double = try P.f487_Caw(t, (t2 - ldf(g_t0)), 65.0)
             ln = 117 // WaterFowl.HC:117
             try tick(t)
             let vb0 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, ((l16_w &>> 1) &- 212), f2i((t3 * Double((l24_h &- 24)))), t4, vb0, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, ((l16_w &>> 1) &- 212), f2i((t3 * Double((l24_h &- 24)))), t4, vb0, 0)
             t.sp = vb0
             ln = 119 // WaterFowl.HC:119
             try st4((p1_dc &+ 160), 0)
             ln = 120 // WaterFowl.HC:120
             let t5: Double = d(try nat(t, n_tS, push0(t)))
             try tick(t)
-            let t6: Double = try P.f485_FullTri(t, t5, 0.4)
+            let t6: Double = try P.f490_FullTri(t, t5, 0.4)
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, f2i(l48_x), f2i(l56_y), f2i((l48_x - (8.0 * l40_s))), f2i((l56_y + ((6.0 * l40_s) * t6))), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, f2i(l48_x), f2i(l56_y), f2i((l48_x - (8.0 * l40_s))), f2i((l56_y + ((6.0 * l40_s) * t6))), 1, 0)
             ln = 121 // WaterFowl.HC:121
             let t7: Double = d(try nat(t, n_tS, push0(t)))
             try tick(t)
-            let t8: Double = try P.f485_FullTri(t, t7, 0.4)
+            let t8: Double = try P.f490_FullTri(t, t7, 0.4)
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, f2i(l48_x), f2i(l56_y), f2i((l48_x + (8.0 * l40_s))), f2i((l56_y + ((6.0 * l40_s) * t8))), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, f2i(l48_x), f2i(l56_y), f2i((l48_x + (8.0 * l40_s))), f2i((l56_y + ((6.0 * l40_s) * t8))), 1, 0)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawIt", ln) }
     }
 
     /// HolyC SongTask (WaterFowl.HC:124)
-    public final func f704_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 128 // WaterFowl.HC:128
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 129 // WaterFowl.HC:129
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 130 // WaterFowl.HC:130
             loop0: while (1 != 0) {
                 ln = 131 // WaterFowl.HC:131
                 try tick(t)
-                try P.f494_Play(t, s0, 0)
+                try P.f499_Play(t, s0, 0)
                 ln = 132 // WaterFowl.HC:132
                 try tick(t)
-                try P.f494_Play(t, s1, 0)
+                try P.f499_Play(t, s1, 0)
                 ln = 133 // WaterFowl.HC:133
                 try tick(t)
-                try P.f494_Play(t, s2, 0)
+                try P.f499_Play(t, s2, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -138,7 +138,7 @@ public final class N_Demo_Snd_WaterFowl: NativeModule {
     }
 
     /// HolyC WaterFowl (WaterFowl.HC:137)
-    public final func f705_WaterFowl(_ t: HTask) throws {
+    public final func f710_WaterFowl(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -147,7 +147,7 @@ public final class N_Demo_Snd_WaterFowl: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 140 // WaterFowl.HC:140
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065856, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 141 // WaterFowl.HC:141
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
@@ -163,7 +163,7 @@ public final class N_Demo_Snd_WaterFowl: NativeModule {
             let t2: Double = d(try nat(t, n_tS, push0(t)))
             try st8(g_t0, bits(t2))
             ln = 146 // WaterFowl.HC:146
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 147 // WaterFowl.HC:147
             _ = try nat(t, n_Sprite, try push2(t, b0, 0))
             ln = 148 // WaterFowl.HC:148
@@ -181,13 +181,13 @@ public final class N_Demo_Snd_WaterFowl: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Snd/WaterFowl.HC#0 (WaterFowl.HC:61)
-    @discardableResult public final func f706_init_C__Demo_Snd_WaterFowl_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Snd_WaterFowl_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 154 // WaterFowl.HC:154
             try tick(t)
-            try f705_WaterFowl(t)
+            try f710_WaterFowl(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Snd/WaterFowl.HC#0", ln) }
@@ -196,16 +196,16 @@ public final class N_Demo_Snd_WaterFowl: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_WaterFowl(t); return 0
-        case 706: return try f706_init_C__Demo_Snd_WaterFowl_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_WaterFowl(t); return 0
+        case 711: return try f711_init_C__Demo_Snd_WaterFowl_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "SongTask", 705: "WaterFowl", 706: "$init:C:/Demo/Snd/WaterFowl.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "SongTask", 710: "WaterFowl", 711: "$init:C:/Demo/Snd/WaterFowl.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Snd/WaterFowl.HC"]
     public override var files: [String] { N_Demo_Snd_WaterFowl.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Snd_WaterFowl.DEFINED.contains(index) }

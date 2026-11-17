@@ -47,7 +47,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Graphics/PoleZeros.HC#0 (PoleZeros.HC:2) */
-    fun f703_init_C__Demo_Graphics_PoleZeros_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Graphics_PoleZeros_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -57,7 +57,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Graphics/PoleZeros.HC#1 (PoleZeros.HC:4) */
-    fun f704_init_C__Demo_Graphics_PoleZeros_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_PoleZeros_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -67,7 +67,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC PoleZeroFind (PoleZeros.HC:8) */
-    fun f705_PoleZeroFind(t: Task, a0: Long, a1: Long): Long {
+    fun f710_PoleZeroFind(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -130,7 +130,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC F (PoleZeros.HC:30) */
-    fun f706_F(t: Task, a0: Long): Double {
+    fun f711_F(t: Task, a0: Long): Double {
         var ln = 0
         try {
             enter(t)
@@ -139,16 +139,16 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
             var p0_x: Long = a0
             ln = 35 // PoleZeros.HC:35
             tick(t)
-            P.f346_CPoly(t, (fp + 24), 2L, g_zeros, p0_x)
+            P.f347_CPoly(t, (fp + 24), 2L, g_zeros, p0_x)
             ln = 36 // PoleZeros.HC:36
             tick(t)
-            P.f346_CPoly(t, (fp + 40), 2L, g_poles, p0_x)
+            P.f347_CPoly(t, (fp + 40), 2L, g_poles, p0_x)
             ln = 37 // PoleZeros.HC:37
             tick(t)
-            P.f342_CDiv(t, (fp + 56), (fp + 24), (fp + 40))
+            P.f343_CDiv(t, (fp + 56), (fp + 24), (fp + 40))
             ln = 39 // PoleZeros.HC:39
             tick(t)
-            P.f336_R2P(t, (fp + 8), (fp + 16), ldf((fp + 56)), ldf(((fp + 56) + 8L)))
+            P.f337_R2P(t, (fp + 8), (fp + 16), ldf((fp + 56)), ldf(((fp + 56) + 8L)))
             ln = 40 // PoleZeros.HC:40
             if ((ld1u((P.g_ms + 161L)) != 0L)) {
                 ln = 41 // PoleZeros.HC:41
@@ -168,7 +168,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MPDraw (PoleZeros.HC:46) */
-    fun f707_MPDraw(t: Task, a0: Long): Double {
+    fun f712_MPDraw(t: Task, a0: Long): Double {
         var ln = 0
         try {
             enter(t)
@@ -212,11 +212,11 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 loop2@ while ((l24_x < l40_w)) {
                     ln = 55 // PoleZeros.HC:55
                     tick(t)
-                    P.f345_CEqu(t, (fp + 8), (l24_x - l56_cx).toDouble(), (l64_cy - l32_y).toDouble())
+                    P.f346_CEqu(t, (fp + 8), (l24_x - l56_cx).toDouble(), (l64_cy - l32_y).toDouble())
                     ln = 56 // PoleZeros.HC:56
                     val t6: Double = ldf(g_scale)
                     tick(t)
-                    val t5: Double = f706_F(t, (fp + 8))
+                    val t5: Double = f711_F(t, (fp + 8))
                     l88_yy = (t6 * t5)
                     ln = 57 // PoleZeros.HC:57
                     tick(t)
@@ -250,7 +250,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Draw (PoleZeros.HC:66) */
-    fun f708_Draw(t: Task) {
+    fun f713_Draw(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -283,7 +283,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
                     val t2: Long = nat(t, n_mp_cnt, push0(t))
                     if (!((l1040_i < t2))) break@loop2
                     ln = 74 // PoleZeros.HC:74
-                    val t1: Long = nat(t, n_JobQue, push(t, 9223090561878065859L, ld8(P.g_Fs), l1040_i, 0L, 0L, 0L, 0L, 0L))
+                    val t1: Long = nat(t, n_JobQue, push(t, 9223090561878065864L, ld8(P.g_Fs), l1040_i, 0L, 0L, 0L, 0L, 0L))
                     st8((fp + (l1040_i * 8L)), t1)
                     ln = 73 // PoleZeros.HC:73
                     l1040_i = (l1040_i + 1L)
@@ -323,17 +323,17 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
             st4((l1080_dc + 160L), 15L)
             ln = 86 // PoleZeros.HC:86
             tick(t)
-            P.f396_GrLine(t, l1080_dc, 0L, l1072_cy, l1048_w, l1072_cy, 1L, 0L)
+            P.f397_GrLine(t, l1080_dc, 0L, l1072_cy, l1048_w, l1072_cy, 1L, 0L)
             ln = 87 // PoleZeros.HC:87
             tick(t)
-            P.f396_GrLine(t, l1080_dc, l1064_cx, 0L, l1064_cx, l1056_h, 1L, 0L)
+            P.f397_GrLine(t, l1080_dc, l1064_cx, 0L, l1064_cx, l1056_h, 1L, 0L)
             ln = 88 // PoleZeros.HC:88
             l1040_i = 0L
             loop6@ while ((l1040_i < 2L)) {
                 ln = 89 // PoleZeros.HC:89
                 tick(t)
                 val vb0 = push0(t)
-                P.f369_GrPrint(t, l1080_dc, f2i(((l1064_cx.toDouble() + ldf((g_zeros + (l1040_i * 16L)))) - divs(8L, 2L).toDouble())), f2i(((l1072_cy.toDouble() - ldf(((g_zeros + (l1040_i * 16L)) + 8L))) - divs(8L, 2L).toDouble())), s0, vb0, 0)
+                P.f370_GrPrint(t, l1080_dc, f2i(((l1064_cx.toDouble() + ldf((g_zeros + (l1040_i * 16L)))) - divs(8L, 2L).toDouble())), f2i(((l1072_cy.toDouble() - ldf(((g_zeros + (l1040_i * 16L)) + 8L))) - divs(8L, 2L).toDouble())), s0, vb0, 0)
                 t.sp = vb0
                 ln = 88 // PoleZeros.HC:88
                 l1040_i = (l1040_i + 1L)
@@ -345,7 +345,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 ln = 91 // PoleZeros.HC:91
                 tick(t)
                 val vb1 = push0(t)
-                P.f369_GrPrint(t, l1080_dc, f2i(((l1064_cx.toDouble() + ldf((g_poles + (l1040_i * 16L)))) - divs(8L, 2L).toDouble())), f2i(((l1072_cy.toDouble() - ldf(((g_poles + (l1040_i * 16L)) + 8L))) - divs(8L, 2L).toDouble())), s1, vb1, 0)
+                P.f370_GrPrint(t, l1080_dc, f2i(((l1064_cx.toDouble() + ldf((g_poles + (l1040_i * 16L)))) - divs(8L, 2L).toDouble())), f2i(((l1072_cy.toDouble() - ldf(((g_poles + (l1040_i * 16L)) + 8L))) - divs(8L, 2L).toDouble())), s1, vb1, 0)
                 t.sp = vb1
                 ln = 90 // PoleZeros.HC:90
                 l1040_i = (l1040_i + 1L)
@@ -361,7 +361,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC PoleZeros (PoleZeros.HC:95) */
-    fun f709_PoleZeros(t: Task) {
+    fun f714_PoleZeros(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -385,7 +385,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
             st4((ld8(P.g_Fs) + 12L), 5436158L)
             ln = 107 // PoleZeros.HC:107
             tick(t)
-            P.f553_GrPaletteSet(t, P.g_gr_palette_gray)
+            P.f558_GrPaletteSet(t, P.g_gr_palette_gray)
             ln = 108 // PoleZeros.HC:108
             nat(t, n_GrPaletteColorSet, push2(t, 15L, 281470681743360L))
             ln = 110 // PoleZeros.HC:110
@@ -409,7 +409,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
             try {
                 ln = 118 // PoleZeros.HC:118
                 tick(t)
-                f708_Draw(t)
+                f713_Draw(t)
                 ln = 119 // PoleZeros.HC:119
                 skip_0@ do {
                     loop1@ while ((1L != 0L)) {
@@ -429,7 +429,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
                                     5L -> {
                                         ln = 127 // PoleZeros.HC:127
                                         tick(t)
-                                        val t2: Long = f705_PoleZeroFind(t, (ld8((fp + 8)) - l40_cx), (l48_cy - ld8((fp + 16))))
+                                        val t2: Long = f710_PoleZeroFind(t, (ld8((fp + 8)) - l40_cx), (l48_cy - ld8((fp + 16))))
                                         l56_tmpc = t2
                                     }
                                     4L -> {
@@ -461,7 +461,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
                                             st8((l56_tmpc + 8L), bits((l48_cy - l32_p22).toDouble()))
                                             ln = 144 // PoleZeros.HC:144
                                             tick(t)
-                                            f708_Draw(t)
+                                            f713_Draw(t)
                                         }
                                     }
                                     6L -> {
@@ -475,13 +475,13 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
                                             l56_tmpc = 0L
                                             ln = 152 // PoleZeros.HC:152
                                             tick(t)
-                                            f708_Draw(t)
+                                            f713_Draw(t)
                                         }
                                     }
                                     9L, 10L -> {
                                         ln = 157 // PoleZeros.HC:157
                                         tick(t)
-                                        f708_Draw(t)
+                                        f713_Draw(t)
                                     }
                                     2L -> {
                                         ln = 160 // PoleZeros.HC:160
@@ -525,13 +525,13 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Graphics/PoleZeros.HC#2 (PoleZeros.HC:173) */
-    fun f710_init_C__Demo_Graphics_PoleZeros_HC_2(t: Task): Long {
+    fun f715_init_C__Demo_Graphics_PoleZeros_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 173 // PoleZeros.HC:173
             tick(t)
-            f709_PoleZeros(t)
+            f714_PoleZeros(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/PoleZeros.HC#2", ln) }
@@ -540,14 +540,14 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Graphics_PoleZeros_HC_0(t)
-            704 -> f704_init_C__Demo_Graphics_PoleZeros_HC_1(t)
-            705 -> f705_PoleZeroFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            706 -> bits(f706_F(t, (if (n > 0) st[base + 0] else 0L)))
-            707 -> bits(f707_MPDraw(t, (if (n > 0) st[base + 0] else 0L)))
-            708 -> { f708_Draw(t); 0L }
-            709 -> { f709_PoleZeros(t); 0L }
-            710 -> f710_init_C__Demo_Graphics_PoleZeros_HC_2(t)
+            708 -> f708_init_C__Demo_Graphics_PoleZeros_HC_0(t)
+            709 -> f709_init_C__Demo_Graphics_PoleZeros_HC_1(t)
+            710 -> f710_PoleZeroFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            711 -> bits(f711_F(t, (if (n > 0) st[base + 0] else 0L)))
+            712 -> bits(f712_MPDraw(t, (if (n > 0) st[base + 0] else 0L)))
+            713 -> { f713_Draw(t); 0L }
+            714 -> { f714_PoleZeros(t); 0L }
+            715 -> f715_init_C__Demo_Graphics_PoleZeros_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -559,7 +559,7 @@ class N_Demo_Graphics_PoleZeros(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715)
         private val NAMES = arrayOf("\$init:C:/Demo/Graphics/PoleZeros.HC#0", "\$init:C:/Demo/Graphics/PoleZeros.HC#1", "PoleZeroFind", "F", "MPDraw", "Draw", "PoleZeros", "\$init:C:/Demo/Graphics/PoleZeros.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/PoleZeros.HC")
     }

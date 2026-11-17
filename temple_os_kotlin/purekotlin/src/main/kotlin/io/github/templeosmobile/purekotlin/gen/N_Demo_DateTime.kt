@@ -44,7 +44,7 @@ class N_Demo_DateTime(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/DateTime.HC#0 (DateTime.HC:2) */
-    fun f703_init_C__Demo_DateTime_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_DateTime_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -60,7 +60,7 @@ class N_Demo_DateTime(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/DateTime.HC#1 (DateTime.HC:5) */
-    fun f704_init_C__Demo_DateTime_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_DateTime_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -74,7 +74,7 @@ class N_Demo_DateTime(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/DateTime.HC#2 (DateTime.HC:7) */
-    fun f705_init_C__Demo_DateTime_HC_2(t: Task): Long {
+    fun f710_init_C__Demo_DateTime_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -88,7 +88,7 @@ class N_Demo_DateTime(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/DateTime.HC#3 (DateTime.HC:9) */
-    fun f706_init_C__Demo_DateTime_HC_3(t: Task): Long {
+    fun f711_init_C__Demo_DateTime_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -102,7 +102,7 @@ class N_Demo_DateTime(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/DateTime.HC#4 (DateTime.HC:11) */
-    fun f707_init_C__Demo_DateTime_HC_4(t: Task): Long {
+    fun f712_init_C__Demo_DateTime_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -118,11 +118,11 @@ class N_Demo_DateTime(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_DateTime_HC_0(t)
-            704 -> f704_init_C__Demo_DateTime_HC_1(t)
-            705 -> f705_init_C__Demo_DateTime_HC_2(t)
-            706 -> f706_init_C__Demo_DateTime_HC_3(t)
-            707 -> f707_init_C__Demo_DateTime_HC_4(t)
+            708 -> f708_init_C__Demo_DateTime_HC_0(t)
+            709 -> f709_init_C__Demo_DateTime_HC_1(t)
+            710 -> f710_init_C__Demo_DateTime_HC_2(t)
+            711 -> f711_init_C__Demo_DateTime_HC_3(t)
+            712 -> f712_init_C__Demo_DateTime_HC_4(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -134,7 +134,7 @@ class N_Demo_DateTime(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("\$init:C:/Demo/DateTime.HC#0", "\$init:C:/Demo/DateTime.HC#1", "\$init:C:/Demo/DateTime.HC#2", "\$init:C:/Demo/DateTime.HC#3", "\$init:C:/Demo/DateTime.HC#4")
         private val FILES = arrayOf<String>("C:/Demo/DateTime.HC")
     }

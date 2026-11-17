@@ -61,7 +61,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC DrawIt (Zing.HC:14) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -82,7 +82,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             st4((p1_dc + 160L), 4L)
             ln = 21 // Zing.HC:21
             tick(t)
-            P.f425_GrBorder(t, p1_dc, ld8(g_box_x_min), ld8(g_box_y_min), ld8(g_box_x_max), ld8(g_box_y_max), 1L, 0L)
+            P.f428_GrBorder(t, p1_dc, ld8(g_box_x_min), ld8(g_box_y_min), ld8(g_box_x_max), ld8(g_box_y_max), 1L, 0L)
             ln = 23 // Zing.HC:23
             tick(t)
             val t0: Long = P.f114_ClampI64(t, ((ld8(P.g_ms) - ld8((p0_task + 208L))) - ld8((p0_task + 256L))), ld8(g_box_x_min), ld8(g_box_x_max))
@@ -123,7 +123,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             val t7: Double = f(nat(t, n_Cos, push1(t, bits((ldf(g_bow__) + (f(4614256656552045848L) / 2.0))))))
             val t8: Double = f(nat(t, n_Cos, push1(t, bits(ldf(g_bow__)))))
             tick(t)
-            P.f396_GrLine(t, p1_dc, f2i(((l24_x - ((l64_str_h / 2.0) * t7)) + (l56_str_w * t8))), f2i(((l32_y - ((l64_str_h / 2.0) * t5)) + (l56_str_w * t6))), f2i(l24_x), f2i(l32_y), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, f2i(((l24_x - ((l64_str_h / 2.0) * t7)) + (l56_str_w * t8))), f2i(((l32_y - ((l64_str_h / 2.0) * t5)) + (l56_str_w * t6))), f2i(l24_x), f2i(l32_y), 1L, 0L)
             ln = 44 // Zing.HC:44
             val t9: Double = f(nat(t, n_Sin, push1(t, bits((ldf(g_bow__) + (f(4614256656552045848L) / 2.0))))))
             val t10: Double = f(nat(t, n_Sin, push1(t, bits(ldf(g_bow__)))))
@@ -131,7 +131,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             val t11: Double = f(nat(t, n_Cos, push1(t, bits((ldf(g_bow__) + (f(4614256656552045848L) / 2.0))))))
             val t12: Double = f(nat(t, n_Cos, push1(t, bits(ldf(g_bow__)))))
             tick(t)
-            P.f396_GrLine(t, p1_dc, f2i(((l24_x + ((l64_str_h / 2.0) * t11)) + (l56_str_w * t12))), f2i(((l32_y + ((l64_str_h / 2.0) * t9)) + (l56_str_w * t10))), f2i(l24_x), f2i(l32_y), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, f2i(((l24_x + ((l64_str_h / 2.0) * t11)) + (l56_str_w * t12))), f2i(((l32_y + ((l64_str_h / 2.0) * t9)) + (l56_str_w * t10))), f2i(l24_x), f2i(l32_y), 1L, 0L)
             ln = 47 // Zing.HC:47
             nat(t, n_MemSet, push3(t, (fp + 88), 0L, 60L))
             ln = 48 // Zing.HC:48
@@ -188,14 +188,14 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             st4((p1_dc + 228L), 2L)
             ln = 65 // Zing.HC:65
             tick(t)
-            P.f418_Gr2BSpline3(t, p1_dc, (fp + 88), 5L, 0L)
+            P.f420_Gr2BSpline3(t, p1_dc, (fp + 88), 5L, 0L)
             ln = 66 // Zing.HC:66
             st4((p1_dc + 228L), 1L)
             ln = 68 // Zing.HC:68
             if ((ld1u(g_bow_drawn) != 0L)) {
                 ln = 69 // Zing.HC:69
                 tick(t)
-                P.f445_Sprite3ZB(t, p1_dc, f2i(l24_x), f2i(l32_y), 0L, b0, ldf(g_bow__))
+                P.f450_Sprite3ZB(t, p1_dc, f2i(l24_x), f2i(l32_y), 0L, b0, ldf(g_bow__))
             }
             ln = 71 // Zing.HC:71
             l80_tmpa = ld8(g_head)
@@ -206,7 +206,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 l16__ = t37
                 ln = 74 // Zing.HC:74
                 tick(t)
-                P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((l80_tmpa + 16L))), f2i(ldf((l80_tmpa + 24L))), 0L, b1, l16__)
+                P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((l80_tmpa + 16L))), f2i(ldf((l80_tmpa + 24L))), 0L, b1, l16__)
                 ln = 75 // Zing.HC:75
                 l80_tmpa = ld8(l80_tmpa)
                 tick(t)
@@ -218,7 +218,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC AnimateTask (Zing.HC:81) */
-    fun f704_AnimateTask(t: Task, a0: Long) {
+    fun f709_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -313,7 +313,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Init (Zing.HC:117) */
-    fun f705_Init(t: Task) {
+    fun f710_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -350,7 +350,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC CleanUp (Zing.HC:134) */
-    fun f706_CleanUp(t: Task) {
+    fun f711_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -363,7 +363,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Zing (Zing.HC:139) */
-    fun f707_Zing(t: Task) {
+    fun f712_Zing(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -372,7 +372,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             var l16_tmpa: Long = 0L
             ln = 143 // Zing.HC:143
             tick(t)
-            P.f507_MenuPush(t, s0)
+            P.f512_MenuPush(t, s0)
             ln = 152 // Zing.HC:152
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -390,13 +390,13 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             nat(t, n_DocClear, push1(t, 0L))
             ln = 159 // Zing.HC:159
             tick(t)
-            f705_Init(t)
+            f710_Init(t)
             ln = 160 // Zing.HC:160
             val t1: Long = (ld8(P.g_Fs) + 1088L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065856L, 0L, s1, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s1, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 161 // Zing.HC:161
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 162 // Zing.HC:162
             st4((ld8(P.g_Fs) + 12L), 5435902L)
             ln = 163 // Zing.HC:163
@@ -418,10 +418,10 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             10L -> {
                                                 ln = 170 // Zing.HC:170
                                                 tick(t)
-                                                f706_CleanUp(t)
+                                                f711_CleanUp(t)
                                                 ln = 171 // Zing.HC:171
                                                 tick(t)
-                                                f705_Init(t)
+                                                f710_Init(t)
                                             }
                                             27L, 28L -> {
                                                 ln = 175 // Zing.HC:175
@@ -459,7 +459,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                         P.f153_QueIns(t, l16_tmpa, ld8((g_head + 8L)))
                                         ln = 191 // Zing.HC:191
                                         tick(t)
-                                        P.f499_Noise(t, 50L, 110.0, 114.0)
+                                        P.f504_Noise(t, 50L, 110.0, 114.0)
                                     }
                                     ln = 193 // Zing.HC:193
                                     st1(g_bow_drawn, 0L)
@@ -487,10 +487,10 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 201 // Zing.HC:201
             tick(t)
-            f706_CleanUp(t)
+            f711_CleanUp(t)
             ln = 202 // Zing.HC:202
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -498,13 +498,13 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Demo/Games/Zing.HC#0 (Zing.HC:205) */
-    fun f708_init_C__Demo_Games_Zing_HC_0(t: Task): Long {
+    fun f713_init_C__Demo_Games_Zing_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 205 // Zing.HC:205
             tick(t)
-            f707_Zing(t)
+            f712_Zing(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Zing.HC#0", ln) }
@@ -513,12 +513,12 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_Init(t); 0L }
-            706 -> { f706_CleanUp(t); 0L }
-            707 -> { f707_Zing(t); 0L }
-            708 -> f708_init_C__Demo_Games_Zing_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_Init(t); 0L }
+            711 -> { f711_CleanUp(t); 0L }
+            712 -> { f712_Zing(t); 0L }
+            713 -> f713_init_C__Demo_Games_Zing_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -530,7 +530,7 @@ class N_Demo_Games_Zing(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("DrawIt", "AnimateTask", "Init", "CleanUp", "Zing", "\$init:C:/Demo/Games/Zing.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/Zing.HC")
     }

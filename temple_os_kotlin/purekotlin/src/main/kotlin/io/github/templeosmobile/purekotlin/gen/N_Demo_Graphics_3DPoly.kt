@@ -10,6 +10,7 @@ import io.github.templeosmobile.core.holyc.*
 import io.github.templeosmobile.core.purenative.*
 
 class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
+    @JvmField val n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!!.index
     @JvmField val n_Refresh = rt.vm.natives.find("Refresh")!!.index
 
 
@@ -18,7 +19,7 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Main (3DPoly.HC:1) */
-    fun f703_Main(t: Task) {
+    fun f708_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -56,12 +57,12 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     P.f295_DCDepthBufRst(t, l72_dc)
                     ln = 11 // 3DPoly.HC:11
                     tick(t)
-                    P.f314_DCSymmetrySet(t, l72_dc, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), divs(ld8((ld8(P.g_Fs) + 248L)), 2L), ((ld8(P.g_ms) - ld8((ld8(P.g_Fs) + 208L))) - ld8((ld8(P.g_Fs) + 256L))), ((ld8((P.g_ms + 8L)) - ld8((ld8(P.g_Fs) + 232L))) - ld8((ld8(P.g_Fs) + 264L))))
+                    P.f315_DCSymmetrySet(t, l72_dc, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), divs(ld8((ld8(P.g_Fs) + 248L)), 2L), ((ld8(P.g_ms) - ld8((ld8(P.g_Fs) + 208L))) - ld8((ld8(P.g_Fs) + 256L))), ((ld8((P.g_ms + 8L)) - ld8((ld8(P.g_Fs) + 232L))) - ld8((ld8(P.g_Fs) + 264L))))
                     ln = 14 // 3DPoly.HC:14
                     st4((l72_dc + 160L), 9L)
                     ln = 15 // 3DPoly.HC:15
                     tick(t)
-                    P.f396_GrLine(t, l72_dc, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), divs(ld8((ld8(P.g_Fs) + 248L)), 2L), ((ld8(P.g_ms) - ld8((ld8(P.g_Fs) + 208L))) - ld8((ld8(P.g_Fs) + 256L))), ((ld8((P.g_ms + 8L)) - ld8((ld8(P.g_Fs) + 232L))) - ld8((ld8(P.g_Fs) + 264L))), 1L, 0L)
+                    P.f397_GrLine(t, l72_dc, divs(ld8((ld8(P.g_Fs) + 224L)), 2L), divs(ld8((ld8(P.g_Fs) + 248L)), 2L), ((ld8(P.g_ms) - ld8((ld8(P.g_Fs) + 208L))) - ld8((ld8(P.g_Fs) + 256L))), ((ld8((P.g_ms + 8L)) - ld8((ld8(P.g_Fs) + 232L))) - ld8((ld8(P.g_Fs) + 264L))), 1L, 0L)
                     ln = 19 // 3DPoly.HC:19
                     tick(t)
                     P.f280_Mat4x4IdentEqu(t, ld8((l72_dc + 200L)))
@@ -110,8 +111,7 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 41 // 3DPoly.HC:41
                     st4((((fp + 24) + 36L) + 8L), 0L)
                     ln = 42 // 3DPoly.HC:42
-                    tick(t)
-                    P.f422_GrFillPoly3(t, l72_dc, 4L, (fp + 24))
+                    nat(t, n_GrFillPoly3, push3(t, l72_dc, 4L, (fp + 24)))
                     ln = 44 // 3DPoly.HC:44
                     st4((l72_dc + 160L), 4L)
                     ln = 45 // 3DPoly.HC:45
@@ -139,8 +139,7 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 56 // 3DPoly.HC:56
                     st4((((fp + 24) + 36L) + 8L), 50L)
                     ln = 57 // 3DPoly.HC:57
-                    tick(t)
-                    P.f422_GrFillPoly3(t, l72_dc, 4L, (fp + 24))
+                    nat(t, n_GrFillPoly3, push3(t, l72_dc, 4L, (fp + 24)))
                     ln = 59 // 3DPoly.HC:59
                     st4((l72_dc + 160L), 1L)
                     ln = 60 // 3DPoly.HC:60
@@ -168,8 +167,7 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 71 // 3DPoly.HC:71
                     st4((((fp + 24) + 36L) + 8L), -50L)
                     ln = 72 // 3DPoly.HC:72
-                    tick(t)
-                    P.f422_GrFillPoly3(t, l72_dc, 4L, (fp + 24))
+                    nat(t, n_GrFillPoly3, push3(t, l72_dc, 4L, (fp + 24)))
                     ln = 74 // 3DPoly.HC:74
                     st4((l72_dc + 160L), 1073872900L)
                     ln = 75 // 3DPoly.HC:75
@@ -197,8 +195,7 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 86 // 3DPoly.HC:86
                     st4((((fp + 24) + 36L) + 8L), 0L)
                     ln = 87 // 3DPoly.HC:87
-                    tick(t)
-                    P.f422_GrFillPoly3(t, l72_dc, 4L, (fp + 24))
+                    nat(t, n_GrFillPoly3, push3(t, l72_dc, 4L, (fp + 24)))
                     ln = 89 // 3DPoly.HC:89
                     st4((l72_dc + 160L), 1073872897L)
                     ln = 90 // 3DPoly.HC:90
@@ -226,8 +223,7 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 101 // 3DPoly.HC:101
                     st4((((fp + 24) + 36L) + 8L), 0L)
                     ln = 102 // 3DPoly.HC:102
-                    tick(t)
-                    P.f422_GrFillPoly3(t, l72_dc, 4L, (fp + 24))
+                    nat(t, n_GrFillPoly3, push3(t, l72_dc, 4L, (fp + 24)))
                     ln = 104 // 3DPoly.HC:104
                     nat(t, n_Refresh, push2(t, 1L, 0L))
                     ln = 105 // 3DPoly.HC:105
@@ -263,13 +259,13 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Graphics/3DPoly.HC#0 (3DPoly.HC:117) */
-    fun f704_init_C__Demo_Graphics_3DPoly_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_3DPoly_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 117 // 3DPoly.HC:117
             tick(t)
-            f703_Main(t)
+            f708_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/3DPoly.HC#0", ln) }
@@ -278,8 +274,8 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Main(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_3DPoly_HC_0(t)
+            708 -> { f708_Main(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_3DPoly_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -291,7 +287,7 @@ class N_Demo_Graphics_3DPoly(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("Main", "\$init:C:/Demo/Graphics/3DPoly.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/3DPoly.HC")
     }

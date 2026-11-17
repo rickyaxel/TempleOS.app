@@ -257,7 +257,7 @@ c 180518 8 363636361e
 c 180520 8 3e061c301e
 c 180528 8 3c3c3c3c0000
 c 180530 8 ffffffffffffffff
-fn 703 $init:C:/Kernel/FontStd.HC#0 (I64;;-)
+fn 708 $init:C:/Kernel/FontStd.HC#0 (I64;;-)
 sym g sys_font_std 17fd38 [256]U64
-init 703
+init 708
 unit C:/Kernel/FontStd.HC#1

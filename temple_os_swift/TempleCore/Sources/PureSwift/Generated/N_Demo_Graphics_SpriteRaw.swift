@@ -31,7 +31,7 @@ public final class N_Demo_Graphics_SpriteRaw: NativeModule {
     }
 
     /// HolyC SpriteRawDemo (SpriteRaw.HC:16)
-    public final func f703_SpriteRawDemo(_ t: HTask) throws {
+    public final func f708_SpriteRawDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -79,13 +79,13 @@ public final class N_Demo_Graphics_SpriteRaw: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/SpriteRaw.HC#0 (SpriteRaw.HC:38)
-    @discardableResult public final func f704_init_C__Demo_Graphics_SpriteRaw_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_SpriteRaw_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 38 // SpriteRaw.HC:38
             try tick(t)
-            try f703_SpriteRawDemo(t)
+            try f708_SpriteRawDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/SpriteRaw.HC#0", ln) }
@@ -94,14 +94,14 @@ public final class N_Demo_Graphics_SpriteRaw: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SpriteRawDemo(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_SpriteRaw_HC_0(t)
+        case 708: try f708_SpriteRawDemo(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_SpriteRaw_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "SpriteRawDemo", 704: "$init:C:/Demo/Graphics/SpriteRaw.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "SpriteRawDemo", 709: "$init:C:/Demo/Graphics/SpriteRaw.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/SpriteRaw.HC"]
     public override var files: [String] { N_Demo_Graphics_SpriteRaw.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_SpriteRaw.DEFINED.contains(index) }

@@ -14,6 +14,7 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
     @JvmField val n_RandI16 = rt.vm.natives.find("RandI16")!!.index
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
     /** imgs: U8 *[4][3] */ @JvmField var g_imgs: Long = 0L
@@ -59,7 +60,7 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC $init:C:/Demo/Graphics/WallPaperFish.HC#0 (WallPaperFish.HC:42) */
-    fun f703_init_C__Demo_Graphics_WallPaperFish_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Graphics_WallPaperFish_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -84,7 +85,7 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC WallPaperFish (WallPaperFish.HC:57) */
-    fun f704_WallPaperFish(t: Task, a0: Long) {
+    fun f709_WallPaperFish(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -111,11 +112,11 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
                 ln = 66 // WallPaperFish.HC:66
                 val t1: Double = f(nat(t, n_tS, push0(t)))
                 tick(t)
-                val t2: Double = P.f484_Tri(t, (t1 * 10.0), 20.0)
+                val t2: Double = P.f489_Tri(t, (t1 * 10.0), 20.0)
                 l16_j = f2i((16.0 * t2))
                 ln = 67 // WallPaperFish.HC:67
                 tick(t)
-                P.f396_GrLine(t, l40_dc, 0L, ((480L - l8_i) - l16_j), ((480L - l8_i) - l16_j), 480L, 1L, 0L)
+                P.f397_GrLine(t, l40_dc, 0L, ((480L - l8_i) - l16_j), ((480L - l8_i) - l16_j), 480L, 1L, 0L)
                 ln = 65 // WallPaperFish.HC:65
                 l8_i = (l8_i + 20L)
                 tick(t)
@@ -145,15 +146,14 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
                     st4(t4, (ld4s(t4) or 1536L))
                     ln = 77 // WallPaperFish.HC:77
                     tick(t)
-                    P.f314_DCSymmetrySet(t, l40_dc, l24_x, (l32_y - 1L), l24_x, (l32_y + 1L))
+                    P.f315_DCSymmetrySet(t, l40_dc, l24_x, (l32_y - 1L), l24_x, (l32_y + 1L))
                 } else {
                     ln = 79 // WallPaperFish.HC:79
                     val t5: Long = (l40_dc + 28L)
                     st4(t5, (ld4s(t5) and -1537L))
                 }
                 ln = 80 // WallPaperFish.HC:80
-                tick(t)
-                P.f440_Sprite3(t, l40_dc, l24_x, l32_y, 0L, ld8(((g_imgs + (ld8((l48_c + 32L)) * 32L)) + (l16_j * 8L))), 0L)
+                nat(t, n_Sprite3, push(t, l40_dc, l24_x, l32_y, 0L, ld8(((g_imgs + (ld8((l48_c + 32L)) * 32L)) + (l16_j * 8L))), 0L))
                 ln = 81 // WallPaperFish.HC:81
                 val t6: Long = l48_c
                 st8(t6, (ld8(t6) + ld8((l48_c + 16L))))
@@ -173,7 +173,7 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC WallInit (WallPaperFish.HC:89) */
-    fun f705_WallInit(t: Task) {
+    fun f710_WallInit(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -228,20 +228,20 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
                 tick(t)
             }
             ln = 112 // WallPaperFish.HC:112
-            st8((P.g_gr + 136L), 9223090561878065856L)
+            st8((P.g_gr + 136L), 9223090561878065861L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "WallInit", ln) }
     }
 
     /** HolyC $init:C:/Demo/Graphics/WallPaperFish.HC#1 (WallPaperFish.HC:115) */
-    fun f706_init_C__Demo_Graphics_WallPaperFish_HC_1(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_WallPaperFish_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 115 // WallPaperFish.HC:115
             tick(t)
-            f705_WallInit(t)
+            f710_WallInit(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/WallPaperFish.HC#1", ln) }
@@ -250,10 +250,10 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Graphics_WallPaperFish_HC_0(t)
-            704 -> { f704_WallPaperFish(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_WallInit(t); 0L }
-            706 -> f706_init_C__Demo_Graphics_WallPaperFish_HC_1(t)
+            708 -> f708_init_C__Demo_Graphics_WallPaperFish_HC_0(t)
+            709 -> { f709_WallPaperFish(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_WallInit(t); 0L }
+            711 -> f711_init_C__Demo_Graphics_WallPaperFish_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -265,7 +265,7 @@ class N_Demo_Graphics_WallPaperFish(rt: NativeRuntime, @JvmField val P: Prelude)
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("\$init:C:/Demo/Graphics/WallPaperFish.HC#0", "WallPaperFish", "WallInit", "\$init:C:/Demo/Graphics/WallPaperFish.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/WallPaperFish.HC")
     }

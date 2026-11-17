@@ -35,15 +35,15 @@ public final class N_Apps_Psalmody_Examples_childish: NativeModule {
     }
 
     /// HolyC Song (childish.HC:2)
-    public final func f703_Song(_ t: HTask) throws {
+    public final func f708_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 4 // childish.HC:4
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 5 // childish.HC:5
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 6 // childish.HC:6
             try st8((P.g_music &+ 56), bits(2.48))
             ln = 7 // childish.HC:7
@@ -58,16 +58,16 @@ public final class N_Apps_Psalmody_Examples_childish: NativeModule {
                     if !((t0 == 0)) { break loop0 }
                     ln = 10 // childish.HC:10
                     try tick(t)
-                    try P.f494_Play(t, s1, s0)
+                    try P.f499_Play(t, s1, s0)
                     ln = 13 // childish.HC:13
                     try tick(t)
-                    try P.f494_Play(t, s1, s2)
+                    try P.f499_Play(t, s1, s2)
                     ln = 16 // childish.HC:16
                     try tick(t)
-                    try P.f494_Play(t, s3, 0)
+                    try P.f499_Play(t, s3, 0)
                     ln = 17 // childish.HC:17
                     try tick(t)
-                    try P.f494_Play(t, s3, 0)
+                    try P.f499_Play(t, s3, 0)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -87,13 +87,13 @@ public final class N_Apps_Psalmody_Examples_childish: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/childish.HC#0 (childish.HC:24)
-    @discardableResult public final func f704_init_C__Apps_Psalmody_Examples_childish_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_Psalmody_Examples_childish_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 24 // childish.HC:24
             try tick(t)
-            try f703_Song(t)
+            try f708_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/childish.HC#0", ln) }
@@ -102,14 +102,14 @@ public final class N_Apps_Psalmody_Examples_childish: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Song(t); return 0
-        case 704: return try f704_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
+        case 708: try f708_Song(t); return 0
+        case 709: return try f709_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "Song", 704: "$init:C:/Apps/Psalmody/Examples/childish.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "Song", 709: "$init:C:/Apps/Psalmody/Examples/childish.HC#0"]
     private static let FILES: [String] = ["C:/Apps/Psalmody/Examples/childish.HC"]
     public override var files: [String] { N_Apps_Psalmody_Examples_childish.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Psalmody_Examples_childish.DEFINED.contains(index) }

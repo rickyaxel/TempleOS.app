@@ -29,7 +29,7 @@ class N_Demo_DolDoc_CursorMove(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CursorMovementDemo (CursorMove.HC:1) */
-    fun f703_CursorMovementDemo(t: Task) {
+    fun f708_CursorMovementDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -58,13 +58,13 @@ class N_Demo_DolDoc_CursorMove(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/DolDoc/CursorMove.HC#0 (CursorMove.HC:17) */
-    fun f704_init_C__Demo_DolDoc_CursorMove_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_DolDoc_CursorMove_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 17 // CursorMove.HC:17
             tick(t)
-            f703_CursorMovementDemo(t)
+            f708_CursorMovementDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/CursorMove.HC#0", ln) }
@@ -73,8 +73,8 @@ class N_Demo_DolDoc_CursorMove(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_CursorMovementDemo(t); 0L }
-            704 -> f704_init_C__Demo_DolDoc_CursorMove_HC_0(t)
+            708 -> { f708_CursorMovementDemo(t); 0L }
+            709 -> f709_init_C__Demo_DolDoc_CursorMove_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -86,7 +86,7 @@ class N_Demo_DolDoc_CursorMove(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("CursorMovementDemo", "\$init:C:/Demo/DolDoc/CursorMove.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/DolDoc/CursorMove.HC")
     }

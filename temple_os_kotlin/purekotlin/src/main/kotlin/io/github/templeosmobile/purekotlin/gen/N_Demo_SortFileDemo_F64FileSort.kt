@@ -56,7 +56,7 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#0 (F64FileSort.HC:3) */
-    fun f703_init_C__Demo_SortFileDemo_F64FileSort_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_SortFileDemo_F64FileSort_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -70,7 +70,7 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC Compare (F64FileSort.HC:5) */
-    fun f704_Compare(t: Task, a0: Double, a1: Double): Long {
+    fun f709_Compare(t: Task, a0: Double, a1: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -87,7 +87,7 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC F64FileSortTXT (F64FileSort.HC:10) */
-    fun f705_F64FileSortTXT(t: Task, a0: Long, a1: Long) {
+    fun f710_F64FileSortTXT(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -142,10 +142,10 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
             ln = 33 // F64FileSort.HC:33
             nat(t, n_CmpCtrlDel, push1(t, l16_cc))
             ln = 35 // F64FileSort.HC:35
-            nat(t, n_QSortI64, push3(t, l40_a, l32_n, 9223090561878065856L))
+            nat(t, n_QSortI64, push3(t, l40_a, l32_n, 9223090561878065861L))
             ln = 38 // F64FileSort.HC:38
             tick(t)
-            val t8: Long = P.f601_DocNew(t, p1_out_name, 0L)
+            val t8: Long = P.f606_DocNew(t, p1_out_name, 0L)
             l48_doc = t8
             ln = 39 // F64FileSort.HC:39
             tick(t)
@@ -166,10 +166,10 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
             }
             ln = 42 // F64FileSort.HC:42
             tick(t)
-            P.f618_DocWrite(t, l48_doc, 0L)
+            P.f623_DocWrite(t, l48_doc, 0L)
             ln = 43 // F64FileSort.HC:43
             tick(t)
-            P.f605_DocDel(t, l48_doc)
+            P.f610_DocDel(t, l48_doc)
             ln = 45 // F64FileSort.HC:45
             nat(t, n_Free, push1(t, l40_a))
             t.depth--
@@ -178,20 +178,20 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#1 (F64FileSort.HC:47) */
-    fun f706_init_C__Demo_SortFileDemo_F64FileSort_HC_1(t: Task): Long {
+    fun f711_init_C__Demo_SortFileDemo_F64FileSort_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 47 // F64FileSort.HC:47
             tick(t)
-            f705_F64FileSortTXT(t, s5, s4)
+            f710_F64FileSortTXT(t, s5, s4)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#1", ln) }
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#2 (F64FileSort.HC:48) */
-    fun f707_init_C__Demo_SortFileDemo_F64FileSort_HC_2(t: Task): Long {
+    fun f712_init_C__Demo_SortFileDemo_F64FileSort_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -203,7 +203,7 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#3 (F64FileSort.HC:49) */
-    fun f708_init_C__Demo_SortFileDemo_F64FileSort_HC_3(t: Task): Long {
+    fun f713_init_C__Demo_SortFileDemo_F64FileSort_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -215,7 +215,7 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC F64FileSortDAT (F64FileSort.HC:51) */
-    fun f709_F64FileSortDAT(t: Task, a0: Long, a1: Long) {
+    fun f714_F64FileSortDAT(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -228,7 +228,7 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
             val t0: Long = nat(t, n_FileRead, push3(t, p0_in_name, (fp + 16), 0L))
             l24_a = t0
             ln = 55 // F64FileSort.HC:55
-            nat(t, n_QSortI64, push3(t, l24_a, divs(ld8((fp + 16)), 8L), 9223090561878065856L))
+            nat(t, n_QSortI64, push3(t, l24_a, divs(ld8((fp + 16)), 8L), 9223090561878065861L))
             ln = 56 // F64FileSort.HC:56
             nat(t, n_FileWrite, push(t, p1_out_name, l24_a, ld8((fp + 16)), 0L, 0L))
             ln = 57 // F64FileSort.HC:57
@@ -240,20 +240,20 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#4 (F64FileSort.HC:59) */
-    fun f710_init_C__Demo_SortFileDemo_F64FileSort_HC_4(t: Task): Long {
+    fun f715_init_C__Demo_SortFileDemo_F64FileSort_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 59 // F64FileSort.HC:59
             tick(t)
-            f709_F64FileSortDAT(t, s7, s6)
+            f714_F64FileSortDAT(t, s7, s6)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#4", ln) }
     }
 
     /** HolyC F64FileDumpDAT (F64FileSort.HC:61) */
-    fun f711_F64FileDumpDAT(t: Task, a0: Long) {
+    fun f716_F64FileDumpDAT(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -288,26 +288,26 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#5 (F64FileSort.HC:71) */
-    fun f712_init_C__Demo_SortFileDemo_F64FileSort_HC_5(t: Task): Long {
+    fun f717_init_C__Demo_SortFileDemo_F64FileSort_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 71 // F64FileSort.HC:71
             tick(t)
-            f711_F64FileDumpDAT(t, s7)
+            f716_F64FileDumpDAT(t, s7)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#5", ln) }
     }
 
     /** HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#6 (F64FileSort.HC:72) */
-    fun f713_init_C__Demo_SortFileDemo_F64FileSort_HC_6(t: Task): Long {
+    fun f718_init_C__Demo_SortFileDemo_F64FileSort_HC_6(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 72 // F64FileSort.HC:72
             tick(t)
-            f711_F64FileDumpDAT(t, s6)
+            f716_F64FileDumpDAT(t, s6)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#6", ln) }
@@ -316,17 +316,17 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_SortFileDemo_F64FileSort_HC_0(t)
-            704 -> f704_Compare(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)))
-            705 -> { f705_F64FileSortTXT(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> f706_init_C__Demo_SortFileDemo_F64FileSort_HC_1(t)
-            707 -> f707_init_C__Demo_SortFileDemo_F64FileSort_HC_2(t)
-            708 -> f708_init_C__Demo_SortFileDemo_F64FileSort_HC_3(t)
-            709 -> { f709_F64FileSortDAT(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> f710_init_C__Demo_SortFileDemo_F64FileSort_HC_4(t)
-            711 -> { f711_F64FileDumpDAT(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            712 -> f712_init_C__Demo_SortFileDemo_F64FileSort_HC_5(t)
-            713 -> f713_init_C__Demo_SortFileDemo_F64FileSort_HC_6(t)
+            708 -> f708_init_C__Demo_SortFileDemo_F64FileSort_HC_0(t)
+            709 -> f709_Compare(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)))
+            710 -> { f710_F64FileSortTXT(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> f711_init_C__Demo_SortFileDemo_F64FileSort_HC_1(t)
+            712 -> f712_init_C__Demo_SortFileDemo_F64FileSort_HC_2(t)
+            713 -> f713_init_C__Demo_SortFileDemo_F64FileSort_HC_3(t)
+            714 -> { f714_F64FileSortDAT(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> f715_init_C__Demo_SortFileDemo_F64FileSort_HC_4(t)
+            716 -> { f716_F64FileDumpDAT(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            717 -> f717_init_C__Demo_SortFileDemo_F64FileSort_HC_5(t)
+            718 -> f718_init_C__Demo_SortFileDemo_F64FileSort_HC_6(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -338,7 +338,7 @@ class N_Demo_SortFileDemo_F64FileSort(rt: NativeRuntime, @JvmField val P: Prelud
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718)
         private val NAMES = arrayOf("\$init:C:/Demo/SortFileDemo/F64FileSort.HC#0", "Compare", "F64FileSortTXT", "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#1", "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#2", "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#3", "F64FileSortDAT", "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#4", "F64FileDumpDAT", "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#5", "\$init:C:/Demo/SortFileDemo/F64FileSort.HC#6")
         private val FILES = arrayOf<String>("C:/Demo/SortFileDemo/F64FileSort.HC")
     }

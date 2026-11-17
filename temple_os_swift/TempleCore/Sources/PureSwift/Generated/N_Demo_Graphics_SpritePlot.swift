@@ -12,6 +12,7 @@ public final class N_Demo_Graphics_SpritePlot: NativeModule {
     public let n_DocClear: Int
     public let n_Print: Int
     public let n_Sleep: Int
+    public let n_Sprite3: Int
     /** binary literal, 167 bytes */ public var b0: Int64 = 0
     /** "Image size:%d." */ public var s0: Int64 = 0
 
@@ -20,6 +21,7 @@ public final class N_Demo_Graphics_SpritePlot: NativeModule {
         n_DocClear = rt.vm.natives.find("DocClear")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -33,7 +35,7 @@ public final class N_Demo_Graphics_SpritePlot: NativeModule {
     }
 
     /// HolyC SpritePlot (SpritePlot.HC:45)
-    public final func f703_SpritePlot(_ t: HTask) throws {
+    public final func f708_SpritePlot(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -52,8 +54,7 @@ public final class N_Demo_Graphics_SpritePlot: NativeModule {
                 try tick(t)
                 try P.f286_DCFill(t, 0, 255)
                 ln = 52 // SpritePlot.HC:52
-                try tick(t)
-                try P.f440_Sprite3(t, l0_dc, l8_i, 240, 0, b0, 0)
+                _ = try nat(t, n_Sprite3, try push(t, l0_dc, l8_i, 240, 0, b0, 0))
                 ln = 53 // SpritePlot.HC:53
                 _ = try nat(t, n_Sleep, try push1(t, 3))
                 ln = 50 // SpritePlot.HC:50
@@ -77,13 +78,13 @@ public final class N_Demo_Graphics_SpritePlot: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/SpritePlot.HC#0 (SpritePlot.HC:61)
-    @discardableResult public final func f704_init_C__Demo_Graphics_SpritePlot_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_SpritePlot_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 61 // SpritePlot.HC:61
             try tick(t)
-            try f703_SpritePlot(t)
+            try f708_SpritePlot(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/SpritePlot.HC#0", ln) }
@@ -92,14 +93,14 @@ public final class N_Demo_Graphics_SpritePlot: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SpritePlot(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_SpritePlot_HC_0(t)
+        case 708: try f708_SpritePlot(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_SpritePlot_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "SpritePlot", 704: "$init:C:/Demo/Graphics/SpritePlot.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "SpritePlot", 709: "$init:C:/Demo/Graphics/SpritePlot.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/SpritePlot.HC"]
     public override var files: [String] { N_Demo_Graphics_SpritePlot.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_SpritePlot.DEFINED.contains(index) }

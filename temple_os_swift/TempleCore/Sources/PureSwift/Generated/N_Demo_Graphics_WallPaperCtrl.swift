@@ -35,7 +35,7 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
     }
 
     /// HolyC DrawCtrlSlider (WallPaperCtrl.HC:25)
-    public final func f703_DrawCtrlSlider(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawCtrlSlider(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -56,21 +56,21 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
             try st4((p0_dc &+ 160), 0)
             ln = 36 // WallPaperCtrl.HC:36
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 20) &+ 0), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 20) &+ 0), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 20) &+ 0), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 20) &+ 0), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
             ln = 38 // WallPaperCtrl.HC:38
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
             ln = 40 // WallPaperCtrl.HC:40
             try st4((p0_dc &+ 160), 12)
             ln = 41 // WallPaperCtrl.HC:41
             try tick(t)
             let vb0 = try push1(t, divs((ld8(l16_s) &* 10), 30))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 20) &+ 0) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 20) &+ 0) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb0, 1)
             t.sp = vb0
             ln = 44 // WallPaperCtrl.HC:44
             try tick(t)
             let vb1 = try push1(t, divs((ld8((l16_s &+ 8)) &* 10), 30))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 40) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb1, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 40) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb1, 1)
             t.sp = vb1
             ln = 47 // WallPaperCtrl.HC:47
             _ = try nat(t, n_GrRect, try push(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 20) &+ 0) &- 3), (((((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1) &- ld8(l16_s)) &- 2), 7, 5))
@@ -88,7 +88,7 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
     }
 
     /// HolyC UpdateDerivedCtrlSlider (WallPaperCtrl.HC:58)
-    public final func f704_UpdateDerivedCtrlSlider(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_UpdateDerivedCtrlSlider(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -118,7 +118,7 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
     }
 
     /// HolyC LeftClickSlider (WallPaperCtrl.HC:69)
-    public final func f705_LeftClickSlider(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f710_LeftClickSlider(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -150,7 +150,7 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
     }
 
     /// HolyC SliderNew (WallPaperCtrl.HC:80)
-    @discardableResult public final func f706_SliderNew(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_SliderNew(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -176,11 +176,11 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
             let t1: Int64 = try nat(t, n_ACAlloc, try push1(t, 16))
             try st8((l0_c &+ 104), t1)
             ln = 93 // WallPaperCtrl.HC:93
-            try st8((l0_c &+ 120), 9223090561878065855)
+            try st8((l0_c &+ 120), 9223090561878065860)
             ln = 94 // WallPaperCtrl.HC:94
-            try st8((l0_c &+ 136), 9223090561878065857)
+            try st8((l0_c &+ 136), 9223090561878065862)
             ln = 95 // WallPaperCtrl.HC:95
-            try st8((l0_c &+ 112), 9223090561878065856)
+            try st8((l0_c &+ 112), 9223090561878065861)
             ln = 96 // WallPaperCtrl.HC:96
             try tick(t)
             _ = try P.f153_QueIns(t, l0_c, ld8((ld8(P.g_sys_winmgr_task) &+ 928)))
@@ -196,7 +196,7 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
     }
 
     /// HolyC SliderDel (WallPaperCtrl.HC:101)
-    public final func f707_SliderDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_SliderDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -214,13 +214,13 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/WallPaperCtrl.HC#0 (WallPaperCtrl.HC:108)
-    @discardableResult public final func f708_init_C__Demo_Graphics_WallPaperCtrl_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_Graphics_WallPaperCtrl_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 108 // WallPaperCtrl.HC:108
             try tick(t)
-            let t0: Int64 = try f706_SliderNew(t)
+            let t0: Int64 = try f711_SliderNew(t)
             t.depth -= 1
             return t0
             t.depth -= 1
@@ -231,18 +231,18 @@ public final class N_Demo_Graphics_WallPaperCtrl: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawCtrlSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_UpdateDerivedCtrlSlider(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_LeftClickSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 706: return try f706_SliderNew(t)
-        case 707: try f707_SliderDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: return try f708_init_C__Demo_Graphics_WallPaperCtrl_HC_0(t)
+        case 708: try f708_DrawCtrlSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_UpdateDerivedCtrlSlider(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_LeftClickSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 711: return try f711_SliderNew(t)
+        case 712: try f712_SliderDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: return try f713_init_C__Demo_Graphics_WallPaperCtrl_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708]
-    private static let NAMES: [Int: String] = [703: "DrawCtrlSlider", 704: "UpdateDerivedCtrlSlider", 705: "LeftClickSlider", 706: "SliderNew", 707: "SliderDel", 708: "$init:C:/Demo/Graphics/WallPaperCtrl.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713]
+    private static let NAMES: [Int: String] = [708: "DrawCtrlSlider", 709: "UpdateDerivedCtrlSlider", 710: "LeftClickSlider", 711: "SliderNew", 712: "SliderDel", 713: "$init:C:/Demo/Graphics/WallPaperCtrl.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/WallPaperCtrl.HC"]
     public override var files: [String] { N_Demo_Graphics_WallPaperCtrl.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_WallPaperCtrl.DEFINED.contains(index) }

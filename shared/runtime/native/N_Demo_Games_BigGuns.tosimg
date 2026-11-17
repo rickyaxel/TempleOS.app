@@ -29,14 +29,14 @@ g 17fdb0 16
 c 17fd68 8 0
 c 17fdb0 8 0
 c 17fdb8 8 0
-fn 703 $init:C:/Demo/Games/BigGuns.HC#0 (I64;;-)
+fn 708 $init:C:/Demo/Games/BigGuns.HC#0 (I64;;-)
 sym g active_map 17fd68 I64
 sym g gun_recoil 17fd80 I64
 sym g gun_x 17fd38 I64
 sym g gun_y 17fd50 I64
 sym g gun_é 17fd98 F64
 sym g map_dcs 17fdb0 [2]*$CDC
-init 703
+init 708
 unit C:/Demo/Games/BigGuns.HC#1
 value DUST_NUM 512
 g 17fdd0 4096
@@ -55,29 +55,29 @@ s 183080 4d6f7665
 s 183080 4d6f7665
 s 183098 46697265
 c 182e18 8 0
-fn 704 DrawIt (U0;*$CTask,*$CDC;-)
-fn 705 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-fn 706 DrawMap (U0;;-)
-fn 707 FireTask (U0;I64;-)
-fn 708 ManageShots (U0;;-)
-fn 709 MoveTask (U0;I64;-)
-fn 710 Init (U0;;-)
-fn 711 CleanUp (U0;*$CMathODE;-)
-fn 712 BigGuns (U0;;-)
-fn 713 $init:C:/Demo/Games/BigGuns.HC#1 (I64;;-)
-sym f BigGuns 712 (U0;;-)
-sym f CleanUp 711 (U0;*$CMathODE;-)
-sym f DrawIt 704 (U0;*$CTask,*$CDC;-)
-sym f DrawMap 706 (U0;;-)
-sym f FireTask 707 (U0;I64;-)
-sym f Init 710 (U0;;-)
-sym f ManageShots 708 (U0;;-)
-sym f MoveTask 709 (U0;I64;-)
-sym f MyDerivative 705 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 709 DrawIt (U0;*$CTask,*$CDC;-)
+fn 710 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 711 DrawMap (U0;;-)
+fn 712 FireTask (U0;I64;-)
+fn 713 ManageShots (U0;;-)
+fn 714 MoveTask (U0;I64;-)
+fn 715 Init (U0;;-)
+fn 716 CleanUp (U0;*$CMathODE;-)
+fn 717 BigGuns (U0;;-)
+fn 718 $init:C:/Demo/Games/BigGuns.HC#1 (I64;;-)
+sym f BigGuns 717 (U0;;-)
+sym f CleanUp 716 (U0;*$CMathODE;-)
+sym f DrawIt 709 (U0;*$CTask,*$CDC;-)
+sym f DrawMap 711 (U0;;-)
+sym f FireTask 712 (U0;I64;-)
+sym f Init 715 (U0;;-)
+sym f ManageShots 713 (U0;;-)
+sym f MoveTask 714 (U0;I64;-)
+sym f MyDerivative 710 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
 sym g dust_x 180df8 [512]I64
 sym g dust_y 181e08 [512]I64
 sym g elevs 17fdd0 [2048]I16
 sym g ode 182e18 *$CMathODE
 sym g wind_x 180de0 F64
-init 713
+init 718
 unit C:/Demo/Games/BigGuns.HC#2

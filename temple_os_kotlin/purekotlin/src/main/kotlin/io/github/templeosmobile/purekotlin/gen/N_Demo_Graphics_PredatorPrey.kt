@@ -33,7 +33,7 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC Steps (PredatorPrey.HC:16) */
-    fun f703_Steps(t: Task, a0: Long) {
+    fun f708_Steps(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -62,7 +62,7 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC PlotTrajectory (PredatorPrey.HC:27) */
-    fun f704_PlotTrajectory(t: Task, a0: Long) {
+    fun f709_PlotTrajectory(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -96,7 +96,7 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
                 nat(t, n_GrPlot, push3(t, l16_dc, f2i((ldf(((fp + 24) + 8L)) + 10.0)), f2i(((divs(480L, 2L) - 8L).toDouble() - ldf(((fp + 24) + 24L))))))
                 ln = 42 // PredatorPrey.HC:42
                 tick(t)
-                f703_Steps(t, (fp + 24))
+                f708_Steps(t, (fp + 24))
                 ln = 37 // PredatorPrey.HC:37
                 l8_i = (l8_i + 1L)
                 tick(t)
@@ -114,7 +114,7 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC PredatorPrey (PredatorPrey.HC:48) */
-    fun f705_PredatorPrey(t: Task) {
+    fun f710_PredatorPrey(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -150,10 +150,10 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
                 st4((l8_dc + 160L), 0L)
                 ln = 65 // PredatorPrey.HC:65
                 tick(t)
-                P.f396_GrLine(t, l8_dc, 10L, 0L, 10L, 471L, 1L, 0L)
+                P.f397_GrLine(t, l8_dc, 10L, 0L, 10L, 471L, 1L, 0L)
                 ln = 66 // PredatorPrey.HC:66
                 tick(t)
-                P.f396_GrLine(t, l8_dc, 0L, (divs(480L, 2L) - 8L), 639L, (divs(480L, 2L) - 8L), 1L, 0L)
+                P.f397_GrLine(t, l8_dc, 0L, (divs(480L, 2L) - 8L), 639L, (divs(480L, 2L) - 8L), 1L, 0L)
                 ln = 67 // PredatorPrey.HC:67
                 loop0@ while (true) {
                     tick(t)
@@ -168,7 +168,7 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
                         val t2: Long = nat(t, n_mp_cnt, push0(t))
                         if (!((l0_i < t2))) break@loop2
                         ln = 70 // PredatorPrey.HC:70
-                        nat(t, n_JobQue, push(t, 9223090561878065856L, ld8(P.g_Fs), l0_i, 0L, 0L, 0L, 0L, 0L))
+                        nat(t, n_JobQue, push(t, 9223090561878065861L, ld8(P.g_Fs), l0_i, 0L, 0L, 0L, 0L, 0L))
                         ln = 69 // PredatorPrey.HC:69
                         l0_i = (l0_i + 1L)
                         tick(t)
@@ -205,13 +205,13 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC $init:C:/Demo/Graphics/PredatorPrey.HC#0 (PredatorPrey.HC:81) */
-    fun f706_init_C__Demo_Graphics_PredatorPrey_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_PredatorPrey_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 81 // PredatorPrey.HC:81
             tick(t)
-            f705_PredatorPrey(t)
+            f710_PredatorPrey(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/PredatorPrey.HC#0", ln) }
@@ -220,10 +220,10 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Steps(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_PlotTrajectory(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_PredatorPrey(t); 0L }
-            706 -> f706_init_C__Demo_Graphics_PredatorPrey_HC_0(t)
+            708 -> { f708_Steps(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_PlotTrajectory(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_PredatorPrey(t); 0L }
+            711 -> f711_init_C__Demo_Graphics_PredatorPrey_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -235,7 +235,7 @@ class N_Demo_Graphics_PredatorPrey(rt: NativeRuntime, @JvmField val P: Prelude) 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("Steps", "PlotTrajectory", "PredatorPrey", "\$init:C:/Demo/Graphics/PredatorPrey.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/PredatorPrey.HC")
     }

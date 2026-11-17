@@ -11,6 +11,7 @@ import io.github.templeosmobile.core.purenative.*
 
 class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_JobQue = rt.vm.natives.find("JobQue")!!.index
     @JvmField val n_JobResGet = rt.vm.natives.find("JobResGet")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
@@ -39,7 +40,7 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC MPSum (MPAdd.HC:3) */
-    fun f703_MPSum(t: Task, a0: Long): Long {
+    fun f708_MPSum(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -72,7 +73,7 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sum (MPAdd.HC:13) */
-    fun f704_Sum(t: Task, a0: Long, a1: Long): Long {
+    fun f709_Sum(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -90,7 +91,7 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             l1048_i = 0L
             loop0@ while ((l1048_i < p1_my_mp_cnt)) {
                 ln = 19 // MPAdd.HC:19
-                val t0: Long = nat(t, n_JobQue, push(t, 9223090561878065855L, p1_my_mp_cnt, l1048_i, 0L, 0L, 0L, 0L, 0L))
+                val t0: Long = nat(t, n_JobQue, push(t, 9223090561878065860L, p1_my_mp_cnt, l1048_i, 0L, 0L, 0L, 0L, 0L))
                 st8(((fp + 16) + (l1048_i * 8L)), t0)
                 ln = 18 // MPAdd.HC:18
                 l1048_i = (l1048_i + 1L)
@@ -117,7 +118,7 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Test (MPAdd.HC:27) */
-    fun f705_Test(t: Task, a0: Long, a1: Long): Double {
+    fun f710_Test(t: Task, a0: Long, a1: Long): Double {
         var ln = 0
         try {
             enter(t)
@@ -137,7 +138,7 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             loop0@ while ((l16_i < 100L)) {
                 ln = 33 // MPAdd.HC:33
                 tick(t)
-                val t1: Long = f704_Sum(t, p0_n, p1_my_mp_cnt)
+                val t1: Long = f709_Sum(t, p0_n, p1_my_mp_cnt)
                 l24_val = (l24_val + t1)
                 ln = 32 // MPAdd.HC:32
                 l16_i = (l16_i + 1L)
@@ -159,7 +160,7 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC MPAdd (MPAdd.HC:46) */
-    fun f706_MPAdd(t: Task) {
+    fun f711_MPAdd(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -186,12 +187,12 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             loop0@ while ((l0_i < 5L)) {
                 ln = 55 // MPAdd.HC:55
                 tick(t)
-                val t1: Double = f705_Test(t, l8_n, 1L)
+                val t1: Double = f710_Test(t, l8_n, 1L)
                 l32_t1 = t1
                 ln = 56 // MPAdd.HC:56
                 val t2: Long = nat(t, n_mp_cnt, push0(t))
                 tick(t)
-                val t3: Double = f705_Test(t, l8_n, t2)
+                val t3: Double = f710_Test(t, l8_n, t2)
                 l40_t2 = t3
                 ln = 57 // MPAdd.HC:57
                 st8(((fp + 48) + (l0_i * 8L)), bits(((l40_t2 * 100.0) / l32_t1)))
@@ -216,13 +217,13 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 val t4: Double = f(nat(t, n_ToF64, push1(t, l0_i)))
                 tick(t)
                 val vb0 = push1(t, l0_i)
-                P.f369_GrPrint(t, l88_dc, 0L, f2i(((l24_v.toDouble() - ((t4 / 200.0) * l24_v.toDouble())) - 8.0)), s3, vb0, 1)
+                P.f370_GrPrint(t, l88_dc, 0L, f2i(((l24_v.toDouble() - ((t4 / 200.0) * l24_v.toDouble())) - 8.0)), s3, vb0, 1)
                 t.sp = vb0
                 ln = 67 // MPAdd.HC:67
                 val t5: Double = f(nat(t, n_ToF64, push1(t, l0_i)))
                 val t6: Double = f(nat(t, n_ToF64, push1(t, l0_i)))
                 tick(t)
-                P.f396_GrLine(t, l88_dc, 0L, f2i((l24_v.toDouble() - ((t6 / 200.0) * l24_v.toDouble()))), l16_h, f2i((l24_v.toDouble() - ((t5 / 200.0) * l24_v.toDouble()))), 1L, 0L)
+                P.f397_GrLine(t, l88_dc, 0L, f2i((l24_v.toDouble() - ((t6 / 200.0) * l24_v.toDouble()))), l16_h, f2i((l24_v.toDouble() - ((t5 / 200.0) * l24_v.toDouble()))), 1L, 0L)
                 ln = 65 // MPAdd.HC:65
                 l0_i = (l0_i + divs(200L, 10L))
                 tick(t)
@@ -235,18 +236,17 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 ln = 72 // MPAdd.HC:72
                 st4((l88_dc + 228L), 2L)
                 ln = 73 // MPAdd.HC:73
-                tick(t)
-                P.f406_GrLine3(t, l88_dc, divs((l0_i * l16_h), 4L), f2i((l24_v.toDouble() - ((ldf(((fp + 48) + (l0_i * 8L))) / 200.0) * l24_v.toDouble()))), 0L, divs(((l0_i + 1L) * l16_h), 4L), f2i((l24_v.toDouble() - ((ldf(((fp + 48) + ((l0_i + 1L) * 8L))) / 200.0) * l24_v.toDouble()))), 0L, 1L, 0L)
+                nat(t, n_GrLine3, push(t, l88_dc, divs((l0_i * l16_h), 4L), f2i((l24_v.toDouble() - ((ldf(((fp + 48) + (l0_i * 8L))) / 200.0) * l24_v.toDouble()))), 0L, divs(((l0_i + 1L) * l16_h), 4L), f2i((l24_v.toDouble() - ((ldf(((fp + 48) + ((l0_i + 1L) * 8L))) / 200.0) * l24_v.toDouble()))), 0L, 1L, 0L))
                 ln = 75 // MPAdd.HC:75
                 st4((l88_dc + 160L), 2L)
                 ln = 76 // MPAdd.HC:76
                 tick(t)
                 val vb1 = push1(t, (l0_i + 3L))
-                P.f369_GrPrint(t, l88_dc, divs((l0_i * l16_h), 4L), (l24_v - 8L), s4, vb1, 1)
+                P.f370_GrPrint(t, l88_dc, divs((l0_i * l16_h), 4L), (l24_v - 8L), s4, vb1, 1)
                 t.sp = vb1
                 ln = 77 // MPAdd.HC:77
                 tick(t)
-                P.f396_GrLine(t, l88_dc, divs((l0_i * l16_h), 4L), 0L, divs((l0_i * l16_h), 4L), l24_v, 1L, 0L)
+                P.f397_GrLine(t, l88_dc, divs((l0_i * l16_h), 4L), 0L, divs((l0_i * l16_h), 4L), l24_v, 1L, 0L)
                 ln = 70 // MPAdd.HC:70
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -267,13 +267,13 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/MultiCore/MPAdd.HC#0 (MPAdd.HC:85) */
-    fun f707_init_C__Demo_MultiCore_MPAdd_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_MultiCore_MPAdd_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 85 // MPAdd.HC:85
             tick(t)
-            f706_MPAdd(t)
+            f711_MPAdd(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/MultiCore/MPAdd.HC#0", ln) }
@@ -282,11 +282,11 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_MPSum(t, (if (n > 0) st[base + 0] else 0L))
-            704 -> f704_Sum(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            705 -> bits(f705_Test(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)))
-            706 -> { f706_MPAdd(t); 0L }
-            707 -> f707_init_C__Demo_MultiCore_MPAdd_HC_0(t)
+            708 -> f708_MPSum(t, (if (n > 0) st[base + 0] else 0L))
+            709 -> f709_Sum(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            710 -> bits(f710_Test(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)))
+            711 -> { f711_MPAdd(t); 0L }
+            712 -> f712_init_C__Demo_MultiCore_MPAdd_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -298,7 +298,7 @@ class N_Demo_MultiCore_MPAdd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("MPSum", "Sum", "Test", "MPAdd", "\$init:C:/Demo/MultiCore/MPAdd.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/MultiCore/MPAdd.HC")
     }

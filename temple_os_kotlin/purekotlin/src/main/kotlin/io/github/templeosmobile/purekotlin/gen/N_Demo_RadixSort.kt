@@ -35,7 +35,7 @@ class N_Demo_RadixSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DumpIn (RadixSort.HC:12) */
-    fun f703_DumpIn(t: Task) {
+    fun f708_DumpIn(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -57,7 +57,7 @@ class N_Demo_RadixSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DumpOut (RadixSort.HC:20) */
-    fun f704_DumpOut(t: Task) {
+    fun f709_DumpOut(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -93,7 +93,7 @@ class N_Demo_RadixSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Init (RadixSort.HC:34) */
-    fun f705_Init(t: Task) {
+    fun f710_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -120,7 +120,7 @@ class N_Demo_RadixSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Sort (RadixSort.HC:45) */
-    fun f706_Sort(t: Task) {
+    fun f711_Sort(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -142,35 +142,35 @@ class N_Demo_RadixSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC RadixSort (RadixSort.HC:54) */
-    fun f707_RadixSort(t: Task) {
+    fun f712_RadixSort(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 56 // RadixSort.HC:56
             tick(t)
-            f705_Init(t)
+            f710_Init(t)
             ln = 57 // RadixSort.HC:57
             tick(t)
-            f703_DumpIn(t)
+            f708_DumpIn(t)
             ln = 58 // RadixSort.HC:58
             tick(t)
-            f706_Sort(t)
+            f711_Sort(t)
             ln = 59 // RadixSort.HC:59
             tick(t)
-            f704_DumpOut(t)
+            f709_DumpOut(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "RadixSort", ln) }
     }
 
     /** HolyC $init:C:/Demo/RadixSort.HC#0 (RadixSort.HC:62) */
-    fun f708_init_C__Demo_RadixSort_HC_0(t: Task): Long {
+    fun f713_init_C__Demo_RadixSort_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 62 // RadixSort.HC:62
             tick(t)
-            f707_RadixSort(t)
+            f712_RadixSort(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/RadixSort.HC#0", ln) }
@@ -179,12 +179,12 @@ class N_Demo_RadixSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DumpIn(t); 0L }
-            704 -> { f704_DumpOut(t); 0L }
-            705 -> { f705_Init(t); 0L }
-            706 -> { f706_Sort(t); 0L }
-            707 -> { f707_RadixSort(t); 0L }
-            708 -> f708_init_C__Demo_RadixSort_HC_0(t)
+            708 -> { f708_DumpIn(t); 0L }
+            709 -> { f709_DumpOut(t); 0L }
+            710 -> { f710_Init(t); 0L }
+            711 -> { f711_Sort(t); 0L }
+            712 -> { f712_RadixSort(t); 0L }
+            713 -> f713_init_C__Demo_RadixSort_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -196,7 +196,7 @@ class N_Demo_RadixSort(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("DumpIn", "DumpOut", "Init", "Sort", "RadixSort", "\$init:C:/Demo/RadixSort.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/RadixSort.HC")
     }

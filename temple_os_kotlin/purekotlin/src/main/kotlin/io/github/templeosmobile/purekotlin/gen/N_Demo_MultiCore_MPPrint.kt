@@ -28,7 +28,7 @@ class N_Demo_MultiCore_MPPrint(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC Job (MPPrint.HC:1) */
-    fun f703_Job(t: Task, a0: Long) {
+    fun f708_Job(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -52,7 +52,7 @@ class N_Demo_MultiCore_MPPrint(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC MPPrintDemo (MPPrint.HC:8) */
-    fun f704_MPPrintDemo(t: Task) {
+    fun f709_MPPrintDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -63,8 +63,8 @@ class N_Demo_MultiCore_MPPrint(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 ln = 12 // MPPrint.HC:12
                 val t0: Long = nat(t, n_mp_cnt, push0(t))
                 tick(t)
-                val t1: Long = P.f602_DocPut(t, 0L)
-                nat(t, n_JobQue, push(t, 9223090561878065855L, t1, mods(l0_i, t0), 0L, 0L, 0L, 0L, 0L))
+                val t1: Long = P.f607_DocPut(t, 0L)
+                nat(t, n_JobQue, push(t, 9223090561878065860L, t1, mods(l0_i, t0), 0L, 0L, 0L, 0L, 0L))
                 ln = 11 // MPPrint.HC:11
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -79,13 +79,13 @@ class N_Demo_MultiCore_MPPrint(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/MultiCore/MPPrint.HC#0 (MPPrint.HC:17) */
-    fun f705_init_C__Demo_MultiCore_MPPrint_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_MultiCore_MPPrint_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 17 // MPPrint.HC:17
             tick(t)
-            f704_MPPrintDemo(t)
+            f709_MPPrintDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/MultiCore/MPPrint.HC#0", ln) }
@@ -94,9 +94,9 @@ class N_Demo_MultiCore_MPPrint(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Job(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_MPPrintDemo(t); 0L }
-            705 -> f705_init_C__Demo_MultiCore_MPPrint_HC_0(t)
+            708 -> { f708_Job(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_MPPrintDemo(t); 0L }
+            710 -> f710_init_C__Demo_MultiCore_MPPrint_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -108,7 +108,7 @@ class N_Demo_MultiCore_MPPrint(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("Job", "MPPrintDemo", "\$init:C:/Demo/MultiCore/MPPrint.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/MultiCore/MPPrint.HC")
     }

@@ -45,7 +45,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC MySin (MathAudioDemo.HC:1) */
-    fun f703_MySin(t: Task, a0: Double): Double {
+    fun f708_MySin(t: Task, a0: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -60,7 +60,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC MyCos (MathAudioDemo.HC:6) */
-    fun f704_MyCos(t: Task, a0: Double): Double {
+    fun f709_MyCos(t: Task, a0: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -75,7 +75,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC FunDraw1 (MathAudioDemo.HC:11) */
-    fun f705_FunDraw1(t: Task, a0: Long, a1: Long) {
+    fun f710_FunDraw1(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -98,7 +98,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
                 ln = 16 // MathAudioDemo.HC:16
                 val t1: Double = f(ptr(t, p1_f, push1(t, bits((((l16_i.toDouble() / l40_scale) * 2.0) * f(4614256656552045848L))))))
                 tick(t)
-                P.f396_GrLine(t, p0_dc, (divs(l24_w, 2L) + l16_i), f2i((divs(l32_h, 2L).toDouble() - (l40_scale * t1))), ((divs(l24_w, 2L) + l16_i) + 1L), f2i((divs(l32_h, 2L).toDouble() - (l40_scale * t0))), 1L, 0L)
+                P.f397_GrLine(t, p0_dc, (divs(l24_w, 2L) + l16_i), f2i((divs(l32_h, 2L).toDouble() - (l40_scale * t1))), ((divs(l24_w, 2L) + l16_i) + 1L), f2i((divs(l32_h, 2L).toDouble() - (l40_scale * t0))), 1L, 0L)
                 ln = 15 // MathAudioDemo.HC:15
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -109,7 +109,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC FunDraw2 (MathAudioDemo.HC:20) */
-    fun f706_FunDraw2(t: Task, a0: Long, a1: Long, a2: Double) {
+    fun f711_FunDraw2(t: Task, a0: Long, a1: Long, a2: Double) {
         var ln = 0
         try {
             enter(t)
@@ -132,7 +132,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
                 val t0: Double = f(ptr(t, p1_f, push2(t, bits(((l24_i + 1L).toDouble() / l48_scale)), bits(p2_T))))
                 val t1: Double = f(ptr(t, p1_f, push2(t, bits((l24_i.toDouble() / l48_scale)), bits(p2_T))))
                 tick(t)
-                P.f396_GrLine(t, p0_dc, (divs(l32_w, 2L) + l24_i), f2i((divs(l40_h, 2L).toDouble() - (l48_scale * t1))), ((divs(l32_w, 2L) + l24_i) + 1L), f2i((divs(l40_h, 2L).toDouble() - (l48_scale * t0))), 1L, 0L)
+                P.f397_GrLine(t, p0_dc, (divs(l32_w, 2L) + l24_i), f2i((divs(l40_h, 2L).toDouble() - (l48_scale * t1))), ((divs(l32_w, 2L) + l24_i) + 1L), f2i((divs(l40_h, 2L).toDouble() - (l48_scale * t0))), 1L, 0L)
                 ln = 24 // MathAudioDemo.HC:24
                 l24_i = (l24_i + 1L)
                 tick(t)
@@ -143,7 +143,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC Init (MathAudioDemo.HC:28) */
-    fun f707_Init(t: Task, a0: Long) {
+    fun f712_Init(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -166,10 +166,10 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((p0_dc + 160L), 0L)
             ln = 35 // MathAudioDemo.HC:35
             tick(t)
-            P.f396_GrLine(t, p0_dc, 0L, divs(l24_h, 2L), (l16_w - 1L), divs(l24_h, 2L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, 0L, divs(l24_h, 2L), (l16_w - 1L), divs(l24_h, 2L), 1L, 0L)
             ln = 36 // MathAudioDemo.HC:36
             tick(t)
-            P.f396_GrLine(t, p0_dc, divs(l16_w, 2L), 0L, divs(l16_w, 2L), (l24_h - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, divs(l16_w, 2L), 0L, divs(l16_w, 2L), (l24_h - 1L), 1L, 0L)
             ln = 37 // MathAudioDemo.HC:37
             l8_i = -2L
             loop0@ while ((l8_i <= 2L)) {
@@ -177,7 +177,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
                 st4((p0_dc + 160L), 0L)
                 ln = 39 // MathAudioDemo.HC:39
                 tick(t)
-                P.f396_GrLine(t, p0_dc, (divs(l16_w, 2L) - 3L), f2i((divs(l24_h, 2L).toDouble() - (l32_scale * l8_i.toDouble()))), (divs(l16_w, 2L) + 3L), f2i((divs(l24_h, 2L).toDouble() - (l32_scale * l8_i.toDouble()))), 1L, 0L)
+                P.f397_GrLine(t, p0_dc, (divs(l16_w, 2L) - 3L), f2i((divs(l24_h, 2L).toDouble() - (l32_scale * l8_i.toDouble()))), (divs(l16_w, 2L) + 3L), f2i((divs(l24_h, 2L).toDouble() - (l32_scale * l8_i.toDouble()))), 1L, 0L)
                 ln = 40 // MathAudioDemo.HC:40
                 if ((l8_i != 0L)) {
                     ln = 41 // MathAudioDemo.HC:41
@@ -186,7 +186,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
                     val t0: Double = f(nat(t, n_ToF64, push1(t, l8_i)))
                     tick(t)
                     val vb0 = push1(t, bits(t0))
-                    P.f369_GrPrint(t, p0_dc, (divs(l16_w, 2L) + 5L), f2i(((divs(l24_h, 2L).toDouble() - (l32_scale * l8_i.toDouble())) - divs(8L, 2L).toDouble())), s0, vb0, 1)
+                    P.f370_GrPrint(t, p0_dc, (divs(l16_w, 2L) + 5L), f2i(((divs(l24_h, 2L).toDouble() - (l32_scale * l8_i.toDouble())) - divs(8L, 2L).toDouble())), s0, vb0, 1)
                     t.sp = vb0
                 }
                 ln = 37 // MathAudioDemo.HC:37
@@ -200,7 +200,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
                 st4((p0_dc + 160L), 0L)
                 ln = 47 // MathAudioDemo.HC:47
                 tick(t)
-                P.f396_GrLine(t, p0_dc, f2i((divs(l16_w, 2L).toDouble() + (l32_scale * l8_i.toDouble()))), (divs(l24_h, 2L) - 3L), f2i((divs(l16_w, 2L).toDouble() + (l32_scale * l8_i.toDouble()))), (divs(l24_h, 2L) + 3L), 1L, 0L)
+                P.f397_GrLine(t, p0_dc, f2i((divs(l16_w, 2L).toDouble() + (l32_scale * l8_i.toDouble()))), (divs(l24_h, 2L) - 3L), f2i((divs(l16_w, 2L).toDouble() + (l32_scale * l8_i.toDouble()))), (divs(l24_h, 2L) + 3L), 1L, 0L)
                 ln = 48 // MathAudioDemo.HC:48
                 if ((l8_i != 0L)) {
                     ln = 49 // MathAudioDemo.HC:49
@@ -210,7 +210,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
                     ln = 50 // MathAudioDemo.HC:50
                     tick(t)
                     val vb1 = push1(t, bits(t1))
-                    P.f369_GrPrint(t, p0_dc, f2i(((divs(l16_w, 2L).toDouble() + (l32_scale * l8_i.toDouble())) - divs(56L, 2L).toDouble())), ((divs(l24_h, 2L) + 5L) + 8L), s1, vb1, 1)
+                    P.f370_GrPrint(t, p0_dc, f2i(((divs(l16_w, 2L).toDouble() + (l32_scale * l8_i.toDouble())) - divs(56L, 2L).toDouble())), ((divs(l24_h, 2L) + 5L) + 8L), s1, vb1, 1)
                     t.sp = vb1
                 }
                 ln = 45 // MathAudioDemo.HC:45
@@ -223,7 +223,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC SndMathDemo (MathAudioDemo.HC:56) */
-    fun f708_SndMathDemo(t: Task) {
+    fun f713_SndMathDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -234,12 +234,12 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             l0_dc = t0
             ln = 60 // MathAudioDemo.HC:60
             tick(t)
-            f707_Init(t, l0_dc)
+            f712_Init(t, l0_dc)
             ln = 61 // MathAudioDemo.HC:61
             st4((l0_dc + 160L), 4L)
             ln = 62 // MathAudioDemo.HC:62
             tick(t)
-            f705_FunDraw1(t, l0_dc, 9223090561878065855L)
+            f710_FunDraw1(t, l0_dc, 9223090561878065860L)
             ln = 63 // MathAudioDemo.HC:63
             nat(t, n_Print, push1(t, s2))
             ln = 64 // MathAudioDemo.HC:64
@@ -249,7 +249,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((l0_dc + 160L), 1L)
             ln = 66 // MathAudioDemo.HC:66
             tick(t)
-            f706_FunDraw2(t, l0_dc, 9223090561878065632L, 1.0)
+            f711_FunDraw2(t, l0_dc, 9223090561878065637L, 1.0)
             ln = 67 // MathAudioDemo.HC:67
             nat(t, n_Print, push1(t, s3))
             ln = 68 // MathAudioDemo.HC:68
@@ -259,7 +259,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((l0_dc + 160L), 2L)
             ln = 70 // MathAudioDemo.HC:70
             tick(t)
-            f706_FunDraw2(t, l0_dc, 9223090561878065633L, 1.0)
+            f711_FunDraw2(t, l0_dc, 9223090561878065638L, 1.0)
             ln = 71 // MathAudioDemo.HC:71
             nat(t, n_Print, push1(t, s4))
             ln = 72 // MathAudioDemo.HC:72
@@ -267,12 +267,12 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             P.f188_PressAKey(t)
             ln = 74 // MathAudioDemo.HC:74
             tick(t)
-            f707_Init(t, l0_dc)
+            f712_Init(t, l0_dc)
             ln = 75 // MathAudioDemo.HC:75
             st4((l0_dc + 160L), 4L)
             ln = 76 // MathAudioDemo.HC:76
             tick(t)
-            f705_FunDraw1(t, l0_dc, 9223090561878065856L)
+            f710_FunDraw1(t, l0_dc, 9223090561878065861L)
             ln = 77 // MathAudioDemo.HC:77
             nat(t, n_Print, push1(t, s5))
             ln = 78 // MathAudioDemo.HC:78
@@ -282,7 +282,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((l0_dc + 160L), 1L)
             ln = 80 // MathAudioDemo.HC:80
             tick(t)
-            f706_FunDraw2(t, l0_dc, 9223090561878065634L, 1.0)
+            f711_FunDraw2(t, l0_dc, 9223090561878065639L, 1.0)
             ln = 81 // MathAudioDemo.HC:81
             nat(t, n_Print, push1(t, s6))
             ln = 82 // MathAudioDemo.HC:82
@@ -292,7 +292,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((l0_dc + 160L), 2L)
             ln = 84 // MathAudioDemo.HC:84
             tick(t)
-            f706_FunDraw2(t, l0_dc, 9223090561878065635L, 1.0)
+            f711_FunDraw2(t, l0_dc, 9223090561878065640L, 1.0)
             ln = 85 // MathAudioDemo.HC:85
             nat(t, n_Print, push1(t, s7))
             ln = 86 // MathAudioDemo.HC:86
@@ -300,12 +300,12 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             P.f188_PressAKey(t)
             ln = 88 // MathAudioDemo.HC:88
             tick(t)
-            f707_Init(t, l0_dc)
+            f712_Init(t, l0_dc)
             ln = 89 // MathAudioDemo.HC:89
             st4((l0_dc + 160L), 4L)
             ln = 90 // MathAudioDemo.HC:90
             tick(t)
-            f705_FunDraw1(t, l0_dc, 9223090561878065855L)
+            f710_FunDraw1(t, l0_dc, 9223090561878065860L)
             ln = 91 // MathAudioDemo.HC:91
             nat(t, n_Print, push1(t, s2))
             ln = 92 // MathAudioDemo.HC:92
@@ -315,7 +315,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((l0_dc + 160L), 1L)
             ln = 94 // MathAudioDemo.HC:94
             tick(t)
-            f706_FunDraw2(t, l0_dc, 9223090561878065636L, 1.0)
+            f711_FunDraw2(t, l0_dc, 9223090561878065641L, 1.0)
             ln = 95 // MathAudioDemo.HC:95
             nat(t, n_Print, push1(t, s8))
             ln = 96 // MathAudioDemo.HC:96
@@ -325,7 +325,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
             st4((l0_dc + 160L), 2L)
             ln = 98 // MathAudioDemo.HC:98
             tick(t)
-            f706_FunDraw2(t, l0_dc, 9223090561878065637L, 1.0)
+            f711_FunDraw2(t, l0_dc, 9223090561878065642L, 1.0)
             ln = 99 // MathAudioDemo.HC:99
             nat(t, n_Print, push1(t, s9))
             ln = 100 // MathAudioDemo.HC:100
@@ -343,13 +343,13 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC $init:C:/Demo/Graphics/MathAudioDemo.HC#0 (MathAudioDemo.HC:106) */
-    fun f709_init_C__Demo_Graphics_MathAudioDemo_HC_0(t: Task): Long {
+    fun f714_init_C__Demo_Graphics_MathAudioDemo_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 106 // MathAudioDemo.HC:106
             tick(t)
-            f708_SndMathDemo(t)
+            f713_SndMathDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/MathAudioDemo.HC#0", ln) }
@@ -358,13 +358,13 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> bits(f703_MySin(t, f((if (n > 0) st[base + 0] else 0L))))
-            704 -> bits(f704_MyCos(t, f((if (n > 0) st[base + 0] else 0L))))
-            705 -> { f705_FunDraw1(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_FunDraw2(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))); 0L }
-            707 -> { f707_Init(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_SndMathDemo(t); 0L }
-            709 -> f709_init_C__Demo_Graphics_MathAudioDemo_HC_0(t)
+            708 -> bits(f708_MySin(t, f((if (n > 0) st[base + 0] else 0L))))
+            709 -> bits(f709_MyCos(t, f((if (n > 0) st[base + 0] else 0L))))
+            710 -> { f710_FunDraw1(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_FunDraw2(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))); 0L }
+            712 -> { f712_Init(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_SndMathDemo(t); 0L }
+            714 -> f714_init_C__Demo_Graphics_MathAudioDemo_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -376,7 +376,7 @@ class N_Demo_Graphics_MathAudioDemo(rt: NativeRuntime, @JvmField val P: Prelude)
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714)
         private val NAMES = arrayOf("MySin", "MyCos", "FunDraw1", "FunDraw2", "Init", "SndMathDemo", "\$init:C:/Demo/Graphics/MathAudioDemo.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/MathAudioDemo.HC")
     }

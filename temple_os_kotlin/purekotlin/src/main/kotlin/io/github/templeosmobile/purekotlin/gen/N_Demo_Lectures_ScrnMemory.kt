@@ -19,7 +19,7 @@ class N_Demo_Lectures_ScrnMemory(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC PlotXY (ScrnMemory.HC:4) */
-    fun f703_PlotXY(t: Task, a0: Long, a1: Long) {
+    fun f708_PlotXY(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -34,63 +34,63 @@ class N_Demo_Lectures_ScrnMemory(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC Main (ScrnMemory.HC:10) */
-    fun f704_Main(t: Task) {
+    fun f709_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
             var l0_i: Long = 0L
             ln = 14 // ScrnMemory.HC:14
             tick(t)
-            P.f570_OutU8(t, 964L, 2L)
+            P.f575_OutU8(t, 964L, 2L)
             ln = 15 // ScrnMemory.HC:15
             tick(t)
-            P.f570_OutU8(t, 965L, 15L)
+            P.f575_OutU8(t, 965L, 15L)
             ln = 16 // ScrnMemory.HC:16
             nat(t, n_MemSet, push3(t, ld8((P.g_text + 56L)), 0L, divs(307200L, 8L)))
             ln = 18 // ScrnMemory.HC:18
             tick(t)
-            P.f570_OutU8(t, 964L, 2L)
+            P.f575_OutU8(t, 964L, 2L)
             ln = 19 // ScrnMemory.HC:19
             tick(t)
-            P.f570_OutU8(t, 965L, 4L)
+            P.f575_OutU8(t, 965L, 4L)
             ln = 20 // ScrnMemory.HC:20
             l0_i = 0L
             loop0@ while ((l0_i < 200L)) {
                 ln = 21 // ScrnMemory.HC:21
                 tick(t)
-                f703_PlotXY(t, l0_i, l0_i)
+                f708_PlotXY(t, l0_i, l0_i)
                 ln = 20 // ScrnMemory.HC:20
                 l0_i = (l0_i + 1L)
                 tick(t)
             }
             ln = 23 // ScrnMemory.HC:23
             tick(t)
-            P.f570_OutU8(t, 964L, 2L)
+            P.f575_OutU8(t, 964L, 2L)
             ln = 24 // ScrnMemory.HC:24
             tick(t)
-            P.f570_OutU8(t, 965L, 2L)
+            P.f575_OutU8(t, 965L, 2L)
             ln = 25 // ScrnMemory.HC:25
             l0_i = 0L
             loop2@ while ((l0_i < 200L)) {
                 ln = 26 // ScrnMemory.HC:26
                 tick(t)
-                f703_PlotXY(t, 100L, l0_i)
+                f708_PlotXY(t, 100L, l0_i)
                 ln = 25 // ScrnMemory.HC:25
                 l0_i = (l0_i + 1L)
                 tick(t)
             }
             ln = 28 // ScrnMemory.HC:28
             tick(t)
-            P.f570_OutU8(t, 964L, 2L)
+            P.f575_OutU8(t, 964L, 2L)
             ln = 29 // ScrnMemory.HC:29
             tick(t)
-            P.f570_OutU8(t, 965L, 1L)
+            P.f575_OutU8(t, 965L, 1L)
             ln = 30 // ScrnMemory.HC:30
             l0_i = 0L
             loop4@ while ((l0_i < 200L)) {
                 ln = 31 // ScrnMemory.HC:31
                 tick(t)
-                f703_PlotXY(t, (200L - l0_i), l0_i)
+                f708_PlotXY(t, (200L - l0_i), l0_i)
                 ln = 30 // ScrnMemory.HC:30
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -99,20 +99,20 @@ class N_Demo_Lectures_ScrnMemory(rt: NativeRuntime, @JvmField val P: Prelude) : 
             nat(t, n_Busy, push1(t, 4000000L))
             ln = 43 // ScrnMemory.HC:43
             tick(t)
-            P.f575_VGAFlush(t)
+            P.f580_VGAFlush(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Main", ln) }
     }
 
     /** HolyC $init:C:/Demo/Lectures/ScrnMemory.HC#0 (ScrnMemory.HC:46) */
-    fun f705_init_C__Demo_Lectures_ScrnMemory_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Lectures_ScrnMemory_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 46 // ScrnMemory.HC:46
             tick(t)
-            f704_Main(t)
+            f709_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Lectures/ScrnMemory.HC#0", ln) }
@@ -121,9 +121,9 @@ class N_Demo_Lectures_ScrnMemory(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_PlotXY(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_Main(t); 0L }
-            705 -> f705_init_C__Demo_Lectures_ScrnMemory_HC_0(t)
+            708 -> { f708_PlotXY(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_Main(t); 0L }
+            710 -> f710_init_C__Demo_Lectures_ScrnMemory_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -135,7 +135,7 @@ class N_Demo_Lectures_ScrnMemory(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("PlotXY", "Main", "\$init:C:/Demo/Lectures/ScrnMemory.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Lectures/ScrnMemory.HC")
     }

@@ -56,7 +56,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#0 (Print.HC:7) */
-    fun f703_init_C__Demo_Print_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Print_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -70,7 +70,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#1 (Print.HC:8) */
-    fun f704_init_C__Demo_Print_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Print_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -84,7 +84,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#2 (Print.HC:10) */
-    fun f705_init_C__Demo_Print_HC_2(t: Task): Long {
+    fun f710_init_C__Demo_Print_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -98,7 +98,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#3 (Print.HC:11) */
-    fun f706_init_C__Demo_Print_HC_3(t: Task): Long {
+    fun f711_init_C__Demo_Print_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -112,7 +112,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#4 (Print.HC:13) */
-    fun f707_init_C__Demo_Print_HC_4(t: Task): Long {
+    fun f712_init_C__Demo_Print_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -126,7 +126,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#5 (Print.HC:14) */
-    fun f708_init_C__Demo_Print_HC_5(t: Task): Long {
+    fun f713_init_C__Demo_Print_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -140,7 +140,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#6 (Print.HC:15) */
-    fun f709_init_C__Demo_Print_HC_6(t: Task): Long {
+    fun f714_init_C__Demo_Print_HC_6(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -154,7 +154,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#7 (Print.HC:17) */
-    fun f710_init_C__Demo_Print_HC_7(t: Task): Long {
+    fun f715_init_C__Demo_Print_HC_7(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -168,7 +168,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#8 (Print.HC:18) */
-    fun f711_init_C__Demo_Print_HC_8(t: Task): Long {
+    fun f716_init_C__Demo_Print_HC_8(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -182,7 +182,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#9 (Print.HC:19) */
-    fun f712_init_C__Demo_Print_HC_9(t: Task): Long {
+    fun f717_init_C__Demo_Print_HC_9(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -196,7 +196,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#10 (Print.HC:21) */
-    fun f713_init_C__Demo_Print_HC_10(t: Task): Long {
+    fun f718_init_C__Demo_Print_HC_10(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -210,7 +210,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#11 (Print.HC:22) */
-    fun f714_init_C__Demo_Print_HC_11(t: Task): Long {
+    fun f719_init_C__Demo_Print_HC_11(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -224,7 +224,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#12 (Print.HC:24) */
-    fun f715_init_C__Demo_Print_HC_12(t: Task): Long {
+    fun f720_init_C__Demo_Print_HC_12(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -236,7 +236,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#13 (Print.HC:26) */
-    fun f716_init_C__Demo_Print_HC_13(t: Task): Long {
+    fun f721_init_C__Demo_Print_HC_13(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -250,7 +250,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#14 (Print.HC:28) */
-    fun f717_init_C__Demo_Print_HC_14(t: Task): Long {
+    fun f722_init_C__Demo_Print_HC_14(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -264,7 +264,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#15 (Print.HC:30) */
-    fun f718_init_C__Demo_Print_HC_15(t: Task): Long {
+    fun f723_init_C__Demo_Print_HC_15(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -276,7 +276,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     }
 
     /** HolyC $init:C:/Demo/Print.HC#16 (Print.HC:32) */
-    fun f719_init_C__Demo_Print_HC_16(t: Task): Long {
+    fun f724_init_C__Demo_Print_HC_16(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -290,23 +290,23 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Print_HC_0(t)
-            704 -> f704_init_C__Demo_Print_HC_1(t)
-            705 -> f705_init_C__Demo_Print_HC_2(t)
-            706 -> f706_init_C__Demo_Print_HC_3(t)
-            707 -> f707_init_C__Demo_Print_HC_4(t)
-            708 -> f708_init_C__Demo_Print_HC_5(t)
-            709 -> f709_init_C__Demo_Print_HC_6(t)
-            710 -> f710_init_C__Demo_Print_HC_7(t)
-            711 -> f711_init_C__Demo_Print_HC_8(t)
-            712 -> f712_init_C__Demo_Print_HC_9(t)
-            713 -> f713_init_C__Demo_Print_HC_10(t)
-            714 -> f714_init_C__Demo_Print_HC_11(t)
-            715 -> f715_init_C__Demo_Print_HC_12(t)
-            716 -> f716_init_C__Demo_Print_HC_13(t)
-            717 -> f717_init_C__Demo_Print_HC_14(t)
-            718 -> f718_init_C__Demo_Print_HC_15(t)
-            719 -> f719_init_C__Demo_Print_HC_16(t)
+            708 -> f708_init_C__Demo_Print_HC_0(t)
+            709 -> f709_init_C__Demo_Print_HC_1(t)
+            710 -> f710_init_C__Demo_Print_HC_2(t)
+            711 -> f711_init_C__Demo_Print_HC_3(t)
+            712 -> f712_init_C__Demo_Print_HC_4(t)
+            713 -> f713_init_C__Demo_Print_HC_5(t)
+            714 -> f714_init_C__Demo_Print_HC_6(t)
+            715 -> f715_init_C__Demo_Print_HC_7(t)
+            716 -> f716_init_C__Demo_Print_HC_8(t)
+            717 -> f717_init_C__Demo_Print_HC_9(t)
+            718 -> f718_init_C__Demo_Print_HC_10(t)
+            719 -> f719_init_C__Demo_Print_HC_11(t)
+            720 -> f720_init_C__Demo_Print_HC_12(t)
+            721 -> f721_init_C__Demo_Print_HC_13(t)
+            722 -> f722_init_C__Demo_Print_HC_14(t)
+            723 -> f723_init_C__Demo_Print_HC_15(t)
+            724 -> f724_init_C__Demo_Print_HC_16(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -318,7 +318,7 @@ class N_Demo_Print(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(r
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724)
         private val NAMES = arrayOf("\$init:C:/Demo/Print.HC#0", "\$init:C:/Demo/Print.HC#1", "\$init:C:/Demo/Print.HC#2", "\$init:C:/Demo/Print.HC#3", "\$init:C:/Demo/Print.HC#4", "\$init:C:/Demo/Print.HC#5", "\$init:C:/Demo/Print.HC#6", "\$init:C:/Demo/Print.HC#7", "\$init:C:/Demo/Print.HC#8", "\$init:C:/Demo/Print.HC#9", "\$init:C:/Demo/Print.HC#10", "\$init:C:/Demo/Print.HC#11", "\$init:C:/Demo/Print.HC#12", "\$init:C:/Demo/Print.HC#13", "\$init:C:/Demo/Print.HC#14", "\$init:C:/Demo/Print.HC#15", "\$init:C:/Demo/Print.HC#16")
         private val FILES = arrayOf<String>("C:/Demo/Print.HC")
     }

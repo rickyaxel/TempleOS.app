@@ -24,6 +24,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     public let n_Sleep: Int
     public let n_Snd: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_Suspend: Int
     public let n_tS: Int
     /** "F64 best_score=9999;." */ public var s0: Int64 = 0
@@ -79,6 +80,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Suspend = rt.vm.natives.find("Suspend")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
@@ -129,7 +131,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/FlapBat.HC#0 (FlapBat.HC:1)
-    @discardableResult public final func f703_init_C__Demo_Games_FlapBat_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_FlapBat_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -143,7 +145,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/FlapBat.HC#1 (FlapBat.HC:2)
-    @discardableResult public final func f704_init_C__Demo_Games_FlapBat_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_FlapBat_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -157,7 +159,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -167,7 +169,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC DrawIt (FlapBat.HC:47)
-    public final func f706_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f711_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -198,24 +200,23 @@ public final class N_Demo_Games_FlapBat: NativeModule {
             ln = 55 // FlapBat.HC:55
             try st8(g_bat_x, bits(Double((ld8((p0_task &+ 224)) &>> 3))))
             ln = 56 // FlapBat.HC:56
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, ((7 &* ld8((p0_task &+ 224))) &>> 3), 20, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, ((7 &* ld8((p0_task &+ 224))) &>> 3), 20, 0, b0, 0))
             ln = 58 // FlapBat.HC:58
             try st4((p1_dc &+ 160), 8)
             ln = 59 // FlapBat.HC:59
             let t3: Double = d(try nat(t, n_tS, push0(t)))
             try tick(t)
-            let t4: Double = try P.f480_Saw(t, (15.0 * t3), 2.0)
+            let t4: Double = try P.f485_Saw(t, (15.0 * t3), 2.0)
             let t8: Int64 = try f2i(ldf(g_bat_y))
             let t7: Double = try (ldf(g_bat_x) + 5.0)
             let t5: Double = d(try nat(t, n_tS, push0(t)))
             try tick(t)
-            let t6: Double = try P.f480_Saw(t, (15.0 * t5), 2.0)
+            let t6: Double = try P.f485_Saw(t, (15.0 * t5), 2.0)
             try tick(t)
-            _ = try P.f397_GrCircle(t, p1_dc, f2i((t7 + (20.0 * t6))), t8, f2i((10.0 + (20.0 * t4))), 5, ((-d(4614256656552045848)) / 4.0), (d(4614256656552045848) / 2.0))
+            _ = try P.f398_GrCircle(t, p1_dc, f2i((t7 + (20.0 * t6))), t8, f2i((10.0 + (20.0 * t4))), 5, ((-d(4614256656552045848)) / 4.0), (d(4614256656552045848) / 2.0))
             ln = 61 // FlapBat.HC:61
             try tick(t)
-            let t9: Int64 = try P.f448_SpriteInterpolate(t, l80_tt, b2, b1)
+            let t9: Int64 = try P.f453_SpriteInterpolate(t, l80_tt, b2, b1)
             l56_tmps = t9
             ln = 62 // FlapBat.HC:62
             var r11: Bool = try (ldf(g_eat_timeout) != 0.0)
@@ -226,13 +227,13 @@ public final class N_Demo_Games_FlapBat: NativeModule {
             if r11 {
                 ln = 63 // FlapBat.HC:63
                 try tick(t)
-                let t12: Int64 = try P.f448_SpriteInterpolate(t, l80_tt, b4, b3)
+                let t12: Int64 = try P.f453_SpriteInterpolate(t, l80_tt, b4, b3)
                 l64_tmps2 = t12
                 ln = 64 // FlapBat.HC:64
                 let t14: Double = try ldf(g_eat_timeout)
                 let t13: Double = d(try nat(t, n_tS, push0(t)))
                 try tick(t)
-                let t15: Int64 = try P.f448_SpriteInterpolate(t, (1.0 - ((t14 - t13) / 0.5)), l64_tmps2, l56_tmps)
+                let t15: Int64 = try P.f453_SpriteInterpolate(t, (1.0 - ((t14 - t13) / 0.5)), l64_tmps2, l56_tmps)
                 l72_tmps3 = t15
                 ln = 65 // FlapBat.HC:65
                 _ = try nat(t, n_Free, try push1(t, l56_tmps))
@@ -245,8 +246,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
             try tick(t)
             try P.f286_DCFill(t, ld8(g_limit_flood_fill_dc), 255)
             ln = 71 // FlapBat.HC:71
-            try tick(t)
-            try P.f440_Sprite3(t, ld8(g_limit_flood_fill_dc), 16, 32, 0, l56_tmps, 0)
+            _ = try nat(t, n_Sprite3, try push(t, ld8(g_limit_flood_fill_dc), 16, 32, 0, l56_tmps, 0))
             ln = 72 // FlapBat.HC:72
             let t16: Int64 = try nat(t, n_GrPeek, try push3(t, ld8(g_limit_flood_fill_dc), 0, 0))
             if (t16 != 255) {
@@ -254,7 +254,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
                 try st4((ld8(g_limit_flood_fill_dc) &+ 160), 255)
                 ln = 74 // FlapBat.HC:74
                 try tick(t)
-                _ = try P.f387_GrFloodFill(t, ld8(g_limit_flood_fill_dc), 0, 0, 0, 0, 0)
+                _ = try P.f388_GrFloodFill(t, ld8(g_limit_flood_fill_dc), 0, 0, 0, 0, 0)
             }
             ln = 76 // FlapBat.HC:76
             _ = try nat(t, n_GrBlot, try push4(t, p1_dc, f2i((ldf(g_bat_x) - 16.0)), f2i((ldf(g_bat_y) - 32.0)), ld8(g_limit_flood_fill_dc)))
@@ -271,7 +271,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
                     l24_y = try (mods(ld4s((g_bugs_y &+ (l16_i &* 4))), l48_v) &+ 6)
                     ln = 83 // FlapBat.HC:83
                     try tick(t)
-                    let t17: Double = try P.f480_Saw(t, (l88_ts + ldf((g_bugs_glow_phase &+ (l16_i &* 8)))), 3.0)
+                    let t17: Double = try P.f485_Saw(t, (l88_ts + ldf((g_bugs_glow_phase &+ (l16_i &* 8)))), 3.0)
                     if (t17 < 0.2) {
                         ln = 84 // FlapBat.HC:84
                         if ((l16_i & 1) != 0) {
@@ -305,7 +305,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
                 ln = 97 // FlapBat.HC:97
                 try tick(t)
                 let vb0 = push0(t)
-                _ = try P.f369_GrPrint(t, p1_dc, divs((ld8((p0_task &+ 224)) &- 112), 2), divs((ld8((p0_task &+ 248)) &- 8), 2), s2, vb0, 0)
+                _ = try P.f370_GrPrint(t, p1_dc, divs((ld8((p0_task &+ 224)) &- 112), 2), divs((ld8((p0_task &+ 248)) &- 8), 2), s2, vb0, 0)
                 t.sp = vb0
                 ln = 99 // FlapBat.HC:99
                 l80_tt = try ldf(g_game_tf)
@@ -319,7 +319,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
             ln = 104 // FlapBat.HC:104
             try tick(t)
             let vb1 = try push3(t, bits(((100.0 * Double((32 &- ld4s(g_bug_cnt)))) / 32.0)), bits((l80_tt - ldf(g_game_t0))), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s3, vb1, 3)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s3, vb1, 3)
             t.sp = vb1
             t.depth -= 1
             return
@@ -327,7 +327,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC CheckBugs (FlapBat.HC:108)
-    public final func f707_CheckBugs(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_CheckBugs(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -427,7 +427,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC Init (FlapBat.HC:142)
-    public final func f708_Init(_ t: HTask) throws {
+    public final func f713_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -484,27 +484,27 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC SongTask (FlapBat.HC:164)
-    public final func f709_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f714_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 166 // FlapBat.HC:166
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 167 // FlapBat.HC:167
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 168 // FlapBat.HC:168
             loop0: while (1 != 0) {
                 ln = 169 // FlapBat.HC:169
                 try tick(t)
-                try P.f494_Play(t, s4, 0)
+                try P.f499_Play(t, s4, 0)
                 ln = 170 // FlapBat.HC:170
                 try tick(t)
-                try P.f494_Play(t, s5, 0)
+                try P.f499_Play(t, s5, 0)
                 ln = 171 // FlapBat.HC:171
                 try tick(t)
-                try P.f494_Play(t, s6, 0)
+                try P.f499_Play(t, s6, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -513,7 +513,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC AnimateTask (FlapBat.HC:175)
-    public final func f710_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f715_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -561,7 +561,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
                 try st8(g_flap_phase, bits(t4))
                 ln = 193 // FlapBat.HC:193
                 try tick(t)
-                try f707_CheckBugs(t, ld8((ld8(P.g_Fs) &+ 120)))
+                try f712_CheckBugs(t, ld8((ld8(P.g_Fs) &+ 120)))
                 ln = 194 // FlapBat.HC:194
                 _ = try nat(t, n_Sleep, try push1(t, 1))
                 try tick(t)
@@ -572,7 +572,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC CleanUp (FlapBat.HC:198)
-    public final func f711_CleanUp(_ t: HTask) throws {
+    public final func f716_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -585,7 +585,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC FlapBat (FlapBat.HC:203)
-    public final func f712_FlapBat(_ t: HTask) throws {
+    public final func f717_FlapBat(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -596,7 +596,7 @@ public final class N_Demo_Games_FlapBat: NativeModule {
             l0_rst_space = 1
             ln = 208 // FlapBat.HC:208
             try tick(t)
-            _ = try P.f507_MenuPush(t, s7)
+            _ = try P.f512_MenuPush(t, s7)
             ln = 219 // FlapBat.HC:219
             try tick(t)
             _ = try P.f201_PopUpOk(t, s8, 0)
@@ -620,17 +620,17 @@ public final class N_Demo_Games_FlapBat: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 228 // FlapBat.HC:228
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s9, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065866, 0, s9, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 229 // FlapBat.HC:229
             try tick(t)
-            try f708_Init(t)
+            try f713_Init(t)
             ln = 230 // FlapBat.HC:230
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065862, 0, s10, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065867, 0, s10, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 231 // FlapBat.HC:231
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065858)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065863)
             ln = 232 // FlapBat.HC:232
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -658,10 +658,10 @@ public final class N_Demo_Games_FlapBat: NativeModule {
                                     case 10:
                                         ln = 244 // FlapBat.HC:244
                                         try tick(t)
-                                        try f711_CleanUp(t)
+                                        try f716_CleanUp(t)
                                         ln = 245 // FlapBat.HC:245
                                         try tick(t)
-                                        try f708_Init(t)
+                                        try f713_Init(t)
                                     case 27, 28:
                                         ln = 249 // FlapBat.HC:249
                                         break skip_0
@@ -706,10 +706,10 @@ public final class N_Demo_Games_FlapBat: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 267 // FlapBat.HC:267
             try tick(t)
-            try f711_CleanUp(t)
+            try f716_CleanUp(t)
             ln = 268 // FlapBat.HC:268
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 269 // FlapBat.HC:269
             _ = try nat(t, n_RegWrite, try push3(t, s1, s11, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -719,13 +719,13 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/FlapBat.HC#2 (FlapBat.HC:272)
-    @discardableResult public final func f713_init_C__Demo_Games_FlapBat_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Demo_Games_FlapBat_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 272 // FlapBat.HC:272
             try tick(t)
-            try f712_FlapBat(t)
+            try f717_FlapBat(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/FlapBat.HC#2", ln) }
@@ -734,23 +734,23 @@ public final class N_Demo_Games_FlapBat: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_FlapBat_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_FlapBat_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: try f706_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 707: try f707_CheckBugs(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_Init(t); return 0
-        case 709: try f709_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 710: try f710_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 711: try f711_CleanUp(t); return 0
-        case 712: try f712_FlapBat(t); return 0
-        case 713: return try f713_init_C__Demo_Games_FlapBat_HC_2(t)
+        case 708: return try f708_init_C__Demo_Games_FlapBat_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_FlapBat_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: try f711_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 712: try f712_CheckBugs(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_Init(t); return 0
+        case 714: try f714_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 715: try f715_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 716: try f716_CleanUp(t); return 0
+        case 717: try f717_FlapBat(t); return 0
+        case 718: return try f718_init_C__Demo_Games_FlapBat_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/FlapBat.HC#0", 704: "$init:C:/Demo/Games/FlapBat.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "DrawIt", 707: "CheckBugs", 708: "Init", 709: "SongTask", 710: "AnimateTask", 711: "CleanUp", 712: "FlapBat", 713: "$init:C:/Demo/Games/FlapBat.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/FlapBat.HC#0", 709: "$init:C:/Demo/Games/FlapBat.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "DrawIt", 712: "CheckBugs", 713: "Init", 714: "SongTask", 715: "AnimateTask", 716: "CleanUp", 717: "FlapBat", 718: "$init:C:/Demo/Games/FlapBat.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Games/FlapBat.HC"]
     public override var files: [String] { N_Demo_Games_FlapBat.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_FlapBat.DEFINED.contains(index) }

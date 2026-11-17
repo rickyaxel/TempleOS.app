@@ -24,7 +24,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Adam/Gr/GrBitMap.HC#0 (GrBitMap.HC:3) */
-    fun f703_init_C__Adam_Gr_GrBitMap_HC_0(t: Task): Long {
+    fun f708_init_C__Adam_Gr_GrBitMap_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -36,7 +36,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrPlot0 (GrBitMap.HC:4) */
-    fun f704_GrPlot0(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f709_GrPlot0(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -57,7 +57,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             if (((ld4s((p0_dc + 28L)) and 2048L) != 0L)) {
                 ln = 12 // GrBitMap.HC:12
                 tick(t)
-                val t0: Long = P.f338_DistSqrI64(t, p1_x, p2_y, ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
+                val t0: Long = P.f339_DistSqrI64(t, p1_x, p2_y, ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
                 l48_dist = t0
                 ln = 13 // GrBitMap.HC:13
                 if ((l48_dist <= ld8((p0_dc + 312L)))) {
@@ -181,7 +181,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Adam/Gr/GrBitMap.HC#1 (GrBitMap.HC:62) */
-    fun f705_init_C__Adam_Gr_GrBitMap_HC_1(t: Task): Long {
+    fun f710_init_C__Adam_Gr_GrBitMap_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -193,7 +193,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrPeek0 (GrBitMap.HC:64) */
-    fun f706_GrPeek0(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f711_GrPeek0(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -209,7 +209,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrBlot (GrBitMap.HC:71) */
-    fun f707_GrBlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f712_GrBlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -292,7 +292,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             if (((ld4s((p0_dc + 28L)) and 2048L) != 0L)) {
                                 ln = 104 // GrBitMap.HC:104
                                 tick(t)
-                                val t0: Long = P.f338_DistSqrI64(t, (p1_x + (ld4s((p3_img + 16L)) shr 1)), (p2_y + (ld4s((p3_img + 24L)) shr 1)), ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
+                                val t0: Long = P.f339_DistSqrI64(t, (p1_x + (ld4s((p3_img + 16L)) shr 1)), (p2_y + (ld4s((p3_img + 24L)) shr 1)), ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
                                 l112_dist = t0
                                 ln = 105 // GrBitMap.HC:105
                                 if ((l112_dist <= ld8((p0_dc + 312L)))) {
@@ -749,7 +749,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                             if ((ld1u((ld8((p3_img + 384L)) + (l48_k + l32_i))) != 0L)) {
                                                 ln = 276 // GrBitMap.HC:276
                                                 tick(t)
-                                                f704_GrPlot0(t, p0_dc, (p1_x + l32_i), (p2_y + l40_j))
+                                                f709_GrPlot0(t, p0_dc, (p1_x + l32_i), (p2_y + l40_j))
                                             }
                                             ln = 274 // GrBitMap.HC:274
                                             l32_i = (l32_i + 1L)
@@ -804,7 +804,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                                 if ((ld1u((ld8((p3_img + 384L)) + (l48_k + l32_i))) != 0L)) {
                                                     ln = 298 // GrBitMap.HC:298
                                                     tick(t)
-                                                    f704_GrPlot0(t, p0_dc, (p1_x + l32_i), (p2_y + l40_j))
+                                                    f709_GrPlot0(t, p0_dc, (p1_x + l32_i), (p2_y + l40_j))
                                                 }
                                             }
                                             ln = 299 // GrBitMap.HC:299
@@ -1426,7 +1426,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                             st1((p0_dc + 160L), l240_c)
                                             ln = 428 // GrBitMap.HC:428
                                             tick(t)
-                                            f704_GrPlot0(t, p0_dc, (p1_x + l32_i), (p2_y + l40_j))
+                                            f709_GrPlot0(t, p0_dc, (p1_x + l32_i), (p2_y + l40_j))
                                         }
                                         ln = 424 // GrBitMap.HC:424
                                         l32_i = (l32_i + 1L)
@@ -1485,7 +1485,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                                 st1((p0_dc + 160L), l240_c)
                                                 ln = 454 // GrBitMap.HC:454
                                                 tick(t)
-                                                f704_GrPlot0(t, p0_dc, (p1_x + l32_i), (p2_y + l40_j))
+                                                f709_GrPlot0(t, p0_dc, (p1_x + l32_i), (p2_y + l40_j))
                                             }
                                         }
                                         ln = 457 // GrBitMap.HC:457
@@ -1535,7 +1535,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrBitMap4ToBitMap8 (GrBitMap.HC:590) */
-    fun f708_GrBitMap4ToBitMap8(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f713_GrBitMap4ToBitMap8(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1596,7 +1596,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrBitMap1ToBitMap8 (GrBitMap.HC:605) */
-    fun f709_GrBitMap1ToBitMap8(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f714_GrBitMap1ToBitMap8(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1640,7 +1640,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC DCExt (GrBitMap.HC:617) */
-    fun f710_DCExt(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
+    fun f715_DCExt(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1690,7 +1690,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             P.f286_DCFill(t, l48_res, 255L)
             ln = 633 // GrBitMap.HC:633
             tick(t)
-            f707_GrBlot(t, l48_res, (-ld8((fp + 8))), (-ld8((fp + 16))), p0_dc)
+            f712_GrBlot(t, l48_res, (-ld8((fp + 8))), (-ld8((fp + 16))), p0_dc)
             ln = 634 // GrBitMap.HC:634
             t.msp = msp0
             t.depth--
@@ -1702,7 +1702,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC DCDiff (GrBitMap.HC:637) */
-    fun f711_DCDiff(t: Task, a0: Long, a1: Long): Long {
+    fun f716_DCDiff(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1829,9 +1829,9 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     loop17@ while ((l16_i <= l48_y2)) {
                         ln = 673 // GrBitMap.HC:673
                         tick(t)
-                        val t12: Long = f706_GrPeek0(t, p0_base, l24_x1, l16_i)
+                        val t12: Long = f711_GrPeek0(t, p0_base, l24_x1, l16_i)
                         tick(t)
-                        val t13: Long = f706_GrPeek0(t, p1_update, l24_x1, l16_i)
+                        val t13: Long = f711_GrPeek0(t, p1_update, l24_x1, l16_i)
                         if ((t12 != t13)) {
                             ln = 674 // GrBitMap.HC:674
                             break@skip_14
@@ -1853,9 +1853,9 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     loop22@ while ((l16_i <= l48_y2)) {
                         ln = 680 // GrBitMap.HC:680
                         tick(t)
-                        val t14: Long = f706_GrPeek0(t, p0_base, l40_x2, l16_i)
+                        val t14: Long = f711_GrPeek0(t, p0_base, l40_x2, l16_i)
                         tick(t)
-                        val t15: Long = f706_GrPeek0(t, p1_update, l40_x2, l16_i)
+                        val t15: Long = f711_GrPeek0(t, p1_update, l40_x2, l16_i)
                         if ((t14 != t15)) {
                             ln = 681 // GrBitMap.HC:681
                             break@skip_19
@@ -1871,7 +1871,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             } while (false)
             ln = 685 // GrBitMap.HC:685
             tick(t)
-            val t16: Long = f710_DCExt(t, p1_update, l24_x1, l32_y1, l40_x2, l48_y2, 0L)
+            val t16: Long = f715_DCExt(t, p1_update, l24_x1, l32_y1, l40_x2, l48_y2, 0L)
             l72_res = t16
             ln = 686 // GrBitMap.HC:686
             st4((l72_res + 8L), l24_x1)
@@ -1886,7 +1886,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrPutChar (GrBitMap.HC:693) */
-    fun f712_GrPutChar(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f717_GrPutChar(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1959,7 +1959,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             if (((ld4s((p0_dc + 28L)) and 2048L) != 0L)) {
                 ln = 723 // GrBitMap.HC:723
                 tick(t)
-                val t0: Long = P.f338_DistSqrI64(t, (p1_x + (l144_w2 shr 1)), (p2_y + (l152_h2 shr 1)), ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
+                val t0: Long = P.f339_DistSqrI64(t, (p1_x + (l144_w2 shr 1)), (p2_y + (l152_h2 shr 1)), ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
                 l176_dist = t0
                 ln = 724 // GrBitMap.HC:724
                 if ((l176_dist <= ld8((p0_dc + 312L)))) {
@@ -2365,7 +2365,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrPutS (GrBitMap.HC:913) */
-    fun f713_GrPutS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f718_GrPutS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2441,7 +2441,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                             } else {
                                 ln = 942 // GrBitMap.HC:942
                                 tick(t)
-                                val t1: Long = f712_GrPutChar(t, p0_dc, (p1_x + l40_sx), (p2_y + l48_sy), ld1u(p3__s))
+                                val t1: Long = f717_GrPutChar(t, p0_dc, (p1_x + l40_sx), (p2_y + l48_sy), ld1u(p3__s))
                                 l56_res = (l56_res + t1)
                                 ln = 943 // GrBitMap.HC:943
                                 p1_x = (p1_x + 8L)
@@ -2462,7 +2462,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrVPutS (GrBitMap.HC:950) */
-    fun f714_GrVPutS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f719_GrVPutS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2547,7 +2547,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                                 st1((fp + 64), ld1u(t1))
                                 ln = 982 // GrBitMap.HC:982
                                 tick(t)
-                                val t2: Long = f713_GrPutS(t, p0_dc, p1_x, p2_y, (fp + 64))
+                                val t2: Long = f718_GrPutS(t, p0_dc, p1_x, p2_y, (fp + 64))
                                 l56_res = (l56_res + t2)
                                 ln = 983 // GrBitMap.HC:983
                                 p2_y = (p2_y + 8L)
@@ -2568,7 +2568,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrPrint (GrBitMap.HC:989) */
-    fun f715_GrPrint(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, vaBase: Int, vaN: Int): Long {
+    fun f720_GrPrint(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, vaBase: Int, vaN: Int): Long {
         var ln = 0
         try {
             enter(t)
@@ -2588,7 +2588,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             l56_buf = t0
             ln = 993 // GrBitMap.HC:993
             tick(t)
-            val t1: Long = f713_GrPutS(t, p0_dc, p1_x, p2_y, l56_buf)
+            val t1: Long = f718_GrPutS(t, p0_dc, p1_x, p2_y, l56_buf)
             l48_res = t1
             ln = 994 // GrBitMap.HC:994
             nat(t, n_Free, push1(t, l56_buf))
@@ -2603,7 +2603,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrVPrint (GrBitMap.HC:998) */
-    fun f716_GrVPrint(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, vaBase: Int, vaN: Int): Long {
+    fun f721_GrVPrint(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, vaBase: Int, vaN: Int): Long {
         var ln = 0
         try {
             enter(t)
@@ -2623,7 +2623,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
             l56_buf = t0
             ln = 1002 // GrBitMap.HC:1002
             tick(t)
-            val t1: Long = f714_GrVPutS(t, p0_dc, p1_x, p2_y, l56_buf)
+            val t1: Long = f719_GrVPutS(t, p0_dc, p1_x, p2_y, l56_buf)
             l48_res = t1
             ln = 1003 // GrBitMap.HC:1003
             nat(t, n_Free, push1(t, l56_buf))
@@ -2638,7 +2638,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrRect (GrBitMap.HC:1008) */
-    fun f717_GrRect(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f722_GrRect(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2744,7 +2744,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 } else {
                     ln = 1046 // GrBitMap.HC:1046
                     tick(t)
-                    val t9: Long = P.f338_DistSqrI64(t, (p1_x + (p3_w shr 1)), (p2_y + (p4_h shr 1)), ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
+                    val t9: Long = P.f339_DistSqrI64(t, (p1_x + (p3_w shr 1)), (p2_y + (p4_h shr 1)), ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
                     l112_dist = t9
                 }
                 ln = 1047 // GrBitMap.HC:1047
@@ -3699,7 +3699,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrRayLenMinus (GrBitMap.HC:1454) */
-    fun f718_GrRayLenMinus(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f723_GrRayLenMinus(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3857,7 +3857,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrRayLen (GrBitMap.HC:1518) */
-    fun f719_GrRayLen(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f724_GrRayLen(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -4046,7 +4046,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         if (((ld4s((p0_dc + 28L)) and 2048L) != 0L)) {
                             ln = 1598 // GrBitMap.HC:1598
                             tick(t)
-                            val t7: Long = P.f338_DistSqrI64(t, l72_x3, l80_y3, ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
+                            val t7: Long = P.f339_DistSqrI64(t, l72_x3, l80_y3, ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
                             l88_dist = t7
                             ln = 1599 // GrBitMap.HC:1599
                             if ((l88_dist <= ld8((p0_dc + 312L)))) {
@@ -4214,7 +4214,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                         if (((ld4s((p0_dc + 28L)) and 2048L) != 0L)) {
                             ln = 1673 // GrBitMap.HC:1673
                             tick(t)
-                            val t16: Long = P.f338_DistSqrI64(t, l72_x3, l80_y3, ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
+                            val t16: Long = P.f339_DistSqrI64(t, l72_x3, l80_y3, ld4s((p0_dc + 288L)), ld4s((p0_dc + 292L)))
                             l88_dist = t16
                             ln = 1674 // GrBitMap.HC:1674
                             if ((l88_dist <= ld8((p0_dc + 312L)))) {
@@ -4317,7 +4317,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrHLine (GrBitMap.HC:1718) */
-    fun f720_GrHLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
+    fun f725_GrHLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -4365,7 +4365,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 }
                 ln = 1731 // GrBitMap.HC:1731
                 tick(t)
-                val t0: Long = f717_GrRect(t, p0_dc, ld8((fp + 8)), p3_y, ((ld8((fp + 16)) - ld8((fp + 8))) + 1L), 1L)
+                val t0: Long = f722_GrRect(t, p0_dc, ld8((fp + 8)), p3_y, ((ld8((fp + 16)) - ld8((fp + 8))) + 1L), 1L)
                 t.msp = msp0
                 t.depth--
                 return t0
@@ -4726,7 +4726,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC GrVLine (GrBitMap.HC:1887) */
-    fun f721_GrVLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
+    fun f726_GrVLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -4774,7 +4774,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                 }
                 ln = 1900 // GrBitMap.HC:1900
                 tick(t)
-                val t0: Long = f717_GrRect(t, p0_dc, p1_x, ld8((fp + 16)), 1L, ((ld8((fp + 24)) - ld8((fp + 16))) + 1L))
+                val t0: Long = f722_GrRect(t, p0_dc, p1_x, ld8((fp + 16)), 1L, ((ld8((fp + 24)) - ld8((fp + 16))) + 1L))
                 t.msp = msp0
                 t.depth--
                 return t0
@@ -5135,7 +5135,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Adam/Gr/GrBitMap.HC#2 (GrBitMap.HC:1) */
-    fun f722_init_C__Adam_Gr_GrBitMap_HC_2(t: Task): Long {
+    fun f727_init_C__Adam_Gr_GrBitMap_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -5147,26 +5147,26 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Adam_Gr_GrBitMap_HC_0(t)
-            704 -> f704_GrPlot0(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            705 -> f705_init_C__Adam_Gr_GrBitMap_HC_1(t)
-            706 -> f706_GrPeek0(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            707 -> f707_GrBlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            708 -> f708_GrBitMap4ToBitMap8(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            709 -> f709_GrBitMap1ToBitMap8(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            710 -> f710_DCExt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
-            711 -> f711_DCDiff(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            712 -> f712_GrPutChar(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            713 -> f713_GrPutS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            714 -> f714_GrVPutS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            715 -> f715_GrPrint(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), base + 4, maxOf(n - 4, 0))
-            716 -> f716_GrVPrint(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), base + 4, maxOf(n - 4, 0))
-            717 -> f717_GrRect(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            718 -> f718_GrRayLenMinus(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            719 -> f719_GrRayLen(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            720 -> f720_GrHLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
-            721 -> f721_GrVLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
-            722 -> f722_init_C__Adam_Gr_GrBitMap_HC_2(t)
+            708 -> f708_init_C__Adam_Gr_GrBitMap_HC_0(t)
+            709 -> f709_GrPlot0(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            710 -> f710_init_C__Adam_Gr_GrBitMap_HC_1(t)
+            711 -> f711_GrPeek0(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            712 -> f712_GrBlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            713 -> f713_GrBitMap4ToBitMap8(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            714 -> f714_GrBitMap1ToBitMap8(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            715 -> f715_DCExt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
+            716 -> f716_DCDiff(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            717 -> f717_GrPutChar(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            718 -> f718_GrPutS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            719 -> f719_GrVPutS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            720 -> f720_GrPrint(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), base + 4, maxOf(n - 4, 0))
+            721 -> f721_GrVPrint(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), base + 4, maxOf(n - 4, 0))
+            722 -> f722_GrRect(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            723 -> f723_GrRayLenMinus(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            724 -> f724_GrRayLen(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            725 -> f725_GrHLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
+            726 -> f726_GrVLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
+            727 -> f727_init_C__Adam_Gr_GrBitMap_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -5178,7 +5178,7 @@ class N_Adam_Gr_GrBitMap(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727)
         private val NAMES = arrayOf("\$init:C:/Adam/Gr/GrBitMap.HC#0", "GrPlot0", "\$init:C:/Adam/Gr/GrBitMap.HC#1", "GrPeek0", "GrBlot", "GrBitMap4ToBitMap8", "GrBitMap1ToBitMap8", "DCExt", "DCDiff", "GrPutChar", "GrPutS", "GrVPutS", "GrPrint", "GrVPrint", "GrRect", "GrRayLenMinus", "GrRayLen", "GrHLine", "GrVLine", "\$init:C:/Adam/Gr/GrBitMap.HC#2")
         private val FILES = arrayOf<String>("C:/Adam/Gr/GrBitMap.HC")
     }

@@ -13,7 +13,9 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     @JvmField val n_BFieldExtU32 = rt.vm.natives.find("BFieldExtU32")!!.index
     @JvmField val n_CAlloc = rt.vm.natives.find("CAlloc")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
+    @JvmField val n_Gr3Mesh = rt.vm.natives.find("Gr3Mesh")!!.index
     @JvmField val n_GrBlot3 = rt.vm.natives.find("GrBlot3")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_MAlloc = rt.vm.natives.find("MAlloc")!!.index
     @JvmField val n_MStrPrint = rt.vm.natives.find("MStrPrint")!!.index
     @JvmField val n_Mat4x4MulMat4x4Equ = rt.vm.natives.find("Mat4x4MulMat4x4Equ")!!.index
@@ -36,7 +38,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sprite3 (GrSpritePlot.HC:18) */
-    fun f703_Sprite3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long) {
+    fun f708_Sprite3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long) {
         var ln = 0
         try {
             enter(t)
@@ -253,7 +255,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                                                                                                     st4((p0_dc + 228L), ld4s(((l48_tmpg + 16L) + 1L)))
                                                                                                                                     ln = 44 // GrSpritePlot.HC:44
                                                                                                                                     tick(t)
-                                                                                                                                    P.f309_DCThickScale(t, p0_dc)
+                                                                                                                                    P.f310_DCThickScale(t, p0_dc)
                                                                                                                                     ln = 45 // GrSpritePlot.HC:45
                                                                                                                                     break@switch2_140
                                                                                                                                 } while (false)
@@ -289,33 +291,33 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                                                                                         } while (false)
                                                                                                                         ln = 63 // GrSpritePlot.HC:63
                                                                                                                         tick(t)
-                                                                                                                        P.f393_GrPlot3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z)
+                                                                                                                        P.f394_GrPlot3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z)
                                                                                                                         ln = 64 // GrSpritePlot.HC:64
                                                                                                                         break@switch2_140
                                                                                                                     } while (false)
                                                                                                                     ln = 66 // GrSpritePlot.HC:66
                                                                                                                     tick(t)
                                                                                                                     val vb0 = push1(t, ((l48_tmpg + 16L) + 9L))
-                                                                                                                    P.f408_GrPrint3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, s0, vb0, 1)
+                                                                                                                    P.f410_GrPrint3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, s0, vb0, 1)
                                                                                                                     t.sp = vb0
                                                                                                                     ln = 67 // GrSpritePlot.HC:67
                                                                                                                     break@switch2_140
                                                                                                                 } while (false)
                                                                                                                 ln = 69 // GrSpritePlot.HC:69
                                                                                                                 tick(t)
-                                                                                                                P.f427_GrTextBox3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ((l48_tmpg + 16L) + 9L), 2L)
+                                                                                                                P.f430_GrTextBox3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ((l48_tmpg + 16L) + 9L), 2L)
                                                                                                                 ln = 70 // GrSpritePlot.HC:70
                                                                                                                 break@switch2_140
                                                                                                             } while (false)
                                                                                                             ln = 72 // GrSpritePlot.HC:72
                                                                                                             tick(t)
-                                                                                                            P.f428_GrTextDiamond3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ((l48_tmpg + 16L) + 9L), 2L)
+                                                                                                            P.f431_GrTextDiamond3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ((l48_tmpg + 16L) + 9L), 2L)
                                                                                                             ln = 73 // GrSpritePlot.HC:73
                                                                                                             break@switch2_140
                                                                                                         } while (false)
                                                                                                         ln = 75 // GrSpritePlot.HC:75
                                                                                                         tick(t)
-                                                                                                        P.f413_GrFloodFill3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, 0L)
+                                                                                                        P.f415_GrFloodFill3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, 0L)
                                                                                                         ln = 76 // GrSpritePlot.HC:76
                                                                                                         break@switch2_140
                                                                                                     } while (false)
@@ -325,7 +327,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                                                                     st4((p0_dc + 160L), ld2u((p0_dc + 160L)))
                                                                                                     ln = 80 // GrSpritePlot.HC:80
                                                                                                     tick(t)
-                                                                                                    P.f413_GrFloodFill3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, 1L)
+                                                                                                    P.f415_GrFloodFill3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, 1L)
                                                                                                     ln = 81 // GrSpritePlot.HC:81
                                                                                                     st4((p0_dc + 160L), l56_i)
                                                                                                     ln = 82 // GrSpritePlot.HC:82
@@ -339,20 +341,19 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                                                                 break@switch2_140
                                                                                             } while (false)
                                                                                             ln = 88 // GrSpritePlot.HC:88
-                                                                                            tick(t)
-                                                                                            P.f406_GrLine3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 13L)) + p2_y), p3_z, 1L, 0L)
+                                                                                            nat(t, n_GrLine3, push(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 13L)) + p2_y), p3_z, 1L, 0L))
                                                                                             ln = 90 // GrSpritePlot.HC:90
                                                                                             break@switch2_140
                                                                                         } while (false)
                                                                                         ln = 92 // GrSpritePlot.HC:92
                                                                                         tick(t)
-                                                                                        P.f426_GrArrow3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 13L)) + p2_y), p3_z, 2.75, 1L, 0L)
+                                                                                        P.f429_GrArrow3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 13L)) + p2_y), p3_z, 2.75, 1L, 0L)
                                                                                         ln = 94 // GrSpritePlot.HC:94
                                                                                         break@switch2_140
                                                                                     } while (false)
                                                                                     ln = 96 // GrSpritePlot.HC:96
                                                                                     tick(t)
-                                                                                    val t3: Long = P.f315_DCSymmetry3Set(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 13L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 13L)) + p2_y), (p3_z + 1L))
+                                                                                    val t3: Long = P.f316_DCSymmetry3Set(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 13L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 13L)) + p2_y), (p3_z + 1L))
                                                                                     if ((t3 != 0L)) {
                                                                                         ln = 99 // GrSpritePlot.HC:99
                                                                                         val t4: Long = (p0_dc + 28L)
@@ -387,7 +388,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                                             } while (false)
                                                                             ln = 114 // GrSpritePlot.HC:114
                                                                             tick(t)
-                                                                            P.f424_GrRect3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) - ld4s(((l48_tmpg + 16L) + 1L))), (ld4s(((l48_tmpg + 16L) + 13L)) - ld4s(((l48_tmpg + 16L) + 5L))))
+                                                                            P.f427_GrRect3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, (ld4s(((l48_tmpg + 16L) + 9L)) - ld4s(((l48_tmpg + 16L) + 1L))), (ld4s(((l48_tmpg + 16L) + 13L)) - ld4s(((l48_tmpg + 16L) + 5L))))
                                                                             ln = 116 // GrSpritePlot.HC:116
                                                                             break@switch2_140
                                                                         } while (false)
@@ -413,7 +414,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                                         P.f307_Mat4x4RotZ(t, l128_r2, (-ldf(((l48_tmpg + 16L) + 17L))))
                                                                         ln = 126 // GrSpritePlot.HC:126
                                                                         tick(t)
-                                                                        P.f310_Mat4x4TranslationEqu(t, l128_r2, ld8((fp + 80)), ld8((fp + 88)), ld8((fp + 96)))
+                                                                        P.f311_Mat4x4TranslationEqu(t, l128_r2, ld8((fp + 80)), ld8((fp + 88)), ld8((fp + 96)))
                                                                         ln = 127 // GrSpritePlot.HC:127
                                                                         tick(t)
                                                                         val t9: Long = P.f301_Mat4x4MulMat4x4New(t, l120_old_r, l128_r2, 0L)
@@ -421,7 +422,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                                         P.f283_DCMat4x4Set(t, p0_dc, t9)
                                                                         ln = 128 // GrSpritePlot.HC:128
                                                                         tick(t)
-                                                                        P.f424_GrRect3(t, p0_dc, 0L, 0L, 0L, (ld4s(((l48_tmpg + 16L) + 9L)) - ld4s(((l48_tmpg + 16L) + 1L))), (ld4s(((l48_tmpg + 16L) + 13L)) - ld4s(((l48_tmpg + 16L) + 5L))))
+                                                                        P.f427_GrRect3(t, p0_dc, 0L, 0L, 0L, (ld4s(((l48_tmpg + 16L) + 9L)) - ld4s(((l48_tmpg + 16L) + 1L))), (ld4s(((l48_tmpg + 16L) + 13L)) - ld4s(((l48_tmpg + 16L) + 5L))))
                                                                         ln = 130 // GrSpritePlot.HC:130
                                                                         nat(t, n_Free, push1(t, ld8((p0_dc + 200L))))
                                                                         ln = 131 // GrSpritePlot.HC:131
@@ -436,19 +437,19 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                                     } while (false)
                                                                     ln = 136 // GrSpritePlot.HC:136
                                                                     tick(t)
-                                                                    P.f411_GrCircle3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ld4s(((l48_tmpg + 16L) + 9L)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                                                                    P.f413_GrCircle3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ld4s(((l48_tmpg + 16L) + 9L)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                                                                     ln = 137 // GrSpritePlot.HC:137
                                                                     break@switch2_140
                                                                 } while (false)
                                                                 ln = 139 // GrSpritePlot.HC:139
                                                                 tick(t)
-                                                                P.f410_GrEllipse3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ld4s(((l48_tmpg + 16L) + 9L)), ld4s(((l48_tmpg + 16L) + 13L)), ldf(((l48_tmpg + 16L) + 17L)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                                                                P.f412_GrEllipse3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ld4s(((l48_tmpg + 16L) + 9L)), ld4s(((l48_tmpg + 16L) + 13L)), ldf(((l48_tmpg + 16L) + 17L)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                                                                 ln = 141 // GrSpritePlot.HC:141
                                                                 break@switch2_140
                                                             } while (false)
                                                             ln = 143 // GrSpritePlot.HC:143
                                                             tick(t)
-                                                            P.f412_GrRegPoly3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ld4s(((l48_tmpg + 16L) + 9L)), ld4s(((l48_tmpg + 16L) + 13L)), ld4s(((l48_tmpg + 16L) + 25L)), ldf(((l48_tmpg + 16L) + 17L)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                                                            P.f414_GrRegPoly3(t, p0_dc, (ld4s(((l48_tmpg + 16L) + 1L)) + p1_x), (ld4s(((l48_tmpg + 16L) + 5L)) + p2_y), p3_z, ld4s(((l48_tmpg + 16L) + 9L)), ld4s(((l48_tmpg + 16L) + 13L)), ld4s(((l48_tmpg + 16L) + 25L)), ldf(((l48_tmpg + 16L) + 17L)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                                                             ln = 145 // GrSpritePlot.HC:145
                                                             break@switch2_140
                                                         } while (false)
@@ -466,8 +467,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                             ln = 152 // GrSpritePlot.HC:152
                                                             l112_y2 = ld4s((l152_ptr + (((l56_i shl 1) + 1L) * 4L)))
                                                             ln = 153 // GrSpritePlot.HC:153
-                                                            tick(t)
-                                                            P.f406_GrLine3(t, p0_dc, (ld8((fp + 80)) + p1_x), (ld8((fp + 88)) + p2_y), p3_z, (l104_x2 + p1_x), (l112_y2 + p2_y), p3_z, 1L, 0L)
+                                                            nat(t, n_GrLine3, push(t, p0_dc, (ld8((fp + 80)) + p1_x), (ld8((fp + 88)) + p2_y), p3_z, (l104_x2 + p1_x), (l112_y2 + p2_y), p3_z, 1L, 0L))
                                                             ln = 154 // GrSpritePlot.HC:154
                                                             st8((fp + 80), l104_x2)
                                                             st8((fp + 88), l112_y2)
@@ -488,7 +488,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                     l72_k = (ld4s(((l48_tmpg + 16L) + 1L)) * 3L)
                                                     ln = 162 // GrSpritePlot.HC:162
                                                     tick(t)
-                                                    P.f393_GrPlot3(t, p0_dc, (ld8((fp + 80)) + p1_x), (ld8((fp + 88)) + p2_y), p3_z)
+                                                    P.f394_GrPlot3(t, p0_dc, (ld8((fp + 80)) + p1_x), (ld8((fp + 88)) + p2_y), p3_z)
                                                     ln = 163 // GrSpritePlot.HC:163
                                                     l56_i = 0L
                                                     loop5@ while ((l56_i < l72_k)) {
@@ -501,7 +501,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                         st8((fp + 88), (ld8((fp + 88)) + ld8((P.g_gr_y_offsets + (l64_j * 8L)))))
                                                         ln = 167 // GrSpritePlot.HC:167
                                                         tick(t)
-                                                        P.f393_GrPlot3(t, p0_dc, (ld8((fp + 80)) + p1_x), (ld8((fp + 88)) + p2_y), p3_z)
+                                                        P.f394_GrPlot3(t, p0_dc, (ld8((fp + 80)) + p1_x), (ld8((fp + 88)) + p2_y), p3_z)
                                                         ln = 163 // GrSpritePlot.HC:163
                                                         l56_i = (l56_i + 3L)
                                                         tick(t)
@@ -552,25 +552,25 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                             } while (false)
                                             ln = 179 // GrSpritePlot.HC:179
                                             tick(t)
-                                            P.f418_Gr2BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg + 16L) + 1L)), 0L)
+                                            P.f420_Gr2BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg + 16L) + 1L)), 0L)
                                             ln = 180 // GrSpritePlot.HC:180
                                             break@switch2_121
                                         } while (false)
                                         ln = 182 // GrSpritePlot.HC:182
                                         tick(t)
-                                        P.f419_Gr3BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg + 16L) + 1L)), 0L)
+                                        P.f421_Gr3BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg + 16L) + 1L)), 0L)
                                         ln = 183 // GrSpritePlot.HC:183
                                         break@switch2_121
                                     } while (false)
                                     ln = 185 // GrSpritePlot.HC:185
                                     tick(t)
-                                    P.f418_Gr2BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg + 16L) + 1L)), 1L)
+                                    P.f420_Gr2BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg + 16L) + 1L)), 1L)
                                     ln = 186 // GrSpritePlot.HC:186
                                     break@switch2_121
                                 } while (false)
                                 ln = 188 // GrSpritePlot.HC:188
                                 tick(t)
-                                P.f419_Gr3BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg + 16L) + 1L)), 1L)
+                                P.f421_Gr3BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg + 16L) + 1L)), 1L)
                                 ln = 189 // GrSpritePlot.HC:189
                                 break@switch2_121
                             } while (false)
@@ -603,8 +603,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             tick(t)
                         }
                         ln = 201 // GrSpritePlot.HC:201
-                        tick(t)
-                        P.f429_Gr3Mesh(t, p0_dc, ld4s(((l48_tmpg + 16L) + 1L)), l176_p, ld4s(((l48_tmpg + 16L) + 5L)), (((l48_tmpg + 16L) + 9L) + (12L * ld4s(((l48_tmpg + 16L) + 1L)))))
+                        nat(t, n_Gr3Mesh, push(t, p0_dc, ld4s(((l48_tmpg + 16L) + 1L)), l176_p, ld4s(((l48_tmpg + 16L) + 5L)), (((l48_tmpg + 16L) + 9L) + (12L * ld4s(((l48_tmpg + 16L) + 1L))))))
                         ln = 203 // GrSpritePlot.HC:203
                         nat(t, n_Free, push1(t, l176_p))
                         ln = 204 // GrSpritePlot.HC:204
@@ -659,8 +658,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         tick(t)
                     }
                     ln = 225 // GrSpritePlot.HC:225
-                    tick(t)
-                    P.f429_Gr3Mesh(t, p0_dc, ld4s(((l48_tmpg + 16L) + 13L)), l176_p, ld4s(((l48_tmpg + 16L) + 17L)), (((l48_tmpg + 16L) + 21L) + (12L * ld4s(((l48_tmpg + 16L) + 13L)))))
+                    nat(t, n_Gr3Mesh, push(t, p0_dc, ld4s(((l48_tmpg + 16L) + 13L)), l176_p, ld4s(((l48_tmpg + 16L) + 17L)), (((l48_tmpg + 16L) + 21L) + (12L * ld4s(((l48_tmpg + 16L) + 13L))))))
                     ln = 227 // GrSpritePlot.HC:227
                     nat(t, n_Free, push1(t, l176_p))
                     ln = 228 // GrSpritePlot.HC:228
@@ -702,7 +700,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sprite3B (GrSpritePlot.HC:245) */
-    fun f704_Sprite3B(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
+    fun f709_Sprite3B(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
         var ln = 0
         try {
             enter(t)
@@ -730,7 +728,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4(t0, (ld4s(t0) or 256L))
             ln = 251 // GrSpritePlot.HC:251
             tick(t)
-            f703_Sprite3(t, p0_dc, 0L, 0L, 0L, p4_elems, 0L)
+            f708_Sprite3(t, p0_dc, 0L, 0L, 0L, p4_elems, 0L)
             ln = 252 // GrSpritePlot.HC:252
             st4((p0_dc + 216L), l40_old_x)
             st4((p0_dc + 220L), l48_old_y)
@@ -743,7 +741,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sprite3Mat4x4B (GrSpritePlot.HC:256) */
-    fun f705_Sprite3Mat4x4B(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long) {
+    fun f710_Sprite3Mat4x4B(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long) {
         var ln = 0
         try {
             enter(t)
@@ -768,13 +766,13 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4(t0, (ld4s(t0) or 256L))
             ln = 262 // GrSpritePlot.HC:262
             tick(t)
-            P.f311_Mat4x4TranslationAdd(t, (fp + 184), p1_x, p2_y, p3_z)
+            P.f312_Mat4x4TranslationAdd(t, (fp + 184), p1_x, p2_y, p3_z)
             ln = 263 // GrSpritePlot.HC:263
             val t1: Long = nat(t, n_Mat4x4MulMat4x4Equ, push3(t, (fp + 48), l176_old_r, (fp + 184)))
             st8((p0_dc + 200L), t1)
             ln = 264 // GrSpritePlot.HC:264
             tick(t)
-            f703_Sprite3(t, p0_dc, 0L, 0L, 0L, p4_elems, 0L)
+            f708_Sprite3(t, p0_dc, 0L, 0L, 0L, p4_elems, 0L)
             ln = 265 // GrSpritePlot.HC:265
             st8((p0_dc + 200L), l176_old_r)
             ln = 266 // GrSpritePlot.HC:266
@@ -786,7 +784,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sprite3XB (GrSpritePlot.HC:269) */
-    fun f706_Sprite3XB(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double) {
+    fun f711_Sprite3XB(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double) {
         var ln = 0
         try {
             enter(t)
@@ -806,7 +804,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f305_Mat4x4RotX(t, (fp + 48), p5__)
             ln = 274 // GrSpritePlot.HC:274
             tick(t)
-            f705_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp + 48))
+            f710_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp + 48))
             t.msp = msp0
             t.depth--
             return
@@ -814,7 +812,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sprite3YB (GrSpritePlot.HC:277) */
-    fun f707_Sprite3YB(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double) {
+    fun f712_Sprite3YB(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double) {
         var ln = 0
         try {
             enter(t)
@@ -834,7 +832,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f306_Mat4x4RotY(t, (fp + 48), p5__)
             ln = 282 // GrSpritePlot.HC:282
             tick(t)
-            f705_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp + 48))
+            f710_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp + 48))
             t.msp = msp0
             t.depth--
             return
@@ -842,7 +840,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sprite3ZB (GrSpritePlot.HC:285) */
-    fun f708_Sprite3ZB(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double) {
+    fun f713_Sprite3ZB(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Double) {
         var ln = 0
         try {
             enter(t)
@@ -862,7 +860,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f307_Mat4x4RotZ(t, (fp + 48), p5__)
             ln = 290 // GrSpritePlot.HC:290
             tick(t)
-            f705_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp + 48))
+            f710_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp + 48))
             t.msp = msp0
             t.depth--
             return
@@ -870,7 +868,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC SpriteExtents (GrSpritePlot.HC:293) */
-    fun f709_SpriteExtents(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
+    fun f714_SpriteExtents(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
         var ln = 0
         try {
             enter(t)
@@ -889,7 +887,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f289_DCExtentsInit(t, l40_dc)
             ln = 298 // GrSpritePlot.HC:298
             tick(t)
-            f703_Sprite3(t, l40_dc, divs(2147483647L, 2L), divs(2147483647L, 2L), divs(2147483647L, 2L), p0_elems, 0L)
+            f708_Sprite3(t, l40_dc, divs(2147483647L, 2L), divs(2147483647L, 2L), divs(2147483647L, 2L), p0_elems, 0L)
             ln = 299 // GrSpritePlot.HC:299
             if ((ld8((l40_dc + 320L)) <= ld8((l40_dc + 328L)))) {
                 ln = 300 // GrSpritePlot.HC:300
@@ -933,7 +931,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sprite2DC (GrSpritePlot.HC:314) */
-    fun f710_Sprite2DC(t: Task, a0: Long): Long {
+    fun f715_Sprite2DC(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -943,14 +941,14 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l8_res: Long = 0L
             ln = 318 // GrSpritePlot.HC:318
             tick(t)
-            f709_SpriteExtents(t, p0_elems, (fp + 16), (fp + 24), (fp + 32), (fp + 40))
+            f714_SpriteExtents(t, p0_elems, (fp + 16), (fp + 24), (fp + 32), (fp + 40))
             ln = 319 // GrSpritePlot.HC:319
             tick(t)
             val t0: Long = P.f292_DCNew(t, ((ld8((fp + 24)) - ld8((fp + 16))) + 1L), ((ld8((fp + 40)) - ld8((fp + 32))) + 1L), 0L, 0L)
             l8_res = t0
             ln = 320 // GrSpritePlot.HC:320
             tick(t)
-            f703_Sprite3(t, l8_res, (-ld8((fp + 16))), (-ld8((fp + 32))), 0L, p0_elems, 0L)
+            f708_Sprite3(t, l8_res, (-ld8((fp + 16))), (-ld8((fp + 32))), 0L, p0_elems, 0L)
             ln = 321 // GrSpritePlot.HC:321
             t.msp = msp0
             t.depth--
@@ -962,7 +960,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC SpriteInterpolate (GrSpritePlot.HC:324) */
-    fun f711_SpriteInterpolate(t: Task, a0: Double, a1: Long, a2: Long): Long {
+    fun f716_SpriteInterpolate(t: Task, a0: Double, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1302,7 +1300,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DocSprite (GrSpritePlot.HC:436) */
-    fun f712_DocSprite(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f717_DocSprite(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1318,7 +1316,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var r1: Boolean = (p0_doc == 0L)
             if (r1) {
                 tick(t)
-                val t0: Long = P.f602_DocPut(t, 0L)
+                val t0: Long = P.f607_DocPut(t, 0L)
                 p0_doc = t0
                 r1 = (t0 == 0L)
             }
@@ -1328,7 +1326,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             }
             ln = 445 // GrSpritePlot.HC:445
             tick(t)
-            val t2: Long = P.f610_DocLock(t, p0_doc)
+            val t2: Long = P.f615_DocLock(t, p0_doc)
             l40_unlock = (t2 and 0xFFL)
             ln = 446 // GrSpritePlot.HC:446
             val t3: Long = nat(t, n_SpriteSize, push1(t, p1_elems))
@@ -1387,7 +1385,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             if ((l40_unlock != 0L)) {
                 ln = 464 // GrSpritePlot.HC:464
                 tick(t)
-                P.f611_DocUnlock(t, p0_doc)
+                P.f616_DocUnlock(t, p0_doc)
             }
             ln = 465 // GrSpritePlot.HC:465
             t.depth--
@@ -1398,7 +1396,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Sprite (GrSpritePlot.HC:468) */
-    fun f713_Sprite(t: Task, a0: Long, a1: Long): Long {
+    fun f718_Sprite(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1407,12 +1405,12 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l16_doc: Long = 0L
             ln = 472 // GrSpritePlot.HC:472
             tick(t)
-            val t0: Long = P.f602_DocPut(t, 0L)
+            val t0: Long = P.f607_DocPut(t, 0L)
             l16_doc = t0
             if ((t0 != 0L)) {
                 ln = 473 // GrSpritePlot.HC:473
                 tick(t)
-                val t1: Long = f712_DocSprite(t, l16_doc, p0_elems, p1_fmt)
+                val t1: Long = f717_DocSprite(t, l16_doc, p0_elems, p1_fmt)
                 t.depth--
                 return t1
             }
@@ -1425,7 +1423,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Adam/Gr/GrSpritePlot.HC#0 (GrSpritePlot.HC:1) */
-    fun f714_init_C__Adam_Gr_GrSpritePlot_HC_0(t: Task): Long {
+    fun f719_init_C__Adam_Gr_GrSpritePlot_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1437,18 +1435,18 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Sprite3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L)); 0L }
-            704 -> { f704_Sprite3B(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
-            705 -> { f705_Sprite3Mat4x4B(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L)); 0L }
-            706 -> { f706_Sprite3XB(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L))); 0L }
-            707 -> { f707_Sprite3YB(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L))); 0L }
-            708 -> { f708_Sprite3ZB(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L))); 0L }
-            709 -> { f709_SpriteExtents(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
-            710 -> f710_Sprite2DC(t, (if (n > 0) st[base + 0] else 0L))
-            711 -> f711_SpriteInterpolate(t, f((if (n > 0) st[base + 0] else 0L)), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            712 -> f712_DocSprite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            713 -> f713_Sprite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            714 -> f714_init_C__Adam_Gr_GrSpritePlot_HC_0(t)
+            708 -> { f708_Sprite3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L)); 0L }
+            709 -> { f709_Sprite3B(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
+            710 -> { f710_Sprite3Mat4x4B(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L)); 0L }
+            711 -> { f711_Sprite3XB(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L))); 0L }
+            712 -> { f712_Sprite3YB(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L))); 0L }
+            713 -> { f713_Sprite3ZB(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), f((if (n > 5) st[base + 5] else 0L))); 0L }
+            714 -> { f714_SpriteExtents(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
+            715 -> f715_Sprite2DC(t, (if (n > 0) st[base + 0] else 0L))
+            716 -> f716_SpriteInterpolate(t, f((if (n > 0) st[base + 0] else 0L)), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            717 -> f717_DocSprite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            718 -> f718_Sprite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            719 -> f719_init_C__Adam_Gr_GrSpritePlot_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1460,7 +1458,7 @@ class N_Adam_Gr_GrSpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719)
         private val NAMES = arrayOf("Sprite3", "Sprite3B", "Sprite3Mat4x4B", "Sprite3XB", "Sprite3YB", "Sprite3ZB", "SpriteExtents", "Sprite2DC", "SpriteInterpolate", "DocSprite", "Sprite", "\$init:C:/Adam/Gr/GrSpritePlot.HC#0")
         private val FILES = arrayOf<String>("C:/Adam/Gr/GrSpritePlot.HC")
     }

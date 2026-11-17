@@ -27,7 +27,7 @@ public final class N_Adam_God_GodExt: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodExt.HC#0 (GodExt.HC:18)
-    @discardableResult public final func f703_init_C__Adam_God_GodExt_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Adam_God_GodExt_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -41,13 +41,13 @@ public final class N_Adam_God_GodExt: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodExt.HC#1 (GodExt.HC:19)
-    @discardableResult public final func f704_init_C__Adam_God_GodExt_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Adam_God_GodExt_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 19 // GodExt.HC:19
             try tick(t)
-            let t0: Int64 = try P.f678_FifoU8New(t, 16384)
+            let t0: Int64 = try P.f683_FifoU8New(t, 16384)
             try st8((g_god &+ 56), t0)
             t.depth -= 1
             return t0
@@ -57,13 +57,13 @@ public final class N_Adam_God_GodExt: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodExt.HC#2 (GodExt.HC:20)
-    @discardableResult public final func f705_init_C__Adam_God_GodExt_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Adam_God_GodExt_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 20 // GodExt.HC:20
             try tick(t)
-            let t0: Int64 = try P.f678_FifoU8New(t, 16384)
+            let t0: Int64 = try P.f683_FifoU8New(t, 16384)
             try st8((g_god &+ 32), t0)
             t.depth -= 1
             return t0
@@ -73,7 +73,7 @@ public final class N_Adam_God_GodExt: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/God/GodExt.HC#3 (GodExt.HC:1)
-    @discardableResult public final func f709_init_C__Adam_God_GodExt_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Adam_God_GodExt_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -85,16 +85,16 @@ public final class N_Adam_God_GodExt: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Adam_God_GodExt_HC_0(t)
-        case 704: return try f704_init_C__Adam_God_GodExt_HC_1(t)
-        case 705: return try f705_init_C__Adam_God_GodExt_HC_2(t)
-        case 709: return try f709_init_C__Adam_God_GodExt_HC_3(t)
+        case 708: return try f708_init_C__Adam_God_GodExt_HC_0(t)
+        case 709: return try f709_init_C__Adam_God_GodExt_HC_1(t)
+        case 710: return try f710_init_C__Adam_God_GodExt_HC_2(t)
+        case 714: return try f714_init_C__Adam_God_GodExt_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 709]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Adam/God/GodExt.HC#0", 704: "$init:C:/Adam/God/GodExt.HC#1", 705: "$init:C:/Adam/God/GodExt.HC#2", 709: "$init:C:/Adam/God/GodExt.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 714]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Adam/God/GodExt.HC#0", 709: "$init:C:/Adam/God/GodExt.HC#1", 710: "$init:C:/Adam/God/GodExt.HC#2", 714: "$init:C:/Adam/God/GodExt.HC#3"]
     private static let FILES: [String] = ["C:/Adam/God/GodExt.HC"]
     public override var files: [String] { N_Adam_God_GodExt.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_God_GodExt.DEFINED.contains(index) }

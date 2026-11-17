@@ -30,7 +30,7 @@ public final class N_Demo_DolDoc_TextDemo: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/DolDoc/TextDemo.HC#0 (TextDemo.HC:1)
-    @discardableResult public final func f703_init_C__Demo_DolDoc_TextDemo_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_DolDoc_TextDemo_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -44,7 +44,7 @@ public final class N_Demo_DolDoc_TextDemo: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/DolDoc/TextDemo.HC#1 (TextDemo.HC:12)
-    @discardableResult public final func f704_init_C__Demo_DolDoc_TextDemo_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_DolDoc_TextDemo_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -60,14 +60,14 @@ public final class N_Demo_DolDoc_TextDemo: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_DolDoc_TextDemo_HC_0(t)
-        case 704: return try f704_init_C__Demo_DolDoc_TextDemo_HC_1(t)
+        case 708: return try f708_init_C__Demo_DolDoc_TextDemo_HC_0(t)
+        case 709: return try f709_init_C__Demo_DolDoc_TextDemo_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/DolDoc/TextDemo.HC#0", 704: "$init:C:/Demo/DolDoc/TextDemo.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/DolDoc/TextDemo.HC#0", 709: "$init:C:/Demo/DolDoc/TextDemo.HC#1"]
     private static let FILES: [String] = ["C:/Demo/DolDoc/TextDemo.HC"]
     public override var files: [String] { N_Demo_DolDoc_TextDemo.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_DolDoc_TextDemo.DEFINED.contains(index) }

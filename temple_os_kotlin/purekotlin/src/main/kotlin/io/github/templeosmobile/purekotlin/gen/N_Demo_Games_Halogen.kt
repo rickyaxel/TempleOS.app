@@ -54,7 +54,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (Halogen.HC:11) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -103,10 +103,10 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             }
             ln = 30 // Halogen.HC:30
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l40_x - 10L), l24_h, (l40_x - 40L), (l24_h - 100L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l40_x - 10L), l24_h, (l40_x - 40L), (l24_h - 100L), 1L, 0L)
             ln = 31 // Halogen.HC:31
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l40_x + 10L), l24_h, (l40_x + 40L), (l24_h - 100L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l40_x + 10L), l24_h, (l40_x + 40L), (l24_h - 100L), 1L, 0L)
             ln = 33 // Halogen.HC:33
             l40_x = ((l16_w shr 1) + 100L)
             ln = 34 // Halogen.HC:34
@@ -116,10 +116,10 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             }
             ln = 36 // Halogen.HC:36
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l40_x - 10L), l24_h, (l40_x - 40L), (l24_h - 100L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l40_x - 10L), l24_h, (l40_x - 40L), (l24_h - 100L), 1L, 0L)
             ln = 37 // Halogen.HC:37
             tick(t)
-            P.f396_GrLine(t, p1_dc, (l40_x + 10L), l24_h, (l40_x + 40L), (l24_h - 100L), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, (l40_x + 10L), l24_h, (l40_x + 40L), (l24_h - 100L), 1L, 0L)
             ln = 39 // Halogen.HC:39
             st4((p1_dc + 160L), 14L)
             ln = 40 // Halogen.HC:40
@@ -127,7 +127,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 ln = 41 // Halogen.HC:41
                 tick(t)
                 val vb0 = push0(t)
-                P.f369_GrPrint(t, p1_dc, ((l16_w shr 1) - 32L), ((l24_h - 8L) shr 1), s0, vb0, 0)
+                P.f370_GrPrint(t, p1_dc, ((l16_w shr 1) - 32L), ((l24_h - 8L) shr 1), s0, vb0, 0)
                 t.sp = vb0
             }
             t.depth--
@@ -136,7 +136,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC UpdateRoad (Halogen.HC:44) */
-    fun f704_UpdateRoad(t: Task) {
+    fun f709_UpdateRoad(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -177,7 +177,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Init (Halogen.HC:58) */
-    fun f705_Init(t: Task) {
+    fun f710_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -229,7 +229,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Halogen (Halogen.HC:77) */
-    fun f706_Halogen(t: Task) {
+    fun f711_Halogen(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -246,7 +246,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st1((ld8(P.g_Fs) + 778L), 15L)
             ln = 82 // Halogen.HC:82
             tick(t)
-            P.f507_MenuPush(t, s2)
+            P.f512_MenuPush(t, s2)
             ln = 95 // Halogen.HC:95
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 96 // Halogen.HC:96
@@ -259,9 +259,9 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_DocCursor, push2(t, 0L, 0L))
             ln = 99 // Halogen.HC:99
             tick(t)
-            f705_Init(t)
+            f710_Init(t)
             ln = 100 // Halogen.HC:100
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 101 // Halogen.HC:101
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -284,7 +284,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                             10L -> {
                                                 ln = 108 // Halogen.HC:108
                                                 tick(t)
-                                                f705_Init(t)
+                                                f710_Init(t)
                                             }
                                             27L, 28L -> {
                                                 ln = 112 // Halogen.HC:112
@@ -371,7 +371,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                             }
                             ln = 149 // Halogen.HC:149
                             tick(t)
-                            f704_UpdateRoad(t)
+                            f709_UpdateRoad(t)
                         }
                         ln = 151 // Halogen.HC:151
                         nat(t, n_Sleep, push1(t, 10L))
@@ -391,7 +391,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             }
             ln = 157 // Halogen.HC:157
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 158 // Halogen.HC:158
             nat(t, n_DocClear, push1(t, 0L))
             ln = 159 // Halogen.HC:159
@@ -404,13 +404,13 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/Halogen.HC#0 (Halogen.HC:7) */
-    fun f707_init_C__Demo_Games_Halogen_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_Games_Halogen_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 162 // Halogen.HC:162
             tick(t)
-            f706_Halogen(t)
+            f711_Halogen(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Halogen.HC#0", ln) }
@@ -419,11 +419,11 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_UpdateRoad(t); 0L }
-            705 -> { f705_Init(t); 0L }
-            706 -> { f706_Halogen(t); 0L }
-            707 -> f707_init_C__Demo_Games_Halogen_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_UpdateRoad(t); 0L }
+            710 -> { f710_Init(t); 0L }
+            711 -> { f711_Halogen(t); 0L }
+            712 -> f712_init_C__Demo_Games_Halogen_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -435,7 +435,7 @@ class N_Demo_Games_Halogen(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("DrawIt", "UpdateRoad", "Init", "Halogen", "\$init:C:/Demo/Games/Halogen.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/Halogen.HC")
     }

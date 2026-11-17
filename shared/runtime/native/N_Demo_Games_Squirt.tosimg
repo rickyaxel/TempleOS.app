@@ -66,35 +66,35 @@ s 192c58 4d6f7665204e6f7a7a6c65
 s 192c58 4d6f7665204e6f7a7a6c65
 s 192c58 4d6f7665204e6f7a7a6c65
 c 17fd80 8 0
-fn 703 DrawIt (U0;*$CTask,*$CDC;-)
-fn 704 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-fn 705 PlaceMass (*$MyMass;I64,I64,I64,F64,F64,F64,F64,*$CTask;-)
-fn 706 PlaceSpring ($MySpring;*$MyMass,*$MyMass;-)
-fn 707 HoseNew (U0;;-)
-fn 708 AnimateTask (U0;I64;-)
-fn 709 MoveNozzleTaskX (U0;I64;-)
-fn 710 MoveNozzleTaskY (U0;I64;-)
-fn 711 Init (U0;;-)
-fn 712 CleanUp (U0;;-)
-fn 713 SongTask (U0;I64;-)
-fn 714 Squirt (U0;;-)
-fn 715 $init:C:/Demo/Games/Squirt.HC#0 (I64;;-)
-sym f AnimateTask 708 (U0;I64;-)
-sym f CleanUp 712 (U0;;-)
-sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
-sym f HoseNew 707 (U0;;-)
-sym f Init 711 (U0;;-)
-sym f MoveNozzleTaskX 709 (U0;I64;-)
-sym f MoveNozzleTaskY 710 (U0;I64;-)
-sym f MyDerivative 704 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-sym f PlaceMass 705 (*$MyMass;I64,I64,I64,F64,F64,F64,F64,*$CTask;-)
-sym f PlaceSpring 706 ($MySpring;*$MyMass,*$MyMass;-)
-sym f SongTask 713 (U0;I64;-)
-sym f Squirt 714 (U0;;-)
+fn 708 DrawIt (U0;*$CTask,*$CDC;-)
+fn 709 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 710 PlaceMass (*$MyMass;I64,I64,I64,F64,F64,F64,F64,*$CTask;-)
+fn 711 PlaceSpring ($MySpring;*$MyMass,*$MyMass;-)
+fn 712 HoseNew (U0;;-)
+fn 713 AnimateTask (U0;I64;-)
+fn 714 MoveNozzleTaskX (U0;I64;-)
+fn 715 MoveNozzleTaskY (U0;I64;-)
+fn 716 Init (U0;;-)
+fn 717 CleanUp (U0;;-)
+fn 718 SongTask (U0;I64;-)
+fn 719 Squirt (U0;;-)
+fn 720 $init:C:/Demo/Games/Squirt.HC#0 (I64;;-)
+sym f AnimateTask 713 (U0;I64;-)
+sym f CleanUp 717 (U0;;-)
+sym f DrawIt 708 (U0;*$CTask,*$CDC;-)
+sym f HoseNew 712 (U0;;-)
+sym f Init 716 (U0;;-)
+sym f MoveNozzleTaskX 714 (U0;I64;-)
+sym f MoveNozzleTaskY 715 (U0;I64;-)
+sym f MyDerivative 709 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym f PlaceMass 710 (*$MyMass;I64,I64,I64,F64,F64,F64,F64,*$CTask;-)
+sym f PlaceSpring 711 ($MySpring;*$MyMass,*$MyMass;-)
+sym f SongTask 718 (U0;I64;-)
+sym f Squirt 719 (U0;;-)
 sym g faucet 17fd38 *$MyMass
 sym g nozzle 17fd50 *$MyMass
 sym g nozzle_é 17fd68 F64
 sym g ode 17fd80 *$CMathODE
 sym g start_up_timeout 17fd98 F64
-init 715
+init 720
 unit C:/Demo/Games/Squirt.HC#1

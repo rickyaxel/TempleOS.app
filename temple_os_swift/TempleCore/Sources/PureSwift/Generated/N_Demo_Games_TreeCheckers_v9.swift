@@ -84,7 +84,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC InitDefines (TreeCheckers.HC:1)
-    public final func f703_InitDefines(_ t: HTask) throws {
+    public final func f708_InitDefines(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -128,20 +128,20 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/TreeCheckers.HC#0 (TreeCheckers.HC:16)
-    @discardableResult public final func f704_init_C__Demo_Games_TreeCheckers_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_TreeCheckers_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 16 // TreeCheckers.HC:16
             try tick(t)
-            try f703_InitDefines(t)
+            try f708_InitDefines(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/TreeCheckers.HC#0", ln) }
     }
 
     /// HolyC S2Circle (TreeCheckers.HC:28)
-    public final func f705_S2Circle(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_S2Circle(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -169,7 +169,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC Circle2S (TreeCheckers.HC:40)
-    public final func f706_Circle2S(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f711_Circle2S(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -195,7 +195,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC S2W (TreeCheckers.HC:48)
-    public final func f707_S2W(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f712_S2W(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -203,17 +203,17 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
             var p1__y: Int64 = a1
             ln = 50 // TreeCheckers.HC:50
             try tick(t)
-            try f705_S2Circle(t, p0__x, p1__y)
+            try f710_S2Circle(t, p0__x, p1__y)
             ln = 51 // TreeCheckers.HC:51
             try tick(t)
-            try f706_Circle2S(t, p0__x, p1__y)
+            try f711_Circle2S(t, p0__x, p1__y)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "S2W", ln) }
     }
 
     /// HolyC DrawIt (TreeCheckers.HC:54)
-    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f713_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -231,7 +231,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                 try st4((p1_dc &+ 160), 11)
                 ln = 62 // TreeCheckers.HC:62
                 try tick(t)
-                _ = try P.f387_GrFloodFill(t, p1_dc, 0, 0, 0, 0, 0)
+                _ = try P.f388_GrFloodFill(t, p1_dc, 0, 0, 0, 0, 0)
                 ln = 63 // TreeCheckers.HC:63
                 try st4((p1_dc &+ 160), 3)
             } else {
@@ -239,14 +239,14 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                 try st4((p1_dc &+ 160), 13)
                 ln = 66 // TreeCheckers.HC:66
                 try tick(t)
-                _ = try P.f387_GrFloodFill(t, p1_dc, 0, 0, 0, 0, 0)
+                _ = try P.f388_GrFloodFill(t, p1_dc, 0, 0, 0, 0, 0)
                 ln = 67 // TreeCheckers.HC:67
                 try st4((p1_dc &+ 160), 5)
             }
             ln = 69 // TreeCheckers.HC:69
             try tick(t)
             let vb0 = try push1(t, (ld8(g_cur_player) &+ 1))
-            _ = try P.f369_GrPrint(t, p1_dc, 2, 2, s7, vb0, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, 2, 2, s7, vb0, 1)
             t.sp = vb0
             ln = 71 // TreeCheckers.HC:71
             l16_i = 0
@@ -257,7 +257,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                     try st4((p1_dc &+ 160), ld8(((g_u &+ (l16_i &* 50)) &+ 40)))
                     ln = 74 // TreeCheckers.HC:74
                     try tick(t)
-                    _ = try P.f387_GrFloodFill(t, p1_dc, ld8(((g_u &+ (l16_i &* 50)) &+ 8)), ld8(((g_u &+ (l16_i &* 50)) &+ 16)), 0, 0, 0)
+                    _ = try P.f388_GrFloodFill(t, p1_dc, ld8(((g_u &+ (l16_i &* 50)) &+ 8)), ld8(((g_u &+ (l16_i &* 50)) &+ 16)), 0, 0, 0)
                 }
                 ln = 71 // TreeCheckers.HC:71
                 l16_i = (l16_i &+ 1)
@@ -272,7 +272,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                     try st4((p1_dc &+ 160), 0)
                     ln = 79 // TreeCheckers.HC:79
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, ld8(((g_u &+ (l16_i &* 50)) &+ 8)), ld8(((g_u &+ (l16_i &* 50)) &+ 16)), ld8(((g_u &+ (ld8(((g_u &+ (l16_i &* 50)) &+ 32)) &* 50)) &+ 8)), ld8(((g_u &+ (ld8(((g_u &+ (l16_i &* 50)) &+ 32)) &* 50)) &+ 16)), 1, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, ld8(((g_u &+ (l16_i &* 50)) &+ 8)), ld8(((g_u &+ (l16_i &* 50)) &+ 16)), ld8(((g_u &+ (ld8(((g_u &+ (l16_i &* 50)) &+ 32)) &* 50)) &+ 8)), ld8(((g_u &+ (ld8(((g_u &+ (l16_i &* 50)) &+ 32)) &* 50)) &+ 16)), 1, 0)
                     ln = 80 // TreeCheckers.HC:80
                     try tick(t)
                     let t1: Int64 = try P.f269_Blink(t, 2.5)
@@ -283,7 +283,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                         try st4((p1_dc &+ 228), 6)
                         ln = 83 // TreeCheckers.HC:83
                         try tick(t)
-                        _ = try P.f393_GrPlot3(t, p1_dc, ((ld8(((g_u &+ (l16_i &* 50)) &+ 8)) &+ ld8(((g_u &+ (ld8(((g_u &+ (l16_i &* 50)) &+ 32)) &* 50)) &+ 8))) &>> 1), ((ld8(((g_u &+ (l16_i &* 50)) &+ 16)) &+ ld8(((g_u &+ (ld8(((g_u &+ (l16_i &* 50)) &+ 32)) &* 50)) &+ 16))) &>> 1), 0)
+                        _ = try P.f394_GrPlot3(t, p1_dc, ((ld8(((g_u &+ (l16_i &* 50)) &+ 8)) &+ ld8(((g_u &+ (ld8(((g_u &+ (l16_i &* 50)) &+ 32)) &* 50)) &+ 8))) &>> 1), ((ld8(((g_u &+ (l16_i &* 50)) &+ 16)) &+ ld8(((g_u &+ (ld8(((g_u &+ (l16_i &* 50)) &+ 32)) &* 50)) &+ 16))) &>> 1), 0)
                     }
                 }
                 ln = 76 // TreeCheckers.HC:76
@@ -296,13 +296,13 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                 try st4((p1_dc &+ 160), 12)
                 ln = 88 // TreeCheckers.HC:88
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, (ld8(g_start_x) &- 4), (ld8(g_start_y) &- 4), (ld8(g_start_x) &+ 4), (ld8(g_start_y) &+ 4), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, (ld8(g_start_x) &- 4), (ld8(g_start_y) &- 4), (ld8(g_start_x) &+ 4), (ld8(g_start_y) &+ 4), 1, 0)
                 ln = 89 // TreeCheckers.HC:89
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, (ld8(g_start_x) &- 4), (ld8(g_start_y) &+ 4), (ld8(g_start_x) &+ 4), (ld8(g_start_y) &- 4), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, (ld8(g_start_x) &- 4), (ld8(g_start_y) &+ 4), (ld8(g_start_x) &+ 4), (ld8(g_start_y) &- 4), 1, 0)
                 ln = 90 // TreeCheckers.HC:90
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, ld8(g_start_x), ld8(g_start_y), ld8(g_end_x), ld8(g_end_y), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, ld8(g_start_x), ld8(g_start_y), ld8(g_end_x), ld8(g_end_y), 1, 0)
             }
             ln = 92 // TreeCheckers.HC:92
             var r3: Bool = try ((ld8(g_num_alive) == 1) || (ld8((g_num_alive &+ 8)) == 1))
@@ -317,7 +317,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                 ln = 94 // TreeCheckers.HC:94
                 try tick(t)
                 let vb1 = push0(t)
-                _ = try P.f369_GrPrint(t, p1_dc, ((ld8((p0_task &+ 224)) &- 72) &>> 1), ((ld8((p0_task &+ 248)) &- 8) &>> 1), s8, vb1, 0)
+                _ = try P.f370_GrPrint(t, p1_dc, ((ld8((p0_task &+ 224)) &- 72) &>> 1), ((ld8((p0_task &+ 248)) &- 8) &>> 1), s8, vb1, 0)
                 t.sp = vb1
             }
             t.depth -= 1
@@ -326,7 +326,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC UnitFind (TreeCheckers.HC:99)
-    @discardableResult public final func f709_UnitFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f714_UnitFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -373,7 +373,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC KillsChk (TreeCheckers.HC:115)
-    public final func f710_KillsChk(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f715_KillsChk(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -456,7 +456,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC UnitMove (TreeCheckers.HC:144)
-    @discardableResult public final func f711_UnitMove(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f716_UnitMove(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -473,13 +473,13 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
             try st8((fp &+ 72), ld8(g_start_y))
             ln = 147 // TreeCheckers.HC:147
             try tick(t)
-            try f707_S2W(t, (fp &+ 8), (fp &+ 16))
+            try f712_S2W(t, (fp &+ 8), (fp &+ 16))
             ln = 148 // TreeCheckers.HC:148
             try st8((fp &+ 56), ld8((fp &+ 8)))
             try st8((fp &+ 48), ld8((fp &+ 16)))
             ln = 149 // TreeCheckers.HC:149
             try tick(t)
-            try f705_S2Circle(t, (fp &+ 56), (fp &+ 48))
+            try f710_S2Circle(t, (fp &+ 56), (fp &+ 48))
             ln = 150 // TreeCheckers.HC:150
             l24_i = 0
             loop0: while (l24_i < 6) {
@@ -488,7 +488,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                 try st8((fp &+ 32), ld8((fp &+ 72)))
                 ln = 152 // TreeCheckers.HC:152
                 try tick(t)
-                try f705_S2Circle(t, (fp &+ 40), (fp &+ 32))
+                try f710_S2Circle(t, (fp &+ 40), (fp &+ 32))
                 ln = 153 // TreeCheckers.HC:153
                 if try ((ld8((fp &+ 40)) == ld8((fp &+ 56))) && (ld8((fp &+ 32)) == ld8((fp &+ 48)))) {
                     ln = 154 // TreeCheckers.HC:154
@@ -532,7 +532,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                     try st8((fp &+ 72), t5)
                     ln = 167 // TreeCheckers.HC:167
                     try tick(t)
-                    try f706_Circle2S(t, (fp &+ 64), (fp &+ 72))
+                    try f711_Circle2S(t, (fp &+ 64), (fp &+ 72))
                 } else {
                     ln = 168 // TreeCheckers.HC:168
                     if try (ld8((fp &+ 48)) < ld8((fp &+ 32))) {
@@ -544,7 +544,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                         try st8((fp &+ 72), t7)
                         ln = 170 // TreeCheckers.HC:170
                         try tick(t)
-                        try f706_Circle2S(t, (fp &+ 64), (fp &+ 72))
+                        try f711_Circle2S(t, (fp &+ 64), (fp &+ 72))
                     } else {
                         ln = 171 // TreeCheckers.HC:171
                         if try (ld8((fp &+ 56)) > ld8((fp &+ 40))) {
@@ -556,7 +556,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                             try st8((fp &+ 72), ld8((fp &+ 32)))
                             ln = 173 // TreeCheckers.HC:173
                             try tick(t)
-                            try f706_Circle2S(t, (fp &+ 64), (fp &+ 72))
+                            try f711_Circle2S(t, (fp &+ 64), (fp &+ 72))
                         } else {
                             ln = 174 // TreeCheckers.HC:174
                             if try (ld8((fp &+ 56)) < ld8((fp &+ 40))) {
@@ -568,7 +568,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                                 try st8((fp &+ 72), ld8((fp &+ 32)))
                                 ln = 176 // TreeCheckers.HC:176
                                 try tick(t)
-                                try f706_Circle2S(t, (fp &+ 64), (fp &+ 72))
+                                try f711_Circle2S(t, (fp &+ 64), (fp &+ 72))
                             }
                         }
                     }
@@ -589,7 +589,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC DrawHexMap (TreeCheckers.HC:182)
-    @discardableResult public final func f712_DrawHexMap(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f717_DrawHexMap(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -629,10 +629,10 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                     }
                     ln = 195 // TreeCheckers.HC:195
                     try tick(t)
-                    try f707_S2W(t, (fp &+ 40), (fp &+ 48))
+                    try f712_S2W(t, (fp &+ 40), (fp &+ 48))
                     ln = 196 // TreeCheckers.HC:196
                     try tick(t)
-                    _ = try P.f397_GrCircle(t, l16_dc, ld8((fp &+ 40)), ld8((fp &+ 48)), 7, 1, 0.0, (2.0 * d(4614256656552045848)))
+                    _ = try P.f398_GrCircle(t, l16_dc, ld8((fp &+ 40)), ld8((fp &+ 48)), 7, 1, 0.0, (2.0 * d(4614256656552045848)))
                     ln = 191 // TreeCheckers.HC:191
                     l24_i = (l24_i &+ 1)
                     try tick(t)
@@ -658,7 +658,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC Init (TreeCheckers.HC:204)
-    public final func f713_Init(_ t: HTask) throws {
+    public final func f718_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -676,7 +676,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
             try st8((fp &+ 64), ld8((ld8(P.g_Fs) &+ 248)))
             ln = 208 // TreeCheckers.HC:208
             try tick(t)
-            let t0: Int64 = try f712_DrawHexMap(t, (fp &+ 56), (fp &+ 64))
+            let t0: Int64 = try f717_DrawHexMap(t, (fp &+ 56), (fp &+ 64))
             try st8(g_map_dc, t0)
             ln = 209 // TreeCheckers.HC:209
             try st8(g_cur_player, 0)
@@ -747,10 +747,10 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                 try st8(t10, (ld8(t10) &+ 22))
                 ln = 238 // TreeCheckers.HC:238
                 try tick(t)
-                try f707_S2W(t, ((g_u &+ (l0_i &* 50)) &+ 8), ((g_u &+ (l0_i &* 50)) &+ 16))
+                try f712_S2W(t, ((g_u &+ (l0_i &* 50)) &+ 8), ((g_u &+ (l0_i &* 50)) &+ 16))
                 ln = 239 // TreeCheckers.HC:239
                 try tick(t)
-                try f707_S2W(t, ((g_u &+ ((l0_i &+ divs(82, 2)) &* 50)) &+ 8), ((g_u &+ ((l0_i &+ divs(82, 2)) &* 50)) &+ 16))
+                try f712_S2W(t, ((g_u &+ ((l0_i &+ divs(82, 2)) &* 50)) &+ 8), ((g_u &+ ((l0_i &+ divs(82, 2)) &* 50)) &+ 16))
                 ln = 241 // TreeCheckers.HC:241
                 try st8(((g_u &+ (l0_i &* 50)) &+ 24), 0)
                 ln = 242 // TreeCheckers.HC:242
@@ -833,7 +833,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC CleanUp (TreeCheckers.HC:279)
-    public final func f714_CleanUp(_ t: HTask) throws {
+    public final func f719_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -846,7 +846,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC TreeCheckers (TreeCheckers.HC:284)
-    public final func f715_TreeCheckers(_ t: HTask) throws {
+    public final func f720_TreeCheckers(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -861,7 +861,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 290 // TreeCheckers.HC:290
             try tick(t)
-            _ = try P.f507_MenuPush(t, s9)
+            _ = try P.f512_MenuPush(t, s9)
             ln = 299 // TreeCheckers.HC:299
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 300 // TreeCheckers.HC:300
@@ -887,13 +887,13 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                 retry_0: while true {
                     ln = 309 // TreeCheckers.HC:309
                     try tick(t)
-                    try f713_Init(t)
+                    try f718_Init(t)
                     ln = 310 // TreeCheckers.HC:310
                     l40_tmpu = 0
                     ln = 311 // TreeCheckers.HC:311
                     try st1(g_show_start, 0)
                     ln = 312 // TreeCheckers.HC:312
-                    try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
+                    try st8((ld8(P.g_Fs) &+ 448), 9223090561878065865)
                     ln = 313 // TreeCheckers.HC:313
                     skip_1: do {
                         loop2: while (1 != 0) {
@@ -912,7 +912,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                                         case 10:
                                             ln = 320 // TreeCheckers.HC:320
                                             try tick(t)
-                                            try f714_CleanUp(t)
+                                            try f719_CleanUp(t)
                                             ln = 321 // TreeCheckers.HC:321
                                             try tick(t)
                                             continue retry_0
@@ -928,7 +928,7 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                                     if try ((ld8(g_num_alive) > 1) && (ld8((g_num_alive &+ 8)) > 1)) {
                                         ln = 329 // TreeCheckers.HC:329
                                         try tick(t)
-                                        let t3: Int64 = try f709_UnitFind(t, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8(g_cur_player))
+                                        let t3: Int64 = try f714_UnitFind(t, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8(g_cur_player))
                                         l40_tmpu = t3
                                         ln = 330 // TreeCheckers.HC:330
                                         let t4: Int64 = try ld8((l40_tmpu &+ 8))
@@ -946,15 +946,15 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
                                     if (l40_tmpu != 0) {
                                         ln = 337 // TreeCheckers.HC:337
                                         try tick(t)
-                                        _ = try f711_UnitMove(t, l40_tmpu, ld8((fp &+ 8)), ld8((fp &+ 16)))
+                                        _ = try f716_UnitMove(t, l40_tmpu, ld8((fp &+ 8)), ld8((fp &+ 16)))
                                     }
                                 case 6:
                                     ln = 340 // TreeCheckers.HC:340
                                     try tick(t)
-                                    _ = try f711_UnitMove(t, l40_tmpu, ld8((fp &+ 8)), ld8((fp &+ 16)))
+                                    _ = try f716_UnitMove(t, l40_tmpu, ld8((fp &+ 8)), ld8((fp &+ 16)))
                                     ln = 341 // TreeCheckers.HC:341
                                     try tick(t)
-                                    try f710_KillsChk(t, ld8((l40_tmpu &+ 8)), ld8((l40_tmpu &+ 16)), ld8(g_cur_player))
+                                    try f715_KillsChk(t, ld8((l40_tmpu &+ 8)), ld8((l40_tmpu &+ 16)), ld8(g_cur_player))
                                     ln = 342 // TreeCheckers.HC:342
                                     try st1(g_show_start, 0)
                                     ln = 343 // TreeCheckers.HC:343
@@ -986,10 +986,10 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 353 // TreeCheckers.HC:353
             try tick(t)
-            try f714_CleanUp(t)
+            try f719_CleanUp(t)
             ln = 354 // TreeCheckers.HC:354
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -997,13 +997,13 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/TreeCheckers.HC#1 (TreeCheckers.HC:357)
-    @discardableResult public final func f716_init_C__Demo_Games_TreeCheckers_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f721_init_C__Demo_Games_TreeCheckers_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 357 // TreeCheckers.HC:357
             try tick(t)
-            try f715_TreeCheckers(t)
+            try f720_TreeCheckers(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/TreeCheckers.HC#1", ln) }
@@ -1012,26 +1012,26 @@ public final class N_Demo_Games_TreeCheckers_v9: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_InitDefines(t); return 0
-        case 704: return try f704_init_C__Demo_Games_TreeCheckers_HC_0(t)
-        case 705: try f705_S2Circle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_Circle2S(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 707: try f707_S2W(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 709: return try f709_UnitFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 710: try f710_KillsChk(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 711: return try f711_UnitMove(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 712: return try f712_DrawHexMap(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 713: try f713_Init(t); return 0
-        case 714: try f714_CleanUp(t); return 0
-        case 715: try f715_TreeCheckers(t); return 0
-        case 716: return try f716_init_C__Demo_Games_TreeCheckers_HC_1(t)
+        case 708: try f708_InitDefines(t); return 0
+        case 709: return try f709_init_C__Demo_Games_TreeCheckers_HC_0(t)
+        case 710: try f710_S2Circle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_Circle2S(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 712: try f712_S2W(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 713: try f713_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 714: return try f714_UnitFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 715: try f715_KillsChk(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 716: return try f716_UnitMove(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 717: return try f717_DrawHexMap(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 718: try f718_Init(t); return 0
+        case 719: try f719_CleanUp(t); return 0
+        case 720: try f720_TreeCheckers(t); return 0
+        case 721: return try f721_init_C__Demo_Games_TreeCheckers_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716]
-    private static let NAMES: [Int: String] = [703: "InitDefines", 704: "$init:C:/Demo/Games/TreeCheckers.HC#0", 705: "S2Circle", 706: "Circle2S", 707: "S2W", 708: "DrawIt", 709: "UnitFind", 710: "KillsChk", 711: "UnitMove", 712: "DrawHexMap", 713: "Init", 714: "CleanUp", 715: "TreeCheckers", 716: "$init:C:/Demo/Games/TreeCheckers.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721]
+    private static let NAMES: [Int: String] = [708: "InitDefines", 709: "$init:C:/Demo/Games/TreeCheckers.HC#0", 710: "S2Circle", 711: "Circle2S", 712: "S2W", 713: "DrawIt", 714: "UnitFind", 715: "KillsChk", 716: "UnitMove", 717: "DrawHexMap", 718: "Init", 719: "CleanUp", 720: "TreeCheckers", 721: "$init:C:/Demo/Games/TreeCheckers.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Games/TreeCheckers.HC"]
     public override var files: [String] { N_Demo_Games_TreeCheckers_v9.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_TreeCheckers_v9.DEFINED.contains(index) }

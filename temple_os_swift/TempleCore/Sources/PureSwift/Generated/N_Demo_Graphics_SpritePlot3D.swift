@@ -10,12 +10,14 @@ import TempleCore
 public final class N_Demo_Graphics_SpritePlot3D: NativeModule {
     public let P: Prelude
     public let n_Sleep: Int
+    public let n_Sprite3: Int
     /** glbl_r: I64[4][4] */ public var g_glbl_r: Int64 = 0
     /** binary literal, 210 bytes */ public var b0: Int64 = 0
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
         n_Sleep = rt.vm.natives.find("Sleep")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -29,7 +31,7 @@ public final class N_Demo_Graphics_SpritePlot3D: NativeModule {
     }
 
     /// HolyC DrawIt (SpritePlot3D.HC:21)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -57,8 +59,7 @@ public final class N_Demo_Graphics_SpritePlot3D: NativeModule {
             try tick(t)
             _ = try P.f295_DCDepthBufRst(t, p1_dc)
             ln = 31 // SpritePlot3D.HC:31
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 0, 0, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 0, 0, 0, b0, 0))
             ln = 32 // SpritePlot3D.HC:32
             try st8((p1_dc &+ 200), l16_old_r)
             t.depth -= 1
@@ -67,7 +68,7 @@ public final class N_Demo_Graphics_SpritePlot3D: NativeModule {
     }
 
     /// HolyC SpritePlot3D (SpritePlot3D.HC:35)
-    public final func f704_SpritePlot3D(_ t: HTask) throws {
+    public final func f709_SpritePlot3D(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -80,7 +81,7 @@ public final class N_Demo_Graphics_SpritePlot3D: NativeModule {
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 40 // SpritePlot3D.HC:40
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 41 // SpritePlot3D.HC:41
             loop0: while true {
                 try tick(t)
@@ -112,13 +113,13 @@ public final class N_Demo_Graphics_SpritePlot3D: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/SpritePlot3D.HC#0 (SpritePlot3D.HC:53)
-    @discardableResult public final func f705_init_C__Demo_Graphics_SpritePlot3D_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_SpritePlot3D_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 53 // SpritePlot3D.HC:53
             try tick(t)
-            try f704_SpritePlot3D(t)
+            try f709_SpritePlot3D(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/SpritePlot3D.HC#0", ln) }
@@ -127,15 +128,15 @@ public final class N_Demo_Graphics_SpritePlot3D: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_SpritePlot3D(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_SpritePlot3D_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_SpritePlot3D(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_SpritePlot3D_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "SpritePlot3D", 705: "$init:C:/Demo/Graphics/SpritePlot3D.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "SpritePlot3D", 710: "$init:C:/Demo/Graphics/SpritePlot3D.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/SpritePlot3D.HC"]
     public override var files: [String] { N_Demo_Graphics_SpritePlot3D.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_SpritePlot3D.DEFINED.contains(index) }

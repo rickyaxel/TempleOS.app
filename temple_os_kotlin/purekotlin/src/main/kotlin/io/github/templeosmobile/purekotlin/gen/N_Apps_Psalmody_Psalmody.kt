@@ -17,7 +17,7 @@ class N_Apps_Psalmody_Psalmody(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Psalmody.HC#0 (Psalmody.HC:61) */
-    fun f703_init_C__Apps_Psalmody_Psalmody_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Psalmody_Psalmody_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -27,7 +27,7 @@ class N_Apps_Psalmody_Psalmody(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Psalmody.HC#1 (Psalmody.HC:63) */
-    fun f704_init_C__Apps_Psalmody_Psalmody_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_Psalmody_Psalmody_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -39,8 +39,8 @@ class N_Apps_Psalmody_Psalmody(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Psalmody_Psalmody_HC_0(t)
-            704 -> f704_init_C__Apps_Psalmody_Psalmody_HC_1(t)
+            708 -> f708_init_C__Apps_Psalmody_Psalmody_HC_0(t)
+            709 -> f709_init_C__Apps_Psalmody_Psalmody_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -52,7 +52,7 @@ class N_Apps_Psalmody_Psalmody(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("\$init:C:/Apps/Psalmody/Psalmody.HC#0", "\$init:C:/Apps/Psalmody/Psalmody.HC#1")
         private val FILES = arrayOf<String>()
     }

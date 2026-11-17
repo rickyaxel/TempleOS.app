@@ -13,10 +13,10 @@ s 17ff70 0a536565642830293b205a65726f206973207370656369616c2e0a
 s 17fef0 25643a2025640a
 s 17ffa0 0a536565642830293b204e6f6e2d726570656174696e672e0a
 s 17fef0 25643a2025640a
-fn 703 RandPts (U0;;-)
-fn 704 RandDemo (U0;;-)
-fn 705 $init:C:/Demo/RandDemo.HC#0 (I64;;-)
-sym f RandDemo 704 (U0;;-)
-sym f RandPts 703 (U0;;-)
-init 705
+fn 708 RandPts (U0;;-)
+fn 709 RandDemo (U0;;-)
+fn 710 $init:C:/Demo/RandDemo.HC#0 (I64;;-)
+sym f RandDemo 709 (U0;;-)
+sym f RandPts 708 (U0;;-)
+init 710
 unit C:/Demo/RandDemo.HC#1

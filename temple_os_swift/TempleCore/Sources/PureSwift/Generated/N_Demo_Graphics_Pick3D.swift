@@ -22,6 +22,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     public let n_Rand: Int
     public let n_RandI32: Int
     public let n_RandU16: Int
+    public let n_Sprite3: Int
     /** imgs: U8 *[3] */ public var g_imgs: Int64 = 0
     /** binary literal, 122 bytes */ public var b0: Int64 = 0
     /** binary literal, 210 bytes */ public var b1: Int64 = 0
@@ -45,6 +46,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
         n_Rand = rt.vm.natives.find("Rand")!.index
         n_RandI32 = rt.vm.natives.find("RandI32")!.index
         n_RandU16 = rt.vm.natives.find("RandU16")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -64,7 +66,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Pick3D.HC#0 (Pick3D.HC:72)
-    @discardableResult public final func f703_init_C__Demo_Graphics_Pick3D_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Graphics_Pick3D_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -78,7 +80,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC DrawIt (Pick3D.HC:74)
-    public final func f704_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -106,7 +108,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
             try st4((p1_dc &+ 228), 3)
             ln = 87 // Pick3D.HC:87
             try tick(t)
-            try P.f425_GrBorder(t, p1_dc, 20, 20, ((2 &* ld8((l32_pf &+ 96))) &- 20), ((2 &* ld8((l32_pf &+ 104))) &- 20), 1, 0)
+            try P.f428_GrBorder(t, p1_dc, 20, 20, ((2 &* ld8((l32_pf &+ 96))) &- 20), ((2 &* ld8((l32_pf &+ 104))) &- 20), 1, 0)
             ln = 89 // Pick3D.HC:89
             loop0: while (l40_tmpo != l32_pf) {
                 ln = 90 // Pick3D.HC:90
@@ -118,18 +120,18 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                     case 0:
                         ln = 93 // Pick3D.HC:93
                         try tick(t)
-                        _ = try P.f396_GrLine(t, p1_dc, ((ld8((l32_pf &+ 96)) &+ ld4s((l40_tmpo &+ 32))) &+ 2), ((ld8((l32_pf &+ 104)) &+ ld4s(((l40_tmpo &+ 32) &+ 4))) &+ 2), ((ld8((l32_pf &+ 96)) &+ ld4s((l40_tmpo &+ 32))) &- 2), ((ld8((l32_pf &+ 104)) &+ ld4s(((l40_tmpo &+ 32) &+ 4))) &- 2), 1, 0)
+                        _ = try P.f397_GrLine(t, p1_dc, ((ld8((l32_pf &+ 96)) &+ ld4s((l40_tmpo &+ 32))) &+ 2), ((ld8((l32_pf &+ 104)) &+ ld4s(((l40_tmpo &+ 32) &+ 4))) &+ 2), ((ld8((l32_pf &+ 96)) &+ ld4s((l40_tmpo &+ 32))) &- 2), ((ld8((l32_pf &+ 104)) &+ ld4s(((l40_tmpo &+ 32) &+ 4))) &- 2), 1, 0)
                         ln = 95 // Pick3D.HC:95
                         try tick(t)
-                        _ = try P.f396_GrLine(t, p1_dc, ((ld8((l32_pf &+ 96)) &+ ld4s((l40_tmpo &+ 32))) &- 2), ((ld8((l32_pf &+ 104)) &+ ld4s(((l40_tmpo &+ 32) &+ 4))) &+ 2), ((ld8((l32_pf &+ 96)) &+ ld4s((l40_tmpo &+ 32))) &+ 2), ((ld8((l32_pf &+ 104)) &+ ld4s(((l40_tmpo &+ 32) &+ 4))) &- 2), 1, 0)
+                        _ = try P.f397_GrLine(t, p1_dc, ((ld8((l32_pf &+ 96)) &+ ld4s((l40_tmpo &+ 32))) &- 2), ((ld8((l32_pf &+ 104)) &+ ld4s(((l40_tmpo &+ 32) &+ 4))) &+ 2), ((ld8((l32_pf &+ 96)) &+ ld4s((l40_tmpo &+ 32))) &+ 2), ((ld8((l32_pf &+ 104)) &+ ld4s(((l40_tmpo &+ 32) &+ 4))) &- 2), 1, 0)
                     case 1:
                         ln = 99 // Pick3D.HC:99
                         try tick(t)
-                        _ = try P.f397_GrCircle(t, p1_dc, (ld8((l32_pf &+ 96)) &+ ld4s((ld8((l40_tmpo &+ 32)) &+ 32))), (ld8((l32_pf &+ 104)) &+ ld4s(((ld8((l40_tmpo &+ 32)) &+ 32) &+ 4))), ld8(((l40_tmpo &+ 32) &+ 8)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                        _ = try P.f398_GrCircle(t, p1_dc, (ld8((l32_pf &+ 96)) &+ ld4s((ld8((l40_tmpo &+ 32)) &+ 32))), (ld8((l32_pf &+ 104)) &+ ld4s(((ld8((l40_tmpo &+ 32)) &+ 32) &+ 4))), ld8(((l40_tmpo &+ 32) &+ 8)), 1, 0.0, (2.0 * d(4614256656552045848)))
                     case 2:
                         ln = 103 // Pick3D.HC:103
                         try tick(t)
-                        _ = try P.f396_GrLine(t, p1_dc, (ld8((l32_pf &+ 96)) &+ ld4s((ld8((l40_tmpo &+ 32)) &+ 32))), (ld8((l32_pf &+ 104)) &+ ld4s(((ld8((l40_tmpo &+ 32)) &+ 32) &+ 4))), (ld8((l32_pf &+ 96)) &+ ld4s((ld8(((l40_tmpo &+ 32) &+ 8)) &+ 32))), (ld8((l32_pf &+ 104)) &+ ld4s(((ld8(((l40_tmpo &+ 32) &+ 8)) &+ 32) &+ 4))), 1, 0)
+                        _ = try P.f397_GrLine(t, p1_dc, (ld8((l32_pf &+ 96)) &+ ld4s((ld8((l40_tmpo &+ 32)) &+ 32))), (ld8((l32_pf &+ 104)) &+ ld4s(((ld8((l40_tmpo &+ 32)) &+ 32) &+ 4))), (ld8((l32_pf &+ 96)) &+ ld4s((ld8(((l40_tmpo &+ 32) &+ 8)) &+ 32))), (ld8((l32_pf &+ 104)) &+ ld4s(((ld8(((l40_tmpo &+ 32) &+ 8)) &+ 32) &+ 4))), 1, 0)
                     case 3:
                         ln = 107 // Pick3D.HC:107
                         l24_old_r = try ld8((p1_dc &+ 200))
@@ -145,8 +147,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                         let t2: Int64 = (p1_dc &+ 28)
                         try st4(t2, (ld4s(t2) | 256))
                         ln = 113 // Pick3D.HC:113
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, 0, 0, 0, ld8(((l40_tmpo &+ 32) &+ 8)), 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, 0, 0, 0, ld8(((l40_tmpo &+ 32) &+ 8)), 0))
                         ln = 114 // Pick3D.HC:114
                         let t3: Int64 = (p1_dc &+ 28)
                         try st4(t3, (ld4s(t3) & (-257)))
@@ -174,7 +175,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC PObjNew (Pick3D.HC:129)
-    @discardableResult public final func f705_PObjNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f710_PObjNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -205,7 +206,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC PObjDel (Pick3D.HC:139)
-    public final func f706_PObjDel(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f711_PObjDel(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -239,7 +240,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC PPtNew (Pick3D.HC:152)
-    @discardableResult public final func f707_PPtNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f712_PPtNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -249,7 +250,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
             var l24_tmpo: Int64 = 0
             ln = 154 // Pick3D.HC:154
             try tick(t)
-            let t0: Int64 = try f705_PObjNew(t, p0_pf, 0, 0)
+            let t0: Int64 = try f710_PObjNew(t, p0_pf, 0, 0)
             l24_tmpo = t0
             ln = 155 // Pick3D.HC:155
             try st4((l24_tmpo &+ 32), p1_x)
@@ -264,7 +265,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC PPtNum (Pick3D.HC:160)
-    @discardableResult public final func f708_PPtNum(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f713_PPtNum(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -300,7 +301,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC PPtFind (Pick3D.HC:171)
-    @discardableResult public final func f709_PPtFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f714_PPtFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -347,7 +348,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC PCircleNew (Pick3D.HC:188)
-    @discardableResult public final func f710_PCircleNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f715_PCircleNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -357,11 +358,11 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
             var l24_tmpo: Int64 = 0
             ln = 190 // Pick3D.HC:190
             try tick(t)
-            let t0: Int64 = try f705_PObjNew(t, p0_pf, 1, 4)
+            let t0: Int64 = try f710_PObjNew(t, p0_pf, 1, 4)
             l24_tmpo = t0
             ln = 191 // Pick3D.HC:191
             try tick(t)
-            let t1: Int64 = try f708_PPtNum(t, p0_pf, p1_p_num)
+            let t1: Int64 = try f713_PPtNum(t, p0_pf, p1_p_num)
             try st8((l24_tmpo &+ 32), t1)
             ln = 192 // Pick3D.HC:192
             try st8(((l24_tmpo &+ 32) &+ 8), p2_r)
@@ -374,7 +375,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC PLineNew (Pick3D.HC:196)
-    @discardableResult public final func f711_PLineNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f716_PLineNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -384,15 +385,15 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
             var l24_tmpo: Int64 = 0
             ln = 198 // Pick3D.HC:198
             try tick(t)
-            let t0: Int64 = try f705_PObjNew(t, p0_pf, 2, 2)
+            let t0: Int64 = try f710_PObjNew(t, p0_pf, 2, 2)
             l24_tmpo = t0
             ln = 199 // Pick3D.HC:199
             try tick(t)
-            let t1: Int64 = try f708_PPtNum(t, p0_pf, p1_p1_num)
+            let t1: Int64 = try f713_PPtNum(t, p0_pf, p1_p1_num)
             try st8((l24_tmpo &+ 32), t1)
             ln = 200 // Pick3D.HC:200
             try tick(t)
-            let t2: Int64 = try f708_PPtNum(t, p0_pf, p2_p2_num)
+            let t2: Int64 = try f713_PPtNum(t, p0_pf, p2_p2_num)
             try st8(((l24_tmpo &+ 32) &+ 8), t2)
             ln = 201 // Pick3D.HC:201
             t.depth -= 1
@@ -403,7 +404,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC PCSpriteNew (Pick3D.HC:204)
-    @discardableResult public final func f712_PCSpriteNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f717_PCSpriteNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -415,11 +416,11 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
             var l40_tmpo: Int64 = 0
             ln = 206 // Pick3D.HC:206
             try tick(t)
-            let t0: Int64 = try f705_PObjNew(t, p0_pf, 3, 0)
+            let t0: Int64 = try f710_PObjNew(t, p0_pf, 3, 0)
             l40_tmpo = t0
             ln = 207 // Pick3D.HC:207
             try tick(t)
-            let t1: Int64 = try f708_PPtNum(t, p0_pf, p2_p_num)
+            let t1: Int64 = try f713_PPtNum(t, p0_pf, p2_p_num)
             try st8((l40_tmpo &+ 32), t1)
             ln = 208 // Pick3D.HC:208
             try st8(((l40_tmpo &+ 32) &+ 8), p1_img)
@@ -436,7 +437,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC Init (Pick3D.HC:214)
-    @discardableResult public final func f713_Init(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_Init(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -463,7 +464,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                 let t4: Int64 = try mods(t2, (ld8((l0_pf &+ 104)) &- 20))
                 let t3: Int64 = try nat(t, n_RandI32, push0(t))
                 try tick(t)
-                _ = try f707_PPtNew(t, l0_pf, mods(t3, (ld8((l0_pf &+ 96)) &- 20)), t4)
+                _ = try f712_PPtNew(t, l0_pf, mods(t3, (ld8((l0_pf &+ 96)) &- 20)), t4)
                 ln = 223 // Pick3D.HC:223
                 l8_i = (l8_i &+ 1)
                 try tick(t)
@@ -475,7 +476,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                 let t6: Int64 = try ld8((l0_pf &+ 64))
                 let t5: Int64 = try nat(t, n_RandU16, push0(t))
                 try tick(t)
-                _ = try f710_PCircleNew(t, l0_pf, divs((t6 &* t5), 65535), 6)
+                _ = try f715_PCircleNew(t, l0_pf, divs((t6 &* t5), 65535), 6)
                 ln = 225 // Pick3D.HC:225
                 l8_i = (l8_i &+ 1)
                 try tick(t)
@@ -490,7 +491,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                 let t10: Int64 = try ld8((l0_pf &+ 64))
                 let t9: Int64 = try nat(t, n_RandU16, push0(t))
                 try tick(t)
-                _ = try f711_PLineNew(t, l0_pf, divs((t10 &* t9), 65535), divs((t8 &* t7), 65535))
+                _ = try f716_PLineNew(t, l0_pf, divs((t10 &* t9), 65535), divs((t8 &* t7), 65535))
                 ln = 227 // Pick3D.HC:227
                 l8_i = (l8_i &+ 1)
                 try tick(t)
@@ -524,7 +525,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                 ln = 236 // Pick3D.HC:236
                 let t18: Int64 = try nat(t, n_RandU16, push0(t))
                 try tick(t)
-                _ = try f712_PCSpriteNew(t, l0_pf, ld8((g_imgs &+ (divs((3 &* t18), 65535) &* 8))), divs((t17 &* t16), 65535), l16_r, l24_dr)
+                _ = try f717_PCSpriteNew(t, l0_pf, ld8((g_imgs &+ (divs((3 &* t18), 65535) &* 8))), divs((t17 &* t16), 65535), l16_r, l24_dr)
                 ln = 230 // Pick3D.HC:230
                 l8_i = (l8_i &+ 1)
                 try tick(t)
@@ -540,7 +541,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC CleanUp (Pick3D.HC:243)
-    public final func f714_CleanUp(_ t: HTask, _ a0: Int64) throws {
+    public final func f719_CleanUp(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -555,7 +556,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                 l16_tmpo1 = try ld8(l8_tmpo)
                 ln = 248 // Pick3D.HC:248
                 try tick(t)
-                try f706_PObjDel(t, p0_pf, l8_tmpo)
+                try f711_PObjDel(t, p0_pf, l8_tmpo)
                 ln = 249 // Pick3D.HC:249
                 l8_tmpo = l16_tmpo1
                 try tick(t)
@@ -568,7 +569,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC Pick3D (Pick3D.HC:254)
-    public final func f715_Pick3D(_ t: HTask) throws {
+    public final func f720_Pick3D(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -583,7 +584,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
             _ = try nat(t, n_FramePtrAdd, try push3(t, s0, 0, 0))
             ln = 262 // Pick3D.HC:262
             try tick(t)
-            _ = try P.f507_MenuPush(t, s1)
+            _ = try P.f512_MenuPush(t, s1)
             ln = 271 // Pick3D.HC:271
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -601,14 +602,14 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
             _ = try nat(t, n_Print, try push1(t, s2))
             ln = 277 // Pick3D.HC:277
             try tick(t)
-            let t0: Int64 = try f713_Init(t)
+            let t0: Int64 = try f718_Init(t)
             l32_pf = t0
             ln = 278 // Pick3D.HC:278
             l24_tmpo = 0
             ln = 280 // Pick3D.HC:280
             try st4((ld8(P.g_Fs) &+ 12), 5305338)
             ln = 281 // Pick3D.HC:281
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065856)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
             ln = 282 // Pick3D.HC:282
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -629,10 +630,10 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                                     case 10:
                                         ln = 289 // Pick3D.HC:289
                                         try tick(t)
-                                        try f714_CleanUp(t, l32_pf)
+                                        try f719_CleanUp(t, l32_pf)
                                         ln = 290 // Pick3D.HC:290
                                         try tick(t)
-                                        let t3: Int64 = try f713_Init(t)
+                                        let t3: Int64 = try f718_Init(t)
                                         l32_pf = t3
                                         ln = 291 // Pick3D.HC:291
                                         l24_tmpo = 0
@@ -646,7 +647,7 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
                             case 5:
                                 ln = 299 // Pick3D.HC:299
                                 try tick(t)
-                                let t4: Int64 = try f709_PPtFind(t, l32_pf, (ld8((fp &+ 8)) &- ld8((l32_pf &+ 96))), (ld8((fp &+ 16)) &- ld8((l32_pf &+ 104))))
+                                let t4: Int64 = try f714_PPtFind(t, l32_pf, (ld8((fp &+ 8)) &- ld8((l32_pf &+ 96))), (ld8((fp &+ 16)) &- ld8((l32_pf &+ 104))))
                                 l24_tmpo = t4
                             case 6:
                                 ln = 302 // Pick3D.HC:302
@@ -689,10 +690,10 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 321 // Pick3D.HC:321
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 322 // Pick3D.HC:322
             try tick(t)
-            try f714_CleanUp(t, l32_pf)
+            try f719_CleanUp(t, l32_pf)
             ln = 323 // Pick3D.HC:323
             _ = try nat(t, n_FramePtrDel, try push2(t, s0, 0))
             t.msp = msp0
@@ -702,13 +703,13 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Pick3D.HC#1 (Pick3D.HC:326)
-    @discardableResult public final func f716_init_C__Demo_Graphics_Pick3D_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f721_init_C__Demo_Graphics_Pick3D_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 326 // Pick3D.HC:326
             try tick(t)
-            try f715_Pick3D(t)
+            try f720_Pick3D(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Pick3D.HC#1", ln) }
@@ -717,26 +718,26 @@ public final class N_Demo_Graphics_Pick3D: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Graphics_Pick3D_HC_0(t)
-        case 704: try f704_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: return try f705_PObjNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 706: try f706_PObjDel(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 707: return try f707_PPtNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 708: return try f708_PPtNum(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 709: return try f709_PPtFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 710: return try f710_PCircleNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 711: return try f711_PLineNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 712: return try f712_PCSpriteNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 713: return try f713_Init(t)
-        case 714: try f714_CleanUp(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 715: try f715_Pick3D(t); return 0
-        case 716: return try f716_init_C__Demo_Graphics_Pick3D_HC_1(t)
+        case 708: return try f708_init_C__Demo_Graphics_Pick3D_HC_0(t)
+        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: return try f710_PObjNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 711: try f711_PObjDel(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 712: return try f712_PPtNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 713: return try f713_PPtNum(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 714: return try f714_PPtFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 715: return try f715_PCircleNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 716: return try f716_PLineNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 717: return try f717_PCSpriteNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 718: return try f718_Init(t)
+        case 719: try f719_CleanUp(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 720: try f720_Pick3D(t); return 0
+        case 721: return try f721_init_C__Demo_Graphics_Pick3D_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Graphics/Pick3D.HC#0", 704: "DrawIt", 705: "PObjNew", 706: "PObjDel", 707: "PPtNew", 708: "PPtNum", 709: "PPtFind", 710: "PCircleNew", 711: "PLineNew", 712: "PCSpriteNew", 713: "Init", 714: "CleanUp", 715: "Pick3D", 716: "$init:C:/Demo/Graphics/Pick3D.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Graphics/Pick3D.HC#0", 709: "DrawIt", 710: "PObjNew", 711: "PObjDel", 712: "PPtNew", 713: "PPtNum", 714: "PPtFind", 715: "PCircleNew", 716: "PLineNew", 717: "PCSpriteNew", 718: "Init", 719: "CleanUp", 720: "Pick3D", 721: "$init:C:/Demo/Graphics/Pick3D.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Pick3D.HC"]
     public override var files: [String] { N_Demo_Graphics_Pick3D.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Pick3D.DEFINED.contains(index) }

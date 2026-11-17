@@ -42,7 +42,7 @@ public final class N_Demo_Graphics_SpriteText: NativeModule {
     }
 
     /// HolyC SpriteText (SpriteText.HC:33)
-    public final func f703_SpriteText(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_SpriteText(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -55,7 +55,7 @@ public final class N_Demo_Graphics_SpriteText: NativeModule {
             loop0: while try ((ld1u((l8_tmpg &+ 16)) & 127) != 0) {
                 ln = 39 // SpriteText.HC:39
                 try tick(t)
-                let t0: Int64 = try P.f699_SpriteElem2Summary(t, l8_tmpg)
+                let t0: Int64 = try P.f704_SpriteElem2Summary(t, l8_tmpg)
                 l16_st = t0
                 ln = 40 // SpriteText.HC:40
                 _ = try nat(t, n_Print, try push2(t, s0, l16_st))
@@ -72,7 +72,7 @@ public final class N_Demo_Graphics_SpriteText: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/SpriteText.HC#0 (SpriteText.HC:46)
-    @discardableResult public final func f704_init_C__Demo_Graphics_SpriteText_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_SpriteText_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -86,20 +86,20 @@ public final class N_Demo_Graphics_SpriteText: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/SpriteText.HC#1 (SpriteText.HC:47)
-    @discardableResult public final func f705_init_C__Demo_Graphics_SpriteText_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_SpriteText_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 47 // SpriteText.HC:47
             try tick(t)
-            try f703_SpriteText(t, b0)
+            try f708_SpriteText(t, b0)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/SpriteText.HC#1", ln) }
     }
 
     /// HolyC $init:C:/Demo/Graphics/SpriteText.HC#2 (SpriteText.HC:49)
-    @discardableResult public final func f706_init_C__Demo_Graphics_SpriteText_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Graphics_SpriteText_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -113,13 +113,13 @@ public final class N_Demo_Graphics_SpriteText: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/SpriteText.HC#3 (SpriteText.HC:50)
-    @discardableResult public final func f707_init_C__Demo_Graphics_SpriteText_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Graphics_SpriteText_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 50 // SpriteText.HC:50
             try tick(t)
-            try P.f701_Sprite2Code(t, 0, b1)
+            try P.f706_Sprite2Code(t, 0, b1)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/SpriteText.HC#3", ln) }
@@ -128,17 +128,17 @@ public final class N_Demo_Graphics_SpriteText: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SpriteText(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: return try f704_init_C__Demo_Graphics_SpriteText_HC_0(t)
-        case 705: return try f705_init_C__Demo_Graphics_SpriteText_HC_1(t)
-        case 706: return try f706_init_C__Demo_Graphics_SpriteText_HC_2(t)
-        case 707: return try f707_init_C__Demo_Graphics_SpriteText_HC_3(t)
+        case 708: try f708_SpriteText(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: return try f709_init_C__Demo_Graphics_SpriteText_HC_0(t)
+        case 710: return try f710_init_C__Demo_Graphics_SpriteText_HC_1(t)
+        case 711: return try f711_init_C__Demo_Graphics_SpriteText_HC_2(t)
+        case 712: return try f712_init_C__Demo_Graphics_SpriteText_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "SpriteText", 704: "$init:C:/Demo/Graphics/SpriteText.HC#0", 705: "$init:C:/Demo/Graphics/SpriteText.HC#1", 706: "$init:C:/Demo/Graphics/SpriteText.HC#2", 707: "$init:C:/Demo/Graphics/SpriteText.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "SpriteText", 709: "$init:C:/Demo/Graphics/SpriteText.HC#0", 710: "$init:C:/Demo/Graphics/SpriteText.HC#1", 711: "$init:C:/Demo/Graphics/SpriteText.HC#2", 712: "$init:C:/Demo/Graphics/SpriteText.HC#3"]
     private static let FILES: [String] = ["C:/Demo/Graphics/SpriteText.HC"]
     public override var files: [String] { N_Demo_Graphics_SpriteText.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_SpriteText.DEFINED.contains(index) }

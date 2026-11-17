@@ -89,7 +89,11 @@ NATIVE_FAST = {'GrPlot', 'GrPlot1', 'GrPeek', 'GrRect', 'GrHLine', 'GrVLine', 'G
                # 2026-10-17 performance audit (docs/performance): GrCircle's arc walker, 36-61% of the VM
                # time of TreeCheckers, Pick3D and Span; GrPutChar, behind every GrPrint (score lines: 32%
                # of BomberGolf's draw_it, 15% of TreeCheckers')
-               'Circle', 'GrPutChar'}
+               'Circle', 'GrPutChar',
+               # 2026-11-17 Varoom pass: share of the interpreted time (Pure Terry, sampled every 64 instructions)
+               # GrLine3 26% / GrFillPoly3 15% / Sprite3 13% of Varoom's; GrLine3 and its clipping 51% of
+               # BattleLines'; Sprite3 43% of BomberGolf's. Gr3Mesh draws Varoom's cars, KeepAway and Titanium.
+               'GrLine3', 'GrFillPoly3', 'Gr3Mesh', 'Sprite3'}
 
 # (file, regex, replacement, reason)
 PATCHES = [

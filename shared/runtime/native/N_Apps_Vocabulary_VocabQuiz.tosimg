@@ -9,10 +9,10 @@ s 2b2230 0a0a244c54424c554524416e737765723a24464724
 s 2b2258 244c54475245454e24436f72726563740a24464724
 s 2b2280 244c5452454424496e636f72726563740a24464724
 s 2b22a8 244c4d2c30240a
-fn 703 RandVocabWord (*U8;;-)
-fn 704 VocabQuiz (U0;;-)
-fn 705 $init:C:/Apps/Vocabulary/VocabQuiz.HC#0 (I64;;-)
-sym f RandVocabWord 703 (*U8;;-)
-sym f VocabQuiz 704 (U0;;-)
-init 705
+fn 708 RandVocabWord (*U8;;-)
+fn 709 VocabQuiz (U0;;-)
+fn 710 $init:C:/Apps/Vocabulary/VocabQuiz.HC#0 (I64;;-)
+sym f RandVocabWord 708 (*U8;;-)
+sym f VocabQuiz 709 (U0;;-)
+init 710
 unit C:/Apps/Vocabulary/VocabQuiz.HC#1

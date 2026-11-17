@@ -20,7 +20,7 @@ class N_Demo_Graphics_SunMoon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC SunMoon (SunMoon.HC:6) */
-    fun f703_SunMoon(t: Task) {
+    fun f708_SunMoon(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -51,12 +51,12 @@ class N_Demo_Graphics_SunMoon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 st4((ld8((P.g_gr + 24L)) + 160L), 8L)
                 ln = 20 // SunMoon.HC:20
                 tick(t)
-                P.f397_GrCircle(t, ld8((P.g_gr + 24L)), l8_x, l16_y, l24_radius, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, ld8((P.g_gr + 24L)), l8_x, l16_y, l24_radius, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 21 // SunMoon.HC:21
                 st4((ld8((P.g_gr + 24L)) + 160L), 1074003982L)
                 ln = 22 // SunMoon.HC:22
                 tick(t)
-                P.f387_GrFloodFill(t, ld8((P.g_gr + 24L)), l8_x, l16_y, 0L, 0L, 0L)
+                P.f388_GrFloodFill(t, ld8((P.g_gr + 24L)), l8_x, l16_y, 0L, 0L, 0L)
                 ln = 25 // SunMoon.HC:25
                 l8_x = f2i(((0.8 * 640.0) - divs(l0_i, 512L).toDouble()))
                 l16_y = f2i((0.5 * 480.0))
@@ -65,22 +65,22 @@ class N_Demo_Graphics_SunMoon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 st4((ld8((P.g_gr + 24L)) + 160L), 8L)
                 ln = 27 // SunMoon.HC:27
                 tick(t)
-                P.f397_GrCircle(t, ld8((P.g_gr + 24L)), l8_x, l16_y, l24_radius, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, ld8((P.g_gr + 24L)), l8_x, l16_y, l24_radius, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 29 // SunMoon.HC:29
                 tick(t)
-                P.f397_GrCircle(t, ld8((P.g_gr + 24L)), f2i((l8_x.toDouble() + (0.5 * l24_radius.toDouble()))), l16_y, f2i((1.2 * l24_radius.toDouble())), 1L, (f(4614256656552045848L) - (0.31 * f(4614256656552045848L))), (0.62 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, ld8((P.g_gr + 24L)), f2i((l8_x.toDouble() + (0.5 * l24_radius.toDouble()))), l16_y, f2i((1.2 * l24_radius.toDouble())), 1L, (f(4614256656552045848L) - (0.31 * f(4614256656552045848L))), (0.62 * f(4614256656552045848L)))
                 ln = 30 // SunMoon.HC:30
                 st4((ld8((P.g_gr + 24L)) + 160L), 2147942400L)
                 ln = 31 // SunMoon.HC:31
                 st8((ld8((P.g_gr + 24L)) + 184L), l0_i)
                 ln = 32 // SunMoon.HC:32
                 tick(t)
-                P.f387_GrFloodFill(t, ld8((P.g_gr + 24L)), f2i((l8_x.toDouble() + (0.5 * l24_radius.toDouble()))), l16_y, 0L, 0L, 0L)
+                P.f388_GrFloodFill(t, ld8((P.g_gr + 24L)), f2i((l8_x.toDouble() + (0.5 * l24_radius.toDouble()))), l16_y, 0L, 0L, 0L)
                 ln = 33 // SunMoon.HC:33
                 st8((ld8((P.g_gr + 24L)) + 184L), (2L * l0_i))
                 ln = 34 // SunMoon.HC:34
                 tick(t)
-                P.f387_GrFloodFill(t, ld8((P.g_gr + 24L)), f2i((l8_x.toDouble() - (0.75 * l24_radius.toDouble()))), l16_y, 0L, 0L, 0L)
+                P.f388_GrFloodFill(t, ld8((P.g_gr + 24L)), f2i((l8_x.toDouble() - (0.75 * l24_radius.toDouble()))), l16_y, 0L, 0L, 0L)
                 ln = 36 // SunMoon.HC:36
                 nat(t, n_Refresh, push2(t, 1L, 0L))
                 ln = 37 // SunMoon.HC:37
@@ -98,13 +98,13 @@ class N_Demo_Graphics_SunMoon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Graphics/SunMoon.HC#0 (SunMoon.HC:43) */
-    fun f704_init_C__Demo_Graphics_SunMoon_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_SunMoon_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 43 // SunMoon.HC:43
             tick(t)
-            f703_SunMoon(t)
+            f708_SunMoon(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/SunMoon.HC#0", ln) }
@@ -113,8 +113,8 @@ class N_Demo_Graphics_SunMoon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SunMoon(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_SunMoon_HC_0(t)
+            708 -> { f708_SunMoon(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_SunMoon_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -126,7 +126,7 @@ class N_Demo_Graphics_SunMoon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("SunMoon", "\$init:C:/Demo/Graphics/SunMoon.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/SunMoon.HC")
     }

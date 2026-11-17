@@ -34,7 +34,7 @@ class N_Demo_Graphics_Bounce(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Init (Bounce.HC:5) */
-    fun f703_Init(t: Task) {
+    fun f708_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -66,7 +66,7 @@ class N_Demo_Graphics_Bounce(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Bounce (Bounce.HC:18) */
-    fun f704_Bounce(t: Task) {
+    fun f709_Bounce(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -79,7 +79,7 @@ class N_Demo_Graphics_Bounce(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             l0_dc = t0
             ln = 22 // Bounce.HC:22
             tick(t)
-            f703_Init(t)
+            f708_Init(t)
             ln = 23 // Bounce.HC:23
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -165,13 +165,13 @@ class N_Demo_Graphics_Bounce(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Graphics/Bounce.HC#0 (Bounce.HC:47) */
-    fun f705_init_C__Demo_Graphics_Bounce_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_Bounce_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 47 // Bounce.HC:47
             tick(t)
-            f704_Bounce(t)
+            f709_Bounce(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Bounce.HC#0", ln) }
@@ -180,9 +180,9 @@ class N_Demo_Graphics_Bounce(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Init(t); 0L }
-            704 -> { f704_Bounce(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_Bounce_HC_0(t)
+            708 -> { f708_Init(t); 0L }
+            709 -> { f709_Bounce(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_Bounce_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -194,7 +194,7 @@ class N_Demo_Graphics_Bounce(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("Init", "Bounce", "\$init:C:/Demo/Graphics/Bounce.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Bounce.HC")
     }

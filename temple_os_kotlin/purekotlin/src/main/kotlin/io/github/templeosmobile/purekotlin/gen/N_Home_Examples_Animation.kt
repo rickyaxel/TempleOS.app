@@ -29,7 +29,7 @@ class N_Home_Examples_Animation(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawIt (Animation.HC:6) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -58,7 +58,7 @@ class N_Home_Examples_Animation(rt: NativeRuntime, @JvmField val P: Prelude) : N
                 ln = 14 // Animation.HC:14
                 val t5: Double = f(nat(t, n_Sin, push1(t, bits(((l16_t * 3.0) + l24_i.toDouble())))))
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, l32_x, l40_y, f2i((10.0 + (5.0 * t5))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, l32_x, l40_y, f2i((10.0 + (5.0 * t5))), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 10 // Animation.HC:10
                 l24_i = (l24_i + 1L)
                 tick(t)
@@ -68,7 +68,7 @@ class N_Home_Examples_Animation(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 17 // Animation.HC:17
             tick(t)
             val vb0 = push1(t, bits(l16_t))
-            P.f369_GrPrint(t, p1_dc, 8L, 8L, s0, vb0, 1)
+            P.f370_GrPrint(t, p1_dc, 8L, 8L, s0, vb0, 1)
             t.sp = vb0
             t.depth--
             return
@@ -76,7 +76,7 @@ class N_Home_Examples_Animation(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Animation (Animation.HC:20) */
-    fun f704_Animation(t: Task) {
+    fun f709_Animation(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -89,7 +89,7 @@ class N_Home_Examples_Animation(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 24 // Animation.HC:24
             nat(t, n_DocClear, push1(t, 0L))
             ln = 25 // Animation.HC:25
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 26 // Animation.HC:26
             nat(t, n_GetChar, push3(t, 0L, 0L, 0L))
             ln = 27 // Animation.HC:27
@@ -101,13 +101,13 @@ class N_Home_Examples_Animation(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Home/Examples/Animation.HC#0 (Animation.HC:30) */
-    fun f705_init_C__Home_Examples_Animation_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Examples_Animation_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 30 // Animation.HC:30
             tick(t)
-            f704_Animation(t)
+            f709_Animation(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Home/Examples/Animation.HC#0", ln) }
@@ -116,9 +116,9 @@ class N_Home_Examples_Animation(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_Animation(t); 0L }
-            705 -> f705_init_C__Home_Examples_Animation_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_Animation(t); 0L }
+            710 -> f710_init_C__Home_Examples_Animation_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -130,7 +130,7 @@ class N_Home_Examples_Animation(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "Animation", "\$init:C:/Home/Examples/Animation.HC#0")
         private val FILES = arrayOf<String>("C:/Home/Examples/Animation.HC")
     }

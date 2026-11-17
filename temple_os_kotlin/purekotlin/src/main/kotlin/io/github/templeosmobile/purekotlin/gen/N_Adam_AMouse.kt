@@ -10,6 +10,7 @@ import io.github.templeosmobile.core.holyc.*
 import io.github.templeosmobile.core.purenative.*
 
 class N_Adam_AMouse(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** binary literal, 38 bytes */ @JvmField var b0: Long = 0L
     /** binary literal, 210 bytes */ @JvmField var b1: Long = 0L
@@ -28,7 +29,7 @@ class N_Adam_AMouse(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Adam/AMouse.HC#0 (AMouse.HC:5) */
-    fun f703_init_C__Adam_AMouse_HC_0(t: Task): Long {
+    fun f708_init_C__Adam_AMouse_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -42,7 +43,7 @@ class N_Adam_AMouse(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC DrawGrabMs (AMouse.HC:11) */
-    fun f704_DrawGrabMs(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f709_DrawGrabMs(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -60,12 +61,10 @@ class N_Adam_AMouse(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
             ln = 15 // AMouse.HC:15
             if ((p3_closed != 0L)) {
                 ln = 16 // AMouse.HC:16
-                tick(t)
-                P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0L, b1, 0L)
+                nat(t, n_Sprite3, push(t, p0_dc, p1_x, p2_y, 0L, b1, 0L))
             } else {
                 ln = 18 // AMouse.HC:18
-                tick(t)
-                P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0L, b2, 0L)
+                nat(t, n_Sprite3, push(t, p0_dc, p1_x, p2_y, 0L, b2, 0L))
             }
             t.depth--
             return
@@ -73,14 +72,14 @@ class N_Adam_AMouse(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Adam/AMouse.HC#1 (AMouse.HC:20) */
-    fun f705_init_C__Adam_AMouse_HC_1(t: Task): Long {
+    fun f710_init_C__Adam_AMouse_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 20 // AMouse.HC:20
-            st8((P.g_gr + 152L), 9223090561878065856L)
+            st8((P.g_gr + 152L), 9223090561878065861L)
             t.depth--
-            return 9223090561878065856L
+            return 9223090561878065861L
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Adam/AMouse.HC#1", ln) }
@@ -89,9 +88,9 @@ class N_Adam_AMouse(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Adam_AMouse_HC_0(t)
-            704 -> { f704_DrawGrabMs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> f705_init_C__Adam_AMouse_HC_1(t)
+            708 -> f708_init_C__Adam_AMouse_HC_0(t)
+            709 -> { f709_DrawGrabMs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> f710_init_C__Adam_AMouse_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -103,7 +102,7 @@ class N_Adam_AMouse(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("\$init:C:/Adam/AMouse.HC#0", "DrawGrabMs", "\$init:C:/Adam/AMouse.HC#1")
         private val FILES = arrayOf<String>("C:/Adam/AMouse.HC")
     }

@@ -16,6 +16,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
     public let n_Free: Int
     public let n_GetMsg: Int
     public let n_GrBlot: Int
+    public let n_Mat4x4Scale: Int
     public let n_RandI16: Int
     public let n_RandU16: Int
     public let n_Sleep: Int
@@ -48,6 +49,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
         n_Free = rt.vm.natives.find("Free")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
         n_GrBlot = rt.vm.natives.find("GrBlot")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_RandI16 = rt.vm.natives.find("RandI16")!.index
         n_RandU16 = rt.vm.natives.find("RandU16")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
@@ -81,7 +83,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
     }
 
     /// HolyC DrawIt (Stadium.HC:19)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -102,7 +104,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
             loop0: while (l16_i < 10) {
                 ln = 26 // Stadium.HC:26
                 try tick(t)
-                try P.f445_Sprite3ZB(t, p1_dc, ld8((g_x &+ (l16_i &* 8))), ld8((g_y &+ (l16_i &* 8))), 0, b0, ldf((g__ &+ (l16_i &* 8))))
+                try P.f450_Sprite3ZB(t, p1_dc, ld8((g_x &+ (l16_i &* 8))), ld8((g_y &+ (l16_i &* 8))), 0, b0, ldf((g__ &+ (l16_i &* 8))))
                 ln = 25 // Stadium.HC:25
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -130,8 +132,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
                     let t2: Int64 = try P.f303_Mat4x4New(t, ld8((p1_dc &+ 200)), ld8((p1_dc &+ 360)))
                     l24_r = t2
                     ln = 37 // Stadium.HC:37
-                    try tick(t)
-                    _ = try P.f308_Mat4x4Scale(t, l24_r, (1.5 - l48_t0))
+                    _ = try nat(t, n_Mat4x4Scale, try push2(t, l24_r, bits((1.5 - l48_t0))))
                     ln = 38 // Stadium.HC:38
                     _ = try nat(t, n_Free, try push1(t, ld8((p1_dc &+ 200))))
                     ln = 39 // Stadium.HC:39
@@ -142,7 +143,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
                     try st4(t3, (ld4s(t3) | 256))
                     ln = 41 // Stadium.HC:41
                     try tick(t)
-                    try P.f445_Sprite3ZB(t, p1_dc, f2i(l32_xx), f2i(l40_yy), 0, b1, l48_t0)
+                    try P.f450_Sprite3ZB(t, p1_dc, f2i(l32_xx), f2i(l40_yy), 0, b1, l48_t0)
                 }
             }
             ln = 44 // Stadium.HC:44
@@ -150,7 +151,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
             ln = 45 // Stadium.HC:45
             try tick(t)
             let vb0 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, 8, 8, s0, vb0, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, 8, 8, s0, vb0, 0)
             t.sp = vb0
             t.depth -= 1
             return
@@ -158,7 +159,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
     }
 
     /// HolyC AnimateTask (Stadium.HC:48)
-    public final func f704_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -267,7 +268,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
     }
 
     /// HolyC Init (Stadium.HC:77)
-    public final func f705_Init(_ t: HTask) throws {
+    public final func f710_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -294,7 +295,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
     }
 
     /// HolyC Stadium (Stadium.HC:88)
-    public final func f706_Stadium(_ t: HTask) throws {
+    public final func f711_Stadium(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -314,7 +315,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
             try st4(t0, (ld4u(t0) | 5242880))
             ln = 96 // Stadium.HC:96
             try tick(t)
-            _ = try P.f507_MenuPush(t, s2)
+            _ = try P.f512_MenuPush(t, s2)
             ln = 105 // Stadium.HC:105
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 106 // Stadium.HC:106
@@ -329,17 +330,17 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 110 // Stadium.HC:110
             try tick(t)
-            try f705_Init(t)
+            try f710_Init(t)
             ln = 111 // Stadium.HC:111
             let t2: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065856, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
+            let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t2, t1)
             ln = 113 // Stadium.HC:113
             try tick(t)
-            let t3: Int64 = try P.f630_GRRead(t, s4, 0)
+            let t3: Int64 = try P.f635_GRRead(t, s4, 0)
             try st8(g_background, t3)
             ln = 114 // Stadium.HC:114
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 115 // Stadium.HC:115
             loop0: while true {
                 ln = 116 // Stadium.HC:116
@@ -353,7 +354,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
                     if (l24_ch == 10) {
                         ln = 120 // Stadium.HC:120
                         try tick(t)
-                        try f705_Init(t)
+                        try f710_Init(t)
                     }
                 } else {
                     ln = 122 // Stadium.HC:122
@@ -379,7 +380,7 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 131 // Stadium.HC:131
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -387,13 +388,13 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Stadium/Stadium.HC#0 (Stadium.HC:134)
-    @discardableResult public final func f707_init_C__Demo_Games_Stadium_Stadium_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Games_Stadium_Stadium_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 134 // Stadium.HC:134
             try tick(t)
-            try f706_Stadium(t)
+            try f711_Stadium(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Stadium/Stadium.HC#0", ln) }
@@ -402,17 +403,17 @@ public final class N_Demo_Games_Stadium_Stadium: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_Init(t); return 0
-        case 706: try f706_Stadium(t); return 0
-        case 707: return try f707_init_C__Demo_Games_Stadium_Stadium_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_Init(t); return 0
+        case 711: try f711_Stadium(t); return 0
+        case 712: return try f712_init_C__Demo_Games_Stadium_Stadium_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "AnimateTask", 705: "Init", 706: "Stadium", 707: "$init:C:/Demo/Games/Stadium/Stadium.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "AnimateTask", 710: "Init", 711: "Stadium", 712: "$init:C:/Demo/Games/Stadium/Stadium.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/Stadium/Stadium.HC"]
     public override var files: [String] { N_Demo_Games_Stadium_Stadium.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Stadium_Stadium.DEFINED.contains(index) }

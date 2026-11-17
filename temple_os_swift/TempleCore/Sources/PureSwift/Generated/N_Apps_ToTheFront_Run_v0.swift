@@ -27,6 +27,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     public let n_GetChar: Int
     public let n_GetMsg: Int
     public let n_GrBlot: Int
+    public let n_GrLine3: Int
     public let n_GrPeek: Int
     public let n_GrPlot: Int
     public let n_GrRect: Int
@@ -48,6 +49,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     public let n_Sleep: Int
     public let n_SleepUntil: Int
     public let n_Snd: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_StrLen: Int
     public let n_StrPrint: Int
@@ -206,6 +208,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
         n_GetChar = rt.vm.natives.find("GetChar")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
         n_GrBlot = rt.vm.natives.find("GrBlot")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_GrPeek = rt.vm.natives.find("GrPeek")!.index
         n_GrPlot = rt.vm.natives.find("GrPlot")!.index
         n_GrRect = rt.vm.natives.find("GrRect")!.index
@@ -227,6 +230,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_SleepUntil = rt.vm.natives.find("SleepUntil")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_StrLen = rt.vm.natives.find("StrLen")!.index
         n_StrPrint = rt.vm.natives.find("StrPrint")!.index
@@ -382,7 +386,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#0 (Run.HC:1)
-    @discardableResult public final func f703_init_C__Apps_ToTheFront_Run_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_ToTheFront_Run_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -396,7 +400,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#1 (Run.HC:3)
-    @discardableResult public final func f704_init_C__Apps_ToTheFront_Run_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_ToTheFront_Run_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -410,7 +414,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC InitDefines (TTFGlbls.HC:5)
-    public final func f705_InitDefines(_ t: HTask) throws {
+    public final func f710_InitDefines(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -431,20 +435,20 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#2 (Run.HC:11)
-    @discardableResult public final func f706_init_C__Apps_ToTheFront_Run_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Apps_ToTheFront_Run_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 2097163 // TTFGlbls.HC:11
             try tick(t)
-            try f705_InitDefines(t)
+            try f710_InitDefines(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/ToTheFront/Run.HC#2", ln) }
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#3 (Run.HC:13)
-    @discardableResult public final func f707_init_C__Apps_ToTheFront_Run_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Apps_ToTheFront_Run_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -463,7 +467,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval0 (TTFGlbls.HC:20)
-    @discardableResult public final func f708_eval0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_eval0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -477,7 +481,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval1 (TTFGlbls.HC:20)
-    @discardableResult public final func f709_eval1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_eval1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -491,7 +495,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval2 (TTFGlbls.HC:27)
-    @discardableResult public final func f710_eval2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_eval2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -505,7 +509,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval3 (TTFGlbls.HC:27)
-    @discardableResult public final func f711_eval3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f716_eval3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -519,7 +523,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval4 (TTFGlbls.HC:30)
-    @discardableResult public final func f712_eval4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_eval4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -533,7 +537,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval5 (TTFGlbls.HC:30)
-    @discardableResult public final func f713_eval5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_eval5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -547,7 +551,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval6 (TTFGlbls.HC:31)
-    @discardableResult public final func f714_eval6(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f719_eval6(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -561,7 +565,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval7 (TTFGlbls.HC:31)
-    @discardableResult public final func f715_eval7(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f720_eval7(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -575,7 +579,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval8 (TTFGlbls.HC:32)
-    @discardableResult public final func f716_eval8(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f721_eval8(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -589,7 +593,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval9 (TTFGlbls.HC:32)
-    @discardableResult public final func f717_eval9(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f722_eval9(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -603,7 +607,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC HexMoveOne (TTFMove.HC:29)
-    @discardableResult public final func f718_HexMoveOne(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws -> Int64 {
+    @discardableResult public final func f723_HexMoveOne(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -621,7 +625,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l40_best_direction = (-1)
             ln = 3145761 // TTFMove.HC:33
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 80), (fp &+ 88), ld8(p0__row), ld8(p1__col))
+            try f729_RowCol2XY(t, (fp &+ 80), (fp &+ 88), ld8(p0__row), ld8(p1__col))
             ln = 3145762 // TTFMove.HC:34
             try tick(t)
             let t0: Double = try P.f102_Sqr(t, (ldf((fp &+ 80)) - p2_x))
@@ -636,10 +640,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 try st8((fp &+ 56), ld8(p1__col))
                 ln = 3145765 // TTFMove.HC:37
                 try tick(t)
-                try f722_Toward(t, (fp &+ 48), (fp &+ 56), l32_direction)
+                try f727_Toward(t, (fp &+ 48), (fp &+ 56), l32_direction)
                 ln = 3145766 // TTFMove.HC:38
                 try tick(t)
-                try f724_RowCol2XY(t, (fp &+ 80), (fp &+ 88), ld8((fp &+ 48)), ld8((fp &+ 56)))
+                try f729_RowCol2XY(t, (fp &+ 80), (fp &+ 88), ld8((fp &+ 48)), ld8((fp &+ 56)))
                 ln = 3145767 // TTFMove.HC:39
                 try tick(t)
                 let t2: Double = try P.f102_Sqr(t, (ldf((fp &+ 80)) - p2_x))
@@ -681,7 +685,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             if (l40_best_direction >= 0) {
                 ln = 3145774 // TTFMove.HC:46
                 try tick(t)
-                try f722_Toward(t, p0__row, p1__col, l40_best_direction)
+                try f727_Toward(t, p0__row, p1__col, l40_best_direction)
                 ln = 3145775 // TTFMove.HC:47
                 t.msp = msp0
                 t.depth -= 1
@@ -699,7 +703,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#4 (Run.HC:83)
-    @discardableResult public final func f719_init_C__Apps_ToTheFront_Run_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f724_init_C__Apps_ToTheFront_Run_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -709,7 +713,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#5 (Run.HC:107)
-    @discardableResult public final func f720_init_C__Apps_ToTheFront_Run_HC_5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f725_init_C__Apps_ToTheFront_Run_HC_5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -719,7 +723,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#6 (Run.HC:108)
-    @discardableResult public final func f721_init_C__Apps_ToTheFront_Run_HC_6(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f726_init_C__Apps_ToTheFront_Run_HC_6(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -729,7 +733,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC Toward (TTFLib.HC:1)
-    public final func f722_Toward(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f727_Toward(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -794,7 +798,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC FacingChg (TTFLib.HC:29)
-    @discardableResult public final func f723_FacingChg(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f728_FacingChg(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -820,7 +824,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC RowCol2XY (TTFLib.HC:38)
-    public final func f724_RowCol2XY(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f729_RowCol2XY(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -849,7 +853,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC XY2RowCol (TTFLib.HC:48)
-    public final func f725_XY2RowCol(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws {
+    public final func f730_XY2RowCol(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -886,7 +890,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UnitFind (TTFLib.HC:60)
-    @discardableResult public final func f726_UnitFind(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f731_UnitFind(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -924,7 +928,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC CursorInWin (TTFLib.HC:72)
-    @discardableResult public final func f727_CursorInWin(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f732_CursorInWin(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -971,7 +975,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC CursorUpdate (TTFLib.HC:81)
-    public final func f728_CursorUpdate(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f733_CursorUpdate(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -980,11 +984,11 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             var p2_y: Int64 = a2
             ln = 4194387 // TTFLib.HC:83
             try tick(t)
-            let t0: Int64 = try f727_CursorInWin(t, p0_task, p1_x, p2_y)
+            let t0: Int64 = try f732_CursorInWin(t, p0_task, p1_x, p2_y)
             if (t0 != 0) {
                 ln = 4194388 // TTFLib.HC:84
                 try tick(t)
-                try f725_XY2RowCol(t, g_cursor_row, g_cursor_col, Double(p1_x), Double(p2_y))
+                try f730_XY2RowCol(t, g_cursor_row, g_cursor_col, Double(p1_x), Double(p2_y))
             }
             t.depth -= 1
             return
@@ -992,7 +996,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC LOSPlot (TTFLib.HC:92)
-    @discardableResult public final func f729_LOSPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f734_LOSPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1004,7 +1008,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             var p3_z: Int64 = a3
             ln = 4194399 // TTFLib.HC:95
             try tick(t)
-            try f725_XY2RowCol(t, (fp &+ 32), (fp &+ 40), Double(p1_x), Double(p2_y))
+            try f730_XY2RowCol(t, (fp &+ 32), (fp &+ 40), Double(p1_x), Double(p2_y))
             ln = 4194400 // TTFLib.HC:96
             if try ((((ld8((fp &+ 32)) != ld8(p0_l)) || (ld8((fp &+ 40)) != ld8((p0_l &+ 8)))) && ((ld8((fp &+ 32)) != ld8((p0_l &+ 16))) || (ld8((fp &+ 40)) != ld8((p0_l &+ 24))))) && (ld1u(((g_terrain &+ (ld8((fp &+ 32)) &* 19)) &+ ld8((fp &+ 40)))) != 10)) {
                 ln = 4194403 // TTFLib.HC:99
@@ -1049,7 +1053,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC LOS (TTFLib.HC:111)
-    @discardableResult public final func f730_LOS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f735_LOS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1061,10 +1065,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             var p3_c2: Int64 = a3
             ln = 4194419 // TTFLib.HC:115
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 32), (fp &+ 40), p0_r1, p1_c1)
+            try f729_RowCol2XY(t, (fp &+ 32), (fp &+ 40), p0_r1, p1_c1)
             ln = 4194420 // TTFLib.HC:116
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 48), (fp &+ 56), p2_r2, p3_c2)
+            try f729_RowCol2XY(t, (fp &+ 48), (fp &+ 56), p2_r2, p3_c2)
             ln = 4194421 // TTFLib.HC:117
             try st8((fp &+ 64), p0_r1)
             try st8(((fp &+ 64) &+ 8), p1_c1)
@@ -1079,7 +1083,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             let t2: Double = d(try nat(t, n_Sqrt, try push1(t, bits(Double((t0 &+ t1))))))
             try st8(((fp &+ 64) &+ 32), f2i(t2))
             ln = 4194424 // TTFLib.HC:120
-            let t3: Int64 = try nat(t, n_Line, try push(t, (fp &+ 64), f2i(ldf((fp &+ 32))), f2i(ldf((fp &+ 40))), 0, f2i(ldf((fp &+ 48))), f2i(ldf((fp &+ 56))), ld8(((fp &+ 64) &+ 32)), 9223090561878065881, 1, 0))
+            let t3: Int64 = try nat(t, n_Line, try push(t, (fp &+ 64), f2i(ldf((fp &+ 32))), f2i(ldf((fp &+ 40))), 0, f2i(ldf((fp &+ 48))), f2i(ldf((fp &+ 56))), ld8(((fp &+ 64) &+ 32)), 9223090561878065886, 1, 0))
             let rv18: Int64 = (t3 & 0xFF)
             t.msp = msp0
             t.depth -= 1
@@ -1091,7 +1095,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC DrawHexes (TTFInit.HC:23)
-    public final func f731_DrawHexes(_ t: HTask) throws {
+    public final func f736_DrawHexes(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1123,10 +1127,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 l16_x = 5.5
                 ln = 5242914 // TTFInit.HC:34
                 try tick(t)
-                _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l16_x), f2i(l24_y), f2i((l16_x - 5.5)), f2i((l24_y + 9.526279442)), 1, 0)
+                _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l16_x), f2i(l24_y), f2i((l16_x - 5.5)), f2i((l24_y + 9.526279442)), 1, 0)
                 ln = 5242915 // TTFInit.HC:35
                 try tick(t)
-                _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i((l16_x - 5.5)), f2i((l24_y + 9.526279442)), f2i(l16_x), f2i((l24_y + (2.0 * 9.526279442))), 1, 0)
+                _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i((l16_x - 5.5)), f2i((l24_y + 9.526279442)), f2i(l16_x), f2i((l24_y + (2.0 * 9.526279442))), 1, 0)
                 ln = 5242916 // TTFInit.HC:36
                 l64_i = 0
                 loop2: while try (l64_i < ld8(g_map_cols)) {
@@ -1138,7 +1142,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     l56_y2 = l40_y1
                     ln = 5242919 // TTFInit.HC:39
                     try tick(t)
-                    _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
+                    _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
                     ln = 5242920 // TTFInit.HC:40
                     l32_x1 = l48_x2
                     l40_y1 = l56_y2
@@ -1147,10 +1151,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     l56_y2 = (l56_y2 + 9.526279442)
                     ln = 5242922 // TTFInit.HC:42
                     try tick(t)
-                    _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
+                    _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
                     ln = 5242923 // TTFInit.HC:43
                     try tick(t)
-                    _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l48_x2), f2i(l56_y2), f2i((l48_x2 - 5.5)), f2i((l56_y2 + 9.526279442)), 1, 0)
+                    _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l48_x2), f2i(l56_y2), f2i((l48_x2 - 5.5)), f2i((l56_y2 + 9.526279442)), 1, 0)
                     ln = 5242924 // TTFInit.HC:44
                     l32_x1 = l48_x2
                     l40_y1 = l56_y2
@@ -1158,10 +1162,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     l48_x2 = (l48_x2 + 11.0)
                     ln = 5242926 // TTFInit.HC:46
                     try tick(t)
-                    _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
+                    _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
                     ln = 5242927 // TTFInit.HC:47
                     try tick(t)
-                    _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l48_x2), f2i(l56_y2), f2i((l48_x2 + 5.5)), f2i((l56_y2 + 9.526279442)), 1, 0)
+                    _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l48_x2), f2i(l56_y2), f2i((l48_x2 + 5.5)), f2i((l56_y2 + 9.526279442)), 1, 0)
                     ln = 5242928 // TTFInit.HC:48
                     l32_x1 = l48_x2
                     l40_y1 = l56_y2
@@ -1172,7 +1176,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     if try ((l72_j != 0) || (l64_i < (ld8(g_map_cols) &- 1))) {
                         ln = 5242931 // TTFInit.HC:51
                         try tick(t)
-                        _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
+                        _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
                     }
                     ln = 5242932 // TTFInit.HC:52
                     l16_x = (l16_x + l0_dx)
@@ -1199,7 +1203,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 l56_y2 = l40_y1
                 ln = 5242940 // TTFInit.HC:60
                 try tick(t)
-                _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
+                _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
                 ln = 5242941 // TTFInit.HC:61
                 l32_x1 = l48_x2
                 l40_y1 = l56_y2
@@ -1208,7 +1212,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 l56_y2 = (l56_y2 + 9.526279442)
                 ln = 5242943 // TTFInit.HC:63
                 try tick(t)
-                _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
+                _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
                 ln = 5242944 // TTFInit.HC:64
                 l32_x1 = l48_x2
                 l40_y1 = l56_y2
@@ -1216,7 +1220,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 l48_x2 = (l48_x2 + 11.0)
                 ln = 5242946 // TTFInit.HC:66
                 try tick(t)
-                _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
+                _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
                 ln = 5242947 // TTFInit.HC:67
                 l32_x1 = l48_x2
                 l40_y1 = l56_y2
@@ -1225,7 +1229,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 l56_y2 = (l56_y2 - 9.526279442)
                 ln = 5242949 // TTFInit.HC:69
                 try tick(t)
-                _ = try P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
+                _ = try P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1, 0)
                 ln = 5242950 // TTFInit.HC:70
                 l16_x = (l16_x + l0_dx)
                 ln = 5242937 // TTFInit.HC:57
@@ -1238,7 +1242,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC MakeTerrain (TTFInit.HC:74)
-    public final func f732_MakeTerrain(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f737_MakeTerrain(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1273,7 +1277,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     ln = 5242963 // TTFInit.HC:83
                     let t3: Int64 = try nat(t, n_RandU16, push0(t))
                     try tick(t)
-                    try f722_Toward(t, (fp &+ 56), (fp &+ 64), mods(t3, 6))
+                    try f727_Toward(t, (fp &+ 56), (fp &+ 64), mods(t3, 6))
                     ln = 5242964 // TTFInit.HC:84
                     try tick(t)
                     let t4: Int64 = try P.f114_ClampI64(t, ld8((fp &+ 64)), 0, (ld8(g_map_cols) &- 1))
@@ -1297,7 +1301,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC MakeRivers (TTFInit.HC:90)
-    public final func f733_MakeRivers(_ t: HTask) throws {
+    public final func f738_MakeRivers(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1323,7 +1327,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     try st1(((g_rivers &+ (ld8((fp &+ 8)) &* 19)) &+ ld8((fp &+ 16))), 1)
                     ln = 5242979 // TTFInit.HC:99
                     try tick(t)
-                    try f722_Toward(t, (fp &+ 8), (fp &+ 16), l24_direction)
+                    try f727_Toward(t, (fp &+ 8), (fp &+ 16), l24_direction)
                     ln = 5242980 // TTFInit.HC:100
                     var r3: Bool = false
                     let t4: Int64 = try ld8((fp &+ 8))
@@ -1369,7 +1373,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC MakeRoads (TTFInit.HC:108)
-    public final func f734_MakeRoads(_ t: HTask) throws {
+    public final func f739_MakeRoads(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1395,7 +1399,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     try st1(((g_roads &+ (ld8((fp &+ 8)) &* 19)) &+ ld8((fp &+ 16))), 1)
                     ln = 5242997 // TTFInit.HC:117
                     try tick(t)
-                    try f722_Toward(t, (fp &+ 8), (fp &+ 16), l24_direction)
+                    try f727_Toward(t, (fp &+ 8), (fp &+ 16), l24_direction)
                     ln = 5242998 // TTFInit.HC:118
                     var r3: Bool = false
                     let t4: Int64 = try ld8((fp &+ 8))
@@ -1441,7 +1445,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC DrawTerrain (TTFInit.HC:126)
-    public final func f735_DrawTerrain(_ t: HTask) throws {
+    public final func f740_DrawTerrain(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1459,10 +1463,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     try st4((ld8(g_map_dc) &+ 160), ld1u(((g_terrain &+ (l8_j &* 19)) &+ l0_i)))
                     ln = 5243013 // TTFInit.HC:133
                     try tick(t)
-                    try f724_RowCol2XY(t, (fp &+ 16), (fp &+ 24), l8_j, l0_i)
+                    try f729_RowCol2XY(t, (fp &+ 16), (fp &+ 24), l8_j, l0_i)
                     ln = 5243014 // TTFInit.HC:134
                     try tick(t)
-                    _ = try P.f387_GrFloodFill(t, ld8(g_map_dc), f2i(ldf((fp &+ 16))), f2i(ldf((fp &+ 24))), 0, 0, 0)
+                    _ = try P.f388_GrFloodFill(t, ld8(g_map_dc), f2i(ldf((fp &+ 16))), f2i(ldf((fp &+ 24))), 0, 0, 0)
                     ln = 5243011 // TTFInit.HC:131
                     l0_i = (l0_i &+ 1)
                     try tick(t)
@@ -1478,7 +1482,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC DrawRivers (TTFInit.HC:138)
-    public final func f736_DrawRivers(_ t: HTask) throws {
+    public final func f741_DrawRivers(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1497,7 +1501,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     if try (ld1u(((g_rivers &+ (l8_j &* 19)) &+ l0_i)) != 0) {
                         ln = 5243025 // TTFInit.HC:145
                         try tick(t)
-                        try f724_RowCol2XY(t, (fp &+ 40), (fp &+ 48), l8_j, l0_i)
+                        try f729_RowCol2XY(t, (fp &+ 40), (fp &+ 48), l8_j, l0_i)
                         ln = 5243026 // TTFInit.HC:146
                         l16_k = 0
                         loop4: while (l16_k < 6) {
@@ -1506,7 +1510,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                             try st8((fp &+ 32), l0_i)
                             ln = 5243028 // TTFInit.HC:148
                             try tick(t)
-                            try f722_Toward(t, (fp &+ 24), (fp &+ 32), l16_k)
+                            try f727_Toward(t, (fp &+ 24), (fp &+ 32), l16_k)
                             ln = 5243029 // TTFInit.HC:149
                             var r0: Bool = false
                             let t1: Int64 = try ld8((fp &+ 24))
@@ -1531,21 +1535,19 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                             if try (r6 && (ld1u(((g_rivers &+ (ld8((fp &+ 24)) &* 19)) &+ ld8((fp &+ 32)))) != 0)) {
                                 ln = 5243031 // TTFInit.HC:151
                                 try tick(t)
-                                try f724_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((fp &+ 24)), ld8((fp &+ 32)))
+                                try f729_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((fp &+ 24)), ld8((fp &+ 32)))
                                 ln = 5243032 // TTFInit.HC:152
                                 try st4((ld8(g_map_dc) &+ 160), 9)
                                 ln = 5243033 // TTFInit.HC:153
                                 try st4((ld8(g_map_dc) &+ 228), 4)
                                 ln = 5243034 // TTFInit.HC:154
-                                try tick(t)
-                                _ = try P.f406_GrLine3(t, ld8(g_map_dc), f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, 1, 0)
+                                _ = try nat(t, n_GrLine3, try push(t, ld8(g_map_dc), f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, 1, 0))
                                 ln = 5243035 // TTFInit.HC:155
                                 try st4((ld8(g_map_dc) &+ 160), 1)
                                 ln = 5243036 // TTFInit.HC:156
                                 try st4((ld8(g_map_dc) &+ 228), 2)
                                 ln = 5243037 // TTFInit.HC:157
-                                try tick(t)
-                                _ = try P.f406_GrLine3(t, ld8(g_map_dc), f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, 1, 0)
+                                _ = try nat(t, n_GrLine3, try push(t, ld8(g_map_dc), f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, 1, 0))
                             }
                             ln = 5243026 // TTFInit.HC:146
                             l16_k = (l16_k &+ 1)
@@ -1567,7 +1569,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC DrawRoads (TTFInit.HC:164)
-    public final func f737_DrawRoads(_ t: HTask) throws {
+    public final func f742_DrawRoads(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1590,7 +1592,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     if try (ld1u(((g_roads &+ (l8_j &* 19)) &+ l0_i)) != 0) {
                         ln = 5243053 // TTFInit.HC:173
                         try tick(t)
-                        try f724_RowCol2XY(t, (fp &+ 40), (fp &+ 48), l8_j, l0_i)
+                        try f729_RowCol2XY(t, (fp &+ 40), (fp &+ 48), l8_j, l0_i)
                         ln = 5243054 // TTFInit.HC:174
                         l16_k = 0
                         loop4: while (l16_k < 6) {
@@ -1599,7 +1601,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                             try st8((fp &+ 32), l0_i)
                             ln = 5243056 // TTFInit.HC:176
                             try tick(t)
-                            try f722_Toward(t, (fp &+ 24), (fp &+ 32), l16_k)
+                            try f727_Toward(t, (fp &+ 24), (fp &+ 32), l16_k)
                             ln = 5243057 // TTFInit.HC:177
                             var r0: Bool = false
                             let t1: Int64 = try ld8((fp &+ 24))
@@ -1624,10 +1626,9 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                             if try (r6 && (ld1u(((g_roads &+ (ld8((fp &+ 24)) &* 19)) &+ ld8((fp &+ 32)))) != 0)) {
                                 ln = 5243059 // TTFInit.HC:179
                                 try tick(t)
-                                try f724_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((fp &+ 24)), ld8((fp &+ 32)))
+                                try f729_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((fp &+ 24)), ld8((fp &+ 32)))
                                 ln = 5243060 // TTFInit.HC:180
-                                try tick(t)
-                                _ = try P.f406_GrLine3(t, ld8(g_map_dc), f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, 1, 0)
+                                _ = try nat(t, n_GrLine3, try push(t, ld8(g_map_dc), f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, 1, 0))
                             }
                             ln = 5243054 // TTFInit.HC:174
                             l16_k = (l16_k &+ 1)
@@ -1649,7 +1650,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC DrawDots (TTFInit.HC:187)
-    public final func f738_DrawDots(_ t: HTask) throws {
+    public final func f743_DrawDots(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1667,7 +1668,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 loop2: while try (l0_i < ld8(g_map_cols)) {
                     ln = 5243074 // TTFInit.HC:194
                     try tick(t)
-                    try f724_RowCol2XY(t, (fp &+ 16), (fp &+ 24), l8_j, l0_i)
+                    try f729_RowCol2XY(t, (fp &+ 16), (fp &+ 24), l8_j, l0_i)
                     ln = 5243075 // TTFInit.HC:195
                     _ = try nat(t, n_GrPlot, try push3(t, ld8(g_map_dc), f2i(ldf((fp &+ 16))), f2i(ldf((fp &+ 24)))))
                     ln = 5243073 // TTFInit.HC:193
@@ -1685,7 +1686,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC HexCentersCalc (TTFInit.HC:199)
-    public final func f739_HexCentersCalc(_ t: HTask) throws {
+    public final func f744_HexCentersCalc(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1726,16 +1727,16 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC InitMap (TTFInit.HC:214)
-    public final func f740_InitMap(_ t: HTask) throws {
+    public final func f745_InitMap(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 5243096 // TTFInit.HC:216
             try tick(t)
-            try f739_HexCentersCalc(t)
+            try f744_HexCentersCalc(t)
             ln = 5243097 // TTFInit.HC:217
             try tick(t)
-            try f731_DrawHexes(t)
+            try f736_DrawHexes(t)
             ln = 5243098 // TTFInit.HC:218
             _ = try nat(t, n_MemSet, try push3(t, g_terrain, 10, 874))
             ln = 5243099 // TTFInit.HC:219
@@ -1746,35 +1747,35 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             _ = try nat(t, n_MemSet, try push3(t, g_vis_map, 0, 874))
             ln = 5243102 // TTFInit.HC:222
             try tick(t)
-            try f732_MakeTerrain(t, 8, f2i(((0.03 * Double(ld8(g_map_cols))) * Double(ld8(g_map_cols)))), 5, 35)
+            try f737_MakeTerrain(t, 8, f2i(((0.03 * Double(ld8(g_map_cols))) * Double(ld8(g_map_cols)))), 5, 35)
             ln = 5243103 // TTFInit.HC:223
             try tick(t)
-            try f732_MakeTerrain(t, 2, f2i(((0.03 * Double(ld8(g_map_cols))) * Double(ld8(g_map_cols)))), 5, 35)
+            try f737_MakeTerrain(t, 2, f2i(((0.03 * Double(ld8(g_map_cols))) * Double(ld8(g_map_cols)))), 5, 35)
             ln = 5243104 // TTFInit.HC:224
             try tick(t)
-            try f735_DrawTerrain(t)
+            try f740_DrawTerrain(t)
             ln = 5243105 // TTFInit.HC:225
             try tick(t)
-            try f733_MakeRivers(t)
+            try f738_MakeRivers(t)
             ln = 5243106 // TTFInit.HC:226
             try tick(t)
-            try f736_DrawRivers(t)
+            try f741_DrawRivers(t)
             ln = 5243107 // TTFInit.HC:227
             try tick(t)
-            try f734_MakeRoads(t)
+            try f739_MakeRoads(t)
             ln = 5243108 // TTFInit.HC:228
             try tick(t)
-            try f737_DrawRoads(t)
+            try f742_DrawRoads(t)
             ln = 5243109 // TTFInit.HC:229
             try tick(t)
-            try f738_DrawDots(t)
+            try f743_DrawDots(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "InitMap", ln) }
     }
 
     /// HolyC InitUnits (TTFInit.HC:232)
-    public final func f741_InitUnits(_ t: HTask) throws {
+    public final func f746_InitUnits(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1951,7 +1952,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         }
                         ln = 5243202 // TTFInit.HC:322
                         try tick(t)
-                        let t4: Int64 = try f726_UnitFind(t, l16_row, l24_col)
+                        let t4: Int64 = try f731_UnitFind(t, l16_row, l24_col)
                         if !((t4 != 0)) { break loop5 }
                         try tick(t)
                     }
@@ -1976,7 +1977,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC ViewPlayerSet (TTFInit.HC:329)
-    public final func f742_ViewPlayerSet(_ t: HTask, _ a0: Int64) throws {
+    public final func f747_ViewPlayerSet(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1988,7 +1989,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             try st8(g_view_player, p0_p)
             ln = 5243213 // TTFInit.HC:333
             try tick(t)
-            let t0: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s7)
+            let t0: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s7)
             l8_tmpse = t0
             if (t0 != 0) {
                 ln = 5243214 // TTFInit.HC:334
@@ -1996,7 +1997,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             }
             ln = 5243215 // TTFInit.HC:335
             try tick(t)
-            let t1: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s8)
+            let t1: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s8)
             l8_tmpse = t1
             if (t1 != 0) {
                 ln = 5243216 // TTFInit.HC:336
@@ -2008,7 +2009,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC Init (TTFInit.HC:339)
-    public final func f743_Init(_ t: HTask) throws {
+    public final func f748_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2024,11 +2025,11 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             try st8(g_moving_unit, 0)
             ln = 5243224 // TTFInit.HC:344
             try tick(t)
-            try f740_InitMap(t)
+            try f745_InitMap(t)
             ln = 5243225 // TTFInit.HC:345
             try st8(g_cur_player, 0)
             try tick(t)
-            try f742_ViewPlayerSet(t, 0)
+            try f747_ViewPlayerSet(t, 0)
             ln = 5243226 // TTFInit.HC:346
             try st8(g_enemy_player, 1)
             ln = 5243227 // TTFInit.HC:347
@@ -2045,7 +2046,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             }
             ln = 5243234 // TTFInit.HC:354
             try tick(t)
-            try f741_InitUnits(t)
+            try f746_InitUnits(t)
             ln = 5243235 // TTFInit.HC:355
             try tick(t)
             try P.f152_QueInit(t, g_indirect_head)
@@ -2069,7 +2070,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC CleanUp (TTFInit.HC:365)
-    public final func f744_CleanUp(_ t: HTask) throws {
+    public final func f749_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2082,7 +2083,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC PlayerPick (TTFInit.HC:370)
-    public final func f745_PlayerPick(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f750_PlayerPick(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2099,7 +2100,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l16_i = 0
             ln = 5243255 // TTFInit.HC:375
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l56_doc = t0
             ln = 5243256 // TTFInit.HC:376
             let t1: Int64 = try nat(t, n_Silent, try push1(t, 1))
@@ -2142,7 +2143,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 l24_st = t6
                 ln = 5243269 // TTFInit.HC:389
                 try tick(t)
-                try P.f666_FileExtRem(t, l24_st)
+                try P.f671_FileExtRem(t, l24_st)
                 ln = 5243270 // TTFInit.HC:390
                 try tick(t)
                 let vb21 = try push2(t, l24_st, l40_tmpde1)
@@ -2175,7 +2176,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 l24_st = t9
                 ln = 5243279 // TTFInit.HC:399
                 try tick(t)
-                try P.f666_FileExtRem(t, l24_st)
+                try P.f671_FileExtRem(t, l24_st)
                 ln = 5243280 // TTFInit.HC:400
                 try tick(t)
                 let vb23 = try push2(t, l24_st, l40_tmpde1)
@@ -2196,7 +2197,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             ln = 5243285 // TTFInit.HC:405
             loop4: while true {
                 try tick(t)
-                let t11: Int64 = try P.f621_PopUpMenu(t, l56_doc, 0)
+                let t11: Int64 = try P.f626_PopUpMenu(t, l56_doc, 0)
                 l40_tmpde1 = t11
                 if !(leu(t11, 0)) { break loop4 }
                 try tick(t)
@@ -2205,7 +2206,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             _ = try nat(t, n_ExeFile, try push2(t, ld8((l40_tmpde1 &+ 24)), 0))
             ln = 5243287 // TTFInit.HC:407
             try tick(t)
-            try P.f605_DocDel(t, l56_doc)
+            try P.f610_DocDel(t, l56_doc)
             ln = 5243288 // TTFInit.HC:408
             _ = try nat(t, n_DirTreeDel, try push1(t, l32_tmpde))
             ln = 5243289 // TTFInit.HC:409
@@ -2218,7 +2219,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC VRSetUp (TTFVis.HC:19)
-    public final func f746_VRSetUp(_ t: HTask, _ a0: Int64) throws {
+    public final func f751_VRSetUp(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2251,7 +2252,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC VRMerge (TTFVis.HC:31)
-    public final func f747_VRMerge(_ t: HTask, _ a0: Int64) throws {
+    public final func f752_VRMerge(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2311,7 +2312,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC MPVisRecalc (TTFVis.HC:48)
-    @discardableResult public final func f748_MPVisRecalc(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f753_MPVisRecalc(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2357,7 +2358,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     }
                     ln = 6291523 // TTFVis.HC:67
                     try tick(t)
-                    try f724_RowCol2XY(t, (fp &+ 56), (fp &+ 64), l40_row, l48_col)
+                    try f729_RowCol2XY(t, (fp &+ 56), (fp &+ 64), l40_row, l48_col)
                     ln = 6291524 // TTFVis.HC:68
                     l24_i = try ld8((p0_job &+ 8))
                     loop1: while try (l24_i < ld8((p0_job &+ 16))) {
@@ -2367,14 +2368,14 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         var r2: Bool = try (ld1s((l112_ut1 &+ 60)) > 0)
                         if r2 {
                             try tick(t)
-                            let t1: Int64 = try f730_LOS(t, l40_row, l48_col, ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
+                            let t1: Int64 = try f735_LOS(t, l40_row, l48_col, ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
                             r2 = (t1 != 0)
                         }
                         ln = 6291526 // TTFVis.HC:70
                         if r2 {
                             ln = 6291528 // TTFVis.HC:72
                             try tick(t)
-                            try f724_RowCol2XY(t, (fp &+ 72), (fp &+ 80), ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
+                            try f729_RowCol2XY(t, (fp &+ 72), (fp &+ 80), ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
                             ln = 6291529 // TTFVis.HC:73
                             try tick(t)
                             let t3: Double = try P.f102_Sqr(t, (ldf((fp &+ 72)) - ldf((fp &+ 56))))
@@ -2404,7 +2405,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 case 4:
                     ln = 6291541 // TTFVis.HC:85
                     try tick(t)
-                    try f724_RowCol2XY(t, (fp &+ 56), (fp &+ 64), l40_row, l48_col)
+                    try f729_RowCol2XY(t, (fp &+ 56), (fp &+ 64), l40_row, l48_col)
                     ln = 6291542 // TTFVis.HC:86
                     l24_i = try ld8((p0_job &+ 8))
                     loop3: while try (l24_i < ld8((p0_job &+ 16))) {
@@ -2412,7 +2413,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         var r6: Bool = try (ld1s((l112_ut1 &+ 60)) > 0)
                         if r6 {
                             try tick(t)
-                            let t5: Int64 = try f730_LOS(t, l40_row, l48_col, ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
+                            let t5: Int64 = try f735_LOS(t, l40_row, l48_col, ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
                             r6 = (t5 != 0)
                         }
                         ln = 6291543 // TTFVis.HC:87
@@ -2442,7 +2443,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         if try (ld1s((l104_ut0 &+ 60)) > 0) {
                             ln = 6291556 // TTFVis.HC:100
                             try tick(t)
-                            try f724_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((l104_ut0 &+ 16)), ld8((l104_ut0 &+ 24)))
+                            try f729_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((l104_ut0 &+ 16)), ld8((l104_ut0 &+ 24)))
                             ln = 6291557 // TTFVis.HC:101
                             l112_ut1 = try ((g_units &+ (ld8(g_enemy_player) &* 2304)) &+ (ld8((p0_job &+ 8)) &* 72))
                             ln = 6291558 // TTFVis.HC:102
@@ -2452,7 +2453,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                                 var r8: Bool = try (ld1s((l112_ut1 &+ 60)) > 0)
                                 if r8 {
                                     try tick(t)
-                                    let t7: Int64 = try f730_LOS(t, ld8((l104_ut0 &+ 16)), ld8((l104_ut0 &+ 24)), ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
+                                    let t7: Int64 = try f735_LOS(t, ld8((l104_ut0 &+ 16)), ld8((l104_ut0 &+ 24)), ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
                                     r8 = (t7 != 0)
                                 }
                                 ln = 6291559 // TTFVis.HC:103
@@ -2499,7 +2500,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         if try (ld1s((l104_ut0 &+ 60)) > 0) {
                             ln = 6291572 // TTFVis.HC:116
                             try tick(t)
-                            try f724_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((l104_ut0 &+ 16)), ld8((l104_ut0 &+ 24)))
+                            try f729_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((l104_ut0 &+ 16)), ld8((l104_ut0 &+ 24)))
                             ln = 6291573 // TTFVis.HC:117
                             l112_ut1 = try ((g_units &+ (ld8(g_cur_player) &* 2304)) &+ (ld8((p0_job &+ 8)) &* 72))
                             ln = 6291574 // TTFVis.HC:118
@@ -2509,7 +2510,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                                 var r10: Bool = try (ld1s((l112_ut1 &+ 60)) > 0)
                                 if r10 {
                                     try tick(t)
-                                    let t9: Int64 = try f730_LOS(t, ld8((l104_ut0 &+ 16)), ld8((l104_ut0 &+ 24)), ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
+                                    let t9: Int64 = try f735_LOS(t, ld8((l104_ut0 &+ 16)), ld8((l104_ut0 &+ 24)), ld8((l112_ut1 &+ 16)), ld8((l112_ut1 &+ 24)))
                                     r10 = (t9 != 0)
                                 }
                                 ln = 6291575 // TTFVis.HC:119
@@ -2563,7 +2564,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC VisRecalc (TTFVis.HC:134)
-    @discardableResult public final func f749_VisRecalc(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f754_VisRecalc(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2582,7 +2583,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 _ = try nat(t, n_MemSet, try push3(t, ((g_vis_unit_bitmap &+ (ld8(g_enemy_player) &* 128)) &+ ((ld8((p1_tmpu &+ 8)) &* 32) &>> 3)), 0, 4))
                 ln = 6291608 // TTFVis.HC:152
                 try tick(t)
-                try f747_VRMerge(t, ld8(g_enemy_player))
+                try f752_VRMerge(t, ld8(g_enemy_player))
                 ln = 6291609 // TTFVis.HC:153
                 let rv26: Int64 = 0
                 t.msp = msp0
@@ -2650,7 +2651,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l16_i = 0
             loop4: while (l16_i < l40_cnt) {
                 ln = 6291635 // TTFVis.HC:179
-                let t2: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065900, ((fp &+ 56) &+ (l16_i &* 32)), l16_i, 0, 0, 0, 0, 0))
+                let t2: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065905, ((fp &+ 56) &+ (l16_i &* 32)), l16_i, 0, 0, 0, 0, 0))
                 try st8(((fp &+ 88) &+ (l16_i &* 8)), t2)
                 ln = 6291634 // TTFVis.HC:178
                 l16_i = (l16_i &+ 1)
@@ -2673,7 +2674,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             if (p0_mode == 1) {
                 ln = 6291640 // TTFVis.HC:184
                 try tick(t)
-                try f747_VRMerge(t, ld8(g_cur_player))
+                try f752_VRMerge(t, ld8(g_cur_player))
             }
             ln = 6291641 // TTFVis.HC:185
             let rv27: Int64 = (l48_res & 0xFF)
@@ -2687,7 +2688,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval10 (TTFVis.HC:146)
-    @discardableResult public final func f750_eval10(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f755_eval10(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2701,7 +2702,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval11 (TTFVis.HC:147)
-    @discardableResult public final func f751_eval11(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f756_eval11(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2715,7 +2716,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC MPVisRecalcMap (TTFVis.HC:188)
-    public final func f752_MPVisRecalcMap(_ t: HTask, _ a0: Int64) throws {
+    public final func f757_MPVisRecalcMap(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2730,7 +2731,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 loop2: while try (l8_i < ld8(g_map_cols)) {
                     ln = 6291649 // TTFVis.HC:193
                     try tick(t)
-                    let t0: Int64 = try f730_LOS(t, ld8((p0_job &+ 16)), ld8((p0_job &+ 24)), l16_j, l8_i)
+                    let t0: Int64 = try f735_LOS(t, ld8((p0_job &+ 16)), ld8((p0_job &+ 24)), l16_j, l8_i)
                     if (t0 != 0) {
                         ln = 6291650 // TTFVis.HC:194
                         try st1(((g_vis_map &+ (l16_j &* 19)) &+ l8_i), 1)
@@ -2752,7 +2753,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC VisRecalcMap (TTFVis.HC:199)
-    public final func f753_VisRecalcMap(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f758_VisRecalcMap(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2806,7 +2807,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l16_i = 0
             loop2: while (l16_i < l40_cnt) {
                 ln = 6291676 // TTFVis.HC:220
-                let t2: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065904, ((fp &+ 48) &+ (l16_i &* 32)), l16_i, 0, 0, 0, 0, 0))
+                let t2: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065909, ((fp &+ 48) &+ (l16_i &* 32)), l16_i, 0, 0, 0, 0, 0))
                 try st8(((fp &+ 80) &+ (l16_i &* 8)), t2)
                 ln = 6291675 // TTFVis.HC:219
                 l16_i = (l16_i &+ 1)
@@ -2828,7 +2829,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval12 (TTFVis.HC:202)
-    @discardableResult public final func f754_eval12(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f759_eval12(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2842,7 +2843,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $eval13 (TTFVis.HC:203)
-    @discardableResult public final func f755_eval13(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f760_eval13(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2856,7 +2857,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC AttackHeader (TTFFire.HC:1)
-    public final func f756_AttackHeader(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f761_AttackHeader(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2925,7 +2926,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC HitDamage (TTFFire.HC:33)
-    @discardableResult public final func f757_HitDamage(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double) throws -> Double {
+    @discardableResult public final func f762_HitDamage(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -2986,7 +2987,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC DamageDo (TTFFire.HC:59)
-    @discardableResult public final func f758_DamageDo(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
+    @discardableResult public final func f763_DamageDo(_ t: HTask, _ a0: Int64, _ a1: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3008,14 +3009,14 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     _ = try nat(t, n_Print, try push1(t, s35))
                     ln = 7340100 // TTFFire.HC:68
                     try tick(t)
-                    _ = try P.f499_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 74.0, 98.0)
+                    _ = try P.f504_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 74.0, 98.0)
                     ln = 7340101 // TTFFire.HC:69
                     _ = try nat(t, n_Sleep, try push1(t, f2i((1000.0 * ldf(g_animation_delay)))))
                     ln = 7340102 // TTFFire.HC:70
                     try st1((p0_target &+ 60), 0)
                     ln = 7340103 // TTFFire.HC:71
                     try tick(t)
-                    _ = try f749_VisRecalc(t, 3, p0_target)
+                    _ = try f754_VisRecalc(t, 3, p0_target)
                     ln = 7340104 // TTFFire.HC:72
                     let t0: Int64 = try (g_alive_cnt &+ (ld1s((p0_target &+ 57)) &* 8))
                     let t1: Int64 = try ld8(t0)
@@ -3062,7 +3063,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC IndirectAdd (TTFFire.HC:91)
-    public final func f759_IndirectAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f764_IndirectAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3096,7 +3097,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC BulletPlot (TTFFire.HC:104)
-    @discardableResult public final func f760_BulletPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f765_BulletPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3121,7 +3122,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UnitDirectFire (TTFFire.HC:112)
-    public final func f761_UnitDirectFire(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f766_UnitDirectFire(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3147,13 +3148,13 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             }
             ln = 7340151 // TTFFire.HC:119
             try tick(t)
-            try f756_AttackHeader(t, p0_tmpu, s39, p1_target)
+            try f761_AttackHeader(t, p0_tmpu, s39, p1_target)
             ln = 7340152 // TTFFire.HC:120
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((p0_tmpu &+ 16)), ld8((p0_tmpu &+ 24)))
+            try f729_RowCol2XY(t, (fp &+ 56), (fp &+ 64), ld8((p0_tmpu &+ 16)), ld8((p0_tmpu &+ 24)))
             ln = 7340153 // TTFFire.HC:121
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 72), (fp &+ 80), ld8((p1_target &+ 16)), ld8((p1_target &+ 24)))
+            try f729_RowCol2XY(t, (fp &+ 72), (fp &+ 80), ld8((p1_target &+ 16)), ld8((p1_target &+ 24)))
             ln = 7340154 // TTFFire.HC:122
             let t0: Double = d(try nat(t, n_Rand, push0(t)))
             l88_d = (100.0 * t0)
@@ -3200,11 +3201,11 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 try st1(g_target_hit, 1)
                 ln = 7340175 // TTFFire.HC:143
                 try tick(t)
-                _ = try P.f499_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
+                _ = try P.f504_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
                 ln = 7340176 // TTFFire.HC:144
                 _ = try nat(t, n_Sleep, try push1(t, f2i((500.0 * ldf(g_animation_delay)))))
                 ln = 7340177 // TTFFire.HC:145
-                _ = try nat(t, n_Line, try push(t, 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, f2i(ldf((fp &+ 72))), f2i(ldf((fp &+ 80))), 0, 9223090561878065912, 1, 0))
+                _ = try nat(t, n_Line, try push(t, 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, f2i(ldf((fp &+ 72))), f2i(ldf((fp &+ 80))), 0, 9223090561878065917, 1, 0))
             } else {
                 ln = 7340179 // TTFFire.HC:147
                 _ = try nat(t, n_Print, try push2(t, s47, bits((-l88_d))))
@@ -3212,7 +3213,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 try st1(g_target_hit, 0)
                 ln = 7340181 // TTFFire.HC:149
                 try tick(t)
-                _ = try P.f499_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 69.0, 74.0)
+                _ = try P.f504_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 69.0, 74.0)
                 ln = 7340182 // TTFFire.HC:150
                 _ = try nat(t, n_Sleep, try push1(t, f2i((1000.0 * ldf(g_animation_delay)))))
                 ln = 7340183 // TTFFire.HC:151
@@ -3225,7 +3226,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 let t5: Double = d(try nat(t, n_Sin, try push1(t, bits(l96_a))))
                 let t8: Double = try ldf((fp &+ 72))
                 let t7: Double = d(try nat(t, n_Cos, try push1(t, bits(l96_a))))
-                _ = try nat(t, n_Line, try push(t, 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, f2i((t8 + (l88_d * t7))), f2i((t6 + (l88_d * t5))), 0, 9223090561878065912, 1, 0))
+                _ = try nat(t, n_Line, try push(t, 0, f2i(ldf((fp &+ 56))), f2i(ldf((fp &+ 64))), 0, f2i((t8 + (l88_d * t7))), f2i((t6 + (l88_d * t5))), 0, 9223090561878065917, 1, 0))
             }
             ln = 7340187 // TTFFire.HC:155
             try st1(g_firing, 0)
@@ -3238,12 +3239,12 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 try st8((fp &+ 24), ld8((p1_target &+ 24)))
                 ln = 7340191 // TTFFire.HC:159
                 try tick(t)
-                let t9: Int64 = try f718_HexMoveOne(t, (fp &+ 16), (fp &+ 24), ldf((fp &+ 56)), ldf((fp &+ 64)))
+                let t9: Int64 = try f723_HexMoveOne(t, (fp &+ 16), (fp &+ 24), ldf((fp &+ 56)), ldf((fp &+ 64)))
                 l32_facing = t9
                 if (t9 >= 0) {
                     ln = 7340192 // TTFFire.HC:160
                     try tick(t)
-                    let t10: Int64 = try f723_FacingChg(t, l32_facing, ld1s((p1_target &+ 58)))
+                    let t10: Int64 = try f728_FacingChg(t, l32_facing, ld1s((p1_target &+ 58)))
                     l32_facing = t10
                 } else {
                     ln = 7340194 // TTFFire.HC:162
@@ -3251,9 +3252,9 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 }
                 ln = 7340195 // TTFFire.HC:163
                 try tick(t)
-                let t11: Double = try f757_HitDamage(t, p0_tmpu, p1_target, l32_facing, l104_range_factor)
+                let t11: Double = try f762_HitDamage(t, p0_tmpu, p1_target, l32_facing, l104_range_factor)
                 try tick(t)
-                _ = try f758_DamageDo(t, p1_target, t11)
+                _ = try f763_DamageDo(t, p1_target, t11)
             }
             ln = 7340197 // TTFFire.HC:165
             loop0: while try (ld1s((P.g_scrncast &+ 67)) != 0) {
@@ -3270,7 +3271,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC HexOccupy (TTFFire.HC:170)
-    @discardableResult public final func f762_HexOccupy(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f767_HexOccupy(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3294,15 +3295,15 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             if (p0_overrun != 0) {
                 ln = 7340209 // TTFFire.HC:177
                 try tick(t)
-                try f756_AttackHeader(t, p1_tmpu, s48, p2_target)
+                try f761_AttackHeader(t, p1_tmpu, s48, p2_target)
             } else {
                 ln = 7340211 // TTFFire.HC:179
                 try tick(t)
-                try f756_AttackHeader(t, p1_tmpu, s49, p2_target)
+                try f761_AttackHeader(t, p1_tmpu, s49, p2_target)
             }
             ln = 7340212 // TTFFire.HC:180
             try tick(t)
-            _ = try P.f499_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
+            _ = try P.f504_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
             ln = 7340213 // TTFFire.HC:181
             _ = try nat(t, n_Sleep, try push1(t, f2i((500.0 * ldf(g_animation_delay)))))
             ln = 7340214 // TTFFire.HC:182
@@ -3311,7 +3312,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             try st1((p2_target &+ 66), 1)
             ln = 7340216 // TTFFire.HC:184
             try tick(t)
-            let t0: Double = try f757_HitDamage(t, p1_tmpu, p2_target, 1, 0.0)
+            let t0: Double = try f762_HitDamage(t, p1_tmpu, p2_target, 1, 0.0)
             l32_damage = t0
             ln = 7340217 // TTFFire.HC:185
             if (p0_overrun != 0) {
@@ -3335,7 +3336,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             ln = 7340228 // TTFFire.HC:196
             let t1: Double = d(try nat(t, n_Round, try push1(t, bits(l32_damage))))
             try tick(t)
-            let t2: Int64 = try f758_DamageDo(t, p2_target, t1)
+            let t2: Int64 = try f763_DamageDo(t, p2_target, t1)
             if (t2 != 0) {
                 ln = 7340229 // TTFFire.HC:197
                 _ = try nat(t, n_Print, try push1(t, s53))
@@ -3354,7 +3355,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 try st1((p1_tmpu &+ 60), 0)
                 ln = 7340235 // TTFFire.HC:203
                 try tick(t)
-                _ = try f749_VisRecalc(t, 3, p1_tmpu)
+                _ = try f754_VisRecalc(t, 3, p1_tmpu)
                 ln = 7340236 // TTFFire.HC:204
                 let t3: Int64 = try (g_alive_cnt &+ (ld1s((p1_tmpu &+ 57)) &* 8))
                 let t4: Int64 = try ld8(t3)
@@ -3378,7 +3379,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC IndirectResolveAll (TTFFire.HC:212)
-    public final func f763_IndirectResolveAll(_ t: HTask) throws {
+    public final func f768_IndirectResolveAll(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3403,13 +3404,13 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 l72_tmpu = try ld8((l88_tmpi &+ 16))
                 ln = 7340253 // TTFFire.HC:221
                 try tick(t)
-                try f756_AttackHeader(t, l72_tmpu, s55, 0)
+                try f761_AttackHeader(t, l72_tmpu, s55, 0)
                 ln = 7340254 // TTFFire.HC:222
                 try tick(t)
-                try f724_RowCol2XY(t, (fp &+ 24), (fp &+ 32), ld8((l72_tmpu &+ 16)), ld8((l72_tmpu &+ 24)))
+                try f729_RowCol2XY(t, (fp &+ 24), (fp &+ 32), ld8((l72_tmpu &+ 16)), ld8((l72_tmpu &+ 24)))
                 ln = 7340255 // TTFFire.HC:223
                 try tick(t)
-                try f724_RowCol2XY(t, (fp &+ 40), (fp &+ 48), ld8((l88_tmpi &+ 24)), ld8((l88_tmpi &+ 32)))
+                try f729_RowCol2XY(t, (fp &+ 40), (fp &+ 48), ld8((l88_tmpi &+ 24)), ld8((l88_tmpi &+ 32)))
                 ln = 7340256 // TTFFire.HC:224
                 let t0: Double = d(try nat(t, n_Rand, push0(t)))
                 l56_d = (100.0 * t0)
@@ -3438,7 +3439,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     _ = try nat(t, n_Print, try push2(t, s46, bits(l56_d)))
                     ln = 7340268 // TTFFire.HC:236
                     try tick(t)
-                    _ = try P.f499_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
+                    _ = try P.f504_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
                     ln = 7340269 // TTFFire.HC:237
                     _ = try nat(t, n_Sleep, try push1(t, f2i((500.0 * ldf(g_animation_delay)))))
                 } else {
@@ -3446,7 +3447,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     _ = try nat(t, n_Print, try push2(t, s47, bits((-l56_d))))
                     ln = 7340272 // TTFFire.HC:240
                     try tick(t)
-                    _ = try P.f499_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 69.0, 74.0)
+                    _ = try P.f504_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 69.0, 74.0)
                     ln = 7340273 // TTFFire.HC:241
                     _ = try nat(t, n_Sleep, try push1(t, f2i((1000.0 * ldf(g_animation_delay)))))
                     ln = 7340274 // TTFFire.HC:242
@@ -3467,10 +3468,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     try st8(t7, (ld8(t7) &+ ld8((g_row_offsets &+ (l0_i &* 8)))))
                     ln = 7340280 // TTFFire.HC:248
                     try tick(t)
-                    try f724_RowCol2XY(t, (fp &+ 40), (fp &+ 48), ld8((l88_tmpi &+ 24)), ld8((l88_tmpi &+ 32)))
+                    try f729_RowCol2XY(t, (fp &+ 40), (fp &+ 48), ld8((l88_tmpi &+ 24)), ld8((l88_tmpi &+ 32)))
                 }
                 ln = 7340283 // TTFFire.HC:251
-                _ = try nat(t, n_Line, try push(t, 0, f2i(ldf((fp &+ 24))), f2i(ldf((fp &+ 32))), 0, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, 9223090561878065912, 1, 0))
+                _ = try nat(t, n_Line, try push(t, 0, f2i(ldf((fp &+ 24))), f2i(ldf((fp &+ 32))), 0, f2i(ldf((fp &+ 40))), f2i(ldf((fp &+ 48))), 0, 9223090561878065917, 1, 0))
                 ln = 7340284 // TTFFire.HC:252
                 try st1(g_firing, 0)
                 ln = 7340285 // TTFFire.HC:253
@@ -3498,19 +3499,19 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     var r9: Bool = try (((0 <= l8_r) && (l8_r < ld8(g_map_rows))) && ((0 <= l16_c) && (l16_c < ld8(g_map_cols))))
                     if r9 {
                         try tick(t)
-                        let t8: Int64 = try f726_UnitFind(t, l8_r, l16_c)
+                        let t8: Int64 = try f731_UnitFind(t, l8_r, l16_c)
                         l80_target = t8
                         r9 = (t8 != 0)
                     }
                     if r9 {
                         ln = 7340296 // TTFFire.HC:264
                         try tick(t)
-                        try f756_AttackHeader(t, l72_tmpu, s55, l80_target)
+                        try f761_AttackHeader(t, l72_tmpu, s55, l80_target)
                         ln = 7340297 // TTFFire.HC:265
                         try tick(t)
-                        let t10: Double = try f757_HitDamage(t, l72_tmpu, l80_target, 1, 0.0)
+                        let t10: Double = try f762_HitDamage(t, l72_tmpu, l80_target, 1, 0.0)
                         try tick(t)
-                        _ = try f758_DamageDo(t, l80_target, t10)
+                        _ = try f763_DamageDo(t, l80_target, t10)
                     }
                     ln = 7340289 // TTFFire.HC:257
                     l0_i = (l0_i &+ 1)
@@ -3518,7 +3519,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 }
                 ln = 7340300 // TTFFire.HC:268
                 try tick(t)
-                _ = try P.f499_Noise(t, f2i((2000.0 * ldf(g_animation_delay))), 70.0, 74.0)
+                _ = try P.f504_Noise(t, f2i((2000.0 * ldf(g_animation_delay))), 70.0, 74.0)
                 ln = 7340301 // TTFFire.HC:269
                 _ = try nat(t, n_Sleep, try push1(t, f2i((2000.0 * ldf(g_animation_delay)))))
                 ln = 7340302 // TTFFire.HC:270
@@ -3545,7 +3546,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#7 (Run.HC:2)
-    @discardableResult public final func f764_init_C__Apps_ToTheFront_Run_HC_7(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f769_init_C__Apps_ToTheFront_Run_HC_7(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3559,7 +3560,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#8 (Run.HC:3)
-    @discardableResult public final func f765_init_C__Apps_ToTheFront_Run_HC_8(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f770_init_C__Apps_ToTheFront_Run_HC_8(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3573,7 +3574,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#9 (Run.HC:4)
-    @discardableResult public final func f766_init_C__Apps_ToTheFront_Run_HC_9(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f771_init_C__Apps_ToTheFront_Run_HC_9(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3587,7 +3588,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC HexMoveOneCost (TTFMove.HC:6)
-    @discardableResult public final func f767_HexMoveOneCost(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f772_HexMoveOneCost(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3603,7 +3604,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             } else {
                 ln = 3145740 // TTFMove.HC:12
                 try tick(t)
-                let t0: Int64 = try f723_FacingChg(t, p3_facing, ld1s((p0_tmpu &+ 58)))
+                let t0: Int64 = try f728_FacingChg(t, p3_facing, ld1s((p0_tmpu &+ 58)))
                 l32_res = t0
                 ln = 3145741 // TTFMove.HC:13
                 if (l32_res > 0) {
@@ -3638,7 +3639,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UnitMovePlot (TTFMove.HC:52)
-    @discardableResult public final func f768_UnitMovePlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f773_UnitMovePlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3661,7 +3662,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UnitMoveAnimation (TTFMove.HC:59)
-    public final func f769_UnitMoveAnimation(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f774_UnitMoveAnimation(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3678,7 +3679,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             try st8(g_moving_unit, p0_tmpu)
             ln = 3145791 // TTFMove.HC:63
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 32), (fp &+ 40), ld8((p0_tmpu &+ 16)), ld8((p0_tmpu &+ 24)))
+            try f729_RowCol2XY(t, (fp &+ 32), (fp &+ 40), ld8((p0_tmpu &+ 16)), ld8((p0_tmpu &+ 24)))
             ln = 3145792 // TTFMove.HC:64
             try st8(g_move_x, f2i(ldf((fp &+ 32))))
             try st8(g_move_y, f2i(ldf((fp &+ 40))))
@@ -3696,7 +3697,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 ln = 3145799 // TTFMove.HC:71
                 loop0: while true {
                     try tick(t)
-                    let t0: Double = try P.f542_Wrap(t, (l64_f - ldf(g_move_facing)), (-d(4614256656552045848)))
+                    let t0: Double = try P.f547_Wrap(t, (l64_f - ldf(g_move_facing)), (-d(4614256656552045848)))
                     if !((t0 <= 0.0)) { break loop0 }
                     ln = 3145800 // TTFMove.HC:72
                     try st8(g_move_facing, bits((ldf(g_move_facing) - 0.03)))
@@ -3707,7 +3708,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 ln = 3145803 // TTFMove.HC:75
                 loop2: while true {
                     try tick(t)
-                    let t1: Double = try P.f542_Wrap(t, (l64_f - ldf(g_move_facing)), (-d(4614256656552045848)))
+                    let t1: Double = try P.f547_Wrap(t, (l64_f - ldf(g_move_facing)), (-d(4614256656552045848)))
                     if !((t1 > 0.0)) { break loop2 }
                     ln = 3145804 // TTFMove.HC:76
                     try st8(g_move_facing, bits((ldf(g_move_facing) + 0.03)))
@@ -3722,9 +3723,9 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             try st8(g_move_facing, bits(l64_f))
             ln = 3145810 // TTFMove.HC:82
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 48), (fp &+ 56), p1_r, p2_c)
+            try f729_RowCol2XY(t, (fp &+ 48), (fp &+ 56), p1_r, p2_c)
             ln = 3145811 // TTFMove.HC:83
-            _ = try nat(t, n_Line, try push(t, 0, f2i(ldf((fp &+ 32))), f2i(ldf((fp &+ 40))), 0, f2i(ldf((fp &+ 48))), f2i(ldf((fp &+ 56))), 0, 9223090561878065920, 1, 0))
+            _ = try nat(t, n_Line, try push(t, 0, f2i(ldf((fp &+ 32))), f2i(ldf((fp &+ 40))), 0, f2i(ldf((fp &+ 48))), f2i(ldf((fp &+ 56))), 0, 9223090561878065925, 1, 0))
             ln = 3145812 // TTFMove.HC:84
             _ = try nat(t, n_Snd, try push1(t, 0))
             ln = 3145813 // TTFMove.HC:85
@@ -3738,7 +3739,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UnitMove (TTFMove.HC:89)
-    @discardableResult public final func f770_UnitMove(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f775_UnitMove(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3763,7 +3764,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 try st8((fp &+ 40), ld8((p0_tmpu &+ 24)))
                 ln = 3145824 // TTFMove.HC:96
                 try tick(t)
-                let t0: Int64 = try f718_HexMoveOne(t, (fp &+ 32), (fp &+ 40), Double(p1_x), Double(p2_y))
+                let t0: Int64 = try f723_HexMoveOne(t, (fp &+ 32), (fp &+ 40), Double(p1_x), Double(p2_y))
                 l72_facing = t0
                 if (t0 < 0) {
                     ln = 3145825 // TTFMove.HC:97
@@ -3771,7 +3772,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 } else {
                     ln = 3145827 // TTFMove.HC:99
                     try tick(t)
-                    let t1: Int64 = try f767_HexMoveOneCost(t, p0_tmpu, ld8((fp &+ 32)), ld8((fp &+ 40)), l72_facing)
+                    let t1: Int64 = try f772_HexMoveOneCost(t, p0_tmpu, ld8((fp &+ 32)), ld8((fp &+ 40)), l72_facing)
                     l64_i = t1
                     ln = 3145828 // TTFMove.HC:100
                     if try (l64_i > ld1s((p0_tmpu &+ 59))) {
@@ -3782,7 +3783,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     var r3: Bool = try (((ld1u((p0_tmpu &+ 66)) == 0) && (ld1s((p0_tmpu &+ 62)) >= l64_i)) && (ld1s((p0_tmpu &+ 62)) >= (ld1s((p0_tmpu &+ 59)) &>> 1)))
                     if r3 {
                         try tick(t)
-                        let t2: Int64 = try f726_UnitFind(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
+                        let t2: Int64 = try f731_UnitFind(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
                         l24_target = t2
                         r3 = (t2 != 0)
                     }
@@ -3791,7 +3792,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         ln = 3145834 // TTFMove.HC:106
                         let t4: Int64 = try nat(t, n_ToBool, try push1(t, ld1u((l24_target &+ 67))))
                         try tick(t)
-                        let t5: Int64 = try f762_HexOccupy(t, t4, p0_tmpu, l24_target)
+                        let t5: Int64 = try f767_HexOccupy(t, t4, p0_tmpu, l24_target)
                         if (t5 == 0) {
                             ln = 3145835 // TTFMove.HC:107
                             p0_tmpu = 0
@@ -3805,13 +3806,13 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     var r7: Bool = try (ld1s((p0_tmpu &+ 62)) >= l64_i)
                     if r7 {
                         try tick(t)
-                        let t6: Int64 = try f726_UnitFind(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
+                        let t6: Int64 = try f731_UnitFind(t, ld8((fp &+ 32)), ld8((fp &+ 40)))
                         r7 = (t6 == 0)
                     }
                     if r7 {
                         ln = 3145841 // TTFMove.HC:113
                         try tick(t)
-                        try f769_UnitMoveAnimation(t, p0_tmpu, ld8((fp &+ 32)), ld8((fp &+ 40)), l72_facing)
+                        try f774_UnitMoveAnimation(t, p0_tmpu, ld8((fp &+ 32)), ld8((fp &+ 40)), l72_facing)
                         ln = 3145842 // TTFMove.HC:114
                         try st1((p0_tmpu &+ 58), l72_facing)
                         ln = 3145843 // TTFMove.HC:115
@@ -3823,10 +3824,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         try st8((p0_tmpu &+ 24), ld8((fp &+ 40)))
                         ln = 3145846 // TTFMove.HC:118
                         try tick(t)
-                        _ = try f749_VisRecalc(t, 1, p0_tmpu)
+                        _ = try f754_VisRecalc(t, 1, p0_tmpu)
                         ln = 3145848 // TTFMove.HC:120
                         try tick(t)
-                        let t9: Int64 = try f749_VisRecalc(t, 4, p0_tmpu)
+                        let t9: Int64 = try f754_VisRecalc(t, 4, p0_tmpu)
                         ln = 3145847 // TTFMove.HC:119
                         try tick(t)
                         try P.f100_LBEqu(t, ((p0_tmpu &+ 64) &+ ld8(g_enemy_player)), 0, t9)
@@ -3858,7 +3859,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UnitDraw (TTFDraw.HC:4)
-    public final func f771_UnitDraw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Double) throws {
+    public final func f776_UnitDraw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3873,12 +3874,11 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             ln = 8388615 // TTFDraw.HC:7
             if try (ld1u((p1_tmpu &+ 67)) != 0) {
                 ln = 8388616 // TTFDraw.HC:8
-                try tick(t)
-                try P.f440_Sprite3(t, p0_dc, p2_x, p3_y, 0, ld8(p1_tmpu), 0)
+                _ = try nat(t, n_Sprite3, try push(t, p0_dc, p2_x, p3_y, 0, ld8(p1_tmpu), 0))
             } else {
                 ln = 8388618 // TTFDraw.HC:10
                 try tick(t)
-                try P.f445_Sprite3ZB(t, p0_dc, p2_x, p3_y, 0, ld8(p1_tmpu), p4_f)
+                try P.f450_Sprite3ZB(t, p0_dc, p2_x, p3_y, 0, ld8(p1_tmpu), p4_f)
             }
             ln = 8388619 // TTFDraw.HC:11
             if try (((((ld8(g_phase) & (-2)) == 0) && (ld1u((p1_tmpu &+ 68)) != 0)) && (ld1u((p1_tmpu &+ 66)) == 0)) && (ld1s((p1_tmpu &+ 57)) == ld8(g_cur_player))) {
@@ -3895,15 +3895,15 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 ln = 8388626 // TTFDraw.HC:18
                 let t0: Double = d(try nat(t, n_tS, push0(t)))
                 try tick(t)
-                let t1: Double = try P.f480_Saw(t, (4.0 * t0), 2.0)
+                let t1: Double = try P.f485_Saw(t, (4.0 * t0), 2.0)
                 try tick(t)
-                _ = try P.f411_GrCircle3(t, p0_dc, p2_x, p3_y, 0, f2i((20.0 * t1)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f413_GrCircle3(t, p0_dc, p2_x, p3_y, 0, f2i((20.0 * t1)), 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 8388627 // TTFDraw.HC:19
                 let t2: Double = d(try nat(t, n_tS, push0(t)))
                 try tick(t)
-                let t3: Double = try P.f480_Saw(t, ((4.0 * t2) + 1.0), 2.0)
+                let t3: Double = try P.f485_Saw(t, ((4.0 * t2) + 1.0), 2.0)
                 try tick(t)
-                _ = try P.f411_GrCircle3(t, p0_dc, p2_x, p3_y, 0, f2i((20.0 * t3)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f413_GrCircle3(t, p0_dc, p2_x, p3_y, 0, f2i((20.0 * t3)), 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 8388628 // TTFDraw.HC:20
                 try st4((p0_dc &+ 228), 1)
             }
@@ -3913,7 +3913,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UnitsDraw (TTFDraw.HC:24)
-    public final func f772_UnitsDraw(_ t: HTask, _ a0: Int64) throws {
+    public final func f777_UnitsDraw(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -3960,7 +3960,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     if try (r1 && (l40_tmpu != ld8(g_moving_unit))) {
                         ln = 8388653 // TTFDraw.HC:45
                         try tick(t)
-                        try f724_RowCol2XY(t, (fp &+ 24), (fp &+ 32), ld8((l40_tmpu &+ 16)), ld8((l40_tmpu &+ 24)))
+                        try f729_RowCol2XY(t, (fp &+ 24), (fp &+ 32), ld8((l40_tmpu &+ 16)), ld8((l40_tmpu &+ 24)))
                         ln = 8388657 // TTFDraw.HC:49
                         var r3: Bool = try ((((ld8(g_phase) & (-2)) == 2) && (ld1s((l40_tmpu &+ 62)) != 0)) || (((((ld8(g_phase) & (-2)) == 0) && (ld1u((l40_tmpu &+ 68)) != 0)) || (((ld8(g_phase) & (-2)) == 4) && (ld1u((l40_tmpu &+ 68)) == 0))) && (ld1u((l40_tmpu &+ 66)) == 0)))
                         if !r3 {
@@ -3972,7 +3972,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         if r3 {
                             ln = 8388658 // TTFDraw.HC:50
                             try tick(t)
-                            try f771_UnitDraw(t, p0_dc, l40_tmpu, f2i(ldf((fp &+ 24))), f2i(ldf((fp &+ 32))), (((Double(ld1s((l40_tmpu &+ 58))) * 60.0) * d(4614256656552045848)) / 180.0))
+                            try f776_UnitDraw(t, p0_dc, l40_tmpu, f2i(ldf((fp &+ 24))), f2i(ldf((fp &+ 32))), (((Double(ld1s((l40_tmpu &+ 58))) * 60.0) * d(4614256656552045848)) / 180.0))
                         }
                     }
                     ln = 8388638 // TTFDraw.HC:30
@@ -3990,7 +3990,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC DrawIt (TTFDraw.HC:56)
-    public final func f773_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f778_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4018,18 +4018,18 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l40_j = try ((ld8((P.g_ms &+ 8)) &- ld8((p0_task &+ 232))) &- ld8((p0_task &+ 264)))
             ln = 8388680 // TTFDraw.HC:72
             try tick(t)
-            let t1: Int64 = try f727_CursorInWin(t, p0_task, l32_i, l40_j)
+            let t1: Int64 = try f732_CursorInWin(t, p0_task, l32_i, l40_j)
             if (t1 != 0) {
                 ln = 8388681 // TTFDraw.HC:73
                 l32_i = try (l32_i &- ld8(g_x0))
                 l40_j = try (l40_j &- ld8(g_y0))
                 ln = 8388682 // TTFDraw.HC:74
                 try tick(t)
-                try f728_CursorUpdate(t, p0_task, l32_i, l40_j)
+                try f733_CursorUpdate(t, p0_task, l32_i, l40_j)
             }
             ln = 8388684 // TTFDraw.HC:76
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 16), (fp &+ 24), ld8(g_cursor_row), ld8(g_cursor_col))
+            try f729_RowCol2XY(t, (fp &+ 16), (fp &+ 24), ld8(g_cursor_row), ld8(g_cursor_col))
             ln = 8388687 // TTFDraw.HC:79
             try st4((p1_dc &+ 160), 14)
             ln = 8388688 // TTFDraw.HC:80
@@ -4042,7 +4042,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 if (t2 == l56_c) {
                     ln = 8388691 // TTFDraw.HC:83
                     try tick(t)
-                    _ = try P.f387_GrFloodFill(t, p1_dc, f2i(((ldf((fp &+ 16)) + Double(l32_i)) + Double(ld8(g_x0)))), f2i((ldf((fp &+ 24)) + Double(ld8(g_y0)))), 0, 0, 0)
+                    _ = try P.f388_GrFloodFill(t, p1_dc, f2i(((ldf((fp &+ 16)) + Double(l32_i)) + Double(ld8(g_x0)))), f2i((ldf((fp &+ 24)) + Double(ld8(g_y0)))), 0, 0, 0)
                 }
                 ln = 8388692 // TTFDraw.HC:84
                 l40_j = try divs((-11), 2)
@@ -4052,7 +4052,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     if (t3 == l56_c) {
                         ln = 8388694 // TTFDraw.HC:86
                         try tick(t)
-                        _ = try P.f387_GrFloodFill(t, p1_dc, f2i(((ldf((fp &+ 16)) + Double(l40_j)) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) + Double(l32_i)) + Double(ld8(g_y0)))), 0, 0, 0)
+                        _ = try P.f388_GrFloodFill(t, p1_dc, f2i(((ldf((fp &+ 16)) + Double(l40_j)) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) + Double(l32_i)) + Double(ld8(g_y0)))), 0, 0, 0)
                     }
                     ln = 8388692 // TTFDraw.HC:84
                     l40_j = (l40_j &+ 1)
@@ -4064,14 +4064,14 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             }
             ln = 8388697 // TTFDraw.HC:89
             try tick(t)
-            try f772_UnitsDraw(t, p1_dc)
+            try f777_UnitsDraw(t, p1_dc)
             ln = 8388698 // TTFDraw.HC:90
             if try (ld1u(g_firing) != 0) {
                 ln = 8388699 // TTFDraw.HC:91
                 try st4((p1_dc &+ 160), 0)
                 ln = 8388700 // TTFDraw.HC:92
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, (ld8(g_fire_x) &+ ld8(g_x0)), (ld8(g_fire_y) &+ ld8(g_y0)), 2, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, (ld8(g_fire_x) &+ ld8(g_x0)), (ld8(g_fire_y) &+ ld8(g_y0)), 2, 1, 0.0, (2.0 * d(4614256656552045848)))
             }
             ln = 8388702 // TTFDraw.HC:94
             if try (ld1u(g_indirect_explosion) != 0) {
@@ -4092,7 +4092,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     if try (((0 <= l48_r) && (l48_r < ld8(g_map_rows))) && ((0 <= l56_c) && (l56_c < ld8(g_map_cols)))) {
                         ln = 8388710 // TTFDraw.HC:102
                         try tick(t)
-                        try f724_RowCol2XY(t, (fp &+ 16), (fp &+ 24), l48_r, l56_c)
+                        try f729_RowCol2XY(t, (fp &+ 16), (fp &+ 24), l48_r, l56_c)
                         ln = 8388711 // TTFDraw.HC:103
                         l40_j = 0
                         loop6: while (l40_j < 10) {
@@ -4112,7 +4112,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                             let t7: Double = try ldf((fp &+ 16))
                             let t6: Int64 = try nat(t, n_RandU16, push0(t))
                             try tick(t)
-                            _ = try P.f397_GrCircle(t, p1_dc, f2i((((t7 + Double(mods(t6, 11))) - Double(divs(11, 2))) + Double(ld8(g_x0)))), t8, 2, 1, 0.0, (2.0 * d(4614256656552045848)))
+                            _ = try P.f398_GrCircle(t, p1_dc, f2i((((t7 + Double(mods(t6, 11))) - Double(divs(11, 2))) + Double(ld8(g_x0)))), t8, 2, 1, 0.0, (2.0 * d(4614256656552045848)))
                             ln = 8388711 // TTFDraw.HC:103
                             l40_j = (l40_j &+ 1)
                             try tick(t)
@@ -4129,11 +4129,11 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 try st4((p1_dc &+ 160), 14)
                 ln = 8388724 // TTFDraw.HC:116
                 try tick(t)
-                try f771_UnitDraw(t, p1_dc, ld8(g_moving_unit), ld8(g_move_x), ld8(g_move_y), ldf(g_move_facing))
+                try f776_UnitDraw(t, p1_dc, ld8(g_moving_unit), ld8(g_move_x), ld8(g_move_y), ldf(g_move_facing))
             }
             ln = 8388726 // TTFDraw.HC:118
             try tick(t)
-            try P.f574_ProgressBarsRst(t, 0)
+            try P.f579_ProgressBarsRst(t, 0)
             ln = 8388727 // TTFDraw.HC:119
             if try (ld8(g_moving_unit) != 0) {
                 ln = 8388728 // TTFDraw.HC:120
@@ -4155,15 +4155,15 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 try st4((p1_dc &+ 160), 14)
                 ln = 8388738 // TTFDraw.HC:130
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + Double(ld8(g_x0)))), f2i((ldf(g_fire_radius_y) + Double(ld8(g_y0)))), f2i((ldf(g_fire_radius) - 1.0)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + Double(ld8(g_x0)))), f2i((ldf(g_fire_radius_y) + Double(ld8(g_y0)))), f2i((ldf(g_fire_radius) - 1.0)), 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 8388739 // TTFDraw.HC:131
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + Double(ld8(g_x0)))), f2i((ldf(g_fire_radius_y) + Double(ld8(g_y0)))), f2i((ldf(g_fire_radius) + 1.0)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + Double(ld8(g_x0)))), f2i((ldf(g_fire_radius_y) + Double(ld8(g_y0)))), f2i((ldf(g_fire_radius) + 1.0)), 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 8388740 // TTFDraw.HC:132
                 try st4((p1_dc &+ 160), 4)
                 ln = 8388741 // TTFDraw.HC:133
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + Double(ld8(g_x0)))), f2i((ldf(g_fire_radius_y) + Double(ld8(g_y0)))), f2i(ldf(g_fire_radius)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + Double(ld8(g_x0)))), f2i((ldf(g_fire_radius_y) + Double(ld8(g_y0)))), f2i(ldf(g_fire_radius)), 1, 0.0, (2.0 * d(4614256656552045848)))
             }
             ln = 8388743 // TTFDraw.HC:135
             try tick(t)
@@ -4177,10 +4177,9 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     if try (ld1s((ld8((l208_tmpi &+ 16)) &+ 57)) == ld8(g_view_player)) {
                         ln = 8388747 // TTFDraw.HC:139
                         try tick(t)
-                        try f724_RowCol2XY(t, (fp &+ 16), (fp &+ 24), ld8((l208_tmpi &+ 24)), ld8((l208_tmpi &+ 32)))
+                        try f729_RowCol2XY(t, (fp &+ 16), (fp &+ 24), ld8((l208_tmpi &+ 24)), ld8((l208_tmpi &+ 32)))
                         ln = 8388748 // TTFDraw.HC:140
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, f2i((ldf((fp &+ 16)) + Double(ld8(g_x0)))), f2i((ldf((fp &+ 24)) + Double(ld8(g_y0)))), 0, b4, 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i((ldf((fp &+ 16)) + Double(ld8(g_x0)))), f2i((ldf((fp &+ 24)) + Double(ld8(g_y0)))), 0, b4, 0))
                     }
                     ln = 8388750 // TTFDraw.HC:142
                     l208_tmpi = try ld8(l208_tmpi)
@@ -4198,7 +4197,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     try st8(g_show_vis_col, ld8(g_cursor_col))
                     ln = 8388757 // TTFDraw.HC:149
                     try tick(t)
-                    try f753_VisRecalcMap(t, ld8(g_show_vis_row), ld8(g_show_vis_col))
+                    try f758_VisRecalcMap(t, ld8(g_show_vis_row), ld8(g_show_vis_col))
                 }
                 ln = 8388760 // TTFDraw.HC:152
                 try st4((p1_dc &+ 160), 7)
@@ -4212,19 +4211,19 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         if try (ld1u(((g_vis_map &+ (l40_j &* 19)) &+ l32_i)) == 0) {
                             ln = 8388764 // TTFDraw.HC:156
                             try tick(t)
-                            try f724_RowCol2XY(t, (fp &+ 16), (fp &+ 24), l40_j, l32_i)
+                            try f729_RowCol2XY(t, (fp &+ 16), (fp &+ 24), l40_j, l32_i)
                             ln = 8388765 // TTFDraw.HC:157
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p1_dc, f2i(((ldf((fp &+ 16)) - 6.0) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) - 6.0) + Double(ld8(g_y0)))), f2i(((ldf((fp &+ 16)) + 6.0) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) + 6.0) + Double(ld8(g_y0)))), 1, 0)
+                            _ = try P.f397_GrLine(t, p1_dc, f2i(((ldf((fp &+ 16)) - 6.0) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) - 6.0) + Double(ld8(g_y0)))), f2i(((ldf((fp &+ 16)) + 6.0) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) + 6.0) + Double(ld8(g_y0)))), 1, 0)
                             ln = 8388766 // TTFDraw.HC:158
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p1_dc, f2i(((ldf((fp &+ 16)) + 6.0) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) - 6.0) + Double(ld8(g_y0)))), f2i(((ldf((fp &+ 16)) - 6.0) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) + 6.0) + Double(ld8(g_y0)))), 1, 0)
+                            _ = try P.f397_GrLine(t, p1_dc, f2i(((ldf((fp &+ 16)) + 6.0) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) - 6.0) + Double(ld8(g_y0)))), f2i(((ldf((fp &+ 16)) - 6.0) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) + 6.0) + Double(ld8(g_y0)))), 1, 0)
                             ln = 8388767 // TTFDraw.HC:159
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p1_dc, f2i((ldf((fp &+ 16)) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) - 6.0) + Double(ld8(g_y0)))), f2i((ldf((fp &+ 16)) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) + 6.0) + Double(ld8(g_y0)))), 1, 0)
+                            _ = try P.f397_GrLine(t, p1_dc, f2i((ldf((fp &+ 16)) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) - 6.0) + Double(ld8(g_y0)))), f2i((ldf((fp &+ 16)) + Double(ld8(g_x0)))), f2i(((ldf((fp &+ 24)) + 6.0) + Double(ld8(g_y0)))), 1, 0)
                             ln = 8388768 // TTFDraw.HC:160
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p1_dc, f2i(((ldf((fp &+ 16)) + 6.0) + Double(ld8(g_x0)))), f2i((ldf((fp &+ 24)) + Double(ld8(g_y0)))), f2i(((ldf((fp &+ 16)) - 6.0) + Double(ld8(g_x0)))), f2i((ldf((fp &+ 24)) + Double(ld8(g_y0)))), 1, 0)
+                            _ = try P.f397_GrLine(t, p1_dc, f2i(((ldf((fp &+ 16)) + 6.0) + Double(ld8(g_x0)))), f2i((ldf((fp &+ 24)) + Double(ld8(g_y0)))), f2i(((ldf((fp &+ 16)) - 6.0) + Double(ld8(g_x0)))), f2i((ldf((fp &+ 24)) + Double(ld8(g_y0)))), 1, 0)
                         }
                         ln = 8388762 // TTFDraw.HC:154
                         l32_i = (l32_i &+ 1)
@@ -4252,7 +4251,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 ln = 8388783 // TTFDraw.HC:175
                 try tick(t)
                 let vb38 = push0(t)
-                _ = try P.f369_GrPrint(t, p1_dc, (((ld8((p0_task &+ 224)) &- l32_i) &>> 1) &- ld8((p0_task &+ 256))), (((ld8((p0_task &+ 248)) &- 8) &>> 1) &- ld8((p0_task &+ 264))), g_msg_buf, vb38, 0)
+                _ = try P.f370_GrPrint(t, p1_dc, (((ld8((p0_task &+ 224)) &- l32_i) &>> 1) &- ld8((p0_task &+ 256))), (((ld8((p0_task &+ 248)) &- 8) &>> 1) &- ld8((p0_task &+ 264))), g_msg_buf, vb38, 0)
                 t.sp = vb38
                 ln = 8388786 // TTFDraw.HC:178
                 if try (ld8(g_msg_off_timeout) != 0) {
@@ -4291,7 +4290,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             ln = 8388805 // TTFDraw.HC:197
             try tick(t)
             let vb39 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), (0 &- ld8((p0_task &+ 264))), (fp &+ 64), vb39, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), (0 &- ld8((p0_task &+ 264))), (fp &+ 64), vb39, 0)
             t.sp = vb39
             ln = 8388807 // TTFDraw.HC:199
             _ = try nat(t, n_StrPrint, try push3(t, (fp &+ 64), s59, ld8(g_alive_cnt)))
@@ -4312,7 +4311,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             ln = 8388812 // TTFDraw.HC:204
             try tick(t)
             let vb40 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, ((0 &- ld8((p0_task &+ 256))) &+ 160), (0 &- ld8((p0_task &+ 264))), (fp &+ 64), vb40, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, ((0 &- ld8((p0_task &+ 256))) &+ 160), (0 &- ld8((p0_task &+ 264))), (fp &+ 64), vb40, 0)
             t.sp = vb40
             ln = 8388814 // TTFDraw.HC:206
             _ = try nat(t, n_StrPrint, try push3(t, (fp &+ 64), s59, ld8((g_alive_cnt &+ 8))))
@@ -4333,7 +4332,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             ln = 8388819 // TTFDraw.HC:211
             try tick(t)
             let vb41 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, ((0 &- ld8((p0_task &+ 256))) &+ 240), (0 &- ld8((p0_task &+ 264))), (fp &+ 64), vb41, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, ((0 &- ld8((p0_task &+ 256))) &+ 240), (0 &- ld8((p0_task &+ 264))), (fp &+ 64), vb41, 0)
             t.sp = vb41
             t.msp = msp0
             t.depth -= 1
@@ -4342,7 +4341,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC AnimationDelaySet (ToTheFront.HC:1)
-    public final func f774_AnimationDelaySet(_ t: HTask) throws {
+    public final func f779_AnimationDelaySet(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4356,7 +4355,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC TurnNew (ToTheFront.HC:6)
-    public final func f775_TurnNew(_ t: HTask) throws {
+    public final func f780_TurnNew(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4397,13 +4396,13 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             _ = try nat(t, n_StrPrint, try push3(t, g_msg_buf, s62, t1))
             ln = 9437205 // ToTheFront.HC:21
             try tick(t)
-            try f746_VRSetUp(t, 0)
+            try f751_VRSetUp(t, 0)
             ln = 9437206 // ToTheFront.HC:22
             try tick(t)
-            try f746_VRSetUp(t, 1)
+            try f751_VRSetUp(t, 1)
             ln = 9437207 // ToTheFront.HC:23
             try tick(t)
-            _ = try f749_VisRecalc(t, 5, 0)
+            _ = try f754_VisRecalc(t, 5, 0)
             ln = 9437208 // ToTheFront.HC:24
             try st8(g_cur_player, ((ld8(g_turn) & 1) ^ 1))
             ln = 9437209 // ToTheFront.HC:25
@@ -4414,7 +4413,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC PhaseNew (ToTheFront.HC:28)
-    public final func f776_PhaseNew(_ t: HTask) throws {
+    public final func f781_PhaseNew(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4429,10 +4428,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             if (t1 >= 6) {
                 ln = 9437217 // ToTheFront.HC:33
                 try tick(t)
-                try f763_IndirectResolveAll(t)
+                try f768_IndirectResolveAll(t)
                 ln = 9437218 // ToTheFront.HC:34
                 try tick(t)
-                try f775_TurnNew(t)
+                try f780_TurnNew(t)
             }
             ln = 9437221 // ToTheFront.HC:37
             _ = try nat(t, n_SleepUntil, try push1(t, ld8(g_msg_off_timeout)))
@@ -4463,7 +4462,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC CharDo (ToTheFront.HC:56)
-    public final func f777_CharDo(_ t: HTask, _ a0: Int64) throws {
+    public final func f782_CharDo(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4524,13 +4523,13 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                             }
                             ln = 9437253 // ToTheFront.HC:69
                             try tick(t)
-                            try f742_ViewPlayerSet(t, 0)
+                            try f747_ViewPlayerSet(t, 0)
                             ln = 9437254 // ToTheFront.HC:70
                             break switch0_30
                         }
                         ln = 9437256 // ToTheFront.HC:72
                         try tick(t)
-                        try f742_ViewPlayerSet(t, 1)
+                        try f747_ViewPlayerSet(t, 1)
                         ln = 9437257 // ToTheFront.HC:73
                         break switch0_30
                     }
@@ -4551,7 +4550,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     _ = try nat(t, n_Print, try push1(t, s66))
                     ln = 9437266 // ToTheFront.HC:82
                     try tick(t)
-                    _ = try P.f625_View(t)
+                    _ = try P.f630_View(t)
                     ln = 9437267 // ToTheFront.HC:83
                     _ = try nat(t, n_DocBottom, push0(t))
                     ln = 9437268 // ToTheFront.HC:84
@@ -4565,7 +4564,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 }
                 ln = 9437273 // ToTheFront.HC:89
                 try tick(t)
-                try f774_AnimationDelaySet(t)
+                try f779_AnimationDelaySet(t)
                 ln = 9437274 // ToTheFront.HC:90
                 break switch0_30
             }
@@ -4575,7 +4574,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UserChk (ToTheFront.HC:94)
-    public final func f778_UserChk(_ t: HTask) throws {
+    public final func f783_UserChk(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4592,7 +4591,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             if (t0 != 0) {
                 ln = 9437284 // ToTheFront.HC:100
                 try tick(t)
-                try f777_CharDo(t, l0_ch)
+                try f782_CharDo(t, l0_ch)
             }
             t.depth -= 1
             return
@@ -4600,7 +4599,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC TaskEndCB (ToTheFront.HC:103)
-    public final func f779_TaskEndCB(_ t: HTask) throws {
+    public final func f784_TaskEndCB(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4619,7 +4618,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC PhaseDo (ToTheFront.HC:110)
-    @discardableResult public final func f780_PhaseDo(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f785_PhaseDo(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -4628,7 +4627,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l0_res = 7308604729815824453
             ln = 9437297 // ToTheFront.HC:113
             try tick(t)
-            try f776_PhaseNew(t)
+            try f781_PhaseNew(t)
             ln = 9437298 // ToTheFront.HC:114
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -4637,17 +4636,17 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 if try ((ld8(g_phase) & (-2)) == 0) {
                     ln = 9437300 // ToTheFront.HC:116
                     try tick(t)
-                    _ = try P.f638_Call(t, ld8((g_player_indirect &+ (ld8(g_cur_player) &* 8))))
+                    _ = try P.f643_Call(t, ld8((g_player_indirect &+ (ld8(g_cur_player) &* 8))))
                 } else {
                     ln = 9437301 // ToTheFront.HC:117
                     if try ((ld8(g_phase) & (-2)) == 2) {
                         ln = 9437302 // ToTheFront.HC:118
                         try tick(t)
-                        _ = try P.f638_Call(t, ld8((g_player_move &+ (ld8(g_cur_player) &* 8))))
+                        _ = try P.f643_Call(t, ld8((g_player_move &+ (ld8(g_cur_player) &* 8))))
                     } else {
                         ln = 9437304 // ToTheFront.HC:120
                         try tick(t)
-                        _ = try P.f638_Call(t, ld8((g_player_direct &+ (ld8(g_cur_player) &* 8))))
+                        _ = try P.f643_Call(t, ld8((g_player_direct &+ (ld8(g_cur_player) &* 8))))
                     }
                 }
                 t.hCount = h0c
@@ -4669,7 +4668,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC ToTheFront (ToTheFront.HC:128)
-    public final func f781_ToTheFront(_ t: HTask) throws {
+    public final func f786_ToTheFront(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4689,7 +4688,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             try st4(t1, (ld4u(t1) | 5242920))
             ln = 9437321 // ToTheFront.HC:137
             try tick(t)
-            _ = try P.f507_MenuPush(t, s67)
+            _ = try P.f512_MenuPush(t, s67)
             ln = 9437341 // ToTheFront.HC:157
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 9437342 // ToTheFront.HC:158
@@ -4702,23 +4701,23 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
             ln = 9437345 // ToTheFront.HC:161
             try tick(t)
-            try P.f612_DocMax(t, 0)
+            try P.f617_DocMax(t, 0)
             ln = 9437346 // ToTheFront.HC:162
             try tick(t)
-            try f743_Init(t)
+            try f748_Init(t)
             ln = 9437347 // ToTheFront.HC:163
             try tick(t)
-            try f745_PlayerPick(t, s68, 0)
+            try f750_PlayerPick(t, s68, 0)
             ln = 9437348 // ToTheFront.HC:164
             try tick(t)
-            try f745_PlayerPick(t, s68, 1)
+            try f750_PlayerPick(t, s68, 1)
             ln = 9437350 // ToTheFront.HC:166
             try tick(t)
             _ = try P.f201_PopUpOk(t, s69, 0)
             ln = 9437359 // ToTheFront.HC:175
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065931)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065936)
             ln = 9437360 // ToTheFront.HC:176
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065925)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065930)
             ln = 9437361 // ToTheFront.HC:177
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -4727,7 +4726,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 loop0: while true {
                     ln = 9437363 // ToTheFront.HC:179
                     try tick(t)
-                    let t2: Int64 = try f780_PhaseDo(t)
+                    let t2: Int64 = try f785_PhaseDo(t)
                     l0_res = t2
                     ln = 9437364 // ToTheFront.HC:180
                     if (l0_res == 8243124776347722055) {
@@ -4747,10 +4746,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                             if (l8_ch == 10) {
                                 ln = 9437371 // ToTheFront.HC:187
                                 try tick(t)
-                                try f744_CleanUp(t)
+                                try f749_CleanUp(t)
                                 ln = 9437372 // ToTheFront.HC:188
                                 try tick(t)
-                                try f743_Init(t)
+                                try f748_Init(t)
                                 ln = 9437373 // ToTheFront.HC:189
                                 break loop2
                             } else {
@@ -4765,19 +4764,19 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                                     if (l8_ch == 49) {
                                         ln = 9437378 // ToTheFront.HC:194
                                         try tick(t)
-                                        try f742_ViewPlayerSet(t, 0)
+                                        try f747_ViewPlayerSet(t, 0)
                                     } else {
                                         ln = 9437379 // ToTheFront.HC:195
                                         if (l8_ch == 50) {
                                             ln = 9437380 // ToTheFront.HC:196
                                             try tick(t)
-                                            try f742_ViewPlayerSet(t, 1)
+                                            try f747_ViewPlayerSet(t, 1)
                                         } else {
                                             ln = 9437381 // ToTheFront.HC:197
                                             if (l8_ch == 100) {
                                                 ln = 9437382 // ToTheFront.HC:198
                                                 try tick(t)
-                                                try f774_AnimationDelaySet(t)
+                                                try f779_AnimationDelaySet(t)
                                             }
                                         }
                                     }
@@ -4790,10 +4789,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                         if (l0_res == 28549237226038606) {
                             ln = 9437385 // ToTheFront.HC:201
                             try tick(t)
-                            try f744_CleanUp(t)
+                            try f749_CleanUp(t)
                             ln = 9437386 // ToTheFront.HC:202
                             try tick(t)
-                            try f743_Init(t)
+                            try f748_Init(t)
                         }
                     }
                     if !((l0_res != 7308604729815824453)) { break loop0 }
@@ -4810,7 +4809,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             }
             ln = 9437391 // ToTheFront.HC:207
             try tick(t)
-            try P.f574_ProgressBarsRst(t, 0)
+            try P.f579_ProgressBarsRst(t, 0)
             ln = 9437393 // ToTheFront.HC:209
             try tick(t)
             try P.f228_SettingsPop(t, 0, 0)
@@ -4819,10 +4818,10 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             try P.f293_DCDel(t, ld8(g_map_dc))
             ln = 9437395 // ToTheFront.HC:211
             try tick(t)
-            try f744_CleanUp(t)
+            try f749_CleanUp(t)
             ln = 9437396 // ToTheFront.HC:212
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 9437397 // ToTheFront.HC:213
             _ = try nat(t, n_Seed, try push2(t, 0, 0))
             t.depth -= 1
@@ -4831,20 +4830,20 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/Run.HC#10 (Run.HC:3)
-    @discardableResult public final func f782_init_C__Apps_ToTheFront_Run_HC_10(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f787_init_C__Apps_ToTheFront_Run_HC_10(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 3 // Run.HC:3
             try tick(t)
-            try f781_ToTheFront(t)
+            try f786_ToTheFront(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/ToTheFront/Run.HC#10", ln) }
     }
 
     /// HolyC PlayerIndirect (Human.HC:1)
-    public final func f783_PlayerIndirect(_ t: HTask) throws {
+    public final func f788_PlayerIndirect(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -4860,7 +4859,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l16_remaining = 0
             ln = 10485766 // Human.HC:6
             try tick(t)
-            try f742_ViewPlayerSet(t, ld8(g_cur_player))
+            try f747_ViewPlayerSet(t, ld8(g_cur_player))
             ln = 10485767 // Human.HC:7
             l8_i = 0
             loop0: while (l8_i < 32) {
@@ -4892,21 +4891,21 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     case 2:
                         ln = 10485779 // Human.HC:19
                         try tick(t)
-                        try f777_CharDo(t, ld8((fp &+ 32)))
+                        try f782_CharDo(t, ld8((fp &+ 32)))
                     case 5:
                         ln = 10485782 // Human.HC:22
                         try tick(t)
-                        let t2: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
+                        let t2: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
                         if (t2 != 0) {
                             ln = 10485783 // Human.HC:23
                             try st8((fp &+ 32), (ld8((fp &+ 32)) &- ld8(g_x0)))
                             try st8((fp &+ 40), (ld8((fp &+ 40)) &- ld8(g_y0)))
                             ln = 10485784 // Human.HC:24
                             try tick(t)
-                            try f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
+                            try f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
                             ln = 10485785 // Human.HC:25
                             try tick(t)
-                            let t3: Int64 = try f726_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
+                            let t3: Int64 = try f731_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
                             l0_tmpu = t3
                             if (t3 != 0) {
                                 ln = 10485786 // Human.HC:26
@@ -4916,7 +4915,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                                 } else {
                                     ln = 10485790 // Human.HC:30
                                     try tick(t)
-                                    try f724_RowCol2XY(t, g_fire_radius_x, g_fire_radius_y, ld8((l0_tmpu &+ 16)), ld8((l0_tmpu &+ 24)))
+                                    try f729_RowCol2XY(t, g_fire_radius_x, g_fire_radius_y, ld8((l0_tmpu &+ 16)), ld8((l0_tmpu &+ 24)))
                                     ln = 10485791 // Human.HC:31
                                     try st8(g_fire_radius, bits((Double((ld1s((l0_tmpu &+ 61)) &* 2)) * 9.536279442)))
                                 }
@@ -4925,17 +4924,17 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     case 6:
                         ln = 10485797 // Human.HC:37
                         try tick(t)
-                        let t4: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
+                        let t4: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
                         if (t4 != 0) {
                             ln = 10485798 // Human.HC:38
                             try st8((fp &+ 32), (ld8((fp &+ 32)) &- ld8(g_x0)))
                             try st8((fp &+ 40), (ld8((fp &+ 40)) &- ld8(g_y0)))
                             ln = 10485799 // Human.HC:39
                             try tick(t)
-                            try f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
+                            try f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
                             ln = 10485800 // Human.HC:40
                             try tick(t)
-                            try f724_RowCol2XY(t, (fp &+ 48), (fp &+ 56), ld8(g_cursor_row), ld8(g_cursor_col))
+                            try f729_RowCol2XY(t, (fp &+ 48), (fp &+ 56), ld8(g_cursor_row), ld8(g_cursor_col))
                             ln = 10485801 // Human.HC:41
                             if (l0_tmpu == 0) {
                                 ln = 10485802 // Human.HC:42
@@ -4955,7 +4954,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                                 } else {
                                     ln = 10485808 // Human.HC:48
                                     try tick(t)
-                                    try f759_IndirectAdd(t, l0_tmpu, ld8(g_cursor_row), ld8(g_cursor_col))
+                                    try f764_IndirectAdd(t, l0_tmpu, ld8(g_cursor_row), ld8(g_cursor_col))
                                     ln = 10485809 // Human.HC:49
                                     l16_remaining = (l16_remaining &+ (-1))
                                 }
@@ -4968,7 +4967,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     case 10:
                         ln = 10485817 // Human.HC:57
                         try tick(t)
-                        let t8: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
+                        let t8: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 32)), ld8((fp &+ 40)))
                         if (t8 != 0) {
                             ln = 10485818 // Human.HC:58
                             _ = try nat(t, n_throw, try push2(t, 8247867064721696848, 1))
@@ -4988,7 +4987,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC PlayerMove (Human.HC:65)
-    public final func f784_PlayerMove(_ t: HTask) throws {
+    public final func f789_PlayerMove(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5000,7 +4999,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l0_tmpu = 0
             ln = 10485829 // Human.HC:69
             try tick(t)
-            try f742_ViewPlayerSet(t, ld8(g_cur_player))
+            try f747_ViewPlayerSet(t, ld8(g_cur_player))
             ln = 10485830 // Human.HC:70
             loop0: while (1 != 0) {
                 ln = 10485831 // Human.HC:71
@@ -5018,21 +5017,21 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     case 2:
                         ln = 10485837 // Human.HC:77
                         try tick(t)
-                        try f777_CharDo(t, ld8((fp &+ 16)))
+                        try f782_CharDo(t, ld8((fp &+ 16)))
                     case 5:
                         ln = 10485840 // Human.HC:80
                         try tick(t)
-                        let t2: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
+                        let t2: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
                         if (t2 != 0) {
                             ln = 10485841 // Human.HC:81
                             try st8((fp &+ 16), (ld8((fp &+ 16)) &- ld8(g_x0)))
                             try st8((fp &+ 24), (ld8((fp &+ 24)) &- ld8(g_y0)))
                             ln = 10485842 // Human.HC:82
                             try tick(t)
-                            try f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
+                            try f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
                             ln = 10485843 // Human.HC:83
                             try tick(t)
-                            let t3: Int64 = try f726_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
+                            let t3: Int64 = try f731_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
                             l0_tmpu = t3
                             if (t3 != 0) {
                                 ln = 10485844 // Human.HC:84
@@ -5045,14 +5044,14 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     case 6:
                         ln = 10485850 // Human.HC:90
                         try tick(t)
-                        let t4: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
+                        let t4: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
                         if (t4 != 0) {
                             ln = 10485851 // Human.HC:91
                             try st8((fp &+ 16), (ld8((fp &+ 16)) &- ld8(g_x0)))
                             try st8((fp &+ 24), (ld8((fp &+ 24)) &- ld8(g_y0)))
                             ln = 10485852 // Human.HC:92
                             try tick(t)
-                            try f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
+                            try f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
                             ln = 10485853 // Human.HC:93
                             if (l0_tmpu == 0) {
                                 ln = 10485854 // Human.HC:94
@@ -5061,7 +5060,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                             } else {
                                 ln = 10485856 // Human.HC:96
                                 try tick(t)
-                                _ = try f770_UnitMove(t, l0_tmpu, ld8((fp &+ 16)), ld8((fp &+ 24)))
+                                _ = try f775_UnitMove(t, l0_tmpu, ld8((fp &+ 16)), ld8((fp &+ 24)))
                                 ln = 10485857 // Human.HC:97
                                 break switch2
                             }
@@ -5071,7 +5070,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     case 10:
                         ln = 10485863 // Human.HC:103
                         try tick(t)
-                        let t5: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
+                        let t5: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 16)), ld8((fp &+ 24)))
                         if (t5 != 0) {
                             ln = 10485864 // Human.HC:104
                             _ = try nat(t, n_throw, try push2(t, 8247867064721696848, 1))
@@ -5089,7 +5088,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC PlayerDirect (Human.HC:110)
-    public final func f785_PlayerDirect(_ t: HTask) throws {
+    public final func f790_PlayerDirect(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5102,7 +5101,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             l0_tmpu = 0
             ln = 10485874 // Human.HC:114
             try tick(t)
-            try f742_ViewPlayerSet(t, ld8(g_cur_player))
+            try f747_ViewPlayerSet(t, ld8(g_cur_player))
             ln = 10485875 // Human.HC:115
             loop0: while (1 != 0) {
                 ln = 10485876 // Human.HC:116
@@ -5120,21 +5119,21 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     case 2:
                         ln = 10485882 // Human.HC:122
                         try tick(t)
-                        try f777_CharDo(t, ld8((fp &+ 24)))
+                        try f782_CharDo(t, ld8((fp &+ 24)))
                     case 5:
                         ln = 10485885 // Human.HC:125
                         try tick(t)
-                        let t2: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
+                        let t2: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
                         if (t2 != 0) {
                             ln = 10485886 // Human.HC:126
                             try st8((fp &+ 24), (ld8((fp &+ 24)) &- ld8(g_x0)))
                             try st8((fp &+ 32), (ld8((fp &+ 32)) &- ld8(g_y0)))
                             ln = 10485887 // Human.HC:127
                             try tick(t)
-                            try f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
+                            try f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
                             ln = 10485888 // Human.HC:128
                             try tick(t)
-                            let t3: Int64 = try f726_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
+                            let t3: Int64 = try f731_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
                             l0_tmpu = t3
                             if (t3 != 0) {
                                 ln = 10485889 // Human.HC:129
@@ -5144,32 +5143,32 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                                 } else {
                                     ln = 10485893 // Human.HC:133
                                     try tick(t)
-                                    try f746_VRSetUp(t, ld8(g_cur_player))
+                                    try f751_VRSetUp(t, ld8(g_cur_player))
                                     ln = 10485894 // Human.HC:134
                                     try tick(t)
-                                    try f724_RowCol2XY(t, g_fire_radius_x, g_fire_radius_y, ld8((l0_tmpu &+ 16)), ld8((l0_tmpu &+ 24)))
+                                    try f729_RowCol2XY(t, g_fire_radius_x, g_fire_radius_y, ld8((l0_tmpu &+ 16)), ld8((l0_tmpu &+ 24)))
                                     ln = 10485895 // Human.HC:135
                                     try st8(g_fire_radius, bits((Double((ld1s((l0_tmpu &+ 61)) &* 2)) * 9.536279442)))
                                     ln = 10485896 // Human.HC:136
                                     try tick(t)
-                                    _ = try f749_VisRecalc(t, 0, l0_tmpu)
+                                    _ = try f754_VisRecalc(t, 0, l0_tmpu)
                                 }
                             }
                         }
                     case 6:
                         ln = 10485902 // Human.HC:142
                         try tick(t)
-                        let t4: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
+                        let t4: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
                         if (t4 != 0) {
                             ln = 10485903 // Human.HC:143
                             try st8((fp &+ 24), (ld8((fp &+ 24)) &- ld8(g_x0)))
                             try st8((fp &+ 32), (ld8((fp &+ 32)) &- ld8(g_y0)))
                             ln = 10485904 // Human.HC:144
                             try tick(t)
-                            try f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
+                            try f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
                             ln = 10485905 // Human.HC:145
                             try tick(t)
-                            let t5: Int64 = try f726_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
+                            let t5: Int64 = try f731_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
                             l8_target = t5
                             ln = 10485906 // Human.HC:146
                             if (l0_tmpu == 0) {
@@ -5191,11 +5190,11 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                                 } else {
                                     ln = 10485913 // Human.HC:153
                                     try tick(t)
-                                    try f761_UnitDirectFire(t, l0_tmpu, l8_target)
+                                    try f766_UnitDirectFire(t, l0_tmpu, l8_target)
                                 }
                                 ln = 10485914 // Human.HC:154
                                 try tick(t)
-                                _ = try f749_VisRecalc(t, 1, l0_tmpu)
+                                _ = try f754_VisRecalc(t, 1, l0_tmpu)
                             }
                         }
                         ln = 10485917 // Human.HC:157
@@ -5205,7 +5204,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     case 10:
                         ln = 10485921 // Human.HC:161
                         try tick(t)
-                        let t8: Int64 = try f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
+                        let t8: Int64 = try f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp &+ 24)), ld8((fp &+ 32)))
                         if (t8 != 0) {
                             ln = 10485922 // Human.HC:162
                             _ = try nat(t, n_throw, try push2(t, 8247867064721696848, 1))
@@ -5223,7 +5222,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/AIs/Human.HC#0 (Human.HC:1)
-    @discardableResult public final func f786_init_C__Apps_ToTheFront_AIs_Human_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f791_init_C__Apps_ToTheFront_AIs_Human_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -5233,7 +5232,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC UnitNearestFind (SimpleAI.HC:1)
-    @discardableResult public final func f787_UnitNearestFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Double) throws -> Int64 {
+    @discardableResult public final func f792_UnitNearestFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -5264,7 +5263,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             }
             ln = 11534347 // SimpleAI.HC:11
             try tick(t)
-            try f724_RowCol2XY(t, (fp &+ 64), (fp &+ 72), p0_row, p1_col)
+            try f729_RowCol2XY(t, (fp &+ 64), (fp &+ 72), p0_row, p1_col)
             ln = 11534348 // SimpleAI.HC:12
             l40_i = 0
             loop0: while (l40_i < 32) {
@@ -5274,13 +5273,13 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                     var r1: Bool = (p3_in_LOS == 0)
                     if !r1 {
                         try tick(t)
-                        let t0: Int64 = try f730_LOS(t, p0_row, p1_col, ld8((((g_units &+ (p2_player &* 2304)) &+ (l40_i &* 72)) &+ 16)), ld8((((g_units &+ (p2_player &* 2304)) &+ (l40_i &* 72)) &+ 24)))
+                        let t0: Int64 = try f735_LOS(t, p0_row, p1_col, ld8((((g_units &+ (p2_player &* 2304)) &+ (l40_i &* 72)) &+ 16)), ld8((((g_units &+ (p2_player &* 2304)) &+ (l40_i &* 72)) &+ 24)))
                         r1 = (t0 != 0)
                     }
                     if r1 {
                         ln = 11534351 // SimpleAI.HC:15
                         try tick(t)
-                        try f724_RowCol2XY(t, (fp &+ 80), (fp &+ 88), ld8((((g_units &+ (p2_player &* 2304)) &+ (l40_i &* 72)) &+ 16)), ld8((((g_units &+ (p2_player &* 2304)) &+ (l40_i &* 72)) &+ 24)))
+                        try f729_RowCol2XY(t, (fp &+ 80), (fp &+ 88), ld8((((g_units &+ (p2_player &* 2304)) &+ (l40_i &* 72)) &+ 16)), ld8((((g_units &+ (p2_player &* 2304)) &+ (l40_i &* 72)) &+ 24)))
                         ln = 11534352 // SimpleAI.HC:16
                         try tick(t)
                         let t2: Double = try P.f102_Sqr(t, (ldf((fp &+ 80)) - ldf((fp &+ 64))))
@@ -5311,7 +5310,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC PlayerIndirect (SimpleAI.HC:26)
-    public final func f788_PlayerIndirect(_ t: HTask) throws {
+    public final func f793_PlayerIndirect(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5323,14 +5322,14 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             loop0: while (l16_i < 32) {
                 ln = 11534367 // SimpleAI.HC:31
                 try tick(t)
-                try f778_UserChk(t)
+                try f783_UserChk(t)
                 ln = 11534368 // SimpleAI.HC:32
                 l8_tmpu = try ((g_units &+ (ld8(g_cur_player) &* 2304)) &+ (l16_i &* 72))
                 ln = 11534370 // SimpleAI.HC:34
                 var r1: Bool = try ((ld1s((l8_tmpu &+ 60)) > 0) && (ld1u((l8_tmpu &+ 68)) != 0))
                 if r1 {
                     try tick(t)
-                    let t0: Int64 = try f787_UnitNearestFind(t, ld8((l8_tmpu &+ 16)), ld8((l8_tmpu &+ 24)), ld8(g_enemy_player), 1, (Double((ld1s((l8_tmpu &+ 61)) &* 2)) * 9.536279442))
+                    let t0: Int64 = try f792_UnitNearestFind(t, ld8((l8_tmpu &+ 16)), ld8((l8_tmpu &+ 24)), ld8(g_enemy_player), 1, (Double((ld1s((l8_tmpu &+ 61)) &* 2)) * 9.536279442))
                     l0_target = t0
                     r1 = (t0 != 0)
                 }
@@ -5338,7 +5337,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 if r1 {
                     ln = 11534372 // SimpleAI.HC:36
                     try tick(t)
-                    try f759_IndirectAdd(t, l8_tmpu, ld8((l0_target &+ 16)), ld8((l0_target &+ 24)))
+                    try f764_IndirectAdd(t, l8_tmpu, ld8((l0_target &+ 16)), ld8((l0_target &+ 24)))
                 }
                 ln = 11534366 // SimpleAI.HC:30
                 l16_i = (l16_i &+ 1)
@@ -5352,7 +5351,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC PlayerMove (SimpleAI.HC:41)
-    public final func f789_PlayerMove(_ t: HTask) throws {
+    public final func f794_PlayerMove(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5366,33 +5365,33 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             loop0: while (l16_i < 32) {
                 ln = 11534383 // SimpleAI.HC:47
                 try tick(t)
-                try f778_UserChk(t)
+                try f783_UserChk(t)
                 ln = 11534384 // SimpleAI.HC:48
                 l8_tmpu = try ((g_units &+ (ld8(g_cur_player) &* 2304)) &+ (l16_i &* 72))
                 ln = 11534385 // SimpleAI.HC:49
                 if try (ld1s((l8_tmpu &+ 60)) > 0) {
                     ln = 11534387 // SimpleAI.HC:51
                     try tick(t)
-                    let t0: Int64 = try f787_UnitNearestFind(t, ld8((l8_tmpu &+ 16)), ld8((l8_tmpu &+ 24)), ld8(g_enemy_player), 0, (-1.0))
+                    let t0: Int64 = try f792_UnitNearestFind(t, ld8((l8_tmpu &+ 16)), ld8((l8_tmpu &+ 24)), ld8(g_enemy_player), 0, (-1.0))
                     l0_target = t0
                     if (t0 != 0) {
                         ln = 11534388 // SimpleAI.HC:52
                         try tick(t)
-                        try f724_RowCol2XY(t, (fp &+ 24), (fp &+ 32), ld8((l0_target &+ 16)), ld8((l0_target &+ 24)))
+                        try f729_RowCol2XY(t, (fp &+ 24), (fp &+ 32), ld8((l0_target &+ 16)), ld8((l0_target &+ 24)))
                         ln = 11534389 // SimpleAI.HC:53
                         try tick(t)
-                        let t1: Int64 = try f770_UnitMove(t, l8_tmpu, f2i(ldf((fp &+ 24))), f2i(ldf((fp &+ 32))))
+                        let t1: Int64 = try f775_UnitMove(t, l8_tmpu, f2i(ldf((fp &+ 24))), f2i(ldf((fp &+ 32))))
                         if (t1 == 0) {
                             ln = 11534390 // SimpleAI.HC:54
                             try tick(t)
-                            try f724_RowCol2XY(t, (fp &+ 24), (fp &+ 32), ld8((l8_tmpu &+ 16)), ld8((l8_tmpu &+ 24)))
+                            try f729_RowCol2XY(t, (fp &+ 24), (fp &+ 32), ld8((l8_tmpu &+ 16)), ld8((l8_tmpu &+ 24)))
                             ln = 11534391 // SimpleAI.HC:55
                             let t3: Double = try ldf((fp &+ 32))
                             let t2: Int64 = try nat(t, n_RandI16, push0(t))
                             let t5: Double = try ldf((fp &+ 24))
                             let t4: Int64 = try nat(t, n_RandI16, push0(t))
                             try tick(t)
-                            _ = try f770_UnitMove(t, l8_tmpu, f2i((t5 + Double(t4))), f2i((t3 + Double(t2))))
+                            _ = try f775_UnitMove(t, l8_tmpu, f2i((t5 + Double(t4))), f2i((t3 + Double(t2))))
                         }
                     }
                 }
@@ -5409,7 +5408,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC PlayerDirect (SimpleAI.HC:63)
-    public final func f790_PlayerDirect(_ t: HTask) throws {
+    public final func f795_PlayerDirect(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -5421,14 +5420,14 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
             loop0: while (l16_i < 32) {
                 ln = 11534404 // SimpleAI.HC:68
                 try tick(t)
-                try f778_UserChk(t)
+                try f783_UserChk(t)
                 ln = 11534405 // SimpleAI.HC:69
                 l8_tmpu = try ((g_units &+ (ld8(g_cur_player) &* 2304)) &+ (l16_i &* 72))
                 ln = 11534407 // SimpleAI.HC:71
                 var r1: Bool = try ((ld1s((l8_tmpu &+ 60)) > 0) && (ld1u((l8_tmpu &+ 68)) == 0))
                 if r1 {
                     try tick(t)
-                    let t0: Int64 = try f787_UnitNearestFind(t, ld8((l8_tmpu &+ 16)), ld8((l8_tmpu &+ 24)), ld8(g_enemy_player), 1, (Double((ld1s((l8_tmpu &+ 61)) &* 2)) * 9.536279442))
+                    let t0: Int64 = try f792_UnitNearestFind(t, ld8((l8_tmpu &+ 16)), ld8((l8_tmpu &+ 24)), ld8(g_enemy_player), 1, (Double((ld1s((l8_tmpu &+ 61)) &* 2)) * 9.536279442))
                     l0_target = t0
                     r1 = (t0 != 0)
                 }
@@ -5436,7 +5435,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
                 if r1 {
                     ln = 11534409 // SimpleAI.HC:73
                     try tick(t)
-                    try f761_UnitDirectFire(t, l8_tmpu, l0_target)
+                    try f766_UnitDirectFire(t, l8_tmpu, l0_target)
                     ln = 11534410 // SimpleAI.HC:74
                     _ = try nat(t, n_Sleep, try push1(t, f2i((250.0 * ldf(g_animation_delay)))))
                 }
@@ -5452,7 +5451,7 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/ToTheFront/AIs/SimpleAI.HC#0 (SimpleAI.HC:1)
-    @discardableResult public final func f791_init_C__Apps_ToTheFront_AIs_SimpleAI_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f796_init_C__Apps_ToTheFront_AIs_SimpleAI_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -5464,101 +5463,101 @@ public final class N_Apps_ToTheFront_Run_v0: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_ToTheFront_Run_HC_0(t)
-        case 704: return try f704_init_C__Apps_ToTheFront_Run_HC_1(t)
-        case 705: try f705_InitDefines(t); return 0
-        case 706: return try f706_init_C__Apps_ToTheFront_Run_HC_2(t)
-        case 707: return try f707_init_C__Apps_ToTheFront_Run_HC_3(t)
-        case 708: return try f708_eval0(t)
-        case 709: return try f709_eval1(t)
-        case 710: return try f710_eval2(t)
-        case 711: return try f711_eval3(t)
-        case 712: return try f712_eval4(t)
-        case 713: return try f713_eval5(t)
-        case 714: return try f714_eval6(t)
-        case 715: return try f715_eval7(t)
-        case 716: return try f716_eval8(t)
-        case 717: return try f717_eval9(t)
-        case 718: return try f718_HexMoveOne(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
-        case 719: return try f719_init_C__Apps_ToTheFront_Run_HC_4(t)
-        case 720: return try f720_init_C__Apps_ToTheFront_Run_HC_5(t)
-        case 721: return try f721_init_C__Apps_ToTheFront_Run_HC_6(t)
-        case 722: try f722_Toward(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 723: return try f723_FacingChg(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 724: try f724_RowCol2XY(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 725: try f725_XY2RowCol(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))); return 0
-        case 726: return try f726_UnitFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 727: return try f727_CursorInWin(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 728: try f728_CursorUpdate(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 729: return try f729_LOSPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 730: return try f730_LOS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 731: try f731_DrawHexes(t); return 0
-        case 732: try f732_MakeTerrain(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 733: try f733_MakeRivers(t); return 0
-        case 734: try f734_MakeRoads(t); return 0
-        case 735: try f735_DrawTerrain(t); return 0
-        case 736: try f736_DrawRivers(t); return 0
-        case 737: try f737_DrawRoads(t); return 0
-        case 738: try f738_DrawDots(t); return 0
-        case 739: try f739_HexCentersCalc(t); return 0
-        case 740: try f740_InitMap(t); return 0
-        case 741: try f741_InitUnits(t); return 0
-        case 742: try f742_ViewPlayerSet(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 743: try f743_Init(t); return 0
-        case 744: try f744_CleanUp(t); return 0
-        case 745: try f745_PlayerPick(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 746: try f746_VRSetUp(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 747: try f747_VRMerge(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 748: return try f748_MPVisRecalc(t, (n > 0 ? st[base + 0] : 0))
-        case 749: return try f749_VisRecalc(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 750: return try f750_eval10(t)
-        case 751: return try f751_eval11(t)
-        case 752: try f752_MPVisRecalcMap(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 753: try f753_VisRecalcMap(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 754: return try f754_eval12(t)
-        case 755: return try f755_eval13(t)
-        case 756: try f756_AttackHeader(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 757: return bits(try f757_HitDamage(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0))))
-        case 758: return try f758_DamageDo(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
-        case 759: try f759_IndirectAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 760: return try f760_BulletPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 761: try f761_UnitDirectFire(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 762: return try f762_HexOccupy(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 763: try f763_IndirectResolveAll(t); return 0
-        case 764: return try f764_init_C__Apps_ToTheFront_Run_HC_7(t)
-        case 765: return try f765_init_C__Apps_ToTheFront_Run_HC_8(t)
-        case 766: return try f766_init_C__Apps_ToTheFront_Run_HC_9(t)
-        case 767: return try f767_HexMoveOneCost(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 768: return try f768_UnitMovePlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 769: try f769_UnitMoveAnimation(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 770: return try f770_UnitMove(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 771: try f771_UnitDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), d((n > 4 ? st[base + 4] : 0))); return 0
-        case 772: try f772_UnitsDraw(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 773: try f773_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 774: try f774_AnimationDelaySet(t); return 0
-        case 775: try f775_TurnNew(t); return 0
-        case 776: try f776_PhaseNew(t); return 0
-        case 777: try f777_CharDo(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 778: try f778_UserChk(t); return 0
-        case 779: try f779_TaskEndCB(t); return 0
-        case 780: return try f780_PhaseDo(t)
-        case 781: try f781_ToTheFront(t); return 0
-        case 782: return try f782_init_C__Apps_ToTheFront_Run_HC_10(t)
-        case 783: try f783_PlayerIndirect(t); return 0
-        case 784: try f784_PlayerMove(t); return 0
-        case 785: try f785_PlayerDirect(t); return 0
-        case 786: return try f786_init_C__Apps_ToTheFront_AIs_Human_HC_0(t)
-        case 787: return try f787_UnitNearestFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), d((n > 4 ? st[base + 4] : 0)))
+        case 708: return try f708_init_C__Apps_ToTheFront_Run_HC_0(t)
+        case 709: return try f709_init_C__Apps_ToTheFront_Run_HC_1(t)
+        case 710: try f710_InitDefines(t); return 0
+        case 711: return try f711_init_C__Apps_ToTheFront_Run_HC_2(t)
+        case 712: return try f712_init_C__Apps_ToTheFront_Run_HC_3(t)
+        case 713: return try f713_eval0(t)
+        case 714: return try f714_eval1(t)
+        case 715: return try f715_eval2(t)
+        case 716: return try f716_eval3(t)
+        case 717: return try f717_eval4(t)
+        case 718: return try f718_eval5(t)
+        case 719: return try f719_eval6(t)
+        case 720: return try f720_eval7(t)
+        case 721: return try f721_eval8(t)
+        case 722: return try f722_eval9(t)
+        case 723: return try f723_HexMoveOne(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
+        case 724: return try f724_init_C__Apps_ToTheFront_Run_HC_4(t)
+        case 725: return try f725_init_C__Apps_ToTheFront_Run_HC_5(t)
+        case 726: return try f726_init_C__Apps_ToTheFront_Run_HC_6(t)
+        case 727: try f727_Toward(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 728: return try f728_FacingChg(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 729: try f729_RowCol2XY(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 730: try f730_XY2RowCol(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))); return 0
+        case 731: return try f731_UnitFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 732: return try f732_CursorInWin(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 733: try f733_CursorUpdate(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 734: return try f734_LOSPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 735: return try f735_LOS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 736: try f736_DrawHexes(t); return 0
+        case 737: try f737_MakeTerrain(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 738: try f738_MakeRivers(t); return 0
+        case 739: try f739_MakeRoads(t); return 0
+        case 740: try f740_DrawTerrain(t); return 0
+        case 741: try f741_DrawRivers(t); return 0
+        case 742: try f742_DrawRoads(t); return 0
+        case 743: try f743_DrawDots(t); return 0
+        case 744: try f744_HexCentersCalc(t); return 0
+        case 745: try f745_InitMap(t); return 0
+        case 746: try f746_InitUnits(t); return 0
+        case 747: try f747_ViewPlayerSet(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 748: try f748_Init(t); return 0
+        case 749: try f749_CleanUp(t); return 0
+        case 750: try f750_PlayerPick(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 751: try f751_VRSetUp(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 752: try f752_VRMerge(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 753: return try f753_MPVisRecalc(t, (n > 0 ? st[base + 0] : 0))
+        case 754: return try f754_VisRecalc(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 755: return try f755_eval10(t)
+        case 756: return try f756_eval11(t)
+        case 757: try f757_MPVisRecalcMap(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 758: try f758_VisRecalcMap(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 759: return try f759_eval12(t)
+        case 760: return try f760_eval13(t)
+        case 761: try f761_AttackHeader(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 762: return bits(try f762_HitDamage(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0))))
+        case 763: return try f763_DamageDo(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)))
+        case 764: try f764_IndirectAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 765: return try f765_BulletPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 766: try f766_UnitDirectFire(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 767: return try f767_HexOccupy(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 768: try f768_IndirectResolveAll(t); return 0
+        case 769: return try f769_init_C__Apps_ToTheFront_Run_HC_7(t)
+        case 770: return try f770_init_C__Apps_ToTheFront_Run_HC_8(t)
+        case 771: return try f771_init_C__Apps_ToTheFront_Run_HC_9(t)
+        case 772: return try f772_HexMoveOneCost(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 773: return try f773_UnitMovePlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 774: try f774_UnitMoveAnimation(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 775: return try f775_UnitMove(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 776: try f776_UnitDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), d((n > 4 ? st[base + 4] : 0))); return 0
+        case 777: try f777_UnitsDraw(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 778: try f778_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 779: try f779_AnimationDelaySet(t); return 0
+        case 780: try f780_TurnNew(t); return 0
+        case 781: try f781_PhaseNew(t); return 0
+        case 782: try f782_CharDo(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 783: try f783_UserChk(t); return 0
+        case 784: try f784_TaskEndCB(t); return 0
+        case 785: return try f785_PhaseDo(t)
+        case 786: try f786_ToTheFront(t); return 0
+        case 787: return try f787_init_C__Apps_ToTheFront_Run_HC_10(t)
         case 788: try f788_PlayerIndirect(t); return 0
         case 789: try f789_PlayerMove(t); return 0
         case 790: try f790_PlayerDirect(t); return 0
-        case 791: return try f791_init_C__Apps_ToTheFront_AIs_SimpleAI_HC_0(t)
+        case 791: return try f791_init_C__Apps_ToTheFront_AIs_Human_HC_0(t)
+        case 792: return try f792_UnitNearestFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), d((n > 4 ? st[base + 4] : 0)))
+        case 793: try f793_PlayerIndirect(t); return 0
+        case 794: try f794_PlayerMove(t); return 0
+        case 795: try f795_PlayerDirect(t); return 0
+        case 796: return try f796_init_C__Apps_ToTheFront_AIs_SimpleAI_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/ToTheFront/Run.HC#0", 704: "$init:C:/Apps/ToTheFront/Run.HC#1", 705: "InitDefines", 706: "$init:C:/Apps/ToTheFront/Run.HC#2", 707: "$init:C:/Apps/ToTheFront/Run.HC#3", 708: "$eval0", 709: "$eval1", 710: "$eval2", 711: "$eval3", 712: "$eval4", 713: "$eval5", 714: "$eval6", 715: "$eval7", 716: "$eval8", 717: "$eval9", 718: "HexMoveOne", 719: "$init:C:/Apps/ToTheFront/Run.HC#4", 720: "$init:C:/Apps/ToTheFront/Run.HC#5", 721: "$init:C:/Apps/ToTheFront/Run.HC#6", 722: "Toward", 723: "FacingChg", 724: "RowCol2XY", 725: "XY2RowCol", 726: "UnitFind", 727: "CursorInWin", 728: "CursorUpdate", 729: "LOSPlot", 730: "LOS", 731: "DrawHexes", 732: "MakeTerrain", 733: "MakeRivers", 734: "MakeRoads", 735: "DrawTerrain", 736: "DrawRivers", 737: "DrawRoads", 738: "DrawDots", 739: "HexCentersCalc", 740: "InitMap", 741: "InitUnits", 742: "ViewPlayerSet", 743: "Init", 744: "CleanUp", 745: "PlayerPick", 746: "VRSetUp", 747: "VRMerge", 748: "MPVisRecalc", 749: "VisRecalc", 750: "$eval10", 751: "$eval11", 752: "MPVisRecalcMap", 753: "VisRecalcMap", 754: "$eval12", 755: "$eval13", 756: "AttackHeader", 757: "HitDamage", 758: "DamageDo", 759: "IndirectAdd", 760: "BulletPlot", 761: "UnitDirectFire", 762: "HexOccupy", 763: "IndirectResolveAll", 764: "$init:C:/Apps/ToTheFront/Run.HC#7", 765: "$init:C:/Apps/ToTheFront/Run.HC#8", 766: "$init:C:/Apps/ToTheFront/Run.HC#9", 767: "HexMoveOneCost", 768: "UnitMovePlot", 769: "UnitMoveAnimation", 770: "UnitMove", 771: "UnitDraw", 772: "UnitsDraw", 773: "DrawIt", 774: "AnimationDelaySet", 775: "TurnNew", 776: "PhaseNew", 777: "CharDo", 778: "UserChk", 779: "TaskEndCB", 780: "PhaseDo", 781: "ToTheFront", 782: "$init:C:/Apps/ToTheFront/Run.HC#10", 783: "PlayerIndirect", 784: "PlayerMove", 785: "PlayerDirect", 786: "$init:C:/Apps/ToTheFront/AIs/Human.HC#0", 787: "UnitNearestFind", 788: "PlayerIndirect", 789: "PlayerMove", 790: "PlayerDirect", 791: "$init:C:/Apps/ToTheFront/AIs/SimpleAI.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/ToTheFront/Run.HC#0", 709: "$init:C:/Apps/ToTheFront/Run.HC#1", 710: "InitDefines", 711: "$init:C:/Apps/ToTheFront/Run.HC#2", 712: "$init:C:/Apps/ToTheFront/Run.HC#3", 713: "$eval0", 714: "$eval1", 715: "$eval2", 716: "$eval3", 717: "$eval4", 718: "$eval5", 719: "$eval6", 720: "$eval7", 721: "$eval8", 722: "$eval9", 723: "HexMoveOne", 724: "$init:C:/Apps/ToTheFront/Run.HC#4", 725: "$init:C:/Apps/ToTheFront/Run.HC#5", 726: "$init:C:/Apps/ToTheFront/Run.HC#6", 727: "Toward", 728: "FacingChg", 729: "RowCol2XY", 730: "XY2RowCol", 731: "UnitFind", 732: "CursorInWin", 733: "CursorUpdate", 734: "LOSPlot", 735: "LOS", 736: "DrawHexes", 737: "MakeTerrain", 738: "MakeRivers", 739: "MakeRoads", 740: "DrawTerrain", 741: "DrawRivers", 742: "DrawRoads", 743: "DrawDots", 744: "HexCentersCalc", 745: "InitMap", 746: "InitUnits", 747: "ViewPlayerSet", 748: "Init", 749: "CleanUp", 750: "PlayerPick", 751: "VRSetUp", 752: "VRMerge", 753: "MPVisRecalc", 754: "VisRecalc", 755: "$eval10", 756: "$eval11", 757: "MPVisRecalcMap", 758: "VisRecalcMap", 759: "$eval12", 760: "$eval13", 761: "AttackHeader", 762: "HitDamage", 763: "DamageDo", 764: "IndirectAdd", 765: "BulletPlot", 766: "UnitDirectFire", 767: "HexOccupy", 768: "IndirectResolveAll", 769: "$init:C:/Apps/ToTheFront/Run.HC#7", 770: "$init:C:/Apps/ToTheFront/Run.HC#8", 771: "$init:C:/Apps/ToTheFront/Run.HC#9", 772: "HexMoveOneCost", 773: "UnitMovePlot", 774: "UnitMoveAnimation", 775: "UnitMove", 776: "UnitDraw", 777: "UnitsDraw", 778: "DrawIt", 779: "AnimationDelaySet", 780: "TurnNew", 781: "PhaseNew", 782: "CharDo", 783: "UserChk", 784: "TaskEndCB", 785: "PhaseDo", 786: "ToTheFront", 787: "$init:C:/Apps/ToTheFront/Run.HC#10", 788: "PlayerIndirect", 789: "PlayerMove", 790: "PlayerDirect", 791: "$init:C:/Apps/ToTheFront/AIs/Human.HC#0", 792: "UnitNearestFind", 793: "PlayerIndirect", 794: "PlayerMove", 795: "PlayerDirect", 796: "$init:C:/Apps/ToTheFront/AIs/SimpleAI.HC#0"]
     private static let FILES: [String] = ["C:/Apps/ToTheFront/Run.HC", "C:/Apps/ToTheFront/Load.HC", "C:/Apps/ToTheFront/TTFGlbls.HC", "C:/Apps/ToTheFront/TTFMove.HC", "C:/Apps/ToTheFront/TTFLib.HC", "C:/Apps/ToTheFront/TTFInit.HC", "C:/Apps/ToTheFront/TTFVis.HC", "C:/Apps/ToTheFront/TTFFire.HC", "C:/Apps/ToTheFront/TTFDraw.HC", "C:/Apps/ToTheFront/ToTheFront.HC", "C:/Apps/ToTheFront/AIs/Human.HC", "C:/Apps/ToTheFront/AIs/SimpleAI.HC"]
     public override var files: [String] { N_Apps_ToTheFront_Run_v0.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_ToTheFront_Run_v0.DEFINED.contains(index) }

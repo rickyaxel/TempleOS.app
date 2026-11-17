@@ -30,6 +30,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_ToI64 = rt.vm.natives.find("ToI64")!!.index
     @JvmField val n_Yield = rt.vm.natives.find("Yield")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
@@ -83,7 +84,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/BigGuns.HC#0 (BigGuns.HC:11) */
-    fun f703_init_C__Demo_Games_BigGuns_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_BigGuns_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -93,7 +94,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (BigGuns.HC:27) */
-    fun f704_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -130,8 +131,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 40 // BigGuns.HC:40
             nat(t, n_GrBlot, push4(t, p1_dc, l72_h, l80_v, l16_map))
             ln = 42 // BigGuns.HC:42
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, (ld8(g_gun_x) + l72_h), (ld8(g_gun_y) + l80_v), 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, (ld8(g_gun_x) + l72_h), (ld8(g_gun_y) + l80_v), 0L, b0, 0L))
             ln = 44 // BigGuns.HC:44
             if ((l32__ < ((-f(4614256656552045848L)) / 2.0))) {
                 ln = 45 // BigGuns.HC:45
@@ -139,7 +139,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st4(t1, (ld4s(t1) or 1536L))
                 ln = 46 // BigGuns.HC:46
                 tick(t)
-                P.f314_DCSymmetrySet(t, p1_dc, (ld8(g_gun_x) + l72_h), 0L, (ld8(g_gun_x) + l72_h), 1L)
+                P.f315_DCSymmetrySet(t, p1_dc, (ld8(g_gun_x) + l72_h), 0L, (ld8(g_gun_x) + l72_h), 1L)
                 ln = 47 // BigGuns.HC:47
                 l32__ = ((-f(4614256656552045848L)) - l32__)
             }
@@ -153,7 +153,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             val t5: Double = f(nat(t, n_Cos, push1(t, bits(l32__))))
             ln = 49 // BigGuns.HC:49
             tick(t)
-            P.f445_Sprite3ZB(t, p1_dc, f2i((t7.toDouble() - (t6.toDouble() * t5))), f2i(((t4.toDouble() - (t3.toDouble() * t2)) - 10.0)), 0L, b1, l32__)
+            P.f450_Sprite3ZB(t, p1_dc, f2i((t7.toDouble() - (t6.toDouble() * t5))), f2i(((t4.toDouble() - (t3.toDouble() * t2)) - 10.0)), 0L, b1, l32__)
             ln = 52 // BigGuns.HC:52
             val t8: Long = (p1_dc + 28L)
             st4(t8, (ld4s(t8) and -1537L))
@@ -171,7 +171,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 st8((l16_map + 304L), 0L)
                 ln = 60 // BigGuns.HC:60
                 tick(t)
-                P.f397_GrCircle(t, l16_map, f2i(ldf((l24_tmpm + 56L))), f2i(ldf((l24_tmpm + 64L))), 2L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, l16_map, f2i(ldf((l24_tmpm + 56L))), f2i(ldf((l24_tmpm + 64L))), 2L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 61 // BigGuns.HC:61
                 if ((ld8((l16_map + 304L)) != 0L)) {
                     ln = 62 // BigGuns.HC:62
@@ -179,7 +179,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 }
                 ln = 64 // BigGuns.HC:64
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, f2i((ldf((l24_tmpm + 56L)) + l72_h.toDouble())), f2i((ldf((l24_tmpm + 64L)) + l80_v.toDouble())), 2L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, f2i((ldf((l24_tmpm + 56L)) + l72_h.toDouble())), f2i((ldf((l24_tmpm + 64L)) + l80_v.toDouble())), 2L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 66 // BigGuns.HC:66
                 l24_tmpm = ld8(l24_tmpm)
                 tick(t)
@@ -211,7 +211,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MyDerivative (BigGuns.HC:79) */
-    fun f705_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f710_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -240,7 +240,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawMap (BigGuns.HC:89) */
-    fun f706_DrawMap(t: Task) {
+    fun f711_DrawMap(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -259,7 +259,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             loop0@ while ((l8_x < 2048L)) {
                 ln = 99 // BigGuns.HC:99
                 tick(t)
-                P.f396_GrLine(t, l0_map, (l8_x - 1L), ld2s((g_elevs + ((l8_x - 1L) * 2L))), l8_x, ld2s((g_elevs + (l8_x * 2L))), 1L, 0L)
+                P.f397_GrLine(t, l0_map, (l8_x - 1L), ld2s((g_elevs + ((l8_x - 1L) * 2L))), l8_x, ld2s((g_elevs + (l8_x * 2L))), 1L, 0L)
                 ln = 98 // BigGuns.HC:98
                 l8_x = (l8_x + 1L)
                 tick(t)
@@ -268,7 +268,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st4((l0_map + 160L), 6L)
             ln = 102 // BigGuns.HC:102
             tick(t)
-            P.f387_GrFloodFill(t, l0_map, 0L, 455L, 0L, 0L, 0L)
+            P.f388_GrFloodFill(t, l0_map, 0L, 455L, 0L, 0L, 0L)
             ln = 104 // BigGuns.HC:104
             val t0: Long = ld8(g_active_map)
             st8(g_active_map, (t0 + 1L))
@@ -278,7 +278,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC FireTask (BigGuns.HC:107) */
-    fun f707_FireTask(t: Task, a0: Long) {
+    fun f712_FireTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -323,7 +323,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             tick(t)
             P.f153_QueIns(t, l8_tmpm, ld8((ld8(g_ode) + 48L)))
             ln = 125 // BigGuns.HC:125
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 126 // BigGuns.HC:126
             l16_i = 0L
             loop2@ while ((l16_i < 60L)) {
@@ -355,7 +355,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC ManageShots (BigGuns.HC:137) */
-    fun f708_ManageShots(t: Task) {
+    fun f713_ManageShots(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -415,7 +415,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             if ((l24_chged != 0L)) {
                 ln = 157 // BigGuns.HC:157
                 tick(t)
-                f706_DrawMap(t)
+                f711_DrawMap(t)
             }
             t.depth--
             return
@@ -423,7 +423,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC MoveTask (BigGuns.HC:160) */
-    fun f709_MoveTask(t: Task, a0: Long) {
+    fun f714_MoveTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -437,7 +437,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 ln = 166 // BigGuns.HC:166
                 nat(t, n_Snd, push1(t, 34L))
                 ln = 167 // BigGuns.HC:167
-                st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+                st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
                 ln = 168 // BigGuns.HC:168
                 val t1: Double = f(nat(t, n_tS, push0(t)))
                 st8(g_quit_time, bits((t1 + 0.1)))
@@ -459,7 +459,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Init (BigGuns.HC:175) */
-    fun f710_Init(t: Task) {
+    fun f715_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -551,10 +551,10 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             }
             ln = 207 // BigGuns.HC:207
             tick(t)
-            val t12: Long = P.f453_ODENew(t, 0L, 1.0E-4, 1L)
+            val t12: Long = P.f458_ODENew(t, 0L, 1.0E-4, 1L)
             st8(g_ode, t12)
             ln = 208 // BigGuns.HC:208
-            st8((ld8(g_ode) + 304L), 9223090561878065857L)
+            st8((ld8(g_ode) + 304L), 9223090561878065862L)
             ln = 209 // BigGuns.HC:209
             st8((ld8(g_ode) + 80L), bits(0.002))
             ln = 210 // BigGuns.HC:210
@@ -581,7 +581,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f226_TaskDerivedValsUpdate(t, 0L, 1L)
             ln = 221 // BigGuns.HC:221
             tick(t)
-            f706_DrawMap(t)
+            f711_DrawMap(t)
             t.msp = msp0
             t.depth--
             return
@@ -589,7 +589,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC CleanUp (BigGuns.HC:224) */
-    fun f711_CleanUp(t: Task, a0: Long) {
+    fun f716_CleanUp(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -604,7 +604,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 P.f156_QueDel(t, (p0_ode + 40L), 1L)
                 ln = 229 // BigGuns.HC:229
                 tick(t)
-                P.f455_ODEDel(t, p0_ode)
+                P.f460_ODEDel(t, p0_ode)
             }
             t.depth--
             return
@@ -612,7 +612,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC BigGuns (BigGuns.HC:233) */
-    fun f712_BigGuns(t: Task) {
+    fun f717_BigGuns(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -629,7 +629,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 248 // BigGuns.HC:248
             tick(t)
-            P.f507_MenuPush(t, s2)
+            P.f512_MenuPush(t, s2)
             ln = 261 // BigGuns.HC:261
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 262 // BigGuns.HC:262
@@ -646,9 +646,9 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_DocScroll, push1(t, 1L))
             ln = 267 // BigGuns.HC:267
             tick(t)
-            f710_Init(t)
+            f715_Init(t)
             ln = 268 // BigGuns.HC:268
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065856L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
             ln = 269 // BigGuns.HC:269
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -678,7 +678,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                         st8(g_gun__, bits(0.0))
                                                     } else {
                                                         ln = 280 // BigGuns.HC:280
-                                                        nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                        nat(t, n_Spawn, push(t, 9223090561878065866L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
                                                     }
                                                 }
                                                 75L -> {
@@ -690,7 +690,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                                         st8(g_gun__, bits((-f(4614256656552045848L))))
                                                     } else {
                                                         ln = 287 // BigGuns.HC:287
-                                                        nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                        nat(t, n_Spawn, push(t, 9223090561878065866L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
                                                     }
                                                 }
                                                 else -> {
@@ -701,14 +701,14 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                     10L -> {
                                         ln = 292 // BigGuns.HC:292
                                         tick(t)
-                                        f711_CleanUp(t, ld8(g_ode))
+                                        f716_CleanUp(t, ld8(g_ode))
                                         ln = 293 // BigGuns.HC:293
                                         tick(t)
-                                        f710_Init(t)
+                                        f715_Init(t)
                                     }
                                     32L -> {
                                         ln = 296 // BigGuns.HC:296
-                                        nat(t, n_Spawn, push(t, 9223090561878065859L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
+                                        nat(t, n_Spawn, push(t, 9223090561878065864L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
                                     }
                                     27L, 28L -> {
                                         ln = 300 // BigGuns.HC:300
@@ -722,7 +722,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                         }
                         ln = 302 // BigGuns.HC:302
                         tick(t)
-                        f708_ManageShots(t)
+                        f713_ManageShots(t)
                         ln = 303 // BigGuns.HC:303
                         nat(t, n_Refresh, push2(t, 1L, 0L))
                         tick(t)
@@ -750,10 +750,10 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st8((g_map_dcs + 8L), 0L)
             ln = 311 // BigGuns.HC:311
             tick(t)
-            f711_CleanUp(t, ld8(g_ode))
+            f716_CleanUp(t, ld8(g_ode))
             ln = 312 // BigGuns.HC:312
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -761,13 +761,13 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/BigGuns.HC#1 (BigGuns.HC:20) */
-    fun f713_init_C__Demo_Games_BigGuns_HC_1(t: Task): Long {
+    fun f718_init_C__Demo_Games_BigGuns_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 315 // BigGuns.HC:315
             tick(t)
-            f712_BigGuns(t)
+            f717_BigGuns(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/BigGuns.HC#1", ln) }
@@ -776,17 +776,17 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_BigGuns_HC_0(t)
-            704 -> { f704_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> { f705_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            706 -> { f706_DrawMap(t); 0L }
-            707 -> { f707_FireTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_ManageShots(t); 0L }
-            709 -> { f709_MoveTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            710 -> { f710_Init(t); 0L }
-            711 -> { f711_CleanUp(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            712 -> { f712_BigGuns(t); 0L }
-            713 -> f713_init_C__Demo_Games_BigGuns_HC_1(t)
+            708 -> f708_init_C__Demo_Games_BigGuns_HC_0(t)
+            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> { f710_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            711 -> { f711_DrawMap(t); 0L }
+            712 -> { f712_FireTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_ManageShots(t); 0L }
+            714 -> { f714_MoveTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            715 -> { f715_Init(t); 0L }
+            716 -> { f716_CleanUp(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            717 -> { f717_BigGuns(t); 0L }
+            718 -> f718_init_C__Demo_Games_BigGuns_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -798,7 +798,7 @@ class N_Demo_Games_BigGuns(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/BigGuns.HC#0", "DrawIt", "MyDerivative", "DrawMap", "FireTask", "ManageShots", "MoveTask", "Init", "CleanUp", "BigGuns", "\$init:C:/Demo/Games/BigGuns.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Games/BigGuns.HC")
     }

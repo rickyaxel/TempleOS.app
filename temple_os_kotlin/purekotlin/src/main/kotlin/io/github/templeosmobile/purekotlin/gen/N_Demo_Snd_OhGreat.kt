@@ -60,15 +60,15 @@ class N_Demo_Snd_OhGreat(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC Song (OhGreat.HC:1) */
-    fun f703_Song(t: Task) {
+    fun f708_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 3 // OhGreat.HC:3
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 4 // OhGreat.HC:4
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 5 // OhGreat.HC:5
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -80,46 +80,46 @@ class N_Demo_Snd_OhGreat(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
                     if (!((t0 == 0L))) break@loop0
                     ln = 7 // OhGreat.HC:7
                     tick(t)
-                    P.f494_Play(t, s1, s0)
+                    P.f499_Play(t, s1, s0)
                     ln = 9 // OhGreat.HC:9
                     tick(t)
-                    P.f494_Play(t, s3, s2)
+                    P.f499_Play(t, s3, s2)
                     ln = 11 // OhGreat.HC:11
                     tick(t)
-                    P.f494_Play(t, s5, s4)
+                    P.f499_Play(t, s5, s4)
                     ln = 13 // OhGreat.HC:13
                     tick(t)
-                    P.f494_Play(t, s7, s6)
+                    P.f499_Play(t, s7, s6)
                     ln = 15 // OhGreat.HC:15
                     tick(t)
-                    P.f494_Play(t, s9, s8)
+                    P.f499_Play(t, s9, s8)
                     ln = 17 // OhGreat.HC:17
                     tick(t)
-                    P.f494_Play(t, s11, s10)
+                    P.f499_Play(t, s11, s10)
                     ln = 19 // OhGreat.HC:19
                     tick(t)
-                    P.f494_Play(t, s13, s12)
+                    P.f499_Play(t, s13, s12)
                     ln = 21 // OhGreat.HC:21
                     tick(t)
-                    P.f494_Play(t, s11, s14)
+                    P.f499_Play(t, s11, s14)
                     ln = 23 // OhGreat.HC:23
                     tick(t)
-                    P.f494_Play(t, s13, s15)
+                    P.f499_Play(t, s13, s15)
                     ln = 25 // OhGreat.HC:25
                     tick(t)
-                    P.f494_Play(t, s11, s16)
+                    P.f499_Play(t, s11, s16)
                     ln = 27 // OhGreat.HC:27
                     tick(t)
-                    P.f494_Play(t, s13, s17)
+                    P.f499_Play(t, s13, s17)
                     ln = 29 // OhGreat.HC:29
                     tick(t)
-                    P.f494_Play(t, s7, s6)
+                    P.f499_Play(t, s7, s6)
                     ln = 31 // OhGreat.HC:31
                     tick(t)
-                    P.f494_Play(t, s9, s8)
+                    P.f499_Play(t, s9, s8)
                     ln = 33 // OhGreat.HC:33
                     tick(t)
-                    P.f494_Play(t, s18, 0L)
+                    P.f499_Play(t, s18, 0L)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -141,13 +141,13 @@ class N_Demo_Snd_OhGreat(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     }
 
     /** HolyC $init:C:/Demo/Snd/OhGreat.HC#0 (OhGreat.HC:41) */
-    fun f704_init_C__Demo_Snd_OhGreat_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Snd_OhGreat_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 41 // OhGreat.HC:41
             tick(t)
-            f703_Song(t)
+            f708_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Snd/OhGreat.HC#0", ln) }
@@ -156,8 +156,8 @@ class N_Demo_Snd_OhGreat(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Song(t); 0L }
-            704 -> f704_init_C__Demo_Snd_OhGreat_HC_0(t)
+            708 -> { f708_Song(t); 0L }
+            709 -> f709_init_C__Demo_Snd_OhGreat_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -169,7 +169,7 @@ class N_Demo_Snd_OhGreat(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMo
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("Song", "\$init:C:/Demo/Snd/OhGreat.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Snd/OhGreat.HC")
     }

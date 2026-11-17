@@ -69,7 +69,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
     }
 
     /// HolyC DrawFrame (RainDrops.HC:12)
-    public final func f703_DrawFrame(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawFrame(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -89,18 +89,18 @@ public final class N_Demo_Games_RainDrops: NativeModule {
             try st4((p1_dc &+ 160), 12)
             ln = 18 // RainDrops.HC:18
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l32_cx &- 20), (l40_cy &- 50), l32_cx, (l40_cy &- 150), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l32_cx &- 20), (l40_cy &- 50), l32_cx, (l40_cy &- 150), 1, 0)
             ln = 19 // RainDrops.HC:19
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l32_cx &+ 20), (l40_cy &- 50), l32_cx, (l40_cy &- 150), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l32_cx &+ 20), (l40_cy &- 50), l32_cx, (l40_cy &- 150), 1, 0)
             ln = 21 // RainDrops.HC:21
             try st4((p1_dc &+ 160), 12)
             ln = 22 // RainDrops.HC:22
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l32_cx &- 100), (l40_cy &- 100), l32_cx, l40_cy, 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l32_cx &- 100), (l40_cy &- 100), l32_cx, l40_cy, 1, 0)
             ln = 23 // RainDrops.HC:23
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l32_cx &+ 100), (l40_cy &- 100), l32_cx, l40_cy, 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l32_cx &+ 100), (l40_cy &- 100), l32_cx, l40_cy, 1, 0)
             ln = 24 // RainDrops.HC:24
             let t0: Int64 = try nat(t, n_Bt, try push2(t, (P.g_kbd &+ 64), ld8(g_sc_1)))
             if (t0 != 0) {
@@ -114,7 +114,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
             ln = 29 // RainDrops.HC:29
             try tick(t)
             let vb0 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, (l32_cx &+ 10), l40_cy, s0, vb0, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, (l32_cx &+ 10), l40_cy, s0, vb0, 0)
             t.sp = vb0
             ln = 31 // RainDrops.HC:31
             try st4((p1_dc &+ 160), 12)
@@ -124,10 +124,10 @@ public final class N_Demo_Games_RainDrops: NativeModule {
             try st4((p1_dc &+ 160), 12)
             ln = 35 // RainDrops.HC:35
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l32_cx &- 200), l40_cy, l32_cx, (l40_cy &+ 100), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l32_cx &- 200), l40_cy, l32_cx, (l40_cy &+ 100), 1, 0)
             ln = 36 // RainDrops.HC:36
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l32_cx &+ 200), l40_cy, l32_cx, (l40_cy &+ 100), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l32_cx &+ 200), l40_cy, l32_cx, (l40_cy &+ 100), 1, 0)
             ln = 37 // RainDrops.HC:37
             let t1: Int64 = try nat(t, n_Bt, try push2(t, (P.g_kbd &+ 64), ld8(g_sc_2)))
             if (t1 != 0) {
@@ -141,20 +141,20 @@ public final class N_Demo_Games_RainDrops: NativeModule {
             ln = 42 // RainDrops.HC:42
             try tick(t)
             let vb1 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, (l32_cx &+ 10), (l40_cy &+ 100), s1, vb1, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, (l32_cx &+ 10), (l40_cy &+ 100), s1, vb1, 0)
             t.sp = vb1
             ln = 44 // RainDrops.HC:44
             try st4((p1_dc &+ 160), 12)
             ln = 45 // RainDrops.HC:45
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l32_cx &+ 400), (l40_cy &+ 100), (l32_cx &- 250), (l40_cy &+ 200), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l32_cx &+ 400), (l40_cy &+ 100), (l32_cx &- 250), (l40_cy &+ 200), 1, 0)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawFrame", ln) }
     }
 
     /// HolyC DrawDrops (RainDrops.HC:48)
-    public final func f704_DrawDrops(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_DrawDrops(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -186,7 +186,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
     }
 
     /// HolyC UpdateCurBase (RainDrops.HC:57)
-    public final func f705_UpdateCurBase(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_UpdateCurBase(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -208,7 +208,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
     }
 
     /// HolyC DrawIt (RainDrops.HC:66)
-    public final func f706_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f711_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -216,20 +216,20 @@ public final class N_Demo_Games_RainDrops: NativeModule {
             var p1_dc: Int64 = a1
             ln = 68 // RainDrops.HC:68
             try tick(t)
-            try f703_DrawFrame(t, p0_task, p1_dc)
+            try f708_DrawFrame(t, p0_task, p1_dc)
             ln = 69 // RainDrops.HC:69
             try tick(t)
-            try f704_DrawDrops(t, p0_task, p1_dc)
+            try f709_DrawDrops(t, p0_task, p1_dc)
             ln = 70 // RainDrops.HC:70
             try tick(t)
-            try f705_UpdateCurBase(t, p0_task, p1_dc)
+            try f710_UpdateCurBase(t, p0_task, p1_dc)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawIt", ln) }
     }
 
     /// HolyC AnimateTask (RainDrops.HC:73)
-    public final func f707_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -397,7 +397,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
     }
 
     /// HolyC Init (RainDrops.HC:140)
-    public final func f708_Init(_ t: HTask) throws {
+    public final func f713_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -419,7 +419,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
     }
 
     /// HolyC RainDrops (RainDrops.HC:148)
-    public final func f709_RainDrops(_ t: HTask) throws {
+    public final func f714_RainDrops(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -428,7 +428,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
             var l0_ch: Int64 = 0
             ln = 151 // RainDrops.HC:151
             try tick(t)
-            _ = try P.f507_MenuPush(t, s2)
+            _ = try P.f512_MenuPush(t, s2)
             ln = 162 // RainDrops.HC:162
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -456,13 +456,13 @@ public final class N_Demo_Games_RainDrops: NativeModule {
             try st8(g_sc_2, t2)
             ln = 171 // RainDrops.HC:171
             try tick(t)
-            try f708_Init(t)
+            try f713_Init(t)
             ln = 172 // RainDrops.HC:172
             let t4: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t3: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065859, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
+            let t3: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065864, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t4, t3)
             ln = 173 // RainDrops.HC:173
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065858)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065863)
             ln = 174 // RainDrops.HC:174
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -477,7 +477,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
                         case 10:
                             ln = 178 // RainDrops.HC:178
                             try tick(t)
-                            try f708_Init(t)
+                            try f713_Init(t)
                         default:
                             break
                         }
@@ -499,7 +499,7 @@ public final class N_Demo_Games_RainDrops: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 185 // RainDrops.HC:185
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 186 // RainDrops.HC:186
             try tick(t)
             try P.f293_DCDel(t, ld8(g_cur_dc))
@@ -510,13 +510,13 @@ public final class N_Demo_Games_RainDrops: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/RainDrops.HC#0 (RainDrops.HC:189)
-    @discardableResult public final func f710_init_C__Demo_Games_RainDrops_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Demo_Games_RainDrops_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 189 // RainDrops.HC:189
             try tick(t)
-            try f709_RainDrops(t)
+            try f714_RainDrops(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/RainDrops.HC#0", ln) }
@@ -525,20 +525,20 @@ public final class N_Demo_Games_RainDrops: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawFrame(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_DrawDrops(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: try f705_UpdateCurBase(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 707: try f707_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_Init(t); return 0
-        case 709: try f709_RainDrops(t); return 0
-        case 710: return try f710_init_C__Demo_Games_RainDrops_HC_0(t)
+        case 708: try f708_DrawFrame(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_DrawDrops(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: try f710_UpdateCurBase(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 712: try f712_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_Init(t); return 0
+        case 714: try f714_RainDrops(t); return 0
+        case 715: return try f715_init_C__Demo_Games_RainDrops_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710]
-    private static let NAMES: [Int: String] = [703: "DrawFrame", 704: "DrawDrops", 705: "UpdateCurBase", 706: "DrawIt", 707: "AnimateTask", 708: "Init", 709: "RainDrops", 710: "$init:C:/Demo/Games/RainDrops.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715]
+    private static let NAMES: [Int: String] = [708: "DrawFrame", 709: "DrawDrops", 710: "UpdateCurBase", 711: "DrawIt", 712: "AnimateTask", 713: "Init", 714: "RainDrops", 715: "$init:C:/Demo/Games/RainDrops.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/RainDrops.HC"]
     public override var files: [String] { N_Demo_Games_RainDrops.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_RainDrops.DEFINED.contains(index) }

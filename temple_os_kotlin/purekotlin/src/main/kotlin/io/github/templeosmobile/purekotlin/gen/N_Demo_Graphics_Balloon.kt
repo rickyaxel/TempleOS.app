@@ -24,7 +24,7 @@ class N_Demo_Graphics_Balloon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Graphics/Balloon.HC#0 (Balloon.HC:3) */
-    fun f703_init_C__Demo_Graphics_Balloon_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Graphics_Balloon_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -34,7 +34,7 @@ class N_Demo_Graphics_Balloon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Balloon (Balloon.HC:9) */
-    fun f704_Balloon(t: Task) {
+    fun f709_Balloon(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -43,18 +43,18 @@ class N_Demo_Graphics_Balloon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             var l8_j: Long = 0L
             ln = 15 // Balloon.HC:15
             tick(t)
-            P.f570_OutU8(t, 964L, 2L)
+            P.f575_OutU8(t, 964L, 2L)
             ln = 16 // Balloon.HC:16
             tick(t)
-            P.f570_OutU8(t, 965L, 15L)
+            P.f575_OutU8(t, 965L, 15L)
             ln = 17 // Balloon.HC:17
             nat(t, n_MemSetI64, push3(t, ld8((P.g_text + 56L)), 0L, divs(307200L, 64L)))
             ln = 19 // Balloon.HC:19
             tick(t)
-            P.f570_OutU8(t, 964L, 2L)
+            P.f575_OutU8(t, 964L, 2L)
             ln = 20 // Balloon.HC:20
             tick(t)
-            P.f570_OutU8(t, 965L, 14L)
+            P.f575_OutU8(t, 965L, 14L)
             ln = 21 // Balloon.HC:21
             l16_k = 100L
             loop0@ while ((l16_k < 150L)) {
@@ -98,20 +98,20 @@ class N_Demo_Graphics_Balloon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             }
             ln = 35 // Balloon.HC:35
             tick(t)
-            P.f575_VGAFlush(t)
+            P.f580_VGAFlush(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Balloon", ln) }
     }
 
     /** HolyC $init:C:/Demo/Graphics/Balloon.HC#1 (Balloon.HC:38) */
-    fun f705_init_C__Demo_Graphics_Balloon_HC_1(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_Balloon_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 38 // Balloon.HC:38
             tick(t)
-            f704_Balloon(t)
+            f709_Balloon(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Balloon.HC#1", ln) }
@@ -120,9 +120,9 @@ class N_Demo_Graphics_Balloon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Graphics_Balloon_HC_0(t)
-            704 -> { f704_Balloon(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_Balloon_HC_1(t)
+            708 -> f708_init_C__Demo_Graphics_Balloon_HC_0(t)
+            709 -> { f709_Balloon(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_Balloon_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -134,7 +134,7 @@ class N_Demo_Graphics_Balloon(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("\$init:C:/Demo/Graphics/Balloon.HC#0", "Balloon", "\$init:C:/Demo/Graphics/Balloon.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Balloon.HC")
     }

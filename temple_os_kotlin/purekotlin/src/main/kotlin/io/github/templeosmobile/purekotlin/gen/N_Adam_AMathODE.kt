@@ -38,7 +38,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC LowPass1 (AMathODE.HC:6) */
-    fun f703_LowPass1(t: Task, a0: Double, a1: Double, a2: Double, a3: Double): Double {
+    fun f708_LowPass1(t: Task, a0: Double, a1: Double, a2: Double, a3: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -58,7 +58,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODERstPtrs (AMathODE.HC:12) */
-    fun f704_ODERstPtrs(t: Task, a0: Long) {
+    fun f709_ODERstPtrs(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -110,7 +110,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODENew (AMathODE.HC:30) */
-    fun f705_ODENew(t: Task, a0: Long, a1: Double, a2: Long): Long {
+    fun f710_ODENew(t: Task, a0: Long, a1: Double, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -161,7 +161,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             st8((l32_ode + 176L), t5)
             ln = 50 // AMathODE.HC:50
             tick(t)
-            f704_ODERstPtrs(t, l32_ode)
+            f709_ODERstPtrs(t, l32_ode)
             ln = 51 // AMathODE.HC:51
             t.depth--
             return l32_ode
@@ -171,7 +171,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEPause (AMathODE.HC:55) */
-    fun f706_ODEPause(t: Task, a0: Long, a1: Long): Long {
+    fun f711_ODEPause(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -209,7 +209,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEDel (AMathODE.HC:66) */
-    fun f707_ODEDel(t: Task, a0: Long) {
+    fun f712_ODEDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -222,7 +222,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             }
             ln = 70 // AMathODE.HC:70
             tick(t)
-            f706_ODEPause(t, p0_ode, 1L)
+            f711_ODEPause(t, p0_ode, 1L)
             ln = 71 // AMathODE.HC:71
             nat(t, n_Free, push1(t, ld8((p0_ode + 184L))))
             ln = 72 // AMathODE.HC:72
@@ -251,7 +251,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODESize (AMathODE.HC:81) */
-    fun f708_ODESize(t: Task, a0: Long): Long {
+    fun f713_ODESize(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -275,7 +275,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODESetMassesPtrs (AMathODE.HC:89) */
-    fun f709_ODESetMassesPtrs(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f714_ODESetMassesPtrs(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -311,7 +311,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEState2Internal (AMathODE.HC:101) */
-    fun f710_ODEState2Internal(t: Task, a0: Long) {
+    fun f715_ODEState2Internal(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -344,10 +344,10 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                 nat(t, n_Free, push1(t, l16_old_array_base))
                 ln = 118 // AMathODE.HC:118
                 tick(t)
-                f704_ODERstPtrs(t, p0_ode)
+                f709_ODERstPtrs(t, p0_ode)
                 ln = 120 // AMathODE.HC:120
                 tick(t)
-                f709_ODESetMassesPtrs(t, p0_ode, ld8((p0_ode + 192L)), ld8((p0_ode + 192L)))
+                f714_ODESetMassesPtrs(t, p0_ode, ld8((p0_ode + 192L)), ld8((p0_ode + 192L)))
                 ln = 121 // AMathODE.HC:121
                 l8_tmpm = ld8((p0_ode + 40L))
                 ln = 122 // AMathODE.HC:122
@@ -367,7 +367,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEInternal2State (AMathODE.HC:130) */
-    fun f711_ODEInternal2State(t: Task, a0: Long) {
+    fun f716_ODEInternal2State(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -379,7 +379,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             if (((ld8((p0_ode + 16L)) and 1L) != 0L)) {
                 ln = 135 // AMathODE.HC:135
                 tick(t)
-                f709_ODESetMassesPtrs(t, p0_ode, ld8((p0_ode + 192L)), ld8((p0_ode + 192L)))
+                f714_ODESetMassesPtrs(t, p0_ode, ld8((p0_ode + 192L)), ld8((p0_ode + 192L)))
                 ln = 136 // AMathODE.HC:136
                 l8_tmpm = ld8((p0_ode + 40L))
                 ln = 137 // AMathODE.HC:137
@@ -397,7 +397,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODERenum (AMathODE.HC:144) */
-    fun f712_ODERenum(t: Task, a0: Long) {
+    fun f717_ODERenum(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -443,7 +443,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC MassFind (AMathODE.HC:167) */
-    fun f713_MassFind(t: Task, a0: Long, a1: Double, a2: Double, a3: Double): Long {
+    fun f718_MassFind(t: Task, a0: Long, a1: Double, a2: Double, a3: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -491,7 +491,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC SpringFind (AMathODE.HC:184) */
-    fun f714_SpringFind(t: Task, a0: Long, a1: Double, a2: Double, a3: Double): Long {
+    fun f719_SpringFind(t: Task, a0: Long, a1: Double, a2: Double, a3: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -541,7 +541,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC MassOrSpringFind (AMathODE.HC:203) */
-    fun f715_MassOrSpringFind(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Double, a5: Double) {
+    fun f720_MassOrSpringFind(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Double, a5: Double) {
         var ln = 0
         try {
             enter(t)
@@ -627,7 +627,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC MassFindNum (AMathODE.HC:237) */
-    fun f716_MassFindNum(t: Task, a0: Long, a1: Long): Long {
+    fun f721_MassFindNum(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -657,7 +657,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODERstInactive (AMathODE.HC:248) */
-    fun f717_ODERstInactive(t: Task, a0: Long) {
+    fun f722_ODERstInactive(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -692,7 +692,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODECalcSprings (AMathODE.HC:264) */
-    fun f718_ODECalcSprings(t: Task, a0: Long) {
+    fun f723_ODECalcSprings(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -763,7 +763,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODECalcDrag (AMathODE.HC:294) */
-    fun f719_ODECalcDrag(t: Task, a0: Long) {
+    fun f724_ODECalcDrag(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -822,7 +822,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEApplyAccelerationLimit (AMathODE.HC:318) */
-    fun f720_ODEApplyAccelerationLimit(t: Task, a0: Long) {
+    fun f725_ODEApplyAccelerationLimit(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -860,7 +860,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEMPTask (AMathODE.HC:333) */
-    fun f721_ODEMPTask(t: Task, a0: Long) {
+    fun f726_ODEMPTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -891,7 +891,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEMPWake (AMathODE.HC:345) */
-    fun f722_ODEMPWake(t: Task, a0: Long) {
+    fun f727_ODEMPWake(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -910,7 +910,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                     if (!((l8_i < t4))) break@loop0
                     ln = 351 // AMathODE.HC:351
                     val t3: Long = (ld8((p0_ode + 320L)) + (l8_i * 8L))
-                    val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065873L, p0_ode, s0, l8_i, 0L, 0L, 0L))
+                    val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065878L, p0_ode, s0, l8_i, 0L, 0L, 0L))
                     st8(t3, t2)
                     ln = 350 // AMathODE.HC:350
                     l8_i = (l8_i + 1L)
@@ -936,7 +936,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEMPSleep (AMathODE.HC:359) */
-    fun f723_ODEMPSleep(t: Task, a0: Long) {
+    fun f728_ODEMPSleep(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -968,7 +968,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODECallMPDerivative (AMathODE.HC:370) */
-    fun f724_ODECallMPDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f729_ODECallMPDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -997,7 +997,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODECallDerivative (AMathODE.HC:380) */
-    fun f725_ODECallDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f730_ODECallDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1010,7 +1010,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             if (((ld8((p0_ode + 16L)) and 1L) != 0L)) {
                 ln = 384 // AMathODE.HC:384
                 tick(t)
-                f709_ODESetMassesPtrs(t, p0_ode, p2_state, p3_DstateDt)
+                f714_ODESetMassesPtrs(t, p0_ode, p2_state, p3_DstateDt)
                 ln = 385 // AMathODE.HC:385
                 l32_tmpm = ld8((p0_ode + 40L))
                 ln = 386 // AMathODE.HC:386
@@ -1030,15 +1030,15 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                 }
                 ln = 393 // AMathODE.HC:393
                 tick(t)
-                f718_ODECalcSprings(t, p0_ode)
+                f723_ODECalcSprings(t, p0_ode)
                 ln = 394 // AMathODE.HC:394
                 tick(t)
-                f719_ODECalcDrag(t, p0_ode)
+                f724_ODECalcDrag(t, p0_ode)
                 ln = 395 // AMathODE.HC:395
                 if ((ld8((p0_ode + 312L)) != 0L)) {
                     ln = 396 // AMathODE.HC:396
                     tick(t)
-                    f724_ODECallMPDerivative(t, p0_ode, p1_t, p2_state, p3_DstateDt)
+                    f729_ODECallMPDerivative(t, p0_ode, p1_t, p2_state, p3_DstateDt)
                 }
                 ln = 397 // AMathODE.HC:397
                 if ((ld8((p0_ode + 304L)) != 0L)) {
@@ -1074,13 +1074,13 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                 }
                 ln = 410 // AMathODE.HC:410
                 tick(t)
-                f720_ODEApplyAccelerationLimit(t, p0_ode)
+                f725_ODEApplyAccelerationLimit(t, p0_ode)
             } else {
                 ln = 412 // AMathODE.HC:412
                 if ((ld8((p0_ode + 312L)) != 0L)) {
                     ln = 413 // AMathODE.HC:413
                     tick(t)
-                    f724_ODECallMPDerivative(t, p0_ode, p1_t, p2_state, p3_DstateDt)
+                    f729_ODECallMPDerivative(t, p0_ode, p1_t, p2_state, p3_DstateDt)
                 }
                 ln = 414 // AMathODE.HC:414
                 if ((ld8((p0_ode + 304L)) != 0L)) {
@@ -1094,7 +1094,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEOneStep (AMathODE.HC:419) */
-    fun f726_ODEOneStep(t: Task, a0: Long) {
+    fun f731_ODEOneStep(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1102,7 +1102,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             var l8_i: Long = 0L
             ln = 422 // AMathODE.HC:422
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, ldf((p0_ode + 112L)), ld8((p0_ode + 192L)), ld8((p0_ode + 200L)))
+            f730_ODECallDerivative(t, p0_ode, ldf((p0_ode + 112L)), ld8((p0_ode + 192L)), ld8((p0_ode + 200L)))
             ln = 423 // AMathODE.HC:423
             l8_i = 0L
             loop0@ while ((l8_i < ld8((p0_ode + 32L)))) {
@@ -1122,7 +1122,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODERK4OneStep (AMathODE.HC:428) */
-    fun f727_ODERK4OneStep(t: Task, a0: Long) {
+    fun f732_ODERK4OneStep(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1154,7 +1154,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             l24_xh = (ldf((p0_ode + 112L)) + l32_hh)
             ln = 441 // AMathODE.HC:441
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, ldf((p0_ode + 112L)), ld8((p0_ode + 192L)), ld8((p0_ode + 200L)))
+            f730_ODECallDerivative(t, p0_ode, ldf((p0_ode + 112L)), ld8((p0_ode + 192L)), ld8((p0_ode + 200L)))
             ln = 442 // AMathODE.HC:442
             l8_i = 0L
             loop0@ while ((l8_i < l16_n)) {
@@ -1166,7 +1166,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             }
             ln = 444 // AMathODE.HC:444
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, l24_xh, l64_yt, l56_dyt)
+            f730_ODECallDerivative(t, p0_ode, l24_xh, l64_yt, l56_dyt)
             ln = 445 // AMathODE.HC:445
             l8_i = 0L
             loop2@ while ((l8_i < l16_n)) {
@@ -1178,7 +1178,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             }
             ln = 447 // AMathODE.HC:447
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, l24_xh, l64_yt, l48_dym)
+            f730_ODECallDerivative(t, p0_ode, l24_xh, l64_yt, l48_dym)
             ln = 448 // AMathODE.HC:448
             l8_i = 0L
             loop4@ while ((l8_i < l16_n)) {
@@ -1196,7 +1196,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             st8(t1, bits((ldf(t1) + ldf((p0_ode + 128L)))))
             ln = 453 // AMathODE.HC:453
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, ldf((p0_ode + 112L)), l64_yt, l56_dyt)
+            f730_ODECallDerivative(t, p0_ode, ldf((p0_ode + 112L)), l64_yt, l56_dyt)
             ln = 454 // AMathODE.HC:454
             l8_i = 0L
             loop6@ while ((l8_i < l16_n)) {
@@ -1213,7 +1213,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODECashKarp (AMathODE.HC:488) */
-    fun f728_ODECashKarp(t: Task, a0: Long) {
+    fun f733_ODECashKarp(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1265,7 +1265,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             }
             ln = 506 // AMathODE.HC:506
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (0.2 * l24_h)), l88_tmpstate, l48_ak2)
+            f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (0.2 * l24_h)), l88_tmpstate, l48_ak2)
             ln = 507 // AMathODE.HC:507
             l8_i = 0L
             loop2@ while ((l8_i < l16_n)) {
@@ -1277,7 +1277,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             }
             ln = 509 // AMathODE.HC:509
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (0.3 * l24_h)), l88_tmpstate, l56_ak3)
+            f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (0.3 * l24_h)), l88_tmpstate, l56_ak3)
             ln = 510 // AMathODE.HC:510
             l8_i = 0L
             loop4@ while ((l8_i < l16_n)) {
@@ -1289,7 +1289,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             }
             ln = 512 // AMathODE.HC:512
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (0.6 * l24_h)), l88_tmpstate, l64_ak4)
+            f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (0.6 * l24_h)), l88_tmpstate, l64_ak4)
             ln = 513 // AMathODE.HC:513
             l8_i = 0L
             loop6@ while ((l8_i < l16_n)) {
@@ -1301,7 +1301,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             }
             ln = 516 // AMathODE.HC:516
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (1.0 * l24_h)), l88_tmpstate, l72_ak5)
+            f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (1.0 * l24_h)), l88_tmpstate, l72_ak5)
             ln = 517 // AMathODE.HC:517
             l8_i = 0L
             loop8@ while ((l8_i < l16_n)) {
@@ -1313,7 +1313,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             }
             ln = 520 // AMathODE.HC:520
             tick(t)
-            f725_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (0.875 * l24_h)), l88_tmpstate, l80_ak6)
+            f730_ODECallDerivative(t, p0_ode, (ldf((p0_ode + 112L)) + (0.875 * l24_h)), l88_tmpstate, l80_ak6)
             ln = 522 // AMathODE.HC:522
             l8_i = 0L
             loop10@ while ((l8_i < l16_n)) {
@@ -1338,7 +1338,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODERK5OneStep (AMathODE.HC:535) */
-    fun f729_ODERK5OneStep(t: Task, a0: Long) {
+    fun f734_ODERK5OneStep(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1359,7 +1359,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                 st8((p0_ode + 128L), bits(t0))
                 ln = 541 // AMathODE.HC:541
                 tick(t)
-                f728_ODECashKarp(t, p0_ode)
+                f733_ODECashKarp(t, p0_ode)
                 ln = 542 // AMathODE.HC:542
                 l16_errmax = 0.0
                 ln = 543 // AMathODE.HC:543
@@ -1421,7 +1421,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC ODEsUpdate (AMathODE.HC:567) */
-    fun f730_ODEsUpdate(t: Task, a0: Long) {
+    fun f735_ODEsUpdate(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1491,11 +1491,11 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                                     if ((ld8((l64_ode + 312L)) != 0L)) {
                                         ln = 613 // AMathODE.HC:613
                                         tick(t)
-                                        f722_ODEMPWake(t, l64_ode)
+                                        f727_ODEMPWake(t, l64_ode)
                                     }
                                     ln = 614 // AMathODE.HC:614
                                     tick(t)
-                                    f710_ODEState2Internal(t, l64_ode)
+                                    f715_ODEState2Internal(t, l64_ode)
                                     ln = 615 // AMathODE.HC:615
                                     nat(t, n_MemCpy, push3(t, ld8((l64_ode + 216L)), ld8((l64_ode + 192L)), (ld8((l64_ode + 32L)) * 8L)))
                                     ln = 632 // AMathODE.HC:632
@@ -1506,7 +1506,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                                             st8((l64_ode + 144L), bits((l40_t_desired - ldf((l64_ode + 112L)))))
                                             ln = 619 // AMathODE.HC:619
                                             tick(t)
-                                            f725_ODECallDerivative(t, l64_ode, ldf((l64_ode + 112L)), ld8((l64_ode + 192L)), ld8((l64_ode + 200L)))
+                                            f730_ODECallDerivative(t, l64_ode, ldf((l64_ode + 112L)), ld8((l64_ode + 192L)), ld8((l64_ode + 200L)))
                                             ln = 620 // AMathODE.HC:620
                                             l8_i = 0L
                                             loop5@ while ((l8_i < ld8((l64_ode + 32L)))) {
@@ -1523,7 +1523,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                                             }
                                             ln = 623 // AMathODE.HC:623
                                             tick(t)
-                                            f729_ODERK5OneStep(t, l64_ode)
+                                            f734_ODERK5OneStep(t, l64_ode)
                                             ln = 624 // AMathODE.HC:624
                                             val t10: Double = f(nat(t, n_tS, push0(t)))
                                             if ((t10 > l32_timeout_time)) {
@@ -1562,15 +1562,15 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
                                     } while (false)
                                     ln = 644 // AMathODE.HC:644
                                     tick(t)
-                                    f711_ODEInternal2State(t, l64_ode)
+                                    f716_ODEInternal2State(t, l64_ode)
                                     ln = 647 // AMathODE.HC:647
                                     tick(t)
-                                    f725_ODECallDerivative(t, l64_ode, ldf((l64_ode + 112L)), ld8((l64_ode + 192L)), ld8((l64_ode + 200L)))
+                                    f730_ODECallDerivative(t, l64_ode, ldf((l64_ode + 112L)), ld8((l64_ode + 192L)), ld8((l64_ode + 200L)))
                                     ln = 649 // AMathODE.HC:649
                                     if ((ld8((l64_ode + 312L)) != 0L)) {
                                         ln = 650 // AMathODE.HC:650
                                         tick(t)
-                                        f723_ODEMPSleep(t, l64_ode)
+                                        f728_ODEMPSleep(t, l64_ode)
                                     }
                                 }
                             }
@@ -1631,7 +1631,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Adam/AMathODE.HC#0 (AMathODE.HC:565) */
-    fun f731_init_C__Adam_AMathODE_HC_0(t: Task): Long {
+    fun f736_init_C__Adam_AMathODE_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1643,35 +1643,35 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> bits(f703_LowPass1(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))))
-            704 -> { f704_ODERstPtrs(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> f705_ODENew(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L))
-            706 -> f706_ODEPause(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            707 -> { f707_ODEDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> f708_ODESize(t, (if (n > 0) st[base + 0] else 0L))
-            709 -> { f709_ODESetMassesPtrs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            710 -> { f710_ODEState2Internal(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            711 -> { f711_ODEInternal2State(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            712 -> { f712_ODERenum(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            713 -> f713_MassFind(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
-            714 -> f714_SpringFind(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
-            715 -> { f715_MassOrSpringFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L)), f((if (n > 5) st[base + 5] else 0L))); 0L }
-            716 -> f716_MassFindNum(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            717 -> { f717_ODERstInactive(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            718 -> { f718_ODECalcSprings(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            719 -> { f719_ODECalcDrag(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            720 -> { f720_ODEApplyAccelerationLimit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            721 -> { f721_ODEMPTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            722 -> { f722_ODEMPWake(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            723 -> { f723_ODEMPSleep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            724 -> { f724_ODECallMPDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            725 -> { f725_ODECallDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            726 -> { f726_ODEOneStep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            727 -> { f727_ODERK4OneStep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            728 -> { f728_ODECashKarp(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            729 -> { f729_ODERK5OneStep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            730 -> { f730_ODEsUpdate(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            731 -> f731_init_C__Adam_AMathODE_HC_0(t)
+            708 -> bits(f708_LowPass1(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))))
+            709 -> { f709_ODERstPtrs(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> f710_ODENew(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L))
+            711 -> f711_ODEPause(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            712 -> { f712_ODEDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> f713_ODESize(t, (if (n > 0) st[base + 0] else 0L))
+            714 -> { f714_ODESetMassesPtrs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            715 -> { f715_ODEState2Internal(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            716 -> { f716_ODEInternal2State(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            717 -> { f717_ODERenum(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            718 -> f718_MassFind(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
+            719 -> f719_SpringFind(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
+            720 -> { f720_MassOrSpringFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), f((if (n > 4) st[base + 4] else 0L)), f((if (n > 5) st[base + 5] else 0L))); 0L }
+            721 -> f721_MassFindNum(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            722 -> { f722_ODERstInactive(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            723 -> { f723_ODECalcSprings(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            724 -> { f724_ODECalcDrag(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            725 -> { f725_ODEApplyAccelerationLimit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            726 -> { f726_ODEMPTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            727 -> { f727_ODEMPWake(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            728 -> { f728_ODEMPSleep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            729 -> { f729_ODECallMPDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            730 -> { f730_ODECallDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            731 -> { f731_ODEOneStep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            732 -> { f732_ODERK4OneStep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            733 -> { f733_ODECashKarp(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            734 -> { f734_ODERK5OneStep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            735 -> { f735_ODEsUpdate(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            736 -> f736_init_C__Adam_AMathODE_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1683,7 +1683,7 @@ class N_Adam_AMathODE(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736)
         private val NAMES = arrayOf("LowPass1", "ODERstPtrs", "ODENew", "ODEPause", "ODEDel", "ODESize", "ODESetMassesPtrs", "ODEState2Internal", "ODEInternal2State", "ODERenum", "MassFind", "SpringFind", "MassOrSpringFind", "MassFindNum", "ODERstInactive", "ODECalcSprings", "ODECalcDrag", "ODEApplyAccelerationLimit", "ODEMPTask", "ODEMPWake", "ODEMPSleep", "ODECallMPDerivative", "ODECallDerivative", "ODEOneStep", "ODERK4OneStep", "ODECashKarp", "ODERK5OneStep", "ODEsUpdate", "\$init:C:/Adam/AMathODE.HC#0")
         private val FILES = arrayOf<String>("C:/Adam/AMathODE.HC")
     }

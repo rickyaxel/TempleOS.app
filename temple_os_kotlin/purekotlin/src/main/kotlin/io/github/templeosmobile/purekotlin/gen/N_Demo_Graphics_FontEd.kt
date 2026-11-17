@@ -43,7 +43,7 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawIt (FontEd.HC:26) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -56,7 +56,7 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 29 // FontEd.HC:29
             tick(t)
             val vb0 = push0(t)
-            P.f449_TextPrint(t, p0_task, 0L, 0L, 30L, s0, vb0, 0)
+            P.f454_TextPrint(t, p0_task, 0L, 0L, 30L, s0, vb0, 0)
             t.sp = vb0
             ln = 30 // FontEd.HC:30
             l32_k = 0L
@@ -133,7 +133,7 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC FESave (FontEd.HC:56) */
-    fun f704_FESave(t: Task, a0: Long) {
+    fun f709_FESave(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -147,7 +147,7 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             l8_old_draw_it = (ld8((ld8(P.g_Fs) + 448L)) and 0xFFL)
             ln = 59 // FontEd.HC:59
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l16_doc = t0
             ln = 61 // FontEd.HC:61
             l24_i = 0L
@@ -188,19 +188,19 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st8((ld8(P.g_Fs) + 448L), 0L)
             ln = 70 // FontEd.HC:70
             tick(t)
-            P.f618_DocWrite(t, l16_doc, p0_pmt)
+            P.f623_DocWrite(t, l16_doc, p0_pmt)
             ln = 71 // FontEd.HC:71
             st8((ld8(P.g_Fs) + 448L), l8_old_draw_it)
             ln = 72 // FontEd.HC:72
             tick(t)
-            P.f605_DocDel(t, l16_doc)
+            P.f610_DocDel(t, l16_doc)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "FESave", ln) }
     }
 
     /** HolyC FontEd (FontEd.HC:75) */
-    fun f705_FontEd(t: Task) {
+    fun f710_FontEd(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -213,7 +213,7 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 79 // FontEd.HC:79
             tick(t)
-            P.f507_MenuPush(t, s5)
+            P.f512_MenuPush(t, s5)
             ln = 85 // FontEd.HC:85
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 86 // FontEd.HC:86
@@ -230,7 +230,7 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             t.hCount = h0c + 1
             try {
                 ln = 91 // FontEd.HC:91
-                st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+                st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
                 ln = 92 // FontEd.HC:92
                 skip_0@ do {
                     loop1@ while ((1L != 0L)) {
@@ -327,13 +327,13 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                                         } while (false)
                                                         ln = 116 // FontEd.HC:116
                                                         tick(t)
-                                                        f704_FESave(t, 1L)
+                                                        f709_FESave(t, 1L)
                                                         ln = 117 // FontEd.HC:117
                                                         break@switch4_13
                                                     } while (false)
                                                     ln = 119 // FontEd.HC:119
                                                     tick(t)
-                                                    f704_FESave(t, 0L)
+                                                    f709_FESave(t, 0L)
                                                 } while (false)
                                                 ln = 121 // FontEd.HC:121
                                                 break@skip_0
@@ -407,7 +407,7 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             }
             ln = 148 // FontEd.HC:148
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 149 // FontEd.HC:149
             tick(t)
             P.f228_SettingsPop(t, 0L, 0L)
@@ -418,13 +418,13 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Graphics/FontEd.HC#0 (FontEd.HC:152) */
-    fun f706_init_C__Demo_Graphics_FontEd_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_FontEd_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 152 // FontEd.HC:152
             tick(t)
-            f705_FontEd(t)
+            f710_FontEd(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/FontEd.HC#0", ln) }
@@ -433,10 +433,10 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_FESave(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_FontEd(t); 0L }
-            706 -> f706_init_C__Demo_Graphics_FontEd_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_FESave(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_FontEd(t); 0L }
+            711 -> f711_init_C__Demo_Graphics_FontEd_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -448,7 +448,7 @@ class N_Demo_Graphics_FontEd(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("DrawIt", "FESave", "FontEd", "\$init:C:/Demo/Graphics/FontEd.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/FontEd.HC")
     }

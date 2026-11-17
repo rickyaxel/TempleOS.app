@@ -32,7 +32,7 @@ class N_Demo_Templates_MultiCore1(rt: NativeRuntime, @JvmField val P: Prelude) :
     }
 
     /** HolyC MPRoutine (MultiCore1.HC:5) */
-    fun f703_MPRoutine(t: Task, a0: Long) {
+    fun f708_MPRoutine(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -76,7 +76,7 @@ class N_Demo_Templates_MultiCore1(rt: NativeRuntime, @JvmField val P: Prelude) :
     }
 
     /** HolyC Main (MultiCore1.HC:17) */
-    fun f704_Main(t: Task) {
+    fun f709_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -93,8 +93,8 @@ class N_Demo_Templates_MultiCore1(rt: NativeRuntime, @JvmField val P: Prelude) :
                 if (!((l0_i < t2))) break@loop0
                 ln = 23 // MultiCore1.HC:23
                 tick(t)
-                val t1: Long = P.f602_DocPut(t, 0L)
-                nat(t, n_Spawn, push(t, 9223090561878065855L, t1, 0L, l0_i, 0L, 0L, 0L))
+                val t1: Long = P.f607_DocPut(t, 0L)
+                nat(t, n_Spawn, push(t, 9223090561878065860L, t1, 0L, l0_i, 0L, 0L, 0L))
                 ln = 22 // MultiCore1.HC:22
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -113,13 +113,13 @@ class N_Demo_Templates_MultiCore1(rt: NativeRuntime, @JvmField val P: Prelude) :
     }
 
     /** HolyC $init:C:/Demo/Templates/MultiCore1.HC#0 (MultiCore1.HC:29) */
-    fun f705_init_C__Demo_Templates_MultiCore1_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Templates_MultiCore1_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 29 // MultiCore1.HC:29
             tick(t)
-            f704_Main(t)
+            f709_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Templates/MultiCore1.HC#0", ln) }
@@ -128,9 +128,9 @@ class N_Demo_Templates_MultiCore1(rt: NativeRuntime, @JvmField val P: Prelude) :
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MPRoutine(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_Main(t); 0L }
-            705 -> f705_init_C__Demo_Templates_MultiCore1_HC_0(t)
+            708 -> { f708_MPRoutine(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_Main(t); 0L }
+            710 -> f710_init_C__Demo_Templates_MultiCore1_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -142,7 +142,7 @@ class N_Demo_Templates_MultiCore1(rt: NativeRuntime, @JvmField val P: Prelude) :
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("MPRoutine", "Main", "\$init:C:/Demo/Templates/MultiCore1.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Templates/MultiCore1.HC")
     }

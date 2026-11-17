@@ -26,17 +26,17 @@ s 194510 2442472c4c544359414e2425682a63
 s 194530 416e74692d7370696e20436f656666696369656e740a0a
 s 194558 25392e3466
 s 194570 46696c65207b202041626f7274282c43485f53484946545f455343293b202045786974282c43485f455343293b7d506c6179207b202052657374617274282c270a27293b20204c61756e6368282c43485f5350414345293b7d
-fn 703 DrawIt (U0;*$CTask,*$CDC;-)
-fn 704 MyDerivative (U0;*$CMathODE,F64,*F64,*F64;-)
-fn 705 Init (U0;;-)
-fn 706 TaskEndCB (U0;;-)
-fn 707 RocketScience (U0;;-)
-fn 708 $init:C:/Demo/Games/RocketScience.HC#0 (I64;;-)
-sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
-sym f Init 705 (U0;;-)
-sym f MyDerivative 704 (U0;*$CMathODE,F64,*F64,*F64;-)
-sym f RocketScience 707 (U0;;-)
-sym f TaskEndCB 706 (U0;;-)
+fn 708 DrawIt (U0;*$CTask,*$CDC;-)
+fn 709 MyDerivative (U0;*$CMathODE,F64,*F64,*F64;-)
+fn 710 Init (U0;;-)
+fn 711 TaskEndCB (U0;;-)
+fn 712 RocketScience (U0;;-)
+fn 713 $init:C:/Demo/Games/RocketScience.HC#0 (I64;;-)
+sym f DrawIt 708 (U0;*$CTask,*$CDC;-)
+sym f Init 710 (U0;;-)
+sym f MyDerivative 709 (U0;*$CMathODE,F64,*F64,*F64;-)
+sym f RocketScience 712 (U0;;-)
+sym f TaskEndCB 711 (U0;;-)
 sym g antispin_coefficient 17ffa0 F64
 sym g blast_off 17fd38 Bool
 sym g dc2 17ff30 *$CDC
@@ -48,5 +48,5 @@ sym g ode 17ff48 *$CMathODE
 sym g plane_hit 17fd50 Bool
 sym g s 17fed0 $CSpring
 sym g target 17ff60 $CD3
-init 708
+init 713
 unit C:/Demo/Games/RocketScience.HC#1

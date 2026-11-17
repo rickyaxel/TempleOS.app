@@ -38,7 +38,7 @@ public final class N_Apps_Budget_Install: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Budget/Install.HC#0 (Install.HC:1)
-    @discardableResult public final func f703_init_C__Apps_Budget_Install_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Budget_Install_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -52,7 +52,7 @@ public final class N_Apps_Budget_Install: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Budget/Install.HC#1 (Install.HC:2)
-    @discardableResult public final func f704_init_C__Apps_Budget_Install_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_Budget_Install_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -72,14 +72,14 @@ public final class N_Apps_Budget_Install: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Budget_Install_HC_0(t)
-        case 704: return try f704_init_C__Apps_Budget_Install_HC_1(t)
+        case 708: return try f708_init_C__Apps_Budget_Install_HC_0(t)
+        case 709: return try f709_init_C__Apps_Budget_Install_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Budget/Install.HC#0", 704: "$init:C:/Apps/Budget/Install.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Budget/Install.HC#0", 709: "$init:C:/Apps/Budget/Install.HC#1"]
     private static let FILES: [String] = ["C:/Apps/Budget/Install.HC"]
     public override var files: [String] { N_Apps_Budget_Install.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Budget_Install.DEFINED.contains(index) }

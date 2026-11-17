@@ -57,7 +57,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     }
 
     /// HolyC MDInit (ManGen.HC:80)
-    public final func f703_MDInit(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_MDInit(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -126,7 +126,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     }
 
     /// HolyC MDCorrect (ManGen.HC:119)
-    public final func f704_MDCorrect(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_MDCorrect(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -182,7 +182,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     }
 
     /// HolyC AddVertex (ManGen.HC:143)
-    @discardableResult public final func f705_AddVertex(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f710_AddVertex(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -211,7 +211,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     }
 
     /// HolyC AddTri (ManGen.HC:152)
-    @discardableResult public final func f706_AddTri(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f711_AddTri(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -243,7 +243,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     }
 
     /// HolyC AddBox (ManGen.HC:162)
-    public final func f707_AddBox(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double, _ a6: Double, _ a7: Double, _ a8: Double, _ a9: Double, _ a10: Double, _ a11: Double, _ a12: Double, _ a13: Int64, _ a14: Int64, _ a15: Int64) throws {
+    public final func f712_AddBox(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double, _ a6: Double, _ a7: Double, _ a8: Double, _ a9: Double, _ a10: Double, _ a11: Double, _ a12: Double, _ a13: Int64, _ a14: Int64, _ a15: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -316,72 +316,72 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
             _ = try nat(t, n_Mat4x4MulXYZ, try push4(t, l128_r, (fp &+ 296), (fp &+ 304), (fp &+ 312)))
             ln = 182 // ManGen.HC:182
             try tick(t)
-            let t1: Int64 = try f705_AddVertex(t, p0_md, (((p2_x1 &+ ld8((fp &+ 296))) &- ld8((fp &+ 200))) &+ ld8((fp &+ 248))), (((p3_y1 &+ ld8((fp &+ 304))) &- ld8((fp &+ 208))) &+ ld8((fp &+ 256))), (((p4_z1 &+ ld8((fp &+ 312))) &- ld8((fp &+ 216))) &+ ld8((fp &+ 264))))
+            let t1: Int64 = try f710_AddVertex(t, p0_md, (((p2_x1 &+ ld8((fp &+ 296))) &- ld8((fp &+ 200))) &+ ld8((fp &+ 248))), (((p3_y1 &+ ld8((fp &+ 304))) &- ld8((fp &+ 208))) &+ ld8((fp &+ 256))), (((p4_z1 &+ ld8((fp &+ 312))) &- ld8((fp &+ 216))) &+ ld8((fp &+ 264))))
             l136_p1a = t1
             ln = 183 // ManGen.HC:183
             try tick(t)
-            let t2: Int64 = try f705_AddVertex(t, p0_md, (((p2_x1 &+ ld8((fp &+ 296))) &+ ld8((fp &+ 200))) &+ ld8((fp &+ 248))), (((p3_y1 &+ ld8((fp &+ 304))) &+ ld8((fp &+ 208))) &+ ld8((fp &+ 256))), (((p4_z1 &+ ld8((fp &+ 312))) &+ ld8((fp &+ 216))) &+ ld8((fp &+ 264))))
+            let t2: Int64 = try f710_AddVertex(t, p0_md, (((p2_x1 &+ ld8((fp &+ 296))) &+ ld8((fp &+ 200))) &+ ld8((fp &+ 248))), (((p3_y1 &+ ld8((fp &+ 304))) &+ ld8((fp &+ 208))) &+ ld8((fp &+ 256))), (((p4_z1 &+ ld8((fp &+ 312))) &+ ld8((fp &+ 216))) &+ ld8((fp &+ 264))))
             l144_p2a = t2
             ln = 184 // ManGen.HC:184
             try tick(t)
-            let t3: Int64 = try f705_AddVertex(t, p0_md, (((p2_x1 &+ ld8((fp &+ 296))) &+ ld8((fp &+ 224))) &- ld8((fp &+ 200))), (((p3_y1 &+ ld8((fp &+ 304))) &+ ld8((fp &+ 232))) &- ld8((fp &+ 208))), (((p4_z1 &+ ld8((fp &+ 312))) &+ ld8((fp &+ 240))) &- ld8((fp &+ 216))))
+            let t3: Int64 = try f710_AddVertex(t, p0_md, (((p2_x1 &+ ld8((fp &+ 296))) &+ ld8((fp &+ 224))) &- ld8((fp &+ 200))), (((p3_y1 &+ ld8((fp &+ 304))) &+ ld8((fp &+ 232))) &- ld8((fp &+ 208))), (((p4_z1 &+ ld8((fp &+ 312))) &+ ld8((fp &+ 240))) &- ld8((fp &+ 216))))
             l152_p3a = t3
             ln = 185 // ManGen.HC:185
             try tick(t)
-            let t4: Int64 = try f705_AddVertex(t, p0_md, (((p2_x1 &+ ld8((fp &+ 296))) &+ ld8((fp &+ 224))) &+ ld8((fp &+ 200))), (((p3_y1 &+ ld8((fp &+ 304))) &+ ld8((fp &+ 232))) &+ ld8((fp &+ 208))), (((p4_z1 &+ ld8((fp &+ 312))) &+ ld8((fp &+ 240))) &+ ld8((fp &+ 216))))
+            let t4: Int64 = try f710_AddVertex(t, p0_md, (((p2_x1 &+ ld8((fp &+ 296))) &+ ld8((fp &+ 224))) &+ ld8((fp &+ 200))), (((p3_y1 &+ ld8((fp &+ 304))) &+ ld8((fp &+ 232))) &+ ld8((fp &+ 208))), (((p4_z1 &+ ld8((fp &+ 312))) &+ ld8((fp &+ 240))) &+ ld8((fp &+ 216))))
             l160_p4a = t4
             ln = 186 // ManGen.HC:186
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l136_p1a, l144_p2a, l152_p3a)
+            _ = try f711_AddTri(t, p0_md, p1_c, l136_p1a, l144_p2a, l152_p3a)
             ln = 187 // ManGen.HC:187
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l160_p4a, l152_p3a, l144_p2a)
+            _ = try f711_AddTri(t, p0_md, p1_c, l160_p4a, l152_p3a, l144_p2a)
             ln = 189 // ManGen.HC:189
             try tick(t)
-            let t5: Int64 = try f705_AddVertex(t, p0_md, (((p2_x1 &- ld8((fp &+ 296))) &- ld8((fp &+ 200))) &+ ld8((fp &+ 248))), (((p3_y1 &- ld8((fp &+ 304))) &- ld8((fp &+ 208))) &+ ld8((fp &+ 256))), (((p4_z1 &- ld8((fp &+ 312))) &- ld8((fp &+ 216))) &+ ld8((fp &+ 264))))
+            let t5: Int64 = try f710_AddVertex(t, p0_md, (((p2_x1 &- ld8((fp &+ 296))) &- ld8((fp &+ 200))) &+ ld8((fp &+ 248))), (((p3_y1 &- ld8((fp &+ 304))) &- ld8((fp &+ 208))) &+ ld8((fp &+ 256))), (((p4_z1 &- ld8((fp &+ 312))) &- ld8((fp &+ 216))) &+ ld8((fp &+ 264))))
             l168_p1b = t5
             ln = 190 // ManGen.HC:190
             try tick(t)
-            let t6: Int64 = try f705_AddVertex(t, p0_md, (((p2_x1 &- ld8((fp &+ 296))) &+ ld8((fp &+ 200))) &+ ld8((fp &+ 248))), (((p3_y1 &- ld8((fp &+ 304))) &+ ld8((fp &+ 208))) &+ ld8((fp &+ 256))), (((p4_z1 &- ld8((fp &+ 312))) &+ ld8((fp &+ 216))) &+ ld8((fp &+ 264))))
+            let t6: Int64 = try f710_AddVertex(t, p0_md, (((p2_x1 &- ld8((fp &+ 296))) &+ ld8((fp &+ 200))) &+ ld8((fp &+ 248))), (((p3_y1 &- ld8((fp &+ 304))) &+ ld8((fp &+ 208))) &+ ld8((fp &+ 256))), (((p4_z1 &- ld8((fp &+ 312))) &+ ld8((fp &+ 216))) &+ ld8((fp &+ 264))))
             l176_p2b = t6
             ln = 191 // ManGen.HC:191
             try tick(t)
-            let t7: Int64 = try f705_AddVertex(t, p0_md, (((p2_x1 &- ld8((fp &+ 296))) &+ ld8((fp &+ 224))) &- ld8((fp &+ 200))), (((p3_y1 &- ld8((fp &+ 304))) &+ ld8((fp &+ 232))) &- ld8((fp &+ 208))), (((p4_z1 &- ld8((fp &+ 312))) &+ ld8((fp &+ 240))) &- ld8((fp &+ 216))))
+            let t7: Int64 = try f710_AddVertex(t, p0_md, (((p2_x1 &- ld8((fp &+ 296))) &+ ld8((fp &+ 224))) &- ld8((fp &+ 200))), (((p3_y1 &- ld8((fp &+ 304))) &+ ld8((fp &+ 232))) &- ld8((fp &+ 208))), (((p4_z1 &- ld8((fp &+ 312))) &+ ld8((fp &+ 240))) &- ld8((fp &+ 216))))
             l184_p3b = t7
             ln = 192 // ManGen.HC:192
             try tick(t)
-            let t8: Int64 = try f705_AddVertex(t, p0_md, (((p2_x1 &- ld8((fp &+ 296))) &+ ld8((fp &+ 224))) &+ ld8((fp &+ 200))), (((p3_y1 &- ld8((fp &+ 304))) &+ ld8((fp &+ 232))) &+ ld8((fp &+ 208))), (((p4_z1 &- ld8((fp &+ 312))) &+ ld8((fp &+ 240))) &+ ld8((fp &+ 216))))
+            let t8: Int64 = try f710_AddVertex(t, p0_md, (((p2_x1 &- ld8((fp &+ 296))) &+ ld8((fp &+ 224))) &+ ld8((fp &+ 200))), (((p3_y1 &- ld8((fp &+ 304))) &+ ld8((fp &+ 232))) &+ ld8((fp &+ 208))), (((p4_z1 &- ld8((fp &+ 312))) &+ ld8((fp &+ 240))) &+ ld8((fp &+ 216))))
             l192_p4b = t8
             ln = 193 // ManGen.HC:193
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l168_p1b, l176_p2b, l184_p3b)
+            _ = try f711_AddTri(t, p0_md, p1_c, l168_p1b, l176_p2b, l184_p3b)
             ln = 194 // ManGen.HC:194
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l192_p4b, l184_p3b, l176_p2b)
+            _ = try f711_AddTri(t, p0_md, p1_c, l192_p4b, l184_p3b, l176_p2b)
             ln = 196 // ManGen.HC:196
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l136_p1a, l144_p2a, l168_p1b)
+            _ = try f711_AddTri(t, p0_md, p1_c, l136_p1a, l144_p2a, l168_p1b)
             ln = 197 // ManGen.HC:197
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l176_p2b, l168_p1b, l144_p2a)
+            _ = try f711_AddTri(t, p0_md, p1_c, l176_p2b, l168_p1b, l144_p2a)
             ln = 198 // ManGen.HC:198
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l152_p3a, l160_p4a, l184_p3b)
+            _ = try f711_AddTri(t, p0_md, p1_c, l152_p3a, l160_p4a, l184_p3b)
             ln = 199 // ManGen.HC:199
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l192_p4b, l184_p3b, l160_p4a)
+            _ = try f711_AddTri(t, p0_md, p1_c, l192_p4b, l184_p3b, l160_p4a)
             ln = 200 // ManGen.HC:200
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l136_p1a, l152_p3a, l168_p1b)
+            _ = try f711_AddTri(t, p0_md, p1_c, l136_p1a, l152_p3a, l168_p1b)
             ln = 201 // ManGen.HC:201
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l184_p3b, l168_p1b, l152_p3a)
+            _ = try f711_AddTri(t, p0_md, p1_c, l184_p3b, l168_p1b, l152_p3a)
             ln = 202 // ManGen.HC:202
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l144_p2a, l160_p4a, l176_p2b)
+            _ = try f711_AddTri(t, p0_md, p1_c, l144_p2a, l160_p4a, l176_p2b)
             ln = 203 // ManGen.HC:203
             try tick(t)
-            _ = try f706_AddTri(t, p0_md, p1_c, l192_p4b, l176_p2b, l160_p4a)
+            _ = try f711_AddTri(t, p0_md, p1_c, l192_p4b, l176_p2b, l160_p4a)
             ln = 205 // ManGen.HC:205
             try st8(p13_ox, ((p2_x1 &+ ld8((fp &+ 224))) &- ld8((fp &+ 272))))
             ln = 206 // ManGen.HC:206
@@ -397,7 +397,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     }
 
     /// HolyC Man2CSprite (ManGen.HC:212)
-    @discardableResult public final func f708_Man2CSprite(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_Man2CSprite(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -441,7 +441,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     }
 
     /// HolyC ManGen (ManGen.HC:230)
-    @discardableResult public final func f709_ManGen(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_ManGen(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -454,12 +454,12 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
             var l56_c4: Int64 = 0
             ln = 235 // ManGen.HC:235
             try tick(t)
-            try f703_MDInit(t, (fp &+ 64))
+            try f708_MDInit(t, (fp &+ 64))
             ln = 237 // ManGen.HC:237
             loop0: while (1 != 0) {
                 ln = 238 // ManGen.HC:238
                 try tick(t)
-                let t0: Int64 = try P.f628_DocForm(t, (fp &+ 64), s0)
+                let t0: Int64 = try P.f633_DocForm(t, (fp &+ 64), s0)
                 if (t0 == 0) {
                     ln = 239 // ManGen.HC:239
                     t.msp = msp0
@@ -470,10 +470,10 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
                 _ = try nat(t, n_MemCpy, try push3(t, (fp &+ 288), (fp &+ 64), 224))
                 ln = 241 // ManGen.HC:241
                 try tick(t)
-                try f704_MDCorrect(t, (fp &+ 288))
+                try f709_MDCorrect(t, (fp &+ 288))
                 ln = 243 // ManGen.HC:243
                 try tick(t)
-                let t1: Int64 = try P.f589_PopUpColorLighting(t, s1)
+                let t1: Int64 = try P.f594_PopUpColorLighting(t, s1)
                 l32_c1 = t1
                 ln = 244 // ManGen.HC:244
                 if (l32_c1 < 0) {
@@ -483,7 +483,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
                 }
                 ln = 245 // ManGen.HC:245
                 try tick(t)
-                let t2: Int64 = try P.f589_PopUpColorLighting(t, s2)
+                let t2: Int64 = try P.f594_PopUpColorLighting(t, s2)
                 l40_c2 = t2
                 ln = 246 // ManGen.HC:246
                 if (l40_c2 < 0) {
@@ -493,7 +493,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
                 }
                 ln = 247 // ManGen.HC:247
                 try tick(t)
-                let t3: Int64 = try P.f589_PopUpColorLighting(t, s3)
+                let t3: Int64 = try P.f594_PopUpColorLighting(t, s3)
                 l48_c3 = t3
                 ln = 248 // ManGen.HC:248
                 if (l48_c3 < 0) {
@@ -503,7 +503,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
                 }
                 ln = 249 // ManGen.HC:249
                 try tick(t)
-                let t4: Int64 = try P.f589_PopUpColorLighting(t, s4)
+                let t4: Int64 = try P.f594_PopUpColorLighting(t, s4)
                 l56_c4 = t4
                 ln = 250 // ManGen.HC:250
                 if (l56_c4 < 0) {
@@ -516,49 +516,49 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
                 try st8(g_m, t5)
                 ln = 255 // ManGen.HC:255
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l48_c3, 0, f2i((ldf(((fp &+ 288) &+ 8)) + (ldf((fp &+ 288)) * 2.0))), 0, (ldf((fp &+ 288)) * 2.0), ((-ldf((fp &+ 288))) * 2.0), (ldf((fp &+ 288)) * 2.0), 0.0, 0.0, 0.0, 0.0, 0.0, (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l48_c3, 0, f2i((ldf(((fp &+ 288) &+ 8)) + (ldf((fp &+ 288)) * 2.0))), 0, (ldf((fp &+ 288)) * 2.0), ((-ldf((fp &+ 288))) * 2.0), (ldf((fp &+ 288)) * 2.0), 0.0, 0.0, 0.0, 0.0, 0.0, (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 260 // ManGen.HC:260
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l32_c1, 0, f2i(ldf(((fp &+ 288) &+ 8))), 0, ldf(((fp &+ 288) &+ 48)), (-ldf(((fp &+ 288) &+ 8))), ldf(((fp &+ 288) &+ 56)), 0.0, 0.0, 0.0, 0.0, 0.0, (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l32_c1, 0, f2i(ldf(((fp &+ 288) &+ 8))), 0, ldf(((fp &+ 288) &+ 48)), (-ldf(((fp &+ 288) &+ 8))), ldf(((fp &+ 288) &+ 56)), 0.0, 0.0, 0.0, 0.0, 0.0, (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 265 // ManGen.HC:265
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l32_c1, f2i((((-ldf(((fp &+ 288) &+ 48))) / 2.0) - ldf(((fp &+ 288) &+ 64)))), f2i((ldf(((fp &+ 288) &+ 8)) - ldf(((fp &+ 288) &+ 64)))), 0, (ldf(((fp &+ 288) &+ 64)) * 2.0), ((-ldf(((fp &+ 288) &+ 16))) / 2.0), (ldf(((fp &+ 288) &+ 64)) * 2.0), ldf(((fp &+ 288) &+ 64)), 0.0, ldf(((fp &+ 288) &+ 128)), 0.0, ldf(((fp &+ 288) &+ 96)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l32_c1, f2i((((-ldf(((fp &+ 288) &+ 48))) / 2.0) - ldf(((fp &+ 288) &+ 64)))), f2i((ldf(((fp &+ 288) &+ 8)) - ldf(((fp &+ 288) &+ 64)))), 0, (ldf(((fp &+ 288) &+ 64)) * 2.0), ((-ldf(((fp &+ 288) &+ 16))) / 2.0), (ldf(((fp &+ 288) &+ 64)) * 2.0), ldf(((fp &+ 288) &+ 64)), 0.0, ldf(((fp &+ 288) &+ 128)), 0.0, ldf(((fp &+ 288) &+ 96)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 268 // ManGen.HC:268
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 64)) * 2.0), ((-ldf(((fp &+ 288) &+ 16))) / 2.0), (ldf(((fp &+ 288) &+ 64)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 128)), 0.0, ldf(((fp &+ 288) &+ 160)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 64)) * 2.0), ((-ldf(((fp &+ 288) &+ 16))) / 2.0), (ldf(((fp &+ 288) &+ 64)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 128)), 0.0, ldf(((fp &+ 288) &+ 160)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 271 // ManGen.HC:271
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 64)) * 2.0), (-ldf(((fp &+ 288) &+ 24))), (ldf(((fp &+ 288) &+ 72)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 128)), 0.0, ldf(((fp &+ 288) &+ 192)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 64)) * 2.0), (-ldf(((fp &+ 288) &+ 24))), (ldf(((fp &+ 288) &+ 72)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 128)), 0.0, ldf(((fp &+ 288) &+ 192)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 276 // ManGen.HC:276
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l32_c1, f2i(((ldf(((fp &+ 288) &+ 48)) / 2.0) + ldf(((fp &+ 288) &+ 64)))), f2i((ldf(((fp &+ 288) &+ 8)) - ldf(((fp &+ 288) &+ 64)))), 0, (ldf(((fp &+ 288) &+ 64)) * 2.0), ((-ldf(((fp &+ 288) &+ 16))) / 2.0), (ldf(((fp &+ 288) &+ 64)) * 2.0), ldf(((fp &+ 288) &+ 64)), 0.0, ldf(((fp &+ 288) &+ 136)), 0.0, ldf(((fp &+ 288) &+ 104)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l32_c1, f2i(((ldf(((fp &+ 288) &+ 48)) / 2.0) + ldf(((fp &+ 288) &+ 64)))), f2i((ldf(((fp &+ 288) &+ 8)) - ldf(((fp &+ 288) &+ 64)))), 0, (ldf(((fp &+ 288) &+ 64)) * 2.0), ((-ldf(((fp &+ 288) &+ 16))) / 2.0), (ldf(((fp &+ 288) &+ 64)) * 2.0), ldf(((fp &+ 288) &+ 64)), 0.0, ldf(((fp &+ 288) &+ 136)), 0.0, ldf(((fp &+ 288) &+ 104)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 279 // ManGen.HC:279
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 64)) * 2.0), ((-ldf(((fp &+ 288) &+ 16))) / 2.0), (ldf(((fp &+ 288) &+ 64)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 136)), 0.0, ldf(((fp &+ 288) &+ 168)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 64)) * 2.0), ((-ldf(((fp &+ 288) &+ 16))) / 2.0), (ldf(((fp &+ 288) &+ 64)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 136)), 0.0, ldf(((fp &+ 288) &+ 168)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 282 // ManGen.HC:282
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 64)) * 2.0), (-ldf(((fp &+ 288) &+ 24))), (ldf(((fp &+ 288) &+ 72)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 136)), 0.0, ldf(((fp &+ 288) &+ 200)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 64)) * 2.0), (-ldf(((fp &+ 288) &+ 24))), (ldf(((fp &+ 288) &+ 72)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 136)), 0.0, ldf(((fp &+ 288) &+ 200)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 287 // ManGen.HC:287
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l40_c2, f2i((((-ldf(((fp &+ 288) &+ 48))) / 2.0) + ldf(((fp &+ 288) &+ 80)))), 0, 0, (ldf(((fp &+ 288) &+ 80)) * 2.0), ((-ldf(((fp &+ 288) &+ 32))) / 2.0), (ldf(((fp &+ 288) &+ 80)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 144)), 0.0, ldf(((fp &+ 288) &+ 112)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l40_c2, f2i((((-ldf(((fp &+ 288) &+ 48))) / 2.0) + ldf(((fp &+ 288) &+ 80)))), 0, 0, (ldf(((fp &+ 288) &+ 80)) * 2.0), ((-ldf(((fp &+ 288) &+ 32))) / 2.0), (ldf(((fp &+ 288) &+ 80)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 144)), 0.0, ldf(((fp &+ 288) &+ 112)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 290 // ManGen.HC:290
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 80)) * 2.0), ((-ldf(((fp &+ 288) &+ 32))) / 2.0), (ldf(((fp &+ 288) &+ 80)) * 2.0), 0.0, ldf(((fp &+ 288) &+ 88)), ldf(((fp &+ 288) &+ 144)), 0.0, ldf(((fp &+ 288) &+ 176)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 80)) * 2.0), ((-ldf(((fp &+ 288) &+ 32))) / 2.0), (ldf(((fp &+ 288) &+ 80)) * 2.0), 0.0, ldf(((fp &+ 288) &+ 88)), ldf(((fp &+ 288) &+ 144)), 0.0, ldf(((fp &+ 288) &+ 176)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 293 // ManGen.HC:293
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l56_c4, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 80)) * 2.0), (-ldf(((fp &+ 288) &+ 40))), (ldf(((fp &+ 288) &+ 88)) * 2.0), ldf(((fp &+ 288) &+ 80)), 0.0, ldf(((fp &+ 288) &+ 144)), 0.0, ldf(((fp &+ 288) &+ 208)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l56_c4, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 80)) * 2.0), (-ldf(((fp &+ 288) &+ 40))), (ldf(((fp &+ 288) &+ 88)) * 2.0), ldf(((fp &+ 288) &+ 80)), 0.0, ldf(((fp &+ 288) &+ 144)), 0.0, ldf(((fp &+ 288) &+ 208)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 298 // ManGen.HC:298
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l40_c2, f2i(((ldf(((fp &+ 288) &+ 48)) / 2.0) - ldf(((fp &+ 288) &+ 80)))), 0, 0, (ldf(((fp &+ 288) &+ 80)) * 2.0), ((-ldf(((fp &+ 288) &+ 32))) / 2.0), (ldf(((fp &+ 288) &+ 80)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 152)), 0.0, ldf(((fp &+ 288) &+ 120)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l40_c2, f2i(((ldf(((fp &+ 288) &+ 48)) / 2.0) - ldf(((fp &+ 288) &+ 80)))), 0, 0, (ldf(((fp &+ 288) &+ 80)) * 2.0), ((-ldf(((fp &+ 288) &+ 32))) / 2.0), (ldf(((fp &+ 288) &+ 80)) * 2.0), 0.0, 0.0, ldf(((fp &+ 288) &+ 152)), 0.0, ldf(((fp &+ 288) &+ 120)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 301 // ManGen.HC:301
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 80)) * 2.0), ((-ldf(((fp &+ 288) &+ 32))) / 2.0), (ldf(((fp &+ 288) &+ 80)) * 2.0), 0.0, ldf(((fp &+ 288) &+ 88)), ldf(((fp &+ 288) &+ 152)), 0.0, ldf(((fp &+ 288) &+ 184)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l48_c3, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 80)) * 2.0), ((-ldf(((fp &+ 288) &+ 32))) / 2.0), (ldf(((fp &+ 288) &+ 80)) * 2.0), 0.0, ldf(((fp &+ 288) &+ 88)), ldf(((fp &+ 288) &+ 152)), 0.0, ldf(((fp &+ 288) &+ 184)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 304 // ManGen.HC:304
                 try tick(t)
-                try f707_AddBox(t, (fp &+ 288), l56_c4, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 80)) * 2.0), (-ldf(((fp &+ 288) &+ 40))), (ldf(((fp &+ 288) &+ 88)) * 2.0), ldf(((fp &+ 288) &+ 80)), 0.0, ldf(((fp &+ 288) &+ 152)), 0.0, ldf(((fp &+ 288) &+ 216)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
+                try f712_AddBox(t, (fp &+ 288), l56_c4, ld8((fp &+ 8)), ld8((fp &+ 16)), ld8((fp &+ 24)), (ldf(((fp &+ 288) &+ 80)) * 2.0), (-ldf(((fp &+ 288) &+ 40))), (ldf(((fp &+ 288) &+ 88)) * 2.0), ldf(((fp &+ 288) &+ 80)), 0.0, ldf(((fp &+ 288) &+ 152)), 0.0, ldf(((fp &+ 288) &+ 216)), (fp &+ 8), (fp &+ 16), (fp &+ 24))
                 ln = 308 // ManGen.HC:308
                 try tick(t)
-                let t6: Int64 = try f708_Man2CSprite(t)
+                let t6: Int64 = try f713_Man2CSprite(t)
                 l0_res = t6
                 ln = 309 // ManGen.HC:309
                 _ = try nat(t, n_Print, try push2(t, s5, 10))
@@ -593,7 +593,7 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/GrModels/ManGen.HC#0 (ManGen.HC:1)
-    @discardableResult public final func f710_init_C__Apps_GrModels_ManGen_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Apps_GrModels_ManGen_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -605,20 +605,20 @@ public final class N_Apps_GrModels_ManGen: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_MDInit(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_MDCorrect(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: return try f705_AddVertex(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 706: return try f706_AddTri(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 707: try f707_AddBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0)), d((n > 6 ? st[base + 6] : 0)), d((n > 7 ? st[base + 7] : 0)), d((n > 8 ? st[base + 8] : 0)), d((n > 9 ? st[base + 9] : 0)), d((n > 10 ? st[base + 10] : 0)), d((n > 11 ? st[base + 11] : 0)), d((n > 12 ? st[base + 12] : 0)), (n > 13 ? st[base + 13] : 0), (n > 14 ? st[base + 14] : 0), (n > 15 ? st[base + 15] : 0)); return 0
-        case 708: return try f708_Man2CSprite(t)
-        case 709: return try f709_ManGen(t)
-        case 710: return try f710_init_C__Apps_GrModels_ManGen_HC_0(t)
+        case 708: try f708_MDInit(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_MDCorrect(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: return try f710_AddVertex(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 711: return try f711_AddTri(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 712: try f712_AddBox(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0)), d((n > 6 ? st[base + 6] : 0)), d((n > 7 ? st[base + 7] : 0)), d((n > 8 ? st[base + 8] : 0)), d((n > 9 ? st[base + 9] : 0)), d((n > 10 ? st[base + 10] : 0)), d((n > 11 ? st[base + 11] : 0)), d((n > 12 ? st[base + 12] : 0)), (n > 13 ? st[base + 13] : 0), (n > 14 ? st[base + 14] : 0), (n > 15 ? st[base + 15] : 0)); return 0
+        case 713: return try f713_Man2CSprite(t)
+        case 714: return try f714_ManGen(t)
+        case 715: return try f715_init_C__Apps_GrModels_ManGen_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710]
-    private static let NAMES: [Int: String] = [703: "MDInit", 704: "MDCorrect", 705: "AddVertex", 706: "AddTri", 707: "AddBox", 708: "Man2CSprite", 709: "ManGen", 710: "$init:C:/Apps/GrModels/ManGen.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715]
+    private static let NAMES: [Int: String] = [708: "MDInit", 709: "MDCorrect", 710: "AddVertex", 711: "AddTri", 712: "AddBox", 713: "Man2CSprite", 714: "ManGen", 715: "$init:C:/Apps/GrModels/ManGen.HC#0"]
     private static let FILES: [String] = ["C:/Apps/GrModels/ManGen.HC"]
     public override var files: [String] { N_Apps_GrModels_ManGen.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_GrModels_ManGen.DEFINED.contains(index) }

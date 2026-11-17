@@ -43,7 +43,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#0 (SubIntAccess.HC:19) */
-    fun f703_init_C__Demo_SubIntAccess_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_SubIntAccess_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -57,7 +57,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#1 (SubIntAccess.HC:22) */
-    fun f704_init_C__Demo_SubIntAccess_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_SubIntAccess_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -72,7 +72,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#2 (SubIntAccess.HC:23) */
-    fun f705_init_C__Demo_SubIntAccess_HC_2(t: Task): Long {
+    fun f710_init_C__Demo_SubIntAccess_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -86,7 +86,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#3 (SubIntAccess.HC:24) */
-    fun f706_init_C__Demo_SubIntAccess_HC_3(t: Task): Long {
+    fun f711_init_C__Demo_SubIntAccess_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -101,7 +101,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#4 (SubIntAccess.HC:25) */
-    fun f707_init_C__Demo_SubIntAccess_HC_4(t: Task): Long {
+    fun f712_init_C__Demo_SubIntAccess_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -115,7 +115,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#5 (SubIntAccess.HC:26) */
-    fun f708_init_C__Demo_SubIntAccess_HC_5(t: Task): Long {
+    fun f713_init_C__Demo_SubIntAccess_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -130,7 +130,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#6 (SubIntAccess.HC:27) */
-    fun f709_init_C__Demo_SubIntAccess_HC_6(t: Task): Long {
+    fun f714_init_C__Demo_SubIntAccess_HC_6(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -144,7 +144,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#7 (SubIntAccess.HC:28) */
-    fun f710_init_C__Demo_SubIntAccess_HC_7(t: Task): Long {
+    fun f715_init_C__Demo_SubIntAccess_HC_7(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -159,7 +159,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/SubIntAccess.HC#8 (SubIntAccess.HC:29) */
-    fun f711_init_C__Demo_SubIntAccess_HC_8(t: Task): Long {
+    fun f716_init_C__Demo_SubIntAccess_HC_8(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -175,15 +175,15 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_SubIntAccess_HC_0(t)
-            704 -> f704_init_C__Demo_SubIntAccess_HC_1(t)
-            705 -> f705_init_C__Demo_SubIntAccess_HC_2(t)
-            706 -> f706_init_C__Demo_SubIntAccess_HC_3(t)
-            707 -> f707_init_C__Demo_SubIntAccess_HC_4(t)
-            708 -> f708_init_C__Demo_SubIntAccess_HC_5(t)
-            709 -> f709_init_C__Demo_SubIntAccess_HC_6(t)
-            710 -> f710_init_C__Demo_SubIntAccess_HC_7(t)
-            711 -> f711_init_C__Demo_SubIntAccess_HC_8(t)
+            708 -> f708_init_C__Demo_SubIntAccess_HC_0(t)
+            709 -> f709_init_C__Demo_SubIntAccess_HC_1(t)
+            710 -> f710_init_C__Demo_SubIntAccess_HC_2(t)
+            711 -> f711_init_C__Demo_SubIntAccess_HC_3(t)
+            712 -> f712_init_C__Demo_SubIntAccess_HC_4(t)
+            713 -> f713_init_C__Demo_SubIntAccess_HC_5(t)
+            714 -> f714_init_C__Demo_SubIntAccess_HC_6(t)
+            715 -> f715_init_C__Demo_SubIntAccess_HC_7(t)
+            716 -> f716_init_C__Demo_SubIntAccess_HC_8(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -195,7 +195,7 @@ class N_Demo_SubIntAccess(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716)
         private val NAMES = arrayOf("\$init:C:/Demo/SubIntAccess.HC#0", "\$init:C:/Demo/SubIntAccess.HC#1", "\$init:C:/Demo/SubIntAccess.HC#2", "\$init:C:/Demo/SubIntAccess.HC#3", "\$init:C:/Demo/SubIntAccess.HC#4", "\$init:C:/Demo/SubIntAccess.HC#5", "\$init:C:/Demo/SubIntAccess.HC#6", "\$init:C:/Demo/SubIntAccess.HC#7", "\$init:C:/Demo/SubIntAccess.HC#8")
         private val FILES = arrayOf<String>("C:/Demo/SubIntAccess.HC")
     }

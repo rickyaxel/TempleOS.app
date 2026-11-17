@@ -27,7 +27,7 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawCtrlBttn (CtrlsBttn.HC:12) */
-    fun f703_DrawCtrlBttn(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawCtrlBttn(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -62,7 +62,7 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 28 // CtrlsBttn.HC:28
             tick(t)
             val vb0 = push1(t, l32_st)
-            P.f369_GrPrint(t, p0_dc, ((((ld8((p1_c + 40L)) + ld8((p1_c + 48L))) + 1L) - (l24_l * 8L)) shr 1), ((((ld8((p1_c + 56L)) + ld8((p1_c + 64L))) + 1L) - 8L) shr 1), s0, vb0, 1)
+            P.f370_GrPrint(t, p0_dc, ((((ld8((p1_c + 40L)) + ld8((p1_c + 48L))) + 1L) - (l24_l * 8L)) shr 1), ((((ld8((p1_c + 56L)) + ld8((p1_c + 64L))) + 1L) - 8L) shr 1), s0, vb0, 1)
             t.sp = vb0
             t.depth--
             return
@@ -70,7 +70,7 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC LeftClickCtrlBttn (CtrlsBttn.HC:32) */
-    fun f704_LeftClickCtrlBttn(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f709_LeftClickCtrlBttn(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -101,7 +101,7 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC CtrlBttnNew (CtrlsBttn.HC:42) */
-    fun f705_CtrlBttnNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long): Long {
+    fun f710_CtrlBttnNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -181,9 +181,9 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 74 // CtrlsBttn.HC:74
             st8((l64_res + 104L), l72_s)
             ln = 75 // CtrlsBttn.HC:75
-            st8((l64_res + 120L), 9223090561878065855L)
+            st8((l64_res + 120L), 9223090561878065860L)
             ln = 76 // CtrlsBttn.HC:76
-            st8((l64_res + 136L), 9223090561878065856L)
+            st8((l64_res + 136L), 9223090561878065861L)
             ln = 77 // CtrlsBttn.HC:77
             st8((l64_res + 40L), p0_x)
             ln = 78 // CtrlsBttn.HC:78
@@ -204,7 +204,7 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC CtrlBttnDel (CtrlsBttn.HC:85) */
-    fun f706_CtrlBttnDel(t: Task, a0: Long) {
+    fun f711_CtrlBttnDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -225,7 +225,7 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Adam/Ctrls/CtrlsBttn.HC#0 (CtrlsBttn.HC:1) */
-    fun f707_init_C__Adam_Ctrls_CtrlsBttn_HC_0(t: Task): Long {
+    fun f712_init_C__Adam_Ctrls_CtrlsBttn_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -237,11 +237,11 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawCtrlBttn(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_LeftClickCtrlBttn(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> f705_CtrlBttnNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L))
-            706 -> { f706_CtrlBttnDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            707 -> f707_init_C__Adam_Ctrls_CtrlsBttn_HC_0(t)
+            708 -> { f708_DrawCtrlBttn(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_LeftClickCtrlBttn(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> f710_CtrlBttnNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L))
+            711 -> { f711_CtrlBttnDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            712 -> f712_init_C__Adam_Ctrls_CtrlsBttn_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -253,7 +253,7 @@ class N_Adam_Ctrls_CtrlsBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("DrawCtrlBttn", "LeftClickCtrlBttn", "CtrlBttnNew", "CtrlBttnDel", "\$init:C:/Adam/Ctrls/CtrlsBttn.HC#0")
         private val FILES = arrayOf<String>("C:/Adam/Ctrls/CtrlsBttn.HC")
     }

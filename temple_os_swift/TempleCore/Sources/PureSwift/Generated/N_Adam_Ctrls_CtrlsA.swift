@@ -39,7 +39,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC CtrlFindUnique (CtrlsA.HC:1)
-    @discardableResult public final func f703_CtrlFindUnique(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f708_CtrlFindUnique(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -69,7 +69,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC CtrlsUpdate (CtrlsA.HC:13)
-    public final func f704_CtrlsUpdate(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_CtrlsUpdate(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -114,21 +114,21 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Ctrls/CtrlsA.HC#0 (CtrlsA.HC:35)
-    @discardableResult public final func f705_init_C__Adam_Ctrls_CtrlsA_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Adam_Ctrls_CtrlsA_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 35 // CtrlsA.HC:35
-            try st8(P.g_fp_update_ctrls, 9223090561878065856)
+            try st8(P.g_fp_update_ctrls, 9223090561878065861)
             t.depth -= 1
-            return 9223090561878065856
+            return 9223090561878065861
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Adam/Ctrls/CtrlsA.HC#0", ln) }
     }
 
     /// HolyC CtrlInsideRect (CtrlsA.HC:37)
-    @discardableResult public final func f706_CtrlInsideRect(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f711_CtrlInsideRect(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -161,7 +161,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC CtrlInside (CtrlsA.HC:46)
-    @discardableResult public final func f707_CtrlInside(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f712_CtrlInside(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -180,7 +180,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
                 } else {
                     ln = 52 // CtrlsA.HC:52
                     try tick(t)
-                    let t1: Int64 = try f706_CtrlInsideRect(t, p0_c, p1_x, p2_y)
+                    let t1: Int64 = try f711_CtrlInsideRect(t, p0_c, p1_x, p2_y)
                     let rv3: Int64 = (t1 & 0xFF)
                     t.depth -= 1
                     return rv3
@@ -197,7 +197,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC DrawCtrls (CtrlsA.HC:57)
-    public final func f708_DrawCtrls(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_DrawCtrls(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -304,7 +304,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC DrawWinScroll (CtrlsA.HC:108)
-    public final func f709_DrawWinScroll(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_DrawWinScroll(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -339,7 +339,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC WinDerivedScrollValsUpdate (CtrlsA.HC:125)
-    public final func f710_WinDerivedScrollValsUpdate(_ t: HTask, _ a0: Int64) throws {
+    public final func f715_WinDerivedScrollValsUpdate(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -400,7 +400,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC LeftClickHWinScroll (CtrlsA.HC:158)
-    public final func f711_LeftClickHWinScroll(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f716_LeftClickHWinScroll(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -445,7 +445,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC LeftClickVWinScroll (CtrlsA.HC:174)
-    public final func f712_LeftClickVWinScroll(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f717_LeftClickVWinScroll(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -490,7 +490,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC WheelChangeWinScroll (CtrlsA.HC:190)
-    public final func f713_WheelChangeWinScroll(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f718_WheelChangeWinScroll(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -516,7 +516,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC WinScrollsInit (CtrlsA.HC:199)
-    public final func f714_WinScrollsInit(_ t: HTask, _ a0: Int64) throws {
+    public final func f719_WinScrollsInit(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -524,7 +524,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
             var l8_c: Int64 = 0
             ln = 203 // CtrlsA.HC:203
             try tick(t)
-            let t0: Int64 = try f703_CtrlFindUnique(t, p0_task, 1)
+            let t0: Int64 = try f708_CtrlFindUnique(t, p0_task, 1)
             if (t0 == 0) {
                 ln = 204 // CtrlsA.HC:204
                 let t1: Int64 = try nat(t, n_CAlloc, try push2(t, 160, 0))
@@ -538,18 +538,18 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
                 ln = 208 // CtrlsA.HC:208
                 try st8((l8_c &+ 104), (p0_task &+ 1144))
                 ln = 209 // CtrlsA.HC:209
-                try st8((l8_c &+ 112), 9223090561878065862)
+                try st8((l8_c &+ 112), 9223090561878065867)
                 ln = 210 // CtrlsA.HC:210
-                try st8((l8_c &+ 120), 9223090561878065861)
+                try st8((l8_c &+ 120), 9223090561878065866)
                 ln = 211 // CtrlsA.HC:211
-                try st8((l8_c &+ 136), 9223090561878065863)
+                try st8((l8_c &+ 136), 9223090561878065868)
                 ln = 212 // CtrlsA.HC:212
                 try tick(t)
                 _ = try P.f153_QueIns(t, l8_c, ld8((p0_task &+ 928)))
             }
             ln = 215 // CtrlsA.HC:215
             try tick(t)
-            let t2: Int64 = try f703_CtrlFindUnique(t, p0_task, 2)
+            let t2: Int64 = try f708_CtrlFindUnique(t, p0_task, 2)
             if (t2 == 0) {
                 ln = 216 // CtrlsA.HC:216
                 let t3: Int64 = try nat(t, n_CAlloc, try push2(t, 160, 0))
@@ -563,13 +563,13 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
                 ln = 220 // CtrlsA.HC:220
                 try st8((l8_c &+ 104), (p0_task &+ 1176))
                 ln = 221 // CtrlsA.HC:221
-                try st8((l8_c &+ 112), 9223090561878065862)
+                try st8((l8_c &+ 112), 9223090561878065867)
                 ln = 222 // CtrlsA.HC:222
-                try st8((l8_c &+ 120), 9223090561878065861)
+                try st8((l8_c &+ 120), 9223090561878065866)
                 ln = 223 // CtrlsA.HC:223
-                try st8((l8_c &+ 136), 9223090561878065864)
+                try st8((l8_c &+ 136), 9223090561878065869)
                 ln = 224 // CtrlsA.HC:224
-                try st8((l8_c &+ 152), 9223090561878065865)
+                try st8((l8_c &+ 152), 9223090561878065870)
                 ln = 225 // CtrlsA.HC:225
                 try tick(t)
                 _ = try P.f153_QueIns(t, l8_c, ld8((p0_task &+ 928)))
@@ -583,7 +583,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC DrawViewAnglesCtrl (CtrlsA.HC:234)
-    public final func f715_DrawViewAnglesCtrl(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f720_DrawViewAnglesCtrl(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -606,13 +606,13 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
             try st4((p0_dc &+ 160), ld4u((l32_s &+ 68)))
             ln = 247 // CtrlsA.HC:247
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, (ld8((p1_c &+ 40)) &+ 22), (ld8((p1_c &+ 56)) &+ 22), (ld8((p1_c &+ 40)) &+ 22), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, (ld8((p1_c &+ 40)) &+ 22), (ld8((p1_c &+ 56)) &+ 22), (ld8((p1_c &+ 40)) &+ 22), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &- 1), 1, 0)
             ln = 250 // CtrlsA.HC:250
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 44) &+ 1), (ld8((p1_c &+ 56)) &+ 22), ((ld8((p1_c &+ 40)) &+ 44) &+ 1), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 44) &+ 1), (ld8((p1_c &+ 56)) &+ 22), ((ld8((p1_c &+ 40)) &+ 44) &+ 1), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &- 1), 1, 0)
             ln = 253 // CtrlsA.HC:253
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 66) &+ 2), (ld8((p1_c &+ 56)) &+ 22), ((ld8((p1_c &+ 40)) &+ 66) &+ 2), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 66) &+ 2), (ld8((p1_c &+ 56)) &+ 22), ((ld8((p1_c &+ 40)) &+ 66) &+ 2), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &- 1), 1, 0)
             ln = 256 // CtrlsA.HC:256
             l16_i = 1
             loop0: while (l16_i < 49) {
@@ -620,13 +620,13 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
                 l24_j = try (2 &- (divs(l16_i, 3) & 1))
                 ln = 258 // CtrlsA.HC:258
                 try tick(t)
-                _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 22) &- l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), ((ld8((p1_c &+ 40)) &+ 22) &+ l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), 1, 0)
+                _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 22) &- l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), ((ld8((p1_c &+ 40)) &+ 22) &+ l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), 1, 0)
                 ln = 261 // CtrlsA.HC:261
                 try tick(t)
-                _ = try P.f396_GrLine(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 44) &+ 1) &- l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), (((ld8((p1_c &+ 40)) &+ 44) &+ 1) &+ l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), 1, 0)
+                _ = try P.f397_GrLine(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 44) &+ 1) &- l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), (((ld8((p1_c &+ 40)) &+ 44) &+ 1) &+ l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), 1, 0)
                 ln = 264 // CtrlsA.HC:264
                 try tick(t)
-                _ = try P.f396_GrLine(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 66) &+ 2) &- l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), (((ld8((p1_c &+ 40)) &+ 66) &+ 2) &+ l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), 1, 0)
+                _ = try P.f397_GrLine(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 66) &+ 2) &- l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), (((ld8((p1_c &+ 40)) &+ 66) &+ 2) &+ l24_j), ((ld8((p1_c &+ 64)) &- 22) &- l16_i), 1, 0)
                 ln = 256 // CtrlsA.HC:256
                 l16_i = (l16_i &+ 4)
                 try tick(t)
@@ -636,12 +636,12 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
             ln = 270 // CtrlsA.HC:270
             try tick(t)
             let vb5 = push0(t)
-            _ = try P.f369_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 22) &- divs(8, 2)), ((ld8((p1_c &+ 56)) &+ 22) &- 9), s0, vb5, 0)
+            _ = try P.f370_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 22) &- divs(8, 2)), ((ld8((p1_c &+ 56)) &+ 22) &- 9), s0, vb5, 0)
             t.sp = vb5
             ln = 272 // CtrlsA.HC:272
             try tick(t)
             let vb6 = try push1(t, divs((ld8(l32_s) &* 360), 48))
-            _ = try P.f369_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 22) &- divs(24, 2)), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &+ 3), s1, vb6, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 22) &- divs(24, 2)), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &+ 3), s1, vb6, 1)
             t.sp = vb6
             ln = 275 // CtrlsA.HC:275
             l16_i = try (ld8((p1_c &+ 40)) &+ 22)
@@ -666,12 +666,12 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
             ln = 286 // CtrlsA.HC:286
             try tick(t)
             let vb7 = push0(t)
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 44) &+ 1) &- divs(8, 2)), ((ld8((p1_c &+ 56)) &+ 22) &- 9), s2, vb7, 0)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 44) &+ 1) &- divs(8, 2)), ((ld8((p1_c &+ 56)) &+ 22) &- 9), s2, vb7, 0)
             t.sp = vb7
             ln = 288 // CtrlsA.HC:288
             try tick(t)
             let vb8 = try push1(t, divs((ld8((l32_s &+ 8)) &* 360), 48))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 44) &+ 1) &- divs(24, 2)), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &+ 3), s1, vb8, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 44) &+ 1) &- divs(24, 2)), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &+ 3), s1, vb8, 1)
             t.sp = vb8
             ln = 291 // CtrlsA.HC:291
             l16_i = try ((ld8((p1_c &+ 40)) &+ 44) &+ 1)
@@ -696,12 +696,12 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
             ln = 302 // CtrlsA.HC:302
             try tick(t)
             let vb9 = push0(t)
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 66) &+ 2) &- divs(8, 2)), ((ld8((p1_c &+ 56)) &+ 22) &- 9), s3, vb9, 0)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 66) &+ 2) &- divs(8, 2)), ((ld8((p1_c &+ 56)) &+ 22) &- 9), s3, vb9, 0)
             t.sp = vb9
             ln = 304 // CtrlsA.HC:304
             try tick(t)
             let vb10 = try push1(t, divs((ld8((l32_s &+ 16)) &* 360), 48))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 66) &+ 2) &- divs(24, 2)), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &+ 3), s1, vb10, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 66) &+ 2) &- divs(24, 2)), (((ld8((p1_c &+ 56)) &+ 22) &+ 48) &+ 3), s1, vb10, 1)
             t.sp = vb10
             ln = 307 // CtrlsA.HC:307
             l16_i = try ((ld8((p1_c &+ 40)) &+ 66) &+ 2)
@@ -727,7 +727,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC UpdateDerivedViewAnglesCtrl (CtrlsA.HC:318)
-    public final func f716_UpdateDerivedViewAnglesCtrl(_ t: HTask, _ a0: Int64) throws {
+    public final func f721_UpdateDerivedViewAnglesCtrl(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -773,7 +773,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC LeftClickViewAngles (CtrlsA.HC:333)
-    public final func f717_LeftClickViewAngles(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f722_LeftClickViewAngles(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -822,7 +822,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC ViewAnglesNew (CtrlsA.HC:352)
-    @discardableResult public final func f718_ViewAnglesNew(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f723_ViewAnglesNew(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -835,7 +835,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
             }
             ln = 357 // CtrlsA.HC:357
             try tick(t)
-            let t0: Int64 = try f703_CtrlFindUnique(t, p0_task, 3)
+            let t0: Int64 = try f708_CtrlFindUnique(t, p0_task, 3)
             l8_c = t0
             if (t0 == 0) {
                 ln = 358 // CtrlsA.HC:358
@@ -865,11 +865,11 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
                 ln = 369 // CtrlsA.HC:369
                 try st8((l8_c &+ 104), l16_s)
                 ln = 370 // CtrlsA.HC:370
-                try st8((l8_c &+ 120), 9223090561878065867)
+                try st8((l8_c &+ 120), 9223090561878065872)
                 ln = 371 // CtrlsA.HC:371
-                try st8((l8_c &+ 136), 9223090561878065869)
+                try st8((l8_c &+ 136), 9223090561878065874)
                 ln = 372 // CtrlsA.HC:372
-                try st8((l8_c &+ 112), 9223090561878065868)
+                try st8((l8_c &+ 112), 9223090561878065873)
                 ln = 373 // CtrlsA.HC:373
                 try tick(t)
                 _ = try P.f153_QueIns(t, l8_c, ld8((p0_task &+ 928)))
@@ -886,7 +886,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC ViewAnglesDel (CtrlsA.HC:379)
-    public final func f719_ViewAnglesDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f724_ViewAnglesDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -898,7 +898,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
             }
             ln = 383 // CtrlsA.HC:383
             try tick(t)
-            let t0: Int64 = try f703_CtrlFindUnique(t, p0_task, 3)
+            let t0: Int64 = try f708_CtrlFindUnique(t, p0_task, 3)
             l8_c = t0
             if (t0 != 0) {
                 ln = 384 // CtrlsA.HC:384
@@ -915,7 +915,7 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Ctrls/CtrlsA.HC#1 (CtrlsA.HC:1)
-    @discardableResult public final func f720_init_C__Adam_Ctrls_CtrlsA_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f725_init_C__Adam_Ctrls_CtrlsA_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -927,30 +927,30 @@ public final class N_Adam_Ctrls_CtrlsA: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_CtrlFindUnique(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 704: try f704_CtrlsUpdate(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: return try f705_init_C__Adam_Ctrls_CtrlsA_HC_0(t)
-        case 706: return try f706_CtrlInsideRect(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 707: return try f707_CtrlInside(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 708: try f708_DrawCtrls(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: try f709_DrawWinScroll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: try f710_WinDerivedScrollValsUpdate(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 711: try f711_LeftClickHWinScroll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 712: try f712_LeftClickVWinScroll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 713: try f713_WheelChangeWinScroll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 714: try f714_WinScrollsInit(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 715: try f715_DrawViewAnglesCtrl(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 716: try f716_UpdateDerivedViewAnglesCtrl(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 717: try f717_LeftClickViewAngles(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 718: return try f718_ViewAnglesNew(t, (n > 0 ? st[base + 0] : 0))
-        case 719: try f719_ViewAnglesDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 720: return try f720_init_C__Adam_Ctrls_CtrlsA_HC_1(t)
+        case 708: return try f708_CtrlFindUnique(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 709: try f709_CtrlsUpdate(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: return try f710_init_C__Adam_Ctrls_CtrlsA_HC_0(t)
+        case 711: return try f711_CtrlInsideRect(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 712: return try f712_CtrlInside(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 713: try f713_DrawCtrls(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: try f714_DrawWinScroll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: try f715_WinDerivedScrollValsUpdate(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 716: try f716_LeftClickHWinScroll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 717: try f717_LeftClickVWinScroll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 718: try f718_WheelChangeWinScroll(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 719: try f719_WinScrollsInit(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 720: try f720_DrawViewAnglesCtrl(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 721: try f721_UpdateDerivedViewAnglesCtrl(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 722: try f722_LeftClickViewAngles(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 723: return try f723_ViewAnglesNew(t, (n > 0 ? st[base + 0] : 0))
+        case 724: try f724_ViewAnglesDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 725: return try f725_init_C__Adam_Ctrls_CtrlsA_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720]
-    private static let NAMES: [Int: String] = [703: "CtrlFindUnique", 704: "CtrlsUpdate", 705: "$init:C:/Adam/Ctrls/CtrlsA.HC#0", 706: "CtrlInsideRect", 707: "CtrlInside", 708: "DrawCtrls", 709: "DrawWinScroll", 710: "WinDerivedScrollValsUpdate", 711: "LeftClickHWinScroll", 712: "LeftClickVWinScroll", 713: "WheelChangeWinScroll", 714: "WinScrollsInit", 715: "DrawViewAnglesCtrl", 716: "UpdateDerivedViewAnglesCtrl", 717: "LeftClickViewAngles", 718: "ViewAnglesNew", 719: "ViewAnglesDel", 720: "$init:C:/Adam/Ctrls/CtrlsA.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725]
+    private static let NAMES: [Int: String] = [708: "CtrlFindUnique", 709: "CtrlsUpdate", 710: "$init:C:/Adam/Ctrls/CtrlsA.HC#0", 711: "CtrlInsideRect", 712: "CtrlInside", 713: "DrawCtrls", 714: "DrawWinScroll", 715: "WinDerivedScrollValsUpdate", 716: "LeftClickHWinScroll", 717: "LeftClickVWinScroll", 718: "WheelChangeWinScroll", 719: "WinScrollsInit", 720: "DrawViewAnglesCtrl", 721: "UpdateDerivedViewAnglesCtrl", 722: "LeftClickViewAngles", 723: "ViewAnglesNew", 724: "ViewAnglesDel", 725: "$init:C:/Adam/Ctrls/CtrlsA.HC#1"]
     private static let FILES: [String] = ["C:/Adam/Ctrls/CtrlsA.HC"]
     public override var files: [String] { N_Adam_Ctrls_CtrlsA.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Ctrls_CtrlsA.DEFINED.contains(index) }

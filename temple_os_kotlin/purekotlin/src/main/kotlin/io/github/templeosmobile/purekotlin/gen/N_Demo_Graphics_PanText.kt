@@ -18,7 +18,7 @@ class N_Demo_Graphics_PanText(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC PanText (PanText.HC:1) */
-    fun f703_PanText(t: Task) {
+    fun f708_PanText(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -99,13 +99,13 @@ class N_Demo_Graphics_PanText(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Graphics/PanText.HC#0 (PanText.HC:35) */
-    fun f704_init_C__Demo_Graphics_PanText_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_PanText_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 35 // PanText.HC:35
             tick(t)
-            f703_PanText(t)
+            f708_PanText(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/PanText.HC#0", ln) }
@@ -114,8 +114,8 @@ class N_Demo_Graphics_PanText(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_PanText(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_PanText_HC_0(t)
+            708 -> { f708_PanText(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_PanText_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -127,7 +127,7 @@ class N_Demo_Graphics_PanText(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("PanText", "\$init:C:/Demo/Graphics/PanText.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/PanText.HC")
     }

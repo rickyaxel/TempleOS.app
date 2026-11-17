@@ -8,8 +8,8 @@ m line3 36 $CSpritePtPt
 m fill 53 $CSpritePt
 m end 62 $CSpriteBase
 s 17fd38 2568313363
-fn 703 SpriteRawDemo (U0;;-)
-fn 704 $init:C:/Demo/Graphics/SpriteRaw.HC#0 (I64;;-)
-sym f SpriteRawDemo 703 (U0;;-)
-init 704
+fn 708 SpriteRawDemo (U0;;-)
+fn 709 $init:C:/Demo/Graphics/SpriteRaw.HC#0 (I64;;-)
+sym f SpriteRawDemo 708 (U0;;-)
+init 709
 unit C:/Demo/Graphics/SpriteRaw.HC#1

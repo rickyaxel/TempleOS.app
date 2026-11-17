@@ -20,8 +20,10 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     public let n_Free: Int
     public let n_GetChar: Int
     public let n_GetMsg: Int
+    public let n_GrLine3: Int
     public let n_GrRect: Int
     public let n_JobQue: Int
+    public let n_Mat4x4Scale: Int
     public let n_MemSet: Int
     public let n_Print: Int
     public let n_Rand: Int
@@ -38,6 +40,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     public let n_Sleep: Int
     public let n_SleepUntil: Int
     public let n_Snd: Int
+    public let n_Sprite3: Int
     public let n_Yield: Int
     public let n_mp_cnt: Int
     public let n_tS: Int
@@ -121,8 +124,10 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
         n_Free = rt.vm.natives.find("Free")!.index
         n_GetChar = rt.vm.natives.find("GetChar")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_GrRect = rt.vm.natives.find("GrRect")!.index
         n_JobQue = rt.vm.natives.find("JobQue")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Rand = rt.vm.natives.find("Rand")!.index
@@ -139,6 +144,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_SleepUntil = rt.vm.natives.find("SleepUntil")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Yield = rt.vm.natives.find("Yield")!.index
         n_mp_cnt = rt.vm.natives.find("mp_cnt")!.index
         n_tS = rt.vm.natives.find("tS")!.index
@@ -227,7 +233,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#0 (Titanium.HC:1)
-    @discardableResult public final func f703_init_C__Apps_Titanium_Titanium_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Titanium_Titanium_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -241,7 +247,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#1 (Titanium.HC:2)
-    @discardableResult public final func f704_init_C__Apps_Titanium_Titanium_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_Titanium_Titanium_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -255,7 +261,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -265,7 +271,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#2 (Titanium.HC:77)
-    @discardableResult public final func f706_init_C__Apps_Titanium_Titanium_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Apps_Titanium_Titanium_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -280,7 +286,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#3 (Titanium.HC:94)
-    @discardableResult public final func f707_init_C__Apps_Titanium_Titanium_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Apps_Titanium_Titanium_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -295,7 +301,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#4 (Titanium.HC:114)
-    @discardableResult public final func f708_init_C__Apps_Titanium_Titanium_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Apps_Titanium_Titanium_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -310,7 +316,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#5 (Titanium.HC:131)
-    @discardableResult public final func f709_init_C__Apps_Titanium_Titanium_HC_5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Apps_Titanium_Titanium_HC_5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -325,7 +331,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#6 (Titanium.HC:168)
-    @discardableResult public final func f710_init_C__Apps_Titanium_Titanium_HC_6(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Apps_Titanium_Titanium_HC_6(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -340,7 +346,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#7 (Titanium.HC:211)
-    @discardableResult public final func f711_init_C__Apps_Titanium_Titanium_HC_7(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f716_init_C__Apps_Titanium_Titanium_HC_7(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -355,7 +361,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC ExplosionDraw (Titanium.HC:214)
-    public final func f712_ExplosionDraw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f717_ExplosionDraw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -496,7 +502,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                 let t8: Int64 = try ld8(p1_tmpe)
                 let t7: Double = d(try nat(t, n_Rand, push0(t)))
                 try tick(t)
-                _ = try P.f396_GrLine(t, p0_dc, f2i((Double(t8) + (Double(l40_n2) * (t7 - 0.5)))), f2i((Double(p2_y) + (Double(divs(l48_n3, 2)) * t6))), f2i((Double(t5) + ((Double(l56_n4) * l72_t) * (t4 - 0.5)))), f2i((Double(p2_y) - ((Double(divs(l64_n5, 2)) * l72_t) * t3))), 1, 0)
+                _ = try P.f397_GrLine(t, p0_dc, f2i((Double(t8) + (Double(l40_n2) * (t7 - 0.5)))), f2i((Double(p2_y) + (Double(divs(l48_n3, 2)) * t6))), f2i((Double(t5) + ((Double(l56_n4) * l72_t) * (t4 - 0.5)))), f2i((Double(p2_y) - ((Double(divs(l64_n5, 2)) * l72_t) * t3))), 1, 0)
                 ln = 226 // Titanium.HC:226
                 l24_i = (l24_i &+ 1)
                 try tick(t)
@@ -507,7 +513,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC MPMenDraw (Titanium.HC:273)
-    public final func f713_MPMenDraw(_ t: HTask, _ a0: Int64) throws {
+    public final func f718_MPMenDraw(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -558,7 +564,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                 if try ((((-32) <= l176_yy) && (l176_yy <= (ld8((l8_task &+ 240)) &+ 32))) && (ld1u((l208_tmpe &+ 48)) == 0)) {
                     ln = 288 // Titanium.HC:288
                     try tick(t)
-                    try f712_ExplosionDraw(t, l16_dc, l208_tmpe, l176_yy)
+                    try f717_ExplosionDraw(t, l16_dc, l208_tmpe, l176_yy)
                     ln = 289 // Titanium.HC:289
                     let t7: Double = d(try nat(t, n_tS, push0(t)))
                     if try (t7 > ldf((l208_tmpe &+ 40))) {
@@ -592,13 +598,12 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                         try tick(t)
                         _ = try P.f305_Mat4x4RotX(t, (fp &+ 32), (d(4614256656552045848) / 6.0))
                         ln = 301 // Titanium.HC:301
-                        try tick(t)
-                        _ = try P.f308_Mat4x4Scale(t, (fp &+ 32), 0.3)
+                        _ = try nat(t, n_Mat4x4Scale, try push2(t, (fp &+ 32), bits(0.3)))
                         ln = 302 // Titanium.HC:302
                         if try (ld1u((l200_tmpu &+ 42)) != 0) {
                             ln = 303 // Titanium.HC:303
                             try tick(t)
-                            try P.f442_Sprite3Mat4x4B(t, l16_dc, ld8(l200_tmpu), l176_yy, divs(2147483647, 2), b24, (fp &+ 32))
+                            try P.f447_Sprite3Mat4x4B(t, l16_dc, ld8(l200_tmpu), l176_yy, divs(2147483647, 2), b24, (fp &+ 32))
                         } else {
                             ln = 305 // Titanium.HC:305
                             if try (ld8((l200_tmpu &+ 16)) < 100) {
@@ -612,7 +617,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                                 }
                                 ln = 310 // Titanium.HC:310
                                 try tick(t)
-                                let t9: Double = try P.f542_Wrap(t, (ldf((l200_tmpu &+ 32)) + (20.0 * l240_ts)), 0.0)
+                                let t9: Double = try P.f547_Wrap(t, (ldf((l200_tmpu &+ 32)) + (20.0 * l240_ts)), 0.0)
                                 l232_tt = ((4.0 * t9) / (2.0 * d(4614256656552045848)))
                             } else {
                                 ln = 312 // Titanium.HC:312
@@ -637,7 +642,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                                 }
                                 ln = 319 // Titanium.HC:319
                                 try tick(t)
-                                let t12: Double = try P.f542_Wrap(t, (ldf((l200_tmpu &+ 32)) + (5.0 * l240_ts)), 0.0)
+                                let t12: Double = try P.f547_Wrap(t, (ldf((l200_tmpu &+ 32)) + (5.0 * l240_ts)), 0.0)
                                 l232_tt = ((4.0 * t12) / (2.0 * d(4614256656552045848)))
                             }
                             ln = 321 // Titanium.HC:321
@@ -645,11 +650,11 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                             l232_tt = fmod(l232_tt, 1.0)
                             ln = 322 // Titanium.HC:322
                             try tick(t)
-                            let t13: Int64 = try P.f448_SpriteInterpolate(t, l232_tt, ld8((l224__tmps &+ ((l184_phase & 3) &* 8))), ld8((l224__tmps &+ (((l184_phase &+ 1) & 3) &* 8))))
+                            let t13: Int64 = try P.f453_SpriteInterpolate(t, l232_tt, ld8((l224__tmps &+ ((l184_phase & 3) &* 8))), ld8((l224__tmps &+ (((l184_phase &+ 1) & 3) &* 8))))
                             l216_tmps = t13
                             ln = 323 // Titanium.HC:323
                             try tick(t)
-                            try P.f442_Sprite3Mat4x4B(t, l16_dc, ld8(l200_tmpu), l176_yy, divs(2147483647, 2), l216_tmps, (fp &+ 32))
+                            try P.f447_Sprite3Mat4x4B(t, l16_dc, ld8(l200_tmpu), l176_yy, divs(2147483647, 2), l216_tmps, (fp &+ 32))
                             ln = 324 // Titanium.HC:324
                             _ = try nat(t, n_Free, try push1(t, l216_tmps))
                         }
@@ -676,7 +681,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC MissilePos (Titanium.HC:336)
-    public final func f714_MissilePos(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f719_MissilePos(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -709,7 +714,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC DrawIt (Titanium.HC:347)
-    public final func f715_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f720_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -733,7 +738,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             try st4((p1_dc &+ 160), 1074135054)
             ln = 354 // Titanium.HC:354
             try tick(t)
-            _ = try P.f424_GrRect3(t, p1_dc, 0, 0, 0, ld4s((p1_dc &+ 16)), ld4s((p1_dc &+ 24)))
+            _ = try P.f427_GrRect3(t, p1_dc, 0, 0, 0, ld4s((p1_dc &+ 16)), ld4s((p1_dc &+ 24)))
             ln = 356 // Titanium.HC:356
             l16_i = 0
             loop0: while (l16_i < 128) {
@@ -750,8 +755,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                 }
                 if r2 {
                     ln = 359 // Titanium.HC:359
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, ld8((g_ls &+ (l16_i &* 24))), ld8((fp &+ 40)), 0, ld8(((g_ls &+ (l16_i &* 24)) &+ 16)), 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((g_ls &+ (l16_i &* 24))), ld8((fp &+ 40)), 0, ld8(((g_ls &+ (l16_i &* 24)) &+ 16)), 0))
                 }
                 ln = 356 // Titanium.HC:356
                 l16_i = (l16_i &+ 1)
@@ -762,8 +766,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             ln = 363 // Titanium.HC:363
             try st4((p1_dc &+ 160), 6)
             ln = 364 // Titanium.HC:364
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 0, ((ld8(g_finish_line) &- l48_scroll_y) & 4095), 0, 640, ((ld8(g_finish_line) &- l48_scroll_y) & 4095), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 0, ((ld8(g_finish_line) &- l48_scroll_y) & 4095), 0, 640, ((ld8(g_finish_line) &- l48_scroll_y) & 4095), 0, 1, 0))
             ln = 367 // Titanium.HC:367
             try st4((p1_dc &+ 160), 7)
             ln = 368 // Titanium.HC:368
@@ -777,11 +780,11 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                         ln = 371 // Titanium.HC:371
                         let t5: Double = d(try nat(t, n_Arg, try push2(t, bits(Double(ld8((l72_tmpb &+ 16)))), bits(Double(ld8((l72_tmpb &+ 24)))))))
                         try tick(t)
-                        try P.f445_Sprite3ZB(t, p1_dc, (ld8(l72_tmpb) &>> 32), (ld8((l72_tmpb &+ 8)) &>> 32), 0, b25, ((d(4614256656552045848) / 2.0) + t5))
+                        try P.f450_Sprite3ZB(t, p1_dc, (ld8(l72_tmpb) &>> 32), (ld8((l72_tmpb &+ 8)) &>> 32), 0, b25, ((d(4614256656552045848) / 2.0) + t5))
                     } else {
                         ln = 373 // Titanium.HC:373
                         try tick(t)
-                        _ = try P.f396_GrLine(t, p1_dc, (ld8(l72_tmpb) &>> 32), (ld8((l72_tmpb &+ 8)) &>> 32), ((ld8(l72_tmpb) &+ (ld8((l72_tmpb &+ 24)) &* 10)) &>> 32), ((ld8((l72_tmpb &+ 8)) &+ (ld8((l72_tmpb &+ 16)) &* 10)) &>> 32), 1, 0)
+                        _ = try P.f397_GrLine(t, p1_dc, (ld8(l72_tmpb) &>> 32), (ld8((l72_tmpb &+ 8)) &>> 32), ((ld8(l72_tmpb) &+ (ld8((l72_tmpb &+ 24)) &* 10)) &>> 32), ((ld8((l72_tmpb &+ 8)) &+ (ld8((l72_tmpb &+ 16)) &* 10)) &>> 32), 1, 0)
                     }
                 }
                 ln = 368 // Titanium.HC:368
@@ -801,7 +804,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                 let t7: Int64 = try nat(t, n_mp_cnt, push0(t))
                 if !((l16_i < t7)) { break loop4 }
                 ln = 381 // Titanium.HC:381
-                _ = try nat(t, n_JobQue, try push(t, 9223090561878065865, p1_dc, l16_i, 0, 0, 0, 0, 0))
+                _ = try nat(t, n_JobQue, try push(t, 9223090561878065870, p1_dc, l16_i, 0, 0, 0, 0, 0))
                 ln = 380 // Titanium.HC:380
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -824,10 +827,10 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                 if (t8 != 0) {
                     ln = 389 // Titanium.HC:389
                     try tick(t)
-                    try f714_MissilePos(t, l24_m, ldf(g__), (fp &+ 32), (fp &+ 40))
+                    try f719_MissilePos(t, l24_m, ldf(g__), (fp &+ 32), (fp &+ 40))
                     ln = 390 // Titanium.HC:390
                     try tick(t)
-                    try P.f445_Sprite3ZB(t, p1_dc, ld8((fp &+ 32)), ld8((fp &+ 40)), 0, b26, ldf(g__))
+                    try P.f450_Sprite3ZB(t, p1_dc, ld8((fp &+ 32)), ld8((fp &+ 40)), 0, b26, ldf(g__))
                 }
                 ln = 387 // Titanium.HC:387
                 l24_m = (l24_m &+ 1)
@@ -835,7 +838,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             }
             ln = 392 // Titanium.HC:392
             try tick(t)
-            try P.f445_Sprite3ZB(t, p1_dc, ld8(g_x), ld8(g_y), 0, b27, ldf(g__))
+            try P.f450_Sprite3ZB(t, p1_dc, ld8(g_x), ld8(g_y), 0, b27, ldf(g__))
             ln = 394 // Titanium.HC:394
             if try (ldf(g_tf) != 0.0) {
                 ln = 395 // Titanium.HC:395
@@ -853,7 +856,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                     ln = 398 // Titanium.HC:398
                     try tick(t)
                     let vb0 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, (divs(ld8((p0_task &+ 224)), 2) &- divs(72, 2)), divs(ld8((p0_task &+ 248)), 2), s2, vb0, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, (divs(ld8((p0_task &+ 224)), 2) &- divs(72, 2)), divs(ld8((p0_task &+ 248)), 2), s2, vb0, 0)
                     t.sp = vb0
                 }
             } else {
@@ -870,12 +873,12 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             ln = 406 // Titanium.HC:406
             try tick(t)
             let vb1 = try push(t, ld8(g_enemy_left), ld8(g_friendly_left), ld8(g_friendly_fire), bits((l56_tt - ldf(g_t0))), ld8(g_bullets_fired))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s3, vb1, 5)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s3, vb1, 5)
             t.sp = vb1
             ln = 408 // Titanium.HC:408
             try tick(t)
             let vb2 = try push2(t, ld8(g_total_score), ld8(g_best_score))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 8, s4, vb2, 2)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 8, s4, vb2, 2)
             t.sp = vb2
             t.msp = msp0
             t.depth -= 1
@@ -884,7 +887,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC ExplosionNew (Titanium.HC:412)
-    @discardableResult public final func f716_ExplosionNew(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f721_ExplosionNew(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -920,7 +923,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC ManDie (Titanium.HC:425)
-    public final func f717_ManDie(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f722_ManDie(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -935,7 +938,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             if (p1_by_human != 0) {
                 ln = 431 // Titanium.HC:431
                 try tick(t)
-                let t0: Int64 = try f716_ExplosionNew(t, ld8(p0_tmpu), ld8((p0_tmpu &+ 8)))
+                let t0: Int64 = try f721_ExplosionNew(t, ld8(p0_tmpu), ld8((p0_tmpu &+ 8)))
                 l16_tmpe = t0
                 if (t0 != 0) {
                     ln = 432 // Titanium.HC:432
@@ -997,7 +1000,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC ExplosionDo (Titanium.HC:461)
-    public final func f718_ExplosionDo(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f723_ExplosionDo(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1011,7 +1014,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             var l56_tmpu: Int64 = 0
             ln = 466 // Titanium.HC:466
             try tick(t)
-            let t0: Int64 = try f716_ExplosionNew(t, p0_x, (p1_y &+ p2_scroll_y))
+            let t0: Int64 = try f721_ExplosionNew(t, p0_x, (p1_y &+ p2_scroll_y))
             l48_tmpe = t0
             if (t0 != 0) {
                 ln = 467 // Titanium.HC:467
@@ -1040,7 +1043,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                     if ((t2 &+ t3) < 10000) {
                         ln = 476 // Titanium.HC:476
                         try tick(t)
-                        try f717_ManDie(t, l56_tmpu, 1)
+                        try f722_ManDie(t, l56_tmpu, 1)
                     }
                 }
                 ln = 471 // Titanium.HC:471
@@ -1063,7 +1066,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                 if ((t4 &+ t5) < 10000) {
                     ln = 483 // Titanium.HC:483
                     try tick(t)
-                    let t6: Int64 = try f716_ExplosionNew(t, l32_x2, (l40_y2 &+ p2_scroll_y))
+                    let t6: Int64 = try f721_ExplosionNew(t, l32_x2, (l40_y2 &+ p2_scroll_y))
                     l48_tmpe = t6
                     if (t6 != 0) {
                         ln = 484 // Titanium.HC:484
@@ -1085,7 +1088,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC CheckCollisions (Titanium.HC:492)
-    public final func f719_CheckCollisions(_ t: HTask) throws {
+    public final func f724_CheckCollisions(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1114,7 +1117,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                 if try ((ld1u((l48_tmpb &+ 48)) == 0) && (ld1u((l48_tmpb &+ 49)) == 0)) {
                     ln = 501 // Titanium.HC:501
                     try tick(t)
-                    _ = try P.f396_GrLine(t, l56_dc2, (ld8(l48_tmpb) &>> 32), (ld8((l48_tmpb &+ 8)) &>> 32), ((ld8(l48_tmpb) &+ (ld8((l48_tmpb &+ 16)) &* 10)) &>> 32), ((ld8((l48_tmpb &+ 8)) &+ (ld8((l48_tmpb &+ 24)) &* 10)) &>> 32), 1, 0)
+                    _ = try P.f397_GrLine(t, l56_dc2, (ld8(l48_tmpb) &>> 32), (ld8((l48_tmpb &+ 8)) &>> 32), ((ld8(l48_tmpb) &+ (ld8((l48_tmpb &+ 16)) &* 10)) &>> 32), ((ld8((l48_tmpb &+ 8)) &+ (ld8((l48_tmpb &+ 24)) &* 10)) &>> 32), 1, 0)
                 }
                 ln = 499 // Titanium.HC:499
                 l0_i = (l0_i &+ 1)
@@ -1145,7 +1148,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                         if try (ld8((l56_dc2 &+ 304)) != 0) {
                             ln = 515 // Titanium.HC:515
                             try tick(t)
-                            try f717_ManDie(t, l40_tmpu, 1)
+                            try f722_ManDie(t, l40_tmpu, 1)
                         }
                     }
                 }
@@ -1196,7 +1199,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                             try st1((l48_tmpb &+ 48), 1)
                             ln = 533 // Titanium.HC:533
                             try tick(t)
-                            try f718_ExplosionDo(t, l16_x, l24_y, l32_scroll_y)
+                            try f723_ExplosionDo(t, l16_x, l24_y, l32_scroll_y)
                         }
                         ln = 525 // Titanium.HC:525
                         l0_i = (l0_i &+ 1)
@@ -1220,7 +1223,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                                 try st1((l48_tmpb &+ 48), 1)
                                 ln = 541 // Titanium.HC:541
                                 try tick(t)
-                                try f718_ExplosionDo(t, l16_x, l24_y, l32_scroll_y)
+                                try f723_ExplosionDo(t, l16_x, l24_y, l32_scroll_y)
                             }
                             ln = 537 // Titanium.HC:537
                             l0_i = (l0_i &+ 1)
@@ -1239,7 +1242,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC Init (Titanium.HC:546)
-    public final func f720_Init(_ t: HTask) throws {
+    public final func f725_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1416,7 +1419,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC FireBullet (Titanium.HC:621)
-    public final func f721_FireBullet(_ t: HTask) throws {
+    public final func f726_FireBullet(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1486,7 +1489,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC FireMissile (Titanium.HC:650)
-    @discardableResult public final func f722_FireMissile(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f727_FireMissile(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1533,7 +1536,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                 l32_tmpb = (g_b &+ (l8_i &* 56))
                 ln = 667 // Titanium.HC:667
                 try tick(t)
-                try f714_MissilePos(t, l16_m, ldf(g__), l32_tmpb, (l32_tmpb &+ 8))
+                try f719_MissilePos(t, l16_m, ldf(g__), l32_tmpb, (l32_tmpb &+ 8))
                 ln = 668 // Titanium.HC:668
                 let t5: Int64 = l32_tmpb
                 try st8(t5, (ld8(t5) &<< 32))
@@ -1574,7 +1577,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC MenMove (Titanium.HC:685)
-    public final func f723_MenMove(_ t: HTask, _ a0: Int64) throws {
+    public final func f728_MenMove(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1704,7 +1707,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC MenFight (Titanium.HC:732)
-    public final func f724_MenFight(_ t: HTask, _ a0: Int64) throws {
+    public final func f729_MenFight(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1757,7 +1760,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                     if r3 {
                         ln = 750 // Titanium.HC:750
                         try tick(t)
-                        try f717_ManDie(t, (g_u &+ (l32_best &* 48)), 0)
+                        try f722_ManDie(t, (g_u &+ (l32_best &* 48)), 0)
                     }
                 }
                 ln = 735 // Titanium.HC:735
@@ -1807,7 +1810,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                     if r7 {
                         ln = 768 // Titanium.HC:768
                         try tick(t)
-                        try f717_ManDie(t, (g_u &+ (l32_best &* 48)), 0)
+                        try f722_ManDie(t, (g_u &+ (l32_best &* 48)), 0)
                     }
                 }
                 ln = 753 // Titanium.HC:753
@@ -1820,7 +1823,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC Titanium (Titanium.HC:773)
-    public final func f725_Titanium(_ t: HTask) throws {
+    public final func f730_Titanium(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1835,7 +1838,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 781 // Titanium.HC:781
             try tick(t)
-            _ = try P.f507_MenuPush(t, s5)
+            _ = try P.f512_MenuPush(t, s5)
             ln = 795 // Titanium.HC:795
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 796 // Titanium.HC:796
@@ -1855,11 +1858,11 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             _ = try P.f188_PressAKey(t)
             ln = 812 // Titanium.HC:812
             try tick(t)
-            try f720_Init(t)
+            try f725_Init(t)
             ln = 813 // Titanium.HC:813
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 814 // Titanium.HC:814
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065867)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065872)
             ln = 816 // Titanium.HC:816
             l32_gun_on = 0
             ln = 818 // Titanium.HC:818
@@ -1895,14 +1898,14 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                                                     if try ((ld8((fp &+ 24)) & 1024) != 0) {
                                                         ln = 829 // Titanium.HC:829
                                                         try tick(t)
-                                                        _ = try f722_FireMissile(t, 1)
+                                                        _ = try f727_FireMissile(t, 1)
                                                     }
                                                 case 75:
                                                     ln = 832 // Titanium.HC:832
                                                     if try ((ld8((fp &+ 24)) & 1024) != 0) {
                                                         ln = 833 // Titanium.HC:833
                                                         try tick(t)
-                                                        _ = try f722_FireMissile(t, (-1))
+                                                        _ = try f727_FireMissile(t, (-1))
                                                     }
                                                 default:
                                                     break
@@ -1914,7 +1917,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                                         case 10:
                                             ln = 841 // Titanium.HC:841
                                             try tick(t)
-                                            try f720_Init(t)
+                                            try f725_Init(t)
                                         case 32:
                                             ln = 844 // Titanium.HC:844
                                             l32_gun_on = 1
@@ -2082,7 +2085,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                                                                             }
                                                                             ln = 894 // Titanium.HC:894
                                                                             try tick(t)
-                                                                            try f724_MenFight(t, mods((ld8(g_main_loop_pass) &>> 4), 8))
+                                                                            try f729_MenFight(t, mods((ld8(g_main_loop_pass) &>> 4), 8))
                                                                             ln = 895 // Titanium.HC:895
                                                                             break switch15_13
                                                                         }
@@ -2091,7 +2094,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                                                             }
                                                             ln = 900 // Titanium.HC:900
                                                             try tick(t)
-                                                            try f723_MenMove(t, mods((ld8(g_main_loop_pass) &>> 4), 8))
+                                                            try f728_MenMove(t, mods((ld8(g_main_loop_pass) &>> 4), 8))
                                                             ln = 901 // Titanium.HC:901
                                                             break switch15_13
                                                         }
@@ -2104,7 +2107,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                                             if (l32_gun_on != 0) {
                                                 ln = 908 // Titanium.HC:908
                                                 try tick(t)
-                                                try f721_FireBullet(t)
+                                                try f726_FireBullet(t)
                                             }
                                             ln = 909 // Titanium.HC:909
                                             break switch14_14
@@ -2114,7 +2117,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                             }
                             ln = 914 // Titanium.HC:914
                             try tick(t)
-                            try f719_CheckCollisions(t)
+                            try f724_CheckCollisions(t)
                             ln = 915 // Titanium.HC:915
                             break switch14_14
                         }
@@ -2191,7 +2194,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
                             l32_gun_on = 0
                             ln = 944 // Titanium.HC:944
                             try tick(t)
-                            try f720_Init(t)
+                            try f725_Init(t)
                         }
                         try tick(t)
                     }
@@ -2212,7 +2215,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 953 // Titanium.HC:953
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 954 // Titanium.HC:954
             _ = try nat(t, n_RegWrite, try push3(t, s1, s7, ld8(g_best_score)))
             t.msp = msp0
@@ -2222,7 +2225,7 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Titanium/Titanium.HC#8 (Titanium.HC:1)
-    @discardableResult public final func f726_init_C__Apps_Titanium_Titanium_HC_8(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f731_init_C__Apps_Titanium_Titanium_HC_8(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2234,36 +2237,36 @@ public final class N_Apps_Titanium_Titanium: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Titanium_Titanium_HC_0(t)
-        case 704: return try f704_init_C__Apps_Titanium_Titanium_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: return try f706_init_C__Apps_Titanium_Titanium_HC_2(t)
-        case 707: return try f707_init_C__Apps_Titanium_Titanium_HC_3(t)
-        case 708: return try f708_init_C__Apps_Titanium_Titanium_HC_4(t)
-        case 709: return try f709_init_C__Apps_Titanium_Titanium_HC_5(t)
-        case 710: return try f710_init_C__Apps_Titanium_Titanium_HC_6(t)
-        case 711: return try f711_init_C__Apps_Titanium_Titanium_HC_7(t)
-        case 712: try f712_ExplosionDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 713: try f713_MPMenDraw(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 714: try f714_MissilePos(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 715: try f715_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 716: return try f716_ExplosionNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 717: try f717_ManDie(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 718: try f718_ExplosionDo(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 719: try f719_CheckCollisions(t); return 0
-        case 720: try f720_Init(t); return 0
-        case 721: try f721_FireBullet(t); return 0
-        case 722: return try f722_FireMissile(t, (n > 0 ? st[base + 0] : 0))
-        case 723: try f723_MenMove(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 724: try f724_MenFight(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 725: try f725_Titanium(t); return 0
-        case 726: return try f726_init_C__Apps_Titanium_Titanium_HC_8(t)
+        case 708: return try f708_init_C__Apps_Titanium_Titanium_HC_0(t)
+        case 709: return try f709_init_C__Apps_Titanium_Titanium_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: return try f711_init_C__Apps_Titanium_Titanium_HC_2(t)
+        case 712: return try f712_init_C__Apps_Titanium_Titanium_HC_3(t)
+        case 713: return try f713_init_C__Apps_Titanium_Titanium_HC_4(t)
+        case 714: return try f714_init_C__Apps_Titanium_Titanium_HC_5(t)
+        case 715: return try f715_init_C__Apps_Titanium_Titanium_HC_6(t)
+        case 716: return try f716_init_C__Apps_Titanium_Titanium_HC_7(t)
+        case 717: try f717_ExplosionDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 718: try f718_MPMenDraw(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 719: try f719_MissilePos(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 720: try f720_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 721: return try f721_ExplosionNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 722: try f722_ManDie(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 723: try f723_ExplosionDo(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 724: try f724_CheckCollisions(t); return 0
+        case 725: try f725_Init(t); return 0
+        case 726: try f726_FireBullet(t); return 0
+        case 727: return try f727_FireMissile(t, (n > 0 ? st[base + 0] : 0))
+        case 728: try f728_MenMove(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 729: try f729_MenFight(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 730: try f730_Titanium(t); return 0
+        case 731: return try f731_init_C__Apps_Titanium_Titanium_HC_8(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Titanium/Titanium.HC#0", 704: "$init:C:/Apps/Titanium/Titanium.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "$init:C:/Apps/Titanium/Titanium.HC#2", 707: "$init:C:/Apps/Titanium/Titanium.HC#3", 708: "$init:C:/Apps/Titanium/Titanium.HC#4", 709: "$init:C:/Apps/Titanium/Titanium.HC#5", 710: "$init:C:/Apps/Titanium/Titanium.HC#6", 711: "$init:C:/Apps/Titanium/Titanium.HC#7", 712: "ExplosionDraw", 713: "MPMenDraw", 714: "MissilePos", 715: "DrawIt", 716: "ExplosionNew", 717: "ManDie", 718: "ExplosionDo", 719: "CheckCollisions", 720: "Init", 721: "FireBullet", 722: "FireMissile", 723: "MenMove", 724: "MenFight", 725: "Titanium", 726: "$init:C:/Apps/Titanium/Titanium.HC#8"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Titanium/Titanium.HC#0", 709: "$init:C:/Apps/Titanium/Titanium.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "$init:C:/Apps/Titanium/Titanium.HC#2", 712: "$init:C:/Apps/Titanium/Titanium.HC#3", 713: "$init:C:/Apps/Titanium/Titanium.HC#4", 714: "$init:C:/Apps/Titanium/Titanium.HC#5", 715: "$init:C:/Apps/Titanium/Titanium.HC#6", 716: "$init:C:/Apps/Titanium/Titanium.HC#7", 717: "ExplosionDraw", 718: "MPMenDraw", 719: "MissilePos", 720: "DrawIt", 721: "ExplosionNew", 722: "ManDie", 723: "ExplosionDo", 724: "CheckCollisions", 725: "Init", 726: "FireBullet", 727: "FireMissile", 728: "MenMove", 729: "MenFight", 730: "Titanium", 731: "$init:C:/Apps/Titanium/Titanium.HC#8"]
     private static let FILES: [String] = ["C:/Apps/Titanium/Titanium.HC"]
     public override var files: [String] { N_Apps_Titanium_Titanium.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Titanium_Titanium.DEFINED.contains(index) }

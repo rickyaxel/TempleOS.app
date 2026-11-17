@@ -68,7 +68,7 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#0 (F64FileSort.HC:3)
-    @discardableResult public final func f703_init_C__Demo_SortFileDemo_F64FileSort_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_SortFileDemo_F64FileSort_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -82,7 +82,7 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     }
 
     /// HolyC Compare (F64FileSort.HC:5)
-    @discardableResult public final func f704_Compare(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Int64 {
+    @discardableResult public final func f709_Compare(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -100,7 +100,7 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     }
 
     /// HolyC F64FileSortTXT (F64FileSort.HC:10)
-    public final func f705_F64FileSortTXT(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_F64FileSortTXT(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -155,10 +155,10 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
             ln = 33 // F64FileSort.HC:33
             _ = try nat(t, n_CmpCtrlDel, try push1(t, l16_cc))
             ln = 35 // F64FileSort.HC:35
-            _ = try nat(t, n_QSortI64, try push3(t, l40_a, l32_n, 9223090561878065856))
+            _ = try nat(t, n_QSortI64, try push3(t, l40_a, l32_n, 9223090561878065861))
             ln = 38 // F64FileSort.HC:38
             try tick(t)
-            let t8: Int64 = try P.f601_DocNew(t, p1_out_name, 0)
+            let t8: Int64 = try P.f606_DocNew(t, p1_out_name, 0)
             l48_doc = t8
             ln = 39 // F64FileSort.HC:39
             try tick(t)
@@ -179,10 +179,10 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
             }
             ln = 42 // F64FileSort.HC:42
             try tick(t)
-            _ = try P.f618_DocWrite(t, l48_doc, 0)
+            _ = try P.f623_DocWrite(t, l48_doc, 0)
             ln = 43 // F64FileSort.HC:43
             try tick(t)
-            try P.f605_DocDel(t, l48_doc)
+            try P.f610_DocDel(t, l48_doc)
             ln = 45 // F64FileSort.HC:45
             _ = try nat(t, n_Free, try push1(t, l40_a))
             t.depth -= 1
@@ -191,20 +191,20 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#1 (F64FileSort.HC:47)
-    @discardableResult public final func f706_init_C__Demo_SortFileDemo_F64FileSort_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_SortFileDemo_F64FileSort_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 47 // F64FileSort.HC:47
             try tick(t)
-            try f705_F64FileSortTXT(t, s5, s4)
+            try f710_F64FileSortTXT(t, s5, s4)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/SortFileDemo/F64FileSort.HC#1", ln) }
     }
 
     /// HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#2 (F64FileSort.HC:48)
-    @discardableResult public final func f707_init_C__Demo_SortFileDemo_F64FileSort_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_SortFileDemo_F64FileSort_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -216,7 +216,7 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#3 (F64FileSort.HC:49)
-    @discardableResult public final func f708_init_C__Demo_SortFileDemo_F64FileSort_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_SortFileDemo_F64FileSort_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -228,7 +228,7 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     }
 
     /// HolyC F64FileSortDAT (F64FileSort.HC:51)
-    public final func f709_F64FileSortDAT(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_F64FileSortDAT(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -241,7 +241,7 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
             let t0: Int64 = try nat(t, n_FileRead, try push3(t, p0_in_name, (fp &+ 16), 0))
             l24_a = t0
             ln = 55 // F64FileSort.HC:55
-            _ = try nat(t, n_QSortI64, try push3(t, l24_a, divs(ld8((fp &+ 16)), 8), 9223090561878065856))
+            _ = try nat(t, n_QSortI64, try push3(t, l24_a, divs(ld8((fp &+ 16)), 8), 9223090561878065861))
             ln = 56 // F64FileSort.HC:56
             _ = try nat(t, n_FileWrite, try push(t, p1_out_name, l24_a, ld8((fp &+ 16)), 0, 0))
             ln = 57 // F64FileSort.HC:57
@@ -253,20 +253,20 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#4 (F64FileSort.HC:59)
-    @discardableResult public final func f710_init_C__Demo_SortFileDemo_F64FileSort_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Demo_SortFileDemo_F64FileSort_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 59 // F64FileSort.HC:59
             try tick(t)
-            try f709_F64FileSortDAT(t, s7, s6)
+            try f714_F64FileSortDAT(t, s7, s6)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/SortFileDemo/F64FileSort.HC#4", ln) }
     }
 
     /// HolyC F64FileDumpDAT (F64FileSort.HC:61)
-    public final func f711_F64FileDumpDAT(_ t: HTask, _ a0: Int64) throws {
+    public final func f716_F64FileDumpDAT(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -301,26 +301,26 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#5 (F64FileSort.HC:71)
-    @discardableResult public final func f712_init_C__Demo_SortFileDemo_F64FileSort_HC_5(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Demo_SortFileDemo_F64FileSort_HC_5(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 71 // F64FileSort.HC:71
             try tick(t)
-            try f711_F64FileDumpDAT(t, s7)
+            try f716_F64FileDumpDAT(t, s7)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/SortFileDemo/F64FileSort.HC#5", ln) }
     }
 
     /// HolyC $init:C:/Demo/SortFileDemo/F64FileSort.HC#6 (F64FileSort.HC:72)
-    @discardableResult public final func f713_init_C__Demo_SortFileDemo_F64FileSort_HC_6(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Demo_SortFileDemo_F64FileSort_HC_6(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 72 // F64FileSort.HC:72
             try tick(t)
-            try f711_F64FileDumpDAT(t, s6)
+            try f716_F64FileDumpDAT(t, s6)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/SortFileDemo/F64FileSort.HC#6", ln) }
@@ -329,23 +329,23 @@ public final class N_Demo_SortFileDemo_F64FileSort: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_SortFileDemo_F64FileSort_HC_0(t)
-        case 704: return try f704_Compare(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)))
-        case 705: try f705_F64FileSortTXT(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: return try f706_init_C__Demo_SortFileDemo_F64FileSort_HC_1(t)
-        case 707: return try f707_init_C__Demo_SortFileDemo_F64FileSort_HC_2(t)
-        case 708: return try f708_init_C__Demo_SortFileDemo_F64FileSort_HC_3(t)
-        case 709: try f709_F64FileSortDAT(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: return try f710_init_C__Demo_SortFileDemo_F64FileSort_HC_4(t)
-        case 711: try f711_F64FileDumpDAT(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 712: return try f712_init_C__Demo_SortFileDemo_F64FileSort_HC_5(t)
-        case 713: return try f713_init_C__Demo_SortFileDemo_F64FileSort_HC_6(t)
+        case 708: return try f708_init_C__Demo_SortFileDemo_F64FileSort_HC_0(t)
+        case 709: return try f709_Compare(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)))
+        case 710: try f710_F64FileSortTXT(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: return try f711_init_C__Demo_SortFileDemo_F64FileSort_HC_1(t)
+        case 712: return try f712_init_C__Demo_SortFileDemo_F64FileSort_HC_2(t)
+        case 713: return try f713_init_C__Demo_SortFileDemo_F64FileSort_HC_3(t)
+        case 714: try f714_F64FileSortDAT(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: return try f715_init_C__Demo_SortFileDemo_F64FileSort_HC_4(t)
+        case 716: try f716_F64FileDumpDAT(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 717: return try f717_init_C__Demo_SortFileDemo_F64FileSort_HC_5(t)
+        case 718: return try f718_init_C__Demo_SortFileDemo_F64FileSort_HC_6(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#0", 704: "Compare", 705: "F64FileSortTXT", 706: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#1", 707: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#2", 708: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#3", 709: "F64FileSortDAT", 710: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#4", 711: "F64FileDumpDAT", 712: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#5", 713: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#6"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#0", 709: "Compare", 710: "F64FileSortTXT", 711: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#1", 712: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#2", 713: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#3", 714: "F64FileSortDAT", 715: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#4", 716: "F64FileDumpDAT", 717: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#5", 718: "$init:C:/Demo/SortFileDemo/F64FileSort.HC#6"]
     private static let FILES: [String] = ["C:/Demo/SortFileDemo/F64FileSort.HC"]
     public override var files: [String] { N_Demo_SortFileDemo_F64FileSort.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_SortFileDemo_F64FileSort.DEFINED.contains(index) }

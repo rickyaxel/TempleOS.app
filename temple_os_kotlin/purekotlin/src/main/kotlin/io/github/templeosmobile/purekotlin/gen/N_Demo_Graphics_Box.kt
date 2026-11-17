@@ -11,6 +11,8 @@ import io.github.templeosmobile.core.purenative.*
 
 class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
 
     /** glbl_r: I64[4][4] */ @JvmField var g_glbl_r: Long = 0L
@@ -24,7 +26,7 @@ class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (Box.HC:3) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -48,41 +50,29 @@ class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             tick(t)
             P.f283_DCMat4x4Set(t, p1_dc, g_glbl_r)
             ln = 12 // Box.HC:12
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, -100L, -100L, -100L, -100L, 100L, -100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, -100L, -100L, -100L, -100L, 100L, -100L, 1L, 0L))
             ln = 13 // Box.HC:13
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, -100L, 100L, -100L, 100L, 100L, -100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, -100L, 100L, -100L, 100L, 100L, -100L, 1L, 0L))
             ln = 14 // Box.HC:14
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 100L, 100L, -100L, 100L, -100L, -100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 100L, 100L, -100L, 100L, -100L, -100L, 1L, 0L))
             ln = 15 // Box.HC:15
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 100L, -100L, -100L, -100L, -100L, -100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 100L, -100L, -100L, -100L, -100L, -100L, 1L, 0L))
             ln = 16 // Box.HC:16
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, -100L, -100L, 100L, -100L, 100L, 100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, -100L, -100L, 100L, -100L, 100L, 100L, 1L, 0L))
             ln = 17 // Box.HC:17
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, -100L, 100L, 100L, 100L, 100L, 100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, -100L, 100L, 100L, 100L, 100L, 100L, 1L, 0L))
             ln = 18 // Box.HC:18
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 100L, 100L, 100L, 100L, -100L, 100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 100L, 100L, 100L, 100L, -100L, 100L, 1L, 0L))
             ln = 19 // Box.HC:19
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 100L, -100L, 100L, -100L, -100L, 100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 100L, -100L, 100L, -100L, -100L, 100L, 1L, 0L))
             ln = 20 // Box.HC:20
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, -100L, -100L, 100L, -100L, -100L, -100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, -100L, -100L, 100L, -100L, -100L, -100L, 1L, 0L))
             ln = 21 // Box.HC:21
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, -100L, 100L, 100L, -100L, 100L, -100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, -100L, 100L, 100L, -100L, 100L, -100L, 1L, 0L))
             ln = 22 // Box.HC:22
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 100L, 100L, 100L, 100L, 100L, -100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 100L, 100L, 100L, 100L, 100L, -100L, 1L, 0L))
             ln = 23 // Box.HC:23
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 100L, -100L, 100L, 100L, -100L, -100L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 100L, -100L, 100L, 100L, -100L, -100L, 1L, 0L))
             ln = 24 // Box.HC:24
             st8((p1_dc + 200L), l16_old_r)
             t.depth--
@@ -91,7 +81,7 @@ class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Box (Box.HC:27) */
-    fun f704_Box(t: Task) {
+    fun f709_Box(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -112,7 +102,7 @@ class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 31 // Box.HC:31
             nat(t, n_DocClear, push1(t, 0L))
             ln = 32 // Box.HC:32
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 33 // Box.HC:33
             loop0@ while (true) {
                 tick(t)
@@ -131,8 +121,7 @@ class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 tick(t)
                 P.f307_Mat4x4RotZ(t, g_glbl_r, l16__)
                 ln = 38 // Box.HC:38
-                tick(t)
-                P.f308_Mat4x4Scale(t, g_glbl_r, l24_s)
+                nat(t, n_Mat4x4Scale, push2(t, g_glbl_r, bits(l24_s)))
                 ln = 40 // Box.HC:40
                 nat(t, n_Sleep, push1(t, 20L))
                 ln = 41 // Box.HC:41
@@ -158,13 +147,13 @@ class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Graphics/Box.HC#0 (Box.HC:50) */
-    fun f705_init_C__Demo_Graphics_Box_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_Box_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 50 // Box.HC:50
             tick(t)
-            f704_Box(t)
+            f709_Box(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Box.HC#0", ln) }
@@ -173,9 +162,9 @@ class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_Box(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_Box_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_Box(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_Box_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -187,7 +176,7 @@ class N_Demo_Graphics_Box(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "Box", "\$init:C:/Demo/Graphics/Box.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Box.HC")
     }

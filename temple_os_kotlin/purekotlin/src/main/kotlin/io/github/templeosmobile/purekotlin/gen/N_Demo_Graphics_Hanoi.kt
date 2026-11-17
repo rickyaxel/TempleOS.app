@@ -36,7 +36,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC OtherPole (Hanoi.HC:9) */
-    fun f703_OtherPole(t: Task, a0: Long, a1: Long): Long {
+    fun f708_OtherPole(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -51,7 +51,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC TopDisk (Hanoi.HC:14) */
-    fun f704_TopDisk(t: Task, a0: Long): Long {
+    fun f709_TopDisk(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -79,7 +79,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC PosInStk (Hanoi.HC:23) */
-    fun f705_PosInStk(t: Task, a0: Long, a1: Long): Long {
+    fun f710_PosInStk(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -110,7 +110,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC SetDisksRestXY (Hanoi.HC:32) */
-    fun f706_SetDisksRestXY(t: Task) {
+    fun f711_SetDisksRestXY(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -123,7 +123,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 ln = 38 // Hanoi.HC:38
                 val t1: Long = (((ld8((ld8(P.g_Fs) + 248L)) - 20L) - divs(8L, 2L)) - 1L)
                 tick(t)
-                val t0: Long = f705_PosInStk(t, ld8((g_disks_pole + (l0_i * 8L))), l0_i)
+                val t0: Long = f710_PosInStk(t, ld8((g_disks_pole + (l0_i * 8L))), l0_i)
                 st8((g_disks_y + (l0_i * 8L)), (t1 - (8L * t0)))
                 ln = 35 // Hanoi.HC:35
                 l0_i = (l0_i + 1L)
@@ -135,7 +135,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC DrawIt (Hanoi.HC:42) */
-    fun f707_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f712_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -195,7 +195,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC MySleep (Hanoi.HC:77) */
-    fun f708_MySleep(t: Task) {
+    fun f713_MySleep(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -214,7 +214,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC MoveDisks (Hanoi.HC:84) */
-    fun f709_MoveDisks(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f714_MoveDisks(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -228,19 +228,19 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             if ((p2_num > 1L)) {
                 ln = 88 // Hanoi.HC:88
                 tick(t)
-                val t0: Long = f703_OtherPole(t, p0_src_pole, p1_dst_pole)
+                val t0: Long = f708_OtherPole(t, p0_src_pole, p1_dst_pole)
                 tick(t)
-                f709_MoveDisks(t, p0_src_pole, t0, (p2_num - 1L))
+                f714_MoveDisks(t, p0_src_pole, t0, (p2_num - 1L))
             }
             ln = 89 // Hanoi.HC:89
             nat(t, n_DocClear, push1(t, 0L))
             ln = 90 // Hanoi.HC:90
             tick(t)
-            val t1: Long = f704_TopDisk(t, p0_src_pole)
+            val t1: Long = f709_TopDisk(t, p0_src_pole)
             nat(t, n_Print, push4(t, s0, t1, p0_src_pole, p1_dst_pole))
             ln = 92 // Hanoi.HC:92
             tick(t)
-            val t2: Long = f704_TopDisk(t, p0_src_pole)
+            val t2: Long = f709_TopDisk(t, p0_src_pole)
             l24_top = t2
             ln = 93 // Hanoi.HC:93
             l40_y = ld8((g_disks_y + (l24_top * 8L)))
@@ -249,7 +249,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 st8((g_disks_y + (l24_top * 8L)), l40_y)
                 ln = 97 // Hanoi.HC:97
                 tick(t)
-                f708_MySleep(t)
+                f713_MySleep(t)
                 ln = 95 // Hanoi.HC:95
                 l40_y = (l40_y + -1L)
                 tick(t)
@@ -263,7 +263,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     st8((g_disks_x + (l24_top * 8L)), l32_x)
                     ln = 102 // Hanoi.HC:102
                     tick(t)
-                    f708_MySleep(t)
+                    f713_MySleep(t)
                     ln = 100 // Hanoi.HC:100
                     l32_x = (l32_x + 1L)
                     tick(t)
@@ -276,7 +276,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                     st8((g_disks_x + (l24_top * 8L)), l32_x)
                     ln = 107 // Hanoi.HC:107
                     tick(t)
-                    f708_MySleep(t)
+                    f713_MySleep(t)
                     ln = 105 // Hanoi.HC:105
                     l32_x = (l32_x + -1L)
                     tick(t)
@@ -290,27 +290,27 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 ln = 113 // Hanoi.HC:113
                 val t4: Long = (((ld8((ld8(P.g_Fs) + 248L)) - 20L) - divs(8L, 2L)) - 1L)
                 tick(t)
-                val t3: Long = f705_PosInStk(t, p1_dst_pole, l24_top)
+                val t3: Long = f710_PosInStk(t, p1_dst_pole, l24_top)
                 if (!((l40_y < (t4 - (8L * t3))))) break@loop6
                 ln = 114 // Hanoi.HC:114
                 st8((g_disks_y + (l24_top * 8L)), l40_y)
                 ln = 115 // Hanoi.HC:115
                 tick(t)
-                f708_MySleep(t)
+                f713_MySleep(t)
                 ln = 113 // Hanoi.HC:113
                 l40_y = (l40_y + 1L)
                 tick(t)
             }
             ln = 117 // Hanoi.HC:117
             tick(t)
-            f706_SetDisksRestXY(t)
+            f711_SetDisksRestXY(t)
             ln = 118 // Hanoi.HC:118
             if ((p2_num > 1L)) {
                 ln = 119 // Hanoi.HC:119
                 tick(t)
-                val t5: Long = f703_OtherPole(t, p0_src_pole, p1_dst_pole)
+                val t5: Long = f708_OtherPole(t, p0_src_pole, p1_dst_pole)
                 tick(t)
-                f709_MoveDisks(t, t5, p1_dst_pole, (p2_num - 1L))
+                f714_MoveDisks(t, t5, p1_dst_pole, (p2_num - 1L))
             }
             t.depth--
             return
@@ -318,7 +318,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC Init (Hanoi.HC:122) */
-    fun f710_Init(t: Task) {
+    fun f715_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -343,14 +343,14 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             }
             ln = 131 // Hanoi.HC:131
             tick(t)
-            f706_SetDisksRestXY(t)
+            f711_SetDisksRestXY(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Init", ln) }
     }
 
     /** HolyC Hanoi (Hanoi.HC:134) */
-    fun f711_Hanoi(t: Task) {
+    fun f716_Hanoi(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -359,11 +359,11 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 137 // Hanoi.HC:137
             tick(t)
-            f710_Init(t)
+            f715_Init(t)
             ln = 138 // Hanoi.HC:138
             nat(t, n_DocClear, push1(t, 0L))
             ln = 139 // Hanoi.HC:139
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065859L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065864L)
             ln = 141 // Hanoi.HC:141
             nat(t, n_Sleep, push1(t, 1000L))
             ln = 142 // Hanoi.HC:142
@@ -372,7 +372,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             try {
                 ln = 143 // Hanoi.HC:143
                 tick(t)
-                f709_MoveDisks(t, 0L, 2L, 6L)
+                f714_MoveDisks(t, 0L, 2L, 6L)
                 ln = 144 // Hanoi.HC:144
                 tick(t)
                 P.f250_Beep(t, 62L, 0L)
@@ -405,13 +405,13 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Graphics/Hanoi.HC#0 (Hanoi.HC:154) */
-    fun f712_init_C__Demo_Graphics_Hanoi_HC_0(t: Task): Long {
+    fun f717_init_C__Demo_Graphics_Hanoi_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 154 // Hanoi.HC:154
             tick(t)
-            f711_Hanoi(t)
+            f716_Hanoi(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Hanoi.HC#0", ln) }
@@ -420,16 +420,16 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_OtherPole(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            704 -> f704_TopDisk(t, (if (n > 0) st[base + 0] else 0L))
-            705 -> f705_PosInStk(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            706 -> { f706_SetDisksRestXY(t); 0L }
-            707 -> { f707_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            708 -> { f708_MySleep(t); 0L }
-            709 -> { f709_MoveDisks(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            710 -> { f710_Init(t); 0L }
-            711 -> { f711_Hanoi(t); 0L }
-            712 -> f712_init_C__Demo_Graphics_Hanoi_HC_0(t)
+            708 -> f708_OtherPole(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            709 -> f709_TopDisk(t, (if (n > 0) st[base + 0] else 0L))
+            710 -> f710_PosInStk(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            711 -> { f711_SetDisksRestXY(t); 0L }
+            712 -> { f712_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            713 -> { f713_MySleep(t); 0L }
+            714 -> { f714_MoveDisks(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            715 -> { f715_Init(t); 0L }
+            716 -> { f716_Hanoi(t); 0L }
+            717 -> f717_init_C__Demo_Graphics_Hanoi_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -441,7 +441,7 @@ class N_Demo_Graphics_Hanoi(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
         private val NAMES = arrayOf("OtherPole", "TopDisk", "PosInStk", "SetDisksRestXY", "DrawIt", "MySleep", "MoveDisks", "Init", "Hanoi", "\$init:C:/Demo/Graphics/Hanoi.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Hanoi.HC")
     }

@@ -65,15 +65,15 @@ public final class N_Demo_Snd_OhGreat: NativeModule {
     }
 
     /// HolyC Song (OhGreat.HC:1)
-    public final func f703_Song(_ t: HTask) throws {
+    public final func f708_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 3 // OhGreat.HC:3
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 4 // OhGreat.HC:4
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 5 // OhGreat.HC:5
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -85,46 +85,46 @@ public final class N_Demo_Snd_OhGreat: NativeModule {
                     if !((t0 == 0)) { break loop0 }
                     ln = 7 // OhGreat.HC:7
                     try tick(t)
-                    try P.f494_Play(t, s1, s0)
+                    try P.f499_Play(t, s1, s0)
                     ln = 9 // OhGreat.HC:9
                     try tick(t)
-                    try P.f494_Play(t, s3, s2)
+                    try P.f499_Play(t, s3, s2)
                     ln = 11 // OhGreat.HC:11
                     try tick(t)
-                    try P.f494_Play(t, s5, s4)
+                    try P.f499_Play(t, s5, s4)
                     ln = 13 // OhGreat.HC:13
                     try tick(t)
-                    try P.f494_Play(t, s7, s6)
+                    try P.f499_Play(t, s7, s6)
                     ln = 15 // OhGreat.HC:15
                     try tick(t)
-                    try P.f494_Play(t, s9, s8)
+                    try P.f499_Play(t, s9, s8)
                     ln = 17 // OhGreat.HC:17
                     try tick(t)
-                    try P.f494_Play(t, s11, s10)
+                    try P.f499_Play(t, s11, s10)
                     ln = 19 // OhGreat.HC:19
                     try tick(t)
-                    try P.f494_Play(t, s13, s12)
+                    try P.f499_Play(t, s13, s12)
                     ln = 21 // OhGreat.HC:21
                     try tick(t)
-                    try P.f494_Play(t, s11, s14)
+                    try P.f499_Play(t, s11, s14)
                     ln = 23 // OhGreat.HC:23
                     try tick(t)
-                    try P.f494_Play(t, s13, s15)
+                    try P.f499_Play(t, s13, s15)
                     ln = 25 // OhGreat.HC:25
                     try tick(t)
-                    try P.f494_Play(t, s11, s16)
+                    try P.f499_Play(t, s11, s16)
                     ln = 27 // OhGreat.HC:27
                     try tick(t)
-                    try P.f494_Play(t, s13, s17)
+                    try P.f499_Play(t, s13, s17)
                     ln = 29 // OhGreat.HC:29
                     try tick(t)
-                    try P.f494_Play(t, s7, s6)
+                    try P.f499_Play(t, s7, s6)
                     ln = 31 // OhGreat.HC:31
                     try tick(t)
-                    try P.f494_Play(t, s9, s8)
+                    try P.f499_Play(t, s9, s8)
                     ln = 33 // OhGreat.HC:33
                     try tick(t)
-                    try P.f494_Play(t, s18, 0)
+                    try P.f499_Play(t, s18, 0)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -146,13 +146,13 @@ public final class N_Demo_Snd_OhGreat: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Snd/OhGreat.HC#0 (OhGreat.HC:41)
-    @discardableResult public final func f704_init_C__Demo_Snd_OhGreat_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Snd_OhGreat_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 41 // OhGreat.HC:41
             try tick(t)
-            try f703_Song(t)
+            try f708_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Snd/OhGreat.HC#0", ln) }
@@ -161,14 +161,14 @@ public final class N_Demo_Snd_OhGreat: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Song(t); return 0
-        case 704: return try f704_init_C__Demo_Snd_OhGreat_HC_0(t)
+        case 708: try f708_Song(t); return 0
+        case 709: return try f709_init_C__Demo_Snd_OhGreat_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "Song", 704: "$init:C:/Demo/Snd/OhGreat.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "Song", 709: "$init:C:/Demo/Snd/OhGreat.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Snd/OhGreat.HC"]
     public override var files: [String] { N_Demo_Snd_OhGreat.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Snd_OhGreat.DEFINED.contains(index) }

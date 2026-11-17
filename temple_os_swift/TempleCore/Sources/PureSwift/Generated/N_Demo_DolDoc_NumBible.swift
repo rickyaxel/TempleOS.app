@@ -33,7 +33,7 @@ public final class N_Demo_DolDoc_NumBible: NativeModule {
     }
 
     /// HolyC NumBible (NumBible.HC:4)
-    public final func f703_NumBible(_ t: HTask) throws {
+    public final func f708_NumBible(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -42,11 +42,11 @@ public final class N_Demo_DolDoc_NumBible: NativeModule {
             var l8_doc_out: Int64 = 0
             ln = 6 // NumBible.HC:6
             try tick(t)
-            let t0: Int64 = try P.f617_DocRead(t, s0, 2)
+            let t0: Int64 = try P.f622_DocRead(t, s0, 2)
             l0_doc_in = t0
             ln = 7 // NumBible.HC:7
             try tick(t)
-            let t1: Int64 = try P.f601_DocNew(t, s1, 0)
+            let t1: Int64 = try P.f606_DocNew(t, s1, 0)
             l8_doc_out = t1
             ln = 8 // NumBible.HC:8
             l16_doc_e = try ld8(l0_doc_in)
@@ -93,26 +93,26 @@ public final class N_Demo_DolDoc_NumBible: NativeModule {
             try st8(t2, (ld8(t2) | 8))
             ln = 24 // NumBible.HC:24
             try tick(t)
-            _ = try P.f618_DocWrite(t, l8_doc_out, 0)
+            _ = try P.f623_DocWrite(t, l8_doc_out, 0)
             ln = 25 // NumBible.HC:25
             try tick(t)
-            try P.f605_DocDel(t, l8_doc_out)
+            try P.f610_DocDel(t, l8_doc_out)
             ln = 26 // NumBible.HC:26
             try tick(t)
-            try P.f605_DocDel(t, l0_doc_in)
+            try P.f610_DocDel(t, l0_doc_in)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "NumBible", ln) }
     }
 
     /// HolyC $init:C:/Demo/DolDoc/NumBible.HC#0 (NumBible.HC:29)
-    @discardableResult public final func f704_init_C__Demo_DolDoc_NumBible_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_DolDoc_NumBible_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 29 // NumBible.HC:29
             try tick(t)
-            try f703_NumBible(t)
+            try f708_NumBible(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/NumBible.HC#0", ln) }
@@ -121,14 +121,14 @@ public final class N_Demo_DolDoc_NumBible: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_NumBible(t); return 0
-        case 704: return try f704_init_C__Demo_DolDoc_NumBible_HC_0(t)
+        case 708: try f708_NumBible(t); return 0
+        case 709: return try f709_init_C__Demo_DolDoc_NumBible_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "NumBible", 704: "$init:C:/Demo/DolDoc/NumBible.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "NumBible", 709: "$init:C:/Demo/DolDoc/NumBible.HC#0"]
     private static let FILES: [String] = ["C:/Demo/DolDoc/NumBible.HC"]
     public override var files: [String] { N_Demo_DolDoc_NumBible.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_DolDoc_NumBible.DEFINED.contains(index) }

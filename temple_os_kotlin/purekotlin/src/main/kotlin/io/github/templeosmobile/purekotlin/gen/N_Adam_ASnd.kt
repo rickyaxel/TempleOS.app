@@ -48,7 +48,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC SndTaskEndCB (ASnd.HC:2) */
-    fun f703_SndTaskEndCB(t: Task) {
+    fun f708_SndTaskEndCB(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -62,7 +62,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Saw (ASnd.HC:9) */
-    fun f704_Saw(t: Task, a0: Double, a1: Double): Double {
+    fun f709_Saw(t: Task, a0: Double, a1: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -91,7 +91,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC FullSaw (ASnd.HC:20) */
-    fun f705_FullSaw(t: Task, a0: Double, a1: Double): Double {
+    fun f710_FullSaw(t: Task, a0: Double, a1: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -120,7 +120,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Caw (ASnd.HC:31) */
-    fun f706_Caw(t: Task, a0: Double, a1: Double): Double {
+    fun f711_Caw(t: Task, a0: Double, a1: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -149,7 +149,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC FullCaw (ASnd.HC:42) */
-    fun f707_FullCaw(t: Task, a0: Double, a1: Double): Double {
+    fun f712_FullCaw(t: Task, a0: Double, a1: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -178,7 +178,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Tri (ASnd.HC:53) */
-    fun f708_Tri(t: Task, a0: Double, a1: Double): Double {
+    fun f713_Tri(t: Task, a0: Double, a1: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -210,7 +210,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC FullTri (ASnd.HC:65) */
-    fun f709_FullTri(t: Task, a0: Double, a1: Double): Double {
+    fun f714_FullTri(t: Task, a0: Double, a1: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -262,7 +262,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC $init:C:/Adam/ASnd.HC#0 (ASnd.HC:104) */
-    fun f710_init_C__Adam_ASnd_HC_0(t: Task): Long {
+    fun f715_init_C__Adam_ASnd_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -272,7 +272,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC tM (ASnd.HC:107) */
-    fun f711_tM(t: Task): Double {
+    fun f716_tM(t: Task): Double {
         var ln = 0
         try {
             enter(t)
@@ -285,7 +285,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Beat (ASnd.HC:112) */
-    fun f712_Beat(t: Task): Double {
+    fun f717_Beat(t: Task): Double {
         var ln = 0
         try {
             enter(t)
@@ -304,7 +304,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
             }
             ln = 120 // ASnd.HC:120
             tick(t)
-            val t2: Double = f711_tM(t)
+            val t2: Double = f716_tM(t)
             l8_cur_tM = t2
             ln = 121 // ASnd.HC:121
             l0_res = ldf((P.g_music + 88L))
@@ -329,7 +329,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC MusicSetOctave (ASnd.HC:132) */
-    fun f713_MusicSetOctave(t: Task, a0: Long): Long {
+    fun f718_MusicSetOctave(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -360,7 +360,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC MusicSetMeter (ASnd.HC:143) */
-    fun f714_MusicSetMeter(t: Task, a0: Long): Long {
+    fun f719_MusicSetMeter(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -414,7 +414,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC MusicSetNoteLen (ASnd.HC:163) */
-    fun f715_MusicSetNoteLen(t: Task, a0: Long): Long {
+    fun f720_MusicSetNoteLen(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -478,7 +478,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Note2Ona (ASnd.HC:183) */
-    fun f716_Note2Ona(t: Task, a0: Long, a1: Long): Long {
+    fun f721_Note2Ona(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -500,7 +500,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Ona2Note (ASnd.HC:191) */
-    fun f717_Ona2Note(t: Task, a0: Long): Long {
+    fun f722_Ona2Note(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -516,7 +516,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Ona2Octave (ASnd.HC:196) */
-    fun f718_Ona2Octave(t: Task, a0: Long): Long {
+    fun f723_Ona2Octave(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -544,7 +544,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Play (ASnd.HC:205) */
-    fun f719_Play(t: Task, a0: Long, a1: Long) {
+    fun f724_Play(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -585,15 +585,15 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
                     } else {
                         ln = 251 // ASnd.HC:251
                         tick(t)
-                        val t0: Long = f714_MusicSetMeter(t, p0_st)
+                        val t0: Long = f719_MusicSetMeter(t, p0_st)
                         p0_st = t0
                         ln = 252 // ASnd.HC:252
                         tick(t)
-                        val t1: Long = f713_MusicSetOctave(t, p0_st)
+                        val t1: Long = f718_MusicSetOctave(t, p0_st)
                         p0_st = t1
                         ln = 253 // ASnd.HC:253
                         tick(t)
-                        val t2: Long = f715_MusicSetNoteLen(t, p0_st)
+                        val t2: Long = f720_MusicSetNoteLen(t, p0_st)
                         p0_st = t2
                     }
                     if (!((p0_st != l24_last_st))) break@loop2
@@ -640,7 +640,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
                     }
                     ln = 273 // ASnd.HC:273
                     tick(t)
-                    val t4: Long = f716_Note2Ona(t, l32_note, l40_octave)
+                    val t4: Long = f721_Note2Ona(t, l32_note, l40_octave)
                     l56_ona = t4
                 } else {
                     ln = 275 // ASnd.HC:275
@@ -711,7 +711,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC MusicSettingsRst (ASnd.HC:300) */
-    fun f720_MusicSettingsRst(t: Task) {
+    fun f725_MusicSettingsRst(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -744,7 +744,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
             }
             ln = 315 // ASnd.HC:315
             tick(t)
-            val t2: Double = f711_tM(t)
+            val t2: Double = f716_tM(t)
             st8((P.g_music + 96L), bits(t2))
             ln = 316 // ASnd.HC:316
             st8((P.g_music + 88L), bits(0.0))
@@ -757,30 +757,30 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC $init:C:/Adam/ASnd.HC#1 (ASnd.HC:321) */
-    fun f721_init_C__Adam_ASnd_HC_1(t: Task): Long {
+    fun f726_init_C__Adam_ASnd_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 321 // ASnd.HC:321
             tick(t)
-            f720_MusicSettingsRst(t)
+            f725_MusicSettingsRst(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Adam/ASnd.HC#1", ln) }
     }
 
     /** HolyC CurSongTask (ASnd.HC:323) */
-    fun f722_CurSongTask(t: Task) {
+    fun f727_CurSongTask(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 325 // ASnd.HC:325
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065860L)
             ln = 326 // ASnd.HC:326
             loop0@ while ((1L != 0L)) {
                 ln = 327 // ASnd.HC:327
                 tick(t)
-                f719_Play(t, ld8(P.g_music), 0L)
+                f724_Play(t, ld8(P.g_music), 0L)
                 tick(t)
             }
             t.depth--
@@ -789,7 +789,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC SoundEffectEndTaskCB (ASnd.HC:342) */
-    fun f723_SoundEffectEndTaskCB(t: Task) {
+    fun f728_SoundEffectEndTaskCB(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -802,14 +802,14 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
             st1(t1, (t2 + -1L))
             ln = 346 // ASnd.HC:346
             tick(t)
-            f703_SndTaskEndCB(t)
+            f708_SndTaskEndCB(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "SoundEffectEndTaskCB", ln) }
     }
 
     /** HolyC SoundEffectTask (ASnd.HC:349) */
-    fun f724_SoundEffectTask(t: Task, a0: Long) {
+    fun f729_SoundEffectTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -826,7 +826,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
             ln = 353 // ASnd.HC:353
             nat(t, n_FramePtrAdd, push3(t, s2, p0_ns, 0L))
             ln = 354 // ASnd.HC:354
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065875L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065880L)
             ln = 355 // ASnd.HC:355
             val t1: Long = ld4s(p0_ns)
             switch0@ do {
@@ -901,7 +901,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Noise (ASnd.HC:381) */
-    fun f725_Noise(t: Task, a0: Long, a1: Double, a2: Double): Long {
+    fun f730_Noise(t: Task, a0: Long, a1: Double, a2: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -927,7 +927,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
                 val t2: Long = ld1u(t1)
                 st1(t1, (t2 + 1L))
                 ln = 391 // ASnd.HC:391
-                val t3: Long = nat(t, n_Spawn, push(t, 9223090561878065876L, l24_ns, s3, -1L, ld8(P.g_Fs), 0L, 0L))
+                val t3: Long = nat(t, n_Spawn, push(t, 9223090561878065881L, l24_ns, s3, -1L, ld8(P.g_Fs), 0L, 0L))
                 t.depth--
                 return t3
             } else {
@@ -941,7 +941,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC Sweep (ASnd.HC:396) */
-    fun f726_Sweep(t: Task, a0: Long, a1: Double, a2: Double): Long {
+    fun f731_Sweep(t: Task, a0: Long, a1: Double, a2: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -967,7 +967,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
                 val t2: Long = ld1u(t1)
                 st1(t1, (t2 + 1L))
                 ln = 406 // ASnd.HC:406
-                val t3: Long = nat(t, n_Spawn, push(t, 9223090561878065876L, l24_ns, s3, -1L, ld8(P.g_Fs), 0L, 0L))
+                val t3: Long = nat(t, n_Spawn, push(t, 9223090561878065881L, l24_ns, s3, -1L, ld8(P.g_Fs), 0L, 0L))
                 t.depth--
                 return t3
             } else {
@@ -981,7 +981,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     }
 
     /** HolyC $init:C:/Adam/ASnd.HC#2 (ASnd.HC:1) */
-    fun f727_init_C__Adam_ASnd_HC_2(t: Task): Long {
+    fun f732_init_C__Adam_ASnd_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -993,31 +993,31 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SndTaskEndCB(t); 0L }
-            704 -> bits(f704_Saw(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
-            705 -> bits(f705_FullSaw(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
-            706 -> bits(f706_Caw(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
-            707 -> bits(f707_FullCaw(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
-            708 -> bits(f708_Tri(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
-            709 -> bits(f709_FullTri(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
-            710 -> f710_init_C__Adam_ASnd_HC_0(t)
-            711 -> bits(f711_tM(t))
-            712 -> bits(f712_Beat(t))
-            713 -> f713_MusicSetOctave(t, (if (n > 0) st[base + 0] else 0L))
-            714 -> f714_MusicSetMeter(t, (if (n > 0) st[base + 0] else 0L))
-            715 -> f715_MusicSetNoteLen(t, (if (n > 0) st[base + 0] else 0L))
-            716 -> f716_Note2Ona(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            717 -> f717_Ona2Note(t, (if (n > 0) st[base + 0] else 0L))
-            718 -> f718_Ona2Octave(t, (if (n > 0) st[base + 0] else 0L))
-            719 -> { f719_Play(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            720 -> { f720_MusicSettingsRst(t); 0L }
-            721 -> f721_init_C__Adam_ASnd_HC_1(t)
-            722 -> { f722_CurSongTask(t); 0L }
-            723 -> { f723_SoundEffectEndTaskCB(t); 0L }
-            724 -> { f724_SoundEffectTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            725 -> f725_Noise(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
-            726 -> f726_Sweep(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
-            727 -> f727_init_C__Adam_ASnd_HC_2(t)
+            708 -> { f708_SndTaskEndCB(t); 0L }
+            709 -> bits(f709_Saw(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
+            710 -> bits(f710_FullSaw(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
+            711 -> bits(f711_Caw(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
+            712 -> bits(f712_FullCaw(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
+            713 -> bits(f713_Tri(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
+            714 -> bits(f714_FullTri(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))))
+            715 -> f715_init_C__Adam_ASnd_HC_0(t)
+            716 -> bits(f716_tM(t))
+            717 -> bits(f717_Beat(t))
+            718 -> f718_MusicSetOctave(t, (if (n > 0) st[base + 0] else 0L))
+            719 -> f719_MusicSetMeter(t, (if (n > 0) st[base + 0] else 0L))
+            720 -> f720_MusicSetNoteLen(t, (if (n > 0) st[base + 0] else 0L))
+            721 -> f721_Note2Ona(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            722 -> f722_Ona2Note(t, (if (n > 0) st[base + 0] else 0L))
+            723 -> f723_Ona2Octave(t, (if (n > 0) st[base + 0] else 0L))
+            724 -> { f724_Play(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            725 -> { f725_MusicSettingsRst(t); 0L }
+            726 -> f726_init_C__Adam_ASnd_HC_1(t)
+            727 -> { f727_CurSongTask(t); 0L }
+            728 -> { f728_SoundEffectEndTaskCB(t); 0L }
+            729 -> { f729_SoundEffectTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            730 -> f730_Noise(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
+            731 -> f731_Sweep(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), f((if (n > 2) st[base + 2] else 0L)))
+            732 -> f732_init_C__Adam_ASnd_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1029,7 +1029,7 @@ class N_Adam_ASnd(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732)
         private val NAMES = arrayOf("SndTaskEndCB", "Saw", "FullSaw", "Caw", "FullCaw", "Tri", "FullTri", "\$init:C:/Adam/ASnd.HC#0", "tM", "Beat", "MusicSetOctave", "MusicSetMeter", "MusicSetNoteLen", "Note2Ona", "Ona2Note", "Ona2Octave", "Play", "MusicSettingsRst", "\$init:C:/Adam/ASnd.HC#1", "CurSongTask", "SoundEffectEndTaskCB", "SoundEffectTask", "Noise", "Sweep", "\$init:C:/Adam/ASnd.HC#2")
         private val FILES = arrayOf<String>("C:/Adam/ASnd.HC")
     }

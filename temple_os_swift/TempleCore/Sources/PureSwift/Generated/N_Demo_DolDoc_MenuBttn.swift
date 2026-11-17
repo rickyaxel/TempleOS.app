@@ -45,7 +45,7 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
     }
 
     /// HolyC PopUpFreq (MenuBttn.HC:5)
-    @discardableResult public final func f703_PopUpFreq(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_PopUpFreq(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -53,7 +53,7 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
             var l8_doc: Int64 = 0
             ln = 8 // MenuBttn.HC:8
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l8_doc = t0
             ln = 9 // MenuBttn.HC:9
             try tick(t)
@@ -62,7 +62,7 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
             t.sp = vb0
             ln = 14 // MenuBttn.HC:14
             try tick(t)
-            let t1: Int64 = try P.f621_PopUpMenu(t, l8_doc, 0)
+            let t1: Int64 = try P.f626_PopUpMenu(t, l8_doc, 0)
             l0_i = t1
             ln = 15 // MenuBttn.HC:15
             if (l0_i < 0) {
@@ -70,7 +70,7 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
             }
             ln = 16 // MenuBttn.HC:16
             try tick(t)
-            try P.f605_DocDel(t, l8_doc)
+            try P.f610_DocDel(t, l8_doc)
             ln = 17 // MenuBttn.HC:17
             t.depth -= 1
             return l0_i
@@ -80,7 +80,7 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
     }
 
     /// HolyC MenuBttn (MenuBttn.HC:25)
-    public final func f704_MenuBttn(_ t: HTask) throws {
+    public final func f709_MenuBttn(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -96,11 +96,11 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
             l24_freq = 100
             ln = 29 // MenuBttn.HC:29
             try tick(t)
-            let t0: Int64 = try P.f602_DocPut(t, 0)
+            let t0: Int64 = try P.f607_DocPut(t, 0)
             l32_old_flags = try ld8((t0 &+ 88))
             ln = 31 // MenuBttn.HC:31
             try tick(t)
-            let t1: Int64 = try P.f602_DocPut(t, 0)
+            let t1: Int64 = try P.f607_DocPut(t, 0)
             let t2: Int64 = (t1 &+ 88)
             try st8(t2, (ld8(t2) | 512))
             ln = 32 // MenuBttn.HC:32
@@ -123,9 +123,9 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
                 _ = try nat(t, n_Print, try push1(t, s5))
                 ln = 45 // MenuBttn.HC:45
                 try tick(t)
-                let t3: Int64 = try P.f602_DocPut(t, 0)
+                let t3: Int64 = try P.f607_DocPut(t, 0)
                 try tick(t)
-                let t4: Int64 = try P.f622_DocMenu(t, t3, 0)
+                let t4: Int64 = try P.f627_DocMenu(t, t3, 0)
                 l8_i = t4
                 ln = 46 // MenuBttn.HC:46
                 _ = try nat(t, n_DocBottom, push0(t))
@@ -149,7 +149,7 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
                     case 1:
                         ln = 59 // MenuBttn.HC:59
                         try tick(t)
-                        let t7: Int64 = try f703_PopUpFreq(t)
+                        let t7: Int64 = try f708_PopUpFreq(t)
                         l24_freq = t7
                         ln = 60 // MenuBttn.HC:60
                         if (l16_j != 0) {
@@ -169,10 +169,10 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
             }
             ln = 69 // MenuBttn.HC:69
             try tick(t)
-            let t9: Int64 = try P.f602_DocPut(t, 0)
+            let t9: Int64 = try P.f607_DocPut(t, 0)
             let t11: Int64 = try ((ld8((t9 &+ 88)) & (-513)) | (l32_old_flags & 512))
             try tick(t)
-            let t10: Int64 = try P.f602_DocPut(t, 0)
+            let t10: Int64 = try P.f607_DocPut(t, 0)
             try st8((t10 &+ 88), t11)
             ln = 71 // MenuBttn.HC:71
             _ = try nat(t, n_DocClear, try push1(t, 0))
@@ -184,13 +184,13 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/DolDoc/MenuBttn.HC#0 (MenuBttn.HC:75)
-    @discardableResult public final func f705_init_C__Demo_DolDoc_MenuBttn_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_DolDoc_MenuBttn_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 75 // MenuBttn.HC:75
             try tick(t)
-            try f704_MenuBttn(t)
+            try f709_MenuBttn(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/MenuBttn.HC#0", ln) }
@@ -199,15 +199,15 @@ public final class N_Demo_DolDoc_MenuBttn: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_PopUpFreq(t)
-        case 704: try f704_MenuBttn(t); return 0
-        case 705: return try f705_init_C__Demo_DolDoc_MenuBttn_HC_0(t)
+        case 708: return try f708_PopUpFreq(t)
+        case 709: try f709_MenuBttn(t); return 0
+        case 710: return try f710_init_C__Demo_DolDoc_MenuBttn_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "PopUpFreq", 704: "MenuBttn", 705: "$init:C:/Demo/DolDoc/MenuBttn.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "PopUpFreq", 709: "MenuBttn", 710: "$init:C:/Demo/DolDoc/MenuBttn.HC#0"]
     private static let FILES: [String] = ["C:/Demo/DolDoc/MenuBttn.HC"]
     public override var files: [String] { N_Demo_DolDoc_MenuBttn.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_DolDoc_MenuBttn.DEFINED.contains(index) }

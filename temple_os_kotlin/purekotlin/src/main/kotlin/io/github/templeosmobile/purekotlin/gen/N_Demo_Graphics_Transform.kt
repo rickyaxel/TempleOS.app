@@ -16,8 +16,10 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
     @JvmField val n_DocScroll = rt.vm.natives.find("DocScroll")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_GrRect = rt.vm.natives.find("GrRect")!!.index
     @JvmField val n_JobQue = rt.vm.natives.find("JobQue")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_MemCpy = rt.vm.natives.find("MemCpy")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
@@ -48,7 +50,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawCtrlSlider (Transform.HC:23) */
-    fun f703_DrawCtrlSlider(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawCtrlSlider(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -69,29 +71,29 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             st4((p0_dc + 160L), 0L)
             ln = 34 // Transform.HC:34
             tick(t)
-            P.f396_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 20L), (ld8((p1_c + 56L)) + 20L), (ld8((p1_c + 40L)) + 20L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 20L), (ld8((p1_c + 56L)) + 20L), (ld8((p1_c + 40L)) + 20L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
             ln = 36 // Transform.HC:36
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 40L) + 1L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 40L) + 1L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 40L) + 1L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 40L) + 1L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
             ln = 38 // Transform.HC:38
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 60L) + 2L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 60L) + 2L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 60L) + 2L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 60L) + 2L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
             ln = 41 // Transform.HC:41
             st4((p0_dc + 160L), 10L)
             ln = 42 // Transform.HC:42
             tick(t)
             val vb0 = push1(t, divs((ld8(l16_s) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 20L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb0, 1)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 20L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb0, 1)
             t.sp = vb0
             ln = 45 // Transform.HC:45
             tick(t)
             val vb1 = push1(t, divs((ld8((l16_s + 8L)) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 40L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb1, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 40L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb1, 1)
             t.sp = vb1
             ln = 48 // Transform.HC:48
             tick(t)
             val vb2 = push1(t, divs((ld8((l16_s + 16L)) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 60L) + 2L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb2, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 60L) + 2L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb2, 1)
             t.sp = vb2
             ln = 51 // Transform.HC:51
             nat(t, n_GrRect, push(t, p0_dc, ((ld8((p1_c + 40L)) + 20L) - 3L), (((((ld8((p1_c + 56L)) + 20L) + 30L) - 1L) - ld8(l16_s)) - 2L), 7L, 5L))
@@ -113,7 +115,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC UpdateDerivedCtrlSlider (Transform.HC:66) */
-    fun f704_UpdateDerivedCtrlSlider(t: Task, a0: Long) {
+    fun f709_UpdateDerivedCtrlSlider(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -153,7 +155,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC LeftClickSlider (Transform.HC:81) */
-    fun f705_LeftClickSlider(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f710_LeftClickSlider(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -191,7 +193,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC SliderNew (Transform.HC:94) */
-    fun f706_SliderNew(t: Task): Long {
+    fun f711_SliderNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -210,11 +212,11 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 101 // Transform.HC:101
             nat(t, n_MemSet, push3(t, g_s, 0L, 48L))
             ln = 102 // Transform.HC:102
-            st8((l0_c + 120L), 9223090561878065855L)
+            st8((l0_c + 120L), 9223090561878065860L)
             ln = 103 // Transform.HC:103
-            st8((l0_c + 136L), 9223090561878065857L)
+            st8((l0_c + 136L), 9223090561878065862L)
             ln = 104 // Transform.HC:104
-            st8((l0_c + 112L), 9223090561878065856L)
+            st8((l0_c + 112L), 9223090561878065861L)
             ln = 105 // Transform.HC:105
             tick(t)
             P.f153_QueIns(t, l0_c, ld8((ld8(P.g_Fs) + 928L)))
@@ -230,7 +232,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC SliderDel (Transform.HC:110) */
-    fun f707_SliderDel(t: Task, a0: Long) {
+    fun f712_SliderDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -246,7 +248,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC MPDrawIt (Transform.HC:137) */
-    fun f708_MPDrawIt(t: Task, a0: Long) {
+    fun f713_MPDrawIt(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -272,7 +274,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             loop0@ while ((l16_i < l32_hi)) {
                 ln = 144 // Transform.HC:144
                 tick(t)
-                P.f445_Sprite3ZB(t, l8_dc, ld8((g_tree_x + (l16_i * 8L))), ld8((g_tree_y + (l16_i * 8L))), 0L, b0, ldf((g_mp + 136L)))
+                P.f450_Sprite3ZB(t, l8_dc, ld8((g_tree_x + (l16_i * 8L))), ld8((g_tree_y + (l16_i * 8L))), 0L, b0, ldf((g_mp + 136L)))
                 ln = 143 // Transform.HC:143
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -289,7 +291,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawIt (Transform.HC:150) */
-    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f714_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -325,14 +327,13 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             tick(t)
             P.f307_Mat4x4RotZ(t, ld8((p1_dc + 200L)), ldf((g_s + 24L)))
             ln = 164 // Transform.HC:164
-            tick(t)
-            P.f308_Mat4x4Scale(t, ld8((p1_dc + 200L)), ldf((g_s + 40L)))
+            nat(t, n_Mat4x4Scale, push2(t, ld8((p1_dc + 200L)), bits(ldf((g_s + 40L)))))
             ln = 165 // Transform.HC:165
             tick(t)
             P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc + 200L)))
             ln = 166 // Transform.HC:166
             tick(t)
-            P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), (-l24_h), (-l32_v), 0L)
+            P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), (-l24_h), (-l32_v), 0L)
             ln = 167 // Transform.HC:167
             nat(t, n_MemCpy, push3(t, (g_mp + 8L), ld8((p1_dc + 200L)), 128L))
             ln = 168 // Transform.HC:168
@@ -344,7 +345,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             l16_i = 0L
             loop0@ while ((l16_i < ld8(g_mp))) {
                 ln = 172 // Transform.HC:172
-                nat(t, n_JobQue, push(t, 9223090561878065860L, p0_task, l16_i, 0L, 0L, 0L, 0L, 0L))
+                nat(t, n_JobQue, push(t, 9223090561878065865L, p0_task, l16_i, 0L, 0L, 0L, 0L, 0L))
                 ln = 171 // Transform.HC:171
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -363,24 +364,20 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 178 // Transform.HC:178
             st4((p1_dc + 228L), 4L)
             ln = 179 // Transform.HC:179
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 2L, 2L, 0L, 2045L, 2L, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 2L, 2L, 0L, 2045L, 2L, 0L, 1L, 0L))
             ln = 180 // Transform.HC:180
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 2L, 2045L, 0L, 2045L, 2045L, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 2L, 2045L, 0L, 2045L, 2045L, 0L, 1L, 0L))
             ln = 181 // Transform.HC:181
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 2L, 2L, 0L, 2L, 2045L, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 2L, 2L, 0L, 2L, 2045L, 0L, 1L, 0L))
             ln = 182 // Transform.HC:182
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, 2045L, 2L, 0L, 2045L, 2045L, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, 2045L, 2L, 0L, 2045L, 2045L, 0L, 1L, 0L))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawIt", ln) }
     }
 
     /** HolyC Init (Transform.HC:185) */
-    fun f710_Init(t: Task) {
+    fun f715_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -404,7 +401,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC TransformDemo (Transform.HC:194) */
-    fun f711_TransformDemo(t: Task, a0: Long) {
+    fun f716_TransformDemo(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -415,11 +412,11 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 197 // Transform.HC:197
             tick(t)
-            f710_Init(t)
+            f715_Init(t)
             ln = 199 // Transform.HC:199
             st4((ld8(P.g_Fs) + 12L), 5304570L)
             ln = 200 // Transform.HC:200
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065866L)
             ln = 201 // Transform.HC:201
             tick(t)
             P.f221_WinBorder(t, 1L, 0L)
@@ -435,7 +432,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             st8(((ld8(P.g_Fs) + 1176L) + 8L), 0L)
             ln = 208 // Transform.HC:208
             tick(t)
-            val t0: Long = f706_SliderNew(t)
+            val t0: Long = f711_SliderNew(t)
             l8_c = t0
             ln = 209 // Transform.HC:209
             st8(g_s, 0L)
@@ -449,10 +446,10 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             st8(g_mp, p0__mp_cnt)
             ln = 216 // Transform.HC:216
             tick(t)
-            P.f625_View(t)
+            P.f630_View(t)
             ln = 217 // Transform.HC:217
             tick(t)
-            f707_SliderDel(t, l8_c)
+            f712_SliderDel(t, l8_c)
             ln = 218 // Transform.HC:218
             tick(t)
             P.f228_SettingsPop(t, 0L, 0L)
@@ -462,7 +459,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Graphics/Transform.HC#0 (Transform.HC:222) */
-    fun f712_init_C__Demo_Graphics_Transform_HC_0(t: Task): Long {
+    fun f717_init_C__Demo_Graphics_Transform_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -470,7 +467,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
             val t0: Long = nat(t, n_mp_cnt, push0(t))
             ln = 222 // Transform.HC:222
             tick(t)
-            f711_TransformDemo(t, t0)
+            f716_TransformDemo(t, t0)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Transform.HC#0", ln) }
@@ -479,16 +476,16 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawCtrlSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_UpdateDerivedCtrlSlider(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_LeftClickSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            706 -> f706_SliderNew(t)
-            707 -> { f707_SliderDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_MPDrawIt(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> { f710_Init(t); 0L }
-            711 -> { f711_TransformDemo(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            712 -> f712_init_C__Demo_Graphics_Transform_HC_0(t)
+            708 -> { f708_DrawCtrlSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_UpdateDerivedCtrlSlider(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_LeftClickSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            711 -> f711_SliderNew(t)
+            712 -> { f712_SliderDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_MPDrawIt(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> { f714_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> { f715_Init(t); 0L }
+            716 -> { f716_TransformDemo(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            717 -> f717_init_C__Demo_Graphics_Transform_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -500,7 +497,7 @@ class N_Demo_Graphics_Transform(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
         private val NAMES = arrayOf("DrawCtrlSlider", "UpdateDerivedCtrlSlider", "LeftClickSlider", "SliderNew", "SliderDel", "MPDrawIt", "DrawIt", "Init", "TransformDemo", "\$init:C:/Demo/Graphics/Transform.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Transform.HC")
     }

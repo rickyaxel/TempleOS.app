@@ -14,6 +14,7 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
     @JvmField val n_GrBlot = rt.vm.natives.find("GrBlot")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_GrPeek = rt.vm.natives.find("GrPeek")!!.index
     @JvmField val n_GrPlot = rt.vm.natives.find("GrPlot")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
@@ -37,7 +38,7 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (Life.HC:7) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -54,7 +55,7 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC AnimateTask (Life.HC:13) */
-    fun f704_AnimateTask(t: Task, a0: Long) {
+    fun f709_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -152,7 +153,7 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Life (Life.HC:49) */
-    fun f705_Life(t: Task) {
+    fun f710_Life(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -194,10 +195,10 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f286_DCFill(t, 0L, 255L)
             ln = 65 // Life.HC:65
             val t3: Long = (ld8(P.g_Fs) + 1088L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065856L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 66 // Life.HC:66
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 67 // Life.HC:67
             st4((ld8(P.g_Fs) + 12L), 5436158L)
             ln = 68 // Life.HC:68
@@ -227,8 +228,7 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 ln = 78 // Life.HC:78
                                 st4((ld8((g_dc + (ld8(g_cur_dc) * 8L))) + 228L), f2i((0.04 * ldf((P.g_ms + 120L)))))
                                 ln = 79 // Life.HC:79
-                                tick(t)
-                                P.f406_GrLine3(t, ld8((g_dc + (ld8(g_cur_dc) * 8L))), l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, ld8((g_dc + (ld8(g_cur_dc) * 8L))), l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L))
                                 ln = 80 // Life.HC:80
                                 st1(g_restart, 1L)
                                 ln = 81 // Life.HC:81
@@ -243,8 +243,7 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                                 tick(t)
                             }
                             ln = 85 // Life.HC:85
-                            tick(t)
-                            P.f406_GrLine3(t, ld8((g_dc + (ld8(g_cur_dc) * 8L))), l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L)
+                            nat(t, n_GrLine3, push(t, ld8((g_dc + (ld8(g_cur_dc) * 8L))), l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L))
                         }
                         2L -> {
                         }
@@ -276,13 +275,13 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Life.HC#0 (Life.HC:98) */
-    fun f706_init_C__Demo_Graphics_Life_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_Life_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 98 // Life.HC:98
             tick(t)
-            f705_Life(t)
+            f710_Life(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Life.HC#0", ln) }
@@ -291,10 +290,10 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_Life(t); 0L }
-            706 -> f706_init_C__Demo_Graphics_Life_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_Life(t); 0L }
+            711 -> f711_init_C__Demo_Graphics_Life_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -306,7 +305,7 @@ class N_Demo_Graphics_Life(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("DrawIt", "AnimateTask", "Life", "\$init:C:/Demo/Graphics/Life.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Life.HC")
     }

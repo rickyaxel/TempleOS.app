@@ -37,6 +37,7 @@ class Raster(private val k: Kernel) {
         const val DONT_DRAW = 0x1000L
         const val EXTENTS = 0x10000L
         const val NO_TRANSPARENTS = 0x100000L
+        const val TRANSFORMATION = 0x100L; const val SYMMETRY = 0x200L; const val JUST_MIRROR = 0x400L
         const val ROP_EQU = 0; const val ROP_XOR = 1; const val ROP_COLLISION = 2; const val ROP_MONO = 3
         const val DITHER = 0x40L; const val PROB_DITHER = 0x80L
         const val ROPBF_HALF_RANGE_COLOR = 0x10L; const val ROPBF_TWO_SIDED = 0x20L
@@ -573,16 +574,24 @@ class Raster(private val k: Kernel) {
      */
     fun fillTri0(dc0: Long, pa: Long, pb: Long, pc: Long): Long {
         val dc = dcp(dc0)
-        val p = arrayOf(readPt(pa), readPt(pb), readPt(pc))
+        val p = fillTriPts // reused: nothing from here on calls HolyC, so no second fillTri0 can start meanwhile
+        readPt(pa, p[0]); readPt(pb, p[1]); readPt(pc, p[2])
+        return fillTri0Pts(dc, p)
+    }
+
+    private val fillTriPts = arrayOf(LongArray(3), LongArray(3), LongArray(3))
+
+    /** [fillTri0] on three points already read (the CD3I32 values, sign-extended): native GrFillPoly3. */
+    private fun fillTri0Pts(dc: Int, p: Array<LongArray>): Long {
         val (x1, y1) = p[0][0] to p[0][1]
         val ay = Math.abs(y1 - p[1][1]) + Math.abs(y1 - p[2][1])
         val ax = Math.abs(x1 - p[1][0]) + Math.abs(x1 - p[2][0])
         return if (ay <= ax) tri(dc, p, 0, 1, true) else tri(dc, p, 1, 0, false)
     }
 
-    private fun readPt(a: Long): LongArray {
+    private fun readPt(a: Long, out: LongArray) {
         val q = m.check(a, 12)
-        return longArrayOf(m.ld4(q).toInt().toLong(), m.ld4(q + 4).toInt().toLong(), m.ld4(q + 8).toInt().toLong())
+        out[0] = m.ld4(q).toInt().toLong(); out[1] = m.ld4(q + 4).toInt().toLong(); out[2] = m.ld4(q + 8).toInt().toLong()
     }
 
     private fun hi(v: Long) = (v shr 32).toInt().toLong()
@@ -1233,5 +1242,347 @@ class Raster(private val k: Kernel) {
             tmpg += n
         }
         return tmpg - tmpg1 + m.ld8(m.check(baseSizes, 8))
+    }
+
+    // ---------------------------------------------------------------- GrLine3, GrFillPoly3, Gr3Mesh, Sprite3
+
+    // Ports of GrLine3 (GrPrimatives.HC), GrFillPoly3 and Gr3Mesh (GrComposites.HC) and Sprite3 (GrSpritePlot.HC),
+    // 2026-11-17 (Varoom: 60% of its interpreted time on Pure Terry). Every dc field is read and written when the
+    // original reads and writes it, because transform, lighting and plot callbacks may be HolyC that looks at the dc;
+    // values stored in CD3I32/I32 fields are truncated as the original's stores truncate them.
+
+    /**
+     * Point arrays for natives that call HolyC (transform, lighting and plot callbacks), which may draw again:
+     * one set per nesting level, so the per-line and per-polygon arrays are not allocated each call (GC was 5.6% of
+     * Varoom's samples on the OPPO) and a nested call never shares its caller's.
+     */
+    private class Scratch(private val n: Int) {
+        private val levels = ArrayList<Array<LongArray>>()
+        private var depth = 0
+        fun enter(): Array<LongArray> { if (depth == levels.size) levels.add(Array(n) { LongArray(3) }); return levels[depth++] }
+        fun exit() { depth-- }
+    }
+    private val line3Scratch = Scratch(4); private val poly3Scratch = Scratch(4); private val mesh3Scratch = Scratch(1)
+
+    private val oThick = o.dc("thick"); private val oLighting = o.dc("lighting"); private val oRNorm = o.dc("r_norm")
+    private val oDcX = o.dc("x"); private val oDcY = o.dc("y"); private val oDcZ = o.dc("z")
+    private val oWI2 = o.dc("width_internal"); private val oSig2 = o.dc("dc_signature")
+    private fun fnPtr(name: String): Long = k.prog.funcPtr(k.prog.globals[name] as FuncSym)
+    private val grLinePlot0Ptr by lazy(LazyThreadSafetyMode.NONE) { fnPtr("GrLinePlot0") }
+    private val grPlot3Ptr by lazy(LazyThreadSafetyMode.NONE) { fnPtr("GrPlot3") }
+    private val dcLightingPtr by lazy(LazyThreadSafetyMode.NONE) { fnPtr("DCLighting") }
+    private val sprite3HcPtr by lazy(LazyThreadSafetyMode.NONE) { fnPtr("Sprite3_HC") }
+    private val dcSymmetry3SetPtr by lazy(LazyThreadSafetyMode.NONE) { fnPtr("DCSymmetry3Set") }
+    private val szCdc by lazy(LazyThreadSafetyMode.NONE) { o.cls("CDC").size.toLong() }
+
+    private fun flagsOf(dc: Int) = m.ld4(dc + oFlags)
+    private fun setFlags(dc: Int, v: Long) = m.st4(dc + oFlags, v)
+    private fun s32(v: Long) = v.toInt().toLong()
+
+    /** Native GrLine3: transformation, symmetry, and thin (clipped), fat (GrLineFat3) or GrPlot3 lines. */
+    fun line3(t: Task, dc0: Long, x1: Long, y1: Long, z1: Long, x2: Long, y2: Long, z2: Long, step: Long, start: Long): Long {
+        val dc = m.check(dc0, 8)
+        val sc = line3Scratch.enter()
+        try {
+            val v1 = sc[0]; val v2 = sc[1]
+            v1[0] = x1; v1[1] = y1; v1[2] = z1; v2[0] = x2; v2[1] = y2; v2[2] = z2
+            return line3Body(t, dc, v1, v2, sc[2], sc[3], step, start)
+        } finally { line3Scratch.exit() }
+    }
+
+    private fun line3Body(t: Task, dc: Int, v1: LongArray, v2: LongArray, s1: LongArray, s2: LongArray, step: Long, start: Long): Long {
+        var res = 0L; var wasTransform = false; var wasSymmetry = false
+        if (flagsOf(dc) and TRANSFORMATION != 0L) {
+            transform(dc, v1); transform(dc, v2)
+            setFlags(dc, flagsOf(dc) and TRANSFORMATION.inv())
+            wasTransform = true
+        }
+        var mirrorOnly = false
+        if (flagsOf(dc) and SYMMETRY != 0L) {
+            System.arraycopy(v1, 0, s1, 0, 3); dcReflect(dc, s1); System.arraycopy(v2, 0, s2, 0, 3); dcReflect(dc, s2)
+            setFlags(dc, flagsOf(dc) and SYMMETRY.inv())
+            res = line3Part(t, dc, s1, s2, step, start, res)
+            wasSymmetry = true
+            mirrorOnly = flagsOf(dc) and JUST_MIRROR != 0L
+        }
+        if (!mirrorOnly) res = line3Part(t, dc, v1, v2, step, start, res)
+        if (wasTransform) setFlags(dc, flagsOf(dc) or TRANSFORMATION)
+        if (wasSymmetry) setFlags(dc, flagsOf(dc) or SYMMETRY)
+        return res
+    }
+
+    /** One half of [line3]; [res] is the Bool so far (`res=`/`res|=` of the original give the same 0/1). */
+    private fun line3Part(t: Task, dc: Int, a: LongArray, b: LongArray, step: Long, start: Long, res: Long): Long {
+        if (step == 1L && m.ld8(dc + oBrush) == 0L) {
+            return if (start == 0L && s32(m.ld4(dc + oThick)) < 2 && m.ld8(dc + oDb) == 0L) {
+                if (clipLineDc(dc, a, b)) res or (line(t, dc.toLong(), a[0], a[1], 0, b[0], b[1], 0, grLinePlot0Ptr, step, start) and 0xFF)
+                else res
+            } else if (lineFat3(dc.toLong(), a[0], a[1], a[2], b[0], b[1], b[2], s32(m.ld4(dc + oThick)), start) != 0L) 1 else res
+        }
+        return res or (line(t, dc.toLong(), a[0], a[1], a[2], b[0], b[1], b[2], grPlot3Ptr, step, start) and 0xFF)
+    }
+
+    /** DCClipLine(dc,&x1,&y1,&x2,&y2) with width=height=0: GrClamp, window to screen coordinates, ClipLine. */
+    private fun clipLineDc(dc: Int, a: LongArray, b: LongArray): Boolean {
+        var left = 0L; var top = 0L
+        var right = s32(m.ld4(dc + oWidth)) - 1; var bottom = s32(m.ld4(dc + oHeight)) - 1
+        if (flagsOf(dc) and SCRN != 0L) {
+            val w = m.check(m.ld8(dc + oWinTask), 8)
+            if (639 < right) right = 639
+            if (479 < bottom) bottom = 479
+            if (m.ld8(w + oPixL) > left) left = m.ld8(w + oPixL)
+            if (m.ld8(w + oPixT) > top) top = m.ld8(w + oPixT)
+            if (m.ld8(w + oPixR) < right) right = m.ld8(w + oPixR)
+            if (m.ld8(w + oPixB) < bottom) bottom = m.ld8(w + oPixB)
+        }
+        if (!(left <= right && top <= bottom)) return false
+        if (flagsOf(dc) and SCRN != 0L) {
+            val w = m.check(m.ld8(dc + oWinTask), 8)
+            a[0] += m.ld8(w + oPixL) + m.ld8(w + oSX); a[1] += m.ld8(w + oPixT) + m.ld8(w + oSY)
+            b[0] += m.ld8(w + oPixL) + m.ld8(w + oSX); b[1] += m.ld8(w + oPixT) + m.ld8(w + oSY)
+        }
+        return clipLine(a, b, left, top, right, bottom)
+    }
+
+    private fun outCode(x: Long, y: Long, left: Long, top: Long, right: Long, bottom: Long): Long {
+        var c = if (y > bottom) 8L else if (y < top) 4L else 0L  // CC_BOTTOM, CC_TOP
+        if (x > right) c = c or 2L else if (x < left) c = c or 1L // CC_RIGHT, CC_LEFT
+        return c
+    }
+
+    /** ClipLine (GrMath.HC): Cohen-Sutherland on I64 with HolyC's division; writes the clipped ends to [a], [b]. */
+    private fun clipLine(a: LongArray, b: LongArray, left: Long, top: Long, right: Long, bottom: Long): Boolean {
+        var x1 = a[0]; var y1 = a[1]; var x2 = b[0]; var y2 = b[1]
+        var cc1 = outCode(x1, y1, left, top, right, bottom); var cc2 = outCode(x2, y2, left, top, right, bottom)
+        while (true) {
+            if (cc1 or cc2 == 0L) return true
+            if (cc1 and cc2 != 0L) return false
+            val cc = if (cc1 != 0L) cc1 else cc2
+            val x: Long; val y: Long
+            if (cc and 8L != 0L) { x = x1 + div((x2 - x1) * (bottom - y1), y2 - y1); y = bottom }
+            else if (cc and 4L != 0L) { x = x1 + div((x2 - x1) * (top - y1), y2 - y1); y = top }
+            else if (cc and 2L != 0L) { y = y1 + div((y2 - y1) * (right - x1), x2 - x1); x = right }
+            else { y = y1 + div((y2 - y1) * (left - x1), x2 - x1); x = left }
+            if (cc == cc1) { x1 = x; y1 = y; a[0] = x; a[1] = y; cc1 = outCode(x1, y1, left, top, right, bottom) }
+            else { x2 = x; y2 = y; b[0] = x; b[1] = y; cc2 = outCode(x2, y2, left, top, right, bottom) }
+        }
+    }
+
+    /** Native GrFillPoly3: a convex polygon as a fan of GrFillTri0, mirrored first with symmetry. */
+    fun fillPoly3(dc0: Long, n: Long, poly: Long): Long {
+        if (n < 3) return 0
+        val dc = m.check(dc0, 8)
+        val sc = poly3Scratch.enter()
+        try {
+            val v = sc[3] // the original's x,y,z: they carry over between fan triangles
+            val tri = sc  // tri[0..2] (fillTri0Pts reads the first three)
+            var res = 0L
+            for (pass in 0..1) {
+                val reflect = pass == 0
+                if (reflect && flagsOf(dc) and SYMMETRY == 0L) continue
+                if (!reflect && flagsOf(dc) and JUST_MIRROR != 0L) return res
+                var i = 1L
+                while (i < n - 1) {
+                    poll()
+                    if (i == 1L) { polyVertex(dc, poly, 0, reflect, v); storeI32(v, tri[0]) }
+                    if (i == 1L) polyVertex(dc, poly, 1, reflect, v)
+                    storeI32(v, tri[1])
+                    polyVertex(dc, poly, i + 1, reflect, v); storeI32(v, tri[2])
+                    res += fillTri0Pts(dc, tri)
+                    i++
+                }
+            }
+            return res
+        } finally { poly3Scratch.exit() }
+    }
+
+    /** GrFillPoly3's x=poly[j].x;...; (*dc->transform)(...); DCReflect(...) into [v]. */
+    private fun polyVertex(dc: Int, poly: Long, j: Long, reflect: Boolean, v: LongArray) {
+        val q = poly + 12 * j
+        v[0] = i32(q); v[1] = i32(q + 4); v[2] = i32(q + 8)
+        if (flagsOf(dc) and TRANSFORMATION != 0L) transform(dc, v)
+        if (reflect) dcReflect(dc, v)
+    }
+
+    /** tri[i].x=x;... : CD3I32 stores truncate. */
+    private fun storeI32(v: LongArray, out: LongArray) { out[0] = s32(v[0]); out[1] = s32(v[1]); out[2] = s32(v[2]) }
+
+    /** (*dc->lighting)(dc,p1,p2,p3,color): native when it is the default DCLighting. */
+    private fun lightingCall(t: Task, dc: Int, p1: Long, p2: Long, p3: Long, color: Long) {
+        val fp = m.ld8(dc + oLighting)
+        if (fp == dcLightingPtr) lighting(dc.toLong(), p1, p2, p3, color)
+        else k.vm.callFunction(t, fp, dc.toLong(), p1, p2, p3, color)
+    }
+
+    /** Native Gr3Mesh: transformed (and mirrored) vertices in MAlloc'd copies, then lit GrFillTri0 per triangle. */
+    fun mesh3(t: Task, dc0: Long, vertexCnt: Long, p0: Long, triCnt: Long, tri0: Long): Long {
+        val dc = m.check(dc0, 8)
+        val oldColor = m.ld4(dc + oColor)
+        var res = 0L
+        var p = p0
+        var pt = 0L
+        val v = mesh3Scratch.enter()[0]
+        try {
+            if (flagsOf(dc) and TRANSFORMATION != 0L) {
+                pt = m.malloc(12 * vertexCnt).toLong()
+                for (i in 0 until vertexCnt) {
+                    poll()
+                    val q = p0 + 12 * i
+                    v[0] = i32(q); v[1] = i32(q + 4); v[2] = i32(q + 8)
+                    transform(dc, v)
+                    val d = m.check(pt + 12 * i, 12)
+                    m.st4(d, v[0]); m.st4(d + 4, v[1]); m.st4(d + 8, v[2])
+                }
+                p = pt
+            }
+            var mirrorOnly = false
+            if (flagsOf(dc) and SYMMETRY != 0L) {
+                val ptSym = m.malloc(12 * vertexCnt).toLong()
+                for (i in 0 until vertexCnt) {
+                    poll()
+                    val q = p + 12 * i
+                    v[0] = i32(q); v[1] = i32(q + 4); v[2] = i32(q + 8)
+                    dcReflect(dc, v)
+                    val d = m.check(ptSym + 12 * i, 12)
+                    m.st4(d, v[0]); m.st4(d + 4, v[1]); m.st4(d + 8, v[2])
+                }
+                for (i in 0 until triCnt) {
+                    poll()
+                    val tr = tri0 + szTri * i
+                    val a = ptSym + 12 * i32(tr + 4); val b = ptSym + 12 * i32(tr + 12); val c = ptSym + 12 * i32(tr + 8)
+                    lightingCall(t, dc, a, b, c, i32(tr)) // tri->color: an I32, sign-extended as the original passes it
+                    res += fillTri0(dc.toLong(), a, b, c)
+                }
+                m.free(ptSym)
+                mirrorOnly = flagsOf(dc) and JUST_MIRROR != 0L
+            }
+            if (!mirrorOnly) for (i in 0 until triCnt) {
+                poll()
+                val tr = tri0 + szTri * i
+                val a = p + 12 * i32(tr + 4); val b = p + 12 * i32(tr + 8); val c = p + 12 * i32(tr + 12)
+                lightingCall(t, dc, a, b, c, i32(tr)) // tri->color: an I32, sign-extended as the original passes it
+                res += fillTri0(dc.toLong(), a, b, c)
+            }
+            m.st4(dc + oColor, oldColor)
+            m.free(pt)
+            return res
+        } finally { mesh3Scratch.exit() }
+    }
+
+    /** Native Mat4x4Scale (Prelude.HC): each element I64*=F64 as HolyC converts it. */
+    fun mat4x4Scale(mat: Long, s: Double): Long {
+        val a = m.check(mat, 128)
+        for (i in 0 until 16) m.st8(a + 8 * i, f2i(m.ld8(a + 8 * i).toDouble() * s))
+        return mat
+    }
+
+    private val oSpColor by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteColor", "color") }
+    private val oSpDither by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteDitherColor", "dither_color") }
+    private val oSpThick by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteT", "thick") }
+    private val oSpX1 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePt", "x1") }
+    private val oSpY1 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePt", "y1") }
+    private val oPpX1 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtPt", "x1") }
+    private val oPpY1 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtPt", "y1") }
+    private val oPpX2 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtPt", "x2") }
+    private val oPpY2 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtPt", "y2") }
+    private val oNuU by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteNumU8s", "u") }
+    private val oWhX1 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtWHU8s", "x1") }
+    private val oWhY1 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtWHU8s", "y1") }
+    private val oWhU by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtWHU8s", "u") }
+    private val oMuU by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteMeshU8s", "u") }
+    private val oSymSz by lazy(LazyThreadSafetyMode.NONE) { o.cls("CGrSym").size }
+
+    /**
+     * Native Sprite3: walks the elements as the original does. Color, thick, transformation, shift and symmetry
+     * elements and the common drawing elements (line, polyline, bitmap, mesh) run here; any other element is drawn
+     * by the original, Sprite3_HC(dc,x,y,z,element,TRUE), which leaves the state it saved unchanged. A dc locating
+     * the nearest element (DCF_LOCATE_NEAREST) draws the whole sprite with the original.
+     */
+    fun sprite3(t: Task, dc0: Long, x0: Long, y0: Long, z0: Long, elems: Long, justOne: Long): Long {
+        val dc = m.check(dc0, 8)
+        if (flagsOf(dc) and NEAREST != 0L) return k.vm.callFunction(t, sprite3HcPtr, dc0, x0, y0, z0, elems, justOne)
+        var tmpg = elems - oStart
+        var x = x0; var y = y0; var z = z0
+        val oldFlags = flagsOf(dc); val oldPenWidth = s32(m.ld4(dc + oThick))
+        val oldColor = m.ld4(dc + oColor)
+        val oldSym = m.readBytes(m.check(dc.toLong() + oSym, oSymSz), oSymSz)
+        while (true) {
+            poll()
+            val e = tmpg + oStart
+            val type = (m.ld1(m.check(e, 1)) and 0x7F).toInt()
+            if (type == 0 || type >= 30) break // SpriteTypeOk
+            when (type) {
+                1 -> m.st4(dc + oColor, (m.ld4(dc + oColor) and (0x00FF00FFL or 0x40000000L).inv()) or m.ld1(m.check(e + oSpColor, 1)))
+                2 -> {
+                    val dcol = m.ld2(m.check(e + oSpDither, 2))
+                    m.st4(dc + oColor, (m.ld4(dc + oColor) and 0x00FF00FFL.inv()) or (dcol and 0xFF) or ((dcol ushr 8) shl 16) or 0x40000000L)
+                }
+                3 -> { m.st4(dc + oThick, i32(e + oSpThick)); thickScale(dc) }
+                5 -> {
+                    if (flagsOf(dc) and TRANSFORMATION == 0L) { x -= s32(m.ld4(dc + oDcX)); y -= s32(m.ld4(dc + oDcY)); z -= s32(m.ld4(dc + oDcZ)) }
+                    setFlags(dc, flagsOf(dc) or TRANSFORMATION)
+                }
+                6 -> {
+                    if (flagsOf(dc) and TRANSFORMATION != 0L) { x += s32(m.ld4(dc + oDcX)); y += s32(m.ld4(dc + oDcY)); z += s32(m.ld4(dc + oDcZ)) }
+                    setFlags(dc, flagsOf(dc) and TRANSFORMATION.inv())
+                }
+                7 -> { x += i32(e + oSpX1); y += i32(e + oSpY1) }
+                10 -> line3(t, dc.toLong(), i32(e + oPpX1) + x, i32(e + oPpY1) + y, z, i32(e + oPpX2) + x, i32(e + oPpY2) + y, z, 1, 0)
+                4 -> {
+                    val ax = i32(e + oPpX1) + x; val ay = i32(e + oPpY1) + y; val bx = i32(e + oPpX2) + x; val by = i32(e + oPpY2) + y
+                    val on = k.vm.callFunction(t, dcSymmetry3SetPtr, dc.toLong(), ax, ay, z, bx, by, z, bx, by, z + 1) and 0xFF
+                    setFlags(dc, if (on != 0L) flagsOf(dc) or SYMMETRY else flagsOf(dc) and SYMMETRY.inv())
+                }
+                11 -> {
+                    val ptr = e + oNuU
+                    var x1 = i32(ptr); var y1 = i32(ptr + 4)
+                    val num = i32(e + oNum)
+                    var i = 1L
+                    while (i < num) {
+                        val x2 = i32(ptr + 8 * i); val y2 = i32(ptr + 8 * i + 4)
+                        line3(t, dc.toLong(), x1 + x, y1 + y, z, x2 + x, y2 + y, z, 1, 0)
+                        x1 = x2; y1 = y2
+                        i++
+                    }
+                }
+                23 -> {
+                    val img = m.calloc(szCdc).toLong()
+                    val w = i32(e + oWidth2); val h = i32(e + oHeight2)
+                    m.st4(img.toInt() + oWidth, w); m.st4(img.toInt() + oWI2, (w + 7) and 7L.inv()); m.st4(img.toInt() + oHeight, h)
+                    m.st8(img.toInt() + oBody, e + oWhU); m.st4(img.toInt() + oSig2, Gfx.DCS_SIG)
+                    blot3(dc.toLong(), i32(e + oWhX1) + x, i32(e + oWhY1) + y, z, img)
+                    m.free(img)
+                }
+                24 -> {
+                    val vc = i32(e + oMuV); val tc = i32(e + oMuT)
+                    val p = m.malloc(vc * szD3).toLong()
+                    val n = vc * szD3
+                    if (n > 0) m.copy(m.check(p, n.toInt()), m.check(e + oMuU, n.toInt()), n.toInt())
+                    for (i in 0 until vc) {
+                        val q = m.check(p + 12 * i, 12)
+                        m.st4(q, s32(m.ld4(q)) + x); m.st4(q + 4, s32(m.ld4(q + 4)) + y); m.st4(q + 8, s32(m.ld4(q + 8)) + z)
+                    }
+                    mesh3(t, dc.toLong(), vc, p, tc, e + oMuU + szD3 * vc)
+                    m.free(p)
+                }
+                else -> k.vm.callFunction(t, sprite3HcPtr, dc.toLong(), x, y, z, e, 1)
+            }
+            if (justOne and 0xFF != 0L) break
+            tmpg += spriteElemSize(tmpg)
+        }
+        m.writeBytes(dc + oSym, oldSym)
+        m.st4(dc + oColor, oldColor)
+        m.st4(dc + oThick, oldPenWidth)
+        setFlags(dc, (flagsOf(dc) and (SYMMETRY or TRANSFORMATION).inv()) or (oldFlags and (SYMMETRY or TRANSFORMATION)))
+        return 0
+    }
+
+    /** DCThickScale (Prelude.HC): scale dc->thick by the transformation's norm. */
+    private fun thickScale(dc: Int) {
+        if (flagsOf(dc) and TRANSFORMATION != 0L && s32(m.ld4(dc + oThick)) != 0L) {
+            val d = s32(m.ld4(dc + oThick)) * m.ld8(dc + oRNorm) + 0x80000000L
+            m.st4(dc + oThick, d shr 32)
+            if (s32(m.ld4(dc + oThick)) < 1) m.st4(dc + oThick, 1)
+        }
     }
 }

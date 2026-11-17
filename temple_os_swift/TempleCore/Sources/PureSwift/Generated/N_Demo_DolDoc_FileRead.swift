@@ -51,7 +51,7 @@ public final class N_Demo_DolDoc_FileRead: NativeModule {
     }
 
     /// HolyC DocProfile (FileRead.HC:1)
-    public final func f703_DocProfile(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DocProfile(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -74,7 +74,7 @@ public final class N_Demo_DolDoc_FileRead: NativeModule {
             l40_type_flags_stats = t2
             ln = 9 // FileRead.HC:9
             try tick(t)
-            let t3: Int64 = try P.f617_DocRead(t, p0_filename, p1_flags)
+            let t3: Int64 = try P.f622_DocRead(t, p0_filename, p1_flags)
             l48_doc = t3
             ln = 13 // FileRead.HC:13
             l56_doc_e = try ld8(l48_doc)
@@ -120,7 +120,7 @@ public final class N_Demo_DolDoc_FileRead: NativeModule {
             }
             ln = 24 // FileRead.HC:24
             try tick(t)
-            try P.f605_DocDel(t, l48_doc)
+            try P.f610_DocDel(t, l48_doc)
             ln = 26 // FileRead.HC:26
             _ = try nat(t, n_Print, try push2(t, s0, p0_filename))
             ln = 27 // FileRead.HC:27
@@ -180,26 +180,26 @@ public final class N_Demo_DolDoc_FileRead: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/DolDoc/FileRead.HC#0 (FileRead.HC:79)
-    @discardableResult public final func f704_init_C__Demo_DolDoc_FileRead_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_DolDoc_FileRead_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 79 // FileRead.HC:79
             try tick(t)
-            try f703_DocProfile(t, s8, 0)
+            try f708_DocProfile(t, s8, 0)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/FileRead.HC#0", ln) }
     }
 
     /// HolyC $init:C:/Demo/DolDoc/FileRead.HC#1 (FileRead.HC:80)
-    @discardableResult public final func f705_init_C__Demo_DolDoc_FileRead_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_DolDoc_FileRead_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 80 // FileRead.HC:80
             try tick(t)
-            try f703_DocProfile(t, s8, 1)
+            try f708_DocProfile(t, s8, 1)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/FileRead.HC#1", ln) }
@@ -208,15 +208,15 @@ public final class N_Demo_DolDoc_FileRead: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DocProfile(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: return try f704_init_C__Demo_DolDoc_FileRead_HC_0(t)
-        case 705: return try f705_init_C__Demo_DolDoc_FileRead_HC_1(t)
+        case 708: try f708_DocProfile(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: return try f709_init_C__Demo_DolDoc_FileRead_HC_0(t)
+        case 710: return try f710_init_C__Demo_DolDoc_FileRead_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DocProfile", 704: "$init:C:/Demo/DolDoc/FileRead.HC#0", 705: "$init:C:/Demo/DolDoc/FileRead.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DocProfile", 709: "$init:C:/Demo/DolDoc/FileRead.HC#0", 710: "$init:C:/Demo/DolDoc/FileRead.HC#1"]
     private static let FILES: [String] = ["C:/Demo/DolDoc/FileRead.HC"]
     public override var files: [String] { N_Demo_DolDoc_FileRead.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_DolDoc_FileRead.DEFINED.contains(index) }

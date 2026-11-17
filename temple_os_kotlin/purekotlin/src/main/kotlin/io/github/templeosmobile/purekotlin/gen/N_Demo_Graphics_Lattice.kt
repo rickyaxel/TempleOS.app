@@ -16,6 +16,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_MemCpy = rt.vm.natives.find("MemCpy")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
@@ -49,7 +50,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Graphics/Lattice.HC#0 (Lattice.HC:5) */
-    fun f703_init_C__Demo_Graphics_Lattice_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Graphics_Lattice_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -103,7 +104,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC TurtlePlot (Lattice.HC:25) */
-    fun f704_TurtlePlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f709_TurtlePlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -135,8 +136,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             val t5: Double = f(nat(t, n_Sin, push1(t, bits((ldf((p1_t + 32L)) + (f(4614256656552045848L) / 2.0))))))
             val t9: Double = ldf(p1_t)
             val t8: Double = f(nat(t, n_Cos, push1(t, bits((ldf((p1_t + 32L)) + (f(4614256656552045848L) / 2.0))))))
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, f2i((t9 + (l32_w * t8))), f2i((t6 + (l32_w * t5))), t7, f2i((t4 + (l32_w * t3))), f2i((t1 + (l32_w * t0))), t2, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p0_dc, f2i((t9 + (l32_w * t8))), f2i((t6 + (l32_w * t5))), t7, f2i((t4 + (l32_w * t3))), f2i((t1 + (l32_w * t0))), t2, 1L, 0L))
             ln = 32 // Lattice.HC:32
             l32_w = (ldf((p1_t + 40L)) / 2.0)
             ln = 33 // Lattice.HC:33
@@ -148,7 +148,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             val t14: Double = ldf(p1_t)
             val t13: Double = f(nat(t, n_Cos, push1(t, bits((ldf((p1_t + 32L)) + (f(4614256656552045848L) / 2.0))))))
             tick(t)
-            P.f393_GrPlot3(t, p0_dc, f2i((t14 + (l32_w * t13))), f2i((t11 + (l32_w * t10))), t12)
+            P.f394_GrPlot3(t, p0_dc, f2i((t14 + (l32_w * t13))), f2i((t11 + (l32_w * t10))), t12)
             ln = 35 // Lattice.HC:35
             val t17: Long = f2i(ldf((p1_t + 16L)))
             val t16: Double = ldf((p1_t + 8L))
@@ -156,14 +156,14 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             val t19: Double = ldf(p1_t)
             val t18: Double = f(nat(t, n_Cos, push1(t, bits((ldf((p1_t + 32L)) - (f(4614256656552045848L) / 2.0))))))
             tick(t)
-            P.f393_GrPlot3(t, p0_dc, f2i((t19 + (l32_w * t18))), f2i((t16 + (l32_w * t15))), t17)
+            P.f394_GrPlot3(t, p0_dc, f2i((t19 + (l32_w * t18))), f2i((t16 + (l32_w * t15))), t17)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "TurtlePlot", ln) }
     }
 
     /** HolyC TurtleMicroMove (Lattice.HC:38) */
-    fun f705_TurtleMicroMove(t: Task, a0: Long, a1: Double) {
+    fun f710_TurtleMicroMove(t: Task, a0: Long, a1: Double) {
         var ln = 0
         try {
             enter(t)
@@ -183,7 +183,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st8(t4, bits((t7 + (t6 * t5))))
             ln = 42 // Lattice.HC:42
             tick(t)
-            val t8: Double = P.f542_Wrap(t, (ldf((p0_t + 32L)) + (p1_dt * ldf((g_angles + (ld8((p0_t + 48L)) * 8L))))), (-f(4614256656552045848L)))
+            val t8: Double = P.f547_Wrap(t, (ldf((p0_t + 32L)) + (p1_dt * ldf((g_angles + (ld8((p0_t + 48L)) * 8L))))), (-f(4614256656552045848L)))
             st8((p0_t + 32L), bits(t8))
             t.depth--
             return
@@ -191,7 +191,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC TurtleEnd (Lattice.HC:45) */
-    fun f706_TurtleEnd(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Double) {
+    fun f711_TurtleEnd(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Double) {
         var ln = 0
         try {
             enter(t)
@@ -239,7 +239,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         st8((p1_t + 40L), bits(t7))
                         ln = 59 // Lattice.HC:59
                         tick(t)
-                        f704_TurtlePlot(t, p0_dc, p1_t, p2_edge, p3_middle)
+                        f709_TurtlePlot(t, p0_dc, p1_t, p2_edge, p3_middle)
                     } else {
                         ln = 61 // Lattice.HC:61
                         break@loop0
@@ -256,7 +256,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC TurtleMove (Lattice.HC:67) */
-    fun f707_TurtleMove(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f712_TurtleMove(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -279,7 +279,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             if (((ld1u((p1_t + 60L)) != 0L) && (ld1u((p1_t + 61L)) != 0L))) {
                 ln = 72 // Lattice.HC:72
                 tick(t)
-                f706_TurtleEnd(t, p0_dc, p1_t, p2_edge, p3_middle, (ldf((p1_t + 32L)) + f(4614256656552045848L)))
+                f711_TurtleEnd(t, p0_dc, p1_t, p2_edge, p3_middle, (ldf((p1_t + 32L)) + f(4614256656552045848L)))
             }
             ln = 73 // Lattice.HC:73
             st1((p1_t + 61L), 0L)
@@ -288,10 +288,10 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             loop0@ while ((l32_i < l40_l)) {
                 ln = 76 // Lattice.HC:76
                 tick(t)
-                f705_TurtleMicroMove(t, p1_t, (1.0 / l40_l.toDouble()))
+                f710_TurtleMicroMove(t, p1_t, (1.0 / l40_l.toDouble()))
                 ln = 77 // Lattice.HC:77
                 tick(t)
-                f704_TurtlePlot(t, p0_dc, p1_t, p2_edge, p3_middle)
+                f709_TurtlePlot(t, p0_dc, p1_t, p2_edge, p3_middle)
                 ln = 75 // Lattice.HC:75
                 l32_i = (l32_i + 1L)
                 tick(t)
@@ -300,7 +300,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             if ((ld1u((p1_t + 60L)) != 0L)) {
                 ln = 80 // Lattice.HC:80
                 tick(t)
-                f706_TurtleEnd(t, p0_dc, p1_t, p2_edge, p3_middle, ldf((p1_t + 32L)))
+                f711_TurtleEnd(t, p0_dc, p1_t, p2_edge, p3_middle, ldf((p1_t + 32L)))
             }
             t.depth--
             return
@@ -308,7 +308,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC TurtleInit (Lattice.HC:83) */
-    fun f708_TurtleInit(t: Task, a0: Long) {
+    fun f713_TurtleInit(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -337,7 +337,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC DrawIt (Lattice.HC:96) */
-    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f714_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -350,11 +350,11 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             ln = 100 // Lattice.HC:100
             tick(t)
             val vb0 = push(t, bits(ldf((g_tt + 16L))), bits(ldf((g_tt + 24L))), bits(((ldf((g_tt + 32L)) * 180.0) / f(4614256656552045848L))), bits(((ldf((g_angles + (ld8((g_tt + 48L)) * 8L))) * 180.0) / f(4614256656552045848L))), bits(ldf((g_tt + 40L))))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 5)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 5)
             t.sp = vb0
             ln = 103 // Lattice.HC:103
             tick(t)
-            f707_TurtleMove(t, p1_dc, (fp + 16), 4L, 12L)
+            f712_TurtleMove(t, p1_dc, (fp + 16), 4L, 12L)
             ln = 104 // Lattice.HC:104
             st4((p1_dc + 160L), 12L)
             ln = 106 // Lattice.HC:106
@@ -368,7 +368,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             val t7: Double = ldf((fp + 16))
             val t6: Double = f(nat(t, n_Cos, push1(t, bits((ldf(((fp + 16) + 32L)) + (f(4614256656552045848L) / 2.0))))))
             tick(t)
-            P.f396_GrLine(t, p1_dc, f2i((t7 + (4.0 * t6))), f2i((t5 + (4.0 * t4))), f2i((t3 + (4.0 * t2))), f2i((t1 + (4.0 * t0))), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, f2i((t7 + (4.0 * t6))), f2i((t5 + (4.0 * t4))), f2i((t3 + (4.0 * t2))), f2i((t1 + (4.0 * t0))), 1L, 0L)
             ln = 108 // Lattice.HC:108
             val t9: Double = ldf(((fp + 16) + 8L))
             val t8: Double = f(nat(t, n_Sin, push1(t, bits(ldf(((fp + 16) + 32L))))))
@@ -380,7 +380,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             val t15: Double = ldf((fp + 16))
             val t14: Double = f(nat(t, n_Cos, push1(t, bits((ldf(((fp + 16) + 32L)) + (f(4614256656552045848L) / 2.0))))))
             tick(t)
-            P.f396_GrLine(t, p1_dc, f2i((t15 + (4.0 * t14))), f2i((t13 + (4.0 * t12))), f2i((t11 + (4.0 * t10))), f2i((t9 + (4.0 * t8))), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, f2i((t15 + (4.0 * t14))), f2i((t13 + (4.0 * t12))), f2i((t11 + (4.0 * t10))), f2i((t9 + (4.0 * t8))), 1L, 0L)
             ln = 110 // Lattice.HC:110
             val t17: Double = ldf(((fp + 16) + 8L))
             val t16: Double = f(nat(t, n_Sin, push1(t, bits(ldf(((fp + 16) + 32L))))))
@@ -392,7 +392,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             val t23: Double = ldf((fp + 16))
             val t22: Double = f(nat(t, n_Cos, push1(t, bits((ldf(((fp + 16) + 32L)) - (f(4614256656552045848L) / 2.0))))))
             tick(t)
-            P.f396_GrLine(t, p1_dc, f2i((t23 + (4.0 * t22))), f2i((t21 + (4.0 * t20))), f2i((t19 + (4.0 * t18))), f2i((t17 + (4.0 * t16))), 1L, 0L)
+            P.f397_GrLine(t, p1_dc, f2i((t23 + (4.0 * t22))), f2i((t21 + (4.0 * t20))), f2i((t19 + (4.0 * t18))), f2i((t17 + (4.0 * t16))), 1L, 0L)
             t.msp = msp0
             t.depth--
             return
@@ -400,7 +400,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC SetMenu (Lattice.HC:113) */
-    fun f710_SetMenu(t: Task) {
+    fun f715_SetMenu(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -415,7 +415,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 nat(t, n_StrPrint, push3(t, (fp + 8), s1, l0_i))
                 ln = 120 // Lattice.HC:120
                 tick(t)
-                val t0: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), (fp + 8))
+                val t0: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), (fp + 8))
                 l152_tmpse = t0
                 if ((t0 != 0L)) {
                     ln = 121 // Lattice.HC:121
@@ -433,7 +433,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             }
             ln = 127 // Lattice.HC:127
             tick(t)
-            val t1: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s2)
+            val t1: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s2)
             l152_tmpse = t1
             if ((t1 != 0L)) {
                 ln = 128 // Lattice.HC:128
@@ -452,7 +452,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Lattice (Lattice.HC:135) */
-    fun f711_Lattice(t: Task) {
+    fun f716_Lattice(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -471,7 +471,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f296_DCDepthBufAlloc(t, l24_dc)
             ln = 141 // Lattice.HC:141
             tick(t)
-            P.f507_MenuPush(t, s3)
+            P.f512_MenuPush(t, s3)
             ln = 171 // Lattice.HC:171
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -489,14 +489,14 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             nat(t, n_DocClear, push1(t, 0L))
             ln = 177 // Lattice.HC:177
             tick(t)
-            f708_TurtleInit(t, g_tt)
+            f713_TurtleInit(t, g_tt)
             ln = 178 // Lattice.HC:178
             tick(t)
-            f710_SetMenu(t)
+            f715_SetMenu(t)
             ln = 180 // Lattice.HC:180
             st4((ld8(P.g_Fs) + 12L), 5304830L)
             ln = 181 // Lattice.HC:181
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065866L)
             ln = 182 // Lattice.HC:182
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -589,7 +589,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                                 st8((g_tt + 16L), bits((ld8((fp + 8)) - 48L).toDouble()))
                                                 ln = 226 // Lattice.HC:226
                                                 tick(t)
-                                                f710_SetMenu(t)
+                                                f715_SetMenu(t)
                                             }
                                             99L -> {
                                                 ln = 229 // Lattice.HC:229
@@ -626,10 +626,10 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                                 P.f286_DCFill(t, l24_dc, 255L)
                                                 ln = 244 // Lattice.HC:244
                                                 tick(t)
-                                                f708_TurtleInit(t, g_tt)
+                                                f713_TurtleInit(t, g_tt)
                                                 ln = 245 // Lattice.HC:245
                                                 tick(t)
-                                                f710_SetMenu(t)
+                                                f715_SetMenu(t)
                                             }
                                             27L, 28L -> {
                                                 ln = 249 // Lattice.HC:249
@@ -638,7 +638,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                             32L -> {
                                                 ln = 251 // Lattice.HC:251
                                                 tick(t)
-                                                f707_TurtleMove(t, l24_dc, g_tt, ld2u((g_tt + 56L)), ld2u((g_tt + 58L)))
+                                                f712_TurtleMove(t, l24_dc, g_tt, ld2u((g_tt + 56L)), ld2u((g_tt + 58L)))
                                             }
                                             else -> {
                                             }
@@ -674,7 +674,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f293_DCDel(t, l24_dc)
             ln = 263 // Lattice.HC:263
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -682,13 +682,13 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Graphics/Lattice.HC#1 (Lattice.HC:266) */
-    fun f712_init_C__Demo_Graphics_Lattice_HC_1(t: Task): Long {
+    fun f717_init_C__Demo_Graphics_Lattice_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 266 // Lattice.HC:266
             tick(t)
-            f711_Lattice(t)
+            f716_Lattice(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Lattice.HC#1", ln) }
@@ -697,16 +697,16 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Graphics_Lattice_HC_0(t)
-            704 -> { f704_TurtlePlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> { f705_TurtleMicroMove(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
-            706 -> { f706_TurtleEnd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), f((if (n > 4) st[base + 4] else 0L))); 0L }
-            707 -> { f707_TurtleMove(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            708 -> { f708_TurtleInit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> { f710_SetMenu(t); 0L }
-            711 -> { f711_Lattice(t); 0L }
-            712 -> f712_init_C__Demo_Graphics_Lattice_HC_1(t)
+            708 -> f708_init_C__Demo_Graphics_Lattice_HC_0(t)
+            709 -> { f709_TurtlePlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> { f710_TurtleMicroMove(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
+            711 -> { f711_TurtleEnd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), f((if (n > 4) st[base + 4] else 0L))); 0L }
+            712 -> { f712_TurtleMove(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            713 -> { f713_TurtleInit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> { f714_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> { f715_SetMenu(t); 0L }
+            716 -> { f716_Lattice(t); 0L }
+            717 -> f717_init_C__Demo_Graphics_Lattice_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -718,7 +718,7 @@ class N_Demo_Graphics_Lattice(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
         private val NAMES = arrayOf("\$init:C:/Demo/Graphics/Lattice.HC#0", "TurtlePlot", "TurtleMicroMove", "TurtleEnd", "TurtleMove", "TurtleInit", "DrawIt", "SetMenu", "Lattice", "\$init:C:/Demo/Graphics/Lattice.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Lattice.HC")
     }

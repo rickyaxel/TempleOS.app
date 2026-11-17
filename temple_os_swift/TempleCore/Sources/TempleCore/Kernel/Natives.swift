@@ -969,6 +969,11 @@ public final class Natives {
         }
         reg("GrFillCircle") { t, a, _ in try self.k.raster.fillCircle(t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4]) }
         reg("GrFillSemiCircle") { t, a, _ in try self.k.raster.fillSemiCircle(t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4], t.st[a + 5]) }
+        reg("GrLine3") { t, a, _ in try self.k.raster.line3(t, t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4], t.st[a + 5], t.st[a + 6], t.st[a + 7], t.st[a + 8]) }
+        reg("GrFillPoly3") { t, a, _ in try self.k.raster.fillPoly3(t.st[a], t.st[a + 1], t.st[a + 2]) }
+        reg("Gr3Mesh") { t, a, _ in try self.k.raster.mesh3(t, t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4]) }
+        reg("Sprite3") { t, a, _ in try self.k.raster.sprite3(t, t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4], t.st[a + 5]) }
+        reg("Mat4x4Scale") { t, a, _ in try self.k.raster.mat4x4Scale(t.st[a], d(t.st[a + 1])) }
         reg("GrLineFat3") { t, a, _ in try self.k.raster.lineFat3(t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4], t.st[a + 5], t.st[a + 6], t.st[a + 7], t.st[a + 8]) }
         reg("SpriteElemSize") { t, a, _ in try self.k.raster.spriteElemSize(t.st[a]) }
         reg("SpriteSize") { t, a, _ in try self.k.raster.spriteSize(t.st[a]) }

@@ -46,7 +46,7 @@ class N_Demo_RandDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC RandPts (RandDemo.HC:1) */
-    fun f703_RandPts(t: Task) {
+    fun f708_RandPts(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -88,7 +88,7 @@ class N_Demo_RandDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC RandDemo (RandDemo.HC:15) */
-    fun f704_RandDemo(t: Task) {
+    fun f709_RandDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -102,7 +102,7 @@ class N_Demo_RandDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             nat(t, n_Seed, push2(t, 0L, 0L))
             ln = 23 // RandDemo.HC:23
             tick(t)
-            f703_RandPts(t)
+            f708_RandPts(t)
             ln = 24 // RandDemo.HC:24
             tick(t)
             P.f286_DCFill(t, 0L, 255L)
@@ -115,7 +115,7 @@ class N_Demo_RandDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
             nat(t, n_Seed, push2(t, 1L, 0L))
             ln = 31 // RandDemo.HC:31
             tick(t)
-            f703_RandPts(t)
+            f708_RandPts(t)
             ln = 32 // RandDemo.HC:32
             tick(t)
             P.f286_DCFill(t, 0L, 255L)
@@ -199,13 +199,13 @@ class N_Demo_RandDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     }
 
     /** HolyC $init:C:/Demo/RandDemo.HC#0 (RandDemo.HC:64) */
-    fun f705_init_C__Demo_RandDemo_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_RandDemo_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 64 // RandDemo.HC:64
             tick(t)
-            f704_RandDemo(t)
+            f709_RandDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/RandDemo.HC#0", ln) }
@@ -214,9 +214,9 @@ class N_Demo_RandDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_RandPts(t); 0L }
-            704 -> { f704_RandDemo(t); 0L }
-            705 -> f705_init_C__Demo_RandDemo_HC_0(t)
+            708 -> { f708_RandPts(t); 0L }
+            709 -> { f709_RandDemo(t); 0L }
+            710 -> f710_init_C__Demo_RandDemo_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -228,7 +228,7 @@ class N_Demo_RandDemo(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModul
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("RandPts", "RandDemo", "\$init:C:/Demo/RandDemo.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/RandDemo.HC")
     }

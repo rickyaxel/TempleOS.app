@@ -16,6 +16,7 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
     @JvmField val n_Refresh = rt.vm.natives.find("Refresh")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** binary literal, 369 bytes */ @JvmField var b0: Long = 0L
     /** y: I64[128] */ @JvmField var g_y: Long = 0L
@@ -40,7 +41,7 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (Pick.HC:10) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -65,8 +66,7 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             l16_i = 0L
             loop0@ while ((l16_i < 128L)) {
                 ln = 19 // Pick.HC:19
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, ld8((g_x + (l16_i * 8L))), ld8((g_y + (l16_i * 8L))), 0L, b0, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, ld8((g_x + (l16_i * 8L))), ld8((g_y + (l16_i * 8L))), 0L, b0, 0L))
                 ln = 20 // Pick.HC:20
                 if ((ld8((p1_dc + 312L)) <= l24_best_dist)) {
                     ln = 23 // Pick.HC:23
@@ -90,7 +90,7 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 32 // Pick.HC:32
             tick(t)
             val vb0 = push1(t, ld8(g_cur_dist))
-            P.f369_GrPrint(t, p1_dc, 8L, 8L, s0, vb0, 1)
+            P.f370_GrPrint(t, p1_dc, 8L, 8L, s0, vb0, 1)
             t.sp = vb0
             t.depth--
             return
@@ -98,7 +98,7 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC Pick (Pick.HC:35) */
-    fun f704_Pick(t: Task) {
+    fun f709_Pick(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -136,7 +136,7 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             st8(g_cur_dist, 0L)
             st8(g_cur_apple, 0L)
             ln = 50 // Pick.HC:50
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 51 // Pick.HC:51
             st4((ld8(P.g_Fs) + 12L), 5436158L)
             ln = 53 // Pick.HC:53
@@ -205,13 +205,13 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Pick.HC#0 (Pick.HC:86) */
-    fun f705_init_C__Demo_Graphics_Pick_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_Pick_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 86 // Pick.HC:86
             tick(t)
-            f704_Pick(t)
+            f709_Pick(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Pick.HC#0", ln) }
@@ -220,9 +220,9 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_Pick(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_Pick_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_Pick(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_Pick_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -234,7 +234,7 @@ class N_Demo_Graphics_Pick(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "Pick", "\$init:C:/Demo/Graphics/Pick.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Pick.HC")
     }

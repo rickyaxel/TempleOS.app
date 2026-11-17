@@ -67,7 +67,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC DrawIt (CharDemo.HC:22)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -114,7 +114,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CharDemo.HC#0 (CharDemo.HC:39)
-    @discardableResult public final func f704_init_C__Demo_Games_CharDemo_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_CharDemo_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -126,7 +126,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CharDemo.HC#1 (CharDemo.HC:40)
-    @discardableResult public final func f705_init_C__Demo_Games_CharDemo_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Games_CharDemo_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -136,7 +136,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC AnimateEndCB (CharDemo.HC:44)
-    public final func f706_AnimateEndCB(_ t: HTask) throws {
+    public final func f711_AnimateEndCB(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -150,7 +150,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC AnimateTask (CharDemo.HC:50)
-    public final func f707_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -161,7 +161,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
             let t0: Int64 = try nat(t, n_MAlloc, try push2(t, 2048, 0))
             l16_font = t0
             ln = 54 // CharDemo.HC:54
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065858)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065863)
             ln = 55 // CharDemo.HC:55
             _ = try nat(t, n_MemCpy, try push3(t, l16_font, ld8((P.g_text &+ 40)), 2048))
             ln = 56 // CharDemo.HC:56
@@ -186,7 +186,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC ScrollTaskX (CharDemo.HC:65)
-    public final func f708_ScrollTaskX(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_ScrollTaskX(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -211,7 +211,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC ScrollTaskY (CharDemo.HC:75)
-    public final func f709_ScrollTaskY(_ t: HTask, _ a0: Int64) throws {
+    public final func f714_ScrollTaskY(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -236,7 +236,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC Init (CharDemo.HC:85)
-    public final func f710_Init(_ t: HTask) throws {
+    public final func f715_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -353,7 +353,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC CleanUp (CharDemo.HC:123)
-    public final func f711_CleanUp(_ t: HTask) throws {
+    public final func f716_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -369,7 +369,7 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC CharDemo (CharDemo.HC:129)
-    public final func f712_CharDemo(_ t: HTask) throws {
+    public final func f717_CharDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -392,16 +392,16 @@ public final class N_Demo_Games_CharDemo: NativeModule {
             _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
             ln = 139 // CharDemo.HC:139
             try tick(t)
-            _ = try P.f507_MenuPush(t, s0)
+            _ = try P.f512_MenuPush(t, s0)
             ln = 152 // CharDemo.HC:152
             try tick(t)
-            try f710_Init(t)
+            try f715_Init(t)
             ln = 153 // CharDemo.HC:153
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065859, 0, s1, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065864, 0, s1, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 154 // CharDemo.HC:154
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 155 // CharDemo.HC:155
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -420,16 +420,16 @@ public final class N_Demo_Games_CharDemo: NativeModule {
                                     switch t3 {
                                     case 75:
                                         ln = 161 // CharDemo.HC:161
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065860, (-1), s2, (-1), ld8(P.g_Fs), 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065865, (-1), s2, (-1), ld8(P.g_Fs), 0, 0))
                                     case 77:
                                         ln = 164 // CharDemo.HC:164
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065860, 1, s2, (-1), ld8(P.g_Fs), 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065865, 1, s2, (-1), ld8(P.g_Fs), 0, 0))
                                     case 72:
                                         ln = 167 // CharDemo.HC:167
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065861, (-1), s2, (-1), ld8(P.g_Fs), 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065866, (-1), s2, (-1), ld8(P.g_Fs), 0, 0))
                                     case 80:
                                         ln = 170 // CharDemo.HC:170
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065861, 1, s2, (-1), ld8(P.g_Fs), 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065866, 1, s2, (-1), ld8(P.g_Fs), 0, 0))
                                     default:
                                         break
                                     }
@@ -437,10 +437,10 @@ public final class N_Demo_Games_CharDemo: NativeModule {
                             case 10:
                                 ln = 175 // CharDemo.HC:175
                                 try tick(t)
-                                try f711_CleanUp(t)
+                                try f716_CleanUp(t)
                                 ln = 176 // CharDemo.HC:176
                                 try tick(t)
-                                try f710_Init(t)
+                                try f715_Init(t)
                             case 27, 28:
                                 ln = 180 // CharDemo.HC:180
                                 break skip_0
@@ -465,10 +465,10 @@ public final class N_Demo_Games_CharDemo: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 187 // CharDemo.HC:187
             try tick(t)
-            try f711_CleanUp(t)
+            try f716_CleanUp(t)
             ln = 188 // CharDemo.HC:188
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -476,13 +476,13 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CharDemo.HC#2 (CharDemo.HC:191)
-    @discardableResult public final func f713_init_C__Demo_Games_CharDemo_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Demo_Games_CharDemo_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 191 // CharDemo.HC:191
             try tick(t)
-            try f712_CharDemo(t)
+            try f717_CharDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/CharDemo.HC#2", ln) }
@@ -491,23 +491,23 @@ public final class N_Demo_Games_CharDemo: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: return try f704_init_C__Demo_Games_CharDemo_HC_0(t)
-        case 705: return try f705_init_C__Demo_Games_CharDemo_HC_1(t)
-        case 706: try f706_AnimateEndCB(t); return 0
-        case 707: try f707_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_ScrollTaskX(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: try f709_ScrollTaskY(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 710: try f710_Init(t); return 0
-        case 711: try f711_CleanUp(t); return 0
-        case 712: try f712_CharDemo(t); return 0
-        case 713: return try f713_init_C__Demo_Games_CharDemo_HC_2(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: return try f709_init_C__Demo_Games_CharDemo_HC_0(t)
+        case 710: return try f710_init_C__Demo_Games_CharDemo_HC_1(t)
+        case 711: try f711_AnimateEndCB(t); return 0
+        case 712: try f712_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_ScrollTaskX(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: try f714_ScrollTaskY(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 715: try f715_Init(t); return 0
+        case 716: try f716_CleanUp(t); return 0
+        case 717: try f717_CharDemo(t); return 0
+        case 718: return try f718_init_C__Demo_Games_CharDemo_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "$init:C:/Demo/Games/CharDemo.HC#0", 705: "$init:C:/Demo/Games/CharDemo.HC#1", 706: "AnimateEndCB", 707: "AnimateTask", 708: "ScrollTaskX", 709: "ScrollTaskY", 710: "Init", 711: "CleanUp", 712: "CharDemo", 713: "$init:C:/Demo/Games/CharDemo.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "$init:C:/Demo/Games/CharDemo.HC#0", 710: "$init:C:/Demo/Games/CharDemo.HC#1", 711: "AnimateEndCB", 712: "AnimateTask", 713: "ScrollTaskX", 714: "ScrollTaskY", 715: "Init", 716: "CleanUp", 717: "CharDemo", 718: "$init:C:/Demo/Games/CharDemo.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Games/CharDemo.HC"]
     public override var files: [String] { N_Demo_Games_CharDemo.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_CharDemo.DEFINED.contains(index) }

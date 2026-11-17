@@ -39,7 +39,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
     }
 
     /// HolyC StrFileRead (BgtStrs.HC:3)
-    @discardableResult public final func f703_StrFileRead(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f708_StrFileRead(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -59,7 +59,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
             p3_no_nums = (p3_no_nums & 0xFF)
             ln = 6 // BgtStrs.HC:6
             try tick(t)
-            let t0: Int64 = try P.f617_DocRead(t, p0_name, 40)
+            let t0: Int64 = try P.f622_DocRead(t, p0_name, 40)
             l32_doc = t0
             ln = 7 // BgtStrs.HC:7
             l40_doc_e = try ld8(l32_doc)
@@ -141,7 +141,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
             }
             ln = 40 // BgtStrs.HC:40
             try tick(t)
-            try P.f605_DocDel(t, l32_doc)
+            try P.f610_DocDel(t, l32_doc)
             ln = 41 // BgtStrs.HC:41
             if (p1__max_num != 0) {
                 try st8(p1__max_num, l56_max_num)
@@ -165,7 +165,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
     }
 
     /// HolyC StrFileArrDel (BgtStrs.HC:49)
-    public final func f704_StrFileArrDel(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_StrFileArrDel(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -189,7 +189,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
     }
 
     /// HolyC StrFileAdd (BgtStrs.HC:57)
-    @discardableResult public final func f705_StrFileAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f710_StrFileAdd(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -205,7 +205,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
             }
             ln = 62 // BgtStrs.HC:62
             try tick(t)
-            let t0: Int64 = try P.f586_HashFind(t, p0_st, p2_table, 1, 1)
+            let t0: Int64 = try P.f591_HashFind(t, p0_st, p2_table, 1, 1)
             l32_tmph = t0
             if (t0 == 0) {
                 ln = 63 // BgtStrs.HC:63
@@ -224,7 +224,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
                 try st8((l32_tmph &+ 24), t4)
                 ln = 67 // BgtStrs.HC:67
                 try tick(t)
-                try P.f587_HashAdd(t, l32_tmph, p2_table)
+                try P.f592_HashAdd(t, l32_tmph, p2_table)
             }
             ln = 69 // BgtStrs.HC:69
             if (p3_color != 16) {
@@ -241,7 +241,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
     }
 
     /// HolyC StrEntriesCompare (BgtStrs.HC:74)
-    @discardableResult public final func f706_StrEntriesCompare(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f711_StrEntriesCompare(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -257,7 +257,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
     }
 
     /// HolyC StrFileWrite (BgtStrs.HC:79)
-    public final func f707_StrFileWrite(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f712_StrFileWrite(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -277,7 +277,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
             l48_color = 0
             ln = 82 // BgtStrs.HC:82
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, p0_name, 0)
+            let t0: Int64 = try P.f606_DocNew(t, p0_name, 0)
             l56_doc = t0
             ln = 84 // BgtStrs.HC:84
             if (p1_table != 0) {
@@ -288,7 +288,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
                 loop0: while try (l24_i <= ld8((p1_table &+ 8))) {
                     ln = 87 // BgtStrs.HC:87
                     try tick(t)
-                    let t1: Int64 = try P.f588_LinkedLstCnt(t, ld8((ld8((p1_table &+ 24)) &+ (l24_i &* 8))))
+                    let t1: Int64 = try P.f593_LinkedLstCnt(t, ld8((ld8((p1_table &+ 24)) &+ (l24_i &* 8))))
                     l40_cnt = (l40_cnt &+ t1)
                     ln = 86 // BgtStrs.HC:86
                     l24_i = (l24_i &+ 1)
@@ -319,7 +319,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
                     try tick(t)
                 }
                 ln = 97 // BgtStrs.HC:97
-                _ = try nat(t, n_QSortI64, try push3(t, l72_a, l40_cnt, 9223090561878065858))
+                _ = try nat(t, n_QSortI64, try push3(t, l72_a, l40_cnt, 9223090561878065863))
                 ln = 98 // BgtStrs.HC:98
                 l24_i = 0
                 loop6: while (l24_i < l40_cnt) {
@@ -361,17 +361,17 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
             try st8(t4, (ld8(t4) | 8))
             ln = 112 // BgtStrs.HC:112
             try tick(t)
-            _ = try P.f618_DocWrite(t, l56_doc, 0)
+            _ = try P.f623_DocWrite(t, l56_doc, 0)
             ln = 113 // BgtStrs.HC:113
             try tick(t)
-            try P.f605_DocDel(t, l56_doc)
+            try P.f610_DocDel(t, l56_doc)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "StrFileWrite", ln) }
     }
 
     /// HolyC StrFileDel (BgtStrs.HC:116)
-    public final func f708_StrFileDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_StrFileDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -415,7 +415,7 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Budget/BgtStrs.HC#0 (BgtStrs.HC:1)
-    @discardableResult public final func f709_init_C__Apps_Budget_BgtStrs_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Apps_Budget_BgtStrs_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -427,19 +427,19 @@ public final class N_Apps_Budget_BgtStrs: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_StrFileRead(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 704: try f704_StrFileArrDel(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: return try f705_StrFileAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 706: return try f706_StrEntriesCompare(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 707: try f707_StrFileWrite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 708: try f708_StrFileDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: return try f709_init_C__Apps_Budget_BgtStrs_HC_0(t)
+        case 708: return try f708_StrFileRead(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 709: try f709_StrFileArrDel(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: return try f710_StrFileAdd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 711: return try f711_StrEntriesCompare(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 712: try f712_StrFileWrite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 713: try f713_StrFileDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: return try f714_init_C__Apps_Budget_BgtStrs_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709]
-    private static let NAMES: [Int: String] = [703: "StrFileRead", 704: "StrFileArrDel", 705: "StrFileAdd", 706: "StrEntriesCompare", 707: "StrFileWrite", 708: "StrFileDel", 709: "$init:C:/Apps/Budget/BgtStrs.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714]
+    private static let NAMES: [Int: String] = [708: "StrFileRead", 709: "StrFileArrDel", 710: "StrFileAdd", 711: "StrEntriesCompare", 712: "StrFileWrite", 713: "StrFileDel", 714: "$init:C:/Apps/Budget/BgtStrs.HC#0"]
     private static let FILES: [String] = ["C:/Apps/Budget/BgtStrs.HC"]
     public override var files: [String] { N_Apps_Budget_BgtStrs.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Budget_BgtStrs.DEFINED.contains(index) }

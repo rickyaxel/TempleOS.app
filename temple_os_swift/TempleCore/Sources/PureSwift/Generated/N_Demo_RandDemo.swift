@@ -57,7 +57,7 @@ public final class N_Demo_RandDemo: NativeModule {
     }
 
     /// HolyC RandPts (RandDemo.HC:1)
-    public final func f703_RandPts(_ t: HTask) throws {
+    public final func f708_RandPts(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -99,7 +99,7 @@ public final class N_Demo_RandDemo: NativeModule {
     }
 
     /// HolyC RandDemo (RandDemo.HC:15)
-    public final func f704_RandDemo(_ t: HTask) throws {
+    public final func f709_RandDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -113,7 +113,7 @@ public final class N_Demo_RandDemo: NativeModule {
             _ = try nat(t, n_Seed, try push2(t, 0, 0))
             ln = 23 // RandDemo.HC:23
             try tick(t)
-            try f703_RandPts(t)
+            try f708_RandPts(t)
             ln = 24 // RandDemo.HC:24
             try tick(t)
             try P.f286_DCFill(t, 0, 255)
@@ -126,7 +126,7 @@ public final class N_Demo_RandDemo: NativeModule {
             _ = try nat(t, n_Seed, try push2(t, 1, 0))
             ln = 31 // RandDemo.HC:31
             try tick(t)
-            try f703_RandPts(t)
+            try f708_RandPts(t)
             ln = 32 // RandDemo.HC:32
             try tick(t)
             try P.f286_DCFill(t, 0, 255)
@@ -210,13 +210,13 @@ public final class N_Demo_RandDemo: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/RandDemo.HC#0 (RandDemo.HC:64)
-    @discardableResult public final func f705_init_C__Demo_RandDemo_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_RandDemo_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 64 // RandDemo.HC:64
             try tick(t)
-            try f704_RandDemo(t)
+            try f709_RandDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/RandDemo.HC#0", ln) }
@@ -225,15 +225,15 @@ public final class N_Demo_RandDemo: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_RandPts(t); return 0
-        case 704: try f704_RandDemo(t); return 0
-        case 705: return try f705_init_C__Demo_RandDemo_HC_0(t)
+        case 708: try f708_RandPts(t); return 0
+        case 709: try f709_RandDemo(t); return 0
+        case 710: return try f710_init_C__Demo_RandDemo_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "RandPts", 704: "RandDemo", 705: "$init:C:/Demo/RandDemo.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "RandPts", 709: "RandDemo", 710: "$init:C:/Demo/RandDemo.HC#0"]
     private static let FILES: [String] = ["C:/Demo/RandDemo.HC"]
     public override var files: [String] { N_Demo_RandDemo.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_RandDemo.DEFINED.contains(index) }

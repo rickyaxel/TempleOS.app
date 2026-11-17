@@ -14,6 +14,7 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
     public let n_Rand: Int
     public let n_RandI16: Int
     public let n_Sin: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     /** t0: F64 */ public var g_t0: Int64 = 0
     /** binary literal, 1778 bytes */ public var b0: Int64 = 0
@@ -31,6 +32,7 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
         n_Rand = rt.vm.natives.find("Rand")!.index
         n_RandI16 = rt.vm.natives.find("RandI16")!.index
         n_Sin = rt.vm.natives.find("Sin")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         super.init(rt)
     }
@@ -52,13 +54,13 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/night.HC#0 (night.HC:14)
-    @discardableResult public final func f703_init_C__Apps_Psalmody_Examples_night_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Psalmody_Examples_night_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 14 // night.HC:14
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             try st8(g_t0, bits(t0))
             t.depth -= 1
             return 0
@@ -66,7 +68,7 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
     }
 
     /// HolyC DrawIt (night.HC:16)
-    public final func f704_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -78,14 +80,13 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
             var l40_dt: Double = 0.0
             ln = 19 // night.HC:19
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             l40_dt = try (t0 - ldf(g_t0))
             ln = 20 // night.HC:20
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, 330, 35, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, 330, 35, 0, b0, 0))
             ln = 21 // night.HC:21
             try tick(t)
-            let t1: Double = try P.f487_Beat(t)
+            let t1: Double = try P.f492_Beat(t)
             if try ((t1 - ldf(g_t0)) < 24.0) {
                 ln = 22 // night.HC:22
                 let t2: Double = d(try nat(t, n_Rand, push0(t)))
@@ -165,7 +166,7 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
     }
 
     /// HolyC Song (night.HC:54)
-    public final func f705_Song(_ t: HTask) throws {
+    public final func f710_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -175,12 +176,12 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
             ln = 57 // night.HC:57
             try st1((ld8(P.g_Fs) &+ 778), 7)
             ln = 58 // night.HC:58
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065856)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
             ln = 59 // night.HC:59
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 60 // night.HC:60
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 61 // night.HC:61
             try st8((P.g_music &+ 56), bits(2.0))
             ln = 62 // night.HC:62
@@ -193,22 +194,22 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
                 loop0: while (1 != 0) {
                     ln = 65 // night.HC:65
                     try tick(t)
-                    let t0: Double = try P.f487_Beat(t)
+                    let t0: Double = try P.f492_Beat(t)
                     try st8(g_t0, bits(t0))
                     ln = 66 // night.HC:66
                     _ = try nat(t, n_Print, try push1(t, s1))
                     ln = 67 // night.HC:67
                     try tick(t)
-                    try P.f494_Play(t, s3, s2)
+                    try P.f499_Play(t, s3, s2)
                     ln = 69 // night.HC:69
                     try tick(t)
-                    try P.f494_Play(t, s3, s2)
+                    try P.f499_Play(t, s3, s2)
                     ln = 71 // night.HC:71
                     try tick(t)
-                    try P.f494_Play(t, s5, s4)
+                    try P.f499_Play(t, s5, s4)
                     ln = 73 // night.HC:73
                     try tick(t)
-                    try P.f494_Play(t, s5, s4)
+                    try P.f499_Play(t, s5, s4)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -229,13 +230,13 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/night.HC#1 (night.HC:81)
-    @discardableResult public final func f706_init_C__Apps_Psalmody_Examples_night_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Apps_Psalmody_Examples_night_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 81 // night.HC:81
             try tick(t)
-            try f705_Song(t)
+            try f710_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/night.HC#1", ln) }
@@ -244,16 +245,16 @@ public final class N_Apps_Psalmody_Examples_night: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Psalmody_Examples_night_HC_0(t)
-        case 704: try f704_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: try f705_Song(t); return 0
-        case 706: return try f706_init_C__Apps_Psalmody_Examples_night_HC_1(t)
+        case 708: return try f708_init_C__Apps_Psalmody_Examples_night_HC_0(t)
+        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: try f710_Song(t); return 0
+        case 711: return try f711_init_C__Apps_Psalmody_Examples_night_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Psalmody/Examples/night.HC#0", 704: "DrawIt", 705: "Song", 706: "$init:C:/Apps/Psalmody/Examples/night.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Psalmody/Examples/night.HC#0", 709: "DrawIt", 710: "Song", 711: "$init:C:/Apps/Psalmody/Examples/night.HC#1"]
     private static let FILES: [String] = ["C:/Apps/Psalmody/Examples/night.HC"]
     public override var files: [String] { N_Apps_Psalmody_Examples_night.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Psalmody_Examples_night.DEFINED.contains(index) }

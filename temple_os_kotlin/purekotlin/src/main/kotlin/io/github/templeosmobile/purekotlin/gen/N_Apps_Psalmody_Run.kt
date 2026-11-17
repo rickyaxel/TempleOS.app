@@ -34,6 +34,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_LexExtStr = rt.vm.natives.find("LexExtStr")!!.index
     @JvmField val n_MAlloc = rt.vm.natives.find("MAlloc")!!.index
     @JvmField val n_MStrPrint = rt.vm.natives.find("MStrPrint")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_Msg = rt.vm.natives.find("Msg")!!.index
     @JvmField val n_PostMsg = rt.vm.natives.find("PostMsg")!!.index
@@ -52,6 +53,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
     @JvmField val n_Sprite = rt.vm.natives.find("Sprite")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_StrCmp = rt.vm.natives.find("StrCmp")!!.index
     @JvmField val n_StrLen = rt.vm.natives.find("StrLen")!!.index
@@ -357,7 +359,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#0 (Run.HC:1) */
-    fun f703_init_C__Apps_Psalmody_Run_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Psalmody_Run_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -371,7 +373,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#1 (Run.HC:3) */
-    fun f704_init_C__Apps_Psalmody_Run_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_Psalmody_Run_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -385,7 +387,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC JukeReward (JukeBox.HC:1) */
-    fun f705_JukeReward(t: Task, a0: Long): Long {
+    fun f710_JukeReward(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -394,7 +396,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l24_res: Long = 0L
             var l8_buf: Long = 0L
             ln = 2097157 // JukeBox.HC:5
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065810L, 0L, s1, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065815L, 0L, s1, -1L, ld8(P.g_Fs), 0L, 0L))
             l24_res = t0
             ln = 2097158 // JukeBox.HC:6
             tick(t)
@@ -403,7 +405,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st1((l24_res + 776L), 1L)
             ln = 2097161 // JukeBox.HC:9
             tick(t)
-            val t1: Long = P.f601_DocNew(t, 0L, l24_res)
+            val t1: Long = P.f606_DocNew(t, 0L, l24_res)
             l16_doc = t1
             ln = 2097162 // JukeBox.HC:10
             tick(t)
@@ -415,17 +417,17 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             l8_buf = t2
             ln = 2097165 // JukeBox.HC:13
             tick(t)
-            P.f659_TaskExe(t, l24_res, 0L, l8_buf, 132L)
+            P.f664_TaskExe(t, l24_res, 0L, l8_buf, 132L)
             ln = 2097166 // JukeBox.HC:14
             nat(t, n_Free, push1(t, l8_buf))
             ln = 2097167 // JukeBox.HC:15
             tick(t)
-            P.f660_TaskWait(t, l24_res, 0L)
+            P.f665_TaskWait(t, l24_res, 0L)
             ln = 2097169 // JukeBox.HC:17
             st1((l24_res + 777L), 0L)
             ln = 2097170 // JukeBox.HC:18
             tick(t)
-            val t3: Long = P.f663_DrvTextAttrGet(t, 58L)
+            val t3: Long = P.f668_DrvTextAttrGet(t, 58L)
             st1((l24_res + 779L), (112L + (t3 and 15L)))
             ln = 2097171 // JukeBox.HC:19
             st1((l24_res + 778L), 113L)
@@ -448,7 +450,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SingleSong (JukeBox.HC:28) */
-    fun f706_SingleSong(t: Task, a0: Long, a1: Long): Long {
+    fun f711_SingleSong(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -456,7 +458,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var p1_name: Long = a1
             var l16_task: Long = 0L
             ln = 2097182 // JukeBox.HC:30
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065810L, 0L, p1_name, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065815L, 0L, p1_name, -1L, ld8(P.g_Fs), 0L, 0L))
             l16_task = t0
             ln = 2097183 // JukeBox.HC:31
             tick(t)
@@ -465,7 +467,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st1((l16_task + 776L), 1L)
             ln = 2097185 // JukeBox.HC:33
             tick(t)
-            P.f659_TaskExe(t, l16_task, ld8(P.g_Fs), s4, 129L)
+            P.f664_TaskExe(t, l16_task, ld8(P.g_Fs), s4, 129L)
             ln = 2097186 // JukeBox.HC:34
             tick(t)
             P.f222_WinHorz(t, ld8((l16_task + 72L)), (ld8((l16_task + 72L)) + 50L), l16_task)
@@ -476,10 +478,10 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((l16_task + 12L), 193239L)
             ln = 2097189 // JukeBox.HC:37
             tick(t)
-            P.f659_TaskExe(t, l16_task, 0L, p0_msg, 132L)
+            P.f664_TaskExe(t, l16_task, 0L, p0_msg, 132L)
             ln = 2097190 // JukeBox.HC:38
             tick(t)
-            val t1: Long = P.f602_DocPut(t, l16_task)
+            val t1: Long = P.f607_DocPut(t, l16_task)
             st8((t1 + 280L), 100L)
             ln = 2097191 // JukeBox.HC:39
             t.depth--
@@ -490,7 +492,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC JBPutKey (JukeBox.HC:46) */
-    fun f707_JBPutKey(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f712_JBPutKey(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -535,11 +537,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         }
                         ln = 2097216 // JukeBox.HC:64
                         tick(t)
-                        val t1: Long = P.f617_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
+                        val t1: Long = P.f622_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
                         l72_doc2 = t1
                         ln = 2097217 // JukeBox.HC:65
                         tick(t)
-                        P.f619_DocGoToLine(t, l72_doc2, 1L)
+                        P.f624_DocGoToLine(t, l72_doc2, 1L)
                         ln = 2097218 // JukeBox.HC:66
                         l40_doc_e = ld8((l72_doc2 + 104L))
                         ln = 2097219 // JukeBox.HC:67
@@ -553,11 +555,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             st1((ld8((l40_doc_e + 16L)) + 2L), p2_ch)
                             ln = 2097221 // JukeBox.HC:69
                             tick(t)
-                            P.f618_DocWrite(t, l72_doc2, 0L)
+                            P.f623_DocWrite(t, l72_doc2, 0L)
                         }
                         ln = 2097223 // JukeBox.HC:71
                         tick(t)
-                        P.f605_DocDel(t, l72_doc2)
+                        P.f610_DocDel(t, l72_doc2)
                         ln = 2097224 // JukeBox.HC:72
                         t.msp = msp0
                         t.depth--
@@ -567,15 +569,15 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         if ((p2_ch == 114L)) {
                             ln = 2097226 // JukeBox.HC:74
                             tick(t)
-                            val t4: Long = P.f672_DocTreeFFind(t, ld8((l48_tmpde + 24L)), s5)
+                            val t4: Long = P.f677_DocTreeFFind(t, ld8((l48_tmpde + 24L)), s5)
                             if ((t4 == 0L)) {
                                 ln = 2097227 // JukeBox.HC:75
                                 tick(t)
-                                val t5: Long = P.f617_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
+                                val t5: Long = P.f622_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
                                 l72_doc2 = t5
                                 ln = 2097228 // JukeBox.HC:76
                                 tick(t)
-                                P.f619_DocGoToLine(t, l72_doc2, 2L)
+                                P.f624_DocGoToLine(t, l72_doc2, 2L)
                                 ln = 2097229 // JukeBox.HC:77
                                 tick(t)
                                 val vb1 = push0(t)
@@ -583,34 +585,34 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 t.sp = vb1
                                 ln = 2097237 // JukeBox.HC:85
                                 tick(t)
-                                P.f618_DocWrite(t, l72_doc2, 0L)
+                                P.f623_DocWrite(t, l72_doc2, 0L)
                                 ln = 2097238 // JukeBox.HC:86
                                 tick(t)
-                                P.f605_DocDel(t, l72_doc2)
+                                P.f610_DocDel(t, l72_doc2)
                             }
                             ln = 2097240 // JukeBox.HC:88
                             tick(t)
-                            val t6: Long = P.f672_DocTreeFFind(t, ld8((l48_tmpde + 24L)), s7)
+                            val t6: Long = P.f677_DocTreeFFind(t, ld8((l48_tmpde + 24L)), s7)
                             if ((t6 != 0L)) {
                                 ln = 2097241 // JukeBox.HC:89
                                 l56_i = 0L
                                 loop0@ while ((l56_i < 5L)) {
                                     ln = 2097243 // JukeBox.HC:91
                                     tick(t)
-                                    val t7: Long = P.f688_GodWordStr(t, 17L)
+                                    val t7: Long = P.f693_GodWordStr(t, 17L)
                                     tick(t)
-                                    val t8: Long = P.f688_GodWordStr(t, 17L)
+                                    val t8: Long = P.f693_GodWordStr(t, 17L)
                                     tick(t)
-                                    val t9: Long = P.f688_GodWordStr(t, 17L)
+                                    val t9: Long = P.f693_GodWordStr(t, 17L)
                                     tick(t)
-                                    val t10: Long = P.f688_GodWordStr(t, 17L)
+                                    val t10: Long = P.f693_GodWordStr(t, 17L)
                                     ln = 2097242 // JukeBox.HC:90
                                     val t11: Long = nat(t, n_MStrPrint, push(t, s8, t10, t9, t8, t7))
                                     l64_st = t11
                                     ln = 2097244 // JukeBox.HC:92
                                     tick(t)
                                     val vb2 = push1(t, l64_st)
-                                    P.f675_DocTreeFAppend(t, ld8((l48_tmpde + 24L)), s7, s9, vb2, 1)
+                                    P.f680_DocTreeFAppend(t, ld8((l48_tmpde + 24L)), s7, s9, vb2, 1)
                                     t.sp = vb2
                                     ln = 2097246 // JukeBox.HC:94
                                     nat(t, n_Free, push1(t, l64_st))
@@ -620,7 +622,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 }
                                 ln = 2097248 // JukeBox.HC:96
                                 tick(t)
-                                P.f668_In(t, s10)
+                                P.f673_In(t, s10)
                             }
                             ln = 2097250 // JukeBox.HC:98
                             t.msp = msp0
@@ -649,7 +651,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC JukeBox (JukeBox.HC:107) */
-    fun f708_JukeBox(t: Task, a0: Long, a1: Long) {
+    fun f713_JukeBox(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -669,7 +671,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             l16_i = 0L
             ln = 2097264 // JukeBox.HC:112
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l64_doc = t0
             ln = 2097266 // JukeBox.HC:114
             l88_task = 0L
@@ -703,7 +705,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 ln = 2097276 // JukeBox.HC:124
                 nat(t, n_Free, push1(t, p0_dirname))
                 ln = 2097277 // JukeBox.HC:125
-                st8((l64_doc + 600L), 9223090561878065859L)
+                st8((l64_doc + 600L), 9223090561878065864L)
                 ln = 2097278 // JukeBox.HC:126
                 tick(t)
                 val vb3 = push0(t)
@@ -730,10 +732,10 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         l32_st = t6
                         ln = 2097289 // JukeBox.HC:137
                         tick(t)
-                        P.f666_FileExtRem(t, l32_st)
+                        P.f671_FileExtRem(t, l32_st)
                         ln = 2097290 // JukeBox.HC:138
                         tick(t)
-                        val t7: Long = P.f617_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
+                        val t7: Long = P.f622_DocRead(t, ld8((l48_tmpde + 24L)), 0L)
                         l72_s = t7
                         ln = 2097291 // JukeBox.HC:139
                         l80_doc_e = ld8(l72_s)
@@ -812,7 +814,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                     st4((l72_s + 120L), 0L)
                                                     ln = 2097311 // JukeBox.HC:159
                                                     tick(t)
-                                                    P.f603_DocEntryDel(t, l72_s, l80_doc_e)
+                                                    P.f608_DocEntryDel(t, l72_s, l80_doc_e)
                                                     ln = 2097312 // JukeBox.HC:160
                                                     tick(t)
                                                     val vb10 = push0(t)
@@ -820,7 +822,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                     t.sp = vb10
                                                     ln = 2097313 // JukeBox.HC:161
                                                     tick(t)
-                                                    P.f618_DocWrite(t, l72_s, 0L)
+                                                    P.f623_DocWrite(t, l72_s, 0L)
                                                 }
                                             }
                                         }
@@ -837,7 +839,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         }
                         ln = 2097319 // JukeBox.HC:167
                         tick(t)
-                        P.f605_DocDel(t, l72_s)
+                        P.f610_DocDel(t, l72_s)
                         ln = 2097320 // JukeBox.HC:168
                         nat(t, n_Free, push1(t, l32_st))
                     }
@@ -856,12 +858,12 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     if ((p1__filename != 0L)) {
                         ln = 2097327 // JukeBox.HC:175
                         tick(t)
-                        val t16: Long = P.f621_PopUpMenu(t, l64_doc, 2L)
+                        val t16: Long = P.f626_PopUpMenu(t, l64_doc, 2L)
                         l48_tmpde = t16
                     } else {
                         ln = 2097329 // JukeBox.HC:177
                         tick(t)
-                        val t17: Long = P.f621_PopUpMenu(t, l64_doc, 0L)
+                        val t17: Long = P.f626_PopUpMenu(t, l64_doc, 0L)
                         l48_tmpde = t17
                     }
                     ln = 2097330 // JukeBox.HC:178
@@ -894,16 +896,16 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     st8((l48_tmpde + 32L), 0L)
                     ln = 2097340 // JukeBox.HC:188
                     tick(t)
-                    P.f666_FileExtRem(t, l40_st2)
+                    P.f671_FileExtRem(t, l40_st2)
                     ln = 2097341 // JukeBox.HC:189
                     val t20: Long = nat(t, n_MStrPrint, push2(t, s30, ld8((l48_tmpde + 24L))))
                     l32_st = t20
                     ln = 2097342 // JukeBox.HC:190
                     tick(t)
-                    P.f495_MusicSettingsRst(t)
+                    P.f500_MusicSettingsRst(t)
                     ln = 2097343 // JukeBox.HC:191
                     tick(t)
-                    val t21: Long = f706_SingleSong(t, l32_st, l40_st2)
+                    val t21: Long = f711_SingleSong(t, l32_st, l40_st2)
                     l88_task = t21
                     ln = 2097344 // JukeBox.HC:192
                     nat(t, n_Free, push1(t, l40_st2))
@@ -913,7 +915,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 }
                 ln = 2097347 // JukeBox.HC:195
                 tick(t)
-                P.f605_DocDel(t, l64_doc)
+                P.f610_DocDel(t, l64_doc)
                 ln = 2097348 // JukeBox.HC:196
                 nat(t, n_DirTreeDel, push1(t, l56_tmpde1))
                 t.hCount = h0c
@@ -934,7 +936,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SongPuppet (JukePuppet.HC:1) */
-    fun f709_SongPuppet(t: Task, a0: Long, a1: Long) {
+    fun f714_SongPuppet(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -960,7 +962,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 if (!(r2)) break@loop0
                 ln = 3145735 // JukePuppet.HC:7
                 tick(t)
-                val t0: Long = P.f586_HashFind(t, s31, ld8((p0_task + 976L)), 64L, 1L)
+                val t0: Long = P.f591_HashFind(t, s31, ld8((p0_task + 976L)), 64L, 1L)
                 l64_tmpf = t0
                 if ((t0 != 0L)) {
                     ln = 3145736 // JukePuppet.HC:8
@@ -998,7 +1000,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             val t8: Long = l24_i
                             l24_i = (t8 + 1L)
                             tick(t)
-                            val t9: Long = P.f664_TaskCaller(t, p0_task, t8, 0L)
+                            val t9: Long = P.f669_TaskCaller(t, p0_task, t8, 0L)
                             l48_rip = t9
                             r10 = (t9 != 0L)
                         }
@@ -1033,7 +1035,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC JukeSongPuppet (JukePuppet.HC:29) */
-    fun f710_JukeSongPuppet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f715_JukeSongPuppet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1046,23 +1048,23 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l48_i: Long = 0L
             ln = 3145763 // JukePuppet.HC:35
             tick(t)
-            val t0: Long = P.f665_FileExtDot(t, p3_name)
+            val t0: Long = P.f670_FileExtDot(t, p3_name)
             if ((t0 != 0L)) {
                 ln = 3145764 // JukePuppet.HC:36
                 tick(t)
-                P.f666_FileExtRem(t, p3_name)
+                P.f671_FileExtRem(t, p3_name)
             }
             ln = 3145765 // JukePuppet.HC:37
             tick(t)
-            P.f661_BirthWait(t, (p0_juke_task + 1128L))
+            P.f666_BirthWait(t, (p0_juke_task + 1128L))
             ln = 3145766 // JukePuppet.HC:38
             tick(t)
-            P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+            P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
             ln = 3145767 // JukePuppet.HC:39
             nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 0L, 1096L, 0L))
             ln = 3145768 // JukePuppet.HC:40
             tick(t)
-            P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+            P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
             ln = 3145769 // JukePuppet.HC:41
             l48_i = 0L
             loop0@ while ((l48_i < p2_song_num)) {
@@ -1070,7 +1072,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 0L, 77L, 0L))
                 ln = 3145771 // JukePuppet.HC:43
                 tick(t)
-                P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+                P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
                 ln = 3145769 // JukePuppet.HC:41
                 l48_i = (l48_i + 1L)
                 tick(t)
@@ -1079,7 +1081,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 32L, 0L, 0L))
             ln = 3145775 // JukePuppet.HC:47
             tick(t)
-            P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+            P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
             ln = 3145776 // JukePuppet.HC:48
             nat(t, n_Sleep, push1(t, 500L))
             ln = 3145778 // JukePuppet.HC:50
@@ -1104,12 +1106,12 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             if ((l32_found != 0L)) {
                 ln = 3145789 // JukePuppet.HC:61
                 tick(t)
-                P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+                P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
                 ln = 3145790 // JukePuppet.HC:62
                 nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 0L, 1096L, 0L))
                 ln = 3145791 // JukePuppet.HC:63
                 tick(t)
-                P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+                P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
                 ln = 3145792 // JukePuppet.HC:64
                 l48_i = 0L
                 loop4@ while ((l48_i < p2_song_num)) {
@@ -1117,14 +1119,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 0L, 77L, 0L))
                     ln = 3145794 // JukePuppet.HC:66
                     tick(t)
-                    P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+                    P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
                     ln = 3145792 // JukePuppet.HC:64
                     l48_i = (l48_i + 1L)
                     tick(t)
                 }
                 ln = 3145796 // JukePuppet.HC:68
                 tick(t)
-                f709_SongPuppet(t, l40_task, p1_passes)
+                f714_SongPuppet(t, l40_task, p1_passes)
             }
             ln = 3145798 // JukePuppet.HC:70
             nat(t, n_Kill, push3(t, l40_task, 1L, 0L))
@@ -1134,7 +1136,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC JukeSongsPuppet (JukePuppet.HC:73) */
-    fun f711_JukeSongsPuppet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f716_JukeSongsPuppet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1150,7 +1152,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 3145806 // JukePuppet.HC:78
             tick(t)
             val vb13 = push1(t, p0_dirname)
-            val t0: Long = P.f662_User(t, s32, vb13, 1)
+            val t0: Long = P.f667_User(t, s32, vb13, 1)
             t.sp = vb13
             l56_juke_task = t0
             ln = 3145808 // JukePuppet.HC:80
@@ -1186,7 +1188,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 nat(t, n_Print, push3(t, s34, bits((t3 - l64_t0)), t4))
                 ln = 3145818 // JukePuppet.HC:90
                 tick(t)
-                f710_JukeSongPuppet(t, l56_juke_task, p1_passes, l32_i, (l40_tmpde + 50L))
+                f715_JukeSongPuppet(t, l56_juke_task, p1_passes, l32_i, (l40_tmpde + 50L))
                 ln = 3145819 // JukePuppet.HC:91
                 l40_tmpde = ld8(l40_tmpde)
                 ln = 3145816 // JukePuppet.HC:88
@@ -1203,7 +1205,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#2 (Run.HC:61) */
-    fun f712_init_C__Apps_Psalmody_Run_HC_2(t: Task): Long {
+    fun f717_init_C__Apps_Psalmody_Run_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1213,7 +1215,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#3 (Run.HC:63) */
-    fun f713_init_C__Apps_Psalmody_Run_HC_3(t: Task): Long {
+    fun f718_init_C__Apps_Psalmody_Run_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1223,7 +1225,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawTempoCtrl (PsalmodyCtrls.HC:10) */
-    fun f714_DrawTempoCtrl(t: Task, a0: Long, a1: Long) {
+    fun f719_DrawTempoCtrl(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1244,21 +1246,21 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((p0_dc + 160L), 15L)
             ln = 4194325 // PsalmodyCtrls.HC:21
             tick(t)
-            P.f396_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 15L), (ld8((p1_c + 56L)) + 15L), (ld8((p1_c + 40L)) + 15L), (((ld8((p1_c + 56L)) + 15L) + 80L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 15L), (ld8((p1_c + 56L)) + 15L), (ld8((p1_c + 40L)) + 15L), (((ld8((p1_c + 56L)) + 15L) + 80L) - 1L), 1L, 0L)
             ln = 4194327 // PsalmodyCtrls.HC:23
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 30L) + 1L), (ld8((p1_c + 56L)) + 15L), ((ld8((p1_c + 40L)) + 30L) + 1L), (((ld8((p1_c + 56L)) + 15L) + 80L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 30L) + 1L), (ld8((p1_c + 56L)) + 15L), ((ld8((p1_c + 40L)) + 30L) + 1L), (((ld8((p1_c + 56L)) + 15L) + 80L) - 1L), 1L, 0L)
             ln = 4194330 // PsalmodyCtrls.HC:26
             st4((p0_dc + 160L), 10L)
             ln = 4194331 // PsalmodyCtrls.HC:27
             tick(t)
             val vb14 = push1(t, divs((ld8(l16_s) * 10L), 80L))
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 15L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 15L) + 80L) + 3L), s35, vb14, 1)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 15L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 15L) + 80L) + 3L), s35, vb14, 1)
             t.sp = vb14
             ln = 4194333 // PsalmodyCtrls.HC:29
             tick(t)
             val vb15 = push1(t, divs((ld8((l16_s + 8L)) * 10L), 80L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 30L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 15L) + 80L) + 3L), s35, vb15, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 30L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 15L) + 80L) + 3L), s35, vb15, 1)
             t.sp = vb15
             ln = 4194336 // PsalmodyCtrls.HC:32
             nat(t, n_GrRect, push(t, p0_dc, ((ld8((p1_c + 40L)) + 15L) - 3L), (((((ld8((p1_c + 56L)) + 15L) + 80L) - 1L) - ld8(l16_s)) - 2L), 7L, 5L))
@@ -1275,12 +1277,12 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 4194347 // PsalmodyCtrls.HC:43
             tick(t)
             val vb16 = push0(t)
-            P.f370_GrVPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 2L) + 2L), ((ld8((p1_c + 56L)) + 15L) + 2L), s36, vb16, 0)
+            P.f371_GrVPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 2L) + 2L), ((ld8((p1_c + 56L)) + 15L) + 2L), s36, vb16, 0)
             t.sp = vb16
             ln = 4194348 // PsalmodyCtrls.HC:44
             tick(t)
             val vb17 = push0(t)
-            P.f370_GrVPrint(t, p0_dc, (((ld8((p1_c + 48L)) - 2L) - 2L) - 8L), ((ld8((p1_c + 56L)) + 15L) + 2L), s37, vb17, 0)
+            P.f371_GrVPrint(t, p0_dc, (((ld8((p1_c + 48L)) - 2L) - 2L) - 8L), ((ld8((p1_c + 56L)) + 15L) + 2L), s37, vb17, 0)
             t.sp = vb17
             t.depth--
             return
@@ -1288,7 +1290,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC UpdateDerivedTempoCtrl (PsalmodyCtrls.HC:48) */
-    fun f715_UpdateDerivedTempoCtrl(t: Task, a0: Long) {
+    fun f720_UpdateDerivedTempoCtrl(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1314,7 +1316,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC LeftClickTempo (PsalmodyCtrls.HC:57) */
-    fun f716_LeftClickTempo(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f721_LeftClickTempo(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1346,7 +1348,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC TempoNew (PsalmodyCtrls.HC:68) */
-    fun f717_TempoNew(t: Task): Long {
+    fun f722_TempoNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1363,11 +1365,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 4194378 // PsalmodyCtrls.HC:74
             st8((l0_c + 104L), g_tempo_state)
             ln = 4194379 // PsalmodyCtrls.HC:75
-            st8((l0_c + 120L), 9223090561878065866L)
+            st8((l0_c + 120L), 9223090561878065871L)
             ln = 4194380 // PsalmodyCtrls.HC:76
-            st8((l0_c + 136L), 9223090561878065868L)
+            st8((l0_c + 136L), 9223090561878065873L)
             ln = 4194381 // PsalmodyCtrls.HC:77
-            st8((l0_c + 112L), 9223090561878065867L)
+            st8((l0_c + 112L), 9223090561878065872L)
             ln = 4194382 // PsalmodyCtrls.HC:78
             st8((l0_c + 40L), 396L)
             ln = 4194383 // PsalmodyCtrls.HC:79
@@ -1387,7 +1389,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC TempoDel (PsalmodyCtrls.HC:85) */
-    fun f718_TempoDel(t: Task, a0: Long) {
+    fun f723_TempoDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1403,7 +1405,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#4 (Run.HC:53) */
-    fun f719_init_C__Apps_Psalmody_Run_HC_4(t: Task): Long {
+    fun f724_init_C__Apps_Psalmody_Run_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1413,7 +1415,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#5 (Run.HC:55) */
-    fun f720_init_C__Apps_Psalmody_Run_HC_5(t: Task): Long {
+    fun f725_init_C__Apps_Psalmody_Run_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1436,7 +1438,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#6 (Run.HC:58) */
-    fun f721_init_C__Apps_Psalmody_Run_HC_6(t: Task): Long {
+    fun f726_init_C__Apps_Psalmody_Run_HC_6(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1446,7 +1448,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmBlink (PsalmodyDraw.HC:61) */
-    fun f722_PsmBlink(t: Task): Long {
+    fun f727_PsmBlink(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1468,7 +1470,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmHasWords (PsalmodyDraw.HC:69) */
-    fun f723_PsmHasWords(t: Task, a0: Long): Long {
+    fun f728_PsmHasWords(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1494,7 +1496,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmIsDotted (PsalmodyDraw.HC:77) */
-    fun f724_PsmIsDotted(t: Task, a0: Long): Long {
+    fun f729_PsmIsDotted(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1520,7 +1522,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmMarkSel (PsalmodyDraw.HC:86) */
-    fun f725_PsmMarkSel(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f730_PsmMarkSel(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1566,7 +1568,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmSetWidth (PsalmodyDraw.HC:99) */
-    fun f726_PsmSetWidth(t: Task, a0: Long) {
+    fun f731_PsmSetWidth(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1580,7 +1582,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st8((p0_tmpn + 88L), 9L)
                 ln = 5242985 // PsalmodyDraw.HC:105
                 tick(t)
-                val t0: Long = f724_PsmIsDotted(t, ld8((p0_tmpn + 80L)))
+                val t0: Long = f729_PsmIsDotted(t, ld8((p0_tmpn + 80L)))
                 if ((t0 != 0L)) {
                     ln = 5242986 // PsalmodyDraw.HC:106
                     val t1: Long = (p0_tmpn + 88L)
@@ -1605,7 +1607,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmSetOctave (PsalmodyDraw.HC:112) */
-    fun f727_PsmSetOctave(t: Task, a0: Long) {
+    fun f732_PsmSetOctave(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1621,7 +1623,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 nat(t, n_StrPrint, push3(t, (fp + 16), s38, l8_i))
                 ln = 5242999 // PsalmodyDraw.HC:119
                 tick(t)
-                val t0: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), (fp + 16))
+                val t0: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), (fp + 16))
                 l160_tmpse = t0
                 if ((t0 != 0L)) {
                     ln = 5243000 // PsalmodyDraw.HC:120
@@ -1644,7 +1646,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawNote (PsalmodyDraw.HC:128) */
-    fun f728_DrawNote(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f733_DrawNote(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1655,21 +1657,18 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 5243010 // PsalmodyDraw.HC:130
             if (((0L <= p3_duration) && (p3_duration <= 12L))) {
                 ln = 5243011 // PsalmodyDraw.HC:131
-                tick(t)
-                P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0L, ld8((g_psm_duration_imgs + (p3_duration * 8L))), 0L)
+                nat(t, n_Sprite3, push(t, p0_dc, p1_x, p2_y, 0L, ld8((g_psm_duration_imgs + (p3_duration * 8L))), 0L))
                 ln = 5243012 // PsalmodyDraw.HC:132
                 if ((ld1u((g_psm_triplet_durations + p3_duration)) != 0L)) {
                     ln = 5243013 // PsalmodyDraw.HC:133
-                    tick(t)
-                    P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0L, b12, 0L)
+                    nat(t, n_Sprite3, push(t, p0_dc, p1_x, p2_y, 0L, b12, 0L))
                 }
                 ln = 5243014 // PsalmodyDraw.HC:134
                 tick(t)
-                val t0: Long = f724_PsmIsDotted(t, p3_duration)
+                val t0: Long = f729_PsmIsDotted(t, p3_duration)
                 if ((t0 != 0L)) {
                     ln = 5243015 // PsalmodyDraw.HC:135
-                    tick(t)
-                    P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0L, b13, 0L)
+                    nat(t, n_Sprite3, push(t, p0_dc, p1_x, p2_y, 0L, b13, 0L))
                 }
             }
             t.depth--
@@ -1678,7 +1677,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawTimeSignature (PsalmodyDraw.HC:139) */
-    fun f729_DrawTimeSignature(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
+    fun f734_DrawTimeSignature(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1690,12 +1689,12 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 5243021 // PsalmodyDraw.HC:141
             tick(t)
             val vb18 = push1(t, p3_top)
-            P.f369_GrPrint(t, p0_dc, p1_x, p2_y, s35, vb18, 1)
+            P.f370_GrPrint(t, p0_dc, p1_x, p2_y, s35, vb18, 1)
             t.sp = vb18
             ln = 5243022 // PsalmodyDraw.HC:142
             tick(t)
             val vb19 = push1(t, p4_bottom)
-            P.f369_GrPrint(t, p0_dc, p1_x, (p2_y + 8L), s35, vb19, 1)
+            P.f370_GrPrint(t, p0_dc, p1_x, (p2_y + 8L), s35, vb19, 1)
             t.sp = vb19
             t.depth--
             return
@@ -1703,7 +1702,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmRecalcNoteXY (PsalmodyDraw.HC:145) */
-    fun f730_PsmRecalcNoteXY(t: Task) {
+    fun f735_PsmRecalcNoteXY(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1752,11 +1751,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             }
                             ln = 5243043 // PsalmodyDraw.HC:163
                             tick(t)
-                            val t2: Long = P.f493_Ona2Octave(t, l32_ona)
+                            val t2: Long = P.f498_Ona2Octave(t, l32_ona)
                             l48_octave = t2
                             ln = 5243044 // PsalmodyDraw.HC:164
                             tick(t)
-                            val t3: Long = P.f492_Ona2Note(t, l32_ona)
+                            val t3: Long = P.f497_Ona2Note(t, l32_ona)
                             l40_note = t3
                             ln = 5243045 // PsalmodyDraw.HC:165
                             tick(t)
@@ -1801,7 +1800,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (PsalmodyDraw.HC:186) */
-    fun f731_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f736_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1826,7 +1825,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l24_i < 6L)) {
                 ln = 5243075 // PsalmodyDraw.HC:195
                 tick(t)
-                P.f396_GrLine(t, p1_dc, 0L, (l24_i * 8L), l48_w, (l24_i * 8L), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, 0L, (l24_i * 8L), l48_w, (l24_i * 8L), 1L, 0L)
                 ln = 5243074 // PsalmodyDraw.HC:194
                 l24_i = (l24_i + 1L)
                 tick(t)
@@ -1836,14 +1835,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop2@ while ((l24_i < 12L)) {
                 ln = 5243077 // PsalmodyDraw.HC:197
                 tick(t)
-                P.f396_GrLine(t, p1_dc, 0L, (l24_i * 8L), l48_w, (l24_i * 8L), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, 0L, (l24_i * 8L), l48_w, (l24_i * 8L), 1L, 0L)
                 ln = 5243076 // PsalmodyDraw.HC:196
                 l24_i = (l24_i + 1L)
                 tick(t)
             }
             ln = 5243079 // PsalmodyDraw.HC:199
             tick(t)
-            f730_PsmRecalcNoteXY(t)
+            f735_PsmRecalcNoteXY(t)
             ln = 5243080 // PsalmodyDraw.HC:200
             if ((ld8((ld8((g_psm + 288L)) + 16L)) < 64L)) {
                 ln = 5243081 // PsalmodyDraw.HC:201
@@ -1851,7 +1850,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st8(t0, (ld8(t0) - 128L))
                 ln = 5243082 // PsalmodyDraw.HC:202
                 tick(t)
-                f730_PsmRecalcNoteXY(t)
+                f735_PsmRecalcNoteXY(t)
             }
             ln = 5243084 // PsalmodyDraw.HC:204
             if ((ld8((ld8((g_psm + 288L)) + 16L)) >= 576L)) {
@@ -1860,7 +1859,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st8(t1, (ld8(t1) + 128L))
                 ln = 5243086 // PsalmodyDraw.HC:206
                 tick(t)
-                f730_PsmRecalcNoteXY(t)
+                f735_PsmRecalcNoteXY(t)
             }
             ln = 5243089 // PsalmodyDraw.HC:209
             l16_tmpn = ld8(g_psm)
@@ -1876,7 +1875,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     st4((p1_dc + 160L), 0L)
                     ln = 5243095 // PsalmodyDraw.HC:215
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, (l32_x - 9L), 8L, (l32_x - 9L), 88L, 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, (l32_x - 9L), 8L, (l32_x - 9L), 88L, 1L, 0L)
                     ln = 5243096 // PsalmodyDraw.HC:216
                     l64_measure_left = l56_measure_len
                 }
@@ -1886,7 +1885,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     var r3: Boolean = (l16_tmpn == ld8((g_psm + 288L)))
                     if (r3) {
                         tick(t)
-                        val t2: Long = f722_PsmBlink(t)
+                        val t2: Long = f727_PsmBlink(t)
                         r3 = (t2 != 0L)
                     }
                     if (r3) {
@@ -1898,7 +1897,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     }
                     ln = 5243103 // PsalmodyDraw.HC:223
                     tick(t)
-                    f729_DrawTimeSignature(t, p1_dc, l32_x, 40L, ld8((l16_tmpn + 64L)), ld8((l16_tmpn + 72L)))
+                    f734_DrawTimeSignature(t, p1_dc, l32_x, 40L, ld8((l16_tmpn + 64L)), ld8((l16_tmpn + 72L)))
                     ln = 5243104 // PsalmodyDraw.HC:224
                     l56_measure_len = ((ld8((l16_tmpn + 64L)).toDouble() * 4.0) / ld8((l16_tmpn + 72L)).toDouble())
                     ln = 5243105 // PsalmodyDraw.HC:225
@@ -1908,7 +1907,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     var r5: Boolean = (l16_tmpn == ld8((g_psm + 288L)))
                     if (r5) {
                         tick(t)
-                        val t4: Long = f722_PsmBlink(t)
+                        val t4: Long = f727_PsmBlink(t)
                         r5 = (t4 != 0L)
                     }
                     if (r5) {
@@ -1917,7 +1916,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         ln = 5243109 // PsalmodyDraw.HC:229
                         tick(t)
                         val vb20 = push1(t, ld8((l16_tmpn + 32L)))
-                        P.f369_GrPrint(t, p1_dc, (l32_x + 8L), l40_y, s39, vb20, 1)
+                        P.f370_GrPrint(t, p1_dc, (l32_x + 8L), l40_y, s39, vb20, 1)
                         t.sp = vb20
                     } else {
                         ln = 5243110 // PsalmodyDraw.HC:230
@@ -1935,7 +1934,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             }
                             ln = 5243117 // PsalmodyDraw.HC:237
                             tick(t)
-                            val t6: Long = f723_PsmHasWords(t, ld8((l16_tmpn + 32L)))
+                            val t6: Long = f728_PsmHasWords(t, ld8((l16_tmpn + 32L)))
                             if ((t6 != 0L)) {
                                 ln = 5243118 // PsalmodyDraw.HC:238
                                 st4((p1_dc + 160L), 2L)
@@ -1944,10 +1943,10 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     }
                     ln = 5243120 // PsalmodyDraw.HC:240
                     tick(t)
-                    f728_DrawNote(t, p1_dc, l32_x, l40_y, ld8((l16_tmpn + 80L)))
+                    f733_DrawNote(t, p1_dc, l32_x, l40_y, ld8((l16_tmpn + 80L)))
                     ln = 5243121 // PsalmodyDraw.HC:241
                     tick(t)
-                    val t7: Long = f724_PsmIsDotted(t, ld8((l16_tmpn + 80L)))
+                    val t7: Long = f729_PsmIsDotted(t, ld8((l16_tmpn + 80L)))
                     if ((t7 != 0L)) {
                         ln = 5243122 // PsalmodyDraw.HC:242
                         l32_x = (l32_x + divs(9L, 2L))
@@ -1956,15 +1955,13 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     val t8: Long = nat(t, n_Bt, push2(t, (l16_tmpn + 48L), 1L))
                     if ((t8 != 0L)) {
                         ln = 5243124 // PsalmodyDraw.HC:244
-                        tick(t)
-                        P.f440_Sprite3(t, p1_dc, l32_x, l40_y, 0L, b14, 0L)
+                        nat(t, n_Sprite3, push(t, p1_dc, l32_x, l40_y, 0L, b14, 0L))
                     } else {
                         ln = 5243125 // PsalmodyDraw.HC:245
                         val t9: Long = nat(t, n_Bt, push2(t, (l16_tmpn + 48L), 2L))
                         if ((t9 != 0L)) {
                             ln = 5243126 // PsalmodyDraw.HC:246
-                            tick(t)
-                            P.f440_Sprite3(t, p1_dc, l32_x, l40_y, 0L, b15, 0L)
+                            nat(t, n_Sprite3, push(t, p1_dc, l32_x, l40_y, 0L, b15, 0L))
                         }
                     }
                     ln = 5243127 // PsalmodyDraw.HC:247
@@ -1978,7 +1975,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var r11: Boolean = (ld8((g_psm + 288L)) == g_psm)
             if (r11) {
                 tick(t)
-                val t10: Long = f722_PsmBlink(t)
+                val t10: Long = f727_PsmBlink(t)
                 r11 = (t10 != 0L)
             }
             if (r11) {
@@ -1989,15 +1986,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st4((p1_dc + 160L), 0L)
             }
             ln = 5243136 // PsalmodyDraw.HC:256
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, ld8((g_psm + 16L)), 50L, 0L, b16, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, ld8((g_psm + 16L)), 50L, 0L, b16, 0L))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawIt", ln) }
     }
 
     /** HolyC PsmSetPickNoteBoxX (PsalmodyDraw.HC:261) */
-    fun f732_PsmSetPickNoteBoxX(t: Task, a0: Long, a1: Long) {
+    fun f737_PsmSetPickNoteBoxX(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2011,7 +2007,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l16_i < p0_duration)) {
                 ln = 5243146 // PsalmodyDraw.HC:266
                 tick(t)
-                val t0: Long = f724_PsmIsDotted(t, l16_i)
+                val t0: Long = f729_PsmIsDotted(t, l16_i)
                 if ((t0 != 0L)) {
                     ln = 5243147 // PsalmodyDraw.HC:267
                     val t1: Long = p1_x
@@ -2030,7 +2026,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmGetPickNoteBoxDuration (PsalmodyDraw.HC:272) */
-    fun f733_PsmGetPickNoteBoxDuration(t: Task, a0: Long, a1: Long): Long {
+    fun f738_PsmGetPickNoteBoxDuration(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2046,10 +2042,10 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 loop0@ while ((l16_i < 12L)) {
                     ln = 5243157 // PsalmodyDraw.HC:277
                     tick(t)
-                    f732_PsmSetPickNoteBoxX(t, l16_i, (fp + 24))
+                    f737_PsmSetPickNoteBoxX(t, l16_i, (fp + 24))
                     ln = 5243158 // PsalmodyDraw.HC:278
                     tick(t)
-                    f732_PsmSetPickNoteBoxX(t, (l16_i + 1L), (fp + 32))
+                    f737_PsmSetPickNoteBoxX(t, (l16_i + 1L), (fp + 32))
                     ln = 5243159 // PsalmodyDraw.HC:279
                     var r0: Boolean = false
                     val t1: Long = ld8((fp + 24))
@@ -2082,7 +2078,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawPickNoteBox (PsalmodyDraw.HC:286) */
-    fun f734_DrawPickNoteBox(t: Task) {
+    fun f739_DrawPickNoteBox(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2094,10 +2090,10 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l0_i < 12L)) {
                 ln = 5243170 // PsalmodyDraw.HC:290
                 tick(t)
-                f732_PsmSetPickNoteBoxX(t, l0_i, (fp + 8))
+                f737_PsmSetPickNoteBoxX(t, l0_i, (fp + 8))
                 ln = 5243171 // PsalmodyDraw.HC:291
                 tick(t)
-                val t0: Long = f724_PsmIsDotted(t, l0_i)
+                val t0: Long = f729_PsmIsDotted(t, l0_i)
                 if ((t0 != 0L)) {
                     ln = 5243172 // PsalmodyDraw.HC:292
                     st4((ld8((g_psm + 296L)) + 160L), 4L)
@@ -2113,7 +2109,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 }
                 ln = 5243177 // PsalmodyDraw.HC:297
                 tick(t)
-                f728_DrawNote(t, ld8((g_psm + 296L)), ld8((fp + 8)), 118L, l0_i)
+                f733_DrawNote(t, ld8((g_psm + 296L)), ld8((fp + 8)), 118L, l0_i)
                 ln = 5243169 // PsalmodyDraw.HC:289
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -2125,7 +2121,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawPickTools (PsalmodyDraw.HC:304) */
-    fun f735_DrawPickTools(t: Task) {
+    fun f740_DrawPickTools(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2139,7 +2135,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 5243190 // PsalmodyDraw.HC:310
             tick(t)
-            P.f425_GrBorder(t, ld8((g_psm + 296L)), 450L, 104L, 460L, 114L, 1L, 0L)
+            P.f428_GrBorder(t, ld8((g_psm + 296L)), 450L, 104L, 460L, 114L, 1L, 0L)
             ln = 5243192 // PsalmodyDraw.HC:312
             if ((ld8((g_psm + 280L)) == 0L)) {
                 ln = 5243193 // PsalmodyDraw.HC:313
@@ -2158,7 +2154,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmGetPickToolBox (PsalmodyDraw.HC:320) */
-    fun f736_PsmGetPickToolBox(t: Task, a0: Long, a1: Long): Long {
+    fun f741_PsmGetPickToolBox(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2168,7 +2164,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             if ((((450L <= p0_xx) && (p0_xx < 477L)) && ((104L <= p1_yy) && (p1_yy < 119L)))) {
                 ln = 5243203 // PsalmodyDraw.HC:323
                 tick(t)
-                f725_PsmMarkSel(t, 0L, 0L, 0L)
+                f730_PsmMarkSel(t, 0L, 0L, 0L)
                 ln = 5243204 // PsalmodyDraw.HC:324
                 if ((p0_xx < 463L)) {
                     ln = 5243205 // PsalmodyDraw.HC:325
@@ -2191,7 +2187,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#7 (Run.HC:334) */
-    fun f737_init_C__Apps_Psalmody_Run_HC_7(t: Task): Long {
+    fun f742_init_C__Apps_Psalmody_Run_HC_7(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2201,7 +2197,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmGetPickMeterBox (PsalmodyDraw.HC:340) */
-    fun f738_PsmGetPickMeterBox(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f743_PsmGetPickMeterBox(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2232,7 +2228,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawPickMeterBox (PsalmodyDraw.HC:353) */
-    fun f739_DrawPickMeterBox(t: Task) {
+    fun f744_DrawPickMeterBox(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2244,7 +2240,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l0_i < 7L)) {
                 ln = 5243238 // PsalmodyDraw.HC:358
                 tick(t)
-                f729_DrawTimeSignature(t, ld8((g_psm + 296L)), (485L + (l0_i * 12L)), 104L, ld8((g_meter_tops + (l0_i * 8L))), ld8((g_meter_bottoms + (l0_i * 8L))))
+                f734_DrawTimeSignature(t, ld8((g_psm + 296L)), (485L + (l0_i * 12L)), 104L, ld8((g_meter_tops + (l0_i * 8L))), ld8((g_meter_bottoms + (l0_i * 8L))))
                 ln = 5243237 // PsalmodyDraw.HC:357
                 l0_i = (l0_i + 1L)
                 tick(t)
@@ -2255,7 +2251,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawDC2 (PsalmodyDraw.HC:362) */
-    fun f740_DrawDC2(t: Task) {
+    fun f745_DrawDC2(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2264,20 +2260,20 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f286_DCFill(t, 0L, 255L)
             ln = 5243245 // PsalmodyDraw.HC:365
             tick(t)
-            f734_DrawPickNoteBox(t)
+            f739_DrawPickNoteBox(t)
             ln = 5243246 // PsalmodyDraw.HC:366
             tick(t)
-            f739_DrawPickMeterBox(t)
+            f744_DrawPickMeterBox(t)
             ln = 5243247 // PsalmodyDraw.HC:367
             tick(t)
-            f735_DrawPickTools(t)
+            f740_DrawPickTools(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawDC2", ln) }
     }
 
     /** HolyC PsmMenu (PsalmodyDraw.HC:377) */
-    fun f741_PsmMenu(t: Task, a0: Long) {
+    fun f746_PsmMenu(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2292,7 +2288,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             nat(t, n_PutChars, push1(t, 43118103050L))
             ln = 5243264 // PsalmodyDraw.HC:384
             tick(t)
-            f740_DrawDC2(t)
+            f745_DrawDC2(t)
             ln = 5243266 // PsalmodyDraw.HC:386
             nat(t, n_Print, push1(t, s41))
             ln = 5243270 // PsalmodyDraw.HC:390
@@ -2327,7 +2323,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             nat(t, n_Print, push1(t, s47))
             ln = 5243287 // PsalmodyDraw.HC:407
             tick(t)
-            f727_PsmSetOctave(t, p0_psm_octave)
+            f732_PsmSetOctave(t, p0_psm_octave)
             ln = 5243288 // PsalmodyDraw.HC:408
             nat(t, n_Refresh, push2(t, 2L, 0L))
             t.depth--
@@ -2336,7 +2332,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmNoteDel (PsalmodyFile.HC:1) */
-    fun f742_PsmNoteDel(t: Task, a0: Long) {
+    fun f747_PsmNoteDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2351,7 +2347,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmNoteCopy (PsalmodyFile.HC:7) */
-    fun f743_PsmNoteCopy(t: Task, a0: Long): Long {
+    fun f748_PsmNoteCopy(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2380,7 +2376,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmSongDel (PsalmodyFile.HC:17) */
-    fun f744_PsmSongDel(t: Task, a0: Long) {
+    fun f749_PsmSongDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2395,7 +2391,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 l16_tmpn1 = ld8(l8_tmpn)
                 ln = 6291479 // PsalmodyFile.HC:23
                 tick(t)
-                f742_PsmNoteDel(t, l8_tmpn)
+                f747_PsmNoteDel(t, l8_tmpn)
                 ln = 6291480 // PsalmodyFile.HC:24
                 l8_tmpn = l16_tmpn1
                 tick(t)
@@ -2409,7 +2405,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmCutToClip (PsalmodyFile.HC:29) */
-    fun f745_PsmCutToClip(t: Task) {
+    fun f750_PsmCutToClip(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2417,7 +2413,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l8_tmpn1: Long = 0L
             ln = 6291488 // PsalmodyFile.HC:32
             tick(t)
-            f744_PsmSongDel(t, (g_psm + 128L))
+            f749_PsmSongDel(t, (g_psm + 128L))
             ln = 6291489 // PsalmodyFile.HC:33
             l0_tmpn = ld8(g_psm)
             ln = 6291490 // PsalmodyFile.HC:34
@@ -2451,7 +2447,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmPasteClip (PsalmodyFile.HC:47) */
-    fun f746_PsmPasteClip(t: Task) {
+    fun f751_PsmPasteClip(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2463,7 +2459,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l0_tmpn != (g_psm + 128L))) {
                 ln = 6291508 // PsalmodyFile.HC:52
                 tick(t)
-                val t0: Long = f743_PsmNoteCopy(t, l0_tmpn)
+                val t0: Long = f748_PsmNoteCopy(t, l0_tmpn)
                 l8_tmpn1 = t0
                 ln = 6291509 // PsalmodyFile.HC:53
                 tick(t)
@@ -2478,7 +2474,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmCopyToClip (PsalmodyFile.HC:58) */
-    fun f747_PsmCopyToClip(t: Task) {
+    fun f752_PsmCopyToClip(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2486,7 +2482,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l8_tmpn1: Long = 0L
             ln = 6291517 // PsalmodyFile.HC:61
             tick(t)
-            f744_PsmSongDel(t, (g_psm + 128L))
+            f749_PsmSongDel(t, (g_psm + 128L))
             ln = 6291518 // PsalmodyFile.HC:62
             l0_tmpn = ld8(g_psm)
             ln = 6291519 // PsalmodyFile.HC:63
@@ -2498,7 +2494,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     st8(t0, (ld8(t0) and -2L))
                     ln = 6291522 // PsalmodyFile.HC:66
                     tick(t)
-                    val t1: Long = f743_PsmNoteCopy(t, l0_tmpn)
+                    val t1: Long = f748_PsmNoteCopy(t, l0_tmpn)
                     l8_tmpn1 = t1
                     ln = 6291523 // PsalmodyFile.HC:67
                     tick(t)
@@ -2514,7 +2510,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmFindNote (PsalmodyFile.HC:73) */
-    fun f748_PsmFindNote(t: Task, a0: Long, a1: Long): Long {
+    fun f753_PsmFindNote(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2525,7 +2521,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             l16_tmpn = ld8(g_psm)
             ln = 6291532 // PsalmodyFile.HC:76
             tick(t)
-            f730_PsmRecalcNoteXY(t)
+            f735_PsmRecalcNoteXY(t)
             ln = 6291533 // PsalmodyFile.HC:77
             p0_x = (p0_x + divs(9L, 2L))
             ln = 6291534 // PsalmodyFile.HC:78
@@ -2543,7 +2539,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmMusicSetOctave (PsalmodyFile.HC:83) */
-    fun f749_PsmMusicSetOctave(t: Task, a0: Long, a1: Long): Long {
+    fun f754_PsmMusicSetOctave(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2574,7 +2570,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmMusicSetNoteLen (PsalmodyFile.HC:90) */
-    fun f750_PsmMusicSetNoteLen(t: Task, a0: Long, a1: Long): Long {
+    fun f755_PsmMusicSetNoteLen(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2639,7 +2635,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmLoadSongStr (PsalmodyFile.HC:110) */
-    fun f751_PsmLoadSongStr(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f756_PsmLoadSongStr(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2721,7 +2717,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         }
                         ln = 6291587 // PsalmodyFile.HC:131
                         tick(t)
-                        f726_PsmSetWidth(t, l32_tmpn1)
+                        f731_PsmSetWidth(t, l32_tmpn1)
                         ln = 6291588 // PsalmodyFile.HC:132
                         tick(t)
                         P.f153_QueIns(t, l32_tmpn1, ld8((g_psm + 8L)))
@@ -2736,11 +2732,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     }
                     ln = 6291594 // PsalmodyFile.HC:138
                     tick(t)
-                    val t8: Long = f749_PsmMusicSetOctave(t, p0_st, p1_psm_octave)
+                    val t8: Long = f754_PsmMusicSetOctave(t, p0_st, p1_psm_octave)
                     p0_st = t8
                     ln = 6291595 // PsalmodyFile.HC:139
                     tick(t)
-                    val t9: Long = f750_PsmMusicSetNoteLen(t, p0_st, p2_psm_duration)
+                    val t9: Long = f755_PsmMusicSetNoteLen(t, p0_st, p2_psm_duration)
                     p0_st = t9
                     tick(t)
                 }
@@ -2748,7 +2744,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 if ((ld1u(p0_st) == 0L)) {
                     ln = 6291598 // PsalmodyFile.HC:142
                     tick(t)
-                    f742_PsmNoteDel(t, l24_tmpn)
+                    f747_PsmNoteDel(t, l24_tmpn)
                     ln = 6291599 // PsalmodyFile.HC:143
                     break@loop0
                 }
@@ -2805,7 +2801,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     }
                     ln = 6291621 // PsalmodyFile.HC:165
                     tick(t)
-                    val t16: Long = P.f491_Note2Ona(t, l40_note, ld8(p1_psm_octave))
+                    val t16: Long = P.f496_Note2Ona(t, l40_note, ld8(p1_psm_octave))
                     st8((l24_tmpn + 56L), t16)
                 } else {
                     ln = 6291623 // PsalmodyFile.HC:167
@@ -2885,7 +2881,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st8((l24_tmpn + 40L), 1L)
                 ln = 6291650 // PsalmodyFile.HC:194
                 tick(t)
-                f726_PsmSetWidth(t, l24_tmpn)
+                f731_PsmSetWidth(t, l24_tmpn)
                 ln = 6291651 // PsalmodyFile.HC:195
                 tick(t)
                 P.f153_QueIns(t, l24_tmpn, ld8((ld8((g_psm + 288L)) + 8L)))
@@ -2897,7 +2893,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmLoadSong (PsalmodyFile.HC:199) */
-    fun f752_PsmLoadSong(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f757_PsmLoadSong(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2942,7 +2938,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 l24_st = t6
                                 ln = 6291671 // PsalmodyFile.HC:215
                                 tick(t)
-                                f751_PsmLoadSongStr(t, l24_st, p1_psm_octave, p2_psm_duration)
+                                f756_PsmLoadSongStr(t, l24_st, p1_psm_octave, p2_psm_duration)
                                 ln = 6291672 // PsalmodyFile.HC:216
                                 if ((ld8((l40_cc + 16L)) == 44L)) {
                                     ln = 6291673 // PsalmodyFile.HC:217
@@ -3042,7 +3038,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmCvtSong (PsalmodyFile.HC:248) */
-    fun f753_PsmCvtSong(t: Task): Long {
+    fun f758_PsmCvtSong(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -3105,11 +3101,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         }
                         ln = 6291728 // PsalmodyFile.HC:272
                         tick(t)
-                        val t6: Long = P.f493_Ona2Octave(t, l40_ona)
+                        val t6: Long = P.f498_Ona2Octave(t, l40_ona)
                         l56_octave = t6
                         ln = 6291729 // PsalmodyFile.HC:273
                         tick(t)
-                        val t7: Long = P.f492_Ona2Note(t, l40_ona)
+                        val t7: Long = P.f497_Ona2Note(t, l40_ona)
                         l48_note = t7
                         ln = 6291730 // PsalmodyFile.HC:274
                         tick(t)
@@ -3238,7 +3234,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmSaveSong (PsalmodyFile.HC:318) */
-    fun f754_PsmSaveSong(t: Task, a0: Long, a1: Long): Long {
+    fun f759_PsmSaveSong(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3254,14 +3250,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l72_ptr: Long = 0L
             ln = 6291776 // PsalmodyFile.HC:320
             tick(t)
-            val t0: Long = P.f601_DocNew(t, p1_full_filename, 0L)
+            val t0: Long = P.f606_DocNew(t, p1_full_filename, 0L)
             l16_doc = t0
             ln = 6291779 // PsalmodyFile.HC:323
             l48_measure_len = 4.0
             l56_two_measure_left = (2.0 * l48_measure_len)
             ln = 6291783 // PsalmodyFile.HC:327
             tick(t)
-            val t1: Long = f753_PsmCvtSong(t)
+            val t1: Long = f758_PsmCvtSong(t)
             nat(t, n_Free, push1(t, t1))
             ln = 6291785 // PsalmodyFile.HC:329
             st8((P.g_music + 56L), bits((((4.4 * ld8(g_tempo_state).toDouble()) / 80.0) + 0.5)))
@@ -3275,7 +3271,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l32_tmpn != g_psm)) {
                 ln = 6291791 // PsalmodyFile.HC:335
                 tick(t)
-                val t2: Long = f723_PsmHasWords(t, ld8((l32_tmpn + 32L)))
+                val t2: Long = f728_PsmHasWords(t, ld8((l32_tmpn + 32L)))
                 if ((t2 != 0L)) {
                     l24_has_words = 1L
                 }
@@ -3326,7 +3322,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 t.sp = vb25
                 ln = 6291817 // PsalmodyFile.HC:361
                 tick(t)
-                val t3: Long = f723_PsmHasWords(t, ld8((l32_tmpn + 32L)))
+                val t3: Long = f728_PsmHasWords(t, ld8((l32_tmpn + 32L)))
                 if ((t3 != 0L)) {
                     l24_has_words = 1L
                 }
@@ -3459,7 +3455,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             t.sp = vb33
             ln = 6291874 // PsalmodyFile.HC:418
             tick(t)
-            P.f614_DocRecalc(t, l16_doc)
+            P.f619_DocRecalc(t, l16_doc)
             ln = 6291875 // PsalmodyFile.HC:419
             if ((p1_full_filename != 0L)) {
                 ln = 6291876 // PsalmodyFile.HC:420
@@ -3470,14 +3466,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 6291879 // PsalmodyFile.HC:423
             tick(t)
-            P.f618_DocWrite(t, l16_doc, 1L)
+            P.f623_DocWrite(t, l16_doc, 1L)
             ln = 6291880 // PsalmodyFile.HC:424
             tick(t)
             val t8: Long = P.f35_StrNew(t, ((l16_doc + 304L) + 8L), 0L)
             p1_full_filename = t8
             ln = 6291881 // PsalmodyFile.HC:425
             tick(t)
-            P.f605_DocDel(t, l16_doc)
+            P.f610_DocDel(t, l16_doc)
             ln = 6291882 // PsalmodyFile.HC:426
             t.depth--
             return p1_full_filename
@@ -3487,7 +3483,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PopUpDuration (PsalmodyMain.HC:9) */
-    fun f755_PopUpDuration(t: Task): Double {
+    fun f760_PopUpDuration(t: Task): Double {
         var ln = 0
         try {
             enter(t)
@@ -3495,7 +3491,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l8_doc: Long = 0L
             ln = 7340044 // PsalmodyMain.HC:12
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l8_doc = t0
             ln = 7340045 // PsalmodyMain.HC:13
             tick(t)
@@ -3521,11 +3517,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             t.sp = vb36
             ln = 7340055 // PsalmodyMain.HC:23
             tick(t)
-            val t1: Long = P.f621_PopUpMenu(t, l8_doc, 0L)
+            val t1: Long = P.f626_PopUpMenu(t, l8_doc, 0L)
             l0_i = t1
             ln = 7340056 // PsalmodyMain.HC:24
             tick(t)
-            P.f605_DocDel(t, l8_doc)
+            P.f610_DocDel(t, l8_doc)
             ln = 7340057 // PsalmodyMain.HC:25
             t.depth--
             return l0_i.toDouble()
@@ -3535,7 +3531,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmRightClick (PsalmodyMain.HC:28) */
-    fun f756_PsmRightClick(t: Task, a0: Long, a1: Long) {
+    fun f761_PsmRightClick(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3549,15 +3545,15 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l56_old_doc_flags: Long = 0L
             ln = 7340065 // PsalmodyMain.HC:33
             tick(t)
-            val t0: Long = P.f602_DocPut(t, 0L)
+            val t0: Long = P.f607_DocPut(t, 0L)
             if ((t0 != 0L)) {
                 tick(t)
-                val t1: Long = P.f602_DocPut(t, 0L)
+                val t1: Long = P.f607_DocPut(t, 0L)
                 l56_old_doc_flags = ld8((t1 + 88L))
             }
             ln = 7340066 // PsalmodyMain.HC:34
             tick(t)
-            val t2: Long = f748_PsmFindNote(t, p0_x, p1_y)
+            val t2: Long = f753_PsmFindNote(t, p0_x, p1_y)
             l32_tmpn = t2
             st8((g_psm + 288L), t2)
             ln = 7340067 // PsalmodyMain.HC:35
@@ -3566,7 +3562,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st4((ld8(P.g_Fs) + 12L), 4096L)
                 ln = 7340069 // PsalmodyMain.HC:37
                 tick(t)
-                val t3: Double = f755_PopUpDuration(t)
+                val t3: Double = f760_PopUpDuration(t)
                 l48_i = f2i(t3)
                 ln = 7340070 // PsalmodyMain.HC:38
                 if (((0L <= l48_i) && (l48_i < 12L))) {
@@ -3651,16 +3647,16 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 if ((ld8((l32_tmpn + 40L)) == 1L)) {
                                     ln = 7340105 // PsalmodyMain.HC:73
                                     tick(t)
-                                    val t21: Long = P.f602_DocPut(t, 0L)
+                                    val t21: Long = P.f607_DocPut(t, 0L)
                                     if ((t21 != 0L)) {
                                         tick(t)
-                                        val t22: Long = P.f602_DocPut(t, 0L)
+                                        val t22: Long = P.f607_DocPut(t, 0L)
                                         val t23: Long = (t22 + 88L)
                                         st8(t23, (ld8(t23) and -513L))
                                     }
                                     ln = 7340106 // PsalmodyMain.HC:74
                                     tick(t)
-                                    val t24: Long = f723_PsmHasWords(t, ld8((l32_tmpn + 32L)))
+                                    val t24: Long = f728_PsmHasWords(t, ld8((l32_tmpn + 32L)))
                                     if ((t24 != 0L)) {
                                         ln = 7340107 // PsalmodyMain.HC:75
                                         val t25: Long = nat(t, n_MStrPrint, push2(t, s65, ld8((l32_tmpn + 32L))))
@@ -3695,13 +3691,13 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     }
                                     ln = 7340119 // PsalmodyMain.HC:87
                                     tick(t)
-                                    val t30: Long = P.f602_DocPut(t, 0L)
+                                    val t30: Long = P.f607_DocPut(t, 0L)
                                     if ((t30 != 0L)) {
                                         tick(t)
-                                        val t31: Long = P.f602_DocPut(t, 0L)
+                                        val t31: Long = P.f607_DocPut(t, 0L)
                                         val t33: Long = ((ld8((t31 + 88L)) and -513L) or (l56_old_doc_flags and 512L))
                                         tick(t)
-                                        val t32: Long = P.f602_DocPut(t, 0L)
+                                        val t32: Long = P.f607_DocPut(t, 0L)
                                         st8((t32 + 88L), t33)
                                     }
                                 }
@@ -3709,7 +3705,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             -4L -> {
                                 ln = 7340124 // PsalmodyMain.HC:92
                                 tick(t)
-                                val t34: Long = f743_PsmNoteCopy(t, l32_tmpn)
+                                val t34: Long = f748_PsmNoteCopy(t, l32_tmpn)
                                 l40_tmpn1 = t34
                                 ln = 7340125 // PsalmodyMain.HC:93
                                 tick(t)
@@ -3723,7 +3719,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 P.f155_QueRem(t, l32_tmpn)
                                 ln = 7340130 // PsalmodyMain.HC:98
                                 tick(t)
-                                f742_PsmNoteDel(t, l32_tmpn)
+                                f747_PsmNoteDel(t, l32_tmpn)
                             }
                             else -> {
                             }
@@ -3732,7 +3728,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 }
                 ln = 7340134 // PsalmodyMain.HC:102
                 tick(t)
-                f726_PsmSetWidth(t, ld8((g_psm + 288L)))
+                f731_PsmSetWidth(t, ld8((g_psm + 288L)))
                 ln = 7340136 // PsalmodyMain.HC:104
                 st4((ld8(P.g_Fs) + 12L), 5305082L)
             }
@@ -3742,7 +3738,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmLeftClickPickNoteBox (PsalmodyMain.HC:108) */
-    fun f757_PsmLeftClickPickNoteBox(t: Task, a0: Long) {
+    fun f762_PsmLeftClickPickNoteBox(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3763,10 +3759,10 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 if ((l24_msg_code == 4L)) {
                     ln = 7340147 // PsalmodyMain.HC:115
                     tick(t)
-                    f740_DrawDC2(t)
+                    f745_DrawDC2(t)
                     ln = 7340148 // PsalmodyMain.HC:116
                     tick(t)
-                    f728_DrawNote(t, ld8((g_psm + 296L)), ld8((fp + 32)), ld8((fp + 40)), p0_duration)
+                    f733_DrawNote(t, ld8((g_psm + 296L)), ld8((fp + 32)), ld8((fp + 40)), p0_duration)
                 }
                 if (!((l24_msg_code != 6L))) break@loop0
                 tick(t)
@@ -3785,7 +3781,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     } else {
                         ln = 7340157 // PsalmodyMain.HC:125
                         tick(t)
-                        val t1: Long = f748_PsmFindNote(t, (ld8((fp + 32)) - divs(9L, 2L)), ld8((fp + 40)))
+                        val t1: Long = f753_PsmFindNote(t, (ld8((fp + 32)) - divs(9L, 2L)), ld8((fp + 40)))
                         l56_tmpn1 = t1
                     }
                 }
@@ -3816,13 +3812,13 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 }
                 ln = 7340170 // PsalmodyMain.HC:138
                 tick(t)
-                val t3: Long = P.f491_Note2Ona(t, l16_n, l8_o)
+                val t3: Long = P.f496_Note2Ona(t, l16_n, l8_o)
                 st8((l48_tmpn + 56L), t3)
                 ln = 7340171 // PsalmodyMain.HC:139
                 st8((l48_tmpn + 80L), p0_duration)
                 ln = 7340172 // PsalmodyMain.HC:140
                 tick(t)
-                f726_PsmSetWidth(t, l48_tmpn)
+                f731_PsmSetWidth(t, l48_tmpn)
                 ln = 7340173 // PsalmodyMain.HC:141
                 tick(t)
                 P.f153_QueIns(t, l48_tmpn, l56_tmpn1)
@@ -3831,7 +3827,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 7340176 // PsalmodyMain.HC:144
             tick(t)
-            f740_DrawDC2(t)
+            f745_DrawDC2(t)
             t.msp = msp0
             t.depth--
             return
@@ -3839,7 +3835,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmLeftClickPickMeterBox (PsalmodyMain.HC:147) */
-    fun f758_PsmLeftClickPickMeterBox(t: Task, a0: Long, a1: Long) {
+    fun f763_PsmLeftClickPickMeterBox(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3859,10 +3855,10 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 if ((l16_msg_code == 4L)) {
                     ln = 7340186 // PsalmodyMain.HC:154
                     tick(t)
-                    f740_DrawDC2(t)
+                    f745_DrawDC2(t)
                     ln = 7340187 // PsalmodyMain.HC:155
                     tick(t)
-                    f729_DrawTimeSignature(t, ld8((g_psm + 296L)), ld8((fp + 24)), ld8((fp + 32)), p0_top, p1_bottom)
+                    f734_DrawTimeSignature(t, ld8((g_psm + 296L)), ld8((fp + 24)), ld8((fp + 32)), p0_top, p1_bottom)
                 }
                 if (!((l16_msg_code != 6L))) break@loop0
                 tick(t)
@@ -3881,7 +3877,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     } else {
                         ln = 7340196 // PsalmodyMain.HC:164
                         tick(t)
-                        val t1: Long = f748_PsmFindNote(t, (ld8((fp + 24)) - divs(9L, 2L)), ld8((fp + 32)))
+                        val t1: Long = f753_PsmFindNote(t, (ld8((fp + 24)) - divs(9L, 2L)), ld8((fp + 32)))
                         l48_tmpn1 = t1
                     }
                 }
@@ -3896,7 +3892,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st8((l40_tmpn + 72L), p1_bottom)
                 ln = 7340201 // PsalmodyMain.HC:169
                 tick(t)
-                f726_PsmSetWidth(t, l40_tmpn)
+                f731_PsmSetWidth(t, l40_tmpn)
                 ln = 7340202 // PsalmodyMain.HC:170
                 tick(t)
                 P.f153_QueIns(t, l40_tmpn, l48_tmpn1)
@@ -3905,7 +3901,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 7340205 // PsalmodyMain.HC:173
             tick(t)
-            f740_DrawDC2(t)
+            f745_DrawDC2(t)
             t.msp = msp0
             t.depth--
             return
@@ -3913,7 +3909,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmLeftClickStaffPtr (PsalmodyMain.HC:176) */
-    fun f759_PsmLeftClickStaffPtr(t: Task, a0: Long, a1: Long) {
+    fun f764_PsmLeftClickStaffPtr(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3935,7 +3931,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         0 -> {
                             ln = 7340212 // PsalmodyMain.HC:180
                             tick(t)
-                            val t0: Long = f748_PsmFindNote(t, p0_x, p1_y)
+                            val t0: Long = f753_PsmFindNote(t, p0_x, p1_y)
                             l16_tmpn = t0
                             st8((g_psm + 288L), t0)
                             ln = 7340213 // PsalmodyMain.HC:181
@@ -3966,11 +3962,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         3 -> {
                             ln = 7340215 // PsalmodyMain.HC:183
                             tick(t)
-                            val t1: Long = P.f493_Ona2Octave(t, ld8((l16_tmpn + 56L)))
+                            val t1: Long = P.f498_Ona2Octave(t, ld8((l16_tmpn + 56L)))
                             l80_o_original = t1
                             ln = 7340216 // PsalmodyMain.HC:184
                             tick(t)
-                            val t2: Long = P.f492_Ona2Note(t, ld8((l16_tmpn + 56L)))
+                            val t2: Long = P.f497_Ona2Note(t, ld8((l16_tmpn + 56L)))
                             l72_n_original = t2
                             ln = 7340217 // PsalmodyMain.HC:185
                             state = 6
@@ -4012,14 +4008,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         8 -> {
                             ln = 7340244 // PsalmodyMain.HC:212
                             tick(t)
-                            f726_PsmSetWidth(t, l16_tmpn)
+                            f731_PsmSetWidth(t, l16_tmpn)
                             state = 4
                             continue@machine0
                         }
                         9 -> {
                             ln = 7340220 // PsalmodyMain.HC:188
                             tick(t)
-                            val t4: Long = f748_PsmFindNote(t, ld8((fp + 56)), ld8((fp + 64)))
+                            val t4: Long = f753_PsmFindNote(t, ld8((fp + 56)), ld8((fp + 64)))
                             l24_tmpn1 = t4
                             ln = 7340221 // PsalmodyMain.HC:189
                             if (((l24_tmpn1 == g_psm) || (l24_tmpn1 == l16_tmpn))) {
@@ -4035,7 +4031,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 st8((l16_tmpn + 32L), 0L)
                                 ln = 7340227 // PsalmodyMain.HC:195
                                 tick(t)
-                                val t5: Long = P.f491_Note2Ona(t, l72_n_original, l80_o_original)
+                                val t5: Long = P.f496_Note2Ona(t, l72_n_original, l80_o_original)
                                 st8((l16_tmpn + 56L), t5)
                             }
                             ln = 7340221 // PsalmodyMain.HC:189
@@ -4075,7 +4071,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             }
                             ln = 7340241 // PsalmodyMain.HC:209
                             tick(t)
-                            val t6: Long = P.f491_Note2Ona(t, l40_n, l32_o)
+                            val t6: Long = P.f496_Note2Ona(t, l40_n, l32_o)
                             st8((l16_tmpn + 56L), t6)
                             state = 11
                             continue@machine0
@@ -4090,7 +4086,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmLeftClickStaffBox (PsalmodyMain.HC:217) */
-    fun f760_PsmLeftClickStaffBox(t: Task, a0: Long, a1: Long) {
+    fun f765_PsmLeftClickStaffBox(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -4107,12 +4103,12 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 l16_msg_code = t0
                 ln = 7340254 // PsalmodyMain.HC:222
                 tick(t)
-                f740_DrawDC2(t)
+                f745_DrawDC2(t)
                 ln = 7340255 // PsalmodyMain.HC:223
                 st4((ld8((g_psm + 296L)) + 160L), 1074724864L)
                 ln = 7340256 // PsalmodyMain.HC:224
                 tick(t)
-                P.f425_GrBorder(t, ld8((g_psm + 296L)), ld8(fp), p1_y, ld8((fp + 24)), ld8((fp + 32)), 1L, 0L)
+                P.f428_GrBorder(t, ld8((g_psm + 296L)), ld8(fp), p1_y, ld8((fp + 24)), ld8((fp + 32)), 1L, 0L)
                 ln = 7340257 // PsalmodyMain.HC:225
                 if ((l16_msg_code == 6L)) {
                     ln = 7340258 // PsalmodyMain.HC:226
@@ -4122,14 +4118,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     }
                     ln = 7340259 // PsalmodyMain.HC:227
                     tick(t)
-                    f725_PsmMarkSel(t, ld8(fp), ld8((fp + 24)), 1L)
+                    f730_PsmMarkSel(t, ld8(fp), ld8((fp + 24)), 1L)
                 }
                 if (!((l16_msg_code != 6L))) break@loop0
                 tick(t)
             }
             ln = 7340262 // PsalmodyMain.HC:230
             tick(t)
-            f740_DrawDC2(t)
+            f745_DrawDC2(t)
             t.msp = msp0
             t.depth--
             return
@@ -4137,7 +4133,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmLeftClick (PsalmodyMain.HC:233) */
-    fun f761_PsmLeftClick(t: Task, a0: Long, a1: Long) {
+    fun f766_PsmLeftClick(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -4152,38 +4148,38 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 if ((ld8((g_psm + 280L)) == 0L)) {
                     ln = 7340270 // PsalmodyMain.HC:238
                     tick(t)
-                    f759_PsmLeftClickStaffPtr(t, p0_x, p1_y)
+                    f764_PsmLeftClickStaffPtr(t, p0_x, p1_y)
                 } else {
                     ln = 7340272 // PsalmodyMain.HC:240
                     tick(t)
-                    f760_PsmLeftClickStaffBox(t, p0_x, p1_y)
+                    f765_PsmLeftClickStaffBox(t, p0_x, p1_y)
                 }
             } else {
                 ln = 7340274 // PsalmodyMain.HC:242
                 tick(t)
-                val t0: Long = f733_PsmGetPickNoteBoxDuration(t, p0_x, p1_y)
+                val t0: Long = f738_PsmGetPickNoteBoxDuration(t, p0_x, p1_y)
                 l16_duration = t0
                 ln = 7340275 // PsalmodyMain.HC:243
                 if (((0L <= l16_duration) && (l16_duration < 12L))) {
                     ln = 7340276 // PsalmodyMain.HC:244
                     tick(t)
-                    f757_PsmLeftClickPickNoteBox(t, l16_duration)
+                    f762_PsmLeftClickPickNoteBox(t, l16_duration)
                 } else {
                     ln = 7340277 // PsalmodyMain.HC:245
                     tick(t)
-                    val t1: Long = f738_PsmGetPickMeterBox(t, p0_x, p1_y, (fp + 24), (fp + 32))
+                    val t1: Long = f743_PsmGetPickMeterBox(t, p0_x, p1_y, (fp + 24), (fp + 32))
                     if ((t1 != 0L)) {
                         ln = 7340278 // PsalmodyMain.HC:246
                         tick(t)
-                        f758_PsmLeftClickPickMeterBox(t, ld8((fp + 24)), ld8((fp + 32)))
+                        f763_PsmLeftClickPickMeterBox(t, ld8((fp + 24)), ld8((fp + 32)))
                     } else {
                         ln = 7340279 // PsalmodyMain.HC:247
                         tick(t)
-                        val t2: Long = f736_PsmGetPickToolBox(t, p0_x, p1_y)
+                        val t2: Long = f741_PsmGetPickToolBox(t, p0_x, p1_y)
                         if ((t2 != 0L)) {
                             ln = 7340280 // PsalmodyMain.HC:248
                             tick(t)
-                            f740_DrawDC2(t)
+                            f745_DrawDC2(t)
                         }
                     }
                 }
@@ -4195,7 +4191,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmCvtDuration (PsalmodyMain.HC:252) */
-    fun f762_PsmCvtDuration(t: Task, a0: Double): Long {
+    fun f767_PsmCvtDuration(t: Task, a0: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -4229,7 +4225,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#8 (Run.HC:276) */
-    fun f763_init_C__Apps_Psalmody_Run_HC_8(t: Task): Long {
+    fun f768_init_C__Apps_Psalmody_Run_HC_8(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -4239,7 +4235,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmDownKey (PsalmodyMain.HC:300) */
-    fun f764_PsmDownKey(t: Task, a0: Long, a1: Long) {
+    fun f769_PsmDownKey(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -4278,7 +4274,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmUpKey (PsalmodyMain.HC:317) */
-    fun f765_PsmUpKey(t: Task, a0: Long, a1: Long) {
+    fun f770_PsmUpKey(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -4317,7 +4313,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PsmPushMode (PsalmodyMain.HC:334) */
-    fun f766_PsmPushMode(t: Task, a0: Long) {
+    fun f771_PsmPushMode(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -4326,14 +4322,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((ld8(P.g_Fs) + 12L), 5305082L)
             ln = 7340370 // PsalmodyMain.HC:338
             tick(t)
-            f741_PsmMenu(t, p0_psm_octave)
+            f746_PsmMenu(t, p0_psm_octave)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "PsmPushMode", ln) }
     }
 
     /** HolyC PsmPopMode (PsalmodyMain.HC:341) */
-    fun f767_PsmPopMode(t: Task) {
+    fun f772_PsmPopMode(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4348,7 +4344,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Psalmody (PsalmodyMain.HC:350) */
-    fun f768_Psalmody(t: Task, a0: Long) {
+    fun f773_Psalmody(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -4391,14 +4387,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             l168_note_down_time = t1
             ln = 7340390 // PsalmodyMain.HC:358
             tick(t)
-            val t2: Long = f717_TempoNew(t)
+            val t2: Long = f722_TempoNew(t)
             l176_c = t2
             ln = 7340392 // PsalmodyMain.HC:360
             tick(t)
-            val t3: Long = P.f602_DocPut(t, 0L)
+            val t3: Long = P.f607_DocPut(t, 0L)
             if ((t3 != 0L)) {
                 tick(t)
-                val t4: Long = P.f602_DocPut(t, 0L)
+                val t4: Long = P.f607_DocPut(t, 0L)
                 l104_old_doc_flags = ld8((t4 + 88L))
             }
             ln = 7340393 // PsalmodyMain.HC:361
@@ -4406,7 +4402,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 7340395 // PsalmodyMain.HC:363
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 7340396 // PsalmodyMain.HC:364
             val t5: Double = f(nat(t, n_Round, push1(t, bits(((80.0 * (ldf((P.g_music + 56L)) - 0.5)) / 4.4)))))
             st8(g_tempo_state, f2i(t5))
@@ -4415,10 +4411,10 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st8((g_tempo_state + 8L), f2i(t6))
             ln = 7340399 // PsalmodyMain.HC:367
             tick(t)
-            val t7: Long = P.f602_DocPut(t, 0L)
+            val t7: Long = P.f607_DocPut(t, 0L)
             if ((t7 != 0L)) {
                 tick(t)
-                val t8: Long = P.f602_DocPut(t, 0L)
+                val t8: Long = P.f607_DocPut(t, 0L)
                 val t9: Long = (t8 + 88L)
                 st8(t9, (ld8(t9) or 512L))
             }
@@ -4440,14 +4436,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st8((g_psm + 296L), t10)
             ln = 7340408 // PsalmodyMain.HC:376
             tick(t)
-            P.f507_MenuPush(t, s68)
+            P.f512_MenuPush(t, s68)
             ln = 7340449 // PsalmodyMain.HC:417
             tick(t)
-            val t11: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s69)
+            val t11: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s69)
             st8((g_psm + 256L), t11)
             ln = 7340450 // PsalmodyMain.HC:418
             tick(t)
-            val t12: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s70)
+            val t12: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s70)
             st8((g_psm + 264L), t12)
             ln = 7340452 // PsalmodyMain.HC:420
             nat(t, n_AutoComplete, push1(t, 0L))
@@ -4463,11 +4459,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             p0_dirname = t13
             ln = 7340457 // PsalmodyMain.HC:425
             tick(t)
-            f766_PsmPushMode(t, ld8((fp + 80)))
+            f771_PsmPushMode(t, ld8((fp + 80)))
             ln = 7340458 // PsalmodyMain.HC:426
             l56_col = 0L
             ln = 7340459 // PsalmodyMain.HC:427
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065883L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065888L)
             ln = 7340461 // PsalmodyMain.HC:429
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -4495,7 +4491,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 if ((((l48_msg_code == 2L) && (ld8((fp + 32)) == 32L)) && (ld8((fp + 40)) == 0L))) {
                                     ln = 7340478 // PsalmodyMain.HC:446
                                     tick(t)
-                                    P.f624_PutKey(t, ld8((fp + 32)), ld8((fp + 40)))
+                                    P.f629_PutKey(t, ld8((fp + 32)), ld8((fp + 40)))
                                     ln = 7340479 // PsalmodyMain.HC:447
                                     tick(t)
                                     continue@retry_3
@@ -4508,20 +4504,20 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     var r17: Boolean = (l8_was_playing != 0L)
                                     if (!r17) {
                                         tick(t)
-                                        val t16: Long = P.f602_DocPut(t, 0L)
+                                        val t16: Long = P.f607_DocPut(t, 0L)
                                         r17 = (ld4s((ld8((t16 + 104L)) + 44L)) >= (ld8((ld8(P.g_Fs) + 200L)) - 2L))
                                     }
                                     if (r17) {
                                         ln = 7340484 // PsalmodyMain.HC:452
                                         tick(t)
-                                        f741_PsmMenu(t, ld8((fp + 80)))
+                                        f746_PsmMenu(t, ld8((fp + 80)))
                                         ln = 7340485 // PsalmodyMain.HC:453
                                         l56_col = 0L
                                     }
                                 }
                                 ln = 7340489 // PsalmodyMain.HC:457
                                 tick(t)
-                                val t18: Long = P.f491_Note2Ona(t, 3L, (ld8((fp + 80)) + 1L))
+                                val t18: Long = P.f496_Note2Ona(t, 3L, (ld8((fp + 80)) + 1L))
                                 l64_ona = t18
                                 ln = 7340490 // PsalmodyMain.HC:458
                                 l16_is_null = 1L
@@ -4532,7 +4528,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                         1L -> {
                                             ln = 7340493 // PsalmodyMain.HC:461
                                             tick(t)
-                                            f767_PsmPopMode(t)
+                                            f772_PsmPopMode(t)
                                             ln = 7340494 // PsalmodyMain.HC:462
                                             val t20: Long = ld8((fp + 32))
                                             switch6@ do {
@@ -4542,7 +4538,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                         l128_st2 = p0_dirname
                                                         ln = 7340497 // PsalmodyMain.HC:465
                                                         tick(t)
-                                                        val t21: Long = P.f689_PopUpPickDir(t, 0L)
+                                                        val t21: Long = P.f694_PopUpPickDir(t, 0L)
                                                         p0_dirname = t21
                                                         if ((t21 != 0L)) {
                                                             ln = 7340498 // PsalmodyMain.HC:466
@@ -4566,7 +4562,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                             } while (false)
                                             ln = 7340508 // PsalmodyMain.HC:476
                                             tick(t)
-                                            f766_PsmPushMode(t, ld8((fp + 80)))
+                                            f771_PsmPushMode(t, ld8((fp + 80)))
                                             ln = 7340509 // PsalmodyMain.HC:477
                                             l56_col = 0L
                                         }
@@ -4587,7 +4583,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                 st8((fp + 80), (ld8((fp + 32)) - 48L))
                                                 ln = 7340515 // PsalmodyMain.HC:483
                                                 tick(t)
-                                                f741_PsmMenu(t, ld8((fp + 80)))
+                                                f746_PsmMenu(t, ld8((fp + 80)))
                                                 ln = 7340516 // PsalmodyMain.HC:484
                                                 l56_col = 0L
                                             } else {
@@ -4990,7 +4986,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                                                                     if (((ld8((fp + 40)) and 512L) != 0L)) {
                                                                                                                         ln = 7340578 // PsalmodyMain.HC:546
                                                                                                                         tick(t)
-                                                                                                                        f745_PsmCutToClip(t)
+                                                                                                                        f750_PsmCutToClip(t)
                                                                                                                     } else {
                                                                                                                         ln = 7340580 // PsalmodyMain.HC:548
                                                                                                                         l136_tmpn = ld8((g_psm + 288L))
@@ -5003,7 +4999,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                                                                             P.f155_QueRem(t, l136_tmpn)
                                                                                                                             ln = 7340584 // PsalmodyMain.HC:552
                                                                                                                             tick(t)
-                                                                                                                            f742_PsmNoteDel(t, l136_tmpn)
+                                                                                                                            f747_PsmNoteDel(t, l136_tmpn)
                                                                                                                         }
                                                                                                                     }
                                                                                                                 }
@@ -5012,26 +5008,26 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                                                                     if (((ld8((fp + 40)) and 512L) != 0L)) {
                                                                                                                         ln = 7340590 // PsalmodyMain.HC:558
                                                                                                                         tick(t)
-                                                                                                                        f746_PsmPasteClip(t)
+                                                                                                                        f751_PsmPasteClip(t)
                                                                                                                     } else {
                                                                                                                         ln = 7340591 // PsalmodyMain.HC:559
                                                                                                                         if (((ld8((fp + 40)) and 1024L) != 0L)) {
                                                                                                                             ln = 7340592 // PsalmodyMain.HC:560
                                                                                                                             tick(t)
-                                                                                                                            f747_PsmCopyToClip(t)
+                                                                                                                            f752_PsmCopyToClip(t)
                                                                                                                         }
                                                                                                                     }
                                                                                                                 }
                                                                                                                 59L -> {
                                                                                                                     ln = 7340595 // PsalmodyMain.HC:563
                                                                                                                     tick(t)
-                                                                                                                    f767_PsmPopMode(t)
+                                                                                                                    f772_PsmPopMode(t)
                                                                                                                     ln = 7340596 // PsalmodyMain.HC:564
                                                                                                                     tick(t)
-                                                                                                                    P.f627_PopUpEd(t, s71, ld8(P.g_Fs), 0L)
+                                                                                                                    P.f632_PopUpEd(t, s71, ld8(P.g_Fs), 0L)
                                                                                                                     ln = 7340597 // PsalmodyMain.HC:565
                                                                                                                     tick(t)
-                                                                                                                    f766_PsmPushMode(t, ld8((fp + 80)))
+                                                                                                                    f771_PsmPushMode(t, ld8((fp + 80)))
                                                                                                                     ln = 7340598 // PsalmodyMain.HC:566
                                                                                                                     l56_col = 0L
                                                                                                                 }
@@ -5048,23 +5044,23 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                                                     st8((fp + 112), 0L)
                                                                                                     ln = 7340605 // PsalmodyMain.HC:573
                                                                                                     tick(t)
-                                                                                                    f767_PsmPopMode(t)
+                                                                                                    f772_PsmPopMode(t)
                                                                                                     ln = 7340606 // PsalmodyMain.HC:574
                                                                                                     st8((P.g_music + 16L), ld8((fp + 80)))
                                                                                                     ln = 7340607 // PsalmodyMain.HC:575
                                                                                                     tick(t)
-                                                                                                    val t27: Long = P.f692_GodSongStr(t)
+                                                                                                    val t27: Long = P.f697_GodSongStr(t)
                                                                                                     l128_st2 = t27
                                                                                                     if ((t27 != 0L)) {
                                                                                                         ln = 7340608 // PsalmodyMain.HC:576
                                                                                                         tick(t)
-                                                                                                        f751_PsmLoadSongStr(t, l128_st2, (fp + 80), (fp + 144))
+                                                                                                        f756_PsmLoadSongStr(t, l128_st2, (fp + 80), (fp + 144))
                                                                                                         ln = 7340609 // PsalmodyMain.HC:577
                                                                                                         nat(t, n_Free, push1(t, l128_st2))
                                                                                                     }
                                                                                                     ln = 7340611 // PsalmodyMain.HC:579
                                                                                                     tick(t)
-                                                                                                    f766_PsmPushMode(t, ld8((fp + 80)))
+                                                                                                    f771_PsmPushMode(t, ld8((fp + 80)))
                                                                                                     ln = 7340612 // PsalmodyMain.HC:580
                                                                                                     l56_col = 0L
                                                                                                     ln = 7340613 // PsalmodyMain.HC:581
@@ -5072,17 +5068,17 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                                                 } while (false)
                                                                                                 ln = 7340615 // PsalmodyMain.HC:583
                                                                                                 tick(t)
-                                                                                                f767_PsmPopMode(t)
+                                                                                                f772_PsmPopMode(t)
                                                                                                 ln = 7340616 // PsalmodyMain.HC:584
                                                                                                 tick(t)
-                                                                                                P.f690_RegOneTimePopUp(t, 3L, s72)
+                                                                                                P.f695_RegOneTimePopUp(t, 3L, s72)
                                                                                                 ln = 7340622 // PsalmodyMain.HC:590
                                                                                                 nat(t, n_Free, push1(t, ld8((fp + 112))))
                                                                                                 ln = 7340623 // PsalmodyMain.HC:591
                                                                                                 st8((fp + 112), 0L)
                                                                                                 ln = 7340624 // PsalmodyMain.HC:592
                                                                                                 tick(t)
-                                                                                                f708_JukeBox(t, p0_dirname, (fp + 112))
+                                                                                                f713_JukeBox(t, p0_dirname, (fp + 112))
                                                                                                 ln = 7340625 // PsalmodyMain.HC:593
                                                                                                 if ((ld8((fp + 112)) != 0L)) {
                                                                                                     ln = 7340626 // PsalmodyMain.HC:594
@@ -5093,12 +5089,12 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                                                     st8((fp + 80), 4L)
                                                                                                     ln = 7340629 // PsalmodyMain.HC:597
                                                                                                     tick(t)
-                                                                                                    f744_PsmSongDel(t, g_psm)
+                                                                                                    f749_PsmSongDel(t, g_psm)
                                                                                                     ln = 7340630 // PsalmodyMain.HC:598
                                                                                                     st8((g_psm + 288L), g_psm)
                                                                                                     ln = 7340631 // PsalmodyMain.HC:599
                                                                                                     tick(t)
-                                                                                                    f752_PsmLoadSong(t, ld8((fp + 112)), (fp + 80), (fp + 144))
+                                                                                                    f757_PsmLoadSong(t, ld8((fp + 112)), (fp + 80), (fp + 144))
                                                                                                     ln = 7340632 // PsalmodyMain.HC:600
                                                                                                     st1((ld8((g_psm + 264L)) + 72L), 0L)
                                                                                                     ln = 7340633 // PsalmodyMain.HC:601
@@ -5106,7 +5102,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                                                 }
                                                                                                 ln = 7340635 // PsalmodyMain.HC:603
                                                                                                 tick(t)
-                                                                                                f766_PsmPushMode(t, ld8((fp + 80)))
+                                                                                                f771_PsmPushMode(t, ld8((fp + 80)))
                                                                                                 ln = 7340636 // PsalmodyMain.HC:604
                                                                                                 l56_col = 0L
                                                                                                 ln = 7340637 // PsalmodyMain.HC:605
@@ -5114,38 +5110,38 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                                             } while (false)
                                                                                             ln = 7340639 // PsalmodyMain.HC:607
                                                                                             tick(t)
-                                                                                            f767_PsmPopMode(t)
+                                                                                            f772_PsmPopMode(t)
                                                                                             ln = 7340640 // PsalmodyMain.HC:608
                                                                                             tick(t)
-                                                                                            val t28: Long = f754_PsmSaveSong(t, p0_dirname, ld8((fp + 112)))
+                                                                                            val t28: Long = f759_PsmSaveSong(t, p0_dirname, ld8((fp + 112)))
                                                                                             st8((fp + 112), t28)
                                                                                             ln = 7340641 // PsalmodyMain.HC:609
                                                                                             tick(t)
-                                                                                            f766_PsmPushMode(t, ld8((fp + 80)))
+                                                                                            f771_PsmPushMode(t, ld8((fp + 80)))
                                                                                             ln = 7340642 // PsalmodyMain.HC:610
                                                                                             break@switch7_143
                                                                                         } while (false)
                                                                                         ln = 7340644 // PsalmodyMain.HC:612
                                                                                         tick(t)
-                                                                                        f747_PsmCopyToClip(t)
+                                                                                        f752_PsmCopyToClip(t)
                                                                                         ln = 7340645 // PsalmodyMain.HC:613
                                                                                         break@switch7_143
                                                                                     } while (false)
                                                                                     ln = 7340647 // PsalmodyMain.HC:615
                                                                                     tick(t)
-                                                                                    f746_PsmPasteClip(t)
+                                                                                    f751_PsmPasteClip(t)
                                                                                     ln = 7340648 // PsalmodyMain.HC:616
                                                                                     break@switch7_143
                                                                                 } while (false)
                                                                                 ln = 7340650 // PsalmodyMain.HC:618
                                                                                 tick(t)
-                                                                                f745_PsmCutToClip(t)
+                                                                                f750_PsmCutToClip(t)
                                                                                 ln = 7340651 // PsalmodyMain.HC:619
                                                                                 break@switch7_143
                                                                             } while (false)
                                                                             ln = 7340653 // PsalmodyMain.HC:621
                                                                             tick(t)
-                                                                            f741_PsmMenu(t, ld8((fp + 80)))
+                                                                            f746_PsmMenu(t, ld8((fp + 80)))
                                                                             ln = 7340654 // PsalmodyMain.HC:622
                                                                             l56_col = 0L
                                                                             ln = 7340655 // PsalmodyMain.HC:623
@@ -5158,7 +5154,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                             st8((fp + 80), 4L)
                                                                             ln = 7340659 // PsalmodyMain.HC:627
                                                                             tick(t)
-                                                                            f744_PsmSongDel(t, g_psm)
+                                                                            f749_PsmSongDel(t, g_psm)
                                                                             ln = 7340660 // PsalmodyMain.HC:628
                                                                             st8((g_psm + 288L), g_psm)
                                                                             ln = 7340661 // PsalmodyMain.HC:629
@@ -5170,7 +5166,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                         if ((ld8((g_psm + 288L)) != g_psm)) {
                                                                             ln = 7340665 // PsalmodyMain.HC:633
                                                                             tick(t)
-                                                                            f756_PsmRightClick(t, ld8((ld8((g_psm + 288L)) + 16L)), ld8((ld8((g_psm + 288L)) + 24L)))
+                                                                            f761_PsmRightClick(t, ld8((ld8((g_psm + 288L)) + 16L)), ld8((ld8((g_psm + 288L)) + 24L)))
                                                                         }
                                                                         ln = 7340666 // PsalmodyMain.HC:634
                                                                         break@switch7_143
@@ -5186,7 +5182,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                     st1((g_psm + 304L), 1L)
                                                                     ln = 7340672 // PsalmodyMain.HC:640
                                                                     tick(t)
-                                                                    f741_PsmMenu(t, ld8((fp + 80)))
+                                                                    f746_PsmMenu(t, ld8((fp + 80)))
                                                                     ln = 7340673 // PsalmodyMain.HC:641
                                                                     l136_tmpn = ld8((g_psm + 288L))
                                                                     ln = 7340674 // PsalmodyMain.HC:642
@@ -5231,7 +5227,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                             st8(t31, f2i((ld8(t31).toDouble() + (ld8((l136_tmpn + 16L)).toDouble() - (0.33 * 640.0)))))
                                                                             ln = 7340695 // PsalmodyMain.HC:663
                                                                             tick(t)
-                                                                            val t32: Long = f723_PsmHasWords(t, ld8((l136_tmpn + 32L)))
+                                                                            val t32: Long = f728_PsmHasWords(t, ld8((l136_tmpn + 32L)))
                                                                             if ((t32 != 0L)) {
                                                                                 ln = 7340696 // PsalmodyMain.HC:664
                                                                                 nat(t, n_Print, push2(t, s39, ld8((l136_tmpn + 32L))))
@@ -5277,7 +5273,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                     st1((g_psm + 304L), 0L)
                                                                     ln = 7340720 // PsalmodyMain.HC:688
                                                                     tick(t)
-                                                                    f741_PsmMenu(t, ld8((fp + 80)))
+                                                                    f746_PsmMenu(t, ld8((fp + 80)))
                                                                     ln = 7340721 // PsalmodyMain.HC:689
                                                                     l56_col = 0L
                                                                     ln = 7340722 // PsalmodyMain.HC:690
@@ -5294,7 +5290,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                     P.f155_QueRem(t, l136_tmpn)
                                                                     ln = 7340728 // PsalmodyMain.HC:696
                                                                     tick(t)
-                                                                    f742_PsmNoteDel(t, l136_tmpn)
+                                                                    f747_PsmNoteDel(t, l136_tmpn)
                                                                 }
                                                                 ln = 7340730 // PsalmodyMain.HC:698
                                                                 if ((l56_col != 0L)) {
@@ -5322,7 +5318,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                             }
                                                             ln = 7340744 // PsalmodyMain.HC:712
                                                             tick(t)
-                                                            f741_PsmMenu(t, ld8((fp + 80)))
+                                                            f746_PsmMenu(t, ld8((fp + 80)))
                                                             ln = 7340745 // PsalmodyMain.HC:713
                                                             l56_col = 0L
                                                             ln = 7340746 // PsalmodyMain.HC:714
@@ -5330,14 +5326,14 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                         } while (false)
                                                         ln = 7340748 // PsalmodyMain.HC:716
                                                         tick(t)
-                                                        f767_PsmPopMode(t)
+                                                        f772_PsmPopMode(t)
                                                         ln = 7340749 // PsalmodyMain.HC:717
                                                         tick(t)
-                                                        val t35: Long = f754_PsmSaveSong(t, p0_dirname, ld8((fp + 112)))
+                                                        val t35: Long = f759_PsmSaveSong(t, p0_dirname, ld8((fp + 112)))
                                                         st8((fp + 112), t35)
                                                         ln = 7340750 // PsalmodyMain.HC:718
                                                         tick(t)
-                                                        f766_PsmPushMode(t, ld8((fp + 80)))
+                                                        f771_PsmPushMode(t, ld8((fp + 80)))
                                                     } while (false)
                                                     ln = 7340752 // PsalmodyMain.HC:720
                                                     break@skip_0
@@ -5362,20 +5358,20 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                         5L -> {
                                             ln = 7340767 // PsalmodyMain.HC:735
                                             tick(t)
-                                            f764_PsmDownKey(t, ld8((fp + 32)), ld8((fp + 40)))
+                                            f769_PsmDownKey(t, ld8((fp + 32)), ld8((fp + 40)))
                                             ln = 7340768 // PsalmodyMain.HC:736
                                             tick(t)
-                                            f761_PsmLeftClick(t, ld8((fp + 32)), ld8((fp + 40)))
+                                            f766_PsmLeftClick(t, ld8((fp + 32)), ld8((fp + 40)))
                                         }
                                         6L -> {
                                             ln = 7340771 // PsalmodyMain.HC:739
                                             tick(t)
-                                            f765_PsmUpKey(t, ld8((fp + 32)), ld8((fp + 40)))
+                                            f770_PsmUpKey(t, ld8((fp + 32)), ld8((fp + 40)))
                                         }
                                         else -> {
                                             ln = 7340774 // PsalmodyMain.HC:742
                                             tick(t)
-                                            f756_PsmRightClick(t, ld8((fp + 32)), ld8((fp + 40)))
+                                            f761_PsmRightClick(t, ld8((fp + 32)), ld8((fp + 40)))
                                         }
                                     }
                                 } while (false)
@@ -5404,7 +5400,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 ln = 7340785 // PsalmodyMain.HC:753
                                 val t38: Long = ld8(g_psm_note_lst)
                                 tick(t)
-                                val t37: Long = P.f492_Ona2Note(t, l64_ona)
+                                val t37: Long = P.f497_Ona2Note(t, l64_ona)
                                 tick(t)
                                 val t39: Long = P.f52_LstSub(t, t37, t38)
                                 l120_st = t39
@@ -5421,11 +5417,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     st8((P.g_music + 64L), bits((((0.88 * ld8((g_tempo_state + 8L)).toDouble()) / 80.0) + 0.12)))
                                     ln = 7340791 // PsalmodyMain.HC:759
                                     tick(t)
-                                    val t40: Long = f762_PsmCvtDuration(t, (ldf((P.g_music + 56L)) * (l160_evt_time - l168_note_down_time)))
+                                    val t40: Long = f767_PsmCvtDuration(t, (ldf((P.g_music + 56L)) * (l160_evt_time - l168_note_down_time)))
                                     st8((l136_tmpn + 80L), t40)
                                     ln = 7340793 // PsalmodyMain.HC:761
                                     tick(t)
-                                    f726_PsmSetWidth(t, l136_tmpn)
+                                    f731_PsmSetWidth(t, l136_tmpn)
                                     ln = 7340794 // PsalmodyMain.HC:762
                                     tick(t)
                                     P.f153_QueIns(t, l136_tmpn, ld8((ld8((g_psm + 288L)) + 8L)))
@@ -5482,16 +5478,16 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 7340819 // PsalmodyMain.HC:787
             tick(t)
-            f767_PsmPopMode(t)
+            f772_PsmPopMode(t)
             ln = 7340820 // PsalmodyMain.HC:788
             tick(t)
-            f744_PsmSongDel(t, g_psm)
+            f749_PsmSongDel(t, g_psm)
             ln = 7340821 // PsalmodyMain.HC:789
             tick(t)
-            f744_PsmSongDel(t, (g_psm + 128L))
+            f749_PsmSongDel(t, (g_psm + 128L))
             ln = 7340822 // PsalmodyMain.HC:790
             tick(t)
-            f718_TempoDel(t, l176_c)
+            f723_TempoDel(t, l176_c)
             ln = 7340823 // PsalmodyMain.HC:791
             tick(t)
             P.f286_DCFill(t, 0L, 255L)
@@ -5505,20 +5501,20 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 7340827 // PsalmodyMain.HC:795
             tick(t)
-            val t44: Long = P.f602_DocPut(t, 0L)
+            val t44: Long = P.f607_DocPut(t, 0L)
             if ((t44 != 0L)) {
                 tick(t)
-                val t45: Long = P.f602_DocPut(t, 0L)
+                val t45: Long = P.f607_DocPut(t, 0L)
                 val t47: Long = ((ld8((t45 + 88L)) and -513L) or (l104_old_doc_flags and 512L))
                 tick(t)
-                val t46: Long = P.f602_DocPut(t, 0L)
+                val t46: Long = P.f607_DocPut(t, 0L)
                 st8((t46 + 88L), t47)
             }
             ln = 7340828 // PsalmodyMain.HC:796
             nat(t, n_Free, push1(t, p0_dirname))
             ln = 7340829 // PsalmodyMain.HC:797
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -5526,28 +5522,28 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Run.HC#9 (Run.HC:3) */
-    fun f769_init_C__Apps_Psalmody_Run_HC_9(t: Task): Long {
+    fun f774_init_C__Apps_Psalmody_Run_HC_9(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 3 // Run.HC:3
             tick(t)
-            f768_Psalmody(t, s74)
+            f773_Psalmody(t, s74)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Run.HC#9", ln) }
     }
 
     /** HolyC Song (childish.HC:2) */
-    fun f770_Song(t: Task) {
+    fun f775_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 8388612 // childish.HC:4
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 8388613 // childish.HC:5
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 8388614 // childish.HC:6
             st8((P.g_music + 56L), bits(2.48))
             ln = 8388615 // childish.HC:7
@@ -5562,16 +5558,16 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     if (!((t0 == 0L))) break@loop0
                     ln = 8388618 // childish.HC:10
                     tick(t)
-                    P.f494_Play(t, s76, s75)
+                    P.f499_Play(t, s76, s75)
                     ln = 8388621 // childish.HC:13
                     tick(t)
-                    P.f494_Play(t, s76, s77)
+                    P.f499_Play(t, s76, s77)
                     ln = 8388624 // childish.HC:16
                     tick(t)
-                    P.f494_Play(t, s78, 0L)
+                    P.f499_Play(t, s78, 0L)
                     ln = 8388625 // childish.HC:17
                     tick(t)
-                    P.f494_Play(t, s78, 0L)
+                    P.f499_Play(t, s78, 0L)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -5591,26 +5587,26 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/childish.HC#0 (childish.HC:24) */
-    fun f771_init_C__Apps_Psalmody_Examples_childish_HC_0(t: Task): Long {
+    fun f776_init_C__Apps_Psalmody_Examples_childish_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 8388632 // childish.HC:24
             tick(t)
-            f770_Song(t)
+            f775_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/childish.HC#0", ln) }
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/night.HC#0 (night.HC:14) */
-    fun f772_init_C__Apps_Psalmody_Examples_night_HC_0(t: Task): Long {
+    fun f777_init_C__Apps_Psalmody_Examples_night_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 9437198 // night.HC:14
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             st8(g_t0, bits(t0))
             t.depth--
             return 0L
@@ -5618,7 +5614,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (night.HC:16) */
-    fun f773_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f778_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -5630,14 +5626,13 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l40_dt: Double = 0.0
             ln = 9437203 // night.HC:19
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             l40_dt = (t0 - ldf(g_t0))
             ln = 9437204 // night.HC:20
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 330L, 35L, 0L, b24, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 330L, 35L, 0L, b24, 0L))
             ln = 9437205 // night.HC:21
             tick(t)
-            val t1: Double = P.f487_Beat(t)
+            val t1: Double = P.f492_Beat(t)
             if (((t1 - ldf(g_t0)) < 24.0)) {
                 ln = 9437206 // night.HC:22
                 val t2: Double = f(nat(t, n_Rand, push0(t)))
@@ -5717,7 +5712,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Song (night.HC:54) */
-    fun f774_Song(t: Task) {
+    fun f779_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -5727,12 +5722,12 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 9437241 // night.HC:57
             st1((ld8(P.g_Fs) + 778L), 7L)
             ln = 9437242 // night.HC:58
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065925L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065930L)
             ln = 9437243 // night.HC:59
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 9437244 // night.HC:60
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 9437245 // night.HC:61
             st8((P.g_music + 56L), bits(2.0))
             ln = 9437246 // night.HC:62
@@ -5745,22 +5740,22 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 loop0@ while ((1L != 0L)) {
                     ln = 9437249 // night.HC:65
                     tick(t)
-                    val t0: Double = P.f487_Beat(t)
+                    val t0: Double = P.f492_Beat(t)
                     st8(g_t0, bits(t0))
                     ln = 9437250 // night.HC:66
                     nat(t, n_Print, push1(t, s80))
                     ln = 9437251 // night.HC:67
                     tick(t)
-                    P.f494_Play(t, s82, s81)
+                    P.f499_Play(t, s82, s81)
                     ln = 9437253 // night.HC:69
                     tick(t)
-                    P.f494_Play(t, s82, s81)
+                    P.f499_Play(t, s82, s81)
                     ln = 9437255 // night.HC:71
                     tick(t)
-                    P.f494_Play(t, s84, s83)
+                    P.f499_Play(t, s84, s83)
                     ln = 9437257 // night.HC:73
                     tick(t)
-                    P.f494_Play(t, s84, s83)
+                    P.f499_Play(t, s84, s83)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -5781,26 +5776,26 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/night.HC#1 (night.HC:81) */
-    fun f775_init_C__Apps_Psalmody_Examples_night_HC_1(t: Task): Long {
+    fun f780_init_C__Apps_Psalmody_Examples_night_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 9437265 // night.HC:81
             tick(t)
-            f774_Song(t)
+            f779_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/night.HC#1", ln) }
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#0 (prosper.HC:14) */
-    fun f776_init_C__Apps_Psalmody_Examples_prosper_HC_0(t: Task): Long {
+    fun f781_init_C__Apps_Psalmody_Examples_prosper_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 10485774 // prosper.HC:14
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             st8(g_t0, bits(t0))
             t.depth--
             return 0L
@@ -5808,7 +5803,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (prosper.HC:16) */
-    fun f777_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f782_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -5817,7 +5812,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l16_dt: Double = 0.0
             ln = 10485778 // prosper.HC:18
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             l16_dt = (t0 - ldf(g_t0))
             ln = 10485779 // prosper.HC:19
             val t1: Long = (p1_dc + 28L)
@@ -5828,8 +5823,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f307_Mat4x4RotZ(t, ld8((p1_dc + 200L)), (0.25 * t2))
             ln = 10485781 // prosper.HC:21
             val t3: Double = f(nat(t, n_Sin, push1(t, bits((l16_dt / 3.0)))))
-            tick(t)
-            P.f308_Mat4x4Scale(t, ld8((p1_dc + 200L)), (1.5 + (0.5 * t3)))
+            nat(t, n_Mat4x4Scale, push2(t, ld8((p1_dc + 200L)), bits((1.5 + (0.5 * t3)))))
             ln = 10485782 // prosper.HC:22
             tick(t)
             P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc + 200L)))
@@ -5838,11 +5832,11 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             if (((t4 and 1L) != 0L)) {
                 ln = 10485784 // prosper.HC:24
                 tick(t)
-                P.f441_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b25)
+                P.f446_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b25)
             } else {
                 ln = 10485786 // prosper.HC:26
                 tick(t)
-                P.f441_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b26)
+                P.f446_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b26)
             }
             t.depth--
             return
@@ -5850,7 +5844,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Song (prosper.HC:29) */
-    fun f778_Song(t: Task) {
+    fun f783_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -5860,12 +5854,12 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 10485792 // prosper.HC:32
             st1((ld8(P.g_Fs) + 778L), 46L)
             ln = 10485793 // prosper.HC:33
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065929L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065934L)
             ln = 10485794 // prosper.HC:34
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 10485796 // prosper.HC:36
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 10485797 // prosper.HC:37
             st8((P.g_music + 56L), bits(3.5))
             ln = 10485798 // prosper.HC:38
@@ -5878,20 +5872,20 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     if (!((t1 == 0L))) break@loop0
                     ln = 10485800 // prosper.HC:40
                     tick(t)
-                    val t0: Double = P.f487_Beat(t)
+                    val t0: Double = P.f492_Beat(t)
                     st8(g_t0, bits(t0))
                     ln = 10485801 // prosper.HC:41
                     tick(t)
-                    P.f494_Play(t, s86, s85)
+                    P.f499_Play(t, s86, s85)
                     ln = 10485804 // prosper.HC:44
                     tick(t)
-                    P.f494_Play(t, s88, s87)
+                    P.f499_Play(t, s88, s87)
                     ln = 10485806 // prosper.HC:46
                     tick(t)
-                    P.f494_Play(t, s90, s89)
+                    P.f499_Play(t, s90, s89)
                     ln = 10485808 // prosper.HC:48
                     tick(t)
-                    P.f494_Play(t, s90, s89)
+                    P.f499_Play(t, s90, s89)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -5912,13 +5906,13 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#1 (prosper.HC:56) */
-    fun f779_init_C__Apps_Psalmody_Examples_prosper_HC_1(t: Task): Long {
+    fun f784_init_C__Apps_Psalmody_Examples_prosper_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 10485816 // prosper.HC:56
             tick(t)
-            f778_Song(t)
+            f783_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/prosper.HC#1", ln) }
@@ -5927,83 +5921,83 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Psalmody_Run_HC_0(t)
-            704 -> f704_init_C__Apps_Psalmody_Run_HC_1(t)
-            705 -> f705_JukeReward(t, (if (n > 0) st[base + 0] else 0L))
-            706 -> f706_SingleSong(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            707 -> f707_JBPutKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            708 -> { f708_JukeBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            709 -> { f709_SongPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> { f710_JukeSongPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            711 -> { f711_JukeSongsPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            712 -> f712_init_C__Apps_Psalmody_Run_HC_2(t)
-            713 -> f713_init_C__Apps_Psalmody_Run_HC_3(t)
-            714 -> { f714_DrawTempoCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            715 -> { f715_UpdateDerivedTempoCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            716 -> { f716_LeftClickTempo(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            717 -> f717_TempoNew(t)
-            718 -> { f718_TempoDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            719 -> f719_init_C__Apps_Psalmody_Run_HC_4(t)
-            720 -> f720_init_C__Apps_Psalmody_Run_HC_5(t)
-            721 -> f721_init_C__Apps_Psalmody_Run_HC_6(t)
-            722 -> f722_PsmBlink(t)
-            723 -> f723_PsmHasWords(t, (if (n > 0) st[base + 0] else 0L))
-            724 -> f724_PsmIsDotted(t, (if (n > 0) st[base + 0] else 0L))
-            725 -> { f725_PsmMarkSel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            726 -> { f726_PsmSetWidth(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            727 -> { f727_PsmSetOctave(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            728 -> { f728_DrawNote(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            729 -> { f729_DrawTimeSignature(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
-            730 -> { f730_PsmRecalcNoteXY(t); 0L }
-            731 -> { f731_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            732 -> { f732_PsmSetPickNoteBoxX(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            733 -> f733_PsmGetPickNoteBoxDuration(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            734 -> { f734_DrawPickNoteBox(t); 0L }
-            735 -> { f735_DrawPickTools(t); 0L }
-            736 -> f736_PsmGetPickToolBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            737 -> f737_init_C__Apps_Psalmody_Run_HC_7(t)
-            738 -> f738_PsmGetPickMeterBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            739 -> { f739_DrawPickMeterBox(t); 0L }
-            740 -> { f740_DrawDC2(t); 0L }
-            741 -> { f741_PsmMenu(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            742 -> { f742_PsmNoteDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            743 -> f743_PsmNoteCopy(t, (if (n > 0) st[base + 0] else 0L))
-            744 -> { f744_PsmSongDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            745 -> { f745_PsmCutToClip(t); 0L }
-            746 -> { f746_PsmPasteClip(t); 0L }
-            747 -> { f747_PsmCopyToClip(t); 0L }
-            748 -> f748_PsmFindNote(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            749 -> f749_PsmMusicSetOctave(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            750 -> f750_PsmMusicSetNoteLen(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            751 -> { f751_PsmLoadSongStr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            752 -> { f752_PsmLoadSong(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            753 -> f753_PsmCvtSong(t)
-            754 -> f754_PsmSaveSong(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            755 -> bits(f755_PopUpDuration(t))
-            756 -> { f756_PsmRightClick(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            757 -> { f757_PsmLeftClickPickNoteBox(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            758 -> { f758_PsmLeftClickPickMeterBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            759 -> { f759_PsmLeftClickStaffPtr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            760 -> { f760_PsmLeftClickStaffBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            761 -> { f761_PsmLeftClick(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            762 -> f762_PsmCvtDuration(t, f((if (n > 0) st[base + 0] else 0L)))
-            763 -> f763_init_C__Apps_Psalmody_Run_HC_8(t)
-            764 -> { f764_PsmDownKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            765 -> { f765_PsmUpKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            766 -> { f766_PsmPushMode(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            767 -> { f767_PsmPopMode(t); 0L }
-            768 -> { f768_Psalmody(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            769 -> f769_init_C__Apps_Psalmody_Run_HC_9(t)
-            770 -> { f770_Song(t); 0L }
-            771 -> f771_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
-            772 -> f772_init_C__Apps_Psalmody_Examples_night_HC_0(t)
-            773 -> { f773_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            774 -> { f774_Song(t); 0L }
-            775 -> f775_init_C__Apps_Psalmody_Examples_night_HC_1(t)
-            776 -> f776_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
-            777 -> { f777_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            778 -> { f778_Song(t); 0L }
-            779 -> f779_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
+            708 -> f708_init_C__Apps_Psalmody_Run_HC_0(t)
+            709 -> f709_init_C__Apps_Psalmody_Run_HC_1(t)
+            710 -> f710_JukeReward(t, (if (n > 0) st[base + 0] else 0L))
+            711 -> f711_SingleSong(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            712 -> f712_JBPutKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            713 -> { f713_JukeBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            714 -> { f714_SongPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> { f715_JukeSongPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            716 -> { f716_JukeSongsPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            717 -> f717_init_C__Apps_Psalmody_Run_HC_2(t)
+            718 -> f718_init_C__Apps_Psalmody_Run_HC_3(t)
+            719 -> { f719_DrawTempoCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            720 -> { f720_UpdateDerivedTempoCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            721 -> { f721_LeftClickTempo(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            722 -> f722_TempoNew(t)
+            723 -> { f723_TempoDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            724 -> f724_init_C__Apps_Psalmody_Run_HC_4(t)
+            725 -> f725_init_C__Apps_Psalmody_Run_HC_5(t)
+            726 -> f726_init_C__Apps_Psalmody_Run_HC_6(t)
+            727 -> f727_PsmBlink(t)
+            728 -> f728_PsmHasWords(t, (if (n > 0) st[base + 0] else 0L))
+            729 -> f729_PsmIsDotted(t, (if (n > 0) st[base + 0] else 0L))
+            730 -> { f730_PsmMarkSel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            731 -> { f731_PsmSetWidth(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            732 -> { f732_PsmSetOctave(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            733 -> { f733_DrawNote(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            734 -> { f734_DrawTimeSignature(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
+            735 -> { f735_PsmRecalcNoteXY(t); 0L }
+            736 -> { f736_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            737 -> { f737_PsmSetPickNoteBoxX(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            738 -> f738_PsmGetPickNoteBoxDuration(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            739 -> { f739_DrawPickNoteBox(t); 0L }
+            740 -> { f740_DrawPickTools(t); 0L }
+            741 -> f741_PsmGetPickToolBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            742 -> f742_init_C__Apps_Psalmody_Run_HC_7(t)
+            743 -> f743_PsmGetPickMeterBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            744 -> { f744_DrawPickMeterBox(t); 0L }
+            745 -> { f745_DrawDC2(t); 0L }
+            746 -> { f746_PsmMenu(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            747 -> { f747_PsmNoteDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            748 -> f748_PsmNoteCopy(t, (if (n > 0) st[base + 0] else 0L))
+            749 -> { f749_PsmSongDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            750 -> { f750_PsmCutToClip(t); 0L }
+            751 -> { f751_PsmPasteClip(t); 0L }
+            752 -> { f752_PsmCopyToClip(t); 0L }
+            753 -> f753_PsmFindNote(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            754 -> f754_PsmMusicSetOctave(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            755 -> f755_PsmMusicSetNoteLen(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            756 -> { f756_PsmLoadSongStr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            757 -> { f757_PsmLoadSong(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            758 -> f758_PsmCvtSong(t)
+            759 -> f759_PsmSaveSong(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            760 -> bits(f760_PopUpDuration(t))
+            761 -> { f761_PsmRightClick(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            762 -> { f762_PsmLeftClickPickNoteBox(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            763 -> { f763_PsmLeftClickPickMeterBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            764 -> { f764_PsmLeftClickStaffPtr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            765 -> { f765_PsmLeftClickStaffBox(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            766 -> { f766_PsmLeftClick(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            767 -> f767_PsmCvtDuration(t, f((if (n > 0) st[base + 0] else 0L)))
+            768 -> f768_init_C__Apps_Psalmody_Run_HC_8(t)
+            769 -> { f769_PsmDownKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            770 -> { f770_PsmUpKey(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            771 -> { f771_PsmPushMode(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            772 -> { f772_PsmPopMode(t); 0L }
+            773 -> { f773_Psalmody(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            774 -> f774_init_C__Apps_Psalmody_Run_HC_9(t)
+            775 -> { f775_Song(t); 0L }
+            776 -> f776_init_C__Apps_Psalmody_Examples_childish_HC_0(t)
+            777 -> f777_init_C__Apps_Psalmody_Examples_night_HC_0(t)
+            778 -> { f778_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            779 -> { f779_Song(t); 0L }
+            780 -> f780_init_C__Apps_Psalmody_Examples_night_HC_1(t)
+            781 -> f781_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
+            782 -> { f782_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            783 -> { f783_Song(t); 0L }
+            784 -> f784_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -6015,7 +6009,7 @@ class N_Apps_Psalmody_Run(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784)
         private val NAMES = arrayOf("\$init:C:/Apps/Psalmody/Run.HC#0", "\$init:C:/Apps/Psalmody/Run.HC#1", "JukeReward", "SingleSong", "JBPutKey", "JukeBox", "SongPuppet", "JukeSongPuppet", "JukeSongsPuppet", "\$init:C:/Apps/Psalmody/Run.HC#2", "\$init:C:/Apps/Psalmody/Run.HC#3", "DrawTempoCtrl", "UpdateDerivedTempoCtrl", "LeftClickTempo", "TempoNew", "TempoDel", "\$init:C:/Apps/Psalmody/Run.HC#4", "\$init:C:/Apps/Psalmody/Run.HC#5", "\$init:C:/Apps/Psalmody/Run.HC#6", "PsmBlink", "PsmHasWords", "PsmIsDotted", "PsmMarkSel", "PsmSetWidth", "PsmSetOctave", "DrawNote", "DrawTimeSignature", "PsmRecalcNoteXY", "DrawIt", "PsmSetPickNoteBoxX", "PsmGetPickNoteBoxDuration", "DrawPickNoteBox", "DrawPickTools", "PsmGetPickToolBox", "\$init:C:/Apps/Psalmody/Run.HC#7", "PsmGetPickMeterBox", "DrawPickMeterBox", "DrawDC2", "PsmMenu", "PsmNoteDel", "PsmNoteCopy", "PsmSongDel", "PsmCutToClip", "PsmPasteClip", "PsmCopyToClip", "PsmFindNote", "PsmMusicSetOctave", "PsmMusicSetNoteLen", "PsmLoadSongStr", "PsmLoadSong", "PsmCvtSong", "PsmSaveSong", "PopUpDuration", "PsmRightClick", "PsmLeftClickPickNoteBox", "PsmLeftClickPickMeterBox", "PsmLeftClickStaffPtr", "PsmLeftClickStaffBox", "PsmLeftClick", "PsmCvtDuration", "\$init:C:/Apps/Psalmody/Run.HC#8", "PsmDownKey", "PsmUpKey", "PsmPushMode", "PsmPopMode", "Psalmody", "\$init:C:/Apps/Psalmody/Run.HC#9", "Song", "\$init:C:/Apps/Psalmody/Examples/childish.HC#0", "\$init:C:/Apps/Psalmody/Examples/night.HC#0", "DrawIt", "Song", "\$init:C:/Apps/Psalmody/Examples/night.HC#1", "\$init:C:/Apps/Psalmody/Examples/prosper.HC#0", "DrawIt", "Song", "\$init:C:/Apps/Psalmody/Examples/prosper.HC#1")
         private val FILES = arrayOf<String>("C:/Apps/Psalmody/Run.HC", "C:/Apps/Psalmody/Load.HC", "C:/Apps/Psalmody/JukeBox.HC", "C:/Apps/Psalmody/JukePuppet.HC", "C:/Apps/Psalmody/PsalmodyCtrls.HC", "C:/Apps/Psalmody/PsalmodyDraw.HC", "C:/Apps/Psalmody/PsalmodyFile.HC", "C:/Apps/Psalmody/PsalmodyMain.HC", "C:/Apps/Psalmody/Examples/childish.HC", "C:/Apps/Psalmody/Examples/night.HC", "C:/Apps/Psalmody/Examples/prosper.HC")
     }

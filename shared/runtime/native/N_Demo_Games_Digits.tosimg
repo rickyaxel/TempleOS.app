@@ -12,12 +12,12 @@ s 17fe70 5061747465726e0a4c656e6774683a25640a0a
 s 17fe40 2457572c31242442472c444b47524159242446442c5748495445240a
 s 17fe98 47756573730a4c656e6774683a25640a0a
 s 17fec0 0a53636f72653a25640a
-fn 703 PrintDigit (U0;U8;-)
-fn 704 PrintPattern (U0;*U8;-)
-fn 705 Digits (U0;;-)
-fn 706 $init:C:/Demo/Games/Digits.HC#0 (I64;;-)
-sym f Digits 705 (U0;;-)
-sym f PrintDigit 703 (U0;U8;-)
-sym f PrintPattern 704 (U0;*U8;-)
-init 706
+fn 708 PrintDigit (U0;U8;-)
+fn 709 PrintPattern (U0;*U8;-)
+fn 710 Digits (U0;;-)
+fn 711 $init:C:/Demo/Games/Digits.HC#0 (I64;;-)
+sym f Digits 710 (U0;;-)
+sym f PrintDigit 708 (U0;U8;-)
+sym f PrintPattern 709 (U0;*U8;-)
+init 711
 unit C:/Demo/Games/Digits.HC#1

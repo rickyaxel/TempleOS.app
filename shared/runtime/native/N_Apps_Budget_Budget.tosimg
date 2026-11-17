@@ -45,12 +45,12 @@ g 17fd68 8
 g 17fd80 88
 s 17fde8 4e756c6c00496e74657276616c004d6f6e74686c790042696d6f6e74686c790053656d69616e6e75616c00416e6e75616c00
 s 17fe30 53545f4247545f54454d504c4154455f5459504553
-fn 703 $init:C:/Apps/Budget/Budget.HC#0 (I64;;-)
+fn 708 $init:C:/Apps/Budget/Budget.HC#0 (I64;;-)
 sym g b_head 17fd80 $CBgtEntry
 sym g bgt_accts_file 17fd50 *U8
 sym g bgt_data_file 17fd68 *U8
 sym g bgt_string_file 17fd38 *U8
-init 703
+init 708
 unit C:/Apps/Budget/Budget.HC#1
 g 17fe58 148
 g 17ff00 512
@@ -58,12 +58,12 @@ g 180110 8
 g 180128 8
 c 180110 8 0
 c 180128 8 0
-fn 704 MyStr2Date ($CDate;*U8;-)
-fn 705 $init:C:/Apps/Budget/Budget.HC#1 (I64;;-)
-sym f MyStr2Date 704 ($CDate;*U8;-)
+fn 709 MyStr2Date ($CDate;*U8;-)
+fn 710 $init:C:/Apps/Budget/Budget.HC#1 (I64;;-)
+sym f MyStr2Date 709 ($CDate;*U8;-)
 sym g accts_table 180110 *$CHashTable
 sym g accts_table_strs 180128 I64
 sym g t_head 17fe58 $CBgtTemplate
 sym g view_acct 17ff00 [512]U8
-init 705
+init 710
 unit C:/Apps/Budget/Budget.HC#2

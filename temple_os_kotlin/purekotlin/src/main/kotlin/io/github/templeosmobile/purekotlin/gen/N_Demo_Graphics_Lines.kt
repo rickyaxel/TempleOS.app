@@ -19,7 +19,7 @@ class N_Demo_Graphics_Lines(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC Main (Lines.HC:1) */
-    fun f703_Main(t: Task) {
+    fun f708_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -68,7 +68,7 @@ class N_Demo_Graphics_Lines(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                 }
                 ln = 11 // Lines.HC:11
                 tick(t)
-                P.f396_GrLine(t, l80_dc, l0_x1, l8_y1, l16_x2, l24_y2, 1L, 0L)
+                P.f397_GrLine(t, l80_dc, l0_x1, l8_y1, l16_x2, l24_y2, 1L, 0L)
                 ln = 12 // Lines.HC:12
                 val t3: Long = nat(t, n_RandI16, push0(t))
                 tick(t)
@@ -129,13 +129,13 @@ class N_Demo_Graphics_Lines(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Graphics/Lines.HC#0 (Lines.HC:26) */
-    fun f704_init_C__Demo_Graphics_Lines_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_Lines_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 26 // Lines.HC:26
             tick(t)
-            f703_Main(t)
+            f708_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Lines.HC#0", ln) }
@@ -144,8 +144,8 @@ class N_Demo_Graphics_Lines(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Main(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_Lines_HC_0(t)
+            708 -> { f708_Main(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_Lines_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -157,7 +157,7 @@ class N_Demo_Graphics_Lines(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("Main", "\$init:C:/Demo/Graphics/Lines.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Lines.HC")
     }

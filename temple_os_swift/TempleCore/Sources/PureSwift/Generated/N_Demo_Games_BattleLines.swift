@@ -13,6 +13,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     public let n_DocClear: Int
     public let n_DocCursor: Int
     public let n_Free: Int
+    public let n_GrLine3: Int
     public let n_MemSet: Int
     public let n_MsSet: Int
     public let n_Rand: Int
@@ -20,6 +21,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     public let n_RandU16: Int
     public let n_Sleep: Int
     public let n_Snd: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_tS: Int
     /** imgs: U8 *[6] */ public var g_imgs: Int64 = 0
@@ -49,6 +51,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
         n_DocClear = rt.vm.natives.find("DocClear")!.index
         n_DocCursor = rt.vm.natives.find("DocCursor")!.index
         n_Free = rt.vm.natives.find("Free")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_MsSet = rt.vm.natives.find("MsSet")!.index
         n_Rand = rt.vm.natives.find("Rand")!.index
@@ -56,6 +59,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
         n_RandU16 = rt.vm.natives.find("RandU16")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
@@ -90,7 +94,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BattleLines.HC#0 (BattleLines.HC:26)
-    @discardableResult public final func f703_init_C__Demo_Games_BattleLines_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_BattleLines_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -107,7 +111,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC DrawTrooper (BattleLines.HC:54)
-    public final func f704_DrawTrooper(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f709_DrawTrooper(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -158,7 +162,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                         try st4(t3, (ld4s(t3) | 1536))
                         ln = 77 // BattleLines.HC:77
                         try tick(t)
-                        _ = try P.f314_DCSymmetrySet(t, p1_dc, l32_x, l40_y, l32_x, (l40_y &+ 1))
+                        _ = try P.f315_DCSymmetrySet(t, p1_dc, l32_x, l40_y, l32_x, (l40_y &+ 1))
                         ln = 78 // BattleLines.HC:78
                         l48_gx = (l48_gx &- 13)
                         ln = 79 // BattleLines.HC:79
@@ -175,8 +179,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                     ln = 86 // BattleLines.HC:86
                     try st4((p1_dc &+ 160), 0)
                     ln = 87 // BattleLines.HC:87
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, (l32_x &+ 1), l40_y, 0, b6, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, (l32_x &+ 1), l40_y, 0, b6, 0))
                     ln = 89 // BattleLines.HC:89
                     if try (ld8((p2_tmpt &+ 56)) == 0) {
                         ln = 90 // BattleLines.HC:90
@@ -186,8 +189,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                         try st4((p1_dc &+ 160), 13)
                     }
                     ln = 93 // BattleLines.HC:93
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, l32_x, l40_y, 0, b7, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, l32_x, l40_y, 0, b7, 0))
                     ln = 95 // BattleLines.HC:95
                     let t5: Int64 = (p1_dc &+ 28)
                     try st4(t5, (ld4s(t5) & (-1537)))
@@ -200,8 +202,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                         try st4((p1_dc &+ 160), 9)
                     }
                     ln = 100 // BattleLines.HC:100
-                    try tick(t)
-                    _ = try P.f406_GrLine3(t, p1_dc, l48_gx, l56_gy, 0, ld4s((ld8((p2_tmpt &+ 80)) &+ 4)), ld4s(((ld8((p2_tmpt &+ 80)) &+ 8) &+ 4)), 0, 1, 0)
+                    _ = try nat(t, n_GrLine3, try push(t, p1_dc, l48_gx, l56_gy, 0, ld4s((ld8((p2_tmpt &+ 80)) &+ 4)), ld4s(((ld8((p2_tmpt &+ 80)) &+ 8) &+ 4)), 0, 1, 0))
                 } else {
                     ln = 102 // BattleLines.HC:102
                     if try (ld8((p2_tmpt &+ 16)) < 0) {
@@ -210,7 +211,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                         try st4(t6, (ld4s(t6) | 1536))
                         ln = 104 // BattleLines.HC:104
                         try tick(t)
-                        _ = try P.f314_DCSymmetrySet(t, p1_dc, l32_x, l40_y, l32_x, (l40_y &+ 1))
+                        _ = try P.f315_DCSymmetrySet(t, p1_dc, l32_x, l40_y, l32_x, (l40_y &+ 1))
                     } else {
                         ln = 106 // BattleLines.HC:106
                         let t7: Int64 = (p1_dc &+ 28)
@@ -218,13 +219,12 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                     }
                     ln = 107 // BattleLines.HC:107
                     try tick(t)
-                    let t8: Int64 = try P.f448_SpriteInterpolate(t, fmod(l72_tt, 1.0), ld8((g_imgs &+ (f2i(fmod(l72_tt, 6.0)) &* 8))), ld8((g_imgs &+ (f2i(fmod((l72_tt + 1.0), 6.0)) &* 8))))
+                    let t8: Int64 = try P.f453_SpriteInterpolate(t, fmod(l72_tt, 1.0), ld8((g_imgs &+ (f2i(fmod(l72_tt, 6.0)) &* 8))), ld8((g_imgs &+ (f2i(fmod((l72_tt + 1.0), 6.0)) &* 8))))
                     l24_tmps = t8
                     ln = 109 // BattleLines.HC:109
                     try st4((p1_dc &+ 160), 0)
                     ln = 110 // BattleLines.HC:110
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, (l32_x &+ 1), l40_y, 0, l24_tmps, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, (l32_x &+ 1), l40_y, 0, l24_tmps, 0))
                     ln = 112 // BattleLines.HC:112
                     if try (ld8((p2_tmpt &+ 56)) == 0) {
                         ln = 113 // BattleLines.HC:113
@@ -234,8 +234,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                         try st4((p1_dc &+ 160), 13)
                     }
                     ln = 116 // BattleLines.HC:116
-                    try tick(t)
-                    try P.f440_Sprite3(t, p1_dc, l32_x, l40_y, 0, l24_tmps, 0)
+                    _ = try nat(t, n_Sprite3, try push(t, p1_dc, l32_x, l40_y, 0, l24_tmps, 0))
                     ln = 118 // BattleLines.HC:118
                     _ = try nat(t, n_Free, try push1(t, l24_tmps))
                     ln = 119 // BattleLines.HC:119
@@ -249,7 +248,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC DrawIt (BattleLines.HC:124)
-    public final func f705_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -286,7 +285,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                     if try (ld8((l16_tmpt &+ 40)) > 0) {
                         ln = 137 // BattleLines.HC:137
                         try tick(t)
-                        try f704_DrawTrooper(t, p0_task, p1_dc, l16_tmpt)
+                        try f709_DrawTrooper(t, p0_task, p1_dc, l16_tmpt)
                         ln = 138 // BattleLines.HC:138
                         let t0: Int64 = ((fp &+ 40) &+ (l32_j &* 8))
                         let t1: Int64 = try ld8(t0)
@@ -307,7 +306,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                 try st4((p1_dc &+ 160), 14)
                 ln = 144 // BattleLines.HC:144
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, l56_x, l64_y, 50, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, l56_x, l64_y, 50, 1, 0.0, (2.0 * d(4614256656552045848)))
             } else {
                 ln = 146 // BattleLines.HC:146
                 if (l72_repulsive != 0) {
@@ -333,21 +332,21 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                 try tick(t)
                 let t2: Int64 = try P.f105_AbsI64(t, ld8((P.g_ms &+ 16)))
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, l56_x, l64_y, t2, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, l56_x, l64_y, t2, 1, 0.0, (2.0 * d(4614256656552045848)))
             }
             ln = 159 // BattleLines.HC:159
             try st4((p1_dc &+ 160), 11)
             ln = 160 // BattleLines.HC:160
             try tick(t)
             let vb0 = try push1(t, ld8((fp &+ 40)))
-            _ = try P.f369_GrPrint(t, p1_dc, ((ld8((p0_task &+ 80)) &- 8) &* 8), 0, s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, ((ld8((p0_task &+ 80)) &- 8) &* 8), 0, s0, vb0, 1)
             t.sp = vb0
             ln = 161 // BattleLines.HC:161
             try st4((p1_dc &+ 160), 13)
             ln = 162 // BattleLines.HC:162
             try tick(t)
             let vb1 = try push1(t, ld8(((fp &+ 40) &+ 8)))
-            _ = try P.f369_GrPrint(t, p1_dc, ((ld8((p0_task &+ 80)) &- 4) &* 8), 0, s0, vb1, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, ((ld8((p0_task &+ 80)) &- 4) &* 8), 0, s0, vb1, 1)
             t.sp = vb1
             t.msp = msp0
             t.depth -= 1
@@ -356,7 +355,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC DoAiTarget (BattleLines.HC:165)
-    public final func f706_DoAiTarget(_ t: HTask) throws {
+    public final func f711_DoAiTarget(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -392,7 +391,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC UpdatePos (BattleLines.HC:179)
-    public final func f707_UpdatePos(_ t: HTask) throws {
+    public final func f712_UpdatePos(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -448,7 +447,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC ResolveFiring (BattleLines.HC:194)
-    public final func f708_ResolveFiring(_ t: HTask) throws {
+    public final func f713_ResolveFiring(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -554,7 +553,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC UpdateHumanVelocities (BattleLines.HC:234)
-    public final func f709_UpdateHumanVelocities(_ t: HTask) throws {
+    public final func f714_UpdateHumanVelocities(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -661,7 +660,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC Init (BattleLines.HC:274)
-    public final func f710_Init(_ t: HTask) throws {
+    public final func f715_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -753,14 +752,14 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     }
 
     /// HolyC BattleLines (BattleLines.HC:314)
-    public final func f711_BattleLines(_ t: HTask) throws {
+    public final func f716_BattleLines(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             var l0_tmpse: Int64 = 0
             ln = 318 // BattleLines.HC:318
             try tick(t)
-            _ = try P.f507_MenuPush(t, s1)
+            _ = try P.f512_MenuPush(t, s1)
             ln = 330 // BattleLines.HC:330
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -780,9 +779,9 @@ public final class N_Demo_Games_BattleLines: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 337 // BattleLines.HC:337
             try tick(t)
-            try f710_Init(t)
+            try f715_Init(t)
             ln = 338 // BattleLines.HC:338
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065857)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065862)
             ln = 339 // BattleLines.HC:339
             try tick(t)
             _ = try P.f201_PopUpOk(t, s2, 0)
@@ -805,7 +804,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                                 try st1(g_time_lapse, b2i((ld1u(g_time_lapse) == 0)))
                                 ln = 351 // BattleLines.HC:351
                                 try tick(t)
-                                let t1: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s3)
+                                let t1: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s3)
                                 l0_tmpse = t1
                                 ln = 352 // BattleLines.HC:352
                                 try st1((l0_tmpse &+ 72), ld1u(g_time_lapse))
@@ -814,7 +813,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                                 try st1(g_tap_mode, b2i((ld1u(g_tap_mode) == 0)))
                                 ln = 356 // BattleLines.HC:356
                                 try tick(t)
-                                let t2: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s4)
+                                let t2: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s4)
                                 l0_tmpse = t2
                                 ln = 357 // BattleLines.HC:357
                                 try st1((l0_tmpse &+ 72), ld1u(g_tap_mode))
@@ -824,7 +823,7 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                             case 10:
                                 ln = 363 // BattleLines.HC:363
                                 try tick(t)
-                                try f710_Init(t)
+                                try f715_Init(t)
                             default:
                                 break
                             }
@@ -835,17 +834,17 @@ public final class N_Demo_Games_BattleLines: NativeModule {
                         if try (ld8(g_ai_mode) == 1) {
                             ln = 368 // BattleLines.HC:368
                             try tick(t)
-                            try f706_DoAiTarget(t)
+                            try f711_DoAiTarget(t)
                         }
                         ln = 369 // BattleLines.HC:369
                         try tick(t)
-                        try f709_UpdateHumanVelocities(t)
+                        try f714_UpdateHumanVelocities(t)
                         ln = 370 // BattleLines.HC:370
                         try tick(t)
-                        try f707_UpdatePos(t)
+                        try f712_UpdatePos(t)
                         ln = 371 // BattleLines.HC:371
                         try tick(t)
-                        try f708_ResolveFiring(t)
+                        try f713_ResolveFiring(t)
                         try tick(t)
                     }
                 }
@@ -863,20 +862,20 @@ public final class N_Demo_Games_BattleLines: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 377 // BattleLines.HC:377
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "BattleLines", ln) }
     }
 
     /// HolyC $init:C:/Demo/Games/BattleLines.HC#1 (BattleLines.HC:41)
-    @discardableResult public final func f712_init_C__Demo_Games_BattleLines_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Demo_Games_BattleLines_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 380 // BattleLines.HC:380
             try tick(t)
-            try f711_BattleLines(t)
+            try f716_BattleLines(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/BattleLines.HC#1", ln) }
@@ -885,22 +884,22 @@ public final class N_Demo_Games_BattleLines: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_BattleLines_HC_0(t)
-        case 704: try f704_DrawTrooper(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 705: try f705_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_DoAiTarget(t); return 0
-        case 707: try f707_UpdatePos(t); return 0
-        case 708: try f708_ResolveFiring(t); return 0
-        case 709: try f709_UpdateHumanVelocities(t); return 0
-        case 710: try f710_Init(t); return 0
-        case 711: try f711_BattleLines(t); return 0
-        case 712: return try f712_init_C__Demo_Games_BattleLines_HC_1(t)
+        case 708: return try f708_init_C__Demo_Games_BattleLines_HC_0(t)
+        case 709: try f709_DrawTrooper(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 710: try f710_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_DoAiTarget(t); return 0
+        case 712: try f712_UpdatePos(t); return 0
+        case 713: try f713_ResolveFiring(t); return 0
+        case 714: try f714_UpdateHumanVelocities(t); return 0
+        case 715: try f715_Init(t); return 0
+        case 716: try f716_BattleLines(t); return 0
+        case 717: return try f717_init_C__Demo_Games_BattleLines_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/BattleLines.HC#0", 704: "DrawTrooper", 705: "DrawIt", 706: "DoAiTarget", 707: "UpdatePos", 708: "ResolveFiring", 709: "UpdateHumanVelocities", 710: "Init", 711: "BattleLines", 712: "$init:C:/Demo/Games/BattleLines.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/BattleLines.HC#0", 709: "DrawTrooper", 710: "DrawIt", 711: "DoAiTarget", 712: "UpdatePos", 713: "ResolveFiring", 714: "UpdateHumanVelocities", 715: "Init", 716: "BattleLines", 717: "$init:C:/Demo/Games/BattleLines.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Games/BattleLines.HC"]
     public override var files: [String] { N_Demo_Games_BattleLines.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_BattleLines.DEFINED.contains(index) }

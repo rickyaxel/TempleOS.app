@@ -38,7 +38,7 @@ public final class N_Home_Examples_Palette: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Palette.HC#0 (Palette.HC:3)
-    @discardableResult public final func f703_init_C__Home_Examples_Palette_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Home_Examples_Palette_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -48,7 +48,7 @@ public final class N_Home_Examples_Palette: NativeModule {
     }
 
     /// HolyC PaletteDemo (Palette.HC:6)
-    public final func f704_PaletteDemo(_ t: HTask) throws {
+    public final func f709_PaletteDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -72,7 +72,7 @@ public final class N_Home_Examples_Palette: NativeModule {
                 ln = 15 // Palette.HC:15
                 try tick(t)
                 let vb0 = try push2(t, l0_i, ld8((g_names &+ (l0_i &* 8))))
-                _ = try P.f369_GrPrint(t, l8_dc, (24 &+ ((l0_i & 3) &* 152)), (64 &+ ((l0_i &>> 2) &* 100)), s0, vb0, 2)
+                _ = try P.f370_GrPrint(t, l8_dc, (24 &+ ((l0_i & 3) &* 152)), (64 &+ ((l0_i &>> 2) &* 100)), s0, vb0, 2)
                 t.sp = vb0
                 ln = 11 // Palette.HC:11
                 l0_i = (l0_i &+ 1)
@@ -94,13 +94,13 @@ public final class N_Home_Examples_Palette: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Palette.HC#1 (Palette.HC:23)
-    @discardableResult public final func f705_init_C__Home_Examples_Palette_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Examples_Palette_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 23 // Palette.HC:23
             try tick(t)
-            try f704_PaletteDemo(t)
+            try f709_PaletteDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Home/Examples/Palette.HC#1", ln) }
@@ -109,15 +109,15 @@ public final class N_Home_Examples_Palette: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Home_Examples_Palette_HC_0(t)
-        case 704: try f704_PaletteDemo(t); return 0
-        case 705: return try f705_init_C__Home_Examples_Palette_HC_1(t)
+        case 708: return try f708_init_C__Home_Examples_Palette_HC_0(t)
+        case 709: try f709_PaletteDemo(t); return 0
+        case 710: return try f710_init_C__Home_Examples_Palette_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Home/Examples/Palette.HC#0", 704: "PaletteDemo", 705: "$init:C:/Home/Examples/Palette.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Home/Examples/Palette.HC#0", 709: "PaletteDemo", 710: "$init:C:/Home/Examples/Palette.HC#1"]
     private static let FILES: [String] = ["C:/Home/Examples/Palette.HC"]
     public override var files: [String] { N_Home_Examples_Palette.FILES }
     public override func defines(_ index: Int) -> Bool { N_Home_Examples_Palette.DEFINED.contains(index) }

@@ -26,6 +26,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     public let n_Sin: Int
     public let n_Sleep: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_tS: Int
     /** "F64 best_score=9999;." */ public var s0: Int64 = 0
@@ -73,6 +74,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
         n_Sin = rt.vm.natives.find("Sin")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
@@ -113,7 +115,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/ZoneOut.HC#0 (ZoneOut.HC:1)
-    @discardableResult public final func f703_init_C__Demo_Games_ZoneOut_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_ZoneOut_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -127,7 +129,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/ZoneOut.HC#1 (ZoneOut.HC:2)
-    @discardableResult public final func f704_init_C__Demo_Games_ZoneOut_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_ZoneOut_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -141,7 +143,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -151,7 +153,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC ZOTransform (ZoneOut.HC:80)
-    public final func f706_ZOTransform(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f711_ZOTransform(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -187,7 +189,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC DrawIt (ZoneOut.HC:93)
-    public final func f707_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f712_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -211,29 +213,26 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
             l72_cy = (l56_h &>> 1)
             ln = 100 // ZoneOut.HC:100
             try tick(t)
-            let t0: Double = try P.f542_Wrap(t, (2.0 * ldf((g_us &+ 24))), (-d(4614256656552045848)))
+            let t0: Double = try P.f547_Wrap(t, (2.0 * ldf((g_us &+ 24))), (-d(4614256656552045848)))
             l96__ = ((640.0 * t0) / d(4614256656552045848))
             ln = 101 // ZoneOut.HC:101
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, f2i((l96__ - 1280.0)), 90, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i((l96__ - 1280.0)), 90, 0, b0, 0))
             ln = 102 // ZoneOut.HC:102
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, f2i(l96__), 90, 0, b1, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i(l96__), 90, 0, b1, 0))
             ln = 103 // ZoneOut.HC:103
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, f2i((l96__ + 1280.0)), 90, 0, b2, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i((l96__ + 1280.0)), 90, 0, b2, 0))
             ln = 105 // ZoneOut.HC:105
             try tick(t)
             _ = try P.f296_DCDepthBufAlloc(t, p1_dc)
             ln = 106 // ZoneOut.HC:106
-            try st8((p1_dc &+ 232), 9223090561878065858)
+            try st8((p1_dc &+ 232), 9223090561878065863)
             ln = 107 // ZoneOut.HC:107
             try st4((p1_dc &+ 216), l64_cx)
             ln = 108 // ZoneOut.HC:108
             try st4((p1_dc &+ 220), l72_cy)
             ln = 109 // ZoneOut.HC:109
             try tick(t)
-            _ = try P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), (0 &- ld8((g_us &+ 32))), (0 &- ld8((g_us &+ 40))), (0 &- ld8((g_us &+ 48))))
+            _ = try P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), (0 &- ld8((g_us &+ 32))), (0 &- ld8((g_us &+ 40))), (0 &- ld8((g_us &+ 48))))
             ln = 110 // ZoneOut.HC:110
             try tick(t)
             _ = try P.f306_Mat4x4RotY(t, ld8((p1_dc &+ 200)), (ldf((g_us &+ 24)) - (d(4614256656552045848) / 2.0)))
@@ -297,7 +296,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
                 }
                 ln = 136 // ZoneOut.HC:136
                 try tick(t)
-                try P.f444_Sprite3YB(t, p1_dc, ld8(((g_them &+ (l24_i &* 64)) &+ 32)), l40_y, ld8(((g_them &+ (l24_i &* 64)) &+ 48)), l80_img, (-ldf(((g_them &+ (l24_i &* 64)) &+ 24))))
+                try P.f449_Sprite3YB(t, p1_dc, ld8(((g_them &+ (l24_i &* 64)) &+ 32)), l40_y, ld8(((g_them &+ (l24_i &* 64)) &+ 48)), l80_img, (-ldf(((g_them &+ (l24_i &* 64)) &+ 24))))
                 ln = 114 // ZoneOut.HC:114
                 l24_i = (l24_i &+ 1)
                 try tick(t)
@@ -308,7 +307,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
             loop4: while (l16_tmpo != g_shots) {
                 ln = 140 // ZoneOut.HC:140
                 try tick(t)
-                try P.f444_Sprite3YB(t, p1_dc, ld8((l16_tmpo &+ 32)), ld8((l16_tmpo &+ 40)), ld8((l16_tmpo &+ 48)), b5, (-ldf((l16_tmpo &+ 24))))
+                try P.f449_Sprite3YB(t, p1_dc, ld8((l16_tmpo &+ 32)), ld8((l16_tmpo &+ 40)), ld8((l16_tmpo &+ 48)), b5, (-ldf((l16_tmpo &+ 24))))
                 ln = 141 // ZoneOut.HC:141
                 l16_tmpo = try ld8(l16_tmpo)
                 try tick(t)
@@ -320,10 +319,10 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
             try st4((p1_dc &+ 160), 10)
             ln = 145 // ZoneOut.HC:145
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l64_cx &- 5), l72_cy, (l64_cx &+ 5), l72_cy, 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l64_cx &- 5), l72_cy, (l64_cx &+ 5), l72_cy, 1, 0)
             ln = 146 // ZoneOut.HC:146
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, l64_cx, (l72_cy &- 5), l64_cx, (l72_cy &+ 5), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, l64_cx, (l72_cy &- 5), l64_cx, (l72_cy &+ 5), 1, 0)
             ln = 147 // ZoneOut.HC:147
             if try (ldf(g_tf) != 0.0) {
                 ln = 148 // ZoneOut.HC:148
@@ -335,7 +334,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
                     ln = 150 // ZoneOut.HC:150
                     try tick(t)
                     let vb0 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, (l64_cx &- divs(112, 2)), (l72_cy &- divs(8, 2)), s2, vb0, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, (l64_cx &- divs(112, 2)), (l72_cy &- divs(8, 2)), s2, vb0, 0)
                     t.sp = vb0
                 }
                 ln = 151 // ZoneOut.HC:151
@@ -345,10 +344,10 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
                 try st4((p1_dc &+ 160), 0)
                 ln = 154 // ZoneOut.HC:154
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, (l64_cx &- 5), l72_cy, (l64_cx &+ 5), l72_cy, 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, (l64_cx &- 5), l72_cy, (l64_cx &+ 5), l72_cy, 1, 0)
                 ln = 155 // ZoneOut.HC:155
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, l64_cx, (l72_cy &- 5), l64_cx, (l72_cy &+ 5), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, l64_cx, (l72_cy &- 5), l64_cx, (l72_cy &+ 5), 1, 0)
                 ln = 156 // ZoneOut.HC:156
                 let t10: Double = d(try nat(t, n_tS, push0(t)))
                 l88_tt = t10
@@ -358,7 +357,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
             ln = 159 // ZoneOut.HC:159
             try tick(t)
             let vb1 = try push3(t, ld8(g_num_them), bits((l88_tt - ldf(g_t0))), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s3, vb1, 3)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s3, vb1, 3)
             t.sp = vb1
             t.depth -= 1
             return
@@ -366,7 +365,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC Fire (ZoneOut.HC:162)
-    public final func f708_Fire(_ t: HTask) throws {
+    public final func f713_Fire(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -394,7 +393,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC MoveUs (ZoneOut.HC:173)
-    public final func f709_MoveUs(_ t: HTask, _ a0: Double) throws {
+    public final func f714_MoveUs(_ t: HTask, _ a0: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -415,7 +414,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC AnimateTask (ZoneOut.HC:179)
-    public final func f710_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f715_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -487,7 +486,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC Init (ZoneOut.HC:205)
-    public final func f711_Init(_ t: HTask) throws {
+    public final func f716_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -534,7 +533,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC CleanUp (ZoneOut.HC:224)
-    public final func f712_CleanUp(_ t: HTask) throws {
+    public final func f717_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -547,30 +546,30 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC SongTask (ZoneOut.HC:229)
-    public final func f713_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f718_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 231 // ZoneOut.HC:231
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 232 // ZoneOut.HC:232
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 233 // ZoneOut.HC:233
             loop0: while (1 != 0) {
                 ln = 234 // ZoneOut.HC:234
                 try tick(t)
-                try P.f494_Play(t, s5, 0)
+                try P.f499_Play(t, s5, 0)
                 ln = 235 // ZoneOut.HC:235
                 try tick(t)
-                try P.f494_Play(t, s5, 0)
+                try P.f499_Play(t, s5, 0)
                 ln = 236 // ZoneOut.HC:236
                 try tick(t)
-                try P.f494_Play(t, s6, 0)
+                try P.f499_Play(t, s6, 0)
                 ln = 237 // ZoneOut.HC:237
                 try tick(t)
-                try P.f494_Play(t, s6, 0)
+                try P.f499_Play(t, s6, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -579,7 +578,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC ZoneOut (ZoneOut.HC:241)
-    public final func f714_ZoneOut(_ t: HTask) throws {
+    public final func f719_ZoneOut(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -590,7 +589,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
             _ = try P.f201_PopUpOk(t, s7, 0)
             ln = 252 // ZoneOut.HC:252
             try tick(t)
-            _ = try P.f507_MenuPush(t, s8)
+            _ = try P.f512_MenuPush(t, s8)
             ln = 267 // ZoneOut.HC:267
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -608,17 +607,17 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
             _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
             ln = 273 // ZoneOut.HC:273
             try tick(t)
-            try f711_Init(t)
+            try f716_Init(t)
             ln = 274 // ZoneOut.HC:274
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065862, 0, s9, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065867, 0, s9, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 275 // ZoneOut.HC:275
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065865, 0, s10, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065870, 0, s10, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 276 // ZoneOut.HC:276
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065859)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065864)
             ln = 277 // ZoneOut.HC:277
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -633,14 +632,14 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
                             case 32:
                                 ln = 281 // ZoneOut.HC:281
                                 try tick(t)
-                                try f708_Fire(t)
+                                try f713_Fire(t)
                             case 10:
                                 ln = 284 // ZoneOut.HC:284
                                 try tick(t)
-                                try f712_CleanUp(t)
+                                try f717_CleanUp(t)
                                 ln = 285 // ZoneOut.HC:285
                                 try tick(t)
-                                try f711_Init(t)
+                                try f716_Init(t)
                             case 27, 28:
                                 ln = 289 // ZoneOut.HC:289
                                 break skip_0
@@ -660,11 +659,11 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
                                     case 72:
                                         ln = 299 // ZoneOut.HC:299
                                         try tick(t)
-                                        try f709_MoveUs(t, ldf((g_us &+ 24)))
+                                        try f714_MoveUs(t, ldf((g_us &+ 24)))
                                     case 80:
                                         ln = 302 // ZoneOut.HC:302
                                         try tick(t)
-                                        try f709_MoveUs(t, (ldf((g_us &+ 24)) + d(4614256656552045848)))
+                                        try f714_MoveUs(t, (ldf((g_us &+ 24)) + d(4614256656552045848)))
                                     default:
                                         break
                                     }
@@ -687,7 +686,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
             }
             ln = 311 // ZoneOut.HC:311
             try tick(t)
-            try f712_CleanUp(t)
+            try f717_CleanUp(t)
             ln = 312 // ZoneOut.HC:312
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 313 // ZoneOut.HC:313
@@ -695,7 +694,7 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 314 // ZoneOut.HC:314
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 315 // ZoneOut.HC:315
             _ = try nat(t, n_RegWrite, try push3(t, s1, s11, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -705,13 +704,13 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/ZoneOut.HC#2 (ZoneOut.HC:318)
-    @discardableResult public final func f715_init_C__Demo_Games_ZoneOut_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f720_init_C__Demo_Games_ZoneOut_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 318 // ZoneOut.HC:318
             try tick(t)
-            try f714_ZoneOut(t)
+            try f719_ZoneOut(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/ZoneOut.HC#2", ln) }
@@ -720,25 +719,25 @@ public final class N_Demo_Games_ZoneOut: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_ZoneOut_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_ZoneOut_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: try f706_ZOTransform(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 707: try f707_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 708: try f708_Fire(t); return 0
-        case 709: try f709_MoveUs(t, d((n > 0 ? st[base + 0] : 0))); return 0
-        case 710: try f710_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 711: try f711_Init(t); return 0
-        case 712: try f712_CleanUp(t); return 0
-        case 713: try f713_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 714: try f714_ZoneOut(t); return 0
-        case 715: return try f715_init_C__Demo_Games_ZoneOut_HC_2(t)
+        case 708: return try f708_init_C__Demo_Games_ZoneOut_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_ZoneOut_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: try f711_ZOTransform(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 712: try f712_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 713: try f713_Fire(t); return 0
+        case 714: try f714_MoveUs(t, d((n > 0 ? st[base + 0] : 0))); return 0
+        case 715: try f715_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 716: try f716_Init(t); return 0
+        case 717: try f717_CleanUp(t); return 0
+        case 718: try f718_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 719: try f719_ZoneOut(t); return 0
+        case 720: return try f720_init_C__Demo_Games_ZoneOut_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/ZoneOut.HC#0", 704: "$init:C:/Demo/Games/ZoneOut.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "ZOTransform", 707: "DrawIt", 708: "Fire", 709: "MoveUs", 710: "AnimateTask", 711: "Init", 712: "CleanUp", 713: "SongTask", 714: "ZoneOut", 715: "$init:C:/Demo/Games/ZoneOut.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/ZoneOut.HC#0", 709: "$init:C:/Demo/Games/ZoneOut.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "ZOTransform", 712: "DrawIt", 713: "Fire", 714: "MoveUs", 715: "AnimateTask", 716: "Init", 717: "CleanUp", 718: "SongTask", 719: "ZoneOut", 720: "$init:C:/Demo/Games/ZoneOut.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Games/ZoneOut.HC"]
     public override var files: [String] { N_Demo_Games_ZoneOut.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_ZoneOut.DEFINED.contains(index) }

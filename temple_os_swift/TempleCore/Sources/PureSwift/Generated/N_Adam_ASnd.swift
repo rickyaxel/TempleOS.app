@@ -68,7 +68,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC SndTaskEndCB (ASnd.HC:2)
-    public final func f703_SndTaskEndCB(_ t: HTask) throws {
+    public final func f708_SndTaskEndCB(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -82,7 +82,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Saw (ASnd.HC:9)
-    @discardableResult public final func f704_Saw(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
+    @discardableResult public final func f709_Saw(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -113,7 +113,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC FullSaw (ASnd.HC:20)
-    @discardableResult public final func f705_FullSaw(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
+    @discardableResult public final func f710_FullSaw(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -144,7 +144,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Caw (ASnd.HC:31)
-    @discardableResult public final func f706_Caw(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
+    @discardableResult public final func f711_Caw(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -175,7 +175,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC FullCaw (ASnd.HC:42)
-    @discardableResult public final func f707_FullCaw(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
+    @discardableResult public final func f712_FullCaw(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -206,7 +206,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Tri (ASnd.HC:53)
-    @discardableResult public final func f708_Tri(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
+    @discardableResult public final func f713_Tri(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -239,7 +239,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC FullTri (ASnd.HC:65)
-    @discardableResult public final func f709_FullTri(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
+    @discardableResult public final func f714_FullTri(_ t: HTask, _ a0: Double, _ a1: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -295,7 +295,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/ASnd.HC#0 (ASnd.HC:104)
-    @discardableResult public final func f710_init_C__Adam_ASnd_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Adam_ASnd_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -305,7 +305,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC tM (ASnd.HC:107)
-    @discardableResult public final func f711_tM(_ t: HTask) throws -> Double {
+    @discardableResult public final func f716_tM(_ t: HTask) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -319,7 +319,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Beat (ASnd.HC:112)
-    @discardableResult public final func f712_Beat(_ t: HTask) throws -> Double {
+    @discardableResult public final func f717_Beat(_ t: HTask) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -338,7 +338,7 @@ public final class N_Adam_ASnd: NativeModule {
             }
             ln = 120 // ASnd.HC:120
             try tick(t)
-            let t2: Double = try f711_tM(t)
+            let t2: Double = try f716_tM(t)
             l8_cur_tM = t2
             ln = 121 // ASnd.HC:121
             l0_res = try ldf((P.g_music &+ 88))
@@ -363,7 +363,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC MusicSetOctave (ASnd.HC:132)
-    @discardableResult public final func f713_MusicSetOctave(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f718_MusicSetOctave(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -394,7 +394,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC MusicSetMeter (ASnd.HC:143)
-    @discardableResult public final func f714_MusicSetMeter(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f719_MusicSetMeter(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -448,7 +448,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC MusicSetNoteLen (ASnd.HC:163)
-    @discardableResult public final func f715_MusicSetNoteLen(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f720_MusicSetNoteLen(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -504,7 +504,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Note2Ona (ASnd.HC:183)
-    @discardableResult public final func f716_Note2Ona(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f721_Note2Ona(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -528,7 +528,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Ona2Note (ASnd.HC:191)
-    @discardableResult public final func f717_Ona2Note(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f722_Ona2Note(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -545,7 +545,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Ona2Octave (ASnd.HC:196)
-    @discardableResult public final func f718_Ona2Octave(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f723_Ona2Octave(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -575,7 +575,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Play (ASnd.HC:205)
-    public final func f719_Play(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f724_Play(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -616,15 +616,15 @@ public final class N_Adam_ASnd: NativeModule {
                     } else {
                         ln = 251 // ASnd.HC:251
                         try tick(t)
-                        let t0: Int64 = try f714_MusicSetMeter(t, p0_st)
+                        let t0: Int64 = try f719_MusicSetMeter(t, p0_st)
                         p0_st = t0
                         ln = 252 // ASnd.HC:252
                         try tick(t)
-                        let t1: Int64 = try f713_MusicSetOctave(t, p0_st)
+                        let t1: Int64 = try f718_MusicSetOctave(t, p0_st)
                         p0_st = t1
                         ln = 253 // ASnd.HC:253
                         try tick(t)
-                        let t2: Int64 = try f715_MusicSetNoteLen(t, p0_st)
+                        let t2: Int64 = try f720_MusicSetNoteLen(t, p0_st)
                         p0_st = t2
                     }
                     if !((p0_st != l24_last_st)) { break loop2 }
@@ -671,7 +671,7 @@ public final class N_Adam_ASnd: NativeModule {
                     }
                     ln = 273 // ASnd.HC:273
                     try tick(t)
-                    let t4: Int64 = try f716_Note2Ona(t, l32_note, l40_octave)
+                    let t4: Int64 = try f721_Note2Ona(t, l32_note, l40_octave)
                     l56_ona = t4
                 } else {
                     ln = 275 // ASnd.HC:275
@@ -742,7 +742,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC MusicSettingsRst (ASnd.HC:300)
-    public final func f720_MusicSettingsRst(_ t: HTask) throws {
+    public final func f725_MusicSettingsRst(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -775,7 +775,7 @@ public final class N_Adam_ASnd: NativeModule {
             }
             ln = 315 // ASnd.HC:315
             try tick(t)
-            let t2: Double = try f711_tM(t)
+            let t2: Double = try f716_tM(t)
             try st8((P.g_music &+ 96), bits(t2))
             ln = 316 // ASnd.HC:316
             try st8((P.g_music &+ 88), bits(0.0))
@@ -788,30 +788,30 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/ASnd.HC#1 (ASnd.HC:321)
-    @discardableResult public final func f721_init_C__Adam_ASnd_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f726_init_C__Adam_ASnd_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 321 // ASnd.HC:321
             try tick(t)
-            try f720_MusicSettingsRst(t)
+            try f725_MusicSettingsRst(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Adam/ASnd.HC#1", ln) }
     }
 
     /// HolyC CurSongTask (ASnd.HC:323)
-    public final func f722_CurSongTask(_ t: HTask) throws {
+    public final func f727_CurSongTask(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 325 // ASnd.HC:325
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065860)
             ln = 326 // ASnd.HC:326
             loop0: while (1 != 0) {
                 ln = 327 // ASnd.HC:327
                 try tick(t)
-                try f719_Play(t, ld8(P.g_music), 0)
+                try f724_Play(t, ld8(P.g_music), 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -820,7 +820,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC SoundEffectEndTaskCB (ASnd.HC:342)
-    public final func f723_SoundEffectEndTaskCB(_ t: HTask) throws {
+    public final func f728_SoundEffectEndTaskCB(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -833,14 +833,14 @@ public final class N_Adam_ASnd: NativeModule {
             try st1(t1, (t2 &+ (-1)))
             ln = 346 // ASnd.HC:346
             try tick(t)
-            try f703_SndTaskEndCB(t)
+            try f708_SndTaskEndCB(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "SoundEffectEndTaskCB", ln) }
     }
 
     /// HolyC SoundEffectTask (ASnd.HC:349)
-    public final func f724_SoundEffectTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f729_SoundEffectTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -857,7 +857,7 @@ public final class N_Adam_ASnd: NativeModule {
             ln = 353 // ASnd.HC:353
             _ = try nat(t, n_FramePtrAdd, try push3(t, s2, p0_ns, 0))
             ln = 354 // ASnd.HC:354
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065875)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065880)
             ln = 355 // ASnd.HC:355
             let t1: Int64 = try ld4s(p0_ns)
             switch0: do {
@@ -930,7 +930,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Noise (ASnd.HC:381)
-    @discardableResult public final func f725_Noise(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
+    @discardableResult public final func f730_Noise(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -956,7 +956,7 @@ public final class N_Adam_ASnd: NativeModule {
                 let t2: Int64 = try ld1u(t1)
                 try st1(t1, (t2 &+ 1))
                 ln = 391 // ASnd.HC:391
-                let t3: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065876, l24_ns, s3, (-1), ld8(P.g_Fs), 0, 0))
+                let t3: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065881, l24_ns, s3, (-1), ld8(P.g_Fs), 0, 0))
                 t.depth -= 1
                 return t3
             } else {
@@ -970,7 +970,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC Sweep (ASnd.HC:396)
-    @discardableResult public final func f726_Sweep(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
+    @discardableResult public final func f731_Sweep(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -996,7 +996,7 @@ public final class N_Adam_ASnd: NativeModule {
                 let t2: Int64 = try ld1u(t1)
                 try st1(t1, (t2 &+ 1))
                 ln = 406 // ASnd.HC:406
-                let t3: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065876, l24_ns, s3, (-1), ld8(P.g_Fs), 0, 0))
+                let t3: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065881, l24_ns, s3, (-1), ld8(P.g_Fs), 0, 0))
                 t.depth -= 1
                 return t3
             } else {
@@ -1010,7 +1010,7 @@ public final class N_Adam_ASnd: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/ASnd.HC#2 (ASnd.HC:1)
-    @discardableResult public final func f727_init_C__Adam_ASnd_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f732_init_C__Adam_ASnd_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1022,37 +1022,37 @@ public final class N_Adam_ASnd: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SndTaskEndCB(t); return 0
-        case 704: return bits(try f704_Saw(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
-        case 705: return bits(try f705_FullSaw(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
-        case 706: return bits(try f706_Caw(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
-        case 707: return bits(try f707_FullCaw(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
-        case 708: return bits(try f708_Tri(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
-        case 709: return bits(try f709_FullTri(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
-        case 710: return try f710_init_C__Adam_ASnd_HC_0(t)
-        case 711: return bits(try f711_tM(t))
-        case 712: return bits(try f712_Beat(t))
-        case 713: return try f713_MusicSetOctave(t, (n > 0 ? st[base + 0] : 0))
-        case 714: return try f714_MusicSetMeter(t, (n > 0 ? st[base + 0] : 0))
-        case 715: return try f715_MusicSetNoteLen(t, (n > 0 ? st[base + 0] : 0))
-        case 716: return try f716_Note2Ona(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 717: return try f717_Ona2Note(t, (n > 0 ? st[base + 0] : 0))
-        case 718: return try f718_Ona2Octave(t, (n > 0 ? st[base + 0] : 0))
-        case 719: try f719_Play(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 720: try f720_MusicSettingsRst(t); return 0
-        case 721: return try f721_init_C__Adam_ASnd_HC_1(t)
-        case 722: try f722_CurSongTask(t); return 0
-        case 723: try f723_SoundEffectEndTaskCB(t); return 0
-        case 724: try f724_SoundEffectTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 725: return try f725_Noise(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
-        case 726: return try f726_Sweep(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
-        case 727: return try f727_init_C__Adam_ASnd_HC_2(t)
+        case 708: try f708_SndTaskEndCB(t); return 0
+        case 709: return bits(try f709_Saw(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
+        case 710: return bits(try f710_FullSaw(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
+        case 711: return bits(try f711_Caw(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
+        case 712: return bits(try f712_FullCaw(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
+        case 713: return bits(try f713_Tri(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
+        case 714: return bits(try f714_FullTri(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))))
+        case 715: return try f715_init_C__Adam_ASnd_HC_0(t)
+        case 716: return bits(try f716_tM(t))
+        case 717: return bits(try f717_Beat(t))
+        case 718: return try f718_MusicSetOctave(t, (n > 0 ? st[base + 0] : 0))
+        case 719: return try f719_MusicSetMeter(t, (n > 0 ? st[base + 0] : 0))
+        case 720: return try f720_MusicSetNoteLen(t, (n > 0 ? st[base + 0] : 0))
+        case 721: return try f721_Note2Ona(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 722: return try f722_Ona2Note(t, (n > 0 ? st[base + 0] : 0))
+        case 723: return try f723_Ona2Octave(t, (n > 0 ? st[base + 0] : 0))
+        case 724: try f724_Play(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 725: try f725_MusicSettingsRst(t); return 0
+        case 726: return try f726_init_C__Adam_ASnd_HC_1(t)
+        case 727: try f727_CurSongTask(t); return 0
+        case 728: try f728_SoundEffectEndTaskCB(t); return 0
+        case 729: try f729_SoundEffectTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 730: return try f730_Noise(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
+        case 731: return try f731_Sweep(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
+        case 732: return try f732_init_C__Adam_ASnd_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727]
-    private static let NAMES: [Int: String] = [703: "SndTaskEndCB", 704: "Saw", 705: "FullSaw", 706: "Caw", 707: "FullCaw", 708: "Tri", 709: "FullTri", 710: "$init:C:/Adam/ASnd.HC#0", 711: "tM", 712: "Beat", 713: "MusicSetOctave", 714: "MusicSetMeter", 715: "MusicSetNoteLen", 716: "Note2Ona", 717: "Ona2Note", 718: "Ona2Octave", 719: "Play", 720: "MusicSettingsRst", 721: "$init:C:/Adam/ASnd.HC#1", 722: "CurSongTask", 723: "SoundEffectEndTaskCB", 724: "SoundEffectTask", 725: "Noise", 726: "Sweep", 727: "$init:C:/Adam/ASnd.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732]
+    private static let NAMES: [Int: String] = [708: "SndTaskEndCB", 709: "Saw", 710: "FullSaw", 711: "Caw", 712: "FullCaw", 713: "Tri", 714: "FullTri", 715: "$init:C:/Adam/ASnd.HC#0", 716: "tM", 717: "Beat", 718: "MusicSetOctave", 719: "MusicSetMeter", 720: "MusicSetNoteLen", 721: "Note2Ona", 722: "Ona2Note", 723: "Ona2Octave", 724: "Play", 725: "MusicSettingsRst", 726: "$init:C:/Adam/ASnd.HC#1", 727: "CurSongTask", 728: "SoundEffectEndTaskCB", 729: "SoundEffectTask", 730: "Noise", 731: "Sweep", 732: "$init:C:/Adam/ASnd.HC#2"]
     private static let FILES: [String] = ["C:/Adam/ASnd.HC"]
     public override var files: [String] { N_Adam_ASnd.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_ASnd.DEFINED.contains(index) }

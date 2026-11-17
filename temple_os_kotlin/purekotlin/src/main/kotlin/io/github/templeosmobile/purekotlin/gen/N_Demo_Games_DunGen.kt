@@ -16,6 +16,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
+    @JvmField val n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!!.index
     @JvmField val n_GrPeek = rt.vm.natives.find("GrPeek")!!.index
     @JvmField val n_Line = rt.vm.natives.find("Line")!!.index
     @JvmField val n_MAlloc = rt.vm.natives.find("MAlloc")!!.index
@@ -26,6 +27,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_RegWrite = rt.vm.natives.find("RegWrite")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
     /** "F64 best_score=9999;." */ @JvmField var s0: Long = 0L
@@ -119,7 +121,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/DunGen.HC#0 (DunGen.HC:1) */
-    fun f703_init_C__Demo_Games_DunGen_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_DunGen_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -133,7 +135,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/DunGen.HC#1 (DunGen.HC:2) */
-    fun f704_init_C__Demo_Games_DunGen_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_DunGen_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -147,7 +149,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -157,7 +159,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/DunGen.HC#2 (DunGen.HC:46) */
-    fun f706_init_C__Demo_Games_DunGen_HC_2(t: Task): Long {
+    fun f711_init_C__Demo_Games_DunGen_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -185,7 +187,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/DunGen.HC#3 (DunGen.HC:49) */
-    fun f707_init_C__Demo_Games_DunGen_HC_3(t: Task): Long {
+    fun f712_init_C__Demo_Games_DunGen_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -213,7 +215,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC LOSPlot (DunGen.HC:77) */
-    fun f708_LOSPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f713_LOSPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -237,7 +239,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC LOS (DunGen.HC:85) */
-    fun f709_LOS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f714_LOS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -246,7 +248,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var p2_x2: Long = a2
             var p3_y2: Long = a3
             ln = 87 // DunGen.HC:87
-            val t0: Long = nat(t, n_Line, push(t, 0L, ((p0_x1 * 4L) + divs(4L, 2L)), ((p1_y1 * 4L) + divs(4L, 2L)), 0L, ((p2_x2 * 4L) + divs(4L, 2L)), ((p3_y2 * 4L) + divs(4L, 2L)), 0L, 9223090561878065860L, 1L, 0L))
+            val t0: Long = nat(t, n_Line, push(t, 0L, ((p0_x1 * 4L) + divs(4L, 2L)), ((p1_y1 * 4L) + divs(4L, 2L)), 0L, ((p2_x2 * 4L) + divs(4L, 2L)), ((p3_y2 * 4L) + divs(4L, 2L)), 0L, 9223090561878065865L, 1L, 0L))
             t.depth--
             return (t0 and 0xFFL)
             t.depth--
@@ -255,7 +257,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (DunGen.HC:91) */
-    fun f710_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f715_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -330,7 +332,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                             var r5: Boolean = (t3 != 0L)
                             if (r5) {
                                 tick(t)
-                                val t4: Long = f709_LOS(t, l48_xx, l56_yy, ld8(g_man_x), ld8(g_man_y))
+                                val t4: Long = f714_LOS(t, l48_xx, l56_yy, ld8(g_man_x), ld8(g_man_y))
                                 r5 = (t4 != 0L)
                             }
                             ln = 124 // DunGen.HC:124
@@ -346,8 +348,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     ln = 130 // DunGen.HC:130
                                     nat(t, n_DCTransform, push4(t, l16_dc_t, (fp + 64), (fp + 72), (fp + 80)))
                                     ln = 131 // DunGen.HC:131
-                                    tick(t)
-                                    P.f440_Sprite3(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), ld8((l160__tiles + (l88_color * 8L))), 0L)
+                                    nat(t, n_Sprite3, push(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), ld8((l160__tiles + (l88_color * 8L))), 0L))
                                 } else {
                                     ln = 133 // DunGen.HC:133
                                     st4((fp + 112), (l32_x * 24L))
@@ -376,8 +377,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     ln = 145 // DunGen.HC:145
                                     st4((l16_dc_t + 160L), l88_color)
                                     ln = 146 // DunGen.HC:146
-                                    tick(t)
-                                    P.f422_GrFillPoly3(t, l16_dc_t, 4L, (fp + 112))
+                                    nat(t, n_GrFillPoly3, push3(t, l16_dc_t, 4L, (fp + 112)))
                                 }
                             }
                         }
@@ -410,7 +410,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 var r7: Boolean = ((l56_yy + 1L) < ld8(g_map_height))
                                 if (r7) {
                                     tick(t)
-                                    val t6: Long = f709_LOS(t, l48_xx, (l56_yy + 1L), ld8(g_man_x), ld8(g_man_y))
+                                    val t6: Long = f714_LOS(t, l48_xx, (l56_yy + 1L), ld8(g_man_x), ld8(g_man_y))
                                     r7 = (t6 != 0L)
                                 }
                                 if (r7) {
@@ -423,14 +423,13 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     ln = 164 // DunGen.HC:164
                                     nat(t, n_DCTransform, push4(t, l16_dc_t, (fp + 64), (fp + 72), (fp + 80)))
                                     ln = 165 // DunGen.HC:165
-                                    tick(t)
-                                    P.f440_Sprite3(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b6, 0L)
+                                    nat(t, n_Sprite3, push(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b6, 0L))
                                 }
                                 ln = 167 // DunGen.HC:167
                                 var r9: Boolean = ((l48_xx + 1L) < ld8(g_map_width))
                                 if (r9) {
                                     tick(t)
-                                    val t8: Long = f709_LOS(t, (l48_xx + 1L), l56_yy, ld8(g_man_x), ld8(g_man_y))
+                                    val t8: Long = f714_LOS(t, (l48_xx + 1L), l56_yy, ld8(g_man_x), ld8(g_man_y))
                                     r9 = (t8 != 0L)
                                 }
                                 if (r9) {
@@ -443,8 +442,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                     ln = 171 // DunGen.HC:171
                                     nat(t, n_DCTransform, push4(t, l16_dc_t, (fp + 64), (fp + 72), (fp + 80)))
                                     ln = 172 // DunGen.HC:172
-                                    tick(t)
-                                    P.f440_Sprite3(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b7, 0L)
+                                    nat(t, n_Sprite3, push(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b7, 0L))
                                 }
                             }
                         }
@@ -465,7 +463,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 var r11: Boolean = (ld1u((l176_tmpm + 32L)) == 0L)
                 if (r11) {
                     tick(t)
-                    val t10: Long = f709_LOS(t, ld8(l176_tmpm), ld8((l176_tmpm + 8L)), ld8(g_man_x), ld8(g_man_y))
+                    val t10: Long = f714_LOS(t, ld8(l176_tmpm), ld8((l176_tmpm + 8L)), ld8(g_man_x), ld8(g_man_y))
                     r11 = (t10 != 0L)
                 }
                 if (r11) {
@@ -484,15 +482,14 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         st4(t12, (ld4s(t12) or 1536L))
                         ln = 187 // DunGen.HC:187
                         tick(t)
-                        P.f314_DCSymmetrySet(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 64)), (ld8((fp + 72)) + 1L))
+                        P.f315_DCSymmetrySet(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 64)), (ld8((fp + 72)) + 1L))
                     } else {
                         ln = 189 // DunGen.HC:189
                         val t13: Long = (p1_dc + 28L)
                         st4(t13, (ld4s(t13) and -1537L))
                     }
                     ln = 190 // DunGen.HC:190
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b8, 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b8, 0L))
                 }
                 ln = 179 // DunGen.HC:179
                 l24_i = (l24_i + 1L)
@@ -512,13 +509,13 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 val t17: Long = ld8((fp + 64))
                 val t15: Double = f(nat(t, n_tS, push0(t)))
                 tick(t)
-                val t16: Double = P.f484_Tri(t, (t15 - ldf(g_man_attack_t0)), 0.2)
+                val t16: Double = P.f489_Tri(t, (t15 - ldf(g_man_attack_t0)), 0.2)
                 st8((fp + 64), f2i((t17.toDouble() + ((t16 * 24.0) * ld8(g_man_dx).toDouble()))))
                 ln = 198 // DunGen.HC:198
                 val t20: Long = ld8((fp + 72))
                 val t18: Double = f(nat(t, n_tS, push0(t)))
                 tick(t)
-                val t19: Double = P.f484_Tri(t, (t18 - ldf(g_man_attack_t0)), 0.2)
+                val t19: Double = P.f489_Tri(t, (t18 - ldf(g_man_attack_t0)), 0.2)
                 st8((fp + 72), f2i((t20.toDouble() + ((t19 * 24.0) * ld8(g_man_dy).toDouble()))))
                 ln = 199 // DunGen.HC:199
                 if ((ld8(g_man_dy) != 1L)) {
@@ -526,7 +523,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     val t23: Long = ld8((fp + 72))
                     val t21: Double = f(nat(t, n_tS, push0(t)))
                     tick(t)
-                    val t22: Double = P.f480_Saw(t, (t21 - ldf(g_man_attack_t0)), 0.2)
+                    val t22: Double = P.f485_Saw(t, (t21 - ldf(g_man_attack_t0)), 0.2)
                     st8((fp + 72), f2i((t23.toDouble() - (t22 * 24.0))))
                 }
             }
@@ -539,7 +536,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st4(t24, (ld4s(t24) or 1536L))
                 ln = 205 // DunGen.HC:205
                 tick(t)
-                P.f314_DCSymmetrySet(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 64)), (ld8((fp + 72)) + 1L))
+                P.f315_DCSymmetrySet(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 64)), (ld8((fp + 72)) + 1L))
             } else {
                 ln = 207 // DunGen.HC:207
                 val t25: Long = (p1_dc + 28L)
@@ -549,12 +546,10 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val t26: Double = f(nat(t, n_tS, push0(t)))
             if (((t26 - ldf(g_man_attack_t0)) < 0.2)) {
                 ln = 210 // DunGen.HC:210
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b9, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b9, 0L))
             } else {
                 ln = 212 // DunGen.HC:212
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b10, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, ld8((fp + 64)), ld8((fp + 72)), ld8((fp + 80)), b10, 0L))
             }
             ln = 214 // DunGen.HC:214
             tick(t)
@@ -570,7 +565,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     ln = 219 // DunGen.HC:219
                     tick(t)
                     val vb0 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, (l96_cx - divs(112L, 2L)), (l104_cy - divs(8L, 2L)), s2, vb0, 0)
+                    P.f370_GrPrint(t, p1_dc, (l96_cx - divs(112L, 2L)), (l104_cy - divs(8L, 2L)), s2, vb0, 0)
                     t.sp = vb0
                 }
                 ln = 220 // DunGen.HC:220
@@ -585,7 +580,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 225 // DunGen.HC:225
             tick(t)
             val vb1 = push3(t, ld8(g_monsters_left), bits((l168_tt - ldf(g_t0))), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
             t.sp = vb1
             t.msp = msp0
             t.depth--
@@ -594,7 +589,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Attack (DunGen.HC:229) */
-    fun f711_Attack(t: Task) {
+    fun f716_Attack(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -605,7 +600,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st8(g_man_attack_t0, bits(t0))
             ln = 235 // DunGen.HC:235
             tick(t)
-            P.f499_Noise(t, 100L, 53.0, 74.0)
+            P.f504_Noise(t, 100L, 53.0, 74.0)
             ln = 236 // DunGen.HC:236
             l0_i = 0L
             l8_tmpm = g_monsters
@@ -640,7 +635,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Init (DunGen.HC:249) */
-    fun f712_Init(t: Task) {
+    fun f717_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -651,7 +646,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l8_x: Long = 0L
             ln = 255 // DunGen.HC:255
             tick(t)
-            val t0: Long = P.f447_Sprite2DC(t, b11)
+            val t0: Long = P.f452_Sprite2DC(t, b11)
             l24_dc = t0
             ln = 256 // DunGen.HC:256
             st8(g_map_width, divs(ld4s((l24_dc + 16L)), 4L))
@@ -738,7 +733,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CleanUp (DunGen.HC:287) */
-    fun f713_CleanUp(t: Task) {
+    fun f718_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -752,7 +747,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC AnimateTask (DunGen.HC:293) */
-    fun f714_AnimateTask(t: Task, a0: Long) {
+    fun f719_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -808,7 +803,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DunGen (DunGen.HC:316) */
-    fun f715_DunGen(t: Task) {
+    fun f720_DunGen(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -816,7 +811,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val fp = frame(t, 40)
             ln = 320 // DunGen.HC:320
             tick(t)
-            P.f507_MenuPush(t, s4)
+            P.f512_MenuPush(t, s4)
             ln = 335 // DunGen.HC:335
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -836,13 +831,13 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             nat(t, n_DocClear, push1(t, 0L))
             ln = 342 // DunGen.HC:342
             tick(t)
-            f712_Init(t)
+            f717_Init(t)
             ln = 343 // DunGen.HC:343
             val t1: Long = (ld8(P.g_Fs) + 1088L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065866L, 0L, s5, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065871L, 0L, s5, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 344 // DunGen.HC:344
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065862L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065867L)
             ln = 346 // DunGen.HC:346
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -862,7 +857,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                             10L -> {
                                                 ln = 352 // DunGen.HC:352
                                                 tick(t)
-                                                f712_Init(t)
+                                                f717_Init(t)
                                             }
                                             32L -> {
                                                 ln = 355 // DunGen.HC:355
@@ -886,7 +881,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                 st8(g_man_dy, 0L)
                                                                 ln = 366 // DunGen.HC:366
                                                                 tick(t)
-                                                                f711_Attack(t)
+                                                                f716_Attack(t)
                                                             } else {
                                                                 ln = 368 // DunGen.HC:368
                                                                 if ((((ld8(g_man_x) + 1L) < ld8(g_map_width)) && (ld1u((ld8(g_map) + ((ld8(g_man_y) * ld8(g_map_width)) + (ld8(g_man_x) + 1L)))) == 8L))) {
@@ -915,7 +910,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                 st8(g_man_dy, 0L)
                                                                 ln = 382 // DunGen.HC:382
                                                                 tick(t)
-                                                                f711_Attack(t)
+                                                                f716_Attack(t)
                                                             } else {
                                                                 ln = 384 // DunGen.HC:384
                                                                 if ((((ld8(g_man_x) - 1L) >= 0L) && (ld1u((ld8(g_map) + ((ld8(g_man_y) * ld8(g_map_width)) + (ld8(g_man_x) - 1L)))) == 8L))) {
@@ -944,7 +939,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                 st8(g_man_dy, -1L)
                                                                 ln = 398 // DunGen.HC:398
                                                                 tick(t)
-                                                                f711_Attack(t)
+                                                                f716_Attack(t)
                                                             } else {
                                                                 ln = 400 // DunGen.HC:400
                                                                 if ((((ld8(g_man_y) - 1L) >= 0L) && (ld1u((ld8(g_map) + (((ld8(g_man_y) - 1L) * ld8(g_map_width)) + ld8(g_man_x)))) == 8L))) {
@@ -973,7 +968,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                                                 st8(g_man_dy, 1L)
                                                                 ln = 414 // DunGen.HC:414
                                                                 tick(t)
-                                                                f711_Attack(t)
+                                                                f716_Attack(t)
                                                             } else {
                                                                 ln = 416 // DunGen.HC:416
                                                                 if ((((ld8(g_man_y) + 1L) < ld8(g_map_height)) && (ld1u((ld8(g_map) + (((ld8(g_man_y) + 1L) * ld8(g_map_width)) + ld8(g_man_x)))) == 8L))) {
@@ -1033,10 +1028,10 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 440 // DunGen.HC:440
             tick(t)
-            f713_CleanUp(t)
+            f718_CleanUp(t)
             ln = 441 // DunGen.HC:441
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 442 // DunGen.HC:442
             nat(t, n_RegWrite, push3(t, s1, s6, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1046,13 +1041,13 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/DunGen.HC#4 (DunGen.HC:59) */
-    fun f716_init_C__Demo_Games_DunGen_HC_4(t: Task): Long {
+    fun f721_init_C__Demo_Games_DunGen_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 445 // DunGen.HC:445
             tick(t)
-            f715_DunGen(t)
+            f720_DunGen(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/DunGen.HC#4", ln) }
@@ -1061,20 +1056,20 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_DunGen_HC_0(t)
-            704 -> f704_init_C__Demo_Games_DunGen_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> f706_init_C__Demo_Games_DunGen_HC_2(t)
-            707 -> f707_init_C__Demo_Games_DunGen_HC_3(t)
-            708 -> f708_LOSPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            709 -> f709_LOS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            710 -> { f710_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            711 -> { f711_Attack(t); 0L }
-            712 -> { f712_Init(t); 0L }
-            713 -> { f713_CleanUp(t); 0L }
-            714 -> { f714_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            715 -> { f715_DunGen(t); 0L }
-            716 -> f716_init_C__Demo_Games_DunGen_HC_4(t)
+            708 -> f708_init_C__Demo_Games_DunGen_HC_0(t)
+            709 -> f709_init_C__Demo_Games_DunGen_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> f711_init_C__Demo_Games_DunGen_HC_2(t)
+            712 -> f712_init_C__Demo_Games_DunGen_HC_3(t)
+            713 -> f713_LOSPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            714 -> f714_LOS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            715 -> { f715_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            716 -> { f716_Attack(t); 0L }
+            717 -> { f717_Init(t); 0L }
+            718 -> { f718_CleanUp(t); 0L }
+            719 -> { f719_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            720 -> { f720_DunGen(t); 0L }
+            721 -> f721_init_C__Demo_Games_DunGen_HC_4(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1086,7 +1081,7 @@ class N_Demo_Games_DunGen(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/DunGen.HC#0", "\$init:C:/Demo/Games/DunGen.HC#1", "\$init:C:/Home/Registry.HC#0", "\$init:C:/Demo/Games/DunGen.HC#2", "\$init:C:/Demo/Games/DunGen.HC#3", "LOSPlot", "LOS", "DrawIt", "Attack", "Init", "CleanUp", "AnimateTask", "DunGen", "\$init:C:/Demo/Games/DunGen.HC#4")
         private val FILES = arrayOf<String>("C:/Demo/Games/DunGen.HC")
     }

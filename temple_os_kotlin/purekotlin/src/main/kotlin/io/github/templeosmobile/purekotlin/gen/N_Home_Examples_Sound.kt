@@ -43,7 +43,7 @@ class N_Home_Examples_Sound(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Sound.HC#0 (Sound.HC:4) */
-    fun f703_init_C__Home_Examples_Sound_HC_0(t: Task): Long {
+    fun f708_init_C__Home_Examples_Sound_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -57,7 +57,7 @@ class N_Home_Examples_Sound(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Sound.HC#1 (Sound.HC:6) */
-    fun f704_init_C__Home_Examples_Sound_HC_1(t: Task): Long {
+    fun f709_init_C__Home_Examples_Sound_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -80,7 +80,7 @@ class N_Home_Examples_Sound(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Sound.HC#2 (Sound.HC:11) */
-    fun f705_init_C__Home_Examples_Sound_HC_2(t: Task): Long {
+    fun f710_init_C__Home_Examples_Sound_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -92,7 +92,7 @@ class N_Home_Examples_Sound(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Sound.HC#3 (Sound.HC:12) */
-    fun f706_init_C__Home_Examples_Sound_HC_3(t: Task): Long {
+    fun f711_init_C__Home_Examples_Sound_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -106,20 +106,20 @@ class N_Home_Examples_Sound(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Sound.HC#4 (Sound.HC:13) */
-    fun f707_init_C__Home_Examples_Sound_HC_4(t: Task): Long {
+    fun f712_init_C__Home_Examples_Sound_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 13 // Sound.HC:13
             tick(t)
-            P.f494_Play(t, s3, 0L)
+            P.f499_Play(t, s3, 0L)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Home/Examples/Sound.HC#4", ln) }
     }
 
     /** HolyC $init:C:/Home/Examples/Sound.HC#5 (Sound.HC:14) */
-    fun f708_init_C__Home_Examples_Sound_HC_5(t: Task): Long {
+    fun f713_init_C__Home_Examples_Sound_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -135,12 +135,12 @@ class N_Home_Examples_Sound(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Home_Examples_Sound_HC_0(t)
-            704 -> f704_init_C__Home_Examples_Sound_HC_1(t)
-            705 -> f705_init_C__Home_Examples_Sound_HC_2(t)
-            706 -> f706_init_C__Home_Examples_Sound_HC_3(t)
-            707 -> f707_init_C__Home_Examples_Sound_HC_4(t)
-            708 -> f708_init_C__Home_Examples_Sound_HC_5(t)
+            708 -> f708_init_C__Home_Examples_Sound_HC_0(t)
+            709 -> f709_init_C__Home_Examples_Sound_HC_1(t)
+            710 -> f710_init_C__Home_Examples_Sound_HC_2(t)
+            711 -> f711_init_C__Home_Examples_Sound_HC_3(t)
+            712 -> f712_init_C__Home_Examples_Sound_HC_4(t)
+            713 -> f713_init_C__Home_Examples_Sound_HC_5(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -152,7 +152,7 @@ class N_Home_Examples_Sound(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("\$init:C:/Home/Examples/Sound.HC#0", "\$init:C:/Home/Examples/Sound.HC#1", "\$init:C:/Home/Examples/Sound.HC#2", "\$init:C:/Home/Examples/Sound.HC#3", "\$init:C:/Home/Examples/Sound.HC#4", "\$init:C:/Home/Examples/Sound.HC#5")
         private val FILES = arrayOf<String>("C:/Home/Examples/Sound.HC")
     }

@@ -24,6 +24,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     public let n_Print: Int
     public let n_PutChars: Int
     public let n_Refresh: Int
+    public let n_Sprite3: Int
     public let n_throw: Int
     /** "C:.Apps.Logic" */ public var s0: Int64 = 0
     /** imgs: U8 *[13] */ public var g_imgs: Int64 = 0
@@ -92,6 +93,7 @@ public final class N_Apps_Logic_Run: NativeModule {
         n_Print = rt.vm.natives.find("Print")!.index
         n_PutChars = rt.vm.natives.find("PutChars")!.index
         n_Refresh = rt.vm.natives.find("Refresh")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_throw = rt.vm.natives.find("throw")!.index
         super.init(rt)
     }
@@ -155,7 +157,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Logic/Run.HC#0 (Run.HC:1)
-    @discardableResult public final func f703_init_C__Apps_Logic_Run_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Logic_Run_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -169,7 +171,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Logic/Run.HC#1 (Run.HC:3)
-    @discardableResult public final func f704_init_C__Apps_Logic_Run_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Apps_Logic_Run_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -183,7 +185,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Logic/Run.HC#2 (Run.HC:5)
-    @discardableResult public final func f705_init_C__Apps_Logic_Run_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Apps_Logic_Run_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -208,7 +210,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC GetGates (Logic.HC:79)
-    public final func f706_GetGates(_ t: HTask) throws {
+    public final func f711_GetGates(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -269,7 +271,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC Init (Logic.HC:107)
-    public final func f707_Init(_ t: HTask) throws {
+    public final func f712_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -422,7 +424,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC DrawDesign (Logic.HC:181)
-    public final func f708_DrawDesign(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws {
+    public final func f713_DrawDesign(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -459,7 +461,7 @@ public final class N_Apps_Logic_Run: NativeModule {
                 ln = 2097342 // Logic.HC:190
                 try tick(t)
                 let vb0 = push0(t)
-                _ = try P.f369_GrPrint(t, p0_dc, (l64_xx &- 24), (ld8((fp &+ 48)) &- 4), s20, vb0, 0)
+                _ = try P.f370_GrPrint(t, p0_dc, (l64_xx &- 24), (ld8((fp &+ 48)) &- 4), s20, vb0, 0)
                 t.sp = vb0
                 ln = 2097343 // Logic.HC:191
                 try st8((fp &+ 48), (ld8((fp &+ 48)) &+ 10))
@@ -474,7 +476,7 @@ public final class N_Apps_Logic_Run: NativeModule {
                         ln = 2097348 // Logic.HC:196
                         try tick(t)
                         let vb1 = try push1(t, (65 &+ ld2u((ld8(g_input1_table) &+ (p2_output &* 2)))))
-                        _ = try P.f369_GrPrint(t, p0_dc, ((l64_xx &- 8) &- 4), (ld8((fp &+ 48)) &- 4), s21, vb1, 1)
+                        _ = try P.f370_GrPrint(t, p0_dc, ((l64_xx &- 8) &- 4), (ld8((fp &+ 48)) &- 4), s21, vb1, 1)
                         t.sp = vb1
                         ln = 2097349 // Logic.HC:197
                         try st8((fp &+ 48), (ld8((fp &+ 48)) &+ 10))
@@ -486,19 +488,18 @@ public final class N_Apps_Logic_Run: NativeModule {
                             try st8((fp &+ 48), (ld8((fp &+ 48)) &+ 16))
                             ln = 2097354 // Logic.HC:202
                             try tick(t)
-                            try f708_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input1_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 80), (fp &+ 88))
+                            try f713_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input1_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 80), (fp &+ 88))
                             ln = 2097355 // Logic.HC:203
                             l72_yy = try ld8((fp &+ 88))
                             ln = 2097357 // Logic.HC:205
                             try st4((p0_dc &+ 160), 1)
                             ln = 2097358 // Logic.HC:206
-                            try tick(t)
-                            try P.f440_Sprite3(t, p0_dc, l64_xx, l72_yy, 0, ld8((g_imgs &+ (l56_type &* 8))), 0)
+                            _ = try nat(t, n_Sprite3, try push(t, p0_dc, l64_xx, l72_yy, 0, ld8((g_imgs &+ (l56_type &* 8))), 0))
                             ln = 2097360 // Logic.HC:208
                             try st4((p0_dc &+ 160), 4)
                             ln = 2097361 // Logic.HC:209
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p0_dc, (l64_xx &- 37), l72_yy, ld8((fp &+ 80)), ld8((fp &+ 88)), 1, 0)
+                            _ = try P.f397_GrLine(t, p0_dc, (l64_xx &- 37), l72_yy, ld8((fp &+ 80)), ld8((fp &+ 88)), 1, 0)
                             ln = 2097362 // Logic.HC:210
                             if (p5__y_out != 0) {
                                 try st8(p5__y_out, l72_yy)
@@ -512,25 +513,24 @@ public final class N_Apps_Logic_Run: NativeModule {
                             try st8((fp &+ 48), (ld8((fp &+ 48)) &+ 24))
                             ln = 2097372 // Logic.HC:220
                             try tick(t)
-                            try f708_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input1_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 80), (fp &+ 88))
+                            try f713_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input1_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 80), (fp &+ 88))
                             ln = 2097373 // Logic.HC:221
                             try tick(t)
-                            try f708_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input2_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 96), (fp &+ 104))
+                            try f713_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input2_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 96), (fp &+ 104))
                             ln = 2097374 // Logic.HC:222
                             l72_yy = try divs((ld8((fp &+ 88)) &+ ld8((fp &+ 104))), 2)
                             ln = 2097376 // Logic.HC:224
                             try st4((p0_dc &+ 160), 1)
                             ln = 2097377 // Logic.HC:225
-                            try tick(t)
-                            try P.f440_Sprite3(t, p0_dc, l64_xx, l72_yy, 0, ld8((g_imgs &+ (l56_type &* 8))), 0)
+                            _ = try nat(t, n_Sprite3, try push(t, p0_dc, l64_xx, l72_yy, 0, ld8((g_imgs &+ (l56_type &* 8))), 0))
                             ln = 2097379 // Logic.HC:227
                             try st4((p0_dc &+ 160), 4)
                             ln = 2097380 // Logic.HC:228
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p0_dc, (l64_xx &- 37), (l72_yy &- 4), ld8((fp &+ 80)), ld8((fp &+ 88)), 1, 0)
+                            _ = try P.f397_GrLine(t, p0_dc, (l64_xx &- 37), (l72_yy &- 4), ld8((fp &+ 80)), ld8((fp &+ 88)), 1, 0)
                             ln = 2097381 // Logic.HC:229
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p0_dc, (l64_xx &- 37), (l72_yy &+ 4), ld8((fp &+ 96)), ld8((fp &+ 104)), 1, 0)
+                            _ = try P.f397_GrLine(t, p0_dc, (l64_xx &- 37), (l72_yy &+ 4), ld8((fp &+ 96)), ld8((fp &+ 104)), 1, 0)
                             ln = 2097382 // Logic.HC:230
                             if (p5__y_out != 0) {
                                 try st8(p5__y_out, l72_yy)
@@ -544,31 +544,30 @@ public final class N_Apps_Logic_Run: NativeModule {
                             try st8((fp &+ 48), (ld8((fp &+ 48)) &+ 32))
                             ln = 2097391 // Logic.HC:239
                             try tick(t)
-                            try f708_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input1_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 80), (fp &+ 88))
+                            try f713_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input1_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 80), (fp &+ 88))
                             ln = 2097392 // Logic.HC:240
                             try tick(t)
-                            try f708_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input2_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 96), (fp &+ 104))
+                            try f713_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input2_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 96), (fp &+ 104))
                             ln = 2097393 // Logic.HC:241
                             try tick(t)
-                            try f708_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input3_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 112), (fp &+ 120))
+                            try f713_DrawDesign(t, p0_dc, (fp &+ 48), ld2u((ld8(g_input3_table) &+ (p2_output &* 2))), (p3_depth &+ 1), (fp &+ 112), (fp &+ 120))
                             ln = 2097394 // Logic.HC:242
                             l72_yy = try divs(((ld8((fp &+ 88)) &+ ld8((fp &+ 104))) &+ ld8((fp &+ 120))), 3)
                             ln = 2097396 // Logic.HC:244
                             try st4((p0_dc &+ 160), 1)
                             ln = 2097397 // Logic.HC:245
-                            try tick(t)
-                            try P.f440_Sprite3(t, p0_dc, l64_xx, l72_yy, 0, ld8((g_imgs &+ (l56_type &* 8))), 0)
+                            _ = try nat(t, n_Sprite3, try push(t, p0_dc, l64_xx, l72_yy, 0, ld8((g_imgs &+ (l56_type &* 8))), 0))
                             ln = 2097399 // Logic.HC:247
                             try st4((p0_dc &+ 160), 4)
                             ln = 2097400 // Logic.HC:248
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p0_dc, (l64_xx &- 37), (l72_yy &- 8), ld8((fp &+ 80)), ld8((fp &+ 88)), 1, 0)
+                            _ = try P.f397_GrLine(t, p0_dc, (l64_xx &- 37), (l72_yy &- 8), ld8((fp &+ 80)), ld8((fp &+ 88)), 1, 0)
                             ln = 2097401 // Logic.HC:249
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p0_dc, (l64_xx &- 37), l72_yy, ld8((fp &+ 96)), ld8((fp &+ 104)), 1, 0)
+                            _ = try P.f397_GrLine(t, p0_dc, (l64_xx &- 37), l72_yy, ld8((fp &+ 96)), ld8((fp &+ 104)), 1, 0)
                             ln = 2097402 // Logic.HC:250
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p0_dc, (l64_xx &- 37), (l72_yy &+ 8), ld8((fp &+ 112)), ld8((fp &+ 120)), 1, 0)
+                            _ = try P.f397_GrLine(t, p0_dc, (l64_xx &- 37), (l72_yy &+ 8), ld8((fp &+ 112)), ld8((fp &+ 120)), 1, 0)
                             ln = 2097403 // Logic.HC:251
                             if (p5__y_out != 0) {
                                 try st8(p5__y_out, l72_yy)
@@ -584,7 +583,7 @@ public final class N_Apps_Logic_Run: NativeModule {
             ln = 2097408 // Logic.HC:256
             try tick(t)
             let vb2 = try push1(t, p2_output)
-            _ = try P.f369_GrPrint(t, p0_dc, l64_xx, (l72_yy &+ 3), s22, vb2, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, l64_xx, (l72_yy &+ 3), s22, vb2, 1)
             t.sp = vb2
             ln = 2097409 // Logic.HC:257
             _ = try nat(t, n_Bts, try push2(t, ld8(g_displayed_design), p2_output))
@@ -599,7 +598,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC DrawIt (Logic.HC:261)
-    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -613,7 +612,7 @@ public final class N_Apps_Logic_Run: NativeModule {
             _ = try nat(t, n_MemSet, try push3(t, ld8(g_displayed_design), 0, (divs((ld8(g_table_size) &+ 7), 8) &* 1)))
             ln = 2097417 // Logic.HC:265
             try tick(t)
-            try f708_DrawDesign(t, p1_dc, (fp &+ 16), ld8(g_output_found), 0, 0, 0)
+            try f713_DrawDesign(t, p1_dc, (fp &+ 16), ld8(g_output_found), 0, 0, 0)
             t.msp = msp0
             t.depth -= 1
             return
@@ -621,7 +620,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillNot (Logic.HC:268)
-    public final func f710_FillNot(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f715_FillNot(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -677,7 +676,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillAnd (Logic.HC:289)
-    public final func f711_FillAnd(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f716_FillAnd(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -751,7 +750,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillOr (Logic.HC:313)
-    public final func f712_FillOr(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f717_FillOr(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -825,7 +824,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillNAnd (Logic.HC:337)
-    public final func f713_FillNAnd(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f718_FillNAnd(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -899,7 +898,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillNOr (Logic.HC:361)
-    public final func f714_FillNOr(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f719_FillNOr(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -973,7 +972,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillXor (Logic.HC:385)
-    public final func f715_FillXor(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f720_FillXor(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1047,7 +1046,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillAnd3 (Logic.HC:409)
-    public final func f716_FillAnd3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f721_FillAnd3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1139,7 +1138,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillOr3 (Logic.HC:436)
-    public final func f717_FillOr3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f722_FillOr3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1231,7 +1230,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillNAnd3 (Logic.HC:463)
-    public final func f718_FillNAnd3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f723_FillNAnd3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1323,7 +1322,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillNOr3 (Logic.HC:490)
-    public final func f719_FillNOr3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f724_FillNOr3(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1415,7 +1414,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC FillGateTable (Logic.HC:517)
-    @discardableResult public final func f720_FillGateTable(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f725_FillGateTable(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1432,7 +1431,7 @@ public final class N_Apps_Logic_Run: NativeModule {
             try st8(g_output_found, (-1))
             ln = 2097675 // Logic.HC:523
             try tick(t)
-            try P.f574_ProgressBarsRst(t, 0)
+            try P.f579_ProgressBarsRst(t, 0)
             ln = 2097676 // Logic.HC:524
             try st8(P.g_progress1_max, ld8(g_table_size))
             ln = 2097677 // Logic.HC:525
@@ -1457,43 +1456,43 @@ public final class N_Apps_Logic_Run: NativeModule {
                         case 3:
                             ln = 2097685 // Logic.HC:533
                             try tick(t)
-                            try f710_FillNot(t, (fp &+ 16), (fp &+ 8))
+                            try f715_FillNot(t, (fp &+ 16), (fp &+ 8))
                         case 4:
                             ln = 2097686 // Logic.HC:534
                             try tick(t)
-                            try f711_FillAnd(t, (fp &+ 16), (fp &+ 8))
+                            try f716_FillAnd(t, (fp &+ 16), (fp &+ 8))
                         case 5:
                             ln = 2097687 // Logic.HC:535
                             try tick(t)
-                            try f712_FillOr(t, (fp &+ 16), (fp &+ 8))
+                            try f717_FillOr(t, (fp &+ 16), (fp &+ 8))
                         case 6:
                             ln = 2097688 // Logic.HC:536
                             try tick(t)
-                            try f713_FillNAnd(t, (fp &+ 16), (fp &+ 8))
+                            try f718_FillNAnd(t, (fp &+ 16), (fp &+ 8))
                         case 7:
                             ln = 2097689 // Logic.HC:537
                             try tick(t)
-                            try f714_FillNOr(t, (fp &+ 16), (fp &+ 8))
+                            try f719_FillNOr(t, (fp &+ 16), (fp &+ 8))
                         case 8:
                             ln = 2097690 // Logic.HC:538
                             try tick(t)
-                            try f715_FillXor(t, (fp &+ 16), (fp &+ 8))
+                            try f720_FillXor(t, (fp &+ 16), (fp &+ 8))
                         case 9:
                             ln = 2097691 // Logic.HC:539
                             try tick(t)
-                            try f716_FillAnd3(t, (fp &+ 16), (fp &+ 8))
+                            try f721_FillAnd3(t, (fp &+ 16), (fp &+ 8))
                         case 10:
                             ln = 2097692 // Logic.HC:540
                             try tick(t)
-                            try f717_FillOr3(t, (fp &+ 16), (fp &+ 8))
+                            try f722_FillOr3(t, (fp &+ 16), (fp &+ 8))
                         case 11:
                             ln = 2097693 // Logic.HC:541
                             try tick(t)
-                            try f718_FillNAnd3(t, (fp &+ 16), (fp &+ 8))
+                            try f723_FillNAnd3(t, (fp &+ 16), (fp &+ 8))
                         case 12:
                             ln = 2097694 // Logic.HC:542
                             try tick(t)
-                            try f719_FillNOr3(t, (fp &+ 16), (fp &+ 8))
+                            try f724_FillNOr3(t, (fp &+ 16), (fp &+ 8))
                         default:
                             break
                         }
@@ -1506,7 +1505,7 @@ public final class N_Apps_Logic_Run: NativeModule {
             }
             ln = 2097698 // Logic.HC:546
             try tick(t)
-            try P.f574_ProgressBarsRst(t, 0)
+            try P.f579_ProgressBarsRst(t, 0)
             ln = 2097699 // Logic.HC:547
             let rv3: Int64 = try ld8((fp &+ 8))
             t.msp = msp0
@@ -1519,7 +1518,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC CleanUp (Logic.HC:550)
-    public final func f721_CleanUp(_ t: HTask) throws {
+    public final func f726_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1541,7 +1540,7 @@ public final class N_Apps_Logic_Run: NativeModule {
     }
 
     /// HolyC DigitalLogic (Logic.HC:560)
-    public final func f722_DigitalLogic(_ t: HTask) throws {
+    public final func f727_DigitalLogic(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1572,24 +1571,24 @@ public final class N_Apps_Logic_Run: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 2097726 // Logic.HC:574
             try tick(t)
-            try f706_GetGates(t)
+            try f711_GetGates(t)
             ln = 2097727 // Logic.HC:575
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
             do {
                 ln = 2097728 // Logic.HC:576
                 try tick(t)
-                try f707_Init(t)
+                try f712_Init(t)
                 ln = 2097729 // Logic.HC:577
                 try tick(t)
-                let t0: Int64 = try f720_FillGateTable(t)
+                let t0: Int64 = try f725_FillGateTable(t)
                 if (t0 != 0) {
                     ln = 2097730 // Logic.HC:578
                     _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
                     ln = 2097731 // Logic.HC:579
                     _ = try nat(t, n_DocClear, try push1(t, 0))
                     ln = 2097732 // Logic.HC:580
-                    try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
+                    try st8((ld8(P.g_Fs) &+ 448), 9223090561878065866)
                     ln = 2097733 // Logic.HC:581
                     _ = try nat(t, n_GetChar, try push3(t, 0, 1, 0))
                     ln = 2097734 // Logic.HC:582
@@ -1613,20 +1612,20 @@ public final class N_Apps_Logic_Run: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 2097741 // Logic.HC:589
             try tick(t)
-            try f721_CleanUp(t)
+            try f726_CleanUp(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DigitalLogic", ln) }
     }
 
     /// HolyC $init:C:/Apps/Logic/Run.HC#3 (Run.HC:3)
-    @discardableResult public final func f723_init_C__Apps_Logic_Run_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f728_init_C__Apps_Logic_Run_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 3 // Run.HC:3
             try tick(t)
-            try f722_DigitalLogic(t)
+            try f727_DigitalLogic(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Logic/Run.HC#3", ln) }
@@ -1635,33 +1634,33 @@ public final class N_Apps_Logic_Run: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Logic_Run_HC_0(t)
-        case 704: return try f704_init_C__Apps_Logic_Run_HC_1(t)
-        case 705: return try f705_init_C__Apps_Logic_Run_HC_2(t)
-        case 706: try f706_GetGates(t); return 0
-        case 707: try f707_Init(t); return 0
-        case 708: try f708_DrawDesign(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0)); return 0
-        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: try f710_FillNot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 711: try f711_FillAnd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 712: try f712_FillOr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 713: try f713_FillNAnd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 714: try f714_FillNOr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 715: try f715_FillXor(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 716: try f716_FillAnd3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 717: try f717_FillOr3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 718: try f718_FillNAnd3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 719: try f719_FillNOr3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 720: return try f720_FillGateTable(t)
-        case 721: try f721_CleanUp(t); return 0
-        case 722: try f722_DigitalLogic(t); return 0
-        case 723: return try f723_init_C__Apps_Logic_Run_HC_3(t)
+        case 708: return try f708_init_C__Apps_Logic_Run_HC_0(t)
+        case 709: return try f709_init_C__Apps_Logic_Run_HC_1(t)
+        case 710: return try f710_init_C__Apps_Logic_Run_HC_2(t)
+        case 711: try f711_GetGates(t); return 0
+        case 712: try f712_Init(t); return 0
+        case 713: try f713_DrawDesign(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0)); return 0
+        case 714: try f714_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: try f715_FillNot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 716: try f716_FillAnd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 717: try f717_FillOr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 718: try f718_FillNAnd(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 719: try f719_FillNOr(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 720: try f720_FillXor(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 721: try f721_FillAnd3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 722: try f722_FillOr3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 723: try f723_FillNAnd3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 724: try f724_FillNOr3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 725: return try f725_FillGateTable(t)
+        case 726: try f726_CleanUp(t); return 0
+        case 727: try f727_DigitalLogic(t); return 0
+        case 728: return try f728_init_C__Apps_Logic_Run_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Logic/Run.HC#0", 704: "$init:C:/Apps/Logic/Run.HC#1", 705: "$init:C:/Apps/Logic/Run.HC#2", 706: "GetGates", 707: "Init", 708: "DrawDesign", 709: "DrawIt", 710: "FillNot", 711: "FillAnd", 712: "FillOr", 713: "FillNAnd", 714: "FillNOr", 715: "FillXor", 716: "FillAnd3", 717: "FillOr3", 718: "FillNAnd3", 719: "FillNOr3", 720: "FillGateTable", 721: "CleanUp", 722: "DigitalLogic", 723: "$init:C:/Apps/Logic/Run.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Logic/Run.HC#0", 709: "$init:C:/Apps/Logic/Run.HC#1", 710: "$init:C:/Apps/Logic/Run.HC#2", 711: "GetGates", 712: "Init", 713: "DrawDesign", 714: "DrawIt", 715: "FillNot", 716: "FillAnd", 717: "FillOr", 718: "FillNAnd", 719: "FillNOr", 720: "FillXor", 721: "FillAnd3", 722: "FillOr3", 723: "FillNAnd3", 724: "FillNOr3", 725: "FillGateTable", 726: "CleanUp", 727: "DigitalLogic", 728: "$init:C:/Apps/Logic/Run.HC#3"]
     private static let FILES: [String] = ["C:/Apps/Logic/Run.HC", "C:/Apps/Logic/Load.HC", "C:/Apps/Logic/Logic.HC"]
     public override var files: [String] { N_Apps_Logic_Run.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Logic_Run.DEFINED.contains(index) }

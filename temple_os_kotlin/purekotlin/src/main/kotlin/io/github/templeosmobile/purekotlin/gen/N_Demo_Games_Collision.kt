@@ -38,7 +38,7 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawIt (Collision.HC:15) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -52,7 +52,7 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             loop0@ while ((l16_i < 64L)) {
                 ln = 20 // Collision.HC:20
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, ld4s(((g_ball_x + (l16_i * 8L)) + 4L)), ld4s(((g_ball_y + (l16_i * 8L)) + 4L)), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, ld4s(((g_ball_x + (l16_i * 8L)) + 4L)), ld4s(((g_ball_y + (l16_i * 8L)) + 4L)), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 19 // Collision.HC:19
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -63,7 +63,7 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC AnimateTask (Collision.HC:47) */
-    fun f704_AnimateTask(t: Task, a0: Long) {
+    fun f709_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -228,7 +228,7 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Init (Collision.HC:131) */
-    fun f705_Init(t: Task) {
+    fun f710_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -258,7 +258,7 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Collision (Collision.HC:142) */
-    fun f706_Collision(t: Task) {
+    fun f711_Collision(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -267,17 +267,17 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 145 // Collision.HC:145
             tick(t)
-            f705_Init(t)
+            f710_Init(t)
             ln = 146 // Collision.HC:146
             val t1: Long = (ld8(P.g_Fs) + 1088L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065856L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 147 // Collision.HC:147
             nat(t, n_DocCursor, push2(t, 0L, 0L))
             ln = 148 // Collision.HC:148
             nat(t, n_DocClear, push1(t, 0L))
             ln = 149 // Collision.HC:149
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 150 // Collision.HC:150
             nat(t, n_GetChar, push3(t, 0L, 1L, 0L))
             ln = 151 // Collision.HC:151
@@ -289,13 +289,13 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/Collision.HC#0 (Collision.HC:154) */
-    fun f707_init_C__Demo_Games_Collision_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_Games_Collision_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 154 // Collision.HC:154
             tick(t)
-            f706_Collision(t)
+            f711_Collision(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Collision.HC#0", ln) }
@@ -304,11 +304,11 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_Init(t); 0L }
-            706 -> { f706_Collision(t); 0L }
-            707 -> f707_init_C__Demo_Games_Collision_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_Init(t); 0L }
+            711 -> { f711_Collision(t); 0L }
+            712 -> f712_init_C__Demo_Games_Collision_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -320,7 +320,7 @@ class N_Demo_Games_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("DrawIt", "AnimateTask", "Init", "Collision", "\$init:C:/Demo/Games/Collision.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/Collision.HC")
     }

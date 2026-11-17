@@ -16,6 +16,7 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     @JvmField val n_GrRect = rt.vm.natives.find("GrRect")!!.index
     @JvmField val n_PutChars = rt.vm.natives.find("PutChars")!!.index
     @JvmField val n_Sprite = rt.vm.natives.find("Sprite")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** in_img: U8 *[12] */ @JvmField var g_in_img: Long = 0L
     /** binary literal, 386 bytes */ @JvmField var b0: Long = 0L
@@ -52,7 +53,7 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/Graphics/EdSprite.HC#0 (EdSprite.HC:53) */
-    fun f703_init_C__Demo_Graphics_EdSprite_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Graphics_EdSprite_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -75,7 +76,7 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC OutLine (EdSprite.HC:55) */
-    fun f704_OutLine(t: Task) {
+    fun f709_OutLine(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -95,7 +96,7 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             loop0@ while ((l0_n < 12L)) {
                 ln = 61 // EdSprite.HC:61
                 tick(t)
-                P.f446_SpriteExtents(t, ld8((g_in_img + (l0_n * 8L))), (fp + 8), (fp + 16), (fp + 24), (fp + 32))
+                P.f451_SpriteExtents(t, ld8((g_in_img + (l0_n * 8L))), (fp + 8), (fp + 16), (fp + 24), (fp + 32))
                 ln = 62 // EdSprite.HC:62
                 l40_w = (((ld8((fp + 16)) - ld8((fp + 8))) + 1L) + 2L)
                 ln = 63 // EdSprite.HC:63
@@ -109,8 +110,7 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 ln = 66 // EdSprite.HC:66
                 nat(t, n_GrRect, push(t, l96_dc, 0L, 0L, l40_w, l48_h))
                 ln = 67 // EdSprite.HC:67
-                tick(t)
-                P.f440_Sprite3(t, l96_dc, ((-ld8((fp + 8))) + 1L), ((-ld8((fp + 24))) + 1L), 0L, ld8((g_in_img + (l0_n * 8L))), 0L)
+                nat(t, n_Sprite3, push(t, l96_dc, ((-ld8((fp + 8))) + 1L), ((-ld8((fp + 24))) + 1L), 0L, ld8((g_in_img + (l0_n * 8L))), 0L))
                 ln = 69 // EdSprite.HC:69
                 l56_i = 0L
                 loop2@ while ((l56_i < l48_h)) {
@@ -150,7 +150,7 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 }
                 ln = 82 // EdSprite.HC:82
                 tick(t)
-                val t3: Long = P.f439_DC2Sprite(t, l96_dc)
+                val t3: Long = P.f443_DC2Sprite(t, l96_dc)
                 l88_out_img = t3
                 ln = 83 // EdSprite.HC:83
                 nat(t, n_PutChars, push1(t, 10L))
@@ -174,13 +174,13 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Demo/Graphics/EdSprite.HC#1 (EdSprite.HC:92) */
-    fun f705_init_C__Demo_Graphics_EdSprite_HC_1(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_EdSprite_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 92 // EdSprite.HC:92
             tick(t)
-            f704_OutLine(t)
+            f709_OutLine(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/EdSprite.HC#1", ln) }
@@ -189,9 +189,9 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Graphics_EdSprite_HC_0(t)
-            704 -> { f704_OutLine(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_EdSprite_HC_1(t)
+            708 -> f708_init_C__Demo_Graphics_EdSprite_HC_0(t)
+            709 -> { f709_OutLine(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_EdSprite_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -203,7 +203,7 @@ class N_Demo_Graphics_EdSprite(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("\$init:C:/Demo/Graphics/EdSprite.HC#0", "OutLine", "\$init:C:/Demo/Graphics/EdSprite.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/EdSprite.HC")
     }

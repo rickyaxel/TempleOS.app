@@ -22,7 +22,7 @@ public final class N_Adam_AExts: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/AExts.HC#0 (AExts.HC:1)
-    @discardableResult public final func f737_init_C__Adam_AExts_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f742_init_C__Adam_AExts_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -34,13 +34,13 @@ public final class N_Adam_AExts: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 737: return try f737_init_C__Adam_AExts_HC_0(t)
+        case 742: return try f742_init_C__Adam_AExts_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [737]
-    private static let NAMES: [Int: String] = [737: "$init:C:/Adam/AExts.HC#0"]
+    private static let DEFINED: Set<Int> = [742]
+    private static let NAMES: [Int: String] = [742: "$init:C:/Adam/AExts.HC#0"]
     private static let FILES: [String] = []
     public override var files: [String] { N_Adam_AExts.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_AExts.DEFINED.contains(index) }

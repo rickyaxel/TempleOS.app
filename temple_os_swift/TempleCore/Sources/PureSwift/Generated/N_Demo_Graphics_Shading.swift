@@ -12,7 +12,9 @@ public final class N_Demo_Graphics_Shading: NativeModule {
     public let n_AutoComplete: Int
     public let n_Cos: Int
     public let n_DocClear: Int
+    public let n_GrFillPoly3: Int
     public let n_Mat4x4MulXYZ: Int
+    public let n_Mat4x4Scale: Int
     public let n_Print: Int
     public let n_Sin: Int
     public let n_Sqrt: Int
@@ -24,7 +26,9 @@ public final class N_Demo_Graphics_Shading: NativeModule {
         n_AutoComplete = rt.vm.natives.find("AutoComplete")!.index
         n_Cos = rt.vm.natives.find("Cos")!.index
         n_DocClear = rt.vm.natives.find("DocClear")!.index
+        n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!.index
         n_Mat4x4MulXYZ = rt.vm.natives.find("Mat4x4MulXYZ")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Sin = rt.vm.natives.find("Sin")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
@@ -41,7 +45,7 @@ public final class N_Demo_Graphics_Shading: NativeModule {
     }
 
     /// HolyC Lighting (Shading.HC:3)
-    public final func f703_Lighting(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f708_Lighting(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -116,7 +120,7 @@ public final class N_Demo_Graphics_Shading: NativeModule {
     }
 
     /// HolyC DrawIt (Shading.HC:56)
-    public final func f704_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -139,7 +143,7 @@ public final class N_Demo_Graphics_Shading: NativeModule {
             var l96_j: Int64 = 0
             ln = 58 // Shading.HC:58
             try tick(t)
-            let t0: Int64 = try P.f510_CtrlFindUnique(t, p0_task, 3)
+            let t0: Int64 = try P.f515_CtrlFindUnique(t, p0_task, 3)
             l16_c = t0
             ln = 59 // Shading.HC:59
             l24_s = try ld8((l16_c &+ 104))
@@ -169,8 +173,7 @@ public final class N_Demo_Graphics_Shading: NativeModule {
             try tick(t)
             _ = try P.f305_Mat4x4RotX(t, ld8((p1_dc &+ 200)), (ldf((l24_s &+ 24)) + d(4614256656552045848)))
             ln = 72 // Shading.HC:72
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, ld8((p1_dc &+ 200)), l32_tt)
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((p1_dc &+ 200)), bits(l32_tt)))
             ln = 73 // Shading.HC:73
             try tick(t)
             try P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc &+ 200)))
@@ -182,7 +185,7 @@ public final class N_Demo_Graphics_Shading: NativeModule {
             try st4(((fp &+ 160) &+ 8), divs(640, 8))
             ln = 78 // Shading.HC:78
             try tick(t)
-            let t4: Double = try P.f355_D3I32Norm(t, (fp &+ 160))
+            let t4: Double = try P.f356_D3I32Norm(t, (fp &+ 160))
             l80_d = (65536.0 / t4)
             ln = 79 // Shading.HC:79
             try st4((fp &+ 160), f2i((Double(ld4s((fp &+ 160))) * l80_d)))
@@ -253,10 +256,9 @@ public final class N_Demo_Graphics_Shading: NativeModule {
                     try st4((((fp &+ 120) &+ 24) &+ 8), f2i((l72_radius * t23)))
                     ln = 105 // Shading.HC:105
                     try tick(t)
-                    try f703_Lighting(t, p1_dc, (fp &+ 160), (fp &+ 120), 1)
+                    try f708_Lighting(t, p1_dc, (fp &+ 160), (fp &+ 120), 1)
                     ln = 106 // Shading.HC:106
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, p1_dc, 3, (fp &+ 120))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 3, (fp &+ 120)))
                     ln = 108 // Shading.HC:108
                     let t24: Double = d(try nat(t, n_Cos, try push1(t, bits(l64__2))))
                     let t25: Double = d(try nat(t, n_Cos, try push1(t, bits((l40__ + (((2.0 * d(4614256656552045848)) / 32.0) / 2.0))))))
@@ -292,10 +294,9 @@ public final class N_Demo_Graphics_Shading: NativeModule {
                     try st4(((fp &+ 120) &+ 8), f2i((l72_radius * t38)))
                     ln = 117 // Shading.HC:117
                     try tick(t)
-                    try f703_Lighting(t, p1_dc, (fp &+ 160), (fp &+ 120), 1)
+                    try f708_Lighting(t, p1_dc, (fp &+ 160), (fp &+ 120), 1)
                     ln = 118 // Shading.HC:118
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, p1_dc, 3, (fp &+ 120))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 3, (fp &+ 120)))
                     ln = 121 // Shading.HC:121
                     let t39: Double = d(try nat(t, n_Cos, try push1(t, bits(l56__))))
                     let t40: Double = d(try nat(t, n_Cos, try push1(t, bits(l40__))))
@@ -331,10 +332,9 @@ public final class N_Demo_Graphics_Shading: NativeModule {
                     try st4(((fp &+ 120) &+ 8), f2i(((-l72_radius) * t53)))
                     ln = 130 // Shading.HC:130
                     try tick(t)
-                    try f703_Lighting(t, p1_dc, (fp &+ 160), (fp &+ 120), 4)
+                    try f708_Lighting(t, p1_dc, (fp &+ 160), (fp &+ 120), 4)
                     ln = 131 // Shading.HC:131
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, p1_dc, 3, (fp &+ 120))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 3, (fp &+ 120)))
                     ln = 133 // Shading.HC:133
                     let t54: Double = d(try nat(t, n_Cos, try push1(t, bits(l64__2))))
                     let t55: Double = d(try nat(t, n_Cos, try push1(t, bits((l40__ + (((2.0 * d(4614256656552045848)) / 32.0) / 2.0))))))
@@ -370,10 +370,9 @@ public final class N_Demo_Graphics_Shading: NativeModule {
                     try st4((((fp &+ 120) &+ 24) &+ 8), f2i(((-l72_radius) * t68)))
                     ln = 142 // Shading.HC:142
                     try tick(t)
-                    try f703_Lighting(t, p1_dc, (fp &+ 160), (fp &+ 120), 4)
+                    try f708_Lighting(t, p1_dc, (fp &+ 160), (fp &+ 120), 4)
                     ln = 143 // Shading.HC:143
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, p1_dc, 3, (fp &+ 120))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 3, (fp &+ 120)))
                     ln = 91 // Shading.HC:91
                     l96_j = (l96_j &+ 1)
                     try tick(t)
@@ -389,7 +388,7 @@ public final class N_Demo_Graphics_Shading: NativeModule {
     }
 
     /// HolyC Main (Shading.HC:153)
-    public final func f705_Main(_ t: HTask) throws {
+    public final func f710_Main(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -397,7 +396,7 @@ public final class N_Demo_Graphics_Shading: NativeModule {
             var l8_s: Int64 = 0
             ln = 155 // Shading.HC:155
             try tick(t)
-            let t0: Int64 = try P.f524_ViewAnglesNew(t, 0)
+            let t0: Int64 = try P.f529_ViewAnglesNew(t, 0)
             l0_c = t0
             ln = 156 // Shading.HC:156
             l8_s = try ld8((l0_c &+ 104))
@@ -421,7 +420,7 @@ public final class N_Demo_Graphics_Shading: NativeModule {
             ln = 165 // Shading.HC:165
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 166 // Shading.HC:166
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065856)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
             ln = 167 // Shading.HC:167
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -447,20 +446,20 @@ public final class N_Demo_Graphics_Shading: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 174 // Shading.HC:174
             try tick(t)
-            try P.f525_ViewAnglesDel(t, 0)
+            try P.f530_ViewAnglesDel(t, 0)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Main", ln) }
     }
 
     /// HolyC $init:C:/Demo/Graphics/Shading.HC#0 (Shading.HC:177)
-    @discardableResult public final func f706_init_C__Demo_Graphics_Shading_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Graphics_Shading_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 177 // Shading.HC:177
             try tick(t)
-            try f705_Main(t)
+            try f710_Main(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Shading.HC#0", ln) }
@@ -469,16 +468,16 @@ public final class N_Demo_Graphics_Shading: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Lighting(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 704: try f704_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: try f705_Main(t); return 0
-        case 706: return try f706_init_C__Demo_Graphics_Shading_HC_0(t)
+        case 708: try f708_Lighting(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: try f710_Main(t); return 0
+        case 711: return try f711_init_C__Demo_Graphics_Shading_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "Lighting", 704: "DrawIt", 705: "Main", 706: "$init:C:/Demo/Graphics/Shading.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "Lighting", 709: "DrawIt", 710: "Main", 711: "$init:C:/Demo/Graphics/Shading.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Shading.HC"]
     public override var files: [String] { N_Demo_Graphics_Shading.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Shading.DEFINED.contains(index) }

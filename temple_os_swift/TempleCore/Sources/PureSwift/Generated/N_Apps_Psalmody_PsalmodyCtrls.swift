@@ -37,7 +37,7 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
     }
 
     /// HolyC DrawTempoCtrl (PsalmodyCtrls.HC:10)
-    public final func f703_DrawTempoCtrl(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawTempoCtrl(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -58,21 +58,21 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
             try st4((p0_dc &+ 160), 15)
             ln = 21 // PsalmodyCtrls.HC:21
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, (ld8((p1_c &+ 40)) &+ 15), (ld8((p1_c &+ 56)) &+ 15), (ld8((p1_c &+ 40)) &+ 15), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, (ld8((p1_c &+ 40)) &+ 15), (ld8((p1_c &+ 56)) &+ 15), (ld8((p1_c &+ 40)) &+ 15), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1), 1, 0)
             ln = 23 // PsalmodyCtrls.HC:23
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 30) &+ 1), (ld8((p1_c &+ 56)) &+ 15), ((ld8((p1_c &+ 40)) &+ 30) &+ 1), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 30) &+ 1), (ld8((p1_c &+ 56)) &+ 15), ((ld8((p1_c &+ 40)) &+ 30) &+ 1), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1), 1, 0)
             ln = 26 // PsalmodyCtrls.HC:26
             try st4((p0_dc &+ 160), 10)
             ln = 27 // PsalmodyCtrls.HC:27
             try tick(t)
             let vb0 = try push1(t, divs((ld8(l16_s) &* 10), 80))
-            _ = try P.f369_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 15) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &+ 3), s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 15) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &+ 3), s0, vb0, 1)
             t.sp = vb0
             ln = 29 // PsalmodyCtrls.HC:29
             try tick(t)
             let vb1 = try push1(t, divs((ld8((l16_s &+ 8)) &* 10), 80))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 30) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &+ 3), s0, vb1, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 30) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 15) &+ 80) &+ 3), s0, vb1, 1)
             t.sp = vb1
             ln = 32 // PsalmodyCtrls.HC:32
             _ = try nat(t, n_GrRect, try push(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 15) &- 3), (((((ld8((p1_c &+ 56)) &+ 15) &+ 80) &- 1) &- ld8(l16_s)) &- 2), 7, 5))
@@ -89,12 +89,12 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
             ln = 43 // PsalmodyCtrls.HC:43
             try tick(t)
             let vb2 = push0(t)
-            _ = try P.f370_GrVPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 2) &+ 2), ((ld8((p1_c &+ 56)) &+ 15) &+ 2), s1, vb2, 0)
+            _ = try P.f371_GrVPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 2) &+ 2), ((ld8((p1_c &+ 56)) &+ 15) &+ 2), s1, vb2, 0)
             t.sp = vb2
             ln = 44 // PsalmodyCtrls.HC:44
             try tick(t)
             let vb3 = push0(t)
-            _ = try P.f370_GrVPrint(t, p0_dc, (((ld8((p1_c &+ 48)) &- 2) &- 2) &- 8), ((ld8((p1_c &+ 56)) &+ 15) &+ 2), s2, vb3, 0)
+            _ = try P.f371_GrVPrint(t, p0_dc, (((ld8((p1_c &+ 48)) &- 2) &- 2) &- 8), ((ld8((p1_c &+ 56)) &+ 15) &+ 2), s2, vb3, 0)
             t.sp = vb3
             t.depth -= 1
             return
@@ -102,7 +102,7 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
     }
 
     /// HolyC UpdateDerivedTempoCtrl (PsalmodyCtrls.HC:48)
-    public final func f704_UpdateDerivedTempoCtrl(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_UpdateDerivedTempoCtrl(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -128,7 +128,7 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
     }
 
     /// HolyC LeftClickTempo (PsalmodyCtrls.HC:57)
-    public final func f705_LeftClickTempo(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f710_LeftClickTempo(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -160,7 +160,7 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
     }
 
     /// HolyC TempoNew (PsalmodyCtrls.HC:68)
-    @discardableResult public final func f706_TempoNew(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_TempoNew(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -177,11 +177,11 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
             ln = 74 // PsalmodyCtrls.HC:74
             try st8((l0_c &+ 104), g_tempo_state)
             ln = 75 // PsalmodyCtrls.HC:75
-            try st8((l0_c &+ 120), 9223090561878065855)
+            try st8((l0_c &+ 120), 9223090561878065860)
             ln = 76 // PsalmodyCtrls.HC:76
-            try st8((l0_c &+ 136), 9223090561878065857)
+            try st8((l0_c &+ 136), 9223090561878065862)
             ln = 77 // PsalmodyCtrls.HC:77
-            try st8((l0_c &+ 112), 9223090561878065856)
+            try st8((l0_c &+ 112), 9223090561878065861)
             ln = 78 // PsalmodyCtrls.HC:78
             try st8((l0_c &+ 40), 396)
             ln = 79 // PsalmodyCtrls.HC:79
@@ -201,7 +201,7 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
     }
 
     /// HolyC TempoDel (PsalmodyCtrls.HC:85)
-    public final func f707_TempoDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_TempoDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -217,7 +217,7 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/PsalmodyCtrls.HC#0 (PsalmodyCtrls.HC:1)
-    @discardableResult public final func f708_init_C__Apps_Psalmody_PsalmodyCtrls_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Apps_Psalmody_PsalmodyCtrls_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -229,18 +229,18 @@ public final class N_Apps_Psalmody_PsalmodyCtrls: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawTempoCtrl(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_UpdateDerivedTempoCtrl(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_LeftClickTempo(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 706: return try f706_TempoNew(t)
-        case 707: try f707_TempoDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: return try f708_init_C__Apps_Psalmody_PsalmodyCtrls_HC_0(t)
+        case 708: try f708_DrawTempoCtrl(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_UpdateDerivedTempoCtrl(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_LeftClickTempo(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 711: return try f711_TempoNew(t)
+        case 712: try f712_TempoDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: return try f713_init_C__Apps_Psalmody_PsalmodyCtrls_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708]
-    private static let NAMES: [Int: String] = [703: "DrawTempoCtrl", 704: "UpdateDerivedTempoCtrl", 705: "LeftClickTempo", 706: "TempoNew", 707: "TempoDel", 708: "$init:C:/Apps/Psalmody/PsalmodyCtrls.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713]
+    private static let NAMES: [Int: String] = [708: "DrawTempoCtrl", 709: "UpdateDerivedTempoCtrl", 710: "LeftClickTempo", 711: "TempoNew", 712: "TempoDel", 713: "$init:C:/Apps/Psalmody/PsalmodyCtrls.HC#0"]
     private static let FILES: [String] = ["C:/Apps/Psalmody/PsalmodyCtrls.HC"]
     public override var files: [String] { N_Apps_Psalmody_PsalmodyCtrls.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Psalmody_PsalmodyCtrls.DEFINED.contains(index) }

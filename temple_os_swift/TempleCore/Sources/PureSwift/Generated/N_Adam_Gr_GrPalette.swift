@@ -33,7 +33,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrPalette.HC#0 (GrPalette.HC:2)
-    @discardableResult public final func f703_init_C__Adam_Gr_GrPalette_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Adam_Gr_GrPalette_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -43,7 +43,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrPalette.HC#1 (GrPalette.HC:5)
-    @discardableResult public final func f704_init_C__Adam_Gr_GrPalette_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Adam_Gr_GrPalette_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -57,7 +57,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC GrPaletteIndicesSet (GrPalette.HC:8)
-    public final func f705_GrPaletteIndicesSet(_ t: HTask) throws {
+    public final func f710_GrPaletteIndicesSet(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -79,29 +79,29 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
             }
             ln = 18 // GrPalette.HC:18
             try tick(t)
-            _ = try P.f565_InU8(t, 986)
+            _ = try P.f570_InU8(t, 986)
             ln = 19 // GrPalette.HC:19
             l0_i = 0
             loop2: while (l0_i < 16) {
                 ln = 20 // GrPalette.HC:20
                 try tick(t)
-                try P.f570_OutU8(t, 960, l0_i)
+                try P.f575_OutU8(t, 960, l0_i)
                 ln = 21 // GrPalette.HC:21
                 try tick(t)
-                try P.f570_OutU8(t, 960, l0_i)
+                try P.f575_OutU8(t, 960, l0_i)
                 ln = 19 // GrPalette.HC:19
                 l0_i = (l0_i &+ 1)
                 try tick(t)
             }
             ln = 23 // GrPalette.HC:23
             try tick(t)
-            try P.f570_OutU8(t, 960, 32)
+            try P.f575_OutU8(t, 960, 32)
             ln = 24 // GrPalette.HC:24
             try tick(t)
-            try P.f570_OutU8(t, 960, 0)
+            try P.f575_OutU8(t, 960, 0)
             ln = 25 // GrPalette.HC:25
             try tick(t)
-            _ = try P.f565_InU8(t, 986)
+            _ = try P.f570_InU8(t, 986)
             ln = 26 // GrPalette.HC:26
             try tick(t)
             _ = try P.f98_LBtr(t, (P.g_sys_semas &+ 112), 0)
@@ -111,7 +111,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC GrPaletteColorSet (GrPalette.HC:30)
-    public final func f706_GrPaletteColorSet(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f711_GrPaletteColorSet(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -138,19 +138,19 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
             }
             ln = 37 // GrPalette.HC:37
             try tick(t)
-            try P.f570_OutU8(t, 966, 255)
+            try P.f575_OutU8(t, 966, 255)
             ln = 38 // GrPalette.HC:38
             try tick(t)
-            try P.f570_OutU8(t, 968, p0_color_num)
+            try P.f575_OutU8(t, 968, p0_color_num)
             ln = 39 // GrPalette.HC:39
             try tick(t)
-            try P.f570_OutU8(t, 969, (ld2u(((fp &+ 8) &+ 4)) &>> 10))
+            try P.f575_OutU8(t, 969, (ld2u(((fp &+ 8) &+ 4)) &>> 10))
             ln = 40 // GrPalette.HC:40
             try tick(t)
-            try P.f570_OutU8(t, 969, (ld2u(((fp &+ 8) &+ 2)) &>> 10))
+            try P.f575_OutU8(t, 969, (ld2u(((fp &+ 8) &+ 2)) &>> 10))
             ln = 41 // GrPalette.HC:41
             try tick(t)
-            try P.f570_OutU8(t, 969, (ld2u((fp &+ 8)) &>> 10))
+            try P.f575_OutU8(t, 969, (ld2u((fp &+ 8)) &>> 10))
             ln = 42 // GrPalette.HC:42
             try tick(t)
             _ = try P.f98_LBtr(t, (P.g_sys_semas &+ 112), 0)
@@ -161,7 +161,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC GrPaletteColorGet (GrPalette.HC:46)
-    @discardableResult public final func f707_GrPaletteColorGet(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f712_GrPaletteColorGet(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -188,21 +188,21 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
             }
             ln = 54 // GrPalette.HC:54
             try tick(t)
-            try P.f570_OutU8(t, 966, 255)
+            try P.f575_OutU8(t, 966, 255)
             ln = 55 // GrPalette.HC:55
             try tick(t)
-            try P.f570_OutU8(t, 967, p0_color_num)
+            try P.f575_OutU8(t, 967, p0_color_num)
             ln = 56 // GrPalette.HC:56
             try tick(t)
-            let t2: Int64 = try P.f565_InU8(t, 969)
+            let t2: Int64 = try P.f570_InU8(t, 969)
             try st2(((fp &+ 8) &+ 4), divs((67107840 &* t2), 64512))
             ln = 57 // GrPalette.HC:57
             try tick(t)
-            let t3: Int64 = try P.f565_InU8(t, 969)
+            let t3: Int64 = try P.f570_InU8(t, 969)
             try st2(((fp &+ 8) &+ 2), divs((67107840 &* t3), 64512))
             ln = 58 // GrPalette.HC:58
             try tick(t)
-            let t4: Int64 = try P.f565_InU8(t, 969)
+            let t4: Int64 = try P.f570_InU8(t, 969)
             try st2((fp &+ 8), divs((67107840 &* t4), 64512))
             ln = 59 // GrPalette.HC:59
             try tick(t)
@@ -219,7 +219,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrPalette.HC#2 (GrPalette.HC:64)
-    @discardableResult public final func f708_init_C__Adam_Gr_GrPalette_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Adam_Gr_GrPalette_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -229,7 +229,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrPalette.HC#3 (GrPalette.HC:70)
-    @discardableResult public final func f709_init_C__Adam_Gr_GrPalette_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Adam_Gr_GrPalette_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -239,7 +239,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC GrPaletteGet (GrPalette.HC:76)
-    public final func f710_GrPaletteGet(_ t: HTask, _ a0: Int64) throws {
+    public final func f715_GrPaletteGet(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -250,7 +250,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
             loop0: while (l8_i < 16) {
                 ln = 80 // GrPalette.HC:80
                 try tick(t)
-                let t0: Int64 = try f707_GrPaletteColorGet(t, l8_i)
+                let t0: Int64 = try f712_GrPaletteColorGet(t, l8_i)
                 try st8((p0_bgr48 &+ (l8_i &* 8)), t0)
                 ln = 79 // GrPalette.HC:79
                 l8_i = (l8_i &+ 1)
@@ -262,7 +262,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC GrPaletteSet (GrPalette.HC:83)
-    public final func f711_GrPaletteSet(_ t: HTask, _ a0: Int64) throws {
+    public final func f716_GrPaletteSet(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -273,7 +273,7 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
             loop0: while (l8_i < 16) {
                 ln = 87 // GrPalette.HC:87
                 try tick(t)
-                try f706_GrPaletteColorSet(t, l8_i, ld8((p0_bgr48 &+ (l8_i &* 8))))
+                try f711_GrPaletteColorSet(t, l8_i, ld8((p0_bgr48 &+ (l8_i &* 8))))
                 ln = 86 // GrPalette.HC:86
                 l8_i = (l8_i &+ 1)
                 try tick(t)
@@ -284,20 +284,20 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     }
 
     /// HolyC PaletteSetStd (GrPalette.HC:90)
-    public final func f712_PaletteSetStd(_ t: HTask) throws {
+    public final func f717_PaletteSetStd(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 92 // GrPalette.HC:92
             try tick(t)
-            try f711_GrPaletteSet(t, P.g_gr_palette_std)
+            try f716_GrPaletteSet(t, P.g_gr_palette_std)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "PaletteSetStd", ln) }
     }
 
     /// HolyC $init:C:/Adam/Gr/GrPalette.HC#4 (GrPalette.HC:1)
-    @discardableResult public final func f713_init_C__Adam_Gr_GrPalette_HC_4(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Adam_Gr_GrPalette_HC_4(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -309,23 +309,23 @@ public final class N_Adam_Gr_GrPalette: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Adam_Gr_GrPalette_HC_0(t)
-        case 704: return try f704_init_C__Adam_Gr_GrPalette_HC_1(t)
-        case 705: try f705_GrPaletteIndicesSet(t); return 0
-        case 706: try f706_GrPaletteColorSet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 707: return try f707_GrPaletteColorGet(t, (n > 0 ? st[base + 0] : 0))
-        case 708: return try f708_init_C__Adam_Gr_GrPalette_HC_2(t)
-        case 709: return try f709_init_C__Adam_Gr_GrPalette_HC_3(t)
-        case 710: try f710_GrPaletteGet(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 711: try f711_GrPaletteSet(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 712: try f712_PaletteSetStd(t); return 0
-        case 713: return try f713_init_C__Adam_Gr_GrPalette_HC_4(t)
+        case 708: return try f708_init_C__Adam_Gr_GrPalette_HC_0(t)
+        case 709: return try f709_init_C__Adam_Gr_GrPalette_HC_1(t)
+        case 710: try f710_GrPaletteIndicesSet(t); return 0
+        case 711: try f711_GrPaletteColorSet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 712: return try f712_GrPaletteColorGet(t, (n > 0 ? st[base + 0] : 0))
+        case 713: return try f713_init_C__Adam_Gr_GrPalette_HC_2(t)
+        case 714: return try f714_init_C__Adam_Gr_GrPalette_HC_3(t)
+        case 715: try f715_GrPaletteGet(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 716: try f716_GrPaletteSet(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 717: try f717_PaletteSetStd(t); return 0
+        case 718: return try f718_init_C__Adam_Gr_GrPalette_HC_4(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Adam/Gr/GrPalette.HC#0", 704: "$init:C:/Adam/Gr/GrPalette.HC#1", 705: "GrPaletteIndicesSet", 706: "GrPaletteColorSet", 707: "GrPaletteColorGet", 708: "$init:C:/Adam/Gr/GrPalette.HC#2", 709: "$init:C:/Adam/Gr/GrPalette.HC#3", 710: "GrPaletteGet", 711: "GrPaletteSet", 712: "PaletteSetStd", 713: "$init:C:/Adam/Gr/GrPalette.HC#4"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Adam/Gr/GrPalette.HC#0", 709: "$init:C:/Adam/Gr/GrPalette.HC#1", 710: "GrPaletteIndicesSet", 711: "GrPaletteColorSet", 712: "GrPaletteColorGet", 713: "$init:C:/Adam/Gr/GrPalette.HC#2", 714: "$init:C:/Adam/Gr/GrPalette.HC#3", 715: "GrPaletteGet", 716: "GrPaletteSet", 717: "PaletteSetStd", 718: "$init:C:/Adam/Gr/GrPalette.HC#4"]
     private static let FILES: [String] = ["C:/Adam/Gr/GrPalette.HC"]
     public override var files: [String] { N_Adam_Gr_GrPalette.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_GrPalette.DEFINED.contains(index) }

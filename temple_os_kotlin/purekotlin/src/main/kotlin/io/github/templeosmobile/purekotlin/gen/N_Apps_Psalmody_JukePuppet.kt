@@ -38,7 +38,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC SongPuppet (JukePuppet.HC:1) */
-    fun f703_SongPuppet(t: Task, a0: Long, a1: Long) {
+    fun f708_SongPuppet(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -64,7 +64,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
                 if (!(r2)) break@loop0
                 ln = 7 // JukePuppet.HC:7
                 tick(t)
-                val t0: Long = P.f586_HashFind(t, s0, ld8((p0_task + 976L)), 64L, 1L)
+                val t0: Long = P.f591_HashFind(t, s0, ld8((p0_task + 976L)), 64L, 1L)
                 l64_tmpf = t0
                 if ((t0 != 0L)) {
                     ln = 8 // JukePuppet.HC:8
@@ -102,7 +102,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
                             val t8: Long = l24_i
                             l24_i = (t8 + 1L)
                             tick(t)
-                            val t9: Long = P.f664_TaskCaller(t, p0_task, t8, 0L)
+                            val t9: Long = P.f669_TaskCaller(t, p0_task, t8, 0L)
                             l48_rip = t9
                             r10 = (t9 != 0L)
                         }
@@ -137,7 +137,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC JukeSongPuppet (JukePuppet.HC:29) */
-    fun f704_JukeSongPuppet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f709_JukeSongPuppet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -150,23 +150,23 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
             var l48_i: Long = 0L
             ln = 35 // JukePuppet.HC:35
             tick(t)
-            val t0: Long = P.f665_FileExtDot(t, p3_name)
+            val t0: Long = P.f670_FileExtDot(t, p3_name)
             if ((t0 != 0L)) {
                 ln = 36 // JukePuppet.HC:36
                 tick(t)
-                P.f666_FileExtRem(t, p3_name)
+                P.f671_FileExtRem(t, p3_name)
             }
             ln = 37 // JukePuppet.HC:37
             tick(t)
-            P.f661_BirthWait(t, (p0_juke_task + 1128L))
+            P.f666_BirthWait(t, (p0_juke_task + 1128L))
             ln = 38 // JukePuppet.HC:38
             tick(t)
-            P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+            P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
             ln = 39 // JukePuppet.HC:39
             nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 0L, 1096L, 0L))
             ln = 40 // JukePuppet.HC:40
             tick(t)
-            P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+            P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
             ln = 41 // JukePuppet.HC:41
             l48_i = 0L
             loop0@ while ((l48_i < p2_song_num)) {
@@ -174,7 +174,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
                 nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 0L, 77L, 0L))
                 ln = 43 // JukePuppet.HC:43
                 tick(t)
-                P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+                P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
                 ln = 41 // JukePuppet.HC:41
                 l48_i = (l48_i + 1L)
                 tick(t)
@@ -183,7 +183,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
             nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 32L, 0L, 0L))
             ln = 47 // JukePuppet.HC:47
             tick(t)
-            P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+            P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
             ln = 48 // JukePuppet.HC:48
             nat(t, n_Sleep, push1(t, 500L))
             ln = 50 // JukePuppet.HC:50
@@ -208,12 +208,12 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
             if ((l32_found != 0L)) {
                 ln = 61 // JukePuppet.HC:61
                 tick(t)
-                P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+                P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
                 ln = 62 // JukePuppet.HC:62
                 nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 0L, 1096L, 0L))
                 ln = 63 // JukePuppet.HC:63
                 tick(t)
-                P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+                P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
                 ln = 64 // JukePuppet.HC:64
                 l48_i = 0L
                 loop4@ while ((l48_i < p2_song_num)) {
@@ -221,14 +221,14 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
                     nat(t, n_PostMsg, push(t, ld8((p0_juke_task + 1128L)), -2L, 0L, 77L, 0L))
                     ln = 66 // JukePuppet.HC:66
                     tick(t)
-                    P.f660_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
+                    P.f665_TaskWait(t, ld8((p0_juke_task + 1128L)), 0L)
                     ln = 64 // JukePuppet.HC:64
                     l48_i = (l48_i + 1L)
                     tick(t)
                 }
                 ln = 68 // JukePuppet.HC:68
                 tick(t)
-                f703_SongPuppet(t, l40_task, p1_passes)
+                f708_SongPuppet(t, l40_task, p1_passes)
             }
             ln = 70 // JukePuppet.HC:70
             nat(t, n_Kill, push3(t, l40_task, 1L, 0L))
@@ -238,7 +238,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC JukeSongsPuppet (JukePuppet.HC:73) */
-    fun f705_JukeSongsPuppet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f710_JukeSongsPuppet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -254,7 +254,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
             ln = 78 // JukePuppet.HC:78
             tick(t)
             val vb0 = push1(t, p0_dirname)
-            val t0: Long = P.f662_User(t, s1, vb0, 1)
+            val t0: Long = P.f667_User(t, s1, vb0, 1)
             t.sp = vb0
             l56_juke_task = t0
             ln = 80 // JukePuppet.HC:80
@@ -290,7 +290,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
                 nat(t, n_Print, push3(t, s3, bits((t3 - l64_t0)), t4))
                 ln = 90 // JukePuppet.HC:90
                 tick(t)
-                f704_JukeSongPuppet(t, l56_juke_task, p1_passes, l32_i, (l40_tmpde + 50L))
+                f709_JukeSongPuppet(t, l56_juke_task, p1_passes, l32_i, (l40_tmpde + 50L))
                 ln = 91 // JukePuppet.HC:91
                 l40_tmpde = ld8(l40_tmpde)
                 ln = 88 // JukePuppet.HC:88
@@ -307,7 +307,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Apps/Psalmody/JukePuppet.HC#0 (JukePuppet.HC:1) */
-    fun f706_init_C__Apps_Psalmody_JukePuppet_HC_0(t: Task): Long {
+    fun f711_init_C__Apps_Psalmody_JukePuppet_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -319,10 +319,10 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SongPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_JukeSongPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> { f705_JukeSongsPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            706 -> f706_init_C__Apps_Psalmody_JukePuppet_HC_0(t)
+            708 -> { f708_SongPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_JukeSongPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> { f710_JukeSongsPuppet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            711 -> f711_init_C__Apps_Psalmody_JukePuppet_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -334,7 +334,7 @@ class N_Apps_Psalmody_JukePuppet(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("SongPuppet", "JukeSongPuppet", "JukeSongsPuppet", "\$init:C:/Apps/Psalmody/JukePuppet.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/Psalmody/JukePuppet.HC")
     }

@@ -16,6 +16,7 @@ public final class N_Demo_Games_TheDead: NativeModule {
     public let n_ScanMsg: Int
     public let n_Sleep: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     /** binary literal, 1138 bytes */ public var b0: Int64 = 0
     /** y: I64 */ public var g_y: Int64 = 0
     /** x: I64 */ public var g_x: Int64 = 0
@@ -45,6 +46,7 @@ public final class N_Demo_Games_TheDead: NativeModule {
         n_ScanMsg = rt.vm.natives.find("ScanMsg")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -75,7 +77,7 @@ public final class N_Demo_Games_TheDead: NativeModule {
     }
 
     /// HolyC DrawIt (TheDead.HC:44)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -84,8 +86,7 @@ public final class N_Demo_Games_TheDead: NativeModule {
             var l16_i: Int64 = 0
             var l24_j: Int64 = 0
             ln = 50 // TheDead.HC:50
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, ld8(g_x), ld8(g_y), 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8(g_x), ld8(g_y), 0, b0, 0))
             ln = 52 // TheDead.HC:52
             l16_i = try ld8(g_bullets_out)
             ln = 53 // TheDead.HC:53
@@ -96,7 +97,7 @@ public final class N_Demo_Games_TheDead: NativeModule {
                 l24_j = (t0 & 31)
                 ln = 55 // TheDead.HC:55
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, ld8((g_bx &+ (l24_j &* 8))), ld8((g_by &+ (l24_j &* 8))), (ld8((g_bx &+ (l24_j &* 8))) &- 2), ld8((g_by &+ (l24_j &* 8))), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, ld8((g_bx &+ (l24_j &* 8))), ld8((g_by &+ (l24_j &* 8))), (ld8((g_bx &+ (l24_j &* 8))) &- 2), ld8((g_by &+ (l24_j &* 8))), 1, 0)
                 try tick(t)
             }
             ln = 57 // TheDead.HC:57
@@ -112,12 +113,10 @@ public final class N_Demo_Games_TheDead: NativeModule {
                     ln = 61 // TheDead.HC:61
                     if try (mods(ld8((g_gx &+ (l24_j &* 8))), 10) > 4) {
                         ln = 62 // TheDead.HC:62
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, ld8((g_gx &+ (l24_j &* 8))), ld8((g_gy &+ (l24_j &* 8))), 0, b1, 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((g_gx &+ (l24_j &* 8))), ld8((g_gy &+ (l24_j &* 8))), 0, b1, 0))
                     } else {
                         ln = 64 // TheDead.HC:64
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, ld8((g_gx &+ (l24_j &* 8))), ld8((g_gy &+ (l24_j &* 8))), 0, b2, 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((g_gx &+ (l24_j &* 8))), ld8((g_gy &+ (l24_j &* 8))), 0, b2, 0))
                     }
                 }
                 try tick(t)
@@ -127,12 +126,12 @@ public final class N_Demo_Games_TheDead: NativeModule {
             ln = 68 // TheDead.HC:68
             try tick(t)
             let vb0 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s0, vb0, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s0, vb0, 0)
             t.sp = vb0
             ln = 69 // TheDead.HC:69
             try tick(t)
             let vb1 = push0(t)
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 8, s1, vb1, 0)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 8, s1, vb1, 0)
             t.sp = vb1
             t.depth -= 1
             return
@@ -140,21 +139,21 @@ public final class N_Demo_Games_TheDead: NativeModule {
     }
 
     /// HolyC SongTask (TheDead.HC:72)
-    public final func f704_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 74 // TheDead.HC:74
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 75 // TheDead.HC:75
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 76 // TheDead.HC:76
             loop0: while (1 != 0) {
                 ln = 77 // TheDead.HC:77
                 try tick(t)
-                try P.f494_Play(t, s2, 0)
+                try P.f499_Play(t, s2, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -163,7 +162,7 @@ public final class N_Demo_Games_TheDead: NativeModule {
     }
 
     /// HolyC TheDead (TheDead.HC:82)
-    public final func f705_TheDead(_ t: HTask) throws {
+    public final func f710_TheDead(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -185,7 +184,7 @@ public final class N_Demo_Games_TheDead: NativeModule {
             l80_gun_on = 0
             ln = 87 // TheDead.HC:87
             try tick(t)
-            _ = try P.f507_MenuPush(t, s3)
+            _ = try P.f512_MenuPush(t, s3)
             ln = 98 // TheDead.HC:98
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -203,10 +202,10 @@ public final class N_Demo_Games_TheDead: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 104 // TheDead.HC:104
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065856, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 105 // TheDead.HC:105
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 107 // TheDead.HC:107
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -389,7 +388,7 @@ public final class N_Demo_Games_TheDead: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 184 // TheDead.HC:184
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -397,13 +396,13 @@ public final class N_Demo_Games_TheDead: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/TheDead.HC#0 (TheDead.HC:2)
-    @discardableResult public final func f706_init_C__Demo_Games_TheDead_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_TheDead_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 187 // TheDead.HC:187
             try tick(t)
-            try f705_TheDead(t)
+            try f710_TheDead(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/TheDead.HC#0", ln) }
@@ -412,16 +411,16 @@ public final class N_Demo_Games_TheDead: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_TheDead(t); return 0
-        case 706: return try f706_init_C__Demo_Games_TheDead_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_TheDead(t); return 0
+        case 711: return try f711_init_C__Demo_Games_TheDead_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "SongTask", 705: "TheDead", 706: "$init:C:/Demo/Games/TheDead.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "SongTask", 710: "TheDead", 711: "$init:C:/Demo/Games/TheDead.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/TheDead.HC"]
     public override var files: [String] { N_Demo_Games_TheDead.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_TheDead.DEFINED.contains(index) }

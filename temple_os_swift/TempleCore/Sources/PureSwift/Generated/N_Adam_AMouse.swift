@@ -9,12 +9,14 @@ import TempleCore
 
 public final class N_Adam_AMouse: NativeModule {
     public let P: Prelude
+    public let n_Sprite3: Int
     /** binary literal, 38 bytes */ public var b0: Int64 = 0
     /** binary literal, 210 bytes */ public var b1: Int64 = 0
     /** binary literal, 210 bytes */ public var b2: Int64 = 0
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -30,7 +32,7 @@ public final class N_Adam_AMouse: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/AMouse.HC#0 (AMouse.HC:5)
-    @discardableResult public final func f703_init_C__Adam_AMouse_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Adam_AMouse_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -45,7 +47,7 @@ public final class N_Adam_AMouse: NativeModule {
     }
 
     /// HolyC DrawGrabMs (AMouse.HC:11)
-    public final func f704_DrawGrabMs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_DrawGrabMs(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -63,12 +65,10 @@ public final class N_Adam_AMouse: NativeModule {
             ln = 15 // AMouse.HC:15
             if (p3_closed != 0) {
                 ln = 16 // AMouse.HC:16
-                try tick(t)
-                try P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0, b1, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p0_dc, p1_x, p2_y, 0, b1, 0))
             } else {
                 ln = 18 // AMouse.HC:18
-                try tick(t)
-                try P.f440_Sprite3(t, p0_dc, p1_x, p2_y, 0, b2, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p0_dc, p1_x, p2_y, 0, b2, 0))
             }
             t.depth -= 1
             return
@@ -76,14 +76,14 @@ public final class N_Adam_AMouse: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/AMouse.HC#1 (AMouse.HC:20)
-    @discardableResult public final func f705_init_C__Adam_AMouse_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Adam_AMouse_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 20 // AMouse.HC:20
-            try st8((P.g_gr &+ 152), 9223090561878065856)
+            try st8((P.g_gr &+ 152), 9223090561878065861)
             t.depth -= 1
-            return 9223090561878065856
+            return 9223090561878065861
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Adam/AMouse.HC#1", ln) }
@@ -92,15 +92,15 @@ public final class N_Adam_AMouse: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Adam_AMouse_HC_0(t)
-        case 704: try f704_DrawGrabMs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: return try f705_init_C__Adam_AMouse_HC_1(t)
+        case 708: return try f708_init_C__Adam_AMouse_HC_0(t)
+        case 709: try f709_DrawGrabMs(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: return try f710_init_C__Adam_AMouse_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Adam/AMouse.HC#0", 704: "DrawGrabMs", 705: "$init:C:/Adam/AMouse.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Adam/AMouse.HC#0", 709: "DrawGrabMs", 710: "$init:C:/Adam/AMouse.HC#1"]
     private static let FILES: [String] = ["C:/Adam/AMouse.HC"]
     public override var files: [String] { N_Adam_AMouse.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_AMouse.DEFINED.contains(index) }

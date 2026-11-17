@@ -1,12 +1,12 @@
 TOSIMG 1
 unit C:/Apps/X-Caliber/Run.HC#0
 s 17fd38 433a2f417070732f582d43616c69626572
-fn 703 $init:C:/Apps/X-Caliber/Run.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/X-Caliber/Run.HC#0 (I64;;-)
+init 708
 unit C:/Apps/X-Caliber/Run.HC#1
 s 17fd38 433a2f417070732f582d43616c69626572
-fn 704 $init:C:/Apps/X-Caliber/Run.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Apps/X-Caliber/Run.HC#1 (I64;;-)
+init 709
 unit C:/Apps/X-Caliber/Run.HC#2
 value CTRL_PANEL_BORDER 2
 value CTRL_PANEL_BTTN_SIZE 12
@@ -27,33 +27,33 @@ s 131e0 2564
 s 131e0 2564
 s 17fde0 49363420626573745f73636f72653d303b0a493634206d73675f666c6167733d303b0a
 s 17fe18 54656d706c654f532f5843616c69626572
-fn 705 DrawCtrlPanelCtrl (U0;*$CDC,*$CCtrl;-)
-fn 706 UpdateDerivedCtrlPanelCtrl (U0;*$CCtrl;-)
-fn 707 LeftClickCtrlPanel (U0;*$CCtrl,I64,I64,Bool;-)
-fn 708 CtrlPanelNew (*$CCtrl;;-)
-fn 709 CtrlPanelDel (U0;*$CCtrl;-)
-fn 710 $init:C:/Apps/X-Caliber/Run.HC#2 (I64;;-)
-sym f CtrlPanelDel 709 (U0;*$CCtrl;-)
-sym f CtrlPanelNew 708 (*$CCtrl;;-)
-sym f DrawCtrlPanelCtrl 705 (U0;*$CDC,*$CCtrl;-)
-sym f LeftClickCtrlPanel 707 (U0;*$CCtrl,I64,I64,Bool;-)
-sym f UpdateDerivedCtrlPanelCtrl 706 (U0;*$CCtrl;-)
+fn 710 DrawCtrlPanelCtrl (U0;*$CDC,*$CCtrl;-)
+fn 711 UpdateDerivedCtrlPanelCtrl (U0;*$CCtrl;-)
+fn 712 LeftClickCtrlPanel (U0;*$CCtrl,I64,I64,Bool;-)
+fn 713 CtrlPanelNew (*$CCtrl;;-)
+fn 714 CtrlPanelDel (U0;*$CCtrl;-)
+fn 715 $init:C:/Apps/X-Caliber/Run.HC#2 (I64;;-)
+sym f CtrlPanelDel 714 (U0;*$CCtrl;-)
+sym f CtrlPanelNew 713 (*$CCtrl;;-)
+sym f DrawCtrlPanelCtrl 710 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickCtrlPanel 712 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f UpdateDerivedCtrlPanelCtrl 711 (U0;*$CCtrl;-)
 sym g ctrl_panel 17fd60 $CtrlPanelState
-init 710
+init 715
 unit C:/Apps/X-Caliber/Run.HC#3
 s 17fe18 54656d706c654f532f5843616c69626572
-fn 711 $init:C:/Apps/X-Caliber/Run.HC#3 (I64;;-)
-init 711
+fn 716 $init:C:/Apps/X-Caliber/Run.HC#3 (I64;;-)
+init 716
 unit C:/Home/Registry.HC#0
 registry TempleOS/XCaliber
 g 17fe40 8
 g 17fe58 8
 c 17fe40 8 0
 c 17fe58 8 0
-fn 712 $init:C:/Home/Registry.HC#0 (I64;;-)
+fn 717 $init:C:/Home/Registry.HC#0 (I64;;-)
 sym g best_score 17fe40 I64
 sym g msg_flags 17fe58 I64
-init 712
+init 717
 unit C:/Home/Registry.HC#1
 unit C:/Apps/X-Caliber/Run.HC#4
 value CMD_EXIT 5
@@ -199,67 +199,67 @@ s 182558 46696c65207b202041626f7274282c43485f53484946545f455343293b2020457869742
 s 182760 49363420626573745f73636f72653d25643b0a493634206d73675f666c6167733d25643b0a
 s 17fe18 54656d706c654f532f5843616c69626572
 c 181bb8 8 0
-fn 713 CheckOverlap (Bool;;-)
-fn 714 MissileNew (U0;*$Ship,I64;-)
-fn 715 ShipNew (*$Ship;I64,I64,I64;-)
-fn 716 MissileDel (U0;*$Missile;-)
-fn 717 ShipDel (U0;*$Ship;-)
-fn 718 PlaceShip (U0;I64;-)
-fn 719 Tweaked (I64;;-)
-fn 720 AllDel (U0;*$CMathODE;-)
-fn 721 LaserPlot (Bool;*$CDC,I64,I64,I64;-)
-fn 722 DrawIt (U0;*$CTask,*$CDC;-)
-fn 723 Explosion (U0;*$MyMass,*$MyMass,F64;-)
-fn 724 TargetGet ($Ship;*$Missile;-)
-fn 725 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-fn 726 CheckDamage (U0;;-)
-fn 727 ShotNew (*$Shot;I64,*$CD3,*$CD3,F64,F64,*$CD3;-)
-fn 728 SolarFlares (U0;;-)
-fn 729 FireOneGun (U0;*$Ship,I64,F64,F64;-)
-fn 730 FireOneMissile (U0;*$Ship,I64;-)
-fn 731 HumanFireGunBegin (U0;;-)
-fn 732 HumanFireMissileBegin (U0;I64;-)
-fn 733 HumanFireLaserBegin (U0;;-)
-fn 734 HumanFireLaserEnd (U0;;-)
-fn 735 SplatNew (U0;*$Shot,F64,F64,F64;-)
-fn 736 ExpireShots (U0;;-)
-fn 737 ExpireSplats (U0;;-)
-fn 738 ExpireMissiles (U0;;-)
-fn 739 AI (U0;;-)
-fn 740 InitLevel (U0;;-)
-fn 741 Init (U0;;-)
-fn 742 XCaliber (U0;;-)
-fn 743 $init:C:/Apps/X-Caliber/Run.HC#4 (I64;;-)
-sym f AI 739 (U0;;-)
-sym f AllDel 720 (U0;*$CMathODE;-)
-sym f CheckDamage 726 (U0;;-)
-sym f CheckOverlap 713 (Bool;;-)
-sym f DrawIt 722 (U0;*$CTask,*$CDC;-)
-sym f ExpireMissiles 738 (U0;;-)
-sym f ExpireShots 736 (U0;;-)
-sym f ExpireSplats 737 (U0;;-)
-sym f Explosion 723 (U0;*$MyMass,*$MyMass,F64;-)
-sym f FireOneGun 729 (U0;*$Ship,I64,F64,F64;-)
-sym f FireOneMissile 730 (U0;*$Ship,I64;-)
-sym f HumanFireGunBegin 731 (U0;;-)
-sym f HumanFireLaserBegin 733 (U0;;-)
-sym f HumanFireLaserEnd 734 (U0;;-)
-sym f HumanFireMissileBegin 732 (U0;I64;-)
-sym f Init 741 (U0;;-)
-sym f InitLevel 740 (U0;;-)
-sym f LaserPlot 721 (Bool;*$CDC,I64,I64,I64;-)
-sym f MissileDel 716 (U0;*$Missile;-)
-sym f MissileNew 714 (U0;*$Ship,I64;-)
-sym f MyDerivative 725 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-sym f PlaceShip 718 (U0;I64;-)
-sym f ShipDel 717 (U0;*$Ship;-)
-sym f ShipNew 715 (*$Ship;I64,I64,I64;-)
-sym f ShotNew 727 (*$Shot;I64,*$CD3,*$CD3,F64,F64,*$CD3;-)
-sym f SolarFlares 728 (U0;;-)
-sym f SplatNew 735 (U0;*$Shot,F64,F64,F64;-)
-sym f TargetGet 724 ($Ship;*$Missile;-)
-sym f Tweaked 719 (I64;;-)
-sym f XCaliber 742 (U0;;-)
+fn 718 CheckOverlap (Bool;;-)
+fn 719 MissileNew (U0;*$Ship,I64;-)
+fn 720 ShipNew (*$Ship;I64,I64,I64;-)
+fn 721 MissileDel (U0;*$Missile;-)
+fn 722 ShipDel (U0;*$Ship;-)
+fn 723 PlaceShip (U0;I64;-)
+fn 724 Tweaked (I64;;-)
+fn 725 AllDel (U0;*$CMathODE;-)
+fn 726 LaserPlot (Bool;*$CDC,I64,I64,I64;-)
+fn 727 DrawIt (U0;*$CTask,*$CDC;-)
+fn 728 Explosion (U0;*$MyMass,*$MyMass,F64;-)
+fn 729 TargetGet ($Ship;*$Missile;-)
+fn 730 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 731 CheckDamage (U0;;-)
+fn 732 ShotNew (*$Shot;I64,*$CD3,*$CD3,F64,F64,*$CD3;-)
+fn 733 SolarFlares (U0;;-)
+fn 734 FireOneGun (U0;*$Ship,I64,F64,F64;-)
+fn 735 FireOneMissile (U0;*$Ship,I64;-)
+fn 736 HumanFireGunBegin (U0;;-)
+fn 737 HumanFireMissileBegin (U0;I64;-)
+fn 738 HumanFireLaserBegin (U0;;-)
+fn 739 HumanFireLaserEnd (U0;;-)
+fn 740 SplatNew (U0;*$Shot,F64,F64,F64;-)
+fn 741 ExpireShots (U0;;-)
+fn 742 ExpireSplats (U0;;-)
+fn 743 ExpireMissiles (U0;;-)
+fn 744 AI (U0;;-)
+fn 745 InitLevel (U0;;-)
+fn 746 Init (U0;;-)
+fn 747 XCaliber (U0;;-)
+fn 748 $init:C:/Apps/X-Caliber/Run.HC#4 (I64;;-)
+sym f AI 744 (U0;;-)
+sym f AllDel 725 (U0;*$CMathODE;-)
+sym f CheckDamage 731 (U0;;-)
+sym f CheckOverlap 718 (Bool;;-)
+sym f DrawIt 727 (U0;*$CTask,*$CDC;-)
+sym f ExpireMissiles 743 (U0;;-)
+sym f ExpireShots 741 (U0;;-)
+sym f ExpireSplats 742 (U0;;-)
+sym f Explosion 728 (U0;*$MyMass,*$MyMass,F64;-)
+sym f FireOneGun 734 (U0;*$Ship,I64,F64,F64;-)
+sym f FireOneMissile 735 (U0;*$Ship,I64;-)
+sym f HumanFireGunBegin 736 (U0;;-)
+sym f HumanFireLaserBegin 738 (U0;;-)
+sym f HumanFireLaserEnd 739 (U0;;-)
+sym f HumanFireMissileBegin 737 (U0;I64;-)
+sym f Init 746 (U0;;-)
+sym f InitLevel 745 (U0;;-)
+sym f LaserPlot 726 (Bool;*$CDC,I64,I64,I64;-)
+sym f MissileDel 721 (U0;*$Missile;-)
+sym f MissileNew 719 (U0;*$Ship,I64;-)
+sym f MyDerivative 730 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym f PlaceShip 723 (U0;I64;-)
+sym f ShipDel 722 (U0;*$Ship;-)
+sym f ShipNew 720 (*$Ship;I64,I64,I64;-)
+sym f ShotNew 732 (*$Shot;I64,*$CD3,*$CD3,F64,F64,*$CD3;-)
+sym f SolarFlares 733 (U0;;-)
+sym f SplatNew 740 (U0;*$Shot,F64,F64,F64;-)
+sym f TargetGet 729 ($Ship;*$Missile;-)
+sym f Tweaked 724 (I64;;-)
+sym f XCaliber 747 (U0;;-)
 sym g alarm 181510 Bool
 sym g game_over 181528 Bool
 sym g human 1813d0 *$Ship
@@ -277,5 +277,5 @@ sym g show_level_msg 181540 Bool
 sym g stars_x 181558 [100]I64
 sym g stars_y 181888 [100]I64
 sym g t_solar_storm 1814f8 F64
-init 743
+init 748
 unit C:/Apps/X-Caliber/Run.HC#5

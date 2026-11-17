@@ -55,7 +55,7 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
     }
 
     /// HolyC DrawIt (FontEd.HC:26)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -68,7 +68,7 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
             ln = 29 // FontEd.HC:29
             try tick(t)
             let vb0 = push0(t)
-            try P.f449_TextPrint(t, p0_task, 0, 0, 30, s0, vb0, 0)
+            try P.f454_TextPrint(t, p0_task, 0, 0, 30, s0, vb0, 0)
             t.sp = vb0
             ln = 30 // FontEd.HC:30
             l32_k = 0
@@ -145,7 +145,7 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
     }
 
     /// HolyC FESave (FontEd.HC:56)
-    public final func f704_FESave(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_FESave(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -159,7 +159,7 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
             l8_old_draw_it = try (ld8((ld8(P.g_Fs) &+ 448)) & 0xFF)
             ln = 59 // FontEd.HC:59
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l16_doc = t0
             ln = 61 // FontEd.HC:61
             l24_i = 0
@@ -200,19 +200,19 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
             try st8((ld8(P.g_Fs) &+ 448), 0)
             ln = 70 // FontEd.HC:70
             try tick(t)
-            _ = try P.f618_DocWrite(t, l16_doc, p0_pmt)
+            _ = try P.f623_DocWrite(t, l16_doc, p0_pmt)
             ln = 71 // FontEd.HC:71
             try st8((ld8(P.g_Fs) &+ 448), l8_old_draw_it)
             ln = 72 // FontEd.HC:72
             try tick(t)
-            try P.f605_DocDel(t, l16_doc)
+            try P.f610_DocDel(t, l16_doc)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "FESave", ln) }
     }
 
     /// HolyC FontEd (FontEd.HC:75)
-    public final func f705_FontEd(_ t: HTask) throws {
+    public final func f710_FontEd(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -225,7 +225,7 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 79 // FontEd.HC:79
             try tick(t)
-            _ = try P.f507_MenuPush(t, s5)
+            _ = try P.f512_MenuPush(t, s5)
             ln = 85 // FontEd.HC:85
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 86 // FontEd.HC:86
@@ -242,7 +242,7 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
             t.hCount = h0c + 1
             do {
                 ln = 91 // FontEd.HC:91
-                try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+                try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
                 ln = 92 // FontEd.HC:92
                 skip_0: do {
                     loop1: while (1 != 0) {
@@ -325,13 +325,13 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
                                                         }
                                                         ln = 116 // FontEd.HC:116
                                                         try tick(t)
-                                                        try f704_FESave(t, 1)
+                                                        try f709_FESave(t, 1)
                                                         ln = 117 // FontEd.HC:117
                                                         break switch4_13
                                                     }
                                                     ln = 119 // FontEd.HC:119
                                                     try tick(t)
-                                                    try f704_FESave(t, 0)
+                                                    try f709_FESave(t, 0)
                                                 }
                                                 ln = 121 // FontEd.HC:121
                                                 break skip_0
@@ -405,7 +405,7 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
             }
             ln = 148 // FontEd.HC:148
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 149 // FontEd.HC:149
             try tick(t)
             try P.f228_SettingsPop(t, 0, 0)
@@ -416,13 +416,13 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/FontEd.HC#0 (FontEd.HC:152)
-    @discardableResult public final func f706_init_C__Demo_Graphics_FontEd_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Graphics_FontEd_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 152 // FontEd.HC:152
             try tick(t)
-            try f705_FontEd(t)
+            try f710_FontEd(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/FontEd.HC#0", ln) }
@@ -431,16 +431,16 @@ public final class N_Demo_Graphics_FontEd: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_FESave(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_FontEd(t); return 0
-        case 706: return try f706_init_C__Demo_Graphics_FontEd_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_FESave(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_FontEd(t); return 0
+        case 711: return try f711_init_C__Demo_Graphics_FontEd_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "FESave", 705: "FontEd", 706: "$init:C:/Demo/Graphics/FontEd.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "FESave", 710: "FontEd", 711: "$init:C:/Demo/Graphics/FontEd.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/FontEd.HC"]
     public override var files: [String] { N_Demo_Graphics_FontEd.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_FontEd.DEFINED.contains(index) }

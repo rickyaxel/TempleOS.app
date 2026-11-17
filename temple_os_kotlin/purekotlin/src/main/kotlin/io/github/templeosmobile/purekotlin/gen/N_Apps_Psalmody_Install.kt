@@ -24,7 +24,7 @@ class N_Apps_Psalmody_Install(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Install.HC#0 (Install.HC:1) */
-    fun f703_init_C__Apps_Psalmody_Install_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Psalmody_Install_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -42,7 +42,7 @@ class N_Apps_Psalmody_Install(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Psalmody_Install_HC_0(t)
+            708 -> f708_init_C__Apps_Psalmody_Install_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -54,7 +54,7 @@ class N_Apps_Psalmody_Install(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703)
+        private val DEFINED = intArrayOf(708)
         private val NAMES = arrayOf("\$init:C:/Apps/Psalmody/Install.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/Psalmody/Install.HC")
     }

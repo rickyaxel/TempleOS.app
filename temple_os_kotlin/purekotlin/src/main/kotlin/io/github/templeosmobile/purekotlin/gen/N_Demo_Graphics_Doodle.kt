@@ -13,6 +13,7 @@ class N_Demo_Graphics_Doodle(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     @JvmField val n_AutoComplete = rt.vm.natives.find("AutoComplete")!!.index
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
 
 
     override fun bind(unit: Int, seg: Segment) {
@@ -20,7 +21,7 @@ class N_Demo_Graphics_Doodle(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Doodle (Doodle.HC:3) */
-    fun f703_Doodle(t: Task) {
+    fun f708_Doodle(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -91,14 +92,12 @@ class N_Demo_Graphics_Doodle(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             ln = 29 // Doodle.HC:29
                             loop3@ while (true) {
                                 ln = 30 // Doodle.HC:30
-                                tick(t)
-                                P.f406_GrLine3(t, l72_dc, l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, l72_dc, l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L))
                                 ln = 31 // Doodle.HC:31
                                 val t4: Long = nat(t, n_GetMsg, push4(t, (fp + 48), (fp + 56), 80L, 0L))
                                 l0_msg_code = t4
                                 ln = 32 // Doodle.HC:32
-                                tick(t)
-                                P.f406_GrLine3(t, l72_dc, l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, l72_dc, l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L))
                                 ln = 33 // Doodle.HC:33
                                 l32_x2 = ld8((fp + 48))
                                 l40_y2 = ld8((fp + 56))
@@ -106,8 +105,7 @@ class N_Demo_Graphics_Doodle(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                 tick(t)
                             }
                             ln = 35 // Doodle.HC:35
-                            tick(t)
-                            P.f406_GrLine3(t, l72_dc, l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L)
+                            nat(t, n_GrLine3, push(t, l72_dc, l16_x1, l24_y1, 0L, l32_x2, l40_y2, 0L, 1L, 0L))
                         }
                         2L -> {
                         }
@@ -136,13 +134,13 @@ class N_Demo_Graphics_Doodle(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Graphics/Doodle.HC#0 (Doodle.HC:47) */
-    fun f704_init_C__Demo_Graphics_Doodle_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_Doodle_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 47 // Doodle.HC:47
             tick(t)
-            f703_Doodle(t)
+            f708_Doodle(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Doodle.HC#0", ln) }
@@ -151,8 +149,8 @@ class N_Demo_Graphics_Doodle(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Doodle(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_Doodle_HC_0(t)
+            708 -> { f708_Doodle(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_Doodle_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -164,7 +162,7 @@ class N_Demo_Graphics_Doodle(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("Doodle", "\$init:C:/Demo/Graphics/Doodle.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Doodle.HC")
     }

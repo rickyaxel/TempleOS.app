@@ -14,10 +14,14 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
     @JvmField val n_Cos = rt.vm.natives.find("Cos")!!.index
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
+    @JvmField val n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_RandI16 = rt.vm.natives.find("RandI16")!!.index
     @JvmField val n_Refresh = rt.vm.natives.find("Refresh")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** t0: F64 */ @JvmField var g_t0: Long = 0L
     /** binary literal, 210 bytes */ @JvmField var b0: Long = 0L
@@ -52,13 +56,13 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/AcctExample/TOS/TOSTheme.HC#0 (TOSTheme.HC:46) */
-    fun f703_init_C__Demo_AcctExample_TOS_TOSTheme_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_AcctExample_TOS_TOSTheme_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 46 // TOSTheme.HC:46
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             st8(g_t0, bits(t0))
             t.depth--
             return 0L
@@ -66,7 +70,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC Bird (TOSTheme.HC:51) */
-    fun f704_Bird(t: Task, a0: Long, a1: Double) {
+    fun f709_Bird(t: Task, a0: Long, a1: Double) {
         var ln = 0
         try {
             enter(t)
@@ -91,8 +95,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
             st4((((fp + 16) + 24L) + 4L), f2i((-24.0 * t1)))
             st4((((fp + 16) + 24L) + 8L), 0L)
             ln = 59 // TOSTheme.HC:59
-            tick(t)
-            P.f422_GrFillPoly3(t, p0_dc, 3L, (fp + 16))
+            nat(t, n_GrFillPoly3, push3(t, p0_dc, 3L, (fp + 16)))
             ln = 61 // TOSTheme.HC:61
             st4((fp + 16), 0L)
             st4(((fp + 16) + 4L), 0L)
@@ -108,15 +111,13 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
             st4((((fp + 16) + 24L) + 4L), f2i((-24.0 * t3)))
             st4((((fp + 16) + 24L) + 8L), 0L)
             ln = 64 // TOSTheme.HC:64
-            tick(t)
-            P.f422_GrFillPoly3(t, p0_dc, 3L, (fp + 16))
+            nat(t, n_GrFillPoly3, push3(t, p0_dc, 3L, (fp + 16)))
             ln = 66 // TOSTheme.HC:66
             st4((p0_dc + 160L), 1074724871L)
             ln = 67 // TOSTheme.HC:67
             st4((p0_dc + 228L), 3L)
             ln = 68 // TOSTheme.HC:68
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, 0L, 0L, -8L, 0L, 0L, 8L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p0_dc, 0L, 0L, -8L, 0L, 0L, 8L, 1L, 0L))
             t.msp = msp0
             t.depth--
             return
@@ -124,7 +125,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC DrawIt (TOSTheme.HC:83) */
-    fun f705_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f710_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -136,7 +137,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
             var l40_d_chain: Double = 0.0
             ln = 86 // TOSTheme.HC:86
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             l32_dt = (t0 - ldf(g_t0))
             val t1: Double = f(nat(t, n_Sin, push1(t, bits(((f(4614256656552045848L) * l32_dt) / 4.0)))))
             val t2: Double = f(nat(t, n_Sin, push1(t, bits(((f(4614256656552045848L) / 64.0) * t1)))))
@@ -166,8 +167,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                 tick(t)
                 P.f307_Mat4x4RotZ(t, ld8((p1_dc + 200L)), ((f(4614256656552045848L) / 64.0) * t4))
                 ln = 97 // TOSTheme.HC:97
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, 0L, 0L, 0L, b0, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, 0L, 0L, 0L, b0, 0L))
                 ln = 99 // TOSTheme.HC:99
                 tick(t)
                 P.f280_Mat4x4IdentEqu(t, ld8((p1_dc + 200L)))
@@ -186,8 +186,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                 tick(t)
                 P.f306_Mat4x4RotY(t, ld8((p1_dc + 200L)), ((f(4614256656552045848L) / 32.0) * t6))
                 ln = 105 // TOSTheme.HC:105
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, 0L, 0L, 0L, b1, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, 0L, 0L, 0L, b1, 0L))
                 ln = 107 // TOSTheme.HC:107
                 tick(t)
                 P.f280_Mat4x4IdentEqu(t, ld8((p1_dc + 200L)))
@@ -197,14 +196,11 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                 ln = 109 // TOSTheme.HC:109
                 st4((p1_dc + 160L), 0L)
                 ln = 110 // TOSTheme.HC:110
-                tick(t)
-                P.f406_GrLine3(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, 0L, 0L, f2i((0.707 * 28.0)), 1L, 0L)
+                nat(t, n_GrLine3, push(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, 0L, 0L, f2i((0.707 * 28.0)), 1L, 0L))
                 ln = 111 // TOSTheme.HC:111
-                tick(t)
-                P.f406_GrLine3(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, 28L, 0L, f2i((-0.707 * 28.0)), 1L, 0L)
+                nat(t, n_GrLine3, push(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, 28L, 0L, f2i((-0.707 * 28.0)), 1L, 0L))
                 ln = 112 // TOSTheme.HC:112
-                tick(t)
-                P.f406_GrLine3(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, -28L, 0L, f2i((-0.707 * 28.0)), 1L, 0L)
+                nat(t, n_GrLine3, push(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, -28L, 0L, f2i((-0.707 * 28.0)), 1L, 0L))
                 ln = 114 // TOSTheme.HC:114
                 tick(t)
                 P.f280_Mat4x4IdentEqu(t, ld8((p1_dc + 200L)))
@@ -223,8 +219,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                 tick(t)
                 P.f306_Mat4x4RotY(t, ld8((p1_dc + 200L)), (((-f(4614256656552045848L)) / 32.0) * t8))
                 ln = 120 // TOSTheme.HC:120
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, 0L, 0L, 0L, b2, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, 0L, 0L, 0L, b2, 0L))
                 ln = 122 // TOSTheme.HC:122
                 tick(t)
                 P.f280_Mat4x4IdentEqu(t, ld8((p1_dc + 200L)))
@@ -234,14 +229,11 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                 ln = 124 // TOSTheme.HC:124
                 st4((p1_dc + 160L), 0L)
                 ln = 125 // TOSTheme.HC:125
-                tick(t)
-                P.f406_GrLine3(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, 0L, 0L, f2i((0.707 * 28.0)), 1L, 0L)
+                nat(t, n_GrLine3, push(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, 0L, 0L, f2i((0.707 * 28.0)), 1L, 0L))
                 ln = 126 // TOSTheme.HC:126
-                tick(t)
-                P.f406_GrLine3(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, 28L, 0L, f2i((-0.707 * 28.0)), 1L, 0L)
+                nat(t, n_GrLine3, push(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, 28L, 0L, f2i((-0.707 * 28.0)), 1L, 0L))
                 ln = 127 // TOSTheme.HC:127
-                tick(t)
-                P.f406_GrLine3(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, -28L, 0L, f2i((-0.707 * 28.0)), 1L, 0L)
+                nat(t, n_GrLine3, push(t, p1_dc, 0L, f2i((-(0.93 * 100.0))), -45L, -28L, 0L, f2i((-0.707 * 28.0)), 1L, 0L))
                 ln = 129 // TOSTheme.HC:129
                 tick(t)
                 P.f280_Mat4x4IdentEqu(t, ld8((p1_dc + 200L)))
@@ -264,8 +256,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                 tick(t)
                 P.f306_Mat4x4RotY(t, ld8((p1_dc + 200L)), (((-f(4614256656552045848L)) / 32.0) * t11))
                 ln = 136 // TOSTheme.HC:136
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, 0L, 0L, 0L, b3, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, 0L, 0L, 0L, b3, 0L))
                 ln = 138 // TOSTheme.HC:138
                 if ((l32_dt >= 12.0)) {
                     ln = 139 // TOSTheme.HC:139
@@ -278,11 +269,9 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                     ln = 142 // TOSTheme.HC:142
                     st4((p1_dc + 224L), divs(2147483647L, 2L))
                     ln = 143 // TOSTheme.HC:143
-                    tick(t)
-                    P.f308_Mat4x4Scale(t, ld8((p1_dc + 200L)), (0.5 + (0.04 * l32_dt)))
+                    nat(t, n_Mat4x4Scale, push2(t, ld8((p1_dc + 200L)), bits((0.5 + (0.04 * l32_dt)))))
                     ln = 144 // TOSTheme.HC:144
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, 0L, 0L, 0L, b4, 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, 0L, 0L, 0L, b4, 0L))
                 }
                 ln = 147 // TOSTheme.HC:147
                 st4((p1_dc + 220L), (ld8((p0_task + 248L)) + 60L))
@@ -321,14 +310,14 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                     val t22: Long = f2i(((230.0 * t20) + ldf((g_by + (l16_i * 8L)))))
                     val t21: Double = f(nat(t, n_Cos, push1(t, bits(l24__))))
                     tick(t)
-                    P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), f2i(((230.0 * t21) + ldf((g_bx + (l16_i * 8L))))), t22, f2i((-(divs((120L * l16_i), 7L).toDouble() + (16.0 * l32_dt)))))
+                    P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), f2i(((230.0 * t21) + ldf((g_bx + (l16_i * 8L))))), t22, f2i((-(divs((120L * l16_i), 7L).toDouble() + (16.0 * l32_dt)))))
                     ln = 157 // TOSTheme.HC:157
                     tick(t)
                     P.f305_Mat4x4RotX(t, ld8((p1_dc + 200L)), ((0.45 * f(4614256656552045848L)) + f(4614256656552045848L)))
                     ln = 158 // TOSTheme.HC:158
                     val t23: Double = f(nat(t, n_Sin, push1(t, bits((((2.0 * f(4614256656552045848L)) * l32_dt) + (((l16_i * 2L).toDouble() * f(4614256656552045848L)) / 7.0))))))
                     tick(t)
-                    f704_Bird(t, p1_dc, t23)
+                    f709_Bird(t, p1_dc, t23)
                     ln = 148 // TOSTheme.HC:148
                     l16_i = (l16_i + 1L)
                     tick(t)
@@ -340,7 +329,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC TOSTheme (TOSTheme.HC:163) */
-    fun f706_TOSTheme(t: Task) {
+    fun f711_TOSTheme(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -373,12 +362,12 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
             ln = 175 // TOSTheme.HC:175
             st1((ld8(P.g_Fs) + 778L), 176L)
             ln = 176 // TOSTheme.HC:176
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065857L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065862L)
             ln = 177 // TOSTheme.HC:177
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 178 // TOSTheme.HC:178
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 179 // TOSTheme.HC:179
             st8((P.g_music + 56L), bits(2.85))
             ln = 180 // TOSTheme.HC:180
@@ -409,20 +398,20 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
                 loop2@ while ((l0_i < 1L)) {
                     ln = 189 // TOSTheme.HC:189
                     tick(t)
-                    val t2: Double = P.f487_Beat(t)
+                    val t2: Double = P.f492_Beat(t)
                     st8(g_t0, bits(t2))
                     ln = 190 // TOSTheme.HC:190
                     tick(t)
-                    P.f494_Play(t, s1, 0L)
+                    P.f499_Play(t, s1, 0L)
                     ln = 191 // TOSTheme.HC:191
                     tick(t)
-                    P.f494_Play(t, s1, 0L)
+                    P.f499_Play(t, s1, 0L)
                     ln = 192 // TOSTheme.HC:192
                     tick(t)
-                    P.f494_Play(t, s2, 0L)
+                    P.f499_Play(t, s2, 0L)
                     ln = 193 // TOSTheme.HC:193
                     tick(t)
-                    P.f494_Play(t, s2, 0L)
+                    P.f499_Play(t, s2, 0L)
                     ln = 188 // TOSTheme.HC:188
                     l0_i = (l0_i + 1L)
                     tick(t)
@@ -449,13 +438,13 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
     }
 
     /** HolyC $init:C:/Demo/AcctExample/TOS/TOSTheme.HC#1 (TOSTheme.HC:202) */
-    fun f707_init_C__Demo_AcctExample_TOS_TOSTheme_HC_1(t: Task): Long {
+    fun f712_init_C__Demo_AcctExample_TOS_TOSTheme_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 202 // TOSTheme.HC:202
             tick(t)
-            f706_TOSTheme(t)
+            f711_TOSTheme(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/AcctExample/TOS/TOSTheme.HC#1", ln) }
@@ -464,11 +453,11 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_AcctExample_TOS_TOSTheme_HC_0(t)
-            704 -> { f704_Bird(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
-            705 -> { f705_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_TOSTheme(t); 0L }
-            707 -> f707_init_C__Demo_AcctExample_TOS_TOSTheme_HC_1(t)
+            708 -> f708_init_C__Demo_AcctExample_TOS_TOSTheme_HC_0(t)
+            709 -> { f709_Bird(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L))); 0L }
+            710 -> { f710_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_TOSTheme(t); 0L }
+            712 -> f712_init_C__Demo_AcctExample_TOS_TOSTheme_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -480,7 +469,7 @@ class N_Demo_AcctExample_TOS_TOSTheme(rt: NativeRuntime, @JvmField val P: Prelud
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("\$init:C:/Demo/AcctExample/TOS/TOSTheme.HC#0", "Bird", "DrawIt", "TOSTheme", "\$init:C:/Demo/AcctExample/TOS/TOSTheme.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/AcctExample/TOS/TOSTheme.HC")
     }

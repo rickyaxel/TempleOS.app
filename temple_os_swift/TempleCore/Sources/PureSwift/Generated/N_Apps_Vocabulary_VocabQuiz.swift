@@ -59,7 +59,7 @@ public final class N_Apps_Vocabulary_VocabQuiz: NativeModule {
     }
 
     /// HolyC RandVocabWord (VocabQuiz.HC:1)
-    @discardableResult public final func f703_RandVocabWord(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_RandVocabWord(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -104,7 +104,7 @@ public final class N_Apps_Vocabulary_VocabQuiz: NativeModule {
     }
 
     /// HolyC VocabQuiz (VocabQuiz.HC:17)
-    public final func f704_VocabQuiz(_ t: HTask) throws {
+    public final func f709_VocabQuiz(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -128,14 +128,14 @@ public final class N_Apps_Vocabulary_VocabQuiz: NativeModule {
             loop0: while true {
                 ln = 26 // VocabQuiz.HC:26
                 try tick(t)
-                let t1: Int64 = try f703_RandVocabWord(t)
+                let t1: Int64 = try f708_RandVocabWord(t)
                 l24_right_word = t1
                 ln = 27 // VocabQuiz.HC:27
                 l8_i = 0
                 loop2: while (l8_i < 4) {
                     ln = 28 // VocabQuiz.HC:28
                     try tick(t)
-                    let t2: Int64 = try f703_RandVocabWord(t)
+                    let t2: Int64 = try f708_RandVocabWord(t)
                     try st8(((fp &+ 32) &+ (l8_i &* 8)), t2)
                     ln = 27 // VocabQuiz.HC:27
                     l8_i = (l8_i &+ 1)
@@ -190,7 +190,7 @@ public final class N_Apps_Vocabulary_VocabQuiz: NativeModule {
                         _ = try nat(t, n_Snd, try push1(t, 0))
                         ln = 51 // VocabQuiz.HC:51
                         try tick(t)
-                        try P.f636_ACDPopUpDef(t, l24_right_word, (-1), 0)
+                        try P.f641_ACDPopUpDef(t, l24_right_word, (-1), 0)
                         ln = 52 // VocabQuiz.HC:52
                         break loop6
                     }
@@ -209,7 +209,7 @@ public final class N_Apps_Vocabulary_VocabQuiz: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Vocabulary/VocabQuiz.HC#0 (VocabQuiz.HC:1)
-    @discardableResult public final func f705_init_C__Apps_Vocabulary_VocabQuiz_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Apps_Vocabulary_VocabQuiz_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -221,15 +221,15 @@ public final class N_Apps_Vocabulary_VocabQuiz: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_RandVocabWord(t)
-        case 704: try f704_VocabQuiz(t); return 0
-        case 705: return try f705_init_C__Apps_Vocabulary_VocabQuiz_HC_0(t)
+        case 708: return try f708_RandVocabWord(t)
+        case 709: try f709_VocabQuiz(t); return 0
+        case 710: return try f710_init_C__Apps_Vocabulary_VocabQuiz_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "RandVocabWord", 704: "VocabQuiz", 705: "$init:C:/Apps/Vocabulary/VocabQuiz.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "RandVocabWord", 709: "VocabQuiz", 710: "$init:C:/Apps/Vocabulary/VocabQuiz.HC#0"]
     private static let FILES: [String] = ["C:/Apps/Vocabulary/VocabQuiz.HC"]
     public override var files: [String] { N_Apps_Vocabulary_VocabQuiz.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Vocabulary_VocabQuiz.DEFINED.contains(index) }

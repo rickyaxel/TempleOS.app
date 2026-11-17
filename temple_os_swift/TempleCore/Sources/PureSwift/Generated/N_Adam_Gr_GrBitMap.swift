@@ -36,7 +36,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrBitMap.HC#0 (GrBitMap.HC:3)
-    @discardableResult public final func f703_init_C__Adam_Gr_GrBitMap_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Adam_Gr_GrBitMap_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -48,7 +48,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrPlot0 (GrBitMap.HC:4)
-    @discardableResult public final func f704_GrPlot0(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f709_GrPlot0(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -69,7 +69,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
             if try ((ld4s((p0_dc &+ 28)) & 2048) != 0) {
                 ln = 12 // GrBitMap.HC:12
                 try tick(t)
-                let t0: Int64 = try P.f338_DistSqrI64(t, p1_x, p2_y, ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
+                let t0: Int64 = try P.f339_DistSqrI64(t, p1_x, p2_y, ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
                 l48_dist = t0
                 ln = 13 // GrBitMap.HC:13
                 if try (l48_dist <= ld8((p0_dc &+ 312))) {
@@ -193,7 +193,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrBitMap.HC#1 (GrBitMap.HC:62)
-    @discardableResult public final func f705_init_C__Adam_Gr_GrBitMap_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Adam_Gr_GrBitMap_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -205,7 +205,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrPeek0 (GrBitMap.HC:64)
-    @discardableResult public final func f706_GrPeek0(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f711_GrPeek0(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -222,7 +222,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrBlot (GrBitMap.HC:71)
-    @discardableResult public final func f707_GrBlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f712_GrBlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -305,7 +305,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                         if try ((ld4s((p0_dc &+ 28)) & 2048) != 0) {
                             ln = 104 // GrBitMap.HC:104
                             try tick(t)
-                            let t0: Int64 = try P.f338_DistSqrI64(t, (p1_x &+ (ld4s((p3_img &+ 16)) &>> 1)), (p2_y &+ (ld4s((p3_img &+ 24)) &>> 1)), ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
+                            let t0: Int64 = try P.f339_DistSqrI64(t, (p1_x &+ (ld4s((p3_img &+ 16)) &>> 1)), (p2_y &+ (ld4s((p3_img &+ 24)) &>> 1)), ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
                             l112_dist = t0
                             ln = 105 // GrBitMap.HC:105
                             if try (l112_dist <= ld8((p0_dc &+ 312))) {
@@ -752,7 +752,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                                         if try (ld1u((ld8((p3_img &+ 384)) &+ (l48_k &+ l32_i))) != 0) {
                                             ln = 276 // GrBitMap.HC:276
                                             try tick(t)
-                                            _ = try f704_GrPlot0(t, p0_dc, (p1_x &+ l32_i), (p2_y &+ l40_j))
+                                            _ = try f709_GrPlot0(t, p0_dc, (p1_x &+ l32_i), (p2_y &+ l40_j))
                                         }
                                         ln = 274 // GrBitMap.HC:274
                                         l32_i = (l32_i &+ 1)
@@ -807,7 +807,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                                             if try (ld1u((ld8((p3_img &+ 384)) &+ (l48_k &+ l32_i))) != 0) {
                                                 ln = 298 // GrBitMap.HC:298
                                                 try tick(t)
-                                                _ = try f704_GrPlot0(t, p0_dc, (p1_x &+ l32_i), (p2_y &+ l40_j))
+                                                _ = try f709_GrPlot0(t, p0_dc, (p1_x &+ l32_i), (p2_y &+ l40_j))
                                             }
                                         }
                                         ln = 299 // GrBitMap.HC:299
@@ -1421,7 +1421,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                                         try st1((p0_dc &+ 160), l240_c)
                                         ln = 428 // GrBitMap.HC:428
                                         try tick(t)
-                                        _ = try f704_GrPlot0(t, p0_dc, (p1_x &+ l32_i), (p2_y &+ l40_j))
+                                        _ = try f709_GrPlot0(t, p0_dc, (p1_x &+ l32_i), (p2_y &+ l40_j))
                                     }
                                     ln = 424 // GrBitMap.HC:424
                                     l32_i = (l32_i &+ 1)
@@ -1480,7 +1480,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                                             try st1((p0_dc &+ 160), l240_c)
                                             ln = 454 // GrBitMap.HC:454
                                             try tick(t)
-                                            _ = try f704_GrPlot0(t, p0_dc, (p1_x &+ l32_i), (p2_y &+ l40_j))
+                                            _ = try f709_GrPlot0(t, p0_dc, (p1_x &+ l32_i), (p2_y &+ l40_j))
                                         }
                                     }
                                     ln = 457 // GrBitMap.HC:457
@@ -1529,7 +1529,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrBitMap4ToBitMap8 (GrBitMap.HC:590)
-    @discardableResult public final func f708_GrBitMap4ToBitMap8(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f713_GrBitMap4ToBitMap8(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1590,7 +1590,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrBitMap1ToBitMap8 (GrBitMap.HC:605)
-    @discardableResult public final func f709_GrBitMap1ToBitMap8(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f714_GrBitMap1ToBitMap8(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1634,7 +1634,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC DCExt (GrBitMap.HC:617)
-    @discardableResult public final func f710_DCExt(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
+    @discardableResult public final func f715_DCExt(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1684,7 +1684,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
             try P.f286_DCFill(t, l48_res, 255)
             ln = 633 // GrBitMap.HC:633
             try tick(t)
-            _ = try f707_GrBlot(t, l48_res, (0 &- ld8((fp &+ 8))), (0 &- ld8((fp &+ 16))), p0_dc)
+            _ = try f712_GrBlot(t, l48_res, (0 &- ld8((fp &+ 8))), (0 &- ld8((fp &+ 16))), p0_dc)
             ln = 634 // GrBitMap.HC:634
             t.msp = msp0
             t.depth -= 1
@@ -1696,7 +1696,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC DCDiff (GrBitMap.HC:637)
-    @discardableResult public final func f711_DCDiff(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f716_DCDiff(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1823,9 +1823,9 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                     loop17: while (l16_i <= l48_y2) {
                         ln = 673 // GrBitMap.HC:673
                         try tick(t)
-                        let t12: Int64 = try f706_GrPeek0(t, p0_base, l24_x1, l16_i)
+                        let t12: Int64 = try f711_GrPeek0(t, p0_base, l24_x1, l16_i)
                         try tick(t)
-                        let t13: Int64 = try f706_GrPeek0(t, p1_update, l24_x1, l16_i)
+                        let t13: Int64 = try f711_GrPeek0(t, p1_update, l24_x1, l16_i)
                         if (t12 != t13) {
                             ln = 674 // GrBitMap.HC:674
                             break skip_14
@@ -1847,9 +1847,9 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                     loop22: while (l16_i <= l48_y2) {
                         ln = 680 // GrBitMap.HC:680
                         try tick(t)
-                        let t14: Int64 = try f706_GrPeek0(t, p0_base, l40_x2, l16_i)
+                        let t14: Int64 = try f711_GrPeek0(t, p0_base, l40_x2, l16_i)
                         try tick(t)
-                        let t15: Int64 = try f706_GrPeek0(t, p1_update, l40_x2, l16_i)
+                        let t15: Int64 = try f711_GrPeek0(t, p1_update, l40_x2, l16_i)
                         if (t14 != t15) {
                             ln = 681 // GrBitMap.HC:681
                             break skip_19
@@ -1865,7 +1865,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
             }
             ln = 685 // GrBitMap.HC:685
             try tick(t)
-            let t16: Int64 = try f710_DCExt(t, p1_update, l24_x1, l32_y1, l40_x2, l48_y2, 0)
+            let t16: Int64 = try f715_DCExt(t, p1_update, l24_x1, l32_y1, l40_x2, l48_y2, 0)
             l72_res = t16
             ln = 686 // GrBitMap.HC:686
             try st4((l72_res &+ 8), l24_x1)
@@ -1880,7 +1880,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrPutChar (GrBitMap.HC:693)
-    @discardableResult public final func f712_GrPutChar(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f717_GrPutChar(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1953,7 +1953,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
             if try ((ld4s((p0_dc &+ 28)) & 2048) != 0) {
                 ln = 723 // GrBitMap.HC:723
                 try tick(t)
-                let t0: Int64 = try P.f338_DistSqrI64(t, (p1_x &+ (l144_w2 &>> 1)), (p2_y &+ (l152_h2 &>> 1)), ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
+                let t0: Int64 = try P.f339_DistSqrI64(t, (p1_x &+ (l144_w2 &>> 1)), (p2_y &+ (l152_h2 &>> 1)), ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
                 l176_dist = t0
                 ln = 724 // GrBitMap.HC:724
                 if try (l176_dist <= ld8((p0_dc &+ 312))) {
@@ -2351,7 +2351,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrPutS (GrBitMap.HC:913)
-    @discardableResult public final func f713_GrPutS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f718_GrPutS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2427,7 +2427,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                             } else {
                                 ln = 942 // GrBitMap.HC:942
                                 try tick(t)
-                                let t1: Int64 = try f712_GrPutChar(t, p0_dc, (p1_x &+ l40_sx), (p2_y &+ l48_sy), ld1u(p3__s))
+                                let t1: Int64 = try f717_GrPutChar(t, p0_dc, (p1_x &+ l40_sx), (p2_y &+ l48_sy), ld1u(p3__s))
                                 l56_res = (l56_res &+ t1)
                                 ln = 943 // GrBitMap.HC:943
                                 p1_x = (p1_x &+ 8)
@@ -2448,7 +2448,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrVPutS (GrBitMap.HC:950)
-    @discardableResult public final func f714_GrVPutS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f719_GrVPutS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2533,7 +2533,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                                 try st1((fp &+ 64), ld1u(t1))
                                 ln = 982 // GrBitMap.HC:982
                                 try tick(t)
-                                let t2: Int64 = try f713_GrPutS(t, p0_dc, p1_x, p2_y, (fp &+ 64))
+                                let t2: Int64 = try f718_GrPutS(t, p0_dc, p1_x, p2_y, (fp &+ 64))
                                 l56_res = (l56_res &+ t2)
                                 ln = 983 // GrBitMap.HC:983
                                 p2_y = (p2_y &+ 8)
@@ -2554,7 +2554,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrPrint (GrBitMap.HC:989)
-    @discardableResult public final func f715_GrPrint(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ vaBase: Int, _ vaN: Int) throws -> Int64 {
+    @discardableResult public final func f720_GrPrint(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ vaBase: Int, _ vaN: Int) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2574,7 +2574,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
             l56_buf = t0
             ln = 993 // GrBitMap.HC:993
             try tick(t)
-            let t1: Int64 = try f713_GrPutS(t, p0_dc, p1_x, p2_y, l56_buf)
+            let t1: Int64 = try f718_GrPutS(t, p0_dc, p1_x, p2_y, l56_buf)
             l48_res = t1
             ln = 994 // GrBitMap.HC:994
             _ = try nat(t, n_Free, try push1(t, l56_buf))
@@ -2589,7 +2589,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrVPrint (GrBitMap.HC:998)
-    @discardableResult public final func f716_GrVPrint(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ vaBase: Int, _ vaN: Int) throws -> Int64 {
+    @discardableResult public final func f721_GrVPrint(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ vaBase: Int, _ vaN: Int) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2609,7 +2609,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
             l56_buf = t0
             ln = 1002 // GrBitMap.HC:1002
             try tick(t)
-            let t1: Int64 = try f714_GrVPutS(t, p0_dc, p1_x, p2_y, l56_buf)
+            let t1: Int64 = try f719_GrVPutS(t, p0_dc, p1_x, p2_y, l56_buf)
             l48_res = t1
             ln = 1003 // GrBitMap.HC:1003
             _ = try nat(t, n_Free, try push1(t, l56_buf))
@@ -2624,7 +2624,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrRect (GrBitMap.HC:1008)
-    @discardableResult public final func f717_GrRect(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f722_GrRect(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -2730,7 +2730,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                 } else {
                     ln = 1046 // GrBitMap.HC:1046
                     try tick(t)
-                    let t9: Int64 = try P.f338_DistSqrI64(t, (p1_x &+ (p3_w &>> 1)), (p2_y &+ (p4_h &>> 1)), ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
+                    let t9: Int64 = try P.f339_DistSqrI64(t, (p1_x &+ (p3_w &>> 1)), (p2_y &+ (p4_h &>> 1)), ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
                     l112_dist = t9
                 }
                 ln = 1047 // GrBitMap.HC:1047
@@ -3679,7 +3679,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrRayLenMinus (GrBitMap.HC:1454)
-    @discardableResult public final func f718_GrRayLenMinus(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f723_GrRayLenMinus(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -3837,7 +3837,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrRayLen (GrBitMap.HC:1518)
-    @discardableResult public final func f719_GrRayLen(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f724_GrRayLen(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -4026,7 +4026,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                         if try ((ld4s((p0_dc &+ 28)) & 2048) != 0) {
                             ln = 1598 // GrBitMap.HC:1598
                             try tick(t)
-                            let t7: Int64 = try P.f338_DistSqrI64(t, l72_x3, l80_y3, ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
+                            let t7: Int64 = try P.f339_DistSqrI64(t, l72_x3, l80_y3, ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
                             l88_dist = t7
                             ln = 1599 // GrBitMap.HC:1599
                             if try (l88_dist <= ld8((p0_dc &+ 312))) {
@@ -4191,7 +4191,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                         if try ((ld4s((p0_dc &+ 28)) & 2048) != 0) {
                             ln = 1673 // GrBitMap.HC:1673
                             try tick(t)
-                            let t16: Int64 = try P.f338_DistSqrI64(t, l72_x3, l80_y3, ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
+                            let t16: Int64 = try P.f339_DistSqrI64(t, l72_x3, l80_y3, ld4s((p0_dc &+ 288)), ld4s((p0_dc &+ 292)))
                             l88_dist = t16
                             ln = 1674 // GrBitMap.HC:1674
                             if try (l88_dist <= ld8((p0_dc &+ 312))) {
@@ -4291,7 +4291,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrHLine (GrBitMap.HC:1718)
-    @discardableResult public final func f720_GrHLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
+    @discardableResult public final func f725_GrHLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -4339,7 +4339,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                 }
                 ln = 1731 // GrBitMap.HC:1731
                 try tick(t)
-                let t0: Int64 = try f717_GrRect(t, p0_dc, ld8((fp &+ 8)), p3_y, ((ld8((fp &+ 16)) &- ld8((fp &+ 8))) &+ 1), 1)
+                let t0: Int64 = try f722_GrRect(t, p0_dc, ld8((fp &+ 8)), p3_y, ((ld8((fp &+ 16)) &- ld8((fp &+ 8))) &+ 1), 1)
                 t.msp = msp0
                 t.depth -= 1
                 return t0
@@ -4697,7 +4697,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC GrVLine (GrBitMap.HC:1887)
-    @discardableResult public final func f721_GrVLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
+    @discardableResult public final func f726_GrVLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -4745,7 +4745,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
                 }
                 ln = 1900 // GrBitMap.HC:1900
                 try tick(t)
-                let t0: Int64 = try f717_GrRect(t, p0_dc, p1_x, ld8((fp &+ 16)), 1, ((ld8((fp &+ 24)) &- ld8((fp &+ 16))) &+ 1))
+                let t0: Int64 = try f722_GrRect(t, p0_dc, p1_x, ld8((fp &+ 16)), 1, ((ld8((fp &+ 24)) &- ld8((fp &+ 16))) &+ 1))
                 t.msp = msp0
                 t.depth -= 1
                 return t0
@@ -5103,7 +5103,7 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrBitMap.HC#2 (GrBitMap.HC:1)
-    @discardableResult public final func f722_init_C__Adam_Gr_GrBitMap_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f727_init_C__Adam_Gr_GrBitMap_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -5115,32 +5115,32 @@ public final class N_Adam_Gr_GrBitMap: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Adam_Gr_GrBitMap_HC_0(t)
-        case 704: return try f704_GrPlot0(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 705: return try f705_init_C__Adam_Gr_GrBitMap_HC_1(t)
-        case 706: return try f706_GrPeek0(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 707: return try f707_GrBlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 708: return try f708_GrBitMap4ToBitMap8(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 709: return try f709_GrBitMap1ToBitMap8(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 710: return try f710_DCExt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
-        case 711: return try f711_DCDiff(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 712: return try f712_GrPutChar(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 713: return try f713_GrPutS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 714: return try f714_GrVPutS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 715: return try f715_GrPrint(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), base + 4, max(n - 4, 0))
-        case 716: return try f716_GrVPrint(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), base + 4, max(n - 4, 0))
-        case 717: return try f717_GrRect(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 718: return try f718_GrRayLenMinus(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 719: return try f719_GrRayLen(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 720: return try f720_GrHLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
-        case 721: return try f721_GrVLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
-        case 722: return try f722_init_C__Adam_Gr_GrBitMap_HC_2(t)
+        case 708: return try f708_init_C__Adam_Gr_GrBitMap_HC_0(t)
+        case 709: return try f709_GrPlot0(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 710: return try f710_init_C__Adam_Gr_GrBitMap_HC_1(t)
+        case 711: return try f711_GrPeek0(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 712: return try f712_GrBlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 713: return try f713_GrBitMap4ToBitMap8(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 714: return try f714_GrBitMap1ToBitMap8(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 715: return try f715_DCExt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
+        case 716: return try f716_DCDiff(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 717: return try f717_GrPutChar(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 718: return try f718_GrPutS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 719: return try f719_GrVPutS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 720: return try f720_GrPrint(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), base + 4, max(n - 4, 0))
+        case 721: return try f721_GrVPrint(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), base + 4, max(n - 4, 0))
+        case 722: return try f722_GrRect(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 723: return try f723_GrRayLenMinus(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 724: return try f724_GrRayLen(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 725: return try f725_GrHLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
+        case 726: return try f726_GrVLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0))
+        case 727: return try f727_init_C__Adam_Gr_GrBitMap_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Adam/Gr/GrBitMap.HC#0", 704: "GrPlot0", 705: "$init:C:/Adam/Gr/GrBitMap.HC#1", 706: "GrPeek0", 707: "GrBlot", 708: "GrBitMap4ToBitMap8", 709: "GrBitMap1ToBitMap8", 710: "DCExt", 711: "DCDiff", 712: "GrPutChar", 713: "GrPutS", 714: "GrVPutS", 715: "GrPrint", 716: "GrVPrint", 717: "GrRect", 718: "GrRayLenMinus", 719: "GrRayLen", 720: "GrHLine", 721: "GrVLine", 722: "$init:C:/Adam/Gr/GrBitMap.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Adam/Gr/GrBitMap.HC#0", 709: "GrPlot0", 710: "$init:C:/Adam/Gr/GrBitMap.HC#1", 711: "GrPeek0", 712: "GrBlot", 713: "GrBitMap4ToBitMap8", 714: "GrBitMap1ToBitMap8", 715: "DCExt", 716: "DCDiff", 717: "GrPutChar", 718: "GrPutS", 719: "GrVPutS", 720: "GrPrint", 721: "GrVPrint", 722: "GrRect", 723: "GrRayLenMinus", 724: "GrRayLen", 725: "GrHLine", 726: "GrVLine", 727: "$init:C:/Adam/Gr/GrBitMap.HC#2"]
     private static let FILES: [String] = ["C:/Adam/Gr/GrBitMap.HC"]
     public override var files: [String] { N_Adam_Gr_GrBitMap.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_GrBitMap.DEFINED.contains(index) }

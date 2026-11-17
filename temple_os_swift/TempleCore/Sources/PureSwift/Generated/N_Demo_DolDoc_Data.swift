@@ -43,7 +43,7 @@ public final class N_Demo_DolDoc_Data: NativeModule {
     }
 
     /// HolyC UpdateGlblTask (Data.HC:20)
-    public final func f703_UpdateGlblTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_UpdateGlblTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -63,7 +63,7 @@ public final class N_Demo_DolDoc_Data: NativeModule {
     }
 
     /// HolyC DataDemo (Data.HC:28)
-    public final func f704_DataDemo(_ t: HTask) throws {
+    public final func f709_DataDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -72,14 +72,14 @@ public final class N_Demo_DolDoc_Data: NativeModule {
             var l8_doc: Int64 = 0
             ln = 33 // Data.HC:33
             try tick(t)
-            let t0: Int64 = try P.f602_DocPut(t, 0)
+            let t0: Int64 = try P.f607_DocPut(t, 0)
             l8_doc = t0
             ln = 37 // Data.HC:37
             try tick(t)
-            let t1: Int64 = try P.f610_DocLock(t, l8_doc)
+            let t1: Int64 = try P.f615_DocLock(t, l8_doc)
             l16_unlock = (t1 & 0xFF)
             ln = 43 // Data.HC:43
-            _ = try nat(t, n_Spawn, try push(t, 9223090561878065855, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
+            _ = try nat(t, n_Spawn, try push(t, 9223090561878065860, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
             ln = 45 // Data.HC:45
             _ = try nat(t, n_Print, try push1(t, s1))
             ln = 50 // Data.HC:50
@@ -105,7 +105,7 @@ public final class N_Demo_DolDoc_Data: NativeModule {
             if (l16_unlock != 0) {
                 ln = 58 // Data.HC:58
                 try tick(t)
-                try P.f611_DocUnlock(t, l8_doc)
+                try P.f616_DocUnlock(t, l8_doc)
             }
             t.depth -= 1
             return
@@ -113,13 +113,13 @@ public final class N_Demo_DolDoc_Data: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/DolDoc/Data.HC#0 (Data.HC:17)
-    @discardableResult public final func f705_init_C__Demo_DolDoc_Data_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_DolDoc_Data_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 61 // Data.HC:61
             try tick(t)
-            try f704_DataDemo(t)
+            try f709_DataDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/Data.HC#0", ln) }
@@ -128,15 +128,15 @@ public final class N_Demo_DolDoc_Data: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_UpdateGlblTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_DataDemo(t); return 0
-        case 705: return try f705_init_C__Demo_DolDoc_Data_HC_0(t)
+        case 708: try f708_UpdateGlblTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_DataDemo(t); return 0
+        case 710: return try f710_init_C__Demo_DolDoc_Data_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "UpdateGlblTask", 704: "DataDemo", 705: "$init:C:/Demo/DolDoc/Data.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "UpdateGlblTask", 709: "DataDemo", 710: "$init:C:/Demo/DolDoc/Data.HC#0"]
     private static let FILES: [String] = ["C:/Demo/DolDoc/Data.HC"]
     public override var files: [String] { N_Demo_DolDoc_Data.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_DolDoc_Data.DEFINED.contains(index) }

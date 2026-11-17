@@ -41,7 +41,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
     }
 
     /// HolyC MGInit (MiniGrLib.HC:7)
-    public final func f703_MGInit(_ t: HTask) throws {
+    public final func f708_MGInit(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -80,16 +80,16 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
     }
 
     /// HolyC MGUpdate (MiniGrLib.HC:18)
-    public final func f704_MGUpdate(_ t: HTask) throws {
+    public final func f709_MGUpdate(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 22 // MiniGrLib.HC:22
             try tick(t)
-            try P.f570_OutU8(t, 964, 2)
+            try P.f575_OutU8(t, 964, 2)
             ln = 23 // MiniGrLib.HC:23
             try tick(t)
-            try P.f570_OutU8(t, 965, 15)
+            try P.f575_OutU8(t, 965, 15)
             ln = 24 // MiniGrLib.HC:24
             _ = try nat(t, n_MemCpy, try push3(t, ld8((P.g_text &+ 56)), g_image, 38400))
             t.depth -= 1
@@ -98,7 +98,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
     }
 
     /// HolyC MGPlot (MiniGrLib.HC:27)
-    public final func f705_MGPlot(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_MGPlot(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -115,7 +115,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
     }
 
     /// HolyC MGHLine (MiniGrLib.HC:33)
-    public final func f706_MGHLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f711_MGHLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -186,7 +186,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
     }
 
     /// HolyC MGLine (MiniGrLib.HC:56)
-    public final func f707_MGLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f712_MGLine(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -227,7 +227,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
                 loop0: while try (ld8(fp) != p2_x2) {
                     ln = 65 // MiniGrLib.HC:65
                     try tick(t)
-                    try f705_MGPlot(t, ld4s((fp &+ 4)), ld4s(((fp &+ 8) &+ 4)))
+                    try f710_MGPlot(t, ld4s((fp &+ 4)), ld4s(((fp &+ 8) &+ 4)))
                     ln = 66 // MiniGrLib.HC:66
                     try st8(fp, (ld8(fp) &+ l32_dx))
                     try st8((fp &+ 8), (ld8((fp &+ 8)) &+ l40_dy))
@@ -246,7 +246,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
                 loop2: while try (ld8((fp &+ 8)) != p3_y2) {
                     ln = 72 // MiniGrLib.HC:72
                     try tick(t)
-                    try f705_MGPlot(t, ld4s((fp &+ 4)), ld4s(((fp &+ 8) &+ 4)))
+                    try f710_MGPlot(t, ld4s((fp &+ 4)), ld4s(((fp &+ 8) &+ 4)))
                     ln = 73 // MiniGrLib.HC:73
                     try st8(fp, (ld8(fp) &+ l32_dx))
                     try st8((fp &+ 8), (ld8((fp &+ 8)) &+ l40_dy))
@@ -255,7 +255,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
             }
             ln = 76 // MiniGrLib.HC:76
             try tick(t)
-            try f705_MGPlot(t, ld4s((fp &+ 4)), ld4s(((fp &+ 8) &+ 4)))
+            try f710_MGPlot(t, ld4s((fp &+ 4)), ld4s(((fp &+ 8) &+ 4)))
             t.msp = msp0
             t.depth -= 1
             return
@@ -263,7 +263,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
     }
 
     /// HolyC MGCircle (MiniGrLib.HC:79)
-    public final func f708_MGCircle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double) throws {
+    public final func f713_MGCircle(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -295,7 +295,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
             l72_len = f2i(((2.0 * p2_r) * d(4614256656552045848)))
             ln = 88 // MiniGrLib.HC:88
             try tick(t)
-            try f705_MGPlot(t, f2i((Double(p0_x) + l40_x1)), f2i((Double(p1_y) + l48_y1)))
+            try f710_MGPlot(t, f2i((Double(p0_x) + l40_x1)), f2i((Double(p1_y) + l48_y1)))
             ln = 89 // MiniGrLib.HC:89
             loop0: while true {
                 let t2: Int64 = l72_len
@@ -310,7 +310,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
                 l48_y1 = ((l24_s * l56_x2) + (l32_c * l64_y2))
                 ln = 100 // MiniGrLib.HC:100
                 try tick(t)
-                try f705_MGPlot(t, f2i((Double(p0_x) + l40_x1)), f2i((Double(p1_y) + l48_y1)))
+                try f710_MGPlot(t, f2i((Double(p0_x) + l40_x1)), f2i((Double(p1_y) + l48_y1)))
                 try tick(t)
             }
             t.depth -= 1
@@ -319,20 +319,20 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
     }
 
     /// HolyC MiniGrLibDemo (MiniGrLib.HC:105)
-    public final func f709_MiniGrLibDemo(_ t: HTask) throws {
+    public final func f714_MiniGrLibDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             var l0_i: Int64 = 0
             ln = 108 // MiniGrLib.HC:108
             try tick(t)
-            try f703_MGInit(t)
+            try f708_MGInit(t)
             ln = 110 // MiniGrLib.HC:110
             l0_i = 0
             loop0: while (l0_i < 100) {
                 ln = 111 // MiniGrLib.HC:111
                 try tick(t)
-                try f706_MGHLine(t, (200 &+ l0_i), (400 &+ l0_i), (300 &+ l0_i))
+                try f711_MGHLine(t, (200 &+ l0_i), (400 &+ l0_i), (300 &+ l0_i))
                 ln = 110 // MiniGrLib.HC:110
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -342,7 +342,7 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
             loop2: while (l0_i < 500) {
                 ln = 113 // MiniGrLib.HC:113
                 try tick(t)
-                try f707_MGLine(t, l0_i, 0, 0, (480 &- l0_i))
+                try f712_MGLine(t, l0_i, 0, 0, (480 &- l0_i))
                 ln = 112 // MiniGrLib.HC:112
                 l0_i = (l0_i &+ 10)
                 try tick(t)
@@ -352,32 +352,32 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
             loop4: while (l0_i < 300) {
                 ln = 115 // MiniGrLib.HC:115
                 try tick(t)
-                try f708_MGCircle(t, 200, (100 &+ l0_i), Double(l0_i))
+                try f713_MGCircle(t, 200, (100 &+ l0_i), Double(l0_i))
                 ln = 114 // MiniGrLib.HC:114
                 l0_i = (l0_i &+ 4)
                 try tick(t)
             }
             ln = 116 // MiniGrLib.HC:116
             try tick(t)
-            try f704_MGUpdate(t)
+            try f709_MGUpdate(t)
             ln = 117 // MiniGrLib.HC:117
             _ = try nat(t, n_Busy, try push1(t, 1500000))
             ln = 125 // MiniGrLib.HC:125
             try tick(t)
-            try P.f575_VGAFlush(t)
+            try P.f580_VGAFlush(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "MiniGrLibDemo", ln) }
     }
 
     /// HolyC $init:C:/Demo/Lectures/MiniGrLib.HC#0 (MiniGrLib.HC:128)
-    @discardableResult public final func f710_init_C__Demo_Lectures_MiniGrLib_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Demo_Lectures_MiniGrLib_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 128 // MiniGrLib.HC:128
             try tick(t)
-            try f709_MiniGrLibDemo(t)
+            try f714_MiniGrLibDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Lectures/MiniGrLib.HC#0", ln) }
@@ -386,20 +386,20 @@ public final class N_Demo_Lectures_MiniGrLib: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_MGInit(t); return 0
-        case 704: try f704_MGUpdate(t); return 0
-        case 705: try f705_MGPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_MGHLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 707: try f707_MGLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 708: try f708_MGCircle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0))); return 0
-        case 709: try f709_MiniGrLibDemo(t); return 0
-        case 710: return try f710_init_C__Demo_Lectures_MiniGrLib_HC_0(t)
+        case 708: try f708_MGInit(t); return 0
+        case 709: try f709_MGUpdate(t); return 0
+        case 710: try f710_MGPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_MGHLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 712: try f712_MGLine(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 713: try f713_MGCircle(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0))); return 0
+        case 714: try f714_MiniGrLibDemo(t); return 0
+        case 715: return try f715_init_C__Demo_Lectures_MiniGrLib_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710]
-    private static let NAMES: [Int: String] = [703: "MGInit", 704: "MGUpdate", 705: "MGPlot", 706: "MGHLine", 707: "MGLine", 708: "MGCircle", 709: "MiniGrLibDemo", 710: "$init:C:/Demo/Lectures/MiniGrLib.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715]
+    private static let NAMES: [Int: String] = [708: "MGInit", 709: "MGUpdate", 710: "MGPlot", 711: "MGHLine", 712: "MGLine", 713: "MGCircle", 714: "MiniGrLibDemo", 715: "$init:C:/Demo/Lectures/MiniGrLib.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Lectures/MiniGrLib.HC"]
     public override var files: [String] { N_Demo_Lectures_MiniGrLib.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Lectures_MiniGrLib.DEFINED.contains(index) }

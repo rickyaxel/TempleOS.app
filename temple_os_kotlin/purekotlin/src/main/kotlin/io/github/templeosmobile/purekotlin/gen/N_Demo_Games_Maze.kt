@@ -47,7 +47,7 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC DrawIt (Maze.HC:7) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -58,12 +58,12 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             ln = 17 // Maze.HC:17
             tick(t)
             val vb0 = push0(t)
-            P.f449_TextPrint(t, p0_task, 0L, 0L, 15L, s0, vb0, 0)
+            P.f454_TextPrint(t, p0_task, 0L, 0L, 15L, s0, vb0, 0)
             t.sp = vb0
             ln = 18 // Maze.HC:18
             tick(t)
             val vb1 = push0(t)
-            P.f449_TextPrint(t, p0_task, 0L, 1L, 15L, s1, vb1, 0)
+            P.f454_TextPrint(t, p0_task, 0L, 1L, 15L, s1, vb1, 0)
             t.sp = vb1
             t.depth--
             return
@@ -71,7 +71,7 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Demo/Games/Maze.HC#0 (Maze.HC:34) */
-    fun f704_init_C__Demo_Games_Maze_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Games_Maze_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -81,7 +81,7 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC SolveMaze (Maze.HC:37) */
-    fun f705_SolveMaze(t: Task, a0: Long, a1: Long) {
+    fun f710_SolveMaze(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -204,7 +204,7 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Maze (Maze.HC:77) */
-    fun f706_Maze(t: Task) {
+    fun f711_Maze(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -227,7 +227,7 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             ln = 86 // Maze.HC:86
             nat(t, n_DocClear, push1(t, 0L))
             ln = 87 // Maze.HC:87
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 88 // Maze.HC:88
             st4((ld8(P.g_Fs) + 12L), 5436158L)
             ln = 90 // Maze.HC:90
@@ -259,7 +259,7 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                             st4(((g_text + (l16_y * 320L)) + (l8_x * 4L)), 3882L)
                             ln = 100 // Maze.HC:100
                             tick(t)
-                            f705_SolveMaze(t, l8_x, l16_y)
+                            f710_SolveMaze(t, l8_x, l16_y)
                             ln = 101 // Maze.HC:101
                             val t0: Long = nat(t, n_GetChar, push3(t, 0L, 1L, 0L))
                             l0_ch = t0
@@ -291,13 +291,13 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Demo/Games/Maze.HC#1 (Maze.HC:112) */
-    fun f707_init_C__Demo_Games_Maze_HC_1(t: Task): Long {
+    fun f712_init_C__Demo_Games_Maze_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 112 // Maze.HC:112
             tick(t)
-            f706_Maze(t)
+            f711_Maze(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Maze.HC#1", ln) }
@@ -306,11 +306,11 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> f704_init_C__Demo_Games_Maze_HC_0(t)
-            705 -> { f705_SolveMaze(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_Maze(t); 0L }
-            707 -> f707_init_C__Demo_Games_Maze_HC_1(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> f709_init_C__Demo_Games_Maze_HC_0(t)
+            710 -> { f710_SolveMaze(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_Maze(t); 0L }
+            712 -> f712_init_C__Demo_Games_Maze_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -322,7 +322,7 @@ class N_Demo_Games_Maze(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("DrawIt", "\$init:C:/Demo/Games/Maze.HC#0", "SolveMaze", "Maze", "\$init:C:/Demo/Games/Maze.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Games/Maze.HC")
     }

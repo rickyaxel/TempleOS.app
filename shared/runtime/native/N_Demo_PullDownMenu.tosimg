@@ -13,8 +13,8 @@ s 17ff50 4f7074696f6e202320310a
 s 17ff70 4d6973632f4f707431
 s 17ff90 4f7074696f6e202320320a
 s 17ffb0 4d6973632f4f707432
-fn 703 PullDownMenuDemo (U0;;-)
-fn 704 $init:C:/Demo/PullDownMenu.HC#0 (I64;;-)
-sym f PullDownMenuDemo 703 (U0;;-)
-init 704
+fn 708 PullDownMenuDemo (U0;;-)
+fn 709 $init:C:/Demo/PullDownMenu.HC#0 (I64;;-)
+sym f PullDownMenuDemo 708 (U0;;-)
+init 709
 unit C:/Demo/PullDownMenu.HC#1

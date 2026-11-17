@@ -801,6 +801,11 @@ class Natives(private val k: Kernel) {
         reg("DCReflect") { t, a, _ -> val dc = mem.check(t.st[a], 8); xyz(t, a + 1) { k.raster.dcReflect(dc, it) }; 0 }
         reg("GrFillCircle") { t, a, _ -> k.raster.fillCircle(t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4]) }
         reg("GrFillSemiCircle") { t, a, _ -> k.raster.fillSemiCircle(t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4], t.st[a + 5]) }
+        reg("GrLine3") { t, a, _ -> k.raster.line3(t, t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4], t.st[a + 5], t.st[a + 6], t.st[a + 7], t.st[a + 8]) }
+        reg("GrFillPoly3") { t, a, _ -> k.raster.fillPoly3(t.st[a], t.st[a + 1], t.st[a + 2]) }
+        reg("Gr3Mesh") { t, a, _ -> k.raster.mesh3(t, t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4]) }
+        reg("Sprite3") { t, a, _ -> k.raster.sprite3(t, t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4], t.st[a + 5]) }
+        reg("Mat4x4Scale") { t, a, _ -> k.raster.mat4x4Scale(t.st[a], d(t.st[a + 1])) }
         reg("GrLineFat3") { t, a, _ -> k.raster.lineFat3(t.st[a], t.st[a + 1], t.st[a + 2], t.st[a + 3], t.st[a + 4], t.st[a + 5], t.st[a + 6], t.st[a + 7], t.st[a + 8]) }
         reg("SpriteElemSize") { t, a, _ -> k.raster.spriteElemSize(t.st[a]) }
         reg("SpriteSize") { t, a, _ -> k.raster.spriteSize(t.st[a]) }

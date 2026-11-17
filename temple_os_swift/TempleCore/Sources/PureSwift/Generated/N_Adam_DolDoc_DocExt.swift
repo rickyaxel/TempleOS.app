@@ -22,7 +22,7 @@ public final class N_Adam_DolDoc_DocExt: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/DolDoc/DocExt.HC#0 (DocExt.HC:1)
-    @discardableResult public final func f712_init_C__Adam_DolDoc_DocExt_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Adam_DolDoc_DocExt_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -34,13 +34,13 @@ public final class N_Adam_DolDoc_DocExt: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 712: return try f712_init_C__Adam_DolDoc_DocExt_HC_0(t)
+        case 717: return try f717_init_C__Adam_DolDoc_DocExt_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [712]
-    private static let NAMES: [Int: String] = [712: "$init:C:/Adam/DolDoc/DocExt.HC#0"]
+    private static let DEFINED: Set<Int> = [717]
+    private static let NAMES: [Int: String] = [717: "$init:C:/Adam/DolDoc/DocExt.HC#0"]
     private static let FILES: [String] = []
     public override var files: [String] { N_Adam_DolDoc_DocExt.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_DolDoc_DocExt.DEFINED.contains(index) }

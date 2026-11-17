@@ -23,6 +23,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
     @JvmField val n_RandI32 = rt.vm.natives.find("RandI32")!!.index
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** imgs: U8 *[3] */ @JvmField var g_imgs: Long = 0L
     /** binary literal, 122 bytes */ @JvmField var b0: Long = 0L
@@ -49,7 +50,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Graphics/Pick3D.HC#0 (Pick3D.HC:72) */
-    fun f703_init_C__Demo_Graphics_Pick3D_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Graphics_Pick3D_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -63,7 +64,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawIt (Pick3D.HC:74) */
-    fun f704_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -91,7 +92,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4((p1_dc + 228L), 3L)
             ln = 87 // Pick3D.HC:87
             tick(t)
-            P.f425_GrBorder(t, p1_dc, 20L, 20L, ((2L * ld8((l32_pf + 96L))) - 20L), ((2L * ld8((l32_pf + 104L))) - 20L), 1L, 0L)
+            P.f428_GrBorder(t, p1_dc, 20L, 20L, ((2L * ld8((l32_pf + 96L))) - 20L), ((2L * ld8((l32_pf + 104L))) - 20L), 1L, 0L)
             ln = 89 // Pick3D.HC:89
             loop0@ while ((l40_tmpo != l32_pf)) {
                 ln = 90 // Pick3D.HC:90
@@ -103,20 +104,20 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         0L -> {
                             ln = 93 // Pick3D.HC:93
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, ((ld8((l32_pf + 96L)) + ld4s((l40_tmpo + 32L))) + 2L), ((ld8((l32_pf + 104L)) + ld4s(((l40_tmpo + 32L) + 4L))) + 2L), ((ld8((l32_pf + 96L)) + ld4s((l40_tmpo + 32L))) - 2L), ((ld8((l32_pf + 104L)) + ld4s(((l40_tmpo + 32L) + 4L))) - 2L), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, ((ld8((l32_pf + 96L)) + ld4s((l40_tmpo + 32L))) + 2L), ((ld8((l32_pf + 104L)) + ld4s(((l40_tmpo + 32L) + 4L))) + 2L), ((ld8((l32_pf + 96L)) + ld4s((l40_tmpo + 32L))) - 2L), ((ld8((l32_pf + 104L)) + ld4s(((l40_tmpo + 32L) + 4L))) - 2L), 1L, 0L)
                             ln = 95 // Pick3D.HC:95
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, ((ld8((l32_pf + 96L)) + ld4s((l40_tmpo + 32L))) - 2L), ((ld8((l32_pf + 104L)) + ld4s(((l40_tmpo + 32L) + 4L))) + 2L), ((ld8((l32_pf + 96L)) + ld4s((l40_tmpo + 32L))) + 2L), ((ld8((l32_pf + 104L)) + ld4s(((l40_tmpo + 32L) + 4L))) - 2L), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, ((ld8((l32_pf + 96L)) + ld4s((l40_tmpo + 32L))) - 2L), ((ld8((l32_pf + 104L)) + ld4s(((l40_tmpo + 32L) + 4L))) + 2L), ((ld8((l32_pf + 96L)) + ld4s((l40_tmpo + 32L))) + 2L), ((ld8((l32_pf + 104L)) + ld4s(((l40_tmpo + 32L) + 4L))) - 2L), 1L, 0L)
                         }
                         1L -> {
                             ln = 99 // Pick3D.HC:99
                             tick(t)
-                            P.f397_GrCircle(t, p1_dc, (ld8((l32_pf + 96L)) + ld4s((ld8((l40_tmpo + 32L)) + 32L))), (ld8((l32_pf + 104L)) + ld4s(((ld8((l40_tmpo + 32L)) + 32L) + 4L))), ld8(((l40_tmpo + 32L) + 8L)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                            P.f398_GrCircle(t, p1_dc, (ld8((l32_pf + 96L)) + ld4s((ld8((l40_tmpo + 32L)) + 32L))), (ld8((l32_pf + 104L)) + ld4s(((ld8((l40_tmpo + 32L)) + 32L) + 4L))), ld8(((l40_tmpo + 32L) + 8L)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                         }
                         2L -> {
                             ln = 103 // Pick3D.HC:103
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, (ld8((l32_pf + 96L)) + ld4s((ld8((l40_tmpo + 32L)) + 32L))), (ld8((l32_pf + 104L)) + ld4s(((ld8((l40_tmpo + 32L)) + 32L) + 4L))), (ld8((l32_pf + 96L)) + ld4s((ld8(((l40_tmpo + 32L) + 8L)) + 32L))), (ld8((l32_pf + 104L)) + ld4s(((ld8(((l40_tmpo + 32L) + 8L)) + 32L) + 4L))), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, (ld8((l32_pf + 96L)) + ld4s((ld8((l40_tmpo + 32L)) + 32L))), (ld8((l32_pf + 104L)) + ld4s(((ld8((l40_tmpo + 32L)) + 32L) + 4L))), (ld8((l32_pf + 96L)) + ld4s((ld8(((l40_tmpo + 32L) + 8L)) + 32L))), (ld8((l32_pf + 104L)) + ld4s(((ld8(((l40_tmpo + 32L) + 8L)) + 32L) + 4L))), 1L, 0L)
                         }
                         3L -> {
                             ln = 107 // Pick3D.HC:107
@@ -133,8 +134,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             val t2: Long = (p1_dc + 28L)
                             st4(t2, (ld4s(t2) or 256L))
                             ln = 113 // Pick3D.HC:113
-                            tick(t)
-                            P.f440_Sprite3(t, p1_dc, 0L, 0L, 0L, ld8(((l40_tmpo + 32L) + 8L)), 0L)
+                            nat(t, n_Sprite3, push(t, p1_dc, 0L, 0L, 0L, ld8(((l40_tmpo + 32L) + 8L)), 0L))
                             ln = 114 // Pick3D.HC:114
                             val t3: Long = (p1_dc + 28L)
                             st4(t3, (ld4s(t3) and -257L))
@@ -163,7 +163,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PObjNew (Pick3D.HC:129) */
-    fun f705_PObjNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f710_PObjNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -194,7 +194,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PObjDel (Pick3D.HC:139) */
-    fun f706_PObjDel(t: Task, a0: Long, a1: Long) {
+    fun f711_PObjDel(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -229,7 +229,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PPtNew (Pick3D.HC:152) */
-    fun f707_PPtNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f712_PPtNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -239,7 +239,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l24_tmpo: Long = 0L
             ln = 154 // Pick3D.HC:154
             tick(t)
-            val t0: Long = f705_PObjNew(t, p0_pf, 0L, 0L)
+            val t0: Long = f710_PObjNew(t, p0_pf, 0L, 0L)
             l24_tmpo = t0
             ln = 155 // Pick3D.HC:155
             st4((l24_tmpo + 32L), p1_x)
@@ -254,7 +254,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PPtNum (Pick3D.HC:160) */
-    fun f708_PPtNum(t: Task, a0: Long, a1: Long): Long {
+    fun f713_PPtNum(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -290,7 +290,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PPtFind (Pick3D.HC:171) */
-    fun f709_PPtFind(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f714_PPtFind(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -337,7 +337,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PCircleNew (Pick3D.HC:188) */
-    fun f710_PCircleNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f715_PCircleNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -347,11 +347,11 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l24_tmpo: Long = 0L
             ln = 190 // Pick3D.HC:190
             tick(t)
-            val t0: Long = f705_PObjNew(t, p0_pf, 1L, 4L)
+            val t0: Long = f710_PObjNew(t, p0_pf, 1L, 4L)
             l24_tmpo = t0
             ln = 191 // Pick3D.HC:191
             tick(t)
-            val t1: Long = f708_PPtNum(t, p0_pf, p1_p_num)
+            val t1: Long = f713_PPtNum(t, p0_pf, p1_p_num)
             st8((l24_tmpo + 32L), t1)
             ln = 192 // Pick3D.HC:192
             st8(((l24_tmpo + 32L) + 8L), p2_r)
@@ -364,7 +364,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PLineNew (Pick3D.HC:196) */
-    fun f711_PLineNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f716_PLineNew(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -374,15 +374,15 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l24_tmpo: Long = 0L
             ln = 198 // Pick3D.HC:198
             tick(t)
-            val t0: Long = f705_PObjNew(t, p0_pf, 2L, 2L)
+            val t0: Long = f710_PObjNew(t, p0_pf, 2L, 2L)
             l24_tmpo = t0
             ln = 199 // Pick3D.HC:199
             tick(t)
-            val t1: Long = f708_PPtNum(t, p0_pf, p1_p1_num)
+            val t1: Long = f713_PPtNum(t, p0_pf, p1_p1_num)
             st8((l24_tmpo + 32L), t1)
             ln = 200 // Pick3D.HC:200
             tick(t)
-            val t2: Long = f708_PPtNum(t, p0_pf, p2_p2_num)
+            val t2: Long = f713_PPtNum(t, p0_pf, p2_p2_num)
             st8(((l24_tmpo + 32L) + 8L), t2)
             ln = 201 // Pick3D.HC:201
             t.depth--
@@ -393,7 +393,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PCSpriteNew (Pick3D.HC:204) */
-    fun f712_PCSpriteNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f717_PCSpriteNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -405,11 +405,11 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l40_tmpo: Long = 0L
             ln = 206 // Pick3D.HC:206
             tick(t)
-            val t0: Long = f705_PObjNew(t, p0_pf, 3L, 0L)
+            val t0: Long = f710_PObjNew(t, p0_pf, 3L, 0L)
             l40_tmpo = t0
             ln = 207 // Pick3D.HC:207
             tick(t)
-            val t1: Long = f708_PPtNum(t, p0_pf, p2_p_num)
+            val t1: Long = f713_PPtNum(t, p0_pf, p2_p_num)
             st8((l40_tmpo + 32L), t1)
             ln = 208 // Pick3D.HC:208
             st8(((l40_tmpo + 32L) + 8L), p1_img)
@@ -426,7 +426,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Init (Pick3D.HC:214) */
-    fun f713_Init(t: Task): Long {
+    fun f718_Init(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -453,7 +453,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 val t4: Long = mods(t2, (ld8((l0_pf + 104L)) - 20L))
                 val t3: Long = nat(t, n_RandI32, push0(t))
                 tick(t)
-                f707_PPtNew(t, l0_pf, mods(t3, (ld8((l0_pf + 96L)) - 20L)), t4)
+                f712_PPtNew(t, l0_pf, mods(t3, (ld8((l0_pf + 96L)) - 20L)), t4)
                 ln = 223 // Pick3D.HC:223
                 l8_i = (l8_i + 1L)
                 tick(t)
@@ -465,7 +465,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 val t6: Long = ld8((l0_pf + 64L))
                 val t5: Long = nat(t, n_RandU16, push0(t))
                 tick(t)
-                f710_PCircleNew(t, l0_pf, divs((t6 * t5), 65535L), 6L)
+                f715_PCircleNew(t, l0_pf, divs((t6 * t5), 65535L), 6L)
                 ln = 225 // Pick3D.HC:225
                 l8_i = (l8_i + 1L)
                 tick(t)
@@ -480,7 +480,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 val t10: Long = ld8((l0_pf + 64L))
                 val t9: Long = nat(t, n_RandU16, push0(t))
                 tick(t)
-                f711_PLineNew(t, l0_pf, divs((t10 * t9), 65535L), divs((t8 * t7), 65535L))
+                f716_PLineNew(t, l0_pf, divs((t10 * t9), 65535L), divs((t8 * t7), 65535L))
                 ln = 227 // Pick3D.HC:227
                 l8_i = (l8_i + 1L)
                 tick(t)
@@ -514,7 +514,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 ln = 236 // Pick3D.HC:236
                 val t18: Long = nat(t, n_RandU16, push0(t))
                 tick(t)
-                f712_PCSpriteNew(t, l0_pf, ld8((g_imgs + (divs((3L * t18), 65535L) * 8L))), divs((t17 * t16), 65535L), l16_r, l24_dr)
+                f717_PCSpriteNew(t, l0_pf, ld8((g_imgs + (divs((3L * t18), 65535L) * 8L))), divs((t17 * t16), 65535L), l16_r, l24_dr)
                 ln = 230 // Pick3D.HC:230
                 l8_i = (l8_i + 1L)
                 tick(t)
@@ -530,7 +530,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC CleanUp (Pick3D.HC:243) */
-    fun f714_CleanUp(t: Task, a0: Long) {
+    fun f719_CleanUp(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -545,7 +545,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 l16_tmpo1 = ld8(l8_tmpo)
                 ln = 248 // Pick3D.HC:248
                 tick(t)
-                f706_PObjDel(t, p0_pf, l8_tmpo)
+                f711_PObjDel(t, p0_pf, l8_tmpo)
                 ln = 249 // Pick3D.HC:249
                 l8_tmpo = l16_tmpo1
                 tick(t)
@@ -558,7 +558,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Pick3D (Pick3D.HC:254) */
-    fun f715_Pick3D(t: Task) {
+    fun f720_Pick3D(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -573,7 +573,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             nat(t, n_FramePtrAdd, push3(t, s0, 0L, 0L))
             ln = 262 // Pick3D.HC:262
             tick(t)
-            P.f507_MenuPush(t, s1)
+            P.f512_MenuPush(t, s1)
             ln = 271 // Pick3D.HC:271
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -591,14 +591,14 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             nat(t, n_Print, push1(t, s2))
             ln = 277 // Pick3D.HC:277
             tick(t)
-            val t0: Long = f713_Init(t)
+            val t0: Long = f718_Init(t)
             l32_pf = t0
             ln = 278 // Pick3D.HC:278
             l24_tmpo = 0L
             ln = 280 // Pick3D.HC:280
             st4((ld8(P.g_Fs) + 12L), 5305338L)
             ln = 281 // Pick3D.HC:281
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065856L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
             ln = 282 // Pick3D.HC:282
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -619,10 +619,10 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                             10L -> {
                                                 ln = 289 // Pick3D.HC:289
                                                 tick(t)
-                                                f714_CleanUp(t, l32_pf)
+                                                f719_CleanUp(t, l32_pf)
                                                 ln = 290 // Pick3D.HC:290
                                                 tick(t)
-                                                val t3: Long = f713_Init(t)
+                                                val t3: Long = f718_Init(t)
                                                 l32_pf = t3
                                                 ln = 291 // Pick3D.HC:291
                                                 l24_tmpo = 0L
@@ -639,7 +639,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                 5L -> {
                                     ln = 299 // Pick3D.HC:299
                                     tick(t)
-                                    val t4: Long = f709_PPtFind(t, l32_pf, (ld8((fp + 8)) - ld8((l32_pf + 96L))), (ld8((fp + 16)) - ld8((l32_pf + 104L))))
+                                    val t4: Long = f714_PPtFind(t, l32_pf, (ld8((fp + 8)) - ld8((l32_pf + 96L))), (ld8((fp + 16)) - ld8((l32_pf + 104L))))
                                     l24_tmpo = t4
                                 }
                                 6L -> {
@@ -685,10 +685,10 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 321 // Pick3D.HC:321
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 322 // Pick3D.HC:322
             tick(t)
-            f714_CleanUp(t, l32_pf)
+            f719_CleanUp(t, l32_pf)
             ln = 323 // Pick3D.HC:323
             nat(t, n_FramePtrDel, push2(t, s0, 0L))
             t.msp = msp0
@@ -698,13 +698,13 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Graphics/Pick3D.HC#1 (Pick3D.HC:326) */
-    fun f716_init_C__Demo_Graphics_Pick3D_HC_1(t: Task): Long {
+    fun f721_init_C__Demo_Graphics_Pick3D_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 326 // Pick3D.HC:326
             tick(t)
-            f715_Pick3D(t)
+            f720_Pick3D(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Pick3D.HC#1", ln) }
@@ -713,20 +713,20 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Graphics_Pick3D_HC_0(t)
-            704 -> { f704_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> f705_PObjNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            706 -> { f706_PObjDel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> f707_PPtNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            708 -> f708_PPtNum(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            709 -> f709_PPtFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            710 -> f710_PCircleNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            711 -> f711_PLineNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            712 -> f712_PCSpriteNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            713 -> f713_Init(t)
-            714 -> { f714_CleanUp(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            715 -> { f715_Pick3D(t); 0L }
-            716 -> f716_init_C__Demo_Graphics_Pick3D_HC_1(t)
+            708 -> f708_init_C__Demo_Graphics_Pick3D_HC_0(t)
+            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> f710_PObjNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            711 -> { f711_PObjDel(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> f712_PPtNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            713 -> f713_PPtNum(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            714 -> f714_PPtFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            715 -> f715_PCircleNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            716 -> f716_PLineNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            717 -> f717_PCSpriteNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            718 -> f718_Init(t)
+            719 -> { f719_CleanUp(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            720 -> { f720_Pick3D(t); 0L }
+            721 -> f721_init_C__Demo_Graphics_Pick3D_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -738,7 +738,7 @@ class N_Demo_Graphics_Pick3D(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721)
         private val NAMES = arrayOf("\$init:C:/Demo/Graphics/Pick3D.HC#0", "DrawIt", "PObjNew", "PObjDel", "PPtNew", "PPtNum", "PPtFind", "PCircleNew", "PLineNew", "PCSpriteNew", "Init", "CleanUp", "Pick3D", "\$init:C:/Demo/Graphics/Pick3D.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Pick3D.HC")
     }

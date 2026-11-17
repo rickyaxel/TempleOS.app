@@ -30,7 +30,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC $init:C:/Kernel/KDate.HC#0 (KDate.HC:3)
-    @discardableResult public final func f703_init_C__Kernel_KDate_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Kernel_KDate_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -40,7 +40,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC $init:C:/Kernel/KDate.HC#1 (KDate.HC:5)
-    @discardableResult public final func f704_init_C__Kernel_KDate_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Kernel_KDate_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -50,7 +50,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC YearStartDate (KDate.HC:8)
-    @discardableResult public final func f705_YearStartDate(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f710_YearStartDate(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -76,7 +76,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC Struct2Date (KDate.HC:14)
-    @discardableResult public final func f706_Struct2Date(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f711_Struct2Date(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -87,11 +87,11 @@ public final class N_Kernel_KDate: NativeModule {
             var l24_i2: Int64 = 0
             ln = 18 // KDate.HC:18
             try tick(t)
-            let t0: Int64 = try f705_YearStartDate(t, ld4s((p0__ds &+ 8)))
+            let t0: Int64 = try f710_YearStartDate(t, ld4s((p0__ds &+ 8)))
             l16_i1 = t0
             ln = 19 // KDate.HC:19
             try tick(t)
-            let t1: Int64 = try f705_YearStartDate(t, (ld4s((p0__ds &+ 8)) &+ 1))
+            let t1: Int64 = try f710_YearStartDate(t, (ld4s((p0__ds &+ 8)) &+ 1))
             l24_i2 = t1
             ln = 20 // KDate.HC:20
             if ((l24_i2 &- l16_i1) == 365) {
@@ -117,7 +117,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC DayOfWeek (KDate.HC:30)
-    @discardableResult public final func f707_DayOfWeek(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f712_DayOfWeek(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -142,7 +142,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC Date2Struct (KDate.HC:39)
-    public final func f708_Date2Struct(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f713_Date2Struct(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -157,13 +157,13 @@ public final class N_Kernel_KDate: NativeModule {
             l32_date = try ld4s(((fp &+ 8) &+ 4))
             ln = 42 // KDate.HC:42
             try tick(t)
-            let t0: Int64 = try f707_DayOfWeek(t, l32_date)
+            let t0: Int64 = try f712_DayOfWeek(t, l32_date)
             try st1((p0__ds &+ 5), t0)
             ln = 43 // KDate.HC:43
             try st4((p0__ds &+ 8), divs(((l32_date &+ 1) &* 100000), 36524225))
             ln = 44 // KDate.HC:44
             try tick(t)
-            let t1: Int64 = try f705_YearStartDate(t, ld4s((p0__ds &+ 8)))
+            let t1: Int64 = try f710_YearStartDate(t, ld4s((p0__ds &+ 8)))
             l16_i = t1
             ln = 45 // KDate.HC:45
             loop0: while (l16_i > l32_date) {
@@ -173,7 +173,7 @@ public final class N_Kernel_KDate: NativeModule {
                 try st4(t2, (t3 &+ (-1)))
                 ln = 47 // KDate.HC:47
                 try tick(t)
-                let t4: Int64 = try f705_YearStartDate(t, ld4s((p0__ds &+ 8)))
+                let t4: Int64 = try f710_YearStartDate(t, ld4s((p0__ds &+ 8)))
                 l16_i = t4
                 try tick(t)
             }
@@ -181,7 +181,7 @@ public final class N_Kernel_KDate: NativeModule {
             l32_date = (l32_date &- l16_i)
             ln = 50 // KDate.HC:50
             try tick(t)
-            let t5: Int64 = try f705_YearStartDate(t, (ld4s((p0__ds &+ 8)) &+ 1))
+            let t5: Int64 = try f710_YearStartDate(t, (ld4s((p0__ds &+ 8)) &+ 1))
             if ((t5 &- l16_i) == 365) {
                 ln = 51 // KDate.HC:51
                 try st8((fp &+ 24), 0)
@@ -238,7 +238,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC FirstDayOfMon (KDate.HC:71)
-    @discardableResult public final func f709_FirstDayOfMon(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f714_FirstDayOfMon(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -251,12 +251,12 @@ public final class N_Kernel_KDate: NativeModule {
             try st4(((fp &+ 24) &+ 4), p0_i)
             ln = 76 // KDate.HC:76
             try tick(t)
-            try f708_Date2Struct(t, (fp &+ 8), ld8((fp &+ 24)))
+            try f713_Date2Struct(t, (fp &+ 8), ld8((fp &+ 24)))
             ln = 77 // KDate.HC:77
             try st1(((fp &+ 8) &+ 6), 1)
             ln = 78 // KDate.HC:78
             try tick(t)
-            let t0: Int64 = try f706_Struct2Date(t, (fp &+ 8))
+            let t0: Int64 = try f711_Struct2Date(t, (fp &+ 8))
             try st8((fp &+ 24), t0)
             ln = 79 // KDate.HC:79
             let rv4: Int64 = try ld4s(((fp &+ 24) &+ 4))
@@ -270,7 +270,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC LastDayOfMon (KDate.HC:82)
-    @discardableResult public final func f710_LastDayOfMon(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f715_LastDayOfMon(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -283,7 +283,7 @@ public final class N_Kernel_KDate: NativeModule {
             try st4(((fp &+ 24) &+ 4), p0_i)
             ln = 87 // KDate.HC:87
             try tick(t)
-            try f708_Date2Struct(t, (fp &+ 8), ld8((fp &+ 24)))
+            try f713_Date2Struct(t, (fp &+ 8), ld8((fp &+ 24)))
             ln = 88 // KDate.HC:88
             let t0: Int64 = ((fp &+ 8) &+ 7)
             let t1: Int64 = try ld1u(t0)
@@ -301,7 +301,7 @@ public final class N_Kernel_KDate: NativeModule {
             try st1(((fp &+ 8) &+ 6), 1)
             ln = 94 // KDate.HC:94
             try tick(t)
-            let t4: Int64 = try f706_Struct2Date(t, (fp &+ 8))
+            let t4: Int64 = try f711_Struct2Date(t, (fp &+ 8))
             try st8((fp &+ 24), t4)
             ln = 95 // KDate.HC:95
             let rv5: Int64 = try (ld4s(((fp &+ 24) &+ 4)) &- 1)
@@ -315,7 +315,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC FirstDayOfYear (KDate.HC:98)
-    @discardableResult public final func f711_FirstDayOfYear(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f716_FirstDayOfYear(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -328,14 +328,14 @@ public final class N_Kernel_KDate: NativeModule {
             try st4(((fp &+ 24) &+ 4), p0_i)
             ln = 103 // KDate.HC:103
             try tick(t)
-            try f708_Date2Struct(t, (fp &+ 8), ld8((fp &+ 24)))
+            try f713_Date2Struct(t, (fp &+ 8), ld8((fp &+ 24)))
             ln = 104 // KDate.HC:104
             try st1(((fp &+ 8) &+ 6), 1)
             ln = 105 // KDate.HC:105
             try st1(((fp &+ 8) &+ 7), 1)
             ln = 106 // KDate.HC:106
             try tick(t)
-            let t0: Int64 = try f706_Struct2Date(t, (fp &+ 8))
+            let t0: Int64 = try f711_Struct2Date(t, (fp &+ 8))
             try st8((fp &+ 24), t0)
             ln = 107 // KDate.HC:107
             let rv6: Int64 = try ld4s(((fp &+ 24) &+ 4))
@@ -349,7 +349,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC LastDayOfYear (KDate.HC:110)
-    @discardableResult public final func f712_LastDayOfYear(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f717_LastDayOfYear(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -362,7 +362,7 @@ public final class N_Kernel_KDate: NativeModule {
             try st4(((fp &+ 24) &+ 4), p0_i)
             ln = 115 // KDate.HC:115
             try tick(t)
-            try f708_Date2Struct(t, (fp &+ 8), ld8((fp &+ 24)))
+            try f713_Date2Struct(t, (fp &+ 8), ld8((fp &+ 24)))
             ln = 116 // KDate.HC:116
             try st1(((fp &+ 8) &+ 6), 1)
             ln = 117 // KDate.HC:117
@@ -373,7 +373,7 @@ public final class N_Kernel_KDate: NativeModule {
             try st4(t0, (t1 &+ 1))
             ln = 119 // KDate.HC:119
             try tick(t)
-            let t2: Int64 = try f706_Struct2Date(t, (fp &+ 8))
+            let t2: Int64 = try f711_Struct2Date(t, (fp &+ 8))
             try st8((fp &+ 24), t2)
             ln = 120 // KDate.HC:120
             let rv7: Int64 = try (ld4s(((fp &+ 24) &+ 4)) &- 1)
@@ -387,7 +387,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC Bcd2Bin (KDate.HC:123)
-    @discardableResult public final func f713_Bcd2Bin(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f718_Bcd2Bin(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -416,7 +416,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC NowDateTimeStruct (KDate.HC:133)
-    public final func f714_NowDateTimeStruct(_ t: HTask, _ a0: Int64) throws {
+    public final func f719_NowDateTimeStruct(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -437,80 +437,80 @@ public final class N_Kernel_KDate: NativeModule {
             }
             ln = 145 // KDate.HC:145
             try tick(t)
-            try P.f570_OutU8(t, 112, 10)
+            try P.f575_OutU8(t, 112, 10)
             ln = 146 // KDate.HC:146
             loop2: while true {
                 ln = 147 // KDate.HC:147
                 loop4: while true {
                     try tick(t)
-                    let t1: Int64 = try P.f565_InU8(t, 113)
+                    let t1: Int64 = try P.f570_InU8(t, 113)
                     if !(((t1 & 128) != 0)) { break loop4 }
                     try tick(t)
                 }
                 ln = 150 // KDate.HC:150
                 try tick(t)
-                try P.f570_OutU8(t, 112, 0)
+                try P.f575_OutU8(t, 112, 0)
                 ln = 151 // KDate.HC:151
                 try tick(t)
-                let t2: Int64 = try P.f565_InU8(t, 113)
+                let t2: Int64 = try P.f570_InU8(t, 113)
                 try st1((l16_b &+ 2), t2)
                 ln = 152 // KDate.HC:152
                 try tick(t)
-                try P.f570_OutU8(t, 112, 2)
+                try P.f575_OutU8(t, 112, 2)
                 ln = 153 // KDate.HC:153
                 try tick(t)
-                let t3: Int64 = try P.f565_InU8(t, 113)
+                let t3: Int64 = try P.f570_InU8(t, 113)
                 try st1((l16_b &+ 3), t3)
                 ln = 154 // KDate.HC:154
                 try tick(t)
-                try P.f570_OutU8(t, 112, 4)
+                try P.f575_OutU8(t, 112, 4)
                 ln = 155 // KDate.HC:155
                 try tick(t)
-                let t4: Int64 = try P.f565_InU8(t, 113)
+                let t4: Int64 = try P.f570_InU8(t, 113)
                 try st1((l16_b &+ 4), t4)
                 ln = 157 // KDate.HC:157
                 try tick(t)
-                try P.f570_OutU8(t, 112, 6)
+                try P.f575_OutU8(t, 112, 6)
                 ln = 158 // KDate.HC:158
                 try tick(t)
-                let t5: Int64 = try P.f565_InU8(t, 113)
+                let t5: Int64 = try P.f570_InU8(t, 113)
                 try st1((l16_b &+ 5), t5)
                 ln = 159 // KDate.HC:159
                 try tick(t)
-                try P.f570_OutU8(t, 112, 7)
+                try P.f575_OutU8(t, 112, 7)
                 ln = 160 // KDate.HC:160
                 try tick(t)
-                let t6: Int64 = try P.f565_InU8(t, 113)
+                let t6: Int64 = try P.f570_InU8(t, 113)
                 try st1((l16_b &+ 6), t6)
                 ln = 161 // KDate.HC:161
                 try tick(t)
-                try P.f570_OutU8(t, 112, 8)
+                try P.f575_OutU8(t, 112, 8)
                 ln = 162 // KDate.HC:162
                 try tick(t)
-                let t7: Int64 = try P.f565_InU8(t, 113)
+                let t7: Int64 = try P.f570_InU8(t, 113)
                 try st1((l16_b &+ 7), t7)
                 ln = 163 // KDate.HC:163
                 try tick(t)
-                try P.f570_OutU8(t, 112, 9)
+                try P.f575_OutU8(t, 112, 9)
                 ln = 164 // KDate.HC:164
                 try tick(t)
-                let t8: Int64 = try P.f565_InU8(t, 113)
+                let t8: Int64 = try P.f570_InU8(t, 113)
                 try st1((l16_b &+ 8), t8)
                 ln = 166 // KDate.HC:166
                 try tick(t)
-                try P.f570_OutU8(t, 112, 10)
+                try P.f575_OutU8(t, 112, 10)
                 ln = 167 // KDate.HC:167
                 try tick(t)
-                let t9: Int64 = try P.f565_InU8(t, 113)
+                let t9: Int64 = try P.f570_InU8(t, 113)
                 if !(((t9 & 128) != 0)) { break loop2 }
                 try tick(t)
             }
             ln = 169 // KDate.HC:169
             try tick(t)
-            try P.f570_OutU8(t, 112, 11)
+            try P.f575_OutU8(t, 112, 11)
             ln = 170 // KDate.HC:170
             try tick(t)
-            let t10: Int64 = try P.f565_InU8(t, 113)
+            let t10: Int64 = try P.f570_InU8(t, 113)
             if ((t10 & 4) != 0) {
                 ln = 171 // KDate.HC:171
                 l24_is_bcd = 0
@@ -528,7 +528,7 @@ public final class N_Kernel_KDate: NativeModule {
                 loop6: while (l8_i < 9) {
                     ln = 179 // KDate.HC:179
                     try tick(t)
-                    let t11: Int64 = try f713_Bcd2Bin(t, ld1u((l16_b &+ l8_i)))
+                    let t11: Int64 = try f718_Bcd2Bin(t, ld1u((l16_b &+ l8_i)))
                     try st1((l16_b &+ l8_i), t11)
                     ln = 178 // KDate.HC:178
                     l8_i = (l8_i &+ 1)
@@ -572,7 +572,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC Now (KDate.HC:191)
-    @discardableResult public final func f715_Now(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f720_Now(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -580,10 +580,10 @@ public final class N_Kernel_KDate: NativeModule {
             let fp = try frame(t, 16)
             ln = 194 // KDate.HC:194
             try tick(t)
-            try f714_NowDateTimeStruct(t, fp)
+            try f719_NowDateTimeStruct(t, fp)
             ln = 195 // KDate.HC:195
             try tick(t)
-            let t0: Int64 = try f706_Struct2Date(t, fp)
+            let t0: Int64 = try f711_Struct2Date(t, fp)
             let rv8: Int64 = try (t0 &- ld8(P.g_local_time_offset))
             t.msp = msp0
             t.depth -= 1
@@ -595,7 +595,7 @@ public final class N_Kernel_KDate: NativeModule {
     }
 
     /// HolyC $init:C:/Kernel/KDate.HC#2 (KDate.HC:1)
-    @discardableResult public final func f716_init_C__Kernel_KDate_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f721_init_C__Kernel_KDate_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -607,26 +607,26 @@ public final class N_Kernel_KDate: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Kernel_KDate_HC_0(t)
-        case 704: return try f704_init_C__Kernel_KDate_HC_1(t)
-        case 705: return try f705_YearStartDate(t, (n > 0 ? st[base + 0] : 0))
-        case 706: return try f706_Struct2Date(t, (n > 0 ? st[base + 0] : 0))
-        case 707: return try f707_DayOfWeek(t, (n > 0 ? st[base + 0] : 0))
-        case 708: try f708_Date2Struct(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 709: return try f709_FirstDayOfMon(t, (n > 0 ? st[base + 0] : 0))
-        case 710: return try f710_LastDayOfMon(t, (n > 0 ? st[base + 0] : 0))
-        case 711: return try f711_FirstDayOfYear(t, (n > 0 ? st[base + 0] : 0))
-        case 712: return try f712_LastDayOfYear(t, (n > 0 ? st[base + 0] : 0))
-        case 713: return try f713_Bcd2Bin(t, (n > 0 ? st[base + 0] : 0))
-        case 714: try f714_NowDateTimeStruct(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 715: return try f715_Now(t)
-        case 716: return try f716_init_C__Kernel_KDate_HC_2(t)
+        case 708: return try f708_init_C__Kernel_KDate_HC_0(t)
+        case 709: return try f709_init_C__Kernel_KDate_HC_1(t)
+        case 710: return try f710_YearStartDate(t, (n > 0 ? st[base + 0] : 0))
+        case 711: return try f711_Struct2Date(t, (n > 0 ? st[base + 0] : 0))
+        case 712: return try f712_DayOfWeek(t, (n > 0 ? st[base + 0] : 0))
+        case 713: try f713_Date2Struct(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 714: return try f714_FirstDayOfMon(t, (n > 0 ? st[base + 0] : 0))
+        case 715: return try f715_LastDayOfMon(t, (n > 0 ? st[base + 0] : 0))
+        case 716: return try f716_FirstDayOfYear(t, (n > 0 ? st[base + 0] : 0))
+        case 717: return try f717_LastDayOfYear(t, (n > 0 ? st[base + 0] : 0))
+        case 718: return try f718_Bcd2Bin(t, (n > 0 ? st[base + 0] : 0))
+        case 719: try f719_NowDateTimeStruct(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 720: return try f720_Now(t)
+        case 721: return try f721_init_C__Kernel_KDate_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Kernel/KDate.HC#0", 704: "$init:C:/Kernel/KDate.HC#1", 705: "YearStartDate", 706: "Struct2Date", 707: "DayOfWeek", 708: "Date2Struct", 709: "FirstDayOfMon", 710: "LastDayOfMon", 711: "FirstDayOfYear", 712: "LastDayOfYear", 713: "Bcd2Bin", 714: "NowDateTimeStruct", 715: "Now", 716: "$init:C:/Kernel/KDate.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Kernel/KDate.HC#0", 709: "$init:C:/Kernel/KDate.HC#1", 710: "YearStartDate", 711: "Struct2Date", 712: "DayOfWeek", 713: "Date2Struct", 714: "FirstDayOfMon", 715: "LastDayOfMon", 716: "FirstDayOfYear", 717: "LastDayOfYear", 718: "Bcd2Bin", 719: "NowDateTimeStruct", 720: "Now", 721: "$init:C:/Kernel/KDate.HC#2"]
     private static let FILES: [String] = ["C:/Kernel/KDate.HC"]
     public override var files: [String] { N_Kernel_KDate.FILES }
     public override func defines(_ index: Int) -> Bool { N_Kernel_KDate.DEFINED.contains(index) }

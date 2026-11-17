@@ -154,7 +154,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/FlatTops.HC#0 (FlatTops.HC:26)
-    @discardableResult public final func f703_init_C__Demo_Games_FlatTops_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_FlatTops_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -164,7 +164,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC SquadronIns (FlatTops.HC:70)
-    public final func f704_SquadronIns(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_SquadronIns(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -187,7 +187,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC SquadronRem (FlatTops.HC:79)
-    public final func f705_SquadronRem(_ t: HTask, _ a0: Int64) throws {
+    public final func f710_SquadronRem(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -207,7 +207,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/FlatTops.HC#1 (FlatTops.HC:88)
-    @discardableResult public final func f706_init_C__Demo_Games_FlatTops_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_FlatTops_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -217,7 +217,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC ObjFind (FlatTops.HC:95)
-    @discardableResult public final func f707_ObjFind(_ t: HTask, _ a0: Double, _ a1: Double, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws -> Int64 {
+    @discardableResult public final func f712_ObjFind(_ t: HTask, _ a0: Double, _ a1: Double, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -290,7 +290,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC ObjDel (FlatTops.HC:116)
-    public final func f708_ObjDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_ObjDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -308,7 +308,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                     if try (ld2s((p0_tmpo &+ 44)) >= 0) {
                         ln = 123 // FlatTops.HC:123
                         try tick(t)
-                        try f705_SquadronRem(t, p0_tmpo)
+                        try f710_SquadronRem(t, p0_tmpo)
                     }
                     ln = 124 // FlatTops.HC:124
                     try tick(t)
@@ -333,7 +333,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/FlatTops.HC#2 (FlatTops.HC:157)
-    @discardableResult public final func f709_init_C__Demo_Games_FlatTops_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Demo_Games_FlatTops_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -350,7 +350,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC DrawIt (FlatTops.HC:159)
-    public final func f710_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f715_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -386,7 +386,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 if try (((ld2u((l56_tmpo &+ 42)) & 2) != 0) && ((ld2u((l56_tmpo &+ 42)) & 1) != 0)) {
                     ln = 176 // FlatTops.HC:176
                     try tick(t)
-                    try P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((l56_tmpo &+ 48))), f2i(ldf((l56_tmpo &+ 56))), 0, ld8(((g_imgs &+ (ld1u((l56_tmpo &+ 40)) &* 24)) &+ (ld1u((l56_tmpo &+ 41)) &* 8))), (ldf((l56_tmpo &+ 64)) + (d(4614256656552045848) / 2.0)))
+                    try P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((l56_tmpo &+ 48))), f2i(ldf((l56_tmpo &+ 56))), 0, ld8(((g_imgs &+ (ld1u((l56_tmpo &+ 40)) &* 24)) &+ (ld1u((l56_tmpo &+ 41)) &* 8))), (ldf((l56_tmpo &+ 64)) + (d(4614256656552045848) / 2.0)))
                     ln = 179 // FlatTops.HC:179
                     l32_k = 0
                     ln = 180 // FlatTops.HC:180
@@ -441,7 +441,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                         try st4((p1_dc &+ 160), 0)
                         ln = 194 // FlatTops.HC:194
                         try tick(t)
-                        _ = try P.f396_GrLine(t, p1_dc, f2i((ldf((l56_tmpo &+ 48)) + 5.0)), f2i(ldf((l56_tmpo &+ 56))), f2i(((ldf((l56_tmpo &+ 48)) + 5.0) + 10.0)), f2i(ldf((l56_tmpo &+ 56))), 1, 0)
+                        _ = try P.f397_GrLine(t, p1_dc, f2i((ldf((l56_tmpo &+ 48)) + 5.0)), f2i(ldf((l56_tmpo &+ 56))), f2i(((ldf((l56_tmpo &+ 48)) + 5.0) + 10.0)), f2i(ldf((l56_tmpo &+ 56))), 1, 0)
                         ln = 196 // FlatTops.HC:196
                         if try (ldf((l56_tmpo &+ 96)) > 0.0) {
                             ln = 197 // FlatTops.HC:197
@@ -460,13 +460,13 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             }
                             ln = 203 // FlatTops.HC:203
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p1_dc, f2i((ldf((l56_tmpo &+ 48)) + 5.0)), f2i(ldf((l56_tmpo &+ 56))), f2i(((ldf((l56_tmpo &+ 48)) + 5.0) + ((10.0 * ldf((l56_tmpo &+ 96))) / 100.0))), f2i(ldf((l56_tmpo &+ 56))), 1, 0)
+                            _ = try P.f397_GrLine(t, p1_dc, f2i((ldf((l56_tmpo &+ 48)) + 5.0)), f2i(ldf((l56_tmpo &+ 56))), f2i(((ldf((l56_tmpo &+ 48)) + 5.0) + ((10.0 * ldf((l56_tmpo &+ 96))) / 100.0))), f2i(ldf((l56_tmpo &+ 56))), 1, 0)
                         }
                         ln = 207 // FlatTops.HC:207
                         try st4((p1_dc &+ 160), 0)
                         ln = 208 // FlatTops.HC:208
                         try tick(t)
-                        _ = try P.f396_GrLine(t, p1_dc, f2i((ldf((l56_tmpo &+ 48)) + 5.0)), f2i((ldf((l56_tmpo &+ 56)) + 2.0)), f2i(((ldf((l56_tmpo &+ 48)) + 5.0) + 10.0)), f2i((ldf((l56_tmpo &+ 56)) + 2.0)), 1, 0)
+                        _ = try P.f397_GrLine(t, p1_dc, f2i((ldf((l56_tmpo &+ 48)) + 5.0)), f2i((ldf((l56_tmpo &+ 56)) + 2.0)), f2i(((ldf((l56_tmpo &+ 48)) + 5.0) + 10.0)), f2i((ldf((l56_tmpo &+ 56)) + 2.0)), 1, 0)
                         ln = 209 // FlatTops.HC:209
                         l40_d = try ((ldf((l56_tmpo &+ 152)) * 100.0) / ldf((l56_tmpo &+ 160)))
                         ln = 210 // FlatTops.HC:210
@@ -487,7 +487,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             }
                             ln = 217 // FlatTops.HC:217
                             try tick(t)
-                            _ = try P.f396_GrLine(t, p1_dc, f2i((ldf((l56_tmpo &+ 48)) + 5.0)), f2i((ldf((l56_tmpo &+ 56)) + 2.0)), f2i(((ldf((l56_tmpo &+ 48)) + 5.0) + ((10.0 * l40_d) / 100.0))), f2i((ldf((l56_tmpo &+ 56)) + 2.0)), 1, 0)
+                            _ = try P.f397_GrLine(t, p1_dc, f2i((ldf((l56_tmpo &+ 48)) + 5.0)), f2i((ldf((l56_tmpo &+ 56)) + 2.0)), f2i(((ldf((l56_tmpo &+ 48)) + 5.0) + ((10.0 * l40_d) / 100.0))), f2i((ldf((l56_tmpo &+ 56)) + 2.0)), 1, 0)
                         }
                     }
                 }
@@ -503,7 +503,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 if try (((ld2u((l56_tmpo &+ 42)) & 2) != 0) && ((ld2u((l56_tmpo &+ 42)) & 1) == 0)) {
                     ln = 227 // FlatTops.HC:227
                     try tick(t)
-                    try P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((l56_tmpo &+ 48))), f2i(ldf((l56_tmpo &+ 56))), 0, ld8(((g_imgs &+ (ld1u((l56_tmpo &+ 40)) &* 24)) &+ (ld1u((l56_tmpo &+ 41)) &* 8))), (ldf((l56_tmpo &+ 64)) + (d(4614256656552045848) / 2.0)))
+                    try P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((l56_tmpo &+ 48))), f2i(ldf((l56_tmpo &+ 56))), 0, ld8(((g_imgs &+ (ld1u((l56_tmpo &+ 40)) &* 24)) &+ (ld1u((l56_tmpo &+ 41)) &* 8))), (ldf((l56_tmpo &+ 64)) + (d(4614256656552045848) / 2.0)))
                 }
                 ln = 229 // FlatTops.HC:229
                 if try ((ld2u((l56_tmpo &+ 42)) & 8) != 0) {
@@ -511,7 +511,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                     try st4((p1_dc &+ 160), 12)
                     ln = 231 // FlatTops.HC:231
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, f2i(ldf((l56_tmpo &+ 48))), f2i(ldf((l56_tmpo &+ 56))), f2i(ldf((l56_tmpo &+ 104))), f2i(ldf((l56_tmpo &+ 112))), 3, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, f2i(ldf((l56_tmpo &+ 48))), f2i(ldf((l56_tmpo &+ 56))), f2i(ldf((l56_tmpo &+ 104))), f2i(ldf((l56_tmpo &+ 112))), 3, 0)
                 }
                 ln = 233 // FlatTops.HC:233
                 l56_tmpo = try ld8(l56_tmpo)
@@ -526,7 +526,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 try st4((p1_dc &+ 160), 10)
                 ln = 239 // FlatTops.HC:239
                 try tick(t)
-                _ = try P.f426_GrArrow3(t, p1_dc, f2i(ldf(g_launch_unit_x1)), f2i(ldf(g_launch_unit_y1)), 0, f2i(ldf(g_launch_unit_x2)), f2i(ldf(g_launch_unit_y2)), 0, 2.75, 1, 0)
+                _ = try P.f429_GrArrow3(t, p1_dc, f2i(ldf(g_launch_unit_x1)), f2i(ldf(g_launch_unit_y1)), 0, f2i(ldf(g_launch_unit_x2)), f2i(ldf(g_launch_unit_y2)), 0, 2.75, 1, 0)
             }
             ln = 242 // FlatTops.HC:242
             if try (l48_cur_time < ldf(g_return_t)) {
@@ -534,7 +534,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 try st4((p1_dc &+ 160), 12)
                 ln = 244 // FlatTops.HC:244
                 try tick(t)
-                _ = try P.f426_GrArrow3(t, p1_dc, f2i(ldf(g_return_unit_x1)), f2i(ldf(g_return_unit_y1)), 0, f2i(ldf(g_return_unit_x2)), f2i(ldf(g_return_unit_y2)), 0, 2.75, 1, 0)
+                _ = try P.f429_GrArrow3(t, p1_dc, f2i(ldf(g_return_unit_x1)), f2i(ldf(g_return_unit_y1)), 0, f2i(ldf(g_return_unit_x2)), f2i(ldf(g_return_unit_y2)), 0, 2.75, 1, 0)
             }
             ln = 247 // FlatTops.HC:247
             if try (l48_cur_time < ldf(g_set___t)) {
@@ -542,28 +542,28 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 try st4((p1_dc &+ 160), 14)
                 ln = 249 // FlatTops.HC:249
                 try tick(t)
-                _ = try P.f426_GrArrow3(t, p1_dc, f2i(ldf(g_set___unit_x1)), f2i(ldf(g_set___unit_y1)), 0, f2i(ldf(g_set___unit_x2)), f2i(ldf(g_set___unit_y2)), 0, 2.75, 1, 0)
+                _ = try P.f429_GrArrow3(t, p1_dc, f2i(ldf(g_set___unit_x1)), f2i(ldf(g_set___unit_y1)), 0, f2i(ldf(g_set___unit_x2)), f2i(ldf(g_set___unit_y2)), 0, 2.75, 1, 0)
             }
             ln = 253 // FlatTops.HC:253
             try st4((p1_dc &+ 160), 14)
             ln = 254 // FlatTops.HC:254
             try tick(t)
             let vb0 = try push1(t, bits(ldf(g_game_speed)))
-            _ = try P.f369_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), (0 &- ld8((p0_task &+ 264))), s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), (0 &- ld8((p0_task &+ 264))), s0, vb0, 1)
             t.sp = vb0
             ln = 256 // FlatTops.HC:256
             try st4((p1_dc &+ 160), 11)
             ln = 257 // FlatTops.HC:257
             try tick(t)
             let vb1 = try push1(t, ld8(g_num_alive))
-            _ = try P.f369_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), ((0 &- ld8((p0_task &+ 264))) &+ 8), s1, vb1, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), ((0 &- ld8((p0_task &+ 264))) &+ 8), s1, vb1, 1)
             t.sp = vb1
             ln = 259 // FlatTops.HC:259
             try st4((p1_dc &+ 160), 13)
             ln = 260 // FlatTops.HC:260
             try tick(t)
             let vb2 = try push1(t, ld8((g_num_alive &+ 8)))
-            _ = try P.f369_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), ((0 &- ld8((p0_task &+ 264))) &+ 16), s2, vb2, 1)
+            _ = try P.f370_GrPrint(t, p1_dc, (0 &- ld8((p0_task &+ 256))), ((0 &- ld8((p0_task &+ 264))) &+ 16), s2, vb2, 1)
             t.sp = vb2
             ln = 263 // FlatTops.HC:263
             var r18: Bool = try ((ld8(g_num_alive) == 0) || (ld8((g_num_alive &+ 8)) == 0))
@@ -580,7 +580,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                     ln = 266 // FlatTops.HC:266
                     try tick(t)
                     let vb3 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, (((ld8((p0_task &+ 224)) &>> 1) &- divs(112, 2)) &- ld8((p0_task &+ 256))), (((ld8((p0_task &+ 248)) &>> 1) &- divs(8, 2)) &- ld8((p0_task &+ 264))), s3, vb3, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, (((ld8((p0_task &+ 224)) &>> 1) &- divs(112, 2)) &- ld8((p0_task &+ 256))), (((ld8((p0_task &+ 248)) &>> 1) &- divs(8, 2)) &- ld8((p0_task &+ 264))), s3, vb3, 0)
                     t.sp = vb3
                 } else {
                     ln = 269 // FlatTops.HC:269
@@ -588,7 +588,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                     ln = 270 // FlatTops.HC:270
                     try tick(t)
                     let vb4 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, (((ld8((p0_task &+ 224)) &>> 1) &- divs(72, 2)) &- ld8((p0_task &+ 256))), (((ld8((p0_task &+ 248)) &>> 1) &- divs(8, 2)) &- ld8((p0_task &+ 264))), s4, vb4, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, (((ld8((p0_task &+ 224)) &>> 1) &- divs(72, 2)) &- ld8((p0_task &+ 256))), (((ld8((p0_task &+ 248)) &>> 1) &- divs(8, 2)) &- ld8((p0_task &+ 264))), s4, vb4, 0)
                     t.sp = vb4
                 }
             }
@@ -598,7 +598,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC Init (FlatTops.HC:276)
-    public final func f711_Init(_ t: HTask) throws {
+    public final func f716_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -856,7 +856,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                     try st8((l56_tmps &+ 336), (shl(1, ld8((g_num_planes_per_squadron &+ (ld1u((l64_tmpo &+ 40)) &* 8)))) &- 1))
                     ln = 369 // FlatTops.HC:369
                     try tick(t)
-                    try f704_SquadronIns(t, l64_tmpo, ld8((l56_tmps &+ 24)))
+                    try f709_SquadronIns(t, l64_tmpo, ld8((l56_tmps &+ 24)))
                 }
                 ln = 371 // FlatTops.HC:371
                 l64_tmpo = try ld8(l64_tmpo)
@@ -868,7 +868,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC CleanUp (FlatTops.HC:375)
-    public final func f712_CleanUp(_ t: HTask) throws {
+    public final func f717_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -886,7 +886,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC ObjLaunch (FlatTops.HC:382)
-    @discardableResult public final func f713_ObjLaunch(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double, _ a4: Double, _ a5: Double) throws -> Int64 {
+    @discardableResult public final func f718_ObjLaunch(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Double, _ a4: Double, _ a5: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -905,7 +905,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
             if (p2_host == 0) {
                 ln = 388 // FlatTops.HC:388
                 try tick(t)
-                let t1: Int64 = try f707_ObjFind(t, p3_x, p4_y, 6, 2, 1, shl(1, p0_player), 0)
+                let t1: Int64 = try f712_ObjFind(t, p3_x, p4_y, 6, 2, 1, shl(1, p0_player), 0)
                 p2_host = t1
             }
             ln = 389 // FlatTops.HC:389
@@ -944,7 +944,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             if r5 {
                                 ln = 405 // FlatTops.HC:405
                                 try tick(t)
-                                let t6: Double = try P.f542_Wrap(t, (p5__ - ldf((l48_tmpo &+ 64))), (-d(4614256656552045848)))
+                                let t6: Double = try P.f547_Wrap(t, (p5__ - ldf((l48_tmpo &+ 64))), (-d(4614256656552045848)))
                                 try st8((l48_tmpo &+ 72), bits(t6))
                             } else {
                                 ln = 407 // FlatTops.HC:407
@@ -975,7 +975,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC SquadronLaunch (FlatTops.HC:420)
-    @discardableResult public final func f714_SquadronLaunch(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
+    @discardableResult public final func f719_SquadronLaunch(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -986,7 +986,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
             var l32_tmpo: Int64 = 0
             ln = 424 // FlatTops.HC:424
             try tick(t)
-            let t0: Int64 = try f713_ObjLaunch(t, p0_player, (-1), 0, p1_x, p2_y, d(9218868437227405311))
+            let t0: Int64 = try f718_ObjLaunch(t, p0_player, (-1), 0, p1_x, p2_y, d(9218868437227405311))
             l32_tmpo = t0
             if (t0 != 0) {
                 ln = 425 // FlatTops.HC:425
@@ -1028,7 +1028,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC ObjReturn (FlatTops.HC:444)
-    @discardableResult public final func f715_ObjReturn(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
+    @discardableResult public final func f720_ObjReturn(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1038,7 +1038,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
             var l24_tmpo: Int64 = 0
             ln = 447 // FlatTops.HC:447
             try tick(t)
-            let t0: Int64 = try f707_ObjFind(t, p1_x, p2_y, 2, 2, 4, shl(1, p0_player), 0)
+            let t0: Int64 = try f712_ObjFind(t, p1_x, p2_y, 2, 2, 4, shl(1, p0_player), 0)
             l24_tmpo = t0
             if (t0 != 0) {
                 ln = 448 // FlatTops.HC:448
@@ -1054,7 +1054,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC SquadronReturn (FlatTops.HC:452)
-    @discardableResult public final func f716_SquadronReturn(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
+    @discardableResult public final func f721_SquadronReturn(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1065,7 +1065,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
             var l32_tmpo: Int64 = 0
             ln = 456 // FlatTops.HC:456
             try tick(t)
-            let t0: Int64 = try f715_ObjReturn(t, p0_player, p1_x, p2_y)
+            let t0: Int64 = try f720_ObjReturn(t, p0_player, p1_x, p2_y)
             l32_tmpo = t0
             if (t0 != 0) {
                 ln = 457 // FlatTops.HC:457
@@ -1108,7 +1108,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC ObjSeté (FlatTops.HC:476)
-    @discardableResult public final func f717_ObjSet_(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Int64 {
+    @discardableResult public final func f722_ObjSet_(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1119,7 +1119,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
             var l32_tmpo: Int64 = 0
             ln = 479 // FlatTops.HC:479
             try tick(t)
-            let t0: Int64 = try f707_ObjFind(t, p1_x, p2_y, 6, 2, (-1), shl(1, p0_player), 0)
+            let t0: Int64 = try f712_ObjFind(t, p1_x, p2_y, 6, 2, (-1), shl(1, p0_player), 0)
             l32_tmpo = t0
             if try (((t0 != 0) && ((ld2u((l32_tmpo &+ 42)) & 2) != 0)) && ((ld2u((l32_tmpo &+ 42)) & 4) == 0)) {
                 ln = 481 // FlatTops.HC:481
@@ -1132,7 +1132,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 let t2: Int64 = (l32_tmpo &+ 72)
                 let t4: Double = try ldf(t2)
                 try tick(t)
-                let t3: Double = try P.f542_Wrap(t, (p3__ - (ldf((l32_tmpo &+ 64)) + ldf((l32_tmpo &+ 72)))), (-d(4614256656552045848)))
+                let t3: Double = try P.f547_Wrap(t, (p3__ - (ldf((l32_tmpo &+ 64)) + ldf((l32_tmpo &+ 72)))), (-d(4614256656552045848)))
                 try st8(t2, bits((t4 + t3)))
                 ln = 484 // FlatTops.HC:484
                 t.depth -= 1
@@ -1147,7 +1147,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC SquadronSeté (FlatTops.HC:489)
-    @discardableResult public final func f718_SquadronSet_(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Int64 {
+    @discardableResult public final func f723_SquadronSet_(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1159,7 +1159,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
             var l40_tmpo: Int64 = 0
             ln = 493 // FlatTops.HC:493
             try tick(t)
-            let t0: Int64 = try f717_ObjSet_(t, p0_player, p1_x, p2_y, p3__)
+            let t0: Int64 = try f722_ObjSet_(t, p0_player, p1_x, p2_y, p3__)
             l40_tmpo = t0
             if (t0 != 0) {
                 ln = 494 // FlatTops.HC:494
@@ -1201,7 +1201,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC SquadronActions (FlatTops.HC:513)
-    public final func f719_SquadronActions(_ t: HTask) throws {
+    public final func f724_SquadronActions(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1223,7 +1223,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                     case 1:
                         ln = 522 // FlatTops.HC:522
                         try tick(t)
-                        _ = try f713_ObjLaunch(t, ld1u((l24_tmps &+ 40)), l0_i, ld8((l24_tmps &+ 32)), d(9218868437227405311), d(9218868437227405311), ldf((l24_tmps &+ 64)))
+                        _ = try f718_ObjLaunch(t, ld1u((l24_tmps &+ 40)), l0_i, ld8((l24_tmps &+ 32)), d(9218868437227405311), d(9218868437227405311), ldf((l24_tmps &+ 64)))
                         ln = 523 // FlatTops.HC:523
                         l16_tmpo = try ld8((l24_tmps &+ 16))
                         ln = 524 // FlatTops.HC:524
@@ -1266,7 +1266,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             let t1: Int64 = (l16_tmpo &+ 72)
                             let t3: Double = try ldf(t1)
                             try tick(t)
-                            let t2: Double = try P.f542_Wrap(t, (ldf((l24_tmps &+ 64)) - (ldf((l16_tmpo &+ 64)) + ldf((l16_tmpo &+ 72)))), (-d(4614256656552045848)))
+                            let t2: Double = try P.f547_Wrap(t, (ldf((l24_tmps &+ 64)) - (ldf((l16_tmpo &+ 64)) + ldf((l16_tmpo &+ 72)))), (-d(4614256656552045848)))
                             try st8(t1, bits((t3 + t2)))
                             ln = 544 // FlatTops.HC:544
                             l16_tmpo = try ld8((l16_tmpo &+ 16))
@@ -1315,7 +1315,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC AI (FlatTops.HC:564)
-    public final func f720_AI(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
+    public final func f725_AI(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1337,7 +1337,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                     if r1 {
                         ln = 571 // FlatTops.HC:571
                         try tick(t)
-                        _ = try f714_SquadronLaunch(t, p0_player, ldf((l16_tmpo &+ 48)), ldf((l16_tmpo &+ 56)))
+                        _ = try f719_SquadronLaunch(t, p0_player, ldf((l16_tmpo &+ 48)), ldf((l16_tmpo &+ 56)))
                     }
                     ln = 573 // FlatTops.HC:573
                     var r3: Bool = try (((ld2u((l16_tmpo &+ 42)) & 2) != 0) && ((ld2u((l16_tmpo &+ 42)) & 4) == 0))
@@ -1351,7 +1351,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                         let t5: Double = try ldf((l16_tmpo &+ 64))
                         let t4: Double = d(try nat(t, n_Rand, push0(t)))
                         try tick(t)
-                        _ = try f718_SquadronSet_(t, p0_player, ldf((l16_tmpo &+ 48)), ldf((l16_tmpo &+ 56)), (t5 + ((d(4614256656552045848) / 2.0) * (t4 - 0.5))))
+                        _ = try f723_SquadronSet_(t, p0_player, ldf((l16_tmpo &+ 48)), ldf((l16_tmpo &+ 56)), (t5 + ((d(4614256656552045848) / 2.0) * (t4 - 0.5))))
                     }
                 }
                 ln = 576 // FlatTops.HC:576
@@ -1364,7 +1364,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC ShipDamage (FlatTops.HC:580)
-    public final func f721_ShipDamage(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
+    public final func f726_ShipDamage(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1431,7 +1431,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC ShipFix (FlatTops.HC:603)
-    public final func f722_ShipFix(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
+    public final func f727_ShipFix(_ t: HTask, _ a0: Int64, _ a1: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1470,7 +1470,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC Combat (FlatTops.HC:618)
-    public final func f723_Combat(_ t: HTask, _ a0: Double) throws {
+    public final func f728_Combat(_ t: HTask, _ a0: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1491,7 +1491,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 var r2: Bool = try ((ld2u((l16_tmpo &+ 42)) & 2) != 0)
                 if r2 {
                     try tick(t)
-                    let t1: Int64 = try f707_ObjFind(t, ldf((l16_tmpo &+ 48)), ldf((l16_tmpo &+ 56)), 2, 2, (-1), shl(1, (ld1u((l16_tmpo &+ 40)) ^ 1)), (fp &+ 8))
+                    let t1: Int64 = try f712_ObjFind(t, ldf((l16_tmpo &+ 48)), ldf((l16_tmpo &+ 56)), 2, 2, (-1), shl(1, (ld1u((l16_tmpo &+ 40)) ^ 1)), (fp &+ 8))
                     l24_tmpo1 = t1
                     r2 = (t1 != 0)
                 }
@@ -1540,7 +1540,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             _ = try P.f153_QueIns(t, l32_tmpt, ld8((g_torpedo_head &+ 8)))
                             ln = 643 // FlatTops.HC:643
                             try tick(t)
-                            _ = try P.f500_Sweep(t, 2000, 86.0, 53.0)
+                            _ = try P.f505_Sweep(t, 2000, 86.0, 53.0)
                         } else {
                             ln = 644 // FlatTops.HC:644
                             if try ((ldf((l16_tmpo &+ 120)) > 0.0) && (ldf((fp &+ 8)) < ldf((l16_tmpo &+ 128)))) {
@@ -1554,7 +1554,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                                     let t14: Double = try ldf((l16_tmpo &+ 120))
                                     let t13: Double = d(try nat(t, n_Rand, push0(t)))
                                     try tick(t)
-                                    try f721_ShipDamage(t, l24_tmpo1, ((t14 * t13) * p0_period))
+                                    try f726_ShipDamage(t, l24_tmpo1, ((t14 * t13) * p0_period))
                                     ln = 648 // FlatTops.HC:648
                                     let t15: Double = d(try nat(t, n_Rand, push0(t)))
                                     if (t15 < (10.0 * p0_period)) {
@@ -1570,7 +1570,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                                 if try (t19 > ldf(g_next_noise)) {
                                     ln = 652 // FlatTops.HC:652
                                     try tick(t)
-                                    _ = try P.f499_Noise(t, 100, 29.0, 46.0)
+                                    _ = try P.f504_Noise(t, 100, 29.0, 46.0)
                                     ln = 653 // FlatTops.HC:653
                                     let t20: Double = d(try nat(t, n_tS, push0(t)))
                                     try st8(g_next_noise, bits((t20 + 0.1)))
@@ -1607,7 +1607,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             if try (t31 > ldf(g_next_noise)) {
                                 ln = 665 // FlatTops.HC:665
                                 try tick(t)
-                                _ = try P.f499_Noise(t, 25, 62.0, 86.0)
+                                _ = try P.f504_Noise(t, 25, 62.0, 86.0)
                                 ln = 666 // FlatTops.HC:666
                                 let t32: Double = d(try nat(t, n_tS, push0(t)))
                                 try st8(g_next_noise, bits((t32 + 0.025)))
@@ -1629,7 +1629,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 if try ((ld1u((l16_tmpo &+ 41)) == 2) && (((ldf((l16_tmpo &+ 96)) <= 0.0) || (((ld2u((l16_tmpo &+ 42)) & 2) != 0) && (ldf((l16_tmpo &+ 152)) <= 0.0))) || (((ld8((l16_tmpo &+ 32)) != 0) && ((ld2u((l16_tmpo &+ 42)) & 2) == 0)) && (ldf((ld8((l16_tmpo &+ 32)) &+ 96)) <= 0.0)))) {
                     ln = 680 // FlatTops.HC:680
                     try tick(t)
-                    try f708_ObjDel(t, l16_tmpo)
+                    try f713_ObjDel(t, l16_tmpo)
                 }
                 ln = 681 // FlatTops.HC:681
                 l16_tmpo = l24_tmpo1
@@ -1645,7 +1645,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 if try (ldf((l16_tmpo &+ 96)) <= 0.0) {
                     ln = 687 // FlatTops.HC:687
                     try tick(t)
-                    try f708_ObjDel(t, l16_tmpo)
+                    try f713_ObjDel(t, l16_tmpo)
                 }
                 ln = 688 // FlatTops.HC:688
                 l16_tmpo = l24_tmpo1
@@ -1658,7 +1658,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC AnimateTask (FlatTops.HC:693)
-    public final func f724_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f729_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1674,7 +1674,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 l40_period = try ((0.1 * ldf(g_game_speed)) / 50.0)
                 ln = 701 // FlatTops.HC:701
                 try tick(t)
-                try f719_SquadronActions(t)
+                try f724_SquadronActions(t)
                 ln = 703 // FlatTops.HC:703
                 l8_tmpo = try ld8(g_obj_head)
                 ln = 704 // FlatTops.HC:704
@@ -1738,7 +1738,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             let t13: Double = d(try nat(t, n_Rand, push0(t)))
                             let t14: Double = d(try nat(t, n_Rand, push0(t)))
                             try tick(t)
-                            try f721_ShipDamage(t, l8_tmpo, ((150.0 * t13) * t14))
+                            try f726_ShipDamage(t, l8_tmpo, ((150.0 * t13) * t14))
                             ln = 727 // FlatTops.HC:727
                             let t15: Double = d(try nat(t, n_Rand, push0(t)))
                             if (t15 < 0.333333) {
@@ -1845,7 +1845,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                                 let t37: Double = try ldf(t34)
                                 let t35: Double = d(try nat(t, n_Arg, try push2(t, bits((ldf((ld8((l8_tmpo &+ 32)) &+ 48)) - ldf((l8_tmpo &+ 48)))), bits((ldf((ld8((l8_tmpo &+ 32)) &+ 56)) - ldf((l8_tmpo &+ 56)))))))
                                 try tick(t)
-                                let t36: Double = try P.f542_Wrap(t, (t35 - (ldf((l8_tmpo &+ 64)) + ldf((l8_tmpo &+ 72)))), (-d(4614256656552045848)))
+                                let t36: Double = try P.f547_Wrap(t, (t35 - (ldf((l8_tmpo &+ 64)) + ldf((l8_tmpo &+ 72)))), (-d(4614256656552045848)))
                                 try st8(t34, bits((t37 + t36)))
                             }
                         } else {
@@ -1853,7 +1853,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             if try (ld1u((l8_tmpo &+ 41)) == 0) {
                                 ln = 771 // FlatTops.HC:771
                                 try tick(t)
-                                try f722_ShipFix(t, l8_tmpo, (2.5 * l40_period))
+                                try f727_ShipFix(t, l8_tmpo, (2.5 * l40_period))
                             }
                         }
                     }
@@ -1863,10 +1863,10 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                 }
                 ln = 776 // FlatTops.HC:776
                 try tick(t)
-                try f720_AI(t, 1, l40_period)
+                try f725_AI(t, 1, l40_period)
                 ln = 777 // FlatTops.HC:777
                 try tick(t)
-                try f723_Combat(t, l40_period)
+                try f728_Combat(t, l40_period)
                 ln = 778 // FlatTops.HC:778
                 _ = try nat(t, n_Sleep, try push1(t, divs(1000, 50)))
                 try tick(t)
@@ -1877,7 +1877,7 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC FlatTops (FlatTops.HC:782)
-    public final func f725_FlatTops(_ t: HTask) throws {
+    public final func f730_FlatTops(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1905,18 +1905,18 @@ public final class N_Demo_Games_FlatTops: NativeModule {
             _ = try P.f201_PopUpOk(t, s5, 0)
             ln = 797 // FlatTops.HC:797
             try tick(t)
-            _ = try P.f507_MenuPush(t, s6)
+            _ = try P.f512_MenuPush(t, s6)
             ln = 808 // FlatTops.HC:808
             let t0: Int64 = try (ld8(P.g_Fs) &+ 12)
             try st4(t0, (ld4u(t0) | 40))
             ln = 809 // FlatTops.HC:809
             try tick(t)
-            try f711_Init(t)
+            try f716_Init(t)
             ln = 810 // FlatTops.HC:810
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065862)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065867)
             ln = 811 // FlatTops.HC:811
             let t2: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065876, 0, s7, (-1), ld8(P.g_Fs), 0, 0))
+            let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065881, 0, s7, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t2, t1)
             ln = 812 // FlatTops.HC:812
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
@@ -1937,10 +1937,10 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                                     case 10:
                                         ln = 819 // FlatTops.HC:819
                                         try tick(t)
-                                        try f712_CleanUp(t)
+                                        try f717_CleanUp(t)
                                         ln = 820 // FlatTops.HC:820
                                         try tick(t)
-                                        try f711_Init(t)
+                                        try f716_Init(t)
                                     case 27, 28:
                                         ln = 824 // FlatTops.HC:824
                                         break skip_0
@@ -1957,15 +1957,15 @@ public final class N_Demo_Games_FlatTops: NativeModule {
                             case 6:
                                 ln = 834 // FlatTops.HC:834
                                 try tick(t)
-                                _ = try f718_SquadronSet_(t, 0, Double(ld8(fp)), Double(ld8((fp &+ 8))), d(9218868437227405311))
+                                _ = try f723_SquadronSet_(t, 0, Double(ld8(fp)), Double(ld8((fp &+ 8))), d(9218868437227405311))
                             case 10:
                                 ln = 837 // FlatTops.HC:837
                                 try tick(t)
-                                _ = try f714_SquadronLaunch(t, 0, Double(ld8(fp)), Double(ld8((fp &+ 8))))
+                                _ = try f719_SquadronLaunch(t, 0, Double(ld8(fp)), Double(ld8((fp &+ 8))))
                             case 12:
                                 ln = 840 // FlatTops.HC:840
                                 try tick(t)
-                                _ = try f716_SquadronReturn(t, 0, Double(ld8(fp)), Double(ld8((fp &+ 8))))
+                                _ = try f721_SquadronReturn(t, 0, Double(ld8(fp)), Double(ld8((fp &+ 8))))
                             default:
                                 break
                             }
@@ -1989,10 +1989,10 @@ public final class N_Demo_Games_FlatTops: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 848 // FlatTops.HC:848
             try tick(t)
-            try f712_CleanUp(t)
+            try f717_CleanUp(t)
             ln = 849 // FlatTops.HC:849
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -2000,13 +2000,13 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/FlatTops.HC#3 (FlatTops.HC:852)
-    @discardableResult public final func f726_init_C__Demo_Games_FlatTops_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f731_init_C__Demo_Games_FlatTops_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 852 // FlatTops.HC:852
             try tick(t)
-            try f725_FlatTops(t)
+            try f730_FlatTops(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/FlatTops.HC#3", ln) }
@@ -2015,36 +2015,36 @@ public final class N_Demo_Games_FlatTops: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_FlatTops_HC_0(t)
-        case 704: try f704_SquadronIns(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: try f705_SquadronRem(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 706: return try f706_init_C__Demo_Games_FlatTops_HC_1(t)
-        case 707: return try f707_ObjFind(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0))
-        case 708: try f708_ObjDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: return try f709_init_C__Demo_Games_FlatTops_HC_2(t)
-        case 710: try f710_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 711: try f711_Init(t); return 0
-        case 712: try f712_CleanUp(t); return 0
-        case 713: return try f713_ObjLaunch(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0)), d((n > 4 ? st[base + 4] : 0)), d((n > 5 ? st[base + 5] : 0)))
-        case 714: return try f714_SquadronLaunch(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
-        case 715: return try f715_ObjReturn(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
-        case 716: return try f716_SquadronReturn(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
-        case 717: return try f717_ObjSet_(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
-        case 718: return try f718_SquadronSet_(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
-        case 719: try f719_SquadronActions(t); return 0
-        case 720: try f720_AI(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
-        case 721: try f721_ShipDamage(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
-        case 722: try f722_ShipFix(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
-        case 723: try f723_Combat(t, d((n > 0 ? st[base + 0] : 0))); return 0
-        case 724: try f724_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 725: try f725_FlatTops(t); return 0
-        case 726: return try f726_init_C__Demo_Games_FlatTops_HC_3(t)
+        case 708: return try f708_init_C__Demo_Games_FlatTops_HC_0(t)
+        case 709: try f709_SquadronIns(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: try f710_SquadronRem(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 711: return try f711_init_C__Demo_Games_FlatTops_HC_1(t)
+        case 712: return try f712_ObjFind(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0))
+        case 713: try f713_ObjDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: return try f714_init_C__Demo_Games_FlatTops_HC_2(t)
+        case 715: try f715_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 716: try f716_Init(t); return 0
+        case 717: try f717_CleanUp(t); return 0
+        case 718: return try f718_ObjLaunch(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), d((n > 3 ? st[base + 3] : 0)), d((n > 4 ? st[base + 4] : 0)), d((n > 5 ? st[base + 5] : 0)))
+        case 719: return try f719_SquadronLaunch(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
+        case 720: return try f720_ObjReturn(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
+        case 721: return try f721_SquadronReturn(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)))
+        case 722: return try f722_ObjSet_(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
+        case 723: return try f723_SquadronSet_(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)))
+        case 724: try f724_SquadronActions(t); return 0
+        case 725: try f725_AI(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
+        case 726: try f726_ShipDamage(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
+        case 727: try f727_ShipFix(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0))); return 0
+        case 728: try f728_Combat(t, d((n > 0 ? st[base + 0] : 0))); return 0
+        case 729: try f729_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 730: try f730_FlatTops(t); return 0
+        case 731: return try f731_init_C__Demo_Games_FlatTops_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/FlatTops.HC#0", 704: "SquadronIns", 705: "SquadronRem", 706: "$init:C:/Demo/Games/FlatTops.HC#1", 707: "ObjFind", 708: "ObjDel", 709: "$init:C:/Demo/Games/FlatTops.HC#2", 710: "DrawIt", 711: "Init", 712: "CleanUp", 713: "ObjLaunch", 714: "SquadronLaunch", 715: "ObjReturn", 716: "SquadronReturn", 717: "ObjSet\u{e9}", 718: "SquadronSet\u{e9}", 719: "SquadronActions", 720: "AI", 721: "ShipDamage", 722: "ShipFix", 723: "Combat", 724: "AnimateTask", 725: "FlatTops", 726: "$init:C:/Demo/Games/FlatTops.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/FlatTops.HC#0", 709: "SquadronIns", 710: "SquadronRem", 711: "$init:C:/Demo/Games/FlatTops.HC#1", 712: "ObjFind", 713: "ObjDel", 714: "$init:C:/Demo/Games/FlatTops.HC#2", 715: "DrawIt", 716: "Init", 717: "CleanUp", 718: "ObjLaunch", 719: "SquadronLaunch", 720: "ObjReturn", 721: "SquadronReturn", 722: "ObjSet\u{e9}", 723: "SquadronSet\u{e9}", 724: "SquadronActions", 725: "AI", 726: "ShipDamage", 727: "ShipFix", 728: "Combat", 729: "AnimateTask", 730: "FlatTops", 731: "$init:C:/Demo/Games/FlatTops.HC#3"]
     private static let FILES: [String] = ["C:/Demo/Games/FlatTops.HC"]
     public override var files: [String] { N_Demo_Games_FlatTops.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_FlatTops.DEFINED.contains(index) }

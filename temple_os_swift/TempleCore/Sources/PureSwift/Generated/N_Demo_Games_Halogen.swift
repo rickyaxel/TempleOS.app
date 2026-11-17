@@ -69,7 +69,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
     }
 
     /// HolyC DrawIt (Halogen.HC:11)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -118,10 +118,10 @@ public final class N_Demo_Games_Halogen: NativeModule {
             }
             ln = 30 // Halogen.HC:30
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l40_x &- 10), l24_h, (l40_x &- 40), (l24_h &- 100), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l40_x &- 10), l24_h, (l40_x &- 40), (l24_h &- 100), 1, 0)
             ln = 31 // Halogen.HC:31
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l40_x &+ 10), l24_h, (l40_x &+ 40), (l24_h &- 100), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l40_x &+ 10), l24_h, (l40_x &+ 40), (l24_h &- 100), 1, 0)
             ln = 33 // Halogen.HC:33
             l40_x = ((l16_w &>> 1) &+ 100)
             ln = 34 // Halogen.HC:34
@@ -131,10 +131,10 @@ public final class N_Demo_Games_Halogen: NativeModule {
             }
             ln = 36 // Halogen.HC:36
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l40_x &- 10), l24_h, (l40_x &- 40), (l24_h &- 100), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l40_x &- 10), l24_h, (l40_x &- 40), (l24_h &- 100), 1, 0)
             ln = 37 // Halogen.HC:37
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, (l40_x &+ 10), l24_h, (l40_x &+ 40), (l24_h &- 100), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, (l40_x &+ 10), l24_h, (l40_x &+ 40), (l24_h &- 100), 1, 0)
             ln = 39 // Halogen.HC:39
             try st4((p1_dc &+ 160), 14)
             ln = 40 // Halogen.HC:40
@@ -142,7 +142,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
                 ln = 41 // Halogen.HC:41
                 try tick(t)
                 let vb0 = push0(t)
-                _ = try P.f369_GrPrint(t, p1_dc, ((l16_w &>> 1) &- 32), ((l24_h &- 8) &>> 1), s0, vb0, 0)
+                _ = try P.f370_GrPrint(t, p1_dc, ((l16_w &>> 1) &- 32), ((l24_h &- 8) &>> 1), s0, vb0, 0)
                 t.sp = vb0
             }
             t.depth -= 1
@@ -151,7 +151,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
     }
 
     /// HolyC UpdateRoad (Halogen.HC:44)
-    public final func f704_UpdateRoad(_ t: HTask) throws {
+    public final func f709_UpdateRoad(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -192,7 +192,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
     }
 
     /// HolyC Init (Halogen.HC:58)
-    public final func f705_Init(_ t: HTask) throws {
+    public final func f710_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -244,7 +244,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
     }
 
     /// HolyC Halogen (Halogen.HC:77)
-    public final func f706_Halogen(_ t: HTask) throws {
+    public final func f711_Halogen(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -261,7 +261,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
             try st1((ld8(P.g_Fs) &+ 778), 15)
             ln = 82 // Halogen.HC:82
             try tick(t)
-            _ = try P.f507_MenuPush(t, s2)
+            _ = try P.f512_MenuPush(t, s2)
             ln = 95 // Halogen.HC:95
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 96 // Halogen.HC:96
@@ -274,9 +274,9 @@ public final class N_Demo_Games_Halogen: NativeModule {
             _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
             ln = 99 // Halogen.HC:99
             try tick(t)
-            try f705_Init(t)
+            try f710_Init(t)
             ln = 100 // Halogen.HC:100
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 101 // Halogen.HC:101
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -299,7 +299,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
                                     case 10:
                                         ln = 108 // Halogen.HC:108
                                         try tick(t)
-                                        try f705_Init(t)
+                                        try f710_Init(t)
                                     case 27, 28:
                                         ln = 112 // Halogen.HC:112
                                         break skip_0
@@ -377,7 +377,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
                             }
                             ln = 149 // Halogen.HC:149
                             try tick(t)
-                            try f704_UpdateRoad(t)
+                            try f709_UpdateRoad(t)
                         }
                         ln = 151 // Halogen.HC:151
                         _ = try nat(t, n_Sleep, try push1(t, 10))
@@ -397,7 +397,7 @@ public final class N_Demo_Games_Halogen: NativeModule {
             }
             ln = 157 // Halogen.HC:157
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 158 // Halogen.HC:158
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 159 // Halogen.HC:159
@@ -410,13 +410,13 @@ public final class N_Demo_Games_Halogen: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Halogen.HC#0 (Halogen.HC:7)
-    @discardableResult public final func f707_init_C__Demo_Games_Halogen_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Games_Halogen_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 162 // Halogen.HC:162
             try tick(t)
-            try f706_Halogen(t)
+            try f711_Halogen(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Halogen.HC#0", ln) }
@@ -425,17 +425,17 @@ public final class N_Demo_Games_Halogen: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_UpdateRoad(t); return 0
-        case 705: try f705_Init(t); return 0
-        case 706: try f706_Halogen(t); return 0
-        case 707: return try f707_init_C__Demo_Games_Halogen_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_UpdateRoad(t); return 0
+        case 710: try f710_Init(t); return 0
+        case 711: try f711_Halogen(t); return 0
+        case 712: return try f712_init_C__Demo_Games_Halogen_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "UpdateRoad", 705: "Init", 706: "Halogen", 707: "$init:C:/Demo/Games/Halogen.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "UpdateRoad", 710: "Init", 711: "Halogen", 712: "$init:C:/Demo/Games/Halogen.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/Halogen.HC"]
     public override var files: [String] { N_Demo_Games_Halogen.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Halogen.DEFINED.contains(index) }

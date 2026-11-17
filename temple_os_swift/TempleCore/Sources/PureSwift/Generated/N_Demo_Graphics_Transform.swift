@@ -15,8 +15,10 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     public let n_DocCursor: Int
     public let n_DocScroll: Int
     public let n_Free: Int
+    public let n_GrLine3: Int
     public let n_GrRect: Int
     public let n_JobQue: Int
+    public let n_Mat4x4Scale: Int
     public let n_MemCpy: Int
     public let n_MemSet: Int
     public let n_RandU16: Int
@@ -39,8 +41,10 @@ public final class N_Demo_Graphics_Transform: NativeModule {
         n_DocCursor = rt.vm.natives.find("DocCursor")!.index
         n_DocScroll = rt.vm.natives.find("DocScroll")!.index
         n_Free = rt.vm.natives.find("Free")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_GrRect = rt.vm.natives.find("GrRect")!.index
         n_JobQue = rt.vm.natives.find("JobQue")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_MemCpy = rt.vm.natives.find("MemCpy")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_RandU16 = rt.vm.natives.find("RandU16")!.index
@@ -65,7 +69,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC DrawCtrlSlider (Transform.HC:23)
-    public final func f703_DrawCtrlSlider(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawCtrlSlider(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -86,29 +90,29 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             try st4((p0_dc &+ 160), 0)
             ln = 34 // Transform.HC:34
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, (ld8((p1_c &+ 40)) &+ 20), (ld8((p1_c &+ 56)) &+ 20), (ld8((p1_c &+ 40)) &+ 20), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, (ld8((p1_c &+ 40)) &+ 20), (ld8((p1_c &+ 56)) &+ 20), (ld8((p1_c &+ 40)) &+ 20), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
             ln = 36 // Transform.HC:36
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
             ln = 38 // Transform.HC:38
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 60) &+ 2), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 60) &+ 2), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 60) &+ 2), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 60) &+ 2), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
             ln = 41 // Transform.HC:41
             try st4((p0_dc &+ 160), 10)
             ln = 42 // Transform.HC:42
             try tick(t)
             let vb0 = try push1(t, divs((ld8(l16_s) &* 10), 30))
-            _ = try P.f369_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 20) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 20) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb0, 1)
             t.sp = vb0
             ln = 45 // Transform.HC:45
             try tick(t)
             let vb1 = try push1(t, divs((ld8((l16_s &+ 8)) &* 10), 30))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 40) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb1, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 40) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb1, 1)
             t.sp = vb1
             ln = 48 // Transform.HC:48
             try tick(t)
             let vb2 = try push1(t, divs((ld8((l16_s &+ 16)) &* 10), 30))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 60) &+ 2) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb2, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 60) &+ 2) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb2, 1)
             t.sp = vb2
             ln = 51 // Transform.HC:51
             _ = try nat(t, n_GrRect, try push(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 20) &- 3), (((((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1) &- ld8(l16_s)) &- 2), 7, 5))
@@ -130,7 +134,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC UpdateDerivedCtrlSlider (Transform.HC:66)
-    public final func f704_UpdateDerivedCtrlSlider(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_UpdateDerivedCtrlSlider(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -170,7 +174,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC LeftClickSlider (Transform.HC:81)
-    public final func f705_LeftClickSlider(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f710_LeftClickSlider(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -208,7 +212,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC SliderNew (Transform.HC:94)
-    @discardableResult public final func f706_SliderNew(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_SliderNew(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -227,11 +231,11 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             ln = 101 // Transform.HC:101
             _ = try nat(t, n_MemSet, try push3(t, g_s, 0, 48))
             ln = 102 // Transform.HC:102
-            try st8((l0_c &+ 120), 9223090561878065855)
+            try st8((l0_c &+ 120), 9223090561878065860)
             ln = 103 // Transform.HC:103
-            try st8((l0_c &+ 136), 9223090561878065857)
+            try st8((l0_c &+ 136), 9223090561878065862)
             ln = 104 // Transform.HC:104
-            try st8((l0_c &+ 112), 9223090561878065856)
+            try st8((l0_c &+ 112), 9223090561878065861)
             ln = 105 // Transform.HC:105
             try tick(t)
             _ = try P.f153_QueIns(t, l0_c, ld8((ld8(P.g_Fs) &+ 928)))
@@ -247,7 +251,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC SliderDel (Transform.HC:110)
-    public final func f707_SliderDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_SliderDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -263,7 +267,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC MPDrawIt (Transform.HC:137)
-    public final func f708_MPDrawIt(_ t: HTask, _ a0: Int64) throws {
+    public final func f713_MPDrawIt(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -289,7 +293,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             loop0: while (l16_i < l32_hi) {
                 ln = 144 // Transform.HC:144
                 try tick(t)
-                try P.f445_Sprite3ZB(t, l8_dc, ld8((g_tree_x &+ (l16_i &* 8))), ld8((g_tree_y &+ (l16_i &* 8))), 0, b0, ldf((g_mp &+ 136)))
+                try P.f450_Sprite3ZB(t, l8_dc, ld8((g_tree_x &+ (l16_i &* 8))), ld8((g_tree_y &+ (l16_i &* 8))), 0, b0, ldf((g_mp &+ 136)))
                 ln = 143 // Transform.HC:143
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -306,7 +310,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC DrawIt (Transform.HC:150)
-    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -342,14 +346,13 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             try tick(t)
             _ = try P.f307_Mat4x4RotZ(t, ld8((p1_dc &+ 200)), ldf((g_s &+ 24)))
             ln = 164 // Transform.HC:164
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, ld8((p1_dc &+ 200)), ldf((g_s &+ 40)))
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((p1_dc &+ 200)), bits(ldf((g_s &+ 40)))))
             ln = 165 // Transform.HC:165
             try tick(t)
             try P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc &+ 200)))
             ln = 166 // Transform.HC:166
             try tick(t)
-            _ = try P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), (0 &- l24_h), (0 &- l32_v), 0)
+            _ = try P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), (0 &- l24_h), (0 &- l32_v), 0)
             ln = 167 // Transform.HC:167
             _ = try nat(t, n_MemCpy, try push3(t, (g_mp &+ 8), ld8((p1_dc &+ 200)), 128))
             ln = 168 // Transform.HC:168
@@ -361,7 +364,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             l16_i = 0
             loop0: while try (l16_i < ld8(g_mp)) {
                 ln = 172 // Transform.HC:172
-                _ = try nat(t, n_JobQue, try push(t, 9223090561878065860, p0_task, l16_i, 0, 0, 0, 0, 0))
+                _ = try nat(t, n_JobQue, try push(t, 9223090561878065865, p0_task, l16_i, 0, 0, 0, 0, 0))
                 ln = 171 // Transform.HC:171
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -380,24 +383,20 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             ln = 178 // Transform.HC:178
             try st4((p1_dc &+ 228), 4)
             ln = 179 // Transform.HC:179
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 2, 2, 0, 2045, 2, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 2, 2, 0, 2045, 2, 0, 1, 0))
             ln = 180 // Transform.HC:180
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 2, 2045, 0, 2045, 2045, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 2, 2045, 0, 2045, 2045, 0, 1, 0))
             ln = 181 // Transform.HC:181
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 2, 2, 0, 2, 2045, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 2, 2, 0, 2, 2045, 0, 1, 0))
             ln = 182 // Transform.HC:182
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 2045, 2, 0, 2045, 2045, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 2045, 2, 0, 2045, 2045, 0, 1, 0))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawIt", ln) }
     }
 
     /// HolyC Init (Transform.HC:185)
-    public final func f710_Init(_ t: HTask) throws {
+    public final func f715_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -421,7 +420,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC TransformDemo (Transform.HC:194)
-    public final func f711_TransformDemo(_ t: HTask, _ a0: Int64) throws {
+    public final func f716_TransformDemo(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -432,11 +431,11 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 197 // Transform.HC:197
             try tick(t)
-            try f710_Init(t)
+            try f715_Init(t)
             ln = 199 // Transform.HC:199
             try st4((ld8(P.g_Fs) &+ 12), 5304570)
             ln = 200 // Transform.HC:200
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065866)
             ln = 201 // Transform.HC:201
             try tick(t)
             _ = try P.f221_WinBorder(t, 1, 0)
@@ -452,7 +451,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             try st8(((ld8(P.g_Fs) &+ 1176) &+ 8), 0)
             ln = 208 // Transform.HC:208
             try tick(t)
-            let t0: Int64 = try f706_SliderNew(t)
+            let t0: Int64 = try f711_SliderNew(t)
             l8_c = t0
             ln = 209 // Transform.HC:209
             try st8(g_s, 0)
@@ -466,10 +465,10 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             try st8(g_mp, p0__mp_cnt)
             ln = 216 // Transform.HC:216
             try tick(t)
-            _ = try P.f625_View(t)
+            _ = try P.f630_View(t)
             ln = 217 // Transform.HC:217
             try tick(t)
-            try f707_SliderDel(t, l8_c)
+            try f712_SliderDel(t, l8_c)
             ln = 218 // Transform.HC:218
             try tick(t)
             try P.f228_SettingsPop(t, 0, 0)
@@ -479,7 +478,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Transform.HC#0 (Transform.HC:222)
-    @discardableResult public final func f712_init_C__Demo_Graphics_Transform_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Demo_Graphics_Transform_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -487,7 +486,7 @@ public final class N_Demo_Graphics_Transform: NativeModule {
             let t0: Int64 = try nat(t, n_mp_cnt, push0(t))
             ln = 222 // Transform.HC:222
             try tick(t)
-            try f711_TransformDemo(t, t0)
+            try f716_TransformDemo(t, t0)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Transform.HC#0", ln) }
@@ -496,22 +495,22 @@ public final class N_Demo_Graphics_Transform: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawCtrlSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_UpdateDerivedCtrlSlider(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_LeftClickSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 706: return try f706_SliderNew(t)
-        case 707: try f707_SliderDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_MPDrawIt(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: try f710_Init(t); return 0
-        case 711: try f711_TransformDemo(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 712: return try f712_init_C__Demo_Graphics_Transform_HC_0(t)
+        case 708: try f708_DrawCtrlSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_UpdateDerivedCtrlSlider(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_LeftClickSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 711: return try f711_SliderNew(t)
+        case 712: try f712_SliderDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_MPDrawIt(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 714: try f714_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: try f715_Init(t); return 0
+        case 716: try f716_TransformDemo(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 717: return try f717_init_C__Demo_Graphics_Transform_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712]
-    private static let NAMES: [Int: String] = [703: "DrawCtrlSlider", 704: "UpdateDerivedCtrlSlider", 705: "LeftClickSlider", 706: "SliderNew", 707: "SliderDel", 708: "MPDrawIt", 709: "DrawIt", 710: "Init", 711: "TransformDemo", 712: "$init:C:/Demo/Graphics/Transform.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
+    private static let NAMES: [Int: String] = [708: "DrawCtrlSlider", 709: "UpdateDerivedCtrlSlider", 710: "LeftClickSlider", 711: "SliderNew", 712: "SliderDel", 713: "MPDrawIt", 714: "DrawIt", 715: "Init", 716: "TransformDemo", 717: "$init:C:/Demo/Graphics/Transform.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Transform.HC"]
     public override var files: [String] { N_Demo_Graphics_Transform.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Transform.DEFINED.contains(index) }

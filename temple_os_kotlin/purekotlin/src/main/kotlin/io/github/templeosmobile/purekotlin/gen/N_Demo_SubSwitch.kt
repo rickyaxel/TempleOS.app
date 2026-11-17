@@ -38,7 +38,7 @@ class N_Demo_SubSwitch(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC SubSwitch (SubSwitch.HC:1) */
-    fun f703_SubSwitch(t: Task) {
+    fun f708_SubSwitch(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -147,13 +147,13 @@ class N_Demo_SubSwitch(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Demo/SubSwitch.HC#0 (SubSwitch.HC:21) */
-    fun f704_init_C__Demo_SubSwitch_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_SubSwitch_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 21 // SubSwitch.HC:21
             tick(t)
-            f703_SubSwitch(t)
+            f708_SubSwitch(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/SubSwitch.HC#0", ln) }
@@ -162,8 +162,8 @@ class N_Demo_SubSwitch(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SubSwitch(t); 0L }
-            704 -> f704_init_C__Demo_SubSwitch_HC_0(t)
+            708 -> { f708_SubSwitch(t); 0L }
+            709 -> f709_init_C__Demo_SubSwitch_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -175,7 +175,7 @@ class N_Demo_SubSwitch(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("SubSwitch", "\$init:C:/Demo/SubSwitch.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/SubSwitch.HC")
     }

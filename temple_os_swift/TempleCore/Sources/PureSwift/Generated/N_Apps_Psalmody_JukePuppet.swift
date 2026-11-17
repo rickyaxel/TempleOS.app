@@ -51,7 +51,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
     }
 
     /// HolyC SongPuppet (JukePuppet.HC:1)
-    public final func f703_SongPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_SongPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -77,7 +77,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
                 if !(r2) { break loop0 }
                 ln = 7 // JukePuppet.HC:7
                 try tick(t)
-                let t0: Int64 = try P.f586_HashFind(t, s0, ld8((p0_task &+ 976)), 64, 1)
+                let t0: Int64 = try P.f591_HashFind(t, s0, ld8((p0_task &+ 976)), 64, 1)
                 l64_tmpf = t0
                 if (t0 != 0) {
                     ln = 8 // JukePuppet.HC:8
@@ -115,7 +115,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
                             let t8: Int64 = l24_i
                             l24_i = (t8 &+ 1)
                             try tick(t)
-                            let t9: Int64 = try P.f664_TaskCaller(t, p0_task, t8, 0)
+                            let t9: Int64 = try P.f669_TaskCaller(t, p0_task, t8, 0)
                             l48_rip = t9
                             r10 = (t9 != 0)
                         }
@@ -150,7 +150,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
     }
 
     /// HolyC JukeSongPuppet (JukePuppet.HC:29)
-    public final func f704_JukeSongPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f709_JukeSongPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -163,23 +163,23 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
             var l48_i: Int64 = 0
             ln = 35 // JukePuppet.HC:35
             try tick(t)
-            let t0: Int64 = try P.f665_FileExtDot(t, p3_name)
+            let t0: Int64 = try P.f670_FileExtDot(t, p3_name)
             if (t0 != 0) {
                 ln = 36 // JukePuppet.HC:36
                 try tick(t)
-                try P.f666_FileExtRem(t, p3_name)
+                try P.f671_FileExtRem(t, p3_name)
             }
             ln = 37 // JukePuppet.HC:37
             try tick(t)
-            try P.f661_BirthWait(t, (p0_juke_task &+ 1128))
+            try P.f666_BirthWait(t, (p0_juke_task &+ 1128))
             ln = 38 // JukePuppet.HC:38
             try tick(t)
-            try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+            try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
             ln = 39 // JukePuppet.HC:39
             _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 0, 1096, 0))
             ln = 40 // JukePuppet.HC:40
             try tick(t)
-            try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+            try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
             ln = 41 // JukePuppet.HC:41
             l48_i = 0
             loop0: while (l48_i < p2_song_num) {
@@ -187,7 +187,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
                 _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 0, 77, 0))
                 ln = 43 // JukePuppet.HC:43
                 try tick(t)
-                try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+                try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
                 ln = 41 // JukePuppet.HC:41
                 l48_i = (l48_i &+ 1)
                 try tick(t)
@@ -196,7 +196,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
             _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 32, 0, 0))
             ln = 47 // JukePuppet.HC:47
             try tick(t)
-            try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+            try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
             ln = 48 // JukePuppet.HC:48
             _ = try nat(t, n_Sleep, try push1(t, 500))
             ln = 50 // JukePuppet.HC:50
@@ -221,12 +221,12 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
             if (l32_found != 0) {
                 ln = 61 // JukePuppet.HC:61
                 try tick(t)
-                try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+                try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
                 ln = 62 // JukePuppet.HC:62
                 _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 0, 1096, 0))
                 ln = 63 // JukePuppet.HC:63
                 try tick(t)
-                try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+                try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
                 ln = 64 // JukePuppet.HC:64
                 l48_i = 0
                 loop4: while (l48_i < p2_song_num) {
@@ -234,14 +234,14 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
                     _ = try nat(t, n_PostMsg, try push(t, ld8((p0_juke_task &+ 1128)), (-2), 0, 77, 0))
                     ln = 66 // JukePuppet.HC:66
                     try tick(t)
-                    try P.f660_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
+                    try P.f665_TaskWait(t, ld8((p0_juke_task &+ 1128)), 0)
                     ln = 64 // JukePuppet.HC:64
                     l48_i = (l48_i &+ 1)
                     try tick(t)
                 }
                 ln = 68 // JukePuppet.HC:68
                 try tick(t)
-                try f703_SongPuppet(t, l40_task, p1_passes)
+                try f708_SongPuppet(t, l40_task, p1_passes)
             }
             ln = 70 // JukePuppet.HC:70
             _ = try nat(t, n_Kill, try push3(t, l40_task, 1, 0))
@@ -251,7 +251,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
     }
 
     /// HolyC JukeSongsPuppet (JukePuppet.HC:73)
-    public final func f705_JukeSongsPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f710_JukeSongsPuppet(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -267,7 +267,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
             ln = 78 // JukePuppet.HC:78
             try tick(t)
             let vb0 = try push1(t, p0_dirname)
-            let t0: Int64 = try P.f662_User(t, s1, vb0, 1)
+            let t0: Int64 = try P.f667_User(t, s1, vb0, 1)
             t.sp = vb0
             l56_juke_task = t0
             ln = 80 // JukePuppet.HC:80
@@ -303,7 +303,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
                 _ = try nat(t, n_Print, try push3(t, s3, bits((t3 - l64_t0)), t4))
                 ln = 90 // JukePuppet.HC:90
                 try tick(t)
-                try f704_JukeSongPuppet(t, l56_juke_task, p1_passes, l32_i, (l40_tmpde &+ 50))
+                try f709_JukeSongPuppet(t, l56_juke_task, p1_passes, l32_i, (l40_tmpde &+ 50))
                 ln = 91 // JukePuppet.HC:91
                 l40_tmpde = try ld8(l40_tmpde)
                 ln = 88 // JukePuppet.HC:88
@@ -320,7 +320,7 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/JukePuppet.HC#0 (JukePuppet.HC:1)
-    @discardableResult public final func f706_init_C__Apps_Psalmody_JukePuppet_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Apps_Psalmody_JukePuppet_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -332,16 +332,16 @@ public final class N_Apps_Psalmody_JukePuppet: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SongPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_JukeSongPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 705: try f705_JukeSongsPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 706: return try f706_init_C__Apps_Psalmody_JukePuppet_HC_0(t)
+        case 708: try f708_SongPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_JukeSongPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 710: try f710_JukeSongsPuppet(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 711: return try f711_init_C__Apps_Psalmody_JukePuppet_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "SongPuppet", 704: "JukeSongPuppet", 705: "JukeSongsPuppet", 706: "$init:C:/Apps/Psalmody/JukePuppet.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "SongPuppet", 709: "JukeSongPuppet", 710: "JukeSongsPuppet", 711: "$init:C:/Apps/Psalmody/JukePuppet.HC#0"]
     private static let FILES: [String] = ["C:/Apps/Psalmody/JukePuppet.HC"]
     public override var files: [String] { N_Apps_Psalmody_JukePuppet.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Psalmody_JukePuppet.DEFINED.contains(index) }

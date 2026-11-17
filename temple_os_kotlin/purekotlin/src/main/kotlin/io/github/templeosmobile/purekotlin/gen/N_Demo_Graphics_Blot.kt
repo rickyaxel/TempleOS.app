@@ -12,6 +12,7 @@ import io.github.templeosmobile.core.purenative.*
 class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GrBlot = rt.vm.natives.find("GrBlot")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_GrRect = rt.vm.natives.find("GrRect")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Refresh = rt.vm.natives.find("Refresh")!!.index
@@ -49,7 +50,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#0 (Blot.HC:1) */
-    fun f703_init_C__Demo_Graphics_Blot_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Graphics_Blot_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -63,7 +64,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#1 (Blot.HC:2) */
-    fun f704_init_C__Demo_Graphics_Blot_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_Blot_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -77,7 +78,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#2 (Blot.HC:3) */
-    fun f705_init_C__Demo_Graphics_Blot_HC_2(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_Blot_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -91,7 +92,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#3 (Blot.HC:5) */
-    fun f706_init_C__Demo_Graphics_Blot_HC_3(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_Blot_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -105,7 +106,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#4 (Blot.HC:6) */
-    fun f707_init_C__Demo_Graphics_Blot_HC_4(t: Task): Long {
+    fun f712_init_C__Demo_Graphics_Blot_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -119,13 +120,13 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#5 (Blot.HC:7) */
-    fun f708_init_C__Demo_Graphics_Blot_HC_5(t: Task): Long {
+    fun f713_init_C__Demo_Graphics_Blot_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 7 // Blot.HC:7
             tick(t)
-            val t0: Long = P.f397_GrCircle(t, ld8(g_img1), 30L, 30L, 20L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            val t0: Long = P.f398_GrCircle(t, ld8(g_img1), 30L, 30L, 20L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             t.depth--
             return t0
             t.depth--
@@ -134,13 +135,13 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#6 (Blot.HC:8) */
-    fun f709_init_C__Demo_Graphics_Blot_HC_6(t: Task): Long {
+    fun f714_init_C__Demo_Graphics_Blot_HC_6(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 8 // Blot.HC:8
             tick(t)
-            val t0: Long = P.f413_GrFloodFill3(t, ld8(g_img1), 30L, 30L, 0L, 1L)
+            val t0: Long = P.f415_GrFloodFill3(t, ld8(g_img1), 30L, 30L, 0L, 1L)
             t.depth--
             return t0
             t.depth--
@@ -149,13 +150,12 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#7 (Blot.HC:9) */
-    fun f710_init_C__Demo_Graphics_Blot_HC_7(t: Task): Long {
+    fun f715_init_C__Demo_Graphics_Blot_HC_7(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 9 // Blot.HC:9
-            tick(t)
-            val t0: Long = P.f406_GrLine3(t, ld8(g_img1), 60L, 0L, 0L, 0L, 60L, 0L, 1L, 0L)
+            val t0: Long = nat(t, n_GrLine3, push(t, ld8(g_img1), 60L, 0L, 0L, 0L, 60L, 0L, 1L, 0L))
             t.depth--
             return t0
             t.depth--
@@ -164,7 +164,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#8 (Blot.HC:11) */
-    fun f711_init_C__Demo_Graphics_Blot_HC_8(t: Task): Long {
+    fun f716_init_C__Demo_Graphics_Blot_HC_8(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -177,7 +177,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#9 (Blot.HC:12) */
-    fun f712_init_C__Demo_Graphics_Blot_HC_9(t: Task): Long {
+    fun f717_init_C__Demo_Graphics_Blot_HC_9(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -191,7 +191,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#10 (Blot.HC:13) */
-    fun f713_init_C__Demo_Graphics_Blot_HC_10(t: Task): Long {
+    fun f718_init_C__Demo_Graphics_Blot_HC_10(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -206,13 +206,13 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#11 (Blot.HC:14) */
-    fun f714_init_C__Demo_Graphics_Blot_HC_11(t: Task): Long {
+    fun f719_init_C__Demo_Graphics_Blot_HC_11(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 14 // Blot.HC:14
             tick(t)
-            val t0: Long = P.f397_GrCircle(t, ld8(g_img2), 226L, 226L, 128L, 67L, 0.0, (2.0 * f(4614256656552045848L)))
+            val t0: Long = P.f398_GrCircle(t, ld8(g_img2), 226L, 226L, 128L, 67L, 0.0, (2.0 * f(4614256656552045848L)))
             t.depth--
             return t0
             t.depth--
@@ -221,7 +221,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#12 (Blot.HC:15) */
-    fun f715_init_C__Demo_Graphics_Blot_HC_12(t: Task): Long {
+    fun f720_init_C__Demo_Graphics_Blot_HC_12(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -235,7 +235,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#13 (Blot.HC:16) */
-    fun f716_init_C__Demo_Graphics_Blot_HC_13(t: Task): Long {
+    fun f721_init_C__Demo_Graphics_Blot_HC_13(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -249,7 +249,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#14 (Blot.HC:17) */
-    fun f717_init_C__Demo_Graphics_Blot_HC_14(t: Task): Long {
+    fun f722_init_C__Demo_Graphics_Blot_HC_14(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -263,13 +263,12 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#15 (Blot.HC:18) */
-    fun f718_init_C__Demo_Graphics_Blot_HC_15(t: Task): Long {
+    fun f723_init_C__Demo_Graphics_Blot_HC_15(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 18 // Blot.HC:18
-            tick(t)
-            val t0: Long = P.f406_GrLine3(t, ld8(g_img2), 128L, 128L, 0L, 384L, 384L, 0L, 1L, 0L)
+            val t0: Long = nat(t, n_GrLine3, push(t, ld8(g_img2), 128L, 128L, 0L, 384L, 384L, 0L, 1L, 0L))
             t.depth--
             return t0
             t.depth--
@@ -278,13 +277,12 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#16 (Blot.HC:19) */
-    fun f719_init_C__Demo_Graphics_Blot_HC_16(t: Task): Long {
+    fun f724_init_C__Demo_Graphics_Blot_HC_16(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 19 // Blot.HC:19
-            tick(t)
-            val t0: Long = P.f406_GrLine3(t, ld8(g_img2), 384L, 128L, 0L, 128L, 384L, 0L, 1L, 0L)
+            val t0: Long = nat(t, n_GrLine3, push(t, ld8(g_img2), 384L, 128L, 0L, 128L, 384L, 0L, 1L, 0L))
             t.depth--
             return t0
             t.depth--
@@ -293,7 +291,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#17 (Blot.HC:21) */
-    fun f720_init_C__Demo_Graphics_Blot_HC_17(t: Task): Long {
+    fun f725_init_C__Demo_Graphics_Blot_HC_17(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -307,7 +305,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#18 (Blot.HC:22) */
-    fun f721_init_C__Demo_Graphics_Blot_HC_18(t: Task): Long {
+    fun f726_init_C__Demo_Graphics_Blot_HC_18(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -321,7 +319,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#19 (Blot.HC:25) */
-    fun f722_init_C__Demo_Graphics_Blot_HC_19(t: Task): Long {
+    fun f727_init_C__Demo_Graphics_Blot_HC_19(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -347,13 +345,13 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#20 (Blot.HC:31) */
-    fun f723_init_C__Demo_Graphics_Blot_HC_20(t: Task): Long {
+    fun f728_init_C__Demo_Graphics_Blot_HC_20(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 31 // Blot.HC:31
             tick(t)
-            val t0: Long = P.f439_DC2Sprite(t, ld8(g_img1))
+            val t0: Long = P.f443_DC2Sprite(t, ld8(g_img1))
             st8(g_tmpg, t0)
             t.depth--
             return 0L
@@ -361,7 +359,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#21 (Blot.HC:32) */
-    fun f724_init_C__Demo_Graphics_Blot_HC_21(t: Task): Long {
+    fun f729_init_C__Demo_Graphics_Blot_HC_21(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -375,7 +373,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#22 (Blot.HC:33) */
-    fun f725_init_C__Demo_Graphics_Blot_HC_22(t: Task): Long {
+    fun f730_init_C__Demo_Graphics_Blot_HC_22(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -387,7 +385,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#23 (Blot.HC:34) */
-    fun f726_init_C__Demo_Graphics_Blot_HC_23(t: Task): Long {
+    fun f731_init_C__Demo_Graphics_Blot_HC_23(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -401,7 +399,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#24 (Blot.HC:36) */
-    fun f727_init_C__Demo_Graphics_Blot_HC_24(t: Task): Long {
+    fun f732_init_C__Demo_Graphics_Blot_HC_24(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -414,7 +412,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#25 (Blot.HC:37) */
-    fun f728_init_C__Demo_Graphics_Blot_HC_25(t: Task): Long {
+    fun f733_init_C__Demo_Graphics_Blot_HC_25(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -427,7 +425,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#26 (Blot.HC:38) */
-    fun f729_init_C__Demo_Graphics_Blot_HC_26(t: Task): Long {
+    fun f734_init_C__Demo_Graphics_Blot_HC_26(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -440,7 +438,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#27 (Blot.HC:40) */
-    fun f730_init_C__Demo_Graphics_Blot_HC_27(t: Task): Long {
+    fun f735_init_C__Demo_Graphics_Blot_HC_27(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -455,7 +453,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Graphics/Blot.HC#28 (Blot.HC:41) */
-    fun f731_init_C__Demo_Graphics_Blot_HC_28(t: Task): Long {
+    fun f736_init_C__Demo_Graphics_Blot_HC_28(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -470,35 +468,35 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Graphics_Blot_HC_0(t)
-            704 -> f704_init_C__Demo_Graphics_Blot_HC_1(t)
-            705 -> f705_init_C__Demo_Graphics_Blot_HC_2(t)
-            706 -> f706_init_C__Demo_Graphics_Blot_HC_3(t)
-            707 -> f707_init_C__Demo_Graphics_Blot_HC_4(t)
-            708 -> f708_init_C__Demo_Graphics_Blot_HC_5(t)
-            709 -> f709_init_C__Demo_Graphics_Blot_HC_6(t)
-            710 -> f710_init_C__Demo_Graphics_Blot_HC_7(t)
-            711 -> f711_init_C__Demo_Graphics_Blot_HC_8(t)
-            712 -> f712_init_C__Demo_Graphics_Blot_HC_9(t)
-            713 -> f713_init_C__Demo_Graphics_Blot_HC_10(t)
-            714 -> f714_init_C__Demo_Graphics_Blot_HC_11(t)
-            715 -> f715_init_C__Demo_Graphics_Blot_HC_12(t)
-            716 -> f716_init_C__Demo_Graphics_Blot_HC_13(t)
-            717 -> f717_init_C__Demo_Graphics_Blot_HC_14(t)
-            718 -> f718_init_C__Demo_Graphics_Blot_HC_15(t)
-            719 -> f719_init_C__Demo_Graphics_Blot_HC_16(t)
-            720 -> f720_init_C__Demo_Graphics_Blot_HC_17(t)
-            721 -> f721_init_C__Demo_Graphics_Blot_HC_18(t)
-            722 -> f722_init_C__Demo_Graphics_Blot_HC_19(t)
-            723 -> f723_init_C__Demo_Graphics_Blot_HC_20(t)
-            724 -> f724_init_C__Demo_Graphics_Blot_HC_21(t)
-            725 -> f725_init_C__Demo_Graphics_Blot_HC_22(t)
-            726 -> f726_init_C__Demo_Graphics_Blot_HC_23(t)
-            727 -> f727_init_C__Demo_Graphics_Blot_HC_24(t)
-            728 -> f728_init_C__Demo_Graphics_Blot_HC_25(t)
-            729 -> f729_init_C__Demo_Graphics_Blot_HC_26(t)
-            730 -> f730_init_C__Demo_Graphics_Blot_HC_27(t)
-            731 -> f731_init_C__Demo_Graphics_Blot_HC_28(t)
+            708 -> f708_init_C__Demo_Graphics_Blot_HC_0(t)
+            709 -> f709_init_C__Demo_Graphics_Blot_HC_1(t)
+            710 -> f710_init_C__Demo_Graphics_Blot_HC_2(t)
+            711 -> f711_init_C__Demo_Graphics_Blot_HC_3(t)
+            712 -> f712_init_C__Demo_Graphics_Blot_HC_4(t)
+            713 -> f713_init_C__Demo_Graphics_Blot_HC_5(t)
+            714 -> f714_init_C__Demo_Graphics_Blot_HC_6(t)
+            715 -> f715_init_C__Demo_Graphics_Blot_HC_7(t)
+            716 -> f716_init_C__Demo_Graphics_Blot_HC_8(t)
+            717 -> f717_init_C__Demo_Graphics_Blot_HC_9(t)
+            718 -> f718_init_C__Demo_Graphics_Blot_HC_10(t)
+            719 -> f719_init_C__Demo_Graphics_Blot_HC_11(t)
+            720 -> f720_init_C__Demo_Graphics_Blot_HC_12(t)
+            721 -> f721_init_C__Demo_Graphics_Blot_HC_13(t)
+            722 -> f722_init_C__Demo_Graphics_Blot_HC_14(t)
+            723 -> f723_init_C__Demo_Graphics_Blot_HC_15(t)
+            724 -> f724_init_C__Demo_Graphics_Blot_HC_16(t)
+            725 -> f725_init_C__Demo_Graphics_Blot_HC_17(t)
+            726 -> f726_init_C__Demo_Graphics_Blot_HC_18(t)
+            727 -> f727_init_C__Demo_Graphics_Blot_HC_19(t)
+            728 -> f728_init_C__Demo_Graphics_Blot_HC_20(t)
+            729 -> f729_init_C__Demo_Graphics_Blot_HC_21(t)
+            730 -> f730_init_C__Demo_Graphics_Blot_HC_22(t)
+            731 -> f731_init_C__Demo_Graphics_Blot_HC_23(t)
+            732 -> f732_init_C__Demo_Graphics_Blot_HC_24(t)
+            733 -> f733_init_C__Demo_Graphics_Blot_HC_25(t)
+            734 -> f734_init_C__Demo_Graphics_Blot_HC_26(t)
+            735 -> f735_init_C__Demo_Graphics_Blot_HC_27(t)
+            736 -> f736_init_C__Demo_Graphics_Blot_HC_28(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -510,7 +508,7 @@ class N_Demo_Graphics_Blot(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736)
         private val NAMES = arrayOf("\$init:C:/Demo/Graphics/Blot.HC#0", "\$init:C:/Demo/Graphics/Blot.HC#1", "\$init:C:/Demo/Graphics/Blot.HC#2", "\$init:C:/Demo/Graphics/Blot.HC#3", "\$init:C:/Demo/Graphics/Blot.HC#4", "\$init:C:/Demo/Graphics/Blot.HC#5", "\$init:C:/Demo/Graphics/Blot.HC#6", "\$init:C:/Demo/Graphics/Blot.HC#7", "\$init:C:/Demo/Graphics/Blot.HC#8", "\$init:C:/Demo/Graphics/Blot.HC#9", "\$init:C:/Demo/Graphics/Blot.HC#10", "\$init:C:/Demo/Graphics/Blot.HC#11", "\$init:C:/Demo/Graphics/Blot.HC#12", "\$init:C:/Demo/Graphics/Blot.HC#13", "\$init:C:/Demo/Graphics/Blot.HC#14", "\$init:C:/Demo/Graphics/Blot.HC#15", "\$init:C:/Demo/Graphics/Blot.HC#16", "\$init:C:/Demo/Graphics/Blot.HC#17", "\$init:C:/Demo/Graphics/Blot.HC#18", "\$init:C:/Demo/Graphics/Blot.HC#19", "\$init:C:/Demo/Graphics/Blot.HC#20", "\$init:C:/Demo/Graphics/Blot.HC#21", "\$init:C:/Demo/Graphics/Blot.HC#22", "\$init:C:/Demo/Graphics/Blot.HC#23", "\$init:C:/Demo/Graphics/Blot.HC#24", "\$init:C:/Demo/Graphics/Blot.HC#25", "\$init:C:/Demo/Graphics/Blot.HC#26", "\$init:C:/Demo/Graphics/Blot.HC#27", "\$init:C:/Demo/Graphics/Blot.HC#28")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Blot.HC")
     }

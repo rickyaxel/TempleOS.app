@@ -43,7 +43,7 @@ public final class N_Demo_Graphics_CharAnimation: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/CharAnimation.HC#0 (CharAnimation.HC:1)
-    @discardableResult public final func f703_init_C__Demo_Graphics_CharAnimation_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Graphics_CharAnimation_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -55,7 +55,7 @@ public final class N_Demo_Graphics_CharAnimation: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/CharAnimation.HC#1 (CharAnimation.HC:6)
-    @discardableResult public final func f704_init_C__Demo_Graphics_CharAnimation_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_CharAnimation_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -65,7 +65,7 @@ public final class N_Demo_Graphics_CharAnimation: NativeModule {
     }
 
     /// HolyC AnimateEndCB (CharAnimation.HC:10)
-    public final func f705_AnimateEndCB(_ t: HTask) throws {
+    public final func f710_AnimateEndCB(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -79,7 +79,7 @@ public final class N_Demo_Graphics_CharAnimation: NativeModule {
     }
 
     /// HolyC AnimateTask (CharAnimation.HC:16)
-    public final func f706_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f711_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -90,7 +90,7 @@ public final class N_Demo_Graphics_CharAnimation: NativeModule {
             let t0: Int64 = try nat(t, n_MAlloc, try push2(t, 2048, 0))
             l16_font = t0
             ln = 20 // CharAnimation.HC:20
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065857)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065862)
             ln = 21 // CharAnimation.HC:21
             _ = try nat(t, n_MemCpy, try push3(t, l16_font, ld8((P.g_text &+ 40)), 2048))
             ln = 22 // CharAnimation.HC:22
@@ -111,12 +111,12 @@ public final class N_Demo_Graphics_CharAnimation: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/CharAnimation.HC#2 (CharAnimation.HC:29)
-    @discardableResult public final func f707_init_C__Demo_Graphics_CharAnimation_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Graphics_CharAnimation_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 29 // CharAnimation.HC:29
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065858, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065863, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
             t.depth -= 1
             return t0
             t.depth -= 1
@@ -125,7 +125,7 @@ public final class N_Demo_Graphics_CharAnimation: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/CharAnimation.HC#3 (CharAnimation.HC:30)
-    @discardableResult public final func f708_init_C__Demo_Graphics_CharAnimation_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_Graphics_CharAnimation_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -139,18 +139,18 @@ public final class N_Demo_Graphics_CharAnimation: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Graphics_CharAnimation_HC_0(t)
-        case 704: return try f704_init_C__Demo_Graphics_CharAnimation_HC_1(t)
-        case 705: try f705_AnimateEndCB(t); return 0
-        case 706: try f706_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 707: return try f707_init_C__Demo_Graphics_CharAnimation_HC_2(t)
-        case 708: return try f708_init_C__Demo_Graphics_CharAnimation_HC_3(t)
+        case 708: return try f708_init_C__Demo_Graphics_CharAnimation_HC_0(t)
+        case 709: return try f709_init_C__Demo_Graphics_CharAnimation_HC_1(t)
+        case 710: try f710_AnimateEndCB(t); return 0
+        case 711: try f711_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 712: return try f712_init_C__Demo_Graphics_CharAnimation_HC_2(t)
+        case 713: return try f713_init_C__Demo_Graphics_CharAnimation_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Graphics/CharAnimation.HC#0", 704: "$init:C:/Demo/Graphics/CharAnimation.HC#1", 705: "AnimateEndCB", 706: "AnimateTask", 707: "$init:C:/Demo/Graphics/CharAnimation.HC#2", 708: "$init:C:/Demo/Graphics/CharAnimation.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Graphics/CharAnimation.HC#0", 709: "$init:C:/Demo/Graphics/CharAnimation.HC#1", 710: "AnimateEndCB", 711: "AnimateTask", 712: "$init:C:/Demo/Graphics/CharAnimation.HC#2", 713: "$init:C:/Demo/Graphics/CharAnimation.HC#3"]
     private static let FILES: [String] = ["C:/Demo/Graphics/CharAnimation.HC"]
     public override var files: [String] { N_Demo_Graphics_CharAnimation.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_CharAnimation.DEFINED.contains(index) }

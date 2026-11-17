@@ -1,12 +1,12 @@
 TOSIMG 1
 unit C:/Apps/ToTheFront/Run.HC#0
 s 1c04b8 433a2f417070732f546f54686546726f6e74
-fn 703 $init:C:/Apps/ToTheFront/Run.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/ToTheFront/Run.HC#0 (I64;;-)
+init 708
 unit C:/Apps/ToTheFront/Run.HC#1
 s 1c04b8 433a2f417070732f546f54686546726f6e74
-fn 704 $init:C:/Apps/ToTheFront/Run.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Apps/ToTheFront/Run.HC#1 (I64;;-)
+init 709
 unit C:/Apps/ToTheFront/Run.HC#2
 value HEX_SIDE 11
 value MAP_WIDTH 640
@@ -19,10 +19,10 @@ s 1c0500 2531322e3966
 s 1c0530 4453494e
 s 1c0500 2531322e3966
 s 1c0548 4845585f524144495553
-fn 705 InitDefines (U0;;-)
-fn 706 $init:C:/Apps/ToTheFront/Run.HC#2 (I64;;-)
-sym f InitDefines 705 (U0;;-)
-init 706
+fn 710 InitDefines (U0;;-)
+fn 711 $init:C:/Apps/ToTheFront/Run.HC#2 (I64;;-)
+sym f InitDefines 710 (U0;;-)
+init 711
 unit C:/Apps/ToTheFront/Run.HC#3
 value MAP_HEIGHT 464
 g 1c05e0 8
@@ -31,14 +31,14 @@ g 1c0610 8
 g 1c0628 8
 g 1c0640 8
 g 1c0658 8
-fn 707 $init:C:/Apps/ToTheFront/Run.HC#3 (I64;;-)
+fn 712 $init:C:/Apps/ToTheFront/Run.HC#3 (I64;;-)
 sym g map_cols 1c05e0 I64
 sym g map_height 1c0628 I64
 sym g map_rows 1c05f8 I64
 sym g map_width 1c0610 I64
 sym g x0 1c0640 I64
 sym g y0 1c0658 I64
-init 707
+init 712
 unit C:/Apps/ToTheFront/Run.HC#4
 value PHASE_DIRECT 4
 value PHASE_DIRECT0 4
@@ -138,18 +138,18 @@ c 1c63b0 8 1
 c 1c63b8 8 2
 c 1c63c0 8 1
 c 1c63c8 8 0
-fn 708 $eval0 (I64;;-)
-fn 709 $eval1 (I64;;-)
-fn 710 $eval2 (I64;;-)
-fn 711 $eval3 (I64;;-)
-fn 712 $eval4 (I64;;-)
-fn 713 $eval5 (I64;;-)
-fn 714 $eval6 (I64;;-)
-fn 715 $eval7 (I64;;-)
-fn 716 $eval8 (I64;;-)
-fn 717 $eval9 (I64;;-)
-fn 719 $init:C:/Apps/ToTheFront/Run.HC#4 (I64;;-)
-sym f HexMoveOne 718 (I64;*I64,*I64,F64,F64;-)
+fn 713 $eval0 (I64;;-)
+fn 714 $eval1 (I64;;-)
+fn 715 $eval2 (I64;;-)
+fn 716 $eval3 (I64;;-)
+fn 717 $eval4 (I64;;-)
+fn 718 $eval5 (I64;;-)
+fn 719 $eval6 (I64;;-)
+fn 720 $eval7 (I64;;-)
+fn 721 $eval8 (I64;;-)
+fn 722 $eval9 (I64;;-)
+fn 724 $init:C:/Apps/ToTheFront/Run.HC#4 (I64;;-)
+sym f HexMoveOne 723 (I64;*I64,*I64,F64,F64;-)
 sym g alive_cnt 1c6190 [2]I64
 sym g animation_delay 1c6210 F64
 sym g cur_player 1c6100 I64
@@ -192,7 +192,7 @@ sym g units 1c4dc8 [2][32]$Unit
 sym g view_player 1c6130 I64
 sym g vis_map 1c4948 [46][19]Bool
 sym g vis_unit_bitmap 1c5fd8 [2][128]U8
-init 719
+init 724
 unit C:/Apps/ToTheFront/Run.HC#5
 g 1c63e0 56
 c 1c63e0 8 ffffffffffffffff
@@ -202,9 +202,9 @@ c 1c63f8 8 0
 c 1c6400 8 0
 c 1c6408 8 ffffffffffffffff
 c 1c6410 8 0
-fn 720 $init:C:/Apps/ToTheFront/Run.HC#5 (I64;;-)
+fn 725 $init:C:/Apps/ToTheFront/Run.HC#5 (I64;;-)
 sym g col_offsets_even 1c63e0 [7]I64
-init 720
+init 725
 unit C:/Apps/ToTheFront/Run.HC#6
 g 1c6428 56
 c 1c6428 8 0
@@ -214,9 +214,9 @@ c 1c6440 8 1
 c 1c6448 8 0
 c 1c6450 8 0
 c 1c6458 8 0
-fn 721 $init:C:/Apps/ToTheFront/Run.HC#6 (I64;;-)
+fn 726 $init:C:/Apps/ToTheFront/Run.HC#6 (I64;;-)
 sym g col_offsets_odd 1c6428 [7]I64
-init 721
+init 726
 unit C:/Apps/ToTheFront/Run.HC#7
 value VR_ALL_UNITS 5
 value VR_FRIENDLY_UNIT_DIED 3
@@ -302,95 +302,95 @@ s 1c6cd0 2b25352e32661f1f4869740a
 s 1c6cf0 2d25352e32661f1f4d6973730a
 s 1c6e38 496e64697265637446697265
 g 1c6e58 16
-fn 722 Toward (U0;*I64,*I64,I64;-)
-fn 723 FacingChg (I64;I64,I64;-)
-fn 724 RowCol2XY (U0;*F64,*F64,I64,I64;-)
-fn 725 XY2RowCol (U0;*I64,*I64,F64,F64;-)
-fn 726 UnitFind (*$Unit;I64,I64;-)
-fn 727 CursorInWin (Bool;*$CTask,I64,I64;-)
-fn 728 CursorUpdate (U0;*$CTask,I64,I64;-)
-fn 729 LOSPlot (Bool;*$LOSCtrl,I64,I64,I64;-)
-fn 730 LOS (Bool;I64,I64,I64,I64;-)
-fn 731 DrawHexes (U0;;-)
-fn 732 MakeTerrain (U0;U8,I64,I64,I64;-)
-fn 733 MakeRivers (U0;;-)
-fn 734 MakeRoads (U0;;-)
-fn 735 DrawTerrain (U0;;-)
-fn 736 DrawRivers (U0;;-)
-fn 737 DrawRoads (U0;;-)
-fn 738 DrawDots (U0;;-)
-fn 739 HexCentersCalc (U0;;-)
-fn 740 InitMap (U0;;-)
-fn 741 InitUnits (U0;;-)
-fn 742 ViewPlayerSet (U0;I8;-)
-fn 743 Init (U0;;-)
-fn 744 CleanUp (U0;;-)
-fn 745 PlayerPick (U0;*U8,I64;-)
-fn 746 VRSetUp (U0;I64;-)
-fn 747 VRMerge (U0;I64;-)
-fn 748 MPVisRecalc (Bool;*$MPCtrl1;-)
-fn 750 $eval10 (I64;;-)
-fn 751 $eval11 (I64;;-)
-fn 749 VisRecalc (Bool;I64,*$Unit;-)
-fn 752 MPVisRecalcMap (U0;*$MPCtrl2;-)
-fn 754 $eval12 (I64;;-)
-fn 755 $eval13 (I64;;-)
-fn 753 VisRecalcMap (U0;I64,I64;-)
-fn 756 AttackHeader (U0;*$Unit,*U8,*$Unit;-)
-fn 757 HitDamage (F64;*$Unit,*$Unit,I64,F64;-)
-fn 758 DamageDo (Bool;*$Unit,F64;-)
-fn 759 IndirectAdd (U0;*$Unit,I64,I64;-)
-fn 760 BulletPlot (Bool;U0,I64,I64,I64;-)
-fn 761 UnitDirectFire (U0;*$Unit,*$Unit;-)
-fn 762 HexOccupy (Bool;Bool,*$Unit,*$Unit;-)
-fn 763 IndirectResolveAll (U0;;-)
-fn 764 $init:C:/Apps/ToTheFront/Run.HC#7 (I64;;-)
-sym f AttackHeader 756 (U0;*$Unit,*U8,*$Unit;-)
-sym f BulletPlot 760 (Bool;U0,I64,I64,I64;-)
-sym f CleanUp 744 (U0;;-)
-sym f CursorInWin 727 (Bool;*$CTask,I64,I64;-)
-sym f CursorUpdate 728 (U0;*$CTask,I64,I64;-)
-sym f DamageDo 758 (Bool;*$Unit,F64;-)
-sym f DrawDots 738 (U0;;-)
-sym f DrawHexes 731 (U0;;-)
-sym f DrawRivers 736 (U0;;-)
-sym f DrawRoads 737 (U0;;-)
-sym f DrawTerrain 735 (U0;;-)
-sym f FacingChg 723 (I64;I64,I64;-)
-sym f HexCentersCalc 739 (U0;;-)
-sym f HexOccupy 762 (Bool;Bool,*$Unit,*$Unit;-)
-sym f HitDamage 757 (F64;*$Unit,*$Unit,I64,F64;-)
-sym f IndirectAdd 759 (U0;*$Unit,I64,I64;-)
-sym f IndirectResolveAll 763 (U0;;-)
-sym f Init 743 (U0;;-)
-sym f InitMap 740 (U0;;-)
-sym f InitUnits 741 (U0;;-)
-sym f LOS 730 (Bool;I64,I64,I64,I64;-)
-sym f LOSPlot 729 (Bool;*$LOSCtrl,I64,I64,I64;-)
-sym f MPVisRecalc 748 (Bool;*$MPCtrl1;-)
-sym f MPVisRecalcMap 752 (U0;*$MPCtrl2;-)
-sym f MakeRivers 733 (U0;;-)
-sym f MakeRoads 734 (U0;;-)
-sym f MakeTerrain 732 (U0;U8,I64,I64,I64;-)
-sym f PlayerPick 745 (U0;*U8,I64;-)
-sym f RowCol2XY 724 (U0;*F64,*F64,I64,I64;-)
-sym f Toward 722 (U0;*I64,*I64,I64;-)
-sym f UnitDirectFire 761 (U0;*$Unit,*$Unit;-)
-sym f UnitFind 726 (*$Unit;I64,I64;-)
-sym f VRMerge 747 (U0;I64;-)
-sym f VRSetUp 746 (U0;I64;-)
-sym f ViewPlayerSet 742 (U0;I8;-)
-sym f VisRecalc 749 (Bool;I64,*$Unit;-)
-sym f VisRecalcMap 753 (U0;I64,I64;-)
-sym f XY2RowCol 725 (U0;*I64,*I64,F64,F64;-)
+fn 727 Toward (U0;*I64,*I64,I64;-)
+fn 728 FacingChg (I64;I64,I64;-)
+fn 729 RowCol2XY (U0;*F64,*F64,I64,I64;-)
+fn 730 XY2RowCol (U0;*I64,*I64,F64,F64;-)
+fn 731 UnitFind (*$Unit;I64,I64;-)
+fn 732 CursorInWin (Bool;*$CTask,I64,I64;-)
+fn 733 CursorUpdate (U0;*$CTask,I64,I64;-)
+fn 734 LOSPlot (Bool;*$LOSCtrl,I64,I64,I64;-)
+fn 735 LOS (Bool;I64,I64,I64,I64;-)
+fn 736 DrawHexes (U0;;-)
+fn 737 MakeTerrain (U0;U8,I64,I64,I64;-)
+fn 738 MakeRivers (U0;;-)
+fn 739 MakeRoads (U0;;-)
+fn 740 DrawTerrain (U0;;-)
+fn 741 DrawRivers (U0;;-)
+fn 742 DrawRoads (U0;;-)
+fn 743 DrawDots (U0;;-)
+fn 744 HexCentersCalc (U0;;-)
+fn 745 InitMap (U0;;-)
+fn 746 InitUnits (U0;;-)
+fn 747 ViewPlayerSet (U0;I8;-)
+fn 748 Init (U0;;-)
+fn 749 CleanUp (U0;;-)
+fn 750 PlayerPick (U0;*U8,I64;-)
+fn 751 VRSetUp (U0;I64;-)
+fn 752 VRMerge (U0;I64;-)
+fn 753 MPVisRecalc (Bool;*$MPCtrl1;-)
+fn 755 $eval10 (I64;;-)
+fn 756 $eval11 (I64;;-)
+fn 754 VisRecalc (Bool;I64,*$Unit;-)
+fn 757 MPVisRecalcMap (U0;*$MPCtrl2;-)
+fn 759 $eval12 (I64;;-)
+fn 760 $eval13 (I64;;-)
+fn 758 VisRecalcMap (U0;I64,I64;-)
+fn 761 AttackHeader (U0;*$Unit,*U8,*$Unit;-)
+fn 762 HitDamage (F64;*$Unit,*$Unit,I64,F64;-)
+fn 763 DamageDo (Bool;*$Unit,F64;-)
+fn 764 IndirectAdd (U0;*$Unit,I64,I64;-)
+fn 765 BulletPlot (Bool;U0,I64,I64,I64;-)
+fn 766 UnitDirectFire (U0;*$Unit,*$Unit;-)
+fn 767 HexOccupy (Bool;Bool,*$Unit,*$Unit;-)
+fn 768 IndirectResolveAll (U0;;-)
+fn 769 $init:C:/Apps/ToTheFront/Run.HC#7 (I64;;-)
+sym f AttackHeader 761 (U0;*$Unit,*U8,*$Unit;-)
+sym f BulletPlot 765 (Bool;U0,I64,I64,I64;-)
+sym f CleanUp 749 (U0;;-)
+sym f CursorInWin 732 (Bool;*$CTask,I64,I64;-)
+sym f CursorUpdate 733 (U0;*$CTask,I64,I64;-)
+sym f DamageDo 763 (Bool;*$Unit,F64;-)
+sym f DrawDots 743 (U0;;-)
+sym f DrawHexes 736 (U0;;-)
+sym f DrawRivers 741 (U0;;-)
+sym f DrawRoads 742 (U0;;-)
+sym f DrawTerrain 740 (U0;;-)
+sym f FacingChg 728 (I64;I64,I64;-)
+sym f HexCentersCalc 744 (U0;;-)
+sym f HexOccupy 767 (Bool;Bool,*$Unit,*$Unit;-)
+sym f HitDamage 762 (F64;*$Unit,*$Unit,I64,F64;-)
+sym f IndirectAdd 764 (U0;*$Unit,I64,I64;-)
+sym f IndirectResolveAll 768 (U0;;-)
+sym f Init 748 (U0;;-)
+sym f InitMap 745 (U0;;-)
+sym f InitUnits 746 (U0;;-)
+sym f LOS 735 (Bool;I64,I64,I64,I64;-)
+sym f LOSPlot 734 (Bool;*$LOSCtrl,I64,I64,I64;-)
+sym f MPVisRecalc 753 (Bool;*$MPCtrl1;-)
+sym f MPVisRecalcMap 757 (U0;*$MPCtrl2;-)
+sym f MakeRivers 738 (U0;;-)
+sym f MakeRoads 739 (U0;;-)
+sym f MakeTerrain 737 (U0;U8,I64,I64,I64;-)
+sym f PlayerPick 750 (U0;*U8,I64;-)
+sym f RowCol2XY 729 (U0;*F64,*F64,I64,I64;-)
+sym f Toward 727 (U0;*I64,*I64,I64;-)
+sym f UnitDirectFire 766 (U0;*$Unit,*$Unit;-)
+sym f UnitFind 731 (*$Unit;I64,I64;-)
+sym f VRMerge 752 (U0;I64;-)
+sym f VRSetUp 751 (U0;I64;-)
+sym f ViewPlayerSet 747 (U0;I8;-)
+sym f VisRecalc 754 (Bool;I64,*$Unit;-)
+sym f VisRecalcMap 758 (U0;I64,I64;-)
+sym f XY2RowCol 730 (U0;*I64,*I64,F64,F64;-)
 sym g movement_costs 1c6e58 [16]U8
-init 764
+init 769
 unit C:/Apps/ToTheFront/Run.HC#8
-fn 765 $init:C:/Apps/ToTheFront/Run.HC#8 (I64;;-)
-init 765
+fn 770 $init:C:/Apps/ToTheFront/Run.HC#8 (I64;;-)
+init 770
 unit C:/Apps/ToTheFront/Run.HC#9
-fn 766 $init:C:/Apps/ToTheFront/Run.HC#9 (I64;;-)
-init 766
+fn 771 $init:C:/Apps/ToTheFront/Run.HC#9 (I64;;-)
+init 771
 unit C:/Apps/ToTheFront/Run.HC#10
 b 1c6e78 010403020000000e01000000010000000600000003010000000a00000000feffffff00000000020000000afeffffff00000000020000000000000000
 s 1c6ec8 5475726e3a25326420417274696c6c657279
@@ -411,63 +411,63 @@ s 1c7140 414973
 s 1c7140 414973
 s 1c7158 24505552504c45242454582b43582c22546f54686546726f6e742224244647240a0a24475245454e247b4c6566742d636c69636b7d2446472420746f206d6f7665206f72206669726520756e6974732e0a24475245454e243c53504143453e24464724096f722024475245454e247b52696768742d636c69636b7d2446472420746f20656e642070686173652e0a24475245454e243c53484946543e2446472409746f2073686f77206c696e652d6f662d73696768742e0a24475245454e243c454e5445523e2446472409746f207374617274206e65772067616d652e0a24475245454e241f1f312446472409506c61796572203120766965772e0a24475245454e241f1f322446472409506c61796572203220766965772e0a24475245454e241f1f63244647240956696577206f6464732063616c63756c6174696f6e732e0a24475245454e241f1f64244647240953657420616e696d6174696f6e2064656c61792e
 s 1c72d0 47616d65204f766572
-fn 767 HexMoveOneCost (I64;*$Unit,I64,I64,I64;-)
-fn 718 HexMoveOne (I64;*I64,*I64,F64,F64;-)
-fn 768 UnitMovePlot (Bool;U0,I64,I64,I64;-)
-fn 769 UnitMoveAnimation (U0;*$Unit,I64,I64,I64;-)
-fn 770 UnitMove (Bool;*$Unit,I64,I64;-)
-fn 771 UnitDraw (U0;*$CDC,*$Unit,I64,I64,F64;-)
-fn 772 UnitsDraw (U0;*$CDC;-)
-fn 773 DrawIt (U0;*$CTask,*$CDC;-)
-fn 774 AnimationDelaySet (U0;;-)
-fn 775 TurnNew (U0;;-)
-fn 776 PhaseNew (U0;;-)
-fn 777 CharDo (U0;U8;-)
-fn 778 UserChk (U0;;-)
-fn 779 TaskEndCB (U0;;-)
-fn 780 PhaseDo (I64;;-)
-fn 781 ToTheFront (U0;;-)
-fn 782 $init:C:/Apps/ToTheFront/Run.HC#10 (I64;;-)
-sym f AnimationDelaySet 774 (U0;;-)
-sym f CharDo 777 (U0;U8;-)
-sym f DrawIt 773 (U0;*$CTask,*$CDC;-)
-sym f HexMoveOneCost 767 (I64;*$Unit,I64,I64,I64;-)
-sym f PhaseDo 780 (I64;;-)
-sym f PhaseNew 776 (U0;;-)
-sym f TaskEndCB 779 (U0;;-)
-sym f ToTheFront 781 (U0;;-)
-sym f TurnNew 775 (U0;;-)
-sym f UnitDraw 771 (U0;*$CDC,*$Unit,I64,I64,F64;-)
-sym f UnitMove 770 (Bool;*$Unit,I64,I64;-)
-sym f UnitMoveAnimation 769 (U0;*$Unit,I64,I64,I64;-)
-sym f UnitMovePlot 768 (Bool;U0,I64,I64,I64;-)
-sym f UnitsDraw 772 (U0;*$CDC;-)
-sym f UserChk 778 (U0;;-)
-init 782
+fn 772 HexMoveOneCost (I64;*$Unit,I64,I64,I64;-)
+fn 723 HexMoveOne (I64;*I64,*I64,F64,F64;-)
+fn 773 UnitMovePlot (Bool;U0,I64,I64,I64;-)
+fn 774 UnitMoveAnimation (U0;*$Unit,I64,I64,I64;-)
+fn 775 UnitMove (Bool;*$Unit,I64,I64;-)
+fn 776 UnitDraw (U0;*$CDC,*$Unit,I64,I64,F64;-)
+fn 777 UnitsDraw (U0;*$CDC;-)
+fn 778 DrawIt (U0;*$CTask,*$CDC;-)
+fn 779 AnimationDelaySet (U0;;-)
+fn 780 TurnNew (U0;;-)
+fn 781 PhaseNew (U0;;-)
+fn 782 CharDo (U0;U8;-)
+fn 783 UserChk (U0;;-)
+fn 784 TaskEndCB (U0;;-)
+fn 785 PhaseDo (I64;;-)
+fn 786 ToTheFront (U0;;-)
+fn 787 $init:C:/Apps/ToTheFront/Run.HC#10 (I64;;-)
+sym f AnimationDelaySet 779 (U0;;-)
+sym f CharDo 782 (U0;U8;-)
+sym f DrawIt 778 (U0;*$CTask,*$CDC;-)
+sym f HexMoveOneCost 772 (I64;*$Unit,I64,I64,I64;-)
+sym f PhaseDo 785 (I64;;-)
+sym f PhaseNew 781 (U0;;-)
+sym f TaskEndCB 784 (U0;;-)
+sym f ToTheFront 786 (U0;;-)
+sym f TurnNew 780 (U0;;-)
+sym f UnitDraw 776 (U0;*$CDC,*$Unit,I64,I64,F64;-)
+sym f UnitMove 775 (Bool;*$Unit,I64,I64;-)
+sym f UnitMoveAnimation 774 (U0;*$Unit,I64,I64,I64;-)
+sym f UnitMovePlot 773 (Bool;U0,I64,I64,I64;-)
+sym f UnitsDraw 777 (U0;*$CDC;-)
+sym f UserChk 783 (U0;;-)
+init 787
 unit C:/Apps/ToTheFront/Run.HC#11
 unit C:/Apps/ToTheFront/AIs/Human.HC#0
 registry file:C:/Apps/ToTheFront/AIs/Human.HC
-fn 783 PlayerIndirect (U0;;-)
-fn 784 PlayerMove (U0;;-)
-fn 785 PlayerDirect (U0;;-)
-fn 786 $init:C:/Apps/ToTheFront/AIs/Human.HC#0 (I64;;-)
-sym f PlayerDirect 785 (U0;;-)
-sym f PlayerIndirect 783 (U0;;-)
-sym f PlayerMove 784 (U0;;-)
-init 786
+fn 788 PlayerIndirect (U0;;-)
+fn 789 PlayerMove (U0;;-)
+fn 790 PlayerDirect (U0;;-)
+fn 791 $init:C:/Apps/ToTheFront/AIs/Human.HC#0 (I64;;-)
+sym f PlayerDirect 790 (U0;;-)
+sym f PlayerIndirect 788 (U0;;-)
+sym f PlayerMove 789 (U0;;-)
+init 791
 unit C:/Apps/ToTheFront/AIs/Human.HC#1
 registry file:C:/Apps/ToTheFront/AIs/Human.HC
 unit C:/Apps/ToTheFront/AIs/SimpleAI.HC#0
 registry file:C:/Apps/ToTheFront/AIs/SimpleAI.HC
-fn 787 UnitNearestFind (*$Unit;I64,I64,I64,Bool,F64;-)
-fn 788 PlayerIndirect (U0;;-)
-fn 789 PlayerMove (U0;;-)
-fn 790 PlayerDirect (U0;;-)
-fn 791 $init:C:/Apps/ToTheFront/AIs/SimpleAI.HC#0 (I64;;-)
-sym f PlayerDirect 790 (U0;;-)
-sym f PlayerIndirect 788 (U0;;-)
-sym f PlayerMove 789 (U0;;-)
-sym f UnitNearestFind 787 (*$Unit;I64,I64,I64,Bool,F64;-)
-init 791
+fn 792 UnitNearestFind (*$Unit;I64,I64,I64,Bool,F64;-)
+fn 793 PlayerIndirect (U0;;-)
+fn 794 PlayerMove (U0;;-)
+fn 795 PlayerDirect (U0;;-)
+fn 796 $init:C:/Apps/ToTheFront/AIs/SimpleAI.HC#0 (I64;;-)
+sym f PlayerDirect 795 (U0;;-)
+sym f PlayerIndirect 793 (U0;;-)
+sym f PlayerMove 794 (U0;;-)
+sym f UnitNearestFind 792 (*$Unit;I64,I64,I64,Bool,F64;-)
+init 796
 unit C:/Apps/ToTheFront/AIs/SimpleAI.HC#1
 registry file:C:/Apps/ToTheFront/AIs/SimpleAI.HC

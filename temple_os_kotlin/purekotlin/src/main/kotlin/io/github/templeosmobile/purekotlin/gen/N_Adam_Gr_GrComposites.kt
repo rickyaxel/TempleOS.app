@@ -16,6 +16,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GrBlot = rt.vm.natives.find("GrBlot")!!.index
     @JvmField val n_GrFillTri0 = rt.vm.natives.find("GrFillTri0")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_GrRect = rt.vm.natives.find("GrRect")!!.index
     @JvmField val n_Line = rt.vm.natives.find("Line")!!.index
     @JvmField val n_MAlloc = rt.vm.natives.find("MAlloc")!!.index
@@ -35,7 +36,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrFillPoly3 (GrComposites.HC:2) */
-    fun f703_GrFillPoly3(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f708_GrFillPoly3(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -204,7 +205,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrRectB (GrComposites.HC:68) */
-    fun f704_GrRectB(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f709_GrRectB(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -241,7 +242,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrRect3 (GrComposites.HC:75) */
-    fun f705_GrRect3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
+    fun f710_GrRect3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -279,7 +280,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4((((fp + 48) + 36L) + 8L), p3_z)
             ln = 90 // GrComposites.HC:90
             tick(t)
-            val t0: Long = f703_GrFillPoly3(t, p0_dc, 4L, (fp + 48))
+            val t0: Long = f708_GrFillPoly3(t, p0_dc, 4L, (fp + 48))
             t.msp = msp0
             t.depth--
             return t0
@@ -290,7 +291,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrBorder (GrComposites.HC:93) */
-    fun f706_GrBorder(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long) {
+    fun f711_GrBorder(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long) {
         var ln = 0
         try {
             enter(t)
@@ -302,24 +303,20 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var p5_step: Long = a5
             var p6_start: Long = a6
             ln = 97 // GrComposites.HC:97
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, p1_x1, p2_y1, 0L, p3_x2, p2_y1, 0L, p5_step, p6_start)
+            nat(t, n_GrLine3, push(t, p0_dc, p1_x1, p2_y1, 0L, p3_x2, p2_y1, 0L, p5_step, p6_start))
             ln = 98 // GrComposites.HC:98
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, p3_x2, p2_y1, 0L, p3_x2, p4_y2, 0L, p5_step, p6_start)
+            nat(t, n_GrLine3, push(t, p0_dc, p3_x2, p2_y1, 0L, p3_x2, p4_y2, 0L, p5_step, p6_start))
             ln = 99 // GrComposites.HC:99
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, p3_x2, p4_y2, 0L, p1_x1, p4_y2, 0L, p5_step, p6_start)
+            nat(t, n_GrLine3, push(t, p0_dc, p3_x2, p4_y2, 0L, p1_x1, p4_y2, 0L, p5_step, p6_start))
             ln = 100 // GrComposites.HC:100
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, p1_x1, p4_y2, 0L, p1_x1, p2_y1, 0L, p5_step, p6_start)
+            nat(t, n_GrLine3, push(t, p0_dc, p1_x1, p4_y2, 0L, p1_x1, p2_y1, 0L, p5_step, p6_start))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "GrBorder", ln) }
     }
 
     /** HolyC GrArrow3 (GrComposites.HC:103) */
-    fun f707_GrArrow3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Double, a8: Long, a9: Long): Long {
+    fun f712_GrArrow3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Double, a8: Long, a9: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -383,7 +380,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     val t1: Long = (p0_dc + 28L)
                     st4(t1, (ld4s(t1) and -513L))
                     ln = 121 // GrComposites.HC:121
-                    val t2: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 80)), ld8((fp + 88)), ld8((fp + 96)), ld8((fp + 104)), ld8((fp + 112)), ld8((fp + 120)), 9223090561878065545L, p8_step, p9_start))
+                    val t2: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 80)), ld8((fp + 88)), ld8((fp + 96)), ld8((fp + 104)), ld8((fp + 112)), ld8((fp + 120)), 9223090561878065546L, p8_step, p9_start))
                     l152_res = (t2 and 0xFFL)
                     ln = 122 // GrComposites.HC:122
                     l128_dx = (ld8((fp + 104)) - ld8((fp + 80)))
@@ -395,10 +392,10 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         ln = 124 // GrComposites.HC:124
                         l144_d = ((p7_w * ld4s((p0_dc + 228L)).toDouble()) / l144_d)
                         ln = 125 // GrComposites.HC:125
-                        val t4: Long = nat(t, n_Line, push(t, p0_dc, f2i((((ld8((fp + 104)).toDouble() - (l128_dx.toDouble() * l144_d)) + (l136_dy.toDouble() * l144_d)) + 0.5)), f2i((((ld8((fp + 112)).toDouble() - (l136_dy.toDouble() * l144_d)) - (l128_dx.toDouble() * l144_d)) + 0.5)), ld8((fp + 120)), ld8((fp + 104)), ld8((fp + 112)), ld8((fp + 120)), 9223090561878065545L, p8_step, 0L))
+                        val t4: Long = nat(t, n_Line, push(t, p0_dc, f2i((((ld8((fp + 104)).toDouble() - (l128_dx.toDouble() * l144_d)) + (l136_dy.toDouble() * l144_d)) + 0.5)), f2i((((ld8((fp + 112)).toDouble() - (l136_dy.toDouble() * l144_d)) - (l128_dx.toDouble() * l144_d)) + 0.5)), ld8((fp + 120)), ld8((fp + 104)), ld8((fp + 112)), ld8((fp + 120)), 9223090561878065546L, p8_step, 0L))
                         l152_res = ((l152_res or t4) and 0xFFL)
                         ln = 127 // GrComposites.HC:127
-                        val t5: Long = nat(t, n_Line, push(t, p0_dc, f2i((((ld8((fp + 104)).toDouble() - (l128_dx.toDouble() * l144_d)) - (l136_dy.toDouble() * l144_d)) + 0.5)), f2i((((ld8((fp + 112)).toDouble() - (l136_dy.toDouble() * l144_d)) + (l128_dx.toDouble() * l144_d)) + 0.5)), ld8((fp + 120)), ld8((fp + 104)), ld8((fp + 112)), ld8((fp + 120)), 9223090561878065545L, p8_step, 0L))
+                        val t5: Long = nat(t, n_Line, push(t, p0_dc, f2i((((ld8((fp + 104)).toDouble() - (l128_dx.toDouble() * l144_d)) - (l136_dy.toDouble() * l144_d)) + 0.5)), f2i((((ld8((fp + 112)).toDouble() - (l136_dy.toDouble() * l144_d)) + (l128_dx.toDouble() * l144_d)) + 0.5)), ld8((fp + 120)), ld8((fp + 104)), ld8((fp + 112)), ld8((fp + 120)), 9223090561878065546L, p8_step, 0L))
                         l152_res = ((l152_res or t5) and 0xFFL)
                     }
                     ln = 130 // GrComposites.HC:130
@@ -410,7 +407,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     }
                 }
                 ln = 134 // GrComposites.HC:134
-                val t6: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), 9223090561878065545L, p8_step, p9_start))
+                val t6: Long = nat(t, n_Line, push(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), ld8((fp + 24)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), 9223090561878065546L, p8_step, p9_start))
                 l152_res = ((l152_res or t6) and 0xFFL)
                 ln = 135 // GrComposites.HC:135
                 l128_dx = (ld8((fp + 32)) - ld8((fp + 8)))
@@ -422,10 +419,10 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 137 // GrComposites.HC:137
                     l144_d = ((p7_w * ld4s((p0_dc + 228L)).toDouble()) / l144_d)
                     ln = 138 // GrComposites.HC:138
-                    val t8: Long = nat(t, n_Line, push(t, p0_dc, f2i((((ld8((fp + 32)).toDouble() - (l128_dx.toDouble() * l144_d)) + (l136_dy.toDouble() * l144_d)) + 0.5)), f2i((((ld8((fp + 40)).toDouble() - (l136_dy.toDouble() * l144_d)) - (l128_dx.toDouble() * l144_d)) + 0.5)), ld8((fp + 48)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), 9223090561878065545L, p8_step, 0L))
+                    val t8: Long = nat(t, n_Line, push(t, p0_dc, f2i((((ld8((fp + 32)).toDouble() - (l128_dx.toDouble() * l144_d)) + (l136_dy.toDouble() * l144_d)) + 0.5)), f2i((((ld8((fp + 40)).toDouble() - (l136_dy.toDouble() * l144_d)) - (l128_dx.toDouble() * l144_d)) + 0.5)), ld8((fp + 48)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), 9223090561878065546L, p8_step, 0L))
                     l152_res = ((l152_res or t8) and 0xFFL)
                     ln = 140 // GrComposites.HC:140
-                    val t9: Long = nat(t, n_Line, push(t, p0_dc, f2i((((ld8((fp + 32)).toDouble() - (l128_dx.toDouble() * l144_d)) - (l136_dy.toDouble() * l144_d)) + 0.5)), f2i((((ld8((fp + 40)).toDouble() - (l136_dy.toDouble() * l144_d)) + (l128_dx.toDouble() * l144_d)) + 0.5)), ld8((fp + 48)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), 9223090561878065545L, p8_step, 0L))
+                    val t9: Long = nat(t, n_Line, push(t, p0_dc, f2i((((ld8((fp + 32)).toDouble() - (l128_dx.toDouble() * l144_d)) - (l136_dy.toDouble() * l144_d)) + 0.5)), f2i((((ld8((fp + 40)).toDouble() - (l136_dy.toDouble() * l144_d)) + (l128_dx.toDouble() * l144_d)) + 0.5)), ld8((fp + 48)), ld8((fp + 32)), ld8((fp + 40)), ld8((fp + 48)), 9223090561878065546L, p8_step, 0L))
                     l152_res = ((l152_res or t9) and 0xFFL)
                 }
             } while (false)
@@ -452,7 +449,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrTextBox3 (GrComposites.HC:152) */
-    fun f708_GrTextBox3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
+    fun f713_GrTextBox3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -528,24 +525,24 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 173 // GrComposites.HC:173
             tick(t)
             val vb0 = push1(t, p4_s)
-            val t3: Long = P.f369_GrPrint(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), s0, vb0, 1)
+            val t3: Long = P.f370_GrPrint(t, p0_dc, ld8((fp + 8)), ld8((fp + 16)), s0, vb0, 1)
             t.sp = vb0
             l64_res = t3
             ln = 174 // GrComposites.HC:174
             tick(t)
-            val t4: Long = P.f396_GrLine(t, p0_dc, (ld8((fp + 8)) - p5_border), (ld8((fp + 16)) - p5_border), ((ld8((fp + 8)) + l80_w_max) + p5_border), (ld8((fp + 16)) - p5_border), 1L, 0L)
+            val t4: Long = P.f397_GrLine(t, p0_dc, (ld8((fp + 8)) - p5_border), (ld8((fp + 16)) - p5_border), ((ld8((fp + 8)) + l80_w_max) + p5_border), (ld8((fp + 16)) - p5_border), 1L, 0L)
             l64_res = (l64_res or t4)
             ln = 175 // GrComposites.HC:175
             tick(t)
-            val t5: Long = P.f396_GrLine(t, p0_dc, (ld8((fp + 8)) - p5_border), ((ld8((fp + 16)) + l88_h) + p5_border), ((ld8((fp + 8)) + l80_w_max) + p5_border), ((ld8((fp + 16)) + l88_h) + p5_border), 1L, 0L)
+            val t5: Long = P.f397_GrLine(t, p0_dc, (ld8((fp + 8)) - p5_border), ((ld8((fp + 16)) + l88_h) + p5_border), ((ld8((fp + 8)) + l80_w_max) + p5_border), ((ld8((fp + 16)) + l88_h) + p5_border), 1L, 0L)
             l64_res = (l64_res or t5)
             ln = 176 // GrComposites.HC:176
             tick(t)
-            val t6: Long = P.f396_GrLine(t, p0_dc, (ld8((fp + 8)) - p5_border), (ld8((fp + 16)) - p5_border), (ld8((fp + 8)) - p5_border), ((ld8((fp + 16)) + l88_h) + p5_border), 1L, 0L)
+            val t6: Long = P.f397_GrLine(t, p0_dc, (ld8((fp + 8)) - p5_border), (ld8((fp + 16)) - p5_border), (ld8((fp + 8)) - p5_border), ((ld8((fp + 16)) + l88_h) + p5_border), 1L, 0L)
             l64_res = (l64_res or t6)
             ln = 177 // GrComposites.HC:177
             tick(t)
-            val t7: Long = P.f396_GrLine(t, p0_dc, ((ld8((fp + 8)) + l80_w_max) + p5_border), (ld8((fp + 16)) - p5_border), ((ld8((fp + 8)) + l80_w_max) + p5_border), ((ld8((fp + 16)) + l88_h) + p5_border), 1L, 0L)
+            val t7: Long = P.f397_GrLine(t, p0_dc, ((ld8((fp + 8)) + l80_w_max) + p5_border), (ld8((fp + 16)) - p5_border), ((ld8((fp + 8)) + l80_w_max) + p5_border), ((ld8((fp + 16)) + l88_h) + p5_border), 1L, 0L)
             l64_res = (l64_res or t7)
             ln = 178 // GrComposites.HC:178
             val t8: Long = nat(t, n_ToBool, push1(t, l64_res))
@@ -559,7 +556,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GrTextDiamond3 (GrComposites.HC:183) */
-    fun f709_GrTextDiamond3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
+    fun f714_GrTextDiamond3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -663,7 +660,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 217 // GrComposites.HC:217
                     tick(t)
                     val vb1 = push1(t, l80_st)
-                    val t4: Long = P.f369_GrPrint(t, p0_dc, (ld8((fp + 8)) - l144_w), l104_y, s0, vb1, 1)
+                    val t4: Long = P.f370_GrPrint(t, p0_dc, (ld8((fp + 8)) - l144_w), l104_y, s0, vb1, 1)
                     t.sp = vb1
                     l96_res = (l96_res or t4)
                     ln = 218 // GrComposites.HC:218
@@ -672,7 +669,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 220 // GrComposites.HC:220
                     tick(t)
                     val vb2 = push1(t, l80_st)
-                    val t5: Long = P.f369_GrPrint(t, p0_dc, (ld8((fp + 8)) - l144_w), l104_y, s0, vb2, 1)
+                    val t5: Long = P.f370_GrPrint(t, p0_dc, (ld8((fp + 8)) - l144_w), l104_y, s0, vb2, 1)
                     t.sp = vb2
                     l96_res = (l96_res or t5)
                 }
@@ -735,19 +732,19 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             nat(t, n_Free, push1(t, l88_s))
             ln = 241 // GrComposites.HC:241
             tick(t)
-            val t17: Long = P.f396_GrLine(t, p0_dc, ld8((fp + 8)), (ld8((fp + 16)) - l120_dy), (ld8((fp + 8)) + l112_dx), ld8((fp + 16)), 1L, 0L)
+            val t17: Long = P.f397_GrLine(t, p0_dc, ld8((fp + 8)), (ld8((fp + 16)) - l120_dy), (ld8((fp + 8)) + l112_dx), ld8((fp + 16)), 1L, 0L)
             l96_res = (l96_res or t17)
             ln = 242 // GrComposites.HC:242
             tick(t)
-            val t18: Long = P.f396_GrLine(t, p0_dc, (ld8((fp + 8)) + l112_dx), ld8((fp + 16)), ld8((fp + 8)), (ld8((fp + 16)) + l120_dy), 1L, 0L)
+            val t18: Long = P.f397_GrLine(t, p0_dc, (ld8((fp + 8)) + l112_dx), ld8((fp + 16)), ld8((fp + 8)), (ld8((fp + 16)) + l120_dy), 1L, 0L)
             l96_res = (l96_res or t18)
             ln = 243 // GrComposites.HC:243
             tick(t)
-            val t19: Long = P.f396_GrLine(t, p0_dc, ld8((fp + 8)), (ld8((fp + 16)) + l120_dy), (ld8((fp + 8)) - l112_dx), ld8((fp + 16)), 1L, 0L)
+            val t19: Long = P.f397_GrLine(t, p0_dc, ld8((fp + 8)), (ld8((fp + 16)) + l120_dy), (ld8((fp + 8)) - l112_dx), ld8((fp + 16)), 1L, 0L)
             l96_res = (l96_res or t19)
             ln = 244 // GrComposites.HC:244
             tick(t)
-            val t20: Long = P.f396_GrLine(t, p0_dc, (ld8((fp + 8)) - l112_dx), ld8((fp + 16)), ld8((fp + 8)), (ld8((fp + 16)) - l120_dy), 1L, 0L)
+            val t20: Long = P.f397_GrLine(t, p0_dc, (ld8((fp + 8)) - l112_dx), ld8((fp + 16)), ld8((fp + 8)), (ld8((fp + 16)) - l120_dy), 1L, 0L)
             l96_res = (l96_res or t20)
             ln = 245 // GrComposites.HC:245
             val t21: Long = nat(t, n_ToBool, push1(t, l96_res))
@@ -761,7 +758,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Gr3Mesh (GrComposites.HC:249) */
-    fun f710_Gr3Mesh(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f715_Gr3Mesh(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -898,7 +895,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawStdMs (GrComposites.HC:298) */
-    fun f711_DrawStdMs(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f716_DrawStdMs(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -912,28 +909,28 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4(t0, (ld4s(t0) and -769L))
             ln = 304 // GrComposites.HC:304
             tick(t)
-            f707_GrArrow3(t, p0_dc, (p1_x + 8L), (p2_y + 8L), 0L, p1_x, p2_y, 0L, 2.75, 1L, 0L)
+            f712_GrArrow3(t, p0_dc, (p1_x + 8L), (p2_y + 8L), 0L, p1_x, p2_y, 0L, 2.75, 1L, 0L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawStdMs", ln) }
     }
 
     /** HolyC $init:C:/Adam/Gr/GrComposites.HC#0 (GrComposites.HC:307) */
-    fun f712_init_C__Adam_Gr_GrComposites_HC_0(t: Task): Long {
+    fun f717_init_C__Adam_Gr_GrComposites_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 307 // GrComposites.HC:307
-            st8((P.g_gr + 144L), 9223090561878065863L)
+            st8((P.g_gr + 144L), 9223090561878065868L)
             t.depth--
-            return 9223090561878065863L
+            return 9223090561878065868L
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Adam/Gr/GrComposites.HC#0", ln) }
     }
 
     /** HolyC DrawWaitMs (GrComposites.HC:309) */
-    fun f713_DrawWaitMs(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f718_DrawWaitMs(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -952,18 +949,17 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4((p0_dc + 160L), 12L)
             ln = 315 // GrComposites.HC:315
             tick(t)
-            P.f411_GrCircle3(t, p0_dc, p1_x, p2_y, 0L, 7L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f413_GrCircle3(t, p0_dc, p1_x, p2_y, 0L, 7L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 316 // GrComposites.HC:316
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, (p1_x - 6L), (p2_y + 6L), 0L, (p1_x + 6L), (p2_y - 6L), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p0_dc, (p1_x - 6L), (p2_y + 6L), 0L, (p1_x + 6L), (p2_y - 6L), 0L, 1L, 0L))
             ln = 317 // GrComposites.HC:317
             st4((p0_dc + 160L), 4L)
             ln = 318 // GrComposites.HC:318
             tick(t)
-            P.f397_GrCircle(t, p0_dc, p1_x, p2_y, 7L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, p0_dc, p1_x, p2_y, 7L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 319 // GrComposites.HC:319
             tick(t)
-            P.f396_GrLine(t, p0_dc, (p1_x - 6L), (p2_y + 6L), (p1_x + 6L), (p2_y - 6L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, (p1_x - 6L), (p2_y + 6L), (p1_x + 6L), (p2_y - 6L), 1L, 0L)
             ln = 320 // GrComposites.HC:320
             st4((p0_dc + 228L), l24_old_pen_width)
             ln = 321 // GrComposites.HC:321
@@ -974,7 +970,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GRScrnCaptureRead (GrComposites.HC:325) */
-    fun f714_GRScrnCaptureRead(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f719_GRScrnCaptureRead(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -985,7 +981,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l32_dc2: Long = 0L
             ln = 328 // GrComposites.HC:328
             tick(t)
-            val t0: Long = P.f630_GRRead(t, p0_filename, 0L)
+            val t0: Long = P.f635_GRRead(t, p0_filename, 0L)
             l32_dc2 = t0
             if ((t0 != 0L)) {
                 ln = 329 // GrComposites.HC:329
@@ -1008,7 +1004,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC GRScrnCaptureWrite (GrComposites.HC:337) */
-    fun f715_GRScrnCaptureWrite(t: Task, a0: Long, a1: Long): Long {
+    fun f720_GRScrnCaptureWrite(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1023,7 +1019,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             l24_dc = t0
             ln = 341 // GrComposites.HC:341
             tick(t)
-            val t1: Long = P.f629_GRWrite(t, p0_filename, l24_dc, 3L)
+            val t1: Long = P.f634_GRWrite(t, p0_filename, l24_dc, 3L)
             l16_size = t1
             ln = 342 // GrComposites.HC:342
             tick(t)
@@ -1037,7 +1033,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Adam/Gr/GrComposites.HC#1 (GrComposites.HC:1) */
-    fun f716_init_C__Adam_Gr_GrComposites_HC_1(t: Task): Long {
+    fun f721_init_C__Adam_Gr_GrComposites_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1049,20 +1045,20 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_GrFillPoly3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            704 -> f704_GrRectB(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            705 -> f705_GrRect3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
-            706 -> { f706_GrBorder(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L)); 0L }
-            707 -> f707_GrArrow3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), (if (n > 8) st[base + 8] else 0L), (if (n > 9) st[base + 9] else 0L))
-            708 -> f708_GrTextBox3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
-            709 -> f709_GrTextDiamond3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
-            710 -> f710_Gr3Mesh(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            711 -> { f711_DrawStdMs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            712 -> f712_init_C__Adam_Gr_GrComposites_HC_0(t)
-            713 -> { f713_DrawWaitMs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            714 -> f714_GRScrnCaptureRead(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            715 -> f715_GRScrnCaptureWrite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            716 -> f716_init_C__Adam_Gr_GrComposites_HC_1(t)
+            708 -> f708_GrFillPoly3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            709 -> f709_GrRectB(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            710 -> f710_GrRect3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
+            711 -> { f711_GrBorder(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L)); 0L }
+            712 -> f712_GrArrow3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), (if (n > 8) st[base + 8] else 0L), (if (n > 9) st[base + 9] else 0L))
+            713 -> f713_GrTextBox3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
+            714 -> f714_GrTextDiamond3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L))
+            715 -> f715_Gr3Mesh(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            716 -> { f716_DrawStdMs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            717 -> f717_init_C__Adam_Gr_GrComposites_HC_0(t)
+            718 -> { f718_DrawWaitMs(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            719 -> f719_GRScrnCaptureRead(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            720 -> f720_GRScrnCaptureWrite(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            721 -> f721_init_C__Adam_Gr_GrComposites_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1074,7 +1070,7 @@ class N_Adam_Gr_GrComposites(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721)
         private val NAMES = arrayOf("GrFillPoly3", "GrRectB", "GrRect3", "GrBorder", "GrArrow3", "GrTextBox3", "GrTextDiamond3", "Gr3Mesh", "DrawStdMs", "\$init:C:/Adam/Gr/GrComposites.HC#0", "DrawWaitMs", "GRScrnCaptureRead", "GRScrnCaptureWrite", "\$init:C:/Adam/Gr/GrComposites.HC#1")
         private val FILES = arrayOf<String>("C:/Adam/Gr/GrComposites.HC")
     }

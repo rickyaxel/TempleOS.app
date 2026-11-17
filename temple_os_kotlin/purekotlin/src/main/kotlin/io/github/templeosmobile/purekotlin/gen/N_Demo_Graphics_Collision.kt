@@ -10,6 +10,7 @@ import io.github.templeosmobile.core.holyc.*
 import io.github.templeosmobile.core.purenative.*
 
 class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** binary literal, 698 bytes */ @JvmField var b0: Long = 0L
     /** binary literal, 698 bytes */ @JvmField var b1: Long = 0L
@@ -30,7 +31,7 @@ class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC DrawIt (Collision.HC:8) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -43,8 +44,7 @@ class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 13 // Collision.HC:13
             l24_y = (ld8((P.g_ms + 8L)) - ld8((p0_task + 232L)))
             ln = 14 // Collision.HC:14
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, l16_x, l24_y, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, l16_x, l24_y, 0L, b0, 0L))
             ln = 16 // Collision.HC:16
             l16_x = (ld8((p0_task + 224L)) shr 1)
             ln = 17 // Collision.HC:17
@@ -56,24 +56,21 @@ class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : N
             ln = 21 // Collision.HC:21
             st8((p1_dc + 304L), 0L)
             ln = 22 // Collision.HC:22
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, l16_x, l24_y, 0L, b1, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, l16_x, l24_y, 0L, b1, 0L))
             ln = 24 // Collision.HC:24
             st4((p1_dc + 160L), 0L)
             ln = 25 // Collision.HC:25
             tick(t)
             val vb0 = push1(t, ld8((p1_dc + 304L)))
-            P.f369_GrPrint(t, p1_dc, 0L, ((ld8((p0_task + 248L)) - 8L) shr 1), s0, vb0, 1)
+            P.f370_GrPrint(t, p1_dc, 0L, ((ld8((p0_task + 248L)) - 8L) shr 1), s0, vb0, 1)
             t.sp = vb0
             ln = 28 // Collision.HC:28
             if ((ld8((p1_dc + 304L)) == 0L)) {
                 ln = 29 // Collision.HC:29
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, l16_x, l24_y, 0L, b2, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, l16_x, l24_y, 0L, b2, 0L))
             } else {
                 ln = 31 // Collision.HC:31
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, l16_x, l24_y, 0L, b3, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, l16_x, l24_y, 0L, b3, 0L))
             }
             t.depth--
             return
@@ -81,7 +78,7 @@ class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Collision (Collision.HC:34) */
-    fun f704_Collision(t: Task) {
+    fun f709_Collision(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -89,7 +86,7 @@ class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : N
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 37 // Collision.HC:37
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 38 // Collision.HC:38
             tick(t)
             P.f188_PressAKey(t)
@@ -102,13 +99,13 @@ class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Graphics/Collision.HC#0 (Collision.HC:42) */
-    fun f705_init_C__Demo_Graphics_Collision_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_Collision_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 42 // Collision.HC:42
             tick(t)
-            f704_Collision(t)
+            f709_Collision(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Collision.HC#0", ln) }
@@ -117,9 +114,9 @@ class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_Collision(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_Collision_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_Collision(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_Collision_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -131,7 +128,7 @@ class N_Demo_Graphics_Collision(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "Collision", "\$init:C:/Demo/Graphics/Collision.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Collision.HC")
     }

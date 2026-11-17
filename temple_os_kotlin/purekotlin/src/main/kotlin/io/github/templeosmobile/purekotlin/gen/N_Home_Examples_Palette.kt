@@ -32,7 +32,7 @@ class N_Home_Examples_Palette(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Home/Examples/Palette.HC#0 (Palette.HC:3) */
-    fun f703_init_C__Home_Examples_Palette_HC_0(t: Task): Long {
+    fun f708_init_C__Home_Examples_Palette_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -42,7 +42,7 @@ class N_Home_Examples_Palette(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC PaletteDemo (Palette.HC:6) */
-    fun f704_PaletteDemo(t: Task) {
+    fun f709_PaletteDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -66,7 +66,7 @@ class N_Home_Examples_Palette(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 ln = 15 // Palette.HC:15
                 tick(t)
                 val vb0 = push2(t, l0_i, ld8((g_names + (l0_i * 8L))))
-                P.f369_GrPrint(t, l8_dc, (24L + ((l0_i and 3L) * 152L)), (64L + ((l0_i shr 2) * 100L)), s0, vb0, 2)
+                P.f370_GrPrint(t, l8_dc, (24L + ((l0_i and 3L) * 152L)), (64L + ((l0_i shr 2) * 100L)), s0, vb0, 2)
                 t.sp = vb0
                 ln = 11 // Palette.HC:11
                 l0_i = (l0_i + 1L)
@@ -88,13 +88,13 @@ class N_Home_Examples_Palette(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Home/Examples/Palette.HC#1 (Palette.HC:23) */
-    fun f705_init_C__Home_Examples_Palette_HC_1(t: Task): Long {
+    fun f710_init_C__Home_Examples_Palette_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 23 // Palette.HC:23
             tick(t)
-            f704_PaletteDemo(t)
+            f709_PaletteDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Home/Examples/Palette.HC#1", ln) }
@@ -103,9 +103,9 @@ class N_Home_Examples_Palette(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Home_Examples_Palette_HC_0(t)
-            704 -> { f704_PaletteDemo(t); 0L }
-            705 -> f705_init_C__Home_Examples_Palette_HC_1(t)
+            708 -> f708_init_C__Home_Examples_Palette_HC_0(t)
+            709 -> { f709_PaletteDemo(t); 0L }
+            710 -> f710_init_C__Home_Examples_Palette_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -117,7 +117,7 @@ class N_Home_Examples_Palette(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("\$init:C:/Home/Examples/Palette.HC#0", "PaletteDemo", "\$init:C:/Home/Examples/Palette.HC#1")
         private val FILES = arrayOf<String>("C:/Home/Examples/Palette.HC")
     }

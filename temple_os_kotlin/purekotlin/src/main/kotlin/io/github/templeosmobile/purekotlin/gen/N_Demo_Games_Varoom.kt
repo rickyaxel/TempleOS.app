@@ -18,12 +18,14 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
     @JvmField val n_GetKey = rt.vm.natives.find("GetKey")!!.index
     @JvmField val n_GrBlot = rt.vm.natives.find("GrBlot")!!.index
+    @JvmField val n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!!.index
     @JvmField val n_GrPeek = rt.vm.natives.find("GrPeek")!!.index
     @JvmField val n_GrPlot = rt.vm.natives.find("GrPlot")!!.index
     @JvmField val n_GrRect = rt.vm.natives.find("GrRect")!!.index
     @JvmField val n_JobQue = rt.vm.natives.find("JobQue")!!.index
     @JvmField val n_Log2 = rt.vm.natives.find("Log2")!!.index
     @JvmField val n_Mat4x4MulXYZ = rt.vm.natives.find("Mat4x4MulXYZ")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_MemCpy = rt.vm.natives.find("MemCpy")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
@@ -124,7 +126,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Varoom.HC#0 (Varoom.HC:90) */
-    fun f703_init_C__Demo_Games_Varoom_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_Varoom_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -138,7 +140,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Varoom.HC#1 (Varoom.HC:91) */
-    fun f704_init_C__Demo_Games_Varoom_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_Varoom_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -152,7 +154,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -162,7 +164,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DipY (Varoom.HC:136) */
-    fun f706_DipY(t: Task, a0: Long, a1: Long): Long {
+    fun f711_DipY(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -172,7 +174,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var p1_z: Long = a1
             ln = 139 // Varoom.HC:139
             tick(t)
-            P.f336_R2P(t, (fp + 16), (fp + 24), p0_x.toDouble(), p1_z.toDouble())
+            P.f337_R2P(t, (fp + 16), (fp + 24), p0_x.toDouble(), p1_z.toDouble())
             ln = 140 // Varoom.HC:140
             val t1: Double = (50.0 * ldf((fp + 16)))
             val t0: Double = f(nat(t, n_Cos, push1(t, bits((5.0 * ldf((fp + 24)))))))
@@ -186,7 +188,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Dipé (Varoom.HC:145) */
-    fun f707_Dip_(t: Task, a0: Long, a1: Long, a2: Double): Double {
+    fun f712_Dip_(t: Task, a0: Long, a1: Long, a2: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -199,17 +201,17 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val t0: Double = f(nat(t, n_Sin, push1(t, bits(p2__))))
             val t1: Double = f(nat(t, n_Cos, push1(t, bits(p2__))))
             tick(t)
-            val t2: Long = f706_DipY(t, f2i((p0_x.toDouble() - (divs(400L, 2L).toDouble() * t1))), f2i((p1_z.toDouble() - (divs(400L, 2L).toDouble() * t0))))
+            val t2: Long = f711_DipY(t, f2i((p0_x.toDouble() - (divs(400L, 2L).toDouble() * t1))), f2i((p1_z.toDouble() - (divs(400L, 2L).toDouble() * t0))))
             l24_y_front = t2.toDouble()
             ln = 149 // Varoom.HC:149
             val t3: Double = f(nat(t, n_Sin, push1(t, bits(p2__))))
             val t4: Double = f(nat(t, n_Cos, push1(t, bits(p2__))))
             tick(t)
-            val t5: Long = f706_DipY(t, f2i((p0_x.toDouble() + (divs(400L, 2L).toDouble() * t4))), f2i((p1_z.toDouble() + (divs(400L, 2L).toDouble() * t3))))
+            val t5: Long = f711_DipY(t, f2i((p0_x.toDouble() + (divs(400L, 2L).toDouble() * t4))), f2i((p1_z.toDouble() + (divs(400L, 2L).toDouble() * t3))))
             l32_y_back = t5.toDouble()
             ln = 150 // Varoom.HC:150
             tick(t)
-            val t6: Double = P.f543_ASin(t, ((l24_y_front - l32_y_back) / 400.0))
+            val t6: Double = P.f548_ASin(t, ((l24_y_front - l32_y_back) / 400.0))
             t.depth--
             return t6
             t.depth--
@@ -218,7 +220,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC TrackFind (Varoom.HC:153) */
-    fun f708_TrackFind(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f713_TrackFind(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -304,7 +306,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC TrackSlice (Varoom.HC:185) */
-    fun f709_TrackSlice(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
+    fun f714_TrackSlice(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
         var ln = 0
         try {
             enter(t)
@@ -352,7 +354,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((((l80_tmpt + 104L) + 24L) + 8L), f2i(((l40_z + (divs(2000L, 2L).toDouble() * l56_s)) + l72_dz)))
             ln = 199 // Varoom.HC:199
             tick(t)
-            val t3: Long = f706_DipY(t, ld4s(((l80_tmpt + 104L) + 24L)), ld4s((((l80_tmpt + 104L) + 24L) + 8L)))
+            val t3: Long = f711_DipY(t, ld4s(((l80_tmpt + 104L) + 24L)), ld4s((((l80_tmpt + 104L) + 24L) + 8L)))
             st4((((l80_tmpt + 104L) + 24L) + 4L), t3)
             ln = 200 // Varoom.HC:200
             st4(((l80_tmpt + 104L) + 36L), f2i(((l32_x - (divs(2000L, 2L).toDouble() * l48_c)) + l64_dx)))
@@ -360,7 +362,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((((l80_tmpt + 104L) + 36L) + 8L), f2i(((l40_z - (divs(2000L, 2L).toDouble() * l56_s)) + l72_dz)))
             ln = 202 // Varoom.HC:202
             tick(t)
-            val t4: Long = f706_DipY(t, ld4s(((l80_tmpt + 104L) + 36L)), ld4s((((l80_tmpt + 104L) + 36L) + 8L)))
+            val t4: Long = f711_DipY(t, ld4s(((l80_tmpt + 104L) + 36L)), ld4s((((l80_tmpt + 104L) + 36L) + 8L)))
             st4((((l80_tmpt + 104L) + 36L) + 4L), t4)
             ln = 204 // Varoom.HC:204
             if ((l88_last != 0L)) {
@@ -375,7 +377,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((((l80_tmpt + 56L) + 24L) + 8L), f2i(((l40_z - (divs(2000L, 2L).toDouble() * l56_s)) + l72_dz)))
             ln = 210 // Varoom.HC:210
             tick(t)
-            val t5: Long = f706_DipY(t, ld4s(((l80_tmpt + 56L) + 24L)), ld4s((((l80_tmpt + 56L) + 24L) + 8L)))
+            val t5: Long = f711_DipY(t, ld4s(((l80_tmpt + 56L) + 24L)), ld4s((((l80_tmpt + 56L) + 24L) + 8L)))
             st4((((l80_tmpt + 56L) + 24L) + 4L), t5)
             ln = 211 // Varoom.HC:211
             st4(((l80_tmpt + 56L) + 36L), f2i(((l32_x - ((divs(2000L, 2L) + 200L).toDouble() * l48_c)) + l64_dx)))
@@ -383,7 +385,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((((l80_tmpt + 56L) + 36L) + 8L), f2i(((l40_z - ((divs(2000L, 2L) + 200L).toDouble() * l56_s)) + l72_dz)))
             ln = 213 // Varoom.HC:213
             tick(t)
-            val t6: Long = f706_DipY(t, ld4s(((l80_tmpt + 56L) + 36L)), ld4s((((l80_tmpt + 56L) + 36L) + 8L)))
+            val t6: Long = f711_DipY(t, ld4s(((l80_tmpt + 56L) + 36L)), ld4s((((l80_tmpt + 56L) + 36L) + 8L)))
             st4((((l80_tmpt + 56L) + 36L) + 4L), t6)
             ln = 215 // Varoom.HC:215
             if ((l88_last != 0L)) {
@@ -398,7 +400,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((((l80_tmpt + 152L) + 24L) + 8L), f2i(((l40_z + ((divs(2000L, 2L) + 200L).toDouble() * l56_s)) + l72_dz)))
             ln = 221 // Varoom.HC:221
             tick(t)
-            val t7: Long = f706_DipY(t, ld4s(((l80_tmpt + 152L) + 24L)), ld4s((((l80_tmpt + 152L) + 24L) + 8L)))
+            val t7: Long = f711_DipY(t, ld4s(((l80_tmpt + 152L) + 24L)), ld4s((((l80_tmpt + 152L) + 24L) + 8L)))
             st4((((l80_tmpt + 152L) + 24L) + 4L), t7)
             ln = 222 // Varoom.HC:222
             st4(((l80_tmpt + 152L) + 36L), f2i(((l32_x + (divs(2000L, 2L).toDouble() * l48_c)) + l64_dx)))
@@ -406,7 +408,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((((l80_tmpt + 152L) + 36L) + 8L), f2i(((l40_z + (divs(2000L, 2L).toDouble() * l56_s)) + l72_dz)))
             ln = 224 // Varoom.HC:224
             tick(t)
-            val t8: Long = f706_DipY(t, ld4s(((l80_tmpt + 152L) + 36L)), ld4s((((l80_tmpt + 152L) + 36L) + 8L)))
+            val t8: Long = f711_DipY(t, ld4s(((l80_tmpt + 152L) + 36L)), ld4s((((l80_tmpt + 152L) + 36L) + 8L)))
             st4((((l80_tmpt + 152L) + 36L) + 4L), t8)
             ln = 226 // Varoom.HC:226
             st8((l80_tmpt + 24L), f2i(l32_x))
@@ -475,7 +477,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CoupleEnds (Varoom.HC:255) */
-    fun f710_CoupleEnds(t: Task) {
+    fun f715_CoupleEnds(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -502,7 +504,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC InitTrack (Varoom.HC:266) */
-    fun f711_InitTrack(t: Task) {
+    fun f716_InitTrack(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -533,7 +535,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l48_d < 60000.0)) {
                 ln = 280 // Varoom.HC:280
                 tick(t)
-                f709_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
+                f714_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
                 ln = 279 // Varoom.HC:279
                 l48_d = (l48_d + (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
                 tick(t)
@@ -543,7 +545,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop2@ while ((l0_i < 180L)) {
                 ln = 282 // Varoom.HC:282
                 tick(t)
-                f709_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
+                f714_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
                 ln = 281 // Varoom.HC:281
                 l0_i = (l0_i + 1L)
                 l40__ = (l40__ + ((2.0 * f(4614256656552045848L)) / 360.0))
@@ -554,7 +556,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop4@ while ((l48_d < 10000.0)) {
                 ln = 284 // Varoom.HC:284
                 tick(t)
-                f709_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
+                f714_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
                 ln = 283 // Varoom.HC:283
                 l48_d = (l48_d + (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
                 tick(t)
@@ -564,7 +566,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop6@ while ((l0_i < 90L)) {
                 ln = 286 // Varoom.HC:286
                 tick(t)
-                f709_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
+                f714_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
                 ln = 285 // Varoom.HC:285
                 l0_i = (l0_i + 1L)
                 l40__ = (l40__ - ((2.0 * f(4614256656552045848L)) / 360.0))
@@ -575,7 +577,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop8@ while ((l0_i < 180L)) {
                 ln = 288 // Varoom.HC:288
                 tick(t)
-                f709_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
+                f714_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
                 ln = 287 // Varoom.HC:287
                 l0_i = (l0_i + 1L)
                 l40__ = (l40__ + ((2.0 * f(4614256656552045848L)) / 360.0))
@@ -586,7 +588,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop10@ while ((l0_i < 90L)) {
                 ln = 290 // Varoom.HC:290
                 tick(t)
-                f709_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
+                f714_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
                 ln = 289 // Varoom.HC:289
                 l0_i = (l0_i + 1L)
                 l40__ = (l40__ - ((2.0 * f(4614256656552045848L)) / 360.0))
@@ -597,7 +599,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop12@ while ((l48_d < 10000.0)) {
                 ln = 292 // Varoom.HC:292
                 tick(t)
-                f709_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
+                f714_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
                 ln = 291 // Varoom.HC:291
                 l48_d = (l48_d + (((2.0 * f(4614256656552045848L)) * 10000.0) / 360.0))
                 tick(t)
@@ -607,7 +609,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop14@ while ((l0_i < 180L)) {
                 ln = 294 // Varoom.HC:294
                 tick(t)
-                f709_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
+                f714_TrackSlice(t, (fp + 24), (fp + 32), l40__, (((2.0 * f(4614256656552045848L)) / 360.0) * 10000.0))
                 ln = 293 // Varoom.HC:293
                 l0_i = (l0_i + 1L)
                 l40__ = (l40__ + ((2.0 * f(4614256656552045848L)) / 360.0))
@@ -615,7 +617,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 296 // Varoom.HC:296
             tick(t)
-            f710_CoupleEnds(t)
+            f715_CoupleEnds(t)
             ln = 298 // Varoom.HC:298
             l16_tmpt = ld8(g_track_head)
             ln = 299 // Varoom.HC:299
@@ -665,7 +667,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop20@ while ((l16_tmpt != g_track_head)) {
                 ln = 318 // Varoom.HC:318
                 tick(t)
-                P.f393_GrPlot3(t, ld8(g_track_map), (ld4s((ld8(g_track_map) + 16L)) - ((ld8((l16_tmpt + 24L)) - ld8(g_t_minx)) shr 9)), ((ld8((l16_tmpt + 32L)) - ld8(g_t_minz)) shr 9), 0L)
+                P.f394_GrPlot3(t, ld8(g_track_map), (ld4s((ld8(g_track_map) + 16L)) - ((ld8((l16_tmpt + 24L)) - ld8(g_t_minx)) shr 9)), ((ld8((l16_tmpt + 32L)) - ld8(g_t_minz)) shr 9), 0L)
                 ln = 320 // Varoom.HC:320
                 l16_tmpt = ld8(l16_tmpt)
                 tick(t)
@@ -677,7 +679,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PrepPoly (Varoom.HC:326) */
-    fun f712_PrepPoly(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f717_PrepPoly(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -746,7 +748,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC MPUpdateWin (Varoom.HC:347) */
-    fun f713_MPUpdateWin(t: Task, a0: Long) {
+    fun f718_MPUpdateWin(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -772,7 +774,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             l192_cx = (l48_w shr 1)
             ln = 352 // Varoom.HC:352
             tick(t)
-            val t0: Double = f707_Dip_(t, ld4s(g_c), ld4s((g_c + 8L)), ldf((g_c + 12L)))
+            val t0: Double = f712_Dip_(t, ld4s(g_c), ld4s((g_c + 8L)), ldf((g_c + 12L)))
             l208_dip__ = t0
             ln = 356 // Varoom.HC:356
             tick(t)
@@ -799,28 +801,25 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st4((l288_dc + 160L), 8L)
                 ln = 369 // Varoom.HC:369
                 tick(t)
-                val t2: Long = f712_PrepPoly(t, (l272_tmpt + 104L), (fp + 64), l192_cx, l56_h, (fp + 224))
+                val t2: Long = f717_PrepPoly(t, (l272_tmpt + 104L), (fp + 64), l192_cx, l56_h, (fp + 224))
                 if ((t2 != 0L)) {
                     ln = 370 // Varoom.HC:370
-                    tick(t)
-                    P.f422_GrFillPoly3(t, l288_dc, 4L, (fp + 224))
+                    nat(t, n_GrFillPoly3, push3(t, l288_dc, 4L, (fp + 224)))
                     ln = 371 // Varoom.HC:371
                     st4((l288_dc + 160L), ld2u((l272_tmpt + 20L)))
                     ln = 372 // Varoom.HC:372
                     tick(t)
-                    val t3: Long = f712_PrepPoly(t, (l272_tmpt + 56L), (fp + 64), l192_cx, l56_h, (fp + 224))
+                    val t3: Long = f717_PrepPoly(t, (l272_tmpt + 56L), (fp + 64), l192_cx, l56_h, (fp + 224))
                     if ((t3 != 0L)) {
                         ln = 373 // Varoom.HC:373
-                        tick(t)
-                        P.f422_GrFillPoly3(t, l288_dc, 4L, (fp + 224))
+                        nat(t, n_GrFillPoly3, push3(t, l288_dc, 4L, (fp + 224)))
                     }
                     ln = 374 // Varoom.HC:374
                     tick(t)
-                    val t4: Long = f712_PrepPoly(t, (l272_tmpt + 152L), (fp + 64), l192_cx, l56_h, (fp + 224))
+                    val t4: Long = f717_PrepPoly(t, (l272_tmpt + 152L), (fp + 64), l192_cx, l56_h, (fp + 224))
                     if ((t4 != 0L)) {
                         ln = 375 // Varoom.HC:375
-                        tick(t)
-                        P.f422_GrFillPoly3(t, l288_dc, 4L, (fp + 224))
+                        nat(t, n_GrFillPoly3, push3(t, l288_dc, 4L, (fp + 224)))
                     }
                 }
                 ln = 377 // Varoom.HC:377
@@ -849,8 +848,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     tick(t)
                     P.f280_Mat4x4IdentEqu(t, ld8((l288_dc + 200L)))
                     ln = 387 // Varoom.HC:387
-                    tick(t)
-                    P.f308_Mat4x4Scale(t, ld8((l288_dc + 200L)), (l200_s * 2.0))
+                    nat(t, n_Mat4x4Scale, push2(t, ld8((l288_dc + 200L)), bits((l200_s * 2.0))))
                     ln = 388 // Varoom.HC:388
                     tick(t)
                     P.f283_DCMat4x4Set(t, l288_dc, ld8((l288_dc + 200L)))
@@ -861,11 +859,11 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         st4(t7, (ld4s(t7) or 1536L))
                         ln = 391 // Varoom.HC:391
                         tick(t)
-                        P.f314_DCSymmetrySet(t, l288_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i(((l200_s * ld8((fp + 32)).toDouble()) + l56_h.toDouble())), f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i((((l200_s * ld8((fp + 32)).toDouble()) + l56_h.toDouble()) + 10.0)))
+                        P.f315_DCSymmetrySet(t, l288_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i(((l200_s * ld8((fp + 32)).toDouble()) + l56_h.toDouble())), f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i((((l200_s * ld8((fp + 32)).toDouble()) + l56_h.toDouble()) + 10.0)))
                     }
                     ln = 393 // Varoom.HC:393
                     tick(t)
-                    P.f441_Sprite3B(t, l288_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i(((l200_s * ld8((fp + 32)).toDouble()) + l56_h.toDouble())), (ld8((fp + 40)) + divs(2147483647L, 2L)), ld8(((g_b + (l16_i * 24L)) + 16L)))
+                    P.f446_Sprite3B(t, l288_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i(((l200_s * ld8((fp + 32)).toDouble()) + l56_h.toDouble())), (ld8((fp + 40)) + divs(2147483647L, 2L)), ld8(((g_b + (l16_i * 24L)) + 16L)))
                     ln = 394 // Varoom.HC:394
                     val t8: Long = (l288_dc + 28L)
                     st4(t8, (ld4s(t8) and -1537L))
@@ -896,11 +894,10 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     tick(t)
                     P.f280_Mat4x4IdentEqu(t, ld8((l288_dc + 200L)))
                     ln = 404 // Varoom.HC:404
-                    tick(t)
-                    P.f308_Mat4x4Scale(t, ld8((l288_dc + 200L)), (l200_s * 2.0))
+                    nat(t, n_Mat4x4Scale, push2(t, ld8((l288_dc + 200L)), bits((l200_s * 2.0))))
                     ln = 405 // Varoom.HC:405
                     tick(t)
-                    val t11: Double = f707_Dip_(t, ld4s(l216_tmpc), ld4s((l216_tmpc + 8L)), (-ldf((l216_tmpc + 12L))))
+                    val t11: Double = f712_Dip_(t, ld4s(l216_tmpc), ld4s((l216_tmpc + 8L)), (-ldf((l216_tmpc + 12L))))
                     tick(t)
                     P.f305_Mat4x4RotX(t, ld8((l288_dc + 200L)), t11)
                     ln = 406 // Varoom.HC:406
@@ -911,7 +908,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     P.f283_DCMat4x4Set(t, l288_dc, ld8((l288_dc + 200L)))
                     ln = 408 // Varoom.HC:408
                     tick(t)
-                    P.f441_Sprite3B(t, l288_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i(((l200_s * ld8((fp + 32)).toDouble()) + l56_h.toDouble())), (ld8((fp + 40)) + divs(2147483647L, 2L)), ld8((l216_tmpc + 36L)))
+                    P.f446_Sprite3B(t, l288_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i(((l200_s * ld8((fp + 32)).toDouble()) + l56_h.toDouble())), (ld8((fp + 40)) + divs(2147483647L, 2L)), ld8((l216_tmpc + 36L)))
                 }
                 ln = 397 // Varoom.HC:397
                 val t12: Long = nat(t, n_mp_cnt, push0(t))
@@ -933,7 +930,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC VRTransform (Varoom.HC:416) */
-    fun f714_VRTransform(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f719_VRTransform(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -969,7 +966,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawIt (Varoom.HC:429) */
-    fun f715_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f720_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -992,7 +989,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             l192_cx = (l48_w shr 1)
             ln = 435 // Varoom.HC:435
             tick(t)
-            val t0: Double = f707_Dip_(t, ld4s(g_c), ld4s((g_c + 8L)), ldf((g_c + 12L)))
+            val t0: Double = f712_Dip_(t, ld4s(g_c), ld4s((g_c + 8L)), ldf((g_c + 12L)))
             l208_dip__ = t0
             ln = 436 // Varoom.HC:436
             l216_tmpc = g_c
@@ -1030,13 +1027,13 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 ln = 453 // Varoom.HC:453
                 val t3: Double = f(nat(t, n_Sin, push1(t, bits(l208_dip__))))
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i((15.0 + (200.0 * t3))), 15L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i((15.0 + (200.0 * t3))), 15L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 454 // Varoom.HC:454
                 st4((p1_dc + 160L), 14L)
                 ln = 455 // Varoom.HC:455
                 val t4: Double = f(nat(t, n_Sin, push1(t, bits(l208_dip__))))
                 tick(t)
-                P.f387_GrFloodFill(t, p1_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i((15.0 + (200.0 * t4))), 0L, 0L, 0L)
+                P.f388_GrFloodFill(t, p1_dc, f2i(((l200_s * ld8((fp + 24)).toDouble()) + l192_cx.toDouble())), f2i((15.0 + (200.0 * t4))), 0L, 0L, 0L)
             }
             ln = 458 // Varoom.HC:458
             val t5: Long = nat(t, n_mp_cnt, push0(t))
@@ -1047,7 +1044,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 val t6: Long = nat(t, n_mp_cnt, push0(t))
                 if (!((l16_i < t6))) break@loop0
                 ln = 460 // Varoom.HC:460
-                nat(t, n_JobQue, push(t, 9223090561878065865L, p1_dc, l16_i, 0L, 0L, 0L, 0L, 0L))
+                nat(t, n_JobQue, push(t, 9223090561878065870L, p1_dc, l16_i, 0L, 0L, 0L, 0L, 0L))
                 ln = 459 // Varoom.HC:459
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -1068,7 +1065,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             tick(t)
             P.f305_Mat4x4RotX(t, (fp + 64), (0.4 - (8.0 * l208_dip__)))
             ln = 467 // Varoom.HC:467
-            st8((p1_dc + 232L), 9223090561878065866L)
+            st8((p1_dc + 232L), 9223090561878065871L)
             ln = 468 // Varoom.HC:468
             st4((p1_dc + 216L), (ld8((p0_task + 224L)) shr 1))
             ln = 469 // Varoom.HC:469
@@ -1077,7 +1074,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((p1_dc + 224L), divs(2147483647L, 2L))
             ln = 471 // Varoom.HC:471
             tick(t)
-            P.f442_Sprite3Mat4x4B(t, p1_dc, 0L, 0L, -100L, ld8((g_c + 36L)), (fp + 64))
+            P.f447_Sprite3Mat4x4B(t, p1_dc, 0L, 0L, -100L, ld8((g_c + 36L)), (fp + 64))
             ln = 474 // Varoom.HC:474
             nat(t, n_GrBlot, push4(t, p1_dc, (l48_w - ld4s((ld8(g_track_map) + 16L))), (l56_h - ld4s((ld8(g_track_map) + 24L))), ld8(g_track_map)))
             ln = 476 // Varoom.HC:476
@@ -1095,7 +1092,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 }
                 ln = 482 // Varoom.HC:482
                 tick(t)
-                P.f393_GrPlot3(t, p1_dc, (l48_w - ((ld4s((g_c + (l16_i * 52L))) - ld8(g_t_minx)) shr 9)), ((l56_h - ld4s((ld8(g_track_map) + 24L))) + ((ld4s(((g_c + (l16_i * 52L)) + 8L)) - ld8(g_t_minz)) shr 9)), 0L)
+                P.f394_GrPlot3(t, p1_dc, (l48_w - ((ld4s((g_c + (l16_i * 52L))) - ld8(g_t_minx)) shr 9)), ((l56_h - ld4s((ld8(g_track_map) + 24L))) + ((ld4s(((g_c + (l16_i * 52L)) + 8L)) - ld8(g_t_minz)) shr 9)), 0L)
                 ln = 477 // Varoom.HC:477
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -1115,7 +1112,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         ln = 491 // Varoom.HC:491
                         tick(t)
                         val vb0 = push0(t)
-                        P.f369_GrPrint(t, p1_dc, divs((l48_w - 112L), 2L), divs((l56_h - 8L), 2L), s2, vb0, 0)
+                        P.f370_GrPrint(t, p1_dc, divs((l48_w - 112L), 2L), divs((l56_h - 8L), 2L), s2, vb0, 0)
                         t.sp = vb0
                     }
                 } else {
@@ -1128,7 +1125,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                         ln = 495 // Varoom.HC:495
                         tick(t)
                         val vb1 = push0(t)
-                        P.f369_GrPrint(t, p1_dc, divs((l48_w - 72L), 2L), divs((l56_h - 8L), 2L), s3, vb1, 0)
+                        P.f370_GrPrint(t, p1_dc, divs((l48_w - 72L), 2L), divs((l56_h - 8L), 2L), s3, vb1, 0)
                         t.sp = vb1
                     }
                 }
@@ -1142,7 +1139,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 500 // Varoom.HC:500
             tick(t)
             val vb2 = push3(t, bits(((100.0 * ldf(g_distance)) / ldf((ld8((g_track_head + 8L)) + 48L)))), bits(l200_s), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s4, vb2, 3)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s4, vb2, 3)
             t.sp = vb2
             t.msp = msp0
             t.depth--
@@ -1151,7 +1148,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC AnimateTask (Varoom.HC:504) */
-    fun f716_AnimateTask(t: Task, a0: Long) {
+    fun f721_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1193,7 +1190,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     st4(t5, f2i((t8.toDouble() + (t7 * t6))))
                     ln = 519 // Varoom.HC:519
                     tick(t)
-                    val t9: Long = f708_TrackFind(t, ld8((l8_tmpc + 44L)), ld4s(l8_tmpc), ld4s((l8_tmpc + 8L)))
+                    val t9: Long = f713_TrackFind(t, ld8((l8_tmpc + 44L)), ld4s(l8_tmpc), ld4s((l8_tmpc + 8L)))
                     l48_tmpt = t9
                     ln = 520 // Varoom.HC:520
                     if ((l16_i != 0L)) {
@@ -1239,7 +1236,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     st8((l8_tmpc + 44L), l48_tmpt)
                     ln = 539 // Varoom.HC:539
                     tick(t)
-                    val t14: Long = f706_DipY(t, ld4s(l8_tmpc), ld4s((l8_tmpc + 8L)))
+                    val t14: Long = f711_DipY(t, ld4s(l8_tmpc), ld4s((l8_tmpc + 8L)))
                     st4((l8_tmpc + 4L), t14)
                     ln = 515 // Varoom.HC:515
                     l16_i = (l16_i + 1L)
@@ -1252,13 +1249,13 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     loop4@ while ((l16_i < 8L)) {
                         ln = 543 // Varoom.HC:543
                         tick(t)
-                        val t15: Long = P.f548_D3I32DistSqr(t, (g_c + (l16_i * 52L)), g_c)
+                        val t15: Long = P.f553_D3I32DistSqr(t, (g_c + (l16_i * 52L)), g_c)
                         if ((t15 < 40000L)) {
                             ln = 544 // Varoom.HC:544
                             st1(g_game_over, 1L)
                             ln = 545 // Varoom.HC:545
                             tick(t)
-                            P.f499_Noise(t, 500L, 22.0, 34.0)
+                            P.f504_Noise(t, 500L, 22.0, 34.0)
                             ln = 546 // Varoom.HC:546
                             nat(t, n_Sleep, push1(t, 500L))
                             ln = 547 // Varoom.HC:547
@@ -1303,7 +1300,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Varoom.HC#2 (Varoom.HC:566) */
-    fun f717_init_C__Demo_Games_Varoom_HC_2(t: Task): Long {
+    fun f722_init_C__Demo_Games_Varoom_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1322,7 +1319,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC InitBushes (Varoom.HC:569) */
-    fun f718_InitBushes(t: Task) {
+    fun f723_InitBushes(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1372,7 +1369,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 nat(t, n_GrPlot, push3(t, ld8(g_track_map), l24_x, l32_z))
                 ln = 588 // Varoom.HC:588
                 tick(t)
-                val t3: Long = f706_DipY(t, ld4s(l0_tmpb), ld4s((l0_tmpb + 8L)))
+                val t3: Long = f711_DipY(t, ld4s(l0_tmpb), ld4s((l0_tmpb + 8L)))
                 st4((l0_tmpb + 4L), t3)
                 ln = 589 // Varoom.HC:589
                 val t4: Long = nat(t, n_RandU16, push0(t))
@@ -1389,7 +1386,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Init (Varoom.HC:595) */
-    fun f719_Init(t: Task) {
+    fun f724_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1399,10 +1396,10 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l8_tmpt: Long = 0L
             ln = 602 // Varoom.HC:602
             tick(t)
-            f711_InitTrack(t)
+            f716_InitTrack(t)
             ln = 603 // Varoom.HC:603
             tick(t)
-            f718_InitBushes(t)
+            f723_InitBushes(t)
             ln = 604 // Varoom.HC:604
             l8_tmpt = ld8(g_track_head)
             ln = 605 // Varoom.HC:605
@@ -1418,7 +1415,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 st4((l0_tmpc + 8L), ld8((l8_tmpt + 32L)))
                 ln = 610 // Varoom.HC:610
                 tick(t)
-                val t0: Long = f706_DipY(t, ld4s(l0_tmpc), ld4s((l0_tmpc + 8L)))
+                val t0: Long = f711_DipY(t, ld4s(l0_tmpc), ld4s((l0_tmpc + 8L)))
                 st4((l0_tmpc + 4L), t0)
                 ln = 611 // Varoom.HC:611
                 st8((l0_tmpc + 12L), bits((-ldf((l8_tmpt + 40L)))))
@@ -1463,7 +1460,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CleanUp (Varoom.HC:630) */
-    fun f720_CleanUp(t: Task) {
+    fun f725_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1485,7 +1482,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC Varoom (Varoom.HC:638) */
-    fun f721_Varoom(t: Task) {
+    fun f726_Varoom(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1493,7 +1490,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             val fp = frame(t, 24)
             ln = 641 // Varoom.HC:641
             tick(t)
-            P.f507_MenuPush(t, s5)
+            P.f512_MenuPush(t, s5)
             ln = 654 // Varoom.HC:654
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -1519,12 +1516,12 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 nat(t, n_DocClear, push1(t, 0L))
                 ln = 664 // Varoom.HC:664
                 tick(t)
-                f719_Init(t)
+                f724_Init(t)
                 ln = 665 // Varoom.HC:665
-                st8((ld8(P.g_Fs) + 448L), 9223090561878065867L)
+                st8((ld8(P.g_Fs) + 448L), 9223090561878065872L)
                 ln = 666 // Varoom.HC:666
                 val t1: Long = (ld8(P.g_Fs) + 1088L)
-                val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065868L, 0L, s6, -1L, ld8(P.g_Fs), 0L, 0L))
+                val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065873L, 0L, s6, -1L, ld8(P.g_Fs), 0L, 0L))
                 st8(t1, t0)
                 ln = 667 // Varoom.HC:667
                 skip_0@ do {
@@ -1570,10 +1567,10 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                 10L -> {
                                     ln = 687 // Varoom.HC:687
                                     tick(t)
-                                    f720_CleanUp(t)
+                                    f725_CleanUp(t)
                                     ln = 688 // Varoom.HC:688
                                     tick(t)
-                                    f719_Init(t)
+                                    f724_Init(t)
                                 }
                                 27L, 28L -> {
                                     ln = 692 // Varoom.HC:692
@@ -1600,10 +1597,10 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 698 // Varoom.HC:698
             tick(t)
-            f720_CleanUp(t)
+            f725_CleanUp(t)
             ln = 699 // Varoom.HC:699
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 700 // Varoom.HC:700
             nat(t, n_RegWrite, push3(t, s1, s7, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1613,13 +1610,13 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/Games/Varoom.HC#3 (Varoom.HC:703) */
-    fun f722_init_C__Demo_Games_Varoom_HC_3(t: Task): Long {
+    fun f727_init_C__Demo_Games_Varoom_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 703 // Varoom.HC:703
             tick(t)
-            f721_Varoom(t)
+            f726_Varoom(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Varoom.HC#3", ln) }
@@ -1628,26 +1625,26 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_Varoom_HC_0(t)
-            704 -> f704_init_C__Demo_Games_Varoom_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> f706_DipY(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            707 -> bits(f707_Dip_(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))))
-            708 -> f708_TrackFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            709 -> { f709_TrackSlice(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
-            710 -> { f710_CoupleEnds(t); 0L }
-            711 -> { f711_InitTrack(t); 0L }
-            712 -> f712_PrepPoly(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            713 -> { f713_MPUpdateWin(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            714 -> { f714_VRTransform(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            715 -> { f715_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            716 -> { f716_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            717 -> f717_init_C__Demo_Games_Varoom_HC_2(t)
-            718 -> { f718_InitBushes(t); 0L }
-            719 -> { f719_Init(t); 0L }
-            720 -> { f720_CleanUp(t); 0L }
-            721 -> { f721_Varoom(t); 0L }
-            722 -> f722_init_C__Demo_Games_Varoom_HC_3(t)
+            708 -> f708_init_C__Demo_Games_Varoom_HC_0(t)
+            709 -> f709_init_C__Demo_Games_Varoom_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> f711_DipY(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            712 -> bits(f712_Dip_(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L))))
+            713 -> f713_TrackFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            714 -> { f714_TrackSlice(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
+            715 -> { f715_CoupleEnds(t); 0L }
+            716 -> { f716_InitTrack(t); 0L }
+            717 -> f717_PrepPoly(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            718 -> { f718_MPUpdateWin(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            719 -> { f719_VRTransform(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            720 -> { f720_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            721 -> { f721_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            722 -> f722_init_C__Demo_Games_Varoom_HC_2(t)
+            723 -> { f723_InitBushes(t); 0L }
+            724 -> { f724_Init(t); 0L }
+            725 -> { f725_CleanUp(t); 0L }
+            726 -> { f726_Varoom(t); 0L }
+            727 -> f727_init_C__Demo_Games_Varoom_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1659,7 +1656,7 @@ class N_Demo_Games_Varoom(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/Varoom.HC#0", "\$init:C:/Demo/Games/Varoom.HC#1", "\$init:C:/Home/Registry.HC#0", "DipY", "Dipé", "TrackFind", "TrackSlice", "CoupleEnds", "InitTrack", "PrepPoly", "MPUpdateWin", "VRTransform", "DrawIt", "AnimateTask", "\$init:C:/Demo/Games/Varoom.HC#2", "InitBushes", "Init", "CleanUp", "Varoom", "\$init:C:/Demo/Games/Varoom.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/Games/Varoom.HC")
     }

@@ -43,7 +43,7 @@ public final class N_Demo_Graphics_Slider: NativeModule {
     }
 
     /// HolyC DrawCtrlSlider (Slider.HC:19)
-    public final func f703_DrawCtrlSlider(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawCtrlSlider(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -64,21 +64,21 @@ public final class N_Demo_Graphics_Slider: NativeModule {
             try st4((p0_dc &+ 160), 0)
             ln = 30 // Slider.HC:30
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 20) &+ 0), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 20) &+ 0), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 20) &+ 0), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 20) &+ 0), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
             ln = 32 // Slider.HC:32
             try tick(t)
-            _ = try P.f396_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
+            _ = try P.f397_GrLine(t, p0_dc, ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (ld8((p1_c &+ 56)) &+ 20), ((ld8((p1_c &+ 40)) &+ 40) &+ 1), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1), 1, 0)
             ln = 34 // Slider.HC:34
             try st4((p0_dc &+ 160), 12)
             ln = 35 // Slider.HC:35
             try tick(t)
             let vb0 = try push1(t, divs((ld8(l16_s) &* 10), 30))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 20) &+ 0) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb0, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 20) &+ 0) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb0, 1)
             t.sp = vb0
             ln = 38 // Slider.HC:38
             try tick(t)
             let vb1 = try push1(t, divs((ld8((l16_s &+ 8)) &* 10), 30))
-            _ = try P.f369_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 40) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb1, 1)
+            _ = try P.f370_GrPrint(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 40) &+ 1) &- divs(8, 2)), (((ld8((p1_c &+ 56)) &+ 20) &+ 30) &+ 3), s0, vb1, 1)
             t.sp = vb1
             ln = 41 // Slider.HC:41
             _ = try nat(t, n_GrRect, try push(t, p0_dc, (((ld8((p1_c &+ 40)) &+ 20) &+ 0) &- 3), (((((ld8((p1_c &+ 56)) &+ 20) &+ 30) &- 1) &- ld8(l16_s)) &- 2), 7, 5))
@@ -96,7 +96,7 @@ public final class N_Demo_Graphics_Slider: NativeModule {
     }
 
     /// HolyC UpdateDerivedCtrlSlider (Slider.HC:52)
-    public final func f704_UpdateDerivedCtrlSlider(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_UpdateDerivedCtrlSlider(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -126,7 +126,7 @@ public final class N_Demo_Graphics_Slider: NativeModule {
     }
 
     /// HolyC LeftClickSlider (Slider.HC:63)
-    public final func f705_LeftClickSlider(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f710_LeftClickSlider(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -158,7 +158,7 @@ public final class N_Demo_Graphics_Slider: NativeModule {
     }
 
     /// HolyC SliderNew (Slider.HC:74)
-    @discardableResult public final func f706_SliderNew(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_SliderNew(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -177,11 +177,11 @@ public final class N_Demo_Graphics_Slider: NativeModule {
             ln = 81 // Slider.HC:81
             _ = try nat(t, n_MemSet, try push3(t, g_sld, 0, 16))
             ln = 82 // Slider.HC:82
-            try st8((l0_c &+ 120), 9223090561878065855)
+            try st8((l0_c &+ 120), 9223090561878065860)
             ln = 83 // Slider.HC:83
-            try st8((l0_c &+ 136), 9223090561878065857)
+            try st8((l0_c &+ 136), 9223090561878065862)
             ln = 84 // Slider.HC:84
-            try st8((l0_c &+ 112), 9223090561878065856)
+            try st8((l0_c &+ 112), 9223090561878065861)
             ln = 85 // Slider.HC:85
             try tick(t)
             _ = try P.f153_QueIns(t, l0_c, ld8((ld8(P.g_Fs) &+ 928)))
@@ -197,7 +197,7 @@ public final class N_Demo_Graphics_Slider: NativeModule {
     }
 
     /// HolyC SliderDel (Slider.HC:90)
-    public final func f707_SliderDel(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_SliderDel(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -213,7 +213,7 @@ public final class N_Demo_Graphics_Slider: NativeModule {
     }
 
     /// HolyC Main (Slider.HC:98)
-    public final func f708_Main(_ t: HTask) throws {
+    public final func f713_Main(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -222,7 +222,7 @@ public final class N_Demo_Graphics_Slider: NativeModule {
             _ = try nat(t, n_Print, try push1(t, s1))
             ln = 101 // Slider.HC:101
             try tick(t)
-            let t0: Int64 = try f706_SliderNew(t)
+            let t0: Int64 = try f711_SliderNew(t)
             l0_c = t0
             ln = 102 // Slider.HC:102
             try tick(t)
@@ -231,7 +231,7 @@ public final class N_Demo_Graphics_Slider: NativeModule {
             _ = try nat(t, n_Print, try push3(t, s2, divs((ld8(g_sld) &* 10), 30), divs((ld8((g_sld &+ 8)) &* 10), 30)))
             ln = 106 // Slider.HC:106
             try tick(t)
-            try f707_SliderDel(t, l0_c)
+            try f712_SliderDel(t, l0_c)
             ln = 107 // Slider.HC:107
             _ = try nat(t, n_DocBottom, push0(t))
             t.depth -= 1
@@ -240,13 +240,13 @@ public final class N_Demo_Graphics_Slider: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Slider.HC#0 (Slider.HC:110)
-    @discardableResult public final func f709_init_C__Demo_Graphics_Slider_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Demo_Graphics_Slider_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 110 // Slider.HC:110
             try tick(t)
-            try f708_Main(t)
+            try f713_Main(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Slider.HC#0", ln) }
@@ -255,19 +255,19 @@ public final class N_Demo_Graphics_Slider: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawCtrlSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_UpdateDerivedCtrlSlider(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_LeftClickSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 706: return try f706_SliderNew(t)
-        case 707: try f707_SliderDel(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_Main(t); return 0
-        case 709: return try f709_init_C__Demo_Graphics_Slider_HC_0(t)
+        case 708: try f708_DrawCtrlSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_UpdateDerivedCtrlSlider(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_LeftClickSlider(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 711: return try f711_SliderNew(t)
+        case 712: try f712_SliderDel(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_Main(t); return 0
+        case 714: return try f714_init_C__Demo_Graphics_Slider_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709]
-    private static let NAMES: [Int: String] = [703: "DrawCtrlSlider", 704: "UpdateDerivedCtrlSlider", 705: "LeftClickSlider", 706: "SliderNew", 707: "SliderDel", 708: "Main", 709: "$init:C:/Demo/Graphics/Slider.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714]
+    private static let NAMES: [Int: String] = [708: "DrawCtrlSlider", 709: "UpdateDerivedCtrlSlider", 710: "LeftClickSlider", 711: "SliderNew", 712: "SliderDel", 713: "Main", 714: "$init:C:/Demo/Graphics/Slider.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Slider.HC"]
     public override var files: [String] { N_Demo_Graphics_Slider.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Slider.DEFINED.contains(index) }

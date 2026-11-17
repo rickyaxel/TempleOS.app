@@ -29,6 +29,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     public let n_Sleep: Int
     public let n_Snd: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_tS: Int
     /** "I64 best_score=99999;." */ public var s0: Int64 = 0
     /** "TempleOS.BomberGolf" */ public var s1: Int64 = 0
@@ -81,6 +82,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_tS = rt.vm.natives.find("tS")!.index
         super.init(rt)
     }
@@ -123,7 +125,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BomberGolf.HC#0 (BomberGolf.HC:1)
-    @discardableResult public final func f703_init_C__Demo_Games_BomberGolf_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_BomberGolf_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -137,7 +139,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BomberGolf.HC#1 (BomberGolf.HC:2)
-    @discardableResult public final func f704_init_C__Demo_Games_BomberGolf_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_BomberGolf_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -151,7 +153,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -161,7 +163,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC DrawIt (BomberGolf.HC:88)
-    public final func f706_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f711_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -181,7 +183,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             try st4((p1_dc &+ 160), 1074135054)
             ln = 96 // BomberGolf.HC:96
             try tick(t)
-            _ = try P.f424_GrRect3(t, p1_dc, 0, 0, 0, ld4s((p1_dc &+ 16)), ld4s((p1_dc &+ 24)))
+            _ = try P.f427_GrRect3(t, p1_dc, 0, 0, 0, ld4s((p1_dc &+ 16)), ld4s((p1_dc &+ 24)))
             ln = 98 // BomberGolf.HC:98
             try st4((p1_dc &+ 216), (ld8((p0_task &+ 224)) &>> 1))
             ln = 99 // BomberGolf.HC:99
@@ -191,7 +193,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             try st4(t1, (ld4s(t1) | 256))
             ln = 101 // BomberGolf.HC:101
             try tick(t)
-            _ = try P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), f2i(ldf(g_x)), f2i(ldf(g_y)), 0)
+            _ = try P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), f2i(ldf(g_x)), f2i(ldf(g_y)), 0)
             ln = 102 // BomberGolf.HC:102
             try tick(t)
             _ = try P.f307_Mat4x4RotZ(t, ld8((p1_dc &+ 200)), ldf(g__))
@@ -199,7 +201,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             try st4((p1_dc &+ 160), 0)
             ln = 104 // BomberGolf.HC:104
             try tick(t)
-            try P.f425_GrBorder(t, p1_dc, (-300), (-300), 300, 300, 1, 0)
+            try P.f428_GrBorder(t, p1_dc, (-300), (-300), 300, 300, 1, 0)
             ln = 105 // BomberGolf.HC:105
             l16_i = 0
             loop0: while (l16_i < 10) {
@@ -219,7 +221,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                         let t5: Double = d(try nat(t, n_Cos, try push1(t, bits(ldf((l40_tmpt &+ 16))))))
                         ln = 110 // BomberGolf.HC:110
                         try tick(t)
-                        _ = try P.f315_DCSymmetry3Set(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 0, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 1, f2i((t6 + (1024.0 * t5))), f2i((t4 + (1024.0 * t3))), 0)
+                        _ = try P.f316_DCSymmetry3Set(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 0, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 1, f2i((t6 + (1024.0 * t5))), f2i((t4 + (1024.0 * t3))), 0)
                     }
                     ln = 113 // BomberGolf.HC:113
                     try tick(t)
@@ -227,11 +229,11 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                     if (t7 != 0) {
                         ln = 114 // BomberGolf.HC:114
                         try tick(t)
-                        try P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 0, ld8((l40_tmpt &+ 32)), ldf((l40_tmpt &+ 16)))
+                        try P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 0, ld8((l40_tmpt &+ 32)), ldf((l40_tmpt &+ 16)))
                     } else {
                         ln = 116 // BomberGolf.HC:116
                         try tick(t)
-                        try P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 0, ld8((l40_tmpt &+ 40)), ldf((l40_tmpt &+ 16)))
+                        try P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 0, ld8((l40_tmpt &+ 40)), ldf((l40_tmpt &+ 16)))
                     }
                     ln = 117 // BomberGolf.HC:117
                     let t8: Int64 = (p1_dc &+ 28)
@@ -239,7 +241,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                 } else {
                     ln = 119 // BomberGolf.HC:119
                     try tick(t)
-                    try P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 0, ld8((l40_tmpt &+ 24)), ldf((l40_tmpt &+ 16)))
+                    try P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt &+ 8))), 0, ld8((l40_tmpt &+ 24)), ldf((l40_tmpt &+ 16)))
                 }
                 ln = 105 // BomberGolf.HC:105
                 l16_i = (l16_i &+ 1)
@@ -249,8 +251,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             l16_i = 0
             loop2: while (l16_i < 64) {
                 ln = 123 // BomberGolf.HC:123
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, ld8((g_trees &+ (l16_i &* 16))), ld8(((g_trees &+ (l16_i &* 16)) &+ 8)), 0, b0, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((g_trees &+ (l16_i &* 16))), ld8(((g_trees &+ (l16_i &* 16)) &+ 8)), 0, b0, 0))
                 ln = 122 // BomberGolf.HC:122
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -280,11 +281,11 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                         l56_dx = ((15.0 * t9) + Double((l24_j &>> 2)))
                         ln = 135 // BomberGolf.HC:135
                         try tick(t)
-                        let t10: Double = try P.f485_FullTri(t, ((l48_ts / 3.0) + (Double(l24_j) / 2.0)), 20.0)
+                        let t10: Double = try P.f490_FullTri(t, ((l48_ts / 3.0) + (Double(l24_j) / 2.0)), 20.0)
                         l64_dy = ((10.0 * t10) + Double((l24_j &>> 2)))
                         ln = 136 // BomberGolf.HC:136
                         try tick(t)
-                        _ = try P.f393_GrPlot3(t, p1_dc, f2i((((ldf(l40_tmpt) + 5.0) + l56_dx) + (0.5 * l64_dy))), f2i(((ldf((l40_tmpt &+ 8)) + (0.5 * l56_dx)) + l64_dy)), 0)
+                        _ = try P.f394_GrPlot3(t, p1_dc, f2i((((ldf(l40_tmpt) + 5.0) + l56_dx) + (0.5 * l64_dy))), f2i(((ldf((l40_tmpt &+ 8)) + (0.5 * l56_dx)) + l64_dy)), 0)
                         ln = 128 // BomberGolf.HC:128
                         l24_j = (l24_j &+ 1)
                         try tick(t)
@@ -307,12 +308,10 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                     let t13: Int64 = try P.f269_Blink(t, 10.0)
                     if (t13 != 0) {
                         ln = 145 // BomberGolf.HC:145
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, f2i(ldf((l32_tmpb &+ 16))), f2i(ldf((l32_tmpb &+ 24))), 0, b1, 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i(ldf((l32_tmpb &+ 16))), f2i(ldf((l32_tmpb &+ 24))), 0, b1, 0))
                     } else {
                         ln = 147 // BomberGolf.HC:147
-                        try tick(t)
-                        try P.f440_Sprite3(t, p1_dc, f2i(ldf((l32_tmpb &+ 16))), f2i(ldf((l32_tmpb &+ 24))), 0, b2, 0)
+                        _ = try nat(t, n_Sprite3, try push(t, p1_dc, f2i(ldf((l32_tmpb &+ 16))), f2i(ldf((l32_tmpb &+ 24))), 0, b2, 0))
                     }
                 }
                 ln = 149 // BomberGolf.HC:149
@@ -323,14 +322,13 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             let t14: Int64 = (p1_dc &+ 28)
             try st4(t14, (ld4s(t14) & (-257)))
             ln = 153 // BomberGolf.HC:153
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, (ld8((p0_task &+ 224)) &>> 1), (ld8((p0_task &+ 248)) &>> 1), 0, b3, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, (ld8((p0_task &+ 224)) &>> 1), (ld8((p0_task &+ 248)) &>> 1), 0, b3, 0))
             ln = 154 // BomberGolf.HC:154
             try st4((p1_dc &+ 160), 4)
             ln = 155 // BomberGolf.HC:155
             try tick(t)
             let vb0 = try push3(t, ld8(g_target_cnt), ld8(g_key_cnt), ld8(g_best_score))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s2, vb0, 3)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s2, vb0, 3)
             t.sp = vb0
             ln = 157 // BomberGolf.HC:157
             var r16: Bool = try (ld8(g_target_cnt) == 0)
@@ -343,7 +341,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                 ln = 158 // BomberGolf.HC:158
                 try tick(t)
                 let vb1 = push0(t)
-                _ = try P.f369_GrPrint(t, p1_dc, ((ld8((p0_task &+ 224)) &- 112) &>> 1), (((ld8((p0_task &+ 248)) &- 8) &>> 1) &- 32), s3, vb1, 0)
+                _ = try P.f370_GrPrint(t, p1_dc, ((ld8((p0_task &+ 224)) &- 112) &>> 1), (((ld8((p0_task &+ 248)) &- 8) &>> 1) &- 32), s3, vb1, 0)
                 t.sp = vb1
             }
             t.depth -= 1
@@ -352,7 +350,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC BombHit (BomberGolf.HC:162)
-    public final func f707_BombHit(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_BombHit(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -393,7 +391,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC BombDrop (BomberGolf.HC:176)
-    public final func f708_BombDrop(_ t: HTask, _ a0: Double, _ a1: Double) throws {
+    public final func f713_BombDrop(_ t: HTask, _ a0: Double, _ a1: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -417,14 +415,14 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             _ = try P.f153_QueIns(t, l16_tmpb, ld8((g_bomb_head &+ 8)))
             ln = 184 // BomberGolf.HC:184
             try tick(t)
-            _ = try P.f500_Sweep(t, f2i((3.0 * 1000.0)), 74.0, 62.0)
+            _ = try P.f505_Sweep(t, f2i((3.0 * 1000.0)), 74.0, 62.0)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "BombDrop", ln) }
     }
 
     /// HolyC AnimateTask (BomberGolf.HC:187)
-    @discardableResult public final func f709_AnimateTask(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f714_AnimateTask(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -452,7 +450,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                     if try (ld8(g_target_cnt) != 0) {
                         ln = 199 // BomberGolf.HC:199
                         try tick(t)
-                        let t3: Double = try P.f542_Wrap(t, (ldf(g__f) - ldf(g__)), (-d(4614256656552045848)))
+                        let t3: Double = try P.f547_Wrap(t, (ldf(g__f) - ldf(g__)), (-d(4614256656552045848)))
                         let t4: Double = d(try nat(t, n_Abs, try push1(t, bits(t3))))
                         try tick(t)
                         let t5: Double = try P.f116_Clamp(t, (0.1 * fpow((1.0 + t4), 4.0)), (-3.0), 3.0)
@@ -535,7 +533,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                     if (t22 < t21) {
                         ln = 228 // BomberGolf.HC:228
                         try tick(t)
-                        try f707_BombHit(t, l32_tmpb)
+                        try f712_BombHit(t, l32_tmpb)
                     } else {
                         ln = 229 // BomberGolf.HC:229
                         let t24: Double = try (ldf((l32_tmpb &+ 32)) + 3.0)
@@ -543,7 +541,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                         if try ((t24 < t23) && (ld1u((l32_tmpb &+ 40)) == 0)) {
                             ln = 230 // BomberGolf.HC:230
                             try tick(t)
-                            _ = try P.f499_Noise(t, f2i((0.25 * 1000.0)), 62.0, 74.0)
+                            _ = try P.f504_Noise(t, f2i((0.25 * 1000.0)), 62.0, 74.0)
                             ln = 231 // BomberGolf.HC:231
                             try st1((l32_tmpb &+ 40), 1)
                         }
@@ -565,7 +563,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC Init (BomberGolf.HC:241)
-    public final func f710_Init(_ t: HTask) throws {
+    public final func f715_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -651,7 +649,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC CleanUp (BomberGolf.HC:282)
-    public final func f711_CleanUp(_ t: HTask) throws {
+    public final func f716_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -664,7 +662,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC BomberGolf (BomberGolf.HC:287)
-    public final func f712_BomberGolf(_ t: HTask) throws {
+    public final func f717_BomberGolf(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -672,7 +670,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             let fp = try frame(t, 24)
             ln = 290 // BomberGolf.HC:290
             try tick(t)
-            _ = try P.f507_MenuPush(t, s4)
+            _ = try P.f512_MenuPush(t, s4)
             ln = 304 // BomberGolf.HC:304
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -690,13 +688,13 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 310 // BomberGolf.HC:310
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, ld8(P.g_Fs), s5, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065866, ld8(P.g_Fs), s5, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 311 // BomberGolf.HC:311
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065858)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065863)
             ln = 312 // BomberGolf.HC:312
             try tick(t)
-            try f710_Init(t)
+            try f715_Init(t)
             ln = 313 // BomberGolf.HC:313
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -734,7 +732,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                                         ln = 328 // BomberGolf.HC:328
                                         let t7: Double = try ldf(g__f)
                                         try tick(t)
-                                        let t5: Double = try P.f542_Wrap(t, (ldf(g__f) - ldf(g__)), (-d(4614256656552045848)))
+                                        let t5: Double = try P.f547_Wrap(t, (ldf(g__f) - ldf(g__)), (-d(4614256656552045848)))
                                         let t6: Double = d(try nat(t, n_Abs, try push1(t, bits(t5))))
                                         try st8(g__f, bits((t7 + (1.0 / (t6 + (2.0 * d(4614256656552045848)))))))
                                     case 77:
@@ -744,7 +742,7 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                                         ln = 332 // BomberGolf.HC:332
                                         let t11: Double = try ldf(g__f)
                                         try tick(t)
-                                        let t9: Double = try P.f542_Wrap(t, (ldf(g__f) - ldf(g__)), (-d(4614256656552045848)))
+                                        let t9: Double = try P.f547_Wrap(t, (ldf(g__f) - ldf(g__)), (-d(4614256656552045848)))
                                         let t10: Double = d(try nat(t, n_Abs, try push1(t, bits(t9))))
                                         try st8(g__f, bits((t11 - (1.0 / (t10 + (2.0 * d(4614256656552045848)))))))
                                     default:
@@ -763,14 +761,14 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
                                 let t17: Double = try ((0.8 * 3.0) * ldf(g_v))
                                 let t16: Double = d(try nat(t, n_Sin, try push1(t, bits(ldf(g__)))))
                                 try tick(t)
-                                try f708_BombDrop(t, (t18 - (t17 * t16)), (t15 - (t14 * t13)))
+                                try f713_BombDrop(t, (t18 - (t17 * t16)), (t15 - (t14 * t13)))
                             case 10:
                                 ln = 342 // BomberGolf.HC:342
                                 try tick(t)
-                                try f711_CleanUp(t)
+                                try f716_CleanUp(t)
                                 ln = 343 // BomberGolf.HC:343
                                 try tick(t)
-                                try f710_Init(t)
+                                try f715_Init(t)
                             case 27, 28:
                                 ln = 347 // BomberGolf.HC:347
                                 break skip_0
@@ -795,10 +793,10 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 353 // BomberGolf.HC:353
             try tick(t)
-            try f711_CleanUp(t)
+            try f716_CleanUp(t)
             ln = 354 // BomberGolf.HC:354
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 355 // BomberGolf.HC:355
             _ = try nat(t, n_RegWrite, try push3(t, s1, s6, ld8(g_best_score)))
             t.msp = msp0
@@ -808,13 +806,13 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BomberGolf.HC#2 (BomberGolf.HC:358)
-    @discardableResult public final func f713_init_C__Demo_Games_BomberGolf_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Demo_Games_BomberGolf_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 358 // BomberGolf.HC:358
             try tick(t)
-            try f712_BomberGolf(t)
+            try f717_BomberGolf(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/BomberGolf.HC#2", ln) }
@@ -823,23 +821,23 @@ public final class N_Demo_Games_BomberGolf: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_BomberGolf_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_BomberGolf_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: try f706_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 707: try f707_BombHit(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_BombDrop(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))); return 0
-        case 709: return try f709_AnimateTask(t, (n > 0 ? st[base + 0] : 0))
-        case 710: try f710_Init(t); return 0
-        case 711: try f711_CleanUp(t); return 0
-        case 712: try f712_BomberGolf(t); return 0
-        case 713: return try f713_init_C__Demo_Games_BomberGolf_HC_2(t)
+        case 708: return try f708_init_C__Demo_Games_BomberGolf_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_BomberGolf_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: try f711_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 712: try f712_BombHit(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_BombDrop(t, d((n > 0 ? st[base + 0] : 0)), d((n > 1 ? st[base + 1] : 0))); return 0
+        case 714: return try f714_AnimateTask(t, (n > 0 ? st[base + 0] : 0))
+        case 715: try f715_Init(t); return 0
+        case 716: try f716_CleanUp(t); return 0
+        case 717: try f717_BomberGolf(t); return 0
+        case 718: return try f718_init_C__Demo_Games_BomberGolf_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/BomberGolf.HC#0", 704: "$init:C:/Demo/Games/BomberGolf.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "DrawIt", 707: "BombHit", 708: "BombDrop", 709: "AnimateTask", 710: "Init", 711: "CleanUp", 712: "BomberGolf", 713: "$init:C:/Demo/Games/BomberGolf.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/BomberGolf.HC#0", 709: "$init:C:/Demo/Games/BomberGolf.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "DrawIt", 712: "BombHit", 713: "BombDrop", 714: "AnimateTask", 715: "Init", 716: "CleanUp", 717: "BomberGolf", 718: "$init:C:/Demo/Games/BomberGolf.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Games/BomberGolf.HC"]
     public override var files: [String] { N_Demo_Games_BomberGolf.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_BomberGolf.DEFINED.contains(index) }

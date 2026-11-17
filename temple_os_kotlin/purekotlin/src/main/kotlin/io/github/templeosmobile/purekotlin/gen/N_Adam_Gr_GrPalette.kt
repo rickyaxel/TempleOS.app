@@ -27,7 +27,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Gr/GrPalette.HC#0 (GrPalette.HC:2) */
-    fun f703_init_C__Adam_Gr_GrPalette_HC_0(t: Task): Long {
+    fun f708_init_C__Adam_Gr_GrPalette_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -37,7 +37,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Gr/GrPalette.HC#1 (GrPalette.HC:5) */
-    fun f704_init_C__Adam_Gr_GrPalette_HC_1(t: Task): Long {
+    fun f709_init_C__Adam_Gr_GrPalette_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -51,7 +51,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC GrPaletteIndicesSet (GrPalette.HC:8) */
-    fun f705_GrPaletteIndicesSet(t: Task) {
+    fun f710_GrPaletteIndicesSet(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -73,29 +73,29 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 18 // GrPalette.HC:18
             tick(t)
-            P.f565_InU8(t, 986L)
+            P.f570_InU8(t, 986L)
             ln = 19 // GrPalette.HC:19
             l0_i = 0L
             loop2@ while ((l0_i < 16L)) {
                 ln = 20 // GrPalette.HC:20
                 tick(t)
-                P.f570_OutU8(t, 960L, l0_i)
+                P.f575_OutU8(t, 960L, l0_i)
                 ln = 21 // GrPalette.HC:21
                 tick(t)
-                P.f570_OutU8(t, 960L, l0_i)
+                P.f575_OutU8(t, 960L, l0_i)
                 ln = 19 // GrPalette.HC:19
                 l0_i = (l0_i + 1L)
                 tick(t)
             }
             ln = 23 // GrPalette.HC:23
             tick(t)
-            P.f570_OutU8(t, 960L, 32L)
+            P.f575_OutU8(t, 960L, 32L)
             ln = 24 // GrPalette.HC:24
             tick(t)
-            P.f570_OutU8(t, 960L, 0L)
+            P.f575_OutU8(t, 960L, 0L)
             ln = 25 // GrPalette.HC:25
             tick(t)
-            P.f565_InU8(t, 986L)
+            P.f570_InU8(t, 986L)
             ln = 26 // GrPalette.HC:26
             tick(t)
             P.f98_LBtr(t, (P.g_sys_semas + 112L), 0L)
@@ -105,7 +105,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC GrPaletteColorSet (GrPalette.HC:30) */
-    fun f706_GrPaletteColorSet(t: Task, a0: Long, a1: Long) {
+    fun f711_GrPaletteColorSet(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -132,19 +132,19 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 37 // GrPalette.HC:37
             tick(t)
-            P.f570_OutU8(t, 966L, 255L)
+            P.f575_OutU8(t, 966L, 255L)
             ln = 38 // GrPalette.HC:38
             tick(t)
-            P.f570_OutU8(t, 968L, p0_color_num)
+            P.f575_OutU8(t, 968L, p0_color_num)
             ln = 39 // GrPalette.HC:39
             tick(t)
-            P.f570_OutU8(t, 969L, (ld2u(((fp + 8) + 4L)) shr 10))
+            P.f575_OutU8(t, 969L, (ld2u(((fp + 8) + 4L)) shr 10))
             ln = 40 // GrPalette.HC:40
             tick(t)
-            P.f570_OutU8(t, 969L, (ld2u(((fp + 8) + 2L)) shr 10))
+            P.f575_OutU8(t, 969L, (ld2u(((fp + 8) + 2L)) shr 10))
             ln = 41 // GrPalette.HC:41
             tick(t)
-            P.f570_OutU8(t, 969L, (ld2u((fp + 8)) shr 10))
+            P.f575_OutU8(t, 969L, (ld2u((fp + 8)) shr 10))
             ln = 42 // GrPalette.HC:42
             tick(t)
             P.f98_LBtr(t, (P.g_sys_semas + 112L), 0L)
@@ -155,7 +155,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC GrPaletteColorGet (GrPalette.HC:46) */
-    fun f707_GrPaletteColorGet(t: Task, a0: Long): Long {
+    fun f712_GrPaletteColorGet(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -182,21 +182,21 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 54 // GrPalette.HC:54
             tick(t)
-            P.f570_OutU8(t, 966L, 255L)
+            P.f575_OutU8(t, 966L, 255L)
             ln = 55 // GrPalette.HC:55
             tick(t)
-            P.f570_OutU8(t, 967L, p0_color_num)
+            P.f575_OutU8(t, 967L, p0_color_num)
             ln = 56 // GrPalette.HC:56
             tick(t)
-            val t2: Long = P.f565_InU8(t, 969L)
+            val t2: Long = P.f570_InU8(t, 969L)
             st2(((fp + 8) + 4L), divs((67107840L * t2), 64512L))
             ln = 57 // GrPalette.HC:57
             tick(t)
-            val t3: Long = P.f565_InU8(t, 969L)
+            val t3: Long = P.f570_InU8(t, 969L)
             st2(((fp + 8) + 2L), divs((67107840L * t3), 64512L))
             ln = 58 // GrPalette.HC:58
             tick(t)
-            val t4: Long = P.f565_InU8(t, 969L)
+            val t4: Long = P.f570_InU8(t, 969L)
             st2((fp + 8), divs((67107840L * t4), 64512L))
             ln = 59 // GrPalette.HC:59
             tick(t)
@@ -212,7 +212,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Gr/GrPalette.HC#2 (GrPalette.HC:64) */
-    fun f708_init_C__Adam_Gr_GrPalette_HC_2(t: Task): Long {
+    fun f713_init_C__Adam_Gr_GrPalette_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -222,7 +222,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Gr/GrPalette.HC#3 (GrPalette.HC:70) */
-    fun f709_init_C__Adam_Gr_GrPalette_HC_3(t: Task): Long {
+    fun f714_init_C__Adam_Gr_GrPalette_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -232,7 +232,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC GrPaletteGet (GrPalette.HC:76) */
-    fun f710_GrPaletteGet(t: Task, a0: Long) {
+    fun f715_GrPaletteGet(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -243,7 +243,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l8_i < 16L)) {
                 ln = 80 // GrPalette.HC:80
                 tick(t)
-                val t0: Long = f707_GrPaletteColorGet(t, l8_i)
+                val t0: Long = f712_GrPaletteColorGet(t, l8_i)
                 st8((p0_bgr48 + (l8_i * 8L)), t0)
                 ln = 79 // GrPalette.HC:79
                 l8_i = (l8_i + 1L)
@@ -255,7 +255,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC GrPaletteSet (GrPalette.HC:83) */
-    fun f711_GrPaletteSet(t: Task, a0: Long) {
+    fun f716_GrPaletteSet(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -266,7 +266,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while ((l8_i < 16L)) {
                 ln = 87 // GrPalette.HC:87
                 tick(t)
-                f706_GrPaletteColorSet(t, l8_i, ld8((p0_bgr48 + (l8_i * 8L))))
+                f711_GrPaletteColorSet(t, l8_i, ld8((p0_bgr48 + (l8_i * 8L))))
                 ln = 86 // GrPalette.HC:86
                 l8_i = (l8_i + 1L)
                 tick(t)
@@ -277,20 +277,20 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PaletteSetStd (GrPalette.HC:90) */
-    fun f712_PaletteSetStd(t: Task) {
+    fun f717_PaletteSetStd(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 92 // GrPalette.HC:92
             tick(t)
-            f711_GrPaletteSet(t, P.g_gr_palette_std)
+            f716_GrPaletteSet(t, P.g_gr_palette_std)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "PaletteSetStd", ln) }
     }
 
     /** HolyC $init:C:/Adam/Gr/GrPalette.HC#4 (GrPalette.HC:1) */
-    fun f713_init_C__Adam_Gr_GrPalette_HC_4(t: Task): Long {
+    fun f718_init_C__Adam_Gr_GrPalette_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -302,17 +302,17 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Adam_Gr_GrPalette_HC_0(t)
-            704 -> f704_init_C__Adam_Gr_GrPalette_HC_1(t)
-            705 -> { f705_GrPaletteIndicesSet(t); 0L }
-            706 -> { f706_GrPaletteColorSet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> f707_GrPaletteColorGet(t, (if (n > 0) st[base + 0] else 0L))
-            708 -> f708_init_C__Adam_Gr_GrPalette_HC_2(t)
-            709 -> f709_init_C__Adam_Gr_GrPalette_HC_3(t)
-            710 -> { f710_GrPaletteGet(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            711 -> { f711_GrPaletteSet(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            712 -> { f712_PaletteSetStd(t); 0L }
-            713 -> f713_init_C__Adam_Gr_GrPalette_HC_4(t)
+            708 -> f708_init_C__Adam_Gr_GrPalette_HC_0(t)
+            709 -> f709_init_C__Adam_Gr_GrPalette_HC_1(t)
+            710 -> { f710_GrPaletteIndicesSet(t); 0L }
+            711 -> { f711_GrPaletteColorSet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> f712_GrPaletteColorGet(t, (if (n > 0) st[base + 0] else 0L))
+            713 -> f713_init_C__Adam_Gr_GrPalette_HC_2(t)
+            714 -> f714_init_C__Adam_Gr_GrPalette_HC_3(t)
+            715 -> { f715_GrPaletteGet(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            716 -> { f716_GrPaletteSet(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            717 -> { f717_PaletteSetStd(t); 0L }
+            718 -> f718_init_C__Adam_Gr_GrPalette_HC_4(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -324,7 +324,7 @@ class N_Adam_Gr_GrPalette(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718)
         private val NAMES = arrayOf("\$init:C:/Adam/Gr/GrPalette.HC#0", "\$init:C:/Adam/Gr/GrPalette.HC#1", "GrPaletteIndicesSet", "GrPaletteColorSet", "GrPaletteColorGet", "\$init:C:/Adam/Gr/GrPalette.HC#2", "\$init:C:/Adam/Gr/GrPalette.HC#3", "GrPaletteGet", "GrPaletteSet", "PaletteSetStd", "\$init:C:/Adam/Gr/GrPalette.HC#4")
         private val FILES = arrayOf<String>("C:/Adam/Gr/GrPalette.HC")
     }

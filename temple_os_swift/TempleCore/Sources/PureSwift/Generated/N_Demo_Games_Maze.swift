@@ -59,7 +59,7 @@ public final class N_Demo_Games_Maze: NativeModule {
     }
 
     /// HolyC DrawIt (Maze.HC:7)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -70,12 +70,12 @@ public final class N_Demo_Games_Maze: NativeModule {
             ln = 17 // Maze.HC:17
             try tick(t)
             let vb0 = push0(t)
-            try P.f449_TextPrint(t, p0_task, 0, 0, 15, s0, vb0, 0)
+            try P.f454_TextPrint(t, p0_task, 0, 0, 15, s0, vb0, 0)
             t.sp = vb0
             ln = 18 // Maze.HC:18
             try tick(t)
             let vb1 = push0(t)
-            try P.f449_TextPrint(t, p0_task, 0, 1, 15, s1, vb1, 0)
+            try P.f454_TextPrint(t, p0_task, 0, 1, 15, s1, vb1, 0)
             t.sp = vb1
             t.depth -= 1
             return
@@ -83,7 +83,7 @@ public final class N_Demo_Games_Maze: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Maze.HC#0 (Maze.HC:34)
-    @discardableResult public final func f704_init_C__Demo_Games_Maze_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_Maze_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -93,7 +93,7 @@ public final class N_Demo_Games_Maze: NativeModule {
     }
 
     /// HolyC SolveMaze (Maze.HC:37)
-    public final func f705_SolveMaze(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_SolveMaze(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -216,7 +216,7 @@ public final class N_Demo_Games_Maze: NativeModule {
     }
 
     /// HolyC Maze (Maze.HC:77)
-    public final func f706_Maze(_ t: HTask) throws {
+    public final func f711_Maze(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -239,7 +239,7 @@ public final class N_Demo_Games_Maze: NativeModule {
             ln = 86 // Maze.HC:86
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 87 // Maze.HC:87
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 88 // Maze.HC:88
             try st4((ld8(P.g_Fs) &+ 12), 5436158)
             ln = 90 // Maze.HC:90
@@ -271,7 +271,7 @@ public final class N_Demo_Games_Maze: NativeModule {
                             try st4(((g_text &+ (l16_y &* 320)) &+ (l8_x &* 4)), 3882)
                             ln = 100 // Maze.HC:100
                             try tick(t)
-                            try f705_SolveMaze(t, l8_x, l16_y)
+                            try f710_SolveMaze(t, l8_x, l16_y)
                             ln = 101 // Maze.HC:101
                             let t0: Int64 = try nat(t, n_GetChar, try push3(t, 0, 1, 0))
                             l0_ch = t0
@@ -303,13 +303,13 @@ public final class N_Demo_Games_Maze: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Maze.HC#1 (Maze.HC:112)
-    @discardableResult public final func f707_init_C__Demo_Games_Maze_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Games_Maze_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 112 // Maze.HC:112
             try tick(t)
-            try f706_Maze(t)
+            try f711_Maze(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Maze.HC#1", ln) }
@@ -318,17 +318,17 @@ public final class N_Demo_Games_Maze: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: return try f704_init_C__Demo_Games_Maze_HC_0(t)
-        case 705: try f705_SolveMaze(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_Maze(t); return 0
-        case 707: return try f707_init_C__Demo_Games_Maze_HC_1(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: return try f709_init_C__Demo_Games_Maze_HC_0(t)
+        case 710: try f710_SolveMaze(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_Maze(t); return 0
+        case 712: return try f712_init_C__Demo_Games_Maze_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "$init:C:/Demo/Games/Maze.HC#0", 705: "SolveMaze", 706: "Maze", 707: "$init:C:/Demo/Games/Maze.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "$init:C:/Demo/Games/Maze.HC#0", 710: "SolveMaze", 711: "Maze", 712: "$init:C:/Demo/Games/Maze.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Games/Maze.HC"]
     public override var files: [String] { N_Demo_Games_Maze.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Maze.DEFINED.contains(index) }

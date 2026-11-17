@@ -27,8 +27,8 @@ s 17fe40 3571464546684742367143
 s 17fe60 6973006e27741f00616c00776179731f006e6963652e0a001f00
 s 17fe90 3644684365444335684247
 s 17fff8 35714645466847
-fn 703 Song (U0;;-)
-fn 704 $init:C:/Demo/Snd/OhGreat.HC#0 (I64;;-)
-sym f Song 703 (U0;;-)
-init 704
+fn 708 Song (U0;;-)
+fn 709 $init:C:/Demo/Snd/OhGreat.HC#0 (I64;;-)
+sym f Song 708 (U0;;-)
+init 709
 unit C:/Demo/Snd/OhGreat.HC#1

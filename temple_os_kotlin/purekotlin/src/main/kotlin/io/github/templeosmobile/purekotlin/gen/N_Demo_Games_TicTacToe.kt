@@ -11,6 +11,7 @@ import io.github.templeosmobile.core.purenative.*
 
 class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_MemSet = rt.vm.natives.find("MemSet")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Refresh = rt.vm.natives.find("Refresh")!!.index
@@ -36,7 +37,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/TicTacToe.HC#0 (TicTacToe.HC:2) */
-    fun f703_init_C__Demo_Games_TicTacToe_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_TicTacToe_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -46,7 +47,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/TicTacToe.HC#1 (TicTacToe.HC:3) */
-    fun f704_init_C__Demo_Games_TicTacToe_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_TicTacToe_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -56,7 +57,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawX (TicTacToe.HC:5) */
-    fun f705_DrawX(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f710_DrawX(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -66,18 +67,16 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 7 // TicTacToe.HC:7
             st4((p0_dc + 228L), 5L)
             ln = 8 // TicTacToe.HC:8
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, (p1_x - 20L), (p2_y - 20L), 0L, (p1_x + 20L), (p2_y + 20L), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p0_dc, (p1_x - 20L), (p2_y - 20L), 0L, (p1_x + 20L), (p2_y + 20L), 0L, 1L, 0L))
             ln = 9 // TicTacToe.HC:9
-            tick(t)
-            P.f406_GrLine3(t, p0_dc, (p1_x + 20L), (p2_y - 20L), 0L, (p1_x - 20L), (p2_y + 20L), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p0_dc, (p1_x + 20L), (p2_y - 20L), 0L, (p1_x - 20L), (p2_y + 20L), 0L, 1L, 0L))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawX", ln) }
     }
 
     /** HolyC DrawO (TicTacToe.HC:12) */
-    fun f706_DrawO(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f711_DrawO(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -88,14 +87,14 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4((p0_dc + 228L), 5L)
             ln = 15 // TicTacToe.HC:15
             tick(t)
-            P.f411_GrCircle3(t, p0_dc, p1_x, p2_y, 0L, 25L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f413_GrCircle3(t, p0_dc, p1_x, p2_y, 0L, 25L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "DrawO", ln) }
     }
 
     /** HolyC DrawBoard (TicTacToe.HC:18) */
-    fun f707_DrawBoard(t: Task, a0: Long) {
+    fun f712_DrawBoard(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -112,17 +111,13 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 23 // TicTacToe.HC:23
             st4((l16_dc + 228L), 5L)
             ln = 24 // TicTacToe.HC:24
-            tick(t)
-            P.f406_GrLine3(t, l16_dc, 200L, 100L, 0L, 200L, 400L, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, l16_dc, 200L, 100L, 0L, 200L, 400L, 0L, 1L, 0L))
             ln = 25 // TicTacToe.HC:25
-            tick(t)
-            P.f406_GrLine3(t, l16_dc, 300L, 100L, 0L, 300L, 400L, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, l16_dc, 300L, 100L, 0L, 300L, 400L, 0L, 1L, 0L))
             ln = 26 // TicTacToe.HC:26
-            tick(t)
-            P.f406_GrLine3(t, l16_dc, 100L, 200L, 0L, 400L, 200L, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, l16_dc, 100L, 200L, 0L, 400L, 200L, 0L, 1L, 0L))
             ln = 27 // TicTacToe.HC:27
-            tick(t)
-            P.f406_GrLine3(t, l16_dc, 100L, 300L, 0L, 400L, 300L, 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, l16_dc, 100L, 300L, 0L, 400L, 300L, 0L, 1L, 0L))
             ln = 28 // TicTacToe.HC:28
             l8_i = 0L
             loop0@ while ((l8_i < 9L)) {
@@ -133,12 +128,12 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         1L -> {
                             ln = 31 // TicTacToe.HC:31
                             tick(t)
-                            f705_DrawX(t, l16_dc, ld8((g_board_x + (l8_i * 8L))), ld8((g_board_y + (l8_i * 8L))))
+                            f710_DrawX(t, l16_dc, ld8((g_board_x + (l8_i * 8L))), ld8((g_board_y + (l8_i * 8L))))
                         }
                         2L -> {
                             ln = 34 // TicTacToe.HC:34
                             tick(t)
-                            f706_DrawO(t, l16_dc, ld8((g_board_x + (l8_i * 8L))), ld8((g_board_y + (l8_i * 8L))))
+                            f711_DrawO(t, l16_dc, ld8((g_board_x + (l8_i * 8L))), ld8((g_board_y + (l8_i * 8L))))
                         }
                         else -> {
                         }
@@ -152,11 +147,11 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             if ((p0_player == 1L)) {
                 ln = 41 // TicTacToe.HC:41
                 tick(t)
-                f705_DrawX(t, l16_dc, (ld8(P.g_ms) - ld8((ld8(P.g_Fs) + 208L))), (ld8((P.g_ms + 8L)) - ld8((ld8(P.g_Fs) + 232L))))
+                f710_DrawX(t, l16_dc, (ld8(P.g_ms) - ld8((ld8(P.g_Fs) + 208L))), (ld8((P.g_ms + 8L)) - ld8((ld8(P.g_Fs) + 232L))))
             } else {
                 ln = 43 // TicTacToe.HC:43
                 tick(t)
-                f706_DrawO(t, l16_dc, (ld8(P.g_ms) - ld8((ld8(P.g_Fs) + 208L))), (ld8((P.g_ms + 8L)) - ld8((ld8(P.g_Fs) + 232L))))
+                f711_DrawO(t, l16_dc, (ld8(P.g_ms) - ld8((ld8(P.g_Fs) + 208L))), (ld8((P.g_ms + 8L)) - ld8((ld8(P.g_Fs) + 232L))))
             }
             ln = 44 // TicTacToe.HC:44
             tick(t)
@@ -167,7 +162,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC TakeTurn (TicTacToe.HC:47) */
-    fun f708_TakeTurn(t: Task, a0: Long) {
+    fun f713_TakeTurn(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -194,7 +189,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 loop2@ while ((ld1u((P.g_ms + 160L)) == 0L)) {
                     ln = 56 // TicTacToe.HC:56
                     tick(t)
-                    f707_DrawBoard(t, p0_player)
+                    f712_DrawBoard(t, p0_player)
                     ln = 57 // TicTacToe.HC:57
                     nat(t, n_Refresh, push2(t, 1L, 0L))
                     tick(t)
@@ -203,7 +198,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 loop4@ while ((ld1u((P.g_ms + 160L)) != 0L)) {
                     ln = 60 // TicTacToe.HC:60
                     tick(t)
-                    f707_DrawBoard(t, p0_player)
+                    f712_DrawBoard(t, p0_player)
                     ln = 61 // TicTacToe.HC:61
                     nat(t, n_Refresh, push2(t, 1L, 0L))
                     tick(t)
@@ -224,7 +219,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC CheckWinner (TicTacToe.HC:70) */
-    fun f709_CheckWinner(t: Task, a0: Long): Long {
+    fun f714_CheckWinner(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -377,7 +372,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DoGame (TicTacToe.HC:87) */
-    fun f710_DoGame(t: Task) {
+    fun f715_DoGame(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -390,10 +385,10 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             loop0@ while ((1L != 0L)) {
                 ln = 92 // TicTacToe.HC:92
                 tick(t)
-                f708_TakeTurn(t, 1L)
+                f713_TakeTurn(t, 1L)
                 ln = 93 // TicTacToe.HC:93
                 tick(t)
-                val t0: Long = f709_CheckWinner(t, 1L)
+                val t0: Long = f714_CheckWinner(t, 1L)
                 if ((t0 != 0L)) {
                     ln = 94 // TicTacToe.HC:94
                     tick(t)
@@ -415,10 +410,10 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 }
                 ln = 101 // TicTacToe.HC:101
                 tick(t)
-                f708_TakeTurn(t, 2L)
+                f713_TakeTurn(t, 2L)
                 ln = 102 // TicTacToe.HC:102
                 tick(t)
-                val t2: Long = f709_CheckWinner(t, 2L)
+                val t2: Long = f714_CheckWinner(t, 2L)
                 if ((t2 != 0L)) {
                     ln = 103 // TicTacToe.HC:103
                     tick(t)
@@ -446,7 +441,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC TicTacToe (TicTacToe.HC:112) */
-    fun f711_TicTacToe(t: Task) {
+    fun f716_TicTacToe(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -465,7 +460,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 loop0@ while ((1L != 0L)) {
                     ln = 119 // TicTacToe.HC:119
                     tick(t)
-                    f710_DoGame(t)
+                    f715_DoGame(t)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -486,13 +481,13 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/TicTacToe.HC#2 (TicTacToe.HC:125) */
-    fun f712_init_C__Demo_Games_TicTacToe_HC_2(t: Task): Long {
+    fun f717_init_C__Demo_Games_TicTacToe_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 125 // TicTacToe.HC:125
             tick(t)
-            f711_TicTacToe(t)
+            f716_TicTacToe(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/TicTacToe.HC#2", ln) }
@@ -501,16 +496,16 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_TicTacToe_HC_0(t)
-            704 -> f704_init_C__Demo_Games_TicTacToe_HC_1(t)
-            705 -> { f705_DrawX(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            706 -> { f706_DrawO(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            707 -> { f707_DrawBoard(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_TakeTurn(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> f709_CheckWinner(t, (if (n > 0) st[base + 0] else 0L))
-            710 -> { f710_DoGame(t); 0L }
-            711 -> { f711_TicTacToe(t); 0L }
-            712 -> f712_init_C__Demo_Games_TicTacToe_HC_2(t)
+            708 -> f708_init_C__Demo_Games_TicTacToe_HC_0(t)
+            709 -> f709_init_C__Demo_Games_TicTacToe_HC_1(t)
+            710 -> { f710_DrawX(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            711 -> { f711_DrawO(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            712 -> { f712_DrawBoard(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_TakeTurn(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> f714_CheckWinner(t, (if (n > 0) st[base + 0] else 0L))
+            715 -> { f715_DoGame(t); 0L }
+            716 -> { f716_TicTacToe(t); 0L }
+            717 -> f717_init_C__Demo_Games_TicTacToe_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -522,7 +517,7 @@ class N_Demo_Games_TicTacToe(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/TicTacToe.HC#0", "\$init:C:/Demo/Games/TicTacToe.HC#1", "DrawX", "DrawO", "DrawBoard", "TakeTurn", "CheckWinner", "DoGame", "TicTacToe", "\$init:C:/Demo/Games/TicTacToe.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Games/TicTacToe.HC")
     }

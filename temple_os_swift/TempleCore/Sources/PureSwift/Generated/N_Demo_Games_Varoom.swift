@@ -17,12 +17,14 @@ public final class N_Demo_Games_Varoom: NativeModule {
     public let n_DocCursor: Int
     public let n_GetKey: Int
     public let n_GrBlot: Int
+    public let n_GrFillPoly3: Int
     public let n_GrPeek: Int
     public let n_GrPlot: Int
     public let n_GrRect: Int
     public let n_JobQue: Int
     public let n_Log2: Int
     public let n_Mat4x4MulXYZ: Int
+    public let n_Mat4x4Scale: Int
     public let n_MemCpy: Int
     public let n_MemSet: Int
     public let n_Rand: Int
@@ -83,12 +85,14 @@ public final class N_Demo_Games_Varoom: NativeModule {
         n_DocCursor = rt.vm.natives.find("DocCursor")!.index
         n_GetKey = rt.vm.natives.find("GetKey")!.index
         n_GrBlot = rt.vm.natives.find("GrBlot")!.index
+        n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!.index
         n_GrPeek = rt.vm.natives.find("GrPeek")!.index
         n_GrPlot = rt.vm.natives.find("GrPlot")!.index
         n_GrRect = rt.vm.natives.find("GrRect")!.index
         n_JobQue = rt.vm.natives.find("JobQue")!.index
         n_Log2 = rt.vm.natives.find("Log2")!.index
         n_Mat4x4MulXYZ = rt.vm.natives.find("Mat4x4MulXYZ")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_MemCpy = rt.vm.natives.find("MemCpy")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_Rand = rt.vm.natives.find("Rand")!.index
@@ -152,7 +156,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Varoom.HC#0 (Varoom.HC:90)
-    @discardableResult public final func f703_init_C__Demo_Games_Varoom_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_Varoom_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -166,7 +170,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Varoom.HC#1 (Varoom.HC:91)
-    @discardableResult public final func f704_init_C__Demo_Games_Varoom_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_Varoom_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -180,7 +184,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -190,7 +194,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC DipY (Varoom.HC:136)
-    @discardableResult public final func f706_DipY(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f711_DipY(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -200,7 +204,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             var p1_z: Int64 = a1
             ln = 139 // Varoom.HC:139
             try tick(t)
-            try P.f336_R2P(t, (fp &+ 16), (fp &+ 24), Double(p0_x), Double(p1_z))
+            try P.f337_R2P(t, (fp &+ 16), (fp &+ 24), Double(p0_x), Double(p1_z))
             ln = 140 // Varoom.HC:140
             let t1: Double = try (50.0 * ldf((fp &+ 16)))
             let t0: Double = d(try nat(t, n_Cos, try push1(t, bits((5.0 * ldf((fp &+ 24)))))))
@@ -215,7 +219,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC Dipé (Varoom.HC:145)
-    @discardableResult public final func f707_Dip_(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double) throws -> Double {
+    @discardableResult public final func f712_Dip_(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -228,17 +232,17 @@ public final class N_Demo_Games_Varoom: NativeModule {
             let t0: Double = d(try nat(t, n_Sin, try push1(t, bits(p2__))))
             let t1: Double = d(try nat(t, n_Cos, try push1(t, bits(p2__))))
             try tick(t)
-            let t2: Int64 = try f706_DipY(t, f2i((Double(p0_x) - (Double(divs(400, 2)) * t1))), f2i((Double(p1_z) - (Double(divs(400, 2)) * t0))))
+            let t2: Int64 = try f711_DipY(t, f2i((Double(p0_x) - (Double(divs(400, 2)) * t1))), f2i((Double(p1_z) - (Double(divs(400, 2)) * t0))))
             l24_y_front = Double(t2)
             ln = 149 // Varoom.HC:149
             let t3: Double = d(try nat(t, n_Sin, try push1(t, bits(p2__))))
             let t4: Double = d(try nat(t, n_Cos, try push1(t, bits(p2__))))
             try tick(t)
-            let t5: Int64 = try f706_DipY(t, f2i((Double(p0_x) + (Double(divs(400, 2)) * t4))), f2i((Double(p1_z) + (Double(divs(400, 2)) * t3))))
+            let t5: Int64 = try f711_DipY(t, f2i((Double(p0_x) + (Double(divs(400, 2)) * t4))), f2i((Double(p1_z) + (Double(divs(400, 2)) * t3))))
             l32_y_back = Double(t5)
             ln = 150 // Varoom.HC:150
             try tick(t)
-            let t6: Double = try P.f543_ASin(t, ((l24_y_front - l32_y_back) / 400.0))
+            let t6: Double = try P.f548_ASin(t, ((l24_y_front - l32_y_back) / 400.0))
             t.depth -= 1
             return t6
             t.depth -= 1
@@ -247,7 +251,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC TrackFind (Varoom.HC:153)
-    @discardableResult public final func f708_TrackFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f713_TrackFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -333,7 +337,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC TrackSlice (Varoom.HC:185)
-    public final func f709_TrackSlice(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws {
+    public final func f714_TrackSlice(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Double, _ a3: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -381,7 +385,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try st4((((l80_tmpt &+ 104) &+ 24) &+ 8), f2i(((l40_z + (Double(divs(2000, 2)) * l56_s)) + l72_dz)))
             ln = 199 // Varoom.HC:199
             try tick(t)
-            let t3: Int64 = try f706_DipY(t, ld4s(((l80_tmpt &+ 104) &+ 24)), ld4s((((l80_tmpt &+ 104) &+ 24) &+ 8)))
+            let t3: Int64 = try f711_DipY(t, ld4s(((l80_tmpt &+ 104) &+ 24)), ld4s((((l80_tmpt &+ 104) &+ 24) &+ 8)))
             try st4((((l80_tmpt &+ 104) &+ 24) &+ 4), t3)
             ln = 200 // Varoom.HC:200
             try st4(((l80_tmpt &+ 104) &+ 36), f2i(((l32_x - (Double(divs(2000, 2)) * l48_c)) + l64_dx)))
@@ -389,7 +393,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try st4((((l80_tmpt &+ 104) &+ 36) &+ 8), f2i(((l40_z - (Double(divs(2000, 2)) * l56_s)) + l72_dz)))
             ln = 202 // Varoom.HC:202
             try tick(t)
-            let t4: Int64 = try f706_DipY(t, ld4s(((l80_tmpt &+ 104) &+ 36)), ld4s((((l80_tmpt &+ 104) &+ 36) &+ 8)))
+            let t4: Int64 = try f711_DipY(t, ld4s(((l80_tmpt &+ 104) &+ 36)), ld4s((((l80_tmpt &+ 104) &+ 36) &+ 8)))
             try st4((((l80_tmpt &+ 104) &+ 36) &+ 4), t4)
             ln = 204 // Varoom.HC:204
             if (l88_last != 0) {
@@ -404,7 +408,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try st4((((l80_tmpt &+ 56) &+ 24) &+ 8), f2i(((l40_z - (Double(divs(2000, 2)) * l56_s)) + l72_dz)))
             ln = 210 // Varoom.HC:210
             try tick(t)
-            let t5: Int64 = try f706_DipY(t, ld4s(((l80_tmpt &+ 56) &+ 24)), ld4s((((l80_tmpt &+ 56) &+ 24) &+ 8)))
+            let t5: Int64 = try f711_DipY(t, ld4s(((l80_tmpt &+ 56) &+ 24)), ld4s((((l80_tmpt &+ 56) &+ 24) &+ 8)))
             try st4((((l80_tmpt &+ 56) &+ 24) &+ 4), t5)
             ln = 211 // Varoom.HC:211
             try st4(((l80_tmpt &+ 56) &+ 36), f2i(((l32_x - (Double((divs(2000, 2) &+ 200)) * l48_c)) + l64_dx)))
@@ -412,7 +416,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try st4((((l80_tmpt &+ 56) &+ 36) &+ 8), f2i(((l40_z - (Double((divs(2000, 2) &+ 200)) * l56_s)) + l72_dz)))
             ln = 213 // Varoom.HC:213
             try tick(t)
-            let t6: Int64 = try f706_DipY(t, ld4s(((l80_tmpt &+ 56) &+ 36)), ld4s((((l80_tmpt &+ 56) &+ 36) &+ 8)))
+            let t6: Int64 = try f711_DipY(t, ld4s(((l80_tmpt &+ 56) &+ 36)), ld4s((((l80_tmpt &+ 56) &+ 36) &+ 8)))
             try st4((((l80_tmpt &+ 56) &+ 36) &+ 4), t6)
             ln = 215 // Varoom.HC:215
             if (l88_last != 0) {
@@ -427,7 +431,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try st4((((l80_tmpt &+ 152) &+ 24) &+ 8), f2i(((l40_z + (Double((divs(2000, 2) &+ 200)) * l56_s)) + l72_dz)))
             ln = 221 // Varoom.HC:221
             try tick(t)
-            let t7: Int64 = try f706_DipY(t, ld4s(((l80_tmpt &+ 152) &+ 24)), ld4s((((l80_tmpt &+ 152) &+ 24) &+ 8)))
+            let t7: Int64 = try f711_DipY(t, ld4s(((l80_tmpt &+ 152) &+ 24)), ld4s((((l80_tmpt &+ 152) &+ 24) &+ 8)))
             try st4((((l80_tmpt &+ 152) &+ 24) &+ 4), t7)
             ln = 222 // Varoom.HC:222
             try st4(((l80_tmpt &+ 152) &+ 36), f2i(((l32_x + (Double(divs(2000, 2)) * l48_c)) + l64_dx)))
@@ -435,7 +439,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try st4((((l80_tmpt &+ 152) &+ 36) &+ 8), f2i(((l40_z + (Double(divs(2000, 2)) * l56_s)) + l72_dz)))
             ln = 224 // Varoom.HC:224
             try tick(t)
-            let t8: Int64 = try f706_DipY(t, ld4s(((l80_tmpt &+ 152) &+ 36)), ld4s((((l80_tmpt &+ 152) &+ 36) &+ 8)))
+            let t8: Int64 = try f711_DipY(t, ld4s(((l80_tmpt &+ 152) &+ 36)), ld4s((((l80_tmpt &+ 152) &+ 36) &+ 8)))
             try st4((((l80_tmpt &+ 152) &+ 36) &+ 4), t8)
             ln = 226 // Varoom.HC:226
             try st8((l80_tmpt &+ 24), f2i(l32_x))
@@ -504,7 +508,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC CoupleEnds (Varoom.HC:255)
-    public final func f710_CoupleEnds(_ t: HTask) throws {
+    public final func f715_CoupleEnds(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -531,7 +535,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC InitTrack (Varoom.HC:266)
-    public final func f711_InitTrack(_ t: HTask) throws {
+    public final func f716_InitTrack(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -562,7 +566,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop0: while (l48_d < 60000.0) {
                 ln = 280 // Varoom.HC:280
                 try tick(t)
-                try f709_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
+                try f714_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
                 ln = 279 // Varoom.HC:279
                 l48_d = (l48_d + (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
                 try tick(t)
@@ -572,7 +576,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop2: while (l0_i < 180) {
                 ln = 282 // Varoom.HC:282
                 try tick(t)
-                try f709_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
+                try f714_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
                 ln = 281 // Varoom.HC:281
                 l0_i = (l0_i &+ 1)
                 l40__ = (l40__ + ((2.0 * d(4614256656552045848)) / 360.0))
@@ -583,7 +587,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop4: while (l48_d < 10000.0) {
                 ln = 284 // Varoom.HC:284
                 try tick(t)
-                try f709_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
+                try f714_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
                 ln = 283 // Varoom.HC:283
                 l48_d = (l48_d + (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
                 try tick(t)
@@ -593,7 +597,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop6: while (l0_i < 90) {
                 ln = 286 // Varoom.HC:286
                 try tick(t)
-                try f709_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
+                try f714_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
                 ln = 285 // Varoom.HC:285
                 l0_i = (l0_i &+ 1)
                 l40__ = (l40__ - ((2.0 * d(4614256656552045848)) / 360.0))
@@ -604,7 +608,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop8: while (l0_i < 180) {
                 ln = 288 // Varoom.HC:288
                 try tick(t)
-                try f709_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
+                try f714_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
                 ln = 287 // Varoom.HC:287
                 l0_i = (l0_i &+ 1)
                 l40__ = (l40__ + ((2.0 * d(4614256656552045848)) / 360.0))
@@ -615,7 +619,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop10: while (l0_i < 90) {
                 ln = 290 // Varoom.HC:290
                 try tick(t)
-                try f709_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
+                try f714_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
                 ln = 289 // Varoom.HC:289
                 l0_i = (l0_i &+ 1)
                 l40__ = (l40__ - ((2.0 * d(4614256656552045848)) / 360.0))
@@ -626,7 +630,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop12: while (l48_d < 10000.0) {
                 ln = 292 // Varoom.HC:292
                 try tick(t)
-                try f709_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
+                try f714_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
                 ln = 291 // Varoom.HC:291
                 l48_d = (l48_d + (((2.0 * d(4614256656552045848)) * 10000.0) / 360.0))
                 try tick(t)
@@ -636,7 +640,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop14: while (l0_i < 180) {
                 ln = 294 // Varoom.HC:294
                 try tick(t)
-                try f709_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
+                try f714_TrackSlice(t, (fp &+ 24), (fp &+ 32), l40__, (((2.0 * d(4614256656552045848)) / 360.0) * 10000.0))
                 ln = 293 // Varoom.HC:293
                 l0_i = (l0_i &+ 1)
                 l40__ = (l40__ + ((2.0 * d(4614256656552045848)) / 360.0))
@@ -644,7 +648,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             }
             ln = 296 // Varoom.HC:296
             try tick(t)
-            try f710_CoupleEnds(t)
+            try f715_CoupleEnds(t)
             ln = 298 // Varoom.HC:298
             l16_tmpt = try ld8(g_track_head)
             ln = 299 // Varoom.HC:299
@@ -694,7 +698,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             loop20: while (l16_tmpt != g_track_head) {
                 ln = 318 // Varoom.HC:318
                 try tick(t)
-                _ = try P.f393_GrPlot3(t, ld8(g_track_map), (ld4s((ld8(g_track_map) &+ 16)) &- ((ld8((l16_tmpt &+ 24)) &- ld8(g_t_minx)) &>> 9)), ((ld8((l16_tmpt &+ 32)) &- ld8(g_t_minz)) &>> 9), 0)
+                _ = try P.f394_GrPlot3(t, ld8(g_track_map), (ld4s((ld8(g_track_map) &+ 16)) &- ((ld8((l16_tmpt &+ 24)) &- ld8(g_t_minx)) &>> 9)), ((ld8((l16_tmpt &+ 32)) &- ld8(g_t_minz)) &>> 9), 0)
                 ln = 320 // Varoom.HC:320
                 l16_tmpt = try ld8(l16_tmpt)
                 try tick(t)
@@ -706,7 +710,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC PrepPoly (Varoom.HC:326)
-    @discardableResult public final func f712_PrepPoly(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f717_PrepPoly(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -777,7 +781,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC MPUpdateWin (Varoom.HC:347)
-    public final func f713_MPUpdateWin(_ t: HTask, _ a0: Int64) throws {
+    public final func f718_MPUpdateWin(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -803,7 +807,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             l192_cx = (l48_w &>> 1)
             ln = 352 // Varoom.HC:352
             try tick(t)
-            let t0: Double = try f707_Dip_(t, ld4s(g_c), ld4s((g_c &+ 8)), ldf((g_c &+ 12)))
+            let t0: Double = try f712_Dip_(t, ld4s(g_c), ld4s((g_c &+ 8)), ldf((g_c &+ 12)))
             l208_dip__ = t0
             ln = 356 // Varoom.HC:356
             try tick(t)
@@ -830,28 +834,25 @@ public final class N_Demo_Games_Varoom: NativeModule {
                 try st4((l288_dc &+ 160), 8)
                 ln = 369 // Varoom.HC:369
                 try tick(t)
-                let t2: Int64 = try f712_PrepPoly(t, (l272_tmpt &+ 104), (fp &+ 64), l192_cx, l56_h, (fp &+ 224))
+                let t2: Int64 = try f717_PrepPoly(t, (l272_tmpt &+ 104), (fp &+ 64), l192_cx, l56_h, (fp &+ 224))
                 if (t2 != 0) {
                     ln = 370 // Varoom.HC:370
-                    try tick(t)
-                    _ = try P.f422_GrFillPoly3(t, l288_dc, 4, (fp &+ 224))
+                    _ = try nat(t, n_GrFillPoly3, try push3(t, l288_dc, 4, (fp &+ 224)))
                     ln = 371 // Varoom.HC:371
                     try st4((l288_dc &+ 160), ld2u((l272_tmpt &+ 20)))
                     ln = 372 // Varoom.HC:372
                     try tick(t)
-                    let t3: Int64 = try f712_PrepPoly(t, (l272_tmpt &+ 56), (fp &+ 64), l192_cx, l56_h, (fp &+ 224))
+                    let t3: Int64 = try f717_PrepPoly(t, (l272_tmpt &+ 56), (fp &+ 64), l192_cx, l56_h, (fp &+ 224))
                     if (t3 != 0) {
                         ln = 373 // Varoom.HC:373
-                        try tick(t)
-                        _ = try P.f422_GrFillPoly3(t, l288_dc, 4, (fp &+ 224))
+                        _ = try nat(t, n_GrFillPoly3, try push3(t, l288_dc, 4, (fp &+ 224)))
                     }
                     ln = 374 // Varoom.HC:374
                     try tick(t)
-                    let t4: Int64 = try f712_PrepPoly(t, (l272_tmpt &+ 152), (fp &+ 64), l192_cx, l56_h, (fp &+ 224))
+                    let t4: Int64 = try f717_PrepPoly(t, (l272_tmpt &+ 152), (fp &+ 64), l192_cx, l56_h, (fp &+ 224))
                     if (t4 != 0) {
                         ln = 375 // Varoom.HC:375
-                        try tick(t)
-                        _ = try P.f422_GrFillPoly3(t, l288_dc, 4, (fp &+ 224))
+                        _ = try nat(t, n_GrFillPoly3, try push3(t, l288_dc, 4, (fp &+ 224)))
                     }
                 }
                 ln = 377 // Varoom.HC:377
@@ -880,8 +881,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                     try tick(t)
                     _ = try P.f280_Mat4x4IdentEqu(t, ld8((l288_dc &+ 200)))
                     ln = 387 // Varoom.HC:387
-                    try tick(t)
-                    _ = try P.f308_Mat4x4Scale(t, ld8((l288_dc &+ 200)), (l200_s * 2.0))
+                    _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((l288_dc &+ 200)), bits((l200_s * 2.0))))
                     ln = 388 // Varoom.HC:388
                     try tick(t)
                     try P.f283_DCMat4x4Set(t, l288_dc, ld8((l288_dc &+ 200)))
@@ -892,11 +892,11 @@ public final class N_Demo_Games_Varoom: NativeModule {
                         try st4(t7, (ld4s(t7) | 1536))
                         ln = 391 // Varoom.HC:391
                         try tick(t)
-                        _ = try P.f314_DCSymmetrySet(t, l288_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i(((l200_s * Double(ld8((fp &+ 32)))) + Double(l56_h))), f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i((((l200_s * Double(ld8((fp &+ 32)))) + Double(l56_h)) + 10.0)))
+                        _ = try P.f315_DCSymmetrySet(t, l288_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i(((l200_s * Double(ld8((fp &+ 32)))) + Double(l56_h))), f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i((((l200_s * Double(ld8((fp &+ 32)))) + Double(l56_h)) + 10.0)))
                     }
                     ln = 393 // Varoom.HC:393
                     try tick(t)
-                    try P.f441_Sprite3B(t, l288_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i(((l200_s * Double(ld8((fp &+ 32)))) + Double(l56_h))), (ld8((fp &+ 40)) &+ divs(2147483647, 2)), ld8(((g_b &+ (l16_i &* 24)) &+ 16)))
+                    try P.f446_Sprite3B(t, l288_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i(((l200_s * Double(ld8((fp &+ 32)))) + Double(l56_h))), (ld8((fp &+ 40)) &+ divs(2147483647, 2)), ld8(((g_b &+ (l16_i &* 24)) &+ 16)))
                     ln = 394 // Varoom.HC:394
                     let t8: Int64 = (l288_dc &+ 28)
                     try st4(t8, (ld4s(t8) & (-1537)))
@@ -927,11 +927,10 @@ public final class N_Demo_Games_Varoom: NativeModule {
                     try tick(t)
                     _ = try P.f280_Mat4x4IdentEqu(t, ld8((l288_dc &+ 200)))
                     ln = 404 // Varoom.HC:404
-                    try tick(t)
-                    _ = try P.f308_Mat4x4Scale(t, ld8((l288_dc &+ 200)), (l200_s * 2.0))
+                    _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((l288_dc &+ 200)), bits((l200_s * 2.0))))
                     ln = 405 // Varoom.HC:405
                     try tick(t)
-                    let t11: Double = try f707_Dip_(t, ld4s(l216_tmpc), ld4s((l216_tmpc &+ 8)), (-ldf((l216_tmpc &+ 12))))
+                    let t11: Double = try f712_Dip_(t, ld4s(l216_tmpc), ld4s((l216_tmpc &+ 8)), (-ldf((l216_tmpc &+ 12))))
                     try tick(t)
                     _ = try P.f305_Mat4x4RotX(t, ld8((l288_dc &+ 200)), t11)
                     ln = 406 // Varoom.HC:406
@@ -942,7 +941,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                     try P.f283_DCMat4x4Set(t, l288_dc, ld8((l288_dc &+ 200)))
                     ln = 408 // Varoom.HC:408
                     try tick(t)
-                    try P.f441_Sprite3B(t, l288_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i(((l200_s * Double(ld8((fp &+ 32)))) + Double(l56_h))), (ld8((fp &+ 40)) &+ divs(2147483647, 2)), ld8((l216_tmpc &+ 36)))
+                    try P.f446_Sprite3B(t, l288_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i(((l200_s * Double(ld8((fp &+ 32)))) + Double(l56_h))), (ld8((fp &+ 40)) &+ divs(2147483647, 2)), ld8((l216_tmpc &+ 36)))
                 }
                 ln = 397 // Varoom.HC:397
                 let t12: Int64 = try nat(t, n_mp_cnt, push0(t))
@@ -964,7 +963,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC VRTransform (Varoom.HC:416)
-    public final func f714_VRTransform(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f719_VRTransform(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1000,7 +999,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC DrawIt (Varoom.HC:429)
-    public final func f715_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f720_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1023,7 +1022,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             l192_cx = (l48_w &>> 1)
             ln = 435 // Varoom.HC:435
             try tick(t)
-            let t0: Double = try f707_Dip_(t, ld4s(g_c), ld4s((g_c &+ 8)), ldf((g_c &+ 12)))
+            let t0: Double = try f712_Dip_(t, ld4s(g_c), ld4s((g_c &+ 8)), ldf((g_c &+ 12)))
             l208_dip__ = t0
             ln = 436 // Varoom.HC:436
             l216_tmpc = g_c
@@ -1061,13 +1060,13 @@ public final class N_Demo_Games_Varoom: NativeModule {
                 ln = 453 // Varoom.HC:453
                 let t3: Double = d(try nat(t, n_Sin, try push1(t, bits(l208_dip__))))
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i((15.0 + (200.0 * t3))), 15, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i((15.0 + (200.0 * t3))), 15, 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 454 // Varoom.HC:454
                 try st4((p1_dc &+ 160), 14)
                 ln = 455 // Varoom.HC:455
                 let t4: Double = d(try nat(t, n_Sin, try push1(t, bits(l208_dip__))))
                 try tick(t)
-                _ = try P.f387_GrFloodFill(t, p1_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i((15.0 + (200.0 * t4))), 0, 0, 0)
+                _ = try P.f388_GrFloodFill(t, p1_dc, f2i(((l200_s * Double(ld8((fp &+ 24)))) + Double(l192_cx))), f2i((15.0 + (200.0 * t4))), 0, 0, 0)
             }
             ln = 458 // Varoom.HC:458
             let t5: Int64 = try nat(t, n_mp_cnt, push0(t))
@@ -1078,7 +1077,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                 let t6: Int64 = try nat(t, n_mp_cnt, push0(t))
                 if !((l16_i < t6)) { break loop0 }
                 ln = 460 // Varoom.HC:460
-                _ = try nat(t, n_JobQue, try push(t, 9223090561878065865, p1_dc, l16_i, 0, 0, 0, 0, 0))
+                _ = try nat(t, n_JobQue, try push(t, 9223090561878065870, p1_dc, l16_i, 0, 0, 0, 0, 0))
                 ln = 459 // Varoom.HC:459
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -1099,7 +1098,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try tick(t)
             _ = try P.f305_Mat4x4RotX(t, (fp &+ 64), (0.4 - (8.0 * l208_dip__)))
             ln = 467 // Varoom.HC:467
-            try st8((p1_dc &+ 232), 9223090561878065866)
+            try st8((p1_dc &+ 232), 9223090561878065871)
             ln = 468 // Varoom.HC:468
             try st4((p1_dc &+ 216), (ld8((p0_task &+ 224)) &>> 1))
             ln = 469 // Varoom.HC:469
@@ -1108,7 +1107,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try st4((p1_dc &+ 224), divs(2147483647, 2))
             ln = 471 // Varoom.HC:471
             try tick(t)
-            try P.f442_Sprite3Mat4x4B(t, p1_dc, 0, 0, (-100), ld8((g_c &+ 36)), (fp &+ 64))
+            try P.f447_Sprite3Mat4x4B(t, p1_dc, 0, 0, (-100), ld8((g_c &+ 36)), (fp &+ 64))
             ln = 474 // Varoom.HC:474
             _ = try nat(t, n_GrBlot, try push4(t, p1_dc, (l48_w &- ld4s((ld8(g_track_map) &+ 16))), (l56_h &- ld4s((ld8(g_track_map) &+ 24))), ld8(g_track_map)))
             ln = 476 // Varoom.HC:476
@@ -1126,7 +1125,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                 }
                 ln = 482 // Varoom.HC:482
                 try tick(t)
-                _ = try P.f393_GrPlot3(t, p1_dc, (l48_w &- ((ld4s((g_c &+ (l16_i &* 52))) &- ld8(g_t_minx)) &>> 9)), ((l56_h &- ld4s((ld8(g_track_map) &+ 24))) &+ ((ld4s(((g_c &+ (l16_i &* 52)) &+ 8)) &- ld8(g_t_minz)) &>> 9)), 0)
+                _ = try P.f394_GrPlot3(t, p1_dc, (l48_w &- ((ld4s((g_c &+ (l16_i &* 52))) &- ld8(g_t_minx)) &>> 9)), ((l56_h &- ld4s((ld8(g_track_map) &+ 24))) &+ ((ld4s(((g_c &+ (l16_i &* 52)) &+ 8)) &- ld8(g_t_minz)) &>> 9)), 0)
                 ln = 477 // Varoom.HC:477
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -1146,7 +1145,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                         ln = 491 // Varoom.HC:491
                         try tick(t)
                         let vb3 = push0(t)
-                        _ = try P.f369_GrPrint(t, p1_dc, divs((l48_w &- 112), 2), divs((l56_h &- 8), 2), s2, vb3, 0)
+                        _ = try P.f370_GrPrint(t, p1_dc, divs((l48_w &- 112), 2), divs((l56_h &- 8), 2), s2, vb3, 0)
                         t.sp = vb3
                     }
                 } else {
@@ -1159,7 +1158,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                         ln = 495 // Varoom.HC:495
                         try tick(t)
                         let vb4 = push0(t)
-                        _ = try P.f369_GrPrint(t, p1_dc, divs((l48_w &- 72), 2), divs((l56_h &- 8), 2), s3, vb4, 0)
+                        _ = try P.f370_GrPrint(t, p1_dc, divs((l48_w &- 72), 2), divs((l56_h &- 8), 2), s3, vb4, 0)
                         t.sp = vb4
                     }
                 }
@@ -1173,7 +1172,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             ln = 500 // Varoom.HC:500
             try tick(t)
             let vb5 = try push3(t, bits(((100.0 * ldf(g_distance)) / ldf((ld8((g_track_head &+ 8)) &+ 48)))), bits(l200_s), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s4, vb5, 3)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s4, vb5, 3)
             t.sp = vb5
             t.msp = msp0
             t.depth -= 1
@@ -1182,7 +1181,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC AnimateTask (Varoom.HC:504)
-    public final func f716_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f721_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1224,7 +1223,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                     try st4(t5, f2i((Double(t8) + (t7 * t6))))
                     ln = 519 // Varoom.HC:519
                     try tick(t)
-                    let t9: Int64 = try f708_TrackFind(t, ld8((l8_tmpc &+ 44)), ld4s(l8_tmpc), ld4s((l8_tmpc &+ 8)))
+                    let t9: Int64 = try f713_TrackFind(t, ld8((l8_tmpc &+ 44)), ld4s(l8_tmpc), ld4s((l8_tmpc &+ 8)))
                     l48_tmpt = t9
                     ln = 520 // Varoom.HC:520
                     if (l16_i != 0) {
@@ -1270,7 +1269,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                     try st8((l8_tmpc &+ 44), l48_tmpt)
                     ln = 539 // Varoom.HC:539
                     try tick(t)
-                    let t14: Int64 = try f706_DipY(t, ld4s(l8_tmpc), ld4s((l8_tmpc &+ 8)))
+                    let t14: Int64 = try f711_DipY(t, ld4s(l8_tmpc), ld4s((l8_tmpc &+ 8)))
                     try st4((l8_tmpc &+ 4), t14)
                     ln = 515 // Varoom.HC:515
                     l16_i = (l16_i &+ 1)
@@ -1283,13 +1282,13 @@ public final class N_Demo_Games_Varoom: NativeModule {
                     loop4: while (l16_i < 8) {
                         ln = 543 // Varoom.HC:543
                         try tick(t)
-                        let t15: Int64 = try P.f548_D3I32DistSqr(t, (g_c &+ (l16_i &* 52)), g_c)
+                        let t15: Int64 = try P.f553_D3I32DistSqr(t, (g_c &+ (l16_i &* 52)), g_c)
                         if (t15 < 40000) {
                             ln = 544 // Varoom.HC:544
                             try st1(g_game_over, 1)
                             ln = 545 // Varoom.HC:545
                             try tick(t)
-                            _ = try P.f499_Noise(t, 500, 22.0, 34.0)
+                            _ = try P.f504_Noise(t, 500, 22.0, 34.0)
                             ln = 546 // Varoom.HC:546
                             _ = try nat(t, n_Sleep, try push1(t, 500))
                             ln = 547 // Varoom.HC:547
@@ -1334,7 +1333,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Varoom.HC#2 (Varoom.HC:566)
-    @discardableResult public final func f717_init_C__Demo_Games_Varoom_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f722_init_C__Demo_Games_Varoom_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1353,7 +1352,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC InitBushes (Varoom.HC:569)
-    public final func f718_InitBushes(_ t: HTask) throws {
+    public final func f723_InitBushes(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1403,7 +1402,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                 _ = try nat(t, n_GrPlot, try push3(t, ld8(g_track_map), l24_x, l32_z))
                 ln = 588 // Varoom.HC:588
                 try tick(t)
-                let t3: Int64 = try f706_DipY(t, ld4s(l0_tmpb), ld4s((l0_tmpb &+ 8)))
+                let t3: Int64 = try f711_DipY(t, ld4s(l0_tmpb), ld4s((l0_tmpb &+ 8)))
                 try st4((l0_tmpb &+ 4), t3)
                 ln = 589 // Varoom.HC:589
                 let t4: Int64 = try nat(t, n_RandU16, push0(t))
@@ -1420,7 +1419,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC Init (Varoom.HC:595)
-    public final func f719_Init(_ t: HTask) throws {
+    public final func f724_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1430,10 +1429,10 @@ public final class N_Demo_Games_Varoom: NativeModule {
             var l8_tmpt: Int64 = 0
             ln = 602 // Varoom.HC:602
             try tick(t)
-            try f711_InitTrack(t)
+            try f716_InitTrack(t)
             ln = 603 // Varoom.HC:603
             try tick(t)
-            try f718_InitBushes(t)
+            try f723_InitBushes(t)
             ln = 604 // Varoom.HC:604
             l8_tmpt = try ld8(g_track_head)
             ln = 605 // Varoom.HC:605
@@ -1449,7 +1448,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
                 try st4((l0_tmpc &+ 8), ld8((l8_tmpt &+ 32)))
                 ln = 610 // Varoom.HC:610
                 try tick(t)
-                let t0: Int64 = try f706_DipY(t, ld4s(l0_tmpc), ld4s((l0_tmpc &+ 8)))
+                let t0: Int64 = try f711_DipY(t, ld4s(l0_tmpc), ld4s((l0_tmpc &+ 8)))
                 try st4((l0_tmpc &+ 4), t0)
                 ln = 611 // Varoom.HC:611
                 try st8((l0_tmpc &+ 12), bits((-ldf((l8_tmpt &+ 40)))))
@@ -1494,7 +1493,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC CleanUp (Varoom.HC:630)
-    public final func f720_CleanUp(_ t: HTask) throws {
+    public final func f725_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1516,7 +1515,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC Varoom (Varoom.HC:638)
-    public final func f721_Varoom(_ t: HTask) throws {
+    public final func f726_Varoom(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1524,7 +1523,7 @@ public final class N_Demo_Games_Varoom: NativeModule {
             let fp = try frame(t, 24)
             ln = 641 // Varoom.HC:641
             try tick(t)
-            _ = try P.f507_MenuPush(t, s5)
+            _ = try P.f512_MenuPush(t, s5)
             ln = 654 // Varoom.HC:654
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -1550,12 +1549,12 @@ public final class N_Demo_Games_Varoom: NativeModule {
                 _ = try nat(t, n_DocClear, try push1(t, 0))
                 ln = 664 // Varoom.HC:664
                 try tick(t)
-                try f719_Init(t)
+                try f724_Init(t)
                 ln = 665 // Varoom.HC:665
-                try st8((ld8(P.g_Fs) &+ 448), 9223090561878065867)
+                try st8((ld8(P.g_Fs) &+ 448), 9223090561878065872)
                 ln = 666 // Varoom.HC:666
                 let t1: Int64 = try (ld8(P.g_Fs) &+ 1088)
-                let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065868, 0, s6, (-1), ld8(P.g_Fs), 0, 0))
+                let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065873, 0, s6, (-1), ld8(P.g_Fs), 0, 0))
                 try st8(t1, t0)
                 ln = 667 // Varoom.HC:667
                 skip_0: do {
@@ -1596,10 +1595,10 @@ public final class N_Demo_Games_Varoom: NativeModule {
                             case 10:
                                 ln = 687 // Varoom.HC:687
                                 try tick(t)
-                                try f720_CleanUp(t)
+                                try f725_CleanUp(t)
                                 ln = 688 // Varoom.HC:688
                                 try tick(t)
-                                try f719_Init(t)
+                                try f724_Init(t)
                             case 27, 28:
                                 ln = 692 // Varoom.HC:692
                                 break skip_0
@@ -1624,10 +1623,10 @@ public final class N_Demo_Games_Varoom: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 698 // Varoom.HC:698
             try tick(t)
-            try f720_CleanUp(t)
+            try f725_CleanUp(t)
             ln = 699 // Varoom.HC:699
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 700 // Varoom.HC:700
             _ = try nat(t, n_RegWrite, try push3(t, s1, s7, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1637,13 +1636,13 @@ public final class N_Demo_Games_Varoom: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Varoom.HC#3 (Varoom.HC:703)
-    @discardableResult public final func f722_init_C__Demo_Games_Varoom_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f727_init_C__Demo_Games_Varoom_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 703 // Varoom.HC:703
             try tick(t)
-            try f721_Varoom(t)
+            try f726_Varoom(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Varoom.HC#3", ln) }
@@ -1652,32 +1651,32 @@ public final class N_Demo_Games_Varoom: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_Varoom_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_Varoom_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: return try f706_DipY(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 707: return bits(try f707_Dip_(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0))))
-        case 708: return try f708_TrackFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 709: try f709_TrackSlice(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))); return 0
-        case 710: try f710_CoupleEnds(t); return 0
-        case 711: try f711_InitTrack(t); return 0
-        case 712: return try f712_PrepPoly(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 713: try f713_MPUpdateWin(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 714: try f714_VRTransform(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 715: try f715_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 716: try f716_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 717: return try f717_init_C__Demo_Games_Varoom_HC_2(t)
-        case 718: try f718_InitBushes(t); return 0
-        case 719: try f719_Init(t); return 0
-        case 720: try f720_CleanUp(t); return 0
-        case 721: try f721_Varoom(t); return 0
-        case 722: return try f722_init_C__Demo_Games_Varoom_HC_3(t)
+        case 708: return try f708_init_C__Demo_Games_Varoom_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_Varoom_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: return try f711_DipY(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 712: return bits(try f712_Dip_(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0))))
+        case 713: return try f713_TrackFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 714: try f714_TrackSlice(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0))); return 0
+        case 715: try f715_CoupleEnds(t); return 0
+        case 716: try f716_InitTrack(t); return 0
+        case 717: return try f717_PrepPoly(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 718: try f718_MPUpdateWin(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 719: try f719_VRTransform(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 720: try f720_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 721: try f721_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 722: return try f722_init_C__Demo_Games_Varoom_HC_2(t)
+        case 723: try f723_InitBushes(t); return 0
+        case 724: try f724_Init(t); return 0
+        case 725: try f725_CleanUp(t); return 0
+        case 726: try f726_Varoom(t); return 0
+        case 727: return try f727_init_C__Demo_Games_Varoom_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/Varoom.HC#0", 704: "$init:C:/Demo/Games/Varoom.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "DipY", 707: "Dip\u{e9}", 708: "TrackFind", 709: "TrackSlice", 710: "CoupleEnds", 711: "InitTrack", 712: "PrepPoly", 713: "MPUpdateWin", 714: "VRTransform", 715: "DrawIt", 716: "AnimateTask", 717: "$init:C:/Demo/Games/Varoom.HC#2", 718: "InitBushes", 719: "Init", 720: "CleanUp", 721: "Varoom", 722: "$init:C:/Demo/Games/Varoom.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/Varoom.HC#0", 709: "$init:C:/Demo/Games/Varoom.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "DipY", 712: "Dip\u{e9}", 713: "TrackFind", 714: "TrackSlice", 715: "CoupleEnds", 716: "InitTrack", 717: "PrepPoly", 718: "MPUpdateWin", 719: "VRTransform", 720: "DrawIt", 721: "AnimateTask", 722: "$init:C:/Demo/Games/Varoom.HC#2", 723: "InitBushes", 724: "Init", 725: "CleanUp", 726: "Varoom", 727: "$init:C:/Demo/Games/Varoom.HC#3"]
     private static let FILES: [String] = ["C:/Demo/Games/Varoom.HC"]
     public override var files: [String] { N_Demo_Games_Varoom.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Varoom.DEFINED.contains(index) }

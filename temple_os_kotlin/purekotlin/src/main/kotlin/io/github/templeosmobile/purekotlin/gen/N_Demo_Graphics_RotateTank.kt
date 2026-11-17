@@ -11,8 +11,10 @@ import io.github.templeosmobile.core.purenative.*
 
 class N_Demo_Graphics_RotateTank(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_Refresh = rt.vm.natives.find("Refresh")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
     /** binary literal, 1970 bytes */ @JvmField var b0: Long = 0L
@@ -26,7 +28,7 @@ class N_Demo_Graphics_RotateTank(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC RotateTank (RotateTank.HC:25) */
-    fun f703_RotateTank(t: Task) {
+    fun f708_RotateTank(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -82,9 +84,8 @@ class N_Demo_Graphics_RotateTank(rt: NativeRuntime, @JvmField val P: Prelude) : 
                     ln = 40 // RotateTank.HC:40
                     val t8: Double = f(nat(t, n_tS, push0(t)))
                     tick(t)
-                    val t9: Double = P.f480_Saw(t, t8, 5.0)
-                    tick(t)
-                    P.f308_Mat4x4Scale(t, ld8((l0_dc + 200L)), (0.25 + t9))
+                    val t9: Double = P.f485_Saw(t, t8, 5.0)
+                    nat(t, n_Mat4x4Scale, push2(t, ld8((l0_dc + 200L)), bits((0.25 + t9))))
                     ln = 41 // RotateTank.HC:41
                     tick(t)
                     P.f283_DCMat4x4Set(t, l0_dc, ld8((l0_dc + 200L)))
@@ -95,8 +96,7 @@ class N_Demo_Graphics_RotateTank(rt: NativeRuntime, @JvmField val P: Prelude) : 
                     ln = 47 // RotateTank.HC:47
                     st4((l0_dc + 224L), divs(2147483647L, 2L))
                     ln = 49 // RotateTank.HC:49
-                    tick(t)
-                    P.f440_Sprite3(t, l0_dc, 0L, 0L, 0L, b0, 0L)
+                    nat(t, n_Sprite3, push(t, l0_dc, 0L, 0L, 0L, b0, 0L))
                     ln = 50 // RotateTank.HC:50
                     nat(t, n_Refresh, push2(t, 1L, 0L))
                     ln = 51 // RotateTank.HC:51
@@ -125,13 +125,13 @@ class N_Demo_Graphics_RotateTank(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Graphics/RotateTank.HC#0 (RotateTank.HC:60) */
-    fun f704_init_C__Demo_Graphics_RotateTank_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_RotateTank_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 60 // RotateTank.HC:60
             tick(t)
-            f703_RotateTank(t)
+            f708_RotateTank(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/RotateTank.HC#0", ln) }
@@ -140,8 +140,8 @@ class N_Demo_Graphics_RotateTank(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_RotateTank(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_RotateTank_HC_0(t)
+            708 -> { f708_RotateTank(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_RotateTank_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -153,7 +153,7 @@ class N_Demo_Graphics_RotateTank(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("RotateTank", "\$init:C:/Demo/Graphics/RotateTank.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/RotateTank.HC")
     }

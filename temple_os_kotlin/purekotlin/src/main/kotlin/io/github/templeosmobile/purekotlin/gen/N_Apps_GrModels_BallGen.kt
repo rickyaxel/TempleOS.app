@@ -41,7 +41,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC BDInit (BallGen.HC:21) */
-    fun f703_BDInit(t: Task, a0: Long) {
+    fun f708_BDInit(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -60,7 +60,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC BDCorrect (BallGen.HC:29) */
-    fun f704_BDCorrect(t: Task, a0: Long) {
+    fun f709_BDCorrect(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -75,7 +75,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC AddVertex (BallGen.HC:35) */
-    fun f705_AddVertex(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f710_AddVertex(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -117,7 +117,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC AddTri (BallGen.HC:48) */
-    fun f706_AddTri(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f711_AddTri(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -149,7 +149,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Ball2CSprite (BallGen.HC:58) */
-    fun f707_Ball2CSprite(t: Task): Long {
+    fun f712_Ball2CSprite(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -193,7 +193,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC BallGen (BallGen.HC:76) */
-    fun f708_BallGen(t: Task): Long {
+    fun f713_BallGen(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -218,12 +218,12 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             var l8_i: Long = 0L
             ln = 83 // BallGen.HC:83
             tick(t)
-            f703_BDInit(t, (fp + 80))
+            f708_BDInit(t, (fp + 80))
             ln = 85 // BallGen.HC:85
             loop0@ while ((1L != 0L)) {
                 ln = 86 // BallGen.HC:86
                 tick(t)
-                val t0: Long = P.f628_DocForm(t, (fp + 80), s0)
+                val t0: Long = P.f633_DocForm(t, (fp + 80), s0)
                 if ((t0 == 0L)) {
                     ln = 87 // BallGen.HC:87
                     t.msp = msp0
@@ -234,10 +234,10 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 nat(t, n_MemCpy, push3(t, (fp + 104), (fp + 80), 24L))
                 ln = 89 // BallGen.HC:89
                 tick(t)
-                f704_BDCorrect(t, (fp + 104))
+                f709_BDCorrect(t, (fp + 104))
                 ln = 91 // BallGen.HC:91
                 tick(t)
-                val t1: Long = P.f589_PopUpColorLighting(t, 0L)
+                val t1: Long = P.f594_PopUpColorLighting(t, 0L)
                 l40_c = t1
                 ln = 92 // BallGen.HC:92
                 if ((l40_c < 0L)) {
@@ -280,32 +280,32 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         val t7: Double = f(nat(t, n_Sin, push1(t, bits((((2L * l8_i) + l16_j).toDouble() * l176_d_a2)))))
                         val t8: Double = f(nat(t, n_Cos, push1(t, bits((((2L * l8_i) + l16_j).toDouble() * l176_d_a2)))))
                         tick(t)
-                        val t9: Long = f705_AddVertex(t, (fp + 104), f2i((l136_r1 * t8)), f2i((l136_r1 * t7)), f2i(l152_z1))
+                        val t9: Long = f710_AddVertex(t, (fp + 104), f2i((l136_r1 * t8)), f2i((l136_r1 * t7)), f2i(l152_z1))
                         l48_p1 = t9
                         ln = 107 // BallGen.HC:107
                         val t10: Double = f(nat(t, n_Sin, push1(t, bits(((((2L * l8_i) + 2L) + l16_j).toDouble() * l176_d_a2)))))
                         val t11: Double = f(nat(t, n_Cos, push1(t, bits(((((2L * l8_i) + 2L) + l16_j).toDouble() * l176_d_a2)))))
                         tick(t)
-                        val t12: Long = f705_AddVertex(t, (fp + 104), f2i((l136_r1 * t11)), f2i((l136_r1 * t10)), f2i(l152_z1))
+                        val t12: Long = f710_AddVertex(t, (fp + 104), f2i((l136_r1 * t11)), f2i((l136_r1 * t10)), f2i(l152_z1))
                         l56_p2 = t12
                         ln = 108 // BallGen.HC:108
                         val t13: Double = f(nat(t, n_Sin, push1(t, bits(((((2L * l8_i) + 1L) + l16_j).toDouble() * l176_d_a2)))))
                         val t14: Double = f(nat(t, n_Cos, push1(t, bits(((((2L * l8_i) + 1L) + l16_j).toDouble() * l176_d_a2)))))
                         tick(t)
-                        val t15: Long = f705_AddVertex(t, (fp + 104), f2i((l144_r2 * t14)), f2i((l144_r2 * t13)), f2i(l160_z2))
+                        val t15: Long = f710_AddVertex(t, (fp + 104), f2i((l144_r2 * t14)), f2i((l144_r2 * t13)), f2i(l160_z2))
                         l64_p3 = t15
                         ln = 109 // BallGen.HC:109
                         val t16: Double = f(nat(t, n_Sin, push1(t, bits(((((2L * l8_i) + 3L) + l16_j).toDouble() * l176_d_a2)))))
                         val t17: Double = f(nat(t, n_Cos, push1(t, bits(((((2L * l8_i) + 3L) + l16_j).toDouble() * l176_d_a2)))))
                         tick(t)
-                        val t18: Long = f705_AddVertex(t, (fp + 104), f2i((l144_r2 * t17)), f2i((l144_r2 * t16)), f2i(l160_z2))
+                        val t18: Long = f710_AddVertex(t, (fp + 104), f2i((l144_r2 * t17)), f2i((l144_r2 * t16)), f2i(l160_z2))
                         l72_p4 = t18
                         ln = 110 // BallGen.HC:110
                         tick(t)
-                        f706_AddTri(t, (fp + 104), l40_c, l48_p1, l56_p2, l64_p3)
+                        f711_AddTri(t, (fp + 104), l40_c, l48_p1, l56_p2, l64_p3)
                         ln = 111 // BallGen.HC:111
                         tick(t)
-                        f706_AddTri(t, (fp + 104), l40_c, l64_p3, l56_p2, l72_p4)
+                        f711_AddTri(t, (fp + 104), l40_c, l64_p3, l56_p2, l72_p4)
                         ln = 105 // BallGen.HC:105
                         l8_i = (l8_i + 1L)
                         tick(t)
@@ -316,7 +316,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 }
                 ln = 115 // BallGen.HC:115
                 tick(t)
-                val t19: Long = f707_Ball2CSprite(t)
+                val t19: Long = f712_Ball2CSprite(t)
                 l0_res = t19
                 ln = 116 // BallGen.HC:116
                 nat(t, n_Print, push2(t, s1, 10L))
@@ -353,7 +353,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Apps/GrModels/BallGen.HC#0 (BallGen.HC:1) */
-    fun f709_init_C__Apps_GrModels_BallGen_HC_0(t: Task): Long {
+    fun f714_init_C__Apps_GrModels_BallGen_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -365,13 +365,13 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_BDInit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_BDCorrect(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> f705_AddVertex(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            706 -> f706_AddTri(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            707 -> f707_Ball2CSprite(t)
-            708 -> f708_BallGen(t)
-            709 -> f709_init_C__Apps_GrModels_BallGen_HC_0(t)
+            708 -> { f708_BDInit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_BDCorrect(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> f710_AddVertex(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            711 -> f711_AddTri(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            712 -> f712_Ball2CSprite(t)
+            713 -> f713_BallGen(t)
+            714 -> f714_init_C__Apps_GrModels_BallGen_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -383,7 +383,7 @@ class N_Apps_GrModels_BallGen(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714)
         private val NAMES = arrayOf("BDInit", "BDCorrect", "AddVertex", "AddTri", "Ball2CSprite", "BallGen", "\$init:C:/Apps/GrModels/BallGen.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/GrModels/BallGen.HC")
     }

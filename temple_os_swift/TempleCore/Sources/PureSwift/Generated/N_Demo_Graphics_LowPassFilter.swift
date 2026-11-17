@@ -28,7 +28,7 @@ public final class N_Demo_Graphics_LowPassFilter: NativeModule {
     }
 
     /// HolyC LowPassFilterDemo (LowPassFilter.HC:3)
-    public final func f703_LowPassFilterDemo(_ t: HTask) throws {
+    public final func f708_LowPassFilterDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -53,16 +53,16 @@ public final class N_Demo_Graphics_LowPassFilter: NativeModule {
             try st4((l32_dc &+ 160), 1)
             ln = 13 // LowPassFilter.HC:13
             try tick(t)
-            _ = try P.f396_GrLine(t, l32_dc, 0, 0, 0, 400, 1, 0)
+            _ = try P.f397_GrLine(t, l32_dc, 0, 0, 0, 400, 1, 0)
             ln = 14 // LowPassFilter.HC:14
             try tick(t)
-            _ = try P.f396_GrLine(t, l32_dc, 0, 400, divs(640, 2), 400, 1, 0)
+            _ = try P.f397_GrLine(t, l32_dc, 0, 400, divs(640, 2), 400, 1, 0)
             ln = 15 // LowPassFilter.HC:15
             try tick(t)
-            _ = try P.f396_GrLine(t, l32_dc, divs(640, 2), 400, divs(640, 2), 0, 1, 0)
+            _ = try P.f397_GrLine(t, l32_dc, divs(640, 2), 400, divs(640, 2), 0, 1, 0)
             ln = 16 // LowPassFilter.HC:16
             try tick(t)
-            _ = try P.f396_GrLine(t, l32_dc, divs(640, 2), 0, 640, 0, 1, 0)
+            _ = try P.f397_GrLine(t, l32_dc, divs(640, 2), 0, 640, 0, 1, 0)
             ln = 17 // LowPassFilter.HC:17
             try tick(t)
             _ = try P.f188_PressAKey(t)
@@ -88,7 +88,7 @@ public final class N_Demo_Graphics_LowPassFilter: NativeModule {
                 }
                 ln = 28 // LowPassFilter.HC:28
                 try tick(t)
-                _ = try P.f396_GrLine(t, l32_dc, f2i(l16_t), f2i(l0_y), f2i((l16_t + l24_dt)), f2i(l8_y1), 1, 0)
+                _ = try P.f397_GrLine(t, l32_dc, f2i(l16_t), f2i(l0_y), f2i((l16_t + l24_dt)), f2i(l8_y1), 1, 0)
                 ln = 29 // LowPassFilter.HC:29
                 l0_y = l8_y1
                 ln = 30 // LowPassFilter.HC:30
@@ -118,7 +118,7 @@ public final class N_Demo_Graphics_LowPassFilter: NativeModule {
                 }
                 ln = 43 // LowPassFilter.HC:43
                 try tick(t)
-                _ = try P.f396_GrLine(t, l32_dc, f2i(l16_t), f2i(l0_y), f2i((l16_t + l24_dt)), f2i(l8_y1), 1, 0)
+                _ = try P.f397_GrLine(t, l32_dc, f2i(l16_t), f2i(l0_y), f2i((l16_t + l24_dt)), f2i(l8_y1), 1, 0)
                 ln = 44 // LowPassFilter.HC:44
                 l0_y = l8_y1
                 ln = 45 // LowPassFilter.HC:45
@@ -143,17 +143,17 @@ public final class N_Demo_Graphics_LowPassFilter: NativeModule {
                 if try (l16_t < Double(divs(640, 2))) {
                     ln = 55 // LowPassFilter.HC:55
                     try tick(t)
-                    let t4: Double = try P.f550_LowPass1(t, 0.01, l0_y, 400.0, l24_dt)
+                    let t4: Double = try P.f555_LowPass1(t, 0.01, l0_y, 400.0, l24_dt)
                     l8_y1 = t4
                 } else {
                     ln = 57 // LowPassFilter.HC:57
                     try tick(t)
-                    let t5: Double = try P.f550_LowPass1(t, 0.01, l0_y, 0.0, l24_dt)
+                    let t5: Double = try P.f555_LowPass1(t, 0.01, l0_y, 0.0, l24_dt)
                     l8_y1 = t5
                 }
                 ln = 58 // LowPassFilter.HC:58
                 try tick(t)
-                _ = try P.f396_GrLine(t, l32_dc, f2i(l16_t), f2i(l0_y), f2i((l16_t + l24_dt)), f2i(l8_y1), 1, 0)
+                _ = try P.f397_GrLine(t, l32_dc, f2i(l16_t), f2i(l0_y), f2i((l16_t + l24_dt)), f2i(l8_y1), 1, 0)
                 ln = 59 // LowPassFilter.HC:59
                 l0_y = l8_y1
                 ln = 60 // LowPassFilter.HC:60
@@ -178,17 +178,17 @@ public final class N_Demo_Graphics_LowPassFilter: NativeModule {
                 if try (l16_t < Double(divs(640, 2))) {
                     ln = 70 // LowPassFilter.HC:70
                     try tick(t)
-                    let t7: Double = try P.f550_LowPass1(t, 0.1, l0_y, 400.0, l24_dt)
+                    let t7: Double = try P.f555_LowPass1(t, 0.1, l0_y, 400.0, l24_dt)
                     l8_y1 = t7
                 } else {
                     ln = 72 // LowPassFilter.HC:72
                     try tick(t)
-                    let t8: Double = try P.f550_LowPass1(t, 0.1, l0_y, 0.0, l24_dt)
+                    let t8: Double = try P.f555_LowPass1(t, 0.1, l0_y, 0.0, l24_dt)
                     l8_y1 = t8
                 }
                 ln = 73 // LowPassFilter.HC:73
                 try tick(t)
-                _ = try P.f396_GrLine(t, l32_dc, f2i(l16_t), f2i(l0_y), f2i((l16_t + l24_dt)), f2i(l8_y1), 1, 0)
+                _ = try P.f397_GrLine(t, l32_dc, f2i(l16_t), f2i(l0_y), f2i((l16_t + l24_dt)), f2i(l8_y1), 1, 0)
                 ln = 74 // LowPassFilter.HC:74
                 l0_y = l8_y1
                 ln = 75 // LowPassFilter.HC:75
@@ -210,13 +210,13 @@ public final class N_Demo_Graphics_LowPassFilter: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/LowPassFilter.HC#0 (LowPassFilter.HC:83)
-    @discardableResult public final func f704_init_C__Demo_Graphics_LowPassFilter_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_LowPassFilter_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 83 // LowPassFilter.HC:83
             try tick(t)
-            try f703_LowPassFilterDemo(t)
+            try f708_LowPassFilterDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/LowPassFilter.HC#0", ln) }
@@ -225,14 +225,14 @@ public final class N_Demo_Graphics_LowPassFilter: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_LowPassFilterDemo(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_LowPassFilter_HC_0(t)
+        case 708: try f708_LowPassFilterDemo(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_LowPassFilter_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "LowPassFilterDemo", 704: "$init:C:/Demo/Graphics/LowPassFilter.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "LowPassFilterDemo", 709: "$init:C:/Demo/Graphics/LowPassFilter.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/LowPassFilter.HC"]
     public override var files: [String] { N_Demo_Graphics_LowPassFilter.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_LowPassFilter.DEFINED.contains(index) }

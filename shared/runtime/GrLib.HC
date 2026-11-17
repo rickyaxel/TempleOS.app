@@ -369,7 +369,8 @@ public Bool Gr2BSpline(CDC *dc=gr.dc,CD3I32 *ctrl,I64 cnt,Bool closed=FALSE);
 public Bool Gr3BSpline(CDC *dc=gr.dc,CD3I32 *ctrl,I64 cnt,Bool closed=FALSE);
 native I64 GrLineFat3(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,I64 x2,I64 y2,I64 z2, I64 width,I64 start=0);
 I64 GrLineFat3_HC(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,I64 x2,I64 y2,I64 z2, I64 width,I64 start=0);
-public Bool GrLine3(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,I64 x2,I64 y2,I64 z2, I64 step=1,I64 start=0);
+native public Bool GrLine3(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,I64 x2,I64 y2,I64 z2, I64 step=1,I64 start=0);
+public Bool GrLine3_HC(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,I64 x2,I64 y2,I64 z2, I64 step=1,I64 start=0);
 public Bool GrPutChar3(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 ch);
 public I64 GrPrint3(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *fmt,...);
 public I64 GrVPrint3(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *fmt,...);
@@ -385,14 +386,16 @@ public I64 Gr2BSpline3(CDC *dc=gr.dc,CD3I32 *ctrl,I64 cnt,Bool closed=FALSE);
 public Bool Gr3BSpline3(CDC *dc=gr.dc,CD3I32 *ctrl,I64 cnt,Bool closed=FALSE);
 native public I64 GrFillTri0(CDC *dc=gr.dc,CD3I32 *p1,CD3I32 *p2,CD3I32 *p4);
 public I64 GrFillTri0_HC(CDC *dc=gr.dc,CD3I32 *p1,CD3I32 *p2,CD3I32 *p4);
-public I64 GrFillPoly3(CDC *dc=gr.dc,I64 n,CD3I32 *poly);
+native public I64 GrFillPoly3(CDC *dc=gr.dc,I64 n,CD3I32 *poly);
+public I64 GrFillPoly3_HC(CDC *dc=gr.dc,I64 n,CD3I32 *poly);
 public I64 GrRectB(CDC *dc=gr.dc,I64 x1,I64 y1,I64 x2,I64 y2);
 public I64 GrRect3(CDC *dc=gr.dc,I64 x,I64 y,I64 z,I64 w,I64 h);
 public U0 GrBorder(CDC *dc=gr.dc,I64 x1,I64 y1,I64 x2,I64 y2, I64 step=1,I64 start=0);
 public Bool GrArrow3(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1, I64 x2,I64 y2,I64 z2,F64 w=2.75,I64 step=1,I64 start=0);
 public Bool GrTextBox3(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,U8 *s,I64 border=2);
 public Bool GrTextDiamond3(CDC *dc=gr.dc, I64 x1,I64 y1,I64 z1,U8 *_s,I64 border=2);
-public I64 Gr3Mesh(CDC *dc=gr.dc,I64 vertex_cnt,CD3I32 *p, I64 tri_cnt,CMeshTri *tri);
+native public I64 Gr3Mesh(CDC *dc=gr.dc,I64 vertex_cnt,CD3I32 *p, I64 tri_cnt,CMeshTri *tri);
+public I64 Gr3Mesh_HC(CDC *dc=gr.dc,I64 vertex_cnt,CD3I32 *p, I64 tri_cnt,CMeshTri *tri);
 public U0 DrawStdMs(CDC *dc,I64 x,I64 y);
 public U0 DrawWaitMs(CDC *dc,I64 x,I64 y);
 I64 SpriteElemQuedBaseSize(I64 type);
@@ -403,7 +406,8 @@ public I64 SpriteSize_HC(U8 *elems);
 I64 SpriteTypeMask(U8 *elems);
 U0 SpriteSelAll(U8 *elems,Bool val);
 public U8 *DC2Sprite(CDC *tmpb);
-public U0 Sprite3(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *elems, Bool just_one_elem=FALSE);
+native public U0 Sprite3(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *elems, Bool just_one_elem=FALSE);
+public U0 Sprite3_HC(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *elems, Bool just_one_elem=FALSE);
 public U0 Sprite3B(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *elems);
 public U0 Sprite3Mat4x4B(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *elems,I64 *m);
 public U0 Sprite3XB(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *elems,F64 è=0);
@@ -3798,7 +3802,7 @@ I64 GrLineFat3_HC(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,I64 x2,I64 y2,I64 z2,
   }
   return res;
 }
-public Bool GrLine3(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,I64 x2,I64 y2,I64 z2,
+public Bool GrLine3_HC(CDC *dc=gr.dc,I64 x1,I64 y1,I64 z1,I64 x2,I64 y2,I64 z2,
 	I64 step=1,I64 start=0)
 {//3D. Transformation with thick.
   I64 _x1,_y1,_z1,_x2,_y2,_z2;
@@ -4836,7 +4840,7 @@ ft_done:
 }
 //==== Adam/Gr/GrComposites.HC
 #help_index "Graphics"
-public I64 GrFillPoly3(CDC *dc=gr.dc,I64 n,CD3I32 *poly)
+public I64 GrFillPoly3_HC(CDC *dc=gr.dc,I64 n,CD3I32 *poly)
 {//3D. Must be convex.
 //Returns cnt of pixs changed
   CD3I32 tri[3];
@@ -5074,7 +5078,7 @@ public Bool GrTextDiamond3(CDC *dc=gr.dc,
   return ToBool(res);
 }
 #help_index "Graphics/Mesh"
-public I64 Gr3Mesh(CDC *dc=gr.dc,I64 vertex_cnt,CD3I32 *p,
+public I64 Gr3Mesh_HC(CDC *dc=gr.dc,I64 vertex_cnt,CD3I32 *p,
 	I64 tri_cnt,CMeshTri *tri)
 {//Returns cnt of pixs changed.
   CColorROPU32 old_color=dc->color;
@@ -5284,7 +5288,7 @@ making CSprite by hand.It uses $LK,"SPT_MESH",A="MN:SPT_MESH"$,
 one of the most complicated.
 */
 
-public U0 Sprite3(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *elems,
+public U0 Sprite3_HC(CDC *dc=gr.dc,I64 x,I64 y,I64 z,U8 *elems,
 	Bool just_one_elem=FALSE)
 {//Plot a sprite into a CDC.
   CSprite *tmpg=elems-offset(CSprite.start);

@@ -48,7 +48,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Gr/SpriteNew.HC#0 (SpriteNew.HC:4) */
-    fun f703_init_C__Adam_Gr_SpriteNew_HC_0(t: Task): Long {
+    fun f708_init_C__Adam_Gr_SpriteNew_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -58,7 +58,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Gr/SpriteNew.HC#1 (SpriteNew.HC:6) */
-    fun f704_init_C__Adam_Gr_SpriteNew_HC_1(t: Task): Long {
+    fun f709_init_C__Adam_Gr_SpriteNew_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -68,7 +68,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SpriteElemQuedBaseSize (SpriteNew.HC:39) */
-    fun f705_SpriteElemQuedBaseSize(t: Task, a0: Long): Long {
+    fun f710_SpriteElemQuedBaseSize(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -82,7 +82,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SpriteElemSize (SpriteNew.HC:44) */
-    fun f706_SpriteElemSize(t: Task, a0: Long): Long {
+    fun f711_SpriteElemSize(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -136,7 +136,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SpriteSize (SpriteNew.HC:80) */
-    fun f707_SpriteSize(t: Task, a0: Long): Long {
+    fun f712_SpriteSize(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -150,7 +150,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             loop0@ while (((ld1u((l8_tmpg + 16L)) and 127L) != 0L)) {
                 ln = 84 // SpriteNew.HC:84
                 tick(t)
-                val t0: Long = f706_SpriteElemSize(t, l8_tmpg)
+                val t0: Long = f711_SpriteElemSize(t, l8_tmpg)
                 l8_tmpg = (l8_tmpg + t0)
                 tick(t)
             }
@@ -163,7 +163,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SpriteTypeMask (SpriteNew.HC:88) */
-    fun f708_SpriteTypeMask(t: Task, a0: Long): Long {
+    fun f713_SpriteTypeMask(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -188,7 +188,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 nat(t, n_Bts, push2(t, (fp + 8), (ld1u((l16_tmpg + 16L)) and 127L)))
                 ln = 96 // SpriteNew.HC:96
                 tick(t)
-                val t0: Long = f706_SpriteElemSize(t, l16_tmpg)
+                val t0: Long = f711_SpriteElemSize(t, l16_tmpg)
                 l16_tmpg = (l16_tmpg + t0)
                 tick(t)
             }
@@ -203,7 +203,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SpriteSelAll (SpriteNew.HC:101) */
-    fun f709_SpriteSelAll(t: Task, a0: Long, a1: Long) {
+    fun f714_SpriteSelAll(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -221,7 +221,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 P.f101_BEqu(t, (l16_tmpg + 16L), 7L, p1_val)
                 ln = 106 // SpriteNew.HC:106
                 tick(t)
-                val t0: Long = f706_SpriteElemSize(t, l16_tmpg)
+                val t0: Long = f711_SpriteElemSize(t, l16_tmpg)
                 l16_tmpg = (l16_tmpg + t0)
                 tick(t)
             }
@@ -231,7 +231,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DC2Sprite (SpriteNew.HC:110) */
-    fun f710_DC2Sprite(t: Task, a0: Long): Long {
+    fun f715_DC2Sprite(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -262,7 +262,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC SpriteElem2Summary (SpriteNew.HC:126) */
-    fun f711_SpriteElem2Summary(t: Task, a0: Long): Long {
+    fun f716_SpriteElem2Summary(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -279,13 +279,13 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                     1L -> {
                         ln = 133 // SpriteNew.HC:133
                         tick(t)
-                        val t1: Long = P.f697_Color2Str(t, (fp + 152), ld1u(((p0_tmpg + 16L) + 1L)))
+                        val t1: Long = P.f702_Color2Str(t, (fp + 152), ld1u(((p0_tmpg + 16L) + 1L)))
                         nat(t, n_CatPrint, push3(t, (fp + 8), s2, t1))
                     }
                     2L -> {
                         ln = 136 // SpriteNew.HC:136
                         tick(t)
-                        val t2: Long = P.f697_Color2Str(t, (fp + 152), ((1073741824L or ld1u(((p0_tmpg + 16L) + 1L))) or (ld1u((((p0_tmpg + 16L) + 1L) + 1L)) shl 16)))
+                        val t2: Long = P.f702_Color2Str(t, (fp + 152), ((1073741824L or ld1u(((p0_tmpg + 16L) + 1L))) or (ld1u((((p0_tmpg + 16L) + 1L) + 1L)) shl 16)))
                         nat(t, n_CatPrint, push3(t, (fp + 8), s2, t2))
                     }
                     7L, 8L, 21L, 22L -> {
@@ -347,7 +347,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Gr/SpriteNew.HC#2 (SpriteNew.HC:1) */
-    fun f712_init_C__Adam_Gr_SpriteNew_HC_2(t: Task): Long {
+    fun f717_init_C__Adam_Gr_SpriteNew_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -359,16 +359,16 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Adam_Gr_SpriteNew_HC_0(t)
-            704 -> f704_init_C__Adam_Gr_SpriteNew_HC_1(t)
-            705 -> f705_SpriteElemQuedBaseSize(t, (if (n > 0) st[base + 0] else 0L))
-            706 -> f706_SpriteElemSize(t, (if (n > 0) st[base + 0] else 0L))
-            707 -> f707_SpriteSize(t, (if (n > 0) st[base + 0] else 0L))
-            708 -> f708_SpriteTypeMask(t, (if (n > 0) st[base + 0] else 0L))
-            709 -> { f709_SpriteSelAll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> f710_DC2Sprite(t, (if (n > 0) st[base + 0] else 0L))
-            711 -> f711_SpriteElem2Summary(t, (if (n > 0) st[base + 0] else 0L))
-            712 -> f712_init_C__Adam_Gr_SpriteNew_HC_2(t)
+            708 -> f708_init_C__Adam_Gr_SpriteNew_HC_0(t)
+            709 -> f709_init_C__Adam_Gr_SpriteNew_HC_1(t)
+            710 -> f710_SpriteElemQuedBaseSize(t, (if (n > 0) st[base + 0] else 0L))
+            711 -> f711_SpriteElemSize(t, (if (n > 0) st[base + 0] else 0L))
+            712 -> f712_SpriteSize(t, (if (n > 0) st[base + 0] else 0L))
+            713 -> f713_SpriteTypeMask(t, (if (n > 0) st[base + 0] else 0L))
+            714 -> { f714_SpriteSelAll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> f715_DC2Sprite(t, (if (n > 0) st[base + 0] else 0L))
+            716 -> f716_SpriteElem2Summary(t, (if (n > 0) st[base + 0] else 0L))
+            717 -> f717_init_C__Adam_Gr_SpriteNew_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -380,7 +380,7 @@ class N_Adam_Gr_SpriteNew(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
         private val NAMES = arrayOf("\$init:C:/Adam/Gr/SpriteNew.HC#0", "\$init:C:/Adam/Gr/SpriteNew.HC#1", "SpriteElemQuedBaseSize", "SpriteElemSize", "SpriteSize", "SpriteTypeMask", "SpriteSelAll", "DC2Sprite", "SpriteElem2Summary", "\$init:C:/Adam/Gr/SpriteNew.HC#2")
         private val FILES = arrayOf<String>("C:/Adam/Gr/SpriteNew.HC")
     }

@@ -37,7 +37,7 @@ class N_Demo_Snd_ASCIIOrgan(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC SafePutChar (ASCIIOrgan.HC:3) */
-    fun f703_SafePutChar(t: Task, a0: Long) {
+    fun f708_SafePutChar(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -64,7 +64,7 @@ class N_Demo_Snd_ASCIIOrgan(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ASCIIOrgan (ASCIIOrgan.HC:21) */
-    fun f704_ASCIIOrgan(t: Task) {
+    fun f709_ASCIIOrgan(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -75,16 +75,16 @@ class N_Demo_Snd_ASCIIOrgan(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             loop0@ while ((l0_i < 32L)) {
                 ln = 26 // ASCIIOrgan.HC:26
                 tick(t)
-                f703_SafePutChar(t, l0_i)
+                f708_SafePutChar(t, l0_i)
                 ln = 27 // ASCIIOrgan.HC:27
                 tick(t)
-                f703_SafePutChar(t, (l0_i + 32L))
+                f708_SafePutChar(t, (l0_i + 32L))
                 ln = 28 // ASCIIOrgan.HC:28
                 tick(t)
-                f703_SafePutChar(t, (l0_i + 64L))
+                f708_SafePutChar(t, (l0_i + 64L))
                 ln = 29 // ASCIIOrgan.HC:29
                 tick(t)
-                f703_SafePutChar(t, (l0_i + 96L))
+                f708_SafePutChar(t, (l0_i + 96L))
                 ln = 30 // ASCIIOrgan.HC:30
                 nat(t, n_PutChars, push1(t, 10L))
                 ln = 25 // ASCIIOrgan.HC:25
@@ -117,13 +117,13 @@ class N_Demo_Snd_ASCIIOrgan(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Snd/ASCIIOrgan.HC#0 (ASCIIOrgan.HC:49) */
-    fun f705_init_C__Demo_Snd_ASCIIOrgan_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Snd_ASCIIOrgan_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 49 // ASCIIOrgan.HC:49
             tick(t)
-            f704_ASCIIOrgan(t)
+            f709_ASCIIOrgan(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Snd/ASCIIOrgan.HC#0", ln) }
@@ -132,9 +132,9 @@ class N_Demo_Snd_ASCIIOrgan(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SafePutChar(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_ASCIIOrgan(t); 0L }
-            705 -> f705_init_C__Demo_Snd_ASCIIOrgan_HC_0(t)
+            708 -> { f708_SafePutChar(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_ASCIIOrgan(t); 0L }
+            710 -> f710_init_C__Demo_Snd_ASCIIOrgan_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -146,7 +146,7 @@ class N_Demo_Snd_ASCIIOrgan(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("SafePutChar", "ASCIIOrgan", "\$init:C:/Demo/Snd/ASCIIOrgan.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Snd/ASCIIOrgan.HC")
     }

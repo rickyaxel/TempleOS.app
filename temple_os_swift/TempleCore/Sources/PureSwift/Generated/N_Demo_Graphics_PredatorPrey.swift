@@ -45,7 +45,7 @@ public final class N_Demo_Graphics_PredatorPrey: NativeModule {
     }
 
     /// HolyC Steps (PredatorPrey.HC:16)
-    public final func f703_Steps(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_Steps(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -74,7 +74,7 @@ public final class N_Demo_Graphics_PredatorPrey: NativeModule {
     }
 
     /// HolyC PlotTrajectory (PredatorPrey.HC:27)
-    public final func f704_PlotTrajectory(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_PlotTrajectory(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -108,7 +108,7 @@ public final class N_Demo_Graphics_PredatorPrey: NativeModule {
                 _ = try nat(t, n_GrPlot, try push3(t, l16_dc, f2i((ldf(((fp &+ 24) &+ 8)) + 10.0)), f2i((Double((divs(480, 2) &- 8)) - ldf(((fp &+ 24) &+ 24))))))
                 ln = 42 // PredatorPrey.HC:42
                 try tick(t)
-                try f703_Steps(t, (fp &+ 24))
+                try f708_Steps(t, (fp &+ 24))
                 ln = 37 // PredatorPrey.HC:37
                 l8_i = (l8_i &+ 1)
                 try tick(t)
@@ -126,7 +126,7 @@ public final class N_Demo_Graphics_PredatorPrey: NativeModule {
     }
 
     /// HolyC PredatorPrey (PredatorPrey.HC:48)
-    public final func f705_PredatorPrey(_ t: HTask) throws {
+    public final func f710_PredatorPrey(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -162,10 +162,10 @@ public final class N_Demo_Graphics_PredatorPrey: NativeModule {
                 try st4((l8_dc &+ 160), 0)
                 ln = 65 // PredatorPrey.HC:65
                 try tick(t)
-                _ = try P.f396_GrLine(t, l8_dc, 10, 0, 10, 471, 1, 0)
+                _ = try P.f397_GrLine(t, l8_dc, 10, 0, 10, 471, 1, 0)
                 ln = 66 // PredatorPrey.HC:66
                 try tick(t)
-                _ = try P.f396_GrLine(t, l8_dc, 0, (divs(480, 2) &- 8), 639, (divs(480, 2) &- 8), 1, 0)
+                _ = try P.f397_GrLine(t, l8_dc, 0, (divs(480, 2) &- 8), 639, (divs(480, 2) &- 8), 1, 0)
                 ln = 67 // PredatorPrey.HC:67
                 loop0: while true {
                     try tick(t)
@@ -180,7 +180,7 @@ public final class N_Demo_Graphics_PredatorPrey: NativeModule {
                         let t2: Int64 = try nat(t, n_mp_cnt, push0(t))
                         if !((l0_i < t2)) { break loop2 }
                         ln = 70 // PredatorPrey.HC:70
-                        _ = try nat(t, n_JobQue, try push(t, 9223090561878065856, ld8(P.g_Fs), l0_i, 0, 0, 0, 0, 0))
+                        _ = try nat(t, n_JobQue, try push(t, 9223090561878065861, ld8(P.g_Fs), l0_i, 0, 0, 0, 0, 0))
                         ln = 69 // PredatorPrey.HC:69
                         l0_i = (l0_i &+ 1)
                         try tick(t)
@@ -217,13 +217,13 @@ public final class N_Demo_Graphics_PredatorPrey: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/PredatorPrey.HC#0 (PredatorPrey.HC:81)
-    @discardableResult public final func f706_init_C__Demo_Graphics_PredatorPrey_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Graphics_PredatorPrey_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 81 // PredatorPrey.HC:81
             try tick(t)
-            try f705_PredatorPrey(t)
+            try f710_PredatorPrey(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/PredatorPrey.HC#0", ln) }
@@ -232,16 +232,16 @@ public final class N_Demo_Graphics_PredatorPrey: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Steps(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_PlotTrajectory(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_PredatorPrey(t); return 0
-        case 706: return try f706_init_C__Demo_Graphics_PredatorPrey_HC_0(t)
+        case 708: try f708_Steps(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_PlotTrajectory(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_PredatorPrey(t); return 0
+        case 711: return try f711_init_C__Demo_Graphics_PredatorPrey_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "Steps", 704: "PlotTrajectory", 705: "PredatorPrey", 706: "$init:C:/Demo/Graphics/PredatorPrey.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "Steps", 709: "PlotTrajectory", 710: "PredatorPrey", 711: "$init:C:/Demo/Graphics/PredatorPrey.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/PredatorPrey.HC"]
     public override var files: [String] { N_Demo_Graphics_PredatorPrey.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_PredatorPrey.DEFINED.contains(index) }

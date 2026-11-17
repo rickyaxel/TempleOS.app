@@ -11,8 +11,10 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
     public let P: Prelude
     public let n_Free: Int
     public let n_JobQue: Int
+    public let n_Mat4x4Scale: Int
     public let n_MemSet: Int
     public let n_Sleep: Int
+    public let n_Sprite3: Int
     public let n_mp_cnt: Int
     /** dc1: CDC * */ public var g_dc1: Int64 = 0
     /** é: F64 */ public var g__: Int64 = 0
@@ -27,8 +29,10 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
         self.P = P
         n_Free = rt.vm.natives.find("Free")!.index
         n_JobQue = rt.vm.natives.find("JobQue")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_mp_cnt = rt.vm.natives.find("mp_cnt")!.index
         super.init(rt)
     }
@@ -49,7 +53,7 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
     }
 
     /// HolyC GrBlackLighting (Shadow.HC:21)
-    public final func f703_GrBlackLighting(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
+    public final func f708_GrBlackLighting(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -68,7 +72,7 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
     }
 
     /// HolyC DrawShadow (Shadow.HC:26)
-    public final func f704_DrawShadow(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_DrawShadow(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -89,11 +93,10 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
             try tick(t)
             _ = try P.f307_Mat4x4RotZ(t, ld8((ld8(g_dc1) &+ 200)), ldf(g___3))
             ln = 34 // Shadow.HC:34
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, ld8((ld8(g_dc1) &+ 200)), ldf(g_s))
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((ld8(g_dc1) &+ 200)), bits(ldf(g_s))))
             ln = 35 // Shadow.HC:35
             try tick(t)
-            _ = try P.f310_Mat4x4TranslationEqu(t, ld8((ld8(g_dc1) &+ 200)), 200, 200, 5000)
+            _ = try P.f311_Mat4x4TranslationEqu(t, ld8((ld8(g_dc1) &+ 200)), 200, 200, 5000)
             ln = 36 // Shadow.HC:36
             let t0: Int64 = try (ld8(g_dc1) &+ 28)
             try st4(t0, (ld4s(t0) | 256))
@@ -114,7 +117,7 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
             try st8((((fp &+ 8) &+ 96) &+ 24), 4294967296)
             ln = 47 // Shadow.HC:47
             try tick(t)
-            _ = try P.f310_Mat4x4TranslationEqu(t, (fp &+ 8), 0, (-2200), 1000)
+            _ = try P.f311_Mat4x4TranslationEqu(t, (fp &+ 8), 0, (-2200), 1000)
             ln = 48 // Shadow.HC:48
             try tick(t)
             let t1: Int64 = try P.f301_Mat4x4MulMat4x4New(t, (fp &+ 8), ld8((ld8(g_dc1) &+ 200)), p0_task)
@@ -125,10 +128,9 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
             try tick(t)
             try P.f283_DCMat4x4Set(t, ld8(g_dc1), l136_r2)
             ln = 52 // Shadow.HC:52
-            try st8((ld8(g_dc1) &+ 240), 9223090561878065855)
+            try st8((ld8(g_dc1) &+ 240), 9223090561878065860)
             ln = 53 // Shadow.HC:53
-            try tick(t)
-            try P.f440_Sprite3(t, ld8(g_dc1), 0, 0, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, ld8(g_dc1), 0, 0, 0, b0, 0))
             t.msp = msp0
             t.depth -= 1
             return
@@ -136,7 +138,7 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
     }
 
     /// HolyC DrawIt (Shadow.HC:56)
-    public final func f705_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f710_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -158,11 +160,10 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
             try tick(t)
             _ = try P.f307_Mat4x4RotZ(t, ld8((ld8(g_dc0) &+ 200)), ldf(g___3))
             ln = 63 // Shadow.HC:63
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, ld8((ld8(g_dc0) &+ 200)), ldf(g_s))
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((ld8(g_dc0) &+ 200)), bits(ldf(g_s))))
             ln = 64 // Shadow.HC:64
             try tick(t)
-            _ = try P.f310_Mat4x4TranslationEqu(t, ld8((ld8(g_dc0) &+ 200)), 200, 200, 5000)
+            _ = try P.f311_Mat4x4TranslationEqu(t, ld8((ld8(g_dc0) &+ 200)), 200, 200, 5000)
             ln = 65 // Shadow.HC:65
             let t0: Int64 = try (ld8(g_dc0) &+ 28)
             try st4(t0, (ld4s(t0) | 256))
@@ -173,22 +174,21 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
             let t1: Int64 = try nat(t, n_mp_cnt, push0(t))
             if (t1 > 1) {
                 ln = 68 // Shadow.HC:68
-                _ = try nat(t, n_JobQue, try push(t, 9223090561878065856, p0_task, 1, 0, 0, 0, 0, 0))
+                _ = try nat(t, n_JobQue, try push(t, 9223090561878065861, p0_task, 1, 0, 0, 0, 0, 0))
             } else {
                 ln = 70 // Shadow.HC:70
                 try tick(t)
-                try f704_DrawShadow(t, p0_task)
+                try f709_DrawShadow(t, p0_task)
             }
             ln = 71 // Shadow.HC:71
-            try tick(t)
-            try P.f440_Sprite3(t, ld8(g_dc0), 0, 0, 0, b1, 0)
+            _ = try nat(t, n_Sprite3, try push(t, ld8(g_dc0), 0, 0, 0, b1, 0))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawIt", ln) }
     }
 
     /// HolyC Shadow (Shadow.HC:74)
-    public final func f706_Shadow(_ t: HTask) throws {
+    public final func f711_Shadow(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -220,7 +220,7 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
             try tick(t)
             try P.f220_WinMax(t, 0)
             ln = 88 // Shadow.HC:88
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065857)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065862)
             ln = 90 // Shadow.HC:90
             loop0: while true {
                 try tick(t)
@@ -253,13 +253,13 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Shadow.HC#0 (Shadow.HC:102)
-    @discardableResult public final func f707_init_C__Demo_Graphics_Shadow_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Graphics_Shadow_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 102 // Shadow.HC:102
             try tick(t)
-            try f706_Shadow(t)
+            try f711_Shadow(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Shadow.HC#0", ln) }
@@ -268,17 +268,17 @@ public final class N_Demo_Graphics_Shadow: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_GrBlackLighting(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
-        case 704: try f704_DrawShadow(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 706: try f706_Shadow(t); return 0
-        case 707: return try f707_init_C__Demo_Graphics_Shadow_HC_0(t)
+        case 708: try f708_GrBlackLighting(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
+        case 709: try f709_DrawShadow(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 711: try f711_Shadow(t); return 0
+        case 712: return try f712_init_C__Demo_Graphics_Shadow_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "GrBlackLighting", 704: "DrawShadow", 705: "DrawIt", 706: "Shadow", 707: "$init:C:/Demo/Graphics/Shadow.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "GrBlackLighting", 709: "DrawShadow", 710: "DrawIt", 711: "Shadow", 712: "$init:C:/Demo/Graphics/Shadow.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Shadow.HC"]
     public override var files: [String] { N_Demo_Graphics_Shadow.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Shadow.DEFINED.contains(index) }

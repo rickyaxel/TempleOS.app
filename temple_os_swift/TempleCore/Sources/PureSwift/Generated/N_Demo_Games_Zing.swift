@@ -79,7 +79,7 @@ public final class N_Demo_Games_Zing: NativeModule {
     }
 
     /// HolyC DrawIt (Zing.HC:14)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -100,7 +100,7 @@ public final class N_Demo_Games_Zing: NativeModule {
             try st4((p1_dc &+ 160), 4)
             ln = 21 // Zing.HC:21
             try tick(t)
-            try P.f425_GrBorder(t, p1_dc, ld8(g_box_x_min), ld8(g_box_y_min), ld8(g_box_x_max), ld8(g_box_y_max), 1, 0)
+            try P.f428_GrBorder(t, p1_dc, ld8(g_box_x_min), ld8(g_box_y_min), ld8(g_box_x_max), ld8(g_box_y_max), 1, 0)
             ln = 23 // Zing.HC:23
             try tick(t)
             let t0: Int64 = try P.f114_ClampI64(t, ((ld8(P.g_ms) &- ld8((p0_task &+ 208))) &- ld8((p0_task &+ 256))), ld8(g_box_x_min), ld8(g_box_x_max))
@@ -141,7 +141,7 @@ public final class N_Demo_Games_Zing: NativeModule {
             let t7: Double = d(try nat(t, n_Cos, try push1(t, bits((ldf(g_bow__) + (d(4614256656552045848) / 2.0))))))
             let t8: Double = d(try nat(t, n_Cos, try push1(t, bits(ldf(g_bow__)))))
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, f2i(((l24_x - ((l64_str_h / 2.0) * t7)) + (l56_str_w * t8))), f2i(((l32_y - ((l64_str_h / 2.0) * t5)) + (l56_str_w * t6))), f2i(l24_x), f2i(l32_y), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, f2i(((l24_x - ((l64_str_h / 2.0) * t7)) + (l56_str_w * t8))), f2i(((l32_y - ((l64_str_h / 2.0) * t5)) + (l56_str_w * t6))), f2i(l24_x), f2i(l32_y), 1, 0)
             ln = 44 // Zing.HC:44
             let t9: Double = d(try nat(t, n_Sin, try push1(t, bits((ldf(g_bow__) + (d(4614256656552045848) / 2.0))))))
             let t10: Double = d(try nat(t, n_Sin, try push1(t, bits(ldf(g_bow__)))))
@@ -149,7 +149,7 @@ public final class N_Demo_Games_Zing: NativeModule {
             let t11: Double = d(try nat(t, n_Cos, try push1(t, bits((ldf(g_bow__) + (d(4614256656552045848) / 2.0))))))
             let t12: Double = d(try nat(t, n_Cos, try push1(t, bits(ldf(g_bow__)))))
             try tick(t)
-            _ = try P.f396_GrLine(t, p1_dc, f2i(((l24_x + ((l64_str_h / 2.0) * t11)) + (l56_str_w * t12))), f2i(((l32_y + ((l64_str_h / 2.0) * t9)) + (l56_str_w * t10))), f2i(l24_x), f2i(l32_y), 1, 0)
+            _ = try P.f397_GrLine(t, p1_dc, f2i(((l24_x + ((l64_str_h / 2.0) * t11)) + (l56_str_w * t12))), f2i(((l32_y + ((l64_str_h / 2.0) * t9)) + (l56_str_w * t10))), f2i(l24_x), f2i(l32_y), 1, 0)
             ln = 47 // Zing.HC:47
             _ = try nat(t, n_MemSet, try push3(t, (fp &+ 88), 0, 60))
             ln = 48 // Zing.HC:48
@@ -206,14 +206,14 @@ public final class N_Demo_Games_Zing: NativeModule {
             try st4((p1_dc &+ 228), 2)
             ln = 65 // Zing.HC:65
             try tick(t)
-            _ = try P.f418_Gr2BSpline3(t, p1_dc, (fp &+ 88), 5, 0)
+            _ = try P.f420_Gr2BSpline3(t, p1_dc, (fp &+ 88), 5, 0)
             ln = 66 // Zing.HC:66
             try st4((p1_dc &+ 228), 1)
             ln = 68 // Zing.HC:68
             if try (ld1u(g_bow_drawn) != 0) {
                 ln = 69 // Zing.HC:69
                 try tick(t)
-                try P.f445_Sprite3ZB(t, p1_dc, f2i(l24_x), f2i(l32_y), 0, b0, ldf(g_bow__))
+                try P.f450_Sprite3ZB(t, p1_dc, f2i(l24_x), f2i(l32_y), 0, b0, ldf(g_bow__))
             }
             ln = 71 // Zing.HC:71
             l80_tmpa = try ld8(g_head)
@@ -224,7 +224,7 @@ public final class N_Demo_Games_Zing: NativeModule {
                 l16__ = t37
                 ln = 74 // Zing.HC:74
                 try tick(t)
-                try P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((l80_tmpa &+ 16))), f2i(ldf((l80_tmpa &+ 24))), 0, b1, l16__)
+                try P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((l80_tmpa &+ 16))), f2i(ldf((l80_tmpa &+ 24))), 0, b1, l16__)
                 ln = 75 // Zing.HC:75
                 l80_tmpa = try ld8(l80_tmpa)
                 try tick(t)
@@ -236,7 +236,7 @@ public final class N_Demo_Games_Zing: NativeModule {
     }
 
     /// HolyC AnimateTask (Zing.HC:81)
-    public final func f704_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -331,7 +331,7 @@ public final class N_Demo_Games_Zing: NativeModule {
     }
 
     /// HolyC Init (Zing.HC:117)
-    public final func f705_Init(_ t: HTask) throws {
+    public final func f710_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -368,7 +368,7 @@ public final class N_Demo_Games_Zing: NativeModule {
     }
 
     /// HolyC CleanUp (Zing.HC:134)
-    public final func f706_CleanUp(_ t: HTask) throws {
+    public final func f711_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -381,7 +381,7 @@ public final class N_Demo_Games_Zing: NativeModule {
     }
 
     /// HolyC Zing (Zing.HC:139)
-    public final func f707_Zing(_ t: HTask) throws {
+    public final func f712_Zing(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -390,7 +390,7 @@ public final class N_Demo_Games_Zing: NativeModule {
             var l16_tmpa: Int64 = 0
             ln = 143 // Zing.HC:143
             try tick(t)
-            _ = try P.f507_MenuPush(t, s0)
+            _ = try P.f512_MenuPush(t, s0)
             ln = 152 // Zing.HC:152
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -408,13 +408,13 @@ public final class N_Demo_Games_Zing: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 159 // Zing.HC:159
             try tick(t)
-            try f705_Init(t)
+            try f710_Init(t)
             ln = 160 // Zing.HC:160
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065856, 0, s1, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s1, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 161 // Zing.HC:161
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 162 // Zing.HC:162
             try st4((ld8(P.g_Fs) &+ 12), 5435902)
             ln = 163 // Zing.HC:163
@@ -436,10 +436,10 @@ public final class N_Demo_Games_Zing: NativeModule {
                                     case 10:
                                         ln = 170 // Zing.HC:170
                                         try tick(t)
-                                        try f706_CleanUp(t)
+                                        try f711_CleanUp(t)
                                         ln = 171 // Zing.HC:171
                                         try tick(t)
-                                        try f705_Init(t)
+                                        try f710_Init(t)
                                     case 27, 28:
                                         ln = 175 // Zing.HC:175
                                         break skip_0
@@ -473,7 +473,7 @@ public final class N_Demo_Games_Zing: NativeModule {
                                     _ = try P.f153_QueIns(t, l16_tmpa, ld8((g_head &+ 8)))
                                     ln = 191 // Zing.HC:191
                                     try tick(t)
-                                    _ = try P.f499_Noise(t, 50, 110.0, 114.0)
+                                    _ = try P.f504_Noise(t, 50, 110.0, 114.0)
                                 }
                                 ln = 193 // Zing.HC:193
                                 try st1(g_bow_drawn, 0)
@@ -500,10 +500,10 @@ public final class N_Demo_Games_Zing: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 201 // Zing.HC:201
             try tick(t)
-            try f706_CleanUp(t)
+            try f711_CleanUp(t)
             ln = 202 // Zing.HC:202
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -511,13 +511,13 @@ public final class N_Demo_Games_Zing: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Zing.HC#0 (Zing.HC:205)
-    @discardableResult public final func f708_init_C__Demo_Games_Zing_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_Games_Zing_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 205 // Zing.HC:205
             try tick(t)
-            try f707_Zing(t)
+            try f712_Zing(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Zing.HC#0", ln) }
@@ -526,18 +526,18 @@ public final class N_Demo_Games_Zing: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_Init(t); return 0
-        case 706: try f706_CleanUp(t); return 0
-        case 707: try f707_Zing(t); return 0
-        case 708: return try f708_init_C__Demo_Games_Zing_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_Init(t); return 0
+        case 711: try f711_CleanUp(t); return 0
+        case 712: try f712_Zing(t); return 0
+        case 713: return try f713_init_C__Demo_Games_Zing_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "AnimateTask", 705: "Init", 706: "CleanUp", 707: "Zing", 708: "$init:C:/Demo/Games/Zing.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "AnimateTask", 710: "Init", 711: "CleanUp", 712: "Zing", 713: "$init:C:/Demo/Games/Zing.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/Zing.HC"]
     public override var files: [String] { N_Demo_Games_Zing.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Zing.DEFINED.contains(index) }

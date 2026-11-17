@@ -29,6 +29,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     public let n_Sleep: Int
     public let n_Snd: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_ToI64: Int
     public let n_Yield: Int
     public let n_tS: Int
@@ -74,6 +75,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_ToI64 = rt.vm.natives.find("ToI64")!.index
         n_Yield = rt.vm.natives.find("Yield")!.index
         n_tS = rt.vm.natives.find("tS")!.index
@@ -108,7 +110,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BigGuns.HC#0 (BigGuns.HC:11)
-    @discardableResult public final func f703_init_C__Demo_Games_BigGuns_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_BigGuns_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -118,7 +120,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC DrawIt (BigGuns.HC:27)
-    public final func f704_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -155,8 +157,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             ln = 40 // BigGuns.HC:40
             _ = try nat(t, n_GrBlot, try push4(t, p1_dc, l72_h, l80_v, l16_map))
             ln = 42 // BigGuns.HC:42
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, (ld8(g_gun_x) &+ l72_h), (ld8(g_gun_y) &+ l80_v), 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, (ld8(g_gun_x) &+ l72_h), (ld8(g_gun_y) &+ l80_v), 0, b0, 0))
             ln = 44 // BigGuns.HC:44
             if (l32__ < ((-d(4614256656552045848)) / 2.0)) {
                 ln = 45 // BigGuns.HC:45
@@ -164,7 +165,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                 try st4(t1, (ld4s(t1) | 1536))
                 ln = 46 // BigGuns.HC:46
                 try tick(t)
-                _ = try P.f314_DCSymmetrySet(t, p1_dc, (ld8(g_gun_x) &+ l72_h), 0, (ld8(g_gun_x) &+ l72_h), 1)
+                _ = try P.f315_DCSymmetrySet(t, p1_dc, (ld8(g_gun_x) &+ l72_h), 0, (ld8(g_gun_x) &+ l72_h), 1)
                 ln = 47 // BigGuns.HC:47
                 l32__ = ((-d(4614256656552045848)) - l32__)
             }
@@ -178,7 +179,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             let t5: Double = d(try nat(t, n_Cos, try push1(t, bits(l32__))))
             ln = 49 // BigGuns.HC:49
             try tick(t)
-            try P.f445_Sprite3ZB(t, p1_dc, f2i((Double(t7) - (Double(t6) * t5))), f2i(((Double(t4) - (Double(t3) * t2)) - 10.0)), 0, b1, l32__)
+            try P.f450_Sprite3ZB(t, p1_dc, f2i((Double(t7) - (Double(t6) * t5))), f2i(((Double(t4) - (Double(t3) * t2)) - 10.0)), 0, b1, l32__)
             ln = 52 // BigGuns.HC:52
             let t8: Int64 = (p1_dc &+ 28)
             try st4(t8, (ld4s(t8) & (-1537)))
@@ -196,7 +197,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                 try st8((l16_map &+ 304), 0)
                 ln = 60 // BigGuns.HC:60
                 try tick(t)
-                _ = try P.f397_GrCircle(t, l16_map, f2i(ldf((l24_tmpm &+ 56))), f2i(ldf((l24_tmpm &+ 64))), 2, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, l16_map, f2i(ldf((l24_tmpm &+ 56))), f2i(ldf((l24_tmpm &+ 64))), 2, 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 61 // BigGuns.HC:61
                 if try (ld8((l16_map &+ 304)) != 0) {
                     ln = 62 // BigGuns.HC:62
@@ -204,7 +205,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                 }
                 ln = 64 // BigGuns.HC:64
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, f2i((ldf((l24_tmpm &+ 56)) + Double(l72_h))), f2i((ldf((l24_tmpm &+ 64)) + Double(l80_v))), 2, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, f2i((ldf((l24_tmpm &+ 56)) + Double(l72_h))), f2i((ldf((l24_tmpm &+ 64)) + Double(l80_v))), 2, 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 66 // BigGuns.HC:66
                 l24_tmpm = try ld8(l24_tmpm)
                 try tick(t)
@@ -236,7 +237,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC MyDerivative (BigGuns.HC:79)
-    public final func f705_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f710_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -265,7 +266,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC DrawMap (BigGuns.HC:89)
-    public final func f706_DrawMap(_ t: HTask) throws {
+    public final func f711_DrawMap(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -284,7 +285,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             loop0: while (l8_x < 2048) {
                 ln = 99 // BigGuns.HC:99
                 try tick(t)
-                _ = try P.f396_GrLine(t, l0_map, (l8_x &- 1), ld2s((g_elevs &+ ((l8_x &- 1) &* 2))), l8_x, ld2s((g_elevs &+ (l8_x &* 2))), 1, 0)
+                _ = try P.f397_GrLine(t, l0_map, (l8_x &- 1), ld2s((g_elevs &+ ((l8_x &- 1) &* 2))), l8_x, ld2s((g_elevs &+ (l8_x &* 2))), 1, 0)
                 ln = 98 // BigGuns.HC:98
                 l8_x = (l8_x &+ 1)
                 try tick(t)
@@ -293,7 +294,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             try st4((l0_map &+ 160), 6)
             ln = 102 // BigGuns.HC:102
             try tick(t)
-            _ = try P.f387_GrFloodFill(t, l0_map, 0, 455, 0, 0, 0)
+            _ = try P.f388_GrFloodFill(t, l0_map, 0, 455, 0, 0, 0)
             ln = 104 // BigGuns.HC:104
             let t0: Int64 = try ld8(g_active_map)
             try st8(g_active_map, (t0 &+ 1))
@@ -303,7 +304,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC FireTask (BigGuns.HC:107)
-    public final func f707_FireTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_FireTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -348,7 +349,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             try tick(t)
             _ = try P.f153_QueIns(t, l8_tmpm, ld8((ld8(g_ode) &+ 48)))
             ln = 125 // BigGuns.HC:125
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 126 // BigGuns.HC:126
             l16_i = 0
             loop2: while (l16_i < 60) {
@@ -380,7 +381,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC ManageShots (BigGuns.HC:137)
-    public final func f708_ManageShots(_ t: HTask) throws {
+    public final func f713_ManageShots(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -440,7 +441,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             if (l24_chged != 0) {
                 ln = 157 // BigGuns.HC:157
                 try tick(t)
-                try f706_DrawMap(t)
+                try f711_DrawMap(t)
             }
             t.depth -= 1
             return
@@ -448,7 +449,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC MoveTask (BigGuns.HC:160)
-    public final func f709_MoveTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f714_MoveTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -462,7 +463,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                 ln = 166 // BigGuns.HC:166
                 _ = try nat(t, n_Snd, try push1(t, 34))
                 ln = 167 // BigGuns.HC:167
-                try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+                try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
                 ln = 168 // BigGuns.HC:168
                 let t1: Double = d(try nat(t, n_tS, push0(t)))
                 try st8(g_quit_time, bits((t1 + 0.1)))
@@ -484,7 +485,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC Init (BigGuns.HC:175)
-    public final func f710_Init(_ t: HTask) throws {
+    public final func f715_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -576,10 +577,10 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             }
             ln = 207 // BigGuns.HC:207
             try tick(t)
-            let t12: Int64 = try P.f453_ODENew(t, 0, 1.0E-4, 1)
+            let t12: Int64 = try P.f458_ODENew(t, 0, 1.0E-4, 1)
             try st8(g_ode, t12)
             ln = 208 // BigGuns.HC:208
-            try st8((ld8(g_ode) &+ 304), 9223090561878065857)
+            try st8((ld8(g_ode) &+ 304), 9223090561878065862)
             ln = 209 // BigGuns.HC:209
             try st8((ld8(g_ode) &+ 80), bits(0.002))
             ln = 210 // BigGuns.HC:210
@@ -606,7 +607,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             try P.f226_TaskDerivedValsUpdate(t, 0, 1)
             ln = 221 // BigGuns.HC:221
             try tick(t)
-            try f706_DrawMap(t)
+            try f711_DrawMap(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -614,7 +615,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC CleanUp (BigGuns.HC:224)
-    public final func f711_CleanUp(_ t: HTask, _ a0: Int64) throws {
+    public final func f716_CleanUp(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -629,7 +630,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                 try P.f156_QueDel(t, (p0_ode &+ 40), 1)
                 ln = 229 // BigGuns.HC:229
                 try tick(t)
-                try P.f455_ODEDel(t, p0_ode)
+                try P.f460_ODEDel(t, p0_ode)
             }
             t.depth -= 1
             return
@@ -637,7 +638,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC BigGuns (BigGuns.HC:233)
-    public final func f712_BigGuns(_ t: HTask) throws {
+    public final func f717_BigGuns(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -654,7 +655,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 248 // BigGuns.HC:248
             try tick(t)
-            _ = try P.f507_MenuPush(t, s2)
+            _ = try P.f512_MenuPush(t, s2)
             ln = 261 // BigGuns.HC:261
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 262 // BigGuns.HC:262
@@ -671,9 +672,9 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             _ = try nat(t, n_DocScroll, try push1(t, 1))
             ln = 267 // BigGuns.HC:267
             try tick(t)
-            try f710_Init(t)
+            try f715_Init(t)
             ln = 268 // BigGuns.HC:268
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065856)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
             ln = 269 // BigGuns.HC:269
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -703,7 +704,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                                                 try st8(g_gun__, bits(0.0))
                                             } else {
                                                 ln = 280 // BigGuns.HC:280
-                                                _ = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
+                                                _ = try nat(t, n_Spawn, try push(t, 9223090561878065866, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
                                             }
                                         case 75:
                                             ln = 283 // BigGuns.HC:283
@@ -714,7 +715,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                                                 try st8(g_gun__, bits((-d(4614256656552045848))))
                                             } else {
                                                 ln = 287 // BigGuns.HC:287
-                                                _ = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
+                                                _ = try nat(t, n_Spawn, try push(t, 9223090561878065866, 0, s3, (-1), ld8(P.g_Fs), 0, 0))
                                             }
                                         default:
                                             break
@@ -723,13 +724,13 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                                 case 10:
                                     ln = 292 // BigGuns.HC:292
                                     try tick(t)
-                                    try f711_CleanUp(t, ld8(g_ode))
+                                    try f716_CleanUp(t, ld8(g_ode))
                                     ln = 293 // BigGuns.HC:293
                                     try tick(t)
-                                    try f710_Init(t)
+                                    try f715_Init(t)
                                 case 32:
                                     ln = 296 // BigGuns.HC:296
-                                    _ = try nat(t, n_Spawn, try push(t, 9223090561878065859, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
+                                    _ = try nat(t, n_Spawn, try push(t, 9223090561878065864, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
                                 case 27, 28:
                                     ln = 300 // BigGuns.HC:300
                                     break skip_0
@@ -741,7 +742,7 @@ public final class N_Demo_Games_BigGuns: NativeModule {
                         }
                         ln = 302 // BigGuns.HC:302
                         try tick(t)
-                        try f708_ManageShots(t)
+                        try f713_ManageShots(t)
                         ln = 303 // BigGuns.HC:303
                         _ = try nat(t, n_Refresh, try push2(t, 1, 0))
                         try tick(t)
@@ -769,10 +770,10 @@ public final class N_Demo_Games_BigGuns: NativeModule {
             try st8((g_map_dcs &+ 8), 0)
             ln = 311 // BigGuns.HC:311
             try tick(t)
-            try f711_CleanUp(t, ld8(g_ode))
+            try f716_CleanUp(t, ld8(g_ode))
             ln = 312 // BigGuns.HC:312
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -780,13 +781,13 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/BigGuns.HC#1 (BigGuns.HC:20)
-    @discardableResult public final func f713_init_C__Demo_Games_BigGuns_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f718_init_C__Demo_Games_BigGuns_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 315 // BigGuns.HC:315
             try tick(t)
-            try f712_BigGuns(t)
+            try f717_BigGuns(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/BigGuns.HC#1", ln) }
@@ -795,23 +796,23 @@ public final class N_Demo_Games_BigGuns: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_BigGuns_HC_0(t)
-        case 704: try f704_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: try f705_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 706: try f706_DrawMap(t); return 0
-        case 707: try f707_FireTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: try f708_ManageShots(t); return 0
-        case 709: try f709_MoveTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 710: try f710_Init(t); return 0
-        case 711: try f711_CleanUp(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 712: try f712_BigGuns(t); return 0
-        case 713: return try f713_init_C__Demo_Games_BigGuns_HC_1(t)
+        case 708: return try f708_init_C__Demo_Games_BigGuns_HC_0(t)
+        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: try f710_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 711: try f711_DrawMap(t); return 0
+        case 712: try f712_FireTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: try f713_ManageShots(t); return 0
+        case 714: try f714_MoveTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 715: try f715_Init(t); return 0
+        case 716: try f716_CleanUp(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 717: try f717_BigGuns(t); return 0
+        case 718: return try f718_init_C__Demo_Games_BigGuns_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/BigGuns.HC#0", 704: "DrawIt", 705: "MyDerivative", 706: "DrawMap", 707: "FireTask", 708: "ManageShots", 709: "MoveTask", 710: "Init", 711: "CleanUp", 712: "BigGuns", 713: "$init:C:/Demo/Games/BigGuns.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/BigGuns.HC#0", 709: "DrawIt", 710: "MyDerivative", 711: "DrawMap", 712: "FireTask", 713: "ManageShots", 714: "MoveTask", 715: "Init", 716: "CleanUp", 717: "BigGuns", 718: "$init:C:/Demo/Games/BigGuns.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Games/BigGuns.HC"]
     public override var files: [String] { N_Demo_Games_BigGuns.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_BigGuns.DEFINED.contains(index) }

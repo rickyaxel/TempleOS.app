@@ -82,8 +82,10 @@ final class RasterDiffTests: XCTestCase {
         return out
     }
 
-    private func snapshot() -> (Int, [UInt8]) { (m.size, m.readBytes(0, m.size)) }
-    private func restore(_ s: (Int, [UInt8])) { m.writeBytes(0, s.1) }
+    // The arena bytes and the allocator (Arena.allocatorState): natives that MAlloc and Free (Gr3Mesh, Sprite3) must
+    // leave the heap as the original does, and the second run must start from the same heap.
+    private func snapshot() -> (Int, [UInt8], Arena.AllocatorState) { (m.size, m.readBytes(0, m.size), m.allocatorState) }
+    private func restore(_ s: (Int, [UInt8], Arena.AllocatorState)) { m.writeBytes(0, s.1); m.allocatorState = s.2 }
 
     /** The generator's state: the current task's rand_seed, in the arena (restored with it). */
     private func seedNow() -> Int64 { k.current.map { m.ld8($0.fsAddr + k.o.task("rand_seed")) } ?? 0 }
@@ -96,14 +98,20 @@ final class RasterDiffTests: XCTestCase {
             // fast path and the HolyC original would dither differently only because they run at different times (RasterDiffTest.kt)
             if let cur = k.current { _ = try k.seed(cur, 0x5EED + Int64(iter), 0) }
             let snap = snapshot()
-            let r1 = try k.callHolyC(name, a)
-            let after1 = state(), rs1 = seedNow()
+            // a fault is a result too: both versions must fault, at the same address (a fault inside a native that the
+            // HolyC original calls reaches here as an uncaught HolyC exception)
+            func call(_ f: String) throws -> Int64 {
+                do { return try k.callHolyC(f, a) } catch let e as VmFault { return faultCode(e.message) } catch let e as VmUncaught { return faultCode(e.message) }
+            }
+            let r1 = try call(name)
+            let after1 = state(), rs1 = seedNow(), heap1 = m.allocatorState
             restore(snap)
-            let r2 = try k.callHolyC(name + "_HC", a)
-            let after2 = state(), rs2 = seedNow()
+            let r2 = try call(name + "_HC")
+            let after2 = state(), rs2 = seedNow(), heap2 = m.allocatorState
             let same = after1.count == after2.count && after1.withUnsafeBytes { x in
                 after2.withUnsafeBytes { y in memcmp(x.baseAddress!, y.baseAddress!, x.count) == 0 } }
-            if r1 != r2 || rs1 != rs2 || !same {
+            if heap1 != heap2 && fails < 3 { print("\(name) #\(iter): the heap differs after the native and the HolyC") }
+            if r1 != r2 || rs1 != rs2 || !same || heap1 != heap2 {
                 let diffAt = same ? nil : after1.indices.first { $0 >= after2.count || after1[$0] != after2[$0] }
                 if fails < 3 { print("\(name) mismatch #\(iter) args=\(a) ret native=\(r1) hc=\(r2) rng=\(rs1 == rs2) diffAt=\(String(describing: diffAt))") }
                 fails += 1
@@ -111,6 +119,13 @@ final class RasterDiffTests: XCTestCase {
             restore(snap)
         }
         XCTAssertEqual(fails, 0, "\(name) mismatches")
+    }
+
+    private func faultCode(_ message: String) -> Int64 {
+        let msg = message.components(separatedBy: "): ").last ?? message
+        var h: Int64 = 0
+        for b in msg.utf8 { h = h &* 31 &+ Int64(b) }
+        return h | (1 << 62)
     }
 
     private func coord(_ n: Int) -> Int64 { Int64(nextInt(n + 80) - 40) }
@@ -364,5 +379,162 @@ final class RasterDiffTests: XCTestCase {
         print("spriteSize: \(sprites) sprites compared, \(fails) mismatches")
         XCTAssertGreaterThan(sprites, 100, "sprites found")
         XCTAssertEqual(fails, 0)
+    }
+
+    // MARK: GrLine3, GrFillPoly3, Gr3Mesh, Sprite3, Mat4x4Scale (port of RasterDiffTest.kt)
+
+    private var customTransformPtr: Int64 = 0
+    /** HolyC callbacks a program can install: a Varoom-style perspective transform (dc->transform), its divisor kept >= 200 so random points stay near the screen (a far point makes GrLineFat3 walk for minutes on both sides). */
+    private func customTransform() throws -> Int64 {
+        if customTransformPtr != 0 { return customTransformPtr }
+        let src = "U0 DiffTransform(CDC *dc,I64 *x,I64 *y,I64 *z)\n{\n  I64 zz;\n  Mat4x4MulXYZ(dc->r,x,y,z);\n  zz=400+*z;\n" +
+            "  if (zz<200) zz=200;\n  *x=400* *x/zz;\n  *y=400* *y/zz;\n  *x+=dc->x;\n  *y+=dc->y;\n  *z+=dc->z;\n}\n"
+        try k.runProgram("C:/Home/DiffTransform.HC", Array(src.utf8))
+        customTransformPtr = k.prog.funcPtr(k.prog.globals["DiffTransform"] as! FuncSym)
+        // Raster.transform allocates its callback scratch block on first use and keeps it: allocate it now, before
+        // any snapshot, or restoring the heap would hand that block to the HolyC run
+        let dc = try k.callHolyC("DCNew", 8, 8, 0, 0)
+        m.st4(dcField(dc, "flags"), m.ld4(dcField(dc, "flags")) | 0x100); m.st8(dcField(dc, "transform"), customTransformPtr)
+        _ = try k.callHolyC("GrLine3", dc, 0, 0, 0, 1, 1, 0, 1, 0)
+        return customTransformPtr
+    }
+
+    /** Random 3D state: transformation (default or HolyC transform), symmetry, just-mirror, thick, brush. */
+    private func randomize3(_ dc: Int64, _ brushes: [Int64] = []) throws {
+        randomize(dc)
+        let f = dcField(dc, "flags")
+        if nextInt(3) != 0 {
+            m.st4(f, m.ld4(f) | 0x100)
+            let r = m.ld8(dcField(dc, "r"))
+            _ = try k.callHolyC("Mat4x4IdentEqu", r)
+            _ = try k.callHolyC("Mat4x4RotZ", r, Int64(bitPattern: (nextDouble() * 7 - 3.5).bitPattern))
+            if nextBool() { _ = try k.callHolyC("Mat4x4RotX", r, Int64(bitPattern: (nextDouble() * 7 - 3.5).bitPattern)) }
+            if nextBool() { _ = try k.callHolyC("Mat4x4RotY", r, Int64(bitPattern: (nextDouble() * 7 - 3.5).bitPattern)) }
+            _ = try k.callHolyC("Mat4x4Scale", r, Int64(bitPattern: (0.3 + nextDouble() * 2.5).bitPattern))
+            _ = try k.callHolyC("DCMat4x4Set", dc, r)
+            m.st4(dcField(dc, "x"), coord(40)); m.st4(dcField(dc, "y"), coord(40)); m.st4(dcField(dc, "z"), Int64(nextInt(600)))
+            m.st8(dcField(dc, "transform"), nextInt(3) == 0 ? try customTransform() : k.raster.dcTransformPtr)
+        } else { m.st4(f, m.ld4(f) & ~0x100) }
+        if nextInt(3) == 0 {
+            _ = try k.callHolyC("DCSymmetrySet", dc, coord(50), coord(40), coord(50), coord(40))
+            let v = m.ld4(f) | 0x200
+            m.st4(f, nextInt(3) == 0 ? v | 0x400 : v & ~0x400)
+        } else { m.st4(f, m.ld4(f) & ~0x600) }
+        m.st4(dcField(dc, "thick"), nextBool() ? 1 : Int64(nextInt(7) - 1))
+        m.st8(dcField(dc, "brush"), !brushes.isEmpty && nextInt(8) == 0 ? brushes[nextInt(brushes.count)] : 0)
+    }
+
+    func testLine3() throws {
+        let dcs = [try newDc(64, 48, false, true), try newDc(64, 48, false, false), try newDc(640, 480, true, false), try newDc(640, 480, true, true)]
+        let brushes = [try newDc(3, 3, false, false)]
+        _ = try customTransform()
+        try check("GrLine3", 2500) {
+            let dc = dcs[nextInt(dcs.count)]; try randomize3(dc, brushes)
+            let step: Int64 = { switch nextInt(6) { case 0: return 2; case 1: return 3; default: return 1 } }()
+            let start: Int64 = nextInt(5) == 0 ? Int64(nextInt(3)) : 0
+            return [dc, coord(70), coord(60), Int64(nextInt(1200) - 100), coord(70), coord(60), Int64(nextInt(1200) - 100), step, start]
+        }
+    }
+
+    func testFillPoly3() throws {
+        let dcs = [try newDc(64, 48, false, true), try newDc(64, 48, false, false), try newDc(640, 480, true, true)]
+        let poly = try m.calloc(12 * 8)
+        _ = try customTransform()
+        try check("GrFillPoly3", 2000) {
+            let dc = dcs[nextInt(dcs.count)]; try randomize3(dc)
+            let n = Int64(nextInt(8))
+            for i in 0..<8 {
+                m.st4(poly + 12 * i, coord(80)); m.st4(poly + 12 * i + 4, coord(70)); m.st4(poly + 12 * i + 8, Int64(nextInt(1500) - 100))
+            }
+            return [dc, n, Int64(poly)]
+        }
+    }
+
+    func testMesh3() throws {
+        let dcs = [try newDc(64, 48, false, true), try newDc(640, 480, true, true), try newDc(64, 48, false, false)]
+        let pts = try m.calloc(12 * 12), tris = try m.calloc(16 * 16)
+        _ = try customTransform()
+        try check("Gr3Mesh", 1500) {
+            let dc = dcs[nextInt(dcs.count)]; try randomize3(dc)
+            let vc = 3 + nextInt(10), tc = nextInt(16)
+            for i in 0..<vc { m.st4(pts + 12 * i, coord(60)); m.st4(pts + 12 * i + 4, coord(50)); m.st4(pts + 12 * i + 8, coord(80)) }
+            for i in 0..<tc {
+                let c = Int64(nextInt(16)) | (nextInt(4) == 0 ? 0x2000 : 0) | (nextInt(4) == 0 ? 0x1000 : 0)
+                m.st4(tris + 16 * i, c)
+                for j in 0..<3 { m.st4(tris + 16 * i + 4 + 4 * j, Int64(nextInt(vc))) }
+            }
+            return [dc, Int64(vc), Int64(pts), Int64(tc), Int64(tris)]
+        }
+    }
+
+    func testMat4x4Scale() throws {
+        let base = try m.calloc(128)
+        extraAddr = base; extraLen = 128
+        try check("Mat4x4Scale", 2000) {
+            for i in 0..<16 {
+                let v: Int64 = { switch nextInt(3) { case 0: return Int64(bitPattern: next()); case 1: return Int64(bitPattern: next()) >> Int64(nextInt(50)); default: return Int64(nextInt(200) - 100) << 32 } }()
+                m.st8(base + 8 * i, v)
+            }
+            let sc: Double = { switch nextInt(5) { case 0: return Double.nan; case 1: return 1e30; case 2: return -nextDouble() * 4; default: return nextDouble() * 4 } }()
+            return [Int64(base), Int64(bitPattern: sc.bitPattern)]
+        }
+        extraAddr = 0; extraLen = 24
+    }
+
+    /** A synthetic sprite with the element types the bundled sprites rarely use (symmetry, transform on/off, shift, ...). */
+    private func syntheticSprite() -> [UInt8] {
+        var out: [UInt8] = []
+        func i32(_ v: Int) { for b in 0..<4 { out.append(UInt8(truncatingIfNeeded: v >> (8 * b))) } }
+        func c() -> Int { nextInt(60) - 30 }
+        for _ in 0..<(1 + nextInt(10)) {
+            switch nextInt(13) {
+            case 0: out.append(1); out.append(UInt8(nextInt(16)))                                      // COLOR
+            case 1: out.append(2); out.append(UInt8(nextInt(16))); out.append(UInt8(nextInt(16)))      // DITHER_COLOR
+            case 2: out.append(3); i32(nextInt(6))                                                     // THICK
+            case 3: out.append(4); for _ in 0..<4 { i32(c()) }                                         // PLANAR_SYMMETRY
+            case 4: out.append(5)                                                                      // TRANSFORM_ON
+            case 5: out.append(6)                                                                      // TRANSFORM_OFF
+            case 6: out.append(7); i32(c()); i32(c())                                                  // SHIFT
+            case 7, 8: out.append(10); for _ in 0..<4 { i32(c()) }                                     // LINE
+            case 9: let n = nextInt(5); out.append(11); i32(n); for _ in 0..<(2 * n) { i32(c()) }       // POLYLINE
+            case 10: out.append(12); for _ in 0..<4 { i32(c()) }                                       // RECT (original)
+            case 11: out.append(8); i32(c()); i32(c())                                                 // PT (original)
+            default: out.append(14); i32(c()); i32(c()); i32(nextInt(12))                              // CIRCLE (original)
+            }
+        }
+        out.append(0)
+        return out
+    }
+
+    func testSprite3() throws {
+        let dcs = [try newDc(64, 48, false, true), try newDc(640, 480, true, true), try newDc(640, 480, true, false), try newDc(96, 64, false, false)]
+        _ = try customTransform()
+        var sprites: [[UInt8]] = []
+        let root = SHARED.appendingPathComponent("bundled-fs")
+        let files = FileManager.default.enumerator(at: root, includingPropertiesForKeys: nil)!.compactMap { $0 as? URL }
+            .filter { $0.pathExtension == "HC" || $0.pathExtension == "DD" }.sorted { $0.path < $1.path }
+        for url in files {
+            guard let raw = try? [UInt8](Data(contentsOf: url)) else { continue }
+            for (_, bin) in SourceFile.parse(url.lastPathComponent, raw).bins where !bin.isEmpty && bin.count <= 40000 {
+                let a = try m.malloc(Int64(bin.count + 64)); m.fill(a, 0, bin.count + 64); m.writeBytes(a, bin)
+                let ok = (try? k.callHolyC("SpriteSize", Int64(a))) != nil // only real sprites
+                try m.free(Int64(a))
+                if ok { sprites.append(bin) }
+            }
+        }
+        for _ in 0..<150 { sprites.append(syntheticSprite()) }
+        XCTAssertGreaterThan(sprites.count, 300, "sprites found")
+        let buf = try m.malloc(40000 + 64)
+        var i = 0
+        try check("Sprite3", sprites.count * 3) {
+            let bin = sprites[i % sprites.count]; i += 1
+            // all of it: a sprite whose data ends early (one bundled mesh) must read zeros past its end, not the last sprite
+            m.fill(buf, 0, 40000 + 64); m.writeBytes(buf, bin)
+            let dc = dcs[nextInt(dcs.count)]; try randomize3(dc)
+            let f = dcField(dc, "flags")
+            m.st4(f, nextInt(10) == 0 ? m.ld4(f) | 0x800 : m.ld4(f) & ~0x800) // DCF_LOCATE_NEAREST
+            return [dc, coord(80), coord(60), Int64(nextInt(800)), Int64(buf), nextInt(8) == 0 ? 1 : 0]
+        }
+        print("sprite3: \(sprites.count) sprites")
     }
 }

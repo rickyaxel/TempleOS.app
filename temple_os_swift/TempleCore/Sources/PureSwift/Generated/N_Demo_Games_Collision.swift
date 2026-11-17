@@ -49,7 +49,7 @@ public final class N_Demo_Games_Collision: NativeModule {
     }
 
     /// HolyC DrawIt (Collision.HC:15)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -63,7 +63,7 @@ public final class N_Demo_Games_Collision: NativeModule {
             loop0: while (l16_i < 64) {
                 ln = 20 // Collision.HC:20
                 try tick(t)
-                _ = try P.f397_GrCircle(t, p1_dc, ld4s(((g_ball_x &+ (l16_i &* 8)) &+ 4)), ld4s(((g_ball_y &+ (l16_i &* 8)) &+ 4)), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
+                _ = try P.f398_GrCircle(t, p1_dc, ld4s(((g_ball_x &+ (l16_i &* 8)) &+ 4)), ld4s(((g_ball_y &+ (l16_i &* 8)) &+ 4)), 5, 1, 0.0, (2.0 * d(4614256656552045848)))
                 ln = 19 // Collision.HC:19
                 l16_i = (l16_i &+ 1)
                 try tick(t)
@@ -74,7 +74,7 @@ public final class N_Demo_Games_Collision: NativeModule {
     }
 
     /// HolyC AnimateTask (Collision.HC:47)
-    public final func f704_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -239,7 +239,7 @@ public final class N_Demo_Games_Collision: NativeModule {
     }
 
     /// HolyC Init (Collision.HC:131)
-    public final func f705_Init(_ t: HTask) throws {
+    public final func f710_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -269,7 +269,7 @@ public final class N_Demo_Games_Collision: NativeModule {
     }
 
     /// HolyC Collision (Collision.HC:142)
-    public final func f706_Collision(_ t: HTask) throws {
+    public final func f711_Collision(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -278,17 +278,17 @@ public final class N_Demo_Games_Collision: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 145 // Collision.HC:145
             try tick(t)
-            try f705_Init(t)
+            try f710_Init(t)
             ln = 146 // Collision.HC:146
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065856, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 147 // Collision.HC:147
             _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
             ln = 148 // Collision.HC:148
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 149 // Collision.HC:149
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 150 // Collision.HC:150
             _ = try nat(t, n_GetChar, try push3(t, 0, 1, 0))
             ln = 151 // Collision.HC:151
@@ -300,13 +300,13 @@ public final class N_Demo_Games_Collision: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Collision.HC#0 (Collision.HC:154)
-    @discardableResult public final func f707_init_C__Demo_Games_Collision_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Games_Collision_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 154 // Collision.HC:154
             try tick(t)
-            try f706_Collision(t)
+            try f711_Collision(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Collision.HC#0", ln) }
@@ -315,17 +315,17 @@ public final class N_Demo_Games_Collision: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_Init(t); return 0
-        case 706: try f706_Collision(t); return 0
-        case 707: return try f707_init_C__Demo_Games_Collision_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_Init(t); return 0
+        case 711: try f711_Collision(t); return 0
+        case 712: return try f712_init_C__Demo_Games_Collision_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "AnimateTask", 705: "Init", 706: "Collision", 707: "$init:C:/Demo/Games/Collision.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "AnimateTask", 710: "Init", 711: "Collision", 712: "$init:C:/Demo/Games/Collision.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/Collision.HC"]
     public override var files: [String] { N_Demo_Games_Collision.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Collision.DEFINED.contains(index) }

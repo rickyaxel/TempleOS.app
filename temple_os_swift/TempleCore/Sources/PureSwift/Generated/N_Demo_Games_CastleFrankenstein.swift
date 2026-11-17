@@ -17,10 +17,12 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     public let n_DocCursor: Int
     public let n_Free: Int
     public let n_GetKey: Int
+    public let n_GrFillPoly3: Int
     public let n_GrPeek: Int
     public let n_Line: Int
     public let n_MAlloc: Int
     public let n_Mat4x4MulXYZ: Int
+    public let n_Mat4x4Scale: Int
     public let n_MemSet: Int
     public let n_Print: Int
     public let n_RandU64: Int
@@ -74,10 +76,12 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
         n_DocCursor = rt.vm.natives.find("DocCursor")!.index
         n_Free = rt.vm.natives.find("Free")!.index
         n_GetKey = rt.vm.natives.find("GetKey")!.index
+        n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!.index
         n_GrPeek = rt.vm.natives.find("GrPeek")!.index
         n_Line = rt.vm.natives.find("Line")!.index
         n_MAlloc = rt.vm.natives.find("MAlloc")!.index
         n_Mat4x4MulXYZ = rt.vm.natives.find("Mat4x4MulXYZ")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_RandU64 = rt.vm.natives.find("RandU64")!.index
@@ -133,7 +137,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CastleFrankenstein.HC#0 (CastleFrankenstein.HC:3)
-    @discardableResult public final func f703_init_C__Demo_Games_CastleFrankenstein_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_CastleFrankenstein_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -147,7 +151,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CastleFrankenstein.HC#1 (CastleFrankenstein.HC:4)
-    @discardableResult public final func f704_init_C__Demo_Games_CastleFrankenstein_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_CastleFrankenstein_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -161,7 +165,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -171,7 +175,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC CFTransform (CastleFrankenstein.HC:109)
-    public final func f706_CFTransform(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f711_CFTransform(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -207,7 +211,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC LOSPlot (CastleFrankenstein.HC:124)
-    @discardableResult public final func f707_LOSPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f712_LOSPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -233,7 +237,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC LOS (CastleFrankenstein.HC:132)
-    @discardableResult public final func f708_LOS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f713_LOS(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -242,7 +246,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             var p2_x2: Int64 = a2
             var p3_y2: Int64 = a3
             ln = 134 // CastleFrankenstein.HC:134
-            let t0: Int64 = try nat(t, n_Line, try push(t, 0, divs((p0_x1 &* 4), 512), divs((p1_y1 &* 4), 512), 0, divs((p2_x2 &* 4), 512), divs((p3_y2 &* 4), 512), 0, 9223090561878065859, 1, 0))
+            let t0: Int64 = try nat(t, n_Line, try push(t, 0, divs((p0_x1 &* 4), 512), divs((p1_y1 &* 4), 512), 0, divs((p2_x2 &* 4), 512), divs((p3_y2 &* 4), 512), 0, 9223090561878065864, 1, 0))
             let rv2: Int64 = (t0 & 0xFF)
             t.depth -= 1
             return rv2
@@ -252,7 +256,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC DrawIt (CastleFrankenstein.HC:138)
-    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -304,7 +308,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             _ = try nat(t, n_Mat4x4MulXYZ, try push4(t, ld8((p1_dc &+ 200)), (fp &+ 168), (fp &+ 176), (fp &+ 184)))
             ln = 159 // CastleFrankenstein.HC:159
             try tick(t)
-            _ = try P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), ld8((fp &+ 168)), ld8((fp &+ 176)), ld8((fp &+ 184)))
+            _ = try P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), ld8((fp &+ 168)), ld8((fp &+ 176)), ld8((fp &+ 184)))
             ln = 162 // CastleFrankenstein.HC:162
             try tick(t)
             let t0: Int64 = try P.f281_Mat4x4IdentNew(t, p0_task)
@@ -335,7 +339,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             let t1: Int64 = (p1_dc &+ 28)
             try st4(t1, (ld4s(t1) | 256))
             ln = 174 // CastleFrankenstein.HC:174
-            try st8((p1_dc &+ 232), 9223090561878065858)
+            try st8((p1_dc &+ 232), 9223090561878065863)
             ln = 175 // CastleFrankenstein.HC:175
             try st4((p1_dc &+ 216), l192_cx)
             ln = 176 // CastleFrankenstein.HC:176
@@ -352,15 +356,13 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             try tick(t)
             _ = try P.f307_Mat4x4RotZ(t, l32_r1, t3)
             ln = 180 // CastleFrankenstein.HC:180
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, l32_r1, 2.0)
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, l32_r1, bits(2.0)))
             ln = 182 // CastleFrankenstein.HC:182
             try tick(t)
             let t4: Int64 = try P.f281_Mat4x4IdentNew(t, p0_task)
             l40_r2 = t4
             ln = 183 // CastleFrankenstein.HC:183
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, l40_r2, 2.0)
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, l40_r2, bits(2.0)))
             ln = 185 // CastleFrankenstein.HC:185
             try tick(t)
             let t5: Int64 = try P.f281_Mat4x4IdentNew(t, p0_task)
@@ -369,8 +371,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             try tick(t)
             _ = try P.f305_Mat4x4RotX(t, l48_r3, ((-d(4614256656552045848)) / 2.0))
             ln = 187 // CastleFrankenstein.HC:187
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, l48_r3, 2.0)
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, l48_r3, bits(2.0)))
             ln = 189 // CastleFrankenstein.HC:189
             _ = try nat(t, n_Seed, try push2(t, 1, 0))
             ln = 190 // CastleFrankenstein.HC:190
@@ -433,7 +434,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                         var r17: Bool = (t15 != 0)
                         if r17 {
                             try tick(t)
-                            let t16: Int64 = try f708_LOS(t, ((ld8((fp &+ 64)) &* 512) &+ divs(512, 2)), ((ld8((fp &+ 72)) &* 512) &+ divs(512, 2)), ld8(g_man_xx), ld8(g_man_yy))
+                            let t16: Int64 = try f713_LOS(t, ((ld8((fp &+ 64)) &* 512) &+ divs(512, 2)), ((ld8((fp &+ 72)) &* 512) &+ divs(512, 2)), ld8(g_man_xx), ld8(g_man_yy))
                             r17 = (t16 != 0)
                         }
                         ln = 201 // CastleFrankenstein.HC:201
@@ -471,8 +472,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                             ln = 219 // CastleFrankenstein.HC:219
                             try st4((((fp &+ 224) &+ 36) &+ 8), 0)
                             ln = 220 // CastleFrankenstein.HC:220
-                            try tick(t)
-                            _ = try P.f422_GrFillPoly3(t, p1_dc, 4, (fp &+ 224))
+                            _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 4, (fp &+ 224)))
                             ln = 221 // CastleFrankenstein.HC:221
                             if (l128_c == 2) {
                                 ln = 222 // CastleFrankenstein.HC:222
@@ -487,7 +487,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                                 if try (ld8((fp &+ 120)) > 0) {
                                     ln = 227 // CastleFrankenstein.HC:227
                                     try tick(t)
-                                    try P.f442_Sprite3Mat4x4B(t, p1_dc, (l88_x &+ divs(512, 2)), (l96_y &+ divs(512, 2)), 0, b0, l48_r3)
+                                    try P.f447_Sprite3Mat4x4B(t, p1_dc, (l88_x &+ divs(512, 2)), (l96_y &+ divs(512, 2)), 0, b0, l48_r3)
                                 }
                             } else {
                                 ln = 228 // CastleFrankenstein.HC:228
@@ -504,7 +504,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                                     if try (ld8((fp &+ 120)) > 0) {
                                         ln = 234 // CastleFrankenstein.HC:234
                                         try tick(t)
-                                        try P.f442_Sprite3Mat4x4B(t, p1_dc, (l88_x &+ divs(512, 2)), (l96_y &+ divs(512, 2)), 0, b1, l48_r3)
+                                        try P.f447_Sprite3Mat4x4B(t, p1_dc, (l88_x &+ divs(512, 2)), (l96_y &+ divs(512, 2)), 0, b1, l48_r3)
                                     }
                                 }
                             }
@@ -537,8 +537,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                                 ln = 250 // CastleFrankenstein.HC:250
                                 try st4((((fp &+ 224) &+ 36) &+ 8), 512)
                                 ln = 251 // CastleFrankenstein.HC:251
-                                try tick(t)
-                                _ = try P.f422_GrFillPoly3(t, p1_dc, 4, (fp &+ 224))
+                                _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 4, (fp &+ 224)))
                             }
                             ln = 253 // CastleFrankenstein.HC:253
                             if try (ld1u((ld8(g_map) &+ (((ld8((fp &+ 72)) &* ld8(g_map_width)) &+ ld8((fp &+ 64))) &+ 1))) == 0) {
@@ -569,8 +568,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                                 ln = 266 // CastleFrankenstein.HC:266
                                 try st4((((fp &+ 224) &+ 36) &+ 8), 512)
                                 ln = 267 // CastleFrankenstein.HC:267
-                                try tick(t)
-                                _ = try P.f422_GrFillPoly3(t, p1_dc, 4, (fp &+ 224))
+                                _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 4, (fp &+ 224)))
                             }
                             ln = 269 // CastleFrankenstein.HC:269
                             if try (ld1u((ld8(g_map) &+ (((ld8((fp &+ 72)) &- 1) &* ld8(g_map_width)) &+ ld8((fp &+ 64))))) == 0) {
@@ -601,8 +599,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                                 ln = 282 // CastleFrankenstein.HC:282
                                 try st4((((fp &+ 224) &+ 36) &+ 8), 512)
                                 ln = 283 // CastleFrankenstein.HC:283
-                                try tick(t)
-                                _ = try P.f422_GrFillPoly3(t, p1_dc, 4, (fp &+ 224))
+                                _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 4, (fp &+ 224)))
                             }
                             ln = 285 // CastleFrankenstein.HC:285
                             if try (ld1u((ld8(g_map) &+ (((ld8((fp &+ 72)) &* ld8(g_map_width)) &+ ld8((fp &+ 64))) &- 1))) == 0) {
@@ -633,8 +630,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                                 ln = 298 // CastleFrankenstein.HC:298
                                 try st4((((fp &+ 224) &+ 36) &+ 8), 512)
                                 ln = 299 // CastleFrankenstein.HC:299
-                                try tick(t)
-                                _ = try P.f422_GrFillPoly3(t, p1_dc, 4, (fp &+ 224))
+                                _ = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, 4, (fp &+ 224)))
                             }
                         }
                     }
@@ -664,7 +660,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                 l96_y = try ld8((l272_tmpm &+ 8))
                 ln = 314 // CastleFrankenstein.HC:314
                 try tick(t)
-                let t18: Int64 = try f708_LOS(t, l88_x, l96_y, ld8(g_man_xx), ld8(g_man_yy))
+                let t18: Int64 = try f713_LOS(t, l88_x, l96_y, ld8(g_man_xx), ld8(g_man_yy))
                 if (t18 != 0) {
                     ln = 315 // CastleFrankenstein.HC:315
                     l88_x = try (l88_x &- ld8(g_man_xx))
@@ -684,20 +680,20 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                         if try (ld1u((l272_tmpm &+ 16)) != 0) {
                             ln = 323 // CastleFrankenstein.HC:323
                             try tick(t)
-                            try P.f442_Sprite3Mat4x4B(t, p1_dc, l88_x, l96_y, 0, b2, l40_r2)
+                            try P.f447_Sprite3Mat4x4B(t, p1_dc, l88_x, l96_y, 0, b2, l40_r2)
                         } else {
                             ln = 325 // CastleFrankenstein.HC:325
                             let t19: Double = d(try nat(t, n_tS, push0(t)))
                             try tick(t)
-                            let t20: Double = try P.f484_Tri(t, t19, 1.0)
+                            let t20: Double = try P.f489_Tri(t, t19, 1.0)
                             l216_tt = t20
                             ln = 326 // CastleFrankenstein.HC:326
                             try tick(t)
-                            let t21: Int64 = try P.f448_SpriteInterpolate(t, l216_tt, b4, b3)
+                            let t21: Int64 = try P.f453_SpriteInterpolate(t, l216_tt, b4, b3)
                             l208_tmps = t21
                             ln = 327 // CastleFrankenstein.HC:327
                             try tick(t)
-                            try P.f442_Sprite3Mat4x4B(t, p1_dc, l88_x, l96_y, 0, l208_tmps, l32_r1)
+                            try P.f447_Sprite3Mat4x4B(t, p1_dc, l88_x, l96_y, 0, l208_tmps, l32_r1)
                             ln = 328 // CastleFrankenstein.HC:328
                             _ = try nat(t, n_Free, try push1(t, l208_tmps))
                         }
@@ -741,7 +737,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                     try st4((p1_dc &+ 160), ld1u((ld8(g_map) &+ ((((ld8(g_map_height) &- 1) &- l16_i) &* ld8(g_map_width)) &+ l24_j))))
                     ln = 348 // CastleFrankenstein.HC:348
                     try tick(t)
-                    _ = try P.f393_GrPlot3(t, p1_dc, (2 &* l24_j), (2 &* l16_i), 0)
+                    _ = try P.f394_GrPlot3(t, p1_dc, (2 &* l24_j), (2 &* l16_i), 0)
                     ln = 346 // CastleFrankenstein.HC:346
                     l24_j = (l24_j &+ 1)
                     try tick(t)
@@ -760,7 +756,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                 if try (ld1u((l272_tmpm &+ 16)) == 0) {
                     ln = 355 // CastleFrankenstein.HC:355
                     try tick(t)
-                    _ = try P.f393_GrPlot3(t, p1_dc, (2 &* divs(ld8(l272_tmpm), 512)), (2 &* ((ld8(g_map_height) &- 1) &- divs(ld8((l272_tmpm &+ 8)), 512))), 0)
+                    _ = try P.f394_GrPlot3(t, p1_dc, (2 &* divs(ld8(l272_tmpm), 512)), (2 &* ((ld8(g_map_height) &- 1) &- divs(ld8((l272_tmpm &+ 8)), 512))), 0)
                 }
                 ln = 353 // CastleFrankenstein.HC:353
                 l16_i = (l16_i &+ 1)
@@ -771,7 +767,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             try st4((p1_dc &+ 160), 11)
             ln = 358 // CastleFrankenstein.HC:358
             try tick(t)
-            _ = try P.f393_GrPlot3(t, p1_dc, (2 &* divs(ld8(g_man_xx), 512)), (2 &* ((ld8(g_map_height) &- 1) &- divs(ld8(g_man_yy), 512))), 0)
+            _ = try P.f394_GrPlot3(t, p1_dc, (2 &* divs(ld8(g_man_xx), 512)), (2 &* ((ld8(g_map_height) &- 1) &- divs(ld8(g_man_yy), 512))), 0)
             ln = 360 // CastleFrankenstein.HC:360
             if try (ldf(g_tf) != 0.0) {
                 ln = 361 // CastleFrankenstein.HC:361
@@ -783,7 +779,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                     ln = 363 // CastleFrankenstein.HC:363
                     try tick(t)
                     let vb3 = push0(t)
-                    _ = try P.f369_GrPrint(t, p1_dc, (l192_cx &- divs(112, 2)), (l200_cy &- divs(8, 2)), s2, vb3, 0)
+                    _ = try P.f370_GrPrint(t, p1_dc, (l192_cx &- divs(112, 2)), (l200_cy &- divs(8, 2)), s2, vb3, 0)
                     t.sp = vb3
                 }
                 ln = 364 // CastleFrankenstein.HC:364
@@ -793,10 +789,10 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                 try st4((p1_dc &+ 160), 10)
                 ln = 367 // CastleFrankenstein.HC:367
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, (l192_cx &- 5), l200_cy, (l192_cx &+ 5), l200_cy, 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, (l192_cx &- 5), l200_cy, (l192_cx &+ 5), l200_cy, 1, 0)
                 ln = 368 // CastleFrankenstein.HC:368
                 try tick(t)
-                _ = try P.f396_GrLine(t, p1_dc, l192_cx, (l200_cy &- 5), l192_cx, (l200_cy &+ 5), 1, 0)
+                _ = try P.f397_GrLine(t, p1_dc, l192_cx, (l200_cy &- 5), l192_cx, (l200_cy &+ 5), 1, 0)
                 ln = 369 // CastleFrankenstein.HC:369
                 let t24: Double = d(try nat(t, n_tS, push0(t)))
                 l216_tt = t24
@@ -804,7 +800,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             ln = 371 // CastleFrankenstein.HC:371
             try tick(t)
             let vb4 = try push3(t, ld8(g_monsters_left), bits((l216_tt - ldf(g_t0))), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s3, vb4, 3)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s3, vb4, 3)
             t.sp = vb4
             ln = 373 // CastleFrankenstein.HC:373
             _ = try nat(t, n_Free, try push1(t, l56_s2w))
@@ -817,7 +813,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC Fire (CastleFrankenstein.HC:377)
-    public final func f710_Fire(_ t: HTask) throws {
+    public final func f715_Fire(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -837,7 +833,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             l56_yy = t1
             ln = 383 // CastleFrankenstein.HC:383
             try tick(t)
-            _ = try P.f499_Noise(t, 100, 53.0, 74.0)
+            _ = try P.f504_Noise(t, 100, 53.0, 74.0)
             ln = 384 // CastleFrankenstein.HC:384
             l0_i = 0
             l64_tmpm = g_monsters
@@ -850,7 +846,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                 var r3: Bool = try (ld1u((l64_tmpm &+ 16)) == 0)
                 if r3 {
                     try tick(t)
-                    let t2: Int64 = try f708_LOS(t, l8_x, l16_y, ld8(g_man_xx), ld8(g_man_yy))
+                    let t2: Int64 = try f713_LOS(t, l8_x, l16_y, ld8(g_man_xx), ld8(g_man_yy))
                     r3 = (t2 != 0)
                 }
                 ln = 387 // CastleFrankenstein.HC:387
@@ -899,7 +895,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC Init (CastleFrankenstein.HC:407)
-    public final func f711_Init(_ t: HTask) throws {
+    public final func f716_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -914,7 +910,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             _ = try nat(t, n_Print, try push3(t, s4, divs(60, 2), 10))
             ln = 416 // CastleFrankenstein.HC:416
             try tick(t)
-            let t0: Int64 = try P.f447_Sprite2DC(t, b5)
+            let t0: Int64 = try P.f452_Sprite2DC(t, b5)
             l24_dc = t0
             ln = 417 // CastleFrankenstein.HC:417
             try st8(g_map_width, (divs(ld4s((l24_dc &+ 16)), 4) &+ 2))
@@ -992,7 +988,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC AnimateTask (CastleFrankenstein.HC:443)
-    public final func f712_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f717_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1099,7 +1095,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC CleanUp (CastleFrankenstein.HC:479)
-    public final func f713_CleanUp(_ t: HTask) throws {
+    public final func f718_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1117,27 +1113,27 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC SongTask (CastleFrankenstein.HC:487)
-    public final func f714_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f719_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 489 // CastleFrankenstein.HC:489
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 490 // CastleFrankenstein.HC:490
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 491 // CastleFrankenstein.HC:491
             loop0: while (1 != 0) {
                 ln = 492 // CastleFrankenstein.HC:492
                 try tick(t)
-                try P.f494_Play(t, s5, 0)
+                try P.f499_Play(t, s5, 0)
                 ln = 493 // CastleFrankenstein.HC:493
                 try tick(t)
-                try P.f494_Play(t, s6, 0)
+                try P.f499_Play(t, s6, 0)
                 ln = 494 // CastleFrankenstein.HC:494
                 try tick(t)
-                try P.f494_Play(t, s7, 0)
+                try P.f499_Play(t, s7, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -1146,7 +1142,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC MoveMan (CastleFrankenstein.HC:498)
-    public final func f715_MoveMan(_ t: HTask, _ a0: Double) throws {
+    public final func f720_MoveMan(_ t: HTask, _ a0: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1198,7 +1194,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC RotateMan (CastleFrankenstein.HC:517)
-    public final func f716_RotateMan(_ t: HTask, _ a0: Double) throws {
+    public final func f721_RotateMan(_ t: HTask, _ a0: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1221,7 +1217,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC CastleFrankenstein (CastleFrankenstein.HC:526)
-    public final func f717_CastleFrankenstein(_ t: HTask) throws {
+    public final func f722_CastleFrankenstein(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1229,7 +1225,7 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             let fp = try frame(t, 24)
             ln = 529 // CastleFrankenstein.HC:529
             try tick(t)
-            _ = try P.f507_MenuPush(t, s8)
+            _ = try P.f512_MenuPush(t, s8)
             ln = 544 // CastleFrankenstein.HC:544
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
@@ -1247,17 +1243,17 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             _ = try nat(t, n_DocCursor, try push2(t, 0, 0))
             ln = 550 // CastleFrankenstein.HC:550
             try tick(t)
-            try f711_Init(t)
+            try f716_Init(t)
             ln = 551 // CastleFrankenstein.HC:551
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065864, 0, s9, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065869, 0, s9, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 552 // CastleFrankenstein.HC:552
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065866, 0, s10, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065871, 0, s10, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 553 // CastleFrankenstein.HC:553
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065866)
             ln = 555 // CastleFrankenstein.HC:555
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -1272,11 +1268,11 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                             case 32:
                                 ln = 559 // CastleFrankenstein.HC:559
                                 try tick(t)
-                                try f710_Fire(t)
+                                try f715_Fire(t)
                             case 10:
                                 ln = 562 // CastleFrankenstein.HC:562
                                 try tick(t)
-                                try f711_Init(t)
+                                try f716_Init(t)
                             case 27, 28:
                                 ln = 566 // CastleFrankenstein.HC:566
                                 break skip_0
@@ -1287,18 +1283,18 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
                                     switch t5 {
                                     case 77:
                                         ln = 570 // CastleFrankenstein.HC:570
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065868, bits((d(4614256656552045848) / 32.0)), 0, (-1), 0, 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065873, bits((d(4614256656552045848) / 32.0)), 0, (-1), 0, 0, 0))
                                     case 75:
                                         ln = 573 // CastleFrankenstein.HC:573
-                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065868, bits(((-d(4614256656552045848)) / 32.0)), 0, (-1), 0, 0, 0))
+                                        _ = try nat(t, n_Spawn, try push(t, 9223090561878065873, bits(((-d(4614256656552045848)) / 32.0)), 0, (-1), 0, 0, 0))
                                     case 72:
                                         ln = 576 // CastleFrankenstein.HC:576
                                         try tick(t)
-                                        try f715_MoveMan(t, ldf(g_man__))
+                                        try f720_MoveMan(t, ldf(g_man__))
                                     case 80:
                                         ln = 579 // CastleFrankenstein.HC:579
                                         try tick(t)
-                                        try f715_MoveMan(t, (ldf(g_man__) + d(4614256656552045848)))
+                                        try f720_MoveMan(t, (ldf(g_man__) + d(4614256656552045848)))
                                     default:
                                         break
                                     }
@@ -1326,10 +1322,10 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 590 // CastleFrankenstein.HC:590
             try tick(t)
-            try f713_CleanUp(t)
+            try f718_CleanUp(t)
             ln = 591 // CastleFrankenstein.HC:591
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 592 // CastleFrankenstein.HC:592
             _ = try nat(t, n_RegWrite, try push3(t, s1, s11, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1339,13 +1335,13 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CastleFrankenstein.HC#2 (CastleFrankenstein.HC:93)
-    @discardableResult public final func f718_init_C__Demo_Games_CastleFrankenstein_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f723_init_C__Demo_Games_CastleFrankenstein_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 596 // CastleFrankenstein.HC:596
             try tick(t)
-            try f717_CastleFrankenstein(t)
+            try f722_CastleFrankenstein(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/CastleFrankenstein.HC#2", ln) }
@@ -1354,28 +1350,28 @@ public final class N_Demo_Games_CastleFrankenstein: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_CastleFrankenstein_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_CastleFrankenstein_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: try f706_CFTransform(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 707: return try f707_LOSPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 708: return try f708_LOS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: try f710_Fire(t); return 0
-        case 711: try f711_Init(t); return 0
-        case 712: try f712_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 713: try f713_CleanUp(t); return 0
-        case 714: try f714_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 715: try f715_MoveMan(t, d((n > 0 ? st[base + 0] : 0))); return 0
-        case 716: try f716_RotateMan(t, d((n > 0 ? st[base + 0] : 0))); return 0
-        case 717: try f717_CastleFrankenstein(t); return 0
-        case 718: return try f718_init_C__Demo_Games_CastleFrankenstein_HC_2(t)
+        case 708: return try f708_init_C__Demo_Games_CastleFrankenstein_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_CastleFrankenstein_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: try f711_CFTransform(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 712: return try f712_LOSPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 713: return try f713_LOS(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 714: try f714_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: try f715_Fire(t); return 0
+        case 716: try f716_Init(t); return 0
+        case 717: try f717_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 718: try f718_CleanUp(t); return 0
+        case 719: try f719_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 720: try f720_MoveMan(t, d((n > 0 ? st[base + 0] : 0))); return 0
+        case 721: try f721_RotateMan(t, d((n > 0 ? st[base + 0] : 0))); return 0
+        case 722: try f722_CastleFrankenstein(t); return 0
+        case 723: return try f723_init_C__Demo_Games_CastleFrankenstein_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/CastleFrankenstein.HC#0", 704: "$init:C:/Demo/Games/CastleFrankenstein.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "CFTransform", 707: "LOSPlot", 708: "LOS", 709: "DrawIt", 710: "Fire", 711: "Init", 712: "AnimateTask", 713: "CleanUp", 714: "SongTask", 715: "MoveMan", 716: "RotateMan", 717: "CastleFrankenstein", 718: "$init:C:/Demo/Games/CastleFrankenstein.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/CastleFrankenstein.HC#0", 709: "$init:C:/Demo/Games/CastleFrankenstein.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "CFTransform", 712: "LOSPlot", 713: "LOS", 714: "DrawIt", 715: "Fire", 716: "Init", 717: "AnimateTask", 718: "CleanUp", 719: "SongTask", 720: "MoveMan", 721: "RotateMan", 722: "CastleFrankenstein", 723: "$init:C:/Demo/Games/CastleFrankenstein.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Games/CastleFrankenstein.HC"]
     public override var files: [String] { N_Demo_Games_CastleFrankenstein.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_CastleFrankenstein.DEFINED.contains(index) }

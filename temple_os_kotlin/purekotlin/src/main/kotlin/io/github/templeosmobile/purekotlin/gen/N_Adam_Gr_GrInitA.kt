@@ -29,7 +29,7 @@ class N_Adam_Gr_GrInitA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC GrInit1 (GrInitA.HC:3) */
-    fun f703_GrInit1(t: Task) {
+    fun f708_GrInit1(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -43,13 +43,13 @@ class N_Adam_Gr_GrInitA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Adam/Gr/GrInitA.HC#0 (GrInitA.HC:21) */
-    fun f704_init_C__Adam_Gr_GrInitA_HC_0(t: Task): Long {
+    fun f709_init_C__Adam_Gr_GrInitA_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 21 // GrInitA.HC:21
             tick(t)
-            f703_GrInit1(t)
+            f708_GrInit1(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Adam/Gr/GrInitA.HC#0", ln) }
@@ -58,8 +58,8 @@ class N_Adam_Gr_GrInitA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_GrInit1(t); 0L }
-            704 -> f704_init_C__Adam_Gr_GrInitA_HC_0(t)
+            708 -> { f708_GrInit1(t); 0L }
+            709 -> f709_init_C__Adam_Gr_GrInitA_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -71,7 +71,7 @@ class N_Adam_Gr_GrInitA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("GrInit1", "\$init:C:/Adam/Gr/GrInitA.HC#0")
         private val FILES = arrayOf<String>("C:/Adam/Gr/GrInitA.HC")
     }

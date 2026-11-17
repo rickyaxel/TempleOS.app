@@ -12,7 +12,9 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     public let n_BFieldExtU32: Int
     public let n_CAlloc: Int
     public let n_Free: Int
+    public let n_Gr3Mesh: Int
     public let n_GrBlot3: Int
+    public let n_GrLine3: Int
     public let n_MAlloc: Int
     public let n_MStrPrint: Int
     public let n_Mat4x4MulMat4x4Equ: Int
@@ -29,7 +31,9 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
         n_BFieldExtU32 = rt.vm.natives.find("BFieldExtU32")!.index
         n_CAlloc = rt.vm.natives.find("CAlloc")!.index
         n_Free = rt.vm.natives.find("Free")!.index
+        n_Gr3Mesh = rt.vm.natives.find("Gr3Mesh")!.index
         n_GrBlot3 = rt.vm.natives.find("GrBlot3")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_MAlloc = rt.vm.natives.find("MAlloc")!.index
         n_MStrPrint = rt.vm.natives.find("MStrPrint")!.index
         n_Mat4x4MulMat4x4Equ = rt.vm.natives.find("Mat4x4MulMat4x4Equ")!.index
@@ -51,7 +55,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC Sprite3 (GrSpritePlot.HC:18)
-    public final func f703_Sprite3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws {
+    public final func f708_Sprite3(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -238,7 +242,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                                                                                                     try st4((p0_dc &+ 228), ld4s(((l48_tmpg &+ 16) &+ 1)))
                                                                                                                                     ln = 44 // GrSpritePlot.HC:44
                                                                                                                                     try tick(t)
-                                                                                                                                    try P.f309_DCThickScale(t, p0_dc)
+                                                                                                                                    try P.f310_DCThickScale(t, p0_dc)
                                                                                                                                     ln = 45 // GrSpritePlot.HC:45
                                                                                                                                     break switch2_140
                                                                                                                                 }
@@ -274,33 +278,33 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                                                                                         }
                                                                                                                         ln = 63 // GrSpritePlot.HC:63
                                                                                                                         try tick(t)
-                                                                                                                        _ = try P.f393_GrPlot3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z)
+                                                                                                                        _ = try P.f394_GrPlot3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z)
                                                                                                                         ln = 64 // GrSpritePlot.HC:64
                                                                                                                         break switch2_140
                                                                                                                     }
                                                                                                                     ln = 66 // GrSpritePlot.HC:66
                                                                                                                     try tick(t)
                                                                                                                     let vb0 = try push1(t, ((l48_tmpg &+ 16) &+ 9))
-                                                                                                                    _ = try P.f408_GrPrint3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, s0, vb0, 1)
+                                                                                                                    _ = try P.f410_GrPrint3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, s0, vb0, 1)
                                                                                                                     t.sp = vb0
                                                                                                                     ln = 67 // GrSpritePlot.HC:67
                                                                                                                     break switch2_140
                                                                                                                 }
                                                                                                                 ln = 69 // GrSpritePlot.HC:69
                                                                                                                 try tick(t)
-                                                                                                                _ = try P.f427_GrTextBox3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ((l48_tmpg &+ 16) &+ 9), 2)
+                                                                                                                _ = try P.f430_GrTextBox3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ((l48_tmpg &+ 16) &+ 9), 2)
                                                                                                                 ln = 70 // GrSpritePlot.HC:70
                                                                                                                 break switch2_140
                                                                                                             }
                                                                                                             ln = 72 // GrSpritePlot.HC:72
                                                                                                             try tick(t)
-                                                                                                            _ = try P.f428_GrTextDiamond3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ((l48_tmpg &+ 16) &+ 9), 2)
+                                                                                                            _ = try P.f431_GrTextDiamond3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ((l48_tmpg &+ 16) &+ 9), 2)
                                                                                                             ln = 73 // GrSpritePlot.HC:73
                                                                                                             break switch2_140
                                                                                                         }
                                                                                                         ln = 75 // GrSpritePlot.HC:75
                                                                                                         try tick(t)
-                                                                                                        _ = try P.f413_GrFloodFill3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, 0)
+                                                                                                        _ = try P.f415_GrFloodFill3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, 0)
                                                                                                         ln = 76 // GrSpritePlot.HC:76
                                                                                                         break switch2_140
                                                                                                     }
@@ -310,7 +314,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                                                                     try st4((p0_dc &+ 160), ld2u((p0_dc &+ 160)))
                                                                                                     ln = 80 // GrSpritePlot.HC:80
                                                                                                     try tick(t)
-                                                                                                    _ = try P.f413_GrFloodFill3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, 1)
+                                                                                                    _ = try P.f415_GrFloodFill3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, 1)
                                                                                                     ln = 81 // GrSpritePlot.HC:81
                                                                                                     try st4((p0_dc &+ 160), l56_i)
                                                                                                     ln = 82 // GrSpritePlot.HC:82
@@ -324,20 +328,19 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                                                                 break switch2_140
                                                                                             }
                                                                                             ln = 88 // GrSpritePlot.HC:88
-                                                                                            try tick(t)
-                                                                                            _ = try P.f406_GrLine3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 13)) &+ p2_y), p3_z, 1, 0)
+                                                                                            _ = try nat(t, n_GrLine3, try push(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 13)) &+ p2_y), p3_z, 1, 0))
                                                                                             ln = 90 // GrSpritePlot.HC:90
                                                                                             break switch2_140
                                                                                         }
                                                                                         ln = 92 // GrSpritePlot.HC:92
                                                                                         try tick(t)
-                                                                                        _ = try P.f426_GrArrow3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 13)) &+ p2_y), p3_z, 2.75, 1, 0)
+                                                                                        _ = try P.f429_GrArrow3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 13)) &+ p2_y), p3_z, 2.75, 1, 0)
                                                                                         ln = 94 // GrSpritePlot.HC:94
                                                                                         break switch2_140
                                                                                     }
                                                                                     ln = 96 // GrSpritePlot.HC:96
                                                                                     try tick(t)
-                                                                                    let t3: Int64 = try P.f315_DCSymmetry3Set(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 13)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 13)) &+ p2_y), (p3_z &+ 1))
+                                                                                    let t3: Int64 = try P.f316_DCSymmetry3Set(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 13)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 13)) &+ p2_y), (p3_z &+ 1))
                                                                                     if (t3 != 0) {
                                                                                         ln = 99 // GrSpritePlot.HC:99
                                                                                         let t4: Int64 = (p0_dc &+ 28)
@@ -372,7 +375,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                                             }
                                                                             ln = 114 // GrSpritePlot.HC:114
                                                                             try tick(t)
-                                                                            _ = try P.f424_GrRect3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &- ld4s(((l48_tmpg &+ 16) &+ 1))), (ld4s(((l48_tmpg &+ 16) &+ 13)) &- ld4s(((l48_tmpg &+ 16) &+ 5))))
+                                                                            _ = try P.f427_GrRect3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, (ld4s(((l48_tmpg &+ 16) &+ 9)) &- ld4s(((l48_tmpg &+ 16) &+ 1))), (ld4s(((l48_tmpg &+ 16) &+ 13)) &- ld4s(((l48_tmpg &+ 16) &+ 5))))
                                                                             ln = 116 // GrSpritePlot.HC:116
                                                                             break switch2_140
                                                                         }
@@ -398,7 +401,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                                         _ = try P.f307_Mat4x4RotZ(t, l128_r2, (-ldf(((l48_tmpg &+ 16) &+ 17))))
                                                                         ln = 126 // GrSpritePlot.HC:126
                                                                         try tick(t)
-                                                                        _ = try P.f310_Mat4x4TranslationEqu(t, l128_r2, ld8((fp &+ 80)), ld8((fp &+ 88)), ld8((fp &+ 96)))
+                                                                        _ = try P.f311_Mat4x4TranslationEqu(t, l128_r2, ld8((fp &+ 80)), ld8((fp &+ 88)), ld8((fp &+ 96)))
                                                                         ln = 127 // GrSpritePlot.HC:127
                                                                         try tick(t)
                                                                         let t9: Int64 = try P.f301_Mat4x4MulMat4x4New(t, l120_old_r, l128_r2, 0)
@@ -406,7 +409,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                                         try P.f283_DCMat4x4Set(t, p0_dc, t9)
                                                                         ln = 128 // GrSpritePlot.HC:128
                                                                         try tick(t)
-                                                                        _ = try P.f424_GrRect3(t, p0_dc, 0, 0, 0, (ld4s(((l48_tmpg &+ 16) &+ 9)) &- ld4s(((l48_tmpg &+ 16) &+ 1))), (ld4s(((l48_tmpg &+ 16) &+ 13)) &- ld4s(((l48_tmpg &+ 16) &+ 5))))
+                                                                        _ = try P.f427_GrRect3(t, p0_dc, 0, 0, 0, (ld4s(((l48_tmpg &+ 16) &+ 9)) &- ld4s(((l48_tmpg &+ 16) &+ 1))), (ld4s(((l48_tmpg &+ 16) &+ 13)) &- ld4s(((l48_tmpg &+ 16) &+ 5))))
                                                                         ln = 130 // GrSpritePlot.HC:130
                                                                         _ = try nat(t, n_Free, try push1(t, ld8((p0_dc &+ 200))))
                                                                         ln = 131 // GrSpritePlot.HC:131
@@ -421,19 +424,19 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                                     }
                                                                     ln = 136 // GrSpritePlot.HC:136
                                                                     try tick(t)
-                                                                    _ = try P.f411_GrCircle3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ld4s(((l48_tmpg &+ 16) &+ 9)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                                                                    _ = try P.f413_GrCircle3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ld4s(((l48_tmpg &+ 16) &+ 9)), 1, 0.0, (2.0 * d(4614256656552045848)))
                                                                     ln = 137 // GrSpritePlot.HC:137
                                                                     break switch2_140
                                                                 }
                                                                 ln = 139 // GrSpritePlot.HC:139
                                                                 try tick(t)
-                                                                _ = try P.f410_GrEllipse3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ld4s(((l48_tmpg &+ 16) &+ 9)), ld4s(((l48_tmpg &+ 16) &+ 13)), ldf(((l48_tmpg &+ 16) &+ 17)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                                                                _ = try P.f412_GrEllipse3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ld4s(((l48_tmpg &+ 16) &+ 9)), ld4s(((l48_tmpg &+ 16) &+ 13)), ldf(((l48_tmpg &+ 16) &+ 17)), 1, 0.0, (2.0 * d(4614256656552045848)))
                                                                 ln = 141 // GrSpritePlot.HC:141
                                                                 break switch2_140
                                                             }
                                                             ln = 143 // GrSpritePlot.HC:143
                                                             try tick(t)
-                                                            _ = try P.f412_GrRegPoly3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ld4s(((l48_tmpg &+ 16) &+ 9)), ld4s(((l48_tmpg &+ 16) &+ 13)), ld4s(((l48_tmpg &+ 16) &+ 25)), ldf(((l48_tmpg &+ 16) &+ 17)), 1, 0.0, (2.0 * d(4614256656552045848)))
+                                                            _ = try P.f414_GrRegPoly3(t, p0_dc, (ld4s(((l48_tmpg &+ 16) &+ 1)) &+ p1_x), (ld4s(((l48_tmpg &+ 16) &+ 5)) &+ p2_y), p3_z, ld4s(((l48_tmpg &+ 16) &+ 9)), ld4s(((l48_tmpg &+ 16) &+ 13)), ld4s(((l48_tmpg &+ 16) &+ 25)), ldf(((l48_tmpg &+ 16) &+ 17)), 1, 0.0, (2.0 * d(4614256656552045848)))
                                                             ln = 145 // GrSpritePlot.HC:145
                                                             break switch2_140
                                                         }
@@ -451,8 +454,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                             ln = 152 // GrSpritePlot.HC:152
                                                             l112_y2 = try ld4s((l152_ptr &+ (((l56_i &<< 1) &+ 1) &* 4)))
                                                             ln = 153 // GrSpritePlot.HC:153
-                                                            try tick(t)
-                                                            _ = try P.f406_GrLine3(t, p0_dc, (ld8((fp &+ 80)) &+ p1_x), (ld8((fp &+ 88)) &+ p2_y), p3_z, (l104_x2 &+ p1_x), (l112_y2 &+ p2_y), p3_z, 1, 0)
+                                                            _ = try nat(t, n_GrLine3, try push(t, p0_dc, (ld8((fp &+ 80)) &+ p1_x), (ld8((fp &+ 88)) &+ p2_y), p3_z, (l104_x2 &+ p1_x), (l112_y2 &+ p2_y), p3_z, 1, 0))
                                                             ln = 154 // GrSpritePlot.HC:154
                                                             try st8((fp &+ 80), l104_x2)
                                                             try st8((fp &+ 88), l112_y2)
@@ -473,7 +475,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                     l72_k = try (ld4s(((l48_tmpg &+ 16) &+ 1)) &* 3)
                                                     ln = 162 // GrSpritePlot.HC:162
                                                     try tick(t)
-                                                    _ = try P.f393_GrPlot3(t, p0_dc, (ld8((fp &+ 80)) &+ p1_x), (ld8((fp &+ 88)) &+ p2_y), p3_z)
+                                                    _ = try P.f394_GrPlot3(t, p0_dc, (ld8((fp &+ 80)) &+ p1_x), (ld8((fp &+ 88)) &+ p2_y), p3_z)
                                                     ln = 163 // GrSpritePlot.HC:163
                                                     l56_i = 0
                                                     loop5: while (l56_i < l72_k) {
@@ -486,7 +488,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                                         try st8((fp &+ 88), (ld8((fp &+ 88)) &+ ld8((P.g_gr_y_offsets &+ (l64_j &* 8)))))
                                                         ln = 167 // GrSpritePlot.HC:167
                                                         try tick(t)
-                                                        _ = try P.f393_GrPlot3(t, p0_dc, (ld8((fp &+ 80)) &+ p1_x), (ld8((fp &+ 88)) &+ p2_y), p3_z)
+                                                        _ = try P.f394_GrPlot3(t, p0_dc, (ld8((fp &+ 80)) &+ p1_x), (ld8((fp &+ 88)) &+ p2_y), p3_z)
                                                         ln = 163 // GrSpritePlot.HC:163
                                                         l56_i = (l56_i &+ 3)
                                                         try tick(t)
@@ -532,25 +534,25 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                                             }
                                             ln = 179 // GrSpritePlot.HC:179
                                             try tick(t)
-                                            _ = try P.f418_Gr2BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg &+ 16) &+ 1)), 0)
+                                            _ = try P.f420_Gr2BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg &+ 16) &+ 1)), 0)
                                             ln = 180 // GrSpritePlot.HC:180
                                             break switch2_121
                                         }
                                         ln = 182 // GrSpritePlot.HC:182
                                         try tick(t)
-                                        _ = try P.f419_Gr3BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg &+ 16) &+ 1)), 0)
+                                        _ = try P.f421_Gr3BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg &+ 16) &+ 1)), 0)
                                         ln = 183 // GrSpritePlot.HC:183
                                         break switch2_121
                                     }
                                     ln = 185 // GrSpritePlot.HC:185
                                     try tick(t)
-                                    _ = try P.f418_Gr2BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg &+ 16) &+ 1)), 1)
+                                    _ = try P.f420_Gr2BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg &+ 16) &+ 1)), 1)
                                     ln = 186 // GrSpritePlot.HC:186
                                     break switch2_121
                                 }
                                 ln = 188 // GrSpritePlot.HC:188
                                 try tick(t)
-                                _ = try P.f419_Gr3BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg &+ 16) &+ 1)), 1)
+                                _ = try P.f421_Gr3BSpline3(t, p0_dc, l176_p, ld4s(((l48_tmpg &+ 16) &+ 1)), 1)
                                 ln = 189 // GrSpritePlot.HC:189
                                 break switch2_121
                             }
@@ -583,8 +585,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                             try tick(t)
                         }
                         ln = 201 // GrSpritePlot.HC:201
-                        try tick(t)
-                        _ = try P.f429_Gr3Mesh(t, p0_dc, ld4s(((l48_tmpg &+ 16) &+ 1)), l176_p, ld4s(((l48_tmpg &+ 16) &+ 5)), (((l48_tmpg &+ 16) &+ 9) &+ (12 &* ld4s(((l48_tmpg &+ 16) &+ 1)))))
+                        _ = try nat(t, n_Gr3Mesh, try push(t, p0_dc, ld4s(((l48_tmpg &+ 16) &+ 1)), l176_p, ld4s(((l48_tmpg &+ 16) &+ 5)), (((l48_tmpg &+ 16) &+ 9) &+ (12 &* ld4s(((l48_tmpg &+ 16) &+ 1))))))
                         ln = 203 // GrSpritePlot.HC:203
                         _ = try nat(t, n_Free, try push1(t, l176_p))
                         ln = 204 // GrSpritePlot.HC:204
@@ -639,8 +640,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
                         try tick(t)
                     }
                     ln = 225 // GrSpritePlot.HC:225
-                    try tick(t)
-                    _ = try P.f429_Gr3Mesh(t, p0_dc, ld4s(((l48_tmpg &+ 16) &+ 13)), l176_p, ld4s(((l48_tmpg &+ 16) &+ 17)), (((l48_tmpg &+ 16) &+ 21) &+ (12 &* ld4s(((l48_tmpg &+ 16) &+ 13)))))
+                    _ = try nat(t, n_Gr3Mesh, try push(t, p0_dc, ld4s(((l48_tmpg &+ 16) &+ 13)), l176_p, ld4s(((l48_tmpg &+ 16) &+ 17)), (((l48_tmpg &+ 16) &+ 21) &+ (12 &* ld4s(((l48_tmpg &+ 16) &+ 13))))))
                     ln = 227 // GrSpritePlot.HC:227
                     _ = try nat(t, n_Free, try push1(t, l176_p))
                     ln = 228 // GrSpritePlot.HC:228
@@ -682,7 +682,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC Sprite3B (GrSpritePlot.HC:245)
-    public final func f704_Sprite3B(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
+    public final func f709_Sprite3B(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -710,7 +710,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             try st4(t0, (ld4s(t0) | 256))
             ln = 251 // GrSpritePlot.HC:251
             try tick(t)
-            try f703_Sprite3(t, p0_dc, 0, 0, 0, p4_elems, 0)
+            try f708_Sprite3(t, p0_dc, 0, 0, 0, p4_elems, 0)
             ln = 252 // GrSpritePlot.HC:252
             try st4((p0_dc &+ 216), l40_old_x)
             try st4((p0_dc &+ 220), l48_old_y)
@@ -723,7 +723,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC Sprite3Mat4x4B (GrSpritePlot.HC:256)
-    public final func f705_Sprite3Mat4x4B(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws {
+    public final func f710_Sprite3Mat4x4B(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -748,13 +748,13 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             try st4(t0, (ld4s(t0) | 256))
             ln = 262 // GrSpritePlot.HC:262
             try tick(t)
-            _ = try P.f311_Mat4x4TranslationAdd(t, (fp &+ 184), p1_x, p2_y, p3_z)
+            _ = try P.f312_Mat4x4TranslationAdd(t, (fp &+ 184), p1_x, p2_y, p3_z)
             ln = 263 // GrSpritePlot.HC:263
             let t1: Int64 = try nat(t, n_Mat4x4MulMat4x4Equ, try push3(t, (fp &+ 48), l176_old_r, (fp &+ 184)))
             try st8((p0_dc &+ 200), t1)
             ln = 264 // GrSpritePlot.HC:264
             try tick(t)
-            try f703_Sprite3(t, p0_dc, 0, 0, 0, p4_elems, 0)
+            try f708_Sprite3(t, p0_dc, 0, 0, 0, p4_elems, 0)
             ln = 265 // GrSpritePlot.HC:265
             try st8((p0_dc &+ 200), l176_old_r)
             ln = 266 // GrSpritePlot.HC:266
@@ -766,7 +766,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC Sprite3XB (GrSpritePlot.HC:269)
-    public final func f706_Sprite3XB(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double) throws {
+    public final func f711_Sprite3XB(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -786,7 +786,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             _ = try P.f305_Mat4x4RotX(t, (fp &+ 48), p5__)
             ln = 274 // GrSpritePlot.HC:274
             try tick(t)
-            try f705_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp &+ 48))
+            try f710_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp &+ 48))
             t.msp = msp0
             t.depth -= 1
             return
@@ -794,7 +794,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC Sprite3YB (GrSpritePlot.HC:277)
-    public final func f707_Sprite3YB(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double) throws {
+    public final func f712_Sprite3YB(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -814,7 +814,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             _ = try P.f306_Mat4x4RotY(t, (fp &+ 48), p5__)
             ln = 282 // GrSpritePlot.HC:282
             try tick(t)
-            try f705_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp &+ 48))
+            try f710_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp &+ 48))
             t.msp = msp0
             t.depth -= 1
             return
@@ -822,7 +822,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC Sprite3ZB (GrSpritePlot.HC:285)
-    public final func f708_Sprite3ZB(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double) throws {
+    public final func f713_Sprite3ZB(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -842,7 +842,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             _ = try P.f307_Mat4x4RotZ(t, (fp &+ 48), p5__)
             ln = 290 // GrSpritePlot.HC:290
             try tick(t)
-            try f705_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp &+ 48))
+            try f710_Sprite3Mat4x4B(t, p0_dc, p1_x, p2_y, p3_z, p4_elems, (fp &+ 48))
             t.msp = msp0
             t.depth -= 1
             return
@@ -850,7 +850,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC SpriteExtents (GrSpritePlot.HC:293)
-    public final func f709_SpriteExtents(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
+    public final func f714_SpriteExtents(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -869,7 +869,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             try P.f289_DCExtentsInit(t, l40_dc)
             ln = 298 // GrSpritePlot.HC:298
             try tick(t)
-            try f703_Sprite3(t, l40_dc, divs(2147483647, 2), divs(2147483647, 2), divs(2147483647, 2), p0_elems, 0)
+            try f708_Sprite3(t, l40_dc, divs(2147483647, 2), divs(2147483647, 2), divs(2147483647, 2), p0_elems, 0)
             ln = 299 // GrSpritePlot.HC:299
             if try (ld8((l40_dc &+ 320)) <= ld8((l40_dc &+ 328))) {
                 ln = 300 // GrSpritePlot.HC:300
@@ -913,7 +913,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC Sprite2DC (GrSpritePlot.HC:314)
-    @discardableResult public final func f710_Sprite2DC(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f715_Sprite2DC(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -923,14 +923,14 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             var l8_res: Int64 = 0
             ln = 318 // GrSpritePlot.HC:318
             try tick(t)
-            try f709_SpriteExtents(t, p0_elems, (fp &+ 16), (fp &+ 24), (fp &+ 32), (fp &+ 40))
+            try f714_SpriteExtents(t, p0_elems, (fp &+ 16), (fp &+ 24), (fp &+ 32), (fp &+ 40))
             ln = 319 // GrSpritePlot.HC:319
             try tick(t)
             let t0: Int64 = try P.f292_DCNew(t, ((ld8((fp &+ 24)) &- ld8((fp &+ 16))) &+ 1), ((ld8((fp &+ 40)) &- ld8((fp &+ 32))) &+ 1), 0, 0)
             l8_res = t0
             ln = 320 // GrSpritePlot.HC:320
             try tick(t)
-            try f703_Sprite3(t, l8_res, (0 &- ld8((fp &+ 16))), (0 &- ld8((fp &+ 32))), 0, p0_elems, 0)
+            try f708_Sprite3(t, l8_res, (0 &- ld8((fp &+ 16))), (0 &- ld8((fp &+ 32))), 0, p0_elems, 0)
             ln = 321 // GrSpritePlot.HC:321
             t.msp = msp0
             t.depth -= 1
@@ -942,7 +942,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC SpriteInterpolate (GrSpritePlot.HC:324)
-    @discardableResult public final func f711_SpriteInterpolate(_ t: HTask, _ a0: Double, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f716_SpriteInterpolate(_ t: HTask, _ a0: Double, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1257,7 +1257,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC DocSprite (GrSpritePlot.HC:436)
-    @discardableResult public final func f712_DocSprite(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f717_DocSprite(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1273,7 +1273,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             var r1: Bool = (p0_doc == 0)
             if r1 {
                 try tick(t)
-                let t0: Int64 = try P.f602_DocPut(t, 0)
+                let t0: Int64 = try P.f607_DocPut(t, 0)
                 p0_doc = t0
                 r1 = (t0 == 0)
             }
@@ -1283,7 +1283,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             }
             ln = 445 // GrSpritePlot.HC:445
             try tick(t)
-            let t2: Int64 = try P.f610_DocLock(t, p0_doc)
+            let t2: Int64 = try P.f615_DocLock(t, p0_doc)
             l40_unlock = (t2 & 0xFF)
             ln = 446 // GrSpritePlot.HC:446
             let t3: Int64 = try nat(t, n_SpriteSize, try push1(t, p1_elems))
@@ -1342,7 +1342,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             if (l40_unlock != 0) {
                 ln = 464 // GrSpritePlot.HC:464
                 try tick(t)
-                try P.f611_DocUnlock(t, p0_doc)
+                try P.f616_DocUnlock(t, p0_doc)
             }
             ln = 465 // GrSpritePlot.HC:465
             t.depth -= 1
@@ -1353,7 +1353,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC Sprite (GrSpritePlot.HC:468)
-    @discardableResult public final func f713_Sprite(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f718_Sprite(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1362,12 +1362,12 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
             var l16_doc: Int64 = 0
             ln = 472 // GrSpritePlot.HC:472
             try tick(t)
-            let t0: Int64 = try P.f602_DocPut(t, 0)
+            let t0: Int64 = try P.f607_DocPut(t, 0)
             l16_doc = t0
             if (t0 != 0) {
                 ln = 473 // GrSpritePlot.HC:473
                 try tick(t)
-                let t1: Int64 = try f712_DocSprite(t, l16_doc, p0_elems, p1_fmt)
+                let t1: Int64 = try f717_DocSprite(t, l16_doc, p0_elems, p1_fmt)
                 t.depth -= 1
                 return t1
             }
@@ -1380,7 +1380,7 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrSpritePlot.HC#0 (GrSpritePlot.HC:1)
-    @discardableResult public final func f714_init_C__Adam_Gr_GrSpritePlot_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f719_init_C__Adam_Gr_GrSpritePlot_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1392,24 +1392,24 @@ public final class N_Adam_Gr_GrSpritePlot: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Sprite3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0)); return 0
-        case 704: try f704_Sprite3B(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
-        case 705: try f705_Sprite3Mat4x4B(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0)); return 0
-        case 706: try f706_Sprite3XB(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0))); return 0
-        case 707: try f707_Sprite3YB(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0))); return 0
-        case 708: try f708_Sprite3ZB(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0))); return 0
-        case 709: try f709_SpriteExtents(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
-        case 710: return try f710_Sprite2DC(t, (n > 0 ? st[base + 0] : 0))
-        case 711: return try f711_SpriteInterpolate(t, d((n > 0 ? st[base + 0] : 0)), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 712: return try f712_DocSprite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 713: return try f713_Sprite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 714: return try f714_init_C__Adam_Gr_GrSpritePlot_HC_0(t)
+        case 708: try f708_Sprite3(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0)); return 0
+        case 709: try f709_Sprite3B(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
+        case 710: try f710_Sprite3Mat4x4B(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0)); return 0
+        case 711: try f711_Sprite3XB(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0))); return 0
+        case 712: try f712_Sprite3YB(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0))); return 0
+        case 713: try f713_Sprite3ZB(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), d((n > 5 ? st[base + 5] : 0))); return 0
+        case 714: try f714_SpriteExtents(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0)); return 0
+        case 715: return try f715_Sprite2DC(t, (n > 0 ? st[base + 0] : 0))
+        case 716: return try f716_SpriteInterpolate(t, d((n > 0 ? st[base + 0] : 0)), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 717: return try f717_DocSprite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 718: return try f718_Sprite(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 719: return try f719_init_C__Adam_Gr_GrSpritePlot_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714]
-    private static let NAMES: [Int: String] = [703: "Sprite3", 704: "Sprite3B", 705: "Sprite3Mat4x4B", 706: "Sprite3XB", 707: "Sprite3YB", 708: "Sprite3ZB", 709: "SpriteExtents", 710: "Sprite2DC", 711: "SpriteInterpolate", 712: "DocSprite", 713: "Sprite", 714: "$init:C:/Adam/Gr/GrSpritePlot.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719]
+    private static let NAMES: [Int: String] = [708: "Sprite3", 709: "Sprite3B", 710: "Sprite3Mat4x4B", 711: "Sprite3XB", 712: "Sprite3YB", 713: "Sprite3ZB", 714: "SpriteExtents", 715: "Sprite2DC", 716: "SpriteInterpolate", 717: "DocSprite", 718: "Sprite", 719: "$init:C:/Adam/Gr/GrSpritePlot.HC#0"]
     private static let FILES: [String] = ["C:/Adam/Gr/GrSpritePlot.HC"]
     public override var files: [String] { N_Adam_Gr_GrSpritePlot.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_GrSpritePlot.DEFINED.contains(index) }

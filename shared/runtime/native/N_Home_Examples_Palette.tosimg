@@ -33,14 +33,14 @@ s 15088 59454c4c4f57
 c 17fda8 8 15088 s
 s 150a0 5748495445
 c 17fdb0 8 150a0 s
-fn 703 $init:C:/Home/Examples/Palette.HC#0 (I64;;-)
+fn 708 $init:C:/Home/Examples/Palette.HC#0 (I64;;-)
 sym g names 17fd38 [16]*U8
-init 703
+init 708
 unit C:/Home/Examples/Palette.HC#1
 s 17fdc8 253264202573
 s 17fde0 50726573732061206b657920746f20657869742e0a
-fn 704 PaletteDemo (U0;;-)
-fn 705 $init:C:/Home/Examples/Palette.HC#1 (I64;;-)
-sym f PaletteDemo 704 (U0;;-)
-init 705
+fn 709 PaletteDemo (U0;;-)
+fn 710 $init:C:/Home/Examples/Palette.HC#1 (I64;;-)
+sym f PaletteDemo 709 (U0;;-)
+init 710
 unit C:/Home/Examples/Palette.HC#2

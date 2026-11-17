@@ -12,6 +12,7 @@ import io.github.templeosmobile.core.purenative.*
 class N_Demo_Graphics_Extents(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** binary literal, 156 bytes */ @JvmField var b0: Long = 0L
     /** binary literal, 156 bytes */ @JvmField var b1: Long = 0L
@@ -30,7 +31,7 @@ class N_Demo_Graphics_Extents(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Extents (Extents.HC:7) */
-    fun f703_Extents(t: Task) {
+    fun f708_Extents(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -57,24 +58,23 @@ class N_Demo_Graphics_Extents(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             ln = 24 // Extents.HC:24
             st4((l0_dc + 228L), 3L)
             ln = 25 // Extents.HC:25
-            tick(t)
-            P.f440_Sprite3(t, l0_dc, 40L, 240L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, l0_dc, 40L, 240L, 0L, b0, 0L))
             ln = 27 // Extents.HC:27
             st4((l0_dc + 160L), 12L)
             ln = 28 // Extents.HC:28
             st4((l0_dc + 228L), 1L)
             ln = 31 // Extents.HC:31
             tick(t)
-            P.f396_GrLine(t, l0_dc, (ld8((l0_dc + 320L)) - l40_h), (ld8((l0_dc + 336L)) - l48_v), (ld8((l0_dc + 328L)) - l40_h), (ld8((l0_dc + 336L)) - l48_v), 1L, 0L)
+            P.f397_GrLine(t, l0_dc, (ld8((l0_dc + 320L)) - l40_h), (ld8((l0_dc + 336L)) - l48_v), (ld8((l0_dc + 328L)) - l40_h), (ld8((l0_dc + 336L)) - l48_v), 1L, 0L)
             ln = 32 // Extents.HC:32
             tick(t)
-            P.f396_GrLine(t, l0_dc, (ld8((l0_dc + 320L)) - l40_h), (ld8((l0_dc + 336L)) - l48_v), (ld8((l0_dc + 320L)) - l40_h), (ld8((l0_dc + 344L)) - l48_v), 1L, 0L)
+            P.f397_GrLine(t, l0_dc, (ld8((l0_dc + 320L)) - l40_h), (ld8((l0_dc + 336L)) - l48_v), (ld8((l0_dc + 320L)) - l40_h), (ld8((l0_dc + 344L)) - l48_v), 1L, 0L)
             ln = 33 // Extents.HC:33
             tick(t)
-            P.f396_GrLine(t, l0_dc, (ld8((l0_dc + 328L)) - l40_h), (ld8((l0_dc + 344L)) - l48_v), (ld8((l0_dc + 328L)) - l40_h), (ld8((l0_dc + 336L)) - l48_v), 1L, 0L)
+            P.f397_GrLine(t, l0_dc, (ld8((l0_dc + 328L)) - l40_h), (ld8((l0_dc + 344L)) - l48_v), (ld8((l0_dc + 328L)) - l40_h), (ld8((l0_dc + 336L)) - l48_v), 1L, 0L)
             ln = 34 // Extents.HC:34
             tick(t)
-            P.f396_GrLine(t, l0_dc, (ld8((l0_dc + 328L)) - l40_h), (ld8((l0_dc + 344L)) - l48_v), (ld8((l0_dc + 320L)) - l40_h), (ld8((l0_dc + 344L)) - l48_v), 1L, 0L)
+            P.f397_GrLine(t, l0_dc, (ld8((l0_dc + 328L)) - l40_h), (ld8((l0_dc + 344L)) - l48_v), (ld8((l0_dc + 320L)) - l40_h), (ld8((l0_dc + 344L)) - l48_v), 1L, 0L)
             ln = 36 // Extents.HC:36
             tick(t)
             P.f293_DCDel(t, l0_dc)
@@ -86,7 +86,7 @@ class N_Demo_Graphics_Extents(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f286_DCFill(t, 0L, 255L)
             ln = 40 // Extents.HC:40
             tick(t)
-            P.f446_SpriteExtents(t, b1, (fp + 8), (fp + 16), (fp + 24), (fp + 32))
+            P.f451_SpriteExtents(t, b1, (fp + 8), (fp + 16), (fp + 24), (fp + 32))
             ln = 41 // Extents.HC:41
             nat(t, n_Print, push3(t, s0, ld8((fp + 8)), ld8((fp + 16))))
             ln = 42 // Extents.HC:42
@@ -98,13 +98,13 @@ class N_Demo_Graphics_Extents(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Graphics/Extents.HC#0 (Extents.HC:45) */
-    fun f704_init_C__Demo_Graphics_Extents_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_Extents_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 45 // Extents.HC:45
             tick(t)
-            f703_Extents(t)
+            f708_Extents(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Extents.HC#0", ln) }
@@ -113,8 +113,8 @@ class N_Demo_Graphics_Extents(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Extents(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_Extents_HC_0(t)
+            708 -> { f708_Extents(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_Extents_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -126,7 +126,7 @@ class N_Demo_Graphics_Extents(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("Extents", "\$init:C:/Demo/Graphics/Extents.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Extents.HC")
     }

@@ -53,7 +53,7 @@ public final class N_Demo_Games_Digits: NativeModule {
     }
 
     /// HolyC PrintDigit (Digits.HC:8)
-    public final func f703_PrintDigit(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_PrintDigit(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -71,7 +71,7 @@ public final class N_Demo_Games_Digits: NativeModule {
     }
 
     /// HolyC PrintPattern (Digits.HC:15)
-    public final func f704_PrintPattern(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_PrintPattern(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -86,7 +86,7 @@ public final class N_Demo_Games_Digits: NativeModule {
                 if !((t1 != 0)) { break loop0 }
                 ln = 19 // Digits.HC:19
                 try tick(t)
-                try f703_PrintDigit(t, l8_ch)
+                try f708_PrintDigit(t, l8_ch)
                 try tick(t)
             }
             ln = 20 // Digits.HC:20
@@ -97,7 +97,7 @@ public final class N_Demo_Games_Digits: NativeModule {
     }
 
     /// HolyC Digits (Digits.HC:23)
-    public final func f705_Digits(_ t: HTask) throws {
+    public final func f710_Digits(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -159,7 +159,7 @@ public final class N_Demo_Games_Digits: NativeModule {
                             try st1(((fp &+ 24) &+ t2), (mods(t1, 10) &+ 48))
                             ln = 52 // Digits.HC:52
                             try tick(t)
-                            try f704_PrintPattern(t, (fp &+ 24))
+                            try f709_PrintPattern(t, (fp &+ 24))
                             ln = 53 // Digits.HC:53
                             try tick(t)
                             let t3: Int64 = try P.f188_PressAKey(t)
@@ -186,14 +186,14 @@ public final class N_Demo_Games_Digits: NativeModule {
                                 }
                                 ln = 61 // Digits.HC:61
                                 try tick(t)
-                                try f703_PrintDigit(t, l8_ch)
+                                try f708_PrintDigit(t, l8_ch)
                                 ln = 62 // Digits.HC:62
                                 if try (l8_ch != ld1u(((fp &+ 24) &+ l16_i))) {
                                     ln = 63 // Digits.HC:63
                                     _ = try nat(t, n_Print, try push2(t, s8, l0_num))
                                     ln = 64 // Digits.HC:64
                                     try tick(t)
-                                    try f704_PrintPattern(t, (fp &+ 24))
+                                    try f709_PrintPattern(t, (fp &+ 24))
                                     ln = 65 // Digits.HC:65
                                     try tick(t)
                                     try P.f250_Beep(t, 62, 0)
@@ -236,13 +236,13 @@ public final class N_Demo_Games_Digits: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Digits.HC#0 (Digits.HC:80)
-    @discardableResult public final func f706_init_C__Demo_Games_Digits_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_Digits_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 80 // Digits.HC:80
             try tick(t)
-            try f705_Digits(t)
+            try f710_Digits(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Digits.HC#0", ln) }
@@ -251,16 +251,16 @@ public final class N_Demo_Games_Digits: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_PrintDigit(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_PrintPattern(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_Digits(t); return 0
-        case 706: return try f706_init_C__Demo_Games_Digits_HC_0(t)
+        case 708: try f708_PrintDigit(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_PrintPattern(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_Digits(t); return 0
+        case 711: return try f711_init_C__Demo_Games_Digits_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "PrintDigit", 704: "PrintPattern", 705: "Digits", 706: "$init:C:/Demo/Games/Digits.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "PrintDigit", 709: "PrintPattern", 710: "Digits", 711: "$init:C:/Demo/Games/Digits.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/Digits.HC"]
     public override var files: [String] { N_Demo_Games_Digits.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Digits.DEFINED.contains(index) }

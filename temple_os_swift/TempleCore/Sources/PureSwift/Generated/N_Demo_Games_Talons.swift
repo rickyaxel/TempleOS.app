@@ -19,8 +19,11 @@ public final class N_Demo_Games_Talons: NativeModule {
     public let n_Exit: Int
     public let n_Free: Int
     public let n_GrBlot: Int
+    public let n_GrFillPoly3: Int
+    public let n_GrLine3: Int
     public let n_MAlloc: Int
     public let n_Mat4x4MulXYZ: Int
+    public let n_Mat4x4Scale: Int
     public let n_MemSet: Int
     public let n_Print: Int
     public let n_Rand: Int
@@ -36,6 +39,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     public let n_Sleep: Int
     public let n_Snd: Int
     public let n_Spawn: Int
+    public let n_Sprite3: Int
     public let n_Sqrt: Int
     public let n_ToF64: Int
     public let n_Yield: Int
@@ -105,8 +109,11 @@ public final class N_Demo_Games_Talons: NativeModule {
         n_Exit = rt.vm.natives.find("Exit")!.index
         n_Free = rt.vm.natives.find("Free")!.index
         n_GrBlot = rt.vm.natives.find("GrBlot")!.index
+        n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_MAlloc = rt.vm.natives.find("MAlloc")!.index
         n_Mat4x4MulXYZ = rt.vm.natives.find("Mat4x4MulXYZ")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_MemSet = rt.vm.natives.find("MemSet")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Rand = rt.vm.natives.find("Rand")!.index
@@ -122,6 +129,7 @@ public final class N_Demo_Games_Talons: NativeModule {
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         n_Snd = rt.vm.natives.find("Snd")!.index
         n_Spawn = rt.vm.natives.find("Spawn")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Sqrt = rt.vm.natives.find("Sqrt")!.index
         n_ToF64 = rt.vm.natives.find("ToF64")!.index
         n_Yield = rt.vm.natives.find("Yield")!.index
@@ -192,7 +200,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Talons.HC#0 (Talons.HC:3)
-    @discardableResult public final func f703_init_C__Demo_Games_Talons_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_Talons_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -206,7 +214,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Talons.HC#1 (Talons.HC:4)
-    @discardableResult public final func f704_init_C__Demo_Games_Talons_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_Talons_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -220,7 +228,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -230,7 +238,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Talons.HC#2 (Talons.HC:142)
-    @discardableResult public final func f706_init_C__Demo_Games_Talons_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Games_Talons_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -244,7 +252,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC $eval0 (Talons.HC:151)
-    @discardableResult public final func f707_eval0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_eval0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -258,7 +266,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC WrapAngles (Talons.HC:186)
-    public final func f708_WrapAngles(_ t: HTask) throws {
+    public final func f713_WrapAngles(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -266,11 +274,11 @@ public final class N_Demo_Games_Talons: NativeModule {
             let fp = try frame(t, 160)
             ln = 190 // Talons.HC:190
             try tick(t)
-            let t0: Double = try P.f542_Wrap(t, ldf(g__), (-d(4614256656552045848)))
+            let t0: Double = try P.f547_Wrap(t, ldf(g__), (-d(4614256656552045848)))
             try st8(g__, bits(t0))
             ln = 191 // Talons.HC:191
             try tick(t)
-            let t1: Double = try P.f542_Wrap(t, ((-ldf(g__)) - (d(4614256656552045848) / 2.0)), (-d(4614256656552045848)))
+            let t1: Double = try P.f547_Wrap(t, ((-ldf(g__)) - (d(4614256656552045848) / 2.0)), (-d(4614256656552045848)))
             try st8(g_pitch, bits(t1))
             ln = 192 // Talons.HC:192
             let t2: Double = d(try nat(t, n_Abs, try push1(t, bits(ldf(g_pitch)))))
@@ -279,7 +287,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                 try st1(g_invert_pitch, 1)
                 ln = 194 // Talons.HC:194
                 try tick(t)
-                let t3: Double = try P.f542_Wrap(t, (d(4614256656552045848) - ldf(g_pitch)), (-d(4614256656552045848)))
+                let t3: Double = try P.f547_Wrap(t, (d(4614256656552045848) - ldf(g_pitch)), (-d(4614256656552045848)))
                 try st8(g_pitch, bits(t3))
             } else {
                 ln = 196 // Talons.HC:196
@@ -287,7 +295,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             }
             ln = 197 // Talons.HC:197
             try tick(t)
-            let t4: Double = try P.f542_Wrap(t, ldf(g_roll), (-d(4614256656552045848)))
+            let t4: Double = try P.f547_Wrap(t, ldf(g_roll), (-d(4614256656552045848)))
             try st8(g_roll, bits(t4))
             ln = 198 // Talons.HC:198
             var r5: Bool = false
@@ -308,7 +316,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             }
             ln = 202 // Talons.HC:202
             try tick(t)
-            let t9: Double = try P.f542_Wrap(t, ldf(g_heading), 0.0)
+            let t9: Double = try P.f547_Wrap(t, ldf(g_heading), 0.0)
             try st8(g_heading, bits(t9))
             ln = 205 // Talons.HC:205
             try tick(t)
@@ -345,7 +353,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC EDTransform (Talons.HC:216)
-    public final func f709_EDTransform(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f714_EDTransform(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -378,7 +386,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC CalcNormals (Talons.HC:230)
-    public final func f710_CalcNormals(_ t: HTask) throws {
+    public final func f715_CalcNormals(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -424,7 +432,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC TestSameSlope (Talons.HC:256)
-    @discardableResult public final func f711_TestSameSlope(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f716_TestSameSlope(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -485,7 +493,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC MPDoPanels (Talons.HC:270)
-    public final func f712_MPDoPanels(_ t: HTask, _ a0: Int64) throws {
+    public final func f717_MPDoPanels(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -540,7 +548,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                                 var r5: Bool = (l48_w < 16)
                                 if r5 {
                                     try tick(t)
-                                    let t4: Int64 = try f711_TestSameSlope(t, l8_i, l16_j, (l48_w &+ 1), l56_h)
+                                    let t4: Int64 = try f716_TestSameSlope(t, l8_i, l16_j, (l48_w &+ 1), l56_h)
                                     r5 = (t4 != 0)
                                 }
                                 if r5 {
@@ -553,7 +561,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                                 var r7: Bool = (l56_h < 16)
                                 if r7 {
                                     try tick(t)
-                                    let t6: Int64 = try f711_TestSameSlope(t, l8_i, l16_j, l48_w, (l56_h &+ 1))
+                                    let t6: Int64 = try f716_TestSameSlope(t, l8_i, l16_j, l48_w, (l56_h &+ 1))
                                     r7 = (t6 != 0)
                                 }
                                 if r7 {
@@ -802,7 +810,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC InitElevations (Talons.HC:400)
-    public final func f713_InitElevations(_ t: HTask) throws {
+    public final func f718_InitElevations(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -918,19 +926,19 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC InitMap (Talons.HC:431)
-    public final func f714_InitMap(_ t: HTask) throws {
+    public final func f719_InitMap(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             var l0_i: Int64 = 0
             ln = 437 // Talons.HC:437
             try tick(t)
-            try f713_InitElevations(t)
+            try f718_InitElevations(t)
             ln = 438 // Talons.HC:438
             _ = try nat(t, n_MemSet, try push3(t, g_panels, 0, 8388608))
             ln = 439 // Talons.HC:439
             try tick(t)
-            try f710_CalcNormals(t)
+            try f715_CalcNormals(t)
             ln = 440 // Talons.HC:440
             try st8(g_panel_head, 0)
             ln = 441 // Talons.HC:441
@@ -942,7 +950,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                 let t1: Int64 = try nat(t, n_mp_cnt, push0(t))
                 if !((l0_i < t1)) { break loop0 }
                 ln = 443 // Talons.HC:443
-                _ = try nat(t, n_Spawn, try push(t, 9223090561878065864, ld8(P.g_Fs), s2, l0_i, 0, 0, 0))
+                _ = try nat(t, n_Spawn, try push(t, 9223090561878065869, ld8(P.g_Fs), s2, l0_i, 0, 0, 0))
                 ln = 442 // Talons.HC:442
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -959,7 +967,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC ClawDraw (Talons.HC:461)
-    public final func f715_ClawDraw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64) throws {
+    public final func f720_ClawDraw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64, _ a5: Int64, _ a6: Int64, _ a7: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -984,15 +992,13 @@ public final class N_Demo_Games_Talons: NativeModule {
                 ln = 466 // Talons.HC:466
                 try st4((p0_dc &+ 160), 0)
                 ln = 467 // Talons.HC:467
-                try tick(t)
-                _ = try P.f406_GrLine3(t, p0_dc, (divs((l72_j &* p1_x1), p6_segments) &+ divs((l64_i &* p3_x2), p6_segments)), (divs((l72_j &* p2_y1), p6_segments) &+ divs((l64_i &* p4_y2), p6_segments)), 0, (divs(((l72_j &- 1) &* p1_x1), p6_segments) &+ divs(((l64_i &+ 1) &* p3_x2), p6_segments)), (divs(((l72_j &- 1) &* p2_y1), p6_segments) &+ divs(((l64_i &+ 1) &* p4_y2), p6_segments)), 0, 1, 0)
+                _ = try nat(t, n_GrLine3, try push(t, p0_dc, (divs((l72_j &* p1_x1), p6_segments) &+ divs((l64_i &* p3_x2), p6_segments)), (divs((l72_j &* p2_y1), p6_segments) &+ divs((l64_i &* p4_y2), p6_segments)), 0, (divs(((l72_j &- 1) &* p1_x1), p6_segments) &+ divs(((l64_i &+ 1) &* p3_x2), p6_segments)), (divs(((l72_j &- 1) &* p2_y1), p6_segments) &+ divs(((l64_i &+ 1) &* p4_y2), p6_segments)), 0, 1, 0))
                 ln = 472 // Talons.HC:472
                 try st4((p0_dc &+ 228), (p5_w &- 2))
                 ln = 473 // Talons.HC:473
                 try st4((p0_dc &+ 160), 14)
                 ln = 474 // Talons.HC:474
-                try tick(t)
-                _ = try P.f406_GrLine3(t, p0_dc, (divs((l72_j &* p1_x1), p6_segments) &+ divs((l64_i &* p3_x2), p6_segments)), (divs((l72_j &* p2_y1), p6_segments) &+ divs((l64_i &* p4_y2), p6_segments)), 0, (divs(((l72_j &- 1) &* p1_x1), p6_segments) &+ divs(((l64_i &+ 1) &* p3_x2), p6_segments)), (divs(((l72_j &- 1) &* p2_y1), p6_segments) &+ divs(((l64_i &+ 1) &* p4_y2), p6_segments)), 0, 1, 0)
+                _ = try nat(t, n_GrLine3, try push(t, p0_dc, (divs((l72_j &* p1_x1), p6_segments) &+ divs((l64_i &* p3_x2), p6_segments)), (divs((l72_j &* p2_y1), p6_segments) &+ divs((l64_i &* p4_y2), p6_segments)), 0, (divs(((l72_j &- 1) &* p1_x1), p6_segments) &+ divs(((l64_i &+ 1) &* p3_x2), p6_segments)), (divs(((l72_j &- 1) &* p2_y1), p6_segments) &+ divs(((l64_i &+ 1) &* p4_y2), p6_segments)), 0, 1, 0))
                 ln = 464 // Talons.HC:464
                 l64_i = (l64_i &+ 1)
                 l72_j = (l72_j &+ (-1))
@@ -1004,11 +1010,11 @@ public final class N_Demo_Games_Talons: NativeModule {
                 if (p2_y1 < p4_y2) {
                     ln = 482 // Talons.HC:482
                     try tick(t)
-                    try P.f441_Sprite3B(t, p0_dc, p1_x1, p2_y1, 0, b4)
+                    try P.f446_Sprite3B(t, p0_dc, p1_x1, p2_y1, 0, b4)
                 } else {
                     ln = 484 // Talons.HC:484
                     try tick(t)
-                    try P.f441_Sprite3B(t, p0_dc, p1_x1, p2_y1, 0, b5)
+                    try P.f446_Sprite3B(t, p0_dc, p1_x1, p2_y1, 0, b5)
                 }
             }
             t.depth -= 1
@@ -1017,7 +1023,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC ClawsDraw (Talons.HC:488)
-    public final func f716_ClawsDraw(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f721_ClawsDraw(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1036,32 +1042,32 @@ public final class N_Demo_Games_Talons: NativeModule {
             try st4(t0, (ld4s(t0) | 512))
             ln = 493 // Talons.HC:493
             try tick(t)
-            _ = try P.f314_DCSymmetrySet(t, p1_dc, (l24_w &>> 1), 0, (l24_w &>> 1), 1)
+            _ = try P.f315_DCSymmetrySet(t, p1_dc, (l24_w &>> 1), 0, (l24_w &>> 1), 1)
             ln = 495 // Talons.HC:495
             try tick(t)
-            try f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) - 30.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) - (50.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) - 5.0)), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
+            try f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) - 30.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) - (50.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) - 5.0)), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
             ln = 496 // Talons.HC:496
             try tick(t)
-            try f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) - 10.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) - (60.0 * l16_claws_up))), f2i((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w))))), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
+            try f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) - 10.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) - (60.0 * l16_claws_up))), f2i((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w))))), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
             ln = 497 // Talons.HC:497
             try tick(t)
-            try f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 10.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) - (60.0 * l16_claws_up))), f2i((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w))))), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
+            try f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 10.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) - (60.0 * l16_claws_up))), f2i((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w))))), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
             ln = 498 // Talons.HC:498
             try tick(t)
-            try f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 30.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) - (50.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 5.0)), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
+            try f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 30.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) - (50.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 5.0)), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
             ln = 499 // Talons.HC:499
             try tick(t)
-            try f715_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 25.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) + (40.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 5.0)), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
+            try f720_ClawDraw(t, p1_dc, f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 25.0)), f2i(((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h))) + (40.0 * l16_claws_up))), f2i(((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w)))) + 5.0)), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), 22, 4, 1)
             ln = 501 // Talons.HC:501
             try tick(t)
-            try f715_ClawDraw(t, p1_dc, f2i((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w))))), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), divs((6 &* l24_w), 20), l32_h, 38, 5, 0)
+            try f720_ClawDraw(t, p1_dc, f2i((((1.0 - ldf(g_claws_down)) * (0.3 * Double(l24_w))) + (ldf(g_claws_down) * (0.4 * Double(l24_w))))), f2i((((1.0 - ldf(g_claws_down)) * Double((l32_h &- 125))) + (ldf(g_claws_down) * Double(l32_h)))), divs((6 &* l24_w), 20), l32_h, 38, 5, 0)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "ClawsDraw", ln) }
     }
 
     /// HolyC DrawIt (Talons.HC:505)
-    public final func f717_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f722_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1076,7 +1082,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             if try (ldf(g_claws_down) != 0.0) {
                 ln = 510 // Talons.HC:510
                 try tick(t)
-                try f716_ClawsDraw(t, p0_task, p1_dc)
+                try f721_ClawsDraw(t, p0_task, p1_dc)
             }
             t.depth -= 1
             return
@@ -1084,7 +1090,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC MPDrawIt (Talons.HC:575)
-    public final func f718_MPDrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f723_MPDrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1166,7 +1172,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             let t1: Int64 = (p1_dc &+ 28)
             try st4(t1, (ld4s(t1) | 256))
             ln = 617 // Talons.HC:617
-            try st8((p1_dc &+ 232), 9223090561878065861)
+            try st8((p1_dc &+ 232), 9223090561878065866)
             ln = 618 // Talons.HC:618
             try st4((p1_dc &+ 216), l216_cx)
             ln = 619 // Talons.HC:619
@@ -1181,7 +1187,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             _ = try nat(t, n_Mat4x4MulXYZ, try push4(t, ld8((p1_dc &+ 200)), (fp &+ 48), (fp &+ 56), (fp &+ 64)))
             ln = 629 // Talons.HC:629
             try tick(t)
-            _ = try P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), ld8((fp &+ 48)), ld8((fp &+ 56)), ld8((fp &+ 64)))
+            _ = try P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc &+ 200)), ld8((fp &+ 48)), ld8((fp &+ 56)), ld8((fp &+ 64)))
             ln = 632 // Talons.HC:632
             let t2: Double = d(try nat(t, n_Abs, try push1(t, bits(((ldf(g__) * 180.0) / d(4614256656552045848))))))
             if (t2 > 90.0) {
@@ -1278,8 +1284,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                                 ln = 673 // Talons.HC:673
                                 try st4((p1_dc &+ 160), ld4u((l376_tmpp &+ 28)))
                                 ln = 674 // Talons.HC:674
-                                try tick(t)
-                                let t9: Int64 = try P.f422_GrFillPoly3(t, p1_dc, ld2u((l376_tmpp &+ 26)), ld8((l376_tmpp &+ 8)))
+                                let t9: Int64 = try nat(t, n_GrFillPoly3, try push3(t, p1_dc, ld2u((l376_tmpp &+ 26)), ld8((l376_tmpp &+ 8))))
                                 try st8((l376_tmpp &+ 16), t9)
                             } else {
                                 ln = 676 // Talons.HC:676
@@ -1292,8 +1297,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                             ln = 678 // Talons.HC:678
                             loop4: while (l392_tmpo != (l376_tmpp &+ 32)) {
                                 ln = 679 // Talons.HC:679
-                                try tick(t)
-                                try P.f440_Sprite3(t, p1_dc, ld8((l392_tmpo &+ 16)), ld8(((l392_tmpo &+ 16) &+ 8)), ld8(((l392_tmpo &+ 16) &+ 16)), ld8((l392_tmpo &+ 40)), 0)
+                                _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((l392_tmpo &+ 16)), ld8(((l392_tmpo &+ 16) &+ 8)), ld8(((l392_tmpo &+ 16) &+ 16)), ld8((l392_tmpo &+ 40)), 0))
                                 ln = 680 // Talons.HC:680
                                 l392_tmpo = try ld8(l392_tmpo)
                                 try tick(t)
@@ -1372,9 +1376,9 @@ public final class N_Demo_Games_Talons: NativeModule {
                 ln = 714 // Talons.HC:714
                 let t14: Double = d(try nat(t, n_tS, push0(t)))
                 try tick(t)
-                let t15: Double = try P.f484_Tri(t, t14, 0.2)
+                let t15: Double = try P.f489_Tri(t, t14, 0.2)
                 try tick(t)
-                let t16: Int64 = try P.f448_SpriteInterpolate(t, t15, b7, b6)
+                let t16: Int64 = try P.f453_SpriteInterpolate(t, t15, b7, b6)
                 l360_elems1 = t16
                 ln = 716 // Talons.HC:716
                 try tick(t)
@@ -1384,11 +1388,10 @@ public final class N_Demo_Games_Talons: NativeModule {
                 _ = try P.f307_Mat4x4RotZ(t, (fp &+ 232), ldf((l384_tmpb &+ 40)))
                 ln = 718 // Talons.HC:718
                 try tick(t)
-                let t17: Int64 = try P.f540_SpriteTransform(t, l360_elems1, (fp &+ 232))
+                let t17: Int64 = try P.f545_SpriteTransform(t, l360_elems1, (fp &+ 232))
                 l368_elems_hard = t17
                 ln = 720 // Talons.HC:720
-                try tick(t)
-                try P.f440_Sprite3(t, p1_dc, ld8((l384_tmpb &+ 16)), ld8(((l384_tmpb &+ 16) &+ 8)), ld8(((l384_tmpb &+ 16) &+ 16)), l368_elems_hard, 0)
+                _ = try nat(t, n_Sprite3, try push(t, p1_dc, ld8((l384_tmpb &+ 16)), ld8(((l384_tmpb &+ 16) &+ 8)), ld8(((l384_tmpb &+ 16) &+ 16)), l368_elems_hard, 0))
                 ln = 721 // Talons.HC:721
                 _ = try nat(t, n_Free, try push1(t, l368_elems_hard))
                 ln = 722 // Talons.HC:722
@@ -1411,7 +1414,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC CoreAPTalonsTask (Talons.HC:732)
-    public final func f719_CoreAPTalonsTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f724_CoreAPTalonsTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1435,7 +1438,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                 if try (ld1u((g_mp &+ 1048)) == 0) {
                     ln = 739 // Talons.HC:739
                     try tick(t)
-                    try f718_MPDrawIt(t, p0_master_task, l8_dc)
+                    try f723_MPDrawIt(t, p0_master_task, l8_dc)
                 }
                 try tick(t)
             }
@@ -1453,7 +1456,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC DrawHorizon (Talons.HC:749)
-    public final func f720_DrawHorizon(_ t: HTask, _ a0: Int64) throws {
+    public final func f725_DrawHorizon(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1487,7 +1490,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                 var r1: Bool = false
                 let t2: Double = ((-d(4614256656552045848)) / 4.0)
                 try tick(t)
-                let t3: Double = try P.f542_Wrap(t, (ldf(g__) - d(4614256656552045848)), (-d(4614256656552045848)))
+                let t3: Double = try P.f547_Wrap(t, (ldf(g__) - d(4614256656552045848)), (-d(4614256656552045848)))
                 if (t2 <= t3) {
                     let t4: Double = (d(4614256656552045848) / 4.0)
                     if (t3 < t4) {
@@ -1526,7 +1529,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                     let t5: Int64 = (p0_dc &+ 28)
                     try st4(t5, (ld4s(t5) & (-257)))
                     ln = 776 // Talons.HC:776
-                    try st8((p0_dc &+ 232), 9223090561878065861)
+                    try st8((p0_dc &+ 232), 9223090561878065866)
                     ln = 777 // Talons.HC:777
                     try st4((p0_dc &+ 216), l88_cx)
                     ln = 778 // Talons.HC:778
@@ -1564,7 +1567,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                     _ = try ptr(t, ld8((p0_dc &+ 232)), try push4(t, p0_dc, (fp &+ 32), (fp &+ 40), (fp &+ 48)))
                     ln = 794 // Talons.HC:794
                     try tick(t)
-                    _ = try P.f380_DCClipLine(t, p0_dc, (fp &+ 8), (fp &+ 16), (fp &+ 32), (fp &+ 40), 0, 0)
+                    _ = try P.f381_DCClipLine(t, p0_dc, (fp &+ 8), (fp &+ 16), (fp &+ 32), (fp &+ 40), 0, 0)
                     ln = 796 // Talons.HC:796
                     _ = try nat(t, n_MemSet, try push3(t, (fp &+ 104), 0, 48))
                     ln = 797 // Talons.HC:797
@@ -1603,8 +1606,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                             try st4((p0_dc &+ 160), 11)
                         }
                         ln = 814 // Talons.HC:814
-                        try tick(t)
-                        _ = try P.f422_GrFillPoly3(t, p0_dc, 4, (fp &+ 104))
+                        _ = try nat(t, n_GrFillPoly3, try push3(t, p0_dc, 4, (fp &+ 104)))
                         ln = 815 // Talons.HC:815
                         try st4(((fp &+ 104) &+ 4), (ld4s((p0_dc &+ 24)) &- 1))
                         ln = 816 // Talons.HC:816
@@ -1618,8 +1620,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                             try st4((p0_dc &+ 160), l160_ground_color)
                         }
                         ln = 821 // Talons.HC:821
-                        try tick(t)
-                        _ = try P.f422_GrFillPoly3(t, p0_dc, 4, (fp &+ 104))
+                        _ = try nat(t, n_GrFillPoly3, try push3(t, p0_dc, 4, (fp &+ 104)))
                     } else {
                         ln = 823 // Talons.HC:823
                         if try (ld8((fp &+ 40)) < ld8((fp &+ 16))) {
@@ -1657,8 +1658,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                                 try st4((p0_dc &+ 160), 11)
                             }
                             ln = 840 // Talons.HC:840
-                            try tick(t)
-                            _ = try P.f422_GrFillPoly3(t, p0_dc, 4, (fp &+ 104))
+                            _ = try nat(t, n_GrFillPoly3, try push3(t, p0_dc, 4, (fp &+ 104)))
                             ln = 841 // Talons.HC:841
                             try st4((fp &+ 104), (ld4s((p0_dc &+ 16)) &- 1))
                             ln = 842 // Talons.HC:842
@@ -1672,8 +1672,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                                 try st4((p0_dc &+ 160), l160_ground_color)
                             }
                             ln = 847 // Talons.HC:847
-                            try tick(t)
-                            _ = try P.f422_GrFillPoly3(t, p0_dc, 4, (fp &+ 104))
+                            _ = try nat(t, n_GrFillPoly3, try push3(t, p0_dc, 4, (fp &+ 104)))
                         } else {
                             ln = 849 // Talons.HC:849
                             try tick(t)
@@ -1691,7 +1690,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC Core0Talons (Talons.HC:856)
-    public final func f721_Core0Talons(_ t: HTask) throws {
+    public final func f726_Core0Talons(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1743,7 +1742,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             }
             ln = 879 // Talons.HC:879
             try tick(t)
-            try f720_DrawHorizon(t, l0_dc)
+            try f725_DrawHorizon(t, l0_dc)
             ln = 881 // Talons.HC:881
             if try (ldf(g_game_tf) != 0.0) {
                 ln = 882 // Talons.HC:882
@@ -1757,7 +1756,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                     ln = 885 // Talons.HC:885
                     try tick(t)
                     let vb3 = push0(t)
-                    _ = try P.f369_GrPrint(t, l0_dc, divs((ld8((ld8(P.g_Fs) &+ 224)) &- 72), 2), divs((ld8((ld8(P.g_Fs) &+ 248)) &- 8), 2), s3, vb3, 0)
+                    _ = try P.f370_GrPrint(t, l0_dc, divs((ld8((ld8(P.g_Fs) &+ 224)) &- 72), 2), divs((ld8((ld8(P.g_Fs) &+ 248)) &- 8), 2), s3, vb3, 0)
                     t.sp = vb3
                 }
             } else {
@@ -1769,7 +1768,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                 try st8((g_mp &+ 8), (shl(1, t3) &- 1))
                 ln = 891 // Talons.HC:891
                 try tick(t)
-                try f718_MPDrawIt(t, ld8(P.g_Fs), l0_dc)
+                try f723_MPDrawIt(t, ld8(P.g_Fs), l0_dc)
                 ln = 892 // Talons.HC:892
                 loop0: while try (ld8((g_mp &+ 8)) != 0) {
                     ln = 893 // Talons.HC:893
@@ -1815,7 +1814,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                     ln = 905 // Talons.HC:905
                     try tick(t)
                     let vb4 = push0(t)
-                    _ = try P.f369_GrPrint(t, l0_dc, divs((ld8((ld8(P.g_Fs) &+ 224)) &- 104), 2), (divs((ld8((ld8(P.g_Fs) &+ 248)) &- 8), 2) &- 32), s4, vb4, 0)
+                    _ = try P.f370_GrPrint(t, l0_dc, divs((ld8((ld8(P.g_Fs) &+ 224)) &- 104), 2), (divs((ld8((ld8(P.g_Fs) &+ 248)) &- 8), 2) &- 32), s4, vb4, 0)
                     t.sp = vb4
                 }
             }
@@ -1833,35 +1832,33 @@ public final class N_Demo_Games_Talons: NativeModule {
             let t12: Int64 = (l0_dc &+ 28)
             try st4(t12, (ld4s(t12) & (-257)))
             ln = 916 // Talons.HC:916
-            try tick(t)
-            _ = try P.f406_GrLine3(t, l0_dc, (l48_cx &+ 5), l56_cy, 0, (l48_cx &- 5), l56_cy, 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, l0_dc, (l48_cx &+ 5), l56_cy, 0, (l48_cx &- 5), l56_cy, 0, 1, 0))
             ln = 917 // Talons.HC:917
-            try tick(t)
-            _ = try P.f406_GrLine3(t, l0_dc, l48_cx, (l56_cy &+ 5), 0, l48_cx, (l56_cy &- 5), 0, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, l0_dc, l48_cx, (l56_cy &+ 5), 0, l48_cx, (l56_cy &- 5), 0, 1, 0))
             ln = 918 // Talons.HC:918
             if try (ld1u(g_invert_pitch) != 0) {
                 ln = 921 // Talons.HC:921
                 let t14: Int64 = try ld8(g_strip_height)
                 try tick(t)
-                let t13: Double = try P.f542_Wrap(t, (ldf(g_heading) + d(4614256656552045848)), 0.0)
+                let t13: Double = try P.f547_Wrap(t, (ldf(g_heading) + d(4614256656552045848)), 0.0)
                 try tick(t)
-                let t15: Double = try P.f542_Wrap(t, (ldf(g_roll) + d(4614256656552045848)), (-d(4614256656552045848)))
+                let t15: Double = try P.f547_Wrap(t, (ldf(g_roll) + d(4614256656552045848)), (-d(4614256656552045848)))
                 ln = 919 // Talons.HC:919
                 try tick(t)
                 let vb5 = try push(t, bits(((ldf(g_pitch) * 180.0) / d(4614256656552045848))), bits(((t15 * 180.0) / d(4614256656552045848))), bits(((t13 * 180.0) / d(4614256656552045848))), l40_height, t14)
-                _ = try P.f369_GrPrint(t, l0_dc, 0, 0, s5, vb5, 5)
+                _ = try P.f370_GrPrint(t, l0_dc, 0, 0, s5, vb5, 5)
                 t.sp = vb5
             } else {
                 ln = 924 // Talons.HC:924
                 try tick(t)
                 let vb6 = try push(t, bits(((ldf(g_pitch) * 180.0) / d(4614256656552045848))), bits(((ldf(g_roll) * 180.0) / d(4614256656552045848))), bits(((ldf(g_heading) * 180.0) / d(4614256656552045848))), l40_height, ld8(g_strip_height))
-                _ = try P.f369_GrPrint(t, l0_dc, 0, 0, s5, vb6, 5)
+                _ = try P.f370_GrPrint(t, l0_dc, 0, 0, s5, vb6, 5)
                 t.sp = vb6
             }
             ln = 927 // Talons.HC:927
             try tick(t)
             let vb7 = try push3(t, ld8(g_fish_left), bits(l72_tt), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, l0_dc, 0, 8, s6, vb7, 3)
+            _ = try P.f370_GrPrint(t, l0_dc, 0, 8, s6, vb7, 3)
             t.sp = vb7
             ln = 931 // Talons.HC:931
             try st8((l0_dc &+ 392), 0)
@@ -1876,7 +1873,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC FishFind (Talons.HC:937)
-    @discardableResult public final func f722_FishFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f727_FishFind(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -1935,7 +1932,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC AnimateTask (Talons.HC:962)
-    public final func f723_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f728_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2025,7 +2022,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                             }
                             ln = 993 // Talons.HC:993
                             try tick(t)
-                            try f708_WrapAngles(t)
+                            try f713_WrapAngles(t)
                         }
                         ln = 995 // Talons.HC:995
                         try st8(g_speed, bits(1.0))
@@ -2033,7 +2030,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                         var r9: Bool = try (ld1u(g_rolled_over) != 0)
                         if !r9 {
                             try tick(t)
-                            let t8: Int64 = try f722_FishFind(t, l24_x1, l32_y1, (fp &+ 72))
+                            let t8: Int64 = try f727_FishFind(t, l24_x1, l32_y1, (fp &+ 72))
                             l112_tmpo = t8
                             r9 = (t8 == 0)
                         }
@@ -2050,13 +2047,13 @@ public final class N_Demo_Games_Talons: NativeModule {
                             l32_y1 = try (l32_y1 &- ld8(((l112_tmpo &+ 16) &+ 8)))
                             ln = 1002 // Talons.HC:1002
                             try tick(t)
-                            let t11: Double = try P.f544_ACos(t, (Double(((ld8((fp &+ 48)) &* l24_x1) &+ (ld8((fp &+ 56)) &* l32_y1))) / (l104_d * 65536.0)))
+                            let t11: Double = try P.f549_ACos(t, (Double(((ld8((fp &+ 48)) &* l24_x1) &+ (ld8((fp &+ 56)) &* l32_y1))) / (l104_d * 65536.0)))
                             l96__ = t11
                             ln = 1003 // Talons.HC:1003
                             if ((l96__ > 0.0) && (l104_d < 600.0)) {
                                 ln = 1004 // Talons.HC:1004
                                 try tick(t)
-                                let t12: Double = try P.f480_Saw(t, l104_d, 600.0)
+                                let t12: Double = try P.f485_Saw(t, l104_d, 600.0)
                                 try st8(g_claws_down, bits(t12))
                             } else {
                                 ln = 1006 // Talons.HC:1006
@@ -2179,7 +2176,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC MPEnd (Talons.HC:1047)
-    public final func f724_MPEnd(_ t: HTask) throws {
+    public final func f729_MPEnd(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2202,13 +2199,13 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC TaskEndCB (Talons.HC:1057)
-    public final func f725_TaskEndCB(_ t: HTask) throws {
+    public final func f730_TaskEndCB(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 1059 // Talons.HC:1059
             try tick(t)
-            try f724_MPEnd(t)
+            try f729_MPEnd(t)
             ln = 1060 // Talons.HC:1060
             _ = try nat(t, n_Exit, push0(t))
             t.depth -= 1
@@ -2217,30 +2214,30 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC SongTask (Talons.HC:1063)
-    public final func f726_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f731_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 1065 // Talons.HC:1065
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 1066 // Talons.HC:1066
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 1067 // Talons.HC:1067
             loop0: while (1 != 0) {
                 ln = 1068 // Talons.HC:1068
                 try tick(t)
-                try P.f494_Play(t, s7, 0)
+                try P.f499_Play(t, s7, 0)
                 ln = 1069 // Talons.HC:1069
                 try tick(t)
-                try P.f494_Play(t, s7, 0)
+                try P.f499_Play(t, s7, 0)
                 ln = 1070 // Talons.HC:1070
                 try tick(t)
-                try P.f494_Play(t, s8, 0)
+                try P.f499_Play(t, s8, 0)
                 ln = 1071 // Talons.HC:1071
                 try tick(t)
-                try P.f494_Play(t, s8, 0)
+                try P.f499_Play(t, s8, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -2249,7 +2246,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC PreInit (Talons.HC:1075)
-    public final func f727_PreInit(_ t: HTask) throws {
+    public final func f732_PreInit(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2260,14 +2257,13 @@ public final class N_Demo_Games_Talons: NativeModule {
             let t0: Int64 = try P.f281_Mat4x4IdentNew(t, 0)
             l8_r = t0
             ln = 1078 // Talons.HC:1078
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, l8_r, 10.0)
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, l8_r, bits(10.0)))
             ln = 1079 // Talons.HC:1079
             l0_i = 0
             loop0: while (l0_i < 3) {
                 ln = 1080 // Talons.HC:1080
                 try tick(t)
-                let t1: Int64 = try P.f540_SpriteTransform(t, ld8((g_landscape_small_imgs &+ (l0_i &* 8))), l8_r)
+                let t1: Int64 = try P.f545_SpriteTransform(t, ld8((g_landscape_small_imgs &+ (l0_i &* 8))), l8_r)
                 try st8((g_landscape_large_imgs &+ (l0_i &* 8)), t1)
                 ln = 1079 // Talons.HC:1079
                 l0_i = (l0_i &+ 1)
@@ -2281,7 +2277,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC PostCleanUp (Talons.HC:1084)
-    public final func f728_PostCleanUp(_ t: HTask) throws {
+    public final func f733_PostCleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2301,7 +2297,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC Init (Talons.HC:1091)
-    public final func f729_Init(_ t: HTask) throws {
+    public final func f734_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2323,7 +2319,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             _ = try nat(t, n_MemSet, try push3(t, g_mp, 0, 1049))
             ln = 1102 // Talons.HC:1102
             try tick(t)
-            try f714_InitMap(t)
+            try f719_InitMap(t)
             ln = 1103 // Talons.HC:1103
             try tick(t)
             _ = try P.f296_DCDepthBufAlloc(t, ld8(g_main_dc))
@@ -2341,7 +2337,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             try st8(g_claws_down, bits(0.0))
             ln = 1112 // Talons.HC:1112
             try tick(t)
-            try f708_WrapAngles(t)
+            try f713_WrapAngles(t)
             ln = 1114 // Talons.HC:1114
             try st8(g_x, 19660800)
             ln = 1115 // Talons.HC:1115
@@ -2397,13 +2393,13 @@ public final class N_Demo_Games_Talons: NativeModule {
                 let t7: Int64 = try nat(t, n_mp_cnt, push0(t))
                 if !((l0_i < t7)) { break loop4 }
                 ln = 1136 // Talons.HC:1136
-                _ = try nat(t, n_Spawn, try push(t, 9223090561878065871, ld8(P.g_Fs), s9, l0_i, 0, 0, 0))
+                _ = try nat(t, n_Spawn, try push(t, 9223090561878065876, ld8(P.g_Fs), s9, l0_i, 0, 0, 0))
                 ln = 1135 // Talons.HC:1135
                 l0_i = (l0_i &+ 1)
                 try tick(t)
             }
             ln = 1137 // Talons.HC:1137
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065877)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065882)
             ln = 1138 // Talons.HC:1138
             let t8: Double = d(try nat(t, n_tS, push0(t)))
             try st8(g_game_t0, bits(t8))
@@ -2413,7 +2409,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC CleanUp (Talons.HC:1141)
-    public final func f730_CleanUp(_ t: HTask) throws {
+    public final func f735_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2424,7 +2420,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             l8_tmpp = try ld8(g_panel_head)
             ln = 1145 // Talons.HC:1145
             try tick(t)
-            try f724_MPEnd(t)
+            try f729_MPEnd(t)
             ln = 1146 // Talons.HC:1146
             loop0: while (l8_tmpp != 0) {
                 ln = 1147 // Talons.HC:1147
@@ -2464,7 +2460,7 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC Talons (Talons.HC:1160)
-    public final func f731_Talons(_ t: HTask) throws {
+    public final func f736_Talons(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -2475,7 +2471,7 @@ public final class N_Demo_Games_Talons: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 1164 // Talons.HC:1164
             try tick(t)
-            _ = try P.f507_MenuPush(t, s10)
+            _ = try P.f512_MenuPush(t, s10)
             ln = 1177 // Talons.HC:1177
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
             ln = 1178 // Talons.HC:1178
@@ -2492,20 +2488,20 @@ public final class N_Demo_Games_Talons: NativeModule {
             _ = try nat(t, n_Print, try push1(t, s11))
             ln = 1183 // Talons.HC:1183
             let t1: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065878, 0, s12, (-1), ld8(P.g_Fs), 0, 0))
+            let t0: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065883, 0, s12, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t1, t0)
             ln = 1184 // Talons.HC:1184
             try tick(t)
-            try f727_PreInit(t)
+            try f732_PreInit(t)
             ln = 1185 // Talons.HC:1185
             try tick(t)
-            try f729_Init(t)
+            try f734_Init(t)
             ln = 1186 // Talons.HC:1186
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065875, 0, s13, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065880, 0, s13, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 1187 // Talons.HC:1187
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065869)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065874)
             ln = 1188 // Talons.HC:1188
             let h0sp = t.sp, h0msp = t.msp, h0d = t.depth, h0c = t.hCount
             t.hCount = h0c + 1
@@ -2596,21 +2592,21 @@ public final class N_Demo_Games_Talons: NativeModule {
                                     }
                                     ln = 1210 // Talons.HC:1210
                                     try tick(t)
-                                    try f708_WrapAngles(t)
+                                    try f713_WrapAngles(t)
                                 }
                             case 10:
                                 ln = 1214 // Talons.HC:1214
                                 try st8((ld8(P.g_Fs) &+ 448), 0)
                                 ln = 1215 // Talons.HC:1215
                                 try tick(t)
-                                try f730_CleanUp(t)
+                                try f735_CleanUp(t)
                                 ln = 1216 // Talons.HC:1216
                                 _ = try nat(t, n_Refresh, try push2(t, 1, 0))
                                 ln = 1217 // Talons.HC:1217
                                 try tick(t)
-                                try f729_Init(t)
+                                try f734_Init(t)
                                 ln = 1218 // Talons.HC:1218
-                                try st8((ld8(P.g_Fs) &+ 448), 9223090561878065869)
+                                try st8((ld8(P.g_Fs) &+ 448), 9223090561878065874)
                             default:
                                 break
                             }
@@ -2618,7 +2614,7 @@ public final class N_Demo_Games_Talons: NativeModule {
                     } else {
                         ln = 1222 // Talons.HC:1222
                         try tick(t)
-                        try f721_Core0Talons(t)
+                        try f726_Core0Talons(t)
                     }
                     if !(try ((ld8(fp) != 28) && (ld8(fp) != 27))) { break loop0 }
                     try tick(t)
@@ -2637,13 +2633,13 @@ public final class N_Demo_Games_Talons: NativeModule {
             try P.f228_SettingsPop(t, 0, 0)
             ln = 1227 // Talons.HC:1227
             try tick(t)
-            try f730_CleanUp(t)
+            try f735_CleanUp(t)
             ln = 1228 // Talons.HC:1228
             try tick(t)
-            try f728_PostCleanUp(t)
+            try f733_PostCleanUp(t)
             ln = 1229 // Talons.HC:1229
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             ln = 1230 // Talons.HC:1230
             _ = try nat(t, n_RegWrite, try push3(t, s1, s14, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -2653,13 +2649,13 @@ public final class N_Demo_Games_Talons: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/Talons.HC#3 (Talons.HC:1233)
-    @discardableResult public final func f732_init_C__Demo_Games_Talons_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f737_init_C__Demo_Games_Talons_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 1233 // Talons.HC:1233
             try tick(t)
-            try f731_Talons(t)
+            try f736_Talons(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/Talons.HC#3", ln) }
@@ -2668,42 +2664,42 @@ public final class N_Demo_Games_Talons: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_Talons_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_Talons_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: return try f706_init_C__Demo_Games_Talons_HC_2(t)
-        case 707: return try f707_eval0(t)
-        case 708: try f708_WrapAngles(t); return 0
-        case 709: try f709_EDTransform(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 710: try f710_CalcNormals(t); return 0
-        case 711: return try f711_TestSameSlope(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 712: try f712_MPDoPanels(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 713: try f713_InitElevations(t); return 0
-        case 714: try f714_InitMap(t); return 0
-        case 715: try f715_ClawDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0)); return 0
-        case 716: try f716_ClawsDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 717: try f717_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 718: try f718_MPDrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 719: try f719_CoreAPTalonsTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 720: try f720_DrawHorizon(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 721: try f721_Core0Talons(t); return 0
-        case 722: return try f722_FishFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 723: try f723_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 724: try f724_MPEnd(t); return 0
-        case 725: try f725_TaskEndCB(t); return 0
-        case 726: try f726_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 727: try f727_PreInit(t); return 0
-        case 728: try f728_PostCleanUp(t); return 0
-        case 729: try f729_Init(t); return 0
-        case 730: try f730_CleanUp(t); return 0
-        case 731: try f731_Talons(t); return 0
-        case 732: return try f732_init_C__Demo_Games_Talons_HC_3(t)
+        case 708: return try f708_init_C__Demo_Games_Talons_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_Talons_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: return try f711_init_C__Demo_Games_Talons_HC_2(t)
+        case 712: return try f712_eval0(t)
+        case 713: try f713_WrapAngles(t); return 0
+        case 714: try f714_EDTransform(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 715: try f715_CalcNormals(t); return 0
+        case 716: return try f716_TestSameSlope(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 717: try f717_MPDoPanels(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 718: try f718_InitElevations(t); return 0
+        case 719: try f719_InitMap(t); return 0
+        case 720: try f720_ClawDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0), (n > 5 ? st[base + 5] : 0), (n > 6 ? st[base + 6] : 0), (n > 7 ? st[base + 7] : 0)); return 0
+        case 721: try f721_ClawsDraw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 722: try f722_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 723: try f723_MPDrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 724: try f724_CoreAPTalonsTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 725: try f725_DrawHorizon(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 726: try f726_Core0Talons(t); return 0
+        case 727: return try f727_FishFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 728: try f728_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 729: try f729_MPEnd(t); return 0
+        case 730: try f730_TaskEndCB(t); return 0
+        case 731: try f731_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 732: try f732_PreInit(t); return 0
+        case 733: try f733_PostCleanUp(t); return 0
+        case 734: try f734_Init(t); return 0
+        case 735: try f735_CleanUp(t); return 0
+        case 736: try f736_Talons(t); return 0
+        case 737: return try f737_init_C__Demo_Games_Talons_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/Talons.HC#0", 704: "$init:C:/Demo/Games/Talons.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "$init:C:/Demo/Games/Talons.HC#2", 707: "$eval0", 708: "WrapAngles", 709: "EDTransform", 710: "CalcNormals", 711: "TestSameSlope", 712: "MPDoPanels", 713: "InitElevations", 714: "InitMap", 715: "ClawDraw", 716: "ClawsDraw", 717: "DrawIt", 718: "MPDrawIt", 719: "CoreAPTalonsTask", 720: "DrawHorizon", 721: "Core0Talons", 722: "FishFind", 723: "AnimateTask", 724: "MPEnd", 725: "TaskEndCB", 726: "SongTask", 727: "PreInit", 728: "PostCleanUp", 729: "Init", 730: "CleanUp", 731: "Talons", 732: "$init:C:/Demo/Games/Talons.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/Talons.HC#0", 709: "$init:C:/Demo/Games/Talons.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "$init:C:/Demo/Games/Talons.HC#2", 712: "$eval0", 713: "WrapAngles", 714: "EDTransform", 715: "CalcNormals", 716: "TestSameSlope", 717: "MPDoPanels", 718: "InitElevations", 719: "InitMap", 720: "ClawDraw", 721: "ClawsDraw", 722: "DrawIt", 723: "MPDrawIt", 724: "CoreAPTalonsTask", 725: "DrawHorizon", 726: "Core0Talons", 727: "FishFind", 728: "AnimateTask", 729: "MPEnd", 730: "TaskEndCB", 731: "SongTask", 732: "PreInit", 733: "PostCleanUp", 734: "Init", 735: "CleanUp", 736: "Talons", 737: "$init:C:/Demo/Games/Talons.HC#3"]
     private static let FILES: [String] = ["C:/Demo/Games/Talons.HC"]
     public override var files: [String] { N_Demo_Games_Talons.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_Talons.DEFINED.contains(index) }

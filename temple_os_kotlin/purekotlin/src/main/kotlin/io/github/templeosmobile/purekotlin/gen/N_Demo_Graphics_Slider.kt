@@ -34,7 +34,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawCtrlSlider (Slider.HC:19) */
-    fun f703_DrawCtrlSlider(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawCtrlSlider(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -55,21 +55,21 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st4((p0_dc + 160L), 0L)
             ln = 30 // Slider.HC:30
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 20L) + 0L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 20L) + 0L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 20L) + 0L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 20L) + 0L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
             ln = 32 // Slider.HC:32
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 40L) + 1L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 40L) + 1L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 40L) + 1L), (ld8((p1_c + 56L)) + 20L), ((ld8((p1_c + 40L)) + 40L) + 1L), (((ld8((p1_c + 56L)) + 20L) + 30L) - 1L), 1L, 0L)
             ln = 34 // Slider.HC:34
             st4((p0_dc + 160L), 12L)
             ln = 35 // Slider.HC:35
             tick(t)
             val vb0 = push1(t, divs((ld8(l16_s) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 20L) + 0L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb0, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 20L) + 0L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb0, 1)
             t.sp = vb0
             ln = 38 // Slider.HC:38
             tick(t)
             val vb1 = push1(t, divs((ld8((l16_s + 8L)) * 10L), 30L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 40L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb1, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 40L) + 1L) - divs(8L, 2L)), (((ld8((p1_c + 56L)) + 20L) + 30L) + 3L), s0, vb1, 1)
             t.sp = vb1
             ln = 41 // Slider.HC:41
             nat(t, n_GrRect, push(t, p0_dc, (((ld8((p1_c + 40L)) + 20L) + 0L) - 3L), (((((ld8((p1_c + 56L)) + 20L) + 30L) - 1L) - ld8(l16_s)) - 2L), 7L, 5L))
@@ -87,7 +87,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC UpdateDerivedCtrlSlider (Slider.HC:52) */
-    fun f704_UpdateDerivedCtrlSlider(t: Task, a0: Long) {
+    fun f709_UpdateDerivedCtrlSlider(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -117,7 +117,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC LeftClickSlider (Slider.HC:63) */
-    fun f705_LeftClickSlider(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f710_LeftClickSlider(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -149,7 +149,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC SliderNew (Slider.HC:74) */
-    fun f706_SliderNew(t: Task): Long {
+    fun f711_SliderNew(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -168,11 +168,11 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 81 // Slider.HC:81
             nat(t, n_MemSet, push3(t, g_sld, 0L, 16L))
             ln = 82 // Slider.HC:82
-            st8((l0_c + 120L), 9223090561878065855L)
+            st8((l0_c + 120L), 9223090561878065860L)
             ln = 83 // Slider.HC:83
-            st8((l0_c + 136L), 9223090561878065857L)
+            st8((l0_c + 136L), 9223090561878065862L)
             ln = 84 // Slider.HC:84
-            st8((l0_c + 112L), 9223090561878065856L)
+            st8((l0_c + 112L), 9223090561878065861L)
             ln = 85 // Slider.HC:85
             tick(t)
             P.f153_QueIns(t, l0_c, ld8((ld8(P.g_Fs) + 928L)))
@@ -188,7 +188,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC SliderDel (Slider.HC:90) */
-    fun f707_SliderDel(t: Task, a0: Long) {
+    fun f712_SliderDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -204,7 +204,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Main (Slider.HC:98) */
-    fun f708_Main(t: Task) {
+    fun f713_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -213,7 +213,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             nat(t, n_Print, push1(t, s1))
             ln = 101 // Slider.HC:101
             tick(t)
-            val t0: Long = f706_SliderNew(t)
+            val t0: Long = f711_SliderNew(t)
             l0_c = t0
             ln = 102 // Slider.HC:102
             tick(t)
@@ -222,7 +222,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             nat(t, n_Print, push3(t, s2, divs((ld8(g_sld) * 10L), 30L), divs((ld8((g_sld + 8L)) * 10L), 30L)))
             ln = 106 // Slider.HC:106
             tick(t)
-            f707_SliderDel(t, l0_c)
+            f712_SliderDel(t, l0_c)
             ln = 107 // Slider.HC:107
             nat(t, n_DocBottom, push0(t))
             t.depth--
@@ -231,13 +231,13 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Graphics/Slider.HC#0 (Slider.HC:110) */
-    fun f709_init_C__Demo_Graphics_Slider_HC_0(t: Task): Long {
+    fun f714_init_C__Demo_Graphics_Slider_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 110 // Slider.HC:110
             tick(t)
-            f708_Main(t)
+            f713_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Slider.HC#0", ln) }
@@ -246,13 +246,13 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawCtrlSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_UpdateDerivedCtrlSlider(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_LeftClickSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            706 -> f706_SliderNew(t)
-            707 -> { f707_SliderDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_Main(t); 0L }
-            709 -> f709_init_C__Demo_Graphics_Slider_HC_0(t)
+            708 -> { f708_DrawCtrlSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_UpdateDerivedCtrlSlider(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_LeftClickSlider(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            711 -> f711_SliderNew(t)
+            712 -> { f712_SliderDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_Main(t); 0L }
+            714 -> f714_init_C__Demo_Graphics_Slider_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -264,7 +264,7 @@ class N_Demo_Graphics_Slider(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714)
         private val NAMES = arrayOf("DrawCtrlSlider", "UpdateDerivedCtrlSlider", "LeftClickSlider", "SliderNew", "SliderDel", "Main", "\$init:C:/Demo/Graphics/Slider.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Slider.HC")
     }

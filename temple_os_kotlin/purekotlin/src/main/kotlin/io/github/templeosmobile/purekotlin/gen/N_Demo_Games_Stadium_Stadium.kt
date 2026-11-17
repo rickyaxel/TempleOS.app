@@ -17,6 +17,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
     @JvmField val n_GrBlot = rt.vm.natives.find("GrBlot")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_RandI16 = rt.vm.natives.find("RandI16")!!.index
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
@@ -66,7 +67,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC DrawIt (Stadium.HC:19) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -87,7 +88,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
             loop0@ while ((l16_i < 10L)) {
                 ln = 26 // Stadium.HC:26
                 tick(t)
-                P.f445_Sprite3ZB(t, p1_dc, ld8((g_x + (l16_i * 8L))), ld8((g_y + (l16_i * 8L))), 0L, b0, ldf((g__ + (l16_i * 8L))))
+                P.f450_Sprite3ZB(t, p1_dc, ld8((g_x + (l16_i * 8L))), ld8((g_y + (l16_i * 8L))), 0L, b0, ldf((g__ + (l16_i * 8L))))
                 ln = 25 // Stadium.HC:25
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -115,8 +116,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
                     val t2: Long = P.f303_Mat4x4New(t, ld8((p1_dc + 200L)), ld8((p1_dc + 360L)))
                     l24_r = t2
                     ln = 37 // Stadium.HC:37
-                    tick(t)
-                    P.f308_Mat4x4Scale(t, l24_r, (1.5 - l48_t0))
+                    nat(t, n_Mat4x4Scale, push2(t, l24_r, bits((1.5 - l48_t0))))
                     ln = 38 // Stadium.HC:38
                     nat(t, n_Free, push1(t, ld8((p1_dc + 200L))))
                     ln = 39 // Stadium.HC:39
@@ -127,7 +127,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
                     st4(t3, (ld4s(t3) or 256L))
                     ln = 41 // Stadium.HC:41
                     tick(t)
-                    P.f445_Sprite3ZB(t, p1_dc, f2i(l32_xx), f2i(l40_yy), 0L, b1, l48_t0)
+                    P.f450_Sprite3ZB(t, p1_dc, f2i(l32_xx), f2i(l40_yy), 0L, b1, l48_t0)
                 }
             }
             ln = 44 // Stadium.HC:44
@@ -135,7 +135,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
             ln = 45 // Stadium.HC:45
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p1_dc, 8L, 8L, s0, vb0, 0)
+            P.f370_GrPrint(t, p1_dc, 8L, 8L, s0, vb0, 0)
             t.sp = vb0
             t.depth--
             return
@@ -143,7 +143,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC AnimateTask (Stadium.HC:48) */
-    fun f704_AnimateTask(t: Task, a0: Long) {
+    fun f709_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -252,7 +252,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC Init (Stadium.HC:77) */
-    fun f705_Init(t: Task) {
+    fun f710_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -279,7 +279,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC Stadium (Stadium.HC:88) */
-    fun f706_Stadium(t: Task) {
+    fun f711_Stadium(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -299,7 +299,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
             st4(t0, (ld4u(t0) or 5242880L))
             ln = 96 // Stadium.HC:96
             tick(t)
-            P.f507_MenuPush(t, s2)
+            P.f512_MenuPush(t, s2)
             ln = 105 // Stadium.HC:105
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 106 // Stadium.HC:106
@@ -314,17 +314,17 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
             nat(t, n_DocClear, push1(t, 0L))
             ln = 110 // Stadium.HC:110
             tick(t)
-            f705_Init(t)
+            f710_Init(t)
             ln = 111 // Stadium.HC:111
             val t2: Long = (ld8(P.g_Fs) + 1088L)
-            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065856L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t1: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s3, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t2, t1)
             ln = 113 // Stadium.HC:113
             tick(t)
-            val t3: Long = P.f630_GRRead(t, s4, 0L)
+            val t3: Long = P.f635_GRRead(t, s4, 0L)
             st8(g_background, t3)
             ln = 114 // Stadium.HC:114
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 115 // Stadium.HC:115
             loop0@ while (true) {
                 ln = 116 // Stadium.HC:116
@@ -338,7 +338,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
                     if ((l24_ch == 10L)) {
                         ln = 120 // Stadium.HC:120
                         tick(t)
-                        f705_Init(t)
+                        f710_Init(t)
                     }
                 } else {
                     ln = 122 // Stadium.HC:122
@@ -364,7 +364,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 131 // Stadium.HC:131
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -372,13 +372,13 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
     }
 
     /** HolyC $init:C:/Demo/Games/Stadium/Stadium.HC#0 (Stadium.HC:134) */
-    fun f707_init_C__Demo_Games_Stadium_Stadium_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_Games_Stadium_Stadium_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 134 // Stadium.HC:134
             tick(t)
-            f706_Stadium(t)
+            f711_Stadium(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Stadium/Stadium.HC#0", ln) }
@@ -387,11 +387,11 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_Init(t); 0L }
-            706 -> { f706_Stadium(t); 0L }
-            707 -> f707_init_C__Demo_Games_Stadium_Stadium_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_Init(t); 0L }
+            711 -> { f711_Stadium(t); 0L }
+            712 -> f712_init_C__Demo_Games_Stadium_Stadium_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -403,7 +403,7 @@ class N_Demo_Games_Stadium_Stadium(rt: NativeRuntime, @JvmField val P: Prelude) 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("DrawIt", "AnimateTask", "Init", "Stadium", "\$init:C:/Demo/Games/Stadium/Stadium.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/Stadium/Stadium.HC")
     }

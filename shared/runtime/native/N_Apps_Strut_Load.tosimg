@@ -1,8 +1,8 @@
 TOSIMG 1
 unit C:/Apps/Strut/Load.HC#0
 s 17fd38 433a2f417070732f5374727574
-fn 703 $init:C:/Apps/Strut/Load.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/Strut/Load.HC#0 (I64;;-)
+init 708
 unit C:/Apps/Strut/Load.HC#1
 value MMD_EDIT 0
 value MMD_MODES_NUM 2
@@ -50,16 +50,16 @@ g 18fd68 65536
 g 19fd78 8
 c 19fd78 4 c
 c 19fd7c 4 a
-fn 704 $init:C:/Apps/Strut/Load.HC#1 (I64;;-)
+fn 709 $init:C:/Apps/Strut/Load.HC#1 (I64;;-)
 sym g main_mode_colors 19fd78 [2]$CColorROPU32
 sym g stars_x 17fd58 [8192]I64
 sym g stars_y 18fd68 [8192]I64
-init 704
+init 709
 unit C:/Apps/Strut/Load.HC#2
 s 19fd90 4564697400506c617900
 s 19fdb0 53545f4d41494e5f4d4f444553
-fn 705 $init:C:/Apps/Strut/Load.HC#2 (I64;;-)
-init 705
+fn 710 $init:C:/Apps/Strut/Load.HC#2 (I64;;-)
+init 710
 unit C:/Apps/Strut/Load.HC#3
 value EMD_CONNECTOR 2
 value EMD_MASS 0
@@ -74,15 +74,15 @@ c 19fe0c 4 b
 c 19fe10 4 3
 c 19fe14 4 e
 c 19fe18 4 9
-fn 706 $init:C:/Apps/Strut/Load.HC#3 (I64;;-)
+fn 711 $init:C:/Apps/Strut/Load.HC#3 (I64;;-)
 sym g edit_mode_colors 19fe08 [5]$CColorROPU32
 sym g main_mode_bttn 19fdd0 $CCtrlBttnState
-init 706
+init 711
 unit C:/Apps/Strut/Load.HC#4
 s 19fe30 4d61737300537072696e6700436f6e6e6563746f72005468727573746572004d6f766500
 s 19fe68 53545f454449545f4d4f444553
-fn 707 $init:C:/Apps/Strut/Load.HC#4 (I64;;-)
-init 707
+fn 712 $init:C:/Apps/Strut/Load.HC#4 (I64;;-)
+init 712
 unit C:/Apps/Strut/Load.HC#5
 value ZOOM_STEPS 20
 g 19fe88 40
@@ -100,42 +100,42 @@ b 1a0530 17f8fffffff8ffffff1000000010000000ffffffffffffff07fffffffffffffffffffff
 s 1a0658 0a2457572c312424505552504c45242454582b43582c224275696c64206120736869702e2224244647240a0a53656c206d617373206d6f64652e094c6566742d636c69636b20746f20706c616365206d61737365732e0a53656c20737072696e67206d6f64652e094c6566742d6472616720746f206d616b65206d656d626572732e0a53656c207468727573746572206d6f64652e09507265737320612064696769742c20302d392e1f1f4472616720746f206d616b652074687275737465722e0a53656c20636f6e6e6563746f72206d6f64652e09507265737320612064696769742c20302d392e1f1f4472616720746f206d616b6520627265616b61626c6520636f6e6e6563746f722e0a0a50726573732024475245454e243c53504143453e2446472420746f2072756e207468652067616d652e1f1f50726573732064696769747320746f206f7065726174652074687275737465727320616e6420627265616b20636f6e6e6563746f72732e0a0a50726573732024475245454e243c7a3e24464724206f722024475245454e243c53484946542d5a3e2446472420746f207a6f6f6d20696e2f6f75742e0a0a
 s 19fdb0 53545f4d41494e5f4d4f444553
 c 19ff68 8 0
-fn 708 S2W (U0;F64,F64,*F64,*F64;-)
-fn 709 W2S (U0;F64,F64,*F64,*F64;-)
-fn 710 Zoom (U0;F64;-)
-fn 711 DrawIt (U0;*$CTask,*$CDC;-)
-fn 712 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-fn 713 PlaceMass (*$MyMass;I64,I64;-)
-fn 714 PlaceSpring (*$MySpring;*$MyMass,*$MyMass,I64;-)
-fn 715 CenterMasses (U0;;-)
-fn 716 NullSprings (U0;;-)
-fn 717 BreakConnectors (U0;;-)
-fn 718 Init (U0;;-)
-fn 719 CleanUp (U0;;-)
-fn 720 PlayShip (U0;;-)
-fn 721 EditShip (U0;;-)
-fn 722 Strut (U0;;-)
-fn 723 $init:C:/Apps/Strut/Load.HC#5 (I64;;-)
-sym f BreakConnectors 717 (U0;;-)
-sym f CenterMasses 715 (U0;;-)
-sym f CleanUp 719 (U0;;-)
-sym f DrawIt 711 (U0;*$CTask,*$CDC;-)
-sym f EditShip 721 (U0;;-)
-sym f Init 718 (U0;;-)
-sym f MyDerivative 712 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
-sym f NullSprings 716 (U0;;-)
-sym f PlaceMass 713 (*$MyMass;I64,I64;-)
-sym f PlaceSpring 714 (*$MySpring;*$MyMass,*$MyMass,I64;-)
-sym f PlayShip 720 (U0;;-)
-sym f S2W 708 (U0;F64,F64,*F64,*F64;-)
-sym f Strut 722 (U0;;-)
-sym f W2S 709 (U0;F64,F64,*F64,*F64;-)
-sym f Zoom 710 (U0;F64;-)
+fn 713 S2W (U0;F64,F64,*F64,*F64;-)
+fn 714 W2S (U0;F64,F64,*F64,*F64;-)
+fn 715 Zoom (U0;F64;-)
+fn 716 DrawIt (U0;*$CTask,*$CDC;-)
+fn 717 MyDerivative (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+fn 718 PlaceMass (*$MyMass;I64,I64;-)
+fn 719 PlaceSpring (*$MySpring;*$MyMass,*$MyMass,I64;-)
+fn 720 CenterMasses (U0;;-)
+fn 721 NullSprings (U0;;-)
+fn 722 BreakConnectors (U0;;-)
+fn 723 Init (U0;;-)
+fn 724 CleanUp (U0;;-)
+fn 725 PlayShip (U0;;-)
+fn 726 EditShip (U0;;-)
+fn 727 Strut (U0;;-)
+fn 728 $init:C:/Apps/Strut/Load.HC#5 (I64;;-)
+sym f BreakConnectors 722 (U0;;-)
+sym f CenterMasses 720 (U0;;-)
+sym f CleanUp 724 (U0;;-)
+sym f DrawIt 716 (U0;*$CTask,*$CDC;-)
+sym f EditShip 726 (U0;;-)
+sym f Init 723 (U0;;-)
+sym f MyDerivative 717 (U0;*$CMathODE,F64,*$COrder2D3,*$COrder2D3;-)
+sym f NullSprings 721 (U0;;-)
+sym f PlaceMass 718 (*$MyMass;I64,I64;-)
+sym f PlaceSpring 719 (*$MySpring;*$MyMass,*$MyMass,I64;-)
+sym f PlayShip 725 (U0;;-)
+sym f S2W 713 (U0;F64,F64,*F64,*F64;-)
+sym f Strut 727 (U0;;-)
+sym f W2S 714 (U0;F64,F64,*F64,*F64;-)
+sym f Zoom 715 (U0;F64;-)
 sym g action_scan_codes 19ff08 [10]I64
 sym g edit_mode_bttn 19fe88 $CCtrlBttnState
 sym g next_action_key 19fef0 I64
 sym g ode 19ff68 *$CMathODE
 sym g task 19fec0 *$CTask
 sym g zoom 19fed8 F64
-init 723
+init 728
 unit C:/Apps/Strut/Load.HC#6

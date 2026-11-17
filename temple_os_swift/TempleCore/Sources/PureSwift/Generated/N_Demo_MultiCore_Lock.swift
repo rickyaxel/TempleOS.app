@@ -33,7 +33,7 @@ public final class N_Demo_MultiCore_Lock: NativeModule {
     }
 
     /// HolyC MPUnlockedInc (Lock.HC:14)
-    public final func f703_MPUnlockedInc(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_MPUnlockedInc(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -55,7 +55,7 @@ public final class N_Demo_MultiCore_Lock: NativeModule {
     }
 
     /// HolyC UnlockedInc (Lock.HC:21)
-    public final func f704_UnlockedInc(_ t: HTask) throws {
+    public final func f709_UnlockedInc(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -64,10 +64,10 @@ public final class N_Demo_MultiCore_Lock: NativeModule {
             ln = 24 // Lock.HC:24
             try st8(g_glbl, 0)
             ln = 25 // Lock.HC:25
-            let t0: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065855, 0, 0, 0, 0, 0, 0, 0))
+            let t0: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065860, 0, 0, 0, 0, 0, 0, 0))
             l0_tmpm0 = t0
             ln = 26 // Lock.HC:26
-            let t1: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065855, 0, 1, 0, 0, 0, 0, 0))
+            let t1: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065860, 0, 1, 0, 0, 0, 0, 0))
             l8_tmpm1 = t1
             ln = 27 // Lock.HC:27
             _ = try nat(t, n_JobResGet, try push1(t, l0_tmpm0))
@@ -81,7 +81,7 @@ public final class N_Demo_MultiCore_Lock: NativeModule {
     }
 
     /// HolyC MPLockedInc (Lock.HC:32)
-    public final func f705_MPLockedInc(_ t: HTask, _ a0: Int64) throws {
+    public final func f710_MPLockedInc(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -103,7 +103,7 @@ public final class N_Demo_MultiCore_Lock: NativeModule {
     }
 
     /// HolyC LockedInc (Lock.HC:40)
-    public final func f706_LockedInc(_ t: HTask) throws {
+    public final func f711_LockedInc(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -112,10 +112,10 @@ public final class N_Demo_MultiCore_Lock: NativeModule {
             ln = 43 // Lock.HC:43
             try st8(g_glbl, 0)
             ln = 44 // Lock.HC:44
-            let t0: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065857, 0, 0, 0, 0, 0, 0, 0))
+            let t0: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065862, 0, 0, 0, 0, 0, 0, 0))
             l0_tmpm0 = t0
             ln = 45 // Lock.HC:45
-            let t1: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065857, 0, 1, 0, 0, 0, 0, 0))
+            let t1: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065862, 0, 1, 0, 0, 0, 0, 0))
             l8_tmpm1 = t1
             ln = 46 // Lock.HC:46
             _ = try nat(t, n_JobResGet, try push1(t, l0_tmpm0))
@@ -129,26 +129,26 @@ public final class N_Demo_MultiCore_Lock: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/MultiCore/Lock.HC#0 (Lock.HC:51)
-    @discardableResult public final func f707_init_C__Demo_MultiCore_Lock_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_MultiCore_Lock_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 51 // Lock.HC:51
             try tick(t)
-            try f704_UnlockedInc(t)
+            try f709_UnlockedInc(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/MultiCore/Lock.HC#0", ln) }
     }
 
     /// HolyC $init:C:/Demo/MultiCore/Lock.HC#1 (Lock.HC:52)
-    @discardableResult public final func f708_init_C__Demo_MultiCore_Lock_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_MultiCore_Lock_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 52 // Lock.HC:52
             try tick(t)
-            try f706_LockedInc(t)
+            try f711_LockedInc(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/MultiCore/Lock.HC#1", ln) }
@@ -157,18 +157,18 @@ public final class N_Demo_MultiCore_Lock: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_MPUnlockedInc(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_UnlockedInc(t); return 0
-        case 705: try f705_MPLockedInc(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 706: try f706_LockedInc(t); return 0
-        case 707: return try f707_init_C__Demo_MultiCore_Lock_HC_0(t)
-        case 708: return try f708_init_C__Demo_MultiCore_Lock_HC_1(t)
+        case 708: try f708_MPUnlockedInc(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_UnlockedInc(t); return 0
+        case 710: try f710_MPLockedInc(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 711: try f711_LockedInc(t); return 0
+        case 712: return try f712_init_C__Demo_MultiCore_Lock_HC_0(t)
+        case 713: return try f713_init_C__Demo_MultiCore_Lock_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708]
-    private static let NAMES: [Int: String] = [703: "MPUnlockedInc", 704: "UnlockedInc", 705: "MPLockedInc", 706: "LockedInc", 707: "$init:C:/Demo/MultiCore/Lock.HC#0", 708: "$init:C:/Demo/MultiCore/Lock.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713]
+    private static let NAMES: [Int: String] = [708: "MPUnlockedInc", 709: "UnlockedInc", 710: "MPLockedInc", 711: "LockedInc", 712: "$init:C:/Demo/MultiCore/Lock.HC#0", 713: "$init:C:/Demo/MultiCore/Lock.HC#1"]
     private static let FILES: [String] = ["C:/Demo/MultiCore/Lock.HC"]
     public override var files: [String] { N_Demo_MultiCore_Lock.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_MultiCore_Lock.DEFINED.contains(index) }

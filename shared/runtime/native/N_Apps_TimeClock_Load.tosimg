@@ -1,8 +1,8 @@
 TOSIMG 1
 unit C:/Apps/TimeClock/Load.HC#0
 s 17fd38 433a2f417070732f54696d65436c6f636b
-fn 703 $init:C:/Apps/TimeClock/Load.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Apps/TimeClock/Load.HC#0 (I64;;-)
+init 708
 unit C:/Apps/TimeClock/Load.HC#1
 value TET_EOF 0
 value TET_PUNCH_IN 1
@@ -27,18 +27,18 @@ s 17fe70 0a456e746572204465736372697074696f6e2e0a5072657373203c4553433e207768656
 s 17fee0 7e2f54696d65436c6f636b
 s 17fee0 7e2f54696d65436c6f636b
 s 17ff00 4166746572204c6f6164696e672c20747970652024475245454e2450756e6368496e3b244647242c2024475245454e2450756e63684f75743b24464724206f722024475245454e2454696d655265703b244647240a596f75206d696768742077616e7420746f206d616b6520504c5547494e5320666f7220686f74206b6579732e0a0a0a
-fn 704 TimeFileRead (U0;*$TimeEntry;-)
-fn 705 TimeFileWrite (U0;*$TimeEntry;-)
-fn 706 TimeEntriesDel (U0;*$TimeEntry;-)
-fn 707 TimeRep (Bool;**$TimeEntry;-)
-fn 708 PunchOut (U0;;-)
-fn 709 PunchIn (U0;;-)
-fn 710 $init:C:/Apps/TimeClock/Load.HC#1 (I64;;-)
-sym f PunchIn 709 (U0;;-)
-sym f PunchOut 708 (U0;;-)
-sym f TimeEntriesDel 706 (U0;*$TimeEntry;-)
-sym f TimeFileRead 704 (U0;*$TimeEntry;-)
-sym f TimeFileWrite 705 (U0;*$TimeEntry;-)
-sym f TimeRep 707 (Bool;**$TimeEntry;-)
-init 710
+fn 709 TimeFileRead (U0;*$TimeEntry;-)
+fn 710 TimeFileWrite (U0;*$TimeEntry;-)
+fn 711 TimeEntriesDel (U0;*$TimeEntry;-)
+fn 712 TimeRep (Bool;**$TimeEntry;-)
+fn 713 PunchOut (U0;;-)
+fn 714 PunchIn (U0;;-)
+fn 715 $init:C:/Apps/TimeClock/Load.HC#1 (I64;;-)
+sym f PunchIn 714 (U0;;-)
+sym f PunchOut 713 (U0;;-)
+sym f TimeEntriesDel 711 (U0;*$TimeEntry;-)
+sym f TimeFileRead 709 (U0;*$TimeEntry;-)
+sym f TimeFileWrite 710 (U0;*$TimeEntry;-)
+sym f TimeRep 712 (Bool;**$TimeEntry;-)
+init 715
 unit C:/Apps/TimeClock/Load.HC#2

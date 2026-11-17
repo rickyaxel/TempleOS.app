@@ -34,7 +34,7 @@ class N_Demo_Graphics_SpritePut(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC SpritePut (SpritePut.HC:26) */
-    fun f703_SpritePut(t: Task) {
+    fun f708_SpritePut(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -64,13 +64,13 @@ class N_Demo_Graphics_SpritePut(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Graphics/SpritePut.HC#0 (SpritePut.HC:39) */
-    fun f704_init_C__Demo_Graphics_SpritePut_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_SpritePut_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 39 // SpritePut.HC:39
             tick(t)
-            f703_SpritePut(t)
+            f708_SpritePut(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/SpritePut.HC#0", ln) }
@@ -79,8 +79,8 @@ class N_Demo_Graphics_SpritePut(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SpritePut(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_SpritePut_HC_0(t)
+            708 -> { f708_SpritePut(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_SpritePut_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -92,7 +92,7 @@ class N_Demo_Graphics_SpritePut(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("SpritePut", "\$init:C:/Demo/Graphics/SpritePut.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/SpritePut.HC")
     }

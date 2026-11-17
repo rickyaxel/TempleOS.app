@@ -37,6 +37,7 @@ public final class Raster {
     public static let DONT_DRAW: Int64 = 0x1000
     public static let EXTENTS: Int64 = 0x10000
     public static let NO_TRANSPARENTS: Int64 = 0x100000
+    public static let TRANSFORMATION: Int64 = 0x100, SYMMETRY: Int64 = 0x200, JUST_MIRROR: Int64 = 0x400
     public static let ROP_EQU = 0, ROP_XOR = 1, ROP_COLLISION = 2, ROP_MONO = 3
     public static let DITHER: Int64 = 0x40, PROB_DITHER: Int64 = 0x80
     public static let ROPBF_HALF_RANGE_COLOR: Int64 = 0x10, ROPBF_TWO_SIDED: Int64 = 0x20
@@ -637,8 +638,11 @@ public final class Raster {
      * the first: u = x (span axis), v = y (iteration axis).
      */
     public func fillTri0(_ dc0: Int64, _ pa: Int64, _ pb: Int64, _ pc: Int64) throws -> Int64 {
-        let dc = try dcp(dc0)
-        let p = [try readPt(pa), try readPt(pb), try readPt(pc)]
+        return try fillTri0Pts(try dcp(dc0), [try readPt(pa), try readPt(pb), try readPt(pc)])
+    }
+
+    /** [fillTri0] on three points already read (the CD3I32 values, sign-extended): native GrFillPoly3. */
+    private func fillTri0Pts(_ dc: Int, _ p: [[Int64]]) throws -> Int64 {
         let x1 = p[0][0], y1 = p[0][1]
         let ay = kabs(y1 &- p[1][1]) &+ kabs(y1 &- p[2][1])
         let ax = kabs(x1 &- p[1][0]) &+ kabs(x1 &- p[2][0])
@@ -1311,5 +1315,330 @@ public final class Raster {
             tmpg = tmpg &+ n
         }
         return tmpg &- tmpg1 &+ m.ld8(try m.check(baseSizes, 8))
+    }
+
+    // MARK: GrLine3, GrFillPoly3, Gr3Mesh, Sprite3 (port of Raster.kt)
+
+    // Ports of GrLine3 (GrPrimatives.HC), GrFillPoly3 and Gr3Mesh (GrComposites.HC) and Sprite3 (GrSpritePlot.HC),
+    // 2026-11-17 (Varoom: 60% of its interpreted time on Pure Terry). Every dc field is read and written when the
+    // original reads and writes it, because transform, lighting and plot callbacks may be HolyC that looks at the dc;
+    // values stored in CD3I32/I32 fields are truncated as the original's stores truncate them.
+
+    private struct CompositeOffsets {
+        let thick: Int, lighting: Int, rNorm: Int, wi: Int, sig: Int
+        let grLinePlot0: Int64, grPlot3: Int64, dcLighting: Int64, sprite3Hc: Int64, dcSymmetry3Set: Int64
+        let cdcSize: Int64, symSize: Int
+        let spColor: Int, spDither: Int, spThick: Int, spX1: Int, spY1: Int
+        let ppX1: Int, ppY1: Int, ppX2: Int, ppY2: Int, nuU: Int, whX1: Int, whY1: Int, whU: Int, muU: Int
+    }
+    private var compositeCache: CompositeOffsets?
+    /** Kotlin's lazies of this section, resolved together on first use (the prelude is compiled by then). */
+    private var co: CompositeOffsets {
+        if let c = compositeCache { return c }
+        func fn(_ name: String) -> Int64 { k.prog.funcPtr(k.prog.globals[name] as! FuncSym) }
+        let c = CompositeOffsets(
+            thick: try! o.dc("thick"), lighting: try! o.dc("lighting"), rNorm: try! o.dc("r_norm"), wi: try! o.dc("width_internal"), sig: try! o.dc("dc_signature"),
+            grLinePlot0: fn("GrLinePlot0"), grPlot3: fn("GrPlot3"), dcLighting: fn("DCLighting"), sprite3Hc: fn("Sprite3_HC"), dcSymmetry3Set: fn("DCSymmetry3Set"),
+            cdcSize: Int64(o.cls("CDC").size), symSize: o.cls("CGrSym").size,
+            spColor: o.member("CSpriteColor", "color"), spDither: o.member("CSpriteDitherColor", "dither_color"), spThick: o.member("CSpriteT", "thick"),
+            spX1: o.member("CSpritePt", "x1"), spY1: o.member("CSpritePt", "y1"),
+            ppX1: o.member("CSpritePtPt", "x1"), ppY1: o.member("CSpritePtPt", "y1"), ppX2: o.member("CSpritePtPt", "x2"), ppY2: o.member("CSpritePtPt", "y2"),
+            nuU: o.member("CSpriteNumU8s", "u"), whX1: o.member("CSpritePtWHU8s", "x1"), whY1: o.member("CSpritePtWHU8s", "y1"),
+            whU: o.member("CSpritePtWHU8s", "u"), muU: o.member("CSpriteMeshU8s", "u"))
+        compositeCache = c
+        return c
+    }
+
+    @inline(__always) private func flagsOf(_ dc: Int) -> Int64 { m.ld4(dc + oFlags) }
+    @inline(__always) private func setFlags(_ dc: Int, _ v: Int64) { m.st4(dc + oFlags, v) }
+
+    /** Native GrLine3: transformation, symmetry, and thin (clipped), fat (GrLineFat3) or GrPlot3 lines. */
+    public func line3(_ t: HTask, _ dc0: Int64, _ x1: Int64, _ y1: Int64, _ z1: Int64, _ x2: Int64, _ y2: Int64, _ z2: Int64, _ step: Int64, _ start: Int64) throws -> Int64 {
+        let dc = try m.check(dc0, 8)
+        var v1: [Int64] = [x1, y1, z1]; var v2: [Int64] = [x2, y2, z2]
+        var res: Int64 = 0; var wasTransform = false; var wasSymmetry = false
+        if flagsOf(dc) & Raster.TRANSFORMATION != 0 {
+            try transform(dc, &v1); try transform(dc, &v2)
+            setFlags(dc, flagsOf(dc) & ~Raster.TRANSFORMATION)
+            wasTransform = true
+        }
+        var mirrorOnly = false
+        if flagsOf(dc) & Raster.SYMMETRY != 0 {
+            var s1 = v1; dcReflect(dc, &s1); var s2 = v2; dcReflect(dc, &s2)
+            setFlags(dc, flagsOf(dc) & ~Raster.SYMMETRY)
+            res = try line3Part(t, dc, &s1, &s2, step, start, res)
+            wasSymmetry = true
+            mirrorOnly = flagsOf(dc) & Raster.JUST_MIRROR != 0
+        }
+        if !mirrorOnly { res = try line3Part(t, dc, &v1, &v2, step, start, res) }
+        if wasTransform { setFlags(dc, flagsOf(dc) | Raster.TRANSFORMATION) }
+        if wasSymmetry { setFlags(dc, flagsOf(dc) | Raster.SYMMETRY) }
+        return res
+    }
+
+    /** One half of [line3]; [res] is the Bool so far (`res=`/`res|=` of the original give the same 0/1). */
+    private func line3Part(_ t: HTask, _ dc: Int, _ a: inout [Int64], _ b: inout [Int64], _ step: Int64, _ start: Int64, _ res: Int64) throws -> Int64 {
+        let c = co
+        if step == 1 && m.ld8(dc + oBrush) == 0 {
+            if start == 0 && s32(m.ld4(dc + c.thick)) < 2 && m.ld8(dc + oDb) == 0 {
+                if try clipLineDc(dc, &a, &b) {
+                    return res | (try line(t, Int64(dc), a[0], a[1], 0, b[0], b[1], 0, c.grLinePlot0, step, start) & 0xFF)
+                }
+                return res
+            }
+            return try lineFat3(Int64(dc), a[0], a[1], a[2], b[0], b[1], b[2], s32(m.ld4(dc + c.thick)), start) != 0 ? 1 : res
+        }
+        return res | (try line(t, Int64(dc), a[0], a[1], a[2], b[0], b[1], b[2], c.grPlot3, step, start) & 0xFF)
+    }
+
+    /** DCClipLine(dc,&x1,&y1,&x2,&y2) with width=height=0: GrClamp, window to screen coordinates, ClipLine. */
+    private func clipLineDc(_ dc: Int, _ a: inout [Int64], _ b: inout [Int64]) throws -> Bool {
+        var left: Int64 = 0; var top: Int64 = 0
+        var right = s32(m.ld4(dc + oWidth)) &- 1; var bottom = s32(m.ld4(dc + oHeight)) &- 1
+        if flagsOf(dc) & Raster.SCRN != 0 {
+            let w = try m.check(m.ld8(dc + oWinTask), 8)
+            if 639 < right { right = 639 }
+            if 479 < bottom { bottom = 479 }
+            if m.ld8(w + oPixL) > left { left = m.ld8(w + oPixL) }
+            if m.ld8(w + oPixT) > top { top = m.ld8(w + oPixT) }
+            if m.ld8(w + oPixR) < right { right = m.ld8(w + oPixR) }
+            if m.ld8(w + oPixB) < bottom { bottom = m.ld8(w + oPixB) }
+        }
+        if !(left <= right && top <= bottom) { return false }
+        if flagsOf(dc) & Raster.SCRN != 0 {
+            let w = try m.check(m.ld8(dc + oWinTask), 8)
+            a[0] = a[0] &+ (m.ld8(w + oPixL) &+ m.ld8(w + oSX)); a[1] = a[1] &+ (m.ld8(w + oPixT) &+ m.ld8(w + oSY))
+            b[0] = b[0] &+ (m.ld8(w + oPixL) &+ m.ld8(w + oSX)); b[1] = b[1] &+ (m.ld8(w + oPixT) &+ m.ld8(w + oSY))
+        }
+        return try clipLine(&a, &b, left, top, right, bottom)
+    }
+
+    private func outCode(_ x: Int64, _ y: Int64, _ left: Int64, _ top: Int64, _ right: Int64, _ bottom: Int64) -> Int64 {
+        var c: Int64 = y > bottom ? 8 : (y < top ? 4 : 0) // CC_BOTTOM, CC_TOP
+        if x > right { c |= 2 } else if x < left { c |= 1 } // CC_RIGHT, CC_LEFT
+        return c
+    }
+
+    /** ClipLine (GrMath.HC): Cohen-Sutherland on I64 with HolyC's division; writes the clipped ends to [a], [b]. */
+    private func clipLine(_ a: inout [Int64], _ b: inout [Int64], _ left: Int64, _ top: Int64, _ right: Int64, _ bottom: Int64) throws -> Bool {
+        var x1 = a[0], y1 = a[1], x2 = b[0], y2 = b[1]
+        var cc1 = outCode(x1, y1, left, top, right, bottom), cc2 = outCode(x2, y2, left, top, right, bottom)
+        while true {
+            if cc1 | cc2 == 0 { return true }
+            if cc1 & cc2 != 0 { return false }
+            let cc = cc1 != 0 ? cc1 : cc2
+            let x: Int64, y: Int64
+            if cc & 8 != 0 { x = x1 &+ (try div((x2 &- x1) &* (bottom &- y1), y2 &- y1)); y = bottom }
+            else if cc & 4 != 0 { x = x1 &+ (try div((x2 &- x1) &* (top &- y1), y2 &- y1)); y = top }
+            else if cc & 2 != 0 { y = y1 &+ (try div((y2 &- y1) &* (right &- x1), x2 &- x1)); x = right }
+            else { y = y1 &+ (try div((y2 &- y1) &* (left &- x1), x2 &- x1)); x = left }
+            if cc == cc1 { x1 = x; y1 = y; a[0] = x; a[1] = y; cc1 = outCode(x1, y1, left, top, right, bottom) }
+            else { x2 = x; y2 = y; b[0] = x; b[1] = y; cc2 = outCode(x2, y2, left, top, right, bottom) }
+        }
+    }
+
+    /** Native GrFillPoly3: a convex polygon as a fan of GrFillTri0, mirrored first with symmetry. */
+    public func fillPoly3(_ dc0: Int64, _ n: Int64, _ poly: Int64) throws -> Int64 {
+        if n < 3 { return 0 }
+        let dc = try m.check(dc0, 8)
+        var v: [Int64] = [0, 0, 0] // the original's x,y,z: they carry over between fan triangles
+        var tri: [[Int64]] = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+        var res: Int64 = 0
+        func vertex(_ j: Int64, _ reflect: Bool) throws {
+            let q = poly &+ 12 &* j
+            v[0] = try spI32(q); v[1] = try spI32(q &+ 4); v[2] = try spI32(q &+ 8)
+            if flagsOf(dc) & Raster.TRANSFORMATION != 0 { try transform(dc, &v) }
+            if reflect { dcReflect(dc, &v) }
+        }
+        func store(_ i: Int) { tri[i][0] = s32(v[0]); tri[i][1] = s32(v[1]); tri[i][2] = s32(v[2]) } // tri is CD3I32
+        for pass in 0...1 {
+            let reflect = pass == 0
+            if reflect && flagsOf(dc) & Raster.SYMMETRY == 0 { continue }
+            if !reflect && flagsOf(dc) & Raster.JUST_MIRROR != 0 { return res }
+            var i: Int64 = 1
+            while i < n &- 1 {
+                try poll()
+                if i == 1 { try vertex(0, reflect); store(0) }
+                if i == 1 { try vertex(1, reflect) }
+                store(1)
+                try vertex(i &+ 1, reflect); store(2)
+                res = res &+ (try fillTri0Pts(dc, tri))
+                i += 1
+            }
+        }
+        return res
+    }
+
+    /** (*dc->lighting)(dc,p1,p2,p3,color): native when it is the default DCLighting. */
+    private func lightingCall(_ t: HTask, _ dc: Int, _ p1: Int64, _ p2: Int64, _ p3: Int64, _ color: Int64) throws {
+        let fp = m.ld8(dc + co.lighting)
+        if fp == co.dcLighting { try lighting(Int64(dc), p1, p2, p3, color) }
+        else { _ = try k.vm.callFunction(t, fp, Int64(dc), p1, p2, p3, color) }
+    }
+
+    /** Native Gr3Mesh: transformed (and mirrored) vertices in MAlloc'd copies, then lit GrFillTri0 per triangle. */
+    public func mesh3(_ t: HTask, _ dc0: Int64, _ vertexCnt: Int64, _ p0: Int64, _ triCnt: Int64, _ tri0: Int64) throws -> Int64 {
+        spriteOffsets()
+        let dc = try m.check(dc0, 8)
+        let oldColor = m.ld4(dc + oColor)
+        var res: Int64 = 0
+        var p = p0
+        var pt: Int64 = 0
+        var v: [Int64] = [0, 0, 0]
+        if flagsOf(dc) & Raster.TRANSFORMATION != 0 {
+            pt = Int64(try m.malloc(12 &* vertexCnt))
+            var i: Int64 = 0
+            while i < vertexCnt {
+                try poll()
+                let q = p0 &+ 12 &* i
+                v[0] = try spI32(q); v[1] = try spI32(q &+ 4); v[2] = try spI32(q &+ 8)
+                try transform(dc, &v)
+                let d = try m.check(pt &+ 12 &* i, 12)
+                m.st4(d, v[0]); m.st4(d + 4, v[1]); m.st4(d + 8, v[2])
+                i += 1
+            }
+            p = pt
+        }
+        var mirrorOnly = false
+        if flagsOf(dc) & Raster.SYMMETRY != 0 {
+            let ptSym = Int64(try m.malloc(12 &* vertexCnt))
+            var i: Int64 = 0
+            while i < vertexCnt {
+                try poll()
+                let q = p &+ 12 &* i
+                v[0] = try spI32(q); v[1] = try spI32(q &+ 4); v[2] = try spI32(q &+ 8)
+                dcReflect(dc, &v)
+                let d = try m.check(ptSym &+ 12 &* i, 12)
+                m.st4(d, v[0]); m.st4(d + 4, v[1]); m.st4(d + 8, v[2])
+                i += 1
+            }
+            i = 0
+            while i < triCnt {
+                try poll()
+                let tr = tri0 &+ szTri &* i
+                let a = ptSym &+ 12 &* (try spI32(tr &+ 4)), b = ptSym &+ 12 &* (try spI32(tr &+ 12)), c = ptSym &+ 12 &* (try spI32(tr &+ 8))
+                try lightingCall(t, dc, a, b, c, try spI32(tr)) // tri->color: an I32, sign-extended as the original passes it
+                res = res &+ (try fillTri0(Int64(dc), a, b, c))
+                i += 1
+            }
+            try m.free(ptSym)
+            mirrorOnly = flagsOf(dc) & Raster.JUST_MIRROR != 0
+        }
+        if !mirrorOnly {
+            var i: Int64 = 0
+            while i < triCnt {
+                try poll()
+                let tr = tri0 &+ szTri &* i
+                let a = p &+ 12 &* (try spI32(tr &+ 4)), b = p &+ 12 &* (try spI32(tr &+ 8)), c = p &+ 12 &* (try spI32(tr &+ 12))
+                try lightingCall(t, dc, a, b, c, try spI32(tr)) // tri->color: an I32, sign-extended as the original passes it
+                res = res &+ (try fillTri0(Int64(dc), a, b, c))
+                i += 1
+            }
+        }
+        m.st4(dc + oColor, oldColor)
+        try m.free(pt)
+        return res
+    }
+
+    /** Native Mat4x4Scale (Prelude.HC): each element I64*=F64 as HolyC converts it. */
+    public func mat4x4Scale(_ mat: Int64, _ s: Double) throws -> Int64 {
+        let a = try m.check(mat, 128)
+        for i in 0..<16 { m.st8(a + 8 * i, f2i(Double(m.ld8(a + 8 * i)) * s)) }
+        return mat
+    }
+
+    /**
+     * Native Sprite3: walks the elements as the original does. Color, thick, transformation, shift and symmetry
+     * elements and the common drawing elements (line, polyline, bitmap, mesh) run here; any other element is drawn
+     * by the original, Sprite3_HC(dc,x,y,z,element,TRUE), which leaves the state it saved unchanged. A dc locating
+     * the nearest element (DCF_LOCATE_NEAREST) draws the whole sprite with the original.
+     */
+    public func sprite3(_ t: HTask, _ dc0: Int64, _ x0: Int64, _ y0: Int64, _ z0: Int64, _ elems: Int64, _ justOne: Int64) throws -> Int64 {
+        spriteOffsets()
+        let c = co
+        let dc = try m.check(dc0, 8)
+        if flagsOf(dc) & Raster.NEAREST != 0 { return try k.vm.callFunction(t, c.sprite3Hc, dc0, x0, y0, z0, elems, justOne) }
+        var tmpg = elems &- Int64(oStart)
+        var x = x0, y = y0, z = z0
+        let oldFlags = flagsOf(dc), oldPenWidth = s32(m.ld4(dc + c.thick))
+        let oldColor = m.ld4(dc + oColor)
+        let oldSym = m.readBytes(try m.check(Int64(dc + oSym), c.symSize), c.symSize)
+        while true {
+            try poll()
+            let e = tmpg &+ Int64(oStart)
+            let type = Int(m.ld1(try m.check(e, 1)) & 0x7F)
+            if type == 0 || type >= 30 { break } // SpriteTypeOk
+            switch type {
+            case 1: m.st4(dc + oColor, (m.ld4(dc + oColor) & ~(0x00FF00FF | 0x40000000)) | m.ld1(try m.check(e &+ Int64(c.spColor), 1)))
+            case 2:
+                let dcol = m.ld2(try m.check(e &+ Int64(c.spDither), 2))
+                m.st4(dc + oColor, (m.ld4(dc + oColor) & ~0x00FF00FF) | (dcol & 0xFF) | ((dcol >> 8) << 16) | 0x40000000)
+            case 3: m.st4(dc + c.thick, try spI32(e &+ Int64(c.spThick))); thickScale(dc)
+            case 5:
+                if flagsOf(dc) & Raster.TRANSFORMATION == 0 { x = x &- s32(m.ld4(dc + oDX)); y = y &- s32(m.ld4(dc + oDY)); z = z &- s32(m.ld4(dc + oDZ)) }
+                setFlags(dc, flagsOf(dc) | Raster.TRANSFORMATION)
+            case 6:
+                if flagsOf(dc) & Raster.TRANSFORMATION != 0 { x = x &+ s32(m.ld4(dc + oDX)); y = y &+ s32(m.ld4(dc + oDY)); z = z &+ s32(m.ld4(dc + oDZ)) }
+                setFlags(dc, flagsOf(dc) & ~Raster.TRANSFORMATION)
+            case 7: x = x &+ (try spI32(e &+ Int64(c.spX1))); y = y &+ (try spI32(e &+ Int64(c.spY1)))
+            case 10:
+                _ = try line3(t, Int64(dc), (try spI32(e &+ Int64(c.ppX1))) &+ x, (try spI32(e &+ Int64(c.ppY1))) &+ y, z,
+                              (try spI32(e &+ Int64(c.ppX2))) &+ x, (try spI32(e &+ Int64(c.ppY2))) &+ y, z, 1, 0)
+            case 4:
+                let ax = (try spI32(e &+ Int64(c.ppX1))) &+ x, ay = (try spI32(e &+ Int64(c.ppY1))) &+ y
+                let bx = (try spI32(e &+ Int64(c.ppX2))) &+ x, by = (try spI32(e &+ Int64(c.ppY2))) &+ y
+                let on = try k.vm.callFunction(t, c.dcSymmetry3Set, Int64(dc), ax, ay, z, bx, by, z, bx, by, z &+ 1) & 0xFF
+                setFlags(dc, on != 0 ? flagsOf(dc) | Raster.SYMMETRY : flagsOf(dc) & ~Raster.SYMMETRY)
+            case 11:
+                let ptr = e &+ Int64(c.nuU)
+                var x1 = try spI32(ptr), y1 = try spI32(ptr &+ 4)
+                let num = try spI32(e &+ Int64(oNum))
+                var i: Int64 = 1
+                while i < num {
+                    let x2 = try spI32(ptr &+ 8 &* i), y2 = try spI32(ptr &+ 8 &* i &+ 4)
+                    _ = try line3(t, Int64(dc), x1 &+ x, y1 &+ y, z, x2 &+ x, y2 &+ y, z, 1, 0)
+                    x1 = x2; y1 = y2
+                    i += 1
+                }
+            case 23:
+                let img = try m.calloc(c.cdcSize)
+                let w = try spI32(e &+ Int64(oWidth2)), h = try spI32(e &+ Int64(oHeight2))
+                m.st4(img + oWidth, w); m.st4(img + c.wi, (w &+ 7) & ~7); m.st4(img + oHeight, h)
+                m.st8(img + oBody, e &+ Int64(c.whU)); m.st4(img + c.sig, Gfx.DCS_SIG)
+                _ = try blot3(Int64(dc), (try spI32(e &+ Int64(c.whX1))) &+ x, (try spI32(e &+ Int64(c.whY1))) &+ y, z, Int64(img))
+                try m.free(Int64(img))
+            case 24:
+                let vc = try spI32(e &+ Int64(oMuV)), tc = try spI32(e &+ Int64(oMuT))
+                let p = Int64(try m.malloc(vc &* szD3))
+                let n = vc &* szD3
+                if n > 0 { m.copy(try m.check(p, Int(n)), try m.check(e &+ Int64(c.muU), Int(n)), Int(n)) }
+                var i: Int64 = 0
+                while i < vc {
+                    let q = try m.check(p &+ 12 &* i, 12)
+                    m.st4(q, s32(m.ld4(q)) &+ x); m.st4(q + 4, s32(m.ld4(q + 4)) &+ y); m.st4(q + 8, s32(m.ld4(q + 8)) &+ z)
+                    i += 1
+                }
+                _ = try mesh3(t, Int64(dc), vc, p, tc, e &+ Int64(c.muU) &+ szD3 &* vc)
+                try m.free(p)
+            default: _ = try k.vm.callFunction(t, c.sprite3Hc, Int64(dc), x, y, z, e, 1)
+            }
+            if justOne & 0xFF != 0 { break }
+            tmpg = tmpg &+ (try spriteElemSize(tmpg))
+        }
+        m.writeBytes(dc + oSym, oldSym)
+        m.st4(dc + oColor, oldColor)
+        m.st4(dc + c.thick, oldPenWidth)
+        setFlags(dc, (flagsOf(dc) & ~(Raster.SYMMETRY | Raster.TRANSFORMATION)) | (oldFlags & (Raster.SYMMETRY | Raster.TRANSFORMATION)))
+        return 0
+    }
+
+    /** DCThickScale (Prelude.HC): scale dc->thick by the transformation's norm. */
+    private func thickScale(_ dc: Int) {
+        let c = co
+        if flagsOf(dc) & Raster.TRANSFORMATION != 0 && s32(m.ld4(dc + c.thick)) != 0 {
+            let d = s32(m.ld4(dc + c.thick)) &* m.ld8(dc + c.rNorm) &+ 0x80000000
+            m.st4(dc + c.thick, d >> 32)
+            if s32(m.ld4(dc + c.thick)) < 1 { m.st4(dc + c.thick, 1) }
+        }
     }
 }

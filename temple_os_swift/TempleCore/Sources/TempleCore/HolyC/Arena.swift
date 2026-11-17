@@ -160,6 +160,16 @@ public final class Arena {
     public private(set) var peakAllocated: Int64 = 0
     public var highWater: Int { top }
 
+    /** The allocator's own state, outside the arena bytes (RasterDiffTests: natives that MAlloc and Free must leave
+     *  the heap as the HolyC original does; the Kotlin test reads the same fields by reflection). */
+    struct AllocatorState: Equatable {
+        let top: Int, smallFree: [Int], largeFree: [Int64: Int], largeSizes: [Int64], allocated: Int64
+    }
+    var allocatorState: AllocatorState {
+        get { AllocatorState(top: top, smallFree: smallFree, largeFree: largeFree, largeSizes: largeSizes, allocated: allocated) }
+        set { top = newValue.top; smallFree = newValue.smallFree; largeFree = newValue.largeFree; largeSizes = newValue.largeSizes; allocated = newValue.allocated }
+    }
+
     private func ensure(_ bytes: Int64) throws {
         if bytes <= Int64(size) { return }
         if bytes > Int64(maxBytes) { throw VmFault(Arena.OUT_MEM, "out of memory: program limit is \(maxBytes / (1024 * 1024)) MiB") }

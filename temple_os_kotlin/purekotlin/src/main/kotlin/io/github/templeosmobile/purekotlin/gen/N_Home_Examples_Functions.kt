@@ -35,7 +35,7 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Area (Functions.HC:4) */
-    fun f703_Area(t: Task, a0: Long, a1: Long): Long {
+    fun f708_Area(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -50,7 +50,7 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Fib (Functions.HC:9) */
-    fun f704_Fib(t: Task, a0: Long): Long {
+    fun f709_Fib(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -62,9 +62,9 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
             }
             ln = 12 // Functions.HC:12
             tick(t)
-            val t0: Long = f704_Fib(t, (p0_n - 1L))
+            val t0: Long = f709_Fib(t, (p0_n - 1L))
             tick(t)
-            val t1: Long = f704_Fib(t, (p0_n - 2L))
+            val t1: Long = f709_Fib(t, (p0_n - 2L))
             t.depth--
             return (t0 + t1)
             t.depth--
@@ -73,7 +73,7 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC Banner (Functions.HC:15) */
-    fun f705_Banner(t: Task) {
+    fun f710_Banner(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -85,26 +85,26 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Home/Examples/Functions.HC#0 (Functions.HC:20) */
-    fun f706_init_C__Home_Examples_Functions_HC_0(t: Task): Long {
+    fun f711_init_C__Home_Examples_Functions_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 20 // Functions.HC:20
             tick(t)
-            f705_Banner(t)
+            f710_Banner(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Home/Examples/Functions.HC#0", ln) }
     }
 
     /** HolyC $init:C:/Home/Examples/Functions.HC#1 (Functions.HC:21) */
-    fun f707_init_C__Home_Examples_Functions_HC_1(t: Task): Long {
+    fun f712_init_C__Home_Examples_Functions_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 21 // Functions.HC:21
             tick(t)
-            val t0: Long = f703_Area(t, 10L, 4L)
+            val t0: Long = f708_Area(t, 10L, 4L)
             nat(t, n_Print, push2(t, s1, t0))
             t.depth--
             return 0L
@@ -114,13 +114,13 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Home/Examples/Functions.HC#2 (Functions.HC:22) */
-    fun f708_init_C__Home_Examples_Functions_HC_2(t: Task): Long {
+    fun f713_init_C__Home_Examples_Functions_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 22 // Functions.HC:22
             tick(t)
-            val t0: Long = f703_Area(t, 3L, 4L)
+            val t0: Long = f708_Area(t, 3L, 4L)
             nat(t, n_Print, push2(t, s2, t0))
             t.depth--
             return 0L
@@ -130,13 +130,13 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Home/Examples/Functions.HC#3 (Functions.HC:23) */
-    fun f709_init_C__Home_Examples_Functions_HC_3(t: Task): Long {
+    fun f714_init_C__Home_Examples_Functions_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 23 // Functions.HC:23
             tick(t)
-            val t0: Long = f704_Fib(t, 20L)
+            val t0: Long = f709_Fib(t, 20L)
             nat(t, n_Print, push2(t, s3, t0))
             t.depth--
             return 0L
@@ -148,13 +148,13 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_Area(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            704 -> f704_Fib(t, (if (n > 0) st[base + 0] else 0L))
-            705 -> { f705_Banner(t); 0L }
-            706 -> f706_init_C__Home_Examples_Functions_HC_0(t)
-            707 -> f707_init_C__Home_Examples_Functions_HC_1(t)
-            708 -> f708_init_C__Home_Examples_Functions_HC_2(t)
-            709 -> f709_init_C__Home_Examples_Functions_HC_3(t)
+            708 -> f708_Area(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            709 -> f709_Fib(t, (if (n > 0) st[base + 0] else 0L))
+            710 -> { f710_Banner(t); 0L }
+            711 -> f711_init_C__Home_Examples_Functions_HC_0(t)
+            712 -> f712_init_C__Home_Examples_Functions_HC_1(t)
+            713 -> f713_init_C__Home_Examples_Functions_HC_2(t)
+            714 -> f714_init_C__Home_Examples_Functions_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -166,7 +166,7 @@ class N_Home_Examples_Functions(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714)
         private val NAMES = arrayOf("Area", "Fib", "Banner", "\$init:C:/Home/Examples/Functions.HC#0", "\$init:C:/Home/Examples/Functions.HC#1", "\$init:C:/Home/Examples/Functions.HC#2", "\$init:C:/Home/Examples/Functions.HC#3")
         private val FILES = arrayOf<String>("C:/Home/Examples/Functions.HC")
     }

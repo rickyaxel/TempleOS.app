@@ -75,7 +75,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC PrimesNew (MagicPairs.HC:52)
-    @discardableResult public final func f703_PrimesNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f708_PrimesNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -180,7 +180,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC PowPrimesNew (MagicPairs.HC:88)
-    @discardableResult public final func f704_PowPrimesNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f709_PowPrimesNew(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -266,7 +266,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC SumFact (MagicPairs.HC:121)
-    @discardableResult public final func f705_SumFact(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f710_SumFact(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -327,7 +327,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC TestSumFact (MagicPairs.HC:144)
-    @discardableResult public final func f706_TestSumFact(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f711_TestSumFact(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -542,7 +542,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC PutFactors (MagicPairs.HC:236)
-    public final func f707_PutFactors(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_PutFactors(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -594,7 +594,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC $eval0 (MagicPairs.HC:262)
-    @discardableResult public final func f708_eval0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_eval0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -608,7 +608,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC TestCoreSubRange (MagicPairs.HC:264)
-    @discardableResult public final func f709_TestCoreSubRange(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f714_TestCoreSubRange(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -733,7 +733,7 @@ public final class N_Demo_MagicPairs: NativeModule {
                     var r11: Bool = try (((t9 <= l40_n2) && (l40_n2 < ld8((p0_r &+ 24)))) && (((ld8((l72_sumfacts &+ ((l40_n2 &- ld8((p0_r &+ 16))) &* 8))) &- l40_n2) &- 1) == l32_n))
                     if !r11 {
                         try tick(t)
-                        let t10: Int64 = try f706_TestSumFact(t, l40_n2, l48_sf, ld8((p0_r &+ 40)), ld8((p0_r &+ 48)), ld8((p0_r &+ 56)))
+                        let t10: Int64 = try f711_TestSumFact(t, l40_n2, l48_sf, ld8((p0_r &+ 40)), ld8((p0_r &+ 48)), ld8((p0_r &+ 56)))
                         r11 = (t10 != 0)
                     }
                     ln = 303 // MagicPairs.HC:303
@@ -766,7 +766,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC TestCoreRange (MagicPairs.HC:318)
-    @discardableResult public final func f710_TestCoreRange(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f715_TestCoreRange(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -794,7 +794,7 @@ public final class N_Demo_MagicPairs: NativeModule {
                 }
                 ln = 328 // MagicPairs.HC:328
                 try tick(t)
-                let t0: Int64 = try f709_TestCoreSubRange(t, (fp &+ 32))
+                let t0: Int64 = try f714_TestCoreSubRange(t, (fp &+ 32))
                 l24_res = (l24_res &+ t0)
                 ln = 330 // MagicPairs.HC:330
                 l16_n = try (ld8(((fp &+ 32) &+ 24)) &- ld8(((fp &+ 32) &+ 16)))
@@ -817,7 +817,7 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC MagicPairs (MagicPairs.HC:338)
-    @discardableResult public final func f711_MagicPairs(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f716_MagicPairs(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -841,11 +841,11 @@ public final class N_Demo_MagicPairs: NativeModule {
             l64_n = try (divs((p0_N &- 1), t1) &+ 1)
             ln = 344 // MagicPairs.HC:344
             try tick(t)
-            let t2: Int64 = try f703_PrimesNew(t, p0_N, (fp &+ 24), (fp &+ 32))
+            let t2: Int64 = try f708_PrimesNew(t, p0_N, (fp &+ 24), (fp &+ 32))
             l72_primes = t2
             ln = 345 // MagicPairs.HC:345
             try tick(t)
-            let t3: Int64 = try f704_PowPrimesNew(t, p0_N, ld8((fp &+ 24)), l72_primes, (fp &+ 40))
+            let t3: Int64 = try f709_PowPrimesNew(t, p0_N, ld8((fp &+ 24)), l72_primes, (fp &+ 40))
             l80_powprimes = t3
             ln = 347 // MagicPairs.HC:347
             _ = try nat(t, n_Print, try push(t, s4, p0_N, ld8((fp &+ 24)), ld8((fp &+ 32)), ld8((fp &+ 40))))
@@ -864,7 +864,7 @@ public final class N_Demo_MagicPairs: NativeModule {
                 if !((l48_i < t7)) { break loop0 }
                 ln = 354 // MagicPairs.HC:354
                 try tick(t)
-                let t4: Int64 = try P.f602_DocPut(t, 0)
+                let t4: Int64 = try P.f607_DocPut(t, 0)
                 try st8((g_rj &+ (l48_i &* 72)), t4)
                 ln = 355 // MagicPairs.HC:355
                 try st8(((g_rj &+ (l48_i &* 72)) &+ 8), l48_i)
@@ -888,7 +888,7 @@ public final class N_Demo_MagicPairs: NativeModule {
                 try st8(((g_rj &+ (l48_i &* 72)) &+ 56), l72_primes)
                 ln = 364 // MagicPairs.HC:364
                 let t5: Int64 = try nat(t, n_mp_cnt, push0(t))
-                let t6: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065862, (g_rj &+ (l48_i &* 72)), ((t5 &- 1) &- l48_i), 0, 0, 0, 0, 0))
+                let t6: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065867, (g_rj &+ (l48_i &* 72)), ((t5 &- 1) &- l48_i), 0, 0, 0, 0, 0))
                 try st8(((g_rj &+ (l48_i &* 72)) &+ 64), t6)
                 ln = 353 // MagicPairs.HC:353
                 l48_i = (l48_i &+ 1)
@@ -927,13 +927,13 @@ public final class N_Demo_MagicPairs: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/MagicPairs.HC#0 (MagicPairs.HC:375)
-    @discardableResult public final func f712_init_C__Demo_MagicPairs_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f717_init_C__Demo_MagicPairs_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 375 // MagicPairs.HC:375
             try tick(t)
-            let t0: Int64 = try f711_MagicPairs(t, 1000000)
+            let t0: Int64 = try f716_MagicPairs(t, 1000000)
             t.depth -= 1
             return t0
             t.depth -= 1
@@ -944,22 +944,22 @@ public final class N_Demo_MagicPairs: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_PrimesNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 704: return try f704_PowPrimesNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 705: return try f705_SumFact(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 706: return try f706_TestSumFact(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 707: try f707_PutFactors(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: return try f708_eval0(t)
-        case 709: return try f709_TestCoreSubRange(t, (n > 0 ? st[base + 0] : 0))
-        case 710: return try f710_TestCoreRange(t, (n > 0 ? st[base + 0] : 0))
-        case 711: return try f711_MagicPairs(t, (n > 0 ? st[base + 0] : 0))
-        case 712: return try f712_init_C__Demo_MagicPairs_HC_0(t)
+        case 708: return try f708_PrimesNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 709: return try f709_PowPrimesNew(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 710: return try f710_SumFact(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 711: return try f711_TestSumFact(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 712: try f712_PutFactors(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: return try f713_eval0(t)
+        case 714: return try f714_TestCoreSubRange(t, (n > 0 ? st[base + 0] : 0))
+        case 715: return try f715_TestCoreRange(t, (n > 0 ? st[base + 0] : 0))
+        case 716: return try f716_MagicPairs(t, (n > 0 ? st[base + 0] : 0))
+        case 717: return try f717_init_C__Demo_MagicPairs_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712]
-    private static let NAMES: [Int: String] = [703: "PrimesNew", 704: "PowPrimesNew", 705: "SumFact", 706: "TestSumFact", 707: "PutFactors", 708: "$eval0", 709: "TestCoreSubRange", 710: "TestCoreRange", 711: "MagicPairs", 712: "$init:C:/Demo/MagicPairs.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717]
+    private static let NAMES: [Int: String] = [708: "PrimesNew", 709: "PowPrimesNew", 710: "SumFact", 711: "TestSumFact", 712: "PutFactors", 713: "$eval0", 714: "TestCoreSubRange", 715: "TestCoreRange", 716: "MagicPairs", 717: "$init:C:/Demo/MagicPairs.HC#0"]
     private static let FILES: [String] = ["C:/Demo/MagicPairs.HC"]
     public override var files: [String] { N_Demo_MagicPairs.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_MagicPairs.DEFINED.contains(index) }

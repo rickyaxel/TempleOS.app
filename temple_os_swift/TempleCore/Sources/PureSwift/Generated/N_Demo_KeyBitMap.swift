@@ -14,6 +14,7 @@ public final class N_Demo_KeyBitMap: NativeModule {
     public let n_FlushMsgs: Int
     public let n_Print: Int
     public let n_Sleep: Int
+    public let n_Sprite3: Int
     public let n_Yield: Int
     /** binary literal, 39 bytes */ public var b0: Int64 = 0
     /** x: I64 */ public var g_x: Int64 = 0
@@ -26,6 +27,7 @@ public final class N_Demo_KeyBitMap: NativeModule {
         n_FlushMsgs = rt.vm.natives.find("FlushMsgs")!.index
         n_Print = rt.vm.natives.find("Print")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         n_Yield = rt.vm.natives.find("Yield")!.index
         super.init(rt)
     }
@@ -41,22 +43,21 @@ public final class N_Demo_KeyBitMap: NativeModule {
     }
 
     /// HolyC DrawIt (KeyBitMap.HC:9)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             var p1_dc: Int64 = a1
             ln = 11 // KeyBitMap.HC:11
-            try tick(t)
-            try P.f440_Sprite3(t, p1_dc, mods(ld8(g_x), 100), 100, 0, b0, 0)
+            _ = try nat(t, n_Sprite3, try push(t, p1_dc, mods(ld8(g_x), 100), 100, 0, b0, 0))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "DrawIt", ln) }
     }
 
     /// HolyC KeyDownBitMapDemo (KeyBitMap.HC:14)
-    public final func f704_KeyDownBitMapDemo(_ t: HTask) throws {
+    public final func f709_KeyDownBitMapDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -78,7 +79,7 @@ public final class N_Demo_KeyBitMap: NativeModule {
             try tick(t)
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 24 // KeyBitMap.HC:24
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 32 // KeyBitMap.HC:32
             loop2: while true {
                 let t3: Int64 = try nat(t, n_Bt, try push2(t, (P.g_kbd &+ 64), l0_i_sc))
@@ -101,13 +102,13 @@ public final class N_Demo_KeyBitMap: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/KeyBitMap.HC#0 (KeyBitMap.HC:7)
-    @discardableResult public final func f705_init_C__Demo_KeyBitMap_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_KeyBitMap_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 40 // KeyBitMap.HC:40
             try tick(t)
-            try f704_KeyDownBitMapDemo(t)
+            try f709_KeyDownBitMapDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/KeyBitMap.HC#0", ln) }
@@ -116,15 +117,15 @@ public final class N_Demo_KeyBitMap: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_KeyDownBitMapDemo(t); return 0
-        case 705: return try f705_init_C__Demo_KeyBitMap_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_KeyDownBitMapDemo(t); return 0
+        case 710: return try f710_init_C__Demo_KeyBitMap_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "KeyDownBitMapDemo", 705: "$init:C:/Demo/KeyBitMap.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "KeyDownBitMapDemo", 710: "$init:C:/Demo/KeyBitMap.HC#0"]
     private static let FILES: [String] = ["C:/Demo/KeyBitMap.HC"]
     public override var files: [String] { N_Demo_KeyBitMap.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_KeyBitMap.DEFINED.contains(index) }

@@ -10,12 +10,16 @@ import TempleCore
 public final class N_Demo_Graphics_Box: NativeModule {
     public let P: Prelude
     public let n_DocClear: Int
+    public let n_GrLine3: Int
+    public let n_Mat4x4Scale: Int
     public let n_Sleep: Int
     /** glbl_r: I64[4][4] */ public var g_glbl_r: Int64 = 0
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
         n_DocClear = rt.vm.natives.find("DocClear")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
         super.init(rt)
     }
@@ -29,7 +33,7 @@ public final class N_Demo_Graphics_Box: NativeModule {
     }
 
     /// HolyC DrawIt (Box.HC:3)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -53,41 +57,29 @@ public final class N_Demo_Graphics_Box: NativeModule {
             try tick(t)
             try P.f283_DCMat4x4Set(t, p1_dc, g_glbl_r)
             ln = 12 // Box.HC:12
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (-100), (-100), (-100), (-100), 100, (-100), 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (-100), (-100), (-100), (-100), 100, (-100), 1, 0))
             ln = 13 // Box.HC:13
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (-100), 100, (-100), 100, 100, (-100), 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (-100), 100, (-100), 100, 100, (-100), 1, 0))
             ln = 14 // Box.HC:14
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 100, 100, (-100), 100, (-100), (-100), 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 100, 100, (-100), 100, (-100), (-100), 1, 0))
             ln = 15 // Box.HC:15
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 100, (-100), (-100), (-100), (-100), (-100), 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 100, (-100), (-100), (-100), (-100), (-100), 1, 0))
             ln = 16 // Box.HC:16
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (-100), (-100), 100, (-100), 100, 100, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (-100), (-100), 100, (-100), 100, 100, 1, 0))
             ln = 17 // Box.HC:17
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (-100), 100, 100, 100, 100, 100, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (-100), 100, 100, 100, 100, 100, 1, 0))
             ln = 18 // Box.HC:18
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 100, 100, 100, 100, (-100), 100, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 100, 100, 100, 100, (-100), 100, 1, 0))
             ln = 19 // Box.HC:19
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 100, (-100), 100, (-100), (-100), 100, 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 100, (-100), 100, (-100), (-100), 100, 1, 0))
             ln = 20 // Box.HC:20
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (-100), (-100), 100, (-100), (-100), (-100), 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (-100), (-100), 100, (-100), (-100), (-100), 1, 0))
             ln = 21 // Box.HC:21
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, (-100), 100, 100, (-100), 100, (-100), 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, (-100), 100, 100, (-100), 100, (-100), 1, 0))
             ln = 22 // Box.HC:22
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 100, 100, 100, 100, 100, (-100), 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 100, 100, 100, 100, 100, (-100), 1, 0))
             ln = 23 // Box.HC:23
-            try tick(t)
-            _ = try P.f406_GrLine3(t, p1_dc, 100, (-100), 100, 100, (-100), (-100), 1, 0)
+            _ = try nat(t, n_GrLine3, try push(t, p1_dc, 100, (-100), 100, 100, (-100), (-100), 1, 0))
             ln = 24 // Box.HC:24
             try st8((p1_dc &+ 200), l16_old_r)
             t.depth -= 1
@@ -96,7 +88,7 @@ public final class N_Demo_Graphics_Box: NativeModule {
     }
 
     /// HolyC Box (Box.HC:27)
-    public final func f704_Box(_ t: HTask) throws {
+    public final func f709_Box(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -117,7 +109,7 @@ public final class N_Demo_Graphics_Box: NativeModule {
             ln = 31 // Box.HC:31
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 32 // Box.HC:32
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 33 // Box.HC:33
             loop0: while true {
                 try tick(t)
@@ -136,8 +128,7 @@ public final class N_Demo_Graphics_Box: NativeModule {
                 try tick(t)
                 _ = try P.f307_Mat4x4RotZ(t, g_glbl_r, l16__)
                 ln = 38 // Box.HC:38
-                try tick(t)
-                _ = try P.f308_Mat4x4Scale(t, g_glbl_r, l24_s)
+                _ = try nat(t, n_Mat4x4Scale, try push2(t, g_glbl_r, bits(l24_s)))
                 ln = 40 // Box.HC:40
                 _ = try nat(t, n_Sleep, try push1(t, 20))
                 ln = 41 // Box.HC:41
@@ -163,13 +154,13 @@ public final class N_Demo_Graphics_Box: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Box.HC#0 (Box.HC:50)
-    @discardableResult public final func f705_init_C__Demo_Graphics_Box_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_Box_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 50 // Box.HC:50
             try tick(t)
-            try f704_Box(t)
+            try f709_Box(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Box.HC#0", ln) }
@@ -178,15 +169,15 @@ public final class N_Demo_Graphics_Box: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_Box(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_Box_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_Box(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_Box_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "Box", 705: "$init:C:/Demo/Graphics/Box.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "Box", 710: "$init:C:/Demo/Graphics/Box.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Box.HC"]
     public override var files: [String] { N_Demo_Graphics_Box.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Box.DEFINED.contains(index) }

@@ -29,6 +29,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
     /** "F64 best_score=9999;." */ @JvmField var s0: Long = 0L
@@ -156,7 +157,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/Wenceslas.HC#0 (Wenceslas.HC:1) */
-    fun f703_init_C__Demo_Games_Wenceslas_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_Wenceslas_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -170,7 +171,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/Wenceslas.HC#1 (Wenceslas.HC:2) */
-    fun f704_init_C__Demo_Games_Wenceslas_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_Wenceslas_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -184,7 +185,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -194,7 +195,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/Wenceslas.HC#2 (Wenceslas.HC:86) */
-    fun f706_init_C__Demo_Games_Wenceslas_HC_2(t: Task): Long {
+    fun f711_init_C__Demo_Games_Wenceslas_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -209,7 +210,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/Wenceslas.HC#3 (Wenceslas.HC:87) */
-    fun f707_init_C__Demo_Games_Wenceslas_HC_3(t: Task): Long {
+    fun f712_init_C__Demo_Games_Wenceslas_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -224,7 +225,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC DrawIt (Wenceslas.HC:121) */
-    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f713_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -270,22 +271,19 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         l184_img = b10
                     }
                     ln = 139 // Wenceslas.HC:139
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, ld2u((g_trees + (l144_i * 12L))), ld2u(((g_trees + (l144_i * 12L)) + 2L)), 0L, l184_img, 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, ld2u((g_trees + (l144_i * 12L))), ld2u(((g_trees + (l144_i * 12L)) + 2L)), 0L, l184_img, 0L))
                 }
                 ln = 130 // Wenceslas.HC:130
                 l144_i = (l144_i + 1L)
                 tick(t)
             }
             ln = 143 // Wenceslas.HC:143
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, divs(l152_w, 2L), divs(l160_h, 2L), 0L, b11, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, divs(l152_w, 2L), divs(l160_h, 2L), 0L, b11, 0L))
             ln = 144 // Wenceslas.HC:144
             val t2: Double = f(nat(t, n_tS, push0(t)))
             if ((t2 < (ldf(g_door_open_t0) + 1.0))) {
                 ln = 145 // Wenceslas.HC:145
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, divs(l152_w, 2L), divs(l160_h, 2L), 0L, b12, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, divs(l152_w, 2L), divs(l160_h, 2L), 0L, b12, 0L))
             }
             ln = 147 // Wenceslas.HC:147
             l144_i = 0L
@@ -310,8 +308,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         l184_img = b15
                     }
                     ln = 156 // Wenceslas.HC:156
-                    tick(t)
-                    P.f440_Sprite3(t, p1_dc, ld2u((g_trees + (l144_i * 12L))), ld2u(((g_trees + (l144_i * 12L)) + 2L)), 0L, l184_img, 0L)
+                    nat(t, n_Sprite3, push(t, p1_dc, ld2u((g_trees + (l144_i * 12L))), ld2u(((g_trees + (l144_i * 12L)) + 2L)), 0L, l184_img, 0L))
                 }
                 ln = 147 // Wenceslas.HC:147
                 l144_i = (l144_i + 1L)
@@ -334,7 +331,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 st4((p1_dc + 228L), 4L)
                 ln = 167 // Wenceslas.HC:167
                 tick(t)
-                P.f393_GrPlot3(t, p1_dc, ld2u((l200_tmpst + 16L)), ld2u((l200_tmpst + 18L)), 0L)
+                P.f394_GrPlot3(t, p1_dc, ld2u((l200_tmpst + 16L)), ld2u((l200_tmpst + 18L)), 0L)
                 ln = 168 // Wenceslas.HC:168
                 l200_tmpst = ld8(l200_tmpst)
                 tick(t)
@@ -364,19 +361,19 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 if ((ld1u((l208_tmpp + 48L)) != 0L)) {
                     ln = 180 // Wenceslas.HC:180
                     tick(t)
-                    P.f442_Sprite3Mat4x4B(t, p1_dc, f2i(ldf((l208_tmpp + 16L))), f2i(ldf((l208_tmpp + 24L))), divs(2147483647L, 2L), ld8(g_peasant_imgs), (fp + 16))
+                    P.f447_Sprite3Mat4x4B(t, p1_dc, f2i(ldf((l208_tmpp + 16L))), f2i(ldf((l208_tmpp + 24L))), divs(2147483647L, 2L), ld8(g_peasant_imgs), (fp + 16))
                 } else {
                     ln = 182 // Wenceslas.HC:182
                     val t8: Long = ld8((g_peasant_imgs + (((ld8(g_animate_phase) + 1L) and 3L) * 8L)))
                     val t9: Long = ld8((g_peasant_imgs + ((ld8(g_animate_phase) and 3L) * 8L)))
                     tick(t)
-                    val t7: Double = P.f480_Saw(t, (ld8(g_animate_mS).toDouble() / 250.0), 1.0)
+                    val t7: Double = P.f485_Saw(t, (ld8(g_animate_mS).toDouble() / 250.0), 1.0)
                     tick(t)
-                    val t10: Long = P.f448_SpriteInterpolate(t, t7, t9, t8)
+                    val t10: Long = P.f453_SpriteInterpolate(t, t7, t9, t8)
                     l192_tmps = t10
                     ln = 185 // Wenceslas.HC:185
                     tick(t)
-                    P.f442_Sprite3Mat4x4B(t, p1_dc, f2i(ldf((l208_tmpp + 16L))), f2i(ldf((l208_tmpp + 24L))), divs(2147483647L, 2L), l192_tmps, (fp + 16))
+                    P.f447_Sprite3Mat4x4B(t, p1_dc, f2i(ldf((l208_tmpp + 16L))), f2i(ldf((l208_tmpp + 24L))), divs(2147483647L, 2L), l192_tmps, (fp + 16))
                     ln = 186 // Wenceslas.HC:186
                     nat(t, n_Free, push1(t, l192_tmps))
                 }
@@ -400,19 +397,19 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             if ((t11 > ldf(g_king_timeout))) {
                 ln = 196 // Wenceslas.HC:196
                 tick(t)
-                P.f442_Sprite3Mat4x4B(t, p1_dc, ld8(g_king_x), ld8(g_king_y), divs(2147483647L, 2L), ld8(g_king_imgs), (fp + 16))
+                P.f447_Sprite3Mat4x4B(t, p1_dc, ld8(g_king_x), ld8(g_king_y), divs(2147483647L, 2L), ld8(g_king_imgs), (fp + 16))
             } else {
                 ln = 198 // Wenceslas.HC:198
                 val t13: Long = ld8((g_king_imgs + (((ld8(g_king_phase) + 1L) and 3L) * 8L)))
                 val t14: Long = ld8((g_king_imgs + ((ld8(g_king_phase) and 3L) * 8L)))
                 tick(t)
-                val t12: Double = P.f480_Saw(t, (ld8(g_king_mS).toDouble() / 250.0), 1.0)
+                val t12: Double = P.f485_Saw(t, (ld8(g_king_mS).toDouble() / 250.0), 1.0)
                 tick(t)
-                val t15: Long = P.f448_SpriteInterpolate(t, t12, t14, t13)
+                val t15: Long = P.f453_SpriteInterpolate(t, t12, t14, t13)
                 l192_tmps = t15
                 ln = 201 // Wenceslas.HC:201
                 tick(t)
-                P.f442_Sprite3Mat4x4B(t, p1_dc, ld8(g_king_x), ld8(g_king_y), divs(2147483647L, 2L), l192_tmps, (fp + 16))
+                P.f447_Sprite3Mat4x4B(t, p1_dc, ld8(g_king_x), ld8(g_king_y), divs(2147483647L, 2L), l192_tmps, (fp + 16))
                 ln = 202 // Wenceslas.HC:202
                 nat(t, n_Free, push1(t, l192_tmps))
             }
@@ -447,7 +444,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                     ln = 214 // Wenceslas.HC:214
                     tick(t)
                     val vb0 = push0(t)
-                    P.f369_GrPrint(t, p1_dc, (divs(l152_w, 2L) - divs(112L, 2L)), (divs(l160_h, 2L) + 8L), s2, vb0, 0)
+                    P.f370_GrPrint(t, p1_dc, (divs(l152_w, 2L) - divs(112L, 2L)), (divs(l160_h, 2L) + 8L), s2, vb0, 0)
                     t.sp = vb0
                 }
                 ln = 215 // Wenceslas.HC:215
@@ -462,7 +459,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             ln = 220 // Wenceslas.HC:220
             tick(t)
             val vb1 = push3(t, ld8(g_not_stopped_cnt), bits((l216_tt - ldf(g_t0))), bits(ldf(g_best_score)))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s3, vb1, 3)
             t.sp = vb1
             t.msp = msp0
             t.depth--
@@ -471,7 +468,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC StepNew (Wenceslas.HC:224) */
-    fun f709_StepNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Long, a5: Long) {
+    fun f714_StepNew(t: Task, a0: Long, a1: Long, a2: Long, a3: Double, a4: Long, a5: Long) {
         var ln = 0
         try {
             enter(t)
@@ -579,7 +576,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Init (Wenceslas.HC:261) */
-    fun f710_Init(t: Task) {
+    fun f715_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -603,7 +600,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             st8(g_snow_tile, t0)
             ln = 271 // Wenceslas.HC:271
             tick(t)
-            P.f446_SpriteExtents(t, b16, (fp + 8), (fp + 16), (fp + 24), (fp + 32))
+            P.f451_SpriteExtents(t, b16, (fp + 8), (fp + 16), (fp + 24), (fp + 32))
             ln = 272 // Wenceslas.HC:272
             l0_i = 0L
             loop0@ while ((l0_i < 8L)) {
@@ -627,7 +624,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f152_QueInit(t, g_king_step_head)
             ln = 281 // Wenceslas.HC:281
             tick(t)
-            P.f446_SpriteExtents(t, b17, (fp + 8), (fp + 16), (fp + 24), (fp + 32))
+            P.f451_SpriteExtents(t, b17, (fp + 8), (fp + 16), (fp + 24), (fp + 32))
             ln = 282 // Wenceslas.HC:282
             tick(t)
             P.f152_QueInit(t, g_peasant_head)
@@ -687,7 +684,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC CleanUp (Wenceslas.HC:305) */
-    fun f711_CleanUp(t: Task) {
+    fun f716_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -709,7 +706,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Follow (Wenceslas.HC:313) */
-    fun f712_Follow(t: Task, a0: Long, a1: Long) {
+    fun f717_Follow(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -755,7 +752,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC AnimateTask (Wenceslas.HC:330) */
-    fun f713_AnimateTask(t: Task, a0: Long) {
+    fun f718_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -872,7 +869,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         if ((ld1u((l24_tmpp + 48L)) == 0L)) {
                             ln = 379 // Wenceslas.HC:379
                             tick(t)
-                            f712_Follow(t, ld8((ld8(P.g_Fs) + 120L)), l24_tmpp)
+                            f717_Follow(t, ld8((ld8(P.g_Fs) + 120L)), l24_tmpp)
                             ln = 380 // Wenceslas.HC:380
                             val t10: Long = (l24_tmpp + 16L)
                             val t12: Double = ldf(t10)
@@ -927,7 +924,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                             if (((ld8(g_animate_mS) == 0L) && ((ld8(g_animate_phase) and 1L) != 0L))) {
                                 ln = 389 // Wenceslas.HC:389
                                 tick(t)
-                                f709_StepNew(t, ld8((ld8(P.g_Fs) + 120L)), f2i(ldf((l24_tmpp + 16L))), f2i(ldf((l24_tmpp + 24L))), ldf((l24_tmpp + 32L)), (ld8(g_animate_phase) and 2L), 0L)
+                                f714_StepNew(t, ld8((ld8(P.g_Fs) + 120L)), f2i(ldf((l24_tmpp + 16L))), f2i(ldf((l24_tmpp + 24L))), ldf((l24_tmpp + 32L)), (ld8(g_animate_phase) and 2L), 0L)
                             }
                             ln = 391 // Wenceslas.HC:391
                             val t32: Long = ld8(g_not_stopped_cnt)
@@ -1018,7 +1015,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC BurnTrees (Wenceslas.HC:429) */
-    fun f714_BurnTrees(t: Task) {
+    fun f719_BurnTrees(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1045,16 +1042,16 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC SongTask (Wenceslas.HC:437) */
-    fun f715_SongTask(t: Task, a0: Long) {
+    fun f720_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 439 // Wenceslas.HC:439
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 440 // Wenceslas.HC:440
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 441 // Wenceslas.HC:441
             st8((P.g_music + 56L), bits(2.48))
             ln = 442 // Wenceslas.HC:442
@@ -1063,13 +1060,13 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             loop0@ while ((1L != 0L)) {
                 ln = 444 // Wenceslas.HC:444
                 tick(t)
-                P.f494_Play(t, s4, 0L)
+                P.f499_Play(t, s4, 0L)
                 ln = 445 // Wenceslas.HC:445
                 tick(t)
-                P.f494_Play(t, s4, 0L)
+                P.f499_Play(t, s4, 0L)
                 ln = 446 // Wenceslas.HC:446
                 tick(t)
-                P.f494_Play(t, s5, 0L)
+                P.f499_Play(t, s5, 0L)
                 tick(t)
             }
             t.depth--
@@ -1078,7 +1075,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC Wenceslas (Wenceslas.HC:450) */
-    fun f716_Wenceslas(t: Task) {
+    fun f721_Wenceslas(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1086,7 +1083,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             val fp = frame(t, 24)
             ln = 454 // Wenceslas.HC:454
             tick(t)
-            P.f507_MenuPush(t, s6)
+            P.f512_MenuPush(t, s6)
             ln = 469 // Wenceslas.HC:469
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -1104,7 +1101,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             nat(t, n_DocClear, push1(t, 0L))
             ln = 475 // Wenceslas.HC:475
             val t1: Long = (ld8(P.g_Fs) + 1080L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065867L, 0L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065872L, 0L, s7, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 477 // Wenceslas.HC:477
             tick(t)
@@ -1117,13 +1114,13 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f201_PopUpOk(t, s10, 0L)
             ln = 535 // Wenceslas.HC:535
             tick(t)
-            f710_Init(t)
+            f715_Init(t)
             ln = 536 // Wenceslas.HC:536
             val t3: Long = (ld8(P.g_Fs) + 1088L)
-            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065865L, 0L, s11, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t2: Long = nat(t, n_Spawn, push(t, 9223090561878065870L, 0L, s11, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t3, t2)
             ln = 537 // Wenceslas.HC:537
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065865L)
             ln = 538 // Wenceslas.HC:538
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -1138,10 +1135,10 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                 10L -> {
                                     ln = 542 // Wenceslas.HC:542
                                     tick(t)
-                                    f711_CleanUp(t)
+                                    f716_CleanUp(t)
                                     ln = 543 // Wenceslas.HC:543
                                     tick(t)
-                                    f710_Init(t)
+                                    f715_Init(t)
                                 }
                                 27L, 28L -> {
                                     ln = 547 // Wenceslas.HC:547
@@ -1150,7 +1147,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                 32L -> {
                                     ln = 549 // Wenceslas.HC:549
                                     tick(t)
-                                    f714_BurnTrees(t)
+                                    f719_BurnTrees(t)
                                 }
                                 0L -> {
                                     ln = 552 // Wenceslas.HC:552
@@ -1249,7 +1246,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                                         st8(g_king_phase, ((ld8(g_king_phase) + 2L) and 2L))
                                         ln = 577 // Wenceslas.HC:577
                                         tick(t)
-                                        f709_StepNew(t, ld8(P.g_Fs), ld8(g_king_x), ld8(g_king_y), ldf(g_king__), (ld8(g_king_phase) and 2L), 1L)
+                                        f714_StepNew(t, ld8(P.g_Fs), ld8(g_king_x), ld8(g_king_y), ldf(g_king__), (ld8(g_king_phase) and 2L), 1L)
                                         ln = 578 // Wenceslas.HC:578
                                         val t6: Double = f(nat(t, n_tS, push0(t)))
                                         st8(g_king_timeout, bits((t6 + 0.5)))
@@ -1278,10 +1275,10 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 587 // Wenceslas.HC:587
             tick(t)
-            f711_CleanUp(t)
+            f716_CleanUp(t)
             ln = 588 // Wenceslas.HC:588
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 589 // Wenceslas.HC:589
             nat(t, n_RegWrite, push3(t, s1, s12, bits(ldf(g_best_score))))
             t.msp = msp0
@@ -1291,13 +1288,13 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/Games/Wenceslas.HC#4 (Wenceslas.HC:592) */
-    fun f717_init_C__Demo_Games_Wenceslas_HC_4(t: Task): Long {
+    fun f722_init_C__Demo_Games_Wenceslas_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 592 // Wenceslas.HC:592
             tick(t)
-            f716_Wenceslas(t)
+            f721_Wenceslas(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/Wenceslas.HC#4", ln) }
@@ -1306,21 +1303,21 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_Wenceslas_HC_0(t)
-            704 -> f704_init_C__Demo_Games_Wenceslas_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> f706_init_C__Demo_Games_Wenceslas_HC_2(t)
-            707 -> f707_init_C__Demo_Games_Wenceslas_HC_3(t)
-            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            709 -> { f709_StepNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L)); 0L }
-            710 -> { f710_Init(t); 0L }
-            711 -> { f711_CleanUp(t); 0L }
-            712 -> { f712_Follow(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            713 -> { f713_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            714 -> { f714_BurnTrees(t); 0L }
-            715 -> { f715_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            716 -> { f716_Wenceslas(t); 0L }
-            717 -> f717_init_C__Demo_Games_Wenceslas_HC_4(t)
+            708 -> f708_init_C__Demo_Games_Wenceslas_HC_0(t)
+            709 -> f709_init_C__Demo_Games_Wenceslas_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> f711_init_C__Demo_Games_Wenceslas_HC_2(t)
+            712 -> f712_init_C__Demo_Games_Wenceslas_HC_3(t)
+            713 -> { f713_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            714 -> { f714_StepNew(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L)), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L)); 0L }
+            715 -> { f715_Init(t); 0L }
+            716 -> { f716_CleanUp(t); 0L }
+            717 -> { f717_Follow(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            718 -> { f718_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            719 -> { f719_BurnTrees(t); 0L }
+            720 -> { f720_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            721 -> { f721_Wenceslas(t); 0L }
+            722 -> f722_init_C__Demo_Games_Wenceslas_HC_4(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1332,7 +1329,7 @@ class N_Demo_Games_Wenceslas(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/Wenceslas.HC#0", "\$init:C:/Demo/Games/Wenceslas.HC#1", "\$init:C:/Home/Registry.HC#0", "\$init:C:/Demo/Games/Wenceslas.HC#2", "\$init:C:/Demo/Games/Wenceslas.HC#3", "DrawIt", "StepNew", "Init", "CleanUp", "Follow", "AnimateTask", "BurnTrees", "SongTask", "Wenceslas", "\$init:C:/Demo/Games/Wenceslas.HC#4")
         private val FILES = arrayOf<String>("C:/Demo/Games/Wenceslas.HC")
     }

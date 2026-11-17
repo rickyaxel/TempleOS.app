@@ -13,7 +13,9 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     @JvmField val n_AutoComplete = rt.vm.natives.find("AutoComplete")!!.index
     @JvmField val n_Cos = rt.vm.natives.find("Cos")!!.index
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
+    @JvmField val n_GrFillPoly3 = rt.vm.natives.find("GrFillPoly3")!!.index
     @JvmField val n_Mat4x4MulXYZ = rt.vm.natives.find("Mat4x4MulXYZ")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
@@ -30,7 +32,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Lighting (Shading.HC:3) */
-    fun f703_Lighting(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f708_Lighting(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -105,7 +107,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC DrawIt (Shading.HC:56) */
-    fun f704_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -128,7 +130,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             var l96_j: Long = 0L
             ln = 58 // Shading.HC:58
             tick(t)
-            val t0: Long = P.f510_CtrlFindUnique(t, p0_task, 3L)
+            val t0: Long = P.f515_CtrlFindUnique(t, p0_task, 3L)
             l16_c = t0
             ln = 59 // Shading.HC:59
             l24_s = ld8((l16_c + 104L))
@@ -158,8 +160,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             tick(t)
             P.f305_Mat4x4RotX(t, ld8((p1_dc + 200L)), (ldf((l24_s + 24L)) + f(4614256656552045848L)))
             ln = 72 // Shading.HC:72
-            tick(t)
-            P.f308_Mat4x4Scale(t, ld8((p1_dc + 200L)), l32_tt)
+            nat(t, n_Mat4x4Scale, push2(t, ld8((p1_dc + 200L)), bits(l32_tt)))
             ln = 73 // Shading.HC:73
             tick(t)
             P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc + 200L)))
@@ -171,7 +172,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st4(((fp + 160) + 8L), divs(640L, 8L))
             ln = 78 // Shading.HC:78
             tick(t)
-            val t4: Double = P.f355_D3I32Norm(t, (fp + 160))
+            val t4: Double = P.f356_D3I32Norm(t, (fp + 160))
             l80_d = (65536.0 / t4)
             ln = 79 // Shading.HC:79
             st4((fp + 160), f2i((ld4s((fp + 160)).toDouble() * l80_d)))
@@ -242,10 +243,9 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     st4((((fp + 120) + 24L) + 8L), f2i((l72_radius * t23)))
                     ln = 105 // Shading.HC:105
                     tick(t)
-                    f703_Lighting(t, p1_dc, (fp + 160), (fp + 120), 1L)
+                    f708_Lighting(t, p1_dc, (fp + 160), (fp + 120), 1L)
                     ln = 106 // Shading.HC:106
-                    tick(t)
-                    P.f422_GrFillPoly3(t, p1_dc, 3L, (fp + 120))
+                    nat(t, n_GrFillPoly3, push3(t, p1_dc, 3L, (fp + 120)))
                     ln = 108 // Shading.HC:108
                     val t24: Double = f(nat(t, n_Cos, push1(t, bits(l64__2))))
                     val t25: Double = f(nat(t, n_Cos, push1(t, bits((l40__ + (((2.0 * f(4614256656552045848L)) / 32.0) / 2.0))))))
@@ -281,10 +281,9 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     st4(((fp + 120) + 8L), f2i((l72_radius * t38)))
                     ln = 117 // Shading.HC:117
                     tick(t)
-                    f703_Lighting(t, p1_dc, (fp + 160), (fp + 120), 1L)
+                    f708_Lighting(t, p1_dc, (fp + 160), (fp + 120), 1L)
                     ln = 118 // Shading.HC:118
-                    tick(t)
-                    P.f422_GrFillPoly3(t, p1_dc, 3L, (fp + 120))
+                    nat(t, n_GrFillPoly3, push3(t, p1_dc, 3L, (fp + 120)))
                     ln = 121 // Shading.HC:121
                     val t39: Double = f(nat(t, n_Cos, push1(t, bits(l56__))))
                     val t40: Double = f(nat(t, n_Cos, push1(t, bits(l40__))))
@@ -320,10 +319,9 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     st4(((fp + 120) + 8L), f2i(((-l72_radius) * t53)))
                     ln = 130 // Shading.HC:130
                     tick(t)
-                    f703_Lighting(t, p1_dc, (fp + 160), (fp + 120), 4L)
+                    f708_Lighting(t, p1_dc, (fp + 160), (fp + 120), 4L)
                     ln = 131 // Shading.HC:131
-                    tick(t)
-                    P.f422_GrFillPoly3(t, p1_dc, 3L, (fp + 120))
+                    nat(t, n_GrFillPoly3, push3(t, p1_dc, 3L, (fp + 120)))
                     ln = 133 // Shading.HC:133
                     val t54: Double = f(nat(t, n_Cos, push1(t, bits(l64__2))))
                     val t55: Double = f(nat(t, n_Cos, push1(t, bits((l40__ + (((2.0 * f(4614256656552045848L)) / 32.0) / 2.0))))))
@@ -359,10 +357,9 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     st4((((fp + 120) + 24L) + 8L), f2i(((-l72_radius) * t68)))
                     ln = 142 // Shading.HC:142
                     tick(t)
-                    f703_Lighting(t, p1_dc, (fp + 160), (fp + 120), 4L)
+                    f708_Lighting(t, p1_dc, (fp + 160), (fp + 120), 4L)
                     ln = 143 // Shading.HC:143
-                    tick(t)
-                    P.f422_GrFillPoly3(t, p1_dc, 3L, (fp + 120))
+                    nat(t, n_GrFillPoly3, push3(t, p1_dc, 3L, (fp + 120)))
                     ln = 91 // Shading.HC:91
                     l96_j = (l96_j + 1L)
                     tick(t)
@@ -378,7 +375,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Main (Shading.HC:153) */
-    fun f705_Main(t: Task) {
+    fun f710_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -386,7 +383,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             var l8_s: Long = 0L
             ln = 155 // Shading.HC:155
             tick(t)
-            val t0: Long = P.f524_ViewAnglesNew(t, 0L)
+            val t0: Long = P.f529_ViewAnglesNew(t, 0L)
             l0_c = t0
             ln = 156 // Shading.HC:156
             l8_s = ld8((l0_c + 104L))
@@ -410,7 +407,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             ln = 165 // Shading.HC:165
             nat(t, n_DocClear, push1(t, 0L))
             ln = 166 // Shading.HC:166
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065856L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
             ln = 167 // Shading.HC:167
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -436,20 +433,20 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 174 // Shading.HC:174
             tick(t)
-            P.f525_ViewAnglesDel(t, 0L)
+            P.f530_ViewAnglesDel(t, 0L)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Main", ln) }
     }
 
     /** HolyC $init:C:/Demo/Graphics/Shading.HC#0 (Shading.HC:177) */
-    fun f706_init_C__Demo_Graphics_Shading_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_Shading_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 177 // Shading.HC:177
             tick(t)
-            f705_Main(t)
+            f710_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/Shading.HC#0", ln) }
@@ -458,10 +455,10 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Lighting(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            704 -> { f704_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> { f705_Main(t); 0L }
-            706 -> f706_init_C__Demo_Graphics_Shading_HC_0(t)
+            708 -> { f708_Lighting(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> { f710_Main(t); 0L }
+            711 -> f711_init_C__Demo_Graphics_Shading_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -473,7 +470,7 @@ class N_Demo_Graphics_Shading(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("Lighting", "DrawIt", "Main", "\$init:C:/Demo/Graphics/Shading.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/Shading.HC")
     }

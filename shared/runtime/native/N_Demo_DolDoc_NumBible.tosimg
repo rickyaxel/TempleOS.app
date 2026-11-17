@@ -5,8 +5,8 @@ s 17fd60 7e2f44656d6f4e756d4269626c652e44442e5a
 s 17fd88 25303564202573
 s 13060 0a
 s 17fda0 253035640a
-fn 703 NumBible (U0;;-)
-fn 704 $init:C:/Demo/DolDoc/NumBible.HC#0 (I64;;-)
-sym f NumBible 703 (U0;;-)
-init 704
+fn 708 NumBible (U0;;-)
+fn 709 $init:C:/Demo/DolDoc/NumBible.HC#0 (I64;;-)
+sym f NumBible 708 (U0;;-)
+init 709
 unit C:/Demo/DolDoc/NumBible.HC#1

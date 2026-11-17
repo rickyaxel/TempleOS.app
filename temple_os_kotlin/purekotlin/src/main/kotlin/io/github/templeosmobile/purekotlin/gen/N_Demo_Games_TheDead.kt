@@ -17,6 +17,7 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     @JvmField val n_ScanMsg = rt.vm.natives.find("ScanMsg")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** binary literal, 1138 bytes */ @JvmField var b0: Long = 0L
     /** y: I64 */ @JvmField var g_y: Long = 0L
@@ -65,7 +66,7 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC DrawIt (TheDead.HC:44) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -74,8 +75,7 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             var l16_i: Long = 0L
             var l24_j: Long = 0L
             ln = 50 // TheDead.HC:50
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, ld8(g_x), ld8(g_y), 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, ld8(g_x), ld8(g_y), 0L, b0, 0L))
             ln = 52 // TheDead.HC:52
             l16_i = ld8(g_bullets_out)
             ln = 53 // TheDead.HC:53
@@ -86,7 +86,7 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                 l24_j = (t0 and 31L)
                 ln = 55 // TheDead.HC:55
                 tick(t)
-                P.f396_GrLine(t, p1_dc, ld8((g_bx + (l24_j * 8L))), ld8((g_by + (l24_j * 8L))), (ld8((g_bx + (l24_j * 8L))) - 2L), ld8((g_by + (l24_j * 8L))), 1L, 0L)
+                P.f397_GrLine(t, p1_dc, ld8((g_bx + (l24_j * 8L))), ld8((g_by + (l24_j * 8L))), (ld8((g_bx + (l24_j * 8L))) - 2L), ld8((g_by + (l24_j * 8L))), 1L, 0L)
                 tick(t)
             }
             ln = 57 // TheDead.HC:57
@@ -102,12 +102,10 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
                     ln = 61 // TheDead.HC:61
                     if ((mods(ld8((g_gx + (l24_j * 8L))), 10L) > 4L)) {
                         ln = 62 // TheDead.HC:62
-                        tick(t)
-                        P.f440_Sprite3(t, p1_dc, ld8((g_gx + (l24_j * 8L))), ld8((g_gy + (l24_j * 8L))), 0L, b1, 0L)
+                        nat(t, n_Sprite3, push(t, p1_dc, ld8((g_gx + (l24_j * 8L))), ld8((g_gy + (l24_j * 8L))), 0L, b1, 0L))
                     } else {
                         ln = 64 // TheDead.HC:64
-                        tick(t)
-                        P.f440_Sprite3(t, p1_dc, ld8((g_gx + (l24_j * 8L))), ld8((g_gy + (l24_j * 8L))), 0L, b2, 0L)
+                        nat(t, n_Sprite3, push(t, p1_dc, ld8((g_gx + (l24_j * 8L))), ld8((g_gy + (l24_j * 8L))), 0L, b2, 0L))
                     }
                 }
                 tick(t)
@@ -117,12 +115,12 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             ln = 68 // TheDead.HC:68
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 0)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 0)
             t.sp = vb0
             ln = 69 // TheDead.HC:69
             tick(t)
             val vb1 = push0(t)
-            P.f369_GrPrint(t, p1_dc, 0L, 8L, s1, vb1, 0)
+            P.f370_GrPrint(t, p1_dc, 0L, 8L, s1, vb1, 0)
             t.sp = vb1
             t.depth--
             return
@@ -130,21 +128,21 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC SongTask (TheDead.HC:72) */
-    fun f704_SongTask(t: Task, a0: Long) {
+    fun f709_SongTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
             var p0_arg: Long = a0
             ln = 74 // TheDead.HC:74
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 75 // TheDead.HC:75
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 76 // TheDead.HC:76
             loop0@ while ((1L != 0L)) {
                 ln = 77 // TheDead.HC:77
                 tick(t)
-                P.f494_Play(t, s2, 0L)
+                P.f499_Play(t, s2, 0L)
                 tick(t)
             }
             t.depth--
@@ -153,7 +151,7 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC TheDead (TheDead.HC:82) */
-    fun f705_TheDead(t: Task) {
+    fun f710_TheDead(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -175,7 +173,7 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             l80_gun_on = 0L
             ln = 87 // TheDead.HC:87
             tick(t)
-            P.f507_MenuPush(t, s3)
+            P.f512_MenuPush(t, s3)
             ln = 98 // TheDead.HC:98
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -193,10 +191,10 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             nat(t, n_DocClear, push1(t, 0L))
             ln = 104 // TheDead.HC:104
             val t1: Long = (ld8(P.g_Fs) + 1080L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065856L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, 0L, s4, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 105 // TheDead.HC:105
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 107 // TheDead.HC:107
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -379,7 +377,7 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 184 // TheDead.HC:184
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -387,13 +385,13 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     }
 
     /** HolyC $init:C:/Demo/Games/TheDead.HC#0 (TheDead.HC:2) */
-    fun f706_init_C__Demo_Games_TheDead_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Games_TheDead_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 187 // TheDead.HC:187
             tick(t)
-            f705_TheDead(t)
+            f710_TheDead(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/TheDead.HC#0", ln) }
@@ -402,10 +400,10 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_TheDead(t); 0L }
-            706 -> f706_init_C__Demo_Games_TheDead_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_SongTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_TheDead(t); 0L }
+            711 -> f711_init_C__Demo_Games_TheDead_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -417,7 +415,7 @@ class N_Demo_Games_TheDead(rt: NativeRuntime, @JvmField val P: Prelude) : Native
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("DrawIt", "SongTask", "TheDead", "\$init:C:/Demo/Games/TheDead.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/TheDead.HC")
     }

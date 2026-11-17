@@ -40,7 +40,7 @@ public final class N_Demo_DolDoc_ClickCallBack: NativeModule {
     }
 
     /// HolyC MyLeftCB1 (ClickCallBack.HC:1)
-    @discardableResult public final func f703_MyLeftCB1(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f708_MyLeftCB1(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -70,19 +70,19 @@ public final class N_Demo_DolDoc_ClickCallBack: NativeModule {
     }
 
     /// HolyC ClickCallBack (ClickCallBack.HC:12)
-    public final func f704_ClickCallBack(_ t: HTask) throws {
+    public final func f709_ClickCallBack(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             var l0_doc_e: Int64 = 0
             ln = 15 // ClickCallBack.HC:15
             try tick(t)
-            let t0: Int64 = try P.f602_DocPut(t, 0)
+            let t0: Int64 = try P.f607_DocPut(t, 0)
             try tick(t)
-            _ = try P.f610_DocLock(t, t0)
+            _ = try P.f615_DocLock(t, t0)
             ln = 17 // ClickCallBack.HC:17
             try tick(t)
-            let t1: Int64 = try P.f602_DocPut(t, 0)
+            let t1: Int64 = try P.f607_DocPut(t, 0)
             try tick(t)
             let vb0 = push0(t)
             let t2: Int64 = try P.f29_DocPrint(t, t1, s0, vb0, 0)
@@ -91,32 +91,32 @@ public final class N_Demo_DolDoc_ClickCallBack: NativeModule {
             ln = 23 // ClickCallBack.HC:23
             _ = try nat(t, n_Print, try push1(t, s1))
             ln = 24 // ClickCallBack.HC:24
-            try st8((l0_doc_e &+ 88), 9223090561878065855)
+            try st8((l0_doc_e &+ 88), 9223090561878065860)
             ln = 25 // ClickCallBack.HC:25
             try tick(t)
-            let t3: Int64 = try P.f602_DocPut(t, 0)
+            let t3: Int64 = try P.f607_DocPut(t, 0)
             try tick(t)
-            try P.f611_DocUnlock(t, t3)
+            try P.f616_DocUnlock(t, t3)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "ClickCallBack", ln) }
     }
 
     /// HolyC $init:C:/Demo/DolDoc/ClickCallBack.HC#0 (ClickCallBack.HC:28)
-    @discardableResult public final func f705_init_C__Demo_DolDoc_ClickCallBack_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_DolDoc_ClickCallBack_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 28 // ClickCallBack.HC:28
             try tick(t)
-            try f704_ClickCallBack(t)
+            try f709_ClickCallBack(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/ClickCallBack.HC#0", ln) }
     }
 
     /// HolyC MyLeftCB2 (ClickCallBack.HC:30)
-    @discardableResult public final func f706_MyLeftCB2(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f711_MyLeftCB2(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -132,7 +132,7 @@ public final class N_Demo_DolDoc_ClickCallBack: NativeModule {
     }
 
     /// HolyC PopUpJiffiesCallBack (ClickCallBack.HC:35)
-    public final func f707_PopUpJiffiesCallBack(_ t: HTask, _ a0: Int64) throws {
+    public final func f712_PopUpJiffiesCallBack(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -141,7 +141,7 @@ public final class N_Demo_DolDoc_ClickCallBack: NativeModule {
             var l8_doc: Int64 = 0
             ln = 37 // ClickCallBack.HC:37
             try tick(t)
-            let t0: Int64 = try P.f601_DocNew(t, 0, 0)
+            let t0: Int64 = try P.f606_DocNew(t, 0, 0)
             l8_doc = t0
             ln = 38 // ClickCallBack.HC:38
             try tick(t)
@@ -150,53 +150,53 @@ public final class N_Demo_DolDoc_ClickCallBack: NativeModule {
             t.sp = vb2
             l16_doc_e = t1
             ln = 40 // ClickCallBack.HC:40
-            try st8((l16_doc_e &+ 88), 9223090561878065858)
+            try st8((l16_doc_e &+ 88), 9223090561878065863)
             ln = 41 // ClickCallBack.HC:41
             try tick(t)
-            let t2: Int64 = try P.f621_PopUpMenu(t, l8_doc, 0)
+            let t2: Int64 = try P.f626_PopUpMenu(t, l8_doc, 0)
             _ = try nat(t, n_Print, try push2(t, s3, t2))
             ln = 42 // ClickCallBack.HC:42
             try tick(t)
-            try P.f605_DocDel(t, l8_doc)
+            try P.f610_DocDel(t, l8_doc)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "PopUpJiffiesCallBack", ln) }
     }
 
     /// HolyC $init:C:/Demo/DolDoc/ClickCallBack.HC#1 (ClickCallBack.HC:45)
-    @discardableResult public final func f708_init_C__Demo_DolDoc_ClickCallBack_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_DolDoc_ClickCallBack_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 45 // ClickCallBack.HC:45
             try tick(t)
-            try f707_PopUpJiffiesCallBack(t, 3)
+            try f712_PopUpJiffiesCallBack(t, 3)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/ClickCallBack.HC#1", ln) }
     }
 
     /// HolyC $init:C:/Demo/DolDoc/ClickCallBack.HC#2 (ClickCallBack.HC:46)
-    @discardableResult public final func f709_init_C__Demo_DolDoc_ClickCallBack_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Demo_DolDoc_ClickCallBack_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 46 // ClickCallBack.HC:46
             try tick(t)
-            try f707_PopUpJiffiesCallBack(t, 2)
+            try f712_PopUpJiffiesCallBack(t, 2)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/ClickCallBack.HC#2", ln) }
     }
 
     /// HolyC $init:C:/Demo/DolDoc/ClickCallBack.HC#3 (ClickCallBack.HC:47)
-    @discardableResult public final func f710_init_C__Demo_DolDoc_ClickCallBack_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Demo_DolDoc_ClickCallBack_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 47 // ClickCallBack.HC:47
             try tick(t)
-            try f707_PopUpJiffiesCallBack(t, 1)
+            try f712_PopUpJiffiesCallBack(t, 1)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/DolDoc/ClickCallBack.HC#3", ln) }
@@ -205,20 +205,20 @@ public final class N_Demo_DolDoc_ClickCallBack: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_MyLeftCB1(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 704: try f704_ClickCallBack(t); return 0
-        case 705: return try f705_init_C__Demo_DolDoc_ClickCallBack_HC_0(t)
-        case 706: return try f706_MyLeftCB2(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 707: try f707_PopUpJiffiesCallBack(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 708: return try f708_init_C__Demo_DolDoc_ClickCallBack_HC_1(t)
-        case 709: return try f709_init_C__Demo_DolDoc_ClickCallBack_HC_2(t)
-        case 710: return try f710_init_C__Demo_DolDoc_ClickCallBack_HC_3(t)
+        case 708: return try f708_MyLeftCB1(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 709: try f709_ClickCallBack(t); return 0
+        case 710: return try f710_init_C__Demo_DolDoc_ClickCallBack_HC_0(t)
+        case 711: return try f711_MyLeftCB2(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 712: try f712_PopUpJiffiesCallBack(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 713: return try f713_init_C__Demo_DolDoc_ClickCallBack_HC_1(t)
+        case 714: return try f714_init_C__Demo_DolDoc_ClickCallBack_HC_2(t)
+        case 715: return try f715_init_C__Demo_DolDoc_ClickCallBack_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710]
-    private static let NAMES: [Int: String] = [703: "MyLeftCB1", 704: "ClickCallBack", 705: "$init:C:/Demo/DolDoc/ClickCallBack.HC#0", 706: "MyLeftCB2", 707: "PopUpJiffiesCallBack", 708: "$init:C:/Demo/DolDoc/ClickCallBack.HC#1", 709: "$init:C:/Demo/DolDoc/ClickCallBack.HC#2", 710: "$init:C:/Demo/DolDoc/ClickCallBack.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715]
+    private static let NAMES: [Int: String] = [708: "MyLeftCB1", 709: "ClickCallBack", 710: "$init:C:/Demo/DolDoc/ClickCallBack.HC#0", 711: "MyLeftCB2", 712: "PopUpJiffiesCallBack", 713: "$init:C:/Demo/DolDoc/ClickCallBack.HC#1", 714: "$init:C:/Demo/DolDoc/ClickCallBack.HC#2", 715: "$init:C:/Demo/DolDoc/ClickCallBack.HC#3"]
     private static let FILES: [String] = ["C:/Demo/DolDoc/ClickCallBack.HC"]
     public override var files: [String] { N_Demo_DolDoc_ClickCallBack.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_DolDoc_ClickCallBack.DEFINED.contains(index) }

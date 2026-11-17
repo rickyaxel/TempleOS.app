@@ -2,19 +2,19 @@ TOSIMG 1
 unit C:/Demo/Games/BomberGolf.HC#0
 s 17fd38 49363420626573745f73636f72653d39393939393b0a
 s 17fd60 54656d706c654f532f426f6d626572476f6c66
-fn 703 $init:C:/Demo/Games/BomberGolf.HC#0 (I64;;-)
-init 703
+fn 708 $init:C:/Demo/Games/BomberGolf.HC#0 (I64;;-)
+init 708
 unit C:/Demo/Games/BomberGolf.HC#1
 s 17fd60 54656d706c654f532f426f6d626572476f6c66
-fn 704 $init:C:/Demo/Games/BomberGolf.HC#1 (I64;;-)
-init 704
+fn 709 $init:C:/Demo/Games/BomberGolf.HC#1 (I64;;-)
+init 709
 unit C:/Home/Registry.HC#0
 registry TempleOS/BomberGolf
 g 17fd88 8
 c 17fd88 8 1869f
-fn 705 $init:C:/Home/Registry.HC#0 (I64;;-)
+fn 710 $init:C:/Home/Registry.HC#0 (I64;;-)
 sym g best_score 17fd88 I64
-init 705
+init 710
 unit C:/Home/Registry.HC#1
 unit C:/Demo/Games/BomberGolf.HC#2
 value MAP_HEIGHT 600
@@ -69,21 +69,21 @@ s 183840 46696c65207b202041626f7274282c43485f53484946545f455343293b2020457869742
 s 183910 416e696d617465
 s 183928 49363420626573745f73636f72653d25643b0a
 s 17fd60 54656d706c654f532f426f6d626572476f6c66
-fn 706 DrawIt (U0;*$CTask,*$CDC;-)
-fn 707 BombHit (U0;*$Bomb;-)
-fn 708 BombDrop (U0;F64,F64;-)
-fn 709 AnimateTask (I64;*$CTask;-)
-fn 710 Init (U0;;-)
-fn 711 CleanUp (U0;;-)
-fn 712 BomberGolf (U0;;-)
-fn 713 $init:C:/Demo/Games/BomberGolf.HC#2 (I64;;-)
-sym f AnimateTask 709 (I64;*$CTask;-)
-sym f BombDrop 708 (U0;F64,F64;-)
-sym f BombHit 707 (U0;*$Bomb;-)
-sym f BomberGolf 712 (U0;;-)
-sym f CleanUp 711 (U0;;-)
-sym f DrawIt 706 (U0;*$CTask,*$CDC;-)
-sym f Init 710 (U0;;-)
+fn 711 DrawIt (U0;*$CTask,*$CDC;-)
+fn 712 BombHit (U0;*$Bomb;-)
+fn 713 BombDrop (U0;F64,F64;-)
+fn 714 AnimateTask (I64;*$CTask;-)
+fn 715 Init (U0;;-)
+fn 716 CleanUp (U0;;-)
+fn 717 BomberGolf (U0;;-)
+fn 718 $init:C:/Demo/Games/BomberGolf.HC#2 (I64;;-)
+sym f AnimateTask 714 (I64;*$CTask;-)
+sym f BombDrop 713 (U0;F64,F64;-)
+sym f BombHit 712 (U0;*$Bomb;-)
+sym f BomberGolf 717 (U0;;-)
+sym f CleanUp 716 (U0;;-)
+sym f DrawIt 711 (U0;*$CTask,*$CDC;-)
+sym f Init 715 (U0;;-)
 sym g bomb_head 180420 $Bomb
 sym g key_cnt 1801c8 I64
 sym g target_cnt 1801b0 I64
@@ -94,5 +94,5 @@ sym g x 180478 F64
 sym g y 180490 F64
 sym g é 1804a8 F64
 sym g éf 1804c0 F64
-init 713
+init 718
 unit C:/Demo/Games/BomberGolf.HC#3

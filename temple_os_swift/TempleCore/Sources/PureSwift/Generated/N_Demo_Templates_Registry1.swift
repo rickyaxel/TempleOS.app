@@ -41,7 +41,7 @@ public final class N_Demo_Templates_Registry1: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Templates/Registry1.HC#0 (Registry1.HC:1)
-    @discardableResult public final func f703_init_C__Demo_Templates_Registry1_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Templates_Registry1_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -55,7 +55,7 @@ public final class N_Demo_Templates_Registry1: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Templates/Registry1.HC#1 (Registry1.HC:2)
-    @discardableResult public final func f704_init_C__Demo_Templates_Registry1_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Templates_Registry1_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -69,7 +69,7 @@ public final class N_Demo_Templates_Registry1: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -79,7 +79,7 @@ public final class N_Demo_Templates_Registry1: NativeModule {
     }
 
     /// HolyC Main (Registry1.HC:4)
-    public final func f706_Main(_ t: HTask) throws {
+    public final func f711_Main(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -93,13 +93,13 @@ public final class N_Demo_Templates_Registry1: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Templates/Registry1.HC#2 (Registry1.HC:10)
-    @discardableResult public final func f707_init_C__Demo_Templates_Registry1_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Templates_Registry1_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 10 // Registry1.HC:10
             try tick(t)
-            try f706_Main(t)
+            try f711_Main(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Templates/Registry1.HC#2", ln) }
@@ -108,17 +108,17 @@ public final class N_Demo_Templates_Registry1: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Templates_Registry1_HC_0(t)
-        case 704: return try f704_init_C__Demo_Templates_Registry1_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: try f706_Main(t); return 0
-        case 707: return try f707_init_C__Demo_Templates_Registry1_HC_2(t)
+        case 708: return try f708_init_C__Demo_Templates_Registry1_HC_0(t)
+        case 709: return try f709_init_C__Demo_Templates_Registry1_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: try f711_Main(t); return 0
+        case 712: return try f712_init_C__Demo_Templates_Registry1_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Templates/Registry1.HC#0", 704: "$init:C:/Demo/Templates/Registry1.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "Main", 707: "$init:C:/Demo/Templates/Registry1.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Templates/Registry1.HC#0", 709: "$init:C:/Demo/Templates/Registry1.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "Main", 712: "$init:C:/Demo/Templates/Registry1.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Templates/Registry1.HC"]
     public override var files: [String] { N_Demo_Templates_Registry1.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Templates_Registry1.DEFINED.contains(index) }

@@ -27,7 +27,7 @@ class N_Demo_Graphics_ScrnCapture(rt: NativeRuntime, @JvmField val P: Prelude) :
     }
 
     /** HolyC Main (ScrnCapture.HC:3) */
-    fun f703_Main(t: Task) {
+    fun f708_Main(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -38,7 +38,7 @@ class N_Demo_Graphics_ScrnCapture(rt: NativeRuntime, @JvmField val P: Prelude) :
             P.f188_PressAKey(t)
             ln = 7 // ScrnCapture.HC:7
             tick(t)
-            P.f631_GRScrnCaptureWrite(t, s1, 1L)
+            P.f636_GRScrnCaptureWrite(t, s1, 1L)
             ln = 8 // ScrnCapture.HC:8
             nat(t, n_Print, push1(t, s2))
             ln = 9 // ScrnCapture.HC:9
@@ -46,7 +46,7 @@ class N_Demo_Graphics_ScrnCapture(rt: NativeRuntime, @JvmField val P: Prelude) :
             P.f188_PressAKey(t)
             ln = 10 // ScrnCapture.HC:10
             tick(t)
-            P.f632_GRScrnCaptureRead(t, s1)
+            P.f637_GRScrnCaptureRead(t, s1)
             ln = 11 // ScrnCapture.HC:11
             tick(t)
             P.f188_PressAKey(t)
@@ -59,13 +59,13 @@ class N_Demo_Graphics_ScrnCapture(rt: NativeRuntime, @JvmField val P: Prelude) :
     }
 
     /** HolyC $init:C:/Demo/Graphics/ScrnCapture.HC#0 (ScrnCapture.HC:15) */
-    fun f704_init_C__Demo_Graphics_ScrnCapture_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_ScrnCapture_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 15 // ScrnCapture.HC:15
             tick(t)
-            f703_Main(t)
+            f708_Main(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/ScrnCapture.HC#0", ln) }
@@ -74,8 +74,8 @@ class N_Demo_Graphics_ScrnCapture(rt: NativeRuntime, @JvmField val P: Prelude) :
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_Main(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_ScrnCapture_HC_0(t)
+            708 -> { f708_Main(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_ScrnCapture_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -87,7 +87,7 @@ class N_Demo_Graphics_ScrnCapture(rt: NativeRuntime, @JvmField val P: Prelude) :
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("Main", "\$init:C:/Demo/Graphics/ScrnCapture.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/ScrnCapture.HC")
     }

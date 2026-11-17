@@ -22,7 +22,7 @@ public final class N_Adam_Gr_GrExt: NativeModule {
     }
 
     /// HolyC $init:C:/Adam/Gr/GrExt.HC#0 (GrExt.HC:1)
-    @discardableResult public final func f704_init_C__Adam_Gr_GrExt_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Adam_Gr_GrExt_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -34,13 +34,13 @@ public final class N_Adam_Gr_GrExt: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 704: return try f704_init_C__Adam_Gr_GrExt_HC_0(t)
+        case 709: return try f709_init_C__Adam_Gr_GrExt_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [704]
-    private static let NAMES: [Int: String] = [704: "$init:C:/Adam/Gr/GrExt.HC#0"]
+    private static let DEFINED: Set<Int> = [709]
+    private static let NAMES: [Int: String] = [709: "$init:C:/Adam/Gr/GrExt.HC#0"]
     private static let FILES: [String] = []
     public override var files: [String] { N_Adam_Gr_GrExt.FILES }
     public override func defines(_ index: Int) -> Bool { N_Adam_Gr_GrExt.DEFINED.contains(index) }

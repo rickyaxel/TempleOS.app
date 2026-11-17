@@ -35,7 +35,7 @@ public final class N_Demo_Games_ElephantWalk: NativeModule {
     }
 
     /// HolyC ElephantWalk (ElephantWalk.HC:34)
-    public final func f703_ElephantWalk(_ t: HTask) throws {
+    public final func f708_ElephantWalk(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -69,7 +69,7 @@ public final class N_Demo_Games_ElephantWalk: NativeModule {
                     if (l8_x > l24_x_last) {
                         ln = 46 // ElephantWalk.HC:46
                         try tick(t)
-                        _ = try P.f314_DCSymmetrySet(t, 0, l8_x, l16_y, l8_x, (l16_y &- 1))
+                        _ = try P.f315_DCSymmetrySet(t, 0, l8_x, l16_y, l8_x, (l16_y &- 1))
                         ln = 47 // ElephantWalk.HC:47
                         let t0: Int64 = try (ld8((P.g_gr &+ 24)) &+ 28)
                         try st4(t0, (ld4s(t0) | 1536))
@@ -84,7 +84,7 @@ public final class N_Demo_Games_ElephantWalk: NativeModule {
                     let t2: Double = d(try nat(t, n_tS, push0(t)))
                     let t3: Double = d(try nat(t, n_Sin, try push1(t, bits((8.0 * t2)))))
                     try tick(t)
-                    try P.f445_Sprite3ZB(t, ld8((P.g_gr &+ 24)), l8_x, l16_y, 0, b0, (t3 / 4.0))
+                    try P.f450_Sprite3ZB(t, ld8((P.g_gr &+ 24)), l8_x, l16_y, 0, b0, (t3 / 4.0))
                     ln = 52 // ElephantWalk.HC:52
                     let t4: Int64 = try nat(t, n_GetKey, try push3(t, fp, 0, 0))
                     switch3: do {
@@ -150,13 +150,13 @@ public final class N_Demo_Games_ElephantWalk: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/ElephantWalk.HC#0 (ElephantWalk.HC:86)
-    @discardableResult public final func f704_init_C__Demo_Games_ElephantWalk_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_ElephantWalk_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 86 // ElephantWalk.HC:86
             try tick(t)
-            try f703_ElephantWalk(t)
+            try f708_ElephantWalk(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/ElephantWalk.HC#0", ln) }
@@ -165,14 +165,14 @@ public final class N_Demo_Games_ElephantWalk: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_ElephantWalk(t); return 0
-        case 704: return try f704_init_C__Demo_Games_ElephantWalk_HC_0(t)
+        case 708: try f708_ElephantWalk(t); return 0
+        case 709: return try f709_init_C__Demo_Games_ElephantWalk_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "ElephantWalk", 704: "$init:C:/Demo/Games/ElephantWalk.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "ElephantWalk", 709: "$init:C:/Demo/Games/ElephantWalk.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Games/ElephantWalk.HC"]
     public override var files: [String] { N_Demo_Games_ElephantWalk.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_ElephantWalk.DEFINED.contains(index) }

@@ -23,6 +23,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
 
     /** m2: CMass */ @JvmField var g_m2: Long = 0L
@@ -76,7 +77,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC DrawIt (RocketScience.HC:51) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -124,14 +125,14 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
                     val t8: Double = ldf((g_m1 + 56L))
                     val t7: Double = f(nat(t, n_Cos, push1(t, bits((l56__ - (f(4614256656552045848L) / 2.0))))))
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i((l40_cx.toDouble() + (t8 + (l16_i.toDouble() * t7)))), f2i((l48_cy.toDouble() - (t6 + (l16_i.toDouble() * t5)))), (l40_cx + l24_x), (l48_cy - l32_y), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i((l40_cx.toDouble() + (t8 + (l16_i.toDouble() * t7)))), f2i((l48_cy.toDouble() - (t6 + (l16_i.toDouble() * t5)))), (l40_cx + l24_x), (l48_cy - l32_y), 1L, 0L)
                     ln = 66 // RocketScience.HC:66
                     val t10: Double = ldf((g_m1 + 64L))
                     val t9: Double = f(nat(t, n_Sin, push1(t, bits((l56__ + (f(4614256656552045848L) / 2.0))))))
                     val t12: Double = ldf((g_m1 + 56L))
                     val t11: Double = f(nat(t, n_Cos, push1(t, bits((l56__ + (f(4614256656552045848L) / 2.0))))))
                     tick(t)
-                    P.f396_GrLine(t, p1_dc, f2i((l40_cx.toDouble() + (t12 + (l16_i.toDouble() * t11)))), f2i((l48_cy.toDouble() - (t10 + (l16_i.toDouble() * t9)))), (l40_cx + l24_x), (l48_cy - l32_y), 1L, 0L)
+                    P.f397_GrLine(t, p1_dc, f2i((l40_cx.toDouble() + (t12 + (l16_i.toDouble() * t11)))), f2i((l48_cy.toDouble() - (t10 + (l16_i.toDouble() * t9)))), (l40_cx + l24_x), (l48_cy - l32_y), 1L, 0L)
                     ln = 60 // RocketScience.HC:60
                     l16_i = (l16_i + 1L)
                     tick(t)
@@ -176,12 +177,10 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             ln = 80 // RocketScience.HC:80
             if ((ld1u(g_plane_hit) != 0L)) {
                 ln = 81 // RocketScience.HC:81
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, f2i((l40_cx.toDouble() + ldf((g_m3 + 56L)))), f2i((l48_cy.toDouble() - ldf((g_m3 + 64L)))), 0L, b0, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, f2i((l40_cx.toDouble() + ldf((g_m3 + 56L)))), f2i((l48_cy.toDouble() - ldf((g_m3 + 64L)))), 0L, b0, 0L))
             } else {
                 ln = 83 // RocketScience.HC:83
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, f2i((l40_cx.toDouble() + ldf((g_m3 + 56L)))), f2i((l48_cy.toDouble() - ldf((g_m3 + 64L)))), 0L, b1, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, f2i((l40_cx.toDouble() + ldf((g_m3 + 56L)))), f2i((l48_cy.toDouble() - ldf((g_m3 + 64L)))), 0L, b1, 0L))
             }
             ln = 85 // RocketScience.HC:85
             if (((ld1u(g_blast_off) != 0L) && (ld1u(g_plane_hit) == 0L))) {
@@ -193,12 +192,12 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
                 st8((p1_dc + 304L), 0L)
                 ln = 89 // RocketScience.HC:89
                 tick(t)
-                P.f445_Sprite3ZB(t, p1_dc, f2i((l40_cx.toDouble() + ((ldf((g_m1 + 56L)) + ldf((g_m2 + 56L))) / 2.0))), f2i((l48_cy.toDouble() - ((ldf((g_m1 + 64L)) + ldf((g_m2 + 64L))) / 2.0))), 0L, b2, (-l56__))
+                P.f450_Sprite3ZB(t, p1_dc, f2i((l40_cx.toDouble() + ((ldf((g_m1 + 56L)) + ldf((g_m2 + 56L))) / 2.0))), f2i((l48_cy.toDouble() - ((ldf((g_m1 + 64L)) + ldf((g_m2 + 64L))) / 2.0))), 0L, b2, (-l56__))
                 ln = 90 // RocketScience.HC:90
                 if ((ld8((p1_dc + 304L)) > 100L)) {
                     ln = 91 // RocketScience.HC:91
                     tick(t)
-                    P.f499_Noise(t, 1000L, 62.0, 81.0)
+                    P.f504_Noise(t, 1000L, 62.0, 81.0)
                     ln = 92 // RocketScience.HC:92
                     st1(g_plane_hit, 1L)
                 } else {
@@ -215,27 +214,26 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             ln = 98 // RocketScience.HC:98
             st4((p1_dc + 160L), 0L)
             ln = 99 // RocketScience.HC:99
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 0L, 456L, 0L, b3, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 0L, 456L, 0L, b3, 0L))
             ln = 100 // RocketScience.HC:100
             tick(t)
-            P.f445_Sprite3ZB(t, p1_dc, f2i((l40_cx.toDouble() + ((ldf((g_m1 + 56L)) + ldf((g_m2 + 56L))) / 2.0))), f2i((l48_cy.toDouble() - ((ldf((g_m1 + 64L)) + ldf((g_m2 + 64L))) / 2.0))), 0L, b4, (-l56__))
+            P.f450_Sprite3ZB(t, p1_dc, f2i((l40_cx.toDouble() + ((ldf((g_m1 + 56L)) + ldf((g_m2 + 56L))) / 2.0))), f2i((l48_cy.toDouble() - ((ldf((g_m1 + 64L)) + ldf((g_m2 + 64L))) / 2.0))), 0L, b4, (-l56__))
             ln = 102 // RocketScience.HC:102
             st4((p1_dc + 160L), 4L)
             ln = 103 // RocketScience.HC:103
             tick(t)
-            P.f397_GrCircle(t, p1_dc, f2i((l40_cx.toDouble() + ldf(g_target))), f2i((l48_cy.toDouble() - ldf((g_target + 8L)))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, p1_dc, f2i((l40_cx.toDouble() + ldf(g_target))), f2i((l48_cy.toDouble() - ldf((g_target + 8L)))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 105 // RocketScience.HC:105
             st4((p1_dc + 160L), 1L)
             ln = 106 // RocketScience.HC:106
             tick(t)
-            P.f397_GrCircle(t, p1_dc, f2i((l40_cx.toDouble() + ldf((g_m3 + 56L)))), f2i((l48_cy.toDouble() - ldf((g_m3 + 64L)))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+            P.f398_GrCircle(t, p1_dc, f2i((l40_cx.toDouble() + ldf((g_m3 + 56L)))), f2i((l48_cy.toDouble() - ldf((g_m3 + 64L)))), 5L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             ln = 108 // RocketScience.HC:108
             st4((p1_dc + 160L), 0L)
             ln = 109 // RocketScience.HC:109
             tick(t)
             val vb0 = push1(t, bits(ldf(g_my_dbg)))
-            P.f369_GrPrint(t, p1_dc, 0L, 8L, s0, vb0, 1)
+            P.f370_GrPrint(t, p1_dc, 0L, 8L, s0, vb0, 1)
             t.sp = vb0
             t.depth--
             return
@@ -243,7 +241,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC MyDerivative (RocketScience.HC:112) */
-    fun f704_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f709_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -324,7 +322,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             l88_target_heading = t3
             ln = 157 // RocketScience.HC:157
             tick(t)
-            val t4: Double = P.f542_Wrap(t, (l64__ - l88_target_heading), (-f(4614256656552045848L)))
+            val t4: Double = P.f547_Wrap(t, (l64__ - l88_target_heading), (-f(4614256656552045848L)))
             l96_target_angle_error = t4
             ln = 158 // RocketScience.HC:158
             tick(t)
@@ -363,7 +361,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC Init (RocketScience.HC:182) */
-    fun f705_Init(t: Task) {
+    fun f710_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -437,7 +435,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC TaskEndCB (RocketScience.HC:221) */
-    fun f706_TaskEndCB(t: Task) {
+    fun f711_TaskEndCB(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -446,14 +444,14 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             P.f286_DCFill(t, 0L, 255L)
             ln = 224 // RocketScience.HC:224
             tick(t)
-            P.f479_SndTaskEndCB(t)
+            P.f484_SndTaskEndCB(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "TaskEndCB", ln) }
     }
 
     /** HolyC RocketScience (RocketScience.HC:227) */
-    fun f707_RocketScience(t: Task) {
+    fun f712_RocketScience(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -464,7 +462,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             st1((ld8(P.g_Fs) + 778L), 225L)
             ln = 231 // RocketScience.HC:231
             tick(t)
-            P.f507_MenuPush(t, s4)
+            P.f512_MenuPush(t, s4)
             ln = 242 // RocketScience.HC:242
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 243 // RocketScience.HC:243
@@ -482,13 +480,13 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             val t0: Long = P.f291_DCAlias(t, 0L, 0L)
             st8(g_dc2, t0)
             ln = 248 // RocketScience.HC:248
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065858L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065863L)
             ln = 250 // RocketScience.HC:250
             tick(t)
-            val t1: Long = P.f453_ODENew(t, 2L, 1.0E-6, 1L)
+            val t1: Long = P.f458_ODENew(t, 2L, 1.0E-6, 1L)
             st8(g_ode, t1)
             ln = 251 // RocketScience.HC:251
-            st8((ld8(g_ode) + 304L), 9223090561878065856L)
+            st8((ld8(g_ode) + 304L), 9223090561878065861L)
             ln = 252 // RocketScience.HC:252
             st8((ld8(g_ode) + 80L), bits(0.002))
             ln = 253 // RocketScience.HC:253
@@ -497,7 +495,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             st8((ld8(g_ode) + 96L), bits(5000.0))
             ln = 258 // RocketScience.HC:258
             tick(t)
-            f705_Init(t)
+            f710_Init(t)
             ln = 259 // RocketScience.HC:259
             tick(t)
             P.f153_QueIns(t, g_m1, ld8((ld8(g_ode) + 48L)))
@@ -514,7 +512,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             tick(t)
             P.f153_QueIns(t, ld8(g_ode), ld8((ld8(P.g_Fs) + 960L)))
             ln = 266 // RocketScience.HC:266
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 268 // RocketScience.HC:268
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -533,7 +531,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
                                 10L -> {
                                     ln = 274 // RocketScience.HC:274
                                     tick(t)
-                                    f705_Init(t)
+                                    f710_Init(t)
                                     ln = 275 // RocketScience.HC:275
                                     nat(t, n_GetKey, push3(t, 0L, 0L, 0L))
                                     ln = 276 // RocketScience.HC:276
@@ -564,7 +562,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             P.f155_QueRem(t, ld8(g_ode))
             ln = 287 // RocketScience.HC:287
             tick(t)
-            P.f455_ODEDel(t, ld8(g_ode))
+            P.f460_ODEDel(t, ld8(g_ode))
             ln = 288 // RocketScience.HC:288
             nat(t, n_DocClear, push1(t, 0L))
             ln = 289 // RocketScience.HC:289
@@ -578,20 +576,20 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
             P.f293_DCDel(t, ld8(g_dc2))
             ln = 292 // RocketScience.HC:292
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "RocketScience", ln) }
     }
 
     /** HolyC $init:C:/Demo/Games/RocketScience.HC#0 (RocketScience.HC:295) */
-    fun f708_init_C__Demo_Games_RocketScience_HC_0(t: Task): Long {
+    fun f713_init_C__Demo_Games_RocketScience_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 295 // RocketScience.HC:295
             tick(t)
-            f707_RocketScience(t)
+            f712_RocketScience(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/RocketScience.HC#0", ln) }
@@ -600,12 +598,12 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            705 -> { f705_Init(t); 0L }
-            706 -> { f706_TaskEndCB(t); 0L }
-            707 -> { f707_RocketScience(t); 0L }
-            708 -> f708_init_C__Demo_Games_RocketScience_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            710 -> { f710_Init(t); 0L }
+            711 -> { f711_TaskEndCB(t); 0L }
+            712 -> { f712_RocketScience(t); 0L }
+            713 -> f713_init_C__Demo_Games_RocketScience_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -617,7 +615,7 @@ class N_Demo_Games_RocketScience(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("DrawIt", "MyDerivative", "Init", "TaskEndCB", "RocketScience", "\$init:C:/Demo/Games/RocketScience.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/RocketScience.HC")
     }

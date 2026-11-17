@@ -49,7 +49,7 @@ public final class N_Demo_PullDownMenu: NativeModule {
     }
 
     /// HolyC PullDownMenuDemo (PullDownMenu.HC:6)
-    public final func f703_PullDownMenuDemo(_ t: HTask) throws {
+    public final func f708_PullDownMenuDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -59,7 +59,7 @@ public final class N_Demo_PullDownMenu: NativeModule {
             var l24_tmpse: Int64 = 0
             ln = 11 // PullDownMenu.HC:11
             try tick(t)
-            _ = try P.f507_MenuPush(t, s0)
+            _ = try P.f512_MenuPush(t, s0)
             ln = 31 // PullDownMenu.HC:31
             _ = try nat(t, n_Print, try push1(t, s1))
             ln = 35 // PullDownMenu.HC:35
@@ -126,7 +126,7 @@ public final class N_Demo_PullDownMenu: NativeModule {
                                 _ = try nat(t, n_Print, try push1(t, s7))
                                 ln = 73 // PullDownMenu.HC:73
                                 try tick(t)
-                                let t5: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s8)
+                                let t5: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s8)
                                 l24_tmpse = t5
                                 if (t5 != 0) {
                                     ln = 74 // PullDownMenu.HC:74
@@ -137,7 +137,7 @@ public final class N_Demo_PullDownMenu: NativeModule {
                                 _ = try nat(t, n_Print, try push1(t, s9))
                                 ln = 78 // PullDownMenu.HC:78
                                 try tick(t)
-                                let t6: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s10)
+                                let t6: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s10)
                                 l24_tmpse = t6
                                 if (t6 != 0) {
                                     ln = 79 // PullDownMenu.HC:79
@@ -156,7 +156,7 @@ public final class N_Demo_PullDownMenu: NativeModule {
             }
             ln = 86 // PullDownMenu.HC:86
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -164,13 +164,13 @@ public final class N_Demo_PullDownMenu: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/PullDownMenu.HC#0 (PullDownMenu.HC:89)
-    @discardableResult public final func f704_init_C__Demo_PullDownMenu_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_PullDownMenu_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 89 // PullDownMenu.HC:89
             try tick(t)
-            try f703_PullDownMenuDemo(t)
+            try f708_PullDownMenuDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/PullDownMenu.HC#0", ln) }
@@ -179,14 +179,14 @@ public final class N_Demo_PullDownMenu: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_PullDownMenuDemo(t); return 0
-        case 704: return try f704_init_C__Demo_PullDownMenu_HC_0(t)
+        case 708: try f708_PullDownMenuDemo(t); return 0
+        case 709: return try f709_init_C__Demo_PullDownMenu_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "PullDownMenuDemo", 704: "$init:C:/Demo/PullDownMenu.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "PullDownMenuDemo", 709: "$init:C:/Demo/PullDownMenu.HC#0"]
     private static let FILES: [String] = ["C:/Demo/PullDownMenu.HC"]
     public override var files: [String] { N_Demo_PullDownMenu.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_PullDownMenu.DEFINED.contains(index) }

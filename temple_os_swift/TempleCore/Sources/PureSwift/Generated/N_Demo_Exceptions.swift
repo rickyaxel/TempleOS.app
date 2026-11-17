@@ -39,7 +39,7 @@ public final class N_Demo_Exceptions: NativeModule {
     }
 
     /// HolyC Prompt (Exceptions.HC:6)
-    @discardableResult public final func f703_Prompt(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f708_Prompt(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -58,7 +58,7 @@ public final class N_Demo_Exceptions: NativeModule {
     }
 
     /// HolyC D1 (Exceptions.HC:12)
-    public final func f704_D1(_ t: HTask) throws {
+    public final func f709_D1(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -66,13 +66,13 @@ public final class N_Demo_Exceptions: NativeModule {
             _ = try nat(t, n_Print, try push1(t, s1))
             ln = 15 // Exceptions.HC:15
             try tick(t)
-            let t0: Int64 = try f703_Prompt(t, 1)
+            let t0: Int64 = try f708_Prompt(t, 1)
             if (t0 != 0) {
                 _ = try nat(t, n_throw, try push2(t, 54376138370896, 0))
             }
             ln = 16 // Exceptions.HC:16
             try tick(t)
-            let t1: Int64 = try f703_Prompt(t, 2)
+            let t1: Int64 = try f708_Prompt(t, 2)
             if (t1 != 0) {
                 _ = try nat(t, n_throw, try push2(t, 55475649998672, 0))
             }
@@ -82,7 +82,7 @@ public final class N_Demo_Exceptions: NativeModule {
     }
 
     /// HolyC D2 (Exceptions.HC:19)
-    public final func f705_D2(_ t: HTask) throws {
+    public final func f710_D2(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -94,10 +94,10 @@ public final class N_Demo_Exceptions: NativeModule {
             do {
                 ln = 23 // Exceptions.HC:23
                 try tick(t)
-                try f704_D1(t)
+                try f709_D1(t)
                 ln = 24 // Exceptions.HC:24
                 try tick(t)
-                let t0: Int64 = try f703_Prompt(t, 4)
+                let t0: Int64 = try f708_Prompt(t, 4)
                 if (t0 != 0) {
                     _ = try nat(t, n_throw, try push2(t, 57674673254224, 0))
                 }
@@ -122,7 +122,7 @@ public final class N_Demo_Exceptions: NativeModule {
     }
 
     /// HolyC Demo (Exceptions.HC:35)
-    public final func f706_Demo(_ t: HTask) throws {
+    public final func f711_Demo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -132,10 +132,10 @@ public final class N_Demo_Exceptions: NativeModule {
             do {
                 ln = 38 // Exceptions.HC:38
                 try tick(t)
-                try f705_D2(t)
+                try f710_D2(t)
                 ln = 39 // Exceptions.HC:39
                 try tick(t)
-                let t0: Int64 = try f703_Prompt(t, 3)
+                let t0: Int64 = try f708_Prompt(t, 3)
                 if (t0 != 0) {
                     _ = try nat(t, n_throw, try push2(t, 56575161626448, 0))
                 }
@@ -155,13 +155,13 @@ public final class N_Demo_Exceptions: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Exceptions.HC#0 (Exceptions.HC:47)
-    @discardableResult public final func f707_init_C__Demo_Exceptions_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Exceptions_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 47 // Exceptions.HC:47
             try tick(t)
-            try f706_Demo(t)
+            try f711_Demo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Exceptions.HC#0", ln) }
@@ -170,17 +170,17 @@ public final class N_Demo_Exceptions: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_Prompt(t, (n > 0 ? st[base + 0] : 0))
-        case 704: try f704_D1(t); return 0
-        case 705: try f705_D2(t); return 0
-        case 706: try f706_Demo(t); return 0
-        case 707: return try f707_init_C__Demo_Exceptions_HC_0(t)
+        case 708: return try f708_Prompt(t, (n > 0 ? st[base + 0] : 0))
+        case 709: try f709_D1(t); return 0
+        case 710: try f710_D2(t); return 0
+        case 711: try f711_Demo(t); return 0
+        case 712: return try f712_init_C__Demo_Exceptions_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "Prompt", 704: "D1", 705: "D2", 706: "Demo", 707: "$init:C:/Demo/Exceptions.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "Prompt", 709: "D1", 710: "D2", 711: "Demo", 712: "$init:C:/Demo/Exceptions.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Exceptions.HC"]
     public override var files: [String] { N_Demo_Exceptions.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Exceptions.DEFINED.contains(index) }

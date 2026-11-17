@@ -49,7 +49,7 @@ class N_Adam_CPURep(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC MPCPURep (CPURep.HC:10) */
-    fun f703_MPCPURep(t: Task, a0: Long) {
+    fun f708_MPCPURep(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -92,7 +92,7 @@ class N_Adam_CPURep(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC CPURep (CPURep.HC:26) */
-    fun f704_CPURep(t: Task, a0: Long) {
+    fun f709_CPURep(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -133,7 +133,7 @@ class N_Adam_CPURep(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
                     val t7: Long = nat(t, n_mp_cnt, push0(t))
                     if (!((l8_i < t7))) break@loop0
                     ln = 40 // CPURep.HC:40
-                    nat(t, n_Spawn, push(t, 9223090561878065855L, (fp + 48), 0L, l8_i, 0L, 0L, 0L))
+                    nat(t, n_Spawn, push(t, 9223090561878065860L, (fp + 48), 0L, l8_i, 0L, 0L, 0L))
                     ln = 39 // CPURep.HC:39
                     l8_i = (l8_i + 1L)
                     tick(t)
@@ -213,7 +213,7 @@ class N_Adam_CPURep(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     }
 
     /** HolyC $init:C:/Adam/CPURep.HC#0 (CPURep.HC:1) */
-    fun f705_init_C__Adam_CPURep_HC_0(t: Task): Long {
+    fun f710_init_C__Adam_CPURep_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -225,9 +225,9 @@ class N_Adam_CPURep(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MPCPURep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_CPURep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> f705_init_C__Adam_CPURep_HC_0(t)
+            708 -> { f708_MPCPURep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_CPURep(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> f710_init_C__Adam_CPURep_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -239,7 +239,7 @@ class N_Adam_CPURep(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("MPCPURep", "CPURep", "\$init:C:/Adam/CPURep.HC#0")
         private val FILES = arrayOf<String>("C:/Adam/CPURep.HC")
     }

@@ -15,6 +15,7 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
     public let n_GrRect: Int
     public let n_PutChars: Int
     public let n_Sprite: Int
+    public let n_Sprite3: Int
     /** in_img: U8 *[12] */ public var g_in_img: Int64 = 0
     /** binary literal, 386 bytes */ public var b0: Int64 = 0
     /** binary literal, 386 bytes */ public var b1: Int64 = 0
@@ -37,6 +38,7 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
         n_GrRect = rt.vm.natives.find("GrRect")!.index
         n_PutChars = rt.vm.natives.find("PutChars")!.index
         n_Sprite = rt.vm.natives.find("Sprite")!.index
+        n_Sprite3 = rt.vm.natives.find("Sprite3")!.index
         super.init(rt)
     }
 
@@ -61,7 +63,7 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/EdSprite.HC#0 (EdSprite.HC:53)
-    @discardableResult public final func f703_init_C__Demo_Graphics_EdSprite_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Graphics_EdSprite_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -84,7 +86,7 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
     }
 
     /// HolyC OutLine (EdSprite.HC:55)
-    public final func f704_OutLine(_ t: HTask) throws {
+    public final func f709_OutLine(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -104,7 +106,7 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
             loop0: while (l0_n < 12) {
                 ln = 61 // EdSprite.HC:61
                 try tick(t)
-                try P.f446_SpriteExtents(t, ld8((g_in_img &+ (l0_n &* 8))), (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32))
+                try P.f451_SpriteExtents(t, ld8((g_in_img &+ (l0_n &* 8))), (fp &+ 8), (fp &+ 16), (fp &+ 24), (fp &+ 32))
                 ln = 62 // EdSprite.HC:62
                 l40_w = try (((ld8((fp &+ 16)) &- ld8((fp &+ 8))) &+ 1) &+ 2)
                 ln = 63 // EdSprite.HC:63
@@ -118,8 +120,7 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
                 ln = 66 // EdSprite.HC:66
                 _ = try nat(t, n_GrRect, try push(t, l96_dc, 0, 0, l40_w, l48_h))
                 ln = 67 // EdSprite.HC:67
-                try tick(t)
-                try P.f440_Sprite3(t, l96_dc, ((0 &- ld8((fp &+ 8))) &+ 1), ((0 &- ld8((fp &+ 24))) &+ 1), 0, ld8((g_in_img &+ (l0_n &* 8))), 0)
+                _ = try nat(t, n_Sprite3, try push(t, l96_dc, ((0 &- ld8((fp &+ 8))) &+ 1), ((0 &- ld8((fp &+ 24))) &+ 1), 0, ld8((g_in_img &+ (l0_n &* 8))), 0))
                 ln = 69 // EdSprite.HC:69
                 l56_i = 0
                 loop2: while (l56_i < l48_h) {
@@ -159,7 +160,7 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
                 }
                 ln = 82 // EdSprite.HC:82
                 try tick(t)
-                let t3: Int64 = try P.f439_DC2Sprite(t, l96_dc)
+                let t3: Int64 = try P.f443_DC2Sprite(t, l96_dc)
                 l88_out_img = t3
                 ln = 83 // EdSprite.HC:83
                 _ = try nat(t, n_PutChars, try push1(t, 10))
@@ -183,13 +184,13 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/EdSprite.HC#1 (EdSprite.HC:92)
-    @discardableResult public final func f705_init_C__Demo_Graphics_EdSprite_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_EdSprite_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 92 // EdSprite.HC:92
             try tick(t)
-            try f704_OutLine(t)
+            try f709_OutLine(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/EdSprite.HC#1", ln) }
@@ -198,15 +199,15 @@ public final class N_Demo_Graphics_EdSprite: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Graphics_EdSprite_HC_0(t)
-        case 704: try f704_OutLine(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_EdSprite_HC_1(t)
+        case 708: return try f708_init_C__Demo_Graphics_EdSprite_HC_0(t)
+        case 709: try f709_OutLine(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_EdSprite_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Graphics/EdSprite.HC#0", 704: "OutLine", 705: "$init:C:/Demo/Graphics/EdSprite.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Graphics/EdSprite.HC#0", 709: "OutLine", 710: "$init:C:/Demo/Graphics/EdSprite.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Graphics/EdSprite.HC"]
     public override var files: [String] { N_Demo_Graphics_EdSprite.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_EdSprite.DEFINED.contains(index) }

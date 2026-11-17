@@ -15,17 +15,17 @@ s 17fd88 53697a65
 s 17fda0 46757365
 s 131e0 2564
 s 131e0 2564
-fn 703 DrawCtrlPanelCtrl (U0;*$CDC,*$CCtrl;-)
-fn 704 UpdateDerivedCtrlPanelCtrl (U0;*$CCtrl;-)
-fn 705 LeftClickCtrlPanel (U0;*$CCtrl,I64,I64,Bool;-)
-fn 706 CtrlPanelNew (*$CCtrl;;-)
-fn 707 CtrlPanelDel (U0;*$CCtrl;-)
-fn 708 $init:C:/Apps/X-Caliber/XCCtrls.HC#0 (I64;;-)
-sym f CtrlPanelDel 707 (U0;*$CCtrl;-)
-sym f CtrlPanelNew 706 (*$CCtrl;;-)
-sym f DrawCtrlPanelCtrl 703 (U0;*$CDC,*$CCtrl;-)
-sym f LeftClickCtrlPanel 705 (U0;*$CCtrl,I64,I64,Bool;-)
-sym f UpdateDerivedCtrlPanelCtrl 704 (U0;*$CCtrl;-)
+fn 708 DrawCtrlPanelCtrl (U0;*$CDC,*$CCtrl;-)
+fn 709 UpdateDerivedCtrlPanelCtrl (U0;*$CCtrl;-)
+fn 710 LeftClickCtrlPanel (U0;*$CCtrl,I64,I64,Bool;-)
+fn 711 CtrlPanelNew (*$CCtrl;;-)
+fn 712 CtrlPanelDel (U0;*$CCtrl;-)
+fn 713 $init:C:/Apps/X-Caliber/XCCtrls.HC#0 (I64;;-)
+sym f CtrlPanelDel 712 (U0;*$CCtrl;-)
+sym f CtrlPanelNew 711 (*$CCtrl;;-)
+sym f DrawCtrlPanelCtrl 708 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickCtrlPanel 710 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f UpdateDerivedCtrlPanelCtrl 709 (U0;*$CCtrl;-)
 sym g ctrl_panel 17fd38 $CtrlPanelState
-init 708
+init 713
 unit C:/Apps/X-Caliber/XCCtrls.HC#1

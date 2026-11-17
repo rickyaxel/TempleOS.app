@@ -20,7 +20,7 @@ class N_Demo_ScrnCodes(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DrawIt (ScrnCodes.HC:11) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -42,7 +42,7 @@ class N_Demo_ScrnCodes(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC ScrnCodes (ScrnCodes.HC:18) */
-    fun f704_ScrnCodes(t: Task) {
+    fun f709_ScrnCodes(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -52,7 +52,7 @@ class N_Demo_ScrnCodes(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             ln = 21 // ScrnCodes.HC:21
             nat(t, n_DocClear, push1(t, 0L))
             ln = 22 // ScrnCodes.HC:22
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 23 // ScrnCodes.HC:23
             nat(t, n_GetChar, push3(t, 0L, 0L, 0L))
             ln = 24 // ScrnCodes.HC:24
@@ -64,13 +64,13 @@ class N_Demo_ScrnCodes(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Demo/ScrnCodes.HC#0 (ScrnCodes.HC:27) */
-    fun f705_init_C__Demo_ScrnCodes_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_ScrnCodes_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 27 // ScrnCodes.HC:27
             tick(t)
-            f704_ScrnCodes(t)
+            f709_ScrnCodes(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/ScrnCodes.HC#0", ln) }
@@ -79,9 +79,9 @@ class N_Demo_ScrnCodes(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_ScrnCodes(t); 0L }
-            705 -> f705_init_C__Demo_ScrnCodes_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_ScrnCodes(t); 0L }
+            710 -> f710_init_C__Demo_ScrnCodes_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -93,7 +93,7 @@ class N_Demo_ScrnCodes(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "ScrnCodes", "\$init:C:/Demo/ScrnCodes.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/ScrnCodes.HC")
     }

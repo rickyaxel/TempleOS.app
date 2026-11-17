@@ -39,7 +39,7 @@ public final class N_Home_Examples_Graphics: NativeModule {
     }
 
     /// HolyC GraphicsDemo (Graphics.HC:4)
-    public final func f703_GraphicsDemo(_ t: HTask) throws {
+    public final func f708_GraphicsDemo(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -62,7 +62,7 @@ public final class N_Home_Examples_Graphics: NativeModule {
                 let t1: Double = d(try nat(t, n_Sin, try push1(t, bits(((Double(l0_i) * d(4614256656552045848)) / 8.0)))))
                 let t2: Double = d(try nat(t, n_Cos, try push1(t, bits(((Double(l0_i) * d(4614256656552045848)) / 8.0)))))
                 try tick(t)
-                _ = try P.f396_GrLine(t, l8_dc, 320, 240, f2i((320.0 + (200.0 * t2))), f2i((240.0 + (200.0 * t1))), 1, 0)
+                _ = try P.f397_GrLine(t, l8_dc, 320, 240, f2i((320.0 + (200.0 * t2))), f2i((240.0 + (200.0 * t1))), 1, 0)
                 ln = 10 // Graphics.HC:10
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -73,7 +73,7 @@ public final class N_Home_Examples_Graphics: NativeModule {
             try st4((l8_dc &+ 228), 3)
             ln = 16 // Graphics.HC:16
             try tick(t)
-            _ = try P.f411_GrCircle3(t, l8_dc, 320, 240, 0, 100, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f413_GrCircle3(t, l8_dc, 320, 240, 0, 100, 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 17 // Graphics.HC:17
             try st4((l8_dc &+ 160), 12)
             ln = 18 // Graphics.HC:18
@@ -83,7 +83,7 @@ public final class N_Home_Examples_Graphics: NativeModule {
             ln = 20 // Graphics.HC:20
             try tick(t)
             let vb0 = push0(t)
-            _ = try P.f369_GrPrint(t, l8_dc, 32, 416, s1, vb0, 0)
+            _ = try P.f370_GrPrint(t, l8_dc, 32, 416, s1, vb0, 0)
             t.sp = vb0
             ln = 21 // Graphics.HC:21
             _ = try nat(t, n_GetChar, try push3(t, 0, 0, 0))
@@ -99,13 +99,13 @@ public final class N_Home_Examples_Graphics: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Graphics.HC#0 (Graphics.HC:26)
-    @discardableResult public final func f704_init_C__Home_Examples_Graphics_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Home_Examples_Graphics_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 26 // Graphics.HC:26
             try tick(t)
-            try f703_GraphicsDemo(t)
+            try f708_GraphicsDemo(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Home/Examples/Graphics.HC#0", ln) }
@@ -114,14 +114,14 @@ public final class N_Home_Examples_Graphics: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_GraphicsDemo(t); return 0
-        case 704: return try f704_init_C__Home_Examples_Graphics_HC_0(t)
+        case 708: try f708_GraphicsDemo(t); return 0
+        case 709: return try f709_init_C__Home_Examples_Graphics_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "GraphicsDemo", 704: "$init:C:/Home/Examples/Graphics.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "GraphicsDemo", 709: "$init:C:/Home/Examples/Graphics.HC#0"]
     private static let FILES: [String] = ["C:/Home/Examples/Graphics.HC"]
     public override var files: [String] { N_Home_Examples_Graphics.FILES }
     public override func defines(_ index: Int) -> Bool { N_Home_Examples_Graphics.DEFINED.contains(index) }

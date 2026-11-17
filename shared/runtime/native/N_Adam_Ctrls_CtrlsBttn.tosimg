@@ -7,14 +7,14 @@ m flags 16 I64
 m state_texts 24 *U8
 m state_colors 32 *$CColorROPU32
 s 132c0 2573
-fn 703 DrawCtrlBttn (U0;*$CDC,*$CCtrl;-)
-fn 704 LeftClickCtrlBttn (U0;*$CCtrl,I64,I64,Bool;-)
-fn 705 CtrlBttnNew (*$CCtrl;I64,I64,I64,I64,I64,*U8,*I32,*$CCtrlBttnState;-)
-fn 706 CtrlBttnDel (U0;*$CCtrl;-)
-fn 707 $init:C:/Adam/Ctrls/CtrlsBttn.HC#0 (I64;;-)
-sym f CtrlBttnDel 706 (U0;*$CCtrl;-)
-sym f CtrlBttnNew 705 (*$CCtrl;I64,I64,I64,I64,I64,*U8,*I32,*$CCtrlBttnState;-)
-sym f DrawCtrlBttn 703 (U0;*$CDC,*$CCtrl;-)
-sym f LeftClickCtrlBttn 704 (U0;*$CCtrl,I64,I64,Bool;-)
-init 707
+fn 708 DrawCtrlBttn (U0;*$CDC,*$CCtrl;-)
+fn 709 LeftClickCtrlBttn (U0;*$CCtrl,I64,I64,Bool;-)
+fn 710 CtrlBttnNew (*$CCtrl;I64,I64,I64,I64,I64,*U8,*I32,*$CCtrlBttnState;-)
+fn 711 CtrlBttnDel (U0;*$CCtrl;-)
+fn 712 $init:C:/Adam/Ctrls/CtrlsBttn.HC#0 (I64;;-)
+sym f CtrlBttnDel 711 (U0;*$CCtrl;-)
+sym f CtrlBttnNew 710 (*$CCtrl;I64,I64,I64,I64,I64,*U8,*I32,*$CCtrlBttnState;-)
+sym f DrawCtrlBttn 708 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickCtrlBttn 709 (U0;*$CCtrl,I64,I64,Bool;-)
+init 712
 unit C:/Adam/Ctrls/CtrlsBttn.HC#1

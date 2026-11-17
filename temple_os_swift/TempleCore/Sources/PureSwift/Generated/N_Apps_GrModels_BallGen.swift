@@ -53,7 +53,7 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
     }
 
     /// HolyC BDInit (BallGen.HC:21)
-    public final func f703_BDInit(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_BDInit(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -72,7 +72,7 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
     }
 
     /// HolyC BDCorrect (BallGen.HC:29)
-    public final func f704_BDCorrect(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_BDCorrect(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -87,7 +87,7 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
     }
 
     /// HolyC AddVertex (BallGen.HC:35)
-    @discardableResult public final func f705_AddVertex(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f710_AddVertex(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -129,7 +129,7 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
     }
 
     /// HolyC AddTri (BallGen.HC:48)
-    @discardableResult public final func f706_AddTri(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
+    @discardableResult public final func f711_AddTri(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64, _ a4: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -161,7 +161,7 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
     }
 
     /// HolyC Ball2CSprite (BallGen.HC:58)
-    @discardableResult public final func f707_Ball2CSprite(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_Ball2CSprite(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -205,7 +205,7 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
     }
 
     /// HolyC BallGen (BallGen.HC:76)
-    @discardableResult public final func f708_BallGen(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_BallGen(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -230,12 +230,12 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
             var l8_i: Int64 = 0
             ln = 83 // BallGen.HC:83
             try tick(t)
-            try f703_BDInit(t, (fp &+ 80))
+            try f708_BDInit(t, (fp &+ 80))
             ln = 85 // BallGen.HC:85
             loop0: while (1 != 0) {
                 ln = 86 // BallGen.HC:86
                 try tick(t)
-                let t0: Int64 = try P.f628_DocForm(t, (fp &+ 80), s0)
+                let t0: Int64 = try P.f633_DocForm(t, (fp &+ 80), s0)
                 if (t0 == 0) {
                     ln = 87 // BallGen.HC:87
                     t.msp = msp0
@@ -246,10 +246,10 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
                 _ = try nat(t, n_MemCpy, try push3(t, (fp &+ 104), (fp &+ 80), 24))
                 ln = 89 // BallGen.HC:89
                 try tick(t)
-                try f704_BDCorrect(t, (fp &+ 104))
+                try f709_BDCorrect(t, (fp &+ 104))
                 ln = 91 // BallGen.HC:91
                 try tick(t)
-                let t1: Int64 = try P.f589_PopUpColorLighting(t, 0)
+                let t1: Int64 = try P.f594_PopUpColorLighting(t, 0)
                 l40_c = t1
                 ln = 92 // BallGen.HC:92
                 if (l40_c < 0) {
@@ -292,32 +292,32 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
                         let t7: Double = d(try nat(t, n_Sin, try push1(t, bits((Double(((2 &* l8_i) &+ l16_j)) * l176_d_a2)))))
                         let t8: Double = d(try nat(t, n_Cos, try push1(t, bits((Double(((2 &* l8_i) &+ l16_j)) * l176_d_a2)))))
                         try tick(t)
-                        let t9: Int64 = try f705_AddVertex(t, (fp &+ 104), f2i((l136_r1 * t8)), f2i((l136_r1 * t7)), f2i(l152_z1))
+                        let t9: Int64 = try f710_AddVertex(t, (fp &+ 104), f2i((l136_r1 * t8)), f2i((l136_r1 * t7)), f2i(l152_z1))
                         l48_p1 = t9
                         ln = 107 // BallGen.HC:107
                         let t10: Double = d(try nat(t, n_Sin, try push1(t, bits((Double((((2 &* l8_i) &+ 2) &+ l16_j)) * l176_d_a2)))))
                         let t11: Double = d(try nat(t, n_Cos, try push1(t, bits((Double((((2 &* l8_i) &+ 2) &+ l16_j)) * l176_d_a2)))))
                         try tick(t)
-                        let t12: Int64 = try f705_AddVertex(t, (fp &+ 104), f2i((l136_r1 * t11)), f2i((l136_r1 * t10)), f2i(l152_z1))
+                        let t12: Int64 = try f710_AddVertex(t, (fp &+ 104), f2i((l136_r1 * t11)), f2i((l136_r1 * t10)), f2i(l152_z1))
                         l56_p2 = t12
                         ln = 108 // BallGen.HC:108
                         let t13: Double = d(try nat(t, n_Sin, try push1(t, bits((Double((((2 &* l8_i) &+ 1) &+ l16_j)) * l176_d_a2)))))
                         let t14: Double = d(try nat(t, n_Cos, try push1(t, bits((Double((((2 &* l8_i) &+ 1) &+ l16_j)) * l176_d_a2)))))
                         try tick(t)
-                        let t15: Int64 = try f705_AddVertex(t, (fp &+ 104), f2i((l144_r2 * t14)), f2i((l144_r2 * t13)), f2i(l160_z2))
+                        let t15: Int64 = try f710_AddVertex(t, (fp &+ 104), f2i((l144_r2 * t14)), f2i((l144_r2 * t13)), f2i(l160_z2))
                         l64_p3 = t15
                         ln = 109 // BallGen.HC:109
                         let t16: Double = d(try nat(t, n_Sin, try push1(t, bits((Double((((2 &* l8_i) &+ 3) &+ l16_j)) * l176_d_a2)))))
                         let t17: Double = d(try nat(t, n_Cos, try push1(t, bits((Double((((2 &* l8_i) &+ 3) &+ l16_j)) * l176_d_a2)))))
                         try tick(t)
-                        let t18: Int64 = try f705_AddVertex(t, (fp &+ 104), f2i((l144_r2 * t17)), f2i((l144_r2 * t16)), f2i(l160_z2))
+                        let t18: Int64 = try f710_AddVertex(t, (fp &+ 104), f2i((l144_r2 * t17)), f2i((l144_r2 * t16)), f2i(l160_z2))
                         l72_p4 = t18
                         ln = 110 // BallGen.HC:110
                         try tick(t)
-                        _ = try f706_AddTri(t, (fp &+ 104), l40_c, l48_p1, l56_p2, l64_p3)
+                        _ = try f711_AddTri(t, (fp &+ 104), l40_c, l48_p1, l56_p2, l64_p3)
                         ln = 111 // BallGen.HC:111
                         try tick(t)
-                        _ = try f706_AddTri(t, (fp &+ 104), l40_c, l64_p3, l56_p2, l72_p4)
+                        _ = try f711_AddTri(t, (fp &+ 104), l40_c, l64_p3, l56_p2, l72_p4)
                         ln = 105 // BallGen.HC:105
                         l8_i = (l8_i &+ 1)
                         try tick(t)
@@ -328,7 +328,7 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
                 }
                 ln = 115 // BallGen.HC:115
                 try tick(t)
-                let t19: Int64 = try f707_Ball2CSprite(t)
+                let t19: Int64 = try f712_Ball2CSprite(t)
                 l0_res = t19
                 ln = 116 // BallGen.HC:116
                 _ = try nat(t, n_Print, try push2(t, s1, 10))
@@ -365,7 +365,7 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/GrModels/BallGen.HC#0 (BallGen.HC:1)
-    @discardableResult public final func f709_init_C__Apps_GrModels_BallGen_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Apps_GrModels_BallGen_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -377,19 +377,19 @@ public final class N_Apps_GrModels_BallGen: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_BDInit(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_BDCorrect(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: return try f705_AddVertex(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 706: return try f706_AddTri(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
-        case 707: return try f707_Ball2CSprite(t)
-        case 708: return try f708_BallGen(t)
-        case 709: return try f709_init_C__Apps_GrModels_BallGen_HC_0(t)
+        case 708: try f708_BDInit(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_BDCorrect(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: return try f710_AddVertex(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 711: return try f711_AddTri(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0), (n > 4 ? st[base + 4] : 0))
+        case 712: return try f712_Ball2CSprite(t)
+        case 713: return try f713_BallGen(t)
+        case 714: return try f714_init_C__Apps_GrModels_BallGen_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709]
-    private static let NAMES: [Int: String] = [703: "BDInit", 704: "BDCorrect", 705: "AddVertex", 706: "AddTri", 707: "Ball2CSprite", 708: "BallGen", 709: "$init:C:/Apps/GrModels/BallGen.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714]
+    private static let NAMES: [Int: String] = [708: "BDInit", 709: "BDCorrect", 710: "AddVertex", 711: "AddTri", 712: "Ball2CSprite", 713: "BallGen", 714: "$init:C:/Apps/GrModels/BallGen.HC#0"]
     private static let FILES: [String] = ["C:/Apps/GrModels/BallGen.HC"]
     public override var files: [String] { N_Apps_GrModels_BallGen.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_GrModels_BallGen.DEFINED.contains(index) }

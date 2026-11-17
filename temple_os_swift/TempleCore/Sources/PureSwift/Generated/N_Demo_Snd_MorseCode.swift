@@ -73,7 +73,7 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
     }
 
     /// HolyC MorseTable (MorseCode.HC:59)
-    public final func f703_MorseTable(_ t: HTask) throws {
+    public final func f708_MorseTable(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -130,7 +130,7 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
     }
 
     /// HolyC MorseTimes (MorseCode.HC:80)
-    @discardableResult public final func f704_MorseTimes(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f709_MorseTimes(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -152,7 +152,7 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
     }
 
     /// HolyC MorseWaitKey (MorseCode.HC:87)
-    @discardableResult public final func f705_MorseWaitKey(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_MorseWaitKey(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -251,7 +251,7 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
     }
 
     /// HolyC Morse (MorseCode.HC:131)
-    public final func f706_Morse(_ t: HTask) throws {
+    public final func f711_Morse(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -263,7 +263,7 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
             var l8_ch: Int64 = 0
             ln = 137 // MorseCode.HC:137
             try tick(t)
-            try f703_MorseTable(t)
+            try f708_MorseTable(t)
             ln = 138 // MorseCode.HC:138
             try st8(g_m_start, bits(0.0))
             ln = 139 // MorseCode.HC:139
@@ -279,14 +279,14 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
             _ = try nat(t, n_Print, try push1(t, s2))
             ln = 146 // MorseCode.HC:146
             try tick(t)
-            let t1: Int64 = try P.f602_DocPut(t, 0)
+            let t1: Int64 = try P.f607_DocPut(t, 0)
             try tick(t)
             let vb0 = push0(t)
             let t2: Int64 = try P.f29_DocPrint(t, t1, s3, vb0, 0)
             t.sp = vb0
             l0_doc_e = t2
             ln = 147 // MorseCode.HC:147
-            try st8((l0_doc_e &+ 120), 9223090561878065856)
+            try st8((l0_doc_e &+ 120), 9223090561878065861)
             ln = 149 // MorseCode.HC:149
             _ = try nat(t, n_Print, try push1(t, s4))
             ln = 151 // MorseCode.HC:151
@@ -295,7 +295,7 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
             loop0: while (1 != 0) {
                 ln = 153 // MorseCode.HC:153
                 try tick(t)
-                let t3: Int64 = try f705_MorseWaitKey(t)
+                let t3: Int64 = try f710_MorseWaitKey(t)
                 l8_ch = t3
                 ln = 154 // MorseCode.HC:154
                 if (l8_ch == 32) {
@@ -345,13 +345,13 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Snd/MorseCode.HC#0 (MorseCode.HC:4)
-    @discardableResult public final func f707_init_C__Demo_Snd_MorseCode_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_Snd_MorseCode_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 176 // MorseCode.HC:176
             try tick(t)
-            try f706_Morse(t)
+            try f711_Morse(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Snd/MorseCode.HC#0", ln) }
@@ -360,17 +360,17 @@ public final class N_Demo_Snd_MorseCode: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_MorseTable(t); return 0
-        case 704: return try f704_MorseTimes(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 705: return try f705_MorseWaitKey(t)
-        case 706: try f706_Morse(t); return 0
-        case 707: return try f707_init_C__Demo_Snd_MorseCode_HC_0(t)
+        case 708: try f708_MorseTable(t); return 0
+        case 709: return try f709_MorseTimes(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 710: return try f710_MorseWaitKey(t)
+        case 711: try f711_Morse(t); return 0
+        case 712: return try f712_init_C__Demo_Snd_MorseCode_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "MorseTable", 704: "MorseTimes", 705: "MorseWaitKey", 706: "Morse", 707: "$init:C:/Demo/Snd/MorseCode.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "MorseTable", 709: "MorseTimes", 710: "MorseWaitKey", 711: "Morse", 712: "$init:C:/Demo/Snd/MorseCode.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Snd/MorseCode.HC"]
     public override var files: [String] { N_Demo_Snd_MorseCode.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Snd_MorseCode.DEFINED.contains(index) }

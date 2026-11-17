@@ -43,7 +43,7 @@ public final class N_Demo_Graphics_Cartesian: NativeModule {
     }
 
     /// HolyC Cartesian (Cartesian.HC:6)
-    public final func f703_Cartesian(_ t: HTask) throws {
+    public final func f708_Cartesian(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -80,10 +80,10 @@ public final class N_Demo_Graphics_Cartesian: NativeModule {
                         try st4((l40_dc &+ 160), 4)
                         ln = 22 // Cartesian.HC:22
                         try tick(t)
-                        _ = try P.f396_GrLine(t, l40_dc, l16_h, 0, l16_h, ((2 &* l24_v) &+ 1), 1, 0)
+                        _ = try P.f397_GrLine(t, l40_dc, l16_h, 0, l16_h, ((2 &* l24_v) &+ 1), 1, 0)
                         ln = 23 // Cartesian.HC:23
                         try tick(t)
-                        _ = try P.f396_GrLine(t, l40_dc, 0, l24_v, ((2 &* l16_h) &+ 1), l24_v, 1, 0)
+                        _ = try P.f397_GrLine(t, l40_dc, 0, l24_v, ((2 &* l16_h) &+ 1), l24_v, 1, 0)
                         ln = 24 // Cartesian.HC:24
                         l32_first = 1
                         ln = 25 // Cartesian.HC:25
@@ -98,7 +98,7 @@ public final class N_Demo_Graphics_Cartesian: NativeModule {
                             if (l32_first == 0) {
                                 ln = 29 // Cartesian.HC:29
                                 try tick(t)
-                                _ = try P.f396_GrLine(t, l40_dc, f2i(((ldf(g_x) - 1.0) + Double(l16_h))), f2i((ldf(g_y_last) + Double(l24_v))), f2i((ldf(g_x) + Double(l16_h))), f2i((ldf(g_y) + Double(l24_v))), 1, 0)
+                                _ = try P.f397_GrLine(t, l40_dc, f2i(((ldf(g_x) - 1.0) + Double(l16_h))), f2i((ldf(g_y_last) + Double(l24_v))), f2i((ldf(g_x) + Double(l16_h))), f2i((ldf(g_y) + Double(l24_v))), 1, 0)
                             }
                             ln = 30 // Cartesian.HC:30
                             try st8(g_y_last, bits(ldf(g_y)))
@@ -137,13 +137,13 @@ public final class N_Demo_Graphics_Cartesian: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Cartesian.HC#0 (Cartesian.HC:44)
-    @discardableResult public final func f704_init_C__Demo_Graphics_Cartesian_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_Cartesian_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 44 // Cartesian.HC:44
             try tick(t)
-            try f703_Cartesian(t)
+            try f708_Cartesian(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Cartesian.HC#0", ln) }
@@ -152,14 +152,14 @@ public final class N_Demo_Graphics_Cartesian: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Cartesian(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_Cartesian_HC_0(t)
+        case 708: try f708_Cartesian(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_Cartesian_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "Cartesian", 704: "$init:C:/Demo/Graphics/Cartesian.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "Cartesian", 709: "$init:C:/Demo/Graphics/Cartesian.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Cartesian.HC"]
     public override var files: [String] { N_Demo_Graphics_Cartesian.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Cartesian.DEFINED.contains(index) }

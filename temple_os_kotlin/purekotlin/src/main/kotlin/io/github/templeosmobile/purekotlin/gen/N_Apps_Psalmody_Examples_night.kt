@@ -15,6 +15,7 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
     @JvmField val n_RandI16 = rt.vm.natives.find("RandI16")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
 
     /** t0: F64 */ @JvmField var g_t0: Long = 0L
@@ -44,13 +45,13 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/night.HC#0 (night.HC:14) */
-    fun f703_init_C__Apps_Psalmody_Examples_night_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Psalmody_Examples_night_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 14 // night.HC:14
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             st8(g_t0, bits(t0))
             t.depth--
             return 0L
@@ -58,7 +59,7 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC DrawIt (night.HC:16) */
-    fun f704_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -70,14 +71,13 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
             var l40_dt: Double = 0.0
             ln = 19 // night.HC:19
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             l40_dt = (t0 - ldf(g_t0))
             ln = 20 // night.HC:20
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, 330L, 35L, 0L, b0, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, 330L, 35L, 0L, b0, 0L))
             ln = 21 // night.HC:21
             tick(t)
-            val t1: Double = P.f487_Beat(t)
+            val t1: Double = P.f492_Beat(t)
             if (((t1 - ldf(g_t0)) < 24.0)) {
                 ln = 22 // night.HC:22
                 val t2: Double = f(nat(t, n_Rand, push0(t)))
@@ -157,7 +157,7 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC Song (night.HC:54) */
-    fun f705_Song(t: Task) {
+    fun f710_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -167,12 +167,12 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
             ln = 57 // night.HC:57
             st1((ld8(P.g_Fs) + 778L), 7L)
             ln = 58 // night.HC:58
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065856L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
             ln = 59 // night.HC:59
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 60 // night.HC:60
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 61 // night.HC:61
             st8((P.g_music + 56L), bits(2.0))
             ln = 62 // night.HC:62
@@ -185,22 +185,22 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
                 loop0@ while ((1L != 0L)) {
                     ln = 65 // night.HC:65
                     tick(t)
-                    val t0: Double = P.f487_Beat(t)
+                    val t0: Double = P.f492_Beat(t)
                     st8(g_t0, bits(t0))
                     ln = 66 // night.HC:66
                     nat(t, n_Print, push1(t, s1))
                     ln = 67 // night.HC:67
                     tick(t)
-                    P.f494_Play(t, s3, s2)
+                    P.f499_Play(t, s3, s2)
                     ln = 69 // night.HC:69
                     tick(t)
-                    P.f494_Play(t, s3, s2)
+                    P.f499_Play(t, s3, s2)
                     ln = 71 // night.HC:71
                     tick(t)
-                    P.f494_Play(t, s5, s4)
+                    P.f499_Play(t, s5, s4)
                     ln = 73 // night.HC:73
                     tick(t)
-                    P.f494_Play(t, s5, s4)
+                    P.f499_Play(t, s5, s4)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -221,13 +221,13 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/night.HC#1 (night.HC:81) */
-    fun f706_init_C__Apps_Psalmody_Examples_night_HC_1(t: Task): Long {
+    fun f711_init_C__Apps_Psalmody_Examples_night_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 81 // night.HC:81
             tick(t)
-            f705_Song(t)
+            f710_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/night.HC#1", ln) }
@@ -236,10 +236,10 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Psalmody_Examples_night_HC_0(t)
-            704 -> { f704_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> { f705_Song(t); 0L }
-            706 -> f706_init_C__Apps_Psalmody_Examples_night_HC_1(t)
+            708 -> f708_init_C__Apps_Psalmody_Examples_night_HC_0(t)
+            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> { f710_Song(t); 0L }
+            711 -> f711_init_C__Apps_Psalmody_Examples_night_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -251,7 +251,7 @@ class N_Apps_Psalmody_Examples_night(rt: NativeRuntime, @JvmField val P: Prelude
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("\$init:C:/Apps/Psalmody/Examples/night.HC#0", "DrawIt", "Song", "\$init:C:/Apps/Psalmody/Examples/night.HC#1")
         private val FILES = arrayOf<String>("C:/Apps/Psalmody/Examples/night.HC")
     }

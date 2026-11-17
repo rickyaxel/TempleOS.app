@@ -18,19 +18,19 @@ s 17fd90 09092453502c223c313e222c42493d256424
 s 17fd78 25683763
 s 17fdb8 56657274696365733a25640a
 s 17fdd8 446f20616e6f74686572
-fn 703 BDInit (U0;*$BallDefineStruct;-)
-fn 704 BDCorrect (U0;*$BallDefineStruct;-)
-fn 705 AddVertex (I64;*$BallDefineStruct,I64,I64,I64;-)
-fn 706 AddTri (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
-fn 707 Ball2CSprite (*U8;;-)
-fn 708 BallGen (*U8;;-)
-fn 709 $init:C:/Apps/GrModels/BallGen.HC#0 (I64;;-)
-sym f AddTri 706 (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
-sym f AddVertex 705 (I64;*$BallDefineStruct,I64,I64,I64;-)
-sym f BDCorrect 704 (U0;*$BallDefineStruct;-)
-sym f BDInit 703 (U0;*$BallDefineStruct;-)
-sym f Ball2CSprite 707 (*U8;;-)
-sym f BallGen 708 (*U8;;-)
+fn 708 BDInit (U0;*$BallDefineStruct;-)
+fn 709 BDCorrect (U0;*$BallDefineStruct;-)
+fn 710 AddVertex (I64;*$BallDefineStruct,I64,I64,I64;-)
+fn 711 AddTri (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
+fn 712 Ball2CSprite (*U8;;-)
+fn 713 BallGen (*U8;;-)
+fn 714 $init:C:/Apps/GrModels/BallGen.HC#0 (I64;;-)
+sym f AddTri 711 (I64;*$BallDefineStruct,I64,I64,I64,I64;-)
+sym f AddVertex 710 (I64;*$BallDefineStruct,I64,I64,I64;-)
+sym f BDCorrect 709 (U0;*$BallDefineStruct;-)
+sym f BDInit 708 (U0;*$BallDefineStruct;-)
+sym f Ball2CSprite 712 (*U8;;-)
+sym f BallGen 713 (*U8;;-)
 sym g b 17fd38 *$Ball
-init 709
+init 714
 unit C:/Apps/GrModels/BallGen.HC#1

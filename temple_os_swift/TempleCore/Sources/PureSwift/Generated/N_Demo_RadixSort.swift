@@ -41,7 +41,7 @@ public final class N_Demo_RadixSort: NativeModule {
     }
 
     /// HolyC DumpIn (RadixSort.HC:12)
-    public final func f703_DumpIn(_ t: HTask) throws {
+    public final func f708_DumpIn(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -63,7 +63,7 @@ public final class N_Demo_RadixSort: NativeModule {
     }
 
     /// HolyC DumpOut (RadixSort.HC:20)
-    public final func f704_DumpOut(_ t: HTask) throws {
+    public final func f709_DumpOut(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -99,7 +99,7 @@ public final class N_Demo_RadixSort: NativeModule {
     }
 
     /// HolyC Init (RadixSort.HC:34)
-    public final func f705_Init(_ t: HTask) throws {
+    public final func f710_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -126,7 +126,7 @@ public final class N_Demo_RadixSort: NativeModule {
     }
 
     /// HolyC Sort (RadixSort.HC:45)
-    public final func f706_Sort(_ t: HTask) throws {
+    public final func f711_Sort(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -148,35 +148,35 @@ public final class N_Demo_RadixSort: NativeModule {
     }
 
     /// HolyC RadixSort (RadixSort.HC:54)
-    public final func f707_RadixSort(_ t: HTask) throws {
+    public final func f712_RadixSort(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 56 // RadixSort.HC:56
             try tick(t)
-            try f705_Init(t)
+            try f710_Init(t)
             ln = 57 // RadixSort.HC:57
             try tick(t)
-            try f703_DumpIn(t)
+            try f708_DumpIn(t)
             ln = 58 // RadixSort.HC:58
             try tick(t)
-            try f706_Sort(t)
+            try f711_Sort(t)
             ln = 59 // RadixSort.HC:59
             try tick(t)
-            try f704_DumpOut(t)
+            try f709_DumpOut(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "RadixSort", ln) }
     }
 
     /// HolyC $init:C:/Demo/RadixSort.HC#0 (RadixSort.HC:62)
-    @discardableResult public final func f708_init_C__Demo_RadixSort_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Demo_RadixSort_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 62 // RadixSort.HC:62
             try tick(t)
-            try f707_RadixSort(t)
+            try f712_RadixSort(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/RadixSort.HC#0", ln) }
@@ -185,18 +185,18 @@ public final class N_Demo_RadixSort: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DumpIn(t); return 0
-        case 704: try f704_DumpOut(t); return 0
-        case 705: try f705_Init(t); return 0
-        case 706: try f706_Sort(t); return 0
-        case 707: try f707_RadixSort(t); return 0
-        case 708: return try f708_init_C__Demo_RadixSort_HC_0(t)
+        case 708: try f708_DumpIn(t); return 0
+        case 709: try f709_DumpOut(t); return 0
+        case 710: try f710_Init(t); return 0
+        case 711: try f711_Sort(t); return 0
+        case 712: try f712_RadixSort(t); return 0
+        case 713: return try f713_init_C__Demo_RadixSort_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708]
-    private static let NAMES: [Int: String] = [703: "DumpIn", 704: "DumpOut", 705: "Init", 706: "Sort", 707: "RadixSort", 708: "$init:C:/Demo/RadixSort.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713]
+    private static let NAMES: [Int: String] = [708: "DumpIn", 709: "DumpOut", 710: "Init", 711: "Sort", 712: "RadixSort", 713: "$init:C:/Demo/RadixSort.HC#0"]
     private static let FILES: [String] = ["C:/Demo/RadixSort.HC"]
     public override var files: [String] { N_Demo_RadixSort.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_RadixSort.DEFINED.contains(index) }

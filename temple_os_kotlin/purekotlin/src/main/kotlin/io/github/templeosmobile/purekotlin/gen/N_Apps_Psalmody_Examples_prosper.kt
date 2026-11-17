@@ -10,6 +10,7 @@ import io.github.templeosmobile.core.holyc.*
 import io.github.templeosmobile.core.purenative.*
 
 class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule(rt) {
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_ScanKey = rt.vm.natives.find("ScanKey")!!.index
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_ToI64 = rt.vm.natives.find("ToI64")!!.index
@@ -43,13 +44,13 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#0 (prosper.HC:14) */
-    fun f703_init_C__Apps_Psalmody_Examples_prosper_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Psalmody_Examples_prosper_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 14 // prosper.HC:14
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             st8(g_t0, bits(t0))
             t.depth--
             return 0L
@@ -57,7 +58,7 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC DrawIt (prosper.HC:16) */
-    fun f704_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -66,7 +67,7 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
             var l16_dt: Double = 0.0
             ln = 18 // prosper.HC:18
             tick(t)
-            val t0: Double = P.f487_Beat(t)
+            val t0: Double = P.f492_Beat(t)
             l16_dt = (t0 - ldf(g_t0))
             ln = 19 // prosper.HC:19
             val t1: Long = (p1_dc + 28L)
@@ -77,8 +78,7 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
             P.f307_Mat4x4RotZ(t, ld8((p1_dc + 200L)), (0.25 * t2))
             ln = 21 // prosper.HC:21
             val t3: Double = f(nat(t, n_Sin, push1(t, bits((l16_dt / 3.0)))))
-            tick(t)
-            P.f308_Mat4x4Scale(t, ld8((p1_dc + 200L)), (1.5 + (0.5 * t3)))
+            nat(t, n_Mat4x4Scale, push2(t, ld8((p1_dc + 200L)), bits((1.5 + (0.5 * t3)))))
             ln = 22 // prosper.HC:22
             tick(t)
             P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc + 200L)))
@@ -87,11 +87,11 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
             if (((t4 and 1L) != 0L)) {
                 ln = 24 // prosper.HC:24
                 tick(t)
-                P.f441_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b0)
+                P.f446_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b0)
             } else {
                 ln = 26 // prosper.HC:26
                 tick(t)
-                P.f441_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b1)
+                P.f446_Sprite3B(t, p1_dc, f2i(((12.0 * l16_dt) % ld8((p0_task + 224L)).toDouble())), 20L, 0L, b1)
             }
             t.depth--
             return
@@ -99,7 +99,7 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC Song (prosper.HC:29) */
-    fun f705_Song(t: Task) {
+    fun f710_Song(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -109,12 +109,12 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
             ln = 32 // prosper.HC:32
             st1((ld8(P.g_Fs) + 778L), 46L)
             ln = 33 // prosper.HC:33
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065856L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
             ln = 34 // prosper.HC:34
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065631L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065636L)
             ln = 36 // prosper.HC:36
             tick(t)
-            P.f495_MusicSettingsRst(t)
+            P.f500_MusicSettingsRst(t)
             ln = 37 // prosper.HC:37
             st8((P.g_music + 56L), bits(3.5))
             ln = 38 // prosper.HC:38
@@ -127,20 +127,20 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
                     if (!((t1 == 0L))) break@loop0
                     ln = 40 // prosper.HC:40
                     tick(t)
-                    val t0: Double = P.f487_Beat(t)
+                    val t0: Double = P.f492_Beat(t)
                     st8(g_t0, bits(t0))
                     ln = 41 // prosper.HC:41
                     tick(t)
-                    P.f494_Play(t, s1, s0)
+                    P.f499_Play(t, s1, s0)
                     ln = 44 // prosper.HC:44
                     tick(t)
-                    P.f494_Play(t, s3, s2)
+                    P.f499_Play(t, s3, s2)
                     ln = 46 // prosper.HC:46
                     tick(t)
-                    P.f494_Play(t, s5, s4)
+                    P.f499_Play(t, s5, s4)
                     ln = 48 // prosper.HC:48
                     tick(t)
-                    P.f494_Play(t, s5, s4)
+                    P.f499_Play(t, s5, s4)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -161,13 +161,13 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#1 (prosper.HC:56) */
-    fun f706_init_C__Apps_Psalmody_Examples_prosper_HC_1(t: Task): Long {
+    fun f711_init_C__Apps_Psalmody_Examples_prosper_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 56 // prosper.HC:56
             tick(t)
-            f705_Song(t)
+            f710_Song(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/Psalmody/Examples/prosper.HC#1", ln) }
@@ -176,10 +176,10 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
-            704 -> { f704_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> { f705_Song(t); 0L }
-            706 -> f706_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
+            708 -> f708_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
+            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> { f710_Song(t); 0L }
+            711 -> f711_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -191,7 +191,7 @@ class N_Apps_Psalmody_Examples_prosper(rt: NativeRuntime, @JvmField val P: Prelu
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("\$init:C:/Apps/Psalmody/Examples/prosper.HC#0", "DrawIt", "Song", "\$init:C:/Apps/Psalmody/Examples/prosper.HC#1")
         private val FILES = arrayOf<String>("C:/Apps/Psalmody/Examples/prosper.HC")
     }

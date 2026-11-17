@@ -53,7 +53,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC DrawIt (CharDemo.HC:22) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -100,7 +100,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Games/CharDemo.HC#0 (CharDemo.HC:39) */
-    fun f704_init_C__Demo_Games_CharDemo_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Games_CharDemo_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -112,7 +112,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Games/CharDemo.HC#1 (CharDemo.HC:40) */
-    fun f705_init_C__Demo_Games_CharDemo_HC_1(t: Task): Long {
+    fun f710_init_C__Demo_Games_CharDemo_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -122,7 +122,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC AnimateEndCB (CharDemo.HC:44) */
-    fun f706_AnimateEndCB(t: Task) {
+    fun f711_AnimateEndCB(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -136,7 +136,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC AnimateTask (CharDemo.HC:50) */
-    fun f707_AnimateTask(t: Task, a0: Long) {
+    fun f712_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -147,7 +147,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             val t0: Long = nat(t, n_MAlloc, push2(t, 2048L, 0L))
             l16_font = t0
             ln = 54 // CharDemo.HC:54
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065858L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065863L)
             ln = 55 // CharDemo.HC:55
             nat(t, n_MemCpy, push3(t, l16_font, ld8((P.g_text + 40L)), 2048L))
             ln = 56 // CharDemo.HC:56
@@ -172,7 +172,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ScrollTaskX (CharDemo.HC:65) */
-    fun f708_ScrollTaskX(t: Task, a0: Long) {
+    fun f713_ScrollTaskX(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -197,7 +197,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC ScrollTaskY (CharDemo.HC:75) */
-    fun f709_ScrollTaskY(t: Task, a0: Long) {
+    fun f714_ScrollTaskY(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -222,7 +222,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC Init (CharDemo.HC:85) */
-    fun f710_Init(t: Task) {
+    fun f715_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -339,7 +339,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC CleanUp (CharDemo.HC:123) */
-    fun f711_CleanUp(t: Task) {
+    fun f716_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -355,7 +355,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC CharDemo (CharDemo.HC:129) */
-    fun f712_CharDemo(t: Task) {
+    fun f717_CharDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -378,16 +378,16 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             nat(t, n_DocCursor, push2(t, 0L, 0L))
             ln = 139 // CharDemo.HC:139
             tick(t)
-            P.f507_MenuPush(t, s0)
+            P.f512_MenuPush(t, s0)
             ln = 152 // CharDemo.HC:152
             tick(t)
-            f710_Init(t)
+            f715_Init(t)
             ln = 153 // CharDemo.HC:153
             val t1: Long = (ld8(P.g_Fs) + 1088L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065859L, 0L, s1, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065864L, 0L, s1, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 154 // CharDemo.HC:154
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 155 // CharDemo.HC:155
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -406,19 +406,19 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                                         when (t3) {
                                             75L -> {
                                                 ln = 161 // CharDemo.HC:161
-                                                nat(t, n_Spawn, push(t, 9223090561878065860L, -1L, s2, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065865L, -1L, s2, -1L, ld8(P.g_Fs), 0L, 0L))
                                             }
                                             77L -> {
                                                 ln = 164 // CharDemo.HC:164
-                                                nat(t, n_Spawn, push(t, 9223090561878065860L, 1L, s2, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065865L, 1L, s2, -1L, ld8(P.g_Fs), 0L, 0L))
                                             }
                                             72L -> {
                                                 ln = 167 // CharDemo.HC:167
-                                                nat(t, n_Spawn, push(t, 9223090561878065861L, -1L, s2, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065866L, -1L, s2, -1L, ld8(P.g_Fs), 0L, 0L))
                                             }
                                             80L -> {
                                                 ln = 170 // CharDemo.HC:170
-                                                nat(t, n_Spawn, push(t, 9223090561878065861L, 1L, s2, -1L, ld8(P.g_Fs), 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065866L, 1L, s2, -1L, ld8(P.g_Fs), 0L, 0L))
                                             }
                                             else -> {
                                             }
@@ -428,10 +428,10 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
                                 10L -> {
                                     ln = 175 // CharDemo.HC:175
                                     tick(t)
-                                    f711_CleanUp(t)
+                                    f716_CleanUp(t)
                                     ln = 176 // CharDemo.HC:176
                                     tick(t)
-                                    f710_Init(t)
+                                    f715_Init(t)
                                 }
                                 27L, 28L -> {
                                     ln = 180 // CharDemo.HC:180
@@ -458,10 +458,10 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 187 // CharDemo.HC:187
             tick(t)
-            f711_CleanUp(t)
+            f716_CleanUp(t)
             ln = 188 // CharDemo.HC:188
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -469,13 +469,13 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Games/CharDemo.HC#2 (CharDemo.HC:191) */
-    fun f713_init_C__Demo_Games_CharDemo_HC_2(t: Task): Long {
+    fun f718_init_C__Demo_Games_CharDemo_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 191 // CharDemo.HC:191
             tick(t)
-            f712_CharDemo(t)
+            f717_CharDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/CharDemo.HC#2", ln) }
@@ -484,17 +484,17 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> f704_init_C__Demo_Games_CharDemo_HC_0(t)
-            705 -> f705_init_C__Demo_Games_CharDemo_HC_1(t)
-            706 -> { f706_AnimateEndCB(t); 0L }
-            707 -> { f707_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_ScrollTaskX(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> { f709_ScrollTaskY(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            710 -> { f710_Init(t); 0L }
-            711 -> { f711_CleanUp(t); 0L }
-            712 -> { f712_CharDemo(t); 0L }
-            713 -> f713_init_C__Demo_Games_CharDemo_HC_2(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> f709_init_C__Demo_Games_CharDemo_HC_0(t)
+            710 -> f710_init_C__Demo_Games_CharDemo_HC_1(t)
+            711 -> { f711_AnimateEndCB(t); 0L }
+            712 -> { f712_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_ScrollTaskX(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> { f714_ScrollTaskY(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            715 -> { f715_Init(t); 0L }
+            716 -> { f716_CleanUp(t); 0L }
+            717 -> { f717_CharDemo(t); 0L }
+            718 -> f718_init_C__Demo_Games_CharDemo_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -506,7 +506,7 @@ class N_Demo_Games_CharDemo(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718)
         private val NAMES = arrayOf("DrawIt", "\$init:C:/Demo/Games/CharDemo.HC#0", "\$init:C:/Demo/Games/CharDemo.HC#1", "AnimateEndCB", "AnimateTask", "ScrollTaskX", "ScrollTaskY", "Init", "CleanUp", "CharDemo", "\$init:C:/Demo/Games/CharDemo.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Games/CharDemo.HC")
     }

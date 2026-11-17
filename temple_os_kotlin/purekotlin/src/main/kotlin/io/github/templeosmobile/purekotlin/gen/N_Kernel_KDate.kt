@@ -27,7 +27,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC $init:C:/Kernel/KDate.HC#0 (KDate.HC:3) */
-    fun f703_init_C__Kernel_KDate_HC_0(t: Task): Long {
+    fun f708_init_C__Kernel_KDate_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -37,7 +37,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC $init:C:/Kernel/KDate.HC#1 (KDate.HC:5) */
-    fun f704_init_C__Kernel_KDate_HC_1(t: Task): Long {
+    fun f709_init_C__Kernel_KDate_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -47,7 +47,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC YearStartDate (KDate.HC:8) */
-    fun f705_YearStartDate(t: Task, a0: Long): Long {
+    fun f710_YearStartDate(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -72,7 +72,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC Struct2Date (KDate.HC:14) */
-    fun f706_Struct2Date(t: Task, a0: Long): Long {
+    fun f711_Struct2Date(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -83,11 +83,11 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             var l24_i2: Long = 0L
             ln = 18 // KDate.HC:18
             tick(t)
-            val t0: Long = f705_YearStartDate(t, ld4s((p0__ds + 8L)))
+            val t0: Long = f710_YearStartDate(t, ld4s((p0__ds + 8L)))
             l16_i1 = t0
             ln = 19 // KDate.HC:19
             tick(t)
-            val t1: Long = f705_YearStartDate(t, (ld4s((p0__ds + 8L)) + 1L))
+            val t1: Long = f710_YearStartDate(t, (ld4s((p0__ds + 8L)) + 1L))
             l24_i2 = t1
             ln = 20 // KDate.HC:20
             if (((l24_i2 - l16_i1) == 365L)) {
@@ -112,7 +112,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC DayOfWeek (KDate.HC:30) */
-    fun f707_DayOfWeek(t: Task, a0: Long): Long {
+    fun f712_DayOfWeek(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -135,7 +135,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC Date2Struct (KDate.HC:39) */
-    fun f708_Date2Struct(t: Task, a0: Long, a1: Long) {
+    fun f713_Date2Struct(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -150,13 +150,13 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             l32_date = ld4s(((fp + 8) + 4L))
             ln = 42 // KDate.HC:42
             tick(t)
-            val t0: Long = f707_DayOfWeek(t, l32_date)
+            val t0: Long = f712_DayOfWeek(t, l32_date)
             st1((p0__ds + 5L), t0)
             ln = 43 // KDate.HC:43
             st4((p0__ds + 8L), divs(((l32_date + 1L) * 100000L), 36524225L))
             ln = 44 // KDate.HC:44
             tick(t)
-            val t1: Long = f705_YearStartDate(t, ld4s((p0__ds + 8L)))
+            val t1: Long = f710_YearStartDate(t, ld4s((p0__ds + 8L)))
             l16_i = t1
             ln = 45 // KDate.HC:45
             loop0@ while ((l16_i > l32_date)) {
@@ -166,7 +166,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
                 st4(t2, (t3 + -1L))
                 ln = 47 // KDate.HC:47
                 tick(t)
-                val t4: Long = f705_YearStartDate(t, ld4s((p0__ds + 8L)))
+                val t4: Long = f710_YearStartDate(t, ld4s((p0__ds + 8L)))
                 l16_i = t4
                 tick(t)
             }
@@ -174,7 +174,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             l32_date = (l32_date - l16_i)
             ln = 50 // KDate.HC:50
             tick(t)
-            val t5: Long = f705_YearStartDate(t, (ld4s((p0__ds + 8L)) + 1L))
+            val t5: Long = f710_YearStartDate(t, (ld4s((p0__ds + 8L)) + 1L))
             if (((t5 - l16_i) == 365L)) {
                 ln = 51 // KDate.HC:51
                 st8((fp + 24), 0L)
@@ -231,7 +231,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC FirstDayOfMon (KDate.HC:71) */
-    fun f709_FirstDayOfMon(t: Task, a0: Long): Long {
+    fun f714_FirstDayOfMon(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -244,12 +244,12 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             st4(((fp + 24) + 4L), p0_i)
             ln = 76 // KDate.HC:76
             tick(t)
-            f708_Date2Struct(t, (fp + 8), ld8((fp + 24)))
+            f713_Date2Struct(t, (fp + 8), ld8((fp + 24)))
             ln = 77 // KDate.HC:77
             st1(((fp + 8) + 6L), 1L)
             ln = 78 // KDate.HC:78
             tick(t)
-            val t0: Long = f706_Struct2Date(t, (fp + 8))
+            val t0: Long = f711_Struct2Date(t, (fp + 8))
             st8((fp + 24), t0)
             ln = 79 // KDate.HC:79
             t.msp = msp0
@@ -262,7 +262,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC LastDayOfMon (KDate.HC:82) */
-    fun f710_LastDayOfMon(t: Task, a0: Long): Long {
+    fun f715_LastDayOfMon(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -275,7 +275,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             st4(((fp + 24) + 4L), p0_i)
             ln = 87 // KDate.HC:87
             tick(t)
-            f708_Date2Struct(t, (fp + 8), ld8((fp + 24)))
+            f713_Date2Struct(t, (fp + 8), ld8((fp + 24)))
             ln = 88 // KDate.HC:88
             val t0: Long = ((fp + 8) + 7L)
             val t1: Long = ld1u(t0)
@@ -293,7 +293,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             st1(((fp + 8) + 6L), 1L)
             ln = 94 // KDate.HC:94
             tick(t)
-            val t4: Long = f706_Struct2Date(t, (fp + 8))
+            val t4: Long = f711_Struct2Date(t, (fp + 8))
             st8((fp + 24), t4)
             ln = 95 // KDate.HC:95
             t.msp = msp0
@@ -306,7 +306,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC FirstDayOfYear (KDate.HC:98) */
-    fun f711_FirstDayOfYear(t: Task, a0: Long): Long {
+    fun f716_FirstDayOfYear(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -319,14 +319,14 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             st4(((fp + 24) + 4L), p0_i)
             ln = 103 // KDate.HC:103
             tick(t)
-            f708_Date2Struct(t, (fp + 8), ld8((fp + 24)))
+            f713_Date2Struct(t, (fp + 8), ld8((fp + 24)))
             ln = 104 // KDate.HC:104
             st1(((fp + 8) + 6L), 1L)
             ln = 105 // KDate.HC:105
             st1(((fp + 8) + 7L), 1L)
             ln = 106 // KDate.HC:106
             tick(t)
-            val t0: Long = f706_Struct2Date(t, (fp + 8))
+            val t0: Long = f711_Struct2Date(t, (fp + 8))
             st8((fp + 24), t0)
             ln = 107 // KDate.HC:107
             t.msp = msp0
@@ -339,7 +339,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC LastDayOfYear (KDate.HC:110) */
-    fun f712_LastDayOfYear(t: Task, a0: Long): Long {
+    fun f717_LastDayOfYear(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -352,7 +352,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             st4(((fp + 24) + 4L), p0_i)
             ln = 115 // KDate.HC:115
             tick(t)
-            f708_Date2Struct(t, (fp + 8), ld8((fp + 24)))
+            f713_Date2Struct(t, (fp + 8), ld8((fp + 24)))
             ln = 116 // KDate.HC:116
             st1(((fp + 8) + 6L), 1L)
             ln = 117 // KDate.HC:117
@@ -363,7 +363,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             st4(t0, (t1 + 1L))
             ln = 119 // KDate.HC:119
             tick(t)
-            val t2: Long = f706_Struct2Date(t, (fp + 8))
+            val t2: Long = f711_Struct2Date(t, (fp + 8))
             st8((fp + 24), t2)
             ln = 120 // KDate.HC:120
             t.msp = msp0
@@ -376,7 +376,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC Bcd2Bin (KDate.HC:123) */
-    fun f713_Bcd2Bin(t: Task, a0: Long): Long {
+    fun f718_Bcd2Bin(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -405,7 +405,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC NowDateTimeStruct (KDate.HC:133) */
-    fun f714_NowDateTimeStruct(t: Task, a0: Long) {
+    fun f719_NowDateTimeStruct(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -426,80 +426,80 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             }
             ln = 145 // KDate.HC:145
             tick(t)
-            P.f570_OutU8(t, 112L, 10L)
+            P.f575_OutU8(t, 112L, 10L)
             ln = 146 // KDate.HC:146
             loop2@ while (true) {
                 ln = 147 // KDate.HC:147
                 loop4@ while (true) {
                     tick(t)
-                    val t1: Long = P.f565_InU8(t, 113L)
+                    val t1: Long = P.f570_InU8(t, 113L)
                     if (!(((t1 and 128L) != 0L))) break@loop4
                     tick(t)
                 }
                 ln = 150 // KDate.HC:150
                 tick(t)
-                P.f570_OutU8(t, 112L, 0L)
+                P.f575_OutU8(t, 112L, 0L)
                 ln = 151 // KDate.HC:151
                 tick(t)
-                val t2: Long = P.f565_InU8(t, 113L)
+                val t2: Long = P.f570_InU8(t, 113L)
                 st1((l16_b + 2L), t2)
                 ln = 152 // KDate.HC:152
                 tick(t)
-                P.f570_OutU8(t, 112L, 2L)
+                P.f575_OutU8(t, 112L, 2L)
                 ln = 153 // KDate.HC:153
                 tick(t)
-                val t3: Long = P.f565_InU8(t, 113L)
+                val t3: Long = P.f570_InU8(t, 113L)
                 st1((l16_b + 3L), t3)
                 ln = 154 // KDate.HC:154
                 tick(t)
-                P.f570_OutU8(t, 112L, 4L)
+                P.f575_OutU8(t, 112L, 4L)
                 ln = 155 // KDate.HC:155
                 tick(t)
-                val t4: Long = P.f565_InU8(t, 113L)
+                val t4: Long = P.f570_InU8(t, 113L)
                 st1((l16_b + 4L), t4)
                 ln = 157 // KDate.HC:157
                 tick(t)
-                P.f570_OutU8(t, 112L, 6L)
+                P.f575_OutU8(t, 112L, 6L)
                 ln = 158 // KDate.HC:158
                 tick(t)
-                val t5: Long = P.f565_InU8(t, 113L)
+                val t5: Long = P.f570_InU8(t, 113L)
                 st1((l16_b + 5L), t5)
                 ln = 159 // KDate.HC:159
                 tick(t)
-                P.f570_OutU8(t, 112L, 7L)
+                P.f575_OutU8(t, 112L, 7L)
                 ln = 160 // KDate.HC:160
                 tick(t)
-                val t6: Long = P.f565_InU8(t, 113L)
+                val t6: Long = P.f570_InU8(t, 113L)
                 st1((l16_b + 6L), t6)
                 ln = 161 // KDate.HC:161
                 tick(t)
-                P.f570_OutU8(t, 112L, 8L)
+                P.f575_OutU8(t, 112L, 8L)
                 ln = 162 // KDate.HC:162
                 tick(t)
-                val t7: Long = P.f565_InU8(t, 113L)
+                val t7: Long = P.f570_InU8(t, 113L)
                 st1((l16_b + 7L), t7)
                 ln = 163 // KDate.HC:163
                 tick(t)
-                P.f570_OutU8(t, 112L, 9L)
+                P.f575_OutU8(t, 112L, 9L)
                 ln = 164 // KDate.HC:164
                 tick(t)
-                val t8: Long = P.f565_InU8(t, 113L)
+                val t8: Long = P.f570_InU8(t, 113L)
                 st1((l16_b + 8L), t8)
                 ln = 166 // KDate.HC:166
                 tick(t)
-                P.f570_OutU8(t, 112L, 10L)
+                P.f575_OutU8(t, 112L, 10L)
                 ln = 167 // KDate.HC:167
                 tick(t)
-                val t9: Long = P.f565_InU8(t, 113L)
+                val t9: Long = P.f570_InU8(t, 113L)
                 if (!(((t9 and 128L) != 0L))) break@loop2
                 tick(t)
             }
             ln = 169 // KDate.HC:169
             tick(t)
-            P.f570_OutU8(t, 112L, 11L)
+            P.f575_OutU8(t, 112L, 11L)
             ln = 170 // KDate.HC:170
             tick(t)
-            val t10: Long = P.f565_InU8(t, 113L)
+            val t10: Long = P.f570_InU8(t, 113L)
             if (((t10 and 4L) != 0L)) {
                 ln = 171 // KDate.HC:171
                 l24_is_bcd = 0L
@@ -517,7 +517,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
                 loop6@ while ((l8_i < 9L)) {
                     ln = 179 // KDate.HC:179
                     tick(t)
-                    val t11: Long = f713_Bcd2Bin(t, ld1u((l16_b + l8_i)))
+                    val t11: Long = f718_Bcd2Bin(t, ld1u((l16_b + l8_i)))
                     st1((l16_b + l8_i), t11)
                     ln = 178 // KDate.HC:178
                     l8_i = (l8_i + 1L)
@@ -561,7 +561,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC Now (KDate.HC:191) */
-    fun f715_Now(t: Task): Long {
+    fun f720_Now(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -569,10 +569,10 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
             val fp = frame(t, 16)
             ln = 194 // KDate.HC:194
             tick(t)
-            f714_NowDateTimeStruct(t, fp)
+            f719_NowDateTimeStruct(t, fp)
             ln = 195 // KDate.HC:195
             tick(t)
-            val t0: Long = f706_Struct2Date(t, fp)
+            val t0: Long = f711_Struct2Date(t, fp)
             t.msp = msp0
             t.depth--
             return (t0 - ld8(P.g_local_time_offset))
@@ -583,7 +583,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     }
 
     /** HolyC $init:C:/Kernel/KDate.HC#2 (KDate.HC:1) */
-    fun f716_init_C__Kernel_KDate_HC_2(t: Task): Long {
+    fun f721_init_C__Kernel_KDate_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -595,20 +595,20 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Kernel_KDate_HC_0(t)
-            704 -> f704_init_C__Kernel_KDate_HC_1(t)
-            705 -> f705_YearStartDate(t, (if (n > 0) st[base + 0] else 0L))
-            706 -> f706_Struct2Date(t, (if (n > 0) st[base + 0] else 0L))
-            707 -> f707_DayOfWeek(t, (if (n > 0) st[base + 0] else 0L))
-            708 -> { f708_Date2Struct(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            709 -> f709_FirstDayOfMon(t, (if (n > 0) st[base + 0] else 0L))
-            710 -> f710_LastDayOfMon(t, (if (n > 0) st[base + 0] else 0L))
-            711 -> f711_FirstDayOfYear(t, (if (n > 0) st[base + 0] else 0L))
-            712 -> f712_LastDayOfYear(t, (if (n > 0) st[base + 0] else 0L))
-            713 -> f713_Bcd2Bin(t, (if (n > 0) st[base + 0] else 0L))
-            714 -> { f714_NowDateTimeStruct(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            715 -> f715_Now(t)
-            716 -> f716_init_C__Kernel_KDate_HC_2(t)
+            708 -> f708_init_C__Kernel_KDate_HC_0(t)
+            709 -> f709_init_C__Kernel_KDate_HC_1(t)
+            710 -> f710_YearStartDate(t, (if (n > 0) st[base + 0] else 0L))
+            711 -> f711_Struct2Date(t, (if (n > 0) st[base + 0] else 0L))
+            712 -> f712_DayOfWeek(t, (if (n > 0) st[base + 0] else 0L))
+            713 -> { f713_Date2Struct(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            714 -> f714_FirstDayOfMon(t, (if (n > 0) st[base + 0] else 0L))
+            715 -> f715_LastDayOfMon(t, (if (n > 0) st[base + 0] else 0L))
+            716 -> f716_FirstDayOfYear(t, (if (n > 0) st[base + 0] else 0L))
+            717 -> f717_LastDayOfYear(t, (if (n > 0) st[base + 0] else 0L))
+            718 -> f718_Bcd2Bin(t, (if (n > 0) st[base + 0] else 0L))
+            719 -> { f719_NowDateTimeStruct(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            720 -> f720_Now(t)
+            721 -> f721_init_C__Kernel_KDate_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -620,7 +620,7 @@ class N_Kernel_KDate(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModule
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721)
         private val NAMES = arrayOf("\$init:C:/Kernel/KDate.HC#0", "\$init:C:/Kernel/KDate.HC#1", "YearStartDate", "Struct2Date", "DayOfWeek", "Date2Struct", "FirstDayOfMon", "LastDayOfMon", "FirstDayOfYear", "LastDayOfYear", "Bcd2Bin", "NowDateTimeStruct", "Now", "\$init:C:/Kernel/KDate.HC#2")
         private val FILES = arrayOf<String>("C:/Kernel/KDate.HC")
     }

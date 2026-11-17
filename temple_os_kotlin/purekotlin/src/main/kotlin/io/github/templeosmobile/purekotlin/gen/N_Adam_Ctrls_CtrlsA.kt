@@ -32,7 +32,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CtrlFindUnique (CtrlsA.HC:1) */
-    fun f703_CtrlFindUnique(t: Task, a0: Long, a1: Long): Long {
+    fun f708_CtrlFindUnique(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -62,7 +62,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CtrlsUpdate (CtrlsA.HC:13) */
-    fun f704_CtrlsUpdate(t: Task, a0: Long) {
+    fun f709_CtrlsUpdate(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -107,21 +107,21 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Ctrls/CtrlsA.HC#0 (CtrlsA.HC:35) */
-    fun f705_init_C__Adam_Ctrls_CtrlsA_HC_0(t: Task): Long {
+    fun f710_init_C__Adam_Ctrls_CtrlsA_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 35 // CtrlsA.HC:35
-            st8(P.g_fp_update_ctrls, 9223090561878065856L)
+            st8(P.g_fp_update_ctrls, 9223090561878065861L)
             t.depth--
-            return 9223090561878065856L
+            return 9223090561878065861L
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Adam/Ctrls/CtrlsA.HC#0", ln) }
     }
 
     /** HolyC CtrlInsideRect (CtrlsA.HC:37) */
-    fun f706_CtrlInsideRect(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f711_CtrlInsideRect(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -152,7 +152,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC CtrlInside (CtrlsA.HC:46) */
-    fun f707_CtrlInside(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f712_CtrlInside(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -170,7 +170,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 } else {
                     ln = 52 // CtrlsA.HC:52
                     tick(t)
-                    val t1: Long = f706_CtrlInsideRect(t, p0_c, p1_x, p2_y)
+                    val t1: Long = f711_CtrlInsideRect(t, p0_c, p1_x, p2_y)
                     t.depth--
                     return (t1 and 0xFFL)
                 }
@@ -185,7 +185,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawCtrls (CtrlsA.HC:57) */
-    fun f708_DrawCtrls(t: Task, a0: Long) {
+    fun f713_DrawCtrls(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -292,7 +292,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawWinScroll (CtrlsA.HC:108) */
-    fun f709_DrawWinScroll(t: Task, a0: Long, a1: Long) {
+    fun f714_DrawWinScroll(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -327,7 +327,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC WinDerivedScrollValsUpdate (CtrlsA.HC:125) */
-    fun f710_WinDerivedScrollValsUpdate(t: Task, a0: Long) {
+    fun f715_WinDerivedScrollValsUpdate(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -390,7 +390,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC LeftClickHWinScroll (CtrlsA.HC:158) */
-    fun f711_LeftClickHWinScroll(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f716_LeftClickHWinScroll(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -435,7 +435,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC LeftClickVWinScroll (CtrlsA.HC:174) */
-    fun f712_LeftClickVWinScroll(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f717_LeftClickVWinScroll(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -480,7 +480,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC WheelChangeWinScroll (CtrlsA.HC:190) */
-    fun f713_WheelChangeWinScroll(t: Task, a0: Long, a1: Long) {
+    fun f718_WheelChangeWinScroll(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -506,7 +506,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC WinScrollsInit (CtrlsA.HC:199) */
-    fun f714_WinScrollsInit(t: Task, a0: Long) {
+    fun f719_WinScrollsInit(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -514,7 +514,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l8_c: Long = 0L
             ln = 203 // CtrlsA.HC:203
             tick(t)
-            val t0: Long = f703_CtrlFindUnique(t, p0_task, 1L)
+            val t0: Long = f708_CtrlFindUnique(t, p0_task, 1L)
             if ((t0 == 0L)) {
                 ln = 204 // CtrlsA.HC:204
                 val t1: Long = nat(t, n_CAlloc, push2(t, 160L, 0L))
@@ -528,18 +528,18 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 ln = 208 // CtrlsA.HC:208
                 st8((l8_c + 104L), (p0_task + 1144L))
                 ln = 209 // CtrlsA.HC:209
-                st8((l8_c + 112L), 9223090561878065862L)
+                st8((l8_c + 112L), 9223090561878065867L)
                 ln = 210 // CtrlsA.HC:210
-                st8((l8_c + 120L), 9223090561878065861L)
+                st8((l8_c + 120L), 9223090561878065866L)
                 ln = 211 // CtrlsA.HC:211
-                st8((l8_c + 136L), 9223090561878065863L)
+                st8((l8_c + 136L), 9223090561878065868L)
                 ln = 212 // CtrlsA.HC:212
                 tick(t)
                 P.f153_QueIns(t, l8_c, ld8((p0_task + 928L)))
             }
             ln = 215 // CtrlsA.HC:215
             tick(t)
-            val t2: Long = f703_CtrlFindUnique(t, p0_task, 2L)
+            val t2: Long = f708_CtrlFindUnique(t, p0_task, 2L)
             if ((t2 == 0L)) {
                 ln = 216 // CtrlsA.HC:216
                 val t3: Long = nat(t, n_CAlloc, push2(t, 160L, 0L))
@@ -553,13 +553,13 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 ln = 220 // CtrlsA.HC:220
                 st8((l8_c + 104L), (p0_task + 1176L))
                 ln = 221 // CtrlsA.HC:221
-                st8((l8_c + 112L), 9223090561878065862L)
+                st8((l8_c + 112L), 9223090561878065867L)
                 ln = 222 // CtrlsA.HC:222
-                st8((l8_c + 120L), 9223090561878065861L)
+                st8((l8_c + 120L), 9223090561878065866L)
                 ln = 223 // CtrlsA.HC:223
-                st8((l8_c + 136L), 9223090561878065864L)
+                st8((l8_c + 136L), 9223090561878065869L)
                 ln = 224 // CtrlsA.HC:224
-                st8((l8_c + 152L), 9223090561878065865L)
+                st8((l8_c + 152L), 9223090561878065870L)
                 ln = 225 // CtrlsA.HC:225
                 tick(t)
                 P.f153_QueIns(t, l8_c, ld8((p0_task + 928L)))
@@ -573,7 +573,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC DrawViewAnglesCtrl (CtrlsA.HC:234) */
-    fun f715_DrawViewAnglesCtrl(t: Task, a0: Long, a1: Long) {
+    fun f720_DrawViewAnglesCtrl(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -596,13 +596,13 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             st4((p0_dc + 160L), ld4u((l32_s + 68L)))
             ln = 247 // CtrlsA.HC:247
             tick(t)
-            P.f396_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 22L), (ld8((p1_c + 56L)) + 22L), (ld8((p1_c + 40L)) + 22L), (((ld8((p1_c + 56L)) + 22L) + 48L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, (ld8((p1_c + 40L)) + 22L), (ld8((p1_c + 56L)) + 22L), (ld8((p1_c + 40L)) + 22L), (((ld8((p1_c + 56L)) + 22L) + 48L) - 1L), 1L, 0L)
             ln = 250 // CtrlsA.HC:250
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 44L) + 1L), (ld8((p1_c + 56L)) + 22L), ((ld8((p1_c + 40L)) + 44L) + 1L), (((ld8((p1_c + 56L)) + 22L) + 48L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 44L) + 1L), (ld8((p1_c + 56L)) + 22L), ((ld8((p1_c + 40L)) + 44L) + 1L), (((ld8((p1_c + 56L)) + 22L) + 48L) - 1L), 1L, 0L)
             ln = 253 // CtrlsA.HC:253
             tick(t)
-            P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 66L) + 2L), (ld8((p1_c + 56L)) + 22L), ((ld8((p1_c + 40L)) + 66L) + 2L), (((ld8((p1_c + 56L)) + 22L) + 48L) - 1L), 1L, 0L)
+            P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 66L) + 2L), (ld8((p1_c + 56L)) + 22L), ((ld8((p1_c + 40L)) + 66L) + 2L), (((ld8((p1_c + 56L)) + 22L) + 48L) - 1L), 1L, 0L)
             ln = 256 // CtrlsA.HC:256
             l16_i = 1L
             loop0@ while ((l16_i < 49L)) {
@@ -610,13 +610,13 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 l24_j = (2L - (divs(l16_i, 3L) and 1L))
                 ln = 258 // CtrlsA.HC:258
                 tick(t)
-                P.f396_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 22L) - l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), ((ld8((p1_c + 40L)) + 22L) + l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), 1L, 0L)
+                P.f397_GrLine(t, p0_dc, ((ld8((p1_c + 40L)) + 22L) - l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), ((ld8((p1_c + 40L)) + 22L) + l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), 1L, 0L)
                 ln = 261 // CtrlsA.HC:261
                 tick(t)
-                P.f396_GrLine(t, p0_dc, (((ld8((p1_c + 40L)) + 44L) + 1L) - l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), (((ld8((p1_c + 40L)) + 44L) + 1L) + l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), 1L, 0L)
+                P.f397_GrLine(t, p0_dc, (((ld8((p1_c + 40L)) + 44L) + 1L) - l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), (((ld8((p1_c + 40L)) + 44L) + 1L) + l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), 1L, 0L)
                 ln = 264 // CtrlsA.HC:264
                 tick(t)
-                P.f396_GrLine(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 2L) - l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), (((ld8((p1_c + 40L)) + 66L) + 2L) + l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), 1L, 0L)
+                P.f397_GrLine(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 2L) - l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), (((ld8((p1_c + 40L)) + 66L) + 2L) + l24_j), ((ld8((p1_c + 64L)) - 22L) - l16_i), 1L, 0L)
                 ln = 256 // CtrlsA.HC:256
                 l16_i = (l16_i + 4L)
                 tick(t)
@@ -626,12 +626,12 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 270 // CtrlsA.HC:270
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 22L) - divs(8L, 2L)), ((ld8((p1_c + 56L)) + 22L) - 9L), s0, vb0, 0)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 22L) - divs(8L, 2L)), ((ld8((p1_c + 56L)) + 22L) - 9L), s0, vb0, 0)
             t.sp = vb0
             ln = 272 // CtrlsA.HC:272
             tick(t)
             val vb1 = push1(t, divs((ld8(l32_s) * 360L), 48L))
-            P.f369_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 22L) - divs(24L, 2L)), (((ld8((p1_c + 56L)) + 22L) + 48L) + 3L), s1, vb1, 1)
+            P.f370_GrPrint(t, p0_dc, ((ld8((p1_c + 40L)) + 22L) - divs(24L, 2L)), (((ld8((p1_c + 56L)) + 22L) + 48L) + 3L), s1, vb1, 1)
             t.sp = vb1
             ln = 275 // CtrlsA.HC:275
             l16_i = (ld8((p1_c + 40L)) + 22L)
@@ -656,12 +656,12 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 286 // CtrlsA.HC:286
             tick(t)
             val vb2 = push0(t)
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 44L) + 1L) - divs(8L, 2L)), ((ld8((p1_c + 56L)) + 22L) - 9L), s2, vb2, 0)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 44L) + 1L) - divs(8L, 2L)), ((ld8((p1_c + 56L)) + 22L) - 9L), s2, vb2, 0)
             t.sp = vb2
             ln = 288 // CtrlsA.HC:288
             tick(t)
             val vb3 = push1(t, divs((ld8((l32_s + 8L)) * 360L), 48L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 44L) + 1L) - divs(24L, 2L)), (((ld8((p1_c + 56L)) + 22L) + 48L) + 3L), s1, vb3, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 44L) + 1L) - divs(24L, 2L)), (((ld8((p1_c + 56L)) + 22L) + 48L) + 3L), s1, vb3, 1)
             t.sp = vb3
             ln = 291 // CtrlsA.HC:291
             l16_i = ((ld8((p1_c + 40L)) + 44L) + 1L)
@@ -686,12 +686,12 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             ln = 302 // CtrlsA.HC:302
             tick(t)
             val vb4 = push0(t)
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 2L) - divs(8L, 2L)), ((ld8((p1_c + 56L)) + 22L) - 9L), s3, vb4, 0)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 2L) - divs(8L, 2L)), ((ld8((p1_c + 56L)) + 22L) - 9L), s3, vb4, 0)
             t.sp = vb4
             ln = 304 // CtrlsA.HC:304
             tick(t)
             val vb5 = push1(t, divs((ld8((l32_s + 16L)) * 360L), 48L))
-            P.f369_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 2L) - divs(24L, 2L)), (((ld8((p1_c + 56L)) + 22L) + 48L) + 3L), s1, vb5, 1)
+            P.f370_GrPrint(t, p0_dc, (((ld8((p1_c + 40L)) + 66L) + 2L) - divs(24L, 2L)), (((ld8((p1_c + 56L)) + 22L) + 48L) + 3L), s1, vb5, 1)
             t.sp = vb5
             ln = 307 // CtrlsA.HC:307
             l16_i = ((ld8((p1_c + 40L)) + 66L) + 2L)
@@ -717,7 +717,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC UpdateDerivedViewAnglesCtrl (CtrlsA.HC:318) */
-    fun f716_UpdateDerivedViewAnglesCtrl(t: Task, a0: Long) {
+    fun f721_UpdateDerivedViewAnglesCtrl(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -763,7 +763,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC LeftClickViewAngles (CtrlsA.HC:333) */
-    fun f717_LeftClickViewAngles(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f722_LeftClickViewAngles(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -812,7 +812,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC ViewAnglesNew (CtrlsA.HC:352) */
-    fun f718_ViewAnglesNew(t: Task, a0: Long): Long {
+    fun f723_ViewAnglesNew(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -825,7 +825,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 357 // CtrlsA.HC:357
             tick(t)
-            val t0: Long = f703_CtrlFindUnique(t, p0_task, 3L)
+            val t0: Long = f708_CtrlFindUnique(t, p0_task, 3L)
             l8_c = t0
             if ((t0 == 0L)) {
                 ln = 358 // CtrlsA.HC:358
@@ -855,11 +855,11 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                 ln = 369 // CtrlsA.HC:369
                 st8((l8_c + 104L), l16_s)
                 ln = 370 // CtrlsA.HC:370
-                st8((l8_c + 120L), 9223090561878065867L)
+                st8((l8_c + 120L), 9223090561878065872L)
                 ln = 371 // CtrlsA.HC:371
-                st8((l8_c + 136L), 9223090561878065869L)
+                st8((l8_c + 136L), 9223090561878065874L)
                 ln = 372 // CtrlsA.HC:372
-                st8((l8_c + 112L), 9223090561878065868L)
+                st8((l8_c + 112L), 9223090561878065873L)
                 ln = 373 // CtrlsA.HC:373
                 tick(t)
                 P.f153_QueIns(t, l8_c, ld8((p0_task + 928L)))
@@ -876,7 +876,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC ViewAnglesDel (CtrlsA.HC:379) */
-    fun f719_ViewAnglesDel(t: Task, a0: Long) {
+    fun f724_ViewAnglesDel(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -888,7 +888,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 383 // CtrlsA.HC:383
             tick(t)
-            val t0: Long = f703_CtrlFindUnique(t, p0_task, 3L)
+            val t0: Long = f708_CtrlFindUnique(t, p0_task, 3L)
             l8_c = t0
             if ((t0 != 0L)) {
                 ln = 384 // CtrlsA.HC:384
@@ -905,7 +905,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Adam/Ctrls/CtrlsA.HC#1 (CtrlsA.HC:1) */
-    fun f720_init_C__Adam_Ctrls_CtrlsA_HC_1(t: Task): Long {
+    fun f725_init_C__Adam_Ctrls_CtrlsA_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -917,24 +917,24 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_CtrlFindUnique(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            704 -> { f704_CtrlsUpdate(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> f705_init_C__Adam_Ctrls_CtrlsA_HC_0(t)
-            706 -> f706_CtrlInsideRect(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            707 -> f707_CtrlInside(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            708 -> { f708_DrawCtrls(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            709 -> { f709_DrawWinScroll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            710 -> { f710_WinDerivedScrollValsUpdate(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            711 -> { f711_LeftClickHWinScroll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            712 -> { f712_LeftClickVWinScroll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            713 -> { f713_WheelChangeWinScroll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            714 -> { f714_WinScrollsInit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            715 -> { f715_DrawViewAnglesCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            716 -> { f716_UpdateDerivedViewAnglesCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            717 -> { f717_LeftClickViewAngles(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            718 -> f718_ViewAnglesNew(t, (if (n > 0) st[base + 0] else 0L))
-            719 -> { f719_ViewAnglesDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            720 -> f720_init_C__Adam_Ctrls_CtrlsA_HC_1(t)
+            708 -> f708_CtrlFindUnique(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            709 -> { f709_CtrlsUpdate(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> f710_init_C__Adam_Ctrls_CtrlsA_HC_0(t)
+            711 -> f711_CtrlInsideRect(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            712 -> f712_CtrlInside(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            713 -> { f713_DrawCtrls(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            714 -> { f714_DrawWinScroll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            715 -> { f715_WinDerivedScrollValsUpdate(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            716 -> { f716_LeftClickHWinScroll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            717 -> { f717_LeftClickVWinScroll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            718 -> { f718_WheelChangeWinScroll(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            719 -> { f719_WinScrollsInit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            720 -> { f720_DrawViewAnglesCtrl(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            721 -> { f721_UpdateDerivedViewAnglesCtrl(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            722 -> { f722_LeftClickViewAngles(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            723 -> f723_ViewAnglesNew(t, (if (n > 0) st[base + 0] else 0L))
+            724 -> { f724_ViewAnglesDel(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            725 -> f725_init_C__Adam_Ctrls_CtrlsA_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -946,7 +946,7 @@ class N_Adam_Ctrls_CtrlsA(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725)
         private val NAMES = arrayOf("CtrlFindUnique", "CtrlsUpdate", "\$init:C:/Adam/Ctrls/CtrlsA.HC#0", "CtrlInsideRect", "CtrlInside", "DrawCtrls", "DrawWinScroll", "WinDerivedScrollValsUpdate", "LeftClickHWinScroll", "LeftClickVWinScroll", "WheelChangeWinScroll", "WinScrollsInit", "DrawViewAnglesCtrl", "UpdateDerivedViewAnglesCtrl", "LeftClickViewAngles", "ViewAnglesNew", "ViewAnglesDel", "\$init:C:/Adam/Ctrls/CtrlsA.HC#1")
         private val FILES = arrayOf<String>("C:/Adam/Ctrls/CtrlsA.HC")
     }

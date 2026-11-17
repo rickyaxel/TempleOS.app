@@ -20,18 +20,18 @@ s 17fe10 24424b2c3124416c72656164792050756e636865642d4f757424424b2c30240a
 s 17fe48 0a456e746572204465736372697074696f6e2e0a5072657373203c4553433e207768656e20646f6e652e0a
 s 17fe88 24424b2c3124416c72656164792050756e636865642d496e24424b2c30240a
 s 17fe48 0a456e746572204465736372697074696f6e2e0a5072657373203c4553433e207768656e20646f6e652e0a
-fn 703 TimeFileRead (U0;*$TimeEntry;-)
-fn 704 TimeFileWrite (U0;*$TimeEntry;-)
-fn 705 TimeEntriesDel (U0;*$TimeEntry;-)
-fn 706 TimeRep (Bool;**$TimeEntry;-)
-fn 707 PunchOut (U0;;-)
-fn 708 PunchIn (U0;;-)
-fn 709 $init:C:/Apps/TimeClock/TimeClk.HC#0 (I64;;-)
-sym f PunchIn 708 (U0;;-)
-sym f PunchOut 707 (U0;;-)
-sym f TimeEntriesDel 705 (U0;*$TimeEntry;-)
-sym f TimeFileRead 703 (U0;*$TimeEntry;-)
-sym f TimeFileWrite 704 (U0;*$TimeEntry;-)
-sym f TimeRep 706 (Bool;**$TimeEntry;-)
-init 709
+fn 708 TimeFileRead (U0;*$TimeEntry;-)
+fn 709 TimeFileWrite (U0;*$TimeEntry;-)
+fn 710 TimeEntriesDel (U0;*$TimeEntry;-)
+fn 711 TimeRep (Bool;**$TimeEntry;-)
+fn 712 PunchOut (U0;;-)
+fn 713 PunchIn (U0;;-)
+fn 714 $init:C:/Apps/TimeClock/TimeClk.HC#0 (I64;;-)
+sym f PunchIn 713 (U0;;-)
+sym f PunchOut 712 (U0;;-)
+sym f TimeEntriesDel 710 (U0;*$TimeEntry;-)
+sym f TimeFileRead 708 (U0;*$TimeEntry;-)
+sym f TimeFileWrite 709 (U0;*$TimeEntry;-)
+sym f TimeRep 711 (Bool;**$TimeEntry;-)
+init 714
 unit C:/Apps/TimeClock/TimeClk.HC#1

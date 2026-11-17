@@ -9,6 +9,7 @@ import TempleCore
 
 public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
     public let P: Prelude
+    public let n_Mat4x4Scale: Int
     public let n_ScanKey: Int
     public let n_Sin: Int
     public let n_ToI64: Int
@@ -24,6 +25,7 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
 
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
+        n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!.index
         n_ScanKey = rt.vm.natives.find("ScanKey")!.index
         n_Sin = rt.vm.natives.find("Sin")!.index
         n_ToI64 = rt.vm.natives.find("ToI64")!.index
@@ -48,13 +50,13 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#0 (prosper.HC:14)
-    @discardableResult public final func f703_init_C__Apps_Psalmody_Examples_prosper_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Apps_Psalmody_Examples_prosper_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 14 // prosper.HC:14
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             try st8(g_t0, bits(t0))
             t.depth -= 1
             return 0
@@ -62,7 +64,7 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
     }
 
     /// HolyC DrawIt (prosper.HC:16)
-    public final func f704_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -71,7 +73,7 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
             var l16_dt: Double = 0.0
             ln = 18 // prosper.HC:18
             try tick(t)
-            let t0: Double = try P.f487_Beat(t)
+            let t0: Double = try P.f492_Beat(t)
             l16_dt = try (t0 - ldf(g_t0))
             ln = 19 // prosper.HC:19
             let t1: Int64 = (p1_dc &+ 28)
@@ -82,8 +84,7 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
             _ = try P.f307_Mat4x4RotZ(t, ld8((p1_dc &+ 200)), (0.25 * t2))
             ln = 21 // prosper.HC:21
             let t3: Double = d(try nat(t, n_Sin, try push1(t, bits((l16_dt / 3.0)))))
-            try tick(t)
-            _ = try P.f308_Mat4x4Scale(t, ld8((p1_dc &+ 200)), (1.5 + (0.5 * t3)))
+            _ = try nat(t, n_Mat4x4Scale, try push2(t, ld8((p1_dc &+ 200)), bits((1.5 + (0.5 * t3)))))
             ln = 22 // prosper.HC:22
             try tick(t)
             try P.f283_DCMat4x4Set(t, p1_dc, ld8((p1_dc &+ 200)))
@@ -92,11 +93,11 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
             if ((t4 & 1) != 0) {
                 ln = 24 // prosper.HC:24
                 try tick(t)
-                try P.f441_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b0)
+                try P.f446_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b0)
             } else {
                 ln = 26 // prosper.HC:26
                 try tick(t)
-                try P.f441_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b1)
+                try P.f446_Sprite3B(t, p1_dc, f2i(fmod((12.0 * l16_dt), Double(ld8((p0_task &+ 224))))), 20, 0, b1)
             }
             t.depth -= 1
             return
@@ -104,7 +105,7 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
     }
 
     /// HolyC Song (prosper.HC:29)
-    public final func f705_Song(_ t: HTask) throws {
+    public final func f710_Song(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -114,12 +115,12 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
             ln = 32 // prosper.HC:32
             try st1((ld8(P.g_Fs) &+ 778), 46)
             ln = 33 // prosper.HC:33
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065856)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
             ln = 34 // prosper.HC:34
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 36 // prosper.HC:36
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 37 // prosper.HC:37
             try st8((P.g_music &+ 56), bits(3.5))
             ln = 38 // prosper.HC:38
@@ -132,20 +133,20 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
                     if !((t1 == 0)) { break loop0 }
                     ln = 40 // prosper.HC:40
                     try tick(t)
-                    let t0: Double = try P.f487_Beat(t)
+                    let t0: Double = try P.f492_Beat(t)
                     try st8(g_t0, bits(t0))
                     ln = 41 // prosper.HC:41
                     try tick(t)
-                    try P.f494_Play(t, s1, s0)
+                    try P.f499_Play(t, s1, s0)
                     ln = 44 // prosper.HC:44
                     try tick(t)
-                    try P.f494_Play(t, s3, s2)
+                    try P.f499_Play(t, s3, s2)
                     ln = 46 // prosper.HC:46
                     try tick(t)
-                    try P.f494_Play(t, s5, s4)
+                    try P.f499_Play(t, s5, s4)
                     ln = 48 // prosper.HC:48
                     try tick(t)
-                    try P.f494_Play(t, s5, s4)
+                    try P.f499_Play(t, s5, s4)
                     try tick(t)
                 }
                 t.hCount = h0c
@@ -166,13 +167,13 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
     }
 
     /// HolyC $init:C:/Apps/Psalmody/Examples/prosper.HC#1 (prosper.HC:56)
-    @discardableResult public final func f706_init_C__Apps_Psalmody_Examples_prosper_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Apps_Psalmody_Examples_prosper_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 56 // prosper.HC:56
             try tick(t)
-            try f705_Song(t)
+            try f710_Song(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Apps/Psalmody/Examples/prosper.HC#1", ln) }
@@ -181,16 +182,16 @@ public final class N_Apps_Psalmody_Examples_prosper: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
-        case 704: try f704_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 705: try f705_Song(t); return 0
-        case 706: return try f706_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
+        case 708: return try f708_init_C__Apps_Psalmody_Examples_prosper_HC_0(t)
+        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 710: try f710_Song(t); return 0
+        case 711: return try f711_init_C__Apps_Psalmody_Examples_prosper_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Apps/Psalmody/Examples/prosper.HC#0", 704: "DrawIt", 705: "Song", 706: "$init:C:/Apps/Psalmody/Examples/prosper.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Apps/Psalmody/Examples/prosper.HC#0", 709: "DrawIt", 710: "Song", 711: "$init:C:/Apps/Psalmody/Examples/prosper.HC#1"]
     private static let FILES: [String] = ["C:/Apps/Psalmody/Examples/prosper.HC"]
     public override var files: [String] { N_Apps_Psalmody_Examples_prosper.FILES }
     public override func defines(_ index: Int) -> Bool { N_Apps_Psalmody_Examples_prosper.DEFINED.contains(index) }

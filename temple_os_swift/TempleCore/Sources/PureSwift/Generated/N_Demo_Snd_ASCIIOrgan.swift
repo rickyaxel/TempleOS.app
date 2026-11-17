@@ -45,7 +45,7 @@ public final class N_Demo_Snd_ASCIIOrgan: NativeModule {
     }
 
     /// HolyC SafePutChar (ASCIIOrgan.HC:3)
-    public final func f703_SafePutChar(_ t: HTask, _ a0: Int64) throws {
+    public final func f708_SafePutChar(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -72,7 +72,7 @@ public final class N_Demo_Snd_ASCIIOrgan: NativeModule {
     }
 
     /// HolyC ASCIIOrgan (ASCIIOrgan.HC:21)
-    public final func f704_ASCIIOrgan(_ t: HTask) throws {
+    public final func f709_ASCIIOrgan(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -83,16 +83,16 @@ public final class N_Demo_Snd_ASCIIOrgan: NativeModule {
             loop0: while (l0_i < 32) {
                 ln = 26 // ASCIIOrgan.HC:26
                 try tick(t)
-                try f703_SafePutChar(t, l0_i)
+                try f708_SafePutChar(t, l0_i)
                 ln = 27 // ASCIIOrgan.HC:27
                 try tick(t)
-                try f703_SafePutChar(t, (l0_i &+ 32))
+                try f708_SafePutChar(t, (l0_i &+ 32))
                 ln = 28 // ASCIIOrgan.HC:28
                 try tick(t)
-                try f703_SafePutChar(t, (l0_i &+ 64))
+                try f708_SafePutChar(t, (l0_i &+ 64))
                 ln = 29 // ASCIIOrgan.HC:29
                 try tick(t)
-                try f703_SafePutChar(t, (l0_i &+ 96))
+                try f708_SafePutChar(t, (l0_i &+ 96))
                 ln = 30 // ASCIIOrgan.HC:30
                 _ = try nat(t, n_PutChars, try push1(t, 10))
                 ln = 25 // ASCIIOrgan.HC:25
@@ -125,13 +125,13 @@ public final class N_Demo_Snd_ASCIIOrgan: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Snd/ASCIIOrgan.HC#0 (ASCIIOrgan.HC:49)
-    @discardableResult public final func f705_init_C__Demo_Snd_ASCIIOrgan_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Snd_ASCIIOrgan_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 49 // ASCIIOrgan.HC:49
             try tick(t)
-            try f704_ASCIIOrgan(t)
+            try f709_ASCIIOrgan(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Snd/ASCIIOrgan.HC#0", ln) }
@@ -140,15 +140,15 @@ public final class N_Demo_Snd_ASCIIOrgan: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_SafePutChar(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 704: try f704_ASCIIOrgan(t); return 0
-        case 705: return try f705_init_C__Demo_Snd_ASCIIOrgan_HC_0(t)
+        case 708: try f708_SafePutChar(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 709: try f709_ASCIIOrgan(t); return 0
+        case 710: return try f710_init_C__Demo_Snd_ASCIIOrgan_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "SafePutChar", 704: "ASCIIOrgan", 705: "$init:C:/Demo/Snd/ASCIIOrgan.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "SafePutChar", 709: "ASCIIOrgan", 710: "$init:C:/Demo/Snd/ASCIIOrgan.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Snd/ASCIIOrgan.HC"]
     public override var files: [String] { N_Demo_Snd_ASCIIOrgan.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Snd_ASCIIOrgan.DEFINED.contains(index) }

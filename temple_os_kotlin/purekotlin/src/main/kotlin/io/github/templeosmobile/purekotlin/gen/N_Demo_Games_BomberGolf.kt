@@ -30,6 +30,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
 
     /** "I64 best_score=99999;." */ @JvmField var s0: Long = 0L
@@ -101,7 +102,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Games/BomberGolf.HC#0 (BomberGolf.HC:1) */
-    fun f703_init_C__Demo_Games_BomberGolf_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Games_BomberGolf_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -115,7 +116,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Games/BomberGolf.HC#1 (BomberGolf.HC:2) */
-    fun f704_init_C__Demo_Games_BomberGolf_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Games_BomberGolf_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -129,7 +130,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1) */
-    fun f705_init_C__Home_Registry_HC_0(t: Task): Long {
+    fun f710_init_C__Home_Registry_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -139,7 +140,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC DrawIt (BomberGolf.HC:88) */
-    fun f706_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f711_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -159,7 +160,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st4((p1_dc + 160L), 1074135054L)
             ln = 96 // BomberGolf.HC:96
             tick(t)
-            P.f424_GrRect3(t, p1_dc, 0L, 0L, 0L, ld4s((p1_dc + 16L)), ld4s((p1_dc + 24L)))
+            P.f427_GrRect3(t, p1_dc, 0L, 0L, 0L, ld4s((p1_dc + 16L)), ld4s((p1_dc + 24L)))
             ln = 98 // BomberGolf.HC:98
             st4((p1_dc + 216L), (ld8((p0_task + 224L)) shr 1))
             ln = 99 // BomberGolf.HC:99
@@ -169,7 +170,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st4(t1, (ld4s(t1) or 256L))
             ln = 101 // BomberGolf.HC:101
             tick(t)
-            P.f310_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), f2i(ldf(g_x)), f2i(ldf(g_y)), 0L)
+            P.f311_Mat4x4TranslationEqu(t, ld8((p1_dc + 200L)), f2i(ldf(g_x)), f2i(ldf(g_y)), 0L)
             ln = 102 // BomberGolf.HC:102
             tick(t)
             P.f307_Mat4x4RotZ(t, ld8((p1_dc + 200L)), ldf(g__))
@@ -177,7 +178,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             st4((p1_dc + 160L), 0L)
             ln = 104 // BomberGolf.HC:104
             tick(t)
-            P.f425_GrBorder(t, p1_dc, -300L, -300L, 300L, 300L, 1L, 0L)
+            P.f428_GrBorder(t, p1_dc, -300L, -300L, 300L, 300L, 1L, 0L)
             ln = 105 // BomberGolf.HC:105
             l16_i = 0L
             loop0@ while ((l16_i < 10L)) {
@@ -197,7 +198,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         val t5: Double = f(nat(t, n_Cos, push1(t, bits(ldf((l40_tmpt + 16L))))))
                         ln = 110 // BomberGolf.HC:110
                         tick(t)
-                        P.f315_DCSymmetry3Set(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 0L, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 1L, f2i((t6 + (1024.0 * t5))), f2i((t4 + (1024.0 * t3))), 0L)
+                        P.f316_DCSymmetry3Set(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 0L, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 1L, f2i((t6 + (1024.0 * t5))), f2i((t4 + (1024.0 * t3))), 0L)
                     }
                     ln = 113 // BomberGolf.HC:113
                     tick(t)
@@ -205,11 +206,11 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     if ((t7 != 0L)) {
                         ln = 114 // BomberGolf.HC:114
                         tick(t)
-                        P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 0L, ld8((l40_tmpt + 32L)), ldf((l40_tmpt + 16L)))
+                        P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 0L, ld8((l40_tmpt + 32L)), ldf((l40_tmpt + 16L)))
                     } else {
                         ln = 116 // BomberGolf.HC:116
                         tick(t)
-                        P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 0L, ld8((l40_tmpt + 40L)), ldf((l40_tmpt + 16L)))
+                        P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 0L, ld8((l40_tmpt + 40L)), ldf((l40_tmpt + 16L)))
                     }
                     ln = 117 // BomberGolf.HC:117
                     val t8: Long = (p1_dc + 28L)
@@ -217,7 +218,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 } else {
                     ln = 119 // BomberGolf.HC:119
                     tick(t)
-                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 0L, ld8((l40_tmpt + 24L)), ldf((l40_tmpt + 16L)))
+                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf(l40_tmpt)), f2i(ldf((l40_tmpt + 8L))), 0L, ld8((l40_tmpt + 24L)), ldf((l40_tmpt + 16L)))
                 }
                 ln = 105 // BomberGolf.HC:105
                 l16_i = (l16_i + 1L)
@@ -227,8 +228,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             l16_i = 0L
             loop2@ while ((l16_i < 64L)) {
                 ln = 123 // BomberGolf.HC:123
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, ld8((g_trees + (l16_i * 16L))), ld8(((g_trees + (l16_i * 16L)) + 8L)), 0L, b0, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, ld8((g_trees + (l16_i * 16L))), ld8(((g_trees + (l16_i * 16L)) + 8L)), 0L, b0, 0L))
                 ln = 122 // BomberGolf.HC:122
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -258,11 +258,11 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         l56_dx = ((15.0 * t9) + (l24_j shr 2).toDouble())
                         ln = 135 // BomberGolf.HC:135
                         tick(t)
-                        val t10: Double = P.f485_FullTri(t, ((l48_ts / 3.0) + (l24_j.toDouble() / 2.0)), 20.0)
+                        val t10: Double = P.f490_FullTri(t, ((l48_ts / 3.0) + (l24_j.toDouble() / 2.0)), 20.0)
                         l64_dy = ((10.0 * t10) + (l24_j shr 2).toDouble())
                         ln = 136 // BomberGolf.HC:136
                         tick(t)
-                        P.f393_GrPlot3(t, p1_dc, f2i((((ldf(l40_tmpt) + 5.0) + l56_dx) + (0.5 * l64_dy))), f2i(((ldf((l40_tmpt + 8L)) + (0.5 * l56_dx)) + l64_dy)), 0L)
+                        P.f394_GrPlot3(t, p1_dc, f2i((((ldf(l40_tmpt) + 5.0) + l56_dx) + (0.5 * l64_dy))), f2i(((ldf((l40_tmpt + 8L)) + (0.5 * l56_dx)) + l64_dy)), 0L)
                         ln = 128 // BomberGolf.HC:128
                         l24_j = (l24_j + 1L)
                         tick(t)
@@ -285,12 +285,10 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     val t13: Long = P.f269_Blink(t, 10.0)
                     if ((t13 != 0L)) {
                         ln = 145 // BomberGolf.HC:145
-                        tick(t)
-                        P.f440_Sprite3(t, p1_dc, f2i(ldf((l32_tmpb + 16L))), f2i(ldf((l32_tmpb + 24L))), 0L, b1, 0L)
+                        nat(t, n_Sprite3, push(t, p1_dc, f2i(ldf((l32_tmpb + 16L))), f2i(ldf((l32_tmpb + 24L))), 0L, b1, 0L))
                     } else {
                         ln = 147 // BomberGolf.HC:147
-                        tick(t)
-                        P.f440_Sprite3(t, p1_dc, f2i(ldf((l32_tmpb + 16L))), f2i(ldf((l32_tmpb + 24L))), 0L, b2, 0L)
+                        nat(t, n_Sprite3, push(t, p1_dc, f2i(ldf((l32_tmpb + 16L))), f2i(ldf((l32_tmpb + 24L))), 0L, b2, 0L))
                     }
                 }
                 ln = 149 // BomberGolf.HC:149
@@ -301,14 +299,13 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             val t14: Long = (p1_dc + 28L)
             st4(t14, (ld4s(t14) and -257L))
             ln = 153 // BomberGolf.HC:153
-            tick(t)
-            P.f440_Sprite3(t, p1_dc, (ld8((p0_task + 224L)) shr 1), (ld8((p0_task + 248L)) shr 1), 0L, b3, 0L)
+            nat(t, n_Sprite3, push(t, p1_dc, (ld8((p0_task + 224L)) shr 1), (ld8((p0_task + 248L)) shr 1), 0L, b3, 0L))
             ln = 154 // BomberGolf.HC:154
             st4((p1_dc + 160L), 4L)
             ln = 155 // BomberGolf.HC:155
             tick(t)
             val vb0 = push3(t, ld8(g_target_cnt), ld8(g_key_cnt), ld8(g_best_score))
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s2, vb0, 3)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s2, vb0, 3)
             t.sp = vb0
             ln = 157 // BomberGolf.HC:157
             var r16: Boolean = (ld8(g_target_cnt) == 0L)
@@ -321,7 +318,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                 ln = 158 // BomberGolf.HC:158
                 tick(t)
                 val vb1 = push0(t)
-                P.f369_GrPrint(t, p1_dc, ((ld8((p0_task + 224L)) - 112L) shr 1), (((ld8((p0_task + 248L)) - 8L) shr 1) - 32L), s3, vb1, 0)
+                P.f370_GrPrint(t, p1_dc, ((ld8((p0_task + 224L)) - 112L) shr 1), (((ld8((p0_task + 248L)) - 8L) shr 1) - 32L), s3, vb1, 0)
                 t.sp = vb1
             }
             t.depth--
@@ -330,7 +327,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC BombHit (BomberGolf.HC:162) */
-    fun f707_BombHit(t: Task, a0: Long) {
+    fun f712_BombHit(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -371,7 +368,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC BombDrop (BomberGolf.HC:176) */
-    fun f708_BombDrop(t: Task, a0: Double, a1: Double) {
+    fun f713_BombDrop(t: Task, a0: Double, a1: Double) {
         var ln = 0
         try {
             enter(t)
@@ -395,14 +392,14 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f153_QueIns(t, l16_tmpb, ld8((g_bomb_head + 8L)))
             ln = 184 // BomberGolf.HC:184
             tick(t)
-            P.f500_Sweep(t, f2i((3.0 * 1000.0)), 74.0, 62.0)
+            P.f505_Sweep(t, f2i((3.0 * 1000.0)), 74.0, 62.0)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "BombDrop", ln) }
     }
 
     /** HolyC AnimateTask (BomberGolf.HC:187) */
-    fun f709_AnimateTask(t: Task, a0: Long): Long {
+    fun f714_AnimateTask(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -430,7 +427,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     if ((ld8(g_target_cnt) != 0L)) {
                         ln = 199 // BomberGolf.HC:199
                         tick(t)
-                        val t3: Double = P.f542_Wrap(t, (ldf(g__f) - ldf(g__)), (-f(4614256656552045848L)))
+                        val t3: Double = P.f547_Wrap(t, (ldf(g__f) - ldf(g__)), (-f(4614256656552045848L)))
                         val t4: Double = f(nat(t, n_Abs, push1(t, bits(t3))))
                         tick(t)
                         val t5: Double = P.f116_Clamp(t, (0.1 * fpow((1.0 + t4), 4.0)), -3.0, 3.0)
@@ -513,7 +510,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                     if ((t22 < t21)) {
                         ln = 228 // BomberGolf.HC:228
                         tick(t)
-                        f707_BombHit(t, l32_tmpb)
+                        f712_BombHit(t, l32_tmpb)
                     } else {
                         ln = 229 // BomberGolf.HC:229
                         val t24: Double = (ldf((l32_tmpb + 32L)) + 3.0)
@@ -521,7 +518,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                         if (((t24 < t23) && (ld1u((l32_tmpb + 40L)) == 0L))) {
                             ln = 230 // BomberGolf.HC:230
                             tick(t)
-                            P.f499_Noise(t, f2i((0.25 * 1000.0)), 62.0, 74.0)
+                            P.f504_Noise(t, f2i((0.25 * 1000.0)), 62.0, 74.0)
                             ln = 231 // BomberGolf.HC:231
                             st1((l32_tmpb + 40L), 1L)
                         }
@@ -543,7 +540,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC Init (BomberGolf.HC:241) */
-    fun f710_Init(t: Task) {
+    fun f715_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -629,7 +626,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC CleanUp (BomberGolf.HC:282) */
-    fun f711_CleanUp(t: Task) {
+    fun f716_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -642,7 +639,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC BomberGolf (BomberGolf.HC:287) */
-    fun f712_BomberGolf(t: Task) {
+    fun f717_BomberGolf(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -650,7 +647,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             val fp = frame(t, 24)
             ln = 290 // BomberGolf.HC:290
             tick(t)
-            P.f507_MenuPush(t, s4)
+            P.f512_MenuPush(t, s4)
             ln = 304 // BomberGolf.HC:304
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
@@ -668,13 +665,13 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             nat(t, n_DocClear, push1(t, 0L))
             ln = 310 // BomberGolf.HC:310
             val t1: Long = (ld8(P.g_Fs) + 1088L)
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065861L, ld8(P.g_Fs), s5, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065866L, ld8(P.g_Fs), s5, -1L, ld8(P.g_Fs), 0L, 0L))
             st8(t1, t0)
             ln = 311 // BomberGolf.HC:311
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065858L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065863L)
             ln = 312 // BomberGolf.HC:312
             tick(t)
-            f710_Init(t)
+            f715_Init(t)
             ln = 313 // BomberGolf.HC:313
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -714,7 +711,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                                 ln = 328 // BomberGolf.HC:328
                                                 val t7: Double = ldf(g__f)
                                                 tick(t)
-                                                val t5: Double = P.f542_Wrap(t, (ldf(g__f) - ldf(g__)), (-f(4614256656552045848L)))
+                                                val t5: Double = P.f547_Wrap(t, (ldf(g__f) - ldf(g__)), (-f(4614256656552045848L)))
                                                 val t6: Double = f(nat(t, n_Abs, push1(t, bits(t5))))
                                                 st8(g__f, bits((t7 + (1.0 / (t6 + (2.0 * f(4614256656552045848L)))))))
                                             }
@@ -725,7 +722,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                                 ln = 332 // BomberGolf.HC:332
                                                 val t11: Double = ldf(g__f)
                                                 tick(t)
-                                                val t9: Double = P.f542_Wrap(t, (ldf(g__f) - ldf(g__)), (-f(4614256656552045848L)))
+                                                val t9: Double = P.f547_Wrap(t, (ldf(g__f) - ldf(g__)), (-f(4614256656552045848L)))
                                                 val t10: Double = f(nat(t, n_Abs, push1(t, bits(t9))))
                                                 st8(g__f, bits((t11 - (1.0 / (t10 + (2.0 * f(4614256656552045848L)))))))
                                             }
@@ -746,15 +743,15 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
                                     val t17: Double = ((0.8 * 3.0) * ldf(g_v))
                                     val t16: Double = f(nat(t, n_Sin, push1(t, bits(ldf(g__)))))
                                     tick(t)
-                                    f708_BombDrop(t, (t18 - (t17 * t16)), (t15 - (t14 * t13)))
+                                    f713_BombDrop(t, (t18 - (t17 * t16)), (t15 - (t14 * t13)))
                                 }
                                 10L -> {
                                     ln = 342 // BomberGolf.HC:342
                                     tick(t)
-                                    f711_CleanUp(t)
+                                    f716_CleanUp(t)
                                     ln = 343 // BomberGolf.HC:343
                                     tick(t)
-                                    f710_Init(t)
+                                    f715_Init(t)
                                 }
                                 27L, 28L -> {
                                     ln = 347 // BomberGolf.HC:347
@@ -781,10 +778,10 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 353 // BomberGolf.HC:353
             tick(t)
-            f711_CleanUp(t)
+            f716_CleanUp(t)
             ln = 354 // BomberGolf.HC:354
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 355 // BomberGolf.HC:355
             nat(t, n_RegWrite, push3(t, s1, s6, ld8(g_best_score)))
             t.msp = msp0
@@ -794,13 +791,13 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Games/BomberGolf.HC#2 (BomberGolf.HC:358) */
-    fun f713_init_C__Demo_Games_BomberGolf_HC_2(t: Task): Long {
+    fun f718_init_C__Demo_Games_BomberGolf_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 358 // BomberGolf.HC:358
             tick(t)
-            f712_BomberGolf(t)
+            f717_BomberGolf(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/BomberGolf.HC#2", ln) }
@@ -809,17 +806,17 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Games_BomberGolf_HC_0(t)
-            704 -> f704_init_C__Demo_Games_BomberGolf_HC_1(t)
-            705 -> f705_init_C__Home_Registry_HC_0(t)
-            706 -> { f706_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            707 -> { f707_BombHit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_BombDrop(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))); 0L }
-            709 -> f709_AnimateTask(t, (if (n > 0) st[base + 0] else 0L))
-            710 -> { f710_Init(t); 0L }
-            711 -> { f711_CleanUp(t); 0L }
-            712 -> { f712_BomberGolf(t); 0L }
-            713 -> f713_init_C__Demo_Games_BomberGolf_HC_2(t)
+            708 -> f708_init_C__Demo_Games_BomberGolf_HC_0(t)
+            709 -> f709_init_C__Demo_Games_BomberGolf_HC_1(t)
+            710 -> f710_init_C__Home_Registry_HC_0(t)
+            711 -> { f711_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            712 -> { f712_BombHit(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_BombDrop(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L))); 0L }
+            714 -> f714_AnimateTask(t, (if (n > 0) st[base + 0] else 0L))
+            715 -> { f715_Init(t); 0L }
+            716 -> { f716_CleanUp(t); 0L }
+            717 -> { f717_BomberGolf(t); 0L }
+            718 -> f718_init_C__Demo_Games_BomberGolf_HC_2(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -831,7 +828,7 @@ class N_Demo_Games_BomberGolf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718)
         private val NAMES = arrayOf("\$init:C:/Demo/Games/BomberGolf.HC#0", "\$init:C:/Demo/Games/BomberGolf.HC#1", "\$init:C:/Home/Registry.HC#0", "DrawIt", "BombHit", "BombDrop", "AnimateTask", "Init", "CleanUp", "BomberGolf", "\$init:C:/Demo/Games/BomberGolf.HC#2")
         private val FILES = arrayOf<String>("C:/Demo/Games/BomberGolf.HC")
     }

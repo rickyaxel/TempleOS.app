@@ -13,6 +13,7 @@ class N_Demo_Graphics_SpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : 
     @JvmField val n_DocClear = rt.vm.natives.find("DocClear")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** binary literal, 167 bytes */ @JvmField var b0: Long = 0L
     /** "Image size:%d." */ @JvmField var s0: Long = 0L
@@ -27,7 +28,7 @@ class N_Demo_Graphics_SpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC SpritePlot (SpritePlot.HC:45) */
-    fun f703_SpritePlot(t: Task) {
+    fun f708_SpritePlot(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -46,8 +47,7 @@ class N_Demo_Graphics_SpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : 
                 tick(t)
                 P.f286_DCFill(t, 0L, 255L)
                 ln = 52 // SpritePlot.HC:52
-                tick(t)
-                P.f440_Sprite3(t, l0_dc, l8_i, 240L, 0L, b0, 0L)
+                nat(t, n_Sprite3, push(t, l0_dc, l8_i, 240L, 0L, b0, 0L))
                 ln = 53 // SpritePlot.HC:53
                 nat(t, n_Sleep, push1(t, 3L))
                 ln = 50 // SpritePlot.HC:50
@@ -71,13 +71,13 @@ class N_Demo_Graphics_SpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Graphics/SpritePlot.HC#0 (SpritePlot.HC:61) */
-    fun f704_init_C__Demo_Graphics_SpritePlot_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_SpritePlot_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 61 // SpritePlot.HC:61
             tick(t)
-            f703_SpritePlot(t)
+            f708_SpritePlot(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/SpritePlot.HC#0", ln) }
@@ -86,8 +86,8 @@ class N_Demo_Graphics_SpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_SpritePlot(t); 0L }
-            704 -> f704_init_C__Demo_Graphics_SpritePlot_HC_0(t)
+            708 -> { f708_SpritePlot(t); 0L }
+            709 -> f709_init_C__Demo_Graphics_SpritePlot_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -99,7 +99,7 @@ class N_Demo_Graphics_SpritePlot(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("SpritePlot", "\$init:C:/Demo/Graphics/SpritePlot.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/SpritePlot.HC")
     }

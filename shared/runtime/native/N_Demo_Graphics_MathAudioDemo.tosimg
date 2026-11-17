@@ -11,18 +11,18 @@ s 17fe10 24475245454e2446756c6c436177244647240a
 s 17fd68 245245442453696e244647240a
 s 17fe38 24424c554524547269244647240a
 s 17fe58 24475245454e2446756c6c547269244647240a
-fn 703 MySin (F64;F64;-)
-fn 704 MyCos (F64;F64;-)
-fn 705 FunDraw1 (U0;*$CDC,*(F64;F64;-);-)
-fn 706 FunDraw2 (U0;*$CDC,*(F64;F64,F64;-),F64;-)
-fn 707 Init (U0;*$CDC;-)
-fn 708 SndMathDemo (U0;;-)
-fn 709 $init:C:/Demo/Graphics/MathAudioDemo.HC#0 (I64;;-)
-sym f FunDraw1 705 (U0;*$CDC,*(F64;F64;-);-)
-sym f FunDraw2 706 (U0;*$CDC,*(F64;F64,F64;-),F64;-)
-sym f Init 707 (U0;*$CDC;-)
-sym f MyCos 704 (F64;F64;-)
-sym f MySin 703 (F64;F64;-)
-sym f SndMathDemo 708 (U0;;-)
-init 709
+fn 708 MySin (F64;F64;-)
+fn 709 MyCos (F64;F64;-)
+fn 710 FunDraw1 (U0;*$CDC,*(F64;F64;-);-)
+fn 711 FunDraw2 (U0;*$CDC,*(F64;F64,F64;-),F64;-)
+fn 712 Init (U0;*$CDC;-)
+fn 713 SndMathDemo (U0;;-)
+fn 714 $init:C:/Demo/Graphics/MathAudioDemo.HC#0 (I64;;-)
+sym f FunDraw1 710 (U0;*$CDC,*(F64;F64;-);-)
+sym f FunDraw2 711 (U0;*$CDC,*(F64;F64,F64;-),F64;-)
+sym f Init 712 (U0;*$CDC;-)
+sym f MyCos 709 (F64;F64;-)
+sym f MySin 708 (F64;F64;-)
+sym f SndMathDemo 713 (U0;;-)
+init 714
 unit C:/Demo/Graphics/MathAudioDemo.HC#1

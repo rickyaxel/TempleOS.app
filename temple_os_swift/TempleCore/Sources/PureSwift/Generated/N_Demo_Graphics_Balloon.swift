@@ -29,7 +29,7 @@ public final class N_Demo_Graphics_Balloon: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Balloon.HC#0 (Balloon.HC:3)
-    @discardableResult public final func f703_init_C__Demo_Graphics_Balloon_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Graphics_Balloon_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -39,7 +39,7 @@ public final class N_Demo_Graphics_Balloon: NativeModule {
     }
 
     /// HolyC Balloon (Balloon.HC:9)
-    public final func f704_Balloon(_ t: HTask) throws {
+    public final func f709_Balloon(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -48,18 +48,18 @@ public final class N_Demo_Graphics_Balloon: NativeModule {
             var l8_j: Int64 = 0
             ln = 15 // Balloon.HC:15
             try tick(t)
-            try P.f570_OutU8(t, 964, 2)
+            try P.f575_OutU8(t, 964, 2)
             ln = 16 // Balloon.HC:16
             try tick(t)
-            try P.f570_OutU8(t, 965, 15)
+            try P.f575_OutU8(t, 965, 15)
             ln = 17 // Balloon.HC:17
             _ = try nat(t, n_MemSetI64, try push3(t, ld8((P.g_text &+ 56)), 0, divs(307200, 64)))
             ln = 19 // Balloon.HC:19
             try tick(t)
-            try P.f570_OutU8(t, 964, 2)
+            try P.f575_OutU8(t, 964, 2)
             ln = 20 // Balloon.HC:20
             try tick(t)
-            try P.f570_OutU8(t, 965, 14)
+            try P.f575_OutU8(t, 965, 14)
             ln = 21 // Balloon.HC:21
             l16_k = 100
             loop0: while (l16_k < 150) {
@@ -103,20 +103,20 @@ public final class N_Demo_Graphics_Balloon: NativeModule {
             }
             ln = 35 // Balloon.HC:35
             try tick(t)
-            try P.f575_VGAFlush(t)
+            try P.f580_VGAFlush(t)
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "Balloon", ln) }
     }
 
     /// HolyC $init:C:/Demo/Graphics/Balloon.HC#1 (Balloon.HC:38)
-    @discardableResult public final func f705_init_C__Demo_Graphics_Balloon_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Demo_Graphics_Balloon_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 38 // Balloon.HC:38
             try tick(t)
-            try f704_Balloon(t)
+            try f709_Balloon(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Balloon.HC#1", ln) }
@@ -125,15 +125,15 @@ public final class N_Demo_Graphics_Balloon: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Graphics_Balloon_HC_0(t)
-        case 704: try f704_Balloon(t); return 0
-        case 705: return try f705_init_C__Demo_Graphics_Balloon_HC_1(t)
+        case 708: return try f708_init_C__Demo_Graphics_Balloon_HC_0(t)
+        case 709: try f709_Balloon(t); return 0
+        case 710: return try f710_init_C__Demo_Graphics_Balloon_HC_1(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Graphics/Balloon.HC#0", 704: "Balloon", 705: "$init:C:/Demo/Graphics/Balloon.HC#1"]
+    private static let DEFINED: Set<Int> = [708, 709, 710]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Graphics/Balloon.HC#0", 709: "Balloon", 710: "$init:C:/Demo/Graphics/Balloon.HC#1"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Balloon.HC"]
     public override var files: [String] { N_Demo_Graphics_Balloon.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Balloon.DEFINED.contains(index) }

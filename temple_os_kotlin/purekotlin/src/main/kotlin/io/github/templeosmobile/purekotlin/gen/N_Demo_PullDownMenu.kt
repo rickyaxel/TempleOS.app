@@ -44,7 +44,7 @@ class N_Demo_PullDownMenu(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC PullDownMenuDemo (PullDownMenu.HC:6) */
-    fun f703_PullDownMenuDemo(t: Task) {
+    fun f708_PullDownMenuDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -54,7 +54,7 @@ class N_Demo_PullDownMenu(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             var l24_tmpse: Long = 0L
             ln = 11 // PullDownMenu.HC:11
             tick(t)
-            P.f507_MenuPush(t, s0)
+            P.f512_MenuPush(t, s0)
             ln = 31 // PullDownMenu.HC:31
             nat(t, n_Print, push1(t, s1))
             ln = 35 // PullDownMenu.HC:35
@@ -127,7 +127,7 @@ class N_Demo_PullDownMenu(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                         nat(t, n_Print, push1(t, s7))
                                         ln = 73 // PullDownMenu.HC:73
                                         tick(t)
-                                        val t5: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s8)
+                                        val t5: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s8)
                                         l24_tmpse = t5
                                         if ((t5 != 0L)) {
                                             ln = 74 // PullDownMenu.HC:74
@@ -139,7 +139,7 @@ class N_Demo_PullDownMenu(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
                                         nat(t, n_Print, push1(t, s9))
                                         ln = 78 // PullDownMenu.HC:78
                                         tick(t)
-                                        val t6: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s10)
+                                        val t6: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s10)
                                         l24_tmpse = t6
                                         if ((t6 != 0L)) {
                                             ln = 79 // PullDownMenu.HC:79
@@ -160,7 +160,7 @@ class N_Demo_PullDownMenu(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
             }
             ln = 86 // PullDownMenu.HC:86
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             t.msp = msp0
             t.depth--
             return
@@ -168,13 +168,13 @@ class N_Demo_PullDownMenu(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     }
 
     /** HolyC $init:C:/Demo/PullDownMenu.HC#0 (PullDownMenu.HC:89) */
-    fun f704_init_C__Demo_PullDownMenu_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_PullDownMenu_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 89 // PullDownMenu.HC:89
             tick(t)
-            f703_PullDownMenuDemo(t)
+            f708_PullDownMenuDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/PullDownMenu.HC#0", ln) }
@@ -183,8 +183,8 @@ class N_Demo_PullDownMenu(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_PullDownMenuDemo(t); 0L }
-            704 -> f704_init_C__Demo_PullDownMenu_HC_0(t)
+            708 -> { f708_PullDownMenuDemo(t); 0L }
+            709 -> f709_init_C__Demo_PullDownMenu_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -196,7 +196,7 @@ class N_Demo_PullDownMenu(rt: NativeRuntime, @JvmField val P: Prelude) : NativeM
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("PullDownMenuDemo", "\$init:C:/Demo/PullDownMenu.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/PullDownMenu.HC")
     }

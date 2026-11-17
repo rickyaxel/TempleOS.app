@@ -27,7 +27,7 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC MPUnlockedInc (Lock.HC:14) */
-    fun f703_MPUnlockedInc(t: Task, a0: Long) {
+    fun f708_MPUnlockedInc(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -49,7 +49,7 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC UnlockedInc (Lock.HC:21) */
-    fun f704_UnlockedInc(t: Task) {
+    fun f709_UnlockedInc(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -58,10 +58,10 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             ln = 24 // Lock.HC:24
             st8(g_glbl, 0L)
             ln = 25 // Lock.HC:25
-            val t0: Long = nat(t, n_JobQue, push(t, 9223090561878065855L, 0L, 0L, 0L, 0L, 0L, 0L, 0L))
+            val t0: Long = nat(t, n_JobQue, push(t, 9223090561878065860L, 0L, 0L, 0L, 0L, 0L, 0L, 0L))
             l0_tmpm0 = t0
             ln = 26 // Lock.HC:26
-            val t1: Long = nat(t, n_JobQue, push(t, 9223090561878065855L, 0L, 1L, 0L, 0L, 0L, 0L, 0L))
+            val t1: Long = nat(t, n_JobQue, push(t, 9223090561878065860L, 0L, 1L, 0L, 0L, 0L, 0L, 0L))
             l8_tmpm1 = t1
             ln = 27 // Lock.HC:27
             nat(t, n_JobResGet, push1(t, l0_tmpm0))
@@ -75,7 +75,7 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC MPLockedInc (Lock.HC:32) */
-    fun f705_MPLockedInc(t: Task, a0: Long) {
+    fun f710_MPLockedInc(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -97,7 +97,7 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC LockedInc (Lock.HC:40) */
-    fun f706_LockedInc(t: Task) {
+    fun f711_LockedInc(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -106,10 +106,10 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
             ln = 43 // Lock.HC:43
             st8(g_glbl, 0L)
             ln = 44 // Lock.HC:44
-            val t0: Long = nat(t, n_JobQue, push(t, 9223090561878065857L, 0L, 0L, 0L, 0L, 0L, 0L, 0L))
+            val t0: Long = nat(t, n_JobQue, push(t, 9223090561878065862L, 0L, 0L, 0L, 0L, 0L, 0L, 0L))
             l0_tmpm0 = t0
             ln = 45 // Lock.HC:45
-            val t1: Long = nat(t, n_JobQue, push(t, 9223090561878065857L, 0L, 1L, 0L, 0L, 0L, 0L, 0L))
+            val t1: Long = nat(t, n_JobQue, push(t, 9223090561878065862L, 0L, 1L, 0L, 0L, 0L, 0L, 0L))
             l8_tmpm1 = t1
             ln = 46 // Lock.HC:46
             nat(t, n_JobResGet, push1(t, l0_tmpm0))
@@ -123,26 +123,26 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/MultiCore/Lock.HC#0 (Lock.HC:51) */
-    fun f707_init_C__Demo_MultiCore_Lock_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_MultiCore_Lock_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 51 // Lock.HC:51
             tick(t)
-            f704_UnlockedInc(t)
+            f709_UnlockedInc(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/MultiCore/Lock.HC#0", ln) }
     }
 
     /** HolyC $init:C:/Demo/MultiCore/Lock.HC#1 (Lock.HC:52) */
-    fun f708_init_C__Demo_MultiCore_Lock_HC_1(t: Task): Long {
+    fun f713_init_C__Demo_MultiCore_Lock_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 52 // Lock.HC:52
             tick(t)
-            f706_LockedInc(t)
+            f711_LockedInc(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/MultiCore/Lock.HC#1", ln) }
@@ -151,12 +151,12 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MPUnlockedInc(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> { f704_UnlockedInc(t); 0L }
-            705 -> { f705_MPLockedInc(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            706 -> { f706_LockedInc(t); 0L }
-            707 -> f707_init_C__Demo_MultiCore_Lock_HC_0(t)
-            708 -> f708_init_C__Demo_MultiCore_Lock_HC_1(t)
+            708 -> { f708_MPUnlockedInc(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> { f709_UnlockedInc(t); 0L }
+            710 -> { f710_MPLockedInc(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            711 -> { f711_LockedInc(t); 0L }
+            712 -> f712_init_C__Demo_MultiCore_Lock_HC_0(t)
+            713 -> f713_init_C__Demo_MultiCore_Lock_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -168,7 +168,7 @@ class N_Demo_MultiCore_Lock(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("MPUnlockedInc", "UnlockedInc", "MPLockedInc", "LockedInc", "\$init:C:/Demo/MultiCore/Lock.HC#0", "\$init:C:/Demo/MultiCore/Lock.HC#1")
         private val FILES = arrayOf<String>("C:/Demo/MultiCore/Lock.HC")
     }

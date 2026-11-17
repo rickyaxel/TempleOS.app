@@ -1,5 +1,6 @@
 package io.github.templeosmobile.core
 
+import io.github.templeosmobile.core.holyc.Arena
 import io.github.templeosmobile.core.kernel.*
 import org.junit.Assert.*
 import org.junit.Test
@@ -69,8 +70,29 @@ class RasterDiffTest {
     private var extraLen = 24
     private fun extra(): ByteArray = if (extraAddr == 0) ByteArray(0) else m.readBytes(extraAddr, extraLen)
 
-    private fun snapshot(): LongArray = m.words.copyOf()
-    private fun restore(s: LongArray) = System.arraycopy(s, 0, m.words, 0, s.size)
+    // The whole Arena, allocator included (its free lists live in Kotlin fields): natives that MAlloc and Free
+    // (Gr3Mesh, Sprite3) must leave the heap as the original does, and the second run must start from the same heap.
+    private val arenaFields = Arena::class.java.declaredFields.filter { !java.lang.reflect.Modifier.isStatic(it.modifiers) }.onEach { it.isAccessible = true }
+    private fun copyOf(v: Any?): Any? = when (v) {
+        is LongArray -> v.copyOf(); is IntArray -> v.copyOf()
+        is java.util.TreeMap<*, *> -> java.util.TreeMap(v)
+        else -> v
+    }
+    private fun snapshot(): List<Any?> = arenaFields.map { copyOf(it.get(m)) }
+    private fun restore(s: List<Any?>) = arenaFields.forEachIndexed { i, f -> if (!java.lang.reflect.Modifier.isFinal(f.modifiers) || f.type.isArray || f.type == java.util.TreeMap::class.java) setField(f, copyOf(s[i])) }
+    private fun setField(f: java.lang.reflect.Field, v: Any?) {
+        if (java.lang.reflect.Modifier.isFinal(f.modifiers)) { // final arrays/maps: copy the contents back
+            when (val cur = f.get(m)) {
+                is IntArray -> System.arraycopy(v as IntArray, 0, cur, 0, cur.size)
+                is LongArray -> System.arraycopy(v as LongArray, 0, cur, 0, cur.size)
+                is java.util.TreeMap<*, *> -> { @Suppress("UNCHECKED_CAST") (cur as java.util.TreeMap<Any, Any>).apply { clear(); putAll(v as java.util.TreeMap<Any, Any>) } }
+            }
+        } else f.set(m, v)
+    }
+    /** The allocator's state (everything but the memory words), to compare the two runs' MAlloc/Free effects. */
+    private fun heapState(): String = arenaFields.filter { it.name != "words" && it.name != "peakAllocated" }.joinToString(";") { f ->
+        when (val v = f.get(m)) { is IntArray -> v.contentToString(); is LongArray -> v.contentToString(); else -> v.toString() }
+    }
 
     private fun seedNow(): Long = k.current?.let { m.ld8(it.fsAddr + k.o.task("rand_seed")) } ?: 0L
 
@@ -83,13 +105,21 @@ class RasterDiffTest {
             k.current?.let { k.seed(it, 0x5EEDL + iter, 0) }
             val snap = snapshot()
             // the generator's state is the current task's rand_seed, in the arena (restored with it)
-            val r1 = k.callHolyC(name, *a)
-            val after1 = state() + extra(); val rs1 = seedNow()
+            // a fault is a result too: both versions must fault, at the same address
+            // (a fault inside a native that the HolyC original calls reaches here as an uncaught HolyC exception)
+            fun call(f: String): Long = try { k.callHolyC(f, *a) } catch (e: RuntimeException) {
+                if (e !is io.github.templeosmobile.core.holyc.VmFault && e !is io.github.templeosmobile.core.holyc.VmUncaught) throw e
+                val msg = e.message!!.substringAfterLast("): ")
+                msg.hashCode().toLong() or (1L shl 62)
+            }
+            val r1 = call(name)
+            val after1 = state() + extra(); val rs1 = seedNow(); val heap1 = heapState()
             restore(snap)
-            val r2 = k.callHolyC(name + "_HC", *a)
-            val after2 = state() + extra(); val rs2 = seedNow()
+            val r2 = call(name + "_HC")
+            val after2 = state() + extra(); val rs2 = seedNow(); val heap2 = heapState()
             val diffAt = (after1.indices).firstOrNull { after1[it] != after2[it] }
-            if (r1 != r2 || rs1 != rs2 || diffAt != null) {
+            if (heap1 != heap2 && fails < 3) println("$name #$iter: the heap differs after the native and the HolyC")
+            if (r1 != r2 || rs1 != rs2 || diffAt != null || heap1 != heap2) {
                 if (fails < 3 && diffAt != null) {
                     var off = diffAt
                     for (dc in tracked) {
@@ -347,5 +377,160 @@ class RasterDiffTest {
         println("spriteSize: $sprites sprites compared, $fails mismatches")
         assertTrue("sprites found", sprites > 100)
         assertEquals(0, fails)
+    }
+
+    // ---------------------------------------------------------------- GrLine3, GrFillPoly3, Gr3Mesh, Sprite3, Mat4x4Scale
+
+    /** HolyC callbacks a program can install: a Varoom-style perspective transform (dc->transform), its divisor kept >= 200 so random points stay near the screen (a far point makes GrLineFat3 walk for minutes on both sides). */
+    private val customTransform: Long by lazy {
+        val src = "U0 DiffTransform(CDC *dc,I64 *x,I64 *y,I64 *z)\n{\n  I64 zz;\n  Mat4x4MulXYZ(dc->r,x,y,z);\n  zz=400+*z;\n" +
+            "  if (zz<200) zz=200;\n  *x=400* *x/zz;\n  *y=400* *y/zz;\n  *x+=dc->x;\n  *y+=dc->y;\n  *z+=dc->z;\n}\n"
+        k.runProgram("C:/Home/DiffTransform.HC", src.toByteArray(Charsets.ISO_8859_1))
+        val fp = k.prog.funcPtr(k.prog.globals["DiffTransform"] as io.github.templeosmobile.core.holyc.FuncSym)
+        // Raster.transform allocates its callback scratch block on first use and keeps it: allocate it now, before
+        // any snapshot, or restoring the heap would hand that block to the HolyC run
+        val dc = k.callHolyC("DCNew", 8, 8, 0, 0)
+        m.st4(dcField(dc, "flags"), m.ld4(dcField(dc, "flags")) or 0x100L); m.st8(dcField(dc, "transform"), fp)
+        k.callHolyC("GrLine3", dc, 0, 0, 0, 1, 1, 0, 1, 0)
+        fp
+    }
+
+    /** Random 3D state: transformation (default or HolyC transform), symmetry, just-mirror, thick, brush. */
+    private fun randomize3(dc: Long, brushes: List<Long> = emptyList()) {
+        randomize(dc)
+        val f = dcField(dc, "flags")
+        if (rnd.nextInt(3) != 0) {
+            m.st4(f, m.ld4(f) or 0x100L)
+            val r = m.ld8(dcField(dc, "r"))
+            k.callHolyC("Mat4x4IdentEqu", r)
+            k.callHolyC("Mat4x4RotZ", r, (rnd.nextDouble() * 7 - 3.5).toRawBits())
+            if (rnd.nextBoolean()) k.callHolyC("Mat4x4RotX", r, (rnd.nextDouble() * 7 - 3.5).toRawBits())
+            if (rnd.nextBoolean()) k.callHolyC("Mat4x4RotY", r, (rnd.nextDouble() * 7 - 3.5).toRawBits())
+            k.callHolyC("Mat4x4Scale", r, (0.3 + rnd.nextDouble() * 2.5).toRawBits())
+            k.callHolyC("DCMat4x4Set", dc, r)
+            m.st4(dcField(dc, "x"), coord(40)); m.st4(dcField(dc, "y"), coord(40)); m.st4(dcField(dc, "z"), rnd.nextInt(600).toLong())
+            m.st8(dcField(dc, "transform"), if (rnd.nextInt(3) == 0) customTransform else rasterTransformPtr)
+        } else m.st4(f, m.ld4(f) and 0x100L.inv())
+        when (rnd.nextInt(3)) {
+            0 -> {
+                k.callHolyC("DCSymmetrySet", dc, coord(50), coord(40), coord(50), coord(40))
+                m.st4(f, (m.ld4(f) or 0x200L).let { if (rnd.nextInt(3) == 0) it or 0x400L else it and 0x400L.inv() })
+            }
+            else -> m.st4(f, m.ld4(f) and 0x600L.inv())
+        }
+        m.st4(dcField(dc, "thick"), if (rnd.nextBoolean()) 1L else rnd.nextInt(7).toLong() - 1)
+        m.st8(dcField(dc, "brush"), if (brushes.isNotEmpty() && rnd.nextInt(8) == 0) brushes[rnd.nextInt(brushes.size)] else 0L)
+    }
+
+    private val rasterTransformPtr by lazy { k.prog.funcPtr(k.prog.globals["DCTransform"] as io.github.templeosmobile.core.holyc.FuncSym) }
+
+    @Test fun line3() {
+        val dcs = listOf(newDc(64, 48, false, true), newDc(64, 48, false, false), newDc(640, 480, true, false), newDc(640, 480, true, true))
+        val brushes = listOf(newDc(3, 3, false, false))
+        customTransform
+        check("GrLine3", 2500) {
+            val dc = dcs[rnd.nextInt(dcs.size)]; randomize3(dc, brushes)
+            val step = when (rnd.nextInt(6)) { 0 -> 2L; 1 -> 3L; else -> 1L }
+            val start = if (rnd.nextInt(5) == 0) rnd.nextInt(3).toLong() else 0L
+            longArrayOf(dc, coord(70), coord(60), rnd.nextInt(1200).toLong() - 100, coord(70), coord(60), rnd.nextInt(1200).toLong() - 100, step, start)
+        }
+    }
+
+    @Test fun fillPoly3() {
+        val dcs = listOf(newDc(64, 48, false, true), newDc(64, 48, false, false), newDc(640, 480, true, true))
+        val poly = m.calloc(12 * 8).toLong()
+        customTransform
+        check("GrFillPoly3", 2000) {
+            val dc = dcs[rnd.nextInt(dcs.size)]; randomize3(dc)
+            val n = rnd.nextInt(8).toLong()
+            for (i in 0 until 8) {
+                m.st4(poly.toInt() + 12 * i, coord(80)); m.st4(poly.toInt() + 12 * i + 4, coord(70))
+                m.st4(poly.toInt() + 12 * i + 8, rnd.nextInt(1500).toLong() - 100)
+            }
+            longArrayOf(dc, n, poly)
+        }
+    }
+
+    @Test fun mesh3() {
+        val dcs = listOf(newDc(64, 48, false, true), newDc(640, 480, true, true), newDc(64, 48, false, false))
+        val pts = m.calloc(12 * 12).toLong(); val tris = m.calloc(16 * 16).toLong()
+        customTransform
+        check("Gr3Mesh", 1500) {
+            val dc = dcs[rnd.nextInt(dcs.size)]; randomize3(dc)
+            val vc = 3 + rnd.nextInt(10); val tc = rnd.nextInt(16)
+            for (i in 0 until vc) {
+                m.st4(pts.toInt() + 12 * i, coord(60)); m.st4(pts.toInt() + 12 * i + 4, coord(50)); m.st4(pts.toInt() + 12 * i + 8, coord(80))
+            }
+            for (i in 0 until tc) {
+                val c = rnd.nextInt(16).toLong() or (if (rnd.nextInt(4) == 0) 0x2000L else 0L) or (if (rnd.nextInt(4) == 0) 0x1000L else 0L)
+                m.st4(tris.toInt() + 16 * i, c)
+                for (j in 0 until 3) m.st4(tris.toInt() + 16 * i + 4 + 4 * j, rnd.nextInt(vc).toLong())
+            }
+            longArrayOf(dc, vc.toLong(), pts, tc.toLong(), tris)
+        }
+    }
+
+    @Test fun mat4x4Scale() {
+        val base = m.calloc(128).toLong()
+        extraAddr = base.toInt(); extraLen = 128
+        check("Mat4x4Scale", 2000) {
+            for (i in 0 until 16) m.st8(base.toInt() + 8 * i, when (rnd.nextInt(3)) { 0 -> rnd.nextLong(); 1 -> rnd.nextLong() shr rnd.nextInt(50); else -> (rnd.nextInt(200) - 100).toLong() shl 32 })
+            val sc = when (rnd.nextInt(5)) { 0 -> Double.NaN; 1 -> 1e30; 2 -> -rnd.nextDouble() * 4; else -> rnd.nextDouble() * 4 }
+            longArrayOf(base, sc.toRawBits())
+        }
+        extraAddr = 0; extraLen = 24
+    }
+
+    /** A synthetic sprite with the element types the bundled sprites rarely use (symmetry, transform on/off, shift, ...). */
+    private fun syntheticSprite(): ByteArray {
+        val out = java.io.ByteArrayOutputStream()
+        fun i32(v: Int) { for (b in 0 until 4) out.write((v ushr (8 * b)) and 0xFF) }
+        fun c() = rnd.nextInt(60) - 30
+        repeat(1 + rnd.nextInt(10)) {
+            when (rnd.nextInt(13)) {
+                0 -> { out.write(1); out.write(rnd.nextInt(16)) }                                          // COLOR
+                1 -> { out.write(2); out.write(rnd.nextInt(16)); out.write(rnd.nextInt(16)) }             // DITHER_COLOR
+                2 -> { out.write(3); i32(rnd.nextInt(6)) }                                                 // THICK
+                3 -> { out.write(4); repeat(4) { i32(c()) } }                                              // PLANAR_SYMMETRY
+                4 -> out.write(5); 5 -> out.write(6)                                                       // TRANSFORM_ON/OFF
+                6 -> { out.write(7); i32(c()); i32(c()) }                                                  // SHIFT
+                7, 8 -> { out.write(10); repeat(4) { i32(c()) } }                                          // LINE
+                9 -> { val n = rnd.nextInt(5); out.write(11); i32(n); repeat(2 * n) { i32(c()) } }        // POLYLINE
+                10 -> { out.write(12); repeat(4) { i32(c()) } }                                            // RECT (original)
+                11 -> { out.write(8); i32(c()); i32(c()) }                                                 // PT (original)
+                else -> { out.write(14); i32(c()); i32(c()); i32(rnd.nextInt(12)) }                        // CIRCLE (original)
+            }
+        }
+        out.write(0)
+        return out.toByteArray()
+    }
+
+    @Test fun sprite3() {
+        val dcs = listOf(newDc(64, 48, false, true), newDc(640, 480, true, true), newDc(640, 480, true, false), newDc(96, 64, false, false))
+        customTransform
+        val sprites = ArrayList<ByteArray>()
+        java.io.File(SHARED, "bundled-fs").walkTopDown().filter { it.isFile && (it.name.endsWith(".HC") || it.name.endsWith(".DD")) }.forEach { f ->
+            for ((_, bin) in io.github.templeosmobile.core.holyc.SourceFile.parse(f.name, f.readBytes()).bins) {
+                if (bin.isEmpty() || bin.size > 40000) continue
+                val a = m.malloc(bin.size + 64L); m.fill(a, 0, bin.size + 64); m.writeBytes(a, bin)
+                val ok = try { k.callHolyC("SpriteSize", a.toLong()); true } catch (e: Exception) { false } // only real sprites
+                m.free(a.toLong())
+                if (ok) sprites.add(bin)
+            }
+        }
+        repeat(150) { sprites.add(syntheticSprite()) }
+        assertTrue("sprites found", sprites.size > 300)
+        val buf = m.malloc(40000 + 64L).toLong()
+        var i = 0
+        check("Sprite3", sprites.size * 3) {
+            val bin = sprites[i++ % sprites.size]
+            // all of it: a sprite whose data ends early (one bundled mesh) must read zeros past its end, not the last sprite
+            m.fill(buf.toInt(), 0, 40000 + 64); m.writeBytes(buf.toInt(), bin)
+            val dc = dcs[rnd.nextInt(dcs.size)]; randomize3(dc)
+            val f = dcField(dc, "flags")
+            if (rnd.nextInt(10) == 0) m.st4(f, m.ld4(f) or 0x800L) else m.st4(f, m.ld4(f) and 0x800L.inv()) // DCF_LOCATE_NEAREST
+            longArrayOf(dc, coord(80), coord(60), rnd.nextInt(800).toLong(), buf, if (rnd.nextInt(8) == 0) 1L else 0L)
+        }
+        println("sprite3: ${sprites.size} sprites")
     }
 }

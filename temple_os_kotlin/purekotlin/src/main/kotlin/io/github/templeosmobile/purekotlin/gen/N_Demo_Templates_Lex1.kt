@@ -40,7 +40,7 @@ class N_Demo_Templates_Lex1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC MyRead (Lex1.HC:1) */
-    fun f703_MyRead(t: Task, a0: Long) {
+    fun f708_MyRead(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -96,7 +96,7 @@ class N_Demo_Templates_Lex1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Demo/Templates/Lex1.HC#0 (Lex1.HC:1) */
-    fun f704_init_C__Demo_Templates_Lex1_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Templates_Lex1_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -108,8 +108,8 @@ class N_Demo_Templates_Lex1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_MyRead(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            704 -> f704_init_C__Demo_Templates_Lex1_HC_0(t)
+            708 -> { f708_MyRead(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            709 -> f709_init_C__Demo_Templates_Lex1_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -121,7 +121,7 @@ class N_Demo_Templates_Lex1(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("MyRead", "\$init:C:/Demo/Templates/Lex1.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Templates/Lex1.HC")
     }

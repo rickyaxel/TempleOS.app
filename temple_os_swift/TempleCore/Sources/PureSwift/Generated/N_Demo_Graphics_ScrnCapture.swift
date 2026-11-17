@@ -31,7 +31,7 @@ public final class N_Demo_Graphics_ScrnCapture: NativeModule {
     }
 
     /// HolyC Main (ScrnCapture.HC:3)
-    public final func f703_Main(_ t: HTask) throws {
+    public final func f708_Main(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -42,7 +42,7 @@ public final class N_Demo_Graphics_ScrnCapture: NativeModule {
             _ = try P.f188_PressAKey(t)
             ln = 7 // ScrnCapture.HC:7
             try tick(t)
-            _ = try P.f631_GRScrnCaptureWrite(t, s1, 1)
+            _ = try P.f636_GRScrnCaptureWrite(t, s1, 1)
             ln = 8 // ScrnCapture.HC:8
             _ = try nat(t, n_Print, try push1(t, s2))
             ln = 9 // ScrnCapture.HC:9
@@ -50,7 +50,7 @@ public final class N_Demo_Graphics_ScrnCapture: NativeModule {
             _ = try P.f188_PressAKey(t)
             ln = 10 // ScrnCapture.HC:10
             try tick(t)
-            try P.f632_GRScrnCaptureRead(t, s1)
+            try P.f637_GRScrnCaptureRead(t, s1)
             ln = 11 // ScrnCapture.HC:11
             try tick(t)
             _ = try P.f188_PressAKey(t)
@@ -63,13 +63,13 @@ public final class N_Demo_Graphics_ScrnCapture: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/ScrnCapture.HC#0 (ScrnCapture.HC:15)
-    @discardableResult public final func f704_init_C__Demo_Graphics_ScrnCapture_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_ScrnCapture_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 15 // ScrnCapture.HC:15
             try tick(t)
-            try f703_Main(t)
+            try f708_Main(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/ScrnCapture.HC#0", ln) }
@@ -78,14 +78,14 @@ public final class N_Demo_Graphics_ScrnCapture: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_Main(t); return 0
-        case 704: return try f704_init_C__Demo_Graphics_ScrnCapture_HC_0(t)
+        case 708: try f708_Main(t); return 0
+        case 709: return try f709_init_C__Demo_Graphics_ScrnCapture_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704]
-    private static let NAMES: [Int: String] = [703: "Main", 704: "$init:C:/Demo/Graphics/ScrnCapture.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709]
+    private static let NAMES: [Int: String] = [708: "Main", 709: "$init:C:/Demo/Graphics/ScrnCapture.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/ScrnCapture.HC"]
     public override var files: [String] { N_Demo_Graphics_ScrnCapture.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_ScrnCapture.DEFINED.contains(index) }

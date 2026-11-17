@@ -32,7 +32,7 @@ class N_Home_Examples_Hello(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Hello.HC#0 (Hello.HC:4) */
-    fun f703_init_C__Home_Examples_Hello_HC_0(t: Task): Long {
+    fun f708_init_C__Home_Examples_Hello_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -46,7 +46,7 @@ class N_Home_Examples_Hello(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Hello.HC#1 (Hello.HC:5) */
-    fun f704_init_C__Home_Examples_Hello_HC_1(t: Task): Long {
+    fun f709_init_C__Home_Examples_Hello_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -60,7 +60,7 @@ class N_Home_Examples_Hello(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Hello.HC#2 (Hello.HC:6) */
-    fun f705_init_C__Home_Examples_Hello_HC_2(t: Task): Long {
+    fun f710_init_C__Home_Examples_Hello_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -72,7 +72,7 @@ class N_Home_Examples_Hello(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     }
 
     /** HolyC $init:C:/Home/Examples/Hello.HC#3 (Hello.HC:7) */
-    fun f706_init_C__Home_Examples_Hello_HC_3(t: Task): Long {
+    fun f711_init_C__Home_Examples_Hello_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -88,10 +88,10 @@ class N_Home_Examples_Hello(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Home_Examples_Hello_HC_0(t)
-            704 -> f704_init_C__Home_Examples_Hello_HC_1(t)
-            705 -> f705_init_C__Home_Examples_Hello_HC_2(t)
-            706 -> f706_init_C__Home_Examples_Hello_HC_3(t)
+            708 -> f708_init_C__Home_Examples_Hello_HC_0(t)
+            709 -> f709_init_C__Home_Examples_Hello_HC_1(t)
+            710 -> f710_init_C__Home_Examples_Hello_HC_2(t)
+            711 -> f711_init_C__Home_Examples_Hello_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -103,7 +103,7 @@ class N_Home_Examples_Hello(rt: NativeRuntime, @JvmField val P: Prelude) : Nativ
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("\$init:C:/Home/Examples/Hello.HC#0", "\$init:C:/Home/Examples/Hello.HC#1", "\$init:C:/Home/Examples/Hello.HC#2", "\$init:C:/Home/Examples/Hello.HC#3")
         private val FILES = arrayOf<String>("C:/Home/Examples/Hello.HC")
     }

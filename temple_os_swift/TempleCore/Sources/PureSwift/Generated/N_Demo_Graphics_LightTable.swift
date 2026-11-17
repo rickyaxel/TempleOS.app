@@ -139,7 +139,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC $eval0 (LightTable.HC:11)
-    @discardableResult public final func f703_eval0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_eval0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -153,7 +153,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC $eval1 (LightTable.HC:16)
-    @discardableResult public final func f704_eval1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_eval1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -167,7 +167,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC BmpPeek (LightTable.HC:30)
-    @discardableResult public final func f705_BmpPeek(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
+    @discardableResult public final func f710_BmpPeek(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -184,7 +184,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC BmpPlot (LightTable.HC:35)
-    public final func f706_BmpPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f711_BmpPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -203,7 +203,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC BmpLine (LightTable.HC:41)
-    public final func f707_BmpLine(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double, _ a4: Double) throws {
+    public final func f712_BmpLine(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Double, _ a3: Double, _ a4: Double) throws {
         var ln = 0
         do {
             try enter(t)
@@ -213,14 +213,14 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             var p3_x2: Double = a3
             var p4_y2: Double = a4
             ln = 43 // LightTable.HC:43
-            _ = try nat(t, n_Line, try push(t, p0_bmp, f2i((p1_x1 * ldf(g_bmp_scale))), f2i((p2_y1 * ldf(g_bmp_scale))), 0, f2i((p3_x2 * ldf(g_bmp_scale))), f2i((p4_y2 * ldf(g_bmp_scale))), 0, 9223090561878065858, 1, 0))
+            _ = try nat(t, n_Line, try push(t, p0_bmp, f2i((p1_x1 * ldf(g_bmp_scale))), f2i((p2_y1 * ldf(g_bmp_scale))), 0, f2i((p3_x2 * ldf(g_bmp_scale))), f2i((p4_y2 * ldf(g_bmp_scale))), 0, 9223090561878065863, 1, 0))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "BmpLine", ln) }
     }
 
     /// HolyC PhotonNew (LightTable.HC:46)
-    @discardableResult public final func f708_PhotonNew(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_PhotonNew(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -258,7 +258,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC DrawIt (LightTable.HC:58)
-    public final func f709_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f714_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -273,12 +273,12 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             ln = 64 // LightTable.HC:64
             try tick(t)
             let vb0 = try push(t, ld8(g_bmp_mem), divs(divs(ld8(g_bmp_mem), 1024), 1024), bits(ldf(g_bmp_scale)), ld4s((ld8(g_map) &+ 16)), ld4s((ld8(g_map) &+ 24)), ld8(g_bmp_width), ld8(g_bmp_height))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s0, vb0, 7)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s0, vb0, 7)
             t.sp = vb0
             ln = 67 // LightTable.HC:67
             try tick(t)
             let vb1 = try push(t, ld8(g_photon_cnt), ld8(g_mirror_cnt), ld8(g_snell_cnt), ld8(g_normal_inhibit), ld8(g_zero_normal))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 8, s1, vb1, 5)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 8, s1, vb1, 5)
             t.sp = vb1
             ln = 70 // LightTable.HC:70
             l16_i = 0
@@ -302,14 +302,14 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                     try st4((p1_dc &+ 160), 12)
                     ln = 76 // LightTable.HC:76
                     try tick(t)
-                    _ = try P.f396_GrLine(t, p1_dc, f2i((ldf((l24_tmpp &+ 16)) - (20.0 * ldf((l24_tmpp &+ 40))))), f2i((ldf(((l24_tmpp &+ 16) &+ 8)) - (20.0 * ldf(((l24_tmpp &+ 40) &+ 8))))), f2i(ldf((l24_tmpp &+ 16))), f2i(ldf(((l24_tmpp &+ 16) &+ 8))), 1, 0)
+                    _ = try P.f397_GrLine(t, p1_dc, f2i((ldf((l24_tmpp &+ 16)) - (20.0 * ldf((l24_tmpp &+ 40))))), f2i((ldf(((l24_tmpp &+ 16) &+ 8)) - (20.0 * ldf(((l24_tmpp &+ 40) &+ 8))))), f2i(ldf((l24_tmpp &+ 16))), f2i(ldf(((l24_tmpp &+ 16) &+ 8))), 1, 0)
                     ln = 78 // LightTable.HC:78
                     if try (ld1u(g_show_normals) != 0) {
                         ln = 79 // LightTable.HC:79
                         try st4((p1_dc &+ 160), 10)
                         ln = 80 // LightTable.HC:80
                         try tick(t)
-                        _ = try P.f396_GrLine(t, p1_dc, f2i(ldf((l24_tmpp &+ 16))), f2i(ldf(((l24_tmpp &+ 16) &+ 8))), f2i((ldf((l24_tmpp &+ 16)) + (20.0 * ldf((l24_tmpp &+ 64))))), f2i((ldf(((l24_tmpp &+ 16) &+ 8)) + (20.0 * ldf(((l24_tmpp &+ 64) &+ 8))))), 1, 0)
+                        _ = try P.f397_GrLine(t, p1_dc, f2i(ldf((l24_tmpp &+ 16))), f2i(ldf(((l24_tmpp &+ 16) &+ 8))), f2i((ldf((l24_tmpp &+ 16)) + (20.0 * ldf((l24_tmpp &+ 64))))), f2i((ldf(((l24_tmpp &+ 16) &+ 8)) + (20.0 * ldf(((l24_tmpp &+ 64) &+ 8))))), 1, 0)
                     }
                     ln = 83 // LightTable.HC:83
                     l24_tmpp = try ld8(l24_tmpp)
@@ -328,7 +328,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC RayBurst (LightTable.HC:91)
-    public final func f710_RayBurst(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
+    public final func f715_RayBurst(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -356,7 +356,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                 _ = try P.f131_D3Equ(t, (fp &+ 80), ldf(((fp &+ 56) &+ 8)), (-ldf((fp &+ 56))), 0.0)
                 ln = 103 // LightTable.HC:103
                 try tick(t)
-                let t0: Int64 = try f708_PhotonNew(t)
+                let t0: Int64 = try f713_PhotonNew(t)
                 l136_tmpp = t0
                 ln = 104 // LightTable.HC:104
                 try tick(t)
@@ -372,7 +372,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                     _ = try P.f136_D3Mul(t, (fp &+ 104), Double(l128_i), (fp &+ 80))
                     ln = 110 // LightTable.HC:110
                     try tick(t)
-                    let t1: Int64 = try f708_PhotonNew(t)
+                    let t1: Int64 = try f713_PhotonNew(t)
                     l136_tmpp = t1
                     ln = 111 // LightTable.HC:111
                     try tick(t)
@@ -382,7 +382,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                     _ = try P.f133_D3Copy(t, (l136_tmpp &+ 40), (fp &+ 56))
                     ln = 114 // LightTable.HC:114
                     try tick(t)
-                    let t2: Int64 = try f708_PhotonNew(t)
+                    let t2: Int64 = try f713_PhotonNew(t)
                     l136_tmpp = t2
                     ln = 115 // LightTable.HC:115
                     try tick(t)
@@ -402,7 +402,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC RandomBurst (LightTable.HC:121)
-    public final func f711_RandomBurst(_ t: HTask) throws {
+    public final func f716_RandomBurst(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -414,7 +414,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             loop0: while (l0_i < 256) {
                 ln = 127 // LightTable.HC:127
                 try tick(t)
-                let t0: Int64 = try f708_PhotonNew(t)
+                let t0: Int64 = try f713_PhotonNew(t)
                 l16_tmpp = t0
                 ln = 129 // LightTable.HC:129
                 let t2: Int64 = try (ld8((ld8(P.g_Fs) &+ 248)) &- 20)
@@ -442,7 +442,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC FindNormal (LightTable.HC:135)
-    public final func f712_FindNormal(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f717_FindNormal(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -474,7 +474,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             ln = 151 // LightTable.HC:151
             loop0: while true {
                 try tick(t)
-                let t1: Int64 = try f705_BmpPeek(t, p0_bmp, f2i(ldf((fp &+ 40))), f2i(ldf(((fp &+ 40) &+ 8))))
+                let t1: Int64 = try f710_BmpPeek(t, p0_bmp, f2i(ldf((fp &+ 40))), f2i(ldf(((fp &+ 40) &+ 8))))
                 ln = 152 // LightTable.HC:152
                 var r3: Bool = (t1 == 0)
                 if r3 {
@@ -513,7 +513,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                         l104_y = (t9 + (Double(t8) * t7))
                         ln = 162 // LightTable.HC:162
                         try tick(t)
-                        let t10: Int64 = try f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        let t10: Int64 = try f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t10
                         if (t10 != 0) {
                             ln = 163 // LightTable.HC:163
@@ -531,7 +531,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                         l104_y = (t16 + (Double(t15) * t14))
                         ln = 166 // LightTable.HC:166
                         try tick(t)
-                        let t17: Int64 = try f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        let t17: Int64 = try f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t17
                         if (t17 != 0) {
                             ln = 167 // LightTable.HC:167
@@ -555,7 +555,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                         l104_y = (t23 + (Double(t22) * t21))
                         ln = 172 // LightTable.HC:172
                         try tick(t)
-                        let t24: Int64 = try f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        let t24: Int64 = try f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t24
                         if (t24 != 0) {
                             ln = 173 // LightTable.HC:173
@@ -599,7 +599,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                         l104_y = (t30 + (Double(t29) * t28))
                         ln = 187 // LightTable.HC:187
                         try tick(t)
-                        let t31: Int64 = try f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        let t31: Int64 = try f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t31
                         if (t31 != 0) {
                             ln = 188 // LightTable.HC:188
@@ -617,7 +617,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                         l104_y = (t37 + (Double(t36) * t35))
                         ln = 191 // LightTable.HC:191
                         try tick(t)
-                        let t38: Int64 = try f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        let t38: Int64 = try f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t38
                         if (t38 != 0) {
                             ln = 192 // LightTable.HC:192
@@ -641,7 +641,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                         l104_y = (t44 + (Double(t43) * t42))
                         ln = 197 // LightTable.HC:197
                         try tick(t)
-                        let t45: Int64 = try f705_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
+                        let t45: Int64 = try f710_BmpPeek(t, p0_bmp, f2i(l96_x), f2i(l104_y))
                         l128_state = t45
                         if (t45 != 0) {
                             ln = 198 // LightTable.HC:198
@@ -704,7 +704,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC Mirror (LightTable.HC:219)
-    public final func f713_Mirror(_ t: HTask, _ a0: Int64) throws {
+    public final func f718_Mirror(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -716,7 +716,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             l8__ = t0
             ln = 235 // LightTable.HC:235
             try tick(t)
-            try f712_FindNormal(t, ld8(g_bmp_reflect), p0_tmpp)
+            try f717_FindNormal(t, ld8(g_bmp_reflect), p0_tmpp)
             ln = 236 // LightTable.HC:236
             let t1: Double = d(try nat(t, n_Arg, try push2(t, bits(ldf((p0_tmpp &+ 64))), bits(ldf(((p0_tmpp &+ 64) &+ 8))))))
             l16__n = t1
@@ -734,7 +734,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC SnellsLaw (LightTable.HC:242)
-    public final func f714_SnellsLaw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
+    public final func f719_SnellsLaw(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -768,7 +768,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             }
             ln = 255 // LightTable.HC:255
             try tick(t)
-            try f712_FindNormal(t, ld8(g_bmp_refract), p0_tmpp)
+            try f717_FindNormal(t, ld8(g_bmp_refract), p0_tmpp)
             ln = 256 // LightTable.HC:256
             let t1: Double = d(try nat(t, n_Arg, try push2(t, bits(ldf((p0_tmpp &+ 64))), bits(ldf(((p0_tmpp &+ 64) &+ 8))))))
             l32__n = t1
@@ -776,16 +776,16 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             try tick(t)
             let t2: Double = try P.f142_D3Dot(t, (p0_tmpp &+ 64), (p0_tmpp &+ 40))
             try tick(t)
-            let t3: Double = try P.f544_ACos(t, t2)
+            let t3: Double = try P.f549_ACos(t, t2)
             l56__1 = t3
             ln = 260 // LightTable.HC:260
             let t4: Double = d(try nat(t, n_Sin, try push1(t, bits(l56__1))))
             try tick(t)
-            let t5: Double = try P.f543_ASin(t, ((l40_n1 * t4) / l48_n2))
+            let t5: Double = try P.f548_ASin(t, ((l40_n1 * t4) / l48_n2))
             l64__2 = t5
             ln = 261 // LightTable.HC:261
             try tick(t)
-            let t6: Double = try P.f542_Wrap(t, (l24__ - l32__n), (-d(4614256656552045848)))
+            let t6: Double = try P.f547_Wrap(t, (l24__ - l32__n), (-d(4614256656552045848)))
             if (t6 >= 0.0) {
                 ln = 262 // LightTable.HC:262
                 l24__ = (l32__n + l64__2)
@@ -807,7 +807,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC AnimateTask (LightTable.HC:270)
-    public final func f715_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f720_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -831,7 +831,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC MPAnimateTask (LightTable.HC:282)
-    public final func f716_MPAnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f721_MPAnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -934,7 +934,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                 } else {
                                     ln = 328 // LightTable.HC:328
                                     try tick(t)
-                                    try f714_SnellsLaw(t, l80_tmpp, l32_last, l40_next)
+                                    try f719_SnellsLaw(t, l80_tmpp, l32_last, l40_next)
                                 }
                             } else {
                                 ln = 329 // LightTable.HC:329
@@ -947,7 +947,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                     } else {
                                         ln = 333 // LightTable.HC:333
                                         try tick(t)
-                                        try f713_Mirror(t, l80_tmpp)
+                                        try f718_Mirror(t, l80_tmpp)
                                     }
                                 } else {
                                     ln = 334 // LightTable.HC:334
@@ -1013,7 +1013,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC Init (LightTable.HC:359)
-    public final func f717_Init(_ t: HTask) throws {
+    public final func f722_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1084,7 +1084,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC CleanUp (LightTable.HC:391)
-    public final func f718_CleanUp(_ t: HTask) throws {
+    public final func f723_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1126,7 +1126,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC LTMenuSet (LightTable.HC:412)
-    public final func f719_LTMenuSet(_ t: HTask, _ a0: Int64) throws {
+    public final func f724_LTMenuSet(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1134,7 +1134,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             var l8_entry: Int64 = 0
             ln = 414 // LightTable.HC:414
             try tick(t)
-            let t0: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s2)
+            let t0: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s2)
             l8_entry = t0
             ln = 415 // LightTable.HC:415
             if try (ld1u(g_show_normals) != 0) {
@@ -1146,7 +1146,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             }
             ln = 420 // LightTable.HC:420
             try tick(t)
-            let t1: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s3)
+            let t1: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s3)
             l8_entry = t1
             ln = 421 // LightTable.HC:421
             if (p0_mode == 0) {
@@ -1158,7 +1158,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             }
             ln = 425 // LightTable.HC:425
             try tick(t)
-            let t2: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s4)
+            let t2: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s4)
             l8_entry = t2
             ln = 426 // LightTable.HC:426
             if (p0_mode == 1) {
@@ -1170,7 +1170,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             }
             ln = 430 // LightTable.HC:430
             try tick(t)
-            let t3: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s5)
+            let t3: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s5)
             l8_entry = t3
             ln = 431 // LightTable.HC:431
             if (p0_mode == 2) {
@@ -1182,7 +1182,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             }
             ln = 435 // LightTable.HC:435
             try tick(t)
-            let t4: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s6)
+            let t4: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s6)
             l8_entry = t4
             ln = 436 // LightTable.HC:436
             if (p0_mode == 3) {
@@ -1194,7 +1194,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             }
             ln = 440 // LightTable.HC:440
             try tick(t)
-            let t5: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s7)
+            let t5: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s7)
             l8_entry = t5
             ln = 441 // LightTable.HC:441
             if (p0_mode == 4) {
@@ -1206,7 +1206,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             }
             ln = 445 // LightTable.HC:445
             try tick(t)
-            let t6: Int64 = try P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s8)
+            let t6: Int64 = try P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) &+ 936)), s8)
             l8_entry = t6
             ln = 446 // LightTable.HC:446
             if (p0_mode == 5) {
@@ -1222,7 +1222,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC LightTable (LightTable.HC:453)
-    public final func f720_LightTable(_ t: HTask) throws {
+    public final func f725_LightTable(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -1246,13 +1246,13 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             try st8(g_p_root_locks, 0)
             ln = 459 // LightTable.HC:459
             try tick(t)
-            _ = try P.f507_MenuPush(t, s9)
+            _ = try P.f512_MenuPush(t, s9)
             ln = 481 // LightTable.HC:481
             try tick(t)
-            try f719_LTMenuSet(t, l8_mode)
+            try f724_LTMenuSet(t, l8_mode)
             ln = 483 // LightTable.HC:483
             try tick(t)
-            try P.f564_MemBIOSRep(t)
+            try P.f569_MemBIOSRep(t)
             ln = 484 // LightTable.HC:484
             try tick(t)
             let t1: Int64 = try P.f191_GetI64(t, s10, 16777216, (Int64.min), 9223372036854775807)
@@ -1278,12 +1278,12 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             _ = try nat(t, n_DocClear, try push1(t, 0))
             ln = 500 // LightTable.HC:500
             try tick(t)
-            try f717_Init(t)
+            try f722_Init(t)
             ln = 501 // LightTable.HC:501
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065861)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065866)
             ln = 502 // LightTable.HC:502
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065867, 0, s11, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065872, 0, s11, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 503 // LightTable.HC:503
             l16_i = 0
@@ -1291,7 +1291,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                 let t5: Int64 = try nat(t, n_mp_cnt, push0(t))
                 if !((l16_i < t5)) { break loop0 }
                 ln = 504 // LightTable.HC:504
-                let t4: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065868, 0, s12, l16_i, 0, 0, 0))
+                let t4: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065873, 0, s12, l16_i, 0, 0, 0))
                 try st8((g_animate_tasks &+ (l16_i &* 8)), t4)
                 ln = 503 // LightTable.HC:503
                 l16_i = (l16_i &+ 1)
@@ -1315,7 +1315,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                 case 6:
                                     ln = 512 // LightTable.HC:512
                                     try tick(t)
-                                    _ = try P.f500_Sweep(t, 100, 90.0, 100.0)
+                                    _ = try P.f505_Sweep(t, 100, 90.0, 100.0)
                                     ln = 513 // LightTable.HC:513
                                     l64_x2 = try ld8((fp &+ 32))
                                     l72_y2 = try ld8((fp &+ 40))
@@ -1328,16 +1328,16 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                             try st4((ld8(g_map) &+ 160), 15)
                                             ln = 517 // LightTable.HC:517
                                             try tick(t)
-                                            _ = try P.f387_GrFloodFill(t, ld8(g_map), l64_x2, l72_y2, 0, 0, 0)
+                                            _ = try P.f388_GrFloodFill(t, ld8(g_map), l64_x2, l72_y2, 0, 0, 0)
                                             ln = 518 // LightTable.HC:518
                                             l8_mode = 0
                                             ln = 519 // LightTable.HC:519
                                             try tick(t)
-                                            try f719_LTMenuSet(t, l8_mode)
+                                            try f724_LTMenuSet(t, l8_mode)
                                         case 5:
                                             ln = 522 // LightTable.HC:522
                                             try tick(t)
-                                            try f710_RayBurst(t, l48_x1, l56_y1, l64_x2, l72_y2)
+                                            try f715_RayBurst(t, l48_x1, l56_y1, l64_x2, l72_y2)
                                         default:
                                             break
                                         }
@@ -1366,13 +1366,13 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                                 l72_y2 = try ld8((fp &+ 40))
                                                 ln = 537 // LightTable.HC:537
                                                 try tick(t)
-                                                _ = try P.f396_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1, 0)
+                                                _ = try P.f397_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1, 0)
                                                 ln = 538 // LightTable.HC:538
                                                 let t10: Int64 = try nat(t, n_GetMsg, try push4(t, (fp &+ 32), (fp &+ 40), 84, 0))
                                                 l0_msg_code = t10
                                                 ln = 540 // LightTable.HC:540
                                                 try tick(t)
-                                                _ = try P.f396_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1, 0)
+                                                _ = try P.f397_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1, 0)
                                                 ln = 541 // LightTable.HC:541
                                                 if (l0_msg_code == 2) {
                                                     ln = 542 // LightTable.HC:542
@@ -1383,7 +1383,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                                     if (l0_msg_code == 6) {
                                                         ln = 544 // LightTable.HC:544
                                                         try tick(t)
-                                                        _ = try P.f500_Sweep(t, 100, 90.0, 100.0)
+                                                        _ = try P.f505_Sweep(t, 100, 90.0, 100.0)
                                                         ln = 545 // LightTable.HC:545
                                                         l64_x2 = try ld8((fp &+ 32))
                                                         l72_y2 = try ld8((fp &+ 40))
@@ -1403,16 +1403,16 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                             }
                                             ln = 553 // LightTable.HC:553
                                             try tick(t)
-                                            _ = try P.f396_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1, 0)
+                                            _ = try P.f397_GrLine(t, ld8(g_map), l48_x1, l56_y1, l64_x2, l72_y2, 1, 0)
                                             ln = 554 // LightTable.HC:554
                                             if (l8_mode == 0) {
                                                 ln = 555 // LightTable.HC:555
                                                 try tick(t)
-                                                try f707_BmpLine(t, ld8(g_bmp_reflect), Double(l48_x1), Double(l56_y1), Double(l64_x2), Double(l72_y2))
+                                                try f712_BmpLine(t, ld8(g_bmp_reflect), Double(l48_x1), Double(l56_y1), Double(l64_x2), Double(l72_y2))
                                             } else {
                                                 ln = 557 // LightTable.HC:557
                                                 try tick(t)
-                                                try f707_BmpLine(t, ld8(g_bmp_refract), Double(l48_x1), Double(l56_y1), Double(l64_x2), Double(l72_y2))
+                                                try f712_BmpLine(t, ld8(g_bmp_refract), Double(l48_x1), Double(l56_y1), Double(l64_x2), Double(l72_y2))
                                             }
                                         case 1, 3:
                                             ln = 561 // LightTable.HC:561
@@ -1433,13 +1433,13 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                                 try st4(((l80_c &+ (l24_cnt &* 12)) &+ 8), 0)
                                                 ln = 568 // LightTable.HC:568
                                                 try tick(t)
-                                                _ = try P.f402_Gr2BSpline(t, ld8(g_map), l80_c, (l24_cnt &+ 1), 0)
+                                                _ = try P.f403_Gr2BSpline(t, ld8(g_map), l80_c, (l24_cnt &+ 1), 0)
                                                 ln = 569 // LightTable.HC:569
                                                 let t11: Int64 = try nat(t, n_GetMsg, try push4(t, (fp &+ 32), (fp &+ 40), 1108, 0))
                                                 l0_msg_code = t11
                                                 ln = 571 // LightTable.HC:571
                                                 try tick(t)
-                                                _ = try P.f402_Gr2BSpline(t, ld8(g_map), l80_c, (l24_cnt &+ 1), 0)
+                                                _ = try P.f403_Gr2BSpline(t, ld8(g_map), l80_c, (l24_cnt &+ 1), 0)
                                                 ln = 572 // LightTable.HC:572
                                                 if (l0_msg_code == 2) {
                                                     ln = 573 // LightTable.HC:573
@@ -1450,7 +1450,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                                     if (l0_msg_code == 6) {
                                                         ln = 575 // LightTable.HC:575
                                                         try tick(t)
-                                                        _ = try P.f500_Sweep(t, 100, 90.0, 100.0)
+                                                        _ = try P.f505_Sweep(t, 100, 90.0, 100.0)
                                                         ln = 576 // LightTable.HC:576
                                                         l24_cnt = (l24_cnt &+ 1)
                                                     }
@@ -1468,7 +1468,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                             }
                                             ln = 583 // LightTable.HC:583
                                             try tick(t)
-                                            _ = try P.f418_Gr2BSpline3(t, ld8(g_map), l80_c, l24_cnt, 0)
+                                            _ = try P.f420_Gr2BSpline3(t, ld8(g_map), l80_c, l24_cnt, 0)
                                             ln = 584 // LightTable.HC:584
                                             l16_i = 0
                                             loop13: while (l16_i < l24_cnt) {
@@ -1486,17 +1486,17 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                             if (l8_mode == 1) {
                                                 ln = 589 // LightTable.HC:589
                                                 try tick(t)
-                                                _ = try P.f358_BSpline2(t, ld8(g_bmp_reflect), l80_c, l24_cnt, 9223090561878065858, 0)
+                                                _ = try P.f359_BSpline2(t, ld8(g_bmp_reflect), l80_c, l24_cnt, 9223090561878065863, 0)
                                             } else {
                                                 ln = 591 // LightTable.HC:591
                                                 try tick(t)
-                                                _ = try P.f358_BSpline2(t, ld8(g_bmp_refract), l80_c, l24_cnt, 9223090561878065858, 0)
+                                                _ = try P.f359_BSpline2(t, ld8(g_bmp_refract), l80_c, l24_cnt, 9223090561878065863, 0)
                                             }
                                             ln = 592 // LightTable.HC:592
                                             l8_mode = 0
                                             ln = 593 // LightTable.HC:593
                                             try tick(t)
-                                            try f719_LTMenuSet(t, l8_mode)
+                                            try f724_LTMenuSet(t, l8_mode)
                                         default:
                                             break
                                         }
@@ -1512,7 +1512,7 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                         l8_mode = l16_i
                                         ln = 602 // LightTable.HC:602
                                         try tick(t)
-                                        try f719_LTMenuSet(t, l8_mode)
+                                        try f724_LTMenuSet(t, l8_mode)
                                     }
                                 case 2:
                                     ln = 606 // LightTable.HC:606
@@ -1522,19 +1522,19 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                         case 10:
                                             ln = 608 // LightTable.HC:608
                                             try tick(t)
-                                            try f718_CleanUp(t)
+                                            try f723_CleanUp(t)
                                             ln = 609 // LightTable.HC:609
                                             try tick(t)
-                                            try f717_Init(t)
+                                            try f722_Init(t)
                                             ln = 610 // LightTable.HC:610
                                             l8_mode = 0
                                             ln = 611 // LightTable.HC:611
                                             try tick(t)
-                                            try f719_LTMenuSet(t, l8_mode)
+                                            try f724_LTMenuSet(t, l8_mode)
                                         case 114:
                                             ln = 614 // LightTable.HC:614
                                             try tick(t)
-                                            try f711_RandomBurst(t)
+                                            try f716_RandomBurst(t)
                                         case 101:
                                             ln = 617 // LightTable.HC:617
                                             try st1(g_full_speed, 1)
@@ -1549,13 +1549,13 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
                                             try st1(g_show_normals, b2i((ld1u(g_show_normals) == 0)))
                                             ln = 624 // LightTable.HC:624
                                             try tick(t)
-                                            try f719_LTMenuSet(t, l8_mode)
+                                            try f724_LTMenuSet(t, l8_mode)
                                         case 48...53:
                                             ln = 627 // LightTable.HC:627
                                             l8_mode = try (ld8((fp &+ 32)) &- 48)
                                             ln = 628 // LightTable.HC:628
                                             try tick(t)
-                                            try f719_LTMenuSet(t, l8_mode)
+                                            try f724_LTMenuSet(t, l8_mode)
                                         case 27, 28:
                                             ln = 632 // LightTable.HC:632
                                             break skip_2
@@ -1601,10 +1601,10 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
             }
             ln = 645 // LightTable.HC:645
             try tick(t)
-            try f718_CleanUp(t)
+            try f723_CleanUp(t)
             ln = 646 // LightTable.HC:646
             try tick(t)
-            try P.f509_MenuPop(t)
+            try P.f514_MenuPop(t)
             t.msp = msp0
             t.depth -= 1
             return
@@ -1612,13 +1612,13 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/LightTable.HC#0 (LightTable.HC:649)
-    @discardableResult public final func f721_init_C__Demo_Graphics_LightTable_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f726_init_C__Demo_Graphics_LightTable_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 649 // LightTable.HC:649
             try tick(t)
-            try f720_LightTable(t)
+            try f725_LightTable(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/LightTable.HC#0", ln) }
@@ -1627,31 +1627,31 @@ public final class N_Demo_Graphics_LightTable: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_eval0(t)
-        case 704: return try f704_eval1(t)
-        case 705: return try f705_BmpPeek(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
-        case 706: try f706_BmpPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 707: try f707_BmpLine(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)), d((n > 4 ? st[base + 4] : 0))); return 0
-        case 708: return try f708_PhotonNew(t)
-        case 709: try f709_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 710: try f710_RayBurst(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 711: try f711_RandomBurst(t); return 0
-        case 712: try f712_FindNormal(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 713: try f713_Mirror(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 714: try f714_SnellsLaw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
-        case 715: try f715_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 716: try f716_MPAnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 717: try f717_Init(t); return 0
-        case 718: try f718_CleanUp(t); return 0
-        case 719: try f719_LTMenuSet(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 720: try f720_LightTable(t); return 0
-        case 721: return try f721_init_C__Demo_Graphics_LightTable_HC_0(t)
+        case 708: return try f708_eval0(t)
+        case 709: return try f709_eval1(t)
+        case 710: return try f710_BmpPeek(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0))
+        case 711: try f711_BmpPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 712: try f712_BmpLine(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), d((n > 2 ? st[base + 2] : 0)), d((n > 3 ? st[base + 3] : 0)), d((n > 4 ? st[base + 4] : 0))); return 0
+        case 713: return try f713_PhotonNew(t)
+        case 714: try f714_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 715: try f715_RayBurst(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 716: try f716_RandomBurst(t); return 0
+        case 717: try f717_FindNormal(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 718: try f718_Mirror(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 719: try f719_SnellsLaw(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0)); return 0
+        case 720: try f720_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 721: try f721_MPAnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 722: try f722_Init(t); return 0
+        case 723: try f723_CleanUp(t); return 0
+        case 724: try f724_LTMenuSet(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 725: try f725_LightTable(t); return 0
+        case 726: return try f726_init_C__Demo_Graphics_LightTable_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721]
-    private static let NAMES: [Int: String] = [703: "$eval0", 704: "$eval1", 705: "BmpPeek", 706: "BmpPlot", 707: "BmpLine", 708: "PhotonNew", 709: "DrawIt", 710: "RayBurst", 711: "RandomBurst", 712: "FindNormal", 713: "Mirror", 714: "SnellsLaw", 715: "AnimateTask", 716: "MPAnimateTask", 717: "Init", 718: "CleanUp", 719: "LTMenuSet", 720: "LightTable", 721: "$init:C:/Demo/Graphics/LightTable.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726]
+    private static let NAMES: [Int: String] = [708: "$eval0", 709: "$eval1", 710: "BmpPeek", 711: "BmpPlot", 712: "BmpLine", 713: "PhotonNew", 714: "DrawIt", 715: "RayBurst", 716: "RandomBurst", 717: "FindNormal", 718: "Mirror", 719: "SnellsLaw", 720: "AnimateTask", 721: "MPAnimateTask", 722: "Init", 723: "CleanUp", 724: "LTMenuSet", 725: "LightTable", 726: "$init:C:/Demo/Graphics/LightTable.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/LightTable.HC"]
     public override var files: [String] { N_Demo_Graphics_LightTable.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_LightTable.DEFINED.contains(index) }

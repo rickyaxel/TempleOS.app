@@ -14,7 +14,9 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
     @JvmField val n_DocCursor = rt.vm.natives.find("DocCursor")!!.index
     @JvmField val n_DocScroll = rt.vm.natives.find("DocScroll")!!.index
     @JvmField val n_GetChar = rt.vm.natives.find("GetChar")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_RandU16 = rt.vm.natives.find("RandU16")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
 
     /** binary literal, 3178 bytes */ @JvmField var b0: Long = 0L
     /** tree_y: I64[256] */ @JvmField var g_tree_y: Long = 0L
@@ -31,7 +33,7 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC DrawIt (ScrollBars.HC:16) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -60,23 +62,18 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
             ln = 30 // ScrollBars.HC:30
             st4((p1_dc + 228L), 4L)
             ln = 31 // ScrollBars.HC:31
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, (2L - l24_h), (2L - l32_v), 0L, (2045L - l24_h), (2L - l32_v), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, (2L - l24_h), (2L - l32_v), 0L, (2045L - l24_h), (2L - l32_v), 0L, 1L, 0L))
             ln = 32 // ScrollBars.HC:32
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, (2L - l24_h), (2045L - l32_v), 0L, (2045L - l24_h), (2045L - l32_v), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, (2L - l24_h), (2045L - l32_v), 0L, (2045L - l24_h), (2045L - l32_v), 0L, 1L, 0L))
             ln = 33 // ScrollBars.HC:33
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, (2L - l24_h), (2L - l32_v), 0L, (2L - l24_h), (2045L - l32_v), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, (2L - l24_h), (2L - l32_v), 0L, (2L - l24_h), (2045L - l32_v), 0L, 1L, 0L))
             ln = 34 // ScrollBars.HC:34
-            tick(t)
-            P.f406_GrLine3(t, p1_dc, (2045L - l24_h), (2L - l32_v), 0L, (2045L - l24_h), (2045L - l32_v), 0L, 1L, 0L)
+            nat(t, n_GrLine3, push(t, p1_dc, (2045L - l24_h), (2L - l32_v), 0L, (2045L - l24_h), (2045L - l32_v), 0L, 1L, 0L))
             ln = 37 // ScrollBars.HC:37
             l16_i = 0L
             loop0@ while ((l16_i < 256L)) {
                 ln = 38 // ScrollBars.HC:38
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, (ld8((g_tree_x + (l16_i * 8L))) - l24_h), (ld8((g_tree_y + (l16_i * 8L))) - l32_v), 0L, b0, 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, (ld8((g_tree_x + (l16_i * 8L))) - l24_h), (ld8((g_tree_y + (l16_i * 8L))) - l32_v), 0L, b0, 0L))
                 ln = 37 // ScrollBars.HC:37
                 l16_i = (l16_i + 1L)
                 tick(t)
@@ -87,7 +84,7 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC Init (ScrollBars.HC:41) */
-    fun f704_Init(t: Task) {
+    fun f709_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -111,7 +108,7 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC ScrollBars (ScrollBars.HC:50) */
-    fun f705_ScrollBars(t: Task) {
+    fun f710_ScrollBars(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -120,9 +117,9 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 53 // ScrollBars.HC:53
             tick(t)
-            f704_Init(t)
+            f709_Init(t)
             ln = 54 // ScrollBars.HC:54
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 55 // ScrollBars.HC:55
             tick(t)
             P.f221_WinBorder(t, 1L, 0L)
@@ -147,13 +144,13 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
     }
 
     /** HolyC $init:C:/Demo/Graphics/ScrollBars.HC#0 (ScrollBars.HC:69) */
-    fun f706_init_C__Demo_Graphics_ScrollBars_HC_0(t: Task): Long {
+    fun f711_init_C__Demo_Graphics_ScrollBars_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 69 // ScrollBars.HC:69
             tick(t)
-            f705_ScrollBars(t)
+            f710_ScrollBars(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/ScrollBars.HC#0", ln) }
@@ -162,10 +159,10 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_Init(t); 0L }
-            705 -> { f705_ScrollBars(t); 0L }
-            706 -> f706_init_C__Demo_Graphics_ScrollBars_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_Init(t); 0L }
+            710 -> { f710_ScrollBars(t); 0L }
+            711 -> f711_init_C__Demo_Graphics_ScrollBars_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -177,7 +174,7 @@ class N_Demo_Graphics_ScrollBars(rt: NativeRuntime, @JvmField val P: Prelude) : 
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706)
+        private val DEFINED = intArrayOf(708, 709, 710, 711)
         private val NAMES = arrayOf("DrawIt", "Init", "ScrollBars", "\$init:C:/Demo/Graphics/ScrollBars.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/ScrollBars.HC")
     }

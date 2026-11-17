@@ -10,6 +10,7 @@ import TempleCore
 public final class N_Demo_MultiCore_MPAdd: NativeModule {
     public let P: Prelude
     public let n_DocClear: Int
+    public let n_GrLine3: Int
     public let n_JobQue: Int
     public let n_JobResGet: Int
     public let n_Print: Int
@@ -26,6 +27,7 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
     public init(_ rt: NativeRuntime, _ P: Prelude) {
         self.P = P
         n_DocClear = rt.vm.natives.find("DocClear")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_JobQue = rt.vm.natives.find("JobQue")!.index
         n_JobResGet = rt.vm.natives.find("JobResGet")!.index
         n_Print = rt.vm.natives.find("Print")!.index
@@ -49,7 +51,7 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
     }
 
     /// HolyC MPSum (MPAdd.HC:3)
-    @discardableResult public final func f703_MPSum(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f708_MPSum(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -82,7 +84,7 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
     }
 
     /// HolyC Sum (MPAdd.HC:13)
-    @discardableResult public final func f704_Sum(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f709_Sum(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -100,7 +102,7 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
             l1048_i = 0
             loop0: while (l1048_i < p1_my_mp_cnt) {
                 ln = 19 // MPAdd.HC:19
-                let t0: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065855, p1_my_mp_cnt, l1048_i, 0, 0, 0, 0, 0))
+                let t0: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065860, p1_my_mp_cnt, l1048_i, 0, 0, 0, 0, 0))
                 try st8(((fp &+ 16) &+ (l1048_i &* 8)), t0)
                 ln = 18 // MPAdd.HC:18
                 l1048_i = (l1048_i &+ 1)
@@ -127,7 +129,7 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
     }
 
     /// HolyC Test (MPAdd.HC:27)
-    @discardableResult public final func f705_Test(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Double {
+    @discardableResult public final func f710_Test(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -147,7 +149,7 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
             loop0: while (l16_i < 100) {
                 ln = 33 // MPAdd.HC:33
                 try tick(t)
-                let t1: Int64 = try f704_Sum(t, p0_n, p1_my_mp_cnt)
+                let t1: Int64 = try f709_Sum(t, p0_n, p1_my_mp_cnt)
                 l24_val = (l24_val &+ t1)
                 ln = 32 // MPAdd.HC:32
                 l16_i = (l16_i &+ 1)
@@ -170,7 +172,7 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
     }
 
     /// HolyC MPAdd (MPAdd.HC:46)
-    public final func f706_MPAdd(_ t: HTask) throws {
+    public final func f711_MPAdd(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -197,12 +199,12 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
             loop0: while (l0_i < 5) {
                 ln = 55 // MPAdd.HC:55
                 try tick(t)
-                let t1: Double = try f705_Test(t, l8_n, 1)
+                let t1: Double = try f710_Test(t, l8_n, 1)
                 l32_t1 = t1
                 ln = 56 // MPAdd.HC:56
                 let t2: Int64 = try nat(t, n_mp_cnt, push0(t))
                 try tick(t)
-                let t3: Double = try f705_Test(t, l8_n, t2)
+                let t3: Double = try f710_Test(t, l8_n, t2)
                 l40_t2 = t3
                 ln = 57 // MPAdd.HC:57
                 try st8(((fp &+ 48) &+ (l0_i &* 8)), bits(((l40_t2 * 100.0) / l32_t1)))
@@ -227,13 +229,13 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
                 let t4: Double = d(try nat(t, n_ToF64, try push1(t, l0_i)))
                 try tick(t)
                 let vb1 = try push1(t, l0_i)
-                _ = try P.f369_GrPrint(t, l88_dc, 0, f2i(((Double(l24_v) - ((t4 / 200.0) * Double(l24_v))) - 8.0)), s3, vb1, 1)
+                _ = try P.f370_GrPrint(t, l88_dc, 0, f2i(((Double(l24_v) - ((t4 / 200.0) * Double(l24_v))) - 8.0)), s3, vb1, 1)
                 t.sp = vb1
                 ln = 67 // MPAdd.HC:67
                 let t5: Double = d(try nat(t, n_ToF64, try push1(t, l0_i)))
                 let t6: Double = d(try nat(t, n_ToF64, try push1(t, l0_i)))
                 try tick(t)
-                _ = try P.f396_GrLine(t, l88_dc, 0, f2i((Double(l24_v) - ((t6 / 200.0) * Double(l24_v)))), l16_h, f2i((Double(l24_v) - ((t5 / 200.0) * Double(l24_v)))), 1, 0)
+                _ = try P.f397_GrLine(t, l88_dc, 0, f2i((Double(l24_v) - ((t6 / 200.0) * Double(l24_v)))), l16_h, f2i((Double(l24_v) - ((t5 / 200.0) * Double(l24_v)))), 1, 0)
                 ln = 65 // MPAdd.HC:65
                 l0_i = try (l0_i &+ divs(200, 10))
                 try tick(t)
@@ -246,18 +248,17 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
                 ln = 72 // MPAdd.HC:72
                 try st4((l88_dc &+ 228), 2)
                 ln = 73 // MPAdd.HC:73
-                try tick(t)
-                _ = try P.f406_GrLine3(t, l88_dc, divs((l0_i &* l16_h), 4), f2i((Double(l24_v) - ((ldf(((fp &+ 48) &+ (l0_i &* 8))) / 200.0) * Double(l24_v)))), 0, divs(((l0_i &+ 1) &* l16_h), 4), f2i((Double(l24_v) - ((ldf(((fp &+ 48) &+ ((l0_i &+ 1) &* 8))) / 200.0) * Double(l24_v)))), 0, 1, 0)
+                _ = try nat(t, n_GrLine3, try push(t, l88_dc, divs((l0_i &* l16_h), 4), f2i((Double(l24_v) - ((ldf(((fp &+ 48) &+ (l0_i &* 8))) / 200.0) * Double(l24_v)))), 0, divs(((l0_i &+ 1) &* l16_h), 4), f2i((Double(l24_v) - ((ldf(((fp &+ 48) &+ ((l0_i &+ 1) &* 8))) / 200.0) * Double(l24_v)))), 0, 1, 0))
                 ln = 75 // MPAdd.HC:75
                 try st4((l88_dc &+ 160), 2)
                 ln = 76 // MPAdd.HC:76
                 try tick(t)
                 let vb2 = try push1(t, (l0_i &+ 3))
-                _ = try P.f369_GrPrint(t, l88_dc, divs((l0_i &* l16_h), 4), (l24_v &- 8), s4, vb2, 1)
+                _ = try P.f370_GrPrint(t, l88_dc, divs((l0_i &* l16_h), 4), (l24_v &- 8), s4, vb2, 1)
                 t.sp = vb2
                 ln = 77 // MPAdd.HC:77
                 try tick(t)
-                _ = try P.f396_GrLine(t, l88_dc, divs((l0_i &* l16_h), 4), 0, divs((l0_i &* l16_h), 4), l24_v, 1, 0)
+                _ = try P.f397_GrLine(t, l88_dc, divs((l0_i &* l16_h), 4), 0, divs((l0_i &* l16_h), 4), l24_v, 1, 0)
                 ln = 70 // MPAdd.HC:70
                 l0_i = (l0_i &+ 1)
                 try tick(t)
@@ -278,13 +279,13 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/MultiCore/MPAdd.HC#0 (MPAdd.HC:85)
-    @discardableResult public final func f707_init_C__Demo_MultiCore_MPAdd_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Demo_MultiCore_MPAdd_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 85 // MPAdd.HC:85
             try tick(t)
-            try f706_MPAdd(t)
+            try f711_MPAdd(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/MultiCore/MPAdd.HC#0", ln) }
@@ -293,17 +294,17 @@ public final class N_Demo_MultiCore_MPAdd: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_MPSum(t, (n > 0 ? st[base + 0] : 0))
-        case 704: return try f704_Sum(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 705: return bits(try f705_Test(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)))
-        case 706: try f706_MPAdd(t); return 0
-        case 707: return try f707_init_C__Demo_MultiCore_MPAdd_HC_0(t)
+        case 708: return try f708_MPSum(t, (n > 0 ? st[base + 0] : 0))
+        case 709: return try f709_Sum(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 710: return bits(try f710_Test(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)))
+        case 711: try f711_MPAdd(t); return 0
+        case 712: return try f712_init_C__Demo_MultiCore_MPAdd_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707]
-    private static let NAMES: [Int: String] = [703: "MPSum", 704: "Sum", 705: "Test", 706: "MPAdd", 707: "$init:C:/Demo/MultiCore/MPAdd.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712]
+    private static let NAMES: [Int: String] = [708: "MPSum", 709: "Sum", 710: "Test", 711: "MPAdd", 712: "$init:C:/Demo/MultiCore/MPAdd.HC#0"]
     private static let FILES: [String] = ["C:/Demo/MultiCore/MPAdd.HC"]
     public override var files: [String] { N_Demo_MultiCore_MPAdd.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_MultiCore_MPAdd.DEFINED.contains(index) }

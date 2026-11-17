@@ -36,7 +36,7 @@ public final class N_Home_Examples_Functions: NativeModule {
     }
 
     /// HolyC Area (Functions.HC:4)
-    @discardableResult public final func f703_Area(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f708_Area(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -52,7 +52,7 @@ public final class N_Home_Examples_Functions: NativeModule {
     }
 
     /// HolyC Fib (Functions.HC:9)
-    @discardableResult public final func f704_Fib(_ t: HTask, _ a0: Int64) throws -> Int64 {
+    @discardableResult public final func f709_Fib(_ t: HTask, _ a0: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -64,9 +64,9 @@ public final class N_Home_Examples_Functions: NativeModule {
             }
             ln = 12 // Functions.HC:12
             try tick(t)
-            let t0: Int64 = try f704_Fib(t, (p0_n &- 1))
+            let t0: Int64 = try f709_Fib(t, (p0_n &- 1))
             try tick(t)
-            let t1: Int64 = try f704_Fib(t, (p0_n &- 2))
+            let t1: Int64 = try f709_Fib(t, (p0_n &- 2))
             let rv1: Int64 = (t0 &+ t1)
             t.depth -= 1
             return rv1
@@ -76,7 +76,7 @@ public final class N_Home_Examples_Functions: NativeModule {
     }
 
     /// HolyC Banner (Functions.HC:15)
-    public final func f705_Banner(_ t: HTask) throws {
+    public final func f710_Banner(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -88,26 +88,26 @@ public final class N_Home_Examples_Functions: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Functions.HC#0 (Functions.HC:20)
-    @discardableResult public final func f706_init_C__Home_Examples_Functions_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Home_Examples_Functions_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 20 // Functions.HC:20
             try tick(t)
-            try f705_Banner(t)
+            try f710_Banner(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Home/Examples/Functions.HC#0", ln) }
     }
 
     /// HolyC $init:C:/Home/Examples/Functions.HC#1 (Functions.HC:21)
-    @discardableResult public final func f707_init_C__Home_Examples_Functions_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f712_init_C__Home_Examples_Functions_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 21 // Functions.HC:21
             try tick(t)
-            let t0: Int64 = try f703_Area(t, 10, 4)
+            let t0: Int64 = try f708_Area(t, 10, 4)
             _ = try nat(t, n_Print, try push2(t, s1, t0))
             t.depth -= 1
             return 0
@@ -117,13 +117,13 @@ public final class N_Home_Examples_Functions: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Functions.HC#2 (Functions.HC:22)
-    @discardableResult public final func f708_init_C__Home_Examples_Functions_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f713_init_C__Home_Examples_Functions_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 22 // Functions.HC:22
             try tick(t)
-            let t0: Int64 = try f703_Area(t, 3, 4)
+            let t0: Int64 = try f708_Area(t, 3, 4)
             _ = try nat(t, n_Print, try push2(t, s2, t0))
             t.depth -= 1
             return 0
@@ -133,13 +133,13 @@ public final class N_Home_Examples_Functions: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Examples/Functions.HC#3 (Functions.HC:23)
-    @discardableResult public final func f709_init_C__Home_Examples_Functions_HC_3(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f714_init_C__Home_Examples_Functions_HC_3(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 23 // Functions.HC:23
             try tick(t)
-            let t0: Int64 = try f704_Fib(t, 20)
+            let t0: Int64 = try f709_Fib(t, 20)
             _ = try nat(t, n_Print, try push2(t, s3, t0))
             t.depth -= 1
             return 0
@@ -151,19 +151,19 @@ public final class N_Home_Examples_Functions: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_Area(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 704: return try f704_Fib(t, (n > 0 ? st[base + 0] : 0))
-        case 705: try f705_Banner(t); return 0
-        case 706: return try f706_init_C__Home_Examples_Functions_HC_0(t)
-        case 707: return try f707_init_C__Home_Examples_Functions_HC_1(t)
-        case 708: return try f708_init_C__Home_Examples_Functions_HC_2(t)
-        case 709: return try f709_init_C__Home_Examples_Functions_HC_3(t)
+        case 708: return try f708_Area(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 709: return try f709_Fib(t, (n > 0 ? st[base + 0] : 0))
+        case 710: try f710_Banner(t); return 0
+        case 711: return try f711_init_C__Home_Examples_Functions_HC_0(t)
+        case 712: return try f712_init_C__Home_Examples_Functions_HC_1(t)
+        case 713: return try f713_init_C__Home_Examples_Functions_HC_2(t)
+        case 714: return try f714_init_C__Home_Examples_Functions_HC_3(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709]
-    private static let NAMES: [Int: String] = [703: "Area", 704: "Fib", 705: "Banner", 706: "$init:C:/Home/Examples/Functions.HC#0", 707: "$init:C:/Home/Examples/Functions.HC#1", 708: "$init:C:/Home/Examples/Functions.HC#2", 709: "$init:C:/Home/Examples/Functions.HC#3"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714]
+    private static let NAMES: [Int: String] = [708: "Area", 709: "Fib", 710: "Banner", 711: "$init:C:/Home/Examples/Functions.HC#0", 712: "$init:C:/Home/Examples/Functions.HC#1", 713: "$init:C:/Home/Examples/Functions.HC#2", 714: "$init:C:/Home/Examples/Functions.HC#3"]
     private static let FILES: [String] = ["C:/Home/Examples/Functions.HC"]
     public override var files: [String] { N_Home_Examples_Functions.FILES }
     public override func defines(_ index: Int) -> Bool { N_Home_Examples_Functions.DEFINED.contains(index) }

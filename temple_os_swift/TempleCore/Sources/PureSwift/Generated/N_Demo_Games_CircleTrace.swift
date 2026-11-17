@@ -85,7 +85,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CircleTrace.HC#0 (CircleTrace.HC:5)
-    @discardableResult public final func f703_init_C__Demo_Games_CircleTrace_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Games_CircleTrace_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -99,7 +99,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CircleTrace.HC#1 (CircleTrace.HC:6)
-    @discardableResult public final func f704_init_C__Demo_Games_CircleTrace_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Games_CircleTrace_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -113,7 +113,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     }
 
     /// HolyC $init:C:/Home/Registry.HC#0 (Registry.HC:1)
-    @discardableResult public final func f705_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f710_init_C__Home_Registry_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -123,21 +123,21 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     }
 
     /// HolyC SongTask (CircleTrace.HC:11)
-    public final func f706_SongTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f711_SongTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
             var p0_arg: Int64 = a0
             ln = 13 // CircleTrace.HC:13
-            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065631)
+            try st8((ld8(P.g_Fs) &+ 1072), 9223090561878065636)
             ln = 14 // CircleTrace.HC:14
             try tick(t)
-            try P.f495_MusicSettingsRst(t)
+            try P.f500_MusicSettingsRst(t)
             ln = 15 // CircleTrace.HC:15
             loop0: while (1 != 0) {
                 ln = 16 // CircleTrace.HC:16
                 try tick(t)
-                try P.f494_Play(t, s2, 0)
+                try P.f499_Play(t, s2, 0)
                 try tick(t)
             }
             t.depth -= 1
@@ -146,7 +146,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     }
 
     /// HolyC DrawIt (CircleTrace.HC:19)
-    public final func f707_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f712_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -155,7 +155,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
             ln = 21 // CircleTrace.HC:21
             try tick(t)
             let vb0 = try push4(t, bits(ldf(g_avg_error)), bits(ldf(g_elapsed_time)), bits(ldf(g_score)), bits(ldf(g_best_score)))
-            _ = try P.f369_GrPrint(t, p1_dc, 0, 0, s3, vb0, 4)
+            _ = try P.f370_GrPrint(t, p1_dc, 0, 0, s3, vb0, 4)
             t.sp = vb0
             t.depth -= 1
             return
@@ -163,7 +163,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     }
 
     /// HolyC CTPlot (CircleTrace.HC:28)
-    @discardableResult public final func f708_CTPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
+    @discardableResult public final func f713_CTPlot(_ t: HTask, _ a0: Int64, _ a1: Int64, _ a2: Int64, _ a3: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -195,7 +195,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     }
 
     /// HolyC CircleTrace (CircleTrace.HC:36)
-    public final func f709_CircleTrace(_ t: HTask) throws {
+    public final func f714_CircleTrace(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -217,7 +217,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
             _ = try P.f227_SettingsPush(t, 0, 0)
             ln = 43 // CircleTrace.HC:43
             let t2: Int64 = try (ld8(P.g_Fs) &+ 1080)
-            let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065858, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
+            let t1: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065863, 0, s4, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t2, t1)
             ln = 44 // CircleTrace.HC:44
             _ = try nat(t, n_AutoComplete, try push1(t, 0))
@@ -238,7 +238,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
             ln = 53 // CircleTrace.HC:53
             try st4((ld8(P.g_Fs) &+ 12), 5436158)
             ln = 54 // CircleTrace.HC:54
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065859)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065864)
             ln = 56 // CircleTrace.HC:56
             try tick(t)
             try P.f286_DCFill(t, 0, 255)
@@ -246,7 +246,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
             try st4((l64_dc &+ 160), 511)
             ln = 58 // CircleTrace.HC:58
             try tick(t)
-            _ = try P.f397_GrCircle(t, l64_dc, ld8(g_cx), ld8(g_cy), 100, 1, 0.0, (2.0 * d(4614256656552045848)))
+            _ = try P.f398_GrCircle(t, l64_dc, ld8(g_cx), ld8(g_cy), 100, 1, 0.0, (2.0 * d(4614256656552045848)))
             ln = 59 // CircleTrace.HC:59
             loop0: while true {
                 ln = 60 // CircleTrace.HC:60
@@ -266,7 +266,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
                         try st4((l64_dc &+ 160), 511)
                         ln = 68 // CircleTrace.HC:68
                         try tick(t)
-                        _ = try P.f397_GrCircle(t, l64_dc, ld8(g_cx), ld8(g_cy), 100, 1, 0.0, (2.0 * d(4614256656552045848)))
+                        _ = try P.f398_GrCircle(t, l64_dc, ld8(g_cx), ld8(g_cy), 100, 1, 0.0, (2.0 * d(4614256656552045848)))
                         ln = 69 // CircleTrace.HC:69
                         try st4((l64_dc &+ 160), 507)
                         ln = 70 // CircleTrace.HC:70
@@ -301,7 +301,7 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
                                         let t10: Double = d(try nat(t, n_Sqrt, try push1(t, bits((t8 + t9)))))
                                         l56_total_distance = (l56_total_distance + t10)
                                         ln = 83 // CircleTrace.HC:83
-                                        _ = try nat(t, n_Line, try push(t, l64_dc, l24_x1, l32_y1, 0, ld8((fp &+ 8)), ld8((fp &+ 16)), 0, 9223090561878065860, 1, 0))
+                                        _ = try nat(t, n_Line, try push(t, l64_dc, l24_x1, l32_y1, 0, ld8((fp &+ 8)), ld8((fp &+ 16)), 0, 9223090561878065865, 1, 0))
                                         ln = 84 // CircleTrace.HC:84
                                         l24_x1 = try ld8((fp &+ 8))
                                         l32_y1 = try ld8((fp &+ 16))
@@ -398,13 +398,13 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Games/CircleTrace.HC#2 (CircleTrace.HC:9)
-    @discardableResult public final func f710_init_C__Demo_Games_CircleTrace_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Demo_Games_CircleTrace_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 128 // CircleTrace.HC:128
             try tick(t)
-            try f709_CircleTrace(t)
+            try f714_CircleTrace(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Games/CircleTrace.HC#2", ln) }
@@ -413,20 +413,20 @@ public final class N_Demo_Games_CircleTrace: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Games_CircleTrace_HC_0(t)
-        case 704: return try f704_init_C__Demo_Games_CircleTrace_HC_1(t)
-        case 705: return try f705_init_C__Home_Registry_HC_0(t)
-        case 706: try f706_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 707: try f707_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 708: return try f708_CTPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
-        case 709: try f709_CircleTrace(t); return 0
-        case 710: return try f710_init_C__Demo_Games_CircleTrace_HC_2(t)
+        case 708: return try f708_init_C__Demo_Games_CircleTrace_HC_0(t)
+        case 709: return try f709_init_C__Demo_Games_CircleTrace_HC_1(t)
+        case 710: return try f710_init_C__Home_Registry_HC_0(t)
+        case 711: try f711_SongTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 712: try f712_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 713: return try f713_CTPlot(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0))
+        case 714: try f714_CircleTrace(t); return 0
+        case 715: return try f715_init_C__Demo_Games_CircleTrace_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Games/CircleTrace.HC#0", 704: "$init:C:/Demo/Games/CircleTrace.HC#1", 705: "$init:C:/Home/Registry.HC#0", 706: "SongTask", 707: "DrawIt", 708: "CTPlot", 709: "CircleTrace", 710: "$init:C:/Demo/Games/CircleTrace.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Games/CircleTrace.HC#0", 709: "$init:C:/Demo/Games/CircleTrace.HC#1", 710: "$init:C:/Home/Registry.HC#0", 711: "SongTask", 712: "DrawIt", 713: "CTPlot", 714: "CircleTrace", 715: "$init:C:/Demo/Games/CircleTrace.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Games/CircleTrace.HC"]
     public override var files: [String] { N_Demo_Games_CircleTrace.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Games_CircleTrace.DEFINED.contains(index) }

@@ -36,7 +36,7 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC $init:C:/Demo/Graphics/CharAnimation.HC#0 (CharAnimation.HC:1) */
-    fun f703_init_C__Demo_Graphics_CharAnimation_HC_0(t: Task): Long {
+    fun f708_init_C__Demo_Graphics_CharAnimation_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -48,7 +48,7 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC $init:C:/Demo/Graphics/CharAnimation.HC#1 (CharAnimation.HC:6) */
-    fun f704_init_C__Demo_Graphics_CharAnimation_HC_1(t: Task): Long {
+    fun f709_init_C__Demo_Graphics_CharAnimation_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -58,7 +58,7 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC AnimateEndCB (CharAnimation.HC:10) */
-    fun f705_AnimateEndCB(t: Task) {
+    fun f710_AnimateEndCB(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -72,7 +72,7 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC AnimateTask (CharAnimation.HC:16) */
-    fun f706_AnimateTask(t: Task, a0: Long) {
+    fun f711_AnimateTask(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -83,7 +83,7 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
             val t0: Long = nat(t, n_MAlloc, push2(t, 2048L, 0L))
             l16_font = t0
             ln = 20 // CharAnimation.HC:20
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065857L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065862L)
             ln = 21 // CharAnimation.HC:21
             nat(t, n_MemCpy, push3(t, l16_font, ld8((P.g_text + 40L)), 2048L))
             ln = 22 // CharAnimation.HC:22
@@ -104,12 +104,12 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC $init:C:/Demo/Graphics/CharAnimation.HC#2 (CharAnimation.HC:29) */
-    fun f707_init_C__Demo_Graphics_CharAnimation_HC_2(t: Task): Long {
+    fun f712_init_C__Demo_Graphics_CharAnimation_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 29 // CharAnimation.HC:29
-            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065858L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
+            val t0: Long = nat(t, n_Spawn, push(t, 9223090561878065863L, 0L, s0, -1L, ld8(P.g_Fs), 0L, 0L))
             t.depth--
             return t0
             t.depth--
@@ -118,7 +118,7 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
     }
 
     /** HolyC $init:C:/Demo/Graphics/CharAnimation.HC#3 (CharAnimation.HC:30) */
-    fun f708_init_C__Demo_Graphics_CharAnimation_HC_3(t: Task): Long {
+    fun f713_init_C__Demo_Graphics_CharAnimation_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -132,12 +132,12 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Demo_Graphics_CharAnimation_HC_0(t)
-            704 -> f704_init_C__Demo_Graphics_CharAnimation_HC_1(t)
-            705 -> { f705_AnimateEndCB(t); 0L }
-            706 -> { f706_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            707 -> f707_init_C__Demo_Graphics_CharAnimation_HC_2(t)
-            708 -> f708_init_C__Demo_Graphics_CharAnimation_HC_3(t)
+            708 -> f708_init_C__Demo_Graphics_CharAnimation_HC_0(t)
+            709 -> f709_init_C__Demo_Graphics_CharAnimation_HC_1(t)
+            710 -> { f710_AnimateEndCB(t); 0L }
+            711 -> { f711_AnimateTask(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            712 -> f712_init_C__Demo_Graphics_CharAnimation_HC_2(t)
+            713 -> f713_init_C__Demo_Graphics_CharAnimation_HC_3(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -149,7 +149,7 @@ class N_Demo_Graphics_CharAnimation(rt: NativeRuntime, @JvmField val P: Prelude)
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713)
         private val NAMES = arrayOf("\$init:C:/Demo/Graphics/CharAnimation.HC#0", "\$init:C:/Demo/Graphics/CharAnimation.HC#1", "AnimateEndCB", "AnimateTask", "\$init:C:/Demo/Graphics/CharAnimation.HC#2", "\$init:C:/Demo/Graphics/CharAnimation.HC#3")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/CharAnimation.HC")
     }

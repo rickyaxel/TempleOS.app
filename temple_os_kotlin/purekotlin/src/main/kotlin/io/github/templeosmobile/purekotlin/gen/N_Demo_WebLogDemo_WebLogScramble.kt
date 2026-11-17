@@ -47,7 +47,7 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC InitKey (WebLogScramble.HC:3) */
-    fun f703_InitKey(t: Task) {
+    fun f708_InitKey(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -86,7 +86,7 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC LogScrambleFile (WebLogScramble.HC:14) */
-    fun f704_LogScrambleFile(t: Task, a0: Long) {
+    fun f709_LogScrambleFile(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -100,7 +100,7 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
             var l8_doc: Long = 0L
             ln = 16 // WebLogScramble.HC:16
             tick(t)
-            val t0: Long = P.f617_DocRead(t, p0_name, 9L)
+            val t0: Long = P.f622_DocRead(t, p0_name, 9L)
             l8_doc = t0
             ln = 17 // WebLogScramble.HC:17
             l16_doc_e = ld8(l8_doc)
@@ -152,10 +152,10 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
             }
             ln = 43 // WebLogScramble.HC:43
             tick(t)
-            P.f618_DocWrite(t, l8_doc, 0L)
+            P.f623_DocWrite(t, l8_doc, 0L)
             ln = 44 // WebLogScramble.HC:44
             tick(t)
-            P.f605_DocDel(t, l8_doc)
+            P.f610_DocDel(t, l8_doc)
             t.msp = msp0
             t.depth--
             return
@@ -163,7 +163,7 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC WebLogScramble (WebLogScramble.HC:46) */
-    fun f705_WebLogScramble(t: Task, a0: Long) {
+    fun f710_WebLogScramble(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -177,12 +177,12 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
             l16_tmpde1 = l8_tmpde
             ln = 50 // WebLogScramble.HC:50
             tick(t)
-            f703_InitKey(t)
+            f708_InitKey(t)
             ln = 51 // WebLogScramble.HC:51
             loop0@ while ((l8_tmpde != 0L)) {
                 ln = 52 // WebLogScramble.HC:52
                 tick(t)
-                f704_LogScrambleFile(t, ld8((l8_tmpde + 24L)))
+                f709_LogScrambleFile(t, ld8((l8_tmpde + 24L)))
                 ln = 53 // WebLogScramble.HC:53
                 l8_tmpde = ld8(l8_tmpde)
                 tick(t)
@@ -195,7 +195,7 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC LogScrambleDemo (WebLogScramble.HC:58) */
-    fun f706_LogScrambleDemo(t: Task) {
+    fun f711_LogScrambleDemo(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -215,7 +215,7 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
             if ((t1 != 0L)) {
                 ln = 66 // WebLogScramble.HC:66
                 tick(t)
-                f705_WebLogScramble(t, s6)
+                f710_WebLogScramble(t, s6)
             }
             t.depth--
             return
@@ -223,13 +223,13 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
     }
 
     /** HolyC $init:C:/Demo/WebLogDemo/WebLogScramble.HC#0 (WebLogScramble.HC:69) */
-    fun f707_init_C__Demo_WebLogDemo_WebLogScramble_HC_0(t: Task): Long {
+    fun f712_init_C__Demo_WebLogDemo_WebLogScramble_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 69 // WebLogScramble.HC:69
             tick(t)
-            f706_LogScrambleDemo(t)
+            f711_LogScrambleDemo(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/WebLogDemo/WebLogScramble.HC#0", ln) }
@@ -238,11 +238,11 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_InitKey(t); 0L }
-            704 -> { f704_LogScrambleFile(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            705 -> { f705_WebLogScramble(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            706 -> { f706_LogScrambleDemo(t); 0L }
-            707 -> f707_init_C__Demo_WebLogDemo_WebLogScramble_HC_0(t)
+            708 -> { f708_InitKey(t); 0L }
+            709 -> { f709_LogScrambleFile(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            710 -> { f710_WebLogScramble(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            711 -> { f711_LogScrambleDemo(t); 0L }
+            712 -> f712_init_C__Demo_WebLogDemo_WebLogScramble_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -254,7 +254,7 @@ class N_Demo_WebLogDemo_WebLogScramble(rt: NativeRuntime, @JvmField val P: Prelu
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712)
         private val NAMES = arrayOf("InitKey", "LogScrambleFile", "WebLogScramble", "LogScrambleDemo", "\$init:C:/Demo/WebLogDemo/WebLogScramble.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/WebLogDemo/WebLogScramble.HC")
     }

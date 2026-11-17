@@ -26,7 +26,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Adam/Gr/GrMath.HC#0 (GrMath.HC:3) */
-    fun f703_init_C__Adam_Gr_GrMath_HC_0(t: Task): Long {
+    fun f708_init_C__Adam_Gr_GrMath_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -36,7 +36,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Line (GrMath.HC:8) */
-    fun f704_Line(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Long, a9: Long): Long {
+    fun f709_Line(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Long, a9: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -243,7 +243,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4MulMat4x4Equ (GrMath.HC:80) */
-    fun f705_Mat4x4MulMat4x4Equ(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f710_Mat4x4MulMat4x4Equ(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -292,7 +292,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4MulMat4x4New (GrMath.HC:96) */
-    fun f706_Mat4x4MulMat4x4New(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f711_Mat4x4MulMat4x4New(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -302,7 +302,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             ln = 99 // GrMath.HC:99
             val t0: Long = nat(t, n_MAlloc, push2(t, 128L, p2_mem_task))
             tick(t)
-            val t1: Long = f705_Mat4x4MulMat4x4Equ(t, t0, p0_m1, p1_m2)
+            val t1: Long = f710_Mat4x4MulMat4x4Equ(t, t0, p0_m1, p1_m2)
             t.depth--
             return t1
             t.depth--
@@ -311,7 +311,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4Equ (GrMath.HC:102) */
-    fun f707_Mat4x4Equ(t: Task, a0: Long, a1: Long): Long {
+    fun f712_Mat4x4Equ(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -328,7 +328,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4New (GrMath.HC:108) */
-    fun f708_Mat4x4New(t: Task, a0: Long, a1: Long): Long {
+    fun f713_Mat4x4New(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -337,7 +337,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             ln = 110 // GrMath.HC:110
             val t0: Long = nat(t, n_MAlloc, push2(t, 128L, p1_mem_task))
             tick(t)
-            val t1: Long = f707_Mat4x4Equ(t, t0, p0_src)
+            val t1: Long = f712_Mat4x4Equ(t, t0, p0_src)
             t.depth--
             return t1
             t.depth--
@@ -346,7 +346,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4RotX (GrMath.HC:113) */
-    fun f709_Mat4x4RotX(t: Task, a0: Long, a1: Double): Long {
+    fun f714_Mat4x4RotX(t: Task, a0: Long, a1: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -377,9 +377,9 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             st8(((fp + 32) + 120L), 4294967296L)
             ln = 124 // GrMath.HC:124
             tick(t)
-            val t2: Long = f705_Mat4x4MulMat4x4Equ(t, (fp + 160), (fp + 32), p0_m)
+            val t2: Long = f710_Mat4x4MulMat4x4Equ(t, (fp + 160), (fp + 32), p0_m)
             tick(t)
-            val t3: Long = f707_Mat4x4Equ(t, p0_m, t2)
+            val t3: Long = f712_Mat4x4Equ(t, p0_m, t2)
             t.msp = msp0
             t.depth--
             return t3
@@ -390,7 +390,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4RotY (GrMath.HC:127) */
-    fun f710_Mat4x4RotY(t: Task, a0: Long, a1: Double): Long {
+    fun f715_Mat4x4RotY(t: Task, a0: Long, a1: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -421,9 +421,9 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             st8(((fp + 32) + 120L), 4294967296L)
             ln = 138 // GrMath.HC:138
             tick(t)
-            val t2: Long = f705_Mat4x4MulMat4x4Equ(t, (fp + 160), (fp + 32), p0_m)
+            val t2: Long = f710_Mat4x4MulMat4x4Equ(t, (fp + 160), (fp + 32), p0_m)
             tick(t)
-            val t3: Long = f707_Mat4x4Equ(t, p0_m, t2)
+            val t3: Long = f712_Mat4x4Equ(t, p0_m, t2)
             t.msp = msp0
             t.depth--
             return t3
@@ -434,7 +434,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4RotZ (GrMath.HC:141) */
-    fun f711_Mat4x4RotZ(t: Task, a0: Long, a1: Double): Long {
+    fun f716_Mat4x4RotZ(t: Task, a0: Long, a1: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -465,9 +465,9 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             st8(((fp + 32) + 120L), 4294967296L)
             ln = 152 // GrMath.HC:152
             tick(t)
-            val t2: Long = f705_Mat4x4MulMat4x4Equ(t, (fp + 160), (fp + 32), p0_m)
+            val t2: Long = f710_Mat4x4MulMat4x4Equ(t, (fp + 160), (fp + 32), p0_m)
             tick(t)
-            val t3: Long = f707_Mat4x4Equ(t, p0_m, t2)
+            val t3: Long = f712_Mat4x4Equ(t, p0_m, t2)
             t.msp = msp0
             t.depth--
             return t3
@@ -478,7 +478,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4Scale (GrMath.HC:155) */
-    fun f712_Mat4x4Scale(t: Task, a0: Long, a1: Double): Long {
+    fun f717_Mat4x4Scale(t: Task, a0: Long, a1: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -504,7 +504,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DCThickScale (GrMath.HC:163) */
-    fun f713_DCThickScale(t: Task, a0: Long) {
+    fun f718_DCThickScale(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -533,7 +533,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4TranslationEqu (GrMath.HC:176) */
-    fun f714_Mat4x4TranslationEqu(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f719_Mat4x4TranslationEqu(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -558,7 +558,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Mat4x4TranslationAdd (GrMath.HC:185) */
-    fun f715_Mat4x4TranslationAdd(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f720_Mat4x4TranslationAdd(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -586,7 +586,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DCSymmetrySet (GrMath.HC:194) */
-    fun f716_DCSymmetrySet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f721_DCSymmetrySet(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -648,7 +648,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DCSymmetry3Set (GrMath.HC:216) */
-    fun f717_DCSymmetry3Set(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Long, a9: Long): Long {
+    fun f722_DCSymmetry3Set(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Long, a9: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -758,7 +758,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC DCReflect (GrMath.HC:252) */
-    fun f718_DCReflect(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f723_DCReflect(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -840,7 +840,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Circle (GrMath.HC:282) */
-    fun f719_Circle(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Double, a8: Double): Long {
+    fun f724_Circle(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Double, a8: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -948,7 +948,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Ellipse (GrMath.HC:321) */
-    fun f720_Ellipse(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Double, a8: Long, a9: Double, a10: Double): Long {
+    fun f725_Ellipse(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Double, a8: Long, a9: Double, a10: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1112,7 +1112,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC RegPoly (GrMath.HC:388) */
-    fun f721_RegPoly(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Double, a9: Long, a10: Double, a11: Double): Long {
+    fun f726_RegPoly(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long, a8: Double, a9: Long, a10: Double, a11: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -1228,7 +1228,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
                 l184_yy2 = (p2_cy + (l120_y shr 8))
                 ln = 440 // GrMath.HC:440
                 tick(t)
-                val t6: Long = f704_Line(t, p0_aux_data, l160_xx1, l168_yy1, p3_cz, l176_xx2, l184_yy2, p3_cz, p7_fp_plot, p9_step, 0L)
+                val t6: Long = f709_Line(t, p0_aux_data, l160_xx1, l168_yy1, p3_cz, l176_xx2, l184_yy2, p3_cz, p7_fp_plot, p9_step, 0L)
                 if ((t6 == 0L)) {
                     ln = 441 // GrMath.HC:441
                     t.depth--
@@ -1250,7 +1250,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC D3I32Dist (GrMath.HC:448) */
-    fun f722_D3I32Dist(t: Task, a0: Long, a1: Long): Double {
+    fun f727_D3I32Dist(t: Task, a0: Long, a1: Long): Double {
         var ln = 0
         try {
             enter(t)
@@ -1272,7 +1272,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC D3I32DistSqr (GrMath.HC:453) */
-    fun f723_D3I32DistSqr(t: Task, a0: Long, a1: Long): Long {
+    fun f728_D3I32DistSqr(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1293,7 +1293,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC D3I32Norm (GrMath.HC:458) */
-    fun f724_D3I32Norm(t: Task, a0: Long): Double {
+    fun f729_D3I32Norm(t: Task, a0: Long): Double {
         var ln = 0
         try {
             enter(t)
@@ -1314,7 +1314,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC D3I32NormSqr (GrMath.HC:463) */
-    fun f725_D3I32NormSqr(t: Task, a0: Long): Long {
+    fun f730_D3I32NormSqr(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1334,7 +1334,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Bezier2 (GrMath.HC:469) */
-    fun f726_Bezier2(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f731_Bezier2(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1382,13 +1382,13 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             l176_z2 = (ld4s(((p1_ctrl + 24L) + 8L)).toDouble() - l128_z0)
             ln = 476 // GrMath.HC:476
             tick(t)
-            val t0: Double = f722_D3I32Dist(t, p1_ctrl, (p1_ctrl + 12L))
+            val t0: Double = f727_D3I32Dist(t, p1_ctrl, (p1_ctrl + 12L))
             ln = 477 // GrMath.HC:477
             tick(t)
-            val t1: Double = f722_D3I32Dist(t, (p1_ctrl + 12L), (p1_ctrl + 24L))
+            val t1: Double = f727_D3I32Dist(t, (p1_ctrl + 12L), (p1_ctrl + 24L))
             ln = 478 // GrMath.HC:478
             tick(t)
-            val t2: Double = f722_D3I32Dist(t, (p1_ctrl + 24L), p1_ctrl)
+            val t2: Double = f727_D3I32Dist(t, (p1_ctrl + 24L), p1_ctrl)
             l192_d = ((t0 + t1) + t2)
             ln = 479 // GrMath.HC:479
             l200_s = (0.5 / l192_d)
@@ -1493,7 +1493,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC Bezier3 (GrMath.HC:514) */
-    fun f727_Bezier3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f732_Bezier3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1550,16 +1550,16 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             l200_z3 = (ld4s(((p1_ctrl + 36L) + 8L)).toDouble() - l128_z0)
             ln = 522 // GrMath.HC:522
             tick(t)
-            val t0: Double = f722_D3I32Dist(t, p1_ctrl, (p1_ctrl + 12L))
+            val t0: Double = f727_D3I32Dist(t, p1_ctrl, (p1_ctrl + 12L))
             ln = 523 // GrMath.HC:523
             tick(t)
-            val t1: Double = f722_D3I32Dist(t, (p1_ctrl + 12L), (p1_ctrl + 24L))
+            val t1: Double = f727_D3I32Dist(t, (p1_ctrl + 12L), (p1_ctrl + 24L))
             ln = 524 // GrMath.HC:524
             tick(t)
-            val t2: Double = f722_D3I32Dist(t, (p1_ctrl + 24L), (p1_ctrl + 36L))
+            val t2: Double = f727_D3I32Dist(t, (p1_ctrl + 24L), (p1_ctrl + 36L))
             ln = 525 // GrMath.HC:525
             tick(t)
-            val t3: Double = f722_D3I32Dist(t, (p1_ctrl + 36L), p1_ctrl)
+            val t3: Double = f727_D3I32Dist(t, (p1_ctrl + 36L), p1_ctrl)
             l216_d = (((t0 + t1) + t2) + t3)
             ln = 526 // GrMath.HC:526
             l224_s = (0.5 / l216_d)
@@ -1668,7 +1668,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC BSpline2 (GrMath.HC:563) */
-    fun f728_BSpline2(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f733_BSpline2(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1805,7 +1805,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             loop8@ while ((l40_i < ((p2_cnt * 2L) - 2L))) {
                 ln = 622 // GrMath.HC:622
                 tick(t)
-                val t2: Long = f726_Bezier2(t, p0_aux_data, (l56_c + (l40_i * 12L)), p3_fp_plot, l64_first)
+                val t2: Long = f731_Bezier2(t, p0_aux_data, (l56_c + (l40_i * 12L)), p3_fp_plot, l64_first)
                 if ((t2 == 0L)) {
                     ln = 623 // GrMath.HC:623
                     t.depth--
@@ -1828,7 +1828,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC BSpline3 (GrMath.HC:630) */
-    fun f729_BSpline3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
+    fun f734_BSpline3(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2010,7 +2010,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
             loop8@ while ((l40_i < ((p2_cnt * 3L) - 3L))) {
                 ln = 712 // GrMath.HC:712
                 tick(t)
-                val t2: Long = f727_Bezier3(t, p0_aux_data, (l80_c + (l40_i * 12L)), p3_fp_plot, l88_first)
+                val t2: Long = f732_Bezier3(t, p0_aux_data, (l80_c + (l40_i * 12L)), p3_fp_plot, l88_first)
                 if ((t2 == 0L)) {
                     ln = 713 // GrMath.HC:713
                     t.depth--
@@ -2033,7 +2033,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC ClipLine (GrMath.HC:725) */
-    fun f730_ClipLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long): Long {
+    fun f735_ClipLine(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long, a5: Long, a6: Long, a7: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2237,7 +2237,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     }
 
     /** HolyC $init:C:/Adam/Gr/GrMath.HC#1 (GrMath.HC:1) */
-    fun f731_init_C__Adam_Gr_GrMath_HC_1(t: Task): Long {
+    fun f736_init_C__Adam_Gr_GrMath_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2249,35 +2249,35 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Adam_Gr_GrMath_HC_0(t)
-            704 -> f704_Line(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), (if (n > 8) st[base + 8] else 0L), (if (n > 9) st[base + 9] else 0L))
-            705 -> f705_Mat4x4MulMat4x4Equ(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            706 -> f706_Mat4x4MulMat4x4New(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            707 -> f707_Mat4x4Equ(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            708 -> f708_Mat4x4New(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            709 -> f709_Mat4x4RotX(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
-            710 -> f710_Mat4x4RotY(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
-            711 -> f711_Mat4x4RotZ(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
-            712 -> f712_Mat4x4Scale(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
-            713 -> { f713_DCThickScale(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            714 -> f714_Mat4x4TranslationEqu(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            715 -> f715_Mat4x4TranslationAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            716 -> f716_DCSymmetrySet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            717 -> f717_DCSymmetry3Set(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), (if (n > 8) st[base + 8] else 0L), (if (n > 9) st[base + 9] else 0L))
-            718 -> { f718_DCReflect(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            719 -> f719_Circle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), f((if (n > 8) st[base + 8] else 0L)))
-            720 -> f720_Ellipse(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), (if (n > 8) st[base + 8] else 0L), f((if (n > 9) st[base + 9] else 0L)), f((if (n > 10) st[base + 10] else 0L)))
-            721 -> f721_RegPoly(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), f((if (n > 8) st[base + 8] else 0L)), (if (n > 9) st[base + 9] else 0L), f((if (n > 10) st[base + 10] else 0L)), f((if (n > 11) st[base + 11] else 0L)))
-            722 -> bits(f722_D3I32Dist(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)))
-            723 -> f723_D3I32DistSqr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            724 -> bits(f724_D3I32Norm(t, (if (n > 0) st[base + 0] else 0L)))
-            725 -> f725_D3I32NormSqr(t, (if (n > 0) st[base + 0] else 0L))
-            726 -> f726_Bezier2(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            727 -> f727_Bezier3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            728 -> f728_BSpline2(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            729 -> f729_BSpline3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
-            730 -> f730_ClipLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L))
-            731 -> f731_init_C__Adam_Gr_GrMath_HC_1(t)
+            708 -> f708_init_C__Adam_Gr_GrMath_HC_0(t)
+            709 -> f709_Line(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), (if (n > 8) st[base + 8] else 0L), (if (n > 9) st[base + 9] else 0L))
+            710 -> f710_Mat4x4MulMat4x4Equ(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            711 -> f711_Mat4x4MulMat4x4New(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            712 -> f712_Mat4x4Equ(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            713 -> f713_Mat4x4New(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            714 -> f714_Mat4x4RotX(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
+            715 -> f715_Mat4x4RotY(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
+            716 -> f716_Mat4x4RotZ(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
+            717 -> f717_Mat4x4Scale(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
+            718 -> { f718_DCThickScale(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            719 -> f719_Mat4x4TranslationEqu(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            720 -> f720_Mat4x4TranslationAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            721 -> f721_DCSymmetrySet(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            722 -> f722_DCSymmetry3Set(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), (if (n > 8) st[base + 8] else 0L), (if (n > 9) st[base + 9] else 0L))
+            723 -> { f723_DCReflect(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            724 -> f724_Circle(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), f((if (n > 8) st[base + 8] else 0L)))
+            725 -> f725_Ellipse(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), f((if (n > 7) st[base + 7] else 0L)), (if (n > 8) st[base + 8] else 0L), f((if (n > 9) st[base + 9] else 0L)), f((if (n > 10) st[base + 10] else 0L)))
+            726 -> f726_RegPoly(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L), f((if (n > 8) st[base + 8] else 0L)), (if (n > 9) st[base + 9] else 0L), f((if (n > 10) st[base + 10] else 0L)), f((if (n > 11) st[base + 11] else 0L)))
+            727 -> bits(f727_D3I32Dist(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)))
+            728 -> f728_D3I32DistSqr(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            729 -> bits(f729_D3I32Norm(t, (if (n > 0) st[base + 0] else 0L)))
+            730 -> f730_D3I32NormSqr(t, (if (n > 0) st[base + 0] else 0L))
+            731 -> f731_Bezier2(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            732 -> f732_Bezier3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            733 -> f733_BSpline2(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            734 -> f734_BSpline3(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L))
+            735 -> f735_ClipLine(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L), (if (n > 5) st[base + 5] else 0L), (if (n > 6) st[base + 6] else 0L), (if (n > 7) st[base + 7] else 0L))
+            736 -> f736_init_C__Adam_Gr_GrMath_HC_1(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -2289,7 +2289,7 @@ class N_Adam_Gr_GrMath(rt: NativeRuntime, @JvmField val P: Prelude) : NativeModu
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736)
         private val NAMES = arrayOf("\$init:C:/Adam/Gr/GrMath.HC#0", "Line", "Mat4x4MulMat4x4Equ", "Mat4x4MulMat4x4New", "Mat4x4Equ", "Mat4x4New", "Mat4x4RotX", "Mat4x4RotY", "Mat4x4RotZ", "Mat4x4Scale", "DCThickScale", "Mat4x4TranslationEqu", "Mat4x4TranslationAdd", "DCSymmetrySet", "DCSymmetry3Set", "DCReflect", "Circle", "Ellipse", "RegPoly", "D3I32Dist", "D3I32DistSqr", "D3I32Norm", "D3I32NormSqr", "Bezier2", "Bezier3", "BSpline2", "BSpline3", "ClipLine", "\$init:C:/Adam/Gr/GrMath.HC#1")
         private val FILES = arrayOf<String>("C:/Adam/Gr/GrMath.HC")
     }

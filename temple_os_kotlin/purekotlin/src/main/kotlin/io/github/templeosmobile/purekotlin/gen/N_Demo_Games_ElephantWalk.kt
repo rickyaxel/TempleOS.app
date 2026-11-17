@@ -27,7 +27,7 @@ class N_Demo_Games_ElephantWalk(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC ElephantWalk (ElephantWalk.HC:34) */
-    fun f703_ElephantWalk(t: Task) {
+    fun f708_ElephantWalk(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -61,7 +61,7 @@ class N_Demo_Games_ElephantWalk(rt: NativeRuntime, @JvmField val P: Prelude) : N
                     if ((l8_x > l24_x_last)) {
                         ln = 46 // ElephantWalk.HC:46
                         tick(t)
-                        P.f314_DCSymmetrySet(t, 0L, l8_x, l16_y, l8_x, (l16_y - 1L))
+                        P.f315_DCSymmetrySet(t, 0L, l8_x, l16_y, l8_x, (l16_y - 1L))
                         ln = 47 // ElephantWalk.HC:47
                         val t0: Long = (ld8((P.g_gr + 24L)) + 28L)
                         st4(t0, (ld4s(t0) or 1536L))
@@ -76,7 +76,7 @@ class N_Demo_Games_ElephantWalk(rt: NativeRuntime, @JvmField val P: Prelude) : N
                     val t2: Double = f(nat(t, n_tS, push0(t)))
                     val t3: Double = f(nat(t, n_Sin, push1(t, bits((8.0 * t2)))))
                     tick(t)
-                    P.f445_Sprite3ZB(t, ld8((P.g_gr + 24L)), l8_x, l16_y, 0L, b0, (t3 / 4.0))
+                    P.f450_Sprite3ZB(t, ld8((P.g_gr + 24L)), l8_x, l16_y, 0L, b0, (t3 / 4.0))
                     ln = 52 // ElephantWalk.HC:52
                     val t4: Long = nat(t, n_GetKey, push3(t, fp, 0L, 0L))
                     switch3@ do {
@@ -148,13 +148,13 @@ class N_Demo_Games_ElephantWalk(rt: NativeRuntime, @JvmField val P: Prelude) : N
     }
 
     /** HolyC $init:C:/Demo/Games/ElephantWalk.HC#0 (ElephantWalk.HC:86) */
-    fun f704_init_C__Demo_Games_ElephantWalk_HC_0(t: Task): Long {
+    fun f709_init_C__Demo_Games_ElephantWalk_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 86 // ElephantWalk.HC:86
             tick(t)
-            f703_ElephantWalk(t)
+            f708_ElephantWalk(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Games/ElephantWalk.HC#0", ln) }
@@ -163,8 +163,8 @@ class N_Demo_Games_ElephantWalk(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_ElephantWalk(t); 0L }
-            704 -> f704_init_C__Demo_Games_ElephantWalk_HC_0(t)
+            708 -> { f708_ElephantWalk(t); 0L }
+            709 -> f709_init_C__Demo_Games_ElephantWalk_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -176,7 +176,7 @@ class N_Demo_Games_ElephantWalk(rt: NativeRuntime, @JvmField val P: Prelude) : N
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704)
+        private val DEFINED = intArrayOf(708, 709)
         private val NAMES = arrayOf("ElephantWalk", "\$init:C:/Demo/Games/ElephantWalk.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Games/ElephantWalk.HC")
     }

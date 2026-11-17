@@ -11,17 +11,17 @@ s 131e0 2564
 s 131e0 2564
 s 17fd58 54656d706f
 s 17fd70 537461636174746f
-fn 703 DrawTempoCtrl (U0;*$CDC,*$CCtrl;-)
-fn 704 UpdateDerivedTempoCtrl (U0;*$CCtrl;-)
-fn 705 LeftClickTempo (U0;*$CCtrl,I64,I64,Bool;-)
-fn 706 TempoNew (*$CCtrl;;-)
-fn 707 TempoDel (U0;*$CCtrl;-)
-fn 708 $init:C:/Apps/Psalmody/PsalmodyCtrls.HC#0 (I64;;-)
-sym f DrawTempoCtrl 703 (U0;*$CDC,*$CCtrl;-)
-sym f LeftClickTempo 705 (U0;*$CCtrl,I64,I64,Bool;-)
-sym f TempoDel 707 (U0;*$CCtrl;-)
-sym f TempoNew 706 (*$CCtrl;;-)
-sym f UpdateDerivedTempoCtrl 704 (U0;*$CCtrl;-)
+fn 708 DrawTempoCtrl (U0;*$CDC,*$CCtrl;-)
+fn 709 UpdateDerivedTempoCtrl (U0;*$CCtrl;-)
+fn 710 LeftClickTempo (U0;*$CCtrl,I64,I64,Bool;-)
+fn 711 TempoNew (*$CCtrl;;-)
+fn 712 TempoDel (U0;*$CCtrl;-)
+fn 713 $init:C:/Apps/Psalmody/PsalmodyCtrls.HC#0 (I64;;-)
+sym f DrawTempoCtrl 708 (U0;*$CDC,*$CCtrl;-)
+sym f LeftClickTempo 710 (U0;*$CCtrl,I64,I64,Bool;-)
+sym f TempoDel 712 (U0;*$CCtrl;-)
+sym f TempoNew 711 (*$CCtrl;;-)
+sym f UpdateDerivedTempoCtrl 709 (U0;*$CCtrl;-)
 sym g tempo_state 17fd38 $TempoState
-init 708
+init 713
 unit C:/Apps/Psalmody/PsalmodyCtrls.HC#1

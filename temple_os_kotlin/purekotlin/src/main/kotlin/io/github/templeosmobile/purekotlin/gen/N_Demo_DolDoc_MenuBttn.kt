@@ -37,7 +37,7 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC PopUpFreq (MenuBttn.HC:5) */
-    fun f703_PopUpFreq(t: Task): Long {
+    fun f708_PopUpFreq(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -45,7 +45,7 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             var l8_doc: Long = 0L
             ln = 8 // MenuBttn.HC:8
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l8_doc = t0
             ln = 9 // MenuBttn.HC:9
             tick(t)
@@ -54,7 +54,7 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             t.sp = vb0
             ln = 14 // MenuBttn.HC:14
             tick(t)
-            val t1: Long = P.f621_PopUpMenu(t, l8_doc, 0L)
+            val t1: Long = P.f626_PopUpMenu(t, l8_doc, 0L)
             l0_i = t1
             ln = 15 // MenuBttn.HC:15
             if ((l0_i < 0L)) {
@@ -62,7 +62,7 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             }
             ln = 16 // MenuBttn.HC:16
             tick(t)
-            P.f605_DocDel(t, l8_doc)
+            P.f610_DocDel(t, l8_doc)
             ln = 17 // MenuBttn.HC:17
             t.depth--
             return l0_i
@@ -72,7 +72,7 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC MenuBttn (MenuBttn.HC:25) */
-    fun f704_MenuBttn(t: Task) {
+    fun f709_MenuBttn(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -88,11 +88,11 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             l24_freq = 100L
             ln = 29 // MenuBttn.HC:29
             tick(t)
-            val t0: Long = P.f602_DocPut(t, 0L)
+            val t0: Long = P.f607_DocPut(t, 0L)
             l32_old_flags = ld8((t0 + 88L))
             ln = 31 // MenuBttn.HC:31
             tick(t)
-            val t1: Long = P.f602_DocPut(t, 0L)
+            val t1: Long = P.f607_DocPut(t, 0L)
             val t2: Long = (t1 + 88L)
             st8(t2, (ld8(t2) or 512L))
             ln = 32 // MenuBttn.HC:32
@@ -115,9 +115,9 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                 nat(t, n_Print, push1(t, s5))
                 ln = 45 // MenuBttn.HC:45
                 tick(t)
-                val t3: Long = P.f602_DocPut(t, 0L)
+                val t3: Long = P.f607_DocPut(t, 0L)
                 tick(t)
-                val t4: Long = P.f622_DocMenu(t, t3, 0L)
+                val t4: Long = P.f627_DocMenu(t, t3, 0L)
                 l8_i = t4
                 ln = 46 // MenuBttn.HC:46
                 nat(t, n_DocBottom, push0(t))
@@ -143,7 +143,7 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
                         1L -> {
                             ln = 59 // MenuBttn.HC:59
                             tick(t)
-                            val t7: Long = f703_PopUpFreq(t)
+                            val t7: Long = f708_PopUpFreq(t)
                             l24_freq = t7
                             ln = 60 // MenuBttn.HC:60
                             if ((l16_j != 0L)) {
@@ -165,10 +165,10 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
             }
             ln = 69 // MenuBttn.HC:69
             tick(t)
-            val t9: Long = P.f602_DocPut(t, 0L)
+            val t9: Long = P.f607_DocPut(t, 0L)
             val t11: Long = ((ld8((t9 + 88L)) and -513L) or (l32_old_flags and 512L))
             tick(t)
-            val t10: Long = P.f602_DocPut(t, 0L)
+            val t10: Long = P.f607_DocPut(t, 0L)
             st8((t10 + 88L), t11)
             ln = 71 // MenuBttn.HC:71
             nat(t, n_DocClear, push1(t, 0L))
@@ -180,13 +180,13 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     }
 
     /** HolyC $init:C:/Demo/DolDoc/MenuBttn.HC#0 (MenuBttn.HC:75) */
-    fun f705_init_C__Demo_DolDoc_MenuBttn_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_DolDoc_MenuBttn_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 75 // MenuBttn.HC:75
             tick(t)
-            f704_MenuBttn(t)
+            f709_MenuBttn(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/DolDoc/MenuBttn.HC#0", ln) }
@@ -195,9 +195,9 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_PopUpFreq(t)
-            704 -> { f704_MenuBttn(t); 0L }
-            705 -> f705_init_C__Demo_DolDoc_MenuBttn_HC_0(t)
+            708 -> f708_PopUpFreq(t)
+            709 -> { f709_MenuBttn(t); 0L }
+            710 -> f710_init_C__Demo_DolDoc_MenuBttn_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -209,7 +209,7 @@ class N_Demo_DolDoc_MenuBttn(rt: NativeRuntime, @JvmField val P: Prelude) : Nati
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("PopUpFreq", "MenuBttn", "\$init:C:/Demo/DolDoc/MenuBttn.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/DolDoc/MenuBttn.HC")
     }

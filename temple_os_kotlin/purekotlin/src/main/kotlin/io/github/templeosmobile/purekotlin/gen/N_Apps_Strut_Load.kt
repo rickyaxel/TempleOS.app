@@ -24,7 +24,9 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     @JvmField val n_Exp = rt.vm.natives.find("Exp")!!.index
     @JvmField val n_Free = rt.vm.natives.find("Free")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_Ln = rt.vm.natives.find("Ln")!!.index
+    @JvmField val n_Mat4x4Scale = rt.vm.natives.find("Mat4x4Scale")!!.index
     @JvmField val n_Print = rt.vm.natives.find("Print")!!.index
     @JvmField val n_Rand = rt.vm.natives.find("Rand")!!.index
     @JvmField val n_RandU32 = rt.vm.natives.find("RandU32")!!.index
@@ -33,6 +35,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     @JvmField val n_Sin = rt.vm.natives.find("Sin")!!.index
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_Spawn = rt.vm.natives.find("Spawn")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_tS = rt.vm.natives.find("tS")!!.index
     @JvmField val n_throw = rt.vm.natives.find("throw")!!.index
@@ -100,7 +103,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Apps/Strut/Load.HC#0 (Load.HC:3) */
-    fun f703_init_C__Apps_Strut_Load_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_Strut_Load_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -114,7 +117,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Apps/Strut/Load.HC#1 (Load.HC:29) */
-    fun f704_init_C__Apps_Strut_Load_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_Strut_Load_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -124,7 +127,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Apps/Strut/Load.HC#2 (Load.HC:30) */
-    fun f705_init_C__Apps_Strut_Load_HC_2(t: Task): Long {
+    fun f710_init_C__Apps_Strut_Load_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -138,7 +141,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Apps/Strut/Load.HC#3 (Load.HC:40) */
-    fun f706_init_C__Apps_Strut_Load_HC_3(t: Task): Long {
+    fun f711_init_C__Apps_Strut_Load_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -148,7 +151,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC $init:C:/Apps/Strut/Load.HC#4 (Load.HC:41) */
-    fun f707_init_C__Apps_Strut_Load_HC_4(t: Task): Long {
+    fun f712_init_C__Apps_Strut_Load_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -162,7 +165,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC S2W (Strut.HC:49) */
-    fun f708_S2W(t: Task, a0: Double, a1: Double, a2: Long, a3: Long) {
+    fun f713_S2W(t: Task, a0: Double, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -184,7 +187,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC W2S (Strut.HC:57) */
-    fun f709_W2S(t: Task, a0: Double, a1: Double, a2: Long, a3: Long) {
+    fun f714_W2S(t: Task, a0: Double, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -201,7 +204,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Zoom (Strut.HC:64) */
-    fun f710_Zoom(t: Task, a0: Double) {
+    fun f715_Zoom(t: Task, a0: Double) {
         var ln = 0
         try {
             enter(t)
@@ -223,14 +226,14 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             loop0@ while ((l40_i < 20L)) {
                 ln = 1048646 // Strut.HC:70
                 tick(t)
-                f708_S2W(t, l48_x.toDouble(), l56_y.toDouble(), (fp + 24), (fp + 32))
+                f713_S2W(t, l48_x.toDouble(), l56_y.toDouble(), (fp + 24), (fp + 32))
                 ln = 1048647 // Strut.HC:71
                 tick(t)
                 val t2: Double = P.f116_Clamp(t, (ldf(g_zoom) * p0_d), 0.02, 50.0)
                 st8(g_zoom, bits(t2))
                 ln = 1048648 // Strut.HC:72
                 tick(t)
-                f709_W2S(t, ldf((fp + 24)), ldf((fp + 32)), (fp + 8), (fp + 16))
+                f714_W2S(t, ldf((fp + 24)), ldf((fp + 32)), (fp + 8), (fp + 16))
                 ln = 1048649 // Strut.HC:73
                 st8((ld8(g_task) + 256L), f2i(((ld8(P.g_ms).toDouble() - ldf((fp + 8))) - ld8((ld8(g_task) + 208L)).toDouble())))
                 ln = 1048650 // Strut.HC:74
@@ -248,7 +251,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC DrawIt (Strut.HC:79) */
-    fun f711_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f716_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -276,8 +279,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             val t0: Long = (p1_dc + 28L)
             st4(t0, (ld4s(t0) or 256L))
             ln = 1048669 // Strut.HC:93
-            tick(t)
-            P.f308_Mat4x4Scale(t, ld8((p1_dc + 200L)), ldf(g_zoom))
+            nat(t, n_Mat4x4Scale, push2(t, ld8((p1_dc + 200L)), bits(ldf(g_zoom))))
             ln = 1048671 // Strut.HC:95
             val t1: Long = ld8(g_main_mode_bttn)
             switch0@ do {
@@ -298,7 +300,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                         loop1@ while ((l16_i < 8192L)) {
                             ln = 1048680 // Strut.HC:104
                             tick(t)
-                            P.f393_GrPlot3(t, p1_dc, ld8((g_stars_x + (l16_i * 8L))), ld8((g_stars_y + (l16_i * 8L))), 0L)
+                            P.f394_GrPlot3(t, p1_dc, ld8((g_stars_x + (l16_i * 8L))), ld8((g_stars_y + (l16_i * 8L))), 0L)
                             ln = 1048679 // Strut.HC:103
                             l16_i = (l16_i + 1L)
                             tick(t)
@@ -316,10 +318,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                     st4((p1_dc + 160L), 3L)
                     ln = 1048687 // Strut.HC:111
                     tick(t)
-                    f708_S2W(t, 88.0, 56.0, (fp + 40), (fp + 48))
+                    f713_S2W(t, 88.0, 56.0, (fp + 40), (fp + 48))
                     ln = 1048688 // Strut.HC:112
                     tick(t)
-                    P.f407_GrPutChar3(t, p1_dc, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, ld8(g_next_action_key))
+                    P.f409_GrPutChar3(t, p1_dc, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, ld8(g_next_action_key))
                 } else {
                     ln = 1048689 // Strut.HC:113
                     if ((ld8(g_edit_mode_bttn) == 3L)) {
@@ -327,10 +329,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                         st4((p1_dc + 160L), 14L)
                         ln = 1048691 // Strut.HC:115
                         tick(t)
-                        f708_S2W(t, 88.0, 56.0, (fp + 40), (fp + 48))
+                        f713_S2W(t, 88.0, 56.0, (fp + 40), (fp + 48))
                         ln = 1048692 // Strut.HC:116
                         tick(t)
-                        P.f407_GrPutChar3(t, p1_dc, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, ld8(g_next_action_key))
+                        P.f409_GrPutChar3(t, p1_dc, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, ld8(g_next_action_key))
                     }
                 }
             }
@@ -343,16 +345,14 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                     ln = 1048699 // Strut.HC:123
                     st4((p1_dc + 160L), 11L)
                     ln = 1048700 // Strut.HC:124
-                    tick(t)
-                    P.f406_GrLine3(t, p1_dc, f2i(ldf((ld8((l80_tmps + 16L)) + 56L))), f2i(ldf((ld8((l80_tmps + 16L)) + 64L))), 0L, f2i(ldf((ld8((l80_tmps + 24L)) + 56L))), f2i(ldf((ld8((l80_tmps + 24L)) + 64L))), 0L, 1L, 0L)
+                    nat(t, n_GrLine3, push(t, p1_dc, f2i(ldf((ld8((l80_tmps + 16L)) + 56L))), f2i(ldf((ld8((l80_tmps + 16L)) + 64L))), 0L, f2i(ldf((ld8((l80_tmps + 24L)) + 56L))), f2i(ldf((ld8((l80_tmps + 24L)) + 64L))), 0L, 1L, 0L))
                 } else {
                     ln = 1048702 // Strut.HC:126
                     if ((ld8((l80_tmps + 80L)) == 2L)) {
                         ln = 1048703 // Strut.HC:127
                         st4((p1_dc + 160L), 3L)
                         ln = 1048704 // Strut.HC:128
-                        tick(t)
-                        P.f406_GrLine3(t, p1_dc, f2i(ldf((ld8((l80_tmps + 16L)) + 56L))), f2i(ldf((ld8((l80_tmps + 16L)) + 64L))), 0L, f2i(ldf((ld8((l80_tmps + 24L)) + 56L))), f2i(ldf((ld8((l80_tmps + 24L)) + 64L))), 0L, 1L, 0L)
+                        nat(t, n_GrLine3, push(t, p1_dc, f2i(ldf((ld8((l80_tmps + 16L)) + 56L))), f2i(ldf((ld8((l80_tmps + 16L)) + 64L))), 0L, f2i(ldf((ld8((l80_tmps + 24L)) + 56L))), f2i(ldf((ld8((l80_tmps + 24L)) + 64L))), 0L, 1L, 0L))
                     }
                 }
                 ln = 1048707 // Strut.HC:131
@@ -366,8 +366,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             ln = 1048712 // Strut.HC:136
             loop5@ while ((l72_tmpm != (ld8(g_ode) + 40L))) {
                 ln = 1048713 // Strut.HC:137
-                tick(t)
-                P.f440_Sprite3(t, p1_dc, f2i(ldf((l72_tmpm + 56L))), f2i(ldf((l72_tmpm + 64L))), 0L, ld8((l72_tmpm + 104L)), 0L)
+                nat(t, n_Sprite3, push(t, p1_dc, f2i(ldf((l72_tmpm + 56L))), f2i(ldf((l72_tmpm + 64L))), 0L, ld8((l72_tmpm + 104L)), 0L))
                 ln = 1048714 // Strut.HC:138
                 l72_tmpm = ld8(l72_tmpm)
                 tick(t)
@@ -399,7 +398,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                         val t8: Double = ldf((fp + 40))
                         val t7: Double = f(nat(t, n_Cos, push1(t, bits(l24__))))
                         tick(t)
-                        P.f315_DCSymmetry3Set(t, p1_dc, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 256L, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, f2i((t8 - (256.0 * t7))), f2i((t6 - (256.0 * t5))), 0L)
+                        P.f316_DCSymmetry3Set(t, p1_dc, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 256L, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, f2i((t8 - (256.0 * t7))), f2i((t6 - (256.0 * t5))), 0L)
                         ln = 1048726 // Strut.HC:150
                         l16_i = 0L
                         loop9@ while ((l16_i < 8L)) {
@@ -433,8 +432,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                             val t16: Double = f(nat(t, n_Sin, push1(t, bits(l24__))))
                             val t19: Double = ldf((fp + 40))
                             val t18: Double = f(nat(t, n_Cos, push1(t, bits(l24__))))
-                            tick(t)
-                            P.f406_GrLine3(t, p1_dc, f2i((t19 - (3.0 * t18))), f2i((t17 - (3.0 * t16))), 0L, f2i(((t14 - (l32_d * t13)) + ((0.5 * l32_d) * t15))), f2i(((t11 - (l32_d * t10)) - ((0.5 * l32_d) * t12))), 0L, 1L, 0L)
+                            nat(t, n_GrLine3, push(t, p1_dc, f2i((t19 - (3.0 * t18))), f2i((t17 - (3.0 * t16))), 0L, f2i(((t14 - (l32_d * t13)) + ((0.5 * l32_d) * t15))), f2i(((t11 - (l32_d * t10)) - ((0.5 * l32_d) * t12))), 0L, 1L, 0L))
                             ln = 1048739 // Strut.HC:163
                             val t21: Double = ldf((fp + 48))
                             val t20: Double = f(nat(t, n_Sin, push1(t, bits(l24__))))
@@ -448,8 +446,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                             val t26: Double = f(nat(t, n_Sin, push1(t, bits(l24__))))
                             val t29: Double = ldf((fp + 40))
                             val t28: Double = f(nat(t, n_Cos, push1(t, bits(l24__))))
-                            tick(t)
-                            P.f406_GrLine3(t, p1_dc, f2i((t29 - ((2.0 * l32_d) * t28))), f2i((t27 - ((2.0 * l32_d) * t26))), 0L, f2i(((t24 - (l32_d * t23)) + ((0.5 * l32_d) * t25))), f2i(((t21 - (l32_d * t20)) - ((0.5 * l32_d) * t22))), 0L, 1L, 0L)
+                            nat(t, n_GrLine3, push(t, p1_dc, f2i((t29 - ((2.0 * l32_d) * t28))), f2i((t27 - ((2.0 * l32_d) * t26))), 0L, f2i(((t24 - (l32_d * t23)) + ((0.5 * l32_d) * t25))), f2i(((t21 - (l32_d * t20)) - ((0.5 * l32_d) * t22))), 0L, 1L, 0L))
                             ln = 1048726 // Strut.HC:150
                             l16_i = (l16_i + 1L)
                             tick(t)
@@ -460,14 +457,14 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                     }
                     ln = 1048743 // Strut.HC:167
                     tick(t)
-                    P.f445_Sprite3ZB(t, p1_dc, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, b0, l24__)
+                    P.f450_Sprite3ZB(t, p1_dc, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, b0, l24__)
                     ln = 1048744 // Strut.HC:168
                     if ((ldf(g_zoom) > 0.5)) {
                         ln = 1048745 // Strut.HC:169
                         st4((p1_dc + 160L), 14L)
                         ln = 1048746 // Strut.HC:170
                         tick(t)
-                        P.f407_GrPutChar3(t, p1_dc, f2i((((ldf((fp + 40)) * 7.0) + l56_x2) / 8.0)), f2i((((ldf((fp + 48)) * 7.0) + l64_y2) / 8.0)), 0L, ld8((l80_tmps + 88L)))
+                        P.f409_GrPutChar3(t, p1_dc, f2i((((ldf((fp + 40)) * 7.0) + l56_x2) / 8.0)), f2i((((ldf((fp + 48)) * 7.0) + l64_y2) / 8.0)), 0L, ld8((l80_tmps + 88L)))
                     }
                 } else {
                     ln = 1048748 // Strut.HC:172
@@ -478,7 +475,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                             st4((p1_dc + 160L), 3L)
                             ln = 1048751 // Strut.HC:175
                             tick(t)
-                            P.f407_GrPutChar3(t, p1_dc, f2i((((ldf((fp + 40)) * 7.0) + l56_x2) / 8.0)), f2i((((ldf((fp + 48)) * 7.0) + l64_y2) / 8.0)), 0L, ld8((l80_tmps + 88L)))
+                            P.f409_GrPutChar3(t, p1_dc, f2i((((ldf((fp + 40)) * 7.0) + l56_x2) / 8.0)), f2i((((ldf((fp + 48)) * 7.0) + l64_y2) / 8.0)), 0L, ld8((l80_tmps + 88L)))
                         }
                     }
                 }
@@ -493,7 +490,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC MyDerivative (Strut.HC:182) */
-    fun f712_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
+    fun f717_MyDerivative(t: Task, a0: Long, a1: Double, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -592,7 +589,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC PlaceMass (Strut.HC:224) */
-    fun f713_PlaceMass(t: Task, a0: Long, a1: Long): Long {
+    fun f718_PlaceMass(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -622,7 +619,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC PlaceSpring (Strut.HC:235) */
-    fun f714_PlaceSpring(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f719_PlaceSpring(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -670,7 +667,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC CenterMasses (Strut.HC:252) */
-    fun f715_CenterMasses(t: Task) {
+    fun f720_CenterMasses(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -704,7 +701,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC NullSprings (Strut.HC:267) */
-    fun f716_NullSprings(t: Task) {
+    fun f721_NullSprings(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -727,7 +724,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC BreakConnectors (Strut.HC:276) */
-    fun f717_BreakConnectors(t: Task) {
+    fun f722_BreakConnectors(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -763,7 +760,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Init (Strut.HC:290) */
-    fun f718_Init(t: Task) {
+    fun f723_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -799,10 +796,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             st8(g_zoom, bits(1.0))
             ln = 1048878 // Strut.HC:302
             tick(t)
-            val t3: Long = P.f453_ODENew(t, 0L, 1.0E-4, 1L)
+            val t3: Long = P.f458_ODENew(t, 0L, 1.0E-4, 1L)
             st8(g_ode, t3)
             ln = 1048879 // Strut.HC:303
-            st8((ld8(g_ode) + 304L), 9223090561878065864L)
+            st8((ld8(g_ode) + 304L), 9223090561878065869L)
             ln = 1048880 // Strut.HC:304
             st8((ld8(g_ode) + 96L), bits(5000.0))
             ln = 1048881 // Strut.HC:305
@@ -818,7 +815,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC CleanUp (Strut.HC:310) */
-    fun f719_CleanUp(t: Task) {
+    fun f724_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -835,7 +832,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 P.f156_QueDel(t, (ld8(g_ode) + 56L), 1L)
                 ln = 1048892 // Strut.HC:316
                 tick(t)
-                P.f455_ODEDel(t, ld8(g_ode))
+                P.f460_ODEDel(t, ld8(g_ode))
                 ln = 1048893 // Strut.HC:317
                 st8(g_ode, 0L)
             }
@@ -845,7 +842,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC PlayShip (Strut.HC:321) */
-    fun f720_PlayShip(t: Task) {
+    fun f725_PlayShip(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -857,10 +854,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             l16_last_noise = 0.0
             ln = 1048902 // Strut.HC:326
             tick(t)
-            P.f454_ODEPause(t, ld8(g_ode), 0L)
+            P.f459_ODEPause(t, ld8(g_ode), 0L)
             ln = 1048903 // Strut.HC:327
             tick(t)
-            P.f507_MenuPush(t, s5)
+            P.f512_MenuPush(t, s5)
             ln = 1048930 // Strut.HC:354
             nat(t, n_DocClear, push1(t, 0L))
             ln = 1048931 // Strut.HC:355
@@ -872,7 +869,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                     loop1@ while ((ld8(g_main_mode_bttn) == 1L)) {
                         ln = 1048933 // Strut.HC:357
                         tick(t)
-                        f717_BreakConnectors(t)
+                        f722_BreakConnectors(t)
                         ln = 1048934 // Strut.HC:358
                         val t0: Long = nat(t, n_ScanMsg, push4(t, fp, (fp + 8), 12L, 0L))
                         switch3@ do {
@@ -888,7 +885,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                                 if ((t2 > (l16_last_noise + 0.25))) {
                                                     ln = 1048939 // Strut.HC:363
                                                     tick(t)
-                                                    P.f499_Noise(t, 250L, 18.0, 46.0)
+                                                    P.f504_Noise(t, 250L, 18.0, 46.0)
                                                     ln = 1048940 // Strut.HC:364
                                                     val t3: Double = f(nat(t, n_tS, push0(t)))
                                                     l16_last_noise = t3
@@ -896,16 +893,16 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             }
                                             122L -> {
                                                 ln = 1048944 // Strut.HC:368
-                                                nat(t, n_Spawn, push(t, 9223090561878065862L, bits(2.0), 0L, -1L, 0L, 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065867L, bits(2.0), 0L, -1L, 0L, 0L, 0L))
                                             }
                                             90L -> {
                                                 ln = 1048947 // Strut.HC:371
-                                                nat(t, n_Spawn, push(t, 9223090561878065862L, bits(0.5), 0L, -1L, 0L, 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065867L, bits(0.5), 0L, -1L, 0L, 0L, 0L))
                                             }
                                             99L -> {
                                                 ln = 1048950 // Strut.HC:374
                                                 tick(t)
-                                                f715_CenterMasses(t)
+                                                f720_CenterMasses(t)
                                             }
                                             100L -> {
                                                 ln = 1048953 // Strut.HC:377
@@ -975,7 +972,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             }
             ln = 1048983 // Strut.HC:407
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 1048984 // Strut.HC:408
             if ((l24_okay == 0L)) {
                 ln = 1048985 // Strut.HC:409
@@ -988,7 +985,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC EditShip (Strut.HC:412) */
-    fun f721_EditShip(t: Task) {
+    fun f726_EditShip(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1005,14 +1002,14 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             val t0: Long = nat(t, n_Define, push1(t, s4))
             ln = 1048994 // Strut.HC:418
             tick(t)
-            val t1: Long = P.f528_CtrlBttnNew(t, 0L, 44L, 80L, -1L, 5L, t0, g_edit_mode_colors, g_edit_mode_bttn)
+            val t1: Long = P.f533_CtrlBttnNew(t, 0L, 44L, 80L, -1L, 5L, t0, g_edit_mode_colors, g_edit_mode_bttn)
             l56_bt_edit_mode = t1
             ln = 1048996 // Strut.HC:420
             tick(t)
-            P.f454_ODEPause(t, ld8(g_ode), 1L)
+            P.f459_ODEPause(t, ld8(g_ode), 1L)
             ln = 1048997 // Strut.HC:421
             tick(t)
-            P.f507_MenuPush(t, s6)
+            P.f512_MenuPush(t, s6)
             ln = 1049030 // Strut.HC:454
             nat(t, n_DocClear, push1(t, 0L))
             ln = 1049031 // Strut.HC:455
@@ -1034,10 +1031,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             0L -> {
                                                 ln = 1049039 // Strut.HC:463
                                                 tick(t)
-                                                f708_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
+                                                f713_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
                                                 ln = 1049040 // Strut.HC:464
                                                 tick(t)
-                                                val t4: Long = f713_PlaceMass(t, f2i(ldf((fp + 16))), f2i(ldf((fp + 24))))
+                                                val t4: Long = f718_PlaceMass(t, f2i(ldf((fp + 16))), f2i(ldf((fp + 24))))
                                                 l40_tmpm1 = t4
                                                 ln = 1049041 // Strut.HC:465
                                                 if ((ld8((ld8(g_ode) + 40L)) == l40_tmpm1)) {
@@ -1053,10 +1050,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             1L, 2L, 3L, 4L -> {
                                                 ln = 1049051 // Strut.HC:475
                                                 tick(t)
-                                                f708_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
+                                                f713_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
                                                 ln = 1049052 // Strut.HC:476
                                                 tick(t)
-                                                val t5: Long = P.f461_MassFind(t, ld8(g_ode), ldf((fp + 16)), ldf((fp + 24)), 0.0)
+                                                val t5: Long = P.f466_MassFind(t, ld8(g_ode), ldf((fp + 16)), ldf((fp + 24)), 0.0)
                                                 l40_tmpm1 = t5
                                                 ln = 1049053 // Strut.HC:477
                                                 l48_tmpm2 = 0L
@@ -1076,19 +1073,19 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             1L, 2L, 3L -> {
                                                 ln = 1049064 // Strut.HC:488
                                                 tick(t)
-                                                f708_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
+                                                f713_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
                                                 ln = 1049065 // Strut.HC:489
                                                 var r8: Boolean = (l40_tmpm1 != 0L)
                                                 if (r8) {
                                                     tick(t)
-                                                    val t7: Long = P.f461_MassFind(t, ld8(g_ode), ldf((fp + 16)), ldf((fp + 24)), 0.0)
+                                                    val t7: Long = P.f466_MassFind(t, ld8(g_ode), ldf((fp + 16)), ldf((fp + 24)), 0.0)
                                                     l48_tmpm2 = t7
                                                     r8 = (t7 != 0L)
                                                 }
                                                 if ((r8 && (l40_tmpm1 != l48_tmpm2))) {
                                                     ln = 1049066 // Strut.HC:490
                                                     tick(t)
-                                                    f714_PlaceSpring(t, l40_tmpm1, l48_tmpm2, ld8(g_edit_mode_bttn))
+                                                    f719_PlaceSpring(t, l40_tmpm1, l48_tmpm2, ld8(g_edit_mode_bttn))
                                                 }
                                                 ln = 1049067 // Strut.HC:491
                                                 l48_tmpm2 = 0L
@@ -1097,7 +1094,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             4L -> {
                                                 ln = 1049070 // Strut.HC:494
                                                 tick(t)
-                                                f708_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
+                                                f713_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
                                                 ln = 1049071 // Strut.HC:495
                                                 if ((l40_tmpm1 != 0L)) {
                                                     ln = 1049072 // Strut.HC:496
@@ -1108,7 +1105,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                                     st8((l40_tmpm1 + 72L), bits(0.0))
                                                     ln = 1049075 // Strut.HC:499
                                                     tick(t)
-                                                    f716_NullSprings(t)
+                                                    f721_NullSprings(t)
                                                 }
                                                 ln = 1049077 // Strut.HC:501
                                                 l48_tmpm2 = 0L
@@ -1127,7 +1124,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             4L -> {
                                                 ln = 1049084 // Strut.HC:508
                                                 tick(t)
-                                                f708_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
+                                                f713_S2W(t, ld8(P.g_ms).toDouble(), ld8((P.g_ms + 8L)).toDouble(), (fp + 16), (fp + 24))
                                                 ln = 1049085 // Strut.HC:509
                                                 if ((l40_tmpm1 != 0L)) {
                                                     ln = 1049086 // Strut.HC:510
@@ -1138,7 +1135,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                                     st8((l40_tmpm1 + 72L), bits(0.0))
                                                     ln = 1049089 // Strut.HC:513
                                                     tick(t)
-                                                    f716_NullSprings(t)
+                                                    f721_NullSprings(t)
                                                 }
                                             }
                                             else -> {
@@ -1166,10 +1163,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             10L -> {
                                                 ln = 1049103 // Strut.HC:527
                                                 tick(t)
-                                                f719_CleanUp(t)
+                                                f724_CleanUp(t)
                                                 ln = 1049104 // Strut.HC:528
                                                 tick(t)
-                                                f718_Init(t)
+                                                f723_Init(t)
                                             }
                                             in 48L..57L -> {
                                                 ln = 1049107 // Strut.HC:531
@@ -1178,12 +1175,12 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             99L -> {
                                                 ln = 1049110 // Strut.HC:534
                                                 tick(t)
-                                                f715_CenterMasses(t)
+                                                f720_CenterMasses(t)
                                             }
                                             100L -> {
                                                 ln = 1049113 // Strut.HC:537
                                                 tick(t)
-                                                P.f454_ODEPause(t, ld8(g_ode), 0L)
+                                                P.f459_ODEPause(t, ld8(g_ode), 0L)
                                                 ln = 1049114 // Strut.HC:538
                                                 st8((ld8(g_ode) + 80L), bits(0.002))
                                                 ln = 1049115 // Strut.HC:539
@@ -1211,11 +1208,11 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             }
                                             122L -> {
                                                 ln = 1049133 // Strut.HC:557
-                                                nat(t, n_Spawn, push(t, 9223090561878065862L, bits(2.0), 0L, -1L, 0L, 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065867L, bits(2.0), 0L, -1L, 0L, 0L, 0L))
                                             }
                                             90L -> {
                                                 ln = 1049136 // Strut.HC:560
-                                                nat(t, n_Spawn, push(t, 9223090561878065862L, bits(0.5), 0L, -1L, 0L, 0L, 0L))
+                                                nat(t, n_Spawn, push(t, 9223090561878065867L, bits(0.5), 0L, -1L, 0L, 0L, 0L))
                                             }
                                             32L -> {
                                                 ln = 1049139 // Strut.HC:563
@@ -1248,7 +1245,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                                             100L -> {
                                                 ln = 1049151 // Strut.HC:575
                                                 tick(t)
-                                                P.f454_ODEPause(t, ld8(g_ode), 1L)
+                                                P.f459_ODEPause(t, ld8(g_ode), 1L)
                                                 ln = 1049152 // Strut.HC:576
                                                 st8((ld8(g_ode) + 80L), bits(2.0E-6))
                                                 ln = 1049153 // Strut.HC:577
@@ -1282,10 +1279,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             }
             ln = 1049166 // Strut.HC:590
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 1049167 // Strut.HC:591
             tick(t)
-            P.f529_CtrlBttnDel(t, l56_bt_edit_mode)
+            P.f534_CtrlBttnDel(t, l56_bt_edit_mode)
             ln = 1049168 // Strut.HC:592
             if ((l32_okay == 0L)) {
                 ln = 1049169 // Strut.HC:593
@@ -1298,7 +1295,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     }
 
     /** HolyC Strut (Strut.HC:596) */
-    fun f722_Strut(t: Task) {
+    fun f727_Strut(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1330,15 +1327,15 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             val t1: Long = nat(t, n_Define, push1(t, s2))
             ln = 1049193 // Strut.HC:617
             tick(t)
-            val t2: Long = P.f528_CtrlBttnNew(t, 296L, 12L, 80L, -1L, 2L, t1, g_main_mode_colors, g_main_mode_bttn)
+            val t2: Long = P.f533_CtrlBttnNew(t, 296L, 12L, 80L, -1L, 2L, t1, g_main_mode_colors, g_main_mode_bttn)
             l0_bt_main_mode = t2
             ln = 1049196 // Strut.HC:620
             nat(t, n_DocClear, push1(t, 0L))
             ln = 1049197 // Strut.HC:621
             tick(t)
-            f718_Init(t)
+            f723_Init(t)
             ln = 1049198 // Strut.HC:622
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065863L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065868L)
             ln = 1049199 // Strut.HC:623
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -1347,10 +1344,10 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 loop0@ while ((1L != 0L)) {
                     ln = 1049201 // Strut.HC:625
                     tick(t)
-                    f721_EditShip(t)
+                    f726_EditShip(t)
                     ln = 1049202 // Strut.HC:626
                     tick(t)
-                    f720_PlayShip(t)
+                    f725_PlayShip(t)
                     tick(t)
                 }
                 t.hCount = h0c
@@ -1359,7 +1356,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
                 t.sp = h0sp; t.msp = h0msp; t.depth = h0d; t.hCount = h0c
                 ln = 1049205 // Strut.HC:629
                 tick(t)
-                f719_CleanUp(t)
+                f724_CleanUp(t)
                 ln = 1049206 // Strut.HC:630
                 st1((ld8(P.g_Fs) + 888L), 1L)
                 endCatch(t)
@@ -1369,14 +1366,14 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
             P.f228_SettingsPop(t, 0L, 0L)
             ln = 1049209 // Strut.HC:633
             tick(t)
-            P.f529_CtrlBttnDel(t, l0_bt_main_mode)
+            P.f534_CtrlBttnDel(t, l0_bt_main_mode)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "Strut", ln) }
     }
 
     /** HolyC $init:C:/Apps/Strut/Load.HC#5 (Load.HC:47) */
-    fun f723_init_C__Apps_Strut_Load_HC_5(t: Task): Long {
+    fun f728_init_C__Apps_Strut_Load_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -1388,27 +1385,27 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_Strut_Load_HC_0(t)
-            704 -> f704_init_C__Apps_Strut_Load_HC_1(t)
-            705 -> f705_init_C__Apps_Strut_Load_HC_2(t)
-            706 -> f706_init_C__Apps_Strut_Load_HC_3(t)
-            707 -> f707_init_C__Apps_Strut_Load_HC_4(t)
-            708 -> { f708_S2W(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            709 -> { f709_W2S(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            710 -> { f710_Zoom(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
-            711 -> { f711_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            712 -> { f712_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            713 -> f713_PlaceMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            714 -> f714_PlaceSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            715 -> { f715_CenterMasses(t); 0L }
-            716 -> { f716_NullSprings(t); 0L }
-            717 -> { f717_BreakConnectors(t); 0L }
-            718 -> { f718_Init(t); 0L }
-            719 -> { f719_CleanUp(t); 0L }
-            720 -> { f720_PlayShip(t); 0L }
-            721 -> { f721_EditShip(t); 0L }
-            722 -> { f722_Strut(t); 0L }
-            723 -> f723_init_C__Apps_Strut_Load_HC_5(t)
+            708 -> f708_init_C__Apps_Strut_Load_HC_0(t)
+            709 -> f709_init_C__Apps_Strut_Load_HC_1(t)
+            710 -> f710_init_C__Apps_Strut_Load_HC_2(t)
+            711 -> f711_init_C__Apps_Strut_Load_HC_3(t)
+            712 -> f712_init_C__Apps_Strut_Load_HC_4(t)
+            713 -> { f713_S2W(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            714 -> { f714_W2S(t, f((if (n > 0) st[base + 0] else 0L)), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            715 -> { f715_Zoom(t, f((if (n > 0) st[base + 0] else 0L))); 0L }
+            716 -> { f716_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            717 -> { f717_MyDerivative(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            718 -> f718_PlaceMass(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            719 -> f719_PlaceSpring(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            720 -> { f720_CenterMasses(t); 0L }
+            721 -> { f721_NullSprings(t); 0L }
+            722 -> { f722_BreakConnectors(t); 0L }
+            723 -> { f723_Init(t); 0L }
+            724 -> { f724_CleanUp(t); 0L }
+            725 -> { f725_PlayShip(t); 0L }
+            726 -> { f726_EditShip(t); 0L }
+            727 -> { f727_Strut(t); 0L }
+            728 -> f728_init_C__Apps_Strut_Load_HC_5(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -1420,7 +1417,7 @@ class N_Apps_Strut_Load(rt: NativeRuntime, @JvmField val P: Prelude) : NativeMod
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728)
         private val NAMES = arrayOf("\$init:C:/Apps/Strut/Load.HC#0", "\$init:C:/Apps/Strut/Load.HC#1", "\$init:C:/Apps/Strut/Load.HC#2", "\$init:C:/Apps/Strut/Load.HC#3", "\$init:C:/Apps/Strut/Load.HC#4", "S2W", "W2S", "Zoom", "DrawIt", "MyDerivative", "PlaceMass", "PlaceSpring", "CenterMasses", "NullSprings", "BreakConnectors", "Init", "CleanUp", "PlayShip", "EditShip", "Strut", "\$init:C:/Apps/Strut/Load.HC#5")
         private val FILES = arrayOf<String>("C:/Apps/Strut/Load.HC", "C:/Apps/Strut/Strut.HC")
     }

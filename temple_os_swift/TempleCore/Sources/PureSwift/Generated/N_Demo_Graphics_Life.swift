@@ -13,6 +13,7 @@ public final class N_Demo_Graphics_Life: NativeModule {
     public let n_DocClear: Int
     public let n_GetMsg: Int
     public let n_GrBlot: Int
+    public let n_GrLine3: Int
     public let n_GrPeek: Int
     public let n_GrPlot: Int
     public let n_Sleep: Int
@@ -29,6 +30,7 @@ public final class N_Demo_Graphics_Life: NativeModule {
         n_DocClear = rt.vm.natives.find("DocClear")!.index
         n_GetMsg = rt.vm.natives.find("GetMsg")!.index
         n_GrBlot = rt.vm.natives.find("GrBlot")!.index
+        n_GrLine3 = rt.vm.natives.find("GrLine3")!.index
         n_GrPeek = rt.vm.natives.find("GrPeek")!.index
         n_GrPlot = rt.vm.natives.find("GrPlot")!.index
         n_Sleep = rt.vm.natives.find("Sleep")!.index
@@ -49,7 +51,7 @@ public final class N_Demo_Graphics_Life: NativeModule {
     }
 
     /// HolyC DrawIt (Life.HC:7)
-    public final func f703_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
+    public final func f708_DrawIt(_ t: HTask, _ a0: Int64, _ a1: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -66,7 +68,7 @@ public final class N_Demo_Graphics_Life: NativeModule {
     }
 
     /// HolyC AnimateTask (Life.HC:13)
-    public final func f704_AnimateTask(_ t: HTask, _ a0: Int64) throws {
+    public final func f709_AnimateTask(_ t: HTask, _ a0: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -164,7 +166,7 @@ public final class N_Demo_Graphics_Life: NativeModule {
     }
 
     /// HolyC Life (Life.HC:49)
-    public final func f705_Life(_ t: HTask) throws {
+    public final func f710_Life(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -206,10 +208,10 @@ public final class N_Demo_Graphics_Life: NativeModule {
             try P.f286_DCFill(t, 0, 255)
             ln = 65 // Life.HC:65
             let t3: Int64 = try (ld8(P.g_Fs) &+ 1088)
-            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065856, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
+            let t2: Int64 = try nat(t, n_Spawn, try push(t, 9223090561878065861, 0, s0, (-1), ld8(P.g_Fs), 0, 0))
             try st8(t3, t2)
             ln = 66 // Life.HC:66
-            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065855)
+            try st8((ld8(P.g_Fs) &+ 448), 9223090561878065860)
             ln = 67 // Life.HC:67
             try st4((ld8(P.g_Fs) &+ 12), 5436158)
             ln = 68 // Life.HC:68
@@ -239,8 +241,7 @@ public final class N_Demo_Graphics_Life: NativeModule {
                             ln = 78 // Life.HC:78
                             try st4((ld8((g_dc &+ (ld8(g_cur_dc) &* 8))) &+ 228), f2i((0.04 * ldf((P.g_ms &+ 120)))))
                             ln = 79 // Life.HC:79
-                            try tick(t)
-                            _ = try P.f406_GrLine3(t, ld8((g_dc &+ (ld8(g_cur_dc) &* 8))), l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0)
+                            _ = try nat(t, n_GrLine3, try push(t, ld8((g_dc &+ (ld8(g_cur_dc) &* 8))), l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0))
                             ln = 80 // Life.HC:80
                             try st1(g_restart, 1)
                             ln = 81 // Life.HC:81
@@ -255,8 +256,7 @@ public final class N_Demo_Graphics_Life: NativeModule {
                             try tick(t)
                         }
                         ln = 85 // Life.HC:85
-                        try tick(t)
-                        _ = try P.f406_GrLine3(t, ld8((g_dc &+ (ld8(g_cur_dc) &* 8))), l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0)
+                        _ = try nat(t, n_GrLine3, try push(t, ld8((g_dc &+ (ld8(g_cur_dc) &* 8))), l16_x1, l24_y1, 0, l32_x2, l40_y2, 0, 1, 0))
                     case 2:
                         break
                     default:
@@ -287,13 +287,13 @@ public final class N_Demo_Graphics_Life: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/Life.HC#0 (Life.HC:98)
-    @discardableResult public final func f706_init_C__Demo_Graphics_Life_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Graphics_Life_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 98 // Life.HC:98
             try tick(t)
-            try f705_Life(t)
+            try f710_Life(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/Life.HC#0", ln) }
@@ -302,16 +302,16 @@ public final class N_Demo_Graphics_Life: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
-        case 704: try f704_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
-        case 705: try f705_Life(t); return 0
-        case 706: return try f706_init_C__Demo_Graphics_Life_HC_0(t)
+        case 708: try f708_DrawIt(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0)); return 0
+        case 709: try f709_AnimateTask(t, (n > 0 ? st[base + 0] : 0)); return 0
+        case 710: try f710_Life(t); return 0
+        case 711: return try f711_init_C__Demo_Graphics_Life_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "DrawIt", 704: "AnimateTask", 705: "Life", 706: "$init:C:/Demo/Graphics/Life.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "DrawIt", 709: "AnimateTask", 710: "Life", 711: "$init:C:/Demo/Graphics/Life.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Graphics/Life.HC"]
     public override var files: [String] { N_Demo_Graphics_Life.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_Life.DEFINED.contains(index) }

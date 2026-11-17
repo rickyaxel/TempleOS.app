@@ -38,7 +38,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC ShowTree (CommonAncestor.HC:16) */
-    fun f703_ShowTree(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
+    fun f708_ShowTree(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Long) {
         var ln = 0
         try {
             enter(t)
@@ -55,12 +55,12 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
                 if ((ld8(p1_tmpn) != 0L)) {
                     ln = 21 // CommonAncestor.HC:21
                     tick(t)
-                    f703_ShowTree(t, p0_dc, ld8(p1_tmpn), (fp + 40), p3__tree_x, (p4_y + 45L))
+                    f708_ShowTree(t, p0_dc, ld8(p1_tmpn), (fp + 40), p3__tree_x, (p4_y + 45L))
                     ln = 22 // CommonAncestor.HC:22
                     st4((p0_dc + 160L), 1L)
                     ln = 23 // CommonAncestor.HC:23
                     tick(t)
-                    P.f426_GrArrow3(t, p0_dc, ld8(p3__tree_x), p4_y, 0L, (ld8((fp + 40)) + 3L), ((p4_y + 45L) - 3L), 0L, 2.75, 1L, 0L)
+                    P.f429_GrArrow3(t, p0_dc, ld8(p3__tree_x), p4_y, 0L, (ld8((fp + 40)) + 3L), ((p4_y + 45L) - 3L), 0L, 2.75, 1L, 0L)
                 }
                 ln = 26 // CommonAncestor.HC:26
                 if (((ld8((p1_tmpn + 16L)) == ld8(g_n1)) || (ld8((p1_tmpn + 16L)) == ld8(g_n2)))) {
@@ -87,7 +87,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
                 ln = 37 // CommonAncestor.HC:37
                 tick(t)
                 val vb0 = push1(t, ld8((p1_tmpn + 16L)))
-                P.f369_GrPrint(t, p0_dc, ld8(p2__node_x), p4_y, s0, vb0, 1)
+                P.f370_GrPrint(t, p0_dc, ld8(p2__node_x), p4_y, s0, vb0, 1)
                 t.sp = vb0
                 ln = 38 // CommonAncestor.HC:38
                 val t0: Long = p3__tree_x
@@ -96,12 +96,12 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
                 if ((ld8((p1_tmpn + 8L)) != 0L)) {
                     ln = 41 // CommonAncestor.HC:41
                     tick(t)
-                    f703_ShowTree(t, p0_dc, ld8((p1_tmpn + 8L)), (fp + 40), p3__tree_x, (p4_y + 45L))
+                    f708_ShowTree(t, p0_dc, ld8((p1_tmpn + 8L)), (fp + 40), p3__tree_x, (p4_y + 45L))
                     ln = 42 // CommonAncestor.HC:42
                     st4((p0_dc + 160L), 1L)
                     ln = 43 // CommonAncestor.HC:43
                     tick(t)
-                    P.f426_GrArrow3(t, p0_dc, ld8(p2__node_x), p4_y, 0L, (ld8((fp + 40)) - 3L), ((p4_y + 45L) - 3L), 0L, 2.75, 1L, 0L)
+                    P.f429_GrArrow3(t, p0_dc, ld8(p2__node_x), p4_y, 0L, (ld8((fp + 40)) - 3L), ((p4_y + 45L) - 3L), 0L, 2.75, 1L, 0L)
                 }
             }
             t.msp = msp0
@@ -111,7 +111,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC DrawIt (CommonAncestor.HC:49) */
-    fun f704_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f709_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -124,7 +124,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
             st8((fp + 24), 0L)
             ln = 52 // CommonAncestor.HC:52
             tick(t)
-            f703_ShowTree(t, p1_dc, ld8(g_root), (fp + 16), (fp + 24), 20L)
+            f708_ShowTree(t, p1_dc, ld8(g_root), (fp + 16), (fp + 24), 20L)
             t.msp = msp0
             t.depth--
             return
@@ -132,7 +132,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC TreeAdd (CommonAncestor.HC:55) */
-    fun f705_TreeAdd(t: Task, a0: Long, a1: Long) {
+    fun f710_TreeAdd(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -155,11 +155,11 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
                     if ((ld8((p1_tmpn + 16L)) < ld8((l16_root + 16L)))) {
                         ln = 63 // CommonAncestor.HC:63
                         tick(t)
-                        f705_TreeAdd(t, l16_root, p1_tmpn)
+                        f710_TreeAdd(t, l16_root, p1_tmpn)
                     } else {
                         ln = 65 // CommonAncestor.HC:65
                         tick(t)
-                        f705_TreeAdd(t, (l16_root + 8L), p1_tmpn)
+                        f710_TreeAdd(t, (l16_root + 8L), p1_tmpn)
                     }
                 }
             }
@@ -169,7 +169,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC TreeNew (CommonAncestor.HC:68) */
-    fun f706_TreeNew(t: Task) {
+    fun f711_TreeNew(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -197,7 +197,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
                 }
                 ln = 81 // CommonAncestor.HC:81
                 tick(t)
-                f705_TreeAdd(t, g_root, l8_tmpn)
+                f710_TreeAdd(t, g_root, l8_tmpn)
                 ln = 82 // CommonAncestor.HC:82
                 nat(t, n_Sleep, push1(t, 50L))
                 ln = 72 // CommonAncestor.HC:72
@@ -210,7 +210,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC TreeCommonAncestorFind (CommonAncestor.HC:86) */
-    fun f707_TreeCommonAncestorFind(t: Task, a0: Long) {
+    fun f712_TreeCommonAncestorFind(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -223,13 +223,13 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
                 if (((ld8(g_n1) < ld8((p0_root + 16L))) && (ld8(g_n2) < ld8((p0_root + 16L))))) {
                     ln = 91 // CommonAncestor.HC:91
                     tick(t)
-                    f707_TreeCommonAncestorFind(t, ld8(p0_root))
+                    f712_TreeCommonAncestorFind(t, ld8(p0_root))
                 } else {
                     ln = 92 // CommonAncestor.HC:92
                     if (((ld8(g_n1) > ld8((p0_root + 16L))) && (ld8(g_n2) > ld8((p0_root + 16L))))) {
                         ln = 93 // CommonAncestor.HC:93
                         tick(t)
-                        f707_TreeCommonAncestorFind(t, ld8((p0_root + 8L)))
+                        f712_TreeCommonAncestorFind(t, ld8((p0_root + 8L)))
                     }
                 }
             }
@@ -239,7 +239,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC TreeCommonAncestor (CommonAncestor.HC:97) */
-    fun f708_TreeCommonAncestor(t: Task) {
+    fun f713_TreeCommonAncestor(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -253,7 +253,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
             tick(t)
             P.f227_SettingsPush(t, 0L, 0L)
             ln = 103 // CommonAncestor.HC:103
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065856L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065861L)
             ln = 104 // CommonAncestor.HC:104
             nat(t, n_DocClear, push1(t, 0L))
             ln = 105 // CommonAncestor.HC:105
@@ -264,10 +264,10 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
             try {
                 ln = 107 // CommonAncestor.HC:107
                 tick(t)
-                f706_TreeNew(t)
+                f711_TreeNew(t)
                 ln = 108 // CommonAncestor.HC:108
                 tick(t)
-                f707_TreeCommonAncestorFind(t, ld8(g_root))
+                f712_TreeCommonAncestorFind(t, ld8(g_root))
                 ln = 109 // CommonAncestor.HC:109
                 tick(t)
                 P.f188_PressAKey(t)
@@ -289,13 +289,13 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     }
 
     /** HolyC $init:C:/Demo/Graphics/CommonAncestor.HC#0 (CommonAncestor.HC:115) */
-    fun f709_init_C__Demo_Graphics_CommonAncestor_HC_0(t: Task): Long {
+    fun f714_init_C__Demo_Graphics_CommonAncestor_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 115 // CommonAncestor.HC:115
             tick(t)
-            f708_TreeCommonAncestor(t)
+            f713_TreeCommonAncestor(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/CommonAncestor.HC#0", ln) }
@@ -304,13 +304,13 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_ShowTree(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
-            704 -> { f704_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            705 -> { f705_TreeAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            706 -> { f706_TreeNew(t); 0L }
-            707 -> { f707_TreeCommonAncestorFind(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            708 -> { f708_TreeCommonAncestor(t); 0L }
-            709 -> f709_init_C__Demo_Graphics_CommonAncestor_HC_0(t)
+            708 -> { f708_ShowTree(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), (if (n > 4) st[base + 4] else 0L)); 0L }
+            709 -> { f709_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            710 -> { f710_TreeAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            711 -> { f711_TreeNew(t); 0L }
+            712 -> { f712_TreeCommonAncestorFind(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            713 -> { f713_TreeCommonAncestor(t); 0L }
+            714 -> f714_init_C__Demo_Graphics_CommonAncestor_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -322,7 +322,7 @@ class N_Demo_Graphics_CommonAncestor(rt: NativeRuntime, @JvmField val P: Prelude
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714)
         private val NAMES = arrayOf("ShowTree", "DrawIt", "TreeAdd", "TreeNew", "TreeCommonAncestorFind", "TreeCommonAncestor", "\$init:C:/Demo/Graphics/CommonAncestor.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/CommonAncestor.HC")
     }

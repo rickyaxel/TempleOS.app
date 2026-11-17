@@ -28,6 +28,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     @JvmField val n_GetChar = rt.vm.natives.find("GetChar")!!.index
     @JvmField val n_GetMsg = rt.vm.natives.find("GetMsg")!!.index
     @JvmField val n_GrBlot = rt.vm.natives.find("GrBlot")!!.index
+    @JvmField val n_GrLine3 = rt.vm.natives.find("GrLine3")!!.index
     @JvmField val n_GrPeek = rt.vm.natives.find("GrPeek")!!.index
     @JvmField val n_GrPlot = rt.vm.natives.find("GrPlot")!!.index
     @JvmField val n_GrRect = rt.vm.natives.find("GrRect")!!.index
@@ -49,6 +50,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     @JvmField val n_Sleep = rt.vm.natives.find("Sleep")!!.index
     @JvmField val n_SleepUntil = rt.vm.natives.find("SleepUntil")!!.index
     @JvmField val n_Snd = rt.vm.natives.find("Snd")!!.index
+    @JvmField val n_Sprite3 = rt.vm.natives.find("Sprite3")!!.index
     @JvmField val n_Sqrt = rt.vm.natives.find("Sqrt")!!.index
     @JvmField val n_StrLen = rt.vm.natives.find("StrLen")!!.index
     @JvmField val n_StrPrint = rt.vm.natives.find("StrPrint")!!.index
@@ -337,7 +339,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#0 (Run.HC:1) */
-    fun f703_init_C__Apps_ToTheFront_Run_HC_0(t: Task): Long {
+    fun f708_init_C__Apps_ToTheFront_Run_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -351,7 +353,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#1 (Run.HC:3) */
-    fun f704_init_C__Apps_ToTheFront_Run_HC_1(t: Task): Long {
+    fun f709_init_C__Apps_ToTheFront_Run_HC_1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -365,7 +367,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC InitDefines (TTFGlbls.HC:5) */
-    fun f705_InitDefines(t: Task) {
+    fun f710_InitDefines(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -386,20 +388,20 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#2 (Run.HC:11) */
-    fun f706_init_C__Apps_ToTheFront_Run_HC_2(t: Task): Long {
+    fun f711_init_C__Apps_ToTheFront_Run_HC_2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 2097163 // TTFGlbls.HC:11
             tick(t)
-            f705_InitDefines(t)
+            f710_InitDefines(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/ToTheFront/Run.HC#2", ln) }
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#3 (Run.HC:13) */
-    fun f707_init_C__Apps_ToTheFront_Run_HC_3(t: Task): Long {
+    fun f712_init_C__Apps_ToTheFront_Run_HC_3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -418,7 +420,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval0 (TTFGlbls.HC:20) */
-    fun f708_eval0(t: Task): Long {
+    fun f713_eval0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -431,7 +433,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval1 (TTFGlbls.HC:20) */
-    fun f709_eval1(t: Task): Long {
+    fun f714_eval1(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -444,7 +446,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval2 (TTFGlbls.HC:27) */
-    fun f710_eval2(t: Task): Long {
+    fun f715_eval2(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -457,7 +459,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval3 (TTFGlbls.HC:27) */
-    fun f711_eval3(t: Task): Long {
+    fun f716_eval3(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -470,7 +472,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval4 (TTFGlbls.HC:30) */
-    fun f712_eval4(t: Task): Long {
+    fun f717_eval4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -483,7 +485,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval5 (TTFGlbls.HC:30) */
-    fun f713_eval5(t: Task): Long {
+    fun f718_eval5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -496,7 +498,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval6 (TTFGlbls.HC:31) */
-    fun f714_eval6(t: Task): Long {
+    fun f719_eval6(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -509,7 +511,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval7 (TTFGlbls.HC:31) */
-    fun f715_eval7(t: Task): Long {
+    fun f720_eval7(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -522,7 +524,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval8 (TTFGlbls.HC:32) */
-    fun f716_eval8(t: Task): Long {
+    fun f721_eval8(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -535,7 +537,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval9 (TTFGlbls.HC:32) */
-    fun f717_eval9(t: Task): Long {
+    fun f722_eval9(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -548,7 +550,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC HexMoveOne (TTFMove.HC:29) */
-    fun f718_HexMoveOne(t: Task, a0: Long, a1: Long, a2: Double, a3: Double): Long {
+    fun f723_HexMoveOne(t: Task, a0: Long, a1: Long, a2: Double, a3: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -566,7 +568,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l40_best_direction = -1L
             ln = 3145761 // TTFMove.HC:33
             tick(t)
-            f724_RowCol2XY(t, (fp + 80), (fp + 88), ld8(p0__row), ld8(p1__col))
+            f729_RowCol2XY(t, (fp + 80), (fp + 88), ld8(p0__row), ld8(p1__col))
             ln = 3145762 // TTFMove.HC:34
             tick(t)
             val t0: Double = P.f102_Sqr(t, (ldf((fp + 80)) - p2_x))
@@ -581,10 +583,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st8((fp + 56), ld8(p1__col))
                 ln = 3145765 // TTFMove.HC:37
                 tick(t)
-                f722_Toward(t, (fp + 48), (fp + 56), l32_direction)
+                f727_Toward(t, (fp + 48), (fp + 56), l32_direction)
                 ln = 3145766 // TTFMove.HC:38
                 tick(t)
-                f724_RowCol2XY(t, (fp + 80), (fp + 88), ld8((fp + 48)), ld8((fp + 56)))
+                f729_RowCol2XY(t, (fp + 80), (fp + 88), ld8((fp + 48)), ld8((fp + 56)))
                 ln = 3145767 // TTFMove.HC:39
                 tick(t)
                 val t2: Double = P.f102_Sqr(t, (ldf((fp + 80)) - p2_x))
@@ -626,7 +628,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             if ((l40_best_direction >= 0L)) {
                 ln = 3145774 // TTFMove.HC:46
                 tick(t)
-                f722_Toward(t, p0__row, p1__col, l40_best_direction)
+                f727_Toward(t, p0__row, p1__col, l40_best_direction)
                 ln = 3145775 // TTFMove.HC:47
                 t.msp = msp0
                 t.depth--
@@ -644,7 +646,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#4 (Run.HC:83) */
-    fun f719_init_C__Apps_ToTheFront_Run_HC_4(t: Task): Long {
+    fun f724_init_C__Apps_ToTheFront_Run_HC_4(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -654,7 +656,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#5 (Run.HC:107) */
-    fun f720_init_C__Apps_ToTheFront_Run_HC_5(t: Task): Long {
+    fun f725_init_C__Apps_ToTheFront_Run_HC_5(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -664,7 +666,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#6 (Run.HC:108) */
-    fun f721_init_C__Apps_ToTheFront_Run_HC_6(t: Task): Long {
+    fun f726_init_C__Apps_ToTheFront_Run_HC_6(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -674,7 +676,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC Toward (TTFLib.HC:1) */
-    fun f722_Toward(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f727_Toward(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -745,7 +747,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC FacingChg (TTFLib.HC:29) */
-    fun f723_FacingChg(t: Task, a0: Long, a1: Long): Long {
+    fun f728_FacingChg(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -770,7 +772,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC RowCol2XY (TTFLib.HC:38) */
-    fun f724_RowCol2XY(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f729_RowCol2XY(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -799,7 +801,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC XY2RowCol (TTFLib.HC:48) */
-    fun f725_XY2RowCol(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
+    fun f730_XY2RowCol(t: Task, a0: Long, a1: Long, a2: Double, a3: Double) {
         var ln = 0
         try {
             enter(t)
@@ -836,7 +838,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UnitFind (TTFLib.HC:60) */
-    fun f726_UnitFind(t: Task, a0: Long, a1: Long): Long {
+    fun f731_UnitFind(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -873,7 +875,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CursorInWin (TTFLib.HC:72) */
-    fun f727_CursorInWin(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f732_CursorInWin(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -918,7 +920,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CursorUpdate (TTFLib.HC:81) */
-    fun f728_CursorUpdate(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f733_CursorUpdate(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -927,11 +929,11 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             var p2_y: Long = a2
             ln = 4194387 // TTFLib.HC:83
             tick(t)
-            val t0: Long = f727_CursorInWin(t, p0_task, p1_x, p2_y)
+            val t0: Long = f732_CursorInWin(t, p0_task, p1_x, p2_y)
             if ((t0 != 0L)) {
                 ln = 4194388 // TTFLib.HC:84
                 tick(t)
-                f725_XY2RowCol(t, g_cursor_row, g_cursor_col, p1_x.toDouble(), p2_y.toDouble())
+                f730_XY2RowCol(t, g_cursor_row, g_cursor_col, p1_x.toDouble(), p2_y.toDouble())
             }
             t.depth--
             return
@@ -939,7 +941,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC LOSPlot (TTFLib.HC:92) */
-    fun f729_LOSPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f734_LOSPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -951,7 +953,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             var p3_z: Long = a3
             ln = 4194399 // TTFLib.HC:95
             tick(t)
-            f725_XY2RowCol(t, (fp + 32), (fp + 40), p1_x.toDouble(), p2_y.toDouble())
+            f730_XY2RowCol(t, (fp + 32), (fp + 40), p1_x.toDouble(), p2_y.toDouble())
             ln = 4194400 // TTFLib.HC:96
             if (((((ld8((fp + 32)) != ld8(p0_l)) || (ld8((fp + 40)) != ld8((p0_l + 8L)))) && ((ld8((fp + 32)) != ld8((p0_l + 16L))) || (ld8((fp + 40)) != ld8((p0_l + 24L))))) && (ld1u(((g_terrain + (ld8((fp + 32)) * 19L)) + ld8((fp + 40)))) != 10L))) {
                 ln = 4194403 // TTFLib.HC:99
@@ -992,7 +994,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC LOS (TTFLib.HC:111) */
-    fun f730_LOS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f735_LOS(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -1004,10 +1006,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             var p3_c2: Long = a3
             ln = 4194419 // TTFLib.HC:115
             tick(t)
-            f724_RowCol2XY(t, (fp + 32), (fp + 40), p0_r1, p1_c1)
+            f729_RowCol2XY(t, (fp + 32), (fp + 40), p0_r1, p1_c1)
             ln = 4194420 // TTFLib.HC:116
             tick(t)
-            f724_RowCol2XY(t, (fp + 48), (fp + 56), p2_r2, p3_c2)
+            f729_RowCol2XY(t, (fp + 48), (fp + 56), p2_r2, p3_c2)
             ln = 4194421 // TTFLib.HC:117
             st8((fp + 64), p0_r1)
             st8(((fp + 64) + 8L), p1_c1)
@@ -1022,7 +1024,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             val t2: Double = f(nat(t, n_Sqrt, push1(t, bits((t0 + t1).toDouble()))))
             st8(((fp + 64) + 32L), f2i(t2))
             ln = 4194424 // TTFLib.HC:120
-            val t3: Long = nat(t, n_Line, push(t, (fp + 64), f2i(ldf((fp + 32))), f2i(ldf((fp + 40))), 0L, f2i(ldf((fp + 48))), f2i(ldf((fp + 56))), ld8(((fp + 64) + 32L)), 9223090561878065881L, 1L, 0L))
+            val t3: Long = nat(t, n_Line, push(t, (fp + 64), f2i(ldf((fp + 32))), f2i(ldf((fp + 40))), 0L, f2i(ldf((fp + 48))), f2i(ldf((fp + 56))), ld8(((fp + 64) + 32L)), 9223090561878065886L, 1L, 0L))
             t.msp = msp0
             t.depth--
             return (t3 and 0xFFL)
@@ -1033,7 +1035,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawHexes (TTFInit.HC:23) */
-    fun f731_DrawHexes(t: Task) {
+    fun f736_DrawHexes(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1065,10 +1067,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 l16_x = 5.5
                 ln = 5242914 // TTFInit.HC:34
                 tick(t)
-                P.f396_GrLine(t, ld8(g_map_dc), f2i(l16_x), f2i(l24_y), f2i((l16_x - 5.5)), f2i((l24_y + 9.526279442)), 1L, 0L)
+                P.f397_GrLine(t, ld8(g_map_dc), f2i(l16_x), f2i(l24_y), f2i((l16_x - 5.5)), f2i((l24_y + 9.526279442)), 1L, 0L)
                 ln = 5242915 // TTFInit.HC:35
                 tick(t)
-                P.f396_GrLine(t, ld8(g_map_dc), f2i((l16_x - 5.5)), f2i((l24_y + 9.526279442)), f2i(l16_x), f2i((l24_y + (2.0 * 9.526279442))), 1L, 0L)
+                P.f397_GrLine(t, ld8(g_map_dc), f2i((l16_x - 5.5)), f2i((l24_y + 9.526279442)), f2i(l16_x), f2i((l24_y + (2.0 * 9.526279442))), 1L, 0L)
                 ln = 5242916 // TTFInit.HC:36
                 l64_i = 0L
                 loop2@ while ((l64_i < ld8(g_map_cols))) {
@@ -1080,7 +1082,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     l56_y2 = l40_y1
                     ln = 5242919 // TTFInit.HC:39
                     tick(t)
-                    P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
+                    P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
                     ln = 5242920 // TTFInit.HC:40
                     l32_x1 = l48_x2
                     l40_y1 = l56_y2
@@ -1089,10 +1091,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     l56_y2 = (l56_y2 + 9.526279442)
                     ln = 5242922 // TTFInit.HC:42
                     tick(t)
-                    P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
+                    P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
                     ln = 5242923 // TTFInit.HC:43
                     tick(t)
-                    P.f396_GrLine(t, ld8(g_map_dc), f2i(l48_x2), f2i(l56_y2), f2i((l48_x2 - 5.5)), f2i((l56_y2 + 9.526279442)), 1L, 0L)
+                    P.f397_GrLine(t, ld8(g_map_dc), f2i(l48_x2), f2i(l56_y2), f2i((l48_x2 - 5.5)), f2i((l56_y2 + 9.526279442)), 1L, 0L)
                     ln = 5242924 // TTFInit.HC:44
                     l32_x1 = l48_x2
                     l40_y1 = l56_y2
@@ -1100,10 +1102,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     l48_x2 = (l48_x2 + 11.0)
                     ln = 5242926 // TTFInit.HC:46
                     tick(t)
-                    P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
+                    P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
                     ln = 5242927 // TTFInit.HC:47
                     tick(t)
-                    P.f396_GrLine(t, ld8(g_map_dc), f2i(l48_x2), f2i(l56_y2), f2i((l48_x2 + 5.5)), f2i((l56_y2 + 9.526279442)), 1L, 0L)
+                    P.f397_GrLine(t, ld8(g_map_dc), f2i(l48_x2), f2i(l56_y2), f2i((l48_x2 + 5.5)), f2i((l56_y2 + 9.526279442)), 1L, 0L)
                     ln = 5242928 // TTFInit.HC:48
                     l32_x1 = l48_x2
                     l40_y1 = l56_y2
@@ -1114,7 +1116,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     if (((l72_j != 0L) || (l64_i < (ld8(g_map_cols) - 1L)))) {
                         ln = 5242931 // TTFInit.HC:51
                         tick(t)
-                        P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
+                        P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
                     }
                     ln = 5242932 // TTFInit.HC:52
                     l16_x = (l16_x + l0_dx)
@@ -1141,7 +1143,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 l56_y2 = l40_y1
                 ln = 5242940 // TTFInit.HC:60
                 tick(t)
-                P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
+                P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
                 ln = 5242941 // TTFInit.HC:61
                 l32_x1 = l48_x2
                 l40_y1 = l56_y2
@@ -1150,7 +1152,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 l56_y2 = (l56_y2 + 9.526279442)
                 ln = 5242943 // TTFInit.HC:63
                 tick(t)
-                P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
+                P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
                 ln = 5242944 // TTFInit.HC:64
                 l32_x1 = l48_x2
                 l40_y1 = l56_y2
@@ -1158,7 +1160,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 l48_x2 = (l48_x2 + 11.0)
                 ln = 5242946 // TTFInit.HC:66
                 tick(t)
-                P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
+                P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
                 ln = 5242947 // TTFInit.HC:67
                 l32_x1 = l48_x2
                 l40_y1 = l56_y2
@@ -1167,7 +1169,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 l56_y2 = (l56_y2 - 9.526279442)
                 ln = 5242949 // TTFInit.HC:69
                 tick(t)
-                P.f396_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
+                P.f397_GrLine(t, ld8(g_map_dc), f2i(l32_x1), f2i(l40_y1), f2i(l48_x2), f2i(l56_y2), 1L, 0L)
                 ln = 5242950 // TTFInit.HC:70
                 l16_x = (l16_x + l0_dx)
                 ln = 5242937 // TTFInit.HC:57
@@ -1180,7 +1182,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC MakeTerrain (TTFInit.HC:74) */
-    fun f732_MakeTerrain(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f737_MakeTerrain(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1215,7 +1217,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     ln = 5242963 // TTFInit.HC:83
                     val t3: Long = nat(t, n_RandU16, push0(t))
                     tick(t)
-                    f722_Toward(t, (fp + 56), (fp + 64), mods(t3, 6L))
+                    f727_Toward(t, (fp + 56), (fp + 64), mods(t3, 6L))
                     ln = 5242964 // TTFInit.HC:84
                     tick(t)
                     val t4: Long = P.f114_ClampI64(t, ld8((fp + 64)), 0L, (ld8(g_map_cols) - 1L))
@@ -1239,7 +1241,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC MakeRivers (TTFInit.HC:90) */
-    fun f733_MakeRivers(t: Task) {
+    fun f738_MakeRivers(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1265,7 +1267,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     st1(((g_rivers + (ld8((fp + 8)) * 19L)) + ld8((fp + 16))), 1L)
                     ln = 5242979 // TTFInit.HC:99
                     tick(t)
-                    f722_Toward(t, (fp + 8), (fp + 16), l24_direction)
+                    f727_Toward(t, (fp + 8), (fp + 16), l24_direction)
                     ln = 5242980 // TTFInit.HC:100
                     var r3: Boolean = false
                     val t4: Long = ld8((fp + 8))
@@ -1311,7 +1313,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC MakeRoads (TTFInit.HC:108) */
-    fun f734_MakeRoads(t: Task) {
+    fun f739_MakeRoads(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1337,7 +1339,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     st1(((g_roads + (ld8((fp + 8)) * 19L)) + ld8((fp + 16))), 1L)
                     ln = 5242997 // TTFInit.HC:117
                     tick(t)
-                    f722_Toward(t, (fp + 8), (fp + 16), l24_direction)
+                    f727_Toward(t, (fp + 8), (fp + 16), l24_direction)
                     ln = 5242998 // TTFInit.HC:118
                     var r3: Boolean = false
                     val t4: Long = ld8((fp + 8))
@@ -1383,7 +1385,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawTerrain (TTFInit.HC:126) */
-    fun f735_DrawTerrain(t: Task) {
+    fun f740_DrawTerrain(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1401,10 +1403,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     st4((ld8(g_map_dc) + 160L), ld1u(((g_terrain + (l8_j * 19L)) + l0_i)))
                     ln = 5243013 // TTFInit.HC:133
                     tick(t)
-                    f724_RowCol2XY(t, (fp + 16), (fp + 24), l8_j, l0_i)
+                    f729_RowCol2XY(t, (fp + 16), (fp + 24), l8_j, l0_i)
                     ln = 5243014 // TTFInit.HC:134
                     tick(t)
-                    P.f387_GrFloodFill(t, ld8(g_map_dc), f2i(ldf((fp + 16))), f2i(ldf((fp + 24))), 0L, 0L, 0L)
+                    P.f388_GrFloodFill(t, ld8(g_map_dc), f2i(ldf((fp + 16))), f2i(ldf((fp + 24))), 0L, 0L, 0L)
                     ln = 5243011 // TTFInit.HC:131
                     l0_i = (l0_i + 1L)
                     tick(t)
@@ -1420,7 +1422,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawRivers (TTFInit.HC:138) */
-    fun f736_DrawRivers(t: Task) {
+    fun f741_DrawRivers(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1439,7 +1441,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     if ((ld1u(((g_rivers + (l8_j * 19L)) + l0_i)) != 0L)) {
                         ln = 5243025 // TTFInit.HC:145
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 40), (fp + 48), l8_j, l0_i)
+                        f729_RowCol2XY(t, (fp + 40), (fp + 48), l8_j, l0_i)
                         ln = 5243026 // TTFInit.HC:146
                         l16_k = 0L
                         loop4@ while ((l16_k < 6L)) {
@@ -1448,7 +1450,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             st8((fp + 32), l0_i)
                             ln = 5243028 // TTFInit.HC:148
                             tick(t)
-                            f722_Toward(t, (fp + 24), (fp + 32), l16_k)
+                            f727_Toward(t, (fp + 24), (fp + 32), l16_k)
                             ln = 5243029 // TTFInit.HC:149
                             var r0: Boolean = false
                             val t1: Long = ld8((fp + 24))
@@ -1473,21 +1475,19 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             if ((r6 && (ld1u(((g_rivers + (ld8((fp + 24)) * 19L)) + ld8((fp + 32)))) != 0L))) {
                                 ln = 5243031 // TTFInit.HC:151
                                 tick(t)
-                                f724_RowCol2XY(t, (fp + 56), (fp + 64), ld8((fp + 24)), ld8((fp + 32)))
+                                f729_RowCol2XY(t, (fp + 56), (fp + 64), ld8((fp + 24)), ld8((fp + 32)))
                                 ln = 5243032 // TTFInit.HC:152
                                 st4((ld8(g_map_dc) + 160L), 9L)
                                 ln = 5243033 // TTFInit.HC:153
                                 st4((ld8(g_map_dc) + 228L), 4L)
                                 ln = 5243034 // TTFInit.HC:154
-                                tick(t)
-                                P.f406_GrLine3(t, ld8(g_map_dc), f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, ld8(g_map_dc), f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, 1L, 0L))
                                 ln = 5243035 // TTFInit.HC:155
                                 st4((ld8(g_map_dc) + 160L), 1L)
                                 ln = 5243036 // TTFInit.HC:156
                                 st4((ld8(g_map_dc) + 228L), 2L)
                                 ln = 5243037 // TTFInit.HC:157
-                                tick(t)
-                                P.f406_GrLine3(t, ld8(g_map_dc), f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, ld8(g_map_dc), f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, 1L, 0L))
                             }
                             ln = 5243026 // TTFInit.HC:146
                             l16_k = (l16_k + 1L)
@@ -1509,7 +1509,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawRoads (TTFInit.HC:164) */
-    fun f737_DrawRoads(t: Task) {
+    fun f742_DrawRoads(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1532,7 +1532,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     if ((ld1u(((g_roads + (l8_j * 19L)) + l0_i)) != 0L)) {
                         ln = 5243053 // TTFInit.HC:173
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 40), (fp + 48), l8_j, l0_i)
+                        f729_RowCol2XY(t, (fp + 40), (fp + 48), l8_j, l0_i)
                         ln = 5243054 // TTFInit.HC:174
                         l16_k = 0L
                         loop4@ while ((l16_k < 6L)) {
@@ -1541,7 +1541,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             st8((fp + 32), l0_i)
                             ln = 5243056 // TTFInit.HC:176
                             tick(t)
-                            f722_Toward(t, (fp + 24), (fp + 32), l16_k)
+                            f727_Toward(t, (fp + 24), (fp + 32), l16_k)
                             ln = 5243057 // TTFInit.HC:177
                             var r0: Boolean = false
                             val t1: Long = ld8((fp + 24))
@@ -1566,10 +1566,9 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             if ((r6 && (ld1u(((g_roads + (ld8((fp + 24)) * 19L)) + ld8((fp + 32)))) != 0L))) {
                                 ln = 5243059 // TTFInit.HC:179
                                 tick(t)
-                                f724_RowCol2XY(t, (fp + 56), (fp + 64), ld8((fp + 24)), ld8((fp + 32)))
+                                f729_RowCol2XY(t, (fp + 56), (fp + 64), ld8((fp + 24)), ld8((fp + 32)))
                                 ln = 5243060 // TTFInit.HC:180
-                                tick(t)
-                                P.f406_GrLine3(t, ld8(g_map_dc), f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, 1L, 0L)
+                                nat(t, n_GrLine3, push(t, ld8(g_map_dc), f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, 1L, 0L))
                             }
                             ln = 5243054 // TTFInit.HC:174
                             l16_k = (l16_k + 1L)
@@ -1591,7 +1590,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawDots (TTFInit.HC:187) */
-    fun f738_DrawDots(t: Task) {
+    fun f743_DrawDots(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1609,7 +1608,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 loop2@ while ((l0_i < ld8(g_map_cols))) {
                     ln = 5243074 // TTFInit.HC:194
                     tick(t)
-                    f724_RowCol2XY(t, (fp + 16), (fp + 24), l8_j, l0_i)
+                    f729_RowCol2XY(t, (fp + 16), (fp + 24), l8_j, l0_i)
                     ln = 5243075 // TTFInit.HC:195
                     nat(t, n_GrPlot, push3(t, ld8(g_map_dc), f2i(ldf((fp + 16))), f2i(ldf((fp + 24)))))
                     ln = 5243073 // TTFInit.HC:193
@@ -1627,7 +1626,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC HexCentersCalc (TTFInit.HC:199) */
-    fun f739_HexCentersCalc(t: Task) {
+    fun f744_HexCentersCalc(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1668,16 +1667,16 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC InitMap (TTFInit.HC:214) */
-    fun f740_InitMap(t: Task) {
+    fun f745_InitMap(t: Task) {
         var ln = 0
         try {
             enter(t)
             ln = 5243096 // TTFInit.HC:216
             tick(t)
-            f739_HexCentersCalc(t)
+            f744_HexCentersCalc(t)
             ln = 5243097 // TTFInit.HC:217
             tick(t)
-            f731_DrawHexes(t)
+            f736_DrawHexes(t)
             ln = 5243098 // TTFInit.HC:218
             nat(t, n_MemSet, push3(t, g_terrain, 10L, 874L))
             ln = 5243099 // TTFInit.HC:219
@@ -1688,35 +1687,35 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             nat(t, n_MemSet, push3(t, g_vis_map, 0L, 874L))
             ln = 5243102 // TTFInit.HC:222
             tick(t)
-            f732_MakeTerrain(t, 8L, f2i(((0.03 * ld8(g_map_cols).toDouble()) * ld8(g_map_cols).toDouble())), 5L, 35L)
+            f737_MakeTerrain(t, 8L, f2i(((0.03 * ld8(g_map_cols).toDouble()) * ld8(g_map_cols).toDouble())), 5L, 35L)
             ln = 5243103 // TTFInit.HC:223
             tick(t)
-            f732_MakeTerrain(t, 2L, f2i(((0.03 * ld8(g_map_cols).toDouble()) * ld8(g_map_cols).toDouble())), 5L, 35L)
+            f737_MakeTerrain(t, 2L, f2i(((0.03 * ld8(g_map_cols).toDouble()) * ld8(g_map_cols).toDouble())), 5L, 35L)
             ln = 5243104 // TTFInit.HC:224
             tick(t)
-            f735_DrawTerrain(t)
+            f740_DrawTerrain(t)
             ln = 5243105 // TTFInit.HC:225
             tick(t)
-            f733_MakeRivers(t)
+            f738_MakeRivers(t)
             ln = 5243106 // TTFInit.HC:226
             tick(t)
-            f736_DrawRivers(t)
+            f741_DrawRivers(t)
             ln = 5243107 // TTFInit.HC:227
             tick(t)
-            f734_MakeRoads(t)
+            f739_MakeRoads(t)
             ln = 5243108 // TTFInit.HC:228
             tick(t)
-            f737_DrawRoads(t)
+            f742_DrawRoads(t)
             ln = 5243109 // TTFInit.HC:229
             tick(t)
-            f738_DrawDots(t)
+            f743_DrawDots(t)
             t.depth--
             return
         } catch (e: VmFault) { throw locate(e, "InitMap", ln) }
     }
 
     /** HolyC InitUnits (TTFInit.HC:232) */
-    fun f741_InitUnits(t: Task) {
+    fun f746_InitUnits(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1897,7 +1896,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         }
                         ln = 5243202 // TTFInit.HC:322
                         tick(t)
-                        val t4: Long = f726_UnitFind(t, l16_row, l24_col)
+                        val t4: Long = f731_UnitFind(t, l16_row, l24_col)
                         if (!((t4 != 0L))) break@loop5
                         tick(t)
                     }
@@ -1922,7 +1921,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC ViewPlayerSet (TTFInit.HC:329) */
-    fun f742_ViewPlayerSet(t: Task, a0: Long) {
+    fun f747_ViewPlayerSet(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -1934,7 +1933,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st8(g_view_player, p0_p)
             ln = 5243213 // TTFInit.HC:333
             tick(t)
-            val t0: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s7)
+            val t0: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s7)
             l8_tmpse = t0
             if ((t0 != 0L)) {
                 ln = 5243214 // TTFInit.HC:334
@@ -1942,7 +1941,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             }
             ln = 5243215 // TTFInit.HC:335
             tick(t)
-            val t1: Long = P.f502_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s8)
+            val t1: Long = P.f507_MenuEntryFind(t, ld8((ld8(P.g_Fs) + 936L)), s8)
             l8_tmpse = t1
             if ((t1 != 0L)) {
                 ln = 5243216 // TTFInit.HC:336
@@ -1954,7 +1953,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC Init (TTFInit.HC:339) */
-    fun f743_Init(t: Task) {
+    fun f748_Init(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -1970,11 +1969,11 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st8(g_moving_unit, 0L)
             ln = 5243224 // TTFInit.HC:344
             tick(t)
-            f740_InitMap(t)
+            f745_InitMap(t)
             ln = 5243225 // TTFInit.HC:345
             st8(g_cur_player, 0L)
             tick(t)
-            f742_ViewPlayerSet(t, 0L)
+            f747_ViewPlayerSet(t, 0L)
             ln = 5243226 // TTFInit.HC:346
             st8(g_enemy_player, 1L)
             ln = 5243227 // TTFInit.HC:347
@@ -1991,7 +1990,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             }
             ln = 5243234 // TTFInit.HC:354
             tick(t)
-            f741_InitUnits(t)
+            f746_InitUnits(t)
             ln = 5243235 // TTFInit.HC:355
             tick(t)
             P.f152_QueInit(t, g_indirect_head)
@@ -2015,7 +2014,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CleanUp (TTFInit.HC:365) */
-    fun f744_CleanUp(t: Task) {
+    fun f749_CleanUp(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -2028,7 +2027,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PlayerPick (TTFInit.HC:370) */
-    fun f745_PlayerPick(t: Task, a0: Long, a1: Long) {
+    fun f750_PlayerPick(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2045,7 +2044,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l16_i = 0L
             ln = 5243255 // TTFInit.HC:375
             tick(t)
-            val t0: Long = P.f601_DocNew(t, 0L, 0L)
+            val t0: Long = P.f606_DocNew(t, 0L, 0L)
             l56_doc = t0
             ln = 5243256 // TTFInit.HC:376
             val t1: Long = nat(t, n_Silent, push1(t, 1L))
@@ -2088,7 +2087,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 l24_st = t6
                 ln = 5243269 // TTFInit.HC:389
                 tick(t)
-                P.f666_FileExtRem(t, l24_st)
+                P.f671_FileExtRem(t, l24_st)
                 ln = 5243270 // TTFInit.HC:390
                 tick(t)
                 val vb2 = push2(t, l24_st, l40_tmpde1)
@@ -2121,7 +2120,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 l24_st = t9
                 ln = 5243279 // TTFInit.HC:399
                 tick(t)
-                P.f666_FileExtRem(t, l24_st)
+                P.f671_FileExtRem(t, l24_st)
                 ln = 5243280 // TTFInit.HC:400
                 tick(t)
                 val vb4 = push2(t, l24_st, l40_tmpde1)
@@ -2142,7 +2141,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 5243285 // TTFInit.HC:405
             loop4@ while (true) {
                 tick(t)
-                val t11: Long = P.f621_PopUpMenu(t, l56_doc, 0L)
+                val t11: Long = P.f626_PopUpMenu(t, l56_doc, 0L)
                 l40_tmpde1 = t11
                 if (!(leu(t11, 0L))) break@loop4
                 tick(t)
@@ -2151,7 +2150,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             nat(t, n_ExeFile, push2(t, ld8((l40_tmpde1 + 24L)), 0L))
             ln = 5243287 // TTFInit.HC:407
             tick(t)
-            P.f605_DocDel(t, l56_doc)
+            P.f610_DocDel(t, l56_doc)
             ln = 5243288 // TTFInit.HC:408
             nat(t, n_DirTreeDel, push1(t, l32_tmpde))
             ln = 5243289 // TTFInit.HC:409
@@ -2164,7 +2163,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC VRSetUp (TTFVis.HC:19) */
-    fun f746_VRSetUp(t: Task, a0: Long) {
+    fun f751_VRSetUp(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2197,7 +2196,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC VRMerge (TTFVis.HC:31) */
-    fun f747_VRMerge(t: Task, a0: Long) {
+    fun f752_VRMerge(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2257,7 +2256,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC MPVisRecalc (TTFVis.HC:48) */
-    fun f748_MPVisRecalc(t: Task, a0: Long): Long {
+    fun f753_MPVisRecalc(t: Task, a0: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2303,7 +2302,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         }
                         ln = 6291523 // TTFVis.HC:67
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 56), (fp + 64), l40_row, l48_col)
+                        f729_RowCol2XY(t, (fp + 56), (fp + 64), l40_row, l48_col)
                         ln = 6291524 // TTFVis.HC:68
                         l24_i = ld8((p0_job + 8L))
                         loop1@ while ((l24_i < ld8((p0_job + 16L)))) {
@@ -2313,14 +2312,14 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             var r2: Boolean = (ld1s((l112_ut1 + 60L)) > 0L)
                             if (r2) {
                                 tick(t)
-                                val t1: Long = f730_LOS(t, l40_row, l48_col, ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
+                                val t1: Long = f735_LOS(t, l40_row, l48_col, ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
                                 r2 = (t1 != 0L)
                             }
                             ln = 6291526 // TTFVis.HC:70
                             if (r2) {
                                 ln = 6291528 // TTFVis.HC:72
                                 tick(t)
-                                f724_RowCol2XY(t, (fp + 72), (fp + 80), ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
+                                f729_RowCol2XY(t, (fp + 72), (fp + 80), ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
                                 ln = 6291529 // TTFVis.HC:73
                                 tick(t)
                                 val t3: Double = P.f102_Sqr(t, (ldf((fp + 72)) - ldf((fp + 56))))
@@ -2351,7 +2350,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     4L -> {
                         ln = 6291541 // TTFVis.HC:85
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 56), (fp + 64), l40_row, l48_col)
+                        f729_RowCol2XY(t, (fp + 56), (fp + 64), l40_row, l48_col)
                         ln = 6291542 // TTFVis.HC:86
                         l24_i = ld8((p0_job + 8L))
                         loop3@ while ((l24_i < ld8((p0_job + 16L)))) {
@@ -2359,7 +2358,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             var r6: Boolean = (ld1s((l112_ut1 + 60L)) > 0L)
                             if (r6) {
                                 tick(t)
-                                val t5: Long = f730_LOS(t, l40_row, l48_col, ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
+                                val t5: Long = f735_LOS(t, l40_row, l48_col, ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
                                 r6 = (t5 != 0L)
                             }
                             ln = 6291543 // TTFVis.HC:87
@@ -2390,7 +2389,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             if ((ld1s((l104_ut0 + 60L)) > 0L)) {
                                 ln = 6291556 // TTFVis.HC:100
                                 tick(t)
-                                f724_RowCol2XY(t, (fp + 56), (fp + 64), ld8((l104_ut0 + 16L)), ld8((l104_ut0 + 24L)))
+                                f729_RowCol2XY(t, (fp + 56), (fp + 64), ld8((l104_ut0 + 16L)), ld8((l104_ut0 + 24L)))
                                 ln = 6291557 // TTFVis.HC:101
                                 l112_ut1 = ((g_units + (ld8(g_enemy_player) * 2304L)) + (ld8((p0_job + 8L)) * 72L))
                                 ln = 6291558 // TTFVis.HC:102
@@ -2400,7 +2399,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     var r8: Boolean = (ld1s((l112_ut1 + 60L)) > 0L)
                                     if (r8) {
                                         tick(t)
-                                        val t7: Long = f730_LOS(t, ld8((l104_ut0 + 16L)), ld8((l104_ut0 + 24L)), ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
+                                        val t7: Long = f735_LOS(t, ld8((l104_ut0 + 16L)), ld8((l104_ut0 + 24L)), ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
                                         r8 = (t7 != 0L)
                                     }
                                     ln = 6291559 // TTFVis.HC:103
@@ -2447,7 +2446,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             if ((ld1s((l104_ut0 + 60L)) > 0L)) {
                                 ln = 6291572 // TTFVis.HC:116
                                 tick(t)
-                                f724_RowCol2XY(t, (fp + 56), (fp + 64), ld8((l104_ut0 + 16L)), ld8((l104_ut0 + 24L)))
+                                f729_RowCol2XY(t, (fp + 56), (fp + 64), ld8((l104_ut0 + 16L)), ld8((l104_ut0 + 24L)))
                                 ln = 6291573 // TTFVis.HC:117
                                 l112_ut1 = ((g_units + (ld8(g_cur_player) * 2304L)) + (ld8((p0_job + 8L)) * 72L))
                                 ln = 6291574 // TTFVis.HC:118
@@ -2457,7 +2456,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     var r10: Boolean = (ld1s((l112_ut1 + 60L)) > 0L)
                                     if (r10) {
                                         tick(t)
-                                        val t9: Long = f730_LOS(t, ld8((l104_ut0 + 16L)), ld8((l104_ut0 + 24L)), ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
+                                        val t9: Long = f735_LOS(t, ld8((l104_ut0 + 16L)), ld8((l104_ut0 + 24L)), ld8((l112_ut1 + 16L)), ld8((l112_ut1 + 24L)))
                                         r10 = (t9 != 0L)
                                     }
                                     ln = 6291575 // TTFVis.HC:119
@@ -2511,7 +2510,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC VisRecalc (TTFVis.HC:134) */
-    fun f749_VisRecalc(t: Task, a0: Long, a1: Long): Long {
+    fun f754_VisRecalc(t: Task, a0: Long, a1: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -2530,7 +2529,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 nat(t, n_MemSet, push3(t, ((g_vis_unit_bitmap + (ld8(g_enemy_player) * 128L)) + ((ld8((p1_tmpu + 8L)) * 32L) shr 3)), 0L, 4L))
                 ln = 6291608 // TTFVis.HC:152
                 tick(t)
-                f747_VRMerge(t, ld8(g_enemy_player))
+                f752_VRMerge(t, ld8(g_enemy_player))
                 ln = 6291609 // TTFVis.HC:153
                 t.msp = msp0
                 t.depth--
@@ -2597,7 +2596,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l16_i = 0L
             loop4@ while ((l16_i < l40_cnt)) {
                 ln = 6291635 // TTFVis.HC:179
-                val t2: Long = nat(t, n_JobQue, push(t, 9223090561878065900L, ((fp + 56) + (l16_i * 32L)), l16_i, 0L, 0L, 0L, 0L, 0L))
+                val t2: Long = nat(t, n_JobQue, push(t, 9223090561878065905L, ((fp + 56) + (l16_i * 32L)), l16_i, 0L, 0L, 0L, 0L, 0L))
                 st8(((fp + 88) + (l16_i * 8L)), t2)
                 ln = 6291634 // TTFVis.HC:178
                 l16_i = (l16_i + 1L)
@@ -2620,7 +2619,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             if ((p0_mode == 1L)) {
                 ln = 6291640 // TTFVis.HC:184
                 tick(t)
-                f747_VRMerge(t, ld8(g_cur_player))
+                f752_VRMerge(t, ld8(g_cur_player))
             }
             ln = 6291641 // TTFVis.HC:185
             t.msp = msp0
@@ -2633,7 +2632,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval10 (TTFVis.HC:146) */
-    fun f750_eval10(t: Task): Long {
+    fun f755_eval10(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2647,7 +2646,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval11 (TTFVis.HC:147) */
-    fun f751_eval11(t: Task): Long {
+    fun f756_eval11(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2661,7 +2660,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC MPVisRecalcMap (TTFVis.HC:188) */
-    fun f752_MPVisRecalcMap(t: Task, a0: Long) {
+    fun f757_MPVisRecalcMap(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2676,7 +2675,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 loop2@ while ((l8_i < ld8(g_map_cols))) {
                     ln = 6291649 // TTFVis.HC:193
                     tick(t)
-                    val t0: Long = f730_LOS(t, ld8((p0_job + 16L)), ld8((p0_job + 24L)), l16_j, l8_i)
+                    val t0: Long = f735_LOS(t, ld8((p0_job + 16L)), ld8((p0_job + 24L)), l16_j, l8_i)
                     if ((t0 != 0L)) {
                         ln = 6291650 // TTFVis.HC:194
                         st1(((g_vis_map + (l16_j * 19L)) + l8_i), 1L)
@@ -2698,7 +2697,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC VisRecalcMap (TTFVis.HC:199) */
-    fun f753_VisRecalcMap(t: Task, a0: Long, a1: Long) {
+    fun f758_VisRecalcMap(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2752,7 +2751,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l16_i = 0L
             loop2@ while ((l16_i < l40_cnt)) {
                 ln = 6291676 // TTFVis.HC:220
-                val t2: Long = nat(t, n_JobQue, push(t, 9223090561878065904L, ((fp + 48) + (l16_i * 32L)), l16_i, 0L, 0L, 0L, 0L, 0L))
+                val t2: Long = nat(t, n_JobQue, push(t, 9223090561878065909L, ((fp + 48) + (l16_i * 32L)), l16_i, 0L, 0L, 0L, 0L, 0L))
                 st8(((fp + 80) + (l16_i * 8L)), t2)
                 ln = 6291675 // TTFVis.HC:219
                 l16_i = (l16_i + 1L)
@@ -2774,7 +2773,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval12 (TTFVis.HC:202) */
-    fun f754_eval12(t: Task): Long {
+    fun f759_eval12(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2788,7 +2787,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $eval13 (TTFVis.HC:203) */
-    fun f755_eval13(t: Task): Long {
+    fun f760_eval13(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -2802,7 +2801,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC AttackHeader (TTFFire.HC:1) */
-    fun f756_AttackHeader(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f761_AttackHeader(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -2871,7 +2870,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC HitDamage (TTFFire.HC:33) */
-    fun f757_HitDamage(t: Task, a0: Long, a1: Long, a2: Long, a3: Double): Double {
+    fun f762_HitDamage(t: Task, a0: Long, a1: Long, a2: Long, a3: Double): Double {
         var ln = 0
         try {
             enter(t)
@@ -2932,7 +2931,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DamageDo (TTFFire.HC:59) */
-    fun f758_DamageDo(t: Task, a0: Long, a1: Double): Long {
+    fun f763_DamageDo(t: Task, a0: Long, a1: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -2954,14 +2953,14 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     nat(t, n_Print, push1(t, s35))
                     ln = 7340100 // TTFFire.HC:68
                     tick(t)
-                    P.f499_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 74.0, 98.0)
+                    P.f504_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 74.0, 98.0)
                     ln = 7340101 // TTFFire.HC:69
                     nat(t, n_Sleep, push1(t, f2i((1000.0 * ldf(g_animation_delay)))))
                     ln = 7340102 // TTFFire.HC:70
                     st1((p0_target + 60L), 0L)
                     ln = 7340103 // TTFFire.HC:71
                     tick(t)
-                    f749_VisRecalc(t, 3L, p0_target)
+                    f754_VisRecalc(t, 3L, p0_target)
                     ln = 7340104 // TTFFire.HC:72
                     val t0: Long = (g_alive_cnt + (ld1s((p0_target + 57L)) * 8L))
                     val t1: Long = ld8(t0)
@@ -3005,7 +3004,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC IndirectAdd (TTFFire.HC:91) */
-    fun f759_IndirectAdd(t: Task, a0: Long, a1: Long, a2: Long) {
+    fun f764_IndirectAdd(t: Task, a0: Long, a1: Long, a2: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3039,7 +3038,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC BulletPlot (TTFFire.HC:104) */
-    fun f760_BulletPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f765_BulletPlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3063,7 +3062,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UnitDirectFire (TTFFire.HC:112) */
-    fun f761_UnitDirectFire(t: Task, a0: Long, a1: Long) {
+    fun f766_UnitDirectFire(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3089,13 +3088,13 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             }
             ln = 7340151 // TTFFire.HC:119
             tick(t)
-            f756_AttackHeader(t, p0_tmpu, s39, p1_target)
+            f761_AttackHeader(t, p0_tmpu, s39, p1_target)
             ln = 7340152 // TTFFire.HC:120
             tick(t)
-            f724_RowCol2XY(t, (fp + 56), (fp + 64), ld8((p0_tmpu + 16L)), ld8((p0_tmpu + 24L)))
+            f729_RowCol2XY(t, (fp + 56), (fp + 64), ld8((p0_tmpu + 16L)), ld8((p0_tmpu + 24L)))
             ln = 7340153 // TTFFire.HC:121
             tick(t)
-            f724_RowCol2XY(t, (fp + 72), (fp + 80), ld8((p1_target + 16L)), ld8((p1_target + 24L)))
+            f729_RowCol2XY(t, (fp + 72), (fp + 80), ld8((p1_target + 16L)), ld8((p1_target + 24L)))
             ln = 7340154 // TTFFire.HC:122
             val t0: Double = f(nat(t, n_Rand, push0(t)))
             l88_d = (100.0 * t0)
@@ -3142,11 +3141,11 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st1(g_target_hit, 1L)
                 ln = 7340175 // TTFFire.HC:143
                 tick(t)
-                P.f499_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
+                P.f504_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
                 ln = 7340176 // TTFFire.HC:144
                 nat(t, n_Sleep, push1(t, f2i((500.0 * ldf(g_animation_delay)))))
                 ln = 7340177 // TTFFire.HC:145
-                nat(t, n_Line, push(t, 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, f2i(ldf((fp + 72))), f2i(ldf((fp + 80))), 0L, 9223090561878065912L, 1L, 0L))
+                nat(t, n_Line, push(t, 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, f2i(ldf((fp + 72))), f2i(ldf((fp + 80))), 0L, 9223090561878065917L, 1L, 0L))
             } else {
                 ln = 7340179 // TTFFire.HC:147
                 nat(t, n_Print, push2(t, s47, bits((-l88_d))))
@@ -3154,7 +3153,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st1(g_target_hit, 0L)
                 ln = 7340181 // TTFFire.HC:149
                 tick(t)
-                P.f499_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 69.0, 74.0)
+                P.f504_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 69.0, 74.0)
                 ln = 7340182 // TTFFire.HC:150
                 nat(t, n_Sleep, push1(t, f2i((1000.0 * ldf(g_animation_delay)))))
                 ln = 7340183 // TTFFire.HC:151
@@ -3167,7 +3166,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 val t5: Double = f(nat(t, n_Sin, push1(t, bits(l96_a))))
                 val t8: Double = ldf((fp + 72))
                 val t7: Double = f(nat(t, n_Cos, push1(t, bits(l96_a))))
-                nat(t, n_Line, push(t, 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, f2i((t8 + (l88_d * t7))), f2i((t6 + (l88_d * t5))), 0L, 9223090561878065912L, 1L, 0L))
+                nat(t, n_Line, push(t, 0L, f2i(ldf((fp + 56))), f2i(ldf((fp + 64))), 0L, f2i((t8 + (l88_d * t7))), f2i((t6 + (l88_d * t5))), 0L, 9223090561878065917L, 1L, 0L))
             }
             ln = 7340187 // TTFFire.HC:155
             st1(g_firing, 0L)
@@ -3180,12 +3179,12 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st8((fp + 24), ld8((p1_target + 24L)))
                 ln = 7340191 // TTFFire.HC:159
                 tick(t)
-                val t9: Long = f718_HexMoveOne(t, (fp + 16), (fp + 24), ldf((fp + 56)), ldf((fp + 64)))
+                val t9: Long = f723_HexMoveOne(t, (fp + 16), (fp + 24), ldf((fp + 56)), ldf((fp + 64)))
                 l32_facing = t9
                 if ((t9 >= 0L)) {
                     ln = 7340192 // TTFFire.HC:160
                     tick(t)
-                    val t10: Long = f723_FacingChg(t, l32_facing, ld1s((p1_target + 58L)))
+                    val t10: Long = f728_FacingChg(t, l32_facing, ld1s((p1_target + 58L)))
                     l32_facing = t10
                 } else {
                     ln = 7340194 // TTFFire.HC:162
@@ -3193,9 +3192,9 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 }
                 ln = 7340195 // TTFFire.HC:163
                 tick(t)
-                val t11: Double = f757_HitDamage(t, p0_tmpu, p1_target, l32_facing, l104_range_factor)
+                val t11: Double = f762_HitDamage(t, p0_tmpu, p1_target, l32_facing, l104_range_factor)
                 tick(t)
-                f758_DamageDo(t, p1_target, t11)
+                f763_DamageDo(t, p1_target, t11)
             }
             ln = 7340197 // TTFFire.HC:165
             loop0@ while ((ld1s((P.g_scrncast + 67L)) != 0L)) {
@@ -3212,7 +3211,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC HexOccupy (TTFFire.HC:170) */
-    fun f762_HexOccupy(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f767_HexOccupy(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3235,15 +3234,15 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             if ((p0_overrun != 0L)) {
                 ln = 7340209 // TTFFire.HC:177
                 tick(t)
-                f756_AttackHeader(t, p1_tmpu, s48, p2_target)
+                f761_AttackHeader(t, p1_tmpu, s48, p2_target)
             } else {
                 ln = 7340211 // TTFFire.HC:179
                 tick(t)
-                f756_AttackHeader(t, p1_tmpu, s49, p2_target)
+                f761_AttackHeader(t, p1_tmpu, s49, p2_target)
             }
             ln = 7340212 // TTFFire.HC:180
             tick(t)
-            P.f499_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
+            P.f504_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
             ln = 7340213 // TTFFire.HC:181
             nat(t, n_Sleep, push1(t, f2i((500.0 * ldf(g_animation_delay)))))
             ln = 7340214 // TTFFire.HC:182
@@ -3252,7 +3251,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st1((p2_target + 66L), 1L)
             ln = 7340216 // TTFFire.HC:184
             tick(t)
-            val t0: Double = f757_HitDamage(t, p1_tmpu, p2_target, 1L, 0.0)
+            val t0: Double = f762_HitDamage(t, p1_tmpu, p2_target, 1L, 0.0)
             l32_damage = t0
             ln = 7340217 // TTFFire.HC:185
             if ((p0_overrun != 0L)) {
@@ -3276,7 +3275,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 7340228 // TTFFire.HC:196
             val t1: Double = f(nat(t, n_Round, push1(t, bits(l32_damage))))
             tick(t)
-            val t2: Long = f758_DamageDo(t, p2_target, t1)
+            val t2: Long = f763_DamageDo(t, p2_target, t1)
             if ((t2 != 0L)) {
                 ln = 7340229 // TTFFire.HC:197
                 nat(t, n_Print, push1(t, s53))
@@ -3294,7 +3293,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st1((p1_tmpu + 60L), 0L)
                 ln = 7340235 // TTFFire.HC:203
                 tick(t)
-                f749_VisRecalc(t, 3L, p1_tmpu)
+                f754_VisRecalc(t, 3L, p1_tmpu)
                 ln = 7340236 // TTFFire.HC:204
                 val t3: Long = (g_alive_cnt + (ld1s((p1_tmpu + 57L)) * 8L))
                 val t4: Long = ld8(t3)
@@ -3317,7 +3316,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC IndirectResolveAll (TTFFire.HC:212) */
-    fun f763_IndirectResolveAll(t: Task) {
+    fun f768_IndirectResolveAll(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -3342,13 +3341,13 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 l72_tmpu = ld8((l88_tmpi + 16L))
                 ln = 7340253 // TTFFire.HC:221
                 tick(t)
-                f756_AttackHeader(t, l72_tmpu, s55, 0L)
+                f761_AttackHeader(t, l72_tmpu, s55, 0L)
                 ln = 7340254 // TTFFire.HC:222
                 tick(t)
-                f724_RowCol2XY(t, (fp + 24), (fp + 32), ld8((l72_tmpu + 16L)), ld8((l72_tmpu + 24L)))
+                f729_RowCol2XY(t, (fp + 24), (fp + 32), ld8((l72_tmpu + 16L)), ld8((l72_tmpu + 24L)))
                 ln = 7340255 // TTFFire.HC:223
                 tick(t)
-                f724_RowCol2XY(t, (fp + 40), (fp + 48), ld8((l88_tmpi + 24L)), ld8((l88_tmpi + 32L)))
+                f729_RowCol2XY(t, (fp + 40), (fp + 48), ld8((l88_tmpi + 24L)), ld8((l88_tmpi + 32L)))
                 ln = 7340256 // TTFFire.HC:224
                 val t0: Double = f(nat(t, n_Rand, push0(t)))
                 l56_d = (100.0 * t0)
@@ -3377,7 +3376,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     nat(t, n_Print, push2(t, s46, bits(l56_d)))
                     ln = 7340268 // TTFFire.HC:236
                     tick(t)
-                    P.f499_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
+                    P.f504_Noise(t, f2i((500.0 * ldf(g_animation_delay))), 34.0, 41.0)
                     ln = 7340269 // TTFFire.HC:237
                     nat(t, n_Sleep, push1(t, f2i((500.0 * ldf(g_animation_delay)))))
                 } else {
@@ -3385,7 +3384,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     nat(t, n_Print, push2(t, s47, bits((-l56_d))))
                     ln = 7340272 // TTFFire.HC:240
                     tick(t)
-                    P.f499_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 69.0, 74.0)
+                    P.f504_Noise(t, f2i((1000.0 * ldf(g_animation_delay))), 69.0, 74.0)
                     ln = 7340273 // TTFFire.HC:241
                     nat(t, n_Sleep, push1(t, f2i((1000.0 * ldf(g_animation_delay)))))
                     ln = 7340274 // TTFFire.HC:242
@@ -3406,10 +3405,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     st8(t7, (ld8(t7) + ld8((g_row_offsets + (l0_i * 8L)))))
                     ln = 7340280 // TTFFire.HC:248
                     tick(t)
-                    f724_RowCol2XY(t, (fp + 40), (fp + 48), ld8((l88_tmpi + 24L)), ld8((l88_tmpi + 32L)))
+                    f729_RowCol2XY(t, (fp + 40), (fp + 48), ld8((l88_tmpi + 24L)), ld8((l88_tmpi + 32L)))
                 }
                 ln = 7340283 // TTFFire.HC:251
-                nat(t, n_Line, push(t, 0L, f2i(ldf((fp + 24))), f2i(ldf((fp + 32))), 0L, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, 9223090561878065912L, 1L, 0L))
+                nat(t, n_Line, push(t, 0L, f2i(ldf((fp + 24))), f2i(ldf((fp + 32))), 0L, f2i(ldf((fp + 40))), f2i(ldf((fp + 48))), 0L, 9223090561878065917L, 1L, 0L))
                 ln = 7340284 // TTFFire.HC:252
                 st1(g_firing, 0L)
                 ln = 7340285 // TTFFire.HC:253
@@ -3437,19 +3436,19 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     var r9: Boolean = (((0L <= l8_r) && (l8_r < ld8(g_map_rows))) && ((0L <= l16_c) && (l16_c < ld8(g_map_cols))))
                     if (r9) {
                         tick(t)
-                        val t8: Long = f726_UnitFind(t, l8_r, l16_c)
+                        val t8: Long = f731_UnitFind(t, l8_r, l16_c)
                         l80_target = t8
                         r9 = (t8 != 0L)
                     }
                     if (r9) {
                         ln = 7340296 // TTFFire.HC:264
                         tick(t)
-                        f756_AttackHeader(t, l72_tmpu, s55, l80_target)
+                        f761_AttackHeader(t, l72_tmpu, s55, l80_target)
                         ln = 7340297 // TTFFire.HC:265
                         tick(t)
-                        val t10: Double = f757_HitDamage(t, l72_tmpu, l80_target, 1L, 0.0)
+                        val t10: Double = f762_HitDamage(t, l72_tmpu, l80_target, 1L, 0.0)
                         tick(t)
-                        f758_DamageDo(t, l80_target, t10)
+                        f763_DamageDo(t, l80_target, t10)
                     }
                     ln = 7340289 // TTFFire.HC:257
                     l0_i = (l0_i + 1L)
@@ -3457,7 +3456,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 }
                 ln = 7340300 // TTFFire.HC:268
                 tick(t)
-                P.f499_Noise(t, f2i((2000.0 * ldf(g_animation_delay))), 70.0, 74.0)
+                P.f504_Noise(t, f2i((2000.0 * ldf(g_animation_delay))), 70.0, 74.0)
                 ln = 7340301 // TTFFire.HC:269
                 nat(t, n_Sleep, push1(t, f2i((2000.0 * ldf(g_animation_delay)))))
                 ln = 7340302 // TTFFire.HC:270
@@ -3484,7 +3483,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#7 (Run.HC:2) */
-    fun f764_init_C__Apps_ToTheFront_Run_HC_7(t: Task): Long {
+    fun f769_init_C__Apps_ToTheFront_Run_HC_7(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -3498,7 +3497,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#8 (Run.HC:3) */
-    fun f765_init_C__Apps_ToTheFront_Run_HC_8(t: Task): Long {
+    fun f770_init_C__Apps_ToTheFront_Run_HC_8(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -3512,7 +3511,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#9 (Run.HC:4) */
-    fun f766_init_C__Apps_ToTheFront_Run_HC_9(t: Task): Long {
+    fun f771_init_C__Apps_ToTheFront_Run_HC_9(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -3526,7 +3525,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC HexMoveOneCost (TTFMove.HC:6) */
-    fun f767_HexMoveOneCost(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f772_HexMoveOneCost(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3542,7 +3541,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             } else {
                 ln = 3145740 // TTFMove.HC:12
                 tick(t)
-                val t0: Long = f723_FacingChg(t, p3_facing, ld1s((p0_tmpu + 58L)))
+                val t0: Long = f728_FacingChg(t, p3_facing, ld1s((p0_tmpu + 58L)))
                 l32_res = t0
                 ln = 3145741 // TTFMove.HC:13
                 if ((l32_res > 0L)) {
@@ -3577,7 +3576,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UnitMovePlot (TTFMove.HC:52) */
-    fun f768_UnitMovePlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
+    fun f773_UnitMovePlot(t: Task, a0: Long, a1: Long, a2: Long, a3: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3599,7 +3598,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UnitMoveAnimation (TTFMove.HC:59) */
-    fun f769_UnitMoveAnimation(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
+    fun f774_UnitMoveAnimation(t: Task, a0: Long, a1: Long, a2: Long, a3: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3616,7 +3615,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st8(g_moving_unit, p0_tmpu)
             ln = 3145791 // TTFMove.HC:63
             tick(t)
-            f724_RowCol2XY(t, (fp + 32), (fp + 40), ld8((p0_tmpu + 16L)), ld8((p0_tmpu + 24L)))
+            f729_RowCol2XY(t, (fp + 32), (fp + 40), ld8((p0_tmpu + 16L)), ld8((p0_tmpu + 24L)))
             ln = 3145792 // TTFMove.HC:64
             st8(g_move_x, f2i(ldf((fp + 32))))
             st8(g_move_y, f2i(ldf((fp + 40))))
@@ -3634,7 +3633,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 ln = 3145799 // TTFMove.HC:71
                 loop0@ while (true) {
                     tick(t)
-                    val t0: Double = P.f542_Wrap(t, (l64_f - ldf(g_move_facing)), (-f(4614256656552045848L)))
+                    val t0: Double = P.f547_Wrap(t, (l64_f - ldf(g_move_facing)), (-f(4614256656552045848L)))
                     if (!((t0 <= 0.0))) break@loop0
                     ln = 3145800 // TTFMove.HC:72
                     st8(g_move_facing, bits((ldf(g_move_facing) - 0.03)))
@@ -3645,7 +3644,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 ln = 3145803 // TTFMove.HC:75
                 loop2@ while (true) {
                     tick(t)
-                    val t1: Double = P.f542_Wrap(t, (l64_f - ldf(g_move_facing)), (-f(4614256656552045848L)))
+                    val t1: Double = P.f547_Wrap(t, (l64_f - ldf(g_move_facing)), (-f(4614256656552045848L)))
                     if (!((t1 > 0.0))) break@loop2
                     ln = 3145804 // TTFMove.HC:76
                     st8(g_move_facing, bits((ldf(g_move_facing) + 0.03)))
@@ -3660,9 +3659,9 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st8(g_move_facing, bits(l64_f))
             ln = 3145810 // TTFMove.HC:82
             tick(t)
-            f724_RowCol2XY(t, (fp + 48), (fp + 56), p1_r, p2_c)
+            f729_RowCol2XY(t, (fp + 48), (fp + 56), p1_r, p2_c)
             ln = 3145811 // TTFMove.HC:83
-            nat(t, n_Line, push(t, 0L, f2i(ldf((fp + 32))), f2i(ldf((fp + 40))), 0L, f2i(ldf((fp + 48))), f2i(ldf((fp + 56))), 0L, 9223090561878065920L, 1L, 0L))
+            nat(t, n_Line, push(t, 0L, f2i(ldf((fp + 32))), f2i(ldf((fp + 40))), 0L, f2i(ldf((fp + 48))), f2i(ldf((fp + 56))), 0L, 9223090561878065925L, 1L, 0L))
             ln = 3145812 // TTFMove.HC:84
             nat(t, n_Snd, push1(t, 0L))
             ln = 3145813 // TTFMove.HC:85
@@ -3676,7 +3675,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UnitMove (TTFMove.HC:89) */
-    fun f770_UnitMove(t: Task, a0: Long, a1: Long, a2: Long): Long {
+    fun f775_UnitMove(t: Task, a0: Long, a1: Long, a2: Long): Long {
         var ln = 0
         try {
             enter(t)
@@ -3701,7 +3700,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st8((fp + 40), ld8((p0_tmpu + 24L)))
                 ln = 3145824 // TTFMove.HC:96
                 tick(t)
-                val t0: Long = f718_HexMoveOne(t, (fp + 32), (fp + 40), p1_x.toDouble(), p2_y.toDouble())
+                val t0: Long = f723_HexMoveOne(t, (fp + 32), (fp + 40), p1_x.toDouble(), p2_y.toDouble())
                 l72_facing = t0
                 if ((t0 < 0L)) {
                     ln = 3145825 // TTFMove.HC:97
@@ -3709,7 +3708,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 } else {
                     ln = 3145827 // TTFMove.HC:99
                     tick(t)
-                    val t1: Long = f767_HexMoveOneCost(t, p0_tmpu, ld8((fp + 32)), ld8((fp + 40)), l72_facing)
+                    val t1: Long = f772_HexMoveOneCost(t, p0_tmpu, ld8((fp + 32)), ld8((fp + 40)), l72_facing)
                     l64_i = t1
                     ln = 3145828 // TTFMove.HC:100
                     if ((l64_i > ld1s((p0_tmpu + 59L)))) {
@@ -3720,7 +3719,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     var r3: Boolean = (((ld1u((p0_tmpu + 66L)) == 0L) && (ld1s((p0_tmpu + 62L)) >= l64_i)) && (ld1s((p0_tmpu + 62L)) >= (ld1s((p0_tmpu + 59L)) shr 1)))
                     if (r3) {
                         tick(t)
-                        val t2: Long = f726_UnitFind(t, ld8((fp + 32)), ld8((fp + 40)))
+                        val t2: Long = f731_UnitFind(t, ld8((fp + 32)), ld8((fp + 40)))
                         l24_target = t2
                         r3 = (t2 != 0L)
                     }
@@ -3729,7 +3728,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         ln = 3145834 // TTFMove.HC:106
                         val t4: Long = nat(t, n_ToBool, push1(t, ld1u((l24_target + 67L))))
                         tick(t)
-                        val t5: Long = f762_HexOccupy(t, t4, p0_tmpu, l24_target)
+                        val t5: Long = f767_HexOccupy(t, t4, p0_tmpu, l24_target)
                         if ((t5 == 0L)) {
                             ln = 3145835 // TTFMove.HC:107
                             p0_tmpu = 0L
@@ -3743,13 +3742,13 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     var r7: Boolean = (ld1s((p0_tmpu + 62L)) >= l64_i)
                     if (r7) {
                         tick(t)
-                        val t6: Long = f726_UnitFind(t, ld8((fp + 32)), ld8((fp + 40)))
+                        val t6: Long = f731_UnitFind(t, ld8((fp + 32)), ld8((fp + 40)))
                         r7 = (t6 == 0L)
                     }
                     if (r7) {
                         ln = 3145841 // TTFMove.HC:113
                         tick(t)
-                        f769_UnitMoveAnimation(t, p0_tmpu, ld8((fp + 32)), ld8((fp + 40)), l72_facing)
+                        f774_UnitMoveAnimation(t, p0_tmpu, ld8((fp + 32)), ld8((fp + 40)), l72_facing)
                         ln = 3145842 // TTFMove.HC:114
                         st1((p0_tmpu + 58L), l72_facing)
                         ln = 3145843 // TTFMove.HC:115
@@ -3761,10 +3760,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         st8((p0_tmpu + 24L), ld8((fp + 40)))
                         ln = 3145846 // TTFMove.HC:118
                         tick(t)
-                        f749_VisRecalc(t, 1L, p0_tmpu)
+                        f754_VisRecalc(t, 1L, p0_tmpu)
                         ln = 3145848 // TTFMove.HC:120
                         tick(t)
-                        val t9: Long = f749_VisRecalc(t, 4L, p0_tmpu)
+                        val t9: Long = f754_VisRecalc(t, 4L, p0_tmpu)
                         ln = 3145847 // TTFMove.HC:119
                         tick(t)
                         P.f100_LBEqu(t, ((p0_tmpu + 64L) + ld8(g_enemy_player)), 0L, t9)
@@ -3794,7 +3793,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UnitDraw (TTFDraw.HC:4) */
-    fun f771_UnitDraw(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Double) {
+    fun f776_UnitDraw(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Double) {
         var ln = 0
         try {
             enter(t)
@@ -3809,12 +3808,11 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 8388615 // TTFDraw.HC:7
             if ((ld1u((p1_tmpu + 67L)) != 0L)) {
                 ln = 8388616 // TTFDraw.HC:8
-                tick(t)
-                P.f440_Sprite3(t, p0_dc, p2_x, p3_y, 0L, ld8(p1_tmpu), 0L)
+                nat(t, n_Sprite3, push(t, p0_dc, p2_x, p3_y, 0L, ld8(p1_tmpu), 0L))
             } else {
                 ln = 8388618 // TTFDraw.HC:10
                 tick(t)
-                P.f445_Sprite3ZB(t, p0_dc, p2_x, p3_y, 0L, ld8(p1_tmpu), p4_f)
+                P.f450_Sprite3ZB(t, p0_dc, p2_x, p3_y, 0L, ld8(p1_tmpu), p4_f)
             }
             ln = 8388619 // TTFDraw.HC:11
             if ((((((ld8(g_phase) and -2L) == 0L) && (ld1u((p1_tmpu + 68L)) != 0L)) && (ld1u((p1_tmpu + 66L)) == 0L)) && (ld1s((p1_tmpu + 57L)) == ld8(g_cur_player)))) {
@@ -3831,15 +3829,15 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 ln = 8388626 // TTFDraw.HC:18
                 val t0: Double = f(nat(t, n_tS, push0(t)))
                 tick(t)
-                val t1: Double = P.f480_Saw(t, (4.0 * t0), 2.0)
+                val t1: Double = P.f485_Saw(t, (4.0 * t0), 2.0)
                 tick(t)
-                P.f411_GrCircle3(t, p0_dc, p2_x, p3_y, 0L, f2i((20.0 * t1)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f413_GrCircle3(t, p0_dc, p2_x, p3_y, 0L, f2i((20.0 * t1)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 8388627 // TTFDraw.HC:19
                 val t2: Double = f(nat(t, n_tS, push0(t)))
                 tick(t)
-                val t3: Double = P.f480_Saw(t, ((4.0 * t2) + 1.0), 2.0)
+                val t3: Double = P.f485_Saw(t, ((4.0 * t2) + 1.0), 2.0)
                 tick(t)
-                P.f411_GrCircle3(t, p0_dc, p2_x, p3_y, 0L, f2i((20.0 * t3)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f413_GrCircle3(t, p0_dc, p2_x, p3_y, 0L, f2i((20.0 * t3)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 8388628 // TTFDraw.HC:20
                 st4((p0_dc + 228L), 1L)
             }
@@ -3849,7 +3847,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UnitsDraw (TTFDraw.HC:24) */
-    fun f772_UnitsDraw(t: Task, a0: Long) {
+    fun f777_UnitsDraw(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3896,7 +3894,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     if ((r1 && (l40_tmpu != ld8(g_moving_unit)))) {
                         ln = 8388653 // TTFDraw.HC:45
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 24), (fp + 32), ld8((l40_tmpu + 16L)), ld8((l40_tmpu + 24L)))
+                        f729_RowCol2XY(t, (fp + 24), (fp + 32), ld8((l40_tmpu + 16L)), ld8((l40_tmpu + 24L)))
                         ln = 8388657 // TTFDraw.HC:49
                         var r3: Boolean = ((((ld8(g_phase) and -2L) == 2L) && (ld1s((l40_tmpu + 62L)) != 0L)) || (((((ld8(g_phase) and -2L) == 0L) && (ld1u((l40_tmpu + 68L)) != 0L)) || (((ld8(g_phase) and -2L) == 4L) && (ld1u((l40_tmpu + 68L)) == 0L))) && (ld1u((l40_tmpu + 66L)) == 0L)))
                         if (!r3) {
@@ -3908,7 +3906,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         if (r3) {
                             ln = 8388658 // TTFDraw.HC:50
                             tick(t)
-                            f771_UnitDraw(t, p0_dc, l40_tmpu, f2i(ldf((fp + 24))), f2i(ldf((fp + 32))), (((ld1s((l40_tmpu + 58L)).toDouble() * 60.0) * f(4614256656552045848L)) / 180.0))
+                            f776_UnitDraw(t, p0_dc, l40_tmpu, f2i(ldf((fp + 24))), f2i(ldf((fp + 32))), (((ld1s((l40_tmpu + 58L)).toDouble() * 60.0) * f(4614256656552045848L)) / 180.0))
                         }
                     }
                     ln = 8388638 // TTFDraw.HC:30
@@ -3926,7 +3924,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC DrawIt (TTFDraw.HC:56) */
-    fun f773_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f778_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -3954,18 +3952,18 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l40_j = ((ld8((P.g_ms + 8L)) - ld8((p0_task + 232L))) - ld8((p0_task + 264L)))
             ln = 8388680 // TTFDraw.HC:72
             tick(t)
-            val t1: Long = f727_CursorInWin(t, p0_task, l32_i, l40_j)
+            val t1: Long = f732_CursorInWin(t, p0_task, l32_i, l40_j)
             if ((t1 != 0L)) {
                 ln = 8388681 // TTFDraw.HC:73
                 l32_i = (l32_i - ld8(g_x0))
                 l40_j = (l40_j - ld8(g_y0))
                 ln = 8388682 // TTFDraw.HC:74
                 tick(t)
-                f728_CursorUpdate(t, p0_task, l32_i, l40_j)
+                f733_CursorUpdate(t, p0_task, l32_i, l40_j)
             }
             ln = 8388684 // TTFDraw.HC:76
             tick(t)
-            f724_RowCol2XY(t, (fp + 16), (fp + 24), ld8(g_cursor_row), ld8(g_cursor_col))
+            f729_RowCol2XY(t, (fp + 16), (fp + 24), ld8(g_cursor_row), ld8(g_cursor_col))
             ln = 8388687 // TTFDraw.HC:79
             st4((p1_dc + 160L), 14L)
             ln = 8388688 // TTFDraw.HC:80
@@ -3978,7 +3976,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 if ((t2 == l56_c)) {
                     ln = 8388691 // TTFDraw.HC:83
                     tick(t)
-                    P.f387_GrFloodFill(t, p1_dc, f2i(((ldf((fp + 16)) + l32_i.toDouble()) + ld8(g_x0).toDouble())), f2i((ldf((fp + 24)) + ld8(g_y0).toDouble())), 0L, 0L, 0L)
+                    P.f388_GrFloodFill(t, p1_dc, f2i(((ldf((fp + 16)) + l32_i.toDouble()) + ld8(g_x0).toDouble())), f2i((ldf((fp + 24)) + ld8(g_y0).toDouble())), 0L, 0L, 0L)
                 }
                 ln = 8388692 // TTFDraw.HC:84
                 l40_j = divs(-11L, 2L)
@@ -3988,7 +3986,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     if ((t3 == l56_c)) {
                         ln = 8388694 // TTFDraw.HC:86
                         tick(t)
-                        P.f387_GrFloodFill(t, p1_dc, f2i(((ldf((fp + 16)) + l40_j.toDouble()) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) + l32_i.toDouble()) + ld8(g_y0).toDouble())), 0L, 0L, 0L)
+                        P.f388_GrFloodFill(t, p1_dc, f2i(((ldf((fp + 16)) + l40_j.toDouble()) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) + l32_i.toDouble()) + ld8(g_y0).toDouble())), 0L, 0L, 0L)
                     }
                     ln = 8388692 // TTFDraw.HC:84
                     l40_j = (l40_j + 1L)
@@ -4000,14 +3998,14 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             }
             ln = 8388697 // TTFDraw.HC:89
             tick(t)
-            f772_UnitsDraw(t, p1_dc)
+            f777_UnitsDraw(t, p1_dc)
             ln = 8388698 // TTFDraw.HC:90
             if ((ld1u(g_firing) != 0L)) {
                 ln = 8388699 // TTFDraw.HC:91
                 st4((p1_dc + 160L), 0L)
                 ln = 8388700 // TTFDraw.HC:92
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, (ld8(g_fire_x) + ld8(g_x0)), (ld8(g_fire_y) + ld8(g_y0)), 2L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, (ld8(g_fire_x) + ld8(g_x0)), (ld8(g_fire_y) + ld8(g_y0)), 2L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
             }
             ln = 8388702 // TTFDraw.HC:94
             if ((ld1u(g_indirect_explosion) != 0L)) {
@@ -4028,7 +4026,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     if ((((0L <= l48_r) && (l48_r < ld8(g_map_rows))) && ((0L <= l56_c) && (l56_c < ld8(g_map_cols))))) {
                         ln = 8388710 // TTFDraw.HC:102
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 16), (fp + 24), l48_r, l56_c)
+                        f729_RowCol2XY(t, (fp + 16), (fp + 24), l48_r, l56_c)
                         ln = 8388711 // TTFDraw.HC:103
                         l40_j = 0L
                         loop6@ while ((l40_j < 10L)) {
@@ -4048,7 +4046,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             val t7: Double = ldf((fp + 16))
                             val t6: Long = nat(t, n_RandU16, push0(t))
                             tick(t)
-                            P.f397_GrCircle(t, p1_dc, f2i((((t7 + mods(t6, 11L).toDouble()) - divs(11L, 2L).toDouble()) + ld8(g_x0).toDouble())), t8, 2L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                            P.f398_GrCircle(t, p1_dc, f2i((((t7 + mods(t6, 11L).toDouble()) - divs(11L, 2L).toDouble()) + ld8(g_x0).toDouble())), t8, 2L, 1L, 0.0, (2.0 * f(4614256656552045848L)))
                             ln = 8388711 // TTFDraw.HC:103
                             l40_j = (l40_j + 1L)
                             tick(t)
@@ -4065,11 +4063,11 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st4((p1_dc + 160L), 14L)
                 ln = 8388724 // TTFDraw.HC:116
                 tick(t)
-                f771_UnitDraw(t, p1_dc, ld8(g_moving_unit), ld8(g_move_x), ld8(g_move_y), ldf(g_move_facing))
+                f776_UnitDraw(t, p1_dc, ld8(g_moving_unit), ld8(g_move_x), ld8(g_move_y), ldf(g_move_facing))
             }
             ln = 8388726 // TTFDraw.HC:118
             tick(t)
-            P.f574_ProgressBarsRst(t, 0L)
+            P.f579_ProgressBarsRst(t, 0L)
             ln = 8388727 // TTFDraw.HC:119
             if ((ld8(g_moving_unit) != 0L)) {
                 ln = 8388728 // TTFDraw.HC:120
@@ -4091,15 +4089,15 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 st4((p1_dc + 160L), 14L)
                 ln = 8388738 // TTFDraw.HC:130
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + ld8(g_x0).toDouble())), f2i((ldf(g_fire_radius_y) + ld8(g_y0).toDouble())), f2i((ldf(g_fire_radius) - 1.0)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + ld8(g_x0).toDouble())), f2i((ldf(g_fire_radius_y) + ld8(g_y0).toDouble())), f2i((ldf(g_fire_radius) - 1.0)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 8388739 // TTFDraw.HC:131
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + ld8(g_x0).toDouble())), f2i((ldf(g_fire_radius_y) + ld8(g_y0).toDouble())), f2i((ldf(g_fire_radius) + 1.0)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + ld8(g_x0).toDouble())), f2i((ldf(g_fire_radius_y) + ld8(g_y0).toDouble())), f2i((ldf(g_fire_radius) + 1.0)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
                 ln = 8388740 // TTFDraw.HC:132
                 st4((p1_dc + 160L), 4L)
                 ln = 8388741 // TTFDraw.HC:133
                 tick(t)
-                P.f397_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + ld8(g_x0).toDouble())), f2i((ldf(g_fire_radius_y) + ld8(g_y0).toDouble())), f2i(ldf(g_fire_radius)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
+                P.f398_GrCircle(t, p1_dc, f2i((ldf(g_fire_radius_x) + ld8(g_x0).toDouble())), f2i((ldf(g_fire_radius_y) + ld8(g_y0).toDouble())), f2i(ldf(g_fire_radius)), 1L, 0.0, (2.0 * f(4614256656552045848L)))
             }
             ln = 8388743 // TTFDraw.HC:135
             tick(t)
@@ -4113,10 +4111,9 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     if ((ld1s((ld8((l208_tmpi + 16L)) + 57L)) == ld8(g_view_player))) {
                         ln = 8388747 // TTFDraw.HC:139
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 16), (fp + 24), ld8((l208_tmpi + 24L)), ld8((l208_tmpi + 32L)))
+                        f729_RowCol2XY(t, (fp + 16), (fp + 24), ld8((l208_tmpi + 24L)), ld8((l208_tmpi + 32L)))
                         ln = 8388748 // TTFDraw.HC:140
-                        tick(t)
-                        P.f440_Sprite3(t, p1_dc, f2i((ldf((fp + 16)) + ld8(g_x0).toDouble())), f2i((ldf((fp + 24)) + ld8(g_y0).toDouble())), 0L, b4, 0L)
+                        nat(t, n_Sprite3, push(t, p1_dc, f2i((ldf((fp + 16)) + ld8(g_x0).toDouble())), f2i((ldf((fp + 24)) + ld8(g_y0).toDouble())), 0L, b4, 0L))
                     }
                     ln = 8388750 // TTFDraw.HC:142
                     l208_tmpi = ld8(l208_tmpi)
@@ -4134,7 +4131,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     st8(g_show_vis_col, ld8(g_cursor_col))
                     ln = 8388757 // TTFDraw.HC:149
                     tick(t)
-                    f753_VisRecalcMap(t, ld8(g_show_vis_row), ld8(g_show_vis_col))
+                    f758_VisRecalcMap(t, ld8(g_show_vis_row), ld8(g_show_vis_col))
                 }
                 ln = 8388760 // TTFDraw.HC:152
                 st4((p1_dc + 160L), 7L)
@@ -4148,19 +4145,19 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         if ((ld1u(((g_vis_map + (l40_j * 19L)) + l32_i)) == 0L)) {
                             ln = 8388764 // TTFDraw.HC:156
                             tick(t)
-                            f724_RowCol2XY(t, (fp + 16), (fp + 24), l40_j, l32_i)
+                            f729_RowCol2XY(t, (fp + 16), (fp + 24), l40_j, l32_i)
                             ln = 8388765 // TTFDraw.HC:157
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, f2i(((ldf((fp + 16)) - 6.0) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) - 6.0) + ld8(g_y0).toDouble())), f2i(((ldf((fp + 16)) + 6.0) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) + 6.0) + ld8(g_y0).toDouble())), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, f2i(((ldf((fp + 16)) - 6.0) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) - 6.0) + ld8(g_y0).toDouble())), f2i(((ldf((fp + 16)) + 6.0) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) + 6.0) + ld8(g_y0).toDouble())), 1L, 0L)
                             ln = 8388766 // TTFDraw.HC:158
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, f2i(((ldf((fp + 16)) + 6.0) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) - 6.0) + ld8(g_y0).toDouble())), f2i(((ldf((fp + 16)) - 6.0) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) + 6.0) + ld8(g_y0).toDouble())), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, f2i(((ldf((fp + 16)) + 6.0) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) - 6.0) + ld8(g_y0).toDouble())), f2i(((ldf((fp + 16)) - 6.0) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) + 6.0) + ld8(g_y0).toDouble())), 1L, 0L)
                             ln = 8388767 // TTFDraw.HC:159
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, f2i((ldf((fp + 16)) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) - 6.0) + ld8(g_y0).toDouble())), f2i((ldf((fp + 16)) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) + 6.0) + ld8(g_y0).toDouble())), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, f2i((ldf((fp + 16)) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) - 6.0) + ld8(g_y0).toDouble())), f2i((ldf((fp + 16)) + ld8(g_x0).toDouble())), f2i(((ldf((fp + 24)) + 6.0) + ld8(g_y0).toDouble())), 1L, 0L)
                             ln = 8388768 // TTFDraw.HC:160
                             tick(t)
-                            P.f396_GrLine(t, p1_dc, f2i(((ldf((fp + 16)) + 6.0) + ld8(g_x0).toDouble())), f2i((ldf((fp + 24)) + ld8(g_y0).toDouble())), f2i(((ldf((fp + 16)) - 6.0) + ld8(g_x0).toDouble())), f2i((ldf((fp + 24)) + ld8(g_y0).toDouble())), 1L, 0L)
+                            P.f397_GrLine(t, p1_dc, f2i(((ldf((fp + 16)) + 6.0) + ld8(g_x0).toDouble())), f2i((ldf((fp + 24)) + ld8(g_y0).toDouble())), f2i(((ldf((fp + 16)) - 6.0) + ld8(g_x0).toDouble())), f2i((ldf((fp + 24)) + ld8(g_y0).toDouble())), 1L, 0L)
                         }
                         ln = 8388762 // TTFDraw.HC:154
                         l32_i = (l32_i + 1L)
@@ -4188,7 +4185,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 ln = 8388783 // TTFDraw.HC:175
                 tick(t)
                 val vb6 = push0(t)
-                P.f369_GrPrint(t, p1_dc, (((ld8((p0_task + 224L)) - l32_i) shr 1) - ld8((p0_task + 256L))), (((ld8((p0_task + 248L)) - 8L) shr 1) - ld8((p0_task + 264L))), g_msg_buf, vb6, 0)
+                P.f370_GrPrint(t, p1_dc, (((ld8((p0_task + 224L)) - l32_i) shr 1) - ld8((p0_task + 256L))), (((ld8((p0_task + 248L)) - 8L) shr 1) - ld8((p0_task + 264L))), g_msg_buf, vb6, 0)
                 t.sp = vb6
                 ln = 8388786 // TTFDraw.HC:178
                 if ((ld8(g_msg_off_timeout) != 0L)) {
@@ -4227,7 +4224,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 8388805 // TTFDraw.HC:197
             tick(t)
             val vb7 = push0(t)
-            P.f369_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), (-ld8((p0_task + 264L))), (fp + 64), vb7, 0)
+            P.f370_GrPrint(t, p1_dc, (-ld8((p0_task + 256L))), (-ld8((p0_task + 264L))), (fp + 64), vb7, 0)
             t.sp = vb7
             ln = 8388807 // TTFDraw.HC:199
             nat(t, n_StrPrint, push3(t, (fp + 64), s59, ld8(g_alive_cnt)))
@@ -4248,7 +4245,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 8388812 // TTFDraw.HC:204
             tick(t)
             val vb8 = push0(t)
-            P.f369_GrPrint(t, p1_dc, ((-ld8((p0_task + 256L))) + 160L), (-ld8((p0_task + 264L))), (fp + 64), vb8, 0)
+            P.f370_GrPrint(t, p1_dc, ((-ld8((p0_task + 256L))) + 160L), (-ld8((p0_task + 264L))), (fp + 64), vb8, 0)
             t.sp = vb8
             ln = 8388814 // TTFDraw.HC:206
             nat(t, n_StrPrint, push3(t, (fp + 64), s59, ld8((g_alive_cnt + 8L))))
@@ -4269,7 +4266,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             ln = 8388819 // TTFDraw.HC:211
             tick(t)
             val vb9 = push0(t)
-            P.f369_GrPrint(t, p1_dc, ((-ld8((p0_task + 256L))) + 240L), (-ld8((p0_task + 264L))), (fp + 64), vb9, 0)
+            P.f370_GrPrint(t, p1_dc, ((-ld8((p0_task + 256L))) + 240L), (-ld8((p0_task + 264L))), (fp + 64), vb9, 0)
             t.sp = vb9
             t.msp = msp0
             t.depth--
@@ -4278,7 +4275,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC AnimationDelaySet (ToTheFront.HC:1) */
-    fun f774_AnimationDelaySet(t: Task) {
+    fun f779_AnimationDelaySet(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4292,7 +4289,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC TurnNew (ToTheFront.HC:6) */
-    fun f775_TurnNew(t: Task) {
+    fun f780_TurnNew(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4333,13 +4330,13 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             nat(t, n_StrPrint, push3(t, g_msg_buf, s62, t1))
             ln = 9437205 // ToTheFront.HC:21
             tick(t)
-            f746_VRSetUp(t, 0L)
+            f751_VRSetUp(t, 0L)
             ln = 9437206 // ToTheFront.HC:22
             tick(t)
-            f746_VRSetUp(t, 1L)
+            f751_VRSetUp(t, 1L)
             ln = 9437207 // ToTheFront.HC:23
             tick(t)
-            f749_VisRecalc(t, 5L, 0L)
+            f754_VisRecalc(t, 5L, 0L)
             ln = 9437208 // ToTheFront.HC:24
             st8(g_cur_player, ((ld8(g_turn) and 1L) xor 1L))
             ln = 9437209 // ToTheFront.HC:25
@@ -4350,7 +4347,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PhaseNew (ToTheFront.HC:28) */
-    fun f776_PhaseNew(t: Task) {
+    fun f781_PhaseNew(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4365,10 +4362,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             if ((t1 >= 6L)) {
                 ln = 9437217 // ToTheFront.HC:33
                 tick(t)
-                f763_IndirectResolveAll(t)
+                f768_IndirectResolveAll(t)
                 ln = 9437218 // ToTheFront.HC:34
                 tick(t)
-                f775_TurnNew(t)
+                f780_TurnNew(t)
             }
             ln = 9437221 // ToTheFront.HC:37
             nat(t, n_SleepUntil, push1(t, ld8(g_msg_off_timeout)))
@@ -4402,7 +4399,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC CharDo (ToTheFront.HC:56) */
-    fun f777_CharDo(t: Task, a0: Long) {
+    fun f782_CharDo(t: Task, a0: Long) {
         var ln = 0
         try {
             enter(t)
@@ -4472,13 +4469,13 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             } while (false)
                             ln = 9437253 // ToTheFront.HC:69
                             tick(t)
-                            f742_ViewPlayerSet(t, 0L)
+                            f747_ViewPlayerSet(t, 0L)
                             ln = 9437254 // ToTheFront.HC:70
                             break@switch0_30
                         } while (false)
                         ln = 9437256 // ToTheFront.HC:72
                         tick(t)
-                        f742_ViewPlayerSet(t, 1L)
+                        f747_ViewPlayerSet(t, 1L)
                         ln = 9437257 // ToTheFront.HC:73
                         break@switch0_30
                     } while (false)
@@ -4499,7 +4496,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     nat(t, n_Print, push1(t, s66))
                     ln = 9437266 // ToTheFront.HC:82
                     tick(t)
-                    P.f625_View(t)
+                    P.f630_View(t)
                     ln = 9437267 // ToTheFront.HC:83
                     nat(t, n_DocBottom, push0(t))
                     ln = 9437268 // ToTheFront.HC:84
@@ -4513,7 +4510,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 } while (false)
                 ln = 9437273 // ToTheFront.HC:89
                 tick(t)
-                f774_AnimationDelaySet(t)
+                f779_AnimationDelaySet(t)
                 ln = 9437274 // ToTheFront.HC:90
                 break@switch0_30
             } while (false)
@@ -4523,7 +4520,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UserChk (ToTheFront.HC:94) */
-    fun f778_UserChk(t: Task) {
+    fun f783_UserChk(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4540,7 +4537,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             if ((t0 != 0L)) {
                 ln = 9437284 // ToTheFront.HC:100
                 tick(t)
-                f777_CharDo(t, l0_ch)
+                f782_CharDo(t, l0_ch)
             }
             t.depth--
             return
@@ -4548,7 +4545,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC TaskEndCB (ToTheFront.HC:103) */
-    fun f779_TaskEndCB(t: Task) {
+    fun f784_TaskEndCB(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4567,7 +4564,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PhaseDo (ToTheFront.HC:110) */
-    fun f780_PhaseDo(t: Task): Long {
+    fun f785_PhaseDo(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -4576,7 +4573,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l0_res = 7308604729815824453L
             ln = 9437297 // ToTheFront.HC:113
             tick(t)
-            f776_PhaseNew(t)
+            f781_PhaseNew(t)
             ln = 9437298 // ToTheFront.HC:114
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -4585,17 +4582,17 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 if (((ld8(g_phase) and -2L) == 0L)) {
                     ln = 9437300 // ToTheFront.HC:116
                     tick(t)
-                    P.f638_Call(t, ld8((g_player_indirect + (ld8(g_cur_player) * 8L))))
+                    P.f643_Call(t, ld8((g_player_indirect + (ld8(g_cur_player) * 8L))))
                 } else {
                     ln = 9437301 // ToTheFront.HC:117
                     if (((ld8(g_phase) and -2L) == 2L)) {
                         ln = 9437302 // ToTheFront.HC:118
                         tick(t)
-                        P.f638_Call(t, ld8((g_player_move + (ld8(g_cur_player) * 8L))))
+                        P.f643_Call(t, ld8((g_player_move + (ld8(g_cur_player) * 8L))))
                     } else {
                         ln = 9437304 // ToTheFront.HC:120
                         tick(t)
-                        P.f638_Call(t, ld8((g_player_direct + (ld8(g_cur_player) * 8L))))
+                        P.f643_Call(t, ld8((g_player_direct + (ld8(g_cur_player) * 8L))))
                     }
                 }
                 t.hCount = h0c
@@ -4617,7 +4614,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC ToTheFront (ToTheFront.HC:128) */
-    fun f781_ToTheFront(t: Task) {
+    fun f786_ToTheFront(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4637,7 +4634,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             st4(t1, (ld4u(t1) or 5242920L))
             ln = 9437321 // ToTheFront.HC:137
             tick(t)
-            P.f507_MenuPush(t, s67)
+            P.f512_MenuPush(t, s67)
             ln = 9437341 // ToTheFront.HC:157
             nat(t, n_AutoComplete, push1(t, 0L))
             ln = 9437342 // ToTheFront.HC:158
@@ -4650,23 +4647,23 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             nat(t, n_DocCursor, push2(t, 0L, 0L))
             ln = 9437345 // ToTheFront.HC:161
             tick(t)
-            P.f612_DocMax(t, 0L)
+            P.f617_DocMax(t, 0L)
             ln = 9437346 // ToTheFront.HC:162
             tick(t)
-            f743_Init(t)
+            f748_Init(t)
             ln = 9437347 // ToTheFront.HC:163
             tick(t)
-            f745_PlayerPick(t, s68, 0L)
+            f750_PlayerPick(t, s68, 0L)
             ln = 9437348 // ToTheFront.HC:164
             tick(t)
-            f745_PlayerPick(t, s68, 1L)
+            f750_PlayerPick(t, s68, 1L)
             ln = 9437350 // ToTheFront.HC:166
             tick(t)
             P.f201_PopUpOk(t, s69, 0L)
             ln = 9437359 // ToTheFront.HC:175
-            st8((ld8(P.g_Fs) + 1072L), 9223090561878065931L)
+            st8((ld8(P.g_Fs) + 1072L), 9223090561878065936L)
             ln = 9437360 // ToTheFront.HC:176
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065925L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065930L)
             ln = 9437361 // ToTheFront.HC:177
             val h0sp = t.sp; val h0msp = t.msp; val h0d = t.depth; val h0c = t.hCount
             t.hCount = h0c + 1
@@ -4675,7 +4672,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 loop0@ while (true) {
                     ln = 9437363 // ToTheFront.HC:179
                     tick(t)
-                    val t2: Long = f780_PhaseDo(t)
+                    val t2: Long = f785_PhaseDo(t)
                     l0_res = t2
                     ln = 9437364 // ToTheFront.HC:180
                     if ((l0_res == 8243124776347722055L)) {
@@ -4695,10 +4692,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                             if ((l8_ch == 10L)) {
                                 ln = 9437371 // ToTheFront.HC:187
                                 tick(t)
-                                f744_CleanUp(t)
+                                f749_CleanUp(t)
                                 ln = 9437372 // ToTheFront.HC:188
                                 tick(t)
-                                f743_Init(t)
+                                f748_Init(t)
                                 ln = 9437373 // ToTheFront.HC:189
                                 break@loop2
                             } else {
@@ -4713,19 +4710,19 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     if ((l8_ch == 49L)) {
                                         ln = 9437378 // ToTheFront.HC:194
                                         tick(t)
-                                        f742_ViewPlayerSet(t, 0L)
+                                        f747_ViewPlayerSet(t, 0L)
                                     } else {
                                         ln = 9437379 // ToTheFront.HC:195
                                         if ((l8_ch == 50L)) {
                                             ln = 9437380 // ToTheFront.HC:196
                                             tick(t)
-                                            f742_ViewPlayerSet(t, 1L)
+                                            f747_ViewPlayerSet(t, 1L)
                                         } else {
                                             ln = 9437381 // ToTheFront.HC:197
                                             if ((l8_ch == 100L)) {
                                                 ln = 9437382 // ToTheFront.HC:198
                                                 tick(t)
-                                                f774_AnimationDelaySet(t)
+                                                f779_AnimationDelaySet(t)
                                             }
                                         }
                                     }
@@ -4738,10 +4735,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         if ((l0_res == 28549237226038606L)) {
                             ln = 9437385 // ToTheFront.HC:201
                             tick(t)
-                            f744_CleanUp(t)
+                            f749_CleanUp(t)
                             ln = 9437386 // ToTheFront.HC:202
                             tick(t)
-                            f743_Init(t)
+                            f748_Init(t)
                         }
                     }
                     if (!((l0_res != 7308604729815824453L))) break@loop0
@@ -4758,7 +4755,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             }
             ln = 9437391 // ToTheFront.HC:207
             tick(t)
-            P.f574_ProgressBarsRst(t, 0L)
+            P.f579_ProgressBarsRst(t, 0L)
             ln = 9437393 // ToTheFront.HC:209
             tick(t)
             P.f228_SettingsPop(t, 0L, 0L)
@@ -4767,10 +4764,10 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             P.f293_DCDel(t, ld8(g_map_dc))
             ln = 9437395 // ToTheFront.HC:211
             tick(t)
-            f744_CleanUp(t)
+            f749_CleanUp(t)
             ln = 9437396 // ToTheFront.HC:212
             tick(t)
-            P.f509_MenuPop(t)
+            P.f514_MenuPop(t)
             ln = 9437397 // ToTheFront.HC:213
             nat(t, n_Seed, push2(t, 0L, 0L))
             t.depth--
@@ -4779,20 +4776,20 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/Run.HC#10 (Run.HC:3) */
-    fun f782_init_C__Apps_ToTheFront_Run_HC_10(t: Task): Long {
+    fun f787_init_C__Apps_ToTheFront_Run_HC_10(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 3 // Run.HC:3
             tick(t)
-            f781_ToTheFront(t)
+            f786_ToTheFront(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Apps/ToTheFront/Run.HC#10", ln) }
     }
 
     /** HolyC PlayerIndirect (Human.HC:1) */
-    fun f783_PlayerIndirect(t: Task) {
+    fun f788_PlayerIndirect(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4808,7 +4805,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l16_remaining = 0L
             ln = 10485766 // Human.HC:6
             tick(t)
-            f742_ViewPlayerSet(t, ld8(g_cur_player))
+            f747_ViewPlayerSet(t, ld8(g_cur_player))
             ln = 10485767 // Human.HC:7
             l8_i = 0L
             loop0@ while ((l8_i < 32L)) {
@@ -4840,22 +4837,22 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         2L -> {
                             ln = 10485779 // Human.HC:19
                             tick(t)
-                            f777_CharDo(t, ld8((fp + 32)))
+                            f782_CharDo(t, ld8((fp + 32)))
                         }
                         5L -> {
                             ln = 10485782 // Human.HC:22
                             tick(t)
-                            val t2: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
+                            val t2: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
                             if ((t2 != 0L)) {
                                 ln = 10485783 // Human.HC:23
                                 st8((fp + 32), (ld8((fp + 32)) - ld8(g_x0)))
                                 st8((fp + 40), (ld8((fp + 40)) - ld8(g_y0)))
                                 ln = 10485784 // Human.HC:24
                                 tick(t)
-                                f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
+                                f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
                                 ln = 10485785 // Human.HC:25
                                 tick(t)
-                                val t3: Long = f726_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
+                                val t3: Long = f731_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
                                 l0_tmpu = t3
                                 if ((t3 != 0L)) {
                                     ln = 10485786 // Human.HC:26
@@ -4865,7 +4862,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     } else {
                                         ln = 10485790 // Human.HC:30
                                         tick(t)
-                                        f724_RowCol2XY(t, g_fire_radius_x, g_fire_radius_y, ld8((l0_tmpu + 16L)), ld8((l0_tmpu + 24L)))
+                                        f729_RowCol2XY(t, g_fire_radius_x, g_fire_radius_y, ld8((l0_tmpu + 16L)), ld8((l0_tmpu + 24L)))
                                         ln = 10485791 // Human.HC:31
                                         st8(g_fire_radius, bits(((ld1s((l0_tmpu + 61L)) * 2L).toDouble() * 9.536279442)))
                                     }
@@ -4875,17 +4872,17 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         6L -> {
                             ln = 10485797 // Human.HC:37
                             tick(t)
-                            val t4: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
+                            val t4: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
                             if ((t4 != 0L)) {
                                 ln = 10485798 // Human.HC:38
                                 st8((fp + 32), (ld8((fp + 32)) - ld8(g_x0)))
                                 st8((fp + 40), (ld8((fp + 40)) - ld8(g_y0)))
                                 ln = 10485799 // Human.HC:39
                                 tick(t)
-                                f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
+                                f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
                                 ln = 10485800 // Human.HC:40
                                 tick(t)
-                                f724_RowCol2XY(t, (fp + 48), (fp + 56), ld8(g_cursor_row), ld8(g_cursor_col))
+                                f729_RowCol2XY(t, (fp + 48), (fp + 56), ld8(g_cursor_row), ld8(g_cursor_col))
                                 ln = 10485801 // Human.HC:41
                                 if ((l0_tmpu == 0L)) {
                                     ln = 10485802 // Human.HC:42
@@ -4905,7 +4902,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     } else {
                                         ln = 10485808 // Human.HC:48
                                         tick(t)
-                                        f759_IndirectAdd(t, l0_tmpu, ld8(g_cursor_row), ld8(g_cursor_col))
+                                        f764_IndirectAdd(t, l0_tmpu, ld8(g_cursor_row), ld8(g_cursor_col))
                                         ln = 10485809 // Human.HC:49
                                         l16_remaining = (l16_remaining + -1L)
                                     }
@@ -4919,7 +4916,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         10L -> {
                             ln = 10485817 // Human.HC:57
                             tick(t)
-                            val t8: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
+                            val t8: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 32)), ld8((fp + 40)))
                             if ((t8 != 0L)) {
                                 ln = 10485818 // Human.HC:58
                                 nat(t, n_throw, push2(t, 8247867064721696848L, 1L))
@@ -4940,7 +4937,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PlayerMove (Human.HC:65) */
-    fun f784_PlayerMove(t: Task) {
+    fun f789_PlayerMove(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -4952,7 +4949,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l0_tmpu = 0L
             ln = 10485829 // Human.HC:69
             tick(t)
-            f742_ViewPlayerSet(t, ld8(g_cur_player))
+            f747_ViewPlayerSet(t, ld8(g_cur_player))
             ln = 10485830 // Human.HC:70
             loop0@ while ((1L != 0L)) {
                 ln = 10485831 // Human.HC:71
@@ -4970,22 +4967,22 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         2L -> {
                             ln = 10485837 // Human.HC:77
                             tick(t)
-                            f777_CharDo(t, ld8((fp + 16)))
+                            f782_CharDo(t, ld8((fp + 16)))
                         }
                         5L -> {
                             ln = 10485840 // Human.HC:80
                             tick(t)
-                            val t2: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
+                            val t2: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
                             if ((t2 != 0L)) {
                                 ln = 10485841 // Human.HC:81
                                 st8((fp + 16), (ld8((fp + 16)) - ld8(g_x0)))
                                 st8((fp + 24), (ld8((fp + 24)) - ld8(g_y0)))
                                 ln = 10485842 // Human.HC:82
                                 tick(t)
-                                f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
+                                f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
                                 ln = 10485843 // Human.HC:83
                                 tick(t)
-                                val t3: Long = f726_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
+                                val t3: Long = f731_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
                                 l0_tmpu = t3
                                 if ((t3 != 0L)) {
                                     ln = 10485844 // Human.HC:84
@@ -4999,14 +4996,14 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         6L -> {
                             ln = 10485850 // Human.HC:90
                             tick(t)
-                            val t4: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
+                            val t4: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
                             if ((t4 != 0L)) {
                                 ln = 10485851 // Human.HC:91
                                 st8((fp + 16), (ld8((fp + 16)) - ld8(g_x0)))
                                 st8((fp + 24), (ld8((fp + 24)) - ld8(g_y0)))
                                 ln = 10485852 // Human.HC:92
                                 tick(t)
-                                f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
+                                f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
                                 ln = 10485853 // Human.HC:93
                                 if ((l0_tmpu == 0L)) {
                                     ln = 10485854 // Human.HC:94
@@ -5015,7 +5012,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                 } else {
                                     ln = 10485856 // Human.HC:96
                                     tick(t)
-                                    f770_UnitMove(t, l0_tmpu, ld8((fp + 16)), ld8((fp + 24)))
+                                    f775_UnitMove(t, l0_tmpu, ld8((fp + 16)), ld8((fp + 24)))
                                     ln = 10485857 // Human.HC:97
                                     break@switch2
                                 }
@@ -5026,7 +5023,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         10L -> {
                             ln = 10485863 // Human.HC:103
                             tick(t)
-                            val t5: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
+                            val t5: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 16)), ld8((fp + 24)))
                             if ((t5 != 0L)) {
                                 ln = 10485864 // Human.HC:104
                                 nat(t, n_throw, push2(t, 8247867064721696848L, 1L))
@@ -5045,7 +5042,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PlayerDirect (Human.HC:110) */
-    fun f785_PlayerDirect(t: Task) {
+    fun f790_PlayerDirect(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -5058,7 +5055,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             l0_tmpu = 0L
             ln = 10485874 // Human.HC:114
             tick(t)
-            f742_ViewPlayerSet(t, ld8(g_cur_player))
+            f747_ViewPlayerSet(t, ld8(g_cur_player))
             ln = 10485875 // Human.HC:115
             loop0@ while ((1L != 0L)) {
                 ln = 10485876 // Human.HC:116
@@ -5076,22 +5073,22 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         2L -> {
                             ln = 10485882 // Human.HC:122
                             tick(t)
-                            f777_CharDo(t, ld8((fp + 24)))
+                            f782_CharDo(t, ld8((fp + 24)))
                         }
                         5L -> {
                             ln = 10485885 // Human.HC:125
                             tick(t)
-                            val t2: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
+                            val t2: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
                             if ((t2 != 0L)) {
                                 ln = 10485886 // Human.HC:126
                                 st8((fp + 24), (ld8((fp + 24)) - ld8(g_x0)))
                                 st8((fp + 32), (ld8((fp + 32)) - ld8(g_y0)))
                                 ln = 10485887 // Human.HC:127
                                 tick(t)
-                                f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
+                                f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
                                 ln = 10485888 // Human.HC:128
                                 tick(t)
-                                val t3: Long = f726_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
+                                val t3: Long = f731_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
                                 l0_tmpu = t3
                                 if ((t3 != 0L)) {
                                     ln = 10485889 // Human.HC:129
@@ -5101,15 +5098,15 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     } else {
                                         ln = 10485893 // Human.HC:133
                                         tick(t)
-                                        f746_VRSetUp(t, ld8(g_cur_player))
+                                        f751_VRSetUp(t, ld8(g_cur_player))
                                         ln = 10485894 // Human.HC:134
                                         tick(t)
-                                        f724_RowCol2XY(t, g_fire_radius_x, g_fire_radius_y, ld8((l0_tmpu + 16L)), ld8((l0_tmpu + 24L)))
+                                        f729_RowCol2XY(t, g_fire_radius_x, g_fire_radius_y, ld8((l0_tmpu + 16L)), ld8((l0_tmpu + 24L)))
                                         ln = 10485895 // Human.HC:135
                                         st8(g_fire_radius, bits(((ld1s((l0_tmpu + 61L)) * 2L).toDouble() * 9.536279442)))
                                         ln = 10485896 // Human.HC:136
                                         tick(t)
-                                        f749_VisRecalc(t, 0L, l0_tmpu)
+                                        f754_VisRecalc(t, 0L, l0_tmpu)
                                     }
                                 }
                             }
@@ -5117,17 +5114,17 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         6L -> {
                             ln = 10485902 // Human.HC:142
                             tick(t)
-                            val t4: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
+                            val t4: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
                             if ((t4 != 0L)) {
                                 ln = 10485903 // Human.HC:143
                                 st8((fp + 24), (ld8((fp + 24)) - ld8(g_x0)))
                                 st8((fp + 32), (ld8((fp + 32)) - ld8(g_y0)))
                                 ln = 10485904 // Human.HC:144
                                 tick(t)
-                                f728_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
+                                f733_CursorUpdate(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
                                 ln = 10485905 // Human.HC:145
                                 tick(t)
-                                val t5: Long = f726_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
+                                val t5: Long = f731_UnitFind(t, ld8(g_cursor_row), ld8(g_cursor_col))
                                 l8_target = t5
                                 ln = 10485906 // Human.HC:146
                                 if ((l0_tmpu == 0L)) {
@@ -5149,11 +5146,11 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                                     } else {
                                         ln = 10485913 // Human.HC:153
                                         tick(t)
-                                        f761_UnitDirectFire(t, l0_tmpu, l8_target)
+                                        f766_UnitDirectFire(t, l0_tmpu, l8_target)
                                     }
                                     ln = 10485914 // Human.HC:154
                                     tick(t)
-                                    f749_VisRecalc(t, 1L, l0_tmpu)
+                                    f754_VisRecalc(t, 1L, l0_tmpu)
                                 }
                             }
                             ln = 10485917 // Human.HC:157
@@ -5164,7 +5161,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                         10L -> {
                             ln = 10485921 // Human.HC:161
                             tick(t)
-                            val t8: Long = f727_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
+                            val t8: Long = f732_CursorInWin(t, ld8(P.g_Fs), ld8((fp + 24)), ld8((fp + 32)))
                             if ((t8 != 0L)) {
                                 ln = 10485922 // Human.HC:162
                                 nat(t, n_throw, push2(t, 8247867064721696848L, 1L))
@@ -5183,7 +5180,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/AIs/Human.HC#0 (Human.HC:1) */
-    fun f786_init_C__Apps_ToTheFront_AIs_Human_HC_0(t: Task): Long {
+    fun f791_init_C__Apps_ToTheFront_AIs_Human_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -5193,7 +5190,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC UnitNearestFind (SimpleAI.HC:1) */
-    fun f787_UnitNearestFind(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Double): Long {
+    fun f792_UnitNearestFind(t: Task, a0: Long, a1: Long, a2: Long, a3: Long, a4: Double): Long {
         var ln = 0
         try {
             enter(t)
@@ -5224,7 +5221,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             }
             ln = 11534347 // SimpleAI.HC:11
             tick(t)
-            f724_RowCol2XY(t, (fp + 64), (fp + 72), p0_row, p1_col)
+            f729_RowCol2XY(t, (fp + 64), (fp + 72), p0_row, p1_col)
             ln = 11534348 // SimpleAI.HC:12
             l40_i = 0L
             loop0@ while ((l40_i < 32L)) {
@@ -5234,13 +5231,13 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                     var r1: Boolean = (p3_in_LOS == 0L)
                     if (!r1) {
                         tick(t)
-                        val t0: Long = f730_LOS(t, p0_row, p1_col, ld8((((g_units + (p2_player * 2304L)) + (l40_i * 72L)) + 16L)), ld8((((g_units + (p2_player * 2304L)) + (l40_i * 72L)) + 24L)))
+                        val t0: Long = f735_LOS(t, p0_row, p1_col, ld8((((g_units + (p2_player * 2304L)) + (l40_i * 72L)) + 16L)), ld8((((g_units + (p2_player * 2304L)) + (l40_i * 72L)) + 24L)))
                         r1 = (t0 != 0L)
                     }
                     if (r1) {
                         ln = 11534351 // SimpleAI.HC:15
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 80), (fp + 88), ld8((((g_units + (p2_player * 2304L)) + (l40_i * 72L)) + 16L)), ld8((((g_units + (p2_player * 2304L)) + (l40_i * 72L)) + 24L)))
+                        f729_RowCol2XY(t, (fp + 80), (fp + 88), ld8((((g_units + (p2_player * 2304L)) + (l40_i * 72L)) + 16L)), ld8((((g_units + (p2_player * 2304L)) + (l40_i * 72L)) + 24L)))
                         ln = 11534352 // SimpleAI.HC:16
                         tick(t)
                         val t2: Double = P.f102_Sqr(t, (ldf((fp + 80)) - ldf((fp + 64))))
@@ -5271,7 +5268,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PlayerIndirect (SimpleAI.HC:26) */
-    fun f788_PlayerIndirect(t: Task) {
+    fun f793_PlayerIndirect(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -5283,14 +5280,14 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             loop0@ while ((l16_i < 32L)) {
                 ln = 11534367 // SimpleAI.HC:31
                 tick(t)
-                f778_UserChk(t)
+                f783_UserChk(t)
                 ln = 11534368 // SimpleAI.HC:32
                 l8_tmpu = ((g_units + (ld8(g_cur_player) * 2304L)) + (l16_i * 72L))
                 ln = 11534370 // SimpleAI.HC:34
                 var r1: Boolean = ((ld1s((l8_tmpu + 60L)) > 0L) && (ld1u((l8_tmpu + 68L)) != 0L))
                 if (r1) {
                     tick(t)
-                    val t0: Long = f787_UnitNearestFind(t, ld8((l8_tmpu + 16L)), ld8((l8_tmpu + 24L)), ld8(g_enemy_player), 1L, ((ld1s((l8_tmpu + 61L)) * 2L).toDouble() * 9.536279442))
+                    val t0: Long = f792_UnitNearestFind(t, ld8((l8_tmpu + 16L)), ld8((l8_tmpu + 24L)), ld8(g_enemy_player), 1L, ((ld1s((l8_tmpu + 61L)) * 2L).toDouble() * 9.536279442))
                     l0_target = t0
                     r1 = (t0 != 0L)
                 }
@@ -5298,7 +5295,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 if (r1) {
                     ln = 11534372 // SimpleAI.HC:36
                     tick(t)
-                    f759_IndirectAdd(t, l8_tmpu, ld8((l0_target + 16L)), ld8((l0_target + 24L)))
+                    f764_IndirectAdd(t, l8_tmpu, ld8((l0_target + 16L)), ld8((l0_target + 24L)))
                 }
                 ln = 11534366 // SimpleAI.HC:30
                 l16_i = (l16_i + 1L)
@@ -5312,7 +5309,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PlayerMove (SimpleAI.HC:41) */
-    fun f789_PlayerMove(t: Task) {
+    fun f794_PlayerMove(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -5326,33 +5323,33 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             loop0@ while ((l16_i < 32L)) {
                 ln = 11534383 // SimpleAI.HC:47
                 tick(t)
-                f778_UserChk(t)
+                f783_UserChk(t)
                 ln = 11534384 // SimpleAI.HC:48
                 l8_tmpu = ((g_units + (ld8(g_cur_player) * 2304L)) + (l16_i * 72L))
                 ln = 11534385 // SimpleAI.HC:49
                 if ((ld1s((l8_tmpu + 60L)) > 0L)) {
                     ln = 11534387 // SimpleAI.HC:51
                     tick(t)
-                    val t0: Long = f787_UnitNearestFind(t, ld8((l8_tmpu + 16L)), ld8((l8_tmpu + 24L)), ld8(g_enemy_player), 0L, -1.0)
+                    val t0: Long = f792_UnitNearestFind(t, ld8((l8_tmpu + 16L)), ld8((l8_tmpu + 24L)), ld8(g_enemy_player), 0L, -1.0)
                     l0_target = t0
                     if ((t0 != 0L)) {
                         ln = 11534388 // SimpleAI.HC:52
                         tick(t)
-                        f724_RowCol2XY(t, (fp + 24), (fp + 32), ld8((l0_target + 16L)), ld8((l0_target + 24L)))
+                        f729_RowCol2XY(t, (fp + 24), (fp + 32), ld8((l0_target + 16L)), ld8((l0_target + 24L)))
                         ln = 11534389 // SimpleAI.HC:53
                         tick(t)
-                        val t1: Long = f770_UnitMove(t, l8_tmpu, f2i(ldf((fp + 24))), f2i(ldf((fp + 32))))
+                        val t1: Long = f775_UnitMove(t, l8_tmpu, f2i(ldf((fp + 24))), f2i(ldf((fp + 32))))
                         if ((t1 == 0L)) {
                             ln = 11534390 // SimpleAI.HC:54
                             tick(t)
-                            f724_RowCol2XY(t, (fp + 24), (fp + 32), ld8((l8_tmpu + 16L)), ld8((l8_tmpu + 24L)))
+                            f729_RowCol2XY(t, (fp + 24), (fp + 32), ld8((l8_tmpu + 16L)), ld8((l8_tmpu + 24L)))
                             ln = 11534391 // SimpleAI.HC:55
                             val t3: Double = ldf((fp + 32))
                             val t2: Long = nat(t, n_RandI16, push0(t))
                             val t5: Double = ldf((fp + 24))
                             val t4: Long = nat(t, n_RandI16, push0(t))
                             tick(t)
-                            f770_UnitMove(t, l8_tmpu, f2i((t5 + t4.toDouble())), f2i((t3 + t2.toDouble())))
+                            f775_UnitMove(t, l8_tmpu, f2i((t5 + t4.toDouble())), f2i((t3 + t2.toDouble())))
                         }
                     }
                 }
@@ -5369,7 +5366,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC PlayerDirect (SimpleAI.HC:63) */
-    fun f790_PlayerDirect(t: Task) {
+    fun f795_PlayerDirect(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -5381,14 +5378,14 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
             loop0@ while ((l16_i < 32L)) {
                 ln = 11534404 // SimpleAI.HC:68
                 tick(t)
-                f778_UserChk(t)
+                f783_UserChk(t)
                 ln = 11534405 // SimpleAI.HC:69
                 l8_tmpu = ((g_units + (ld8(g_cur_player) * 2304L)) + (l16_i * 72L))
                 ln = 11534407 // SimpleAI.HC:71
                 var r1: Boolean = ((ld1s((l8_tmpu + 60L)) > 0L) && (ld1u((l8_tmpu + 68L)) == 0L))
                 if (r1) {
                     tick(t)
-                    val t0: Long = f787_UnitNearestFind(t, ld8((l8_tmpu + 16L)), ld8((l8_tmpu + 24L)), ld8(g_enemy_player), 1L, ((ld1s((l8_tmpu + 61L)) * 2L).toDouble() * 9.536279442))
+                    val t0: Long = f792_UnitNearestFind(t, ld8((l8_tmpu + 16L)), ld8((l8_tmpu + 24L)), ld8(g_enemy_player), 1L, ((ld1s((l8_tmpu + 61L)) * 2L).toDouble() * 9.536279442))
                     l0_target = t0
                     r1 = (t0 != 0L)
                 }
@@ -5396,7 +5393,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
                 if (r1) {
                     ln = 11534409 // SimpleAI.HC:73
                     tick(t)
-                    f761_UnitDirectFire(t, l8_tmpu, l0_target)
+                    f766_UnitDirectFire(t, l8_tmpu, l0_target)
                     ln = 11534410 // SimpleAI.HC:74
                     nat(t, n_Sleep, push1(t, f2i((250.0 * ldf(g_animation_delay)))))
                 }
@@ -5412,7 +5409,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     }
 
     /** HolyC $init:C:/Apps/ToTheFront/AIs/SimpleAI.HC#0 (SimpleAI.HC:1) */
-    fun f791_init_C__Apps_ToTheFront_AIs_SimpleAI_HC_0(t: Task): Long {
+    fun f796_init_C__Apps_ToTheFront_AIs_SimpleAI_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
@@ -5424,95 +5421,95 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> f703_init_C__Apps_ToTheFront_Run_HC_0(t)
-            704 -> f704_init_C__Apps_ToTheFront_Run_HC_1(t)
-            705 -> { f705_InitDefines(t); 0L }
-            706 -> f706_init_C__Apps_ToTheFront_Run_HC_2(t)
-            707 -> f707_init_C__Apps_ToTheFront_Run_HC_3(t)
-            708 -> f708_eval0(t)
-            709 -> f709_eval1(t)
-            710 -> f710_eval2(t)
-            711 -> f711_eval3(t)
-            712 -> f712_eval4(t)
-            713 -> f713_eval5(t)
-            714 -> f714_eval6(t)
-            715 -> f715_eval7(t)
-            716 -> f716_eval8(t)
-            717 -> f717_eval9(t)
-            718 -> f718_HexMoveOne(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
-            719 -> f719_init_C__Apps_ToTheFront_Run_HC_4(t)
-            720 -> f720_init_C__Apps_ToTheFront_Run_HC_5(t)
-            721 -> f721_init_C__Apps_ToTheFront_Run_HC_6(t)
-            722 -> { f722_Toward(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            723 -> f723_FacingChg(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            724 -> { f724_RowCol2XY(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            725 -> { f725_XY2RowCol(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
-            726 -> f726_UnitFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            727 -> f727_CursorInWin(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            728 -> { f728_CursorUpdate(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            729 -> f729_LOSPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            730 -> f730_LOS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            731 -> { f731_DrawHexes(t); 0L }
-            732 -> { f732_MakeTerrain(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            733 -> { f733_MakeRivers(t); 0L }
-            734 -> { f734_MakeRoads(t); 0L }
-            735 -> { f735_DrawTerrain(t); 0L }
-            736 -> { f736_DrawRivers(t); 0L }
-            737 -> { f737_DrawRoads(t); 0L }
-            738 -> { f738_DrawDots(t); 0L }
-            739 -> { f739_HexCentersCalc(t); 0L }
-            740 -> { f740_InitMap(t); 0L }
-            741 -> { f741_InitUnits(t); 0L }
-            742 -> { f742_ViewPlayerSet(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            743 -> { f743_Init(t); 0L }
-            744 -> { f744_CleanUp(t); 0L }
-            745 -> { f745_PlayerPick(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            746 -> { f746_VRSetUp(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            747 -> { f747_VRMerge(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            748 -> f748_MPVisRecalc(t, (if (n > 0) st[base + 0] else 0L))
-            749 -> f749_VisRecalc(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
-            750 -> f750_eval10(t)
-            751 -> f751_eval11(t)
-            752 -> { f752_MPVisRecalcMap(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            753 -> { f753_VisRecalcMap(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            754 -> f754_eval12(t)
-            755 -> f755_eval13(t)
-            756 -> { f756_AttackHeader(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            757 -> bits(f757_HitDamage(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L))))
-            758 -> f758_DamageDo(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
-            759 -> { f759_IndirectAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
-            760 -> f760_BulletPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            761 -> { f761_UnitDirectFire(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            762 -> f762_HexOccupy(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            763 -> { f763_IndirectResolveAll(t); 0L }
-            764 -> f764_init_C__Apps_ToTheFront_Run_HC_7(t)
-            765 -> f765_init_C__Apps_ToTheFront_Run_HC_8(t)
-            766 -> f766_init_C__Apps_ToTheFront_Run_HC_9(t)
-            767 -> f767_HexMoveOneCost(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            768 -> f768_UnitMovePlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
-            769 -> { f769_UnitMoveAnimation(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
-            770 -> f770_UnitMove(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
-            771 -> { f771_UnitDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), f((if (n > 4) st[base + 4] else 0L))); 0L }
-            772 -> { f772_UnitsDraw(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            773 -> { f773_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            774 -> { f774_AnimationDelaySet(t); 0L }
-            775 -> { f775_TurnNew(t); 0L }
-            776 -> { f776_PhaseNew(t); 0L }
-            777 -> { f777_CharDo(t, (if (n > 0) st[base + 0] else 0L)); 0L }
-            778 -> { f778_UserChk(t); 0L }
-            779 -> { f779_TaskEndCB(t); 0L }
-            780 -> f780_PhaseDo(t)
-            781 -> { f781_ToTheFront(t); 0L }
-            782 -> f782_init_C__Apps_ToTheFront_Run_HC_10(t)
-            783 -> { f783_PlayerIndirect(t); 0L }
-            784 -> { f784_PlayerMove(t); 0L }
-            785 -> { f785_PlayerDirect(t); 0L }
-            786 -> f786_init_C__Apps_ToTheFront_AIs_Human_HC_0(t)
-            787 -> f787_UnitNearestFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), f((if (n > 4) st[base + 4] else 0L)))
+            708 -> f708_init_C__Apps_ToTheFront_Run_HC_0(t)
+            709 -> f709_init_C__Apps_ToTheFront_Run_HC_1(t)
+            710 -> { f710_InitDefines(t); 0L }
+            711 -> f711_init_C__Apps_ToTheFront_Run_HC_2(t)
+            712 -> f712_init_C__Apps_ToTheFront_Run_HC_3(t)
+            713 -> f713_eval0(t)
+            714 -> f714_eval1(t)
+            715 -> f715_eval2(t)
+            716 -> f716_eval3(t)
+            717 -> f717_eval4(t)
+            718 -> f718_eval5(t)
+            719 -> f719_eval6(t)
+            720 -> f720_eval7(t)
+            721 -> f721_eval8(t)
+            722 -> f722_eval9(t)
+            723 -> f723_HexMoveOne(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L)))
+            724 -> f724_init_C__Apps_ToTheFront_Run_HC_4(t)
+            725 -> f725_init_C__Apps_ToTheFront_Run_HC_5(t)
+            726 -> f726_init_C__Apps_ToTheFront_Run_HC_6(t)
+            727 -> { f727_Toward(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            728 -> f728_FacingChg(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            729 -> { f729_RowCol2XY(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            730 -> { f730_XY2RowCol(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), f((if (n > 2) st[base + 2] else 0L)), f((if (n > 3) st[base + 3] else 0L))); 0L }
+            731 -> f731_UnitFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            732 -> f732_CursorInWin(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            733 -> { f733_CursorUpdate(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            734 -> f734_LOSPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            735 -> f735_LOS(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            736 -> { f736_DrawHexes(t); 0L }
+            737 -> { f737_MakeTerrain(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            738 -> { f738_MakeRivers(t); 0L }
+            739 -> { f739_MakeRoads(t); 0L }
+            740 -> { f740_DrawTerrain(t); 0L }
+            741 -> { f741_DrawRivers(t); 0L }
+            742 -> { f742_DrawRoads(t); 0L }
+            743 -> { f743_DrawDots(t); 0L }
+            744 -> { f744_HexCentersCalc(t); 0L }
+            745 -> { f745_InitMap(t); 0L }
+            746 -> { f746_InitUnits(t); 0L }
+            747 -> { f747_ViewPlayerSet(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            748 -> { f748_Init(t); 0L }
+            749 -> { f749_CleanUp(t); 0L }
+            750 -> { f750_PlayerPick(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            751 -> { f751_VRSetUp(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            752 -> { f752_VRMerge(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            753 -> f753_MPVisRecalc(t, (if (n > 0) st[base + 0] else 0L))
+            754 -> f754_VisRecalc(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L))
+            755 -> f755_eval10(t)
+            756 -> f756_eval11(t)
+            757 -> { f757_MPVisRecalcMap(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            758 -> { f758_VisRecalcMap(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            759 -> f759_eval12(t)
+            760 -> f760_eval13(t)
+            761 -> { f761_AttackHeader(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            762 -> bits(f762_HitDamage(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), f((if (n > 3) st[base + 3] else 0L))))
+            763 -> f763_DamageDo(t, (if (n > 0) st[base + 0] else 0L), f((if (n > 1) st[base + 1] else 0L)))
+            764 -> { f764_IndirectAdd(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L)); 0L }
+            765 -> f765_BulletPlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            766 -> { f766_UnitDirectFire(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            767 -> f767_HexOccupy(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            768 -> { f768_IndirectResolveAll(t); 0L }
+            769 -> f769_init_C__Apps_ToTheFront_Run_HC_7(t)
+            770 -> f770_init_C__Apps_ToTheFront_Run_HC_8(t)
+            771 -> f771_init_C__Apps_ToTheFront_Run_HC_9(t)
+            772 -> f772_HexMoveOneCost(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            773 -> f773_UnitMovePlot(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L))
+            774 -> { f774_UnitMoveAnimation(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L)); 0L }
+            775 -> f775_UnitMove(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L))
+            776 -> { f776_UnitDraw(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), f((if (n > 4) st[base + 4] else 0L))); 0L }
+            777 -> { f777_UnitsDraw(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            778 -> { f778_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            779 -> { f779_AnimationDelaySet(t); 0L }
+            780 -> { f780_TurnNew(t); 0L }
+            781 -> { f781_PhaseNew(t); 0L }
+            782 -> { f782_CharDo(t, (if (n > 0) st[base + 0] else 0L)); 0L }
+            783 -> { f783_UserChk(t); 0L }
+            784 -> { f784_TaskEndCB(t); 0L }
+            785 -> f785_PhaseDo(t)
+            786 -> { f786_ToTheFront(t); 0L }
+            787 -> f787_init_C__Apps_ToTheFront_Run_HC_10(t)
             788 -> { f788_PlayerIndirect(t); 0L }
             789 -> { f789_PlayerMove(t); 0L }
             790 -> { f790_PlayerDirect(t); 0L }
-            791 -> f791_init_C__Apps_ToTheFront_AIs_SimpleAI_HC_0(t)
+            791 -> f791_init_C__Apps_ToTheFront_AIs_Human_HC_0(t)
+            792 -> f792_UnitNearestFind(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L), (if (n > 2) st[base + 2] else 0L), (if (n > 3) st[base + 3] else 0L), f((if (n > 4) st[base + 4] else 0L)))
+            793 -> { f793_PlayerIndirect(t); 0L }
+            794 -> { f794_PlayerMove(t); 0L }
+            795 -> { f795_PlayerDirect(t); 0L }
+            796 -> f796_init_C__Apps_ToTheFront_AIs_SimpleAI_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -5524,7 +5521,7 @@ class N_Apps_ToTheFront_Run_v0(rt: NativeRuntime, @JvmField val P: Prelude) : Na
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791)
+        private val DEFINED = intArrayOf(708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796)
         private val NAMES = arrayOf("\$init:C:/Apps/ToTheFront/Run.HC#0", "\$init:C:/Apps/ToTheFront/Run.HC#1", "InitDefines", "\$init:C:/Apps/ToTheFront/Run.HC#2", "\$init:C:/Apps/ToTheFront/Run.HC#3", "\$eval0", "\$eval1", "\$eval2", "\$eval3", "\$eval4", "\$eval5", "\$eval6", "\$eval7", "\$eval8", "\$eval9", "HexMoveOne", "\$init:C:/Apps/ToTheFront/Run.HC#4", "\$init:C:/Apps/ToTheFront/Run.HC#5", "\$init:C:/Apps/ToTheFront/Run.HC#6", "Toward", "FacingChg", "RowCol2XY", "XY2RowCol", "UnitFind", "CursorInWin", "CursorUpdate", "LOSPlot", "LOS", "DrawHexes", "MakeTerrain", "MakeRivers", "MakeRoads", "DrawTerrain", "DrawRivers", "DrawRoads", "DrawDots", "HexCentersCalc", "InitMap", "InitUnits", "ViewPlayerSet", "Init", "CleanUp", "PlayerPick", "VRSetUp", "VRMerge", "MPVisRecalc", "VisRecalc", "\$eval10", "\$eval11", "MPVisRecalcMap", "VisRecalcMap", "\$eval12", "\$eval13", "AttackHeader", "HitDamage", "DamageDo", "IndirectAdd", "BulletPlot", "UnitDirectFire", "HexOccupy", "IndirectResolveAll", "\$init:C:/Apps/ToTheFront/Run.HC#7", "\$init:C:/Apps/ToTheFront/Run.HC#8", "\$init:C:/Apps/ToTheFront/Run.HC#9", "HexMoveOneCost", "UnitMovePlot", "UnitMoveAnimation", "UnitMove", "UnitDraw", "UnitsDraw", "DrawIt", "AnimationDelaySet", "TurnNew", "PhaseNew", "CharDo", "UserChk", "TaskEndCB", "PhaseDo", "ToTheFront", "\$init:C:/Apps/ToTheFront/Run.HC#10", "PlayerIndirect", "PlayerMove", "PlayerDirect", "\$init:C:/Apps/ToTheFront/AIs/Human.HC#0", "UnitNearestFind", "PlayerIndirect", "PlayerMove", "PlayerDirect", "\$init:C:/Apps/ToTheFront/AIs/SimpleAI.HC#0")
         private val FILES = arrayOf<String>("C:/Apps/ToTheFront/Run.HC", "C:/Apps/ToTheFront/Load.HC", "C:/Apps/ToTheFront/TTFGlbls.HC", "C:/Apps/ToTheFront/TTFMove.HC", "C:/Apps/ToTheFront/TTFLib.HC", "C:/Apps/ToTheFront/TTFInit.HC", "C:/Apps/ToTheFront/TTFVis.HC", "C:/Apps/ToTheFront/TTFFire.HC", "C:/Apps/ToTheFront/TTFDraw.HC", "C:/Apps/ToTheFront/ToTheFront.HC", "C:/Apps/ToTheFront/AIs/Human.HC", "C:/Apps/ToTheFront/AIs/SimpleAI.HC")
     }

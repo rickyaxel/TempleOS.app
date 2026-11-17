@@ -25,7 +25,7 @@ class N_Demo_Graphics_WinZBuf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC DrawIt (WinZBuf.HC:1) */
-    fun f703_DrawIt(t: Task, a0: Long, a1: Long) {
+    fun f708_DrawIt(t: Task, a0: Long, a1: Long) {
         var ln = 0
         try {
             enter(t)
@@ -41,7 +41,7 @@ class N_Demo_Graphics_WinZBuf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             ln = 6 // WinZBuf.HC:6
             tick(t)
             val vb0 = push0(t)
-            P.f369_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 0)
+            P.f370_GrPrint(t, p1_dc, 0L, 0L, s0, vb0, 0)
             t.sp = vb0
             ln = 7 // WinZBuf.HC:7
             l16_i = 0L
@@ -69,7 +69,7 @@ class N_Demo_Graphics_WinZBuf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC ScrollBars (WinZBuf.HC:14) */
-    fun f704_ScrollBars(t: Task) {
+    fun f709_ScrollBars(t: Task) {
         var ln = 0
         try {
             enter(t)
@@ -79,7 +79,7 @@ class N_Demo_Graphics_WinZBuf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
             ln = 17 // WinZBuf.HC:17
             nat(t, n_DocClear, push1(t, 0L))
             ln = 18 // WinZBuf.HC:18
-            st8((ld8(P.g_Fs) + 448L), 9223090561878065855L)
+            st8((ld8(P.g_Fs) + 448L), 9223090561878065860L)
             ln = 19 // WinZBuf.HC:19
             nat(t, n_GetChar, push3(t, 0L, 0L, 0L))
             ln = 20 // WinZBuf.HC:20
@@ -91,13 +91,13 @@ class N_Demo_Graphics_WinZBuf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     }
 
     /** HolyC $init:C:/Demo/Graphics/WinZBuf.HC#0 (WinZBuf.HC:23) */
-    fun f705_init_C__Demo_Graphics_WinZBuf_HC_0(t: Task): Long {
+    fun f710_init_C__Demo_Graphics_WinZBuf_HC_0(t: Task): Long {
         var ln = 0
         try {
             enter(t)
             ln = 23 // WinZBuf.HC:23
             tick(t)
-            f704_ScrollBars(t)
+            f709_ScrollBars(t)
             t.depth--
             return 0L
         } catch (e: VmFault) { throw locate(e, "\$init:C:/Demo/Graphics/WinZBuf.HC#0", ln) }
@@ -106,9 +106,9 @@ class N_Demo_Graphics_WinZBuf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override fun dispatch(t: Task, index: Int, base: Int, n: Int): Long {
         val st = t.st
         return when (index) {
-            703 -> { f703_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
-            704 -> { f704_ScrollBars(t); 0L }
-            705 -> f705_init_C__Demo_Graphics_WinZBuf_HC_0(t)
+            708 -> { f708_DrawIt(t, (if (n > 0) st[base + 0] else 0L), (if (n > 1) st[base + 1] else 0L)); 0L }
+            709 -> { f709_ScrollBars(t); 0L }
+            710 -> f710_init_C__Demo_Graphics_WinZBuf_HC_0(t)
             else -> throw VmFault(Vm.BAD_CALL, "call of undefined function #$index")
         }
     }
@@ -120,7 +120,7 @@ class N_Demo_Graphics_WinZBuf(rt: NativeRuntime, @JvmField val P: Prelude) : Nat
     override val files: Array<String> get() = FILES
 
     companion object {
-        private val DEFINED = intArrayOf(703, 704, 705)
+        private val DEFINED = intArrayOf(708, 709, 710)
         private val NAMES = arrayOf("DrawIt", "ScrollBars", "\$init:C:/Demo/Graphics/WinZBuf.HC#0")
         private val FILES = arrayOf<String>("C:/Demo/Graphics/WinZBuf.HC")
     }

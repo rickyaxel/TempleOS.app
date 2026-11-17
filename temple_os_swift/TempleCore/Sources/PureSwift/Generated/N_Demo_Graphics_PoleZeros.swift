@@ -59,7 +59,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/PoleZeros.HC#0 (PoleZeros.HC:2)
-    @discardableResult public final func f703_init_C__Demo_Graphics_PoleZeros_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f708_init_C__Demo_Graphics_PoleZeros_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -69,7 +69,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/PoleZeros.HC#1 (PoleZeros.HC:4)
-    @discardableResult public final func f704_init_C__Demo_Graphics_PoleZeros_HC_1(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f709_init_C__Demo_Graphics_PoleZeros_HC_1(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -79,7 +79,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     }
 
     /// HolyC PoleZeroFind (PoleZeros.HC:8)
-    @discardableResult public final func f705_PoleZeroFind(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
+    @discardableResult public final func f710_PoleZeroFind(_ t: HTask, _ a0: Int64, _ a1: Int64) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -142,7 +142,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     }
 
     /// HolyC F (PoleZeros.HC:30)
-    @discardableResult public final func f706_F(_ t: HTask, _ a0: Int64) throws -> Double {
+    @discardableResult public final func f711_F(_ t: HTask, _ a0: Int64) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -151,16 +151,16 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
             var p0_x: Int64 = a0
             ln = 35 // PoleZeros.HC:35
             try tick(t)
-            _ = try P.f346_CPoly(t, (fp &+ 24), 2, g_zeros, p0_x)
+            _ = try P.f347_CPoly(t, (fp &+ 24), 2, g_zeros, p0_x)
             ln = 36 // PoleZeros.HC:36
             try tick(t)
-            _ = try P.f346_CPoly(t, (fp &+ 40), 2, g_poles, p0_x)
+            _ = try P.f347_CPoly(t, (fp &+ 40), 2, g_poles, p0_x)
             ln = 37 // PoleZeros.HC:37
             try tick(t)
-            _ = try P.f342_CDiv(t, (fp &+ 56), (fp &+ 24), (fp &+ 40))
+            _ = try P.f343_CDiv(t, (fp &+ 56), (fp &+ 24), (fp &+ 40))
             ln = 39 // PoleZeros.HC:39
             try tick(t)
-            try P.f336_R2P(t, (fp &+ 8), (fp &+ 16), ldf((fp &+ 56)), ldf(((fp &+ 56) &+ 8)))
+            try P.f337_R2P(t, (fp &+ 8), (fp &+ 16), ldf((fp &+ 56)), ldf(((fp &+ 56) &+ 8)))
             ln = 40 // PoleZeros.HC:40
             if try (ld1u((P.g_ms &+ 161)) != 0) {
                 ln = 41 // PoleZeros.HC:41
@@ -182,7 +182,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     }
 
     /// HolyC MPDraw (PoleZeros.HC:46)
-    @discardableResult public final func f707_MPDraw(_ t: HTask, _ a0: Int64) throws -> Double {
+    @discardableResult public final func f712_MPDraw(_ t: HTask, _ a0: Int64) throws -> Double {
         var ln = 0
         do {
             try enter(t)
@@ -226,11 +226,11 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
                 loop2: while (l24_x < l40_w) {
                     ln = 55 // PoleZeros.HC:55
                     try tick(t)
-                    _ = try P.f345_CEqu(t, (fp &+ 8), Double((l24_x &- l56_cx)), Double((l64_cy &- l32_y)))
+                    _ = try P.f346_CEqu(t, (fp &+ 8), Double((l24_x &- l56_cx)), Double((l64_cy &- l32_y)))
                     ln = 56 // PoleZeros.HC:56
                     let t6: Double = try ldf(g_scale)
                     try tick(t)
-                    let t5: Double = try f706_F(t, (fp &+ 8))
+                    let t5: Double = try f711_F(t, (fp &+ 8))
                     l88_yy = (t6 * t5)
                     ln = 57 // PoleZeros.HC:57
                     try tick(t)
@@ -264,7 +264,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     }
 
     /// HolyC Draw (PoleZeros.HC:66)
-    public final func f708_Draw(_ t: HTask) throws {
+    public final func f713_Draw(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -297,7 +297,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
                     let t2: Int64 = try nat(t, n_mp_cnt, push0(t))
                     if !((l1040_i < t2)) { break loop2 }
                     ln = 74 // PoleZeros.HC:74
-                    let t1: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065859, ld8(P.g_Fs), l1040_i, 0, 0, 0, 0, 0))
+                    let t1: Int64 = try nat(t, n_JobQue, try push(t, 9223090561878065864, ld8(P.g_Fs), l1040_i, 0, 0, 0, 0, 0))
                     try st8((fp &+ (l1040_i &* 8)), t1)
                     ln = 73 // PoleZeros.HC:73
                     l1040_i = (l1040_i &+ 1)
@@ -337,17 +337,17 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
             try st4((l1080_dc &+ 160), 15)
             ln = 86 // PoleZeros.HC:86
             try tick(t)
-            _ = try P.f396_GrLine(t, l1080_dc, 0, l1072_cy, l1048_w, l1072_cy, 1, 0)
+            _ = try P.f397_GrLine(t, l1080_dc, 0, l1072_cy, l1048_w, l1072_cy, 1, 0)
             ln = 87 // PoleZeros.HC:87
             try tick(t)
-            _ = try P.f396_GrLine(t, l1080_dc, l1064_cx, 0, l1064_cx, l1056_h, 1, 0)
+            _ = try P.f397_GrLine(t, l1080_dc, l1064_cx, 0, l1064_cx, l1056_h, 1, 0)
             ln = 88 // PoleZeros.HC:88
             l1040_i = 0
             loop6: while (l1040_i < 2) {
                 ln = 89 // PoleZeros.HC:89
                 try tick(t)
                 let vb2 = push0(t)
-                _ = try P.f369_GrPrint(t, l1080_dc, f2i(((Double(l1064_cx) + ldf((g_zeros &+ (l1040_i &* 16)))) - Double(divs(8, 2)))), f2i(((Double(l1072_cy) - ldf(((g_zeros &+ (l1040_i &* 16)) &+ 8))) - Double(divs(8, 2)))), s0, vb2, 0)
+                _ = try P.f370_GrPrint(t, l1080_dc, f2i(((Double(l1064_cx) + ldf((g_zeros &+ (l1040_i &* 16)))) - Double(divs(8, 2)))), f2i(((Double(l1072_cy) - ldf(((g_zeros &+ (l1040_i &* 16)) &+ 8))) - Double(divs(8, 2)))), s0, vb2, 0)
                 t.sp = vb2
                 ln = 88 // PoleZeros.HC:88
                 l1040_i = (l1040_i &+ 1)
@@ -359,7 +359,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
                 ln = 91 // PoleZeros.HC:91
                 try tick(t)
                 let vb3 = push0(t)
-                _ = try P.f369_GrPrint(t, l1080_dc, f2i(((Double(l1064_cx) + ldf((g_poles &+ (l1040_i &* 16)))) - Double(divs(8, 2)))), f2i(((Double(l1072_cy) - ldf(((g_poles &+ (l1040_i &* 16)) &+ 8))) - Double(divs(8, 2)))), s1, vb3, 0)
+                _ = try P.f370_GrPrint(t, l1080_dc, f2i(((Double(l1064_cx) + ldf((g_poles &+ (l1040_i &* 16)))) - Double(divs(8, 2)))), f2i(((Double(l1072_cy) - ldf(((g_poles &+ (l1040_i &* 16)) &+ 8))) - Double(divs(8, 2)))), s1, vb3, 0)
                 t.sp = vb3
                 ln = 90 // PoleZeros.HC:90
                 l1040_i = (l1040_i &+ 1)
@@ -375,7 +375,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     }
 
     /// HolyC PoleZeros (PoleZeros.HC:95)
-    public final func f709_PoleZeros(_ t: HTask) throws {
+    public final func f714_PoleZeros(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -399,7 +399,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
             try st4((ld8(P.g_Fs) &+ 12), 5436158)
             ln = 107 // PoleZeros.HC:107
             try tick(t)
-            try P.f553_GrPaletteSet(t, P.g_gr_palette_gray)
+            try P.f558_GrPaletteSet(t, P.g_gr_palette_gray)
             ln = 108 // PoleZeros.HC:108
             _ = try nat(t, n_GrPaletteColorSet, try push2(t, 15, 281470681743360))
             ln = 110 // PoleZeros.HC:110
@@ -423,7 +423,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
             do {
                 ln = 118 // PoleZeros.HC:118
                 try tick(t)
-                try f708_Draw(t)
+                try f713_Draw(t)
                 ln = 119 // PoleZeros.HC:119
                 skip_0: do {
                     loop1: while (1 != 0) {
@@ -443,7 +443,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
                                 case 5:
                                     ln = 127 // PoleZeros.HC:127
                                     try tick(t)
-                                    let t2: Int64 = try f705_PoleZeroFind(t, (ld8((fp &+ 8)) &- l40_cx), (l48_cy &- ld8((fp &+ 16))))
+                                    let t2: Int64 = try f710_PoleZeroFind(t, (ld8((fp &+ 8)) &- l40_cx), (l48_cy &- ld8((fp &+ 16))))
                                     l56_tmpc = t2
                                 case 4:
                                     ln = 130 // PoleZeros.HC:130
@@ -474,7 +474,7 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
                                         try st8((l56_tmpc &+ 8), bits(Double((l48_cy &- l32_p22))))
                                         ln = 144 // PoleZeros.HC:144
                                         try tick(t)
-                                        try f708_Draw(t)
+                                        try f713_Draw(t)
                                     }
                                 case 6:
                                     ln = 148 // PoleZeros.HC:148
@@ -487,12 +487,12 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
                                         l56_tmpc = 0
                                         ln = 152 // PoleZeros.HC:152
                                         try tick(t)
-                                        try f708_Draw(t)
+                                        try f713_Draw(t)
                                     }
                                 case 9, 10:
                                     ln = 157 // PoleZeros.HC:157
                                     try tick(t)
-                                    try f708_Draw(t)
+                                    try f713_Draw(t)
                                 case 2:
                                     ln = 160 // PoleZeros.HC:160
                                     if try ((ld8((fp &+ 8)) == 28) || (ld8((fp &+ 8)) == 27)) {
@@ -534,13 +534,13 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     }
 
     /// HolyC $init:C:/Demo/Graphics/PoleZeros.HC#2 (PoleZeros.HC:173)
-    @discardableResult public final func f710_init_C__Demo_Graphics_PoleZeros_HC_2(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f715_init_C__Demo_Graphics_PoleZeros_HC_2(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
             ln = 173 // PoleZeros.HC:173
             try tick(t)
-            try f709_PoleZeros(t)
+            try f714_PoleZeros(t)
             t.depth -= 1
             return 0
         } catch let e as VmFault { throw locate(e, "$init:C:/Demo/Graphics/PoleZeros.HC#2", ln) }
@@ -549,20 +549,20 @@ public final class N_Demo_Graphics_PoleZeros: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: return try f703_init_C__Demo_Graphics_PoleZeros_HC_0(t)
-        case 704: return try f704_init_C__Demo_Graphics_PoleZeros_HC_1(t)
-        case 705: return try f705_PoleZeroFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
-        case 706: return bits(try f706_F(t, (n > 0 ? st[base + 0] : 0)))
-        case 707: return bits(try f707_MPDraw(t, (n > 0 ? st[base + 0] : 0)))
-        case 708: try f708_Draw(t); return 0
-        case 709: try f709_PoleZeros(t); return 0
-        case 710: return try f710_init_C__Demo_Graphics_PoleZeros_HC_2(t)
+        case 708: return try f708_init_C__Demo_Graphics_PoleZeros_HC_0(t)
+        case 709: return try f709_init_C__Demo_Graphics_PoleZeros_HC_1(t)
+        case 710: return try f710_PoleZeroFind(t, (n > 0 ? st[base + 0] : 0), (n > 1 ? st[base + 1] : 0))
+        case 711: return bits(try f711_F(t, (n > 0 ? st[base + 0] : 0)))
+        case 712: return bits(try f712_MPDraw(t, (n > 0 ? st[base + 0] : 0)))
+        case 713: try f713_Draw(t); return 0
+        case 714: try f714_PoleZeros(t); return 0
+        case 715: return try f715_init_C__Demo_Graphics_PoleZeros_HC_2(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706, 707, 708, 709, 710]
-    private static let NAMES: [Int: String] = [703: "$init:C:/Demo/Graphics/PoleZeros.HC#0", 704: "$init:C:/Demo/Graphics/PoleZeros.HC#1", 705: "PoleZeroFind", 706: "F", 707: "MPDraw", 708: "Draw", 709: "PoleZeros", 710: "$init:C:/Demo/Graphics/PoleZeros.HC#2"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711, 712, 713, 714, 715]
+    private static let NAMES: [Int: String] = [708: "$init:C:/Demo/Graphics/PoleZeros.HC#0", 709: "$init:C:/Demo/Graphics/PoleZeros.HC#1", 710: "PoleZeroFind", 711: "F", 712: "MPDraw", 713: "Draw", 714: "PoleZeros", 715: "$init:C:/Demo/Graphics/PoleZeros.HC#2"]
     private static let FILES: [String] = ["C:/Demo/Graphics/PoleZeros.HC"]
     public override var files: [String] { N_Demo_Graphics_PoleZeros.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Graphics_PoleZeros.DEFINED.contains(index) }

@@ -27,13 +27,13 @@ c 17fd68 8 0
 c 17fd80 8 0
 c 17ffb8 8 0
 c 17ffd0 8 0
-fn 703 DrawIt (U0;*$CTask,*$CDC;-)
-fn 704 SongTask (U0;I64;-)
-fn 705 TheDead (U0;;-)
-fn 706 $init:C:/Demo/Games/TheDead.HC#0 (I64;;-)
-sym f DrawIt 703 (U0;*$CTask,*$CDC;-)
-sym f SongTask 704 (U0;I64;-)
-sym f TheDead 705 (U0;;-)
+fn 708 DrawIt (U0;*$CTask,*$CDC;-)
+fn 709 SongTask (U0;I64;-)
+fn 710 TheDead (U0;;-)
+fn 711 $init:C:/Demo/Games/TheDead.HC#0 (I64;;-)
+sym f DrawIt 708 (U0;*$CTask,*$CDC;-)
+sym f SongTask 709 (U0;I64;-)
+sym f TheDead 710 (U0;;-)
 sym g bullets_in 17fd68 I64
 sym g bullets_out 17fd80 I64
 sym g bx 17fd98 [32]I64
@@ -45,5 +45,5 @@ sym g gx 17ffe8 [32]I64
 sym g gy 1800f8 [32]I64
 sym g x 17fd38 I64
 sym g y 17fd50 I64
-init 706
+init 711
 unit C:/Demo/Games/TheDead.HC#1

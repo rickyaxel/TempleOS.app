@@ -25,7 +25,7 @@ public final class N_Demo_Templates_ODE1: NativeModule {
     }
 
     /// HolyC MyDerivative (ODE1.HC:12)
-    public final func f703_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
+    public final func f708_MyDerivative(_ t: HTask, _ a0: Int64, _ a1: Double, _ a2: Int64, _ a3: Int64) throws {
         var ln = 0
         do {
             try enter(t)
@@ -57,16 +57,16 @@ public final class N_Demo_Templates_ODE1: NativeModule {
     }
 
     /// HolyC Init (ODE1.HC:26)
-    public final func f704_Init(_ t: HTask) throws {
+    public final func f709_Init(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
             ln = 28 // ODE1.HC:28
             try tick(t)
-            let t0: Int64 = try P.f453_ODENew(t, 0, 1.0E-4, 1)
+            let t0: Int64 = try P.f458_ODENew(t, 0, 1.0E-4, 1)
             try st8(g_ode, t0)
             ln = 29 // ODE1.HC:29
-            try st8((ld8(g_ode) &+ 304), 9223090561878065855)
+            try st8((ld8(g_ode) &+ 304), 9223090561878065860)
             ln = 30 // ODE1.HC:30
             try st8((ld8(g_ode) &+ 80), bits(0.002))
             ln = 31 // ODE1.HC:31
@@ -82,7 +82,7 @@ public final class N_Demo_Templates_ODE1: NativeModule {
     }
 
     /// HolyC CleanUp (ODE1.HC:37)
-    public final func f705_CleanUp(_ t: HTask) throws {
+    public final func f710_CleanUp(_ t: HTask) throws {
         var ln = 0
         do {
             try enter(t)
@@ -97,14 +97,14 @@ public final class N_Demo_Templates_ODE1: NativeModule {
             try P.f156_QueDel(t, (ld8(g_ode) &+ 56), 1)
             ln = 42 // ODE1.HC:42
             try tick(t)
-            try P.f455_ODEDel(t, ld8(g_ode))
+            try P.f460_ODEDel(t, ld8(g_ode))
             t.depth -= 1
             return
         } catch let e as VmFault { throw locate(e, "CleanUp", ln) }
     }
 
     /// HolyC $init:C:/Demo/Templates/ODE1.HC#0 (ODE1.HC:10)
-    @discardableResult public final func f706_init_C__Demo_Templates_ODE1_HC_0(_ t: HTask) throws -> Int64 {
+    @discardableResult public final func f711_init_C__Demo_Templates_ODE1_HC_0(_ t: HTask) throws -> Int64 {
         var ln = 0
         do {
             try enter(t)
@@ -116,16 +116,16 @@ public final class N_Demo_Templates_ODE1: NativeModule {
     public override func dispatch(_ t: HTask, _ index: Int, _ base: Int, _ n: Int) throws -> Int64 {
         let st = t.st
         switch index {
-        case 703: try f703_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
-        case 704: try f704_Init(t); return 0
-        case 705: try f705_CleanUp(t); return 0
-        case 706: return try f706_init_C__Demo_Templates_ODE1_HC_0(t)
+        case 708: try f708_MyDerivative(t, (n > 0 ? st[base + 0] : 0), d((n > 1 ? st[base + 1] : 0)), (n > 2 ? st[base + 2] : 0), (n > 3 ? st[base + 3] : 0)); return 0
+        case 709: try f709_Init(t); return 0
+        case 710: try f710_CleanUp(t); return 0
+        case 711: return try f711_init_C__Demo_Templates_ODE1_HC_0(t)
         default: throw VmFault(Vm.BAD_CALL, "call of undefined function #\(index)")
         }
     }
 
-    private static let DEFINED: Set<Int> = [703, 704, 705, 706]
-    private static let NAMES: [Int: String] = [703: "MyDerivative", 704: "Init", 705: "CleanUp", 706: "$init:C:/Demo/Templates/ODE1.HC#0"]
+    private static let DEFINED: Set<Int> = [708, 709, 710, 711]
+    private static let NAMES: [Int: String] = [708: "MyDerivative", 709: "Init", 710: "CleanUp", 711: "$init:C:/Demo/Templates/ODE1.HC#0"]
     private static let FILES: [String] = ["C:/Demo/Templates/ODE1.HC"]
     public override var files: [String] { N_Demo_Templates_ODE1.FILES }
     public override func defines(_ index: Int) -> Bool { N_Demo_Templates_ODE1.DEFINED.contains(index) }
