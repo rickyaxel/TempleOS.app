@@ -12,6 +12,7 @@ class LifeTest {
         val dir = kotlin.io.path.createTempDirectory("life").toFile()
         val env = HeadlessEnv(dir)
         val sh = Shell(env); sh.resize(360, 640); sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Demo/Graphics/Life.HC", sh.catalog.byPath("C:/Demo/Graphics/Life.HC"))
         val prog = sh.focused!!.app as ProgramApp
         val k = prog.kernel

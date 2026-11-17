@@ -136,6 +136,7 @@ final class MenuMetricsTests: XCTestCase {
             tapNode(sh, tr("topbar.menu")); tapNode(sh, tr("menu.start.examples"))
             // A deliberately long fixture exercises overflow independently of catalog size.
             let bounce = sh.catalog.byId("demo.bounce")!
+            sh.settings.engine = Settings.ENGINE_TERRY
             sh.showMenu([MenuItem("Overflow") {
                 sh.showMenu((0..<30).map { i in MenuItem("Entry \(i)") { Launch.program(sh, bounce.path, bounce) } }, 4, sh.insetTop + sh.barH, "Overflow fixture")
             }], 4, sh.insetTop + sh.barH, "Fixture parent")

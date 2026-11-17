@@ -356,6 +356,7 @@ class JoystickTest {
         val dir = kotlin.io.path.createTempDirectory("joyrun").toFile()
         val sh = Shell(HeadlessEnv(dir)); sh.resize(360, 640); sh.tick()
         sh.settings.directional = directional
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, path, sh.catalog.byPath(path))
         val r = Run(sh, sh.focused!!.app as ProgramApp, dir)
         if (popupOk) { assertTrue("$path popup", r.waitFor(30_000) { sh.dialogOpen }); sh.key('\n'.code, Keys.forChar('\n'.code).second, true) }

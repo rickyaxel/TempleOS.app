@@ -37,6 +37,7 @@ class ControlsFidelityTest {
     private fun launch(path: String, popupOk: Boolean = false, pressAKey: Boolean = false, menuItem: String? = null): Run {
         val dir = kotlin.io.path.createTempDirectory("ctl").toFile()
         val sh = Shell(HeadlessEnv(dir)); sh.resize(360, 640); sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, path, sh.catalog.byPath(path))
         val p = sh.focused!!.app as ProgramApp
         val r = Run(sh, p.kernel, dir)

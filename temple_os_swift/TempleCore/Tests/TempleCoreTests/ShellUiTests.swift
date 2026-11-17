@@ -124,6 +124,7 @@ final class ShellUiTests: XCTestCase {
         shot(sh, "09-terminal")
 
         let info = sh.catalog.byPath("C:/Home/Examples/Graphics.HC")
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Home/Examples/Graphics.HC", info)
         let prog = sh.focused!.app as! ProgramApp
         // frames keep running; the published frame holds the drawing (static pictures are
@@ -193,6 +194,7 @@ final class ShellUiTests: XCTestCase {
         defer { try? FileManager.default.removeItem(at: dir) }
         let env = HeadlessEnv(dir)
         let sh = newShell(env, 360, 640)
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Demo/Games/Maze.HC", sh.catalog.byPath("C:/Demo/Games/Maze.HC"))
         let prog = sh.focused!.app as! ProgramApp
         XCTAssertTrue(waitFor(sh, 15000) { prog.kernel.frameCount >= 10 })
@@ -223,6 +225,7 @@ final class ShellUiTests: XCTestCase {
         defer { try? FileManager.default.removeItem(at: dir) }
         let env = HeadlessEnv(dir)
         let sh = newShell(env, 360, 640)
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Demo/Graphics/Life.HC", sh.catalog.byPath("C:/Demo/Graphics/Life.HC"))
         let prog = sh.focused!.app as! ProgramApp
         let k = prog.kernel!
@@ -262,6 +265,7 @@ final class ShellUiTests: XCTestCase {
         defer { try? FileManager.default.removeItem(at: dir) }
         let env = HeadlessEnv(dir)
         let sh = newShell(env, 360, 640)
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Demo/Games/TicTacToe.HC", sh.catalog.byPath("C:/Demo/Games/TicTacToe.HC"))
         let prog = sh.focused!.app as! ProgramApp
         XCTAssertTrue(waitFor(sh, 15000) { prog.kernel.graphicsUsed && prog.kernel.frameCount >= 10 })

@@ -24,6 +24,7 @@ class GameInputTest {
     @Test fun heldDpadWalksCastleFrankenstein() {
         val dir = kotlin.io.path.createTempDirectory("cf").toFile()
         val sh = Shell(HeadlessEnv(dir)); sh.resize(360, 640); sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Demo/Games/CastleFrankenstein.HC", sh.catalog.byPath("C:/Demo/Games/CastleFrankenstein.HC"))
         val k = (sh.focused!!.app as ProgramApp).kernel
         val end = System.currentTimeMillis() + 20000
@@ -54,6 +55,7 @@ class GameInputTest {
         for ((w, h, large) in listOf(Triple(640, 360, false), Triple(852, 393, false), Triple(852, 393, true), Triple(360, 640, false), Triple(360, 640, true))) {
             val dir = kotlin.io.path.createTempDirectory("bg").toFile()
             val sh = Shell(HeadlessEnv(dir)); sh.settings.largeTouch = large; Touch.large = large; sh.resize(w, h); sh.tick()
+            sh.settings.engine = Settings.ENGINE_TERRY
             Launch.program(sh, "C:/Demo/Games/BomberGolf.HC", sh.catalog.byPath("C:/Demo/Games/BomberGolf.HC"))
             val k = (sh.focused!!.app as ProgramApp).kernel
             val end = System.currentTimeMillis() + 20000
@@ -109,6 +111,7 @@ class GameInputTest {
                 sh.tick(); return c()
             }
             Launch.doc(sh, "C:/Home/Welcome.DD"); sh.tick() // a second window (Tile, focus)
+            sh.settings.engine = Settings.ENGINE_TERRY
             Launch.program(sh, "C:/Demo/Games/FlapBat.HC", sh.catalog.byPath("C:/Demo/Games/FlapBat.HC"))
             val win = sh.focused!!
             val p = win.app as ProgramApp

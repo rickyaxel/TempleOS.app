@@ -22,6 +22,7 @@ final class GameInputTests: XCTestCase {
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         defer { try? FileManager.default.removeItem(at: dir) }
         let sh = Shell(HeadlessEnv(dir)); sh.resize(360, 640); _ = sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Demo/Games/CastleFrankenstein.HC", sh.catalog.byPath("C:/Demo/Games/CastleFrankenstein.HC"))
         let k = (sh.focused!.app as! ProgramApp).kernel!
         let end = Date().addingTimeInterval(30)
@@ -117,6 +118,7 @@ final class GameInputTests: XCTestCase {
             try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
             defer { try? FileManager.default.removeItem(at: dir) }
             let sh = Shell(HeadlessEnv(dir)); sh.settings.largeTouch = large; Touch.large = large; sh.resize(w, h); _ = sh.tick()
+            sh.settings.engine = Settings.ENGINE_TERRY
             Launch.program(sh, "C:/Demo/Games/BomberGolf.HC", sh.catalog.byPath("C:/Demo/Games/BomberGolf.HC"))
             let k = (sh.focused!.app as! ProgramApp).kernel!
             let end = Date().addingTimeInterval(30)
@@ -172,6 +174,7 @@ final class GameInputTests: XCTestCase {
                 _ = sh.tick(); return c()
             }
             Launch.doc(sh, "C:/Home/Welcome.DD"); _ = sh.tick() // a second window (Tile, focus)
+            sh.settings.engine = Settings.ENGINE_TERRY
             Launch.program(sh, "C:/Demo/Games/FlapBat.HC", sh.catalog.byPath("C:/Demo/Games/FlapBat.HC"))
             let win = sh.focused!
             let p = win.app as! ProgramApp

@@ -252,8 +252,8 @@ class SettingsApp(shell: Shell) : App(shell) {
             tr("settings.touch_targets", "value" to tr(if (st.largeTouch) "value.large" else "value.standard")) to { st.largeTouch = !st.largeTouch; Touch.large = st.largeTouch; shell.relayout() },
             tr("settings.joystick_sensitivity", "value" to "${st.joystickSensitivity}/${Joystick.SENSITIVITY_MAX}") to {
                 st.joystickSensitivity = st.joystickSensitivity % Joystick.SENSITIVITY_MAX + 1 },
-            tr("settings.engine", "value" to if (st.engine == Settings.ENGINE_NATIVE) Engines.NATIVE_NAME else Engines.TERRY_NAME) to {
-                if (Engines.nativeAvailable) st.engine = if (st.engine == Settings.ENGINE_NATIVE) Settings.ENGINE_TERRY else Settings.ENGINE_NATIVE },
+            tr("settings.engine", "value" to if (Engines.selectsNative(st)) Engines.NATIVE_NAME else Engines.TERRY_NAME) to {
+                if (Engines.nativeAvailable) st.engine = if (Engines.selectsNative(st)) Settings.ENGINE_TERRY else Settings.ENGINE_NATIVE },
             tr("settings.storage", "used" to shell.fs.usedBytes() / 1024, "total" to (shell.fs.quota shr 20)) to {},
             tr("settings.close_all") to { shell.windows.toList().forEach { w -> if (w.app !== this) shell.close(w) } },
         )
@@ -517,9 +517,11 @@ object Launch {
 
     fun program(shell: Shell, path: String, info0: ProgramInfo?) {
         val info = info0 ?: shell.catalog.byPath(path)
-        if (shell.settings.engine == Settings.ENGINE_NATIVE) {
+        if (shell.settings.engine != Settings.ENGINE_TERRY) {
             val reason = Engines.unavailableReason(shell, path)
             if (reason != null) {
+                // the default is not a choice: what the native engine cannot run goes to the interpreter
+                if (shell.settings.engine == Settings.ENGINE_DEFAULT) { programOn(shell, path, info, null); return }
                 // never a silent fallback: say why, and let the user run it on the interpreter
                 val title = info?.title ?: path.substringAfterLast('/').substringBefore('.')
                 shell.showDialog(Dialog.confirm( { tr("engine.unavailable.title", "engine" to Engines.NATIVE_NAME) }, { tr("engine.unavailable.message", "title" to title, "engine" to Engines.NATIVE_NAME, "reason" to tr(reason)) }, { tr("button.run_in", "engine" to Engines.TERRY_NAME) }) { programOn(shell, path, info, null) })

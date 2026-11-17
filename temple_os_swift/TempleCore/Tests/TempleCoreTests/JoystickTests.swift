@@ -368,6 +368,7 @@ final class JoystickTests: XCTestCase {
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         let sh = Shell(HeadlessEnv(dir)); sh.resize(360, 640); _ = sh.tick()
         sh.settings.directional = directional
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, path, sh.catalog.byPath(path))
         let r = Run(sh, sh.focused!.app as! ProgramApp, dir)
         if popupOk { XCTAssertTrue(r.waitFor(30) { sh.dialogOpen }, "\(path) popup"); sh.key(10, Keys.forChar(10).1, true) }

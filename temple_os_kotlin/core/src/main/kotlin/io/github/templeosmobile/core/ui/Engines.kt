@@ -11,7 +11,11 @@ import io.github.templeosmobile.core.purenative.NativePrograms
  * - **Pure Kotlin**: the program's ahead-of-time translation to Kotlin (purenative), for the bundled
  *   programs that have one, unchanged since translation.
  *
- * The choice is explicit: a program the native engine cannot run is never quietly run on the
+ * Pure Kotlin is the default ([Settings.ENGINE_DEFAULT]): until an engine is chosen in Settings, a
+ * program the native engine cannot run (the user's own HolyC, an edited bundled file, a build
+ * without translations) runs in Pure Terry without asking.
+ *
+ * A choice is explicit: a program the native engine cannot run is never quietly run on the
  * interpreter under the native name; the user is told why and can run it in Pure Terry.
  */
 object Engines {
@@ -21,6 +25,9 @@ object Engines {
 
     /** True when this build contains translated programs. */
     val nativeAvailable get() = NativePrograms.catalog != null
+
+    /** True when [st] selects the native engine: chosen in Settings, or the default in a build that has it. */
+    fun selectsNative(st: Settings) = st.engine == Settings.ENGINE_NATIVE || (st.engine == Settings.ENGINE_DEFAULT && nativeAvailable)
 
     /** Why [path] cannot run natively (a localization key), or null when its translation can run. */
     fun unavailableReason(shell: Shell, path: String): String? {

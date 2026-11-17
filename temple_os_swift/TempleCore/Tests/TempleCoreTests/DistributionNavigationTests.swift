@@ -144,6 +144,7 @@ final class DistributionNavigationTests:XCTestCase {
             sh.close(sh.focused!,force:true)
             let unsupported=try XCTUnwrap(m.entries.first {$0.expression.contains("BootRAM")})
             XCTAssertFalse(OriginalNavigation.dispatch(sh,unsupported));XCTAssertEqual(sh.focused?.app.kind,"programs")
+            sh.settings.engine=Settings.ENGINE_TERRY
             let game=try XCTUnwrap(m.entries.first {$0.programId=="game.tictactoe"} ?? m.entries.first {$0.programId=="game.flapbat"})
             XCTAssertTrue(OriginalNavigation.dispatch(sh,game));XCTAssertEqual((sh.focused?.app as? ProgramApp)?.path,sh.catalog.byId(game.programId)?.path)
         }

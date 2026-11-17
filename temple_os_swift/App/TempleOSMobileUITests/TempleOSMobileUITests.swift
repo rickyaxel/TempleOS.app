@@ -374,7 +374,7 @@ final class TempleOSMobileUITests: XCTestCase {
 
     /** Frame-rate readout for two heavy games (screenshots show "NN FPS" under the frame). */
     func testFrameRates() throws {
-        app.launchArguments = ["-uitest-reset"]
+        app.launchArguments = ["-uitest-reset", "-engine", "terry"]
         app.launch()
         XCUIDevice.shared.orientation = .portrait
         readLayout(); sleep(2)
@@ -396,7 +396,7 @@ final class TempleOSMobileUITests: XCTestCase {
      * Measurements: attachment "menu-sizing.json" (and TEMPLEOS_SHOTS).
      */
     func testMenuSizing() throws {
-        app.launchArguments = ["-uitest-reset", "-perflog", "-AppleLanguages", "(en-US)"]
+        app.launchArguments = ["-uitest-reset", "-perflog", "-engine", "terry", "-AppleLanguages", "(en-US)"]
         app.launch()
         var report: [String] = []
         for (name, o) in [("portrait", UIDeviceOrientation.portrait), ("landscape", UIDeviceOrientation.landscapeLeft)] {
@@ -729,7 +729,7 @@ final class TempleOSMobileUITests: XCTestCase {
     func testSoundExample() throws {
         let envv = ProcessInfo.processInfo.environment
         let program = envv["TEMPLEOS_SOUND_PROGRAM"] ?? "Sound"
-        app.launchArguments = ["-uitest-reset", "-soundcapture", "-AppleLanguages", "(en-US)"]
+        app.launchArguments = ["-uitest-reset", "-soundcapture", "-engine", "terry", "-AppleLanguages", "(en-US)"]
         app.launch()
         readLayout(); sleep(2)
         app.buttons["MENU"].tap(); sleep(1)
@@ -765,7 +765,7 @@ final class TempleOSMobileUITests: XCTestCase {
      * ToneGenerator.suspend, must hold about that much sound, not the whole 2.6 s example).
      */
     func testSoundStopsInBackground() throws {
-        app.launchArguments = ["-uitest-reset", "-soundcapture", "-AppleLanguages", "(en-US)"]
+        app.launchArguments = ["-uitest-reset", "-soundcapture", "-engine", "terry", "-AppleLanguages", "(en-US)"]
         app.launch()
         readLayout(); sleep(2)
         app.buttons["MENU"].tap(); sleep(1)
@@ -912,7 +912,7 @@ final class TempleOSMobileUITests: XCTestCase {
     /** The in-app TempleOS keyboard: VoiceOver sees its keys, and typing on them runs HolyC in the terminal. */
     /** Game controls are visible in both orientations: none lies under the program picture (BomberGolf). */
     func testGameControlsAreNotUnderThePicture() throws {
-        app.launchArguments = ["-uitest-reset", "-AppleLanguages", "(en-US)"]
+        app.launchArguments = ["-uitest-reset", "-engine", "terry", "-AppleLanguages", "(en-US)"]
         app.launch()
         XCUIDevice.shared.orientation = .portrait
         readLayout(); sleep(2)
@@ -1008,7 +1008,7 @@ final class TempleOSMobileUITests: XCTestCase {
     /** Launches a clean app and opens [title] from the Games or Demos menu; returns its picture. */
     private func openProgram(_ menu: String, _ title: String, partial: Bool = false) -> XCUIElement {
         app.terminate()
-        app.launchArguments = ["-uitest-reset", "-AppleLanguages", "(en-US)"]
+        app.launchArguments = ["-uitest-reset", "-engine", "terry", "-AppleLanguages", "(en-US)"]
         app.launch()
         XCUIDevice.shared.orientation = .portrait
         readLayout(); sleep(2)
@@ -1553,7 +1553,7 @@ final class TempleOSMobileUITests: XCTestCase {
             ?? ["en-US", "es-ES", "de-DE", "ar", "he-IL", "hi-IN", "ja-JP", "zh-CN", "zh-TW", "ko-KR", "th", "id", "ru-RU", "ml-IN"]
         for loc in locales {
             app.terminate()
-            app.launchArguments = ["-uitest-reset", "-AppleLanguages", "(\(loc))"]
+            app.launchArguments = ["-uitest-reset", "-engine", "terry", "-AppleLanguages", "(\(loc))"]
             app.launch()
             XCUIDevice.shared.orientation = .portrait
             readLayout(); sleep(2)
@@ -1759,7 +1759,7 @@ final class TempleOSMobileUITests: XCTestCase {
      * showed "Program ended. Restart from the menu.". Its own Exit still ends it with that message.
      */
     func testTapsOutsideTheProgramKeepItRunning() throws {
-        app.launchArguments = ["-uitest-reset", "-AppleLanguages", "(en-US)"]
+        app.launchArguments = ["-uitest-reset", "-engine", "terry", "-AppleLanguages", "(en-US)"]
         app.launch()
         XCUIDevice.shared.orientation = .portrait
         readLayout(); sleep(2)

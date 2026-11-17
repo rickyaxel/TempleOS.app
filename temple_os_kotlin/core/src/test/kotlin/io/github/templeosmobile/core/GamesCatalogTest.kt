@@ -2,6 +2,7 @@ package io.github.templeosmobile.core
 
 import io.github.templeosmobile.core.ui.*
 import io.github.templeosmobile.core.kernel.*
+import io.github.templeosmobile.core.purenative.NativePrograms
 import org.junit.Assert.*
 import org.junit.Test
 import java.io.File
@@ -57,6 +58,7 @@ class GamesCatalogTest {
             val tab=sh.accessibilityNodes().first { it.label==tr("games.catalog") }.rect
             sh.focused!!.app.tap(tab.x+tab.w/2,tab.y+tab.h/2,tab);sh.tick()
             val water=sh.accessibilityNodes().first { it.label=="WaterFowl" }.rect
+            sh.settings.engine=Settings.ENGINE_TERRY
             sh.focused!!.app.tap(water.x+water.w/2,water.y+water.h/2,water);sh.tick()
             assertEquals("program",sh.focused!!.app.kind)
             assertEquals("C:/Demo/Snd/WaterFowl.HC",sh.focused!!.app.saveState()["path"])
@@ -82,6 +84,30 @@ class GamesCatalogTest {
         val dir=kotlin.io.path.createTempDirectory("games-mode").toFile();val sh=Shell(HeadlessEnv(dir))
         try { assertNull(Launch.restore(sh,"program",mapOf("path" to "C:/Home/Untranslated.HC", "engine" to "native"))) }
         finally { dir.deleteRecursively() }
+    }
+    /** No engine chosen (a fresh install) in a build without translations: programs open in Pure Terry and nothing asks. */
+    @Test fun defaultEngineWithoutTranslationsRunsPureTerryWithoutAsking() {
+        val dir=kotlin.io.path.createTempDirectory("games-default").toFile();val sh=Shell(HeadlessEnv(dir))
+        val catalog=NativePrograms.catalog;NativePrograms.catalog=null
+        try {
+            sh.resize(402,874);sh.tick()
+            assertEquals(Settings.ENGINE_DEFAULT,sh.settings.engine);assertFalse(Engines.selectsNative(sh.settings))
+            val water=sh.catalog.byId("sound.waterfowl")!!
+            Launch.program(sh,water.path,water);sh.tick()
+            assertFalse(sh.dialogOpen);assertNull((sh.focused!!.app as ProgramApp).native)
+            sh.close(sh.focused!!,true)
+            // Settings names the engine in use and cannot choose one this build does not have
+            Launch.settings(sh);sh.tick()
+            val row=sh.accessibilityNodes().first { it.label==tr("settings.engine","value" to Engines.TERRY_NAME) }.rect
+            sh.focused!!.app.tap(row.x+row.w/2,row.y+row.h/2,row);sh.tick()
+            assertEquals(Settings.ENGINE_DEFAULT,sh.settings.engine)
+            // a chosen Pure Kotlin is explicit: it asks before the program runs on the interpreter
+            sh.settings.engine=Settings.ENGINE_NATIVE
+            Launch.program(sh,water.path,water);sh.tick()
+            assertTrue(sh.dialogOpen);assertTrue(sh.windows.none { it.app is ProgramApp })
+            sh.key('\n'.code,Keys.forChar('\n'.code).second,true);sh.tick()
+            assertFalse(sh.dialogOpen);assertNull((sh.focused!!.app as ProgramApp).native)
+        } finally { NativePrograms.catalog=catalog;sh.windows.toList().forEach { it.app.close() };dir.deleteRecursively() }
     }
     @Test fun duplicateCatalogIdsAreRejected() {
         try { Catalog.parse("""{"programs":[{"id":"x","path":"C:/a.HC"},{"id":"x","path":"C:/b.HC"}]}"""); fail("duplicate accepted") }

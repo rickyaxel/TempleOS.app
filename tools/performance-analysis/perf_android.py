@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Plays a program on an Android device or emulator and collects the app's perf log.
 
-The app is started with --ez perflog true, so the focused program prints one line per second:
+The app is started with --ez perflog true --es engine terry (Pure Terry; perf_engines_android.py
+compares the engines), so the focused program prints one line per second:
   TempleOSMobile perf program=<id> fps=.. compose_ms=.. busy_pct=.. speaker_per_s=.. ui_fps=..
       ui_max_gap_ms=.. ui_janks=..
 (ProgramApp.perfLine). The program is opened through the start menu like a user would, then
@@ -38,7 +39,7 @@ def run(d, menu, program, seconds, taps, landscape=False, period=0.7, apk=None, 
         d.rotate(True)
     else:
         d.rotate(False)
-    d.launch(clear=True, extras="--ez perflog true")
+    d.launch(clear=True, extras="--ez perflog true --es engine terry")
     time.sleep(2)
     d.tap("MENU")
     d.tap(menu)

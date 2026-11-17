@@ -1702,13 +1702,15 @@ public final class Settings {
     public static let ENGINE_TERRY = 0
     /** Pure Swift: bundled programs run as their ahead-of-time Swift translation (PureNative). */
     public static let ENGINE_NATIVE = 1
+    /** No engine chosen yet: Pure Swift for the programs it can run, Pure Terry for the rest, without asking. */
+    public static let ENGINE_DEFAULT = 2
 
     /** The in-app TempleOS keyboard ([TempleKeyboard]). */
     public static let KEYBOARD_TEMPLEOS = 0
     /** The device's own keyboard (international input, dictation, accessibility). */
     public static let KEYBOARD_SYSTEM = 1 // Legacy serialized value only; cannot activate a device keyboard.
 
-    public init(_ desktopColor: Int = Palette.DKGRAY, _ sound: Bool = true, _ controlsOpacity: Int = 2, _ uiScale: Int = 0, _ crispScaling: Bool = false, _ largeTouch: Bool = false, _ keyboardMode: Int = Settings.KEYBOARD_TEMPLEOS, _ language: String = "", _ engine: Int = Settings.ENGINE_TERRY, _ directional: DirectionalControl = .dpad, _ joystickSensitivity: Int = Joystick.SENSITIVITY_DEFAULT, _ importIntroSeen: Bool = false) {
+    public init(_ desktopColor: Int = Palette.DKGRAY, _ sound: Bool = true, _ controlsOpacity: Int = 2, _ uiScale: Int = 0, _ crispScaling: Bool = false, _ largeTouch: Bool = false, _ keyboardMode: Int = Settings.KEYBOARD_TEMPLEOS, _ language: String = "", _ engine: Int = Settings.ENGINE_DEFAULT, _ directional: DirectionalControl = .dpad, _ joystickSensitivity: Int = Joystick.SENSITIVITY_DEFAULT, _ importIntroSeen: Bool = false) {
         self.desktopColor = desktopColor; self.sound = sound; self.controlsOpacity = controlsOpacity
         self.uiScale = uiScale; self.crispScaling = crispScaling; self.largeTouch = largeTouch
         self.language = language; self.engine = engine; self.directional = directional
@@ -1739,7 +1741,7 @@ public final class Settings {
             KEYBOARD_TEMPLEOS,
             // an unknown or stale id falls back to the device language (LocaleResolver ignores it)
             scString((m["g"] ?? "").unicodeScalars.filter { Settings.isLetterOrDigit($0) || $0 == "-" }.prefix(35)),
-            m["e"] == "1" ? ENGINE_NATIVE : ENGINE_TERRY,
+            m["e"] == "0" ? ENGINE_TERRY : m["e"] == "1" ? ENGINE_NATIVE : ENGINE_DEFAULT,
             // sessions saved before the joystick existed have no "j": the d-pad, as before
             m["j"] == "1" ? .joystick : .dpad,
             m["js"].flatMap { Int($0) }.map { coerceInUI($0, Joystick.SENSITIVITY_MIN, Joystick.SENSITIVITY_MAX) } ?? Joystick.SENSITIVITY_DEFAULT,

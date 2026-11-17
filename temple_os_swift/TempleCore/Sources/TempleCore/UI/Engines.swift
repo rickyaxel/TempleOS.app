@@ -10,7 +10,11 @@ import Foundation
  * - **Pure Swift**: the program's ahead-of-time translation to Swift (PureNative), for the bundled
  *   programs that have one, unchanged since translation.
  *
- * The choice is explicit: a program the native engine cannot run is never quietly run on the
+ * Pure Swift is the default ([Settings.ENGINE_DEFAULT]): until an engine is chosen in Settings, a
+ * program the native engine cannot run (the user's own HolyC, an edited bundled file, a build
+ * without translations) runs in Pure Terry without asking.
+ *
+ * A choice is explicit: a program the native engine cannot run is never quietly run on the
  * interpreter under the native name; the user is told why and can run it in Pure Terry.
  */
 public enum Engines {
@@ -20,6 +24,9 @@ public enum Engines {
 
     /** True when this build contains translated programs. */
     public static var nativeAvailable: Bool { NativePrograms.catalog != nil }
+
+    /** True when [st] selects the native engine: chosen in Settings, or the default in a build that has it. */
+    public static func selectsNative(_ st: Settings) -> Bool { st.engine == Settings.ENGINE_NATIVE || (st.engine == Settings.ENGINE_DEFAULT && nativeAvailable) }
 
     /** Why [path] cannot run natively (a localization key), or nil when its translation can run. */
     public static func unavailableReason(_ shell: Shell, _ path: String) -> String? {

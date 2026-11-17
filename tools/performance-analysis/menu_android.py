@@ -26,7 +26,7 @@ def run(d, out, label):
     os.makedirs(out, exist_ok=True)
     density = d.density()
     report = {"device": d.serial, "label": label, "density": density, "views": []}
-    d.launch(clear=True)
+    d.launch(clear=True, extras="--es engine terry")  # the window titles below are Pure Terry's
     for orient in ("portrait", "landscape"):
         d.rotate(orient == "landscape")
         time.sleep(1.5)

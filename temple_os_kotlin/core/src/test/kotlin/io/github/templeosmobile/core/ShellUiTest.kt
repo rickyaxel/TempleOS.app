@@ -120,6 +120,7 @@ class ShellUiTest {
             shot(sh, "09-terminal")
 
             val info = sh.catalog.byPath("C:/Home/Examples/Graphics.HC")
+            sh.settings.engine = Settings.ENGINE_TERRY
             Launch.program(sh, "C:/Home/Examples/Graphics.HC", info)
             val prog = sh.focused!!.app as ProgramApp
             // frames keep running; the published frame holds the drawing (static pictures are

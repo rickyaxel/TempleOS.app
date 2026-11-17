@@ -148,6 +148,7 @@ class AppBehaviorTest {
     @Test fun coveredProgramPictureRespectsStacking() {
         val (sh, _) = shell()
         sh.resize(640, 360); sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Home/Examples/Graphics.HC", null)
         val progWin = sh.focused!!
         val prog = progWin.app as ProgramApp

@@ -166,7 +166,7 @@ class ProgramsApp(shell: Shell) : App(shell) {
                 if (p.localizedDescription.isNotEmpty()) out.add(Row(p.localizedDescription,"text"))
                 if (p.unsupported) out.add(Row(tr("games.source_only"),"text"))
                 if (p.localizedNote.isNotEmpty()) out.add(Row(p.localizedNote,"text"))
-                if (!p.unsupported) out.add(Row(tr("button.run_in","engine" to if(shell.settings.engine == Settings.ENGINE_NATIVE) Engines.NATIVE_NAME else Engines.TERRY_NAME),"run",p.id))
+                if (!p.unsupported) out.add(Row(tr("button.run_in","engine" to if(Engines.selectsNative(shell.settings)) Engines.NATIVE_NAME else Engines.TERRY_NAME),"run",p.id))
                 out.add(Row(tr("menu.edit_source"),"source",p.path))
                 for (m in menus.menus.filter { p.id in it.owners }) out.add(Row(m.title,"navigate","m:"+m.id))
             }

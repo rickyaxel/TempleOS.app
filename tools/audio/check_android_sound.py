@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Runs a program on an Android device or emulator with the debug sound capture and checks what it played.
 
-Installs the debug APK, launches it with `--ez soundcapture true`, opens START MENU > <menu> > <program>
+Installs the debug APK, launches it with `--ez soundcapture true --es engine terry`, opens START MENU > <menu> > <program>
 through the accessibility tree (tools/performance-analysis/android_ui.py), optionally taps buttons, waits,
 pulls <external files>/sound-capture.wav (written when the speaker idles) and runs
 tools/audio/analyze_capture.py: against TempleOS's trace for the Sound example, --stats for others.
@@ -40,7 +40,7 @@ def main():
     remote_all = remote.replace(".wav", "-all.wav")
     d.shell("rm -f %s %s %s" % (remote, remote_all, remote.replace(".wav", ".json")), check=False)
     d.logcat_clear()
-    d.launch(clear=False, extras="--ez soundcapture true")
+    d.launch(clear=False, extras="--ez soundcapture true --es engine terry")
     # a restored session may reopen this program from an earlier check: close those windows (only windows of
     # the program under test; anything else in the session is left alone), so the last burst is ours
     time.sleep(3)

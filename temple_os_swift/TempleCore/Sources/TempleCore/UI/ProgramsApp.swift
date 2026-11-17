@@ -158,7 +158,7 @@ public final class ProgramsApp: App {
             if !p.localizedDescription.isEmpty {out.append(Row(p.localizedDescription,"text"))}
             if p.unsupported {out.append(Row(tr("games.source_only"),"text"))}
             if !p.localizedNote.isEmpty {out.append(Row(p.localizedNote,"text"))}
-            if !p.unsupported {out.append(Row(tr("button.run_in",("engine",shell.settings.engine == Settings.ENGINE_NATIVE ? Engines.NATIVE_NAME : Engines.TERRY_NAME)),"run",p.id))}
+            if !p.unsupported {out.append(Row(tr("button.run_in",("engine",Engines.selectsNative(shell.settings) ? Engines.NATIVE_NAME : Engines.TERRY_NAME)),"run",p.id))}
             out.append(Row(tr("menu.edit_source"),"source",p.path))
             for m in menus.menus where m.owners.contains(p.id) {out.append(Row(m.title,"navigate","m:"+m.id))}
         } else if route.hasPrefix("m:"), let m=menus.byId(id) {

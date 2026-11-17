@@ -145,8 +145,16 @@ final class L10nTests: XCTestCase {
         let st = Settings()
         st.language = "pt-BR"
         XCTAssertTrue(st.encode().contains(";g=pt-BR"))
-        // the engine setting (Pure Terry / Pure Swift) round-trips and defaults to Pure Terry
-        XCTAssertEqual(Settings.ENGINE_TERRY, Settings.decode("d=8;s=1").engine)
+        // the engine setting (Pure Terry / Pure Swift) round-trips; a fresh install, and a session saved
+        // without the setting, have no engine chosen (Pure Swift where it can run)
+        XCTAssertEqual(Settings.ENGINE_DEFAULT, st.engine)
+        XCTAssertEqual(Settings.ENGINE_DEFAULT, Settings.decode("d=8;s=1").engine)
+        XCTAssertEqual(Settings.ENGINE_DEFAULT, Settings.decode(st.encode()).engine)
+        // a saved choice is kept: sessions saved while Pure Terry was the default say e=0
+        XCTAssertEqual(Settings.ENGINE_TERRY, Settings.decode("d=8;s=1;e=0").engine)
+        XCTAssertEqual(Settings.ENGINE_NATIVE, Settings.decode("d=8;s=1;e=1").engine)
+        st.engine = Settings.ENGINE_TERRY
+        XCTAssertEqual(Settings.ENGINE_TERRY, Settings.decode(st.encode()).engine)
         st.engine = Settings.ENGINE_NATIVE
         XCTAssertEqual(Settings.ENGINE_NATIVE, Settings.decode(st.encode()).engine)
         XCTAssertEqual("pt-BR", Settings.decode(st.encode()).language)

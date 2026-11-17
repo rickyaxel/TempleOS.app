@@ -49,6 +49,7 @@ final class GamesCatalogTests: XCTestCase {
         let tab=try XCTUnwrap(sh.accessibilityNodes().first { $0.label==tr("games.catalog") }?.rect)
         sh.focused!.app.tap(tab.x+tab.w/2,tab.y+tab.h/2,tab);_ = sh.tick()
         let water=try XCTUnwrap(sh.accessibilityNodes().first { $0.label=="WaterFowl" }?.rect)
+        sh.settings.engine=Settings.ENGINE_TERRY
         sh.focused!.app.tap(water.x+water.w/2,water.y+water.h/2,water);_ = sh.tick()
         XCTAssertEqual(sh.focused!.app.kind,"program");XCTAssertEqual(sh.focused!.app.saveState()["path"],"C:/Demo/Snd/WaterFowl.HC")
         let state=sh.windows.first { $0.app.kind=="games" }!.app.saveState()
@@ -65,6 +66,32 @@ final class GamesCatalogTests: XCTestCase {
         defer { try? FileManager.default.removeItem(at:dir) }
         let sh=Shell(HeadlessEnv(dir))
         XCTAssertNil(Launch.restore(sh,"program",["path":"C:/Home/Untranslated.HC","engine":"native"]))
+    }
+    /** No engine chosen (a fresh install) in a build without translations: programs open in Pure Terry and nothing asks. */
+    func testDefaultEngineWithoutTranslationsRunsPureTerryWithoutAsking() throws {
+        let dir=FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at:dir,withIntermediateDirectories:true)
+        defer { try? FileManager.default.removeItem(at:dir) }
+        let catalog=NativePrograms.catalog;NativePrograms.catalog=nil
+        defer { NativePrograms.catalog=catalog }
+        let sh=Shell(HeadlessEnv(dir));sh.resize(402,874);_ = sh.tick()
+        defer { sh.windows.forEach { $0.app.close() } }
+        XCTAssertEqual(sh.settings.engine,Settings.ENGINE_DEFAULT);XCTAssertFalse(Engines.selectsNative(sh.settings))
+        let water=try XCTUnwrap(sh.catalog.byId("sound.waterfowl"))
+        Launch.program(sh,water.path,water);_ = sh.tick()
+        XCTAssertFalse(sh.dialogOpen);XCTAssertNil(try XCTUnwrap(sh.focused?.app as? ProgramApp).native)
+        sh.close(try XCTUnwrap(sh.focused),force:true)
+        // Settings names the engine in use and cannot choose one this build does not have
+        Launch.settings(sh);_ = sh.tick()
+        let row=try XCTUnwrap(sh.accessibilityNodes().first { $0.label==tr("settings.engine",("value",Engines.TERRY_NAME)) }?.rect)
+        sh.focused!.app.tap(row.x+row.w/2,row.y+row.h/2,row);_ = sh.tick()
+        XCTAssertEqual(sh.settings.engine,Settings.ENGINE_DEFAULT)
+        // a chosen Pure Swift is explicit: it asks before the program runs on the interpreter
+        sh.settings.engine=Settings.ENGINE_NATIVE
+        Launch.program(sh,water.path,water);_ = sh.tick()
+        XCTAssertTrue(sh.dialogOpen);XCTAssertFalse(sh.windows.contains { $0.app is ProgramApp })
+        sh.key(10,Keys.forChar(10).1,true);_ = sh.tick()
+        XCTAssertFalse(sh.dialogOpen);XCTAssertNil(try XCTUnwrap(sh.focused?.app as? ProgramApp).native)
     }
     func testDuplicateCatalogIdsAreRejected() {
         XCTAssertThrowsError(try Catalog.parse(#"{"programs":[{"id":"x","path":"C:/a.HC"},{"id":"x","path":"C:/b.HC"}]}"#))

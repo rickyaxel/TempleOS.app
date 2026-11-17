@@ -92,6 +92,7 @@ final class AppBehaviorTests: XCTestCase {
         let (sh, _, dir) = shell()
         defer { try? FileManager.default.removeItem(at: dir) }
         sh.resize(640, 360); _ = sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Home/Examples/Graphics.HC", nil)
         let progWin = sh.focused!
         let prog = progWin.app as! ProgramApp

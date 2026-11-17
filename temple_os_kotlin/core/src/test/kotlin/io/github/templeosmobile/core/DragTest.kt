@@ -11,6 +11,7 @@ class DragTest {
         val dir = kotlin.io.path.createTempDirectory("drag").toFile()
         val env = HeadlessEnv(dir)
         val sh = Shell(env); sh.resize(360, 640); sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Demo/Games/Maze.HC", sh.catalog.byPath("C:/Demo/Games/Maze.HC"))
         val prog = sh.focused!!.app as ProgramApp
         val end = System.currentTimeMillis() + 15000
@@ -43,6 +44,7 @@ class DragTest {
         val dir = kotlin.io.path.createTempDirectory("tap").toFile()
         val env = HeadlessEnv(dir)
         val sh = Shell(env); sh.resize(360, 640); sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, "C:/Demo/Games/TicTacToe.HC", sh.catalog.byPath("C:/Demo/Games/TicTacToe.HC"))
         val prog = sh.focused!!.app as ProgramApp
         val end = System.currentTimeMillis() + 15000

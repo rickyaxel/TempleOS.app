@@ -227,7 +227,7 @@ final class DuoPostureUITests: XCTestCase {
     // MARK: app helpers
 
     private func launch(_ extra: [String] = [], lang: String = "en-US") {
-        app.launchArguments = ["-uitest-reset", "-perflog", "-AppleLanguages", "(\(lang))"] + extra
+        app.launchArguments = ["-uitest-reset", "-perflog", "-engine", "terry", "-AppleLanguages", "(\(lang))"] + extra
         app.launch()
         XCTAssertTrue(view.waitForExistence(timeout: 30))
         settle()

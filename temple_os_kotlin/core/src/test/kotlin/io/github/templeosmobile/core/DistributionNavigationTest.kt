@@ -113,6 +113,7 @@ class DistributionNavigationTest {
         assertTrue(OriginalNavigation.dispatch(sh,m.entries.first {it.target=="C:/Demo/Snd"}));assertEquals("C:/Demo/Snd",(sh.focused!!.app as FilesApp).dir)
         sh.close(sh.focused!!,true)
         assertFalse(OriginalNavigation.dispatch(sh,m.entries.first {it.expression.contains("BootRAM")}));assertEquals("programs",sh.focused?.app?.kind)
+        sh.settings.engine=Settings.ENGINE_TERRY
         val game=m.entries.first {it.programId=="game.flapbat"};assertTrue(OriginalNavigation.dispatch(sh,game));assertEquals(sh.catalog.byId(game.programId)!!.path,(sh.focused!!.app as ProgramApp).path)
     }
     @Test fun contextualGroupsAndUnsupportedDiskCommands() = withShell {sh,_->

@@ -30,6 +30,7 @@ final class ControlsFidelityTests: XCTestCase {
         let dir = FileManager.default.temporaryDirectory.appendingPathComponent("ctl-\(UUID().uuidString)")
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         let sh = Shell(HeadlessEnv(dir)); sh.resize(360, 640); _ = sh.tick()
+        sh.settings.engine = Settings.ENGINE_TERRY
         Launch.program(sh, path, sh.catalog.byPath(path))
         let p = sh.focused!.app as! ProgramApp
         let r = Run(sh, p.kernel, dir)

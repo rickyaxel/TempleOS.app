@@ -116,7 +116,7 @@ in one program cannot affect another or the desktop.
 
 ### Execution engines (Settings › Engine)
 
-The VM above is **Pure Terry**, the default. Bundled programs can also run as **Pure Kotlin**
+The VM above is **Pure Terry**. By default bundled programs run as **Pure Kotlin**
 (Android) or **Pure Swift** (iOS): HolyC translated ahead of time, at build time, by
 `temple_os_kotlin/translator` (which reuses this compiler front end) into Kotlin
 (`temple_os_kotlin/purekotlin`) and Swift (`TempleCore/Sources/PureSwift`) that is compiled into the

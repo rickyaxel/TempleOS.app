@@ -281,8 +281,8 @@ public final class SettingsApp: App {
             (tr("settings.touch_targets", ("value", tr(st.largeTouch ? "value.large" : "value.standard"))), { [self] in st.largeTouch = !st.largeTouch; Touch.large = st.largeTouch; shell.relayout() }),
             (tr("settings.joystick_sensitivity", ("value", "\(st.joystickSensitivity)/\(Joystick.SENSITIVITY_MAX)")), {
                 st.joystickSensitivity = st.joystickSensitivity % Joystick.SENSITIVITY_MAX + 1 }),
-            (tr("settings.engine", ("value", st.engine == Settings.ENGINE_NATIVE ? Engines.NATIVE_NAME : Engines.TERRY_NAME)), {
-                if Engines.nativeAvailable { st.engine = st.engine == Settings.ENGINE_NATIVE ? Settings.ENGINE_TERRY : Settings.ENGINE_NATIVE } }),
+            (tr("settings.engine", ("value", Engines.selectsNative(st) ? Engines.NATIVE_NAME : Engines.TERRY_NAME)), {
+                if Engines.nativeAvailable { st.engine = Engines.selectsNative(st) ? Settings.ENGINE_TERRY : Settings.ENGINE_NATIVE } }),
             (tr("settings.storage", ("used", shell.fs.usedBytes() / 1024), ("total", shell.fs.quota >> 20)), {}),
             (tr("settings.close_all"), { [self] in for w in shell.windows { if w.app !== self { shell.close(w) } } }),
         ]
@@ -561,8 +561,10 @@ public enum Launch {
 
     public static func program(_ shell: Shell, _ path: String, _ info0: ProgramInfo?) {
         let info = info0 ?? shell.catalog.byPath(path)
-        if shell.settings.engine == Settings.ENGINE_NATIVE {
+        if shell.settings.engine != Settings.ENGINE_TERRY {
             if let reason = Engines.unavailableReason(shell, path) {
+                // the default is not a choice: what the native engine cannot run goes to the interpreter
+                if shell.settings.engine == Settings.ENGINE_DEFAULT { programOn(shell, path, info, nil); return }
                 // never a silent fallback: say why, and let the user run it on the interpreter
                 let title = info?.title ?? path.substringAfterLast("/").substringBefore(".")
                 shell.showDialog(Dialog.confirm(tr("engine.unavailable.title", ("engine", Engines.NATIVE_NAME)),

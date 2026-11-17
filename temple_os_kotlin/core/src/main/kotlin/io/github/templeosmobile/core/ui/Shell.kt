@@ -1281,7 +1281,7 @@ class Settings(
     /** The in-app UI language (canonical locale id), or "" to follow the device. */
     var language: String = "",
     /** How bundled programs run: [ENGINE_TERRY] (the HolyC interpreter) or [ENGINE_NATIVE] (their Kotlin translation). */
-    var engine: Int = ENGINE_TERRY,
+    var engine: Int = ENGINE_DEFAULT,
     /** How programs with arrow keys show them: the d-pad's four buttons, or the joystick (GameControls). */
     var directional: DirectionalControl = DirectionalControl.DPAD,
     /** How short a push holds the joystick's arrows: [Joystick.SENSITIVITY_MIN]..[Joystick.SENSITIVITY_MAX]. */
@@ -1303,6 +1303,8 @@ class Settings(
         const val ENGINE_TERRY = 0
         /** Pure Kotlin: bundled programs run as their ahead-of-time Kotlin translation (purenative). */
         const val ENGINE_NATIVE = 1
+        /** No engine chosen yet: Pure Kotlin for the programs it can run, Pure Terry for the rest, without asking. */
+        const val ENGINE_DEFAULT = 2
 
         fun decode(s: String): Settings {
             val m = s.split(';').mapNotNull { val i = it.indexOf('='); if (i > 0) it.substring(0, i) to it.substring(i + 1) else null }.toMap()
@@ -1312,7 +1314,7 @@ class Settings(
                 KEYBOARD_TEMPLEOS,
                 // an unknown or stale id falls back to the device language (LocaleResolver ignores it)
                 (m["g"] ?: "").filter { it.isLetterOrDigit() || it == '-' }.take(35),
-                if (m["e"] == "1") ENGINE_NATIVE else ENGINE_TERRY,
+                when (m["e"]) { "0" -> ENGINE_TERRY; "1" -> ENGINE_NATIVE; else -> ENGINE_DEFAULT },
                 // sessions saved before the joystick existed have no "j": the d-pad, as before
                 if (m["j"] == "1") DirectionalControl.JOYSTICK else DirectionalControl.DPAD,
                 m["js"]?.toIntOrNull()?.coerceIn(Joystick.SENSITIVITY_MIN, Joystick.SENSITIVITY_MAX) ?: Joystick.SENSITIVITY_DEFAULT,
