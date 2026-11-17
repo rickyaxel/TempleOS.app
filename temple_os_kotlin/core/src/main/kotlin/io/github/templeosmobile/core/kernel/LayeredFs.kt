@@ -50,6 +50,7 @@ class LayeredFs(
 
     init {
         filesDir.mkdirs()
+        filesCanonical = filesDir.canonicalPath // before anything below can look a path up
         bundled["c:/"] = BEntry("C:/", true, 0)
         for (line in bundle.index().split('\n')) {
             val f = line.split('\t')
@@ -62,7 +63,6 @@ class LayeredFs(
         if (whiteoutFile.exists()) whiteoutFile.readLines().filter { it.isNotBlank() }.forEach { whiteouts.add(it) }
         recoverImports()
         used = filesDir.walkTopDown().filter { it.isFile }.sumOf { it.length() }
-        filesCanonical = filesDir.canonicalPath
     }
 
 

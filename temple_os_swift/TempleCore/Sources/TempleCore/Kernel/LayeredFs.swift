@@ -143,6 +143,7 @@ public final class LayeredFs: VirtualFs {
         whiteoutFile = HostFile.child(overlayRoot, "deleted.txt")
         journalFile = HostFile.child(overlayRoot, "import-journal.txt")
         HostFile.mkdirs(filesDir)
+        filesCanonical = HostFile.canonicalPath(filesDir) // before anything below can look a path up
         bundled["c:/"] = BEntry("C:/", true, 0)
         for line in LayeredFs.splitScalars(bundle.index(), "\n") {
             let f = LayeredFs.splitScalars(line, "\t")
@@ -157,7 +158,6 @@ public final class LayeredFs: VirtualFs {
         }
         recoverImports()
         used = HostFile.treeSize(filesDir)
-        filesCanonical = HostFile.canonicalPath(filesDir)
     }
 
     // ------------------------------------------------------------ text helpers (Kotlin semantics)
