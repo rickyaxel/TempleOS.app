@@ -378,6 +378,15 @@ class Raster(private val k: Kernel) {
         } else cur = cc0
         val bk = m.ld4(dc + oBk) and 0xFF
         val body = m.ld8(dc + oBody)
+        // Fast path: when the whole span's depth-buffer and pixel addresses pass the arena check, the loop
+        // needs no per-pixel checks (the checked loop below faults at the same pixel as the original).
+        val n = a2 - a1 + 1
+        if (n > 0 && step > 0 && n - 1 <= (Int.MAX_VALUE / 4) / step) {
+            val span = (n - 1) * step
+            val bd = body + d
+            if (db >= 0 && db <= m.size - 4L - span * 4 && bd >= 0 && bd <= m.size - 1L - span)
+                return spanDepth(dc, db.toInt(), bd.toInt(), step.toInt(), n.toInt(), z, dz, rop0, cur, cc0, cc1, dither, prob, dprob, bk)
+        }
         var res = 0L
         var a = a1
         var swapState = false
@@ -403,6 +412,47 @@ class Raster(private val k: Kernel) {
             db += step * 4
             z += dz
         }
+        return res
+    }
+
+    /**
+     * [line1d]'s depth-tested loop over [n] pixels whose depth-buffer ([db0]) and pixel ([dst0]) addresses
+     * were checked in advance: same depth test, raster operation, dither sequence and count.
+     */
+    private fun spanDepth(dc: Int, db0: Int, dst0: Int, step: Int, n: Int, z0: Long, dz: Long, rop0: Int,
+                          cur0: Long, cc0: Long, cc1: Long, dither: Boolean, prob: Boolean, dprob: Long, bk: Long): Long {
+        var db = db0; var dst = dst0; var z = z0
+        val dbStep = step * 4
+        var res = 0L
+        if (!dither && rop0 != ROP_COLLISION && rop0 != ROP_XOR) {
+            for (i in 0 until n) {
+                val zi = (z shr 32).toInt()
+                if (zi >= 0 && zi <= m.ld4(db).toInt()) { m.st4(db, zi.toLong()); m.st1(dst, cur0); res++ }
+                db += dbStep; dst += step; z += dz
+            }
+            return res
+        }
+        var cur = cur0
+        var swapState = false
+        if (prob) k.randRunBegin()
+        for (i in 0 until n) {
+            val zi = (z shr 32).toInt()
+            if (zi >= 0 && zi <= m.ld4(db).toInt()) {
+                m.st4(db, zi.toLong())
+                when (rop0) {
+                    ROP_COLLISION -> { val c2 = m.ld1(dst); if (c2 != 0xFFL && c2 != bk) m.st8(dc + oCollision, m.ld8(dc + oCollision) + 1) }
+                    ROP_XOR -> m.st1(dst, m.ld1(dst) xor cur)
+                    else -> m.st1(dst, cur)
+                }
+                res++
+            }
+            if (dither) {
+                if (prob) cur = if ((k.randRunNext() and 0xFFFF) < dprob) cc1 else cc0
+                else { swapState = !swapState; cur = if (swapState) cc1 else cc0 }
+            }
+            db += dbStep; dst += step; z += dz
+        }
+        if (prob) k.randRunEnd()
         return res
     }
 
@@ -549,9 +599,6 @@ class Raster(private val k: Kernel) {
         }
         val dcl = dc.toLong()
         var res = 0L
-        fun draw(u1: Long, u2: Long, v: Long, z1: Long, z2: Long) {
-            res += if (hmode) hline(dcl, hi(u1), hi(u2), v, hi(z1), hi(z2)) else vline(dcl, v, hi(u1), hi(u2), hi(z1), hi(z2))
-        }
         var du1: Long; var dz1: Long; var du2: Long; var dz2: Long
         var u1: Long; var u2: Long; var v1: Long; var z1: Long; var z2: Long
         var dv1: Long; var dv2: Long; var i: Long
@@ -566,7 +613,7 @@ class Raster(private val k: Kernel) {
                 i = v1 - max + 1; if (i > -dv2) i = -dv2
                 dv2 += i; v1 -= i; u1 += du1 * i; u2 += du2 * i; z1 += dz1 * i; z2 += dz2 * i
             }
-            while (dv2++ != 0L) { draw(u1, u2, v1, z1, z2); v1--; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
+            while (dv2++ != 0L) { res += triDraw(dcl, hmode, u1, u2, v1, z1, z2); v1--; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
             dv2 = p2[V] - p4[V]
             if (dv2 != 0L) {
                 du2 = div((p4[U] - p2[U]) shl 32, dv2); dz2 = div((p4[2] - p2[2]) shl 32, dv2)
@@ -576,7 +623,7 @@ class Raster(private val k: Kernel) {
                     dv2 += i; v1 -= i; u1 += du1 * i; u2 += du2 * i; z1 += dz1 * i; z2 += dz2 * i
                 }
             }
-            while (dv2++ <= 0) { draw(u1, u2, v1, z1, z2); v1--; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
+            while (dv2++ <= 0) { res += triDraw(dcl, hmode, u1, u2, v1, z1, z2); v1--; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
         } else {
             dv2 = p2[V] - p1[V]
             if (dv2 > 0) {
@@ -589,7 +636,7 @@ class Raster(private val k: Kernel) {
                     i = min - v1; if (i > dv2) i = dv2
                     dv2 -= i; v1 += i; u1 += du1 * i; u2 += du2 * i; z1 += dz1 * i; z2 += dz2 * i
                 }
-                while (dv2-- != 0L) { draw(u1, u2, v1, z1, z2); v1++; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
+                while (dv2-- != 0L) { res += triDraw(dcl, hmode, u1, u2, v1, z1, z2); v1++; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
                 dv2 = p4[V] - p2[V]
                 if (dv2 != 0L) {
                     du2 = div((p4[U] - p2[U]) shl 32, dv2); dz2 = div((p4[2] - p2[2]) shl 32, dv2)
@@ -599,7 +646,7 @@ class Raster(private val k: Kernel) {
                         dv2 -= i; v1 += i; u1 += du1 * i; u2 += du2 * i; z1 += dz1 * i; z2 += dz2 * i
                     }
                 }
-                while (dv2-- >= 0) { draw(u1, u2, v1, z1, z2); v1++; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
+                while (dv2-- >= 0) { res += triDraw(dcl, hmode, u1, u2, v1, z1, z2); v1++; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
             } else {
                 dv1 = p2[V] - p1[V]
                 if (dv1 != 0L) {
@@ -615,7 +662,7 @@ class Raster(private val k: Kernel) {
                     while (dv1++ <= 0) {
                         // v1 only grows: past max nothing more is drawn (huge dv1 spun ~2^32 times)
                         if (v1 >= max) break
-                        draw(u1, u2, v1, z1, z2)
+                        res += triDraw(dcl, hmode, u1, u2, v1, z1, z2)
                         v1++; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2
                     }
                 }
@@ -631,19 +678,25 @@ class Raster(private val k: Kernel) {
                         i = v1 - max + 1; if (i > dv1) return res
                         dv1 -= i; v1 -= i; u1 += du1 * i; u2 += du2 * i; z1 += dz1 * i; z2 += dz2 * i
                     }
-                    while (dv1-- >= 0) { draw(u1, u2, v1, z1, z2); v1--; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
+                    while (dv1-- >= 0) { res += triDraw(dcl, hmode, u1, u2, v1, z1, z2); v1--; u1 += du1; u2 += du2; z1 += dz1; z2 += dz2 }
                 }
             }
         }
         return res
     }
 
+    /** One row (or column) of [tri] (Swift: triDraw): a plain method, as a local function capturing `res` boxed it per triangle. */
+    private fun triDraw(dcl: Long, hmode: Boolean, u1: Long, u2: Long, v: Long, z1: Long, z2: Long): Long =
+        if (hmode) hline(dcl, hi(u1), hi(u2), v, hi(z1), hi(z2)) else vline(dcl, v, hi(u1), hi(u2), hi(z1), hi(z2))
+
     // ---------------------------------------------------------------- transforms
 
     private val oR = o.dc("r"); private val oDX = o.dc("x"); private val oDY = o.dc("y"); private val oDZ = o.dc("z")
     private val oTransform = o.dc("transform")
     private val oSym = o.dc("sym")
-    private val scratch: Int by lazy { m.calloc(24) }
+    // These lazies resolve prelude symbols once it is compiled. A kernel runs on one thread, and the default
+    // synchronized lazy cost 2-4% of Varoom's time on ART (simpleperf, OPPO): per vertex and sprite element.
+    private val scratch: Int by lazy(LazyThreadSafetyMode.NONE) { m.calloc(24) }
 
     /** Mat4x4MulXYZ on raw values (GrDC.HC). */
     fun mulXYZ(r: Int, v: LongArray) {
@@ -721,7 +774,7 @@ class Raster(private val k: Kernel) {
         v[0] = m.ld8(sc); v[1] = m.ld8(sc + 8); v[2] = m.ld8(sc + 16)
     }
 
-    val dcTransformPtr: Long by lazy { k.prog.funcPtr(k.prog.globals["DCTransform"] as FuncSym) }
+    val dcTransformPtr: Long by lazy(LazyThreadSafetyMode.NONE) { k.prog.funcPtr(k.prog.globals["DCTransform"] as FuncSym) }
 
     /** Port of DCReflect (Adam/Gr/GrMath.HC): reflect a point about dc->sym. */
     fun dcReflect(dc: Int, v: LongArray) {
@@ -1124,20 +1177,20 @@ class Raster(private val k: Kernel) {
 
     // ---------------------------------------------------------------- sprites (Adam/Gr/SpriteNew.HC)
 
-    private val oStart by lazy { o.member("CSprite", "start") }
-    private val oNum by lazy { o.member("CSpriteNumU8s", "num") }
-    private val oNpNum by lazy { o.member("CSpriteNumPtU8s", "num") }
-    private val oSt by lazy { o.member("CSpritePtStr", "st") }
-    private val oWidth2 by lazy { o.member("CSpritePtWHU8s", "width") }
-    private val oHeight2 by lazy { o.member("CSpritePtWHU8s", "height") }
-    private val oMuV by lazy { o.member("CSpriteMeshU8s", "vertex_cnt") }
-    private val oMuT by lazy { o.member("CSpriteMeshU8s", "tri_cnt") }
-    private val oPmuV by lazy { o.member("CSpritePtMeshU8s", "vertex_cnt") }
-    private val oPmuT by lazy { o.member("CSpritePtMeshU8s", "tri_cnt") }
-    private val szD2 by lazy { o.cls("CD2I32").size.toLong() }
-    private val szD3 by lazy { o.cls("CD3I32").size.toLong() }
-    private val szTri by lazy { o.cls("CMeshTri").size.toLong() }
-    private val baseSizes by lazy { (k.prog.globals["sprite_elem_base_sizes"] as GlobalSym).addr.toLong() }
+    private val oStart by lazy(LazyThreadSafetyMode.NONE) { o.member("CSprite", "start") }
+    private val oNum by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteNumU8s", "num") }
+    private val oNpNum by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteNumPtU8s", "num") }
+    private val oSt by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtStr", "st") }
+    private val oWidth2 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtWHU8s", "width") }
+    private val oHeight2 by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtWHU8s", "height") }
+    private val oMuV by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteMeshU8s", "vertex_cnt") }
+    private val oMuT by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpriteMeshU8s", "tri_cnt") }
+    private val oPmuV by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtMeshU8s", "vertex_cnt") }
+    private val oPmuT by lazy(LazyThreadSafetyMode.NONE) { o.member("CSpritePtMeshU8s", "tri_cnt") }
+    private val szD2 by lazy(LazyThreadSafetyMode.NONE) { o.cls("CD2I32").size.toLong() }
+    private val szD3 by lazy(LazyThreadSafetyMode.NONE) { o.cls("CD3I32").size.toLong() }
+    private val szTri by lazy(LazyThreadSafetyMode.NONE) { o.cls("CMeshTri").size.toLong() }
+    private val baseSizes by lazy(LazyThreadSafetyMode.NONE) { (k.prog.globals["sprite_elem_base_sizes"] as GlobalSym).addr.toLong() }
 
     private fun i32(a: Long): Long = m.ld4(m.check(a, 4)).toInt().toLong()
 

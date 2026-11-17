@@ -1758,8 +1758,11 @@ class Kernel(val env: KernelEnv, val name: String, val shellMode: Boolean = fals
     // ------------------------------------------------------------ random
 
     val rng = java.util.SplittableRandom(0)
-    private val randSeedOff by lazy { o.task("rand_seed") }
-    private val taskFlagsOff by lazy { o.task("task_flags") }
+    // resolved on first use; not `by lazy`, whose synchronized getter showed up per dithered pixel on ART
+    private var randSeedOff0 = -1
+    private val randSeedOff: Int get() { if (randSeedOff0 < 0) randSeedOff0 = o.task("rand_seed"); return randSeedOff0 }
+    private var taskFlagsOff0 = -1
+    private val taskFlagsOff: Int get() { if (taskFlagsOff0 < 0) taskFlagsOff0 = o.task("task_flags"); return taskFlagsOff0 }
 
     /**
      * Kernel/KMathB.HC RandU64 and friends: advances [t]'s own `rand_seed` with TempleOS's linear congruence
@@ -1777,6 +1780,33 @@ class Kernel(val env: KernelEnv, val name: String, val shellMode: Boolean = fals
         mem.st8(fs + randSeedOff, res)
         return res
     }
+
+    /**
+     * [nextRand] for a native loop that draws many numbers with no HolyC in between (a dithered span):
+     * [randRunBegin] loads the current task's seed and time once, [randRunNext] advances the seed as
+     * [nextRand] does, [randRunEnd] stores it. The time cannot change within a run in virtual time, so the
+     * values are nextRand's; in real time the run XORs one reading of the clock instead of one per draw.
+     */
+    fun randRunBegin() {
+        val task = current
+        if (task == null) { randRunFs = -1; return }
+        randRunFs = task.fsAddr
+        randRunSeed = mem.ld8(randRunFs + randSeedOff)
+        randRunXor = if ((mem.ld4(randRunFs + taskFlagsOff) ushr TASKF_NONTIMER_RAND) and 1L == 0L) taskNow(task) else 0L
+    }
+
+    fun randRunNext(): Long {
+        if (randRunFs < 0) return 0
+        val s = randRunSeed
+        randRunSeed = (((LIN_CONGRUE_A * s) xor ((s and 0xFFFFFFFF0000L) shr 16)) + LIN_CONGRUE_C) xor randRunXor
+        return randRunSeed
+    }
+
+    fun randRunEnd() { if (randRunFs >= 0) mem.st8(randRunFs + randSeedOff, randRunSeed) }
+
+    private var randRunFs = -1
+    private var randRunSeed = 0L
+    private var randRunXor = 0L
 
     /** Kernel/KMathB.HC Seed(seed, task): a fixed seed (and no more TSC) or, for 0, back to timer-based. */
     fun seed(t: Task, seed: Long, taskAddr: Long): Long {

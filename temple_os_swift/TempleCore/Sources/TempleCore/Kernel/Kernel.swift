@@ -1852,6 +1852,32 @@ public final class Kernel {
         return res
     }
 
+    /**
+     * [nextRand] for a native loop that draws many numbers with no HolyC in between (a dithered span):
+     * [randRunBegin] loads the current task's seed and time once, [randRunNext] advances the seed as
+     * [nextRand] does, [randRunEnd] stores it. The time cannot change within a run in virtual time, so the
+     * values are nextRand's; in real time the run XORs one reading of the clock instead of one per draw.
+     */
+    public func randRunBegin() {
+        guard let task = current else { randRunFs = -1; return }
+        randRunFs = task.fsAddr
+        randRunSeed = mem.ld8(randRunFs + randSeedOff)
+        randRunXor = (ushr(mem.ld4(randRunFs + taskFlagsOff), Int64(Kernel.TASKF_NONTIMER_RAND)) & 1) == 0 ? taskNow(task) : 0
+    }
+
+    @inline(__always) public func randRunNext() -> Int64 {
+        if randRunFs < 0 { return 0 }
+        let s = randRunSeed
+        randRunSeed = (((Kernel.LIN_CONGRUE_A &* s) ^ ((s & 0xFFFFFFFF0000) >> 16)) &+ Kernel.LIN_CONGRUE_C) ^ randRunXor
+        return randRunSeed
+    }
+
+    public func randRunEnd() { if randRunFs >= 0 { mem.st8(randRunFs + randSeedOff, randRunSeed) } }
+
+    private var randRunFs = -1
+    private var randRunSeed: Int64 = 0
+    private var randRunXor: Int64 = 0
+
     /** Kernel/KMathB.HC Seed(seed, task): a fixed seed (and no more TSC) or, for 0, back to timer-based. */
     public func seed(_ t: HTask, _ seed: Int64, _ taskAddr: Int64) throws -> Int64 {
         let fs = taskAddr != 0 ? try mem.check(taskAddr, 8) : t.fsAddr

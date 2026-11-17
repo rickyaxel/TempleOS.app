@@ -435,6 +435,17 @@ public final class Raster {
         } else { cur = cc0 }
         let bk = m.ld4(dc + oBk) & 0xFF
         let body = m.ld8(dc + oBody)
+        // Fast path: when the whole span's depth-buffer and pixel addresses pass the arena check, the loop
+        // needs no per-pixel checks (the checked loop below faults at the same pixel as the original).
+        let n = a2 &- a1 &+ 1
+        if n > 0 && step > 0 && n - 1 <= (Int64(Int32.max) / 4) / step {
+            let span = (n - 1) * step
+            let bd = body &+ d
+            let size = Int64(m.size)
+            if db >= 0 && db <= size - 4 - span * 4 && bd >= 0 && bd <= size - 1 - span {
+                return spanDepth(dc, Int(db), Int(bd), Int(step), Int(n), z, dz, rop0, cur, cc0, cc1, dither, prob, dprob, bk)
+            }
+        }
         var res: Int64 = 0
         var a = a1
         var swapState = false
@@ -463,6 +474,49 @@ public final class Raster {
             db = db &+ dbStep
             z = z &+ dz
         }
+        return res
+    }
+
+    /**
+     * [line1d]'s depth-tested loop over [n] pixels whose depth-buffer ([db0]) and pixel ([dst0]) addresses
+     * were checked in advance: same depth test, raster operation, dither sequence and count.
+     */
+    private func spanDepth(_ dc: Int, _ db0: Int, _ dst0: Int, _ step: Int, _ n: Int, _ z0: Int64, _ dz: Int64, _ rop0: Int,
+                           _ cur0: Int64, _ cc0: Int64, _ cc1: Int64, _ dither: Bool, _ prob: Bool, _ dprob: Int64, _ bk: Int64) -> Int64 {
+        var db = db0; var dst = dst0; var z = z0
+        let dbStep = step * 4
+        var res: Int64 = 0
+        if !dither && rop0 != 2 && rop0 != 1 { // not ROP_COLLISION or ROP_XOR
+            for _ in 0..<n {
+                let zi = s32(z >> 32)
+                if zi >= 0 && zi <= s32(m.ld4(db)) { m.st4(db, zi); m.st1(dst, cur0); res += 1 }
+                db += dbStep; dst += step; z = z &+ dz
+            }
+            return res
+        }
+        var cur = cur0
+        var swapState = false
+        if prob { k.randRunBegin() }
+        for _ in 0..<n {
+            let zi = s32(z >> 32)
+            if zi >= 0 && zi <= s32(m.ld4(db)) {
+                m.st4(db, zi)
+                switch rop0 {
+                case 2: // ROP_COLLISION
+                    let c2 = m.ld1(dst); if c2 != 0xFF && c2 != bk { m.st8(dc + oCollision, m.ld8(dc + oCollision) &+ 1) }
+                case 1: // ROP_XOR
+                    m.st1(dst, m.ld1(dst) ^ cur)
+                default: m.st1(dst, cur)
+                }
+                res += 1
+            }
+            if dither {
+                if prob { cur = (k.randRunNext() & 0xFFFF) < dprob ? cc1 : cc0 }
+                else { swapState = !swapState; cur = swapState ? cc1 : cc0 }
+            }
+            db += dbStep; dst += step; z = z &+ dz
+        }
+        if prob { k.randRunEnd() }
         return res
     }
 
