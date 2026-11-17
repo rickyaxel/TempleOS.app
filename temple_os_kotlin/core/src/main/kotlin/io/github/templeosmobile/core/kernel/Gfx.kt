@@ -410,15 +410,8 @@ class Gfx(private val k: Kernel) {
     fun loadScreen(frame: ByteArray) {
         val dst = bodyOf(grDc2)
         m.check(dst.toLong(), frame.size) // program-writable body pointer (the Swift port checks it too)
-        val words = m.words
-        var i = 0
-        var w = dst ushr 3
-        while (i < frame.size) {
-            var v = 0L
-            for (j in 7 downTo 0) v = (v shl 8) or (frame[i + j].toLong() and 0xFF)
-            words[w++] = v
-            i += 8
-        }
+        // one bulk little-endian copy (arena words are little-endian bytes); was a byte-at-a-time loop
+        java.nio.ByteBuffer.wrap(frame).order(java.nio.ByteOrder.LITTLE_ENDIAN).asLongBuffer().get(m.words, dst ushr 3, frame.size / 8)
     }
 
     fun aliasForDraw(t: Task): Long {
@@ -440,23 +433,27 @@ class Gfx(private val k: Kernel) {
         val words = m.words
         val s2 = bodyOf(grDc2) ushr 3
         val s1 = bodyOf(grDc) ushr 3
-        var i = 0
-        var diff = 0
+        val pub = publishedWords
+        var diff = false
         val n = Kernel.W * Kernel.H / 8
         for (w in 0 until n) {
             val a = words[s2 + w]
             val b = words[s1 + w]
-            if (b == -1L) {
-                for (j in 0 until 8) { val v = (a ushr (8 * j)).toByte(); diff = diff or (out[i + j].toInt() xor v.toInt()); out[i + j] = v }
-            } else {
+            var v = a
+            if (b != -1L) {
+                v = 0L
                 for (j in 0 until 8) {
-                    val pb = ((b ushr (8 * j)) and 0xFF).toInt()
-                    val v = if (pb == 0xFF) (a ushr (8 * j)).toByte() else pb.toByte()
-                    diff = diff or (out[i + j].toInt() xor v.toInt()); out[i + j] = v
+                    val pb = (b ushr (8 * j)) and 0xFF
+                    v = v or ((if (pb == 0xFFL) (a ushr (8 * j)) and 0xFF else pb) shl (8 * j))
                 }
             }
-            i += 8
+            if (v != pub[w]) { pub[w] = v; diff = true }
         }
-        return diff != 0
+        // [out] is only written here: convert to bytes in one bulk copy, and only when a pixel changed
+        if (diff) java.nio.ByteBuffer.wrap(out).order(java.nio.ByteOrder.LITTLE_ENDIAN).asLongBuffer().put(pub, 0, n)
+        return diff
     }
+
+    /** The last composed frame as little-endian words: what [composeAndPublish] last wrote to its output. */
+    private val publishedWords = LongArray(Kernel.W * Kernel.H / 8)
 }
