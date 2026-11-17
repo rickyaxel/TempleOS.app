@@ -99,7 +99,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "మెనూ",
  "window.menu": "మెనూ",
@@ -282,6 +283,7 @@
  "settings.display_scale": "డిస్‌ప్లే స్కేల్: {value}",
  "settings.crisp_scaling": "ప్రోగ్రామ్‌లకు స్పష్టమైన పూర్ణాంక స్కేలింగ్: {value}",
  "settings.touch_targets": "టచ్ లక్ష్యాలు: {value}",
+ "settings.joystick_sensitivity": "జాయ్‌స్టిక్ సున్నితత్వం: {value}",
  "settings.engine": "ఇంజిన్: {value}",
  "engine.unavailable.title": "{engine}లో అందుబాటులో లేదు",
  "engine.unavailable.message": "{title}ను {engine}లో అమలు చేయడం సాధ్యం కాదు: {reason}.",

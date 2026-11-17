@@ -92,7 +92,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "МЕНЮ",
  "window.menu": "МЕНЮ",
@@ -275,6 +276,7 @@
  "settings.display_scale": "Маштаб экрана: {value}",
  "settings.crisp_scaling": "Выразнае цэлалікавае маштабаванне праграм: {value}",
  "settings.touch_targets": "Вобласці дотыку: {value}",
+ "settings.joystick_sensitivity": "Адчувальнасць джойсціка: {value}",
  "settings.engine": "Рухавік: {value}",
  "engine.unavailable.title": "Недаступна ў {engine}",
  "engine.unavailable.message": "{title} не можа працаваць у {engine}: {reason}.",

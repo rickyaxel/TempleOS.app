@@ -67,7 +67,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENY",
  "window.menu": "MENY",
@@ -250,6 +251,7 @@
  "settings.display_scale": "Skärmskala: {value}",
  "settings.crisp_scaling": "Skarp heltalsskalning för program: {value}",
  "settings.touch_targets": "Tryckytor: {value}",
+ "settings.joystick_sensitivity": "Styrspakens känslighet: {value}",
  "settings.engine": "Motor: {value}",
  "engine.unavailable.title": "Inte tillgängligt i {engine}",
  "engine.unavailable.message": "{title} kan inte köras i {engine}: {reason}.",

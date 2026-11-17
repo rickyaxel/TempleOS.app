@@ -67,7 +67,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "メニュー",
  "window.menu": "メニュー",
@@ -250,6 +251,7 @@
  "settings.display_scale": "表示倍率：{value}",
  "settings.crisp_scaling": "プログラムを整数倍でくっきり拡大：{value}",
  "settings.touch_targets": "タッチ領域：{value}",
+ "settings.joystick_sensitivity": "ジョイスティックの感度：{value}",
  "settings.engine": "エンジン：{value}",
  "engine.unavailable.title": "{engine} では利用できません",
  "engine.unavailable.message": "{title} は {engine} では実行できません：{reason}。",

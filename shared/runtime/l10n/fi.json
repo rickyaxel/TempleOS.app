@@ -74,7 +74,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "VALIKKO",
  "window.menu": "VALIKKO",
@@ -257,6 +258,7 @@
  "settings.display_scale": "Näytön skaalaus: {value}",
  "settings.crisp_scaling": "Terävä kokonaislukuskaalaus ohjelmille: {value}",
  "settings.touch_targets": "Kosketusalueet: {value}",
+ "settings.joystick_sensitivity": "Ohjaussauvan herkkyys: {value}",
  "settings.engine": "Moottori: {value}",
  "engine.unavailable.title": "Ei saatavilla {engine} -moottorissa",
  "engine.unavailable.message": "{title} ei voi toimia {engine} -moottorissa: {reason}.",

@@ -73,7 +73,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "เมนู",
  "window.menu": "เมนู",
@@ -256,6 +257,7 @@
  "settings.display_scale": "มาตราส่วนการแสดงผล: {value}",
  "settings.crisp_scaling": "ปรับขนาดแบบจำนวนเต็มให้คมชัดสำหรับโปรแกรม: {value}",
  "settings.touch_targets": "พื้นที่สัมผัส: {value}",
+ "settings.joystick_sensitivity": "ความไวของจอยสติ๊ก: {value}",
  "settings.engine": "เอนจิน: {value}",
  "engine.unavailable.title": "ไม่พร้อมใช้งานใน {engine}",
  "engine.unavailable.message": "{title} ไม่สามารถทำงานใน {engine} ได้: {reason}",

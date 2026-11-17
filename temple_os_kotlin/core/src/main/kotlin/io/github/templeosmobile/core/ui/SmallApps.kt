@@ -226,7 +226,7 @@ class PaintApp(shell: Shell, var path: String? = null) : App(shell), FrameSource
 /** The localized name of a TempleOS palette color. */
 fun colorName(c: Int) = tr("color." + (Console.COLOR_NAMES.entries.firstOrNull { it.value == c }?.key ?: "BLACK").lowercase())
 
-/** Settings: sound, desktop color, display scale, touch size, keyboard, language, storage. */
+/** Settings: sound, desktop color, display scale, touch size, joystick sensitivity, keyboard, language, storage. */
 class SettingsApp(shell: Shell) : App(shell) {
     override val kind = "settings"
     override val title get() = tr("app.settings.title")
@@ -250,6 +250,8 @@ class SettingsApp(shell: Shell) : App(shell) {
             tr("settings.display_scale", "value" to (if (st.uiScale == 0) tr("value.auto") else "${st.uiScale}x")) to { st.uiScale = (st.uiScale + 1) % 6 },
             tr("settings.crisp_scaling", "value" to onOff(st.crispScaling)) to { st.crispScaling = !st.crispScaling },
             tr("settings.touch_targets", "value" to tr(if (st.largeTouch) "value.large" else "value.standard")) to { st.largeTouch = !st.largeTouch; Touch.large = st.largeTouch; shell.relayout() },
+            tr("settings.joystick_sensitivity", "value" to "${st.joystickSensitivity}/${Joystick.SENSITIVITY_MAX}") to {
+                st.joystickSensitivity = st.joystickSensitivity % Joystick.SENSITIVITY_MAX + 1 },
             tr("settings.engine", "value" to if (st.engine == Settings.ENGINE_NATIVE) Engines.NATIVE_NAME else Engines.TERRY_NAME) to {
                 if (Engines.nativeAvailable) st.engine = if (st.engine == Settings.ENGINE_NATIVE) Settings.ENGINE_TERRY else Settings.ENGINE_NATIVE },
             tr("settings.storage", "used" to shell.fs.usedBytes() / 1024, "total" to (shell.fs.quota shr 20)) to {},

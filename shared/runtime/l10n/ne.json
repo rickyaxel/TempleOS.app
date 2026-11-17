@@ -74,7 +74,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "मेनु",
  "window.menu": "मेनु",
@@ -257,6 +258,7 @@
  "settings.display_scale": "डिस्प्ले स्केल: {value}",
  "settings.crisp_scaling": "प्रोग्रामहरूका लागि स्पष्ट पूर्णाङ्क स्केलिङ: {value}",
  "settings.touch_targets": "टच लक्ष्यहरू: {value}",
+ "settings.joystick_sensitivity": "जोयस्टिकको संवेदनशीलता: {value}",
  "settings.engine": "इन्जिन: {value}",
  "engine.unavailable.title": "{engine} मा उपलब्ध छैन",
  "engine.unavailable.message": "{title} {engine} मा चल्न सक्दैन: {reason}।",

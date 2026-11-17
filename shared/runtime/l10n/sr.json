@@ -88,7 +88,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "МЕНИ",
  "window.menu": "МЕНИ",
@@ -271,6 +272,7 @@
  "settings.display_scale": "Размера приказа: {value}",
  "settings.crisp_scaling": "Оштро целобројно скалирање за програме: {value}",
  "settings.touch_targets": "Површине за додир: {value}",
+ "settings.joystick_sensitivity": "Осетљивост џојстика: {value}",
  "settings.engine": "Мотор: {value}",
  "engine.unavailable.title": "Није доступно у {engine}",
  "engine.unavailable.message": "{title} не може да ради у {engine}: {reason}.",

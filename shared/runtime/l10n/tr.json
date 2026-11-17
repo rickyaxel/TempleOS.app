@@ -75,7 +75,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENÜ",
  "window.menu": "MENÜ",
@@ -258,6 +259,7 @@
  "settings.display_scale": "Ekran ölçeği: {value}",
  "settings.crisp_scaling": "Programlar için keskin tam sayı ölçekleme: {value}",
  "settings.touch_targets": "Dokunma hedefleri: {value}",
+ "settings.joystick_sensitivity": "Joystick hassasiyeti: {value}",
  "settings.engine": "Motor: {value}",
  "engine.unavailable.title": "{engine} motorunda kullanılamaz",
  "engine.unavailable.message": "{title}, {engine} motorunda çalışamaz: {reason}.",

@@ -66,7 +66,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "منو",
  "window.menu": "منو",
@@ -249,6 +250,7 @@
  "settings.display_scale": "مقیاس نمایش: {value}",
  "settings.crisp_scaling": "مقیاس‌بندی واضح با ضریب صحیح برای برنامه‌ها: {value}",
  "settings.touch_targets": "اندازهٔ هدف‌های لمسی: {value}",
+ "settings.joystick_sensitivity": "حساسیت جوی‌استیک: {value}",
  "settings.engine": "موتور: {value}",
  "engine.unavailable.title": "در {engine} در دسترس نیست",
  "engine.unavailable.message": "{title} نمی‌تواند در {engine} اجرا شود: {reason}.",

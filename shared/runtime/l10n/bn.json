@@ -76,7 +76,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "মেনু",
  "window.menu": "মেনু",
@@ -259,6 +260,7 @@
  "settings.display_scale": "ডিসপ্লে স্কেল: {value}",
  "settings.crisp_scaling": "প্রোগ্রামের জন্য স্পষ্ট পূর্ণসংখ্যা স্কেলিং: {value}",
  "settings.touch_targets": "স্পর্শের জায়গা: {value}",
+ "settings.joystick_sensitivity": "জয়স্টিকের সংবেদনশীলতা: {value}",
  "settings.engine": "ইঞ্জিন: {value}",
  "engine.unavailable.title": "{engine}-এ উপলব্ধ নয়",
  "engine.unavailable.message": "{title} {engine}-এ চলতে পারে না: {reason}।",

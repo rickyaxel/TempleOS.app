@@ -28,6 +28,7 @@ class ProgramApp(shell: Shell, val path: String, val info: ProgramInfo?, private
         c.onWheel = { d -> kernel.post(KInput.Mouse(lastPointer.first, lastPointer.second, lastButtons.first, lastButtons.second, d)); runner.wake() }
         // the d-pad or the joystick is the user's choice for every program (Settings), kept with the session
         c.onDirectional = { mode -> shell.settings.directional = mode; shell.saveSession() }
+        c.stickSensitivity = { shell.settings.joystickSensitivity }
     }
     /** Where the last touch put the TempleOS pointer and its buttons (wheel notches keep them). */
     private var lastPointer = Kernel.W / 2 to Kernel.H / 2 // TempleOS starts the pointer mid-screen

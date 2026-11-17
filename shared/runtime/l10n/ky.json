@@ -95,7 +95,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "МЕНЮ",
  "window.menu": "МЕНЮ",
@@ -278,6 +279,7 @@
  "settings.display_scale": "Экрандын масштабы: {value}",
  "settings.crisp_scaling": "Программалар үчүн так бүтүн сандуу масштабдоо: {value}",
  "settings.touch_targets": "Тийүү аймактары: {value}",
+ "settings.joystick_sensitivity": "Джойстиктин сезгичтиги: {value}",
  "settings.engine": "Кыймылдаткыч: {value}",
  "engine.unavailable.title": "{engine} кыймылдаткычында жеткиликсиз",
  "engine.unavailable.message": "{title} {engine} кыймылдаткычында иштей албайт: {reason}.",

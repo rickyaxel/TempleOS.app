@@ -81,7 +81,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "മെനു",
  "window.menu": "മെനു",
@@ -264,6 +265,7 @@
  "settings.display_scale": "ഡിസ്പ്ലേ സ്കെയിൽ: {value}",
  "settings.crisp_scaling": "പ്രോഗ്രാമുകൾക്ക് വ്യക്തമായ പൂർണ്ണസംഖ്യാ സ്കെയിലിംഗ്: {value}",
  "settings.touch_targets": "ടച്ച് ടാർഗെറ്റുകൾ: {value}",
+ "settings.joystick_sensitivity": "ജോയ്‌സ്റ്റിക്ക് സംവേദനക്ഷമത: {value}",
  "settings.engine": "എഞ്ചിൻ: {value}",
  "engine.unavailable.title": "{engine}-ൽ ലഭ്യമല്ല",
  "engine.unavailable.message": "{title} {engine}-ൽ റൺ ചെയ്യാനാകില്ല: {reason}.",

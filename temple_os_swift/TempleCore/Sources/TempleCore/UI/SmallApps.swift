@@ -253,7 +253,7 @@ public func colorName(_ c: Int) -> String {
     tr("color." + (Console.COLOR_NAMES.first { $0.value == c }?.key ?? "BLACK").lowercased())
 }
 
-/** Settings: sound, desktop color, display scale, touch size, keyboard, language, storage. */
+/** Settings: sound, desktop color, display scale, touch size, joystick sensitivity, keyboard, language, storage. */
 public final class SettingsApp: App {
     public override var kind: String { "settings" }
     public override var title: String { tr("app.settings.title") }
@@ -279,6 +279,8 @@ public final class SettingsApp: App {
             (tr("settings.display_scale", ("value", st.uiScale == 0 ? tr("value.auto") : "\(st.uiScale)x")), { st.uiScale = (st.uiScale + 1) % 6 }),
             (tr("settings.crisp_scaling", ("value", onOff(st.crispScaling))), { st.crispScaling = !st.crispScaling }),
             (tr("settings.touch_targets", ("value", tr(st.largeTouch ? "value.large" : "value.standard"))), { [self] in st.largeTouch = !st.largeTouch; Touch.large = st.largeTouch; shell.relayout() }),
+            (tr("settings.joystick_sensitivity", ("value", "\(st.joystickSensitivity)/\(Joystick.SENSITIVITY_MAX)")), {
+                st.joystickSensitivity = st.joystickSensitivity % Joystick.SENSITIVITY_MAX + 1 }),
             (tr("settings.engine", ("value", st.engine == Settings.ENGINE_NATIVE ? Engines.NATIVE_NAME : Engines.TERRY_NAME)), {
                 if Engines.nativeAvailable { st.engine = st.engine == Settings.ENGINE_NATIVE ? Settings.ENGINE_TERRY : Settings.ENGINE_NATIVE } }),
             (tr("settings.storage", ("used", shell.fs.usedBytes() / 1024), ("total", shell.fs.quota >> 20)), {}),

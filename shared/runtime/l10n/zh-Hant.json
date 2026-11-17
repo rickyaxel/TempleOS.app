@@ -70,7 +70,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "選單",
  "window.menu": "選單",
@@ -253,6 +254,7 @@
  "settings.display_scale": "顯示縮放：{value}",
  "settings.crisp_scaling": "程式以清晰整數倍縮放：{value}",
  "settings.touch_targets": "觸控區域：{value}",
+ "settings.joystick_sensitivity": "搖桿靈敏度：{value}",
  "settings.engine": "引擎：{value}",
  "engine.unavailable.title": "無法在 {engine} 中使用",
  "engine.unavailable.message": "{title} 無法在 {engine} 中執行：{reason}。",

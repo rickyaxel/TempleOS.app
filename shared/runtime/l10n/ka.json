@@ -94,7 +94,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "მენიუ",
  "window.menu": "მენიუ",
@@ -277,6 +278,7 @@
  "settings.display_scale": "ეკრანის მასშტაბი: {value}",
  "settings.crisp_scaling": "პროგრამების მკაფიო მთელრიცხვა მასშტაბირება: {value}",
  "settings.touch_targets": "შეხების არეები: {value}",
+ "settings.joystick_sensitivity": "ჯოისტიკის მგრძნობელობა: {value}",
  "settings.engine": "ძრავი: {value}",
  "engine.unavailable.title": "მიუწვდომელია {engine}-ში",
  "engine.unavailable.message": "{title} ვერ გაეშვება {engine}-ში: {reason}.",

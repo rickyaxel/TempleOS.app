@@ -159,6 +159,8 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
     }
     /** The joystick toggle asks for the other directional control: the owner keeps it (Settings) and draws with it. */
     var onDirectional: (DirectionalControl) -> Unit = {}
+    /** How short a push holds the joystick's arrows ([Joystick.keys]): the owner's setting, read at each push. */
+    var stickSensitivity: () -> Int = { Joystick.SENSITIVITY_DEFAULT }
     /**
      * What the layout depends on. While it stays the same, a frame draws the last layout's buttons again instead of
      * building new ones: a held button is the one drawn (PRESSED), and a frame only compares and draws.
@@ -387,7 +389,7 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
     /** The joystick's finger is at ([x], [y]): the knob follows, and the push holds its arrows. */
     private fun steer(x: Int, y: Int) {
         val (dx, dy) = joystick.push(x, y)
-        holdArrows(Joystick.keys(dx, dy, joystick.travel, stickHeld))
+        holdArrows(Joystick.keys(dx, dy, joystick.travel, stickHeld, stickSensitivity()))
     }
 
     /**
@@ -580,12 +582,21 @@ class Joystick {
         /** Arrow bits (a d-pad button's or a push's [GameControls] dir). */
         const val UP = 1; const val DOWN = 2; const val LEFT = 4; const val RIGHT = 8
         /**
-         * A push holds keys from [ENGAGE] of the knob's travel and lets go below [RELEASE], so a thumb resting at
-         * the edge of the dead zone does not chatter. Each arrow takes [CARDINAL] degrees either side of its axis,
-         * a diagonal (two arrows) the 30 degrees between, and a held direction stays until the push is [STICKY]
-         * degrees past its edge.
+         * The sensitivity levels (Settings.joystickSensitivity): the higher, the shorter the push that holds keys.
+         * The default needs twice the push of [SENSITIVITY_MAX].
          */
-        const val ENGAGE = 0.30; const val RELEASE = 0.22; const val CARDINAL = 30.0; const val STICKY = 6.0
+        const val SENSITIVITY_MIN = 1; const val SENSITIVITY_MAX = 5; const val SENSITIVITY_DEFAULT = 3
+        /**
+         * A push holds keys from [engagePercent] of the knob's travel and lets go below [releasePercent], so a thumb
+         * resting at the edge of the dead zone does not chatter. Each arrow takes [CARDINAL] degrees either side of
+         * its axis, a diagonal (two arrows) the 30 degrees between, and a held direction stays until the push is
+         * [STICKY] degrees past its edge.
+         */
+        const val CARDINAL = 30.0; const val STICKY = 6.0
+        /** Percent of the knob's travel a push needs to hold keys at [sensitivity]: 90, 75, 60, 45, 30. */
+        fun engagePercent(sensitivity: Int) = 105 - 15 * sensitivity.coerceIn(SENSITIVITY_MIN, SENSITIVITY_MAX)
+        /** Percent of the knob's travel below which a held push lets go: 66, 55, 44, 33, 22. */
+        fun releasePercent(sensitivity: Int) = engagePercent(sensitivity) * 11 / 15
         /** How long the released knob takes back to the centre (its keys go up at once). */
         const val RETURN_MS = 80L
         /** Counter-clockwise from right, 45 degrees apart. */
@@ -593,12 +604,13 @@ class Joystick {
 
         /**
          * The arrow keys a push of ([dx], [dy]) from the centre holds (y grows downwards) for a knob that travels
-         * [travel] px, given the keys [held] now: none in the dead zone, else one arrow, or two on a diagonal,
-         * as two fingers on the d-pad hold them.
+         * [travel] px, given the keys [held] now: none in the dead zone ([sensitivity] sets its size), else one
+         * arrow, or two on a diagonal, as two fingers on the d-pad hold them.
          */
-        fun keys(dx: Int, dy: Int, travel: Int, held: Int): Int {
-            val dist = Math.sqrt((dx * dx + dy * dy).toDouble())
-            if (dist < (if (held == 0) ENGAGE else RELEASE) * maxOf(1, travel)) return 0
+        fun keys(dx: Int, dy: Int, travel: Int, held: Int, sensitivity: Int = SENSITIVITY_DEFAULT): Int {
+            // the dead zone's edge in whole numbers (percent of the travel): the same pixel on every platform
+            val edge = (if (held == 0) engagePercent(sensitivity) else releasePercent(sensitivity)).toLong() * maxOf(1, travel)
+            if ((dx.toLong() * dx + dy.toLong() * dy) * 10000 < edge * edge) return 0
             var a = Math.atan2(-dy.toDouble(), dx.toDouble()) * 180 / Math.PI
             if (a < 0) a += 360
             fun apart(b: Double): Double { val d = Math.abs(a - b) % 360; return if (d > 180) 360 - d else d }

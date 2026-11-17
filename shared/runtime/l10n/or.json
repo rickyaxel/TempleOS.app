@@ -89,7 +89,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "ମେନୁ",
  "window.menu": "ମେନୁ",
@@ -272,6 +273,7 @@
  "settings.display_scale": "ଡିସ୍ପ୍ଲେ ସ୍କେଲ୍: {value}",
  "settings.crisp_scaling": "ପ୍ରୋଗ୍ରାମ ପାଇଁ ସ୍ପଷ୍ଟ ପୂର୍ଣ୍ଣାଙ୍କ ସ୍କେଲିଂ: {value}",
  "settings.touch_targets": "ସ୍ପର୍ଶ କ୍ଷେତ୍ର: {value}",
+ "settings.joystick_sensitivity": "ଜଏଷ୍ଟିକ୍ ସମ୍ବେଦନଶୀଳତା: {value}",
  "settings.engine": "ଇଞ୍ଜିନ୍: {value}",
  "engine.unavailable.title": "{engine} ରେ ଉପଲବ୍ଧ ନାହିଁ",
  "engine.unavailable.message": "{title} {engine} ରେ ଚାଲିପାରିବ ନାହିଁ: {reason}।",

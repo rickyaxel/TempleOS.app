@@ -90,7 +90,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "මෙනුව",
  "window.menu": "මෙනුව",
@@ -273,6 +274,7 @@
  "settings.display_scale": "සංදර්ශක පරිමාණය: {value}",
  "settings.crisp_scaling": "වැඩසටහන් සඳහා පැහැදිලි පූර්ණ සංඛ්‍යා පරිමාණය: {value}",
  "settings.touch_targets": "ස්පර්ශ ඉලක්ක: {value}",
+ "settings.joystick_sensitivity": "ජොයිස්ටික් සංවේදීතාව: {value}",
  "settings.engine": "එන්ජිම: {value}",
  "engine.unavailable.title": "{engine} තුළ ලබා ගත නොහැක",
  "engine.unavailable.message": "{title} {engine} තුළ ධාවනය කළ නොහැක: {reason}.",

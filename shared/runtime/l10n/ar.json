@@ -68,7 +68,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "القائمة",
  "window.menu": "القائمة",
@@ -251,6 +252,7 @@
  "settings.display_scale": "مقياس العرض: {value}",
  "settings.crisp_scaling": "تحجيم حاد بمضاعفات صحيحة للبرامج: {value}",
  "settings.touch_targets": "أهداف اللمس: {value}",
+ "settings.joystick_sensitivity": "حساسية عصا التحكم: {value}",
  "settings.engine": "المحرك: {value}",
  "engine.unavailable.title": "غير متوفر في {engine}",
  "engine.unavailable.message": "لا يمكن تشغيل {title} في {engine}: {reason}.",

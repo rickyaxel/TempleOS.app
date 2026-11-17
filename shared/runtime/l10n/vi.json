@@ -76,7 +76,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENU",
  "window.menu": "MENU",
@@ -259,6 +260,7 @@
  "settings.display_scale": "Tỷ lệ hiển thị: {value}",
  "settings.crisp_scaling": "Phóng to sắc nét theo bội số nguyên cho chương trình: {value}",
  "settings.touch_targets": "Vùng chạm: {value}",
+ "settings.joystick_sensitivity": "Độ nhạy của joystick: {value}",
  "settings.engine": "Công cụ chạy: {value}",
  "engine.unavailable.title": "Không khả dụng trong {engine}",
  "engine.unavailable.message": "{title} không thể chạy trong {engine}: {reason}.",

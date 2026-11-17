@@ -70,7 +70,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENÜ",
  "window.menu": "MENÜ",
@@ -253,6 +254,7 @@
  "settings.display_scale": "Megjelenítési méret: {value}",
  "settings.crisp_scaling": "Éles, egész szorzós méretezés programoknál: {value}",
  "settings.touch_targets": "Érintési célterületek: {value}",
+ "settings.joystick_sensitivity": "Joystick érzékenysége: {value}",
  "settings.engine": "Motor: {value}",
  "engine.unavailable.title": "Nem érhető el a {engine} motorban",
  "engine.unavailable.message": "{title} nem futtatható a {engine} motorban: {reason}.",

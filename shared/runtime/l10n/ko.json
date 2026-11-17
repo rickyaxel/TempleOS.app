@@ -69,7 +69,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "메뉴",
  "window.menu": "메뉴",
@@ -252,6 +253,7 @@
  "settings.display_scale": "화면 배율: {value}",
  "settings.crisp_scaling": "프로그램 선명한 정수 배율: {value}",
  "settings.touch_targets": "터치 영역: {value}",
+ "settings.joystick_sensitivity": "조이스틱 감도: {value}",
  "settings.engine": "엔진: {value}",
  "engine.unavailable.title": "{engine}에서 사용할 수 없음",
  "engine.unavailable.message": "{title}은(는) {engine}에서 실행할 수 없습니다: {reason}.",

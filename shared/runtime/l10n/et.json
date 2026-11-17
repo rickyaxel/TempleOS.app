@@ -68,7 +68,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENÜÜ",
  "window.menu": "MENÜÜ",
@@ -251,6 +252,7 @@
  "settings.display_scale": "Kuva skaleerimine: {value}",
  "settings.crisp_scaling": "Terav täisarvuline skaleerimine programmidele: {value}",
  "settings.touch_targets": "Puutealad: {value}",
+ "settings.joystick_sensitivity": "Juhtkangi tundlikkus: {value}",
  "settings.engine": "Mootor: {value}",
  "engine.unavailable.title": "Pole saadaval mootoris {engine}",
  "engine.unavailable.message": "{title} ei saa töötada mootoris {engine}: {reason}.",

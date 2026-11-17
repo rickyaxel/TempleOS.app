@@ -84,7 +84,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENU",
  "window.menu": "MENU",
@@ -267,6 +268,7 @@
  "settings.display_scale": "Skala paparan: {value}",
  "settings.crisp_scaling": "Penskalaan integer tajam untuk program: {value}",
  "settings.touch_targets": "Sasaran sentuhan: {value}",
+ "settings.joystick_sensitivity": "Kepekaan joystick: {value}",
  "settings.engine": "Enjin: {value}",
  "engine.unavailable.title": "Tidak tersedia dalam {engine}",
  "engine.unavailable.message": "{title} tidak dapat dijalankan dalam {engine}: {reason}.",

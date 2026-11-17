@@ -73,7 +73,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "МЕНЮ",
  "window.menu": "МЕНЮ",
@@ -256,6 +257,7 @@
  "settings.display_scale": "Масштаб экрана: {value}",
  "settings.crisp_scaling": "Четкое целочисленное масштабирование программ: {value}",
  "settings.touch_targets": "Области касания: {value}",
+ "settings.joystick_sensitivity": "Чувствительность джойстика: {value}",
  "settings.engine": "Движок: {value}",
  "engine.unavailable.title": "Недоступно в {engine}",
  "engine.unavailable.message": "{title} не может работать в {engine}: {reason}.",

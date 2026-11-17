@@ -29,13 +29,13 @@ final class JoystickTests: XCTestCase {
     }
 
     func testDeadZoneAndHysteresis() {
-        let t = 40 // engages at 12 px, lets go below 8.8 px
+        let t = 40 // engages at 24 px, lets go below 17.6 px
         XCTAssertEqual(0, Joystick.keys(0, 0, t, 0))
-        XCTAssertEqual(0, Joystick.keys(11, 0, t, 0), "inside the dead zone")
-        XCTAssertEqual(R, Joystick.keys(12, 0, t, 0), "at its edge")
-        XCTAssertEqual(R, Joystick.keys(9, 0, t, R), "a held push stays down a little inside the edge")
-        XCTAssertEqual(0, Joystick.keys(8, 0, t, R), "and lets go further in")
-        XCTAssertEqual(0, Joystick.keys(10, 0, t, 0), "a new push needs the full distance")
+        XCTAssertEqual(0, Joystick.keys(23, 0, t, 0), "inside the dead zone")
+        XCTAssertEqual(R, Joystick.keys(24, 0, t, 0), "at its edge")
+        XCTAssertEqual(R, Joystick.keys(18, 0, t, R), "a held push stays down a little inside the edge")
+        XCTAssertEqual(0, Joystick.keys(17, 0, t, R), "and lets go further in")
+        XCTAssertEqual(0, Joystick.keys(20, 0, t, 0), "a new push needs the full distance")
         // a held direction is kept 6 degrees past its sector's edge
         let a33 = (Int(100 * cos(33 * Double.pi / 180)), -Int(100 * sin(33 * Double.pi / 180)))
         XCTAssertEqual(U | R, Joystick.keys(a33.0, a33.1, t, 0), "33 degrees is a diagonal")
@@ -45,6 +45,26 @@ final class JoystickTests: XCTestCase {
         let a26 = (Int(100 * cos(26 * Double.pi / 180)), -Int(100 * sin(26 * Double.pi / 180)))
         XCTAssertEqual(U | R, Joystick.keys(a26.0, a26.1, t, U | R), "a diagonal is kept 6 degrees into the arrow's sector")
         XCTAssertEqual(R, Joystick.keys(a26.0, a26.1, t, 0))
+    }
+
+    /** Settings > Joystick sensitivity: each level up holds from a shorter push; the default needs twice the highest level's. */
+    func testTheSensitivitySetsTheDeadZone() {
+        let t = 40
+        // level -> the shortest push that holds, and the shortest held push that stays (90/66 ... 30/22 % of the travel)
+        let edges = [1: (36, 27), 2: (30, 22), 3: (24, 18), 4: (18, 14), 5: (12, 9)]
+        for (level, edge) in edges {
+            let (engage, keep) = edge
+            XCTAssertEqual(0, Joystick.keys(engage - 1, 0, t, 0, level), "level \(level)")
+            XCTAssertEqual(R, Joystick.keys(engage, 0, t, 0, level), "level \(level)")
+            XCTAssertEqual(R, Joystick.keys(keep, 0, t, R, level), "level \(level)")
+            XCTAssertEqual(0, Joystick.keys(keep - 1, 0, t, R, level), "level \(level)")
+        }
+        XCTAssertEqual(3, Joystick.SENSITIVITY_DEFAULT)
+        XCTAssertEqual(2 * Joystick.engagePercent(Joystick.SENSITIVITY_MAX), Joystick.engagePercent(Joystick.SENSITIVITY_DEFAULT), "the default needs twice the push of the highest level")
+        for push in 0...45 { XCTAssertEqual(Joystick.keys(push, 0, t, 0, 3), Joystick.keys(push, 0, t, 0), "no level given: the default") }
+        XCTAssertEqual(R, Joystick.keys(12, 0, t, 0, 9), "above the levels: the highest")
+        XCTAssertEqual(0, Joystick.keys(35, 0, t, 0, 0), "below them: the lowest")
+        XCTAssertEqual(U | L, Joystick.keys(-40, -40, t, 0, 1), "the direction is the push's at every level")
     }
 
     // ------------------------------------------------------------ GameControls
@@ -68,6 +88,7 @@ final class JoystickTests: XCTestCase {
         private let log = Log()
         var directional = DirectionalControl.dpad
         var showDpad = true
+        var sensitivity = Joystick.SENSITIVITY_DEFAULT
         init(_ s: Surface, _ area: Rect) {
             self.s = s; self.area = area
             let log = self.log
@@ -75,6 +96,7 @@ final class JoystickTests: XCTestCase {
                 if case let .key(_, sc, down) = e { log.items.append("\(Rig.name(Int(sc & 0x7F))) \(down ? "down" : "up")") }
             }
             gc.onDirectional = { [unowned self] in directional = $0 }
+            gc.stickSensitivity = { [unowned self] in sensitivity }
         }
         /** What was sent since the last take. */
         func take() -> [String] { defer { log.items.removeAll() }; return log.items }
@@ -161,6 +183,25 @@ final class JoystickTests: XCTestCase {
         XCTAssertFalse(r.gc.anyHeld)
         XCTAssertTrue(r.stick(Ptr.DOWN, 40, 0)); XCTAssertEqual(["RIGHT down"], r.take(), "a touch away from the centre pushes at once")
         XCTAssertTrue(r.stick(Ptr.CANCEL, 40, 0)); XCTAssertEqual(["RIGHT up"], r.take(), "a cancelled touch releases too")
+    }
+
+    /** The setting is read at each push: the same finger holds its arrow sooner or later with the level. */
+    func testThePushThatHoldsFollowsTheSensitivity() {
+        let r = rig(); r.directional = .joystick; r.draw()
+        func at(_ percent: Int) -> Int { r.gc.joystick.travel * percent / 100 }
+        XCTAssertTrue(r.stick(Ptr.DOWN, at(50), 0)); XCTAssertEqual([], r.take(), "the default: half the travel holds nothing")
+        XCTAssertTrue(r.stick(Ptr.MOVE, at(70), 0)); XCTAssertEqual(["RIGHT down"], r.take())
+        XCTAssertTrue(r.stick(Ptr.UP, at(70), 0)); XCTAssertEqual(["RIGHT up"], r.take())
+        r.sensitivity = Joystick.SENSITIVITY_MAX
+        XCTAssertTrue(r.stick(Ptr.DOWN, at(40), 0)); XCTAssertEqual(["RIGHT down"], r.take(), "the highest level holds from a short push")
+        XCTAssertTrue(r.stick(Ptr.UP, at(40), 0)); XCTAssertEqual(["RIGHT up"], r.take())
+        r.sensitivity = Joystick.SENSITIVITY_MIN
+        XCTAssertTrue(r.stick(Ptr.DOWN, at(80), 0)); XCTAssertEqual([], r.take(), "the lowest needs nearly the whole travel")
+        XCTAssertTrue(r.stick(Ptr.MOVE, at(95), 0)); XCTAssertEqual(["RIGHT down"], r.take())
+        XCTAssertTrue(r.stick(Ptr.MOVE, at(70), 0)); XCTAssertEqual([], r.take(), "held a little inside the edge")
+        XCTAssertTrue(r.stick(Ptr.MOVE, at(50), 0)); XCTAssertEqual(["RIGHT up"], r.take())
+        XCTAssertTrue(r.stick(Ptr.UP, at(50), 0)); XCTAssertEqual([], r.take())
+        XCTAssertFalse(r.gc.anyHeld)
     }
 
     /** A held push repeats like a held d-pad button (TempleOS KbdTypeMatic(0): 250 ms, then 30/s). */
@@ -253,6 +294,43 @@ final class JoystickTests: XCTestCase {
         XCTAssertEqual(.dpad, Settings.decode("j=7").directional)
     }
 
+    func testTheSensitivityIsKeptAndOldSessionsGetTheDefault() {
+        XCTAssertEqual(Joystick.SENSITIVITY_DEFAULT, Settings().joystickSensitivity)
+        let old = Settings.decode("d=8;s=1;o=2;u=0;c=0;t=0;k=0;g=;e=0;j=1;i=1")
+        XCTAssertEqual(Joystick.SENSITIVITY_DEFAULT, old.joystickSensitivity, "a session from before the setting")
+        XCTAssertEqual(.joystick, old.directional, "its other settings stay"); XCTAssertTrue(old.importIntroSeen)
+        let st = Settings(); st.joystickSensitivity = 5; st.directional = .joystick
+        XCTAssertTrue(st.encode().contains(";j=1;js=5;"), st.encode())
+        XCTAssertEqual(5, Settings.decode(st.encode()).joystickSensitivity)
+        XCTAssertEqual(.joystick, Settings.decode(st.encode()).directional)
+        XCTAssertEqual(5, Settings.decode("js=9").joystickSensitivity, "out of range: the nearest level")
+        XCTAssertEqual(1, Settings.decode("js=0").joystickSensitivity)
+        XCTAssertEqual(Joystick.SENSITIVITY_DEFAULT, Settings.decode("js=high").joystickSensitivity, "not a number: the default")
+    }
+
+    /** Settings > Joystick sensitivity: a tap goes to the next level and round again, saved with the session. */
+    func testTheSettingsRowCyclesThroughTheLevels() {
+        L10n.use("en-US")
+        let env = HeadlessEnv(dir)
+        let sh = Shell(env); sh.resize(360, 640); _ = sh.tick()
+        Launch.settings(sh); sh.invalidate(); _ = sh.tick()
+        func row(_ level: Int) -> Rect? { sh.accessibilityNodes().first { $0.label == "Joystick sensitivity: \(level)/5" }?.rect }
+        func tap(_ r: Rect) {
+            sh.pointer(PointerEvent(Ptr.DOWN, r.x + r.w / 2, r.y + r.h / 2, id: 1)); sh.pointer(PointerEvent(Ptr.UP, r.x + r.w / 2, r.y + r.h / 2, id: 1))
+            sh.invalidate(); _ = sh.tick()
+        }
+        for next in [4, 5, 1, 2, 3] {
+            let before = sh.settings.joystickSensitivity
+            tap(row(before)!)
+            XCTAssertEqual(next, sh.settings.joystickSensitivity)
+            XCTAssertNotNil(row(next), "the row shows level \(next)"); XCTAssertNil(row(before))
+            XCTAssertTrue(env.session!.contains(";js=\(next);"), "saved: \(env.session ?? "")")
+        }
+        tap(row(3)!); tap(row(4)!)
+        let again = Shell(env); again.resize(360, 640); again.restoreSession(); _ = again.tick()
+        XCTAssertEqual(5, again.settings.joystickSensitivity, "kept across a relaunch")
+    }
+
     // ------------------------------------------------------------ programs, through the shell
 
     private final class Run {
@@ -334,6 +412,31 @@ final class JoystickTests: XCTestCase {
         r.sh.pointer(PointerEvent(Ptr.UP, up.x + 4, up.y + 4, id: 3)); _ = r.sh.tick()
         XCTAssertTrue(r.waitFor(1) { !r.bit(Keys.SC_CURSOR_UP) })
         XCTAssertTrue(Settings.decode(r.sh.settings.encode()).directional == .dpad)
+    }
+
+    /** A running program's joystick follows the setting from its next push on (Halogen holds its arrows down). */
+    func testARunningProgramFollowsTheSensitivity() {
+        let r = launch("C:/Demo/Games/Halogen.HC", .joystick)
+        defer { r.close() }
+        XCTAssertEqual(Joystick.SENSITIVITY_DEFAULT, r.sh.settings.joystickSensitivity)
+        r.stick(Ptr.DOWN, 0, -15)
+        XCTAssertFalse(r.waitFor(0.3) { r.bit(Keys.SC_CURSOR_UP) }, "the default: a short push holds nothing")
+        r.stick(Ptr.MOVE, 0, -28)
+        XCTAssertTrue(r.waitFor(1) { r.bit(Keys.SC_CURSOR_UP) }, "a longer one holds up")
+        r.stick(Ptr.UP, 0, -28)
+        XCTAssertTrue(r.waitFor(1) { !r.bit(Keys.SC_CURSOR_UP) })
+        r.sh.settings.joystickSensitivity = Joystick.SENSITIVITY_MAX
+        r.stick(Ptr.DOWN, 0, -15)
+        XCTAssertTrue(r.waitFor(1) { r.bit(Keys.SC_CURSOR_UP) }, "the highest level: the short push holds up")
+        r.stick(Ptr.UP, 0, -15)
+        XCTAssertTrue(r.waitFor(1) { !r.bit(Keys.SC_CURSOR_UP) })
+        r.sh.settings.joystickSensitivity = Joystick.SENSITIVITY_MIN
+        r.stick(Ptr.DOWN, 0, -28)
+        XCTAssertFalse(r.waitFor(0.3) { r.bit(Keys.SC_CURSOR_UP) }, "the lowest level: the longer push holds nothing")
+        r.stick(Ptr.MOVE, 0, -40)
+        XCTAssertTrue(r.waitFor(1) { r.bit(Keys.SC_CURSOR_UP) }, "the whole travel does")
+        r.stick(Ptr.UP, 0, -40)
+        XCTAssertTrue(r.waitFor(1) { !r.bit(Keys.SC_CURSOR_UP) })
     }
 
     /** Android keeps its back gesture out of the joystick: the shell reports its square while it is on screen and focused. */

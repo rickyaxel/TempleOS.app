@@ -90,7 +90,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "МӘЗІР",
  "window.menu": "МӘЗІР",
@@ -273,6 +274,7 @@
  "settings.display_scale": "Экран масштабы: {value}",
  "settings.crisp_scaling": "Бағдарламалар үшін анық бүтін санды масштабтау: {value}",
  "settings.touch_targets": "Түрту аймақтары: {value}",
+ "settings.joystick_sensitivity": "Джойстик сезімталдығы: {value}",
  "settings.engine": "Қозғалтқыш: {value}",
  "engine.unavailable.title": "{engine} қозғалтқышында қолжетімсіз",
  "engine.unavailable.message": "{title} {engine} қозғалтқышында іске қосыла алмайды: {reason}.",

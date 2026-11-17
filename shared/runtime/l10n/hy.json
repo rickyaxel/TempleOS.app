@@ -85,7 +85,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "ԸՆՏՐԱՑԱՆԿ",
  "window.menu": "ԸՆՏՐԱՑԱՆԿ",
@@ -268,6 +269,7 @@
  "settings.display_scale": "Էկրանի մասշտաբ՝ {value}",
  "settings.crisp_scaling": "Ծրագրերի հստակ ամբողջաթիվ մասշտաբավորում՝ {value}",
  "settings.touch_targets": "Հպման տարածքներ՝ {value}",
+ "settings.joystick_sensitivity": "Ջոյստիկի զգայունություն՝ {value}",
  "settings.engine": "Շարժիչ՝ {value}",
  "engine.unavailable.title": "Հասանելի չէ {engine}-ում",
  "engine.unavailable.message": "{title}-ը չի կարող աշխատել {engine}-ում․ {reason}։",

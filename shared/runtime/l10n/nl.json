@@ -64,7 +64,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENU",
  "window.menu": "MENU",
@@ -247,6 +248,7 @@
  "settings.display_scale": "Weergaveschaal: {value}",
  "settings.crisp_scaling": "Scherpe schaling met gehele factoren voor programma's: {value}",
  "settings.touch_targets": "Aanraakdoelen: {value}",
+ "settings.joystick_sensitivity": "Joystickgevoeligheid: {value}",
  "settings.engine": "Engine: {value}",
  "engine.unavailable.title": "Niet beschikbaar in {engine}",
  "engine.unavailable.message": "{title} kan niet draaien in {engine}: {reason}.",

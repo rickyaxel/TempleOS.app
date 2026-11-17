@@ -129,7 +129,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "ເມນູ",
  "window.menu": "ເມນູ",
@@ -312,6 +313,7 @@
  "settings.display_scale": "ຂະໜາດການສະແດງຜົນ: {value}",
  "settings.crisp_scaling": "ການຂະຫຍາຍແບບຈຳນວນເຕັມໃຫ້ຄົມຊັດສຳລັບໂປຣແກຣມ: {value}",
  "settings.touch_targets": "ເປົ້າໝາຍການແຕະ: {value}",
+ "settings.joystick_sensitivity": "ຄວາມລະອຽດອ່ອນຂອງຈອຍສະຕິກ: {value}",
  "settings.engine": "ເອັນຈິນ: {value}",
  "engine.unavailable.title": "ບໍ່ມີໃນ {engine}",
  "engine.unavailable.message": "{title} ບໍ່ສາມາດແລ່ນໃນ {engine} ໄດ້: {reason}.",

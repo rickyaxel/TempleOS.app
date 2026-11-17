@@ -99,7 +99,10 @@ Generated per program from its catalog entry and its own TempleOS menu:
   same arrow keys the d-pad buttons hold (key-down, typematic repeat, key-up),
   one arrow per direction and two on a diagonal, as two fingers on the d-pad.
   It follows one finger from anywhere on it; other fingers stay free for the
-  buttons. Dead zone: 30% of the knob's travel to engage, 22% to let go.
+  buttons. Dead zone: set by Settings → Joystick sensitivity, levels 1 to 5
+  (`Settings.joystickSensitivity`, `js=` in the session, read at each push).
+  A push engages at 90, 75, 60, 45 or 30% of the knob's travel and lets go
+  below 66, 55, 44, 33 or 22%; the default is level 3 (60% and 44%).
   Arrows own 30° either side of their axis, diagonals the 30° between, with a
   6° margin before a held direction changes. Only changes are sent. Its keys
   go up when its finger lifts or is cancelled, when the mode switches, when

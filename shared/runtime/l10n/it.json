@@ -68,7 +68,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENU",
  "window.menu": "MENU",
@@ -251,6 +252,7 @@
  "settings.display_scale": "Scala dello schermo: {value}",
  "settings.crisp_scaling": "Scala intera nitida per i programmi: {value}",
  "settings.touch_targets": "Aree di tocco: {value}",
+ "settings.joystick_sensitivity": "Sensibilità del joystick: {value}",
  "settings.engine": "Motore: {value}",
  "engine.unavailable.title": "Non disponibile in {engine}",
  "engine.unavailable.message": "{title} non può essere eseguito in {engine}: {reason}.",

@@ -73,7 +73,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENIU",
  "window.menu": "MENIU",
@@ -256,6 +257,7 @@
  "settings.display_scale": "Scara afișajului: {value}",
  "settings.crisp_scaling": "Scalare clară cu numere întregi pentru programe: {value}",
  "settings.touch_targets": "Zone de atingere: {value}",
+ "settings.joystick_sensitivity": "Sensibilitatea joystickului: {value}",
  "settings.engine": "Motor: {value}",
  "engine.unavailable.title": "Indisponibil în {engine}",
  "engine.unavailable.message": "{title} nu poate rula în {engine}: {reason}.",

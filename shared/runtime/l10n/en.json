@@ -183,6 +183,7 @@
  "settings.display_scale": "Display scale: {value}",
  "settings.crisp_scaling": "Crisp integer scaling for programs: {value}",
  "settings.touch_targets": "Touch targets: {value}",
+ "settings.joystick_sensitivity": "Joystick sensitivity: {value}",
  "settings.engine": "Engine: {value}",
  "engine.unavailable.title": "Not available in {engine}",
  "engine.unavailable.message": "{title} cannot run in {engine}: {reason}.",

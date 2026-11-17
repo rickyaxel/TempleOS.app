@@ -102,7 +102,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "VALMYND",
  "window.menu": "VALMYND",
@@ -285,6 +286,7 @@
  "settings.display_scale": "Skölun skjás: {value}",
  "settings.crisp_scaling": "Skörp heiltöluskölun fyrir forrit: {value}",
  "settings.touch_targets": "Snertisvæði: {value}",
+ "settings.joystick_sensitivity": "Næmi stýripinna: {value}",
  "settings.engine": "Vél: {value}",
  "engine.unavailable.title": "Ekki í boði í {engine}",
  "engine.unavailable.message": "{title} getur ekki keyrt í {engine}: {reason}.",

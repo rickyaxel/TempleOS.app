@@ -131,7 +131,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "မီနူး",
  "window.menu": "မီနူး",
@@ -314,6 +315,7 @@
  "settings.display_scale": "မျက်နှာပြင် စကေး- {value}",
  "settings.crisp_scaling": "ပရိုဂရမ်များအတွက် ကိန်းပြည့် ပြတ်သားသော ချဲ့ချုံ့မှု- {value}",
  "settings.touch_targets": "ထိရန် ပစ်မှတ်များ- {value}",
+ "settings.joystick_sensitivity": "ဂျွိုက်စတစ် အာရုံခံနိုင်မှု- {value}",
  "settings.engine": "အင်ဂျင်- {value}",
  "engine.unavailable.title": "{engine} တွင် မရနိုင်ပါ",
  "engine.unavailable.message": "{title} ကို {engine} တွင် လုပ်ဆောင်၍ မရပါ- {reason}။",

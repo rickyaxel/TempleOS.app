@@ -72,7 +72,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENI",
  "window.menu": "MENI",
@@ -255,6 +256,7 @@
  "settings.display_scale": "Merilo prikaza: {value}",
  "settings.crisp_scaling": "Ostro celoštevilsko skaliranje programov: {value}",
  "settings.touch_targets": "Območja dotika: {value}",
+ "settings.joystick_sensitivity": "Občutljivost igralne palice: {value}",
  "settings.engine": "Pogon: {value}",
  "engine.unavailable.title": "Ni na voljo v {engine}",
  "engine.unavailable.message": "Programa {title} ni mogoče izvajati v {engine}: {reason}.",

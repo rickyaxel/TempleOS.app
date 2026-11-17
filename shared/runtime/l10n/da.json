@@ -64,7 +64,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENU",
  "window.menu": "MENU",
@@ -247,6 +248,7 @@
  "settings.display_scale": "Skærmskalering: {value}",
  "settings.crisp_scaling": "Skarp heltalsskalering for programmer: {value}",
  "settings.touch_targets": "Berøringsområder: {value}",
+ "settings.joystick_sensitivity": "Joystickfølsomhed: {value}",
  "settings.engine": "Motor: {value}",
  "engine.unavailable.title": "Ikke tilgængelig i {engine}",
  "engine.unavailable.message": "{title} kan ikke køre i {engine}: {reason}.",

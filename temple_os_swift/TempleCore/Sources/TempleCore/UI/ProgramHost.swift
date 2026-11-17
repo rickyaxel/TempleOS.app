@@ -206,6 +206,8 @@ public final class GameControls {
     }
     /** The joystick toggle asks for the other directional control: the owner keeps it (Settings) and draws with it. */
     public var onDirectional: (DirectionalControl) -> Void = { _ in }
+    /** How short a push holds the joystick's arrows ([Joystick.keys]): the owner's setting, read at each push. */
+    public var stickSensitivity: () -> Int = { Joystick.SENSITIVITY_DEFAULT }
     /**
      * What the layout depends on. While it stays the same, a frame draws the last layout's buttons again instead of
      * building new ones: a held button is the one drawn (PRESSED), and a frame only compares and draws.
@@ -450,7 +452,7 @@ public final class GameControls {
     /** The joystick's finger is at ([x], [y]): the knob follows, and the push holds its arrows. */
     private func steer(_ x: Int, _ y: Int) {
         let (dx, dy) = joystick.push(x, y)
-        holdArrows(Joystick.keys(dx, dy, joystick.travel, stickHeld))
+        holdArrows(Joystick.keys(dx, dy, joystick.travel, stickHeld, stickSensitivity()))
     }
 
     /**
@@ -527,16 +529,25 @@ public final class GameControls {
  * TempleOS colors and pixels in the pad's square. It keeps the geometry, the picture and the knob; a push
  * ([keys]) becomes the arrow keys the d-pad buttons hold, through the same key path.
  */
-final class Joystick {
+public final class Joystick {
     /** Arrow bits (a d-pad button's or a push's [GameControls] dir). */
     static let UP = 1, DOWN = 2, LEFT = 4, RIGHT = 8
     /**
-     * A push holds keys from [ENGAGE] of the knob's travel and lets go below [RELEASE], so a thumb resting at
-     * the edge of the dead zone does not chatter. Each arrow takes [CARDINAL] degrees either side of its axis,
-     * a diagonal (two arrows) the 30 degrees between, and a held direction stays until the push is [STICKY]
-     * degrees past its edge.
+     * The sensitivity levels (Settings.joystickSensitivity): the higher, the shorter the push that holds keys.
+     * The default needs twice the push of [SENSITIVITY_MAX].
      */
-    static let ENGAGE = 0.30, RELEASE = 0.22, CARDINAL = 30.0, STICKY = 6.0
+    public static let SENSITIVITY_MIN = 1, SENSITIVITY_MAX = 5, SENSITIVITY_DEFAULT = 3
+    /**
+     * A push holds keys from [engagePercent] of the knob's travel and lets go below [releasePercent], so a thumb
+     * resting at the edge of the dead zone does not chatter. Each arrow takes [CARDINAL] degrees either side of
+     * its axis, a diagonal (two arrows) the 30 degrees between, and a held direction stays until the push is
+     * [STICKY] degrees past its edge.
+     */
+    static let CARDINAL = 30.0, STICKY = 6.0
+    /** Percent of the knob's travel a push needs to hold keys at [sensitivity]: 90, 75, 60, 45, 30. */
+    static func engagePercent(_ sensitivity: Int) -> Int { 105 - 15 * coerceInUI(sensitivity, SENSITIVITY_MIN, SENSITIVITY_MAX) }
+    /** Percent of the knob's travel below which a held push lets go: 66, 55, 44, 33, 22. */
+    static func releasePercent(_ sensitivity: Int) -> Int { engagePercent(sensitivity) * 11 / 15 }
     /** How long the released knob takes back to the centre (its keys go up at once). */
     static let RETURN_MS: Int64 = 80
     /** Counter-clockwise from right, 45 degrees apart. */
@@ -544,12 +555,13 @@ final class Joystick {
 
     /**
      * The arrow keys a push of ([dx], [dy]) from the centre holds (y grows downwards) for a knob that travels
-     * [travel] px, given the keys [held] now: none in the dead zone, else one arrow, or two on a diagonal,
-     * as two fingers on the d-pad hold them.
+     * [travel] px, given the keys [held] now: none in the dead zone ([sensitivity] sets its size), else one
+     * arrow, or two on a diagonal, as two fingers on the d-pad hold them.
      */
-    static func keys(_ dx: Int, _ dy: Int, _ travel: Int, _ held: Int) -> Int {
-        let dist = Double(dx * dx + dy * dy).squareRoot()
-        if dist < (held == 0 ? ENGAGE : RELEASE) * Double(max(1, travel)) { return 0 }
+    static func keys(_ dx: Int, _ dy: Int, _ travel: Int, _ held: Int, _ sensitivity: Int = SENSITIVITY_DEFAULT) -> Int {
+        // the dead zone's edge in whole numbers (percent of the travel): the same pixel on every platform
+        let edge = (held == 0 ? engagePercent(sensitivity) : releasePercent(sensitivity)) * max(1, travel)
+        if (dx * dx + dy * dy) * 10000 < edge * edge { return 0 }
         var a = atan2(Double(-dy), Double(dx)) * 180 / Double.pi
         if a < 0 { a += 360 }
         func apart(_ b: Double) -> Double { let d = abs(a - b).truncatingRemainder(dividingBy: 360); return d > 180 ? 360 - d : d }

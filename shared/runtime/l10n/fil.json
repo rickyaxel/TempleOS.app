@@ -93,7 +93,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENU",
  "window.menu": "MENU",
@@ -276,6 +277,7 @@
  "settings.display_scale": "Scale ng display: {value}",
  "settings.crisp_scaling": "Malinaw na integer scaling para sa mga program: {value}",
  "settings.touch_targets": "Mga touch target: {value}",
+ "settings.joystick_sensitivity": "Sensitivity ng joystick: {value}",
  "settings.engine": "Engine: {value}",
  "engine.unavailable.title": "Hindi magagamit sa {engine}",
  "engine.unavailable.message": "Hindi maaaring patakbuhin ang {title} sa {engine}: {reason}.",

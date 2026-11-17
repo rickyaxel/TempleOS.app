@@ -981,6 +981,28 @@ final class TempleOSMobileUITests: XCTestCase {
         shot("joystick-7-dpad-again")
     }
 
+    /** Settings > Joystick sensitivity: level 3 of 5 on a new install, a tap goes to the next level, kept across a relaunch. */
+    func testJoystickSensitivitySetting() throws {
+        app.launchArguments = ["-uitest-reset", "-AppleLanguages", "(en-US)"]
+        app.launch()
+        XCUIDevice.shared.orientation = .portrait
+        readLayout(); sleep(2)
+        startMenu(); menuItem("Settings"); sleep(1)
+        func row(_ level: Int) -> XCUIElement { app.buttons["Joystick sensitivity: \(level)/5"] }
+        XCTAssertTrue(row(3).waitForExistence(timeout: 5), "the default")
+        shot("joystick-sensitivity-1-default")
+        for (from, to) in [(3, 4), (4, 5), (5, 1)] {
+            row(from).tap()
+            XCTAssertTrue(row(to).waitForExistence(timeout: 5), "\(from) -> \(to)")
+        }
+        shot("joystick-sensitivity-2-lowest")
+        app.terminate()
+        app.launchArguments = ["-AppleLanguages", "(en-US)"]
+        app.launch(); readLayout(); sleep(2)
+        if !row(1).waitForExistence(timeout: 10) { startMenu(); menuItem("Settings") }
+        XCTAssertTrue(row(1).waitForExistence(timeout: 10), "still level 1 after a relaunch")
+    }
+
     // MARK: fidelity audit (docs/fidelity-audit): the programs its fixes touched, on a device
 
     /** Launches a clean app and opens [title] from the Games or Demos menu; returns its picture. */

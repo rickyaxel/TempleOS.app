@@ -69,7 +69,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENU",
  "window.menu": "MENU",
@@ -252,6 +253,7 @@
  "settings.display_scale": "Měřítko zobrazení: {value}",
  "settings.crisp_scaling": "Ostré celočíselné škálování programů: {value}",
  "settings.touch_targets": "Dotykové plochy: {value}",
+ "settings.joystick_sensitivity": "Citlivost joysticku: {value}",
  "settings.engine": "Jádro: {value}",
  "engine.unavailable.title": "Není k dispozici v {engine}",
  "engine.unavailable.message": "Program {title} nelze spustit v {engine}: {reason}.",

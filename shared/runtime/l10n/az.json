@@ -86,7 +86,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENYU",
  "window.menu": "MENYU",
@@ -269,6 +270,7 @@
  "settings.display_scale": "Ekran miqyası: {value}",
  "settings.crisp_scaling": "Proqramlar üçün dəqiq tam ədədli miqyaslama: {value}",
  "settings.touch_targets": "Toxunma sahələri: {value}",
+ "settings.joystick_sensitivity": "Coystik həssaslığı: {value}",
  "settings.engine": "Mühərrik: {value}",
  "engine.unavailable.title": "{engine} mühərrikində əlçatan deyil",
  "engine.unavailable.message": "{title} {engine} mühərrikində işləyə bilməz: {reason}.",

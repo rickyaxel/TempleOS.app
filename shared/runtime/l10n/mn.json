@@ -102,7 +102,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "ЦЭС",
  "window.menu": "ЦЭС",
@@ -285,6 +286,7 @@
  "settings.display_scale": "Дэлгэцийн масштаб: {value}",
  "settings.crisp_scaling": "Програмд зориулсан тод бүхэл тоон масштаб: {value}",
  "settings.touch_targets": "Хүрэх талбарууд: {value}",
+ "settings.joystick_sensitivity": "Жойстикийн мэдрэмж: {value}",
  "settings.engine": "Хөдөлгүүр: {value}",
  "engine.unavailable.title": "{engine} дээр боломжгүй",
  "engine.unavailable.message": "{title} {engine} дээр ажиллах боломжгүй: {reason}.",

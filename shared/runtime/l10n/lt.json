@@ -71,7 +71,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENIU",
  "window.menu": "MENIU",
@@ -254,6 +255,7 @@
  "settings.display_scale": "Ekrano mastelis: {value}",
  "settings.crisp_scaling": "Ryškus sveikųjų skaičių mastelis programoms: {value}",
  "settings.touch_targets": "Lietimo sritys: {value}",
+ "settings.joystick_sensitivity": "Vairalazdės jautrumas: {value}",
  "settings.engine": "Variklis: {value}",
  "engine.unavailable.title": "Nepasiekiama variklyje {engine}",
  "engine.unavailable.message": "{title} negali veikti variklyje {engine}: {reason}.",

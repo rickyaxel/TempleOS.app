@@ -1281,13 +1281,15 @@ class Settings(
     var engine: Int = ENGINE_TERRY,
     /** How programs with arrow keys show them: the d-pad's four buttons, or the joystick (GameControls). */
     var directional: DirectionalControl = DirectionalControl.DPAD,
+    /** How short a push holds the joystick's arrows: [Joystick.SENSITIVITY_MIN]..[Joystick.SENSITIVITY_MAX]. */
+    var joystickSensitivity: Int = Joystick.SENSITIVITY_DEFAULT,
     /** The user continued past Import's first-time explanation ([ImportFlow]); it is not shown again. */
     var importIntroSeen: Boolean = false,
 ) {
     var keyboardMode: Int
         get() = KEYBOARD_TEMPLEOS
         set(@Suppress("UNUSED_PARAMETER") value) {}
-    fun encode() = "d=$desktopColor;s=${if (sound) 1 else 0};o=$controlsOpacity;u=$uiScale;c=${if (crispScaling) 1 else 0};t=${if (largeTouch) 1 else 0};k=$keyboardMode;g=$language;e=$engine;j=${directional.ordinal};i=${if (importIntroSeen) 1 else 0}"
+    fun encode() = "d=$desktopColor;s=${if (sound) 1 else 0};o=$controlsOpacity;u=$uiScale;c=${if (crispScaling) 1 else 0};t=${if (largeTouch) 1 else 0};k=$keyboardMode;g=$language;e=$engine;j=${directional.ordinal};js=$joystickSensitivity;i=${if (importIntroSeen) 1 else 0}"
     companion object {
         /** The in-app TempleOS keyboard ([TempleKeyboard]). */
         const val KEYBOARD_TEMPLEOS = 0
@@ -1310,6 +1312,7 @@ class Settings(
                 if (m["e"] == "1") ENGINE_NATIVE else ENGINE_TERRY,
                 // sessions saved before the joystick existed have no "j": the d-pad, as before
                 if (m["j"] == "1") DirectionalControl.JOYSTICK else DirectionalControl.DPAD,
+                m["js"]?.toIntOrNull()?.coerceIn(Joystick.SENSITIVITY_MIN, Joystick.SENSITIVITY_MAX) ?: Joystick.SENSITIVITY_DEFAULT,
                 m["i"] == "1",
             )
         }

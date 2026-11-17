@@ -137,7 +137,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENU",
  "window.menu": "MENU",
@@ -320,6 +321,7 @@
  "settings.display_scale": "Scala da la visualisaziun: {value}",
  "settings.crisp_scaling": "Scalaziun cun numers entirs per programs: {value}",
  "settings.touch_targets": "Zonas da tutg: {value}",
+ "settings.joystick_sensitivity": "Sensibilitad dal joystick: {value}",
  "settings.engine": "Motor: {value}",
  "engine.unavailable.title": "Betg disponibel en {engine}",
  "engine.unavailable.message": "{title} na po betg vegnir exequì en {engine}: {reason}.",

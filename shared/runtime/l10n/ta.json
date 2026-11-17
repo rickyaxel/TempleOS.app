@@ -98,7 +98,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "மெனு",
  "window.menu": "மெனு",
@@ -281,6 +282,7 @@
  "settings.display_scale": "திரை அளவுகோல்: {value}",
  "settings.crisp_scaling": "நிரல்களுக்குத் துல்லியமான முழு எண் அளவிடல்: {value}",
  "settings.touch_targets": "தொடு இலக்குகள்: {value}",
+ "settings.joystick_sensitivity": "ஜாய்ஸ்டிக் உணர்திறன்: {value}",
  "settings.engine": "எஞ்சின்: {value}",
  "engine.unavailable.title": "{engine}-இல் கிடைக்கவில்லை",
  "engine.unavailable.message": "{title} {engine}-இல் இயங்க முடியாது: {reason}.",

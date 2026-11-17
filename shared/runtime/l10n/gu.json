@@ -86,7 +86,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "મેનૂ",
  "window.menu": "મેનૂ",
@@ -269,6 +270,7 @@
  "settings.display_scale": "ડિસ્પ્લે સ્કેલ: {value}",
  "settings.crisp_scaling": "પ્રોગ્રામ માટે સ્પષ્ટ પૂર્ણાંક સ્કેલિંગ: {value}",
  "settings.touch_targets": "ટચ વિસ્તારો: {value}",
+ "settings.joystick_sensitivity": "જોયસ્ટિકની સંવેદનશીલતા: {value}",
  "settings.engine": "એન્જિન: {value}",
  "engine.unavailable.title": "{engine} માં ઉપલબ્ધ નથી",
  "engine.unavailable.message": "{title} {engine} માં ચાલી શકતું નથી: {reason}.",

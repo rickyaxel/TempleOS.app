@@ -90,7 +90,8 @@
   "import.error.is_compressed",
   "import.error.read",
   "import.error.device_storage",
-  "import.error.interrupted"
+  "import.error.interrupted",
+  "settings.joystick_sensitivity"
  ],
  "topbar.menu": "MENYJA",
  "window.menu": "MENYJA",
@@ -273,6 +274,7 @@
  "settings.display_scale": "Shkalla e ekranit: {value}",
  "settings.crisp_scaling": "Shkallëzim i mprehtë me numra të plotë për programet: {value}",
  "settings.touch_targets": "Zonat e prekjes: {value}",
+ "settings.joystick_sensitivity": "Ndjeshmëria e xhojstikut: {value}",
  "settings.engine": "Motori: {value}",
  "engine.unavailable.title": "Nuk ofrohet në {engine}",
  "engine.unavailable.message": "{title} nuk mund të ekzekutohet në {engine}: {reason}.",

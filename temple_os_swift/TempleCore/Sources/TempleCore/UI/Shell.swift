@@ -1690,6 +1690,8 @@ public final class Settings {
     public var engine: Int
     /** How programs with arrow keys show them: the d-pad's four buttons, or the joystick (GameControls). */
     public var directional: DirectionalControl
+    /** How short a push holds the joystick's arrows: [Joystick.SENSITIVITY_MIN]..[Joystick.SENSITIVITY_MAX]. */
+    public var joystickSensitivity: Int
     /** The user continued past Import's first-time explanation ([ImportFlow]); it is not shown again. */
     public var importIntroSeen: Bool
 
@@ -1703,14 +1705,15 @@ public final class Settings {
     /** The device's own keyboard (international input, dictation, accessibility). */
     public static let KEYBOARD_SYSTEM = 1 // Legacy serialized value only; cannot activate a device keyboard.
 
-    public init(_ desktopColor: Int = Palette.DKGRAY, _ sound: Bool = true, _ controlsOpacity: Int = 2, _ uiScale: Int = 0, _ crispScaling: Bool = false, _ largeTouch: Bool = false, _ keyboardMode: Int = Settings.KEYBOARD_TEMPLEOS, _ language: String = "", _ engine: Int = Settings.ENGINE_TERRY, _ directional: DirectionalControl = .dpad, _ importIntroSeen: Bool = false) {
+    public init(_ desktopColor: Int = Palette.DKGRAY, _ sound: Bool = true, _ controlsOpacity: Int = 2, _ uiScale: Int = 0, _ crispScaling: Bool = false, _ largeTouch: Bool = false, _ keyboardMode: Int = Settings.KEYBOARD_TEMPLEOS, _ language: String = "", _ engine: Int = Settings.ENGINE_TERRY, _ directional: DirectionalControl = .dpad, _ joystickSensitivity: Int = Joystick.SENSITIVITY_DEFAULT, _ importIntroSeen: Bool = false) {
         self.desktopColor = desktopColor; self.sound = sound; self.controlsOpacity = controlsOpacity
         self.uiScale = uiScale; self.crispScaling = crispScaling; self.largeTouch = largeTouch
-        self.language = language; self.engine = engine; self.directional = directional; self.importIntroSeen = importIntroSeen
+        self.language = language; self.engine = engine; self.directional = directional
+        self.joystickSensitivity = joystickSensitivity; self.importIntroSeen = importIntroSeen
     }
 
     public func encode() -> String {
-        "d=\(desktopColor);s=\(sound ? 1 : 0);o=\(controlsOpacity);u=\(uiScale);c=\(crispScaling ? 1 : 0);t=\(largeTouch ? 1 : 0);k=\(keyboardMode);g=\(language);e=\(engine);j=\(directional.rawValue);i=\(importIntroSeen ? 1 : 0)"
+        "d=\(desktopColor);s=\(sound ? 1 : 0);o=\(controlsOpacity);u=\(uiScale);c=\(crispScaling ? 1 : 0);t=\(largeTouch ? 1 : 0);k=\(keyboardMode);g=\(language);e=\(engine);j=\(directional.rawValue);js=\(joystickSensitivity);i=\(importIntroSeen ? 1 : 0)"
     }
 
     /** Kotlin Char.isLetterOrDigit(): Unicode letters (L*) and decimal digits (Nd). */
@@ -1736,6 +1739,7 @@ public final class Settings {
             m["e"] == "1" ? ENGINE_NATIVE : ENGINE_TERRY,
             // sessions saved before the joystick existed have no "j": the d-pad, as before
             m["j"] == "1" ? .joystick : .dpad,
+            m["js"].flatMap { Int($0) }.map { coerceInUI($0, Joystick.SENSITIVITY_MIN, Joystick.SENSITIVITY_MAX) } ?? Joystick.SENSITIVITY_DEFAULT,
             m["i"] == "1"
         )
     }

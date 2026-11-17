@@ -77,6 +77,7 @@ public final class ProgramApp: App {
             guard let shell = self?.liveShell else { return }
             shell.settings.directional = mode; shell.saveSession()
         }
+        controls.stickSensitivity = { [weak self] in self?.liveShell?.settings.joystickSensitivity ?? Joystick.SENSITIVITY_DEFAULT }
         start()
     }
 
