@@ -1,5 +1,29 @@
 # Performance
 
+> **Performance pass (2026-11-17): Varoom and the graphics library.**
+> - **Varoom on the OPPO CPH2669, in the app** (portrait, accelerator held, 2 x 20 s per build and engine, median of
+>   the per-second FPS readout): Pure Terry 4 -> 15 fps, Pure Kotlin 6 -> 26 fps (peaks at 30); UI 60 fps throughout.
+>   Frame composition: Pure Terry 243 -> 65 ms, Pure Kotlin 161 -> 38 ms. (Before = `main` at `2c10ed3`, so this
+>   includes the 2026-11-08 pass below.)
+> - **Headless bench mode on the same phone**, frame composition per frame for 5-6 s of game time, Pure Terry /
+>   Pure Kotlin: Varoom 163 -> 64 / 81 -> 34.5 ms, CastleFrankenstein 2.3x / 2.2x faster, KeepAway 2.3x / 2.3x,
+>   ZoneOut 2.2x / 2.1x, Titanium 2.0x / 1.8x, BattleLines 1.7x / 1.1x, BomberGolf and RawHide 1.4x / 1.4x.
+>   Program boot (Pure Terry) about 570 -> 230 ms.
+> - What changed: depth-tested spans checked once per span instead of per pixel, dithered spans draw their random
+>   numbers without a clock read per pixel, word-level MemSetU32/I64 (depth-buffer reset) and frame copies (Kotlin),
+>   no synchronized lazies or getter chains in the raster code (Kotlin); and GrLine3 (with DCClipLine/ClipLine),
+>   GrFillPoly3, Gr3Mesh, Sprite3 and Mat4x4Scale run natively on both platforms (originals kept as `*_HC`).
+> - Verification: RasterDiffTest/RasterDiffTests compare every native with its HolyC original on random inputs,
+>   including the heap; before the new natives, the catalog parity sweep's checkpoints were byte-identical for
+>   every program (except the two that print the date); after, 145 of 149 programs have every checkpoint frame
+>   identical (the other four diverge only after their budget ticks do), and Terry/Pure Kotlin parity is unchanged.
+>   Commits from `57656b6` to the merge of this pass.
+> - **Swift on the M3 Pro host** (release, `BenchmarkTests`, 6 s of game time, 3 runs, wall time including boot), Pure
+>   Terry / Pure Swift: Varoom 2.14x / 1.83x faster, Talons 1.78x / 1.19x, Maze 1.52x / 1.08x, BattleLines
+>   1.35x / 1.03x, BomberGolf 1.26x / 1.08x; X-Caliber, Squirt and Bounce unchanged. Swift's raster code was
+>   already free of the Kotlin-on-ART overheads, so most of its gain is the native library routines. iOS devices
+>   were not measured (simulator and host only, as for the earlier passes).
+
 > **Performance pass (2026-11-08), [performance-2026-11-08/](performance-2026-11-08/OVERNIGHT_FINAL_SUMMARY.md).**
 > - Program and terminal start: the prelude's pen tables are set up natively; on the OPPO CPH2669 boot plus program
 >   load went from about 570 to about 245 ms.

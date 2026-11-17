@@ -106,10 +106,13 @@ in one program cannot affect another or the desktop.
 - **Natives**: registered by name; the prelude declares them with the
   `native` keyword using TempleOS's real signatures.
 - **Native fast paths**: `GrPlot`, `GrRect`, `GrBlot`, `GrFillTri0`,
-  `GrLineFat3`, `GrFillCircle`, `Line` and others are implemented natively
-  for speed; the original HolyC versions remain compiled as `*_HC` and a
-  differential test (`RasterDiffTest`) checks pixel-exact equality on random
-  inputs.
+  `GrLineFat3`, `GrFillCircle`, `Line`, `GrLine3`, `GrFillPoly3`, `Gr3Mesh`,
+  `Sprite3`, `Mat4x4Scale` and others are implemented natively for speed; the
+  original HolyC versions remain compiled as `*_HC` and a differential test
+  (`RasterDiffTest`) checks pixel-exact equality (and identical heap use) on
+  random inputs. Natives call HolyC callbacks (`dc->transform`,
+  `dc->lighting`, plot callbacks) where the original does; `Sprite3` hands
+  the element types it does not implement to `Sprite3_HC`.
 
 ### Execution engines (Settings › Engine)
 
