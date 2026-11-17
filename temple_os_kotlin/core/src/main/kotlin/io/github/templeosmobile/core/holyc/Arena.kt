@@ -174,6 +174,28 @@ class Arena(initialBytes: Int, val maxBytes: Int) {
         while (i < n) { st1(dst + i, b.toLong()); i++ }
     }
 
+    /** [n] elements of [size] bytes (2, 4 or 8), each the low bytes of [v], from [dst] (MemSetU16/U32/I64). */
+    fun fillElems(dst: Int, v: Long, size: Int, n: Int) {
+        if (n <= 0) return
+        var p = dst; var i = 0
+        if ((dst and (size - 1)) == 0) { // aligned: whole words at once
+            while (i < n && (p and 7) != 0) { stN(p, v, size); p += size; i++ }
+            val perWord = 8 / size
+            val cnt = (n - i) / perWord
+            if (cnt > 0) {
+                val bits = size * 8
+                var e = if (bits == 64) v else v and ((1L shl bits) - 1)
+                var w = e
+                for (k in 1 until perWord) { e = e shl bits; w = w or e }
+                java.util.Arrays.fill(words, p ushr 3, (p ushr 3) + cnt, w)
+                p += cnt * 8; i += cnt * perWord
+            }
+        }
+        while (i < n) { stN(p, v, size); p += size; i++ }
+    }
+
+    private fun stN(a: Int, v: Long, size: Int) = when (size) { 2 -> st2(a, v); 4 -> st4(a, v); else -> st8(a, v) }
+
     fun readBytes(a: Int, n: Int): ByteArray = ByteArray(n) { ld1(a + it).toByte() }
 
     fun writeBytes(a: Int, b: ByteArray, off: Int = 0, len: Int = b.size) {

@@ -173,17 +173,17 @@ class Natives(private val k: Kernel) {
         }
         reg("MemSetU16") { t, a, _ ->
             val dst = t.st[a]; val v = t.st[a + 1]; val n = t.st[a + 2]
-            if (n != 0L) { val p = span(dst, n, 2); for (i in 0 until n.toInt()) mem.st2(p + i * 2, v) }
+            if (n != 0L) mem.fillElems(span(dst, n, 2), v, 2, n.toInt())
             dst + n * 2
         }
         reg("MemSetU32") { t, a, _ ->
             val dst = t.st[a]; val v = t.st[a + 1]; val n = t.st[a + 2]
-            if (n != 0L) { val p = span(dst, n, 4); for (i in 0 until n.toInt()) mem.st4(p + i * 4, v) }
+            if (n != 0L) mem.fillElems(span(dst, n, 4), v, 4, n.toInt())
             dst + n * 4
         }
         reg("MemSetI64") { t, a, _ ->
             val dst = t.st[a]; val v = t.st[a + 1]; val n = t.st[a + 2]
-            if (n != 0L) { val p = span(dst, n, 8); for (i in 0 until n.toInt()) mem.st8(p + i * 8, v) }
+            if (n != 0L) mem.fillElems(span(dst, n, 8), v, 8, n.toInt())
             dst + n * 8
         }
         reg("MemCmp") { t, a, _ ->

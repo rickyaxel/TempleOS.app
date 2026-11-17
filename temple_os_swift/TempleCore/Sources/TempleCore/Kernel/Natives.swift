@@ -178,19 +178,19 @@ public final class Natives {
         reg("MemSetU16") { t, a, _ in
             let mem = self.mem
             let dst = t.st[a]; let v = t.st[a + 1]; let n = t.st[a + 2]
-            if n != 0 { let p = try self.span(dst, n, 2); for i in 0..<Int(n) { mem.st2(p + i * 2, v) } }
+            if n != 0 { mem.fillElems(try self.span(dst, n, 2), v, 2, Int(n)) }
             return dst &+ n &* 2
         }
         reg("MemSetU32") { t, a, _ in
             let mem = self.mem
             let dst = t.st[a]; let v = t.st[a + 1]; let n = t.st[a + 2]
-            if n != 0 { let p = try self.span(dst, n, 4); for i in 0..<Int(n) { mem.st4(p + i * 4, v) } }
+            if n != 0 { mem.fillElems(try self.span(dst, n, 4), v, 4, Int(n)) }
             return dst &+ n &* 4
         }
         reg("MemSetI64") { t, a, _ in
             let mem = self.mem
             let dst = t.st[a]; let v = t.st[a + 1]; let n = t.st[a + 2]
-            if n != 0 { let p = try self.span(dst, n, 8); for i in 0..<Int(n) { mem.st8(p + i * 8, v) } }
+            if n != 0 { mem.fillElems(try self.span(dst, n, 8), v, 8, Int(n)) }
             return dst &+ n &* 8
         }
         reg("MemCmp") { t, a, _ in

@@ -106,6 +106,16 @@ public final class Arena {
         memset(base + dst, Int32(b & 0xFF), n)
     }
 
+    /** [n] elements of [size] bytes (2, 4 or 8), each the low bytes of [v], from [dst] (MemSetU16/U32/I64). */
+    public func fillElems(_ dst: Int, _ v: Int64, _ size: Int, _ n: Int) {
+        if n <= 0 { return }
+        switch size {
+        case 2: let e = UInt16(truncatingIfNeeded: v); for i in 0..<n { base.storeBytes(of: e, toByteOffset: dst + i * 2, as: UInt16.self) }
+        case 4: let e = UInt32(truncatingIfNeeded: v); for i in 0..<n { base.storeBytes(of: e, toByteOffset: dst + i * 4, as: UInt32.self) }
+        default: for i in 0..<n { base.storeBytes(of: v, toByteOffset: dst + i * 8, as: Int64.self) }
+        }
+    }
+
     public func readBytes(_ a: Int, _ n: Int) -> [UInt8] {
         if n <= 0 { return [] }
         return Array(UnsafeBufferPointer(start: ptr(a), count: n))
