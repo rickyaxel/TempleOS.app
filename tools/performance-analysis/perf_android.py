@@ -8,7 +8,7 @@ The app is started with --ez perflog true, so the focused program prints one lin
 "played" by tapping its on-screen buttons on a fixed schedule (taps go through the
 accessibility node bounds). Results: JSON with every per-second sample and a summary.
 
-  perf_android.py -s 49c56f82 --menu Games... --program BomberGolf --seconds 20 \
+  perf_android.py -s <serial> --menu Games... --program BomberGolf --seconds 20 \
       --taps "Space,Left arrow,Space,Right arrow" --out docs/performance/evidence/x.json
 """
 import argparse

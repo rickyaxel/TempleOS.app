@@ -17,7 +17,7 @@ Engines alternate (T N, N T, ...) to spread thermal and scheduling drift over bo
 WARMUP seconds of every run are dropped (boot, JIT/AOT warm-up, first frames). The kernel boot time
 (its "TempleOSMobile boot <name> <ms> ms" line) is recorded per run.
 
-  perf_engines_android.py -s 49c56f82 --apk app-release.apk --repeats 3 --seconds 25 \\
+  perf_engines_android.py -s <serial> --apk app-release.apk --repeats 3 --seconds 25 \\
       --program "Games...:BomberGolf:Space,Left arrow,Space,Right arrow" --out docs/performance/evidence/engines.json
 """
 import argparse

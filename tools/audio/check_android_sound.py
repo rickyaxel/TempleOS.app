@@ -7,7 +7,7 @@ pulls <external files>/sound-capture.wav (written when the speaker idles) and ru
 tools/audio/analyze_capture.py: against TempleOS's trace for the Sound example, --stats for others.
 
     check_android_sound.py -s emulator-5554 --apk app-debug.apk --out DIR                       # Examples > Sound
-    check_android_sound.py -s 49c56f82 --menu Games... --program TicTacToe --taps L-CLICK --seconds 20 --out DIR
+    check_android_sound.py -s <serial> --menu Games... --program TicTacToe --taps L-CLICK --seconds 20 --out DIR
 
 Development tool only.
 """
