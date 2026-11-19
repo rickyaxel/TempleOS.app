@@ -203,20 +203,22 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
     /**
      * Typematic repeat for held key buttons, like a PC keyboard: TempleOS boots with
      * KbdTypeMatic(0) (HomeLocalize.HC) = 250 ms delay, then 30 key-downs per second.
-     * Games that move one step per key message (GetKey: CastleFrankenstein) need it. Returns true while the
-     * joystick's knob is easing back to the centre (the controls need drawing).
+     * Games that move one step per key message (GetKey: CastleFrankenstein) need it. The joystick's arrows
+     * repeat after the same delay, then [STICK_REPEAT_PERIOD_MS] apart. Returns true while the joystick's knob
+     * is easing back to the centre (the controls need drawing).
      */
     fun tick(nowMs: Long): Boolean {
         for ((id, b) in held) {
             if (b.toggle != null || isModifier(b)) continue
             if (b.wheel == 0 && !typematic.repeats(ticket[id] ?: -1)) continue
             val since = heldSince[id] ?: continue
-            if (since < 0) { heldSince[id] = nowMs; lastRepeat[id] = nowMs + REPEAT_DELAY_MS - REPEAT_PERIOD_MS; continue }
+            val period = if (id < 0) STICK_REPEAT_PERIOD_MS else REPEAT_PERIOD_MS // (the joystick's hold ids are negative)
+            if (since < 0) { heldSince[id] = nowMs; lastRepeat[id] = nowMs + REPEAT_DELAY_MS - period; continue }
             if (nowMs - since < REPEAT_DELAY_MS) continue
             var last = lastRepeat[id] ?: since
             var n = 0
-            while (nowMs - last >= REPEAT_PERIOD_MS && n++ < 2) { press(b); last += REPEAT_PERIOD_MS }
-            if (nowMs - last >= REPEAT_PERIOD_MS) last = nowMs // do not queue a burst after a stall
+            while (nowMs - last >= period && n++ < 2) { press(b); last += period }
+            if (nowMs - last >= period) last = nowMs // do not queue a burst after a stall
             lastRepeat[id] = last
         }
         return joystick.settle(nowMs)
@@ -464,6 +466,12 @@ class GameControls(private val typematic: Typematic = Typematic(), private val s
     companion object {
         const val REPEAT_DELAY_MS = 250L
         const val REPEAT_PERIOD_MS = 33L
+        /**
+         * A held joystick push repeats its arrow 5 times a second, the pace of quick taps on a d-pad button: a
+         * stick is held where a button is tapped, and a game that counts key messages (Varoom's accelerator)
+         * gets 30 a second only from a button that is held on purpose.
+         */
+        const val STICK_REPEAT_PERIOD_MS = 200L
     }
 
     val anyHeld get() = held.isNotEmpty()

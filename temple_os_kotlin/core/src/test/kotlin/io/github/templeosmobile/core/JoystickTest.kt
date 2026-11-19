@@ -11,7 +11,7 @@ import java.io.File
 
 /**
  * The joystick that can stand in for the d-pad (GameControls, Settings.directional): it exists only where the
- * program has the d-pad, it holds the same arrow keys through the same key path (down, typematic repeat, up), it
+ * program has the d-pad, it holds the same arrow keys through the same key path (down, a slower repeat, up), it
  * sends only what changes, and nothing it holds outlives its finger, its mode or its place on the screen.
  */
 class JoystickTest {
@@ -198,23 +198,35 @@ class JoystickTest {
         assertFalse(r.gc.anyHeld)
     }
 
-    /** A held push repeats like a held d-pad button (TempleOS KbdTypeMatic(0): 250 ms, then 30/s). */
-    @Test fun aHeldPushRepeatsLikeTheDpad() {
+    /**
+     * A held push repeats its arrow at the pace of quick taps: after the keyboard's 250 ms, 5 times a second. A held
+     * d-pad button keeps the keyboard's 30 (TempleOS KbdTypeMatic(0)).
+     */
+    @Test fun aHeldPushRepeatsAtATappingPace() {
         val r = rig(); r.directional = DirectionalControl.JOYSTICK; r.draw()
         r.stick(Ptr.DOWN, 30, 0)
         val log = r.take().toMutableList()
         r.gc.tick(1000); r.gc.tick(1200); log += r.take()
         assertEquals("no repeat before 250 ms", listOf("RIGHT down"), log)
         r.gc.tick(1260); assertEquals("first repeat after 250 ms", listOf("RIGHT down"), r.take())
-        for (t in 1293..2260 step 33) r.gc.tick(t.toLong())
-        val n = r.take().size
-        assertTrue("about 30 repeats per second: $n", n in 28..34)
+        r.gc.tick(1440); assertEquals("the next one 200 ms after it", emptyList<String>(), r.take())
+        r.gc.tick(1460); assertEquals(listOf("RIGHT down"), r.take())
+        for (t in 1476..2460 step 16) r.gc.tick(t.toLong())
+        assertEquals("5 repeats in a second of frames", List(5) { "RIGHT down" }, r.take())
         r.stick(Ptr.MOVE, 25, -25); assertEquals(listOf("UP down"), r.take())
-        for (t in 2293..2800 step 33) r.gc.tick(t.toLong())
-        assertTrue("the arrow pressed last repeats, as on a PC keyboard", r.take().all { it == "UP down" })
+        for (t in 2476..3460 step 16) r.gc.tick(t.toLong())
+        assertEquals("the arrow pressed last repeats, as on a PC keyboard", List(4) { "UP down" }, r.take())
         r.stick(Ptr.UP, 25, -25); assertEquals(listOf("UP up", "RIGHT up"), r.take())
         r.gc.tick(4000); r.gc.tick(5000)
         assertEquals("nothing repeats after the release", emptyList<String>(), r.take())
+        r.directional = DirectionalControl.DPAD; r.draw()
+        val up = r.node("Up arrow")!!
+        r.gc.pointer(PointerEvent(Ptr.DOWN, up.x + 4, up.y + 4, 7)); assertEquals(listOf("UP down"), r.take())
+        r.gc.tick(6000)
+        for (t in 6250..7249 step 16) r.gc.tick(t.toLong())
+        val n = r.take().size
+        assertTrue("a held button: about 30 repeats per second: $n", n in 28..34)
+        r.gc.pointer(PointerEvent(Ptr.UP, up.x + 4, up.y + 4, 7)); assertEquals(listOf("UP up"), r.take())
     }
 
     @Test fun theJoystickAndButtonsAreSeparateFingers() {
@@ -445,7 +457,7 @@ class JoystickTest {
         } finally { r.close() }
     }
 
-    /** CastleFrankenstein walks one step per key message: a held push walks it like a held d-pad button. */
+    /** CastleFrankenstein walks one step per key message: a held push keeps walking it, 5 steps a second. */
     @Test fun aHeldPushWalksCastleFrankenstein() {
         val r = launch("C:/Demo/Games/CastleFrankenstein.HC", DirectionalControl.JOYSTICK)
         try {
@@ -457,7 +469,10 @@ class JoystickTest {
             while (System.currentTimeMillis() - t0 < 2000) { r.sh.tick(); Thread.sleep(16) }
             r.stick(Ptr.UP, 0, -45)
             Thread.sleep(300); r.sh.tick()
-            assertTrue("the player walked", Math.abs(g("man_xx") - x0) + Math.abs(g("man_yy") - y0) > 1000)
+            val walked = Math.abs(g("man_xx") - x0) + Math.abs(g("man_yy") - y0)
+            assertTrue("the player walked: $walked", walked > 1000)
+            // a step is SCRN_SCALE/2 = 256: the push and its repeats make about 10 in two seconds, a held button over 50
+            assertTrue("at the joystick's pace: $walked", walked <= 12 * 256)
             assertFalse(r.bit(Keys.SC_CURSOR_UP))
         } finally { r.close() }
     }

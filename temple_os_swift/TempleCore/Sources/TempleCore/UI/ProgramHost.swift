@@ -251,12 +251,19 @@ public final class GameControls {
     public var onWheel: (Int) -> Void = { _ in }
     public static let REPEAT_DELAY_MS: Int64 = 250
     public static let REPEAT_PERIOD_MS: Int64 = 33
+    /**
+     * A held joystick push repeats its arrow 5 times a second, the pace of quick taps on a d-pad button: a
+     * stick is held where a button is tapped, and a game that counts key messages (Varoom's accelerator)
+     * gets 30 a second only from a button that is held on purpose.
+     */
+    public static let STICK_REPEAT_PERIOD_MS: Int64 = 200
 
     /**
      * Typematic repeat for held key buttons, like a PC keyboard: TempleOS boots with
      * KbdTypeMatic(0) (HomeLocalize.HC) = 250 ms delay, then 30 key-downs per second.
-     * Games that move one step per key message (GetKey: CastleFrankenstein) need it. Returns true while the
-     * joystick's knob is easing back to the centre (the controls need drawing).
+     * Games that move one step per key message (GetKey: CastleFrankenstein) need it. The joystick's arrows
+     * repeat after the same delay, then [STICK_REPEAT_PERIOD_MS] apart. Returns true while the joystick's knob
+     * is easing back to the centre (the controls need drawing).
      */
     @discardableResult
     public func tick(_ nowMs: Int64) -> Bool {
@@ -264,12 +271,13 @@ public final class GameControls {
             if b.toggle != nil || isModifier(b) { continue }
             if b.wheel == 0 && !typematic.repeats(ticket[id] ?? -1) { continue }
             guard let since = heldSince[id] else { continue }
-            if since < 0 { heldSince[id] = nowMs; lastRepeat[id] = nowMs + GameControls.REPEAT_DELAY_MS - GameControls.REPEAT_PERIOD_MS; continue }
+            let period = id < 0 ? GameControls.STICK_REPEAT_PERIOD_MS : GameControls.REPEAT_PERIOD_MS // (the joystick's hold ids are negative)
+            if since < 0 { heldSince[id] = nowMs; lastRepeat[id] = nowMs + GameControls.REPEAT_DELAY_MS - period; continue }
             if nowMs - since < GameControls.REPEAT_DELAY_MS { continue }
             var last = lastRepeat[id] ?? since
             var n = 0
-            while nowMs - last >= GameControls.REPEAT_PERIOD_MS && n < 2 { press(b); last += GameControls.REPEAT_PERIOD_MS; n += 1 }
-            if nowMs - last >= GameControls.REPEAT_PERIOD_MS { last = nowMs } // do not queue a burst after a stall
+            while nowMs - last >= period && n < 2 { press(b); last += period; n += 1 }
+            if nowMs - last >= period { last = nowMs } // do not queue a burst after a stall
             lastRepeat[id] = last
         }
         return joystick.settle(nowMs)

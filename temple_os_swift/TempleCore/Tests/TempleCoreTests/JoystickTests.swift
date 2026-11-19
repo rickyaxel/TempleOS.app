@@ -4,7 +4,7 @@ import XCTest
 
 /**
  * The joystick that can stand in for the d-pad (GameControls, Settings.directional): it exists only where the
- * program has the d-pad, it holds the same arrow keys through the same key path (down, typematic repeat, up), it
+ * program has the d-pad, it holds the same arrow keys through the same key path (down, a slower repeat, up), it
  * sends only what changes, and nothing it holds outlives its finger, its mode or its place on the screen.
  * Port of JoystickTest.kt.
  */
@@ -204,23 +204,35 @@ final class JoystickTests: XCTestCase {
         XCTAssertFalse(r.gc.anyHeld)
     }
 
-    /** A held push repeats like a held d-pad button (TempleOS KbdTypeMatic(0): 250 ms, then 30/s). */
-    func testAHeldPushRepeatsLikeTheDpad() {
+    /**
+     * A held push repeats its arrow at the pace of quick taps: after the keyboard's 250 ms, 5 times a second. A held
+     * d-pad button keeps the keyboard's 30 (TempleOS KbdTypeMatic(0)).
+     */
+    func testAHeldPushRepeatsAtATappingPace() {
         let r = rig(); r.directional = .joystick; r.draw()
         _ = r.stick(Ptr.DOWN, 30, 0)
         var log = r.take()
         r.gc.tick(1000); r.gc.tick(1200); log += r.take()
         XCTAssertEqual(["RIGHT down"], log, "no repeat before 250 ms")
         r.gc.tick(1260); XCTAssertEqual(["RIGHT down"], r.take(), "first repeat after 250 ms")
-        for t in stride(from: 1293, through: 2260, by: 33) { r.gc.tick(Int64(t)) }
-        let n = r.take().count
-        XCTAssertTrue((28...34).contains(n), "about 30 repeats per second: \(n)")
+        r.gc.tick(1440); XCTAssertEqual([], r.take(), "the next one 200 ms after it")
+        r.gc.tick(1460); XCTAssertEqual(["RIGHT down"], r.take())
+        for t in stride(from: 1476, through: 2460, by: 16) { r.gc.tick(Int64(t)) }
+        XCTAssertEqual(Array(repeating: "RIGHT down", count: 5), r.take(), "5 repeats in a second of frames")
         _ = r.stick(Ptr.MOVE, 25, -25); XCTAssertEqual(["UP down"], r.take())
-        for t in stride(from: 2293, through: 2800, by: 33) { r.gc.tick(Int64(t)) }
-        XCTAssertTrue(r.take().allSatisfy { $0 == "UP down" }, "the arrow pressed last repeats, as on a PC keyboard")
+        for t in stride(from: 2476, through: 3460, by: 16) { r.gc.tick(Int64(t)) }
+        XCTAssertEqual(Array(repeating: "UP down", count: 4), r.take(), "the arrow pressed last repeats, as on a PC keyboard")
         _ = r.stick(Ptr.UP, 25, -25); XCTAssertEqual(["UP up", "RIGHT up"], r.take())
         r.gc.tick(4000); r.gc.tick(5000)
         XCTAssertEqual([], r.take(), "nothing repeats after the release")
+        r.directional = .dpad; r.draw()
+        let up = r.node("Up arrow")!
+        _ = r.gc.pointer(PointerEvent(Ptr.DOWN, up.x + 4, up.y + 4, id: 7)); XCTAssertEqual(["UP down"], r.take())
+        r.gc.tick(6000)
+        for t in stride(from: 6250, through: 7249, by: 16) { r.gc.tick(Int64(t)) }
+        let n = r.take().count
+        XCTAssertTrue((28...34).contains(n), "a held button: about 30 repeats per second: \(n)")
+        _ = r.gc.pointer(PointerEvent(Ptr.UP, up.x + 4, up.y + 4, id: 7)); XCTAssertEqual(["UP up"], r.take())
     }
 
     func testTheJoystickAndButtonsAreSeparateFingers() {
@@ -454,7 +466,7 @@ final class JoystickTests: XCTestCase {
         XCTAssertEqual([], r.sh.systemChrome.gestureExclusion, "the d-pad's buttons are tapped, not dragged")
     }
 
-    /** CastleFrankenstein walks one step per key message: a held push walks it like a held d-pad button. */
+    /** CastleFrankenstein walks one step per key message: a held push keeps walking it, 5 steps a second. */
     func testAHeldPushWalksCastleFrankenstein() {
         let r = launch("C:/Demo/Games/CastleFrankenstein.HC", .joystick)
         defer { r.close() }
@@ -466,7 +478,10 @@ final class JoystickTests: XCTestCase {
         while Date().timeIntervalSince(t0) < 2 { _ = r.sh.tick(); Thread.sleep(forTimeInterval: 0.016) }
         r.stick(Ptr.UP, 0, -45)
         Thread.sleep(forTimeInterval: 0.3); _ = r.sh.tick()
-        XCTAssertGreaterThan(abs(g("man_xx") - x0) + abs(g("man_yy") - y0), 1000, "the player walked")
+        let walked = abs(g("man_xx") - x0) + abs(g("man_yy") - y0)
+        XCTAssertGreaterThan(walked, 1000, "the player walked")
+        // a step is SCRN_SCALE/2 = 256: the push and its repeats make about 10 in two seconds, a held button over 50
+        XCTAssertLessThanOrEqual(walked, 12 * 256, "at the joystick's pace")
         XCTAssertFalse(r.bit(Keys.SC_CURSOR_UP))
     }
 

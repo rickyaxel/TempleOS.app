@@ -96,8 +96,14 @@ Generated per program from its catalog entry and its own TempleOS menu:
   The choice is a setting (`Settings.directional`, `j=` in the session) shared
   by every program; a program without the d-pad never shows either. The
   joystick (`Joystick` in `ProgramHost`) is a digital stick: a push holds the
-  same arrow keys the d-pad buttons hold (key-down, typematic repeat, key-up),
-  one arrow per direction and two on a diagonal, as two fingers on the d-pad.
+  same arrow keys the d-pad buttons hold (key-down, repeat, key-up), one arrow
+  per direction and two on a diagonal, as two fingers on the d-pad. How far it
+  is pushed past the dead zone changes nothing. A held push repeats its arrow
+  after the keyboard's 250 ms, then 5 times a second
+  (`GameControls.STICK_REPEAT_PERIOD_MS`), where a held button repeats 30
+  times. A stick is held where a button is tapped: in a game that acts on
+  every key message (Varoom adds speed or steering with each one), a
+  one-second push is worth 5 taps, a one-second hold of a button over 20.
   It follows one finger from anywhere on it; other fingers stay free for the
   buttons. Dead zone: set by Settings → Joystick sensitivity, levels 1 to 5
   (`Settings.joystickSensitivity`, `js=` in the session, read at each push).
